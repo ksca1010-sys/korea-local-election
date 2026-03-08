@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-03-05T10:06:19.272651",
+  "source": {
+    "primary": "https://www.namk.or.kr/state/member.php",
+    "secondary": "https://openapi.naver.com/v1/search/news.json"
+  },
+  "thresholds": {
+    "days": 365,
+    "partyMinConfidence": 0.6,
+    "partyMinMentions": 2
+  },
+  "summary": {
+    "namkRows": 109,
+    "localRows": 227,
+    "nameMismatches": 2,
+    "actingMismatches": 0,
+    "partyFlags": 1
+  },
+  "nameMismatches": [
+    {
+      "regionKey": "jeju",
+      "district": "제주시",
+      "siteName": "김완근",
+      "localName": null
+    },
+    {
+      "regionKey": "jeju",
+      "district": "서귀포시",
+      "siteName": "오순문",
+      "localName": null
+    }
+  ],
+  "actingMismatches": [],
+  "partyFlags": [
+    {
+      "regionKey": "jeonbuk",
+      "district": "임실군",
+      "name": "심민",
+      "localParty": "independent",
+      "inferredParty": "ppp",
+      "confidence": 1.0,
+      "mentions": 2,
+      "counts": {
+        "ppp": 2
+      },
+      "query": "전북특별자치도 임실군 심민 군수",
+      "sample": [
+        "성준후 전 청와대 행정관, 고향 임실서 ‘출판기념회’ 성황… “임실의...",
+        "\"…꺾이지 않았다\"…'구름 인맥' 자랑한 성준후  임실군 수 출마예정자 출..."
+      ]
+    }
+  ]
+}

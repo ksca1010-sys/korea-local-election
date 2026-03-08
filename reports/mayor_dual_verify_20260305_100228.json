@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-03-05T10:02:28.874561",
+  "source": {
+    "primary": "https://www.namk.or.kr/state/member.php",
+    "secondary": "https://openapi.naver.com/v1/search/news.json"
+  },
+  "thresholds": {
+    "days": 365,
+    "partyMinConfidence": 0.6,
+    "partyMinMentions": 2
+  },
+  "summary": {
+    "namkRows": 109,
+    "localRows": 227,
+    "nameMismatches": 2,
+    "actingMismatches": 0,
+    "partyFlags": 2
+  },
+  "nameMismatches": [
+    {
+      "regionKey": "jeju",
+      "district": "제주시",
+      "siteName": "김완근",
+      "localName": null
+    },
+    {
+      "regionKey": "jeju",
+      "district": "서귀포시",
+      "siteName": "오순문",
+      "localName": null
+    }
+  ],
+  "actingMismatches": [],
+  "partyFlags": [
+    {
+      "regionKey": "jeonbuk",
+      "district": "임실군",
+      "name": "심민",
+      "localParty": "independent",
+      "inferredParty": "ppp",
+      "confidence": 1.0,
+      "mentions": 2,
+      "counts": {
+        "ppp": 2
+      },
+      "query": "전북특별자치도 임실군 심민 군수",
+      "sample": [
+        "임실군 ,‘로컬업 기업지원사업’내달 9일까지 참여기업 모집",
+        "'자연과 사람이 조화'… 임실군 , 생활권 녹색공간 확충에 주력",
+        "임실군 , 저지종으로 임실N치즈 명품화 '가속'"
+      ]
+    },
+    {
+      "regionKey": "jeonbuk",
+      "district": "순창군",
+      "name": "최영일",
+      "localParty": "independent",
+      "inferredParty": "progressive",
+      "confidence": 1.0,
+      "mentions": 2,
+      "counts": {
+        "progressive": 2
+      },
+      "query": "전북특별자치도 순창군 최영일 군수",
+      "sample": [
+        "순창군 , 역대 최대규모 '순창배 전국 유소년 야구대회' 마쳐",
+        "순창군 , 제11회 순창배 전국 유소년 야구대회 개최...“역대 최대 규모...",
+        "제11회 순창배 전국 유소년 야구대회'성료'"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "korea-local-eletion",
+  "private": true,
+  "scripts": {
+    "deploy": "npx wrangler pages deploy . --project-name korea-local-eletion --branch main --commit-dirty=true",
+    "deploy:preview": "npx wrangler pages deploy . --project-name korea-local-eletion --commit-dirty=true"
+  }
+}

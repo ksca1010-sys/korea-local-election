@@ -1,0 +1,306 @@
+[
+  {
+    "id": "incheon-gemalpo",
+    "name": "검단구",
+    "regionKey": "incheon",
+    "layerId": "28001",
+    "level": "gu",
+    "parentId": "incheon",
+    "electionTypes": ["mayoral", "sigunguCouncil"],
+    "isElectedOffice": false,
+    "hasSubdivisions": false,
+    "actingHead": {
+      "name": "박정우",
+      "party": "무소속",
+      "since": "2025-12-10",
+      "isActing": true
+    },
+    "specialHandling": {
+      "type": "newDistrict2026",
+      "legacyIds": ["incheon-jung-gu", "incheon-dong-gu", "incheon-seo-gu"],
+      "label": "검단구"
+    },
+    "metadata": {
+      "geoMappingHint": "2026년 검단구는 기존 중구·동구·서구의 합으로 렌더링"
+    }
+  },
+  {
+    "id": "incheon-yeongjong",
+    "name": "영종구",
+    "regionKey": "incheon",
+    "layerId": "28002",
+    "level": "gu",
+    "parentId": "incheon",
+    "electionTypes": ["mayoral", "sigunguCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "newDistrict2026",
+      "legacyIds": ["incheon-yeongjongdong", "incheon-yongyu-dong"],
+      "label": "영종구"
+    },
+    "metadata": {
+      "geoMappingHint": "영종·용유 묶음으로 2026년 선거구"
+    }
+  },
+  {
+    "id": "incheon-jemulpo",
+    "name": "제물포구",
+    "regionKey": "incheon",
+    "layerId": "28003",
+    "level": "gu",
+    "parentId": "incheon",
+    "electionTypes": ["mayoral", "sigunguCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "newDistrict2026",
+      "legacyIds": ["incheon-jung-gu", "incheon-dong-gu", "incheon-seo-gu"],
+      "label": "제물포구"
+    },
+    "metadata": {
+      "geoMappingHint": "제물포구는 2026년 인천 항 중심으로 구획"
+    }
+  },
+  {
+    "id": "changwon",
+    "name": "창원특례시",
+    "regionKey": "gyeongsangnam",
+    "layerId": "21010",
+    "level": "si",
+    "parentId": "gyeongsangnam",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["의창구", "성산구", "마산합포구", "마산회원구", "진해구"]
+    },
+    "metadata": {
+      "geoMappingHint": "창원 5개 구를 하나의 창원특례시로 통합"
+    }
+  },
+  {
+    "id": "sejong",
+    "name": "세종특별자치시",
+    "regionKey": "sejong",
+    "level": "special",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "noSubdivisions",
+      "reason": "세종은 단층제로 시/군/구 단위 없음"
+    }
+  },
+  {
+    "id": "gyeonggi-suwon",
+    "name": "수원시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["장안구", "권선구", "팔달구", "영통구"]
+    },
+    "metadata": {
+      "geoMappingHint": "기초단체장은 시 단위 선거인 만큼 구획선을 감추고 하나로 표시"
+    }
+  },
+  {
+    "id": "gyeonggi-seongnam",
+    "name": "성남시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["수정구", "중원구", "분당구"]
+    }
+  },
+  {
+    "id": "gyeonggi-anyang",
+    "name": "안양시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["만안구", "동안구"]
+    }
+  },
+  {
+    "id": "gyeonggi-ansan",
+    "name": "안산시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["상록구", "단원구"]
+    }
+  },
+  {
+    "id": "gyeonggi-goyang",
+    "name": "고양시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["덕양구", "일산동구", "일산서구"]
+    }
+  },
+  {
+    "id": "gyeonggi-yongin",
+    "name": "용인시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["처인구", "기흥구", "수지구"]
+    }
+  },
+  {
+    "id": "chungbuk-cheongju",
+    "name": "청주시",
+    "regionKey": "chungbuk",
+    "level": "si",
+    "parentId": "chungbuk",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["상당구", "서원구", "흥덕구", "청원구"]
+    }
+  },
+  {
+    "id": "chungnam-cheonan",
+    "name": "천안시",
+    "regionKey": "chungnam",
+    "level": "si",
+    "parentId": "chungnam",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["동남구", "서북구"]
+    }
+  },
+  {
+    "id": "jeonbuk-jeonju",
+    "name": "전주시",
+    "regionKey": "jeonbuk",
+    "level": "si",
+    "parentId": "jeonbuk",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["완산구", "덕진구"]
+    }
+  },
+  {
+    "id": "gyeongbuk-pohang",
+    "name": "포항시",
+    "regionKey": "gyeongbuk",
+    "level": "si",
+    "parentId": "gyeongbuk",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["남구", "북구"]
+    }
+  },
+  {
+    "id": "gyeonggi-bucheon",
+    "name": "부천시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "mergedGu",
+      "mergedIds": ["오정구", "소사구", "원미구"]
+    },
+    "metadata": {
+      "geoMappingHint": "부천시 3개 행정구는 2010년대부터 선출 대신 시장이 임명"
+    }
+  },
+  {
+    "id": "gyeonggi-pyeongtaek",
+    "name": "평택시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "appointmentOnly",
+      "reason": "평택은 인구 50만 이상 일반시로 행정구의 장은 시장이 임명"
+    }
+  },
+  {
+    "id": "gyeonggi-namyangju",
+    "name": "남양주시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "appointmentOnly",
+      "reason": "남양주 지역의 행정구도 구청장을 선출하지 않고 시장이 임명"
+    }
+  },
+  {
+    "id": "gyeonggi-siheung",
+    "name": "시흥시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "appointmentOnly",
+      "reason": "시흥시가 사무 위임구(행정구)를 시장이 임명"
+    }
+  },
+  {
+    "id": "gyeonggi-paju",
+    "name": "파주시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "appointmentOnly",
+      "reason": "파주 행정구의 장도 시가 임명"
+    }
+  },
+  {
+    "id": "gyeonggi-gimpo",
+    "name": "김포시",
+    "regionKey": "gyeonggi",
+    "level": "si",
+    "parentId": "gyeonggi",
+    "electionTypes": ["mayoral", "sidoCouncil"],
+    "hasSubdivisions": false,
+    "specialHandling": {
+      "type": "appointmentOnly",
+      "reason": "김포시 행정구도 시장이 구청장을 임명"
+    }
+  }
+]

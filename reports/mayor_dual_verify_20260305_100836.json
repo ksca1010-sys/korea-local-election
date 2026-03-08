@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-03-05T10:08:36.941091",
+  "source": {
+    "primary": "https://www.namk.or.kr/state/member.php",
+    "secondary": "https://openapi.naver.com/v1/search/news.json"
+  },
+  "thresholds": {
+    "days": 365,
+    "partyMinConfidence": 0.6,
+    "partyMinMentions": 2
+  },
+  "summary": {
+    "namkRows": 109,
+    "localRows": 227,
+    "nameMismatches": 2,
+    "actingMismatches": 0,
+    "partyFlags": 0
+  },
+  "nameMismatches": [
+    {
+      "regionKey": "jeju",
+      "district": "제주시",
+      "siteName": "김완근",
+      "localName": null
+    },
+    {
+      "regionKey": "jeju",
+      "district": "서귀포시",
+      "siteName": "오순문",
+      "localName": null
+    }
+  ],
+  "actingMismatches": [],
+  "partyFlags": []
+}
