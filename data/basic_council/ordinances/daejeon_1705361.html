@@ -1,0 +1,90 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<script type="text/javascript" src="/DRF/js/jquery.js"></script>
+
+	<style>
+	body {
+	    overflow: hidden; 
+	    width: 100%;
+		height : 100%;
+	}
+	
+	#bodyDiv {
+		width: 100%;
+		height: 100%;
+		overflow-x : hidden;
+		overflow-y : auto;
+	}
+	
+	</style>
+</head>
+<script type="text/javascript">
+	$(document).ready(function(){
+		// 모바일일 경우 수행		
+		if($("#mobileYn").val() == 'Y'){
+			var url = "mobileOrdinInfoR.do";
+			var param = "ordinSeq="+$("#ordinSeq").val()+"&gubun="+$("#gubun").val()+"&xmlSrvYn="+$("#xmlSrvYn").val()+"&Mobile=Y";
+			
+			$.ajax({
+				url: url,
+				type:'POST',
+				dataType:'text',
+				data: param,
+				timeout : 150000,
+		        error : function(request,status,error){
+		        	//alert("다시 실행해주시기 바랍니다. :: " + status);
+		        	location.href = $("#url").val();
+		        },
+				success: function(responseData, result){
+					if(responseData != ''){
+						$("#bodyDiv").html(responseData);
+					}else{
+						location.href = $("#url").val();
+					}
+				}
+			});	
+		}
+	});
+</script>
+<body topmargin="0" leftmargin="0" rightmargin="0" bottommargin="0" marginheight="0" marginwidth="0">
+<input type="hidden" id="ordinSeq" value ="1705361"/>
+<input type="hidden" id="gubun" value ="ELIS"/>
+<input type="hidden" id="xmlSrvYn" value ="N"/>
+<input type="hidden" id="mobileYn" value=""/> 
+<input type="hidden" id="url" value="https://www.law.go.kr/LSW/ordinInfoP.do?urlMode=ordinScJoRltInfoR&viewCls=ordinInfoP&ordinSeq=1705361&chrClsCd=010202&gubun=ELIS"/>
+
+	
+	
+		<table cellspacing="1" cellpadding="0" border="0" height="98%" width="100%" style="border:1px solid #cacaca;">
+			<tr>
+				<td>
+					<iframe scrolling="auto" frameborder="0" marginheight="0" marginwidth="0" tabIndex="-1"
+					      	style="position: absolute; top: 0px; left: 0px; right: 0px; bottom: 0px; width: 100%; height: 100%;"
+							src = "https://www.law.go.kr/LSW/ordinInfoP.do?urlMode=ordinScJoRltInfoR&viewCls=ordinInfoP&ordinSeq=1705361&chrClsCd=010202&gubun=ELIS"></iframe>
+				</td>
+			</tr>
+		</table>
+	
+
+</body>
+</html>

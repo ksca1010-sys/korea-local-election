@@ -2143,9 +2143,19 @@ const MapModule = (() => {
             let bgFeatures = [];
             if (districtGeo) {
                 const target = sggName.replace(/\s/g, '');
-                // 일반구(상당구 등)를 포함한 시 단위 매칭
+                // 시도코드로 동명 시군구 구분 (중구, 동구, 서구 등)
+                const sidoCodeMap = {
+                    seoul:'11', busan:'21', daegu:'22', incheon:'23', gwangju:'24',
+                    daejeon:'25', ulsan:'26', sejong:'29', gyeonggi:'31',
+                    gangwon:'32', chungbuk:'33', chungnam:'34', jeonbuk:'35',
+                    jeonnam:'36', gyeongbuk:'37', gyeongnam:'38', jeju:'39'
+                };
+                const sidoCode = sidoCodeMap[regionKey] || '';
                 bgFeatures = districtGeo.features.filter(f => {
                     const name = (f.properties.name || '').replace(/\s/g, '');
+                    const code = f.properties.code || '';
+                    // 시도코드가 있으면 반드시 일치해야 함
+                    if (sidoCode && code && !code.startsWith(sidoCode)) return false;
                     return name === target || name.startsWith(target) || target.includes(name);
                 });
             }
