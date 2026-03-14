@@ -1,0 +1,44 @@
+name: Update Mayor Status
+
+on:
+  schedule:
+    # 매주 수요일 한국시간 11:00 (UTC 02:00) 실행
+    - cron: '0 2 * * 3'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-genai google-generativeai
+
+      - name: Run mayor status factcheck
+        env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/candidate_pipeline/fetch_mayor_status.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/candidates/mayor_status.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/candidates/mayor_status.json
+          git commit -m "chore: auto-update mayor status $(date +%Y-%m-%d)"
+          git push

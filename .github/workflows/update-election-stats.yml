@@ -1,0 +1,41 @@
+name: Update Election Stats
+
+on:
+  schedule:
+    # 매일 한국시간 10:00 (UTC 01:00) 실행
+    # 획정 확정 시기(2026.04~05) 대응: 매일 갱신
+    - cron: '0 1 * * *'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run election stats pipeline
+        env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+        run: python scripts/fetch_election_stats.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/election_stats.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/election_stats.json
+          git commit -m "chore: auto-update election stats $(date +%Y-%m-%d)"
+          git push

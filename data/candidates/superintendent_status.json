@@ -1,0 +1,149 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-14",
+    "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
+    "baseline": "제8회 지방선거 (20220601) + 보궐선거 반영",
+    "totalCount": 17,
+    "note": "교육감은 무소속 (정당 추천 없음), stance=성향",
+    "lastFactCheck": "2026-03-14T17:34:13.369462"
+  },
+  "superintendents": {
+    "seoul": {
+      "region": "seoul",
+      "name": "정근식",
+      "electedName": "조희연",
+      "electedYear": 2022,
+      "_source": "NEC_API_20241016",
+      "note": "2024 보궐선거 당선, 조희연 후임",
+      "stance": "진보"
+    },
+    "busan": {
+      "region": "busan",
+      "name": "하윤수",
+      "electedName": "하윤수",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "daegu": {
+      "region": "daegu",
+      "name": "강은희",
+      "electedName": "강은희",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "incheon": {
+      "region": "incheon",
+      "name": "도성훈",
+      "electedName": "도성훈",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "gwangju": {
+      "region": "gwangju",
+      "name": "이정선",
+      "electedName": "이정선",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "daejeon": {
+      "region": "daejeon",
+      "name": "설동호",
+      "electedName": "설동호",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "중도"
+    },
+    "ulsan": {
+      "region": "ulsan",
+      "name": "노옥희",
+      "electedName": "노옥희",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "gyeonggi": {
+      "region": "gyeonggi",
+      "name": "임태희",
+      "electedName": "임태희",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "gangwon": {
+      "region": "gangwon",
+      "name": "신경호",
+      "electedName": "신경호",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "chungbuk": {
+      "region": "chungbuk",
+      "name": "윤건영",
+      "electedName": "윤건영",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "chungnam": {
+      "region": "chungnam",
+      "name": "김지철",
+      "electedName": "김지철",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "jeonbuk": {
+      "region": "jeonbuk",
+      "name": "서거석",
+      "electedName": "서거석",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "jeonnam": {
+      "region": "jeonnam",
+      "name": "김대중",
+      "electedName": "김대중",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "gyeongbuk": {
+      "region": "gyeongbuk",
+      "name": "임종식",
+      "electedName": "임종식",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "gyeongnam": {
+      "region": "gyeongnam",
+      "name": "박종훈",
+      "electedName": "박종훈",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    },
+    "jeju": {
+      "region": "jeju",
+      "name": "김광수",
+      "electedName": "김광수",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "보수"
+    },
+    "sejong": {
+      "region": "sejong",
+      "name": "최교진",
+      "electedName": "최교진",
+      "electedYear": 2022,
+      "_source": "NEC_API_20220601",
+      "stance": "진보"
+    }
+  }
+}

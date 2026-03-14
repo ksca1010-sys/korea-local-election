@@ -1,0 +1,39 @@
+name: Update Local Council Members
+
+on:
+  schedule:
+    # 매주 수요일 한국시간 12:00 (UTC 03:00) 실행
+    - cron: '0 3 * * 3'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run local council members pipeline
+        env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+        run: python scripts/candidate_pipeline/fetch_local_council_members.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/candidates/local_council_members.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/candidates/local_council_members.json
+          git commit -m "chore: auto-update local council members $(date +%Y-%m-%d)"
+          git push

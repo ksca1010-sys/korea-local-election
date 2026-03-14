@@ -1,0 +1,147 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-14",
+    "source": "중앙선거관리위원회 당선인정보 API (공식)",
+    "baseline": "제8회 지방선거 (20220601) 당선인",
+    "totalCount": 17,
+    "actingCount": 0
+  },
+  "governors": {
+    "seoul": {
+      "region": "seoul",
+      "name": "오세훈",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "오세훈",
+      "_source": "NEC_API"
+    },
+    "busan": {
+      "region": "busan",
+      "name": "박형준",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "박형준",
+      "_source": "NEC_API"
+    },
+    "daegu": {
+      "region": "daegu",
+      "name": "홍준표",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "홍준표",
+      "_source": "NEC_API"
+    },
+    "incheon": {
+      "region": "incheon",
+      "name": "유정복",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "유정복",
+      "_source": "NEC_API"
+    },
+    "gwangju": {
+      "region": "gwangju",
+      "name": "강기정",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "강기정",
+      "_source": "NEC_API"
+    },
+    "daejeon": {
+      "region": "daejeon",
+      "name": "이장우",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "이장우",
+      "_source": "NEC_API"
+    },
+    "ulsan": {
+      "region": "ulsan",
+      "name": "김두겸",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "김두겸",
+      "_source": "NEC_API"
+    },
+    "gyeonggi": {
+      "region": "gyeonggi",
+      "name": "김동연",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "김동연",
+      "_source": "NEC_API"
+    },
+    "gangwon": {
+      "region": "gangwon",
+      "name": "김진태",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "김진태",
+      "_source": "NEC_API"
+    },
+    "chungbuk": {
+      "region": "chungbuk",
+      "name": "김영환",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "김영환",
+      "_source": "NEC_API"
+    },
+    "chungnam": {
+      "region": "chungnam",
+      "name": "김태흠",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "김태흠",
+      "_source": "NEC_API"
+    },
+    "jeonbuk": {
+      "region": "jeonbuk",
+      "name": "김관영",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "김관영",
+      "_source": "NEC_API"
+    },
+    "jeonnam": {
+      "region": "jeonnam",
+      "name": "김영록",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "김영록",
+      "_source": "NEC_API"
+    },
+    "gyeongbuk": {
+      "region": "gyeongbuk",
+      "name": "이철우",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "이철우",
+      "_source": "NEC_API"
+    },
+    "gyeongnam": {
+      "region": "gyeongnam",
+      "name": "박완수",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "박완수",
+      "_source": "NEC_API"
+    },
+    "jeju": {
+      "region": "jeju",
+      "name": "오영훈",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "오영훈",
+      "_source": "NEC_API"
+    },
+    "sejong": {
+      "region": "sejong",
+      "name": "최민호",
+      "party": "ppp",
+      "electedParty": "ppp",
+      "electedName": "최민호",
+      "_source": "NEC_API"
+    }
+  }
+}

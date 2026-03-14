@@ -2,7 +2,23 @@
   "name": "korea-local-eletion",
   "private": true,
   "scripts": {
-    "deploy": "npx wrangler pages deploy . --project-name korea-local-eletion --branch main --commit-dirty=true",
+    "build:local-media": "node scripts/build_local_media_registry.js",
+    "check:local-media": "node scripts/check_local_media_registry.js",
+    "check:news": "node scripts/run_news_regression.js",
+    "check:all": "node scripts/run_quality_gate.js",
+    "check:polls": "node scripts/run_poll_regression.js",
+    "check:poll-observations": "node scripts/check_poll_observations.js",
+    "check:observations": "node scripts/check_news_observations.js",
+    "gemini:polls": "python3 scripts/gemini_parse_polls.py",
+    "gemini:polls:dry": "python3 scripts/gemini_parse_polls.py --dry-run",
+    "import:polls": "node scripts/import_poll_observations.js",
+    "import:news": "node scripts/import_news_observations.js",
+    "polls:backfill-registration": "python3 scripts/nesdc_poll_pipeline.py --backfill-registration-meta",
+    "report:health": "node scripts/report_data_health.js",
+    "deploy": "bash deploy.sh",
     "deploy:preview": "npx wrangler pages deploy . --project-name korea-local-eletion --commit-dirty=true"
+  },
+  "devDependencies": {
+    "topojson-client": "^3.1.0"
   }
 }
