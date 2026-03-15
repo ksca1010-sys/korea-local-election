@@ -27,7 +27,7 @@
 
     --party-democratic: #2E8BFF;
     --party-ppp: #E61E2B;
-    --party-reform: #0A1747;
+    --party-reform: #3B6ABF;
     --party-newreform: #FF7210;
     --party-progressive: #D6001C;
     --party-newfuture: #45B97C;
@@ -1496,6 +1496,10 @@ body {
 }
 
 /* Key Issues */
+#key-issues-card:has(#key-issues:empty) {
+    display: none;
+}
+
 .issues-list {
     display: flex;
     flex-wrap: wrap;
@@ -1919,7 +1923,89 @@ canvas {
     }
 }
 
+/* Mobile Filter Toggle Button */
+.mobile-filter-toggle {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Mobile Bottom Sheet */
+.mobile-filter-sheet {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+}
+
+.mobile-filter-sheet.active {
+    display: block;
+}
+
+.mobile-filter-sheet-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.mobile-filter-sheet-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    border-radius: 16px 16px 0 0;
+    padding: 12px 16px 24px;
+    max-height: 70vh;
+    overflow-y: auto;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.mobile-filter-sheet-handle {
+    width: 36px;
+    height: 4px;
+    background: var(--text-muted);
+    border-radius: 2px;
+    margin: 0 auto 12px;
+}
+
+.mobile-filter-sheet-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    text-align: center;
+}
+
+.mobile-filter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.mobile-filter-grid .filter-btn {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px;
+    min-height: 48px;
+    font-size: 0.85rem;
+}
+
 @media (max-width: 1024px) {
+    .mobile-filter-toggle {
+        display: flex;
+    }
+
     .sidebar {
         display: none;
     }

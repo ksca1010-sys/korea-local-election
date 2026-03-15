@@ -26,7 +26,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=50">
+    <link rel="stylesheet" href="css/style.css?v=53">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -64,6 +64,9 @@
             </div>
         </div>
         <div class="header-right">
+            <button id="mobile-filter-toggle" class="mobile-filter-toggle" aria-label="선거 종류 선택">
+                <i class="fas fa-filter"></i>
+            </button>
             <div class="dday-counter" id="dday-counter">
                 <span class="dday-label">선거일까지</span>
                 <span class="dday-number" id="dday-number">D-98</span>
@@ -74,6 +77,16 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Bottom Sheet for Election Filters -->
+    <div id="mobile-filter-sheet" class="mobile-filter-sheet">
+        <div class="mobile-filter-sheet-backdrop"></div>
+        <div class="mobile-filter-sheet-content">
+            <div class="mobile-filter-sheet-handle"></div>
+            <h3 class="mobile-filter-sheet-title">선거 종류 선택</h3>
+            <div class="mobile-filter-grid" id="mobile-filter-grid"></div>
+        </div>
+    </div>
 
 
     <!-- Main Content -->
@@ -262,6 +275,7 @@
                         <div id="current-governor"></div>
                         <div id="panel-region-badge" class="panel-region-badge" style="display:none"></div>
                     </div>
+                    <div id="key-issues" style="display:none"></div>
                     <div class="panel-card">
                         <h4><i class="fas fa-history"></i> 지난 선거 결과 (제8회)</h4>
                         <div id="prev-election-result"></div>
@@ -379,10 +393,10 @@
     <script src="js/news_filters.js?v=90"></script>
     <script src="js/derived_issues.js?v=75"></script>
     <script src="js/issue_engine.js?v=5"></script>
-    <script src="js/data.js?v=98"></script>
+    <script src="js/data.js?v=99"></script>
     <script src="js/nec.js?v=75"></script>
-    <script src="js/map.js?v=145"></script>
+    <script src="js/map.js?v=147"></script>
     <script src="js/charts.js?v=78"></script>
-    <script src="js/app.js?v=114"></script>
+    <script src="js/app.js?v=115"></script>
 </body>
 </html>

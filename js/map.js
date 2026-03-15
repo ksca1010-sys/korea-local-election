@@ -747,15 +747,49 @@ const MapModule = (() => {
                     parties = Object.entries(seatMap).map(([party, seats]) => ({ party, seats }));
                 }
                 parties.sort((a, b) => b.seats - a.seats);
-                const partyRows = parties.map(p => {
-                    const pc = ElectionData.getPartyColor(p.party);
-                    const share = p.voteShare ? ` (${p.voteShare}%)` : totalSeats > 0 ? ` (${(p.seats / totalSeats * 100).toFixed(1)}%)` : '';
-                    return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
-                        <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
-                        <span style="color:#e0e0e0;font-size:0.9em">${ElectionData.getPartyName(p.party)}</span>
-                        <span style="color:#fff;font-weight:600">${p.seats}석${share}</span>
+
+                // 득표율 (비의석 정당 포함)
+                const voteResults = regionPropData.voteResults || [];
+                const voteRows = voteResults.length > 0
+                    ? voteResults.map(v => {
+                        const pc = ElectionData.getPartyColor(v.party);
+                        const pn = v.partyName || ElectionData.getPartyName(v.party);
+                        const seatInfo = parties.find(p => p.party === v.party);
+                        const seatText = seatInfo ? `${seatInfo.seats}석` : '0석';
+                        return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                            <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
+                            <span style="color:#e0e0e0;font-size:0.85em">${pn}</span>
+                            <span style="color:#fff;font-weight:600">${seatText}</span>
+                            <span style="color:#999;font-size:0.8em">${v.voteShare}%</span>
+                        </div>`;
+                    }).join('')
+                    : parties.map(p => {
+                        const pc = ElectionData.getPartyColor(p.party);
+                        const share = totalSeats > 0 ? ` (${(p.seats / totalSeats * 100).toFixed(1)}%)` : '';
+                        return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                            <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
+                            <span style="color:#e0e0e0;font-size:0.85em">${ElectionData.getPartyName(p.party)}</span>
+                            <span style="color:#fff;font-weight:600">${p.seats}석${share}</span>
+                        </div>`;
+                    }).join('');
+
+                // 현직 의원 목록 (광역비례만)
+                let membersHtml = '';
+                if (isCouncilProp && regionPropData.members?.length) {
+                    const memberLines = regionPropData.members.map(m => {
+                        const mc = ElectionData.getPartyColor(m.party);
+                        const mn = ElectionData.getPartyName(m.party);
+                        return `<div style="display:flex;align-items:center;gap:8px;padding:1px 0">
+                            <span style="display:inline-block;width:10px;height:10px;min-width:10px;border-radius:2px;background:${mc}"></span>
+                            <span style="color:#e0e0e0;font-size:0.8em">${mn}</span>
+                            <span style="color:#fff;font-size:0.85em">${m.name}</span>
+                        </div>`;
+                    }).join('');
+                    membersHtml = `<div style="margin-top:6px;border-top:1px solid #333;padding-top:4px">
+                        <div style="color:#999;font-size:0.75em;margin-bottom:3px">현직 비례의원 ${regionPropData.members.length}명</div>
+                        <div style="max-height:120px;overflow-y:auto">${memberLines}</div>
                     </div>`;
-                }).join('');
+                }
 
                 tooltipHtml = `
                     <div class="tooltip-title">${region.name} ${isCouncilProp ? '광역' : '기초'} 비례대표</div>
@@ -764,8 +798,9 @@ const MapModule = (() => {
                         <span class="value" style="color:#fff">${totalSeats}석</span>
                     </div>
                     <div style="margin-top:4px;border-top:1px solid #333;padding-top:4px">
-                        ${partyRows}
+                        ${voteRows}
                     </div>
+                    ${membersHtml}
                 `;
             } else {
                 tooltipHtml = `
@@ -931,8 +966,16 @@ const MapModule = (() => {
 
     function handleMouseMove(event) {
         if (!_mapTooltip) return;
-        _mapTooltip.style.left = (event.clientX + 16) + 'px';
-        _mapTooltip.style.top = (event.clientY - 10) + 'px';
+        const pad = 16;
+        let x = event.clientX + pad;
+        let y = event.clientY - 10;
+        const tw = _mapTooltip.offsetWidth;
+        const th = _mapTooltip.offsetHeight;
+        if (x + tw > window.innerWidth - pad) x = event.clientX - tw - pad;
+        if (y + th > window.innerHeight - pad) y = window.innerHeight - th - pad;
+        if (y < pad) y = pad;
+        _mapTooltip.style.left = x + 'px';
+        _mapTooltip.style.top = y + 'px';
     }
 
     function handleMouseOut() {
@@ -954,8 +997,11 @@ const MapModule = (() => {
     }
 
     function handleRegionSelection(regionKey) {
-        // 선거 종류 미선택 시 클릭 무시
-        if (!currentElectionType) return false;
+        // 선거 종류 미선택 시 안내
+        if (!currentElectionType) {
+            renderTemporaryTooltip('좌측에서 선거 종류를 선택해주세요');
+            return false;
+        }
 
         const region = ElectionData.getRegion(regionKey);
         if (!region) return false;
@@ -1011,10 +1057,12 @@ const MapModule = (() => {
         selectedRegion = key;
 
         // For drill-down types, switch to district map first
-        const drillDownTypes = ['mayor', 'council', 'localCouncil', 'byElection'];
+        const drillDownTypes = ['mayor', 'council', 'localCouncil', 'localCouncilProportional', 'byElection'];
         if (drillDownTypes.includes(currentElectionType)) {
             if (currentElectionType === 'council') {
                 switchToCouncilDistrictMap(key);
+            } else if (currentElectionType === 'localCouncilProportional') {
+                switchToProportionalDistrictMap(key);
             } else if (currentElectionType === 'byElection') {
                 switchToByElectionDistrictMap(key);
                 return; // byElection은 별도 패널 처리
@@ -3478,10 +3526,6 @@ const MapModule = (() => {
                 .on('mouseout', function() {
                     handleMouseOut();
                 })
-                .on('click', (event, d) => {
-                    const districtName = getEffectiveDistrictName(regionKey, getDistrictName(d));
-                    switchToProportionalSigunguDetail(regionKey, districtName);
-                })
                 .attr('opacity', 1);
 
             // 시군구 라벨 + 의석수 통합 ("시군구명 N석")
@@ -3642,13 +3686,38 @@ const MapModule = (() => {
             const topColor = ElectionData.getPartyColor(topParty.party);
             const partyRows = sggData.parties.map(p => {
                 const pc = ElectionData.getPartyColor(p.party);
-                const shareText = p.voteShare ? ` (${p.voteShare}%)` : '';
+                const shareText = p.voteShare ? `${p.voteShare}%` : '';
                 return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
                     <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
-                    <span style="color:#e0e0e0;font-size:0.9em">${ElectionData.getPartyName(p.party)}</span>
-                    <span style="color:#fff;font-weight:600">${p.seats}석${shareText}</span>
+                    <span style="color:#e0e0e0;font-size:0.85em">${ElectionData.getPartyName(p.party)}</span>
+                    <span style="color:#fff;font-weight:600">${p.seats}석</span>
+                    ${shareText ? `<span style="color:#999;font-size:0.8em">${shareText}</span>` : ''}
                 </div>`;
             }).join('');
+
+            // 기초비례 현직의원 조회 (local_council_members에서 비례 키)
+            let membersHtml = '';
+            const lcData = ElectionData._localCouncilMembersCache?.sigungus;
+            if (lcData) {
+                // 비례 키 패턴: regionKey_시군구비례대표
+                const propKey = `${regionKey}_${districtName.replace(/\s+/g,'')}비례대표`;
+                const propData = lcData[propKey];
+                if (propData?.members?.length) {
+                    const mLines = propData.members.map(m => {
+                        const mc = ElectionData.getPartyColor(m.party);
+                        return `<div style="display:flex;align-items:center;gap:8px;padding:1px 0">
+                            <span style="display:inline-block;width:10px;height:10px;min-width:10px;border-radius:2px;background:${mc}"></span>
+                            <span style="color:#e0e0e0;font-size:0.8em">${ElectionData.getPartyName(m.party)}</span>
+                            <span style="color:#fff;font-size:0.85em">${m.name}</span>
+                        </div>`;
+                    }).join('');
+                    membersHtml = `<div style="margin-top:4px;border-top:1px solid #333;padding-top:4px">
+                        <div style="color:#999;font-size:0.75em;margin-bottom:2px">현직 비례의원</div>
+                        ${mLines}
+                    </div>`;
+                }
+            }
+
             tooltip.style.display = 'block';
             tooltip.innerHTML = `
                 <div class="tooltip-title">
@@ -3659,7 +3728,10 @@ const MapModule = (() => {
                     <span class="label">비례대표석</span>
                     <span class="value" style="color:#fff">${sggData.totalSeats}석</span>
                 </div>
-                ${partyRows}
+                <div style="margin-top:4px;border-top:1px solid #333;padding-top:4px">
+                    ${partyRows}
+                </div>
+                ${membersHtml}
             `;
         } else {
             tooltip.style.display = 'block';

@@ -48,6 +48,7 @@ const App = (() => {
         renderFooterPartyBar();
         setupFilterTooltips();
         setupFilterButtons();
+        setupMobileFilterSheet();
         toggleByelectionNote(false);
         setupBannerClose();
 
@@ -95,6 +96,53 @@ const App = (() => {
     // ============================================
     // Banner Close (#10)
     // ============================================
+    function setupMobileFilterSheet() {
+        const toggle = document.getElementById('mobile-filter-toggle');
+        const sheet = document.getElementById('mobile-filter-sheet');
+        const grid = document.getElementById('mobile-filter-grid');
+        const backdrop = sheet?.querySelector('.mobile-filter-sheet-backdrop');
+        if (!toggle || !sheet || !grid) return;
+
+        // 사이드바의 필터 버튼을 복제해서 모바일 그리드에 넣기
+        const sidebarBtns = document.querySelectorAll('.sidebar .filter-btn');
+        sidebarBtns.forEach(btn => {
+            const clone = btn.cloneNode(true);
+            clone.addEventListener('click', () => {
+                // 원본 버튼 클릭 트리거
+                btn.click();
+                // 시트 닫기
+                sheet.classList.remove('active');
+                // 활성 상태 동기화
+                grid.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                clone.classList.add('active');
+            });
+            grid.appendChild(clone);
+        });
+
+        // 토글 버튼
+        toggle.addEventListener('click', () => {
+            sheet.classList.toggle('active');
+        });
+
+        // 배경 클릭 시 닫기
+        if (backdrop) {
+            backdrop.addEventListener('click', () => {
+                sheet.classList.remove('active');
+            });
+        }
+
+        // 사이드바 필터 활성 상태 변경 감시 → 모바일 동기화
+        const observer = new MutationObserver(() => {
+            const activeType = document.querySelector('.sidebar .filter-btn.active')?.dataset?.type;
+            grid.querySelectorAll('.filter-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.type === activeType);
+            });
+        });
+        sidebarBtns.forEach(btn => {
+            observer.observe(btn, { attributes: true, attributeFilter: ['class'] });
+        });
+    }
+
     function setupBannerClose() {
         const closeBtn = document.getElementById('banner-close');
         if (closeBtn) {
