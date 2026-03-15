@@ -1,0 +1,45 @@
+name: Update Election Overview
+
+on:
+  schedule:
+    # 매일 한국시간 07:00 (UTC 22:00 전날) 실행
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    # 수동 실행 가능
+  workflow_call:
+    # 갤럽 등 다른 워크플로우에서 연쇄 트리거
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install google-genai google-generativeai
+
+      - name: Run overview update
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/update_election_overview.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/election_overview.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/election_overview.json
+          git commit -m "chore: auto-update election overview $(date +%Y-%m-%d)"
+          git push

@@ -1807,7 +1807,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 govContainer.innerHTML = '';
             } else {
                 const govColor = ElectionData.getPartyColor(gov.party);
-                const sinceText = Number.isFinite(Number(gov.since)) ? `${gov.since}년~` : '재임 정보 집계 중';
+                const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
                 const statusText = gov.acting ? ' 권한대행' : ' 재임중';
                 govContainer.innerHTML = `
                     <div class="governor-info">

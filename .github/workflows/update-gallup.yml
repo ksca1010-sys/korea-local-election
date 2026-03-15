@@ -1,0 +1,48 @@
+name: Update Gallup National Poll
+
+on:
+  schedule:
+    # 매주 금요일 한국시간 18:00 (UTC 09:00) - 갤럽 발표 후
+    - cron: '0 9 * * 5'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run gallup update
+        run: python scripts/update_gallup.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet js/data.js || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/data.js
+          git commit -m "chore: auto-update gallup national poll $(date +%Y-%m-%d)"
+          git push
+
+    outputs:
+      changed: ${{ steps.diff.outputs.changed }}
+
+  # 갤럽 데이터가 실제 변경된 경우에만 개황 연쇄 업데이트
+  trigger-overview:
+    needs: update
+    if: needs.update.outputs.changed == 'true'
+    uses: ./.github/workflows/update-overview.yml
+    secrets: inherit

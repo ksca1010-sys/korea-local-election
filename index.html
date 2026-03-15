@@ -5,14 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>6.3 전국지방선거 인터랙티브 선거 정보 지도</title>
     <meta name="description" content="2026년 6월 3일 제9회 전국동시지방선거 인터랙티브 선거 정보 지도. 지역별 여론조사, 선거 정보를 투명하게 한눈에 확인하세요.">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="6.3 지방선거 정보지도 - 투명한 선거 정보, 한눈에">
+    <meta property="og:description" content="제9회 전국동시지방선거 인터랙티브 지도. 지역별 여론조사, 후보자 비교, 역대 선거 결과를 한눈에 확인하세요.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:url" content="https://korea-local-eletion.pages.dev">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="6.3 지방선거 정보지도">
+    <meta name="twitter:description" content="제9회 전국동시지방선거 인터랙티브 선거 정보 지도">
+    <meta name="twitter:image" content="og-image.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <link rel="stylesheet" href="css/style.css?v=27">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css?v=50">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -45,7 +59,7 @@
         <div class="header-center">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="region-search" placeholder="지역명을 입력하세요 (예: 서울, 부산, 경기...)" autocomplete="off">
+                <input type="text" id="region-search" placeholder="지역 검색 (예: 영암, 서울)" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
         </div>
@@ -98,7 +112,7 @@
                         <button class="filter-btn" data-type="council">
                             <span class="filter-icon"><i class="fas fa-users"></i></span>
                             <span>광역의원</span>
-                            <span class="filter-count">789</span>
+                            <span class="filter-count">779</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-council"></div>
                     </div>
@@ -106,7 +120,7 @@
                         <button class="filter-btn" data-type="localCouncil">
                             <span class="filter-icon"><i class="fas fa-people-group"></i></span>
                             <span>기초의원</span>
-                            <span class="filter-count">2,927</span>
+                            <span class="filter-count">2,601</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-localCouncil"></div>
                     </div>
@@ -114,7 +128,7 @@
                         <button class="filter-btn" data-type="councilProportional">
                             <span class="filter-icon"><i class="fas fa-layer-group"></i></span>
                             <span>광역의원 비례대표</span>
-                            <span class="filter-count">47</span>
+                            <span class="filter-count">93</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-councilProportional"></div>
                     </div>
@@ -122,7 +136,7 @@
                         <button class="filter-btn" data-type="localCouncilProportional">
                             <span class="filter-icon"><i class="fas fa-network-wired"></i></span>
                             <span>기초의원 비례대표</span>
-                            <span class="filter-count">120</span>
+                            <span class="filter-count">386</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-localCouncilProportional"></div>
                     </div>
@@ -130,7 +144,7 @@
                         <button class="filter-btn" data-type="byElection">
                             <span class="filter-icon"><i class="fas fa-calendar-check"></i></span>
                             <span>재보궐</span>
-                            <span class="filter-count">4</span>
+                            <span class="filter-count">5</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-byElection"></div>
                     </div>
@@ -151,7 +165,7 @@
 
             <!-- 한국갤럽 정당지지율 (#4) -->
             <div class="sidebar-section">
-                <h3 class="section-title"><i class="fas fa-poll"></i> 정당지지율</h3>
+                <h3 class="section-title"><i class="fas fa-poll"></i> 전국 정당지지율</h3>
                 <div class="national-party-bar" id="national-party-bar"></div>
                 <div class="gallup-source" id="gallup-source"></div>
             </div>
@@ -193,6 +207,7 @@
 
         <!-- Right Panel -->
         <aside id="detail-panel" class="detail-panel">
+            <div class="panel-resize-handle" id="panel-resize-handle" title="드래그하여 패널 크기 조절"></div>
             <div class="panel-header">
                 <div class="panel-title-area">
                     <h2 id="panel-region-name">지역을 선택하세요</h2>
@@ -202,9 +217,11 @@
             </div>
 
             <div class="panel-tabs">
-                <button class="panel-tab active" data-tab="overview"><i class="fas fa-info-circle"></i> 선거구도</button>
+                <button class="panel-tab active" data-tab="overview"><i class="fas fa-info-circle"></i> 개요</button>
                 <button class="panel-tab" data-tab="polls"><i class="fas fa-chart-line"></i> 여론조사</button>
+                <button class="panel-tab" data-tab="candidates"><i class="fas fa-user-tie"></i> 후보자</button>
                 <button class="panel-tab" data-tab="news"><i class="fas fa-newspaper"></i> 뉴스</button>
+                <button class="panel-tab" data-tab="history"><i class="fas fa-clock-rotate-left"></i> 역대비교</button>
             </div>
             <div class="panel-content" id="panel-content">
                 <!-- Welcome State (#10 투명성 강조) -->
@@ -225,8 +242,25 @@
 
                 <!-- Overview Tab (#9 출마예정후보 제거, 시군구 개요 추가) -->
                 <div id="tab-overview" class="tab-content" style="display:none;">
-                    <div id="district-detail" class="panel-card" style="display:none;">
+                    <!-- 선거 쟁점 개요 카드 -->
+                    <div id="election-overview-card" class="election-overview-card" style="display:none;">
+                        <div id="integration-alert-banner" class="integration-alert-banner" style="display:none;"></div>
+                        <div class="ov-top">
+                            <div class="ov-trend-badge" id="overview-trend-badge"></div>
+                            <div class="ov-date" id="overview-updated-date"></div>
+                        </div>
+                        <div class="ov-headline" id="overview-headline"></div>
+                        <div class="ov-summary" id="overview-summary"></div>
+                        <div class="ov-issues" id="overview-key-issues"></div>
+                        <div class="ov-risk" id="overview-risk-factor"></div>
+                    </div>
+                    <div id="district-detail" class="district-detail panel-card">
                         <!-- 기초단체장 정보가 여기에 렌더링됨 -->
+                    </div>
+                    <div class="panel-card">
+                        <h4><i class="fas fa-user-tie"></i> 현직자 정보</h4>
+                        <div id="current-governor"></div>
+                        <div id="panel-region-badge" class="panel-region-badge" style="display:none"></div>
                     </div>
                     <div class="panel-card">
                         <h4><i class="fas fa-history"></i> 지난 선거 결과 (제8회)</h4>
@@ -236,15 +270,6 @@
                         <h4><i class="fas fa-graduation-cap"></i> 교육감 주요 지표</h4>
                         <div id="superintendent-summary" class="superintendent-summary-grid"></div>
                         <div id="superintendent-summary-note" class="superintendent-summary-note"></div>
-                    </div>
-            <div class="panel-card">
-                <h4><i class="fas fa-user-tie"></i> 현직자 정보</h4>
-                <div id="current-governor"></div>
-                <div id="panel-region-badge" class="panel-region-badge" style="display:none"></div>
-            </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-bullhorn"></i> 지역 핵심 이슈</h4>
-                        <div id="key-issues"></div>
                     </div>
                 </div>
 
@@ -262,30 +287,70 @@
                         <canvas id="poll-bar-chart"></canvas>
                     </div>
                     <div class="panel-card">
-                        <h4><i class="fas fa-list"></i> NESDC 최신 등록현황</h4>
-                        <div id="latest-polls-list" class="latest-polls-list"></div>
-                    </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-chart-line"></i> 지지도 추이</h4>
+                        <h4><i class="fas fa-chart-line"></i> 여론조사 추이</h4>
                         <canvas id="poll-trend-chart"></canvas>
                     </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-chart-pie"></i> 정당 지지도</h4>
-                        <canvas id="party-donut-chart"></canvas>
+                    <!-- NESDC 등록현황 카드 리스트 -->
+                    <div id="polls-cards-section">
+                        <div id="latest-polls-list" class="latest-polls-list"></div>
                     </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-users-cog"></i> 연령대별 지지율</h4>
-                        <canvas id="demographics-chart"></canvas>
-                    </div>
+                    <!-- 투명성 안내 (하단 고정) -->
                     <div class="poll-disclaimer">
-                        <i class="fas fa-info-circle"></i>
-                        <p>자세한 사항은 <strong>중앙선거여론조사심의위원회</strong> 홈페이지를 참조하시기 바랍니다. 여론조사 결과는 조사 시점의 여론을 반영하며, 실제 선거 결과와 다를 수 있습니다.</p>
+                        <i class="fas fa-shield-halved"></i>
+                        <div>
+                            <p>여심위 등록 조사만 표시합니다. 상세 결과(연령대별·성별 등)는 NESDC 원문에서 확인하세요.</p>
+                            <a href="https://www.nesdc.go.kr/portal/bbs/B0000005/list.do?menuNo=200467" target="_blank" rel="noopener" class="poll-nesdc-link"><i class="fas fa-external-link-alt"></i> 선거여론조사심의위원회 등록현황</a>
+                        </div>
                     </div>
                 </div>
 
-                <!-- News Tab (#8 실시간 뉴스) -->
+                <!-- Candidates Tab (후보자) -->
+                <div id="tab-candidates" class="tab-content" style="display:none;">
+                    <div class="panel-card">
+                        <h4><i class="fas fa-user-tie"></i> 후보자 정보</h4>
+                        <div id="candidates-list" class="candidates-list"></div>
+                    </div>
+                    <div class="panel-card" id="candidate-compare-card" style="display:none;">
+                        <h4><i class="fas fa-scale-balanced"></i> 공약 비교</h4>
+                        <div id="candidate-compare" class="candidate-compare"></div>
+                    </div>
+                </div>
+
+                <!-- News Tab (계획서 기반 재설계) -->
                 <div id="tab-news" class="tab-content" style="display:none;">
+                    <div class="news-tab-header">
+                        <div class="news-sub-tabs" id="news-sub-tabs"></div>
+                        <div class="news-sort-control">
+                            <select id="news-sort-select" class="news-sort-select">
+                                <option value="score">종합점수순</option>
+                                <option value="date">최신순</option>
+                            </select>
+                        </div>
+                    </div>
                     <div id="news-feed" class="news-feed"></div>
+                    <button id="news-load-more" class="news-load-more" style="display:none;">
+                        <i class="fas fa-chevron-down"></i> 더보기
+                    </button>
+                    <div class="news-notice">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>뉴스는 언론사 신뢰도 + 최신성 + 관련성 복합 점수로 정렬됩니다. 원문 링크를 클릭해 확인하세요.</span>
+                    </div>
+                </div>
+
+                <!-- History Tab (역대비교) -->
+                <div id="tab-history" class="tab-content" style="display:none;">
+                    <div class="panel-card">
+                        <h4><i class="fas fa-exchange-alt"></i> 정권 변화 흐름</h4>
+                        <div id="history-party-flow" class="history-party-flow"></div>
+                    </div>
+                    <div class="panel-card">
+                        <h4><i class="fas fa-chart-area"></i> 정당별 득표율 변화</h4>
+                        <canvas id="history-turnout-chart"></canvas>
+                    </div>
+                    <div class="panel-card">
+                        <h4><i class="fas fa-clock-rotate-left"></i> 역대 선거 결과</h4>
+                        <div id="history-results" class="history-results"></div>
+                    </div>
                 </div>
             </div>
         </aside>
@@ -293,7 +358,6 @@
 
     <!-- Footer -->
     <footer id="main-footer">
-        <div class="footer-party-bar" id="footer-party-bar"></div>
         <div class="footer-info">
             <span>6.3 전국지방선거 인터랙티브 선거 정보 지도</span>
             <span class="footer-divider">|</span>
@@ -301,14 +365,24 @@
             <span class="footer-divider">|</span>
             <span>본 사이트의 여론조사 데이터는 시뮬레이션 목적의 모의 데이터입니다.</span>
         </div>
+        <div class="footer-legal">
+            <span>운영: 개인 비영리 프로젝트 (선거 정보 공공 서비스)</span>
+            <span class="footer-divider">|</span>
+            <a href="#privacy" id="privacy-link">개인정보처리방침</a>
+            <span class="footer-divider">|</span>
+            <a href="https://github.com" target="_blank" rel="noopener">오픈소스</a>
+            <span class="footer-divider">|</span>
+            <span>문의: 선거 관련 공식 정보는 <a href="https://www.nec.go.kr" target="_blank" rel="noopener">중앙선거관리위원회</a> 참조</span>
+        </div>
     </footer>
 
-    <script src="js/news_filters.js?v=74"></script>
-    <script src="js/derived_issues.js?v=74"></script>
-    <script src="js/data.js?v=74"></script>
-    <script src="js/nec.js?v=74"></script>
-    <script src="js/map.js?v=74"></script>
-    <script src="js/charts.js?v=74"></script>
-    <script src="js/app.js?v=74"></script>
+    <script src="js/news_filters.js?v=90"></script>
+    <script src="js/derived_issues.js?v=75"></script>
+    <script src="js/issue_engine.js?v=5"></script>
+    <script src="js/data.js?v=98"></script>
+    <script src="js/nec.js?v=75"></script>
+    <script src="js/map.js?v=145"></script>
+    <script src="js/charts.js?v=78"></script>
+    <script src="js/app.js?v=114"></script>
 </body>
 </html>

@@ -14,7 +14,7 @@ const ElectionData = (() => {
         justice: { name: '정의당', color: '#FFCC00', shortName: '정의당' },
         newFuture: { name: '새로운미래', color: '#45B97C', shortName: '새미래' },
         // greenJustice(녹색정의당)은 2024.5.15 해산됨 → 정의당+녹색당 각각 독립
-        independent: { name: '무소속', color: '#808080', shortName: '무소속' },
+        independent: { name: '무소속', color: '#a0a0a0', shortName: '무소속' },
         other: { name: '기타정당', color: '#9370DB', shortName: '기타' }
     };
 
@@ -2412,19 +2412,34 @@ const ElectionData = (() => {
                     if (!data?.governors) return;
                     Object.entries(data.governors).forEach(([regionKey, g]) => {
                         if (!regions[regionKey]) return;
-                        // currentGovernor 갱신
-                        regions[regionKey].currentGovernor = {
-                            name: g.name || null,
-                            party: g.party || 'independent'
-                        };
-                        if (g.acting) {
-                            regions[regionKey].actingHead = {
-                                name: g.actingHead || null,
-                                reason: g.actingReason || ''
+                        const existing = regions[regionKey].currentGovernor || {};
+                        // acting 필드가 외부 JSON에 명시적으로 있을 때만 갱신, 없으면 기존 data.js 상태 보존
+                        if ('acting' in g) {
+                            regions[regionKey].currentGovernor = {
+                                name: g.name || null,
+                                party: g.party || 'independent'
                             };
-                            regions[regionKey].currentGovernor.acting = true;
+                            if (g.acting) {
+                                regions[regionKey].actingHead = {
+                                    name: g.actingHead || null,
+                                    reason: g.actingReason || ''
+                                };
+                                regions[regionKey].currentGovernor.acting = true;
+                                regions[regionKey].currentGovernor.actingReason = g.actingReason || '';
+                            } else {
+                                delete regions[regionKey].actingHead;
+                            }
+                        } else if (existing.acting) {
+                            // 외부 JSON에 acting 필드 없음 → 기존 권한대행 상태 보존
+                            regions[regionKey].currentGovernor = {
+                                ...existing,
+                                party: existing.party || 'independent'
+                            };
                         } else {
-                            delete regions[regionKey].actingHead;
+                            regions[regionKey].currentGovernor = {
+                                name: g.name || null,
+                                party: g.party || 'independent'
+                            };
                         }
                     });
                     this._governorStatusLoaded = true;
@@ -2452,13 +2467,24 @@ const ElectionData = (() => {
                         if (!subRegions) return;
                         const target = subRegions.find(s => s.name === district);
                         if (!target) return;
-                        target.mayor = {
-                            name: m.name || null,
-                            party: m.party || 'independent'
-                        };
-                        if (m.acting) {
-                            target.mayor.acting = true;
-                            target.mayor.actingReason = m.actingReason || '';
+                        const existingMayor = target.mayor || {};
+                        if ('acting' in m) {
+                            target.mayor = {
+                                name: m.name || null,
+                                party: m.party || 'independent'
+                            };
+                            if (m.acting) {
+                                target.mayor.acting = true;
+                                target.mayor.actingReason = m.actingReason || '';
+                            }
+                        } else if (existingMayor.acting) {
+                            // 외부 JSON에 acting 필드 없음 → 기존 권한대행 상태 보존
+                            target.mayor = { ...existingMayor };
+                        } else {
+                            target.mayor = {
+                                name: m.name || null,
+                                party: m.party || 'independent'
+                            };
                         }
                     });
                     this._mayorStatusLoaded = true;

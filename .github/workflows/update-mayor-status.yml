@@ -4,6 +4,7 @@ on:
   schedule:
     # 매주 수요일 한국시간 11:00 (UTC 02:00) 실행
     - cron: '0 2 * * 3'
+    # 기초단체장 226명 — 수요일 유지
   workflow_dispatch:
     # 수동 실행 가능
 

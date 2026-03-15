@@ -750,9 +750,10 @@ const MapModule = (() => {
                 const partyRows = parties.map(p => {
                     const pc = ElectionData.getPartyColor(p.party);
                     const share = p.voteShare ? ` (${p.voteShare}%)` : totalSeats > 0 ? ` (${(p.seats / totalSeats * 100).toFixed(1)}%)` : '';
-                    return `<div class="tooltip-row">
-                        <span class="label"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${pc};margin-right:4px;vertical-align:middle;"></span>${ElectionData.getPartyName(p.party)}</span>
-                        <span class="value">${p.seats}석${share}</span>
+                    return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                        <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
+                        <span style="color:#e0e0e0;font-size:0.9em">${ElectionData.getPartyName(p.party)}</span>
+                        <span style="color:#fff;font-weight:600">${p.seats}석${share}</span>
                     </div>`;
                 }).join('');
 
@@ -762,8 +763,9 @@ const MapModule = (() => {
                         <span class="label">비례대표석</span>
                         <span class="value" style="color:#fff">${totalSeats}석</span>
                     </div>
-                    ${partyRows}
-                    <div class="tooltip-row" style="color:#888;font-size:11px">클릭하여 상세보기</div>
+                    <div style="margin-top:4px;border-top:1px solid #333;padding-top:4px">
+                        ${partyRows}
+                    </div>
                 `;
             } else {
                 tooltipHtml = `
@@ -891,7 +893,7 @@ const MapModule = (() => {
                 govRow = `
                 <div class="tooltip-row">
                     <span class="label">현직 단체장</span>
-                    <span class="value">${gov.name} (${gov.since}~)</span>
+                    <span class="value">${gov.name}${gov.since ? ` (${gov.since}~)` : ''}</span>
                 </div>
                 <div class="tooltip-row">
                     <span class="label">소속 정당</span>
@@ -1009,12 +1011,10 @@ const MapModule = (() => {
         selectedRegion = key;
 
         // For drill-down types, switch to district map first
-        const drillDownTypes = ['mayor', 'council', 'localCouncil', 'localCouncilProportional', 'byElection'];
+        const drillDownTypes = ['mayor', 'council', 'localCouncil', 'byElection'];
         if (drillDownTypes.includes(currentElectionType)) {
             if (currentElectionType === 'council') {
                 switchToCouncilDistrictMap(key);
-            } else if (currentElectionType === 'localCouncilProportional') {
-                switchToProportionalDistrictMap(key);
             } else if (currentElectionType === 'byElection') {
                 switchToByElectionDistrictMap(key);
                 return; // byElection은 별도 패널 처리
@@ -1197,8 +1197,6 @@ const MapModule = (() => {
                 if (currentMapMode === 'subdistrict' && subdistrictContext.regionKey) {
                     if (currentElectionType === 'council') {
                         switchToCouncilDistrictMap(subdistrictContext.regionKey);
-                    } else if (currentElectionType === 'localCouncilProportional') {
-                        switchToProportionalDistrictMap(subdistrictContext.regionKey);
                     } else {
                         switchToDistrictMap(subdistrictContext.regionKey);
                     }
@@ -1254,7 +1252,7 @@ const MapModule = (() => {
         }
     }
 
-    const LOCAL_DISTRICT_TOPO = 'data/skorea-municipalities-2018-topo-changwon.json';
+    const LOCAL_DISTRICT_TOPO = 'data/skorea-municipalities-2018-topo-changwon.json?v=2';
     const REMOTE_DISTRICT_TOPO =
         'https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2018/json/skorea-municipalities-2018-topo.json';
 
@@ -1399,7 +1397,7 @@ const MapModule = (() => {
                 .on('click', (event, d) => {
                     const districtName = getEffectiveDistrictName(regionKey, getDistrictName(d));
                     if (currentElectionType === 'council') {
-                        switchToCouncilSubdistrictMap(regionKey, districtName);
+                        selectDistrict(regionKey, districtName);
                     } else if (currentElectionType === 'localCouncil') {
                         switchToBasicCouncilMap(regionKey, districtName);
                     } else {
@@ -1441,7 +1439,7 @@ const MapModule = (() => {
                 .on('click', (event, d) => {
                     const districtName = getEffectiveDistrictName(regionKey, getDistrictName(d));
                     if (currentElectionType === 'council') {
-                        switchToCouncilSubdistrictMap(regionKey, districtName);
+                        selectDistrict(regionKey, districtName);
                     } else if (currentElectionType === 'localCouncil') {
                         switchToBasicCouncilMap(regionKey, districtName);
                     } else {
@@ -1625,7 +1623,7 @@ const MapModule = (() => {
     // ============================================
     function loadCouncilGeo(regionKey) {
         if (councilGeoCache[regionKey]) return Promise.resolve(councilGeoCache[regionKey]);
-        const url = `data/council/council_districts_${regionKey}_topo.json`;
+        const url = `data/council/council_districts_${regionKey}_topo.json?v=11`;
         return fetch(url)
             .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(topo => {
@@ -1815,13 +1813,28 @@ const MapModule = (() => {
                 sggGroups[sgg].push(d);
             });
 
-            Object.entries(sggGroups).forEach(([sgg, features]) => {
-                // 시군구 전체 바운딩 박스 (그룹 라벨 크기 결정)
-                const fc = { type: 'FeatureCollection', features };
+            // 충돌 감지용 배치된 라벨 목록
+            const placedCouncilLabels = [];
+            const COUNCIL_PAD = 4;
+            function councilRectsOverlap(a, b) {
+                return a.x - COUNCIL_PAD < b.x + b.w && a.x + a.w + COUNCIL_PAD > b.x &&
+                       a.y - COUNCIL_PAD < b.y + b.h && a.y + a.h + COUNCIL_PAD > b.y;
+            }
+
+            // 면적 큰 순서로 정렬 (큰 시군구 우선 배치)
+            const sortedSggEntries = Object.entries(sggGroups)
+                .map(([sgg, features]) => {
+                    const fc = { type: 'FeatureCollection', features };
+                    const b = path.bounds(fc);
+                    const area = (b[1][0] - b[0][0]) * (b[1][1] - b[0][1]);
+                    return { sgg, features, fc, area };
+                })
+                .sort((a, b) => b.area - a.area);
+
+            sortedSggEntries.forEach(({ sgg, features, fc, area: groupArea }) => {
                 const groupBounds = path.bounds(fc);
                 const gbw = groupBounds[1][0] - groupBounds[0][0];
                 const gbh = groupBounds[1][1] - groupBounds[0][1];
-                const groupArea = gbw * gbh;
 
                 // 시군구명 라벨 (그룹 중심에 큰 글자)
                 const groupCentroid = d3.geoCentroid(fc);
@@ -1829,6 +1842,17 @@ const MapModule = (() => {
                 if (!gc || isNaN(gc[0])) return;
 
                 const groupFontSize = Math.max(8, Math.min(14, Math.sqrt(groupArea) / 4));
+
+                // 충돌 검사: 라벨 bbox 추정
+                const estW = sgg.length * groupFontSize * 0.7;
+                const estH = groupFontSize * 1.4;
+                const labelRect = { x: gc[0] - estW / 2, y: gc[1] - estH / 2, w: estW, h: estH };
+
+                // 겹치면 스킵 (호버 툴팁으로 확인 가능)
+                if (placedCouncilLabels.some(p => councilRectsOverlap(labelRect, p))) {
+                    return;
+                }
+                placedCouncilLabels.push(labelRect);
 
                 const groupLabel = g.append('g')
                     .attr('class', 'council-label council-group-label')
@@ -1868,11 +1892,18 @@ const MapModule = (() => {
                         const c = path.centroid(d);
                         if (area < 100 || isNaN(c[0])) return;
 
-                        const fontSize = Math.max(6, Math.min(10, Math.sqrt(area) / 4));
+                        const fontSize = Math.max(8, Math.min(11, Math.sqrt(area) / 4));
                         const fullName = d.properties.district_name;
                         const numMatch = fullName.match(/제?(\d+)선거구$/);
                         if (!numMatch) return;
                         const numText = `${numMatch[1]}`;
+
+                        // 번호 라벨 충돌 검사
+                        const numW = numText.length * fontSize * 0.8;
+                        const numH = fontSize * 1.3;
+                        const numRect = { x: c[0] - numW / 2, y: c[1] - numH / 2, w: numW, h: numH };
+                        if (placedCouncilLabels.some(p => councilRectsOverlap(numRect, p))) return;
+                        placedCouncilLabels.push(numRect);
 
                         const numLabel = g.append('g')
                             .attr('class', 'council-label council-num-label')
@@ -1977,27 +2008,58 @@ const MapModule = (() => {
                 return '#808080'; // 데이터 없는 선거구: 회색(미정)
             }
 
+            // 시군구 배경 (분할 행정동의 빈 공간 커버)
+            const cachedTopo = councilTopoCache[regionKey];
+            if (cachedTopo) {
+                const { topo, objKey } = cachedTopo;
+                const topoObj = topo.objects[objKey];
+                const sggGeoms = topoObj.geometries.filter(g =>
+                    filtered.some(f => f.properties.district_name === g.properties?.district_name)
+                );
+                if (sggGeoms.length > 0) {
+                    try {
+                        const mergedBg = topojson.merge(topo, sggGeoms);
+                        g.append('path')
+                            .datum(mergedBg)
+                            .attr('class', 'council-bg-fill')
+                            .attr('d', path)
+                            .attr('fill', '#1a1a2e')
+                            .attr('stroke', 'none')
+                            .attr('pointer-events', 'none');
+                    } catch(e) { /* merge 실패 시 무시 */ }
+                }
+            }
+
+            // 면적 내림차순 정렬: 큰 선거구 먼저 → 작은 선거구가 위에 렌더링 (hover/click 정확도)
+            const sortedFiltered = [...filtered].sort((a, b) => {
+                const areaA = d3.geoArea(a);
+                const areaB = d3.geoArea(b);
+                return areaB - areaA;
+            });
+
             g.selectAll('.council-district')
-                .data(filtered)
+                .data(sortedFiltered)
                 .enter()
                 .append('path')
                 .attr('class', 'council-district')
                 .attr('data-district', d => d.properties.district_name)
                 .attr('d', path)
-                .attr('fill', d => getSubCouncilColor(d) + '66')
+                .attr('fill', d => getSubCouncilColor(d) + 'b3')
                 .attr('stroke', d => getSubCouncilColor(d))
                 .attr('stroke-width', 1)
                 .attr('opacity', 0)
                 .on('mouseover', function(event, d) {
                     showCouncilDistrictTooltip(event, d, regionKey);
                     const name = d.properties.district_name;
-                    g.selectAll('.council-district').classed('selected', false);
-                    g.selectAll(`.council-district[data-district="${name}"]`).classed('selected', true);
+                    g.selectAll('.council-district').classed('selected', false).classed('dimmed', true);
+                    g.selectAll(`.council-district[data-district="${name}"]`).classed('selected', true).classed('dimmed', false);
+                    g.selectAll('.council-bg-fill').classed('dimmed', true);
                 })
                 .on('mousemove', handleMouseMove)
                 .on('mouseout', function() {
                     handleMouseOut();
-                    g.selectAll('.council-district').classed('selected', false);
+                    g.selectAll('.council-district').classed('selected', false).classed('dimmed', false);
+                    g.selectAll('.council-bg-fill').classed('dimmed', false);
                 })
                 .on('click', (event, d) => {
                     const name = d.properties.district_name;
@@ -2020,7 +2082,9 @@ const MapModule = (() => {
                 const b = path.bounds(d);
                 const area = (b[1][0] - b[0][0]) * (b[1][1] - b[0][1]);
                 const c = path.centroid(d);
-                if (area < medArea * 0.12 || isNaN(c[0])) return;
+                // 선거구 수가 적으면 면적 필터 완화 (거창군 등 2개 선거구)
+                const areaThreshold = filtered.length <= 3 ? 0 : medArea * 0.12;
+                if (area < areaThreshold || isNaN(c[0])) return;
 
                 const fontSize = Math.max(7, Math.min(12, Math.sqrt(area) / 3.5));
                 const fullName = d.properties.district_name;
@@ -2077,7 +2141,7 @@ const MapModule = (() => {
 
         // 시군구별 TopoJSON 로드
         const sggKey = districtName.replace(/\s+/g, '');
-        const url = `data/basic_council/${regionKey}/basic_${sggKey}_topo.json`;
+        const url = `data/basic_council/${regionKey}/basic_${sggKey}_topo.json?v=3`;
         return fetch(url)
             .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(topo => {
@@ -2234,11 +2298,17 @@ const MapModule = (() => {
                 .attr('stroke-width', 1.5)
                 .attr('opacity', 0)
                 .on('mouseover', function(event, d) {
-                    showBasicDistrictTooltip(event, d);
+                    const name = d.properties.district_name;
+                    g.selectAll('.basic-district').classed('selected', false).classed('dimmed', true);
+                    g.selectAll(`.basic-district[data-district="${name}"]`).classed('selected', true).classed('dimmed', false);
+                    g.selectAll('.basic-bg-fill').classed('dimmed', true);
+                    showBasicDistrictTooltip(event, d, regionKey);
                 })
                 .on('mousemove', handleMouseMove)
                 .on('mouseout', function() {
                     handleMouseOut();
+                    g.selectAll('.basic-district').classed('selected', false).classed('dimmed', false);
+                    g.selectAll('.basic-bg-fill').classed('dimmed', false);
                 })
                 .on('click', (event, d) => {
                     const name = d.properties.district_name;
@@ -2300,7 +2370,7 @@ const MapModule = (() => {
             sortedFeatures.forEach(({ d, area, centroid: c }) => {
                 if (area < medArea * 0.12 || isNaN(c[0])) return;
 
-                const fontSize = Math.max(6, Math.min(10, Math.sqrt(area) / 4));
+                const fontSize = Math.max(8, Math.min(11, Math.sqrt(area) / 4));
                 const name = d.properties.district_name;
                 const match = name.match(/^.+?\s*([가나다라마바사아자차카타파하])선거구$/);
                 const label1 = match ? match[1] + '선거구' : name;
@@ -2531,9 +2601,10 @@ const MapModule = (() => {
             ? members.map(m => {
                 const c = ElectionData.getPartyColor(m.party);
                 const pn = ElectionData.getPartyName(m.party);
-                return `<div class="tooltip-row" style="padding-left:4px;">
-                    <span class="label"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${c};margin-right:4px;vertical-align:middle;"></span>${m.name}</span>
-                    <span class="value" style="color:${c}">${pn}</span>
+                return `<div style="display:flex;align-items:center;gap:8px;padding:2px 4px">
+                    <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${c}"></span>
+                    <span style="color:#e0e0e0;font-size:0.9em">${pn}</span>
+                    <span style="color:#fff;font-weight:600">${m.name}</span>
                 </div>`;
             }).join('')
             : isVacant
@@ -2646,15 +2717,33 @@ const MapModule = (() => {
     }
 
     // ── 통합 툴팁: 기초의원 선거구 ──
-    function showBasicDistrictTooltip(event, d) {
+    function showBasicDistrictTooltip(event, d, regionKey) {
         const tooltip = _mapTooltip;
         if (!tooltip) return;
 
         const distName = d.properties.district_name;
         const sigungu = d.properties.sigungu;
         const seats = d.properties.seats || '?';
-        const matched = d.properties.matched_count || 0;
-        const total = d.properties.dong_count || 0;
+
+        // 현직의원 데이터 조회
+        let membersHtml = '';
+        const lcKey = `${regionKey || ''}_${distName.replace(/\s+/g, '')}`;
+        const lcData = ElectionData._localCouncilMembersCache?.sigungus?.[lcKey];
+        if (lcData?.members?.length) {
+            const memberLines = lcData.members.map(m => {
+                const color = ElectionData.getPartyColor(m.party);
+                const partyName = ElectionData.getPartyName(m.party);
+                return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                    <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${color}"></span>
+                    <span style="color:#e0e0e0;font-size:0.9em">${partyName}</span>
+                    <span style="color:#fff;font-weight:600">${m.name}</span>
+                </div>`;
+            }).join('');
+            membersHtml = `<div style="margin-top:6px;border-top:1px solid #333;padding-top:6px">
+                <div style="color:#999;font-size:0.8em;margin-bottom:4px">현직의원</div>
+                ${memberLines}
+            </div>`;
+        }
 
         tooltip.style.display = 'block';
         tooltip.innerHTML = `
@@ -2670,10 +2759,7 @@ const MapModule = (() => {
                 <span class="label">선거구 유형</span>
                 <span class="value" style="color:#4fc3f7">${seats}인 선거구</span>
             </div>
-            <div class="tooltip-row">
-                <span class="label">행정동</span>
-                <span class="value">${matched}/${total}개</span>
-            </div>
+            ${membersHtml}
         `;
     }
 
@@ -3008,7 +3094,7 @@ const MapModule = (() => {
         const tooltip = _mapTooltip;
         if (!tooltip) return;
 
-        const subTypeColor = election.subType === '보궐선거' ? '#f59e0b' : '#ef4444';
+        const subTypeColor = '#f59e0b';
         const prev = election.prevElection;
         const winColor = prev ? ElectionData.getPartyColor(prev.winner) : '#808080';
 
@@ -3263,6 +3349,87 @@ const MapModule = (() => {
         });
     }
 
+    // 광역비례: 시도 클릭 → 시도 영역 확대 + 바 차트 오버레이
+    function switchToCouncilProportionalDetail(regionKey) {
+        const region = ElectionData.getRegion(regionKey);
+        if (!region) return;
+        handleMouseOut();
+
+        currentMapMode = 'district';
+        currentProvinceKey = regionKey;
+        setMapModeLabel(`${region.name} 광역의원 비례대표`);
+        toggleBackButton(true);
+        updateLegend();
+        updateBreadcrumb('province', regionKey);
+
+        loadDistrictGeo().then(geo => {
+            if (!geo || !geo.features) return;
+            const filtered = geo.features.filter(f => matchesProvince(f, region));
+            if (!filtered.length) return;
+
+            g.selectAll('*').remove();
+            const fc = { type: 'FeatureCollection', features: filtered };
+            const width = +svg.attr('width') || 0;
+            const height = +svg.attr('height') || 0;
+            projection.fitExtent([[40, 40], [width - 40, height - 40]], fc);
+            path = d3.geoPath().projection(projection);
+
+            // 시도 영역 배경
+            g.selectAll('.district')
+                .data(filtered)
+                .enter()
+                .append('path')
+                .attr('class', 'district')
+                .attr('d', path)
+                .attr('fill', '#2a3450')
+                .attr('stroke', '#5a6d8a')
+                .attr('stroke-width', 0.5)
+                .attr('pointer-events', 'none');
+
+            // 시도 전체를 하나로 merge해서 외곽선
+            const mergedFeature = filtered[0]; // fitExtent 기준
+            const c = path.centroid(mergedFeature);
+            if (isNaN(c[0])) return;
+
+            // 광역 비례 데이터 로드
+            ElectionData.loadProportionalCouncilData().then(() => {
+                const propData = ElectionData.getProportionalCouncilRegion(regionKey);
+                if (!propData) return;
+
+                const parties = propData.parties || [];
+                const totalSeats = propData.totalSeats || 0;
+
+                // 헤더
+                g.append('text')
+                    .attr('x', c[0]).attr('y', c[1] - 30)
+                    .attr('text-anchor', 'middle')
+                    .attr('fill', '#fff').attr('font-size', '18px').attr('font-weight', 700)
+                    .text(`${region.name} 광역 비례대표 ${totalSeats}석`);
+
+                // 바 차트
+                const barWidth = Math.min(200, width * 0.4);
+                const barX = c[0] - barWidth / 2;
+
+                parties.forEach((p, i) => {
+                    const y = c[1] + i * 28;
+                    const w = (p.seats / totalSeats) * barWidth;
+                    const color = ElectionData.getPartyColor(p.party);
+                    const partyName = ElectionData.getPartyName(p.party);
+
+                    g.append('rect')
+                        .attr('x', barX).attr('y', y)
+                        .attr('width', Math.max(w, 4)).attr('height', 20).attr('rx', 4)
+                        .attr('fill', color).attr('opacity', 0.85);
+
+                    g.append('text')
+                        .attr('x', barX + Math.max(w, 4) + 6).attr('y', y + 14)
+                        .attr('fill', '#fff').attr('font-size', '12px').attr('font-weight', 500)
+                        .text(`${partyName} ${p.seats}석`);
+                });
+            });
+        });
+    }
+
     // 기초비례: 시도 클릭 → 시군구 지도 + 도넛 오버레이
     function switchToProportionalDistrictMap(regionKey) {
         const region = ElectionData.getRegion(regionKey);
@@ -3442,25 +3609,25 @@ const MapModule = (() => {
 
             // 바 차트
             const barY = c[1] + 10;
-            const barWidth = 140;
+            const barWidth = 160;
             const barX = c[0] - barWidth / 2;
 
             parties.forEach((p, i) => {
-                const y = barY + i * 24;
+                const y = barY + i * 28;
                 const w = (p.seats / totalSeats) * barWidth;
                 const color = ElectionData.getPartyColor(p.party);
                 const partyName = ElectionData.getPartyName(p.party);
+                const shareText = p.voteShare ? ` (${p.voteShare}%)` : '';
 
                 g.append('rect')
                     .attr('x', barX).attr('y', y)
-                    .attr('width', Math.max(w, 4)).attr('height', 18).attr('rx', 3)
-                    .attr('fill', color).attr('opacity', 0.8);
+                    .attr('width', Math.max(w, 4)).attr('height', 20).attr('rx', 4)
+                    .attr('fill', color).attr('opacity', 0.85);
 
                 g.append('text')
-                    .attr('x', barX + Math.max(w, 4) + 5).attr('y', y + 13)
-                    .attr('fill', '#fff').attr('font-size', '10px')
-                    .attr('opacity', 1)
-                    .text(`${partyName} ${p.seats}석`);
+                    .attr('x', barX + Math.max(w, 4) + 6).attr('y', y + 14)
+                    .attr('fill', '#fff').attr('font-size', '12px').attr('font-weight', 500)
+                    .text(`${partyName} ${p.seats}석${shareText}`);
             });
         });
     }
@@ -3475,9 +3642,11 @@ const MapModule = (() => {
             const topColor = ElectionData.getPartyColor(topParty.party);
             const partyRows = sggData.parties.map(p => {
                 const pc = ElectionData.getPartyColor(p.party);
-                return `<div class="tooltip-row">
-                    <span class="label"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${pc};margin-right:4px;vertical-align:middle;"></span>${ElectionData.getPartyName(p.party)}</span>
-                    <span class="value">${p.seats}석 (${p.voteShare}%)</span>
+                const shareText = p.voteShare ? ` (${p.voteShare}%)` : '';
+                return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                    <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
+                    <span style="color:#e0e0e0;font-size:0.9em">${ElectionData.getPartyName(p.party)}</span>
+                    <span style="color:#fff;font-weight:600">${p.seats}석${shareText}</span>
                 </div>`;
             }).join('');
             tooltip.style.display = 'block';

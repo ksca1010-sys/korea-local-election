@@ -17,3 +17,10 @@ __pycache__/
 
 # Node
 node_modules/
+.env
+.env.local
+.env.*
+
+# API key files
+*.key
+secrets.json

@@ -293,6 +293,40 @@ body {
     color: var(--text-muted);
 }
 
+.search-result-item.active,
+.search-result-item:hover {
+    background: var(--bg-card-hover);
+}
+
+.search-result-item.no-hover {
+    cursor: default;
+}
+.search-result-item.no-hover:hover {
+    background: transparent;
+}
+
+.search-result-item mark {
+    background: rgba(59, 130, 246, 0.3);
+    color: var(--text-primary);
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+.result-type-badge {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    background: var(--bg-input);
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    border: 1px solid var(--border-light);
+}
+
+.search-results {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
 .header-right {
     display: flex;
     align-items: center;
@@ -362,7 +396,48 @@ body {
     overflow-y: auto;
     padding: 16px;
     flex-shrink: 0;
-    transition: var(--transition);
+    transition: width 0.3s ease, padding 0.3s ease;
+    position: relative;
+}
+
+.sidebar.collapsed {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    border-right: none;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 12px;
+    right: -14px;
+    z-index: 100;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    transition: all 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.sidebar-toggle:hover {
+    background: var(--bg-hover);
+    color: var(--text-primary);
+}
+
+.sidebar.collapsed .sidebar-toggle {
+    right: -36px;
+}
+
+.sidebar.collapsed .sidebar-toggle i {
+    transform: rotate(180deg);
 }
 
 .sidebar-section {
@@ -828,6 +903,33 @@ body {
     filter: brightness(1.15);
 }
 
+#korea-map .council-district.selected {
+    stroke: #fff;
+    stroke-width: 3;
+    filter: brightness(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.5));
+    z-index: 10;
+}
+
+#korea-map .basic-district.selected {
+    stroke: #fff;
+    stroke-width: 3;
+    filter: brightness(1.5) drop-shadow(0 0 4px rgba(255,255,255,0.5));
+    z-index: 10;
+}
+
+#korea-map .council-district.dimmed,
+#korea-map .basic-district.dimmed,
+#korea-map .council-bg-fill.dimmed,
+#korea-map .basic-bg-fill.dimmed {
+    opacity: 0.3 !important;
+    transition: opacity 0.15s ease;
+}
+
+#korea-map .council-district.selected,
+#korea-map .basic-district.selected {
+    opacity: 1 !important;
+}
+
 /* 창원특례시 통합(기초단체장 모드) 내부경계 강제 제거 */
 #korea-map .district.merged-changwon,
 #korea-map .district.merged-changwon:hover,
@@ -880,6 +982,7 @@ body {
     backdrop-filter: blur(8px);
     box-shadow: var(--shadow);
     max-width: 260px;
+    font-size: 0.85rem;
 }
 
 .map-tooltip.active {
@@ -894,7 +997,7 @@ body {
 
 .tooltip-title {
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     margin-bottom: 6px;
     display: flex;
     align-items: center;
@@ -910,9 +1013,9 @@ body {
 .tooltip-row {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
-    margin-top: 3px;
+    margin-top: 5px;
 }
 
 .tooltip-row .label {
@@ -1146,6 +1249,73 @@ body {
 .panel-card h4 i {
     color: var(--accent-blue);
     font-size: 0.8rem;
+}
+
+/* Election Overview Card */
+.election-overview-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(59,130,246,0.08) 100%);
+    border: 1px solid rgba(59,130,246,0.2);
+    border-radius: 10px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+.ov-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+.ov-trend-badge {
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(59,130,246,0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(59,130,246,0.25);
+}
+.ov-date {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+.ov-headline {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+.ov-summary {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.ov-issues {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+.ov-issues .issue-tag {
+    background: rgba(59,130,246,0.1);
+    color: var(--accent-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    font-weight: 500;
+}
+.ov-risk {
+    font-size: 0.78rem;
+    color: var(--accent-yellow);
+    padding: 8px 10px;
+    background: rgba(250,204,21,0.06);
+    border-radius: 6px;
+    border: 1px solid rgba(250,204,21,0.15);
+}
+.ov-risk i {
+    margin-right: 4px;
 }
 
 /* Previous Election Result */
@@ -2760,4 +2930,212 @@ body.banner-hidden #main-content {
 .party-share {
     color: var(--accent-cyan);
     font-weight: 600;
+}
+
+/* ── No Data Message ── */
+.no-data-message {
+    text-align: center;
+    padding: 24px 16px;
+    color: var(--text-muted);
+}
+.no-data-message i {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    display: block;
+    opacity: 0.5;
+}
+
+/* ── Candidates Tab ── */
+.cand-count-summary {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.candidate-card-full {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 8px;
+}
+.candidate-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.candidate-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: white;
+    flex-shrink: 0;
+}
+.candidate-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+.candidate-name { font-weight: 600; font-size: 0.9rem; }
+.candidate-age { font-size: 0.75rem; color: var(--text-muted); }
+.candidate-career { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+.cand-core-message { font-size: 0.75rem; color: var(--accent-cyan); margin-top: 2px; }
+.candidate-pledges {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border-light);
+}
+.pledges-title { font-size: 0.72rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
+.pledge-item {
+    display: flex;
+    gap: 6px;
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    padding: 2px 0;
+}
+.pledge-num {
+    color: var(--accent-blue);
+    font-weight: 600;
+    min-width: 14px;
+}
+.cand-card-footer {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+.cand-incumbent-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+    background: rgba(250,204,21,0.15);
+    color: var(--accent-yellow);
+    border: 1px solid rgba(250,204,21,0.25);
+}
+.cand-status-badge {
+    font-size: 0.7rem;
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+.cand-source-badge {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+/* ── Compare Table ── */
+.compare-table { margin-top: 8px; }
+.compare-header { display: flex; gap: 8px; margin-bottom: 6px; }
+.compare-col-header { flex: 1; text-align: center; padding: 6px; background: var(--bg-input); border-radius: 6px; }
+.compare-row { display: flex; gap: 8px; margin-bottom: 4px; }
+.compare-cell { flex: 1; font-size: 0.78rem; color: var(--text-secondary); padding: 4px 6px; background: var(--bg-card); border-radius: 4px; }
+
+/* ── History Tab ── */
+.hpf-timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow-x: auto;
+    padding: 8px 0 12px;
+}
+.hpf-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 48px;
+    position: relative;
+}
+.hpf-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-bottom: 4px;
+}
+.hpf-label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+}
+.hpf-party {
+    font-size: 0.68rem;
+    font-weight: 600;
+}
+.hpf-line {
+    width: 20px;
+    height: 2px;
+    flex-shrink: 0;
+    margin-top: -20px;
+}
+.hpf-change-mark {
+    position: absolute;
+    top: -16px;
+    font-size: 0.6rem;
+    color: var(--accent-yellow);
+    font-weight: 700;
+}
+.hpf-summary {
+    display: flex;
+    gap: 16px;
+    padding: 8px 0;
+    margin-top: 4px;
+    border-top: 1px solid var(--border-light);
+}
+.hpf-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hpf-stat-val { font-weight: 700; font-size: 0.9rem; color: var(--text-primary); }
+.hpf-stat-lbl { font-size: 0.68rem; color: var(--text-muted); }
+
+.history-results .hr-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 0.82rem;
+}
+.history-results .hr-year {
+    font-weight: 600;
+    color: var(--text-muted);
+    min-width: 36px;
+}
+.history-results .hr-winner {
+    font-weight: 600;
+    color: var(--text-primary);
+}
+.history-results .hr-rate {
+    color: var(--text-secondary);
+    margin-left: auto;
+}
+
+/* ── Panel Resize Handle ── */
+.panel-resize-handle {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    cursor: col-resize;
+    background: transparent;
+    transition: background 0.2s;
+    z-index: 10;
+}
+.panel-resize-handle:hover {
+    background: var(--accent-blue);
+}
+
+/* ── District Detail ── */
+.district-detail {
+    margin-bottom: 12px;
 }
