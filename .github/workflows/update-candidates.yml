@@ -21,10 +21,17 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4 google-genai google-generativeai
 
+      # 1단계: 선관위 예비후보 데이터
       - name: Run candidate pipeline
         run: python scripts/candidate_pipeline/fetch_nec_candidates.py
+
+      # 2단계: Gemini 출마/사퇴 감지
+      - name: Factcheck candidate status
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/candidate_pipeline/factcheck_candidates.py
 
       - name: Check for changes
         id: diff

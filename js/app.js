@@ -70,6 +70,12 @@ const App = (() => {
         // Load by-election data
         try { ElectionData.loadByElectionData?.(); } catch(e) { console.warn('loadByElectionData error:', e); }
 
+        // Load local media registry
+        try {
+            const resp = await fetch('data/local_media_registry.json');
+            if (resp.ok) window.LocalMediaRegistry = await resp.json();
+        } catch(e) { console.warn('LocalMediaRegistry load error:', e); }
+
         // Initialize map
         await MapModule.init();
         if (MapModule.setElectionType) MapModule.setElectionType(null);
@@ -1632,7 +1638,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `기초단체장 선거 | 후보 ${mayorData ? mayorData.candidates.length : 0}명`;
 
-        configurePanelTabs(['overview', 'polls', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news']);
 
         if (mayorData) {
             const prevContainer = document.getElementById('prev-election-result');
@@ -1914,6 +1920,16 @@ function renderCouncilProvinceView(regionKey, region) {
                     label: '하마평',
                     style: 'background:rgba(168,85,247,0.14);color:#d8b4fe;border:1px solid rgba(168,85,247,0.24);'
                 };
+            case 'NOMINATED':
+                return {
+                    label: '공천확정',
+                    style: 'background:rgba(20,184,166,0.14);color:#5eead4;border:1px solid rgba(20,184,166,0.24);'
+                };
+            case 'WITHDRAWN':
+                return {
+                    label: '사퇴',
+                    style: 'background:rgba(128,128,128,0.14);color:#94a3b8;border:1px solid rgba(128,128,128,0.24);text-decoration:line-through;'
+                };
             default:
                 return null;
         }
@@ -1947,6 +1963,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     age: candidate.age,
                     career: candidate.career,
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
+                    status: candidate.status,
                     statusMeta: getCandidateStatusMeta(candidate.status),
                     sourceLabel: getCandidateSourceLabel(candidate.dataSource),
                     incumbent: incumbentName === candidate.name
@@ -2052,6 +2069,13 @@ function renderCouncilProvinceView(regionKey, region) {
         if (!listEl || !compareCardEl || !compareEl) return;
 
         const model = buildCandidateTabModel(regionKey);
+        // 상태 우선순위 정렬: 출마선언 > 거론 > 하마평 > 사퇴
+        const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3, WITHDRAWN: 4 };
+        model.candidates.sort((a, b) => {
+            const sa = statusOrder[a.status] ?? 1;
+            const sb = statusOrder[b.status] ?? 1;
+            return sa - sb;
+        });
         if (!model.candidates.length) {
             listEl.innerHTML = buildEmptyTabMessage(model.emptyMessage, 'fa-user-tie');
             compareEl.innerHTML = '';
@@ -2119,7 +2143,7 @@ function renderCouncilProvinceView(regionKey, region) {
 
     function truncatePartyLabel(label) {
         const text = String(label || '');
-        return text.length > 7 ? `${text.slice(0, 7)}…` : text;
+        return text.length > 5 ? `${text.slice(0, 5)}…` : text;
     }
 
     function getHistoryBlocKey(partyKey) {
@@ -2260,60 +2284,41 @@ function renderCouncilProvinceView(regionKey, region) {
             </div>
         `;
 
-        resultsEl.innerHTML = `
-            <div class="ht-table">
-                <div class="ht-header">
-                    <div>회차</div>
-                    <div>당선</div>
-                    <div>2위</div>
-                    <div>득표율</div>
-                </div>
-                ${history.map((entry) => {
-                    const winnerColor = ElectionData.getPartyColor(entry.winner);
-                    const runnerColor = ElectionData.getPartyColor(entry.runner || 'independent');
-                    const winnerParty = entry.winnerPartyLabel || ElectionData.getHistoricalPartyName(entry.winner, entry.election);
-                    const runnerParty = entry.runnerPartyLabel || ElectionData.getHistoricalPartyName(entry.runner, entry.election);
-                    const gap = Math.max(0, (Number(entry.rate) || 0) - (Number(entry.runnerRate) || 0)).toFixed(1);
-                    return `
-                        <div class="ht-row">
-                            <div class="ht-col-election">
-                                <span class="ht-badge" style="background:${winnerColor}">민선 ${entry.election}기</span>
-                                <span class="ht-year">${entry.year}</span>
-                            </div>
-                            <div class="ht-col-winner">
-                                <span class="ht-name">${entry.winnerName}</span>
-                                <span class="ht-party-tag" style="color:${winnerColor}">${winnerParty}</span>
-                            </div>
-                            <div class="ht-col-runner">
-                                <span class="ht-name ht-runner-name">${entry.runnerName || '-'}</span>
-                                <span class="ht-party-tag" style="color:${runnerColor}">${entry.runner ? runnerParty : '무투표'}</span>
-                            </div>
-                            <div class="ht-col-bar">
-                                <div class="ht-bar-group">
-                                    <div class="ht-bar-row">
-                                        <div class="ht-bar" style="width:${Math.max(4, Number(entry.rate) || 0)}%;background:${winnerColor}"></div>
-                                        <span class="ht-bar-val">${Number(entry.rate).toFixed(1)}%</span>
-                                    </div>
-                                    <div class="ht-bar-row">
-                                        <div class="ht-bar" style="width:${Math.max(4, Number(entry.runnerRate) || 0)}%;background:${runnerColor}"></div>
-                                        <span class="ht-bar-val ht-bar-sub">${Number(entry.runnerRate || 0).toFixed(1)}%</span>
-                                    </div>
-                                </div>
-                                <div class="ht-gap">격차 ${gap}%p · 투표율 ${Number(entry.turnout || 0).toFixed(1)}%</div>
-                            </div>
+        resultsEl.innerHTML = history.map((entry, idx) => {
+            const winnerColor = ElectionData.getPartyColor(entry.winner);
+            const runnerColor = ElectionData.getPartyColor(entry.runner || 'independent');
+            const winnerPct = Number(entry.rate) || 0;
+            const runnerPct = Number(entry.runnerRate) || 0;
+            return `
+                <div class="ht-row">
+                    <div class="ht-left">
+                        <span class="ht-year">${entry.year}</span>
+                    </div>
+                    <div class="ht-center">
+                        <div class="ht-bar-track">
+                            <div class="ht-bar-fill" style="width:${winnerPct}%;background:${winnerColor}"></div>
                         </div>
-                    `;
-                }).join('')}
-            </div>
-        `;
+                        <div class="ht-names">
+                            <span><span class="ht-dot" style="background:${winnerColor}"></span>${entry.winnerName} <b>${winnerPct.toFixed(1)}%</b></span>
+                            <span class="ht-sub"><span class="ht-dot" style="background:${runnerColor}"></span>${entry.runnerName || '-'} ${runnerPct.toFixed(1)}%</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }).reverse().join('');
 
         destroyHistoryComparisonChart();
-        canvas.style.display = '';
-        canvas.height = 220;
-        emptyEl.style.display = 'none';
-        if (chartCardTitle) {
-            chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
+        const chartCard = document.getElementById('history-chart-card');
+        if (chartCard) {
+            chartCard.style.display = '';
+            chartCard.querySelector('h4')?.remove();
+            const h4 = document.createElement('h4');
+            h4.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
+            chartCard.insertBefore(h4, canvas);
         }
+        canvas.style.display = '';
+        emptyEl.style.display = 'none';
+
         // Y축 범위를 데이터에 맞게 자동 산출
         const allVals = chartDatasets.flatMap(ds => ds.data).filter(v => v !== null);
         const yMin = Math.max(0, Math.floor((Math.min(...allVals) - 5) / 10) * 10);
@@ -2327,7 +2332,8 @@ function renderCouncilProvinceView(regionKey, region) {
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false,
+                maintainAspectRatio: true,
+                aspectRatio: 2,
                 interaction: {
                     mode: 'index',
                     intersect: false
@@ -2759,7 +2765,6 @@ function renderCouncilProvinceView(regionKey, region) {
         let html = `
             <div class="news-live">
                 <div class="news-live-header">
-                    <div class="news-live-title"><i class="fas fa-bolt"></i> 최신 뉴스 6건</div>
                     <div class="news-live-actions" id="news-live-actions">
                         ${categories.map((cat, idx) => `
                             <button class="news-live-btn ${idx === 0 ? 'active' : ''}" data-query="${cat.query}" data-idx="${idx}">
@@ -2767,21 +2772,43 @@ function renderCouncilProvinceView(regionKey, region) {
                             </button>
                         `).join('')}
                     </div>
+                    <div class="news-sort-toggle" id="news-sort-toggle">
+                        <button class="news-sort-btn active" data-sort="score"><i class="fas fa-star"></i> 종합</button>
+                        <button class="news-sort-btn" data-sort="date"><i class="fas fa-clock"></i> 최신</button>
+                    </div>
                 </div>
                 <div class="news-live-list" id="news-live-list"></div>
-            </div>
-            <a href="${mainSearchUrl}" target="_blank" rel="noopener" class="news-search-link">
-                <i class="fas fa-search"></i>
-                ${regionName} 최신 선거 뉴스 보기 (네이버 뉴스)
-            </a>
-            <div class="news-notice">
-                <i class="fas fa-info-circle"></i>
-                <span>최신 기사 기준으로 가져오되, 주요 언론사 기사를 우선 노출합니다. 링크를 클릭해 <strong>${regionName}</strong> 관련 뉴스를 원문으로 확인하세요.</span>
+                <button class="news-load-more-btn" id="news-load-more-btn" style="display:none">
+                    <i class="fas fa-plus"></i> 더보기
+                </button>
             </div>
         `;
 
         container.innerHTML = html;
-        setupLatestNews(regionName, categories);
+        setupLatestNews(regionName, categories, regionKey);
+
+        // 지역 언론사 목록
+        const localMediaEl = document.getElementById('news-local-media');
+        if (localMediaEl) {
+            const registry = window.LocalMediaRegistry?.regions?.[regionKey];
+            const province = registry?.province;
+            if (province?.outlets?.length) {
+                const tier1Hosts = province.hosts?.tier1 || [];
+                const tier2Hosts = province.hosts?.tier2 || [];
+                const outletItems = province.outlets.slice(0, 8).map(o => {
+                    const isTier1 = tier1Hosts.some(h => province.priorityNames?.indexOf(o.name) < 3);
+                    return `<span class="local-media-tag${isTier1 ? ' tier1' : ''}">${o.name}</span>`;
+                }).join('');
+                localMediaEl.innerHTML = `
+                    <details class="local-media-details">
+                        <summary><i class="fas fa-building"></i> ${regionName} 지역 언론사</summary>
+                        <div class="local-media-list">${outletItems}</div>
+                    </details>
+                `;
+            } else {
+                localMediaEl.innerHTML = '';
+            }
+        }
     }
 
     function getGovernorQueryBase(regionName) {
@@ -3032,7 +3059,7 @@ function renderCouncilProvinceView(regionKey, region) {
         };
         const regionOverrides = getRegionFilterOverrides(regionKey);
 
-        return templates.map((tpl) => {
+        return templates.filter(t => t.categoryId !== 'analysis' && t.categoryId !== 'campaign').map((tpl) => {
             const built = applyNewsTemplateValue(tpl, context);
             const override = applyNewsTemplateValue(regionOverrides[built.categoryId] || {}, context);
             const merged = deepMergeNewsConfig(built, override);
@@ -3050,7 +3077,7 @@ function renderCouncilProvinceView(regionKey, region) {
         });
     }
 
-    function setupLatestNews(regionName, categories) {
+    function setupLatestNews(regionName, categories, regionKey) {
         const actionWrap = document.getElementById('news-live-actions');
         const list = document.getElementById('news-live-list');
         if (!actionWrap || !list) return;
@@ -3065,10 +3092,10 @@ function renderCouncilProvinceView(regionKey, region) {
             btn.classList.add('active');
             const idx = Number(btn.dataset.idx || 0);
             const selected = safeCategories[idx] || safeCategories[0];
-            fetchLatestNews(selected);
+            fetchLatestNews(selected, regionKey);
         });
 
-        fetchLatestNews(safeCategories[0]);
+        fetchLatestNews(safeCategories[0], regionKey);
     }
 
     function sanitizeHtml(text) {
@@ -3173,7 +3200,7 @@ function renderCouncilProvinceView(regionKey, region) {
         return { ok: true, score };
     }
 
-    async function fetchLatestNews(category) {
+    async function fetchLatestNews(category, regionKey) {
         const list = document.getElementById('news-live-list');
         if (!list) return;
         const query = category?.query || '';
@@ -3182,7 +3209,7 @@ function renderCouncilProvinceView(regionKey, region) {
         const preferPopularity = !!selectedCategory.preferPopularity;
         const queryCandidates = Array.from(new Set([query, ...(selectedCategory.altQueries || [])].filter(Boolean)));
 
-        list.innerHTML = '<div class="district-no-data"><p>최신 뉴스를 불러오는 중...</p></div>';
+        list.innerHTML = '<div class="panel-loading"><div class="panel-loading-spinner"></div>최신 뉴스를 불러오는 중...</div>';
 
         try {
             const fetchedItems = [];
@@ -3258,21 +3285,109 @@ function renderCouncilProvinceView(regionKey, region) {
                     }
                 });
 
-                const items = Array.from(dedup.values());
+                // ── 고도화 필터 엔진 ──
+                // 후보자 이름 목록 (현재 선택된 지역)
+                const regionData = ElectionData.getRegion(regionKey);
+                const regionCandidates = (regionData?.candidates || []).map(c => c.name);
+                const currentGovernor = ElectionData.getRegion(regionKey)?.currentGovernor?.name;
+                const knownActors = [...regionCandidates, currentGovernor].filter(Boolean);
+                const regionObj = ElectionData.getRegion(regionKey);
+                const regionName = regionObj?.name || '';
+                const regionAliases = getRegionAliasTerms(regionName);
+
+                // 선거유형 분류 패턴
+                const patterns = {
+                    governor: /도지사|지사|광역단체장|시도지사/,
+                    mayor: /[가-힣]{2,4}(시장|군수|구청장)/,
+                    superintendent: /교육감|교육청/,
+                    national: /대통령|대선|총선|국회의원|[가-힣]{2,8}(갑|을|병|정)/,
+                    noise: /스포츠|프로야구|프로축구|K리그|KBO|드라마|영화|예능|콘서트|공연|사망사고|교통사고|살인|폭행|성범죄|마약/,
+                };
+
+                const filteredDedup = Array.from(dedup.values()).map(item => {
+                    const t = (item.title || '') + ' ' + (item.description || '');
+                    let penalty = 0;
+                    let signals = [];
+
+                    // 1. 다른 지역 감지 (강한 감점)
+                    if (regionKey && mentionsOtherRegion(t, regionKey)) {
+                        penalty += 0.4;
+                        signals.push('other_region');
+                    }
+
+                    // 2. 선거유형 불일치 (기초단체장/교육감/국회의원 기사)
+                    if (patterns.mayor.test(t) && !patterns.governor.test(t)) {
+                        penalty += 0.3;
+                        signals.push('local_mayor');
+                    }
+                    if (patterns.superintendent.test(t) && !patterns.governor.test(t)) {
+                        penalty += 0.35;
+                        signals.push('superintendent');
+                    }
+                    if (patterns.national.test(t)) {
+                        penalty += 0.25;
+                        signals.push('national');
+                    }
+
+                    // 3. 노이즈 (스포츠/연예/범죄)
+                    if (patterns.noise.test(t)) {
+                        penalty += 0.5;
+                        signals.push('noise');
+                    }
+
+                    // 4. 후보자 이름 매칭 (보너스)
+                    const mentionedActor = knownActors.find(name => t.includes(name));
+                    if (mentionedActor) {
+                        penalty -= 0.15;
+                        signals.push('known_actor');
+                    }
+
+                    // 5. 지역명 직접 언급 (보너스)
+                    const mentionsRegion = regionAliases.some(a => a && t.includes(a));
+                    if (mentionsRegion) {
+                        penalty -= 0.1;
+                        signals.push('region_match');
+                    }
+
+                    item._filterPenalty = Math.max(0, penalty);
+                    item._filterSignals = signals;
+                    return item;
+                }).filter(item => item._filterPenalty < 0.35); // 0.35 이상이면 제거
+
+                const items = filteredDedup;
                 const rankToScore = (rank) => {
                     if (!rank) return 0;
                     return Math.max(0, 1 - (Math.min(50, rank) - 1) / 49);
                 };
 
+                // 지역 언론사 host 목록 구성
+                const registry = window.LocalMediaRegistry?.regions?.[regionKey];
+                const localTier1 = registry?.province?.hosts?.tier1 || [];
+                const localTier2 = registry?.province?.hosts?.tier2 || [];
+                const isLocalMedia = (host) => {
+                    if (!host) return false;
+                    return [...localTier1, ...localTier2].some(h => host === h || host.endsWith(`.${h}`));
+                };
+                const isLocalTier1 = (host) => {
+                    if (!host) return false;
+                    return localTier1.some(h => host === h || host.endsWith(`.${h}`));
+                };
+
                 if (preferPopularity) {
+                    const sw = NEWS_FILTER_CONFIG.scoreWeights || { time: 0.32, relevance: 0.30, credibility: 0.18, locality: 0.15, engagement: 0.05 };
                     items.forEach((item) => {
                         const ageDays = (Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24);
                         const recencyScore = Math.max(0, 1 - (ageDays / Math.max(1, dayLimit)));
                         const simScore = rankToScore(item.simRank);
-                        const dateScore = rankToScore(item.dateRank);
                         const relevanceScore = Math.min(1, item.relevance / 8);
-                        const majorBoost = isMajorOutlet(item.host) ? 0.05 : 0;
-                        item.rankScore = (simScore * 0.5) + (recencyScore * 0.25) + (dateScore * 0.1) + (relevanceScore * 0.15) + majorBoost;
+                        const credibilityScore = isMajorOutlet(item.host) ? 1 : isLocalTier1(item.host) ? 0.8 : 0.4;
+                        const localityScore = isLocalMedia(item.host) ? 1 : 0;
+                        item.isLocalMedia = isLocalMedia(item.host);
+                        item.rankScore = (recencyScore * sw.time)
+                            + (relevanceScore * sw.relevance)
+                            + (credibilityScore * sw.credibility)
+                            + (localityScore * sw.locality)
+                            + (simScore * sw.engagement);
                     });
                     items.sort((a, b) => (b.rankScore - a.rankScore) || (b.relevance - a.relevance) || (b.publishedAt - a.publishedAt));
                     return items;
@@ -3284,25 +3399,97 @@ function renderCouncilProvinceView(regionKey, region) {
                 return [...majorItems, ...otherItems];
             };
 
-            let selectedItems = runFilter('strict', maxAgeDays).slice(0, 6);
-            if (selectedItems.length < 3) {
-                selectedItems = runFilter('relaxed', maxAgeDays).slice(0, 6);
+            let allItems = runFilter('strict', maxAgeDays);
+            if (allItems.length < 3) {
+                allItems = runFilter('relaxed', maxAgeDays);
             }
 
-            if (!selectedItems.length) {
-                list.innerHTML = `<div class="district-no-data"><p>선택한 카테고리에 맞는 최신 뉴스가 없습니다.</p><p style="margin-top:6px;color:var(--text-muted);font-size:0.8rem">최근 ${maxAgeDays}일(엄격) + 완화 규칙으로 재조회했습니다.</p></div>`;
+            if (!allItems.length) {
+                list.innerHTML = `<div class="district-no-data"><p>선택한 카테고리에 맞는 최신 뉴스가 없습니다.</p></div>`;
+                const loadMoreBtn = document.getElementById('news-load-more-btn');
+                if (loadMoreBtn) loadMoreBtn.style.display = 'none';
                 return;
             }
 
-            list.innerHTML = selectedItems.map(item => {
+            // 카테고리 배지 매핑
+            const catBadges = {
+                'all': { label: '종합', color: '#3b82f6' },
+                'poll': { label: '여론조사', color: '#f59e0b' },
+                'candidate': { label: '후보·인물', color: '#22d3ee' },
+                'policy': { label: '공약·정책', color: '#14b8a6' },
+            };
+            const currentCatId = selectedCategory.categoryId || 'all';
+            const catBadge = catBadges[currentCatId] || catBadges.all;
+
+            function renderNewsItem(item) {
                 const press = item.host || '출처 미상';
+                const isMajor = isMajorOutlet(item.host);
+                const ageDays = Math.floor((Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24));
+                const freshBadge = ageDays <= 1 ? '<span class="news-badge news-badge-fresh">NEW</span>' : '';
+                const majorBadge = isMajor ? '<span class="news-badge news-badge-major">주요</span>' : '';
+                const localBadge = item.isLocalMedia ? '<span class="news-badge news-badge-local">지역</span>' : '';
+                const timeText = ageDays === 0 ? '오늘' : ageDays === 1 ? '어제' : `${ageDays}일 전`;
+                const rawScore = item.rankScore || 0;
+                const penalty = item._filterPenalty || 0;
+                const adjustedScore = Math.max(0, rawScore - penalty);
+                const score = adjustedScore ? Math.round(adjustedScore * 100) : null;
+                const scoreBar = score !== null ? `<div class="news-score"><div class="news-score-bar" style="width:${score}%"></div><span>${score}점</span></div>` : '';
                 return `
-                    <a class="news-live-item" href="${item.link}" target="_blank" rel="noopener" title="${item.title}">
-                        <div class="news-live-item-title" title="${item.title}">${item.title}</div>
-                        <div class="news-live-item-meta">${press} · ${item.pubDateLabel}</div>
+                    <a class="news-live-item" href="${item.link}" target="_blank" rel="noopener">
+                        <div class="news-live-item-badges">${freshBadge}${majorBadge}${localBadge}<span class="news-badge" style="background:${catBadge.color}22;color:${catBadge.color};border-color:${catBadge.color}44">${catBadge.label}</span></div>
+                        <div class="news-live-item-title">${item.title}</div>
+                        <div class="news-live-item-meta">
+                            <span class="news-press">${press}</span>
+                            <span class="news-time">${timeText}</span>
+                        </div>
+                        ${scoreBar}
                     </a>
                 `;
-            }).join('');
+            }
+
+            let showCount = 6;
+            let currentSort = 'score';
+            let sortedItems = [...allItems];
+
+            function refreshList() {
+                if (currentSort === 'date') {
+                    sortedItems = [...allItems].sort((a, b) => b.publishedAt - a.publishedAt);
+                } else {
+                    sortedItems = [...allItems].sort((a, b) => {
+                        const sa = (a.rankScore || 0) - (a._filterPenalty || 0);
+                        const sb = (b.rankScore || 0) - (b._filterPenalty || 0);
+                        return sb - sa;
+                    });
+                }
+                list.innerHTML = sortedItems.slice(0, showCount).map(renderNewsItem).join('');
+                const loadMoreBtn = document.getElementById('news-load-more-btn');
+                if (loadMoreBtn) loadMoreBtn.style.display = showCount < sortedItems.length ? '' : 'none';
+            }
+
+            refreshList();
+
+            // 더보기 버튼
+            const loadMoreBtn = document.getElementById('news-load-more-btn');
+            if (loadMoreBtn) {
+                loadMoreBtn.onclick = () => {
+                    showCount += 6;
+                    refreshList();
+                };
+            }
+
+            // 정렬 토글
+            const sortToggle = document.getElementById('news-sort-toggle');
+            if (sortToggle) {
+                sortToggle.addEventListener('click', (e) => {
+                    const btn = e.target.closest('.news-sort-btn');
+                    if (!btn) return;
+                    sortToggle.querySelectorAll('.news-sort-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentSort = btn.dataset.sort;
+                    showCount = 6;
+                    refreshList();
+                });
+            }
         } catch (err) {
             const message = err?.message || '';
             const missingKey = message.includes('Missing NAVER_CLIENT_ID/NAVER_CLIENT_SECRET');

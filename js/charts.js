@@ -227,9 +227,12 @@ const ChartsModule = (() => {
         });
     }
 
-    function renderPartyDonutChart(regionKey) {
-        const region = ElectionData.getRegion(regionKey);
-        if (!region) return;
+    // renderPartyDonutChart, renderDemographicsChart 제거됨 (HTML 캔버스 없음)
+
+    function renderAllCharts(regionKey) {
+        destroyCharts();
+        renderPollBarChart(regionKey);
+        renderPollTrendChart(regionKey);
 
         const canvas = document.getElementById('party-donut-chart');
         if (!canvas) return;
@@ -370,20 +373,10 @@ const ChartsModule = (() => {
         });
     }
 
-    function renderAllCharts(regionKey) {
-        destroyCharts();
-        renderPollBarChart(regionKey);
-        renderPollTrendChart(regionKey);
-        renderPartyDonutChart(regionKey);
-        renderDemographicsChart(regionKey);
-    }
-
     return {
         renderAllCharts,
         renderPollBarChart,
         renderPollTrendChart,
-        renderPartyDonutChart,
-        renderDemographicsChart,
         destroyCharts
     };
 })();

@@ -1,0 +1,43 @@
+name: Update Poll Data (NESDC)
+
+on:
+  schedule:
+    # 매주 토요일 한국시간 10:00 (UTC 01:00) 실행 — 금요일 갤럽 이후
+    - cron: '0 1 * * 6'
+  workflow_dispatch:
+    # 수동 실행 가능
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install httpx beautifulsoup4 google-genai google-generativeai
+
+      - name: Run NESDC poll pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/nesdc_poll_pipeline.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/polls/ || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/polls/
+          git commit -m "chore: auto-update poll data $(date +%Y-%m-%d)"
+          git push

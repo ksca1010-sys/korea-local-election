@@ -1,0 +1,3634 @@
+{
+  "generatedAt": "2026-03-12T21:54:15.902Z",
+  "source": "중앙선거여론조사심의위원회 polls.json 의뢰 매체명 기반 자동 수집",
+  "notes": [
+    "전국단위·비매체성 이름은 필터링했습니다.",
+    "province는 시도 단위 우선 매체, municipalities는 시군구 단위 우선 매체입니다.",
+    "host 도메인은 overrides의 tier1Hosts/tier2Hosts로 보강할 수 있고, locality 점수와 site: 검색에 사용합니다.",
+    "data/local_media_registry_overrides.json 으로 지역별 수동 보정과 seed 매체 주입이 가능합니다."
+  ],
+  "regions": {
+    "gyeonggi": {
+      "province": {
+        "outlets": [
+          {
+            "name": "경기일보",
+            "count": 9,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "중부일보",
+            "count": 15,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경기신문",
+            "count": 2,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경인일보",
+            "count": 2,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "수원일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "경기일보",
+          "중부일보",
+          "경기신문",
+          "경인일보",
+          "수원일보"
+        ],
+        "hosts": {
+          "tier1": [
+            "kyeonggi.com",
+            "kyeongin.com",
+            "suwonilbo.co.kr"
+          ],
+          "tier2": [
+            "incheonilbo.com"
+          ]
+        }
+      },
+      "municipalities": {
+        "용인시": {
+          "outlets": [
+            {
+              "name": "경기일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경기일보",
+            "중부일보"
+          ]
+        },
+        "부천시": {
+          "outlets": [
+            {
+              "name": "새부천신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경기신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "새부천신문",
+            "경기신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "saebucheon.com"
+            ],
+            "tier2": []
+          }
+        },
+        "남양주시": {
+          "outlets": [
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "중부일보"
+          ]
+        },
+        "이천시": {
+          "outlets": [
+            {
+              "name": "이천신문",
+              "count": 2,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경기일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "하나로신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "이천신문",
+            "경기일보",
+            "하나로신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "ic119.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "여주시": {
+          "outlets": [
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "중부일보"
+          ]
+        },
+        "고양시": {
+          "outlets": [
+            {
+              "name": "경기신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경기신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "mygoyang.com"
+            ],
+            "tier2": []
+          }
+        },
+        "의정부시": {
+          "outlets": [
+            {
+              "name": "북경기신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "북경기신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "ujbnews.net"
+            ],
+            "tier2": []
+          }
+        },
+        "평택시": {
+          "outlets": [
+            {
+              "name": "평택신문",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경기일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "평택신문",
+            "경기일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "pttimes.com"
+            ],
+            "tier2": []
+          }
+        },
+        "화성시": {
+          "outlets": [
+            {
+              "name": "경기일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경기일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "hsnews.or.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "포천시": {
+          "outlets": [
+            {
+              "name": "포천뉴스",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "포천일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "포천뉴스",
+            "포천일보",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "ipcs21.com"
+            ],
+            "tier2": []
+          }
+        },
+        "수원시": {
+          "outlets": [
+            {
+              "name": "수원일보",
+              "count": 0,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경기일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "수원일보",
+            "경기일보",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "suwonilbo.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "하남시": {
+          "outlets": [
+            {
+              "name": "투데이광주하남",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "투데이광주하남",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "tgh.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "안산시": {
+          "outlets": [
+            {
+              "name": "반월신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "반월신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "banwol.net"
+            ],
+            "tier2": []
+          }
+        },
+        "양평군": {
+          "outlets": [
+            {
+              "name": "YPN뉴스",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": []
+        },
+        "연천군": {
+          "outlets": [
+            {
+              "name": "연천신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "연천신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "ycgmnews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "시흥시": {
+          "outlets": [],
+          "priorityNames": [],
+          "hosts": {
+            "tier1": [
+              "sh-news.com"
+            ],
+            "tier2": []
+          }
+        },
+        "가평군": {
+          "outlets": [
+            {
+              "name": "NGN뉴스",
+              "count": 2,
+              "types": [
+                "internet"
+              ]
+            },
+            {
+              "name": "포천뉴스",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "NGN뉴스",
+            "포천뉴스"
+          ]
+        },
+        "파주시": {
+          "outlets": [
+            {
+              "name": "파주시대",
+              "count": 2,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "파주시대"
+          ],
+          "hosts": {
+            "tier1": [
+              "pajusidae.com"
+            ],
+            "tier2": []
+          }
+        },
+        "성남시": {
+          "outlets": [],
+          "priorityNames": [],
+          "hosts": {
+            "tier1": [
+              "snsiminnews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "광주시": {
+          "outlets": [
+            {
+              "name": "투데이광주하남",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "투데이광주하남"
+          ],
+          "hosts": {
+            "tier1": [
+              "tgh.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "과천시": {
+          "outlets": [
+            {
+              "name": "과천시대신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "과천시대신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "gwachonnews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "안양시": {
+          "outlets": [
+            {
+              "name": "안양신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "중부일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "안양신문",
+            "중부일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "anyangnews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "군포시": {
+          "outlets": [
+            {
+              "name": "군포신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "군포신문"
+          ]
+        },
+        "오산시": {
+          "outlets": [
+            {
+              "name": "더 시그널뉴스",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": []
+        }
+      }
+    },
+    "gyeongbuk": {
+      "province": {
+        "outlets": [
+          {
+            "name": "TBC",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "경북매일신문",
+            "count": 4,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경상매일신문",
+            "count": 3,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경북도민일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경북신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "영남일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "대구일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "세명일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "영남신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "TBC",
+          "경북매일신문",
+          "경상매일신문",
+          "경북도민일보",
+          "경북신문",
+          "영남일보",
+          "대구일보",
+          "세명일보"
+        ],
+        "hosts": {
+          "tier1": [
+            "kbmaeil.com",
+            "ksmnews.co.kr",
+            "hidomin.com",
+            "kyongbuk.co.kr",
+            "yeongnam.com",
+            "idaegu.com"
+          ],
+          "tier2": [
+            "tbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "포항시": {
+          "outlets": [
+            {
+              "name": "경상매일신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경북도민일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경북매일신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "영남일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "일간경북신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "일일경북신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경상매일신문",
+            "경북도민일보",
+            "경북매일신문",
+            "영남일보",
+            "일간경북신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "hidomin.com",
+              "ksmnews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "영양군": {
+          "outlets": [],
+          "priorityNames": [],
+          "hosts": {
+            "tier1": [
+              "yygnews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "경주시": {
+          "outlets": [
+            {
+              "name": "경북매일신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경상매일신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경북매일신문",
+            "경상매일신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "kbmaeil.com"
+            ],
+            "tier2": []
+          }
+        },
+        "문경시": {
+          "outlets": [
+            {
+              "name": "문경시민신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "문경시민신문"
+          ]
+        },
+        "영천시": {
+          "outlets": [
+            {
+              "name": "영천투데이",
+              "count": 2,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경북신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "영천투데이",
+            "경북신문"
+          ]
+        },
+        "봉화군": {
+          "outlets": [
+            {
+              "name": "봉화일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "봉화일보"
+          ]
+        },
+        "예천군": {
+          "outlets": [
+            {
+              "name": "예천인터넷신문",
+              "count": 2,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "예천인터넷신문"
+          ]
+        },
+        "울진군": {
+          "outlets": [
+            {
+              "name": "울진투데이",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "울진투데이"
+          ]
+        },
+        "영덕군": {
+          "outlets": [
+            {
+              "name": "경북매일신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경북매일신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "ydknews.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "안동시": {
+          "outlets": [
+            {
+              "name": "안동뉴스",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            },
+            {
+              "name": "세명일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "영남신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "안동뉴스",
+            "세명일보",
+            "영남신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "kbjn.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "청송군": {
+          "outlets": [
+            {
+              "name": "주간고향신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "청송영양신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "주간고향신문",
+            "청송영양신문"
+          ]
+        }
+      }
+    },
+    "gangwon": {
+      "province": {
+        "outlets": [
+          {
+            "name": "강원일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "강원도민일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "G1방송",
+            "count": 4,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "춘천MBC",
+            "count": 4,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "원주MBC",
+            "count": 4,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "MBC강원영동",
+            "count": 4,
+            "types": [
+              "broadcast"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "강원일보",
+          "강원도민일보",
+          "G1방송",
+          "춘천MBC",
+          "원주MBC",
+          "MBC강원영동"
+        ],
+        "hosts": {
+          "tier1": [
+            "g1tv.co.kr"
+          ],
+          "tier2": []
+        }
+      },
+      "municipalities": {
+        "횡성군": {
+          "outlets": [
+            {
+              "name": "횡성희망신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "횡성신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "횡성희망신문",
+            "횡성신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "hshope.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "원주시": {
+          "outlets": [
+            {
+              "name": "원주신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "원주MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "춘천MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "G1방송",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "MBC강원영동",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "원주신문",
+            "원주MBC",
+            "춘천MBC",
+            "G1방송",
+            "MBC강원영동"
+          ],
+          "hosts": {
+            "tier1": [
+              "iwjnews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "강릉시": {
+          "outlets": [
+            {
+              "name": "MBC강원영동",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "G1방송",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "춘천MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "원주MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "MBC강원영동",
+            "G1방송",
+            "춘천MBC",
+            "원주MBC"
+          ],
+          "hosts": {
+            "tier1": [
+              "gangneungnews.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "춘천시": {
+          "outlets": [
+            {
+              "name": "춘천MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "G1방송",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "원주MBC",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "MBC강원영동",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "춘천MBC",
+            "G1방송",
+            "원주MBC",
+            "MBC강원영동"
+          ],
+          "hosts": {
+            "tier1": [
+              "ccnews.kr"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "gyeongnam": {
+      "province": {
+        "outlets": [
+          {
+            "name": "경남도민일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경남신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경남일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경남매일",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "MBC경남",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "KNN",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "경남CBS",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "뉴스경남",
+            "count": 2,
+            "types": [
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "경남도민일보",
+          "경남신문",
+          "경남일보",
+          "경남매일",
+          "MBC경남",
+          "KNN",
+          "경남CBS",
+          "뉴스경남"
+        ],
+        "hosts": {
+          "tier1": [
+            "knnews.co.kr",
+            "gndomin.com"
+          ],
+          "tier2": [
+            "chmbc.co.kr",
+            "knnb.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "하동군": {
+          "outlets": [
+            {
+              "name": "하동신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "하동뉴스",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "하동신문",
+            "하동뉴스"
+          ],
+          "hosts": {
+            "tier1": [
+              "hadongsinmoon.com"
+            ],
+            "tier2": []
+          }
+        },
+        "산청군": {
+          "outlets": [
+            {
+              "name": "산청시대",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "산청시대"
+          ],
+          "hosts": {
+            "tier1": [
+              "gndomin.com"
+            ],
+            "tier2": []
+          }
+        },
+        "양산시": {
+          "outlets": [
+            {
+              "name": "양산신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "뉴스경남",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "양산신문",
+            "뉴스경남"
+          ],
+          "hosts": {
+            "tier1": [
+              "yangsanilbo.com"
+            ],
+            "tier2": []
+          }
+        },
+        "진주시": {
+          "outlets": [
+            {
+              "name": "뉴스경남",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "뉴스경남"
+          ],
+          "hosts": {
+            "tier1": [
+              "newsgn.com"
+            ],
+            "tier2": []
+          }
+        },
+        "김해시": {
+          "outlets": [
+            {
+              "name": "경남CBS",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경남CBS"
+          ],
+          "hosts": {
+            "tier1": [
+              "gimhaenews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "합천군": {
+          "outlets": [
+            {
+              "name": "합천신문사",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "합천열린신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "합천신문사",
+            "합천열린신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "hcnews1995.com"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "daegu": {
+      "province": {
+        "outlets": [
+          {
+            "name": "매일신문",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "TBC",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "대구일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "대구MBC",
+            "count": 0,
+            "types": [
+              "broadcast"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "매일신문",
+          "TBC",
+          "대구일보",
+          "대구MBC"
+        ],
+        "hosts": {
+          "tier1": [
+            "imaeil.com",
+            "idaegu.co.kr"
+          ],
+          "tier2": [
+            "tbc.co.kr",
+            "dgmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {}
+    },
+    "jeonnam": {
+      "province": {
+        "outlets": [
+          {
+            "name": "목포MBC",
+            "count": 18,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "KBC광주방송",
+            "count": 13,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBS광주방송총국",
+            "count": 13,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "광주MBC",
+            "count": 4,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "무등일보",
+            "count": 4,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "광남일보",
+            "count": 7,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "뉴스스콜",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "뉴스앤티브이",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "메디언뉴스",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "에버뉴스",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "일요저널",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "목포MBC",
+          "KBC광주방송",
+          "KBS광주방송총국",
+          "광주MBC",
+          "무등일보",
+          "광남일보"
+        ],
+        "hosts": {
+          "tier1": [],
+          "tier2": [
+            "mpmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "담양군": {
+          "outlets": [
+            {
+              "name": "호남일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 2,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광주MBC",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "무등일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "호남일보",
+            "KBC광주방송",
+            "광남일보",
+            "광주MBC",
+            "무등일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "dgtimes.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "장성군": {
+          "outlets": [
+            {
+              "name": "주간장성신문사",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "장성투데이",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "장성인뉴스",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "우리군민신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "주간장성신문사",
+            "장성투데이",
+            "장성인뉴스",
+            "우리군민신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "jstnews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "해남군": {
+          "outlets": [
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "전남목포신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "목포MBC",
+            "전남목포신문"
+          ]
+        },
+        "화순군": {
+          "outlets": [
+            {
+              "name": "화순매일신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광주MBC",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "무등일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광주타임즈",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "화순매일신문",
+            "광남일보",
+            "광주MBC",
+            "무등일보",
+            "KBC광주방송"
+          ],
+          "hosts": {
+            "tier1": [
+              "hsmaeil.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "고흥군": {
+          "outlets": [],
+          "priorityNames": [],
+          "hosts": {
+            "tier1": [
+              "goheungnews.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "영광군": {
+          "outlets": [
+            {
+              "name": "영광 YT신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "영광21신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "영광 YT신문",
+            "영광21신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "yg21.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "광양시": {
+          "outlets": [
+            {
+              "name": "광양시민신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "광양시민신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "gycitizen.com"
+            ],
+            "tier2": []
+          }
+        },
+        "함평군": {
+          "outlets": [
+            {
+              "name": "전남희망신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전남희망신문"
+          ]
+        },
+        "진도군": {
+          "outlets": [
+            {
+              "name": "진도투데이",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "더타임즈진도",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "진도투데이",
+            "더타임즈진도",
+            "목포MBC"
+          ],
+          "hosts": {
+            "tier1": [
+              "jindotoday.com",
+              "thetimesjindo.com"
+            ],
+            "tier2": []
+          }
+        },
+        "완도군": {
+          "outlets": [
+            {
+              "name": "전남인뉴스",
+              "count": 2,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 2,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전남인뉴스",
+            "목포MBC",
+            "KBC광주방송",
+            "광남일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "jninnews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "영암군": {
+          "outlets": [
+            {
+              "name": "영암군민신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "낭주신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "영암군민신문",
+            "낭주신문",
+            "목포MBC"
+          ],
+          "hosts": {
+            "tier1": [
+              "yanews.net",
+              "yeongamnews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "장흥군": {
+          "outlets": [
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "장흥신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "목포MBC",
+            "장흥신문"
+          ]
+        },
+        "강진군": {
+          "outlets": [
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "목포MBC",
+            "광남일보",
+            "KBC광주방송"
+          ]
+        },
+        "신안군": {
+          "outlets": [
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "신안신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "목포MBC",
+            "신안신문"
+          ]
+        },
+        "무안군": {
+          "outlets": [
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "KBS광주방송총국",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "목포MBC",
+            "KBS광주방송총국",
+            "KBC광주방송"
+          ]
+        },
+        "목포시": {
+          "outlets": [
+            {
+              "name": "전남중앙신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "목포MBC",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "KBS광주방송총국",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전남중앙신문",
+            "목포MBC",
+            "KBS광주방송총국",
+            "광남일보",
+            "KBC광주방송"
+          ],
+          "hosts": {
+            "tier1": [
+              "jn-joongang.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "여수시": {
+          "outlets": [
+            {
+              "name": "여수신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBC광주방송",
+              "count": 2,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBS광주방송총국",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "여수신문",
+            "KBC광주방송",
+            "KBS광주방송총국",
+            "광남일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "yeosu.yestv.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "순천시": {
+          "outlets": [
+            {
+              "name": "KBC광주방송",
+              "count": 2,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBS광주방송총국",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "광남일보",
+              "count": 1,
+              "types": [
+                "broadcast",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBC광주방송",
+            "KBS광주방송총국",
+            "광남일보"
+          ]
+        }
+      }
+    },
+    "incheon": {
+      "province": {
+        "outlets": [
+          {
+            "name": "인천일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "경인일보",
+            "count": 2,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "기호일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "인천일보",
+          "경인일보",
+          "기호일보"
+        ],
+        "hosts": {
+          "tier1": [
+            "incheonilbo.com",
+            "kihoilbo.co.kr",
+            "incheontimes.com"
+          ],
+          "tier2": [
+            "kyeongin.com"
+          ]
+        }
+      },
+      "municipalities": {
+        "강화군": {
+          "outlets": [
+            {
+              "name": "인천일보",
+              "count": 0,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경인일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "인천일보",
+            "경인일보"
+          ],
+          "hosts": {
+            "tier1": [
+              "incheonilbo.com"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "chungbuk": {
+      "province": {
+        "outlets": [
+          {
+            "name": "KBS청주",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "MBC충북",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "중부매일",
+            "count": 4,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "굿모닝충청",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "KBS청주",
+          "MBC충북",
+          "중부매일",
+          "굿모닝충청"
+        ],
+        "hosts": {
+          "tier1": [
+            "jbnews.com",
+            "goodmorningcc.com"
+          ],
+          "tier2": [
+            "mbccb.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "청주시": {
+          "outlets": [
+            {
+              "name": "KBS청주",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "MBC충북",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS청주",
+            "MBC충북"
+          ],
+          "hosts": {
+            "tier1": [
+              "mbccb.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "보은군": {
+          "outlets": [
+            {
+              "name": "보은사람들",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "보은사람들"
+          ],
+          "hosts": {
+            "tier1": [
+              "boeunpeople.com"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "busan": {
+      "province": {
+        "outlets": [
+          {
+            "name": "부산일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "국제신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KNN",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "부산MBC",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "부산CBS",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "부산일보",
+          "국제신문",
+          "KNN",
+          "부산MBC",
+          "부산CBS"
+        ],
+        "hosts": {
+          "tier1": [
+            "busan.com",
+            "kookje.co.kr"
+          ],
+          "tier2": [
+            "knn.co.kr",
+            "busanmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "강서구": {
+          "outlets": [
+            {
+              "name": "부산CBS",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "부산CBS"
+          ]
+        },
+        "사상구": {
+          "outlets": [
+            {
+              "name": "부산CBS",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "부산CBS"
+          ]
+        }
+      }
+    },
+    "jeju": {
+      "province": {
+        "outlets": [
+          {
+            "name": "제주KBS",
+            "count": 5,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "JIBS제주방송",
+            "count": 2,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KCTV제주방송",
+            "count": 1,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "제주MBC",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "제민일보",
+            "count": 2,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "제주일보",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "한라일보",
+            "count": 1,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "제주의소리",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "미디어제주",
+            "count": 2,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "제주CBS",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "헤드라인제주",
+            "count": 1,
+            "types": [
+              "broadcast",
+              "internet",
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "제주KBS",
+          "JIBS제주방송",
+          "KCTV제주방송",
+          "제주MBC",
+          "제민일보",
+          "제주일보",
+          "한라일보",
+          "제주의소리"
+        ],
+        "hosts": {
+          "tier1": [
+            "jejuilbo.net",
+            "ihalla.com",
+            "jemin.com"
+          ],
+          "tier2": []
+        }
+      },
+      "municipalities": {}
+    },
+    "chungnam": {
+      "province": {
+        "outlets": [
+          {
+            "name": "KBS대전",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "굿모닝충청",
+            "count": 5,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "대전일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "충청신문사",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "시사뉴스24",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "씨엘미디어",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "KBS대전",
+          "굿모닝충청",
+          "대전일보",
+          "충청신문사"
+        ],
+        "hosts": {
+          "tier1": [
+            "cctoday.co.kr",
+            "cnnews.co.kr"
+          ],
+          "tier2": [
+            "daejonilbo.com",
+            "naepo2day.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "청양군": {
+          "outlets": [
+            {
+              "name": "뉴스청양",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "백제신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "뉴스청양",
+            "백제신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "echeongyang.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "서산시": {
+          "outlets": [
+            {
+              "name": "서산타임즈",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "투데이충남",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "굿모닝충청",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "서산타임즈",
+            "투데이충남",
+            "굿모닝충청"
+          ],
+          "hosts": {
+            "tier1": [
+              "seosantimes.com"
+            ],
+            "tier2": []
+          }
+        },
+        "천안시": {
+          "outlets": [
+            {
+              "name": "씨엘미디어",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": []
+        },
+        "태안군": {
+          "outlets": [
+            {
+              "name": "태안미래신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "태안타임즈",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "태안미래신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "tanews.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "당진시": {
+          "outlets": [
+            {
+              "name": "당진시대",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "당진시대"
+          ],
+          "hosts": {
+            "tier1": [
+              "djtimes.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "금산군": {
+          "outlets": [
+            {
+              "name": "금산진악신문",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "금산진악신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "xn--jj0b33w89d9pct7dkrj.com",
+              "m.xn--jj0b33w89d9pct7dkrj.com"
+            ],
+            "tier2": []
+          }
+        },
+        "부여군": {
+          "outlets": [
+            {
+              "name": "21세기부여신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "21세기부여신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "buyeonews.com"
+            ],
+            "tier2": []
+          }
+        },
+        "계룡시": {
+          "outlets": [
+            {
+              "name": "충청신문사",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "충청신문사"
+          ],
+          "hosts": {
+            "tier1": [
+              "cctoday.co.kr"
+            ],
+            "tier2": []
+          }
+        },
+        "공주시": {
+          "outlets": [
+            {
+              "name": "굿모닝충청",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "굿모닝충청"
+          ],
+          "hosts": {
+            "tier1": [
+              "e-gongju.com"
+            ],
+            "tier2": []
+          }
+        },
+        "논산시": {
+          "outlets": [
+            {
+              "name": "굿모닝충청",
+              "count": 1,
+              "types": [
+                "internet"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "굿모닝충청"
+          ],
+          "hosts": {
+            "tier1": [
+              "enonsan.com"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "jeonbuk": {
+      "province": {
+        "outlets": [
+          {
+            "name": "전북도민일보",
+            "count": 16,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "전북일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "새전북신문",
+            "count": 4,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "전북제일신문",
+            "count": 3,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBS전주",
+            "count": 7,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "전주일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "전북경제신문",
+            "count": 1,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "전북연합신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "한국복지신문",
+            "count": 1,
+            "types": [
+              "internet",
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "전북도민일보",
+          "전북일보",
+          "새전북신문",
+          "전북제일신문",
+          "KBS전주",
+          "전주일보",
+          "전북경제신문",
+          "전북연합신문"
+        ],
+        "hosts": {
+          "tier1": [
+            "jjan.kr",
+            "jbdomin.co.kr",
+            "sjbnews.com"
+          ],
+          "tier2": [
+            "jmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "임실군": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전주일보",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보",
+            "전주일보"
+          ]
+        },
+        "부안군": {
+          "outlets": [
+            {
+              "name": "부안뉴스",
+              "count": 2,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "부안독립신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "새전북신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "부안뉴스",
+            "KBS전주",
+            "부안독립신문",
+            "새전북신문",
+            "전북도민일보"
+          ]
+        },
+        "남원시": {
+          "outlets": [
+            {
+              "name": "전북제일신문",
+              "count": 2,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북경제신문",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북제일신문",
+            "전북경제신문",
+            "전북도민일보"
+          ]
+        },
+        "전주시": {
+          "outlets": [
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북제일신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS전주",
+            "전북도민일보",
+            "전북제일신문"
+          ]
+        },
+        "익산시": {
+          "outlets": [
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "새전북신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS전주",
+            "새전북신문",
+            "전북도민일보"
+          ]
+        },
+        "완주군": {
+          "outlets": [
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "새전북신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "완주신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북연합신문",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS전주",
+            "새전북신문",
+            "완주신문",
+            "전북도민일보",
+            "전북연합신문"
+          ]
+        },
+        "김제시": {
+          "outlets": [
+            {
+              "name": "김제시민의신문사",
+              "count": 1,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "김제시민의신문사",
+            "전북도민일보"
+          ]
+        },
+        "고창군": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보"
+          ]
+        },
+        "순창군": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보"
+          ]
+        },
+        "장수군": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보"
+          ]
+        },
+        "정읍시": {
+          "outlets": [
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS전주",
+            "전북도민일보"
+          ]
+        },
+        "군산시": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보"
+          ]
+        },
+        "무주군": {
+          "outlets": [
+            {
+              "name": "KBS전주",
+              "count": 1,
+              "types": [
+                "broadcast"
+              ]
+            },
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "KBS전주",
+            "전북도민일보"
+          ]
+        },
+        "진안군": {
+          "outlets": [
+            {
+              "name": "전북도민일보",
+              "count": 1,
+              "types": [
+                "internet",
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "전북도민일보"
+          ]
+        }
+      }
+    },
+    "sejong": {
+      "province": {
+        "outlets": [
+          {
+            "name": "세종포스트",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "세종의소리",
+            "count": 0,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "대전투데이",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBS대전",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "굿모닝충청",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          },
+          {
+            "name": "세종미디어네트",
+            "count": 1,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "세종포스트",
+          "세종의소리",
+          "대전투데이",
+          "KBS대전",
+          "굿모닝충청"
+        ],
+        "hosts": {
+          "tier1": [
+            "sjpost.co.kr"
+          ],
+          "tier2": [
+            "daejonilbo.com"
+          ]
+        }
+      },
+      "municipalities": {}
+    },
+    "ulsan": {
+      "province": {
+        "outlets": [
+          {
+            "name": "울산매일",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "울산제일일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "ubc울산방송",
+            "count": 1,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "울산시민신문",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "울산매일",
+          "울산제일일보",
+          "ubc울산방송",
+          "울산시민신문"
+        ],
+        "hosts": {
+          "tier1": [
+            "iusm.co.kr",
+            "ujeil.com"
+          ],
+          "tier2": [
+            "usanmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {}
+    },
+    "daejeon": {
+      "province": {
+        "outlets": [
+          {
+            "name": "대전일보",
+            "count": 1,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "충청투데이",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBS대전",
+            "count": 2,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "대전MBC",
+            "count": 0,
+            "types": [
+              "broadcast"
+            ]
+          },
+          {
+            "name": "굿모닝충청",
+            "count": 2,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "대전일보",
+          "충청투데이",
+          "KBS대전",
+          "대전MBC",
+          "굿모닝충청"
+        ],
+        "hosts": {
+          "tier1": [
+            "daejonilbo.com"
+          ],
+          "tier2": [
+            "cctoday.co.kr",
+            "tjmbc.co.kr"
+          ]
+        }
+      },
+      "municipalities": {}
+    },
+    "gwangju": {
+      "province": {
+        "outlets": [
+          {
+            "name": "광주일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "무등일보",
+            "count": 3,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBC광주방송",
+            "count": 3,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "광주MBC",
+            "count": 3,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "광남일보",
+            "count": 2,
+            "types": [
+              "broadcast",
+              "newspaper"
+            ]
+          },
+          {
+            "name": "KBS광주방송총국",
+            "count": 13,
+            "types": [
+              "broadcast"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "광주일보",
+          "무등일보",
+          "KBC광주방송",
+          "광주MBC",
+          "광남일보",
+          "KBS광주방송총국"
+        ],
+        "hosts": {
+          "tier1": [
+            "kwangju.co.kr",
+            "kjdaily.com",
+            "mdilbo.com",
+            "ikbc.co.kr"
+          ],
+          "tier2": [
+            "kjmbc.co.kr",
+            "gwangnam.co.kr"
+          ]
+        }
+      },
+      "municipalities": {
+        "광산구": {
+          "outlets": [
+            {
+              "name": "광주일보",
+              "count": 0,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "KBS광주방송총국",
+              "count": 2,
+              "types": [
+                "broadcast"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "광주일보",
+            "KBS광주방송총국"
+          ],
+          "hosts": {
+            "tier1": [
+              "kwangju.co.kr"
+            ],
+            "tier2": []
+          }
+        }
+      }
+    },
+    "seoul": {
+      "province": {
+        "outlets": [
+          {
+            "name": "서울일보",
+            "count": 0,
+            "types": [
+              "newspaper"
+            ]
+          },
+          {
+            "name": "서울뉴스통신",
+            "count": 0,
+            "types": [
+              "internet"
+            ]
+          }
+        ],
+        "priorityNames": [
+          "서울일보",
+          "서울뉴스통신"
+        ],
+        "hosts": {
+          "tier1": [
+            "seoulilbo.com",
+            "senews.co.kr"
+          ],
+          "tier2": []
+        }
+      },
+      "municipalities": {}
+    }
+  }
+}
