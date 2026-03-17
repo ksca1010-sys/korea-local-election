@@ -1,0 +1,3 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+gwangju-governor-summary-trend	gwangju	governor		4		trend	line			광주광역시,광역단체장	광역단체장선거		2	광주 광역단체장 추이
+gwangju-superintendent-trend	gwangju	superintendent		5		trend	line			광주광역시,교육감	교육감선거		2	광주 교육감 추이

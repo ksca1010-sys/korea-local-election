@@ -5,7 +5,6 @@ on:
     # 매일 한국시간 09:00 (UTC 00:00) 실행
     - cron: '0 0 * * *'
   workflow_dispatch:
-    # 수동 실행 가능
 
 jobs:
   update:
@@ -21,17 +20,57 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install requests beautifulsoup4 google-genai google-generativeai
+        run: pip install httpx google-genai google-generativeai
 
-      # 1단계: 선관위 예비후보 데이터
-      - name: Run candidate pipeline
-        run: python scripts/candidate_pipeline/fetch_nec_candidates.py
+      # 0단계: 재보궐 당선 결과 동기화 (선관위 API)
+      - name: Sync byelection winners
+        env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+        run: python scripts/candidate_pipeline/sync_byelection_winners.py
 
-      # 2단계: Gemini 출마/사퇴 감지
-      - name: Factcheck candidate status
+      # 1단계: 광역단체장 팩트체크 (Gemini + 뉴스 + 교차검증)
+      - name: Factcheck governor candidates
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
         run: python scripts/candidate_pipeline/factcheck_candidates.py
+
+      # 2단계: 교육감 팩트체크 (Gemini + 지역뉴스 + 교차검증)
+      - name: Factcheck superintendent candidates
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
+        run: python scripts/candidate_pipeline/factcheck_superintendent.py
+
+      # 3단계: 기초단체장 팩트체크 (Gemini + 지역뉴스 + 교차검증)
+      - name: Factcheck mayor candidates
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
+        run: python scripts/candidate_pipeline/factcheck_mayor.py
+
+      # 4단계: 재보궐 후보 수집
+      - name: Update byelection candidates
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
+        run: python scripts/candidate_pipeline/fetch_byelection.py
+
+      # 5단계: 개요 narrative에서 발견된 후보 동기화
+      - name: Sync candidates from overview narratives
+        run: python scripts/sync_overview_candidates.py --apply
+
+      # 6단계: 다중 교차 검증 (권한대행/중복/광역 겸직 등)
+      - name: Cross-validate candidates
+        run: python scripts/candidate_pipeline/cross_validate.py --fix
 
       - name: Check for changes
         id: diff

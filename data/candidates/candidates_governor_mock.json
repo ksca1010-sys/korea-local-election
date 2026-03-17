@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-03-11T12:00:00.000000",
+  "mode": "research",
+  "note": "언론 보도·여론조사·출마선언 기반 후보군 데이터 (2026.03.11 기준). 후보 등록(2026.05) 후 확정 데이터로 교체 예정.",
+  "candidates": {
+    "seoul": [
+      { "id": "seoul-1", "name": "정원오", "party": "democratic", "partyName": "더불어민주당", "age": 57, "career": "3선 성동구청장 / 前 임종석 의원 보좌관", "photo": null, "status": "DECLARED", "pledges": ["시민주권 AI 혁신", "30분 통근 도시", "재건축·재개발 속도전"], "source": "헤럴드경제·시사저널 (2026.3.9 출마선언)" },
+      { "id": "seoul-2", "name": "오세훈", "party": "ppp", "partyName": "국민의힘", "age": 65, "career": "現 서울시장 (민선6·8기) / 변호사", "photo": null, "status": "EXPECTED", "pledges": ["주택 신속 공급", "서울 글로벌 경쟁력 강화"], "source": "MBC·SBS 여론조사" },
+      { "id": "seoul-3", "name": "박주민", "party": "democratic", "partyName": "더불어민주당", "age": 52, "career": "3선 국회의원 (은평갑) / 변호사", "photo": null, "status": "DECLARED", "pledges": ["기회특별시 서울", "서울투자공사 설립", "강북 바이오 클러스터"], "source": "뉴스토마토 (2025.12.11 출마선언)" },
+      { "id": "seoul-4", "name": "서영교", "party": "democratic", "partyName": "더불어민주당", "age": 59, "career": "4선 국회의원 (중랑갑)", "photo": null, "status": "DECLARED", "pledges": ["주택 30만호 공급", "지하철 증차"], "source": "서울신문 (2026.1.15 출마선언)" },
+      { "id": "seoul-5", "name": "박홍근", "party": "democratic", "partyName": "더불어민주당", "age": 53, "career": "4선 국회의원 (중랑을) / 前 원내대표", "photo": null, "status": "DECLARED", "pledges": ["서민 주택 공급", "마을버스 무료화", "통합돌봄서비스"], "source": "오마이뉴스 (2025.11.26 출마선언)" },
+      { "id": "seoul-6", "name": "나경원", "party": "ppp", "partyName": "국민의힘", "age": 61, "career": "5선 국회의원 (동작을) / 前 원내대표 / 변호사", "photo": null, "status": "RUMORED", "pledges": [], "source": "문화일보, MBC 여론조사 (국힘 선호도 12%)" },
+      { "id": "seoul-7", "name": "김정철", "party": "newReform", "partyName": "개혁신당", "age": null, "career": "개혁신당 최고위원", "photo": null, "status": "DECLARED", "pledges": [], "source": "더퍼블릭" }
+    ],
+    "busan": [
+      { "id": "busan-1", "name": "전재수", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (부산 북구갑) / 前 해양수산부 장관", "photo": null, "status": "EXPECTED", "pledges": ["해수부 공공기관 부산 이전", "동남투자공사 설립", "해사전문법원 신설"], "source": "경향신문, 부산MBC 여론조사 43.3%" },
+      { "id": "busan-2", "name": "박형준", "party": "ppp", "partyName": "국민의힘", "age": 66, "career": "現 부산시장 (3선 도전) / 前 국회의원·청와대 정무수석", "photo": null, "status": "DECLARED", "pledges": ["글로벌 도시 부산 완성"], "source": "경향신문 (2026.3.9)" },
+      { "id": "busan-3", "name": "주진우", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "現 국회의원 (해운대갑)", "photo": null, "status": "DECLARED", "pledges": ["글로벌 해양수도", "AI 메카 조성"], "source": "이투데이·한국경제 (2026.3.9 출마선언)" },
+      { "id": "busan-4", "name": "이재성", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 민주당 부산시당위원장 / 이재명 인재영입 2호", "photo": null, "status": "DECLARED", "pledges": ["다대포 테마파크 유치", "북항 해수부 신청사"], "source": "KNN·노컷뉴스" }
+    ],
+    "daegu": [
+      { "id": "daegu-1", "name": "이진숙", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 방송통신위원장 / 前 대전MBC 사장", "photo": null, "status": "DECLARED", "pledges": ["대구 살리기"], "source": "뉴데일리 (2026.2.12 출마선언), 여론조사 22.6% 1위" },
+      { "id": "daegu-2", "name": "추경호", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "3선 국회의원 (달성) / 前 경제부총리", "photo": null, "status": "DECLARED", "pledges": ["대구 경제 재건"], "source": "경북매일 (2025.12.28 출마선언), 여론조사 14.4~19.4%" },
+      { "id": "daegu-3", "name": "주호영", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "6선 국회의원 (수성갑) / 現 국회 부의장", "photo": null, "status": "DECLARED", "pledges": ["대구 재도약"], "source": "뉴스1, 여론조사 12.7~14.1%" },
+      { "id": "daegu-4", "name": "윤재옥", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "4선 국회의원 (달서을) / 前 원내대표", "photo": null, "status": "DECLARED", "pledges": ["야전사령관형 리더십"], "source": "대구신문·서울신문" },
+      { "id": "daegu-5", "name": "최은석", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "초선 국회의원 (동구·군위) / 前 CJ제일제당 대표", "photo": null, "status": "DECLARED", "pledges": ["기업 경영 DNA로 대구 경제 재건"], "source": "대구MBC" },
+      { "id": "daegu-6", "name": "김부겸", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 국무총리 / 前 행안부 장관 / 前 국회의원 (수성)", "photo": null, "status": "RUMORED", "pledges": [], "source": "대구일보 여론조사 1위 28.7%, 출마 미표명" }
+    ],
+    "incheon": [
+      { "id": "incheon-1", "name": "박찬대", "party": "democratic", "partyName": "더불어민주당", "age": 60, "career": "4선 국회의원 (연수갑) / 前 원내대표·대표권한대행 / 공인회계사", "photo": null, "status": "DECLARED", "pledges": ["기업가적 인천 대전환", "공익·민간 이익 공유"], "source": "뉴스토마토·인천투데이, 여론조사 34~40.5%" },
+      { "id": "incheon-2", "name": "유정복", "party": "ppp", "partyName": "국민의힘", "age": 68, "career": "現 인천시장 (3선 도전) / 前 행안부·농림부 장관", "photo": null, "status": "DECLARED", "pledges": ["천원주택 확대", "인천 제2의료원", "F1 그랑프리 유치"], "source": "아주경제·서울경제 (2026.3.4), 여론조사 22~29%" },
+      { "id": "incheon-3", "name": "이기붕", "party": "newReform", "partyName": "개혁신당", "age": null, "career": "개혁신당 인천시당위원장", "photo": null, "status": "DECLARED", "pledges": [], "source": "인천투데이" }
+    ],
+    "gwangju": [
+      { "id": "gwangju-1", "name": "민형배", "party": "democratic", "partyName": "더불어민주당", "age": 58, "career": "재선 국회의원 (광산을) / 前 광산구청장(재선) / 前 청와대 시민사회비서관", "photo": null, "status": "EXPECTED", "pledges": [], "source": "광주MBC 여론조사 1위 33%, 오마이뉴스 30%" },
+      { "id": "gwangju-2", "name": "강기정", "party": "democratic", "partyName": "더불어민주당", "age": 62, "career": "現 광주시장 (재선 도전) / 前 청와대 정무수석 / 3선 국회의원", "photo": null, "status": "EXPECTED", "pledges": ["AI 산업 수도 광주", "광주형 일자리 2.0"], "source": "광주MBC 여론조사 14%" },
+      { "id": "gwangju-3", "name": "정준호", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "초선 국회의원 (북구갑)", "photo": null, "status": "RUMORED", "pledges": [], "source": "광주MBC 여론조사 6%" },
+      { "id": "gwangju-4", "name": "문인", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 광주 북구청장 / 前 광주시 행정부시장", "photo": null, "status": "EXPECTED", "pledges": [], "source": "광주MBC 여론조사 5%" },
+      { "id": "gwangju-5", "name": "이병훈", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 국회의원 (동구남구을)", "photo": null, "status": "EXPECTED", "pledges": [], "source": "광주MBC 여론조사 3%" },
+      { "id": "gwangju-6", "name": "이형석", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 국회의원 (북구을) / 前 민주당 최고위원", "photo": null, "status": "EXPECTED", "pledges": [], "source": "뉴시스·지방자치TV" }
+    ],
+    "daejeon": [
+      { "id": "daejeon-1", "name": "이장우", "party": "ppp", "partyName": "국민의힘", "age": 61, "career": "現 대전시장 (재선 도전) / 前 3선 국회의원 (동구)", "photo": null, "status": "DECLARED", "pledges": ["2048 대전 그랜드 플랜", "스마트시티"], "source": "굿모닝경제·뉴스1, 여론조사 11.6%" },
+      { "id": "daejeon-2", "name": "강훈식", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 대통령 비서실장 / 前 재선 국회의원 (아산을)", "photo": null, "status": "RUMORED", "pledges": [], "source": "대전일보 여론조사 1위 26.7%" },
+      { "id": "daejeon-3", "name": "양승조", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 충남도지사 / 4선 국회의원 (천안갑)", "photo": null, "status": "DECLARED", "pledges": ["대전충남 통합특별시 완성"], "source": "서울신문 (2026.2.11), 여론조사 9.3%" },
+      { "id": "daejeon-4", "name": "허태정", "party": "democratic", "partyName": "더불어민주당", "age": 60, "career": "前 대전시장 (민선7기) / 前 국회의원 (유성을)", "photo": null, "status": "DECLARED", "pledges": ["한국 제2경제수도", "대전충남 행정통합"], "source": "충청뉴스·금강일보, 여론조사 6.1%" },
+      { "id": "daejeon-5", "name": "박범계", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (서구을) / 前 법무부장관", "photo": null, "status": "DECLARED", "pledges": ["실리콘밸리형 이노베이션 허브"], "source": "충청뉴스 (2026.2.11), 여론조사 6.2%" },
+      { "id": "daejeon-6", "name": "장철민", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "재선 국회의원 (동구)", "photo": null, "status": "DECLARED", "pledges": [], "source": "서울신문" },
+      { "id": "daejeon-7", "name": "장종태", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "초선 국회의원 (서구갑)", "photo": null, "status": "DECLARED", "pledges": [], "source": "서울신문" }
+    ],
+    "ulsan": [
+      { "id": "ulsan-1", "name": "김두겸", "party": "ppp", "partyName": "국민의힘", "age": 68, "career": "現 울산시장 (재선 도전) / 前 남구청장", "photo": null, "status": "EXPECTED", "pledges": ["34조원 투자 유치 지속", "분산에너지 특화지역"], "source": "뉴스1 (4월 출마선언 예고), 여론조사 38.9%" },
+      { "id": "ulsan-2", "name": "김상욱", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (남구갑)", "photo": null, "status": "DECLARED", "pledges": ["민주도시·AX 선도도시"], "source": "뉴스1·오마이뉴스, 여론조사 20.2%" },
+      { "id": "ulsan-3", "name": "김종훈", "party": "progressive", "partyName": "진보당", "age": null, "career": "現 울산 동구청장 / 前 국회의원 / 현대중공업 노조 출신", "photo": null, "status": "DECLARED", "pledges": ["범진보 후보 단일화"], "source": "오마이뉴스, 여론조사 11.7%" },
+      { "id": "ulsan-4", "name": "안재현", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 노무현재단 울산 상임대표", "photo": null, "status": "DECLARED", "pledges": ["부유식 해상풍력 완수"], "source": "울산저널, 민주당 경선 확정" },
+      { "id": "ulsan-5", "name": "이선호", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 청와대 자치발전비서관 / 前 울주군수 / 변호사", "photo": null, "status": "DECLARED", "pledges": [], "source": "오마이뉴스, 민주당 경선 확정" }
+    ],
+    "sejong": [
+      { "id": "sejong-1", "name": "최민호", "party": "ppp", "partyName": "국민의힘", "age": 70, "career": "現 세종시장 / 前 국무총리 비서실장 / 31년 관료", "photo": null, "status": "DECLARED", "pledges": ["대한민국에서 가장 살기 좋은 도시", "글로벌 행정수도 완성"], "source": "국민의힘 공천 확정 (2026.3.11), 여론조사 21.3%" },
+      { "id": "sejong-2", "name": "조상호", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 이재명 정부 국정기획위원 / 前 세종시 경제부시장", "photo": null, "status": "DECLARED", "pledges": ["삼수도론", "경제 중심 행정수도"], "source": "굿모닝충청 여론조사 21.0%" },
+      { "id": "sejong-3", "name": "이춘희", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 세종시장 2·3대 / 前 행정도시건설청장", "photo": null, "status": "DECLARED", "pledges": ["행정수도 완성 마지막 기회"], "source": "굿모닝충청 여론조사 14.8%" },
+      { "id": "sejong-4", "name": "김수현", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "더민주세종혁신회의 상임대표", "photo": null, "status": "DECLARED", "pledges": [], "source": "굿모닝충청 여론조사 9.8%" },
+      { "id": "sejong-5", "name": "황운하", "party": "reform", "partyName": "조국혁신당", "age": null, "career": "現 비례대표 국회의원 / 前 대전경찰청장", "photo": null, "status": "DECLARED", "pledges": ["행정수도 완성의 종결자"], "source": "시사저널·오마이뉴스, 여론조사 6.0%" },
+      { "id": "sejong-6", "name": "고준일", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 세종시의회 의장", "photo": null, "status": "DECLARED", "pledges": [], "source": "굿모닝충청 여론조사 7.4%" },
+      { "id": "sejong-7", "name": "이준배", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 세종시 경제부시장", "photo": null, "status": "EXPECTED", "pledges": [], "source": "굿모닝충청 여론조사 8.1%" }
+    ],
+    "gyeonggi": [
+      { "id": "gyeonggi-1", "name": "김동연", "party": "democratic", "partyName": "더불어민주당", "age": 69, "career": "現 경기도지사 / 前 경제부총리 겸 기재부 장관", "photo": null, "status": "DECLARED", "pledges": ["경기국제공항 추진", "경기북도 신설", "피지컬 AI 비전"], "source": "경기신문·시사저널 (2026.3.12), 여론조사 30% 1위" },
+      { "id": "gyeonggi-2", "name": "양향자", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "삼성전자 상무 출신 / 국민의힘 최고위원", "photo": null, "status": "DECLARED", "pledges": ["반도체 산업 육성", "첨단산업 기반 경기도"], "source": "경인일보·세계일보 (2026.3.3 출마선언)" },
+      { "id": "gyeonggi-3", "name": "추미애", "party": "democratic", "partyName": "더불어민주당", "age": 67, "career": "6선 국회의원 / 前 민주당 대표 / 前 법무부 장관", "photo": null, "status": "DECLARED", "pledges": ["경기 혁신 주도"], "source": "시사저널·경인일보 (2026.3.12), 여론조사 18.3%" },
+      { "id": "gyeonggi-4", "name": "한준호", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "재선 국회의원 (고양을) / 前 대통령 수행실장", "photo": null, "status": "DECLARED", "pledges": ["이재명 정부 실용주의 경기도 완성"], "source": "서울신문·중부일보 (2026.2.12), 여론조사 7.8%" },
+      { "id": "gyeonggi-5", "name": "권칠승", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "3선 국회의원 (화성병) / 前 중기부 장관", "photo": null, "status": "DECLARED", "pledges": ["최소 환승 교통체계", "중입자 암 치료센터"], "source": "서울신문·헤럴드경제 (2026.2.3)" },
+      { "id": "gyeonggi-6", "name": "양기대", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 광명시장(재선) / 前 국회의원 (광명을)", "photo": null, "status": "DECLARED", "pledges": [], "source": "경인일보·중부일보, 여론조사 1.8%" }
+    ],
+    "gangwon": [
+      { "id": "gangwon-1", "name": "우상호", "party": "democratic", "partyName": "더불어민주당", "age": 63, "career": "前 대통령비서실 정무수석 / 4선 국회의원 (서대문갑) / 前 원내대표", "photo": null, "status": "DECLARED", "pledges": ["이해관계 조율·관리형 리더십", "강원 발전 예산 확보"], "source": "민주당 단수 공천 확정, KBS·리얼미터 여론조사 44~45.4%" },
+      { "id": "gangwon-2", "name": "김진태", "party": "ppp", "partyName": "국민의힘", "age": 62, "career": "現 강원도지사 / 前 3선 국회의원 / 검사 출신", "photo": null, "status": "DECLARED", "pledges": ["미래산업 글로벌도시", "AI·첨단산업 120개 사업"], "source": "강원도민일보, 여론조사 31~32%" }
+    ],
+    "chungbuk": [
+      { "id": "chungbuk-1", "name": "김영환", "party": "ppp", "partyName": "국민의힘", "age": 63, "career": "現 충북도지사 (재선 도전) / 前 3선 국회의원", "photo": null, "status": "EXPECTED", "pledges": ["오송 바이오클러스터", "충북 반도체 단지", "KTX 충북선 연장"], "source": "KBS청주 여론조사 10%" },
+      { "id": "chungbuk-2", "name": "신용한", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 지방시대위 부위원장 / 前 교수", "photo": null, "status": "DECLARED", "pledges": ["새로운 충북 개척", "젊은 충북"], "source": "뉴시스 (2026.2.26), 민주 여론조사 1위 14.3%" },
+      { "id": "chungbuk-3", "name": "노영민", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 대통령 비서실장 / 前 주중 대사 / 3선 국회의원 (흥덕)", "photo": null, "status": "DECLARED", "pledges": ["국정 노하우 활용 지역 발전"], "source": "충청도민일보, 여론조사 12.3%" },
+      { "id": "chungbuk-4", "name": "송기섭", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 진천군수 (3선)", "photo": null, "status": "DECLARED", "pledges": ["충북특별중심도 건설"], "source": "굿모닝충청, 여론조사 12.2%" },
+      { "id": "chungbuk-5", "name": "한범덕", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 청주시장 (재선)", "photo": null, "status": "DECLARED", "pledges": [], "source": "뉴스1, 여론조사 6.1%" },
+      { "id": "chungbuk-6", "name": "조길형", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 충주시장 (재선)", "photo": null, "status": "DECLARED", "pledges": [], "source": "뉴데일리, KBS청주 여론조사 5%" },
+      { "id": "chungbuk-7", "name": "윤갑근", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 충북도당위원장 / 前 대구고검 검사장", "photo": null, "status": "EXPECTED", "pledges": [], "source": "뉴데일리, 여론조사 5.9%" }
+    ],
+    "chungnam": [
+      { "id": "chungnam-1", "name": "김태흠", "party": "ppp", "partyName": "국민의힘", "age": 58, "career": "現 충남도지사 / 前 3선 국회의원 (보령·서천)", "photo": null, "status": "EXPECTED", "pledges": ["AI 대전환", "당진항 복합물류단지", "대전·충남 행정통합"], "source": "뉴시스, 여론조사 21% 선두" },
+      { "id": "chungnam-2", "name": "박수현", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (공주·부여·청양) / 前 청와대 대변인·국민소통수석", "photo": null, "status": "DECLARED", "pledges": ["충남대전 AI 기본사회", "대전충남 통합 완성"], "source": "경향신문·뉴스1 (2026.3.6)" },
+      { "id": "chungnam-3", "name": "양승조", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 충남도지사 / 4선 국회의원 (천안갑)", "photo": null, "status": "DECLARED", "pledges": ["대전충남 통합특별시"], "source": "뉴시스, 여론조사 12%" },
+      { "id": "chungnam-4", "name": "복기왕", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (아산갑) / 前 아산시장(재선)", "photo": null, "status": "EXPECTED", "pledges": [], "source": "충청뉴스·로컬투데이" },
+      { "id": "chungnam-5", "name": "나소열", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 서천군수", "photo": null, "status": "DECLARED", "pledges": [], "source": "굿모닝경제" },
+      { "id": "chungnam-6", "name": "박정현", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "前 부여군수", "photo": null, "status": "DECLARED", "pledges": [], "source": "굿모닝경제" }
+    ],
+    "jeonbuk": [
+      { "id": "jeonbuk-1", "name": "김관영", "party": "democratic", "partyName": "더불어민주당", "age": 58, "career": "現 전북도지사 (재선 도전) / 前 3선 국회의원 (군산)", "photo": null, "status": "DECLARED", "pledges": ["전북특별자치도 특례 확대", "새만금 활성화"], "source": "뉴시스 (2026.3.8 경선 3파전 확정)" },
+      { "id": "jeonbuk-2", "name": "안호영", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "3선 국회의원 (완주·진안·무주·장수) / 現 환경노동위원장", "photo": null, "status": "DECLARED", "pledges": [], "source": "뉴시스 경선 3파전 확정" },
+      { "id": "jeonbuk-3", "name": "이원택", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "재선 국회의원 (전주갑) / 前 전북도 정무부지사", "photo": null, "status": "DECLARED", "pledges": [], "source": "뉴시스 경선 3파전 확정" }
+    ],
+    "jeonnam": [
+      { "id": "jeonnam-1", "name": "김영록", "party": "democratic", "partyName": "더불어민주당", "age": 68, "career": "現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원", "photo": null, "status": "EXPECTED", "pledges": ["전남 해상풍력 허브", "광주-전남 메가시티"], "source": "프레시안 여론조사 1위 25.6%" },
+      { "id": "jeonnam-2", "name": "주철현", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장", "photo": null, "status": "EXPECTED", "pledges": [], "source": "프레시안 여론조사 2위 17.9%" },
+      { "id": "jeonnam-3", "name": "신정훈", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국회의원 (나주·화순) / 現 행안위원장", "photo": null, "status": "DECLARED", "pledges": [], "source": "전남일보 (2025.12.8 출마선언), 여론조사 3위 13.8%" },
+      { "id": "jeonnam-4", "name": "이개호", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관", "photo": null, "status": "EXPECTED", "pledges": [], "source": "프레시안 여론조사 4위 9.8%" }
+    ],
+    "gyeongbuk": [
+      { "id": "gyeongbuk-1", "name": "이철우", "party": "ppp", "partyName": "국민의힘", "age": 71, "career": "現 경북도지사 (3선 도전) / 前 5선 국회의원 (김천)", "photo": null, "status": "DECLARED", "pledges": ["대구경북신공항 완수", "국가산업단지 조성"], "source": "대구일보·경북일보" },
+      { "id": "gyeongbuk-2", "name": "권오을", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 국가보훈부 장관 / 前 3선 국회의원 (안동)", "photo": null, "status": "EXPECTED", "pledges": [], "source": "경북일보·브릿지경제" },
+      { "id": "gyeongbuk-3", "name": "오중기", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "民 포항북 지역위원장 / 前 청와대 균형발전비서관실", "photo": null, "status": "EXPECTED", "pledges": ["대기업 상생 생태계", "청년창업 메카"], "source": "경북일보·노컷뉴스" },
+      { "id": "gyeongbuk-4", "name": "임미애", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 비례대표 국회의원 / 前 경북도의원", "photo": null, "status": "RUMORED", "pledges": [], "source": "경북일보·대구일보" }
+    ],
+    "gyeongnam": [
+      { "id": "gyeongnam-1", "name": "김경수", "party": "democratic", "partyName": "더불어민주당", "age": null, "career": "現 지방시대위원장 / 前 경남도지사 (민선7기) / 前 국회의원 (김해을)", "photo": null, "status": "DECLARED", "pledges": [], "source": "민주당 단수 공천 확정 (MBC경남), 여론조사 47.7%" },
+      { "id": "gyeongnam-2", "name": "박완수", "party": "ppp", "partyName": "국민의힘", "age": 71, "career": "現 경남도지사 / 前 3선 창원시장", "photo": null, "status": "EXPECTED", "pledges": ["산업 경쟁력 강화", "도정 연속성"], "source": "경남도민일보, 여론조사 43.3%" },
+      { "id": "gyeongnam-3", "name": "조해진", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 3선 국회의원 (밀양·의령·함안·창녕)", "photo": null, "status": "DECLARED", "pledges": ["남부권 제2 수도권", "부울경 통합 지자체"], "source": "오마이뉴스·경남도민일보" },
+      { "id": "gyeongnam-4", "name": "전희영", "party": "progressive", "partyName": "진보당", "age": null, "career": "前 전교조 위원장", "photo": null, "status": "DECLARED", "pledges": [], "source": "나무위키·뉴스피릿" }
+    ],
+    "jeju": [
+      { "id": "jeju-1", "name": "문대림", "party": "democratic", "partyName": "더불어민주당", "age": 61, "career": "現 국회의원 (제주시을) / 前 제주도의회 의장(최연소)", "photo": null, "status": "DECLARED", "pledges": ["5천억 민생회복 추경", "20조원 투자 유치"], "source": "미디어제주·아시아경제 (2026.3.7 출마선언), 여론조사 26.0%" },
+      { "id": "jeju-2", "name": "오영훈", "party": "democratic", "partyName": "더불어민주당", "age": 57, "career": "現 제주도지사 (재선 도전) / 前 국회의원", "photo": null, "status": "DECLARED", "pledges": ["AI·에너지·우주산업 중심 미래 제주", "재생에너지 연금"], "source": "제이누리 여론조사 21.8%" },
+      { "id": "jeju-3", "name": "위성곤", "party": "democratic", "partyName": "더불어민주당", "age": 58, "career": "3선 국회의원 (서귀포) / 現 기후위기특별위원장", "photo": null, "status": "DECLARED", "pledges": ["제주사회 대전환 6대 비전"], "source": "제주일보·제주의소리 (2026.2.19), 여론조사 23.2%" },
+      { "id": "jeju-4", "name": "문성유", "party": "ppp", "partyName": "국민의힘", "age": null, "career": "前 기재부 기획조정실장 / 前 KAMCO 사장", "photo": null, "status": "DECLARED", "pledges": ["1차 산업 인력통합관리센터"], "source": "제이누리·제주의소리 (단수 공천 유력)" }
+    ]
+  }
+}

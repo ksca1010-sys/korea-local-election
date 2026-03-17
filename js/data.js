@@ -1584,6 +1584,111 @@ const ElectionData = (() => {
         'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '김광수', stance: '보수', support: 41.2, career: '현 교육감' }, { name: '이석문', stance: '진보', support: 38.6, career: '前 교육감' }] }
     };
 
+    // 교육감 역대 선거 결과 (직선제: 2007~2022, winner/runner는 성향)
+    // 교육감은 정당 공천이 없으므로 진보/보수/중도로 분류
+    const superintendentHistory = {
+        seoul:    [
+            { election: 2, year: 2010, winner: '진보', winnerName: '곽노현', rate: 44.5, runner: '보수', runnerName: '이원희', runnerRate: 42.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '조희연', rate: 33.4, runner: '보수', runnerName: '고승덕', runnerRate: 32.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '조희연', rate: 47.8, runner: '보수', runnerName: '조영달', runnerRate: 28.0, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '조희연', rate: 45.6, runner: '보수', runnerName: '조전혁', runnerRate: 44.6, turnout: 50.9 }
+        ],
+        busan:    [
+            { election: 2, year: 2010, winner: '보수', winnerName: '임혜경', rate: 33.0, runner: '진보', runnerName: '김석준', runnerRate: 31.1, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김석준', rate: 40.6, runner: '진보', runnerName: '임혜경', runnerRate: 34.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김석준', rate: 43.5, runner: '보수', runnerName: '하윤수', runnerRate: 39.6, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '하윤수', rate: 52.8, runner: '진보', runnerName: '김석준', runnerRate: 26.2, turnout: 50.9 }
+        ],
+        daegu:    [
+            { election: 2, year: 2010, winner: '보수', winnerName: '이청우', rate: 44.4, runner: '보수', runnerName: '반상진', runnerRate: 38.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '우동기', rate: 53.5, runner: '보수', runnerName: '이수진', runnerRate: 23.2, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '보수', winnerName: '강은희', rate: 50.2, runner: '진보', runnerName: '김인경', runnerRate: 21.1, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '강은희', rate: 66.5, runner: '진보', runnerName: '박성혁', runnerRate: 27.7, turnout: 50.9 }
+        ],
+        incheon:  [
+            { election: 2, year: 2010, winner: '진보', winnerName: '나길채', rate: 43.2, runner: '보수', runnerName: '김점덕', runnerRate: 39.7, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이청연', rate: 41.4, runner: '보수', runnerName: '이기찬', runnerRate: 38.1, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '도성훈', rate: 47.2, runner: '보수', runnerName: '고승의', runnerRate: 30.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '도성훈', rate: 45.2, runner: '보수', runnerName: '이달곤', runnerRate: 43.2, turnout: 50.9 }
+        ],
+        gwangju:  [
+            { election: 2, year: 2010, winner: '진보', winnerName: '장휘국', rate: 57.4, runner: '진보', runnerName: '박우식', runnerRate: 18.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장휘국', rate: 61.8, runner: '진보', runnerName: '이정선', runnerRate: 21.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장휘국', rate: 67.3, runner: '진보', runnerName: '이정선', runnerRate: 15.1, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '이정선', rate: 41.8, runner: '진보', runnerName: '정성홍', runnerRate: 22.4, turnout: 50.9 }
+        ],
+        daejeon:  [
+            { election: 2, year: 2010, winner: '중도', winnerName: '설동호', rate: 34.8, runner: '진보', runnerName: '김기동', runnerRate: 31.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '중도', winnerName: '설동호', rate: 48.8, runner: '진보', runnerName: '김기동', runnerRate: 40.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '중도', winnerName: '설동호', rate: 50.5, runner: '진보', runnerName: '김기동', runnerRate: 28.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '중도', winnerName: '설동호', rate: 52.3, runner: '보수', runnerName: '이영우', runnerRate: 25.1, turnout: 50.9 }
+        ],
+        ulsan:    [
+            { election: 2, year: 2010, winner: '보수', winnerName: '김복만', rate: 52.7, runner: '진보', runnerName: '노옥희', runnerRate: 47.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김복만', rate: 50.5, runner: '진보', runnerName: '노옥희', runnerRate: 49.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '노옥희', rate: 53.8, runner: '보수', runnerName: '김복만', runnerRate: 46.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '노옥희', rate: 51.8, runner: '보수', runnerName: '천창수', runnerRate: 48.2, turnout: 50.9 }
+        ],
+        sejong:   [
+            { election: 4, year: 2018, winner: '진보', winnerName: '최교진', rate: 62.4, runner: '보수', runnerName: '오경석', runnerRate: 37.6, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '최교진', rate: 55.2, runner: '보수', runnerName: '강태중', runnerRate: 44.8, turnout: 50.9 }
+        ],
+        gyeonggi: [
+            { election: 2, year: 2010, winner: '진보', winnerName: '김상곤', rate: 50.2, runner: '보수', runnerName: '이재정', runnerRate: 49.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이재정', rate: 33.7, runner: '보수', runnerName: '이범희', runnerRate: 33.4, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이재정', rate: 52.3, runner: '보수', runnerName: '인요한', runnerRate: 29.5, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임태희', rate: 50.6, runner: '진보', runnerName: '이재정', runnerRate: 37.1, turnout: 50.9 }
+        ],
+        gangwon:  [
+            { election: 2, year: 2010, winner: '진보', winnerName: '민병희', rate: 42.5, runner: '보수', runnerName: '임창환', runnerRate: 38.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '민병희', rate: 51.2, runner: '보수', runnerName: '박운서', runnerRate: 48.8, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '민병희', rate: 55.1, runner: '보수', runnerName: '이상인', runnerRate: 44.9, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '신경호', rate: 51.7, runner: '진보', runnerName: '민병희', runnerRate: 48.3, turnout: 50.9 }
+        ],
+        chungbuk: [
+            { election: 2, year: 2010, winner: '보수', winnerName: '이기우', rate: 47.1, runner: '진보', runnerName: '심의보', runnerRate: 39.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김병우', rate: 47.8, runner: '보수', runnerName: '이기우', runnerRate: 43.1, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김병우', rate: 56.2, runner: '보수', runnerName: '심의보', runnerRate: 43.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '윤건영', rate: 52.1, runner: '진보', runnerName: '심의보', runnerRate: 47.9, turnout: 50.9 }
+        ],
+        chungnam: [
+            { election: 2, year: 2010, winner: '진보', winnerName: '김지철', rate: 45.2, runner: '보수', runnerName: '최병우', runnerRate: 37.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김지철', rate: 56.3, runner: '보수', runnerName: '오세열', runnerRate: 43.7, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김지철', rate: 60.8, runner: '보수', runnerName: '오세열', runnerRate: 39.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김지철', rate: 51.4, runner: '보수', runnerName: '오연호', runnerRate: 48.6, turnout: 50.9 }
+        ],
+        jeonbuk: [
+            { election: 2, year: 2010, winner: '진보', winnerName: '김승환', rate: 62.3, runner: '보수', runnerName: '양춘삼', runnerRate: 20.4, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김승환', rate: 73.6, runner: '중도', runnerName: '김규성', runnerRate: 26.4, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김승환', rate: 76.2, runner: '중도', runnerName: '황종현', runnerRate: 23.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '서거석', rate: 63.5, runner: '보수', runnerName: '이창식', runnerRate: 36.5, turnout: 50.9 }
+        ],
+        jeonnam:  [
+            { election: 2, year: 2010, winner: '진보', winnerName: '장만채', rate: 57.1, runner: '진보', runnerName: '이봉길', runnerRate: 22.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장만채', rate: 72.5, runner: '진보', runnerName: '고석규', runnerRate: 27.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장석웅', rate: 68.3, runner: '보수', runnerName: '고영진', runnerRate: 31.7, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김대중', rate: 54.1, runner: '보수', runnerName: '박정일', runnerRate: 25.8, turnout: 50.9 }
+        ],
+        gyeongbuk: [
+            { election: 2, year: 2010, winner: '보수', winnerName: '이영우', rate: 56.5, runner: '보수', runnerName: '안양옥', runnerRate: 33.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '이영우', rate: 58.1, runner: '진보', runnerName: '안양옥', runnerRate: 41.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '보수', winnerName: '임종식', rate: 55.3, runner: '진보', runnerName: '이영국', runnerRate: 44.7, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임종식', rate: 58.9, runner: '진보', runnerName: '안형준', runnerRate: 41.1, turnout: 50.9 }
+        ],
+        gyeongnam: [
+            { election: 2, year: 2010, winner: '보수', winnerName: '고대준', rate: 49.1, runner: '진보', runnerName: '권정호', runnerRate: 42.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '박종훈', rate: 50.8, runner: '보수', runnerName: '고대준', runnerRate: 49.2, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '박종훈', rate: 60.5, runner: '보수', runnerName: '권정오', runnerRate: 39.5, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '박종훈', rate: 51.1, runner: '보수', runnerName: '김태진', runnerRate: 48.9, turnout: 50.9 }
+        ],
+        jeju:     [
+            { election: 2, year: 2010, winner: '진보', winnerName: '이석문', rate: 52.8, runner: '보수', runnerName: '양성봉', runnerRate: 47.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이석문', rate: 55.1, runner: '보수', runnerName: '고석화', runnerRate: 44.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이석문', rate: 58.6, runner: '보수', runnerName: '김광수', runnerRate: 41.4, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '김광수', rate: 51.2, runner: '진보', runnerName: '이석문', runnerRate: 48.8, turnout: 50.9 }
+        ]
+    };
+
     // BEGIN NESDC_LATEST_POLLS
     const latestPolls = [];
     // END NESDC_LATEST_POLLS
@@ -2133,8 +2238,43 @@ const ElectionData = (() => {
         },
         getSuperintendentData: (regionKey) => superintendents[regionKey] || null,
         getSuperintendentColor: (stance) => superintendentStanceColors[stance] || '#888888',
+        getSuperintendentStance(regionKey, candidateName) {
+            const data = superintendents[regionKey];
+            if (!data) return null;
+            const match = (data.candidates || []).find(c => c.name === candidateName);
+            return match?.stance || null;
+        },
         superintendentStanceColors,
-        getMayorData: (regionKey, districtName) => {
+        // ── 기초단체장 후보 데이터 (mayor_candidates.json) ──
+        _mayorCandidatesCache: null,
+        loadMayorCandidates() {
+            if (this._mayorCandidatesCache) return Promise.resolve(this._mayorCandidatesCache);
+            return fetch('data/candidates/mayor_candidates.json')
+                .then(r => r.ok ? r.json() : null)
+                .then(data => {
+                    this._mayorCandidatesCache = data;
+                    console.log(`[MayorCandidates] Loaded: ${data?._meta?.lastUpdated || 'unknown'}`);
+                    return data;
+                })
+                .catch(err => { console.warn('[MayorCandidates] Failed:', err); return null; });
+        },
+        getMayorData: function(regionKey, districtName) {
+            const cache = this._mayorCandidatesCache;
+            if (cache?.candidates?.[regionKey]?.[districtName]) {
+                const cands = cache.candidates[regionKey][districtName]
+                    .filter(c => c.status !== 'WITHDRAWN')
+                    .map((c, i) => ({
+                        id: `${regionKey}-${districtName}-${i}`,
+                        name: c.name,
+                        party: c.party || 'independent',
+                        career: c.career || '',
+                        pledges: c.pledges || [],
+                        status: c.status,
+                        dataSource: c.dataSource,
+                    }));
+                if (cands.length) return { candidates: cands };
+            }
+            // fallback: mock data
             const data = generateMockElectionData();
             return data?.mayor?.[regionKey]?.[districtName] || null;
         },
@@ -2203,6 +2343,7 @@ const ElectionData = (() => {
         // ── 역대 선거 데이터 API ──
         historicalElections,
         getHistoricalData: (regionKey) => historicalElections[regionKey] || [],
+        getSuperintendentHistoricalData: (regionKey) => superintendentHistory[regionKey] || [],
         getHistoricalPartyName: (partyKey, election) => {
             if (!partyKey) return '';
             const names = historicalPartyNames[partyKey];
@@ -2402,6 +2543,41 @@ const ElectionData = (() => {
                 });
         },
 
+        // ── 교육감 후보 데이터 (superintendent.json) 로드 ──
+        _superintendentCandidatesCache: null,
+        loadSuperintendentCandidates() {
+            if (this._superintendentCandidatesCache) return Promise.resolve(this._superintendentCandidatesCache);
+            return fetch('data/candidates/superintendent.json')
+                .then(r => r.ok ? r.json() : null)
+                .then(data => {
+                    this._superintendentCandidatesCache = data;
+                    // superintendent.json의 후보를 기존 superintendents 데이터에 반영
+                    if (data?.candidates) {
+                        Object.entries(data.candidates).forEach(([regionKey, candidates]) => {
+                            if (!superintendents[regionKey]) return;
+                            // WITHDRAWN이 아닌 후보만
+                            superintendents[regionKey].candidates = candidates
+                                .filter(c => c.status !== 'WITHDRAWN')
+                                .map(c => ({
+                                    name: c.name,
+                                    stance: c.stance || '중도',
+                                    support: null,
+                                    career: c.career || '',
+                                    status: c.status,
+                                    pledges: c.pledges || [],
+                                    dataSource: c.dataSource,
+                                }));
+                        });
+                    }
+                    console.log(`[SuperintendentCandidates] Loaded: ${data?._meta?.lastUpdated || 'unknown'}`);
+                    return data;
+                })
+                .catch(err => {
+                    console.warn('[SuperintendentCandidates] Failed to load:', err);
+                    return null;
+                });
+        },
+
         // ── 광역단체장 현황 외부 JSON 로드 API ──
         _governorStatusLoaded: false,
         loadGovernorStatus() {
@@ -2478,13 +2654,16 @@ const ElectionData = (() => {
                                 target.mayor.actingReason = m.actingReason || '';
                             }
                         } else if (existingMayor.acting) {
-                            // 외부 JSON에 acting 필드 없음 → 기존 권한대행 상태 보존
                             target.mayor = { ...existingMayor };
                         } else {
                             target.mayor = {
                                 name: m.name || null,
                                 party: m.party || 'independent'
                             };
+                        }
+                        // leadParty도 현직자 정당으로 동기화 (지도 색상 반영)
+                        if (m.party && !m.acting) {
+                            target.leadParty = m.party;
                         }
                     });
                     this._mayorStatusLoaded = true;
@@ -2836,6 +3015,8 @@ const ElectionData = (() => {
                     if (governorTitle) score -= 18;
                     if (mayorTitle) score -= 18;
                     score -= nationalHits * 10;
+                    // 도지사 후보가 results에 있으면 혼합 조사 → 교육감에서 제외
+                    if (governorHits >= 2) score -= 60;
                     matched = !municipality && score >= 40;
                 } else if (electionType === 'mayor') {
                     if (canonicalDistrict) {
@@ -2898,17 +3079,78 @@ const ElectionData = (() => {
             return [...seen.values()];
         },
 
+        // ── 여론조사 표시용 API ──
+        getLatestPollsForDisplay(regionKey, electionType = 'governor', districtName = null) {
+            // getPollsForSelection은 이미 최신순 정렬되어 반환
+            return this.getPollsForSelection(regionKey, electionType, districtName);
+        },
+
+        getTrendGroups(regionKey, electionType = 'governor', districtName = null) {
+            // 같은 조사기관의 2회 이상 조사를 그룹핑 (추이 차트용)
+            const polls = this.getPollsForSelection(regionKey, electionType, districtName);
+            const groups = {};
+            polls.forEach(p => {
+                if (!p.results || p.results.length < 2) return; // 유효 결과 없으면 스킵
+                const key = p.pollOrg || 'unknown';
+                if (!groups[key]) groups[key] = { pollOrg: key, polls: [] };
+                groups[key].polls.push(p);
+            });
+            // 2회 이상만 반환, 최신 조사 기준 정렬
+            return Object.values(groups)
+                .filter(g => g.polls.length >= 2)
+                .sort((a, b) => {
+                    const aDate = a.polls[0]?.publishDate || '';
+                    const bDate = b.polls[0]?.publishDate || '';
+                    return bDate.localeCompare(aDate);
+                });
+        },
+
+        getLatestPollPerElection(regionKey) {
+            // 선거유형별 최신 1건 반환
+            const result = {};
+            ['governor', 'superintendent', 'mayor'].forEach(type => {
+                const polls = this.getPollsForSelection(regionKey, type);
+                if (polls.length > 0) result[type] = polls[0];
+            });
+            return result;
+        },
+
         // ── 선거 쟁점 개요 ──
         _overviewCache: null,
         loadElectionOverview() {
             if (this._overviewCache) return Promise.resolve(this._overviewCache);
-            return fetch('data/election_overview.json')
+            return fetch('data/election_overview.json?v=' + Date.now())
                 .then(r => r.ok ? r.json() : null)
                 .then(data => { this._overviewCache = data; return data; })
                 .catch(() => null);
         },
-        getElectionOverview(regionKey) {
-            return this._overviewCache?.regions?.[regionKey] || null;
+        getElectionOverview(regionKey, electionType, districtName) {
+            const cache = this._overviewCache;
+            if (!cache) return null;
+            if (electionType === 'superintendent') {
+                return cache?.superintendent?.[regionKey] || null;
+            }
+            if (electionType === 'mayor' && districtName) {
+                return cache?.mayor?.[regionKey]?.[districtName] || null;
+            }
+            // 기본: 광역단체장
+            return cache?.regions?.[regionKey] || null;
+        },
+
+        // ── 기초단체장 역대 선거 데이터 ──
+        _mayorHistoryCache: null,
+        loadMayorHistory() {
+            if (this._mayorHistoryCache) return Promise.resolve(this._mayorHistoryCache);
+            return fetch('data/mayor_history.json')
+                .then(r => r.ok ? r.json() : null)
+                .then(data => { this._mayorHistoryCache = data; return data; })
+                .catch(() => null);
+        },
+        getMayorHistoricalData(regionKey, districtName) {
+            const cache = this._mayorHistoryCache;
+            if (!cache?.history) return [];
+            const key = `${regionKey}/${districtName}`;
+            return cache.history[key] || [];
         },
 
         // 기존 호환용

@@ -1,0 +1,20 @@
+# Pipeline source files - not needed for deployment (exceed 25MB limit)
+data/대한민국_광역자치단체_경계_2017.geojson
+data/대한민국_기초자치단체_경계_2017.geojson
+data/서울시_집계구_2016.geojson
+data/서울시_기초구역_2018.geojson
+data/전국_광역지자체_2018.geojson
+data/council/hangjeongdong_2026.geojson
+
+# Python pipeline scripts and raw data
+scripts/
+*_byulpyo/
+prd/
+
+# Development
+__pycache__/
+*.py[cod]
+.env
+.env.*
+node_modules/
+.wrangler/

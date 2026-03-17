@@ -1,0 +1,1747 @@
+[
+  {
+    "name": "gangwon-reject-other-region-primary",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "충북 경선 본격화…후보 간 신경전",
+    "description": "충북지사 선거 경선 구도 분석",
+    "link": "https://example.com/chungbuk-primary",
+    "expectedOk": false
+  },
+  {
+    "name": "gangwon-reject-multi-region-incumbents",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "부산·경북 등 현역 지자체장 거취 주목",
+    "description": "강원도 언급 없는 전국 정치 기사",
+    "link": "https://example.com/incumbents",
+    "expectedOk": false
+  },
+  {
+    "name": "seoul-reject-national-politicians-only",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "이준석·한동훈 회동 정치권 파장",
+    "description": "중앙정치권 차기 행보를 다룬 일반 정치 기사",
+    "link": "https://example.com/central-politics",
+    "expectedOk": false
+  },
+  {
+    "name": "seoul-reject-gyeongbuk-governor",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "경북지사 선거 판세 요동",
+    "description": "경북지사 후보 경쟁 심화",
+    "link": "https://example.com/gyeongbuk-governor",
+    "expectedOk": false
+  },
+  {
+    "name": "seoul-reject-chungnam-governor",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "김태흠 충남지사 재선 도전",
+    "description": "충남지사 선거 공약 발표",
+    "link": "https://example.com/chungnam-governor",
+    "expectedOk": false
+  },
+  {
+    "name": "jeonnam-reject-gyeyangeul",
+    "regionKey": "jeonnam",
+    "categoryId": "all",
+    "title": "송영길 계양을 출마설 재점화",
+    "description": "인천 지역 총선급 정치 이슈를 다룬 기사",
+    "link": "https://example.com/gyeyang-eul",
+    "expectedOk": false
+  },
+  {
+    "name": "seoul-accept-local-outlet-mayor",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "서울일보, 서울시장 후보 공약 발표 집중 점검",
+    "description": "서울시장 선거에서 주거 정책 경쟁 본격화",
+    "link": "https://www.seoulilbo.com/news/seoul-mayor",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:seoulilbo.com",
+      "site:senews.co.kr"
+    ]
+  },
+  {
+    "name": "gangwon-accept-local-outlet-governor",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "강원일보, 강원도지사 후보 경선 레이스 본격화",
+    "description": "강원도지사 선거 후보 공약 경쟁",
+    "link": "https://www.kwnews.co.kr/page/view/202603120001",
+    "expectedOk": true,
+    "expectedPrimaryIncludes": [
+      "site:g1tv.co.kr",
+      "site:kwnews.co.kr",
+      "site:kado.net"
+    ]
+  },
+  {
+    "name": "chungbuk-accept-local-outlet-governor",
+    "regionKey": "chungbuk",
+    "categoryId": "all",
+    "title": "MBC충북, 충북도지사 후보 공약 검증",
+    "description": "충북도지사 선거에서 산업 정책 경쟁",
+    "link": "https://www.mbccb.co.kr/news/article/1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.8,
+    "expectedPrimaryIncludes": [
+      "site:jbnews.com",
+      "site:goodmorningcc.com",
+      "site:mbccb.co.kr"
+    ]
+  },
+  {
+    "name": "gyeongbuk-accept-local-outlet-governor",
+    "regionKey": "gyeongbuk",
+    "categoryId": "all",
+    "title": "경북매일신문, 경북도지사 후보 경선 구도 분석",
+    "description": "경북도지사 선거 공약 경쟁 본격화",
+    "link": "https://www.kbmaeil.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kbmaeil.com",
+      "site:hidomin.com"
+    ]
+  },
+  {
+    "name": "jeonnam-accept-local-outlet-governor",
+    "regionKey": "jeonnam",
+    "categoryId": "all",
+    "title": "목포MBC, 전남도지사 선거 후보 공약 검증",
+    "description": "전남도지사 후보들 해상교통 공약 경쟁",
+    "link": "https://mpmbc.co.kr/article/jeonnam-governor",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.8,
+    "expectedPrimaryIncludes": [
+      "site:mpmbc.co.kr",
+      "site:jnilbo.com"
+    ],
+    "expectedSecondaryIncludes": [
+      "무등일보"
+    ]
+  },
+  {
+    "name": "busan-accept-local-outlet-mayor-poll",
+    "regionKey": "busan",
+    "categoryId": "poll",
+    "title": "부산일보 여론조사, 부산시장 후보 양자대결 오차범위 접전",
+    "description": "부산시장 후보 지지율 41.2% 대 39.8%, 표본오차 ±3.1%p",
+    "link": "https://www.busan.com/view/busan-poll",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:busan.com",
+      "site:kookje.co.kr",
+      "site:knn.co.kr",
+      "site:busanmbc.co.kr"
+    ]
+  },
+  {
+    "name": "busan-accept-local-broadcast-mayor",
+    "regionKey": "busan",
+    "categoryId": "all",
+    "title": "부산MBC, 부산시장 후보 공약 검증",
+    "description": "부산시장 선거에서 해양 정책 경쟁",
+    "link": "https://busanmbc.co.kr/news/article/1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.8,
+    "expectedPrimaryIncludes": [
+      "site:busanmbc.co.kr"
+    ]
+  },
+  {
+    "name": "chungnam-accept-governor-local-outlet",
+    "regionKey": "chungnam",
+    "categoryId": "all",
+    "title": "충청투데이, 충남도지사 후보 공약 검증",
+    "description": "충남도지사 선거에서 산업 공약 경쟁",
+    "link": "https://www.cctoday.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:cctoday.co.kr",
+      "site:cnnews.co.kr",
+      "site:daejonilbo.com"
+    ]
+  },
+  {
+    "name": "jeonbuk-accept-local-outlet-governor-poll",
+    "regionKey": "jeonbuk",
+    "categoryId": "poll",
+    "title": "전북일보 여론조사, 전북지사 후보 지지율 접전",
+    "description": "전북지사 가상대결 42.1% 대 38.7%, 응답률 12.4%",
+    "link": "https://www.jjan.kr/article/202603120001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jjan.kr",
+      "site:jbdomin.co.kr",
+      "site:sjbnews.com",
+      "site:jmbc.co.kr"
+    ]
+  },
+  {
+    "name": "suncheon-accept-district-mayor",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "순천시",
+    "categoryId": "candidate",
+    "title": "순천시장 후보 등록 임박…공약 경쟁 가열",
+    "description": "순천시장 선거 출마 선언과 유세 일정 발표",
+    "link": "https://example.com/suncheon-mayor",
+    "expectedOk": true
+  },
+  {
+    "name": "wonju-accept-district-outlet-mention",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "원주시",
+    "categoryId": "all",
+    "title": "원주신문, 원주시장 후보 공약 발표",
+    "description": "원주시장 선거에서 교통 공약 경쟁",
+    "link": "https://example.com/wonju-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "wonju-accept-district-outlet-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "원주시",
+    "categoryId": "all",
+    "title": "원주신문, 원주시장 후보 공약 발표",
+    "description": "원주시장 선거에서 교통 공약 경쟁",
+    "link": "https://www.iwjnews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:iwjnews.com"
+    ]
+  },
+  {
+    "name": "boeun-accept-district-outlet-mention",
+    "regionKey": "chungbuk",
+    "electionType": "mayor",
+    "districtName": "보은군",
+    "categoryId": "candidate",
+    "title": "보은사람들, 보은군수 후보 등록 임박",
+    "description": "보은군수 선거 출마 선언과 유세 일정 발표",
+    "link": "https://example.com/boeun-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "boeun-accept-district-outlet-host",
+    "regionKey": "chungbuk",
+    "electionType": "mayor",
+    "districtName": "보은군",
+    "categoryId": "candidate",
+    "title": "보은사람들, 보은군수 후보 등록 임박",
+    "description": "보은군수 선거 출마 선언과 유세 일정 발표",
+    "link": "http://www.boeunpeople.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:boeunpeople.com"
+    ]
+  },
+  {
+    "name": "gwacheon-accept-district-outlet-mention",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "과천시",
+    "categoryId": "all",
+    "title": "과천시대신문, 과천시장 후보 공약 발표",
+    "description": "과천시장 선거에서 교통·주거 공약 경쟁",
+    "link": "https://example.com/gwacheon-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "gwacheon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "과천시",
+    "categoryId": "all",
+    "title": "과천시대신문, 과천시장 후보 공약 발표",
+    "description": "과천시장 선거에서 교통·주거 공약 경쟁",
+    "link": "http://www.gwachonnews.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gwachonnews.co.kr"
+    ]
+  },
+  {
+    "name": "uijeongbu-accept-district-outlet-mention",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "의정부시",
+    "categoryId": "all",
+    "title": "북경기신문, 의정부시장 후보 공약 발표",
+    "description": "의정부시장 선거에서 교통·복지 공약 경쟁",
+    "link": "https://example.com/uijeongbu-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "uijeongbu-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "의정부시",
+    "categoryId": "all",
+    "title": "의정부신문, 의정부시장 후보 공약 발표",
+    "description": "의정부시장 선거에서 교통·복지 공약 경쟁",
+    "link": "http://www.ujbnews.net/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ujbnews.net"
+    ]
+  },
+  {
+    "name": "mokpo-accept-district-outlet-mention",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "목포시",
+    "categoryId": "all",
+    "title": "전남중앙신문, 목포시장 후보 공약 발표",
+    "description": "목포시장 선거에서 해양관광·교통 공약 경쟁",
+    "link": "https://example.com/mokpo-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "mokpo-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "목포시",
+    "categoryId": "all",
+    "title": "전남중앙신문, 목포시장 후보 공약 발표",
+    "description": "목포시장 선거에서 해양관광·교통 공약 경쟁",
+    "link": "http://www.jn-joongang.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jn-joongang.co.kr"
+    ]
+  },
+  {
+    "name": "sancheong-accept-district-outlet-mention",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "산청군",
+    "categoryId": "candidate",
+    "title": "산청시대, 산청군수 후보 공약 발표",
+    "description": "산청군수 선거에서 농업·관광 공약 경쟁",
+    "link": "https://example.com/sancheong-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "hapcheon-accept-district-outlet-mention",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "합천군",
+    "categoryId": "candidate",
+    "title": "합천열린신문, 합천군수 후보 공약 발표",
+    "description": "합천군수 선거에서 농업·관광 공약 경쟁",
+    "link": "https://example.com/hapcheon-local-outlet",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.74
+  },
+  {
+    "name": "hapcheon-accept-district-outlet-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "합천군",
+    "categoryId": "candidate",
+    "title": "합천신문사, 합천군수 후보 공약 발표",
+    "description": "합천군수 선거에서 농업·관광 공약 경쟁",
+    "link": "http://www.hcnews1995.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hcnews1995.com"
+    ]
+  },
+  {
+    "name": "yeosu-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "여수시",
+    "categoryId": "all",
+    "title": "여수신문, 여수시장 후보 공약 점검",
+    "description": "여수시장 선거에서 해양관광 공약 경쟁",
+    "link": "http://yeosu.yestv.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:yeosu.yestv.co.kr"
+    ]
+  },
+  {
+    "name": "hoengseong-accept-district-outlet-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "횡성군",
+    "categoryId": "candidate",
+    "title": "횡성희망신문, 횡성군수 후보 공약 발표",
+    "description": "횡성군수 선거에서 농업 정책 공약 경쟁",
+    "link": "https://www.hshope.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hshope.kr"
+    ]
+  },
+  {
+    "name": "dangjin-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "당진시",
+    "categoryId": "all",
+    "title": "당진시대, 당진시장 후보 공약 점검",
+    "description": "당진시장 선거에서 산업단지 공약 경쟁",
+    "link": "https://www.djtimes.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:djtimes.co.kr"
+    ]
+  },
+  {
+    "name": "paju-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "파주시",
+    "categoryId": "all",
+    "title": "파주시대, 파주시장 후보 토론회 개최",
+    "description": "파주시장 선거에서 교통·도시개발 공약 경쟁",
+    "link": "https://www.pajusidae.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:pajusidae.com"
+    ]
+  },
+  {
+    "name": "yeoncheon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "연천군",
+    "categoryId": "candidate",
+    "title": "연천신문, 연천군수 후보 공약 발표",
+    "description": "연천군수 선거에서 접경지역 발전 공약 경쟁",
+    "link": "https://www.ycgmnews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ycgmnews.com"
+    ]
+  },
+  {
+    "name": "bucheon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "부천시",
+    "categoryId": "all",
+    "title": "새부천신문, 부천시장 후보 공약 점검",
+    "description": "부천시장 선거에서 복지·교통 공약 경쟁",
+    "link": "https://www.saebucheon.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:saebucheon.com"
+    ]
+  },
+  {
+    "name": "icheon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "이천시",
+    "categoryId": "all",
+    "title": "이천신문, 이천시장 후보 토론회 개최",
+    "description": "이천시장 선거에서 산업·교통 공약 경쟁",
+    "link": "http://www.ic119.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ic119.co.kr"
+    ]
+  },
+  {
+    "name": "gwangyang-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "광양시",
+    "categoryId": "all",
+    "title": "광양시민신문, 광양시장 후보 토론회 개최",
+    "description": "광양시장 선거에서 항만·산업 공약 경쟁",
+    "link": "https://www.gycitizen.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gycitizen.com"
+    ]
+  },
+  {
+    "name": "seosan-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "서산시",
+    "categoryId": "all",
+    "title": "서산타임즈, 서산시장 후보 공약 발표",
+    "description": "서산시장 선거에서 산업·환경 공약 경쟁",
+    "link": "http://www.seosantimes.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:seosantimes.com"
+    ]
+  },
+  {
+    "name": "taean-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "태안군",
+    "categoryId": "candidate",
+    "title": "태안미래신문, 태안군수 후보 공약 점검",
+    "description": "태안군수 선거에서 관광·해양 공약 경쟁",
+    "link": "https://www.tanews.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:tanews.co.kr"
+    ]
+  },
+  {
+    "name": "yeonggwang-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "영광군",
+    "categoryId": "candidate",
+    "title": "영광21신문, 영광군수 후보 공약 발표",
+    "description": "영광군수 선거에서 에너지 정책 공약 경쟁",
+    "link": "https://www.yg21.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:yg21.co.kr"
+    ]
+  },
+  {
+    "name": "jangseong-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "장성군",
+    "categoryId": "candidate",
+    "title": "장성투데이, 장성군수 후보 공약 발표",
+    "description": "장성군수 선거에서 농업·교통 공약 경쟁",
+    "link": "http://www.jstnews.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jstnews.co.kr"
+    ]
+  },
+  {
+    "name": "anyang-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "안양시",
+    "categoryId": "all",
+    "title": "안양신문, 안양시장 후보 공약 발표",
+    "description": "안양시장 선거에서 교통·복지 공약 경쟁",
+    "link": "https://anyangnews.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:anyangnews.co.kr"
+    ]
+  },
+  {
+    "name": "geumsan-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "금산군",
+    "categoryId": "candidate",
+    "title": "금산진악신문, 금산군수 후보 공약 발표",
+    "description": "금산군수 선거에서 인삼·관광 공약 경쟁",
+    "link": "https://m.xn--jj0b33w89d9pct7dkrj.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:xn--jj0b33w89d9pct7dkrj.com"
+    ]
+  },
+  {
+    "name": "pyeongtaek-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "평택시",
+    "categoryId": "all",
+    "title": "평택시민신문, 평택시장 후보 토론회 개최",
+    "description": "평택시장 선거에서 도시개발·교통 공약 경쟁",
+    "link": "https://www.pttimes.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:pttimes.com"
+    ]
+  },
+  {
+    "name": "cheongyang-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "청양군",
+    "categoryId": "candidate",
+    "title": "뉴스청양, 청양군수 후보 공약 발표",
+    "description": "청양군수 선거에서 농업·복지 공약 경쟁",
+    "link": "http://www.echeongyang.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:echeongyang.co.kr"
+    ]
+  },
+  {
+    "name": "yeongam-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "영암군",
+    "categoryId": "candidate",
+    "title": "영암군민신문, 영암군수 후보 공약 발표",
+    "description": "영암군수 선거에서 농업·관광 공약 경쟁",
+    "link": "https://www.yanews.net/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:yanews.net"
+    ]
+  },
+  {
+    "name": "pocheon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "포천시",
+    "categoryId": "all",
+    "title": "포천뉴스, 포천시장 후보 공약 발표",
+    "description": "포천시장 선거에서 지역개발·교통 공약 경쟁",
+    "link": "https://www.ipcs21.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ipcs21.com"
+    ]
+  },
+  {
+    "name": "jindo-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "진도군",
+    "categoryId": "candidate",
+    "title": "진도투데이, 진도군수 후보 공약 발표",
+    "description": "진도군수 선거에서 해양·관광 공약 경쟁",
+    "link": "https://www.jindotoday.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jindotoday.com"
+    ]
+  },
+  {
+    "name": "hadong-accept-district-outlet-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "하동군",
+    "categoryId": "candidate",
+    "title": "하동신문, 하동군수 후보 공약 발표",
+    "description": "하동군수 선거에서 관광·농업 공약 경쟁",
+    "link": "http://www.hadongsinmoon.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hadongsinmoon.com"
+    ]
+  },
+  {
+    "name": "gwangju-gyeonggi-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "광주시",
+    "categoryId": "all",
+    "title": "투데이광주하남, 광주시장 후보 공약 발표",
+    "description": "광주시장 선거에서 교통·도시개발 공약 경쟁",
+    "link": "http://www.tgh.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:tgh.kr"
+    ]
+  },
+  {
+    "name": "hanam-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "하남시",
+    "categoryId": "all",
+    "title": "하남시장 후보 공약 발표",
+    "description": "하남시장 선거에서 교통·주거 공약 경쟁",
+    "link": "http://www.tgh.kr/news/articleView.html?idxno=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:tgh.kr"
+    ]
+  },
+  {
+    "name": "yangsan-accept-district-outlet-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "양산시",
+    "categoryId": "all",
+    "title": "양산신문, 양산시장 후보 공약 발표",
+    "description": "양산시장 선거에서 산업·교통 공약 경쟁",
+    "link": "http://www.yangsanilbo.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:yangsanilbo.com"
+    ]
+  },
+  {
+    "name": "wando-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "완도군",
+    "categoryId": "candidate",
+    "title": "전남인뉴스, 완도군수 후보 공약 발표",
+    "description": "완도군수 선거에서 해양·관광 공약 경쟁",
+    "link": "http://www.jninnews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jninnews.com"
+    ]
+  },
+  {
+    "name": "goheung-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "고흥군",
+    "categoryId": "all",
+    "title": "고흥뉴스, 고흥군수 후보 공약 발표",
+    "description": "고흥군수 선거에서 농수산·관광 공약 경쟁",
+    "link": "https://www.goheungnews.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:goheungnews.kr"
+    ]
+  },
+  {
+    "name": "damyang-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "담양군",
+    "categoryId": "all",
+    "title": "담양곡성타임스, 담양군수 후보 공약 발표",
+    "description": "담양군수 선거에서 관광·농업 공약 경쟁",
+    "link": "https://www.dgtimes.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:dgtimes.co.kr"
+    ]
+  },
+  {
+    "name": "ansan-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "안산시",
+    "categoryId": "all",
+    "title": "반월신문, 안산시장 후보 공약 발표",
+    "description": "안산시장 선거에서 산업·교통 공약 경쟁",
+    "link": "https://www.banwol.net/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:banwol.net"
+    ]
+  },
+  {
+    "name": "gimhae-accept-district-outlet-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "김해시",
+    "categoryId": "all",
+    "title": "김해뉴스, 김해시장 후보 공약 발표",
+    "description": "김해시장 선거에서 산업·교통 공약 경쟁",
+    "link": "https://www.gimhaenews.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gimhaenews.co.kr"
+    ]
+  },
+  {
+    "name": "hwasun-accept-district-outlet-host",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "화순군",
+    "categoryId": "candidate",
+    "title": "화순매일신문, 화순군수 후보 공약 발표",
+    "description": "화순군수 선거에서 바이오·농업 공약 경쟁",
+    "link": "https://www.hsmaeil.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hsmaeil.co.kr"
+    ]
+  },
+  {
+    "name": "andong-accept-district-outlet-host",
+    "regionKey": "gyeongbuk",
+    "electionType": "mayor",
+    "districtName": "안동시",
+    "categoryId": "all",
+    "title": "안동뉴스, 안동시장 후보 공약 발표",
+    "description": "안동시장 선거에서 관광 정책 경쟁",
+    "link": "https://www.kbjn.co.kr/news/article/1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kbjn.co.kr"
+    ]
+  },
+  {
+    "name": "seoul-reject-byelection-history",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "서울시장 보궐선거 5주년…당시 판세 재조명",
+    "description": "2021년 보궐선거를 되짚는 회고 기사",
+    "link": "https://example.com/seoul-byelection",
+    "expectedOk": false
+  },
+  {
+    "name": "jeonnam-reject-local-mayor-only",
+    "regionKey": "jeonnam",
+    "categoryId": "all",
+    "title": "순천시장 후보 등록 마감…3파전 확정",
+    "description": "순천시장 선거 유세 일정 발표",
+    "link": "https://example.com/suncheon-only",
+    "expectedOk": false
+  },
+  {
+    "name": "gyeonggi-reject-sports-match",
+    "regionKey": "gyeonggi",
+    "categoryId": "all",
+    "title": "경기 막판 역전승…수원 홈팬 환호",
+    "description": "프로축구 경기 결과와 선수 인터뷰",
+    "link": "https://example.com/sports",
+    "expectedOk": false
+  },
+  {
+    "name": "incheon-reject-national-assembly-race",
+    "regionKey": "incheon",
+    "categoryId": "all",
+    "title": "인천 계양을 국회의원 출마 선언",
+    "description": "총선 재도전을 준비하는 정치권 기사",
+    "link": "https://example.com/gyeyang",
+    "expectedOk": false
+  },
+  {
+    "name": "daejeon-reject-party-leadership-event",
+    "regionKey": "daejeon",
+    "categoryId": "all",
+    "title": "대전서 당대표 선거 합동연설회 개최",
+    "description": "전당대회 일정과 당권 경쟁 기사",
+    "link": "https://example.com/party-race",
+    "expectedOk": false
+  },
+  {
+    "name": "gwangju-reject-superintendent-race",
+    "regionKey": "gwangju",
+    "categoryId": "all",
+    "title": "광주교육감 후보 토론회 개최",
+    "description": "교육감 선거 정책 검증 토론회",
+    "link": "https://example.com/gj-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "gyeonggi-accept-governor-local-outlet",
+    "regionKey": "gyeonggi",
+    "categoryId": "all",
+    "title": "경기일보, 경기도지사 후보 공약 경쟁 본격화",
+    "description": "경기도지사 선거에서 교통 공약 대결",
+    "link": "https://www.kyeonggi.com/article/202603120001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kyeonggi.com",
+      "site:kyeongin.com",
+      "site:suwonilbo.co.kr",
+      "site:incheonilbo.com"
+    ]
+  },
+  {
+    "name": "incheon-accept-mayor-poll",
+    "regionKey": "incheon",
+    "categoryId": "poll",
+    "title": "인천일보 여론조사, 인천시장 후보 지지율 오차범위 접전",
+    "description": "인천시장 양자대결 39.4% 대 37.8%, 표본오차 ±3.0%p",
+    "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:incheonilbo.com",
+      "site:kihoilbo.co.kr",
+      "site:incheontimes.com",
+      "site:kyeongin.com"
+    ]
+  },
+  {
+    "name": "daegu-accept-mayor-local-outlet",
+    "regionKey": "daegu",
+    "categoryId": "all",
+    "title": "매일신문, 대구시장 후보 공약 검증",
+    "description": "대구시장 선거에서 산업단지 공약 경쟁",
+    "link": "https://www.imaeil.com/page/view/202603120001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:imaeil.com",
+      "site:idaegu.co.kr",
+      "site:tbc.co.kr"
+    ]
+  },
+  {
+    "name": "daegu-accept-broadcast-mayor-local-outlet",
+    "regionKey": "daegu",
+    "categoryId": "all",
+    "title": "TBC, 대구시장 후보 공약 점검",
+    "description": "대구시장 선거 산업 공약 비교",
+    "link": "https://www.tbc.co.kr/news/article/1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.8,
+    "expectedPrimaryIncludes": [
+      "site:tbc.co.kr"
+    ]
+  },
+  {
+    "name": "daejeon-accept-mayor-local-outlet",
+    "regionKey": "daejeon",
+    "categoryId": "all",
+    "title": "대전일보, 대전시장 후보 경선 레이스 본격화",
+    "description": "대전시장 선거에서 교통 공약 경쟁",
+    "link": "https://www.daejonilbo.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:daejonilbo.com",
+      "site:cctoday.co.kr",
+      "site:tjmbc.co.kr"
+    ]
+  },
+  {
+    "name": "ulsan-accept-mayor-local-outlet",
+    "regionKey": "ulsan",
+    "categoryId": "all",
+    "title": "울산매일, 울산시장 후보 공약 발표",
+    "description": "울산시장 선거 핵심 공약 검증",
+    "link": "https://www.iusm.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:iusm.co.kr",
+      "site:ujeil.com",
+      "site:usanmbc.co.kr"
+    ]
+  },
+  {
+    "name": "sejong-accept-mayor-local-outlet",
+    "regionKey": "sejong",
+    "categoryId": "all",
+    "title": "세종포스트, 세종시장 후보 정책 대결",
+    "description": "세종시장 선거에서 행정수도 공약 경쟁",
+    "link": "https://www.sjpost.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:sjpost.co.kr",
+      "site:daejonilbo.com"
+    ]
+  },
+  {
+    "name": "gwangju-accept-mayor-local-outlet",
+    "regionKey": "gwangju",
+    "categoryId": "all",
+    "title": "광주일보, 광주시장 후보 공약 검증",
+    "description": "광주시장 선거에서 교통 정책 경쟁",
+    "link": "https://www.kwangju.co.kr/article.php?aid=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kwangju.co.kr",
+      "site:kjdaily.com",
+      "site:mdilbo.com",
+      "site:ikbc.co.kr",
+      "site:kjmbc.co.kr"
+    ]
+  },
+  {
+    "name": "gyeongnam-accept-governor-local-outlet",
+    "regionKey": "gyeongnam",
+    "categoryId": "all",
+    "title": "경남도민일보, 경남지사 후보 경선 구도 분석",
+    "description": "경남지사 선거 후보 공약 비교",
+    "link": "https://www.gndomin.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:knnews.co.kr",
+      "site:gndomin.com",
+      "site:chmbc.co.kr",
+      "site:knnb.co.kr"
+    ]
+  },
+  {
+    "name": "gangneung-accept-district-province-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "강릉시",
+    "categoryId": "all",
+    "title": "G1방송, 강릉시장 후보 공약 발표",
+    "description": "강릉시장 선거에서 관광·교통 공약 경쟁",
+    "link": "https://www.g1tv.co.kr/news/?newsid=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:g1tv.co.kr"
+    ]
+  },
+  {
+    "name": "chuncheon-accept-district-province-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "춘천시",
+    "categoryId": "all",
+    "title": "G1방송, 춘천시장 후보 공약 발표",
+    "description": "춘천시장 선거에서 교통·관광 공약 경쟁",
+    "link": "https://www.g1tv.co.kr/news/?newsid=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:g1tv.co.kr"
+    ]
+  },
+  {
+    "name": "cheongju-accept-district-province-host",
+    "regionKey": "chungbuk",
+    "electionType": "mayor",
+    "districtName": "청주시",
+    "categoryId": "all",
+    "title": "MBC충북, 청주시장 후보 공약 발표",
+    "description": "청주시장 선거에서 교통·산업 공약 경쟁",
+    "link": "https://www.mbccb.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 0.82,
+    "expectedPrimaryIncludes": [
+      "site:mbccb.co.kr"
+    ]
+  },
+  {
+    "name": "ganghwa-accept-district-province-host",
+    "regionKey": "incheon",
+    "electionType": "mayor",
+    "districtName": "강화군",
+    "categoryId": "candidate",
+    "title": "인천일보, 강화군수 후보 공약 발표",
+    "description": "강화군수 선거에서 관광·농업 공약 경쟁",
+    "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:incheonilbo.com"
+    ]
+  },
+  {
+    "name": "gwangsan-accept-district-province-host",
+    "regionKey": "gwangju",
+    "electionType": "mayor",
+    "districtName": "광산구",
+    "categoryId": "candidate",
+    "title": "광주일보, 광산구청장 후보 공약 발표",
+    "description": "광산구청장 선거에서 산업·교통 공약 경쟁",
+    "link": "https://www.kwangju.co.kr/article.php?aid=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kwangju.co.kr"
+    ]
+  },
+  {
+    "name": "goyang-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "고양시",
+    "categoryId": "all",
+    "title": "고양신문, 고양시장 후보 공약 발표",
+    "description": "고양시장 선거에서 교통·도시개발 공약 경쟁",
+    "link": "https://www.mygoyang.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:mygoyang.com"
+    ]
+  },
+  {
+    "name": "hwaseong-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "화성시",
+    "categoryId": "all",
+    "title": "화성뉴스, 화성시장 후보 공약 발표",
+    "description": "화성시장 선거에서 교통·산업 공약 경쟁",
+    "link": "https://www.hsnews.or.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hsnews.or.kr"
+    ]
+  },
+  {
+    "name": "seongnam-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "성남시",
+    "categoryId": "all",
+    "title": "성남시민신문, 성남시장 후보 공약 발표",
+    "description": "성남시장 선거에서 교통·재개발 공약 경쟁",
+    "link": "https://www.snsiminnews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:snsiminnews.com"
+    ]
+  },
+  {
+    "name": "siheung-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "시흥시",
+    "categoryId": "all",
+    "title": "주간시흥, 시흥시장 후보 공약 발표",
+    "description": "시흥시장 선거에서 산업·교통 공약 경쟁",
+    "link": "https://www.sh-news.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:sh-news.com"
+    ]
+  },
+  {
+    "name": "gongju-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "공주시",
+    "categoryId": "all",
+    "title": "공주신문, 공주시장 후보 공약 발표",
+    "description": "공주시장 선거에서 문화·교통 공약 경쟁",
+    "link": "http://www.e-gongju.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:e-gongju.com"
+    ]
+  },
+  {
+    "name": "nonsan-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "논산시",
+    "categoryId": "all",
+    "title": "e논산신문, 논산시장 후보 공약 발표",
+    "description": "논산시장 선거에서 농업·국방 공약 경쟁",
+    "link": "http://www.enonsan.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:enonsan.com"
+    ]
+  },
+  {
+    "name": "gangneung-accept-district-outlet-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "강릉시",
+    "categoryId": "all",
+    "title": "강릉뉴스, 강릉시장 후보 공약 발표",
+    "description": "강릉시장 선거에서 관광·교통 공약 경쟁",
+    "link": "https://www.gangneungnews.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gangneungnews.kr"
+    ]
+  },
+  {
+    "name": "chuncheon-accept-district-outlet-host",
+    "regionKey": "gangwon",
+    "electionType": "mayor",
+    "districtName": "춘천시",
+    "categoryId": "all",
+    "title": "춘천사람들, 춘천시장 후보 공약 발표",
+    "description": "춘천시장 선거에서 교통·교육 공약 경쟁",
+    "link": "https://www.ccnews.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ccnews.kr"
+    ]
+  },
+  {
+    "name": "buyeo-accept-district-outlet-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "부여군",
+    "categoryId": "all",
+    "title": "21세기부여신문, 부여군수 후보 공약 발표",
+    "description": "부여군수 선거에서 관광·농업 공약 경쟁",
+    "link": "http://www.buyeonews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:buyeonews.com"
+    ]
+  },
+  {
+    "name": "gyeryong-accept-district-province-host",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "districtName": "계룡시",
+    "categoryId": "all",
+    "title": "충청투데이, 계룡시장 후보 공약 발표",
+    "description": "계룡시장 선거에서 교통·정주환경 공약 경쟁",
+    "link": "https://www.cctoday.co.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:cctoday.co.kr"
+    ]
+  },
+  {
+    "name": "sancheong-accept-district-province-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "산청군",
+    "categoryId": "all",
+    "title": "경남도민일보, 산청군수 후보 공약 발표",
+    "description": "산청군수 선거에서 농업·관광 공약 경쟁",
+    "link": "https://www.gndomin.com/news/articleView.html?idxno=1000003",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gndomin.com"
+    ]
+  },
+  {
+    "name": "yeongdeok-accept-district-outlet-host",
+    "regionKey": "gyeongbuk",
+    "electionType": "mayor",
+    "districtName": "영덕군",
+    "categoryId": "all",
+    "title": "영덕신문, 영덕군수 후보 공약 발표",
+    "description": "영덕군수 선거에서 해양·관광 공약 경쟁",
+    "link": "http://www.ydknews.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:ydknews.kr"
+    ]
+  },
+  {
+    "name": "yeongyang-accept-district-outlet-host",
+    "regionKey": "gyeongbuk",
+    "electionType": "mayor",
+    "districtName": "영양군",
+    "categoryId": "all",
+    "title": "영양신문, 영양군수 후보 공약 발표",
+    "description": "영양군수 선거에서 농업·복지 공약 경쟁",
+    "link": "http://www.yygnews.com/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:yygnews.com"
+    ]
+  },
+  {
+    "name": "jinju-accept-district-province-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "진주시",
+    "categoryId": "all",
+    "title": "경남도민일보, 진주시장 후보 공약 발표",
+    "description": "진주시장 선거에서 문화·교통 공약 경쟁",
+    "link": "https://www.gndomin.com/news/articleView.html?idxno=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:gndomin.com"
+    ]
+  },
+  {
+    "name": "jinju-accept-district-outlet-host",
+    "regionKey": "gyeongnam",
+    "electionType": "mayor",
+    "districtName": "진주시",
+    "categoryId": "all",
+    "title": "뉴스경남, 진주시장 후보 공약 발표",
+    "description": "진주시장 선거에서 문화·교통 공약 경쟁",
+    "link": "http://www.newsgn.com/sub_read.html?uid=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:newsgn.com"
+    ]
+  },
+  {
+    "name": "gyeongju-accept-district-province-host",
+    "regionKey": "gyeongbuk",
+    "electionType": "mayor",
+    "districtName": "경주시",
+    "categoryId": "all",
+    "title": "경북매일신문, 경주시장 후보 공약 발표",
+    "description": "경주시장 선거에서 관광·문화 공약 경쟁",
+    "link": "https://www.kbmaeil.com/news/articleView.html?idxno=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:kbmaeil.com"
+    ]
+  },
+  {
+    "name": "pohang-accept-district-province-host",
+    "regionKey": "gyeongbuk",
+    "electionType": "mayor",
+    "districtName": "포항시",
+    "categoryId": "all",
+    "title": "경북도민일보, 포항시장 후보 공약 발표",
+    "description": "포항시장 선거에서 산업·해양 공약 경쟁",
+    "link": "https://www.hidomin.com/news/articleView.html?idxno=1000002",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:hidomin.com"
+    ]
+  },
+  {
+    "name": "jeju-accept-governor-local-outlet",
+    "regionKey": "jeju",
+    "categoryId": "all",
+    "title": "한라일보, 제주지사 후보 공약 경쟁 본격화",
+    "description": "제주지사 선거에서 관광 정책 대결",
+    "link": "https://www.ihalla.com/article.php?aid=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:jejuilbo.net",
+      "site:ihalla.com",
+      "site:jemin.com"
+    ]
+  },
+  {
+    "name": "suwon-accept-district-outlet-host",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "수원시",
+    "categoryId": "all",
+    "title": "수원일보, 수원시장 후보 공약 발표",
+    "description": "수원시장 선거에서 교통·주거 공약 경쟁",
+    "link": "https://www.suwonilbo.kr/news/articleView.html?idxno=1000001",
+    "expectedOk": true,
+    "expectedLocalityMin": 1,
+    "expectedPrimaryIncludes": [
+      "site:suwonilbo.kr"
+    ]
+  },
+  {
+    "name": "suwon-accept-district-mayor",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "수원시",
+    "categoryId": "candidate",
+    "title": "수원시장 후보 출마 선언…유세전 본격화",
+    "description": "수원시장 선거 캠프 출범과 현장 방문 일정",
+    "link": "https://example.com/suwon-mayor",
+    "expectedOk": true
+  },
+  {
+    "name": "observed-gangwon-chungbuk-primary",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "충북 경선 본격화",
+    "description": "강원도 뉴스 전체에서 노출된 다른 지역 경선 기사",
+    "link": "https://example.com/observed/gangwon-chungbuk-primary",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-gangwon-busan-gyeongbuk-incumbents",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "부산 경북 등 현역 지자체장 거취 주목",
+    "description": "강원도 뉴스 전체에서 노출된 타 지역 현역 지자체장 기사",
+    "link": "https://example.com/observed/gangwon-busan-gyeongbuk",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-seoul-lee-han",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "이준석 한동훈 회동 정치권 파장",
+    "description": "서울 뉴스 전체에서 노출된 중앙정치 기사",
+    "link": "https://example.com/observed/seoul-lee-han",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-seoul-gyeongbuk-governor",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "경북지사 선거 판세 요동",
+    "description": "서울 뉴스 전체에서 노출된 경북지사 기사",
+    "link": "https://example.com/observed/seoul-gyeongbuk-governor",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-seoul-kimtaeheum",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "김태흠 충남지사 재선 도전",
+    "description": "서울 뉴스 전체에서 노출된 충남지사 기사",
+    "link": "https://example.com/observed/seoul-kimtaeheum",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-jeonnam-song-younggil",
+    "regionKey": "jeonnam",
+    "categoryId": "all",
+    "title": "송영길 계양을 출마설 재점화",
+    "description": "전국 단위 국회의원 기사인데 전남 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/jeonnam-governor-reject-national",
+    "expectedOk": false
+  },
+  {
+    "name": "observed-seoul-byelection-history",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "서울시장 보궐선거 5주년…당시 판세 재조명",
+    "description": "현재 지방선거가 아닌 과거 보궐선거 회고 기사",
+    "link": "https://example.com/observed/seoul-byelection-history",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-busan-governor-accept",
+    "regionKey": "busan",
+    "categoryId": "all",
+    "title": "부산일보, 부산시장 후보 공약 경쟁 본격화",
+    "description": "부산시장 선거에서 교통·주거 공약 비교 보도",
+    "link": "https://example.com/starter/busan-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-busan-governor-reject-superintendent",
+    "regionKey": "busan",
+    "categoryId": "all",
+    "title": "부산교육감 후보 단일화 논의 재점화",
+    "description": "교육감 선거 기사인데 부산 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/busan-governor-reject-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-chungbuk-governor-accept",
+    "regionKey": "chungbuk",
+    "categoryId": "all",
+    "title": "중부매일, 충북지사 후보 경선 구도 분석",
+    "description": "충북지사 선거 구도와 지역 공약 비교 기사",
+    "link": "https://example.com/starter/chungbuk-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-chungbuk-governor-reject-sports",
+    "regionKey": "chungbuk",
+    "categoryId": "all",
+    "title": "충북 경기 막판 역전승…팬들 환호",
+    "description": "스포츠 기사인데 충북 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/chungbuk-governor-reject-sports",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-chungnam-governor-accept",
+    "regionKey": "chungnam",
+    "categoryId": "all",
+    "title": "충청신문, 충남지사 후보 공약 검증 확대",
+    "description": "충남지사 선거 공약과 지역 현안 기사",
+    "link": "https://example.com/starter/chungnam-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-chungnam-governor-reject-sports",
+    "regionKey": "chungnam",
+    "categoryId": "all",
+    "title": "충남 경기 막판 결승골",
+    "description": "스포츠 기사인데 충남 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/chungnam-governor-reject-sports",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-daegu-governor-accept",
+    "regionKey": "daegu",
+    "categoryId": "all",
+    "title": "대구일보, 대구시장 후보 공약 경쟁 심화",
+    "description": "대구시장 선거 공약 비교와 지역 현안 기사",
+    "link": "https://example.com/starter/daegu-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-daegu-governor-reject-superintendent",
+    "regionKey": "daegu",
+    "categoryId": "all",
+    "title": "대구교육감 후보 토론회 개최",
+    "description": "교육감 기사인데 대구 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/daegu-governor-reject-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-daejeon-governor-accept",
+    "regionKey": "daejeon",
+    "categoryId": "all",
+    "title": "대전일보, 대전시장 후보 공약 검증 본격화",
+    "description": "대전시장 선거 공약과 교통 현안 비교 기사",
+    "link": "https://example.com/starter/daejeon-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-daejeon-governor-reject-party",
+    "regionKey": "daejeon",
+    "categoryId": "all",
+    "title": "당대표 선거 앞두고 충청권 순회 일정",
+    "description": "정당 지도부 기사인데 대전 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/daejeon-governor-reject-party",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-gangwon-governor-accept",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "강원일보, 강원도지사 후보 공약 경쟁 본격화",
+    "description": "강원도지사 선거 공약과 지역 균형발전 기사",
+    "link": "https://example.com/starter/gangwon-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-gangwon-governor-reject-other-region",
+    "regionKey": "gangwon",
+    "categoryId": "all",
+    "title": "부산시장 선거 막판 변수 부상",
+    "description": "다른 지역 광역단체장 기사인데 강원 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/gangwon-governor-reject-other-region",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-gwangju-governor-accept",
+    "regionKey": "gwangju",
+    "categoryId": "all",
+    "title": "광주일보, 광주시장 후보 토론회 개최",
+    "description": "광주시장 선거 정책 토론회와 공약 검증 기사",
+    "link": "https://example.com/starter/gwangju-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-gwangju-governor-reject-district",
+    "regionKey": "gwangju",
+    "categoryId": "all",
+    "title": "광산구청장 출마 선언 잇따라",
+    "description": "기초단체장 기사인데 광주 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/gwangju-governor-reject-district",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-gyeongbuk-governor-accept",
+    "regionKey": "gyeongbuk",
+    "categoryId": "all",
+    "title": "경북매일신문, 경북도지사 후보 공약 경쟁 본격화",
+    "description": "경북도지사 선거 공약 비교와 지역 현안 기사",
+    "link": "https://example.com/starter/gyeongbuk-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-gyeongbuk-governor-reject-superintendent",
+    "regionKey": "gyeongbuk",
+    "categoryId": "all",
+    "title": "경북교육감 후보 정책 토론회 개최",
+    "description": "교육감 기사인데 경북 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/gyeongbuk-governor-reject-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-gyeonggi-governor-accept",
+    "regionKey": "gyeonggi",
+    "categoryId": "all",
+    "title": "경인일보, 경기지사 후보 공약 대결 본격화",
+    "description": "경기지사 선거에서 교통·주거 공약 비교 기사",
+    "link": "https://example.com/starter/gyeonggi-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-gyeonggi-governor-reject-other-region",
+    "regionKey": "gyeonggi",
+    "categoryId": "all",
+    "title": "충남지사 선거 판세 요동",
+    "description": "다른 지역 광역단체장 기사인데 경기 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/gyeonggi-governor-reject-other-region",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-gyeongnam-governor-accept",
+    "regionKey": "gyeongnam",
+    "categoryId": "all",
+    "title": "경남도민일보, 경남지사 후보 공약 경쟁 본격화",
+    "description": "경남지사 선거 공약과 지역 현안 비교 기사",
+    "link": "https://example.com/starter/gyeongnam-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-gyeongnam-governor-reject-superintendent",
+    "regionKey": "gyeongnam",
+    "categoryId": "all",
+    "title": "경남교육감 후보 토론회 개최",
+    "description": "교육감 기사인데 경남 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/gyeongnam-governor-reject-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-incheon-governor-accept",
+    "regionKey": "incheon",
+    "categoryId": "all",
+    "title": "인천일보, 인천시장 후보 공약 검증 본격화",
+    "description": "인천시장 선거 주요 공약과 지역 현안 비교 기사",
+    "link": "https://example.com/starter/incheon-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-incheon-governor-reject-national",
+    "regionKey": "incheon",
+    "categoryId": "all",
+    "title": "국회의원 보궐선거 판세 분석",
+    "description": "전국 단위 국회의원 선거 기사인데 인천 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/incheon-governor-reject-national",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-jeju-governor-accept",
+    "regionKey": "jeju",
+    "categoryId": "all",
+    "title": "제주일보, 제주도지사 선거 여론전 가열",
+    "description": "제주도지사 선거 후보 간 공약 경쟁 기사",
+    "link": "https://example.com/starter/jeju-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-jeju-governor-reject-national",
+    "regionKey": "jeju",
+    "categoryId": "all",
+    "title": "당대표 선거 앞두고 전국 순회 일정 공개",
+    "description": "전국 정당 기사인데 제주 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/jeju-governor-reject-national",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-jeonbuk-governor-accept",
+    "regionKey": "jeonbuk",
+    "categoryId": "all",
+    "title": "전북일보, 전북지사 후보 공약 경쟁 본격화",
+    "description": "전북지사 선거 공약과 지역 현안 비교 기사",
+    "link": "https://example.com/starter/jeonbuk-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-jeonbuk-governor-reject-superintendent",
+    "regionKey": "jeonbuk",
+    "categoryId": "all",
+    "title": "전북교육감 후보 토론회 개최",
+    "description": "교육감 기사인데 전북 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/jeonbuk-governor-reject-superintendent",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-jeonnam-governor-accept",
+    "regionKey": "jeonnam",
+    "categoryId": "all",
+    "title": "남도일보, 전남지사 후보 공약 검증 본격화",
+    "description": "전남지사 선거 공약과 지역 균형발전 기사",
+    "link": "https://example.com/starter/jeonnam-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-sejong-governor-accept",
+    "regionKey": "sejong",
+    "categoryId": "all",
+    "title": "세종포스트, 세종시장 후보 행정수도 공약 경쟁",
+    "description": "세종시장 선거 공약과 현안 비교 기사",
+    "link": "https://example.com/starter/sejong-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-sejong-governor-reject-national",
+    "regionKey": "sejong",
+    "categoryId": "all",
+    "title": "대선 주자 전국 순회 일정 발표",
+    "description": "전국 정치 기사인데 세종 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/sejong-governor-reject-national",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-seoul-governor-accept",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "서울일보, 서울시장 후보 공약 비교 본격화",
+    "description": "서울시장 선거 핵심 공약과 지역 현안 비교 기사",
+    "link": "https://example.com/starter/seoul-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-seoul-governor-reject-other-region",
+    "regionKey": "seoul",
+    "categoryId": "all",
+    "title": "경북지사 선거 판세 급변",
+    "description": "다른 지역 광역단체장 기사인데 서울 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/seoul-governor-reject-other-region",
+    "expectedOk": false
+  },
+  {
+    "name": "starter-ulsan-governor-accept",
+    "regionKey": "ulsan",
+    "categoryId": "all",
+    "title": "울산매일, 울산시장 후보 산업 공약 대결",
+    "description": "울산시장 선거 산업·일자리 공약 비교 기사",
+    "link": "https://example.com/starter/ulsan-governor-accept",
+    "expectedOk": true
+  },
+  {
+    "name": "starter-ulsan-governor-reject-district",
+    "regionKey": "ulsan",
+    "categoryId": "all",
+    "title": "동구청장 선거 출마 선언 잇따라",
+    "description": "기초단체장 기사인데 울산 광역단체장 탭에 섞이면 안 됨",
+    "link": "https://example.com/starter/ulsan-governor-reject-district",
+    "expectedOk": false
+  }
+]

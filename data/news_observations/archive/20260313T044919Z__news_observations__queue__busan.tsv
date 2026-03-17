@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-busan-governor-accept	busan	all	governor		부산일보, 부산시장 후보 공약 경쟁 본격화	부산시장 선거에서 교통·주거 공약 비교 보도	https://example.com/starter/busan-governor-accept	true	뉴스 QA 추천 배치용 스타터. 부산 광역단체장 정탐 확인
+starter-busan-governor-reject-superintendent	busan	all	governor		부산교육감 후보 단일화 논의 재점화	교육감 선거 기사인데 부산 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/busan-governor-reject-superintendent	false	뉴스 QA 추천 배치용 스타터. 다른 선거 종류 차단 확인

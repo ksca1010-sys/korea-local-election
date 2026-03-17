@@ -1,0 +1,3142 @@
+{
+  "seoul": [
+    {
+      "name": "종로구",
+      "population": 148000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "정문헌",
+        "party": "ppp"
+      },
+      "keyIssue": "도심 재생",
+      "voters": 129816,
+      "prevElection": {
+        "turnout": 54.4
+      }
+    },
+    {
+      "name": "중구",
+      "population": 125000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김길성",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 활성화",
+      "voters": 112039,
+      "prevElection": {
+        "turnout": 53.8
+      }
+    },
+    {
+      "name": "용산구",
+      "population": 228000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박희영",
+        "party": "ppp"
+      },
+      "keyIssue": "용산공원 개발",
+      "voters": 199061,
+      "prevElection": {
+        "turnout": 52.6
+      }
+    },
+    {
+      "name": "성동구",
+      "population": 298000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "정원오 서울시장 출마 사퇴 (2026.3)"
+      },
+      "keyIssue": "성수 도시재생",
+      "voters": 251990,
+      "prevElection": {
+        "turnout": 55.5
+      }
+    },
+    {
+      "name": "광진구",
+      "population": 345000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김경호",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 개선",
+      "voters": 305462,
+      "prevElection": {
+        "turnout": 51.4
+      }
+    },
+    {
+      "name": "동대문구",
+      "population": 343000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이필형",
+        "party": "ppp"
+      },
+      "keyIssue": "패션산업 활성화",
+      "voters": 302024,
+      "prevElection": {
+        "turnout": 52
+      }
+    },
+    {
+      "name": "중랑구",
+      "population": 388000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "류경기",
+        "party": "democratic"
+      },
+      "keyIssue": "주거 환경 개선",
+      "voters": 348762,
+      "prevElection": {
+        "turnout": 51
+      }
+    },
+    {
+      "name": "성북구",
+      "population": 427000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이승로",
+        "party": "democratic"
+      },
+      "keyIssue": "교육 인프라",
+      "voters": 379123,
+      "prevElection": {
+        "turnout": 53.3
+      }
+    },
+    {
+      "name": "강북구",
+      "population": 297000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이순희",
+        "party": "democratic"
+      },
+      "keyIssue": "균형 발전",
+      "voters": 268130,
+      "prevElection": {
+        "turnout": 49.7
+      }
+    },
+    {
+      "name": "도봉구",
+      "population": 316000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "오언석",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 접근성",
+      "voters": 280913,
+      "prevElection": {
+        "turnout": 52.9
+      }
+    },
+    {
+      "name": "노원구",
+      "population": 507000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "오승록",
+        "party": "democratic"
+      },
+      "keyIssue": "교육·일자리",
+      "voters": 441748,
+      "prevElection": {
+        "turnout": 55.5
+      }
+    },
+    {
+      "name": "은평구",
+      "population": 465000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김미경",
+        "party": "democratic"
+      },
+      "keyIssue": "도시 재생",
+      "voters": 418387,
+      "prevElection": {
+        "turnout": 51.6
+      }
+    },
+    {
+      "name": "서대문구",
+      "population": 304000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이성헌",
+        "party": "ppp"
+      },
+      "keyIssue": "대학가 활성화",
+      "voters": 271718,
+      "prevElection": {
+        "turnout": 54.1
+      }
+    },
+    {
+      "name": "마포구",
+      "population": 368000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박강수",
+        "party": "ppp"
+      },
+      "keyIssue": "문화 산업",
+      "voters": 324528,
+      "prevElection": {
+        "turnout": 53.9
+      }
+    },
+    {
+      "name": "양천구",
+      "population": 448000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이기재",
+        "party": "ppp"
+      },
+      "keyIssue": "교육 특구",
+      "voters": 378444,
+      "prevElection": {
+        "turnout": 55.4
+      }
+    },
+    {
+      "name": "강서구",
+      "population": 565000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "진교훈",
+        "party": "democratic"
+      },
+      "keyIssue": "마곡지구 개발",
+      "voters": 504606,
+      "prevElection": {
+        "turnout": 51.7
+      }
+    },
+    {
+      "name": "구로구",
+      "population": 396000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "장인홍",
+        "party": "democratic"
+      },
+      "keyIssue": "디지털단지 재생",
+      "voters": 353697,
+      "prevElection": {
+        "turnout": 53.2
+      }
+    },
+    {
+      "name": "금천구",
+      "population": 229000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "유성훈",
+        "party": "democratic"
+      },
+      "keyIssue": "산업 전환",
+      "voters": 212879,
+      "prevElection": {
+        "turnout": 49.7
+      }
+    },
+    {
+      "name": "영등포구",
+      "population": 388000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최호권",
+        "party": "ppp"
+      },
+      "keyIssue": "여의도 개발",
+      "voters": 340017,
+      "prevElection": {
+        "turnout": 53.3
+      }
+    },
+    {
+      "name": "동작구",
+      "population": 389000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박일하",
+        "party": "ppp"
+      },
+      "keyIssue": "주거 안정",
+      "voters": 344280,
+      "prevElection": {
+        "turnout": 54.4
+      }
+    },
+    {
+      "name": "관악구",
+      "population": 488000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박준희",
+        "party": "ppp"
+      },
+      "keyIssue": "청년 주거",
+      "voters": 450180,
+      "prevElection": {
+        "turnout": 50.4
+      }
+    },
+    {
+      "name": "서초구",
+      "population": 422000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "전성수",
+        "party": "ppp"
+      },
+      "keyIssue": "교육·문화",
+      "voters": 342589,
+      "prevElection": {
+        "turnout": 56
+      }
+    },
+    {
+      "name": "강남구",
+      "population": 533000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조성명",
+        "party": "ppp"
+      },
+      "keyIssue": "도시 경쟁력",
+      "voters": 450895,
+      "prevElection": {
+        "turnout": 53.6
+      }
+    },
+    {
+      "name": "송파구",
+      "population": 655000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "서강석",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 인프라",
+      "voters": 569507,
+      "prevElection": {
+        "turnout": 55
+      }
+    },
+    {
+      "name": "강동구",
+      "population": 448000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이수희",
+        "party": "ppp"
+      },
+      "keyIssue": "신도시 개발",
+      "voters": 397544,
+      "prevElection": {
+        "turnout": 53.8
+      }
+    }
+  ],
+  "busan": [
+    {
+      "name": "중구",
+      "population": 40000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최진봉",
+        "party": "ppp"
+      },
+      "keyIssue": "원도심 재생"
+    },
+    {
+      "name": "서구",
+      "population": 99000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "공한수",
+        "party": "ppp"
+      },
+      "keyIssue": "도심 활성화",
+      "voters": 93426,
+      "prevElection": {
+        "turnout": 50.4
+      }
+    },
+    {
+      "name": "동구",
+      "population": 81000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김진홍",
+        "party": "ppp"
+      },
+      "keyIssue": "항만 재개발",
+      "voters": 80869,
+      "prevElection": {
+        "turnout": 50.5
+      }
+    },
+    {
+      "name": "영도구",
+      "population": 105000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김기재",
+        "party": "ppp"
+      },
+      "keyIssue": "조선산업",
+      "voters": 99395,
+      "prevElection": {
+        "turnout": 50.5
+      }
+    },
+    {
+      "name": "부산진구",
+      "population": 352000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김영욱",
+        "party": "ppp"
+      },
+      "keyIssue": "서면 상권",
+      "voters": 313025,
+      "prevElection": {
+        "turnout": 47.6
+      }
+    },
+    {
+      "name": "동래구",
+      "population": 265000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "장준용",
+        "party": "ppp"
+      },
+      "keyIssue": "전통시장",
+      "voters": 234034,
+      "prevElection": {
+        "turnout": 49.9
+      }
+    },
+    {
+      "name": "남구",
+      "population": 261000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "오은택",
+        "party": "ppp"
+      },
+      "keyIssue": "유엔기념공원",
+      "voters": 227019,
+      "prevElection": {
+        "turnout": 52.2
+      }
+    },
+    {
+      "name": "북구",
+      "population": 277000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "오태원",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 개선",
+      "voters": 245787,
+      "prevElection": {
+        "turnout": 51.3
+      }
+    },
+    {
+      "name": "해운대구",
+      "population": 406000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김성수",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 인프라",
+      "voters": 337958,
+      "prevElection": {
+        "turnout": 48.8
+      }
+    },
+    {
+      "name": "사하구",
+      "population": 305000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이갑준",
+        "party": "ppp"
+      },
+      "keyIssue": "낙동강 환경",
+      "voters": 268863,
+      "prevElection": {
+        "turnout": 47.1
+      }
+    },
+    {
+      "name": "금정구",
+      "population": 228000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "윤일현",
+        "party": "ppp"
+      },
+      "keyIssue": "대학가 활성화",
+      "voters": 200445,
+      "prevElection": {
+        "turnout": 51.3
+      }
+    },
+    {
+      "name": "강서구",
+      "population": 120000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김형찬",
+        "party": "ppp"
+      },
+      "keyIssue": "가덕도 신공항"
+    },
+    {
+      "name": "연제구",
+      "population": 204000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "주석수",
+        "party": "ppp"
+      },
+      "keyIssue": "행정중심",
+      "voters": 180173,
+      "prevElection": {
+        "turnout": 51.1
+      }
+    },
+    {
+      "name": "수영구",
+      "population": 170000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "강성태",
+        "party": "ppp"
+      },
+      "keyIssue": "해양스포츠",
+      "voters": 156247,
+      "prevElection": {
+        "turnout": 47.9
+      }
+    },
+    {
+      "name": "사상구",
+      "population": 211000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조병길",
+        "party": "ppp"
+      },
+      "keyIssue": "산업단지 전환",
+      "voters": 184625,
+      "prevElection": {
+        "turnout": 47.5
+      }
+    },
+    {
+      "name": "기장군",
+      "population": 188000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "정종복",
+        "party": "ppp"
+      },
+      "keyIssue": "신도시 개발",
+      "voters": 143871,
+      "prevElection": {
+        "turnout": 44.7
+      }
+    }
+  ],
+  "daegu": [
+    {
+      "name": "중구",
+      "population": 73000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "류규하",
+        "party": "ppp"
+      },
+      "keyIssue": "원도심 재생"
+    },
+    {
+      "name": "동구",
+      "population": 337000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "윤석준",
+        "party": "ppp"
+      },
+      "keyIssue": "혁신도시"
+    },
+    {
+      "name": "서구",
+      "population": 165000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "류한국",
+        "party": "ppp"
+      },
+      "keyIssue": "산업 전환"
+    },
+    {
+      "name": "남구",
+      "population": 140000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조재구",
+        "party": "ppp"
+      },
+      "keyIssue": "앞산 관광"
+    },
+    {
+      "name": "북구",
+      "population": 428000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "배광식",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 인프라"
+    },
+    {
+      "name": "수성구",
+      "population": 421000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김대권",
+        "party": "ppp"
+      },
+      "keyIssue": "교육 특구",
+      "voters": 349048,
+      "prevElection": {
+        "turnout": 45.1
+      }
+    },
+    {
+      "name": "달서구",
+      "population": 551000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이태훈",
+        "party": "ppp"
+      },
+      "keyIssue": "성서산단 전환"
+    },
+    {
+      "name": "달성군",
+      "population": 270000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최재훈",
+        "party": "ppp"
+      },
+      "keyIssue": "테크노폴리스",
+      "voters": 214580,
+      "prevElection": {
+        "turnout": 42.6
+      }
+    }
+  ],
+  "incheon": [
+    {
+      "name": "중구",
+      "population": 120000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김정헌",
+        "party": "ppp"
+      },
+      "keyIssue": "차이나타운 관광"
+    },
+    {
+      "name": "동구",
+      "population": 63000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김찬진",
+        "party": "ppp"
+      },
+      "keyIssue": "원도심 재생"
+    },
+    {
+      "name": "미추홀구",
+      "population": 384000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이영훈",
+        "party": "ppp"
+      },
+      "keyIssue": "주거 재정비",
+      "voters": 358612,
+      "prevElection": {
+        "turnout": 44.7
+      }
+    },
+    {
+      "name": "연수구",
+      "population": 374000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이재호",
+        "party": "ppp"
+      },
+      "keyIssue": "송도 국제도시",
+      "voters": 317883,
+      "prevElection": {
+        "turnout": 51.7
+      }
+    },
+    {
+      "name": "남동구",
+      "population": 512000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박종효",
+        "party": "ppp"
+      },
+      "keyIssue": "산업단지 혁신",
+      "voters": 441226,
+      "prevElection": {
+        "turnout": 48.1
+      }
+    },
+    {
+      "name": "부평구",
+      "population": 492000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "차준택",
+        "party": "democratic"
+      },
+      "keyIssue": "지역경제 활성화",
+      "voters": 426463,
+      "prevElection": {
+        "turnout": 47.5
+      }
+    },
+    {
+      "name": "계양구",
+      "population": 290000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "윤환",
+        "party": "democratic"
+      },
+      "keyIssue": "신도시 개발",
+      "voters": 258156,
+      "prevElection": {
+        "turnout": 56.1
+      }
+    },
+    {
+      "name": "서구",
+      "population": 550000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "강범석",
+        "party": "ppp"
+      },
+      "keyIssue": "청라 국제도시"
+    },
+    {
+      "name": "강화군",
+      "population": 65000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박용철",
+        "party": "ppp"
+      },
+      "keyIssue": "접경지역 발전",
+      "voters": 63147,
+      "prevElection": {
+        "turnout": 61.9
+      }
+    },
+    {
+      "name": "옹진군",
+      "population": 20000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "문경복",
+        "party": "ppp"
+      },
+      "keyIssue": "섬 지역 발전",
+      "voters": 18895,
+      "prevElection": {
+        "turnout": 67.2
+      }
+    }
+  ],
+  "gwangju": [
+    {
+      "name": "동구",
+      "population": 92000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "임택",
+        "party": "democratic"
+      },
+      "keyIssue": "문화전당 활성화"
+    },
+    {
+      "name": "서구",
+      "population": 283000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김이강",
+        "party": "democratic"
+      },
+      "keyIssue": "상무지구 발전"
+    },
+    {
+      "name": "남구",
+      "population": 197000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김병내",
+        "party": "democratic"
+      },
+      "keyIssue": "양림동 재생"
+    },
+    {
+      "name": "북구",
+      "population": 425000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "문인",
+        "party": "democratic"
+      },
+      "keyIssue": "첨단과학단지"
+    },
+    {
+      "name": "광산구",
+      "population": 404000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "박병규",
+        "party": "democratic"
+      },
+      "keyIssue": "하남산단 전환"
+    }
+  ],
+  "daejeon": [
+    {
+      "name": "동구",
+      "population": 218000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박희조",
+        "party": "ppp"
+      },
+      "keyIssue": "대전역세권 개발"
+    },
+    {
+      "name": "중구",
+      "population": 230000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김제선",
+        "party": "democratic"
+      },
+      "keyIssue": "원도심 활성화"
+    },
+    {
+      "name": "서구",
+      "population": 470000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "서철모",
+        "party": "ppp"
+      },
+      "keyIssue": "둔산 도심 혁신"
+    },
+    {
+      "name": "유성구",
+      "population": 370000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "정용래",
+        "party": "democratic"
+      },
+      "keyIssue": "과학벨트",
+      "voters": 289980,
+      "prevElection": {
+        "turnout": 51.6
+      }
+    },
+    {
+      "name": "대덕구",
+      "population": 178000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최충규",
+        "party": "ppp"
+      },
+      "keyIssue": "대덕연구단지",
+      "voters": 152766,
+      "prevElection": {
+        "turnout": 49.8
+      }
+    }
+  ],
+  "ulsan": [
+    {
+      "name": "중구",
+      "population": 217000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김영길",
+        "party": "ppp"
+      },
+      "keyIssue": "도심 재생 및 상권 활성화"
+    },
+    {
+      "name": "남구",
+      "population": 335000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "서동욱",
+        "party": "ppp"
+      },
+      "keyIssue": "석유화학 산업 전환"
+    },
+    {
+      "name": "동구",
+      "population": 94000,
+      "leadParty": "progressive",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "김종훈 울산시장 출마 사퇴 (2026.1)"
+      },
+      "keyIssue": "조선업 구조조정"
+    },
+    {
+      "name": "북구",
+      "population": 197000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박천동",
+        "party": "ppp"
+      },
+      "keyIssue": "자동차 산업 클러스터"
+    },
+    {
+      "name": "울주군",
+      "population": 277000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이순걸",
+        "party": "ppp"
+      },
+      "keyIssue": "원전 안전 및 지역 발전",
+      "voters": 189051,
+      "prevElection": {
+        "turnout": 52.6
+      }
+    }
+  ],
+  "sejong": [
+    {
+      "name": "세종시",
+      "population": 380000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최민호",
+        "party": "ppp"
+      },
+      "keyIssue": "행정수도 완성 및 인프라 확충"
+    }
+  ],
+  "jeju": [
+    {
+      "name": "제주시",
+      "population": 493000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이상봉",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 혁신"
+    },
+    {
+      "name": "서귀포시",
+      "population": 183000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이종우",
+        "party": "ppp"
+      },
+      "keyIssue": "감귤산업·관광"
+    }
+  ],
+  "gangwon": [
+    {
+      "name": "춘천시",
+      "population": 285000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "육동한",
+        "party": "democratic"
+      },
+      "keyIssue": "관광 인프라 확대",
+      "voters": 244406,
+      "prevElection": {
+        "turnout": 56.4
+      }
+    },
+    {
+      "name": "원주시",
+      "population": 360000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "원강수",
+        "party": "ppp"
+      },
+      "keyIssue": "혁신도시 활성화",
+      "voters": 304060,
+      "prevElection": {
+        "turnout": 51.8
+      }
+    },
+    {
+      "name": "강릉시",
+      "population": 213000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김홍규",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 산업 육성",
+      "voters": 185804,
+      "prevElection": {
+        "turnout": 54.9
+      }
+    },
+    {
+      "name": "동해시",
+      "population": 90000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "심규언",
+        "party": "ppp"
+      },
+      "keyIssue": "항만 물류 발전",
+      "voters": 76886,
+      "prevElection": {
+        "turnout": 54.7
+      }
+    },
+    {
+      "name": "태백시",
+      "population": 42000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이상호",
+        "party": "democratic"
+      },
+      "keyIssue": "폐광 지역 경제 전환",
+      "voters": 35236,
+      "prevElection": {
+        "turnout": 64
+      }
+    },
+    {
+      "name": "속초시",
+      "population": 82000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이병선",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 특구 개발",
+      "voters": 71621,
+      "prevElection": {
+        "turnout": 51.8
+      }
+    },
+    {
+      "name": "삼척시",
+      "population": 65000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박상수",
+        "party": "ppp"
+      },
+      "keyIssue": "해양 자원 개발",
+      "voters": 57023,
+      "prevElection": {
+        "turnout": 65.8
+      }
+    },
+    {
+      "name": "홍천군",
+      "population": 68000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "신영재",
+        "party": "ppp"
+      },
+      "keyIssue": "농촌 고령화 대책",
+      "voters": 60743,
+      "prevElection": {
+        "turnout": 60.8
+      }
+    },
+    {
+      "name": "횡성군",
+      "population": 44000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김명기",
+        "party": "ppp"
+      },
+      "keyIssue": "한우 산업 지원",
+      "voters": 41777,
+      "prevElection": {
+        "turnout": 66.4
+      }
+    },
+    {
+      "name": "영월군",
+      "population": 38000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최명서",
+        "party": "democratic"
+      },
+      "keyIssue": "폐광 지역 재생",
+      "voters": 34371,
+      "prevElection": {
+        "turnout": 66.3
+      }
+    },
+    {
+      "name": "평창군",
+      "population": 41000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "심재국",
+        "party": "ppp"
+      },
+      "keyIssue": "올림픽 유산 활용",
+      "voters": 37372,
+      "prevElection": {
+        "turnout": 67.9
+      }
+    },
+    {
+      "name": "정선군",
+      "population": 35000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최승준",
+        "party": "democratic"
+      },
+      "keyIssue": "카지노 지역 경제",
+      "voters": 32001,
+      "prevElection": {
+        "turnout": 69
+      }
+    },
+    {
+      "name": "철원군",
+      "population": 44000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이현종",
+        "party": "ppp"
+      },
+      "keyIssue": "접경 지역 개발",
+      "voters": 37099,
+      "prevElection": {
+        "turnout": 60.5
+      }
+    },
+    {
+      "name": "화천군",
+      "population": 25000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최문순",
+        "party": "democratic"
+      },
+      "keyIssue": "군사시설 보호구역 해제",
+      "voters": 21055,
+      "prevElection": {
+        "turnout": 65.7
+      }
+    },
+    {
+      "name": "양구군",
+      "population": 22000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "서흥원",
+        "party": "ppp"
+      },
+      "keyIssue": "접경 지역 지원",
+      "voters": 18552,
+      "prevElection": {
+        "turnout": 69
+      }
+    },
+    {
+      "name": "인제군",
+      "population": 31000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최상기",
+        "party": "democratic"
+      },
+      "keyIssue": "생태관광 개발",
+      "voters": 27939,
+      "prevElection": {
+        "turnout": 66.4
+      }
+    },
+    {
+      "name": "고성군",
+      "population": 27000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "함명준",
+        "party": "democratic"
+      },
+      "keyIssue": "금강산 관광 재개",
+      "voters": 24776,
+      "prevElection": {
+        "turnout": 67.7
+      }
+    },
+    {
+      "name": "양양군",
+      "population": 27000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김진하",
+        "party": "ppp"
+      },
+      "keyIssue": "서핑 관광 활성화",
+      "voters": 25359,
+      "prevElection": {
+        "turnout": 65.7
+      }
+    }
+  ],
+  "chungbuk": [
+    {
+      "name": "청주시",
+      "population": 855000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이범석",
+        "party": "ppp"
+      },
+      "keyIssue": "반도체 클러스터 유치",
+      "voters": 712524,
+      "prevElection": {
+        "turnout": 46.4
+      }
+    },
+    {
+      "name": "충주시",
+      "population": 210000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "조길형 충북도지사 출마 사퇴 (2026.1)"
+      },
+      "keyIssue": "기업도시 활성화",
+      "voters": 181044,
+      "prevElection": {
+        "turnout": 49.6
+      }
+    },
+    {
+      "name": "제천시",
+      "population": 132000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김창규",
+        "party": "ppp"
+      },
+      "keyIssue": "바이오 산업 육성",
+      "voters": 115563,
+      "prevElection": {
+        "turnout": 54.3
+      }
+    },
+    {
+      "name": "보은군",
+      "population": 32000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최재형",
+        "party": "ppp"
+      },
+      "keyIssue": "농촌 인구 감소 대책",
+      "voters": 28963,
+      "prevElection": {
+        "turnout": 67.5
+      }
+    },
+    {
+      "name": "옥천군",
+      "population": 51000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "황규철",
+        "party": "democratic"
+      },
+      "keyIssue": "교통 인프라 개선",
+      "voters": 44686,
+      "prevElection": {
+        "turnout": 64.6
+      }
+    },
+    {
+      "name": "영동군",
+      "population": 44000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "정영철",
+        "party": "ppp"
+      },
+      "keyIssue": "포도 산업 지원",
+      "voters": 41123,
+      "prevElection": {
+        "turnout": 66
+      }
+    },
+    {
+      "name": "증평군",
+      "population": 38000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이재영",
+        "party": "democratic"
+      },
+      "keyIssue": "산업단지 확장",
+      "voters": 31366,
+      "prevElection": {
+        "turnout": 54.3
+      }
+    },
+    {
+      "name": "진천군",
+      "population": 85000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "송기섭 충북도지사 출마 사퇴 (2026.2)"
+      },
+      "keyIssue": "혁신도시 정주 환경",
+      "voters": 71725,
+      "prevElection": {
+        "turnout": 48.2
+      }
+    },
+    {
+      "name": "괴산군",
+      "population": 36000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "송인헌",
+        "party": "ppp"
+      },
+      "keyIssue": "유기농 특구 발전",
+      "voters": 34674,
+      "prevElection": {
+        "turnout": 68.4
+      }
+    },
+    {
+      "name": "음성군",
+      "population": 95000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "조병옥",
+        "party": "democratic"
+      },
+      "keyIssue": "산업단지 교통 개선",
+      "voters": 81419,
+      "prevElection": {
+        "turnout": 49.9
+      }
+    },
+    {
+      "name": "단양군",
+      "population": 29000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김문근",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 자원 개발",
+      "voters": 25692,
+      "prevElection": {
+        "turnout": 67.8
+      }
+    }
+  ],
+  "chungnam": [
+    {
+      "name": "천안시",
+      "population": 660000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "박상돈 시장 당선무효 (2025.4)"
+      },
+      "keyIssue": "수도권 연계 교통망",
+      "voters": 548022,
+      "prevElection": {
+        "turnout": 42.2
+      }
+    },
+    {
+      "name": "공주시",
+      "population": 106000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최원철",
+        "party": "ppp"
+      },
+      "keyIssue": "백제 문화유산 활용",
+      "voters": 91847,
+      "prevElection": {
+        "turnout": 56
+      }
+    },
+    {
+      "name": "보령시",
+      "population": 100000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김동일",
+        "party": "ppp"
+      },
+      "keyIssue": "석탄화력 전환 대책",
+      "voters": 86264,
+      "prevElection": {
+        "turnout": 60.9
+      }
+    },
+    {
+      "name": "아산시",
+      "population": 340000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "오세현",
+        "party": "democratic"
+      },
+      "keyIssue": "반도체 산업 인프라",
+      "voters": 268765,
+      "prevElection": {
+        "turnout": 44.4
+      }
+    },
+    {
+      "name": "서산시",
+      "population": 175000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이완섭",
+        "party": "ppp"
+      },
+      "keyIssue": "석유화학 산업 환경",
+      "voters": 148744,
+      "prevElection": {
+        "turnout": 48.6
+      }
+    },
+    {
+      "name": "논산시",
+      "population": 118000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "백성현",
+        "party": "ppp"
+      },
+      "keyIssue": "군부대 이전 대책",
+      "voters": 99942,
+      "prevElection": {
+        "turnout": 53.8
+      }
+    },
+    {
+      "name": "계룡시",
+      "population": 44000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이응우",
+        "party": "ppp"
+      },
+      "keyIssue": "군사도시 자족기능",
+      "voters": 34875,
+      "prevElection": {
+        "turnout": 55.4
+      }
+    },
+    {
+      "name": "당진시",
+      "population": 168000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "오성환",
+        "party": "ppp"
+      },
+      "keyIssue": "제철소 환경 문제",
+      "voters": 140008,
+      "prevElection": {
+        "turnout": 46.3
+      }
+    },
+    {
+      "name": "금산군",
+      "population": 51000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박범인",
+        "party": "ppp"
+      },
+      "keyIssue": "인삼 산업 글로벌화",
+      "voters": 44747,
+      "prevElection": {
+        "turnout": 64.1
+      }
+    },
+    {
+      "name": "부여군",
+      "population": 63000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "박정현",
+        "party": "democratic"
+      },
+      "keyIssue": "백제 역사 관광",
+      "voters": 57322,
+      "prevElection": {
+        "turnout": 63.6
+      }
+    },
+    {
+      "name": "서천군",
+      "population": 51000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김기웅",
+        "party": "ppp"
+      },
+      "keyIssue": "해양 생태 보전",
+      "voters": 45864,
+      "prevElection": {
+        "turnout": 63.8
+      }
+    },
+    {
+      "name": "청양군",
+      "population": 30000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김돈곤",
+        "party": "democratic"
+      },
+      "keyIssue": "농촌 인구 유입",
+      "voters": 27932,
+      "prevElection": {
+        "turnout": 70.5
+      }
+    },
+    {
+      "name": "홍성군",
+      "population": 89000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이용록",
+        "party": "ppp"
+      },
+      "keyIssue": "내포신도시 개발",
+      "voters": 84260,
+      "prevElection": {
+        "turnout": 54.3
+      }
+    },
+    {
+      "name": "예산군",
+      "population": 79000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최재구",
+        "party": "ppp"
+      },
+      "keyIssue": "농업 기반 경제",
+      "voters": 69069,
+      "prevElection": {
+        "turnout": 56.1
+      }
+    },
+    {
+      "name": "태안군",
+      "population": 47000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "가세로",
+        "party": "democratic"
+      },
+      "keyIssue": "해양 환경 복원",
+      "voters": 55435,
+      "prevElection": {
+        "turnout": 62.6
+      }
+    }
+  ],
+  "jeonbuk": [
+    {
+      "name": "전주시",
+      "population": 658000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "우범기",
+        "party": "democratic"
+      },
+      "keyIssue": "탄소 산업 전환",
+      "voters": 550442,
+      "prevElection": {
+        "turnout": 40.4
+      }
+    },
+    {
+      "name": "군산시",
+      "population": 265000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "강임준",
+        "party": "democratic"
+      },
+      "keyIssue": "산업단지 구조조정",
+      "voters": 224926,
+      "prevElection": {
+        "turnout": 38.7
+      }
+    },
+    {
+      "name": "익산시",
+      "population": 285000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "정헌율",
+        "party": "democratic"
+      },
+      "keyIssue": "보석산업 활성화",
+      "voters": 239077,
+      "prevElection": {
+        "turnout": 44.9
+      }
+    },
+    {
+      "name": "정읍시",
+      "population": 108000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이학수",
+        "party": "democratic"
+      },
+      "keyIssue": "방사광 가속기 활용",
+      "voters": 93307,
+      "prevElection": {
+        "turnout": 58.2
+      }
+    },
+    {
+      "name": "남원시",
+      "population": 78000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최경식",
+        "party": "democratic"
+      },
+      "keyIssue": "관광 문화 도시",
+      "voters": 69007,
+      "prevElection": {
+        "turnout": 64.5
+      }
+    },
+    {
+      "name": "김제시",
+      "population": 83000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "정성주",
+        "party": "democratic"
+      },
+      "keyIssue": "농업 스마트화",
+      "voters": 72358,
+      "prevElection": {
+        "turnout": 59
+      }
+    },
+    {
+      "name": "완주군",
+      "population": 97000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "유희태",
+        "party": "democratic"
+      },
+      "keyIssue": "혁신도시 연계 발전",
+      "voters": 78284,
+      "prevElection": {
+        "turnout": 52.9
+      }
+    },
+    {
+      "name": "진안군",
+      "population": 24000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "전춘성",
+        "party": "democratic"
+      },
+      "keyIssue": "고원 관광 개발",
+      "voters": 22634,
+      "prevElection": {
+        "turnout": 73.4
+      }
+    },
+    {
+      "name": "무주군",
+      "population": 23000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "황인홍",
+        "party": "independent"
+      },
+      "keyIssue": "리조트 관광 활성화",
+      "voters": 21279,
+      "prevElection": {
+        "turnout": 76.4
+      }
+    },
+    {
+      "name": "장수군",
+      "population": 21000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최훈식",
+        "party": "democratic"
+      },
+      "keyIssue": "농촌 체류형 관광",
+      "voters": 19380,
+      "prevElection": {
+        "turnout": 75.3
+      }
+    },
+    {
+      "name": "임실군",
+      "population": 27000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "심민",
+        "party": "independent"
+      },
+      "keyIssue": "치즈 산업 특화",
+      "voters": 24346,
+      "prevElection": {
+        "turnout": 72.4
+      }
+    },
+    {
+      "name": "순창군",
+      "population": 26000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "최영일",
+        "party": "independent"
+      },
+      "keyIssue": "장류 산업 육성",
+      "voters": 23898,
+      "prevElection": {
+        "turnout": 77.8
+      }
+    },
+    {
+      "name": "고창군",
+      "population": 53000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "심덕섭",
+        "party": "democratic"
+      },
+      "keyIssue": "유네스코 생물권 보전",
+      "voters": 47581,
+      "prevElection": {
+        "turnout": 72.9
+      }
+    },
+    {
+      "name": "부안군",
+      "population": 52000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "권익현",
+        "party": "democratic"
+      },
+      "keyIssue": "새만금 개발 사업",
+      "voters": 45614,
+      "prevElection": {
+        "turnout": 60.3
+      }
+    }
+  ],
+  "jeonnam": [
+    {
+      "name": "목포시",
+      "population": 218000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "박홍률 시장 당선무효 (2025.3)"
+      },
+      "keyIssue": "원도심 재생 사업",
+      "voters": 183412,
+      "prevElection": {
+        "turnout": 52.9
+      }
+    },
+    {
+      "name": "여수시",
+      "population": 278000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "정기명",
+        "party": "democratic"
+      },
+      "keyIssue": "석유화학 환경 관리",
+      "voters": 236881,
+      "prevElection": {
+        "turnout": 46.1
+      }
+    },
+    {
+      "name": "순천시",
+      "population": 282000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "노관규",
+        "party": "independent"
+      },
+      "keyIssue": "생태수도 조성",
+      "voters": 235432,
+      "prevElection": {
+        "turnout": 54.4
+      }
+    },
+    {
+      "name": "나주시",
+      "population": 115000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "윤병태",
+        "party": "democratic"
+      },
+      "keyIssue": "에너지 신산업 클러스터",
+      "voters": 98951,
+      "prevElection": {
+        "turnout": 53.6
+      }
+    },
+    {
+      "name": "광양시",
+      "population": 155000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "정인화",
+        "party": "independent"
+      },
+      "keyIssue": "제철소 탄소중립",
+      "voters": 126604,
+      "prevElection": {
+        "turnout": 54.6
+      }
+    },
+    {
+      "name": "담양군",
+      "population": 46000,
+      "leadParty": "reform",
+      "mayor": {
+        "name": "정철원",
+        "party": "reform"
+      },
+      "keyIssue": "대나무 생태 관광",
+      "voters": 41720,
+      "prevElection": {
+        "turnout": 63.8
+      }
+    },
+    {
+      "name": "곡성군",
+      "population": 27000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "조상래",
+        "party": "democratic"
+      },
+      "keyIssue": "기차마을 관광",
+      "voters": 25196,
+      "prevElection": {
+        "turnout": 74
+      }
+    },
+    {
+      "name": "구례군",
+      "population": 25000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김순호",
+        "party": "democratic"
+      },
+      "keyIssue": "지리산 생태 관광",
+      "voters": 22848,
+      "prevElection": {
+        "turnout": 76.2
+      }
+    },
+    {
+      "name": "고흥군",
+      "population": 62000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "공영민",
+        "party": "democratic"
+      },
+      "keyIssue": "우주항공 산업 육성",
+      "voters": 57371,
+      "prevElection": {
+        "turnout": 77.9
+      }
+    },
+    {
+      "name": "보성군",
+      "population": 39000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김철우",
+        "party": "democratic"
+      },
+      "keyIssue": "녹차 산업 활성화"
+    },
+    {
+      "name": "화순군",
+      "population": 62000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "구복규",
+        "party": "democratic"
+      },
+      "keyIssue": "고인돌 유적 활용",
+      "voters": 55284,
+      "prevElection": {
+        "turnout": 58.7
+      }
+    },
+    {
+      "name": "장흥군",
+      "population": 35000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김성",
+        "party": "democratic"
+      },
+      "keyIssue": "통합의학 특구",
+      "voters": 32510,
+      "prevElection": {
+        "turnout": 71.5
+      }
+    },
+    {
+      "name": "강진군",
+      "population": 33000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "강진원",
+        "party": "independent"
+      },
+      "keyIssue": "도자기 문화 관광",
+      "voters": 30148,
+      "prevElection": {
+        "turnout": 72.8
+      }
+    },
+    {
+      "name": "해남군",
+      "population": 68000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "명현관",
+        "party": "democratic"
+      },
+      "keyIssue": "해양에너지 개발"
+    },
+    {
+      "name": "영암군",
+      "population": 54000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "우승희",
+        "party": "democratic"
+      },
+      "keyIssue": "F1 경기장 활용",
+      "voters": 46851,
+      "prevElection": {
+        "turnout": 61.2
+      }
+    },
+    {
+      "name": "무안군",
+      "population": 92000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "김산",
+        "party": "independent"
+      },
+      "keyIssue": "공항 연계 개발",
+      "voters": 74895,
+      "prevElection": {
+        "turnout": 55.2
+      }
+    },
+    {
+      "name": "함평군",
+      "population": 31000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이상익",
+        "party": "democratic"
+      },
+      "keyIssue": "나비축제 관광",
+      "voters": 28381,
+      "prevElection": {
+        "turnout": 64.2
+      }
+    },
+    {
+      "name": "영광군",
+      "population": 53000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "장세일",
+        "party": "democratic"
+      },
+      "keyIssue": "원전 해체 대책",
+      "voters": 45299,
+      "prevElection": {
+        "turnout": 70.2
+      }
+    },
+    {
+      "name": "장성군",
+      "population": 43000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김한종",
+        "party": "democratic"
+      },
+      "keyIssue": "교육 특구 조성",
+      "voters": 38470,
+      "prevElection": {
+        "turnout": 68.9
+      }
+    },
+    {
+      "name": "완도군",
+      "population": 47000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "신우철",
+        "party": "democratic"
+      },
+      "keyIssue": "해조류 산업 수출",
+      "voters": 42697,
+      "prevElection": {
+        "turnout": 69.8
+      }
+    },
+    {
+      "name": "진도군",
+      "population": 30000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "김희수",
+        "party": "independent"
+      },
+      "keyIssue": "해양문화 관광",
+      "voters": 26748,
+      "prevElection": {
+        "turnout": 76.3
+      }
+    },
+    {
+      "name": "신안군",
+      "population": 38000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "박우량 군수 직위상실 (2025.3)"
+      },
+      "keyIssue": "태양광 섬 에너지",
+      "voters": 35246,
+      "prevElection": {
+        "turnout": 74.9
+      }
+    }
+  ],
+  "gyeongbuk": [
+    {
+      "name": "포항시",
+      "population": 502000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "이강덕 경북도지사 출마 사퇴 (2026.2)"
+      },
+      "keyIssue": "지진 피해 복구 및 안전",
+      "voters": 427687,
+      "prevElection": {
+        "turnout": 45.9
+      }
+    },
+    {
+      "name": "경주시",
+      "population": 254000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "주낙영",
+        "party": "ppp"
+      },
+      "keyIssue": "문화유산 관광 활성화",
+      "voters": 220490,
+      "prevElection": {
+        "turnout": 49.7
+      }
+    },
+    {
+      "name": "김천시",
+      "population": 140000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "배낙호",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 허브 도시",
+      "voters": 120471,
+      "prevElection": {
+        "turnout": 55.8
+      }
+    },
+    {
+      "name": "안동시",
+      "population": 158000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "권기창",
+        "party": "ppp"
+      },
+      "keyIssue": "전통문화 수도 조성",
+      "voters": 135862,
+      "prevElection": {
+        "turnout": 54.9
+      }
+    },
+    {
+      "name": "구미시",
+      "population": 412000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김장호",
+        "party": "ppp"
+      },
+      "keyIssue": "전자산업 구조 전환",
+      "voters": 337510,
+      "prevElection": {
+        "turnout": 42.8
+      }
+    },
+    {
+      "name": "영주시",
+      "population": 103000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "박남서 시장 당선무효 (2025.3)"
+      },
+      "keyIssue": "소백산 관광 개발",
+      "voters": 89061,
+      "prevElection": {
+        "turnout": 63.2
+      }
+    },
+    {
+      "name": "영천시",
+      "population": 100000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "최기문",
+        "party": "ppp"
+      },
+      "keyIssue": "농업 첨단화",
+      "voters": 90932,
+      "prevElection": {
+        "turnout": 56.9
+      }
+    },
+    {
+      "name": "상주시",
+      "population": 96000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "강영석",
+        "party": "ppp"
+      },
+      "keyIssue": "농촌 인구 감소",
+      "voters": 84980,
+      "prevElection": {
+        "turnout": 64
+      }
+    },
+    {
+      "name": "문경시",
+      "population": 70000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "신현국",
+        "party": "ppp"
+      },
+      "keyIssue": "옛길 관광 자원화",
+      "voters": 64160,
+      "prevElection": {
+        "turnout": 62.9
+      }
+    },
+    {
+      "name": "경산시",
+      "population": 280000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조현일",
+        "party": "ppp"
+      },
+      "keyIssue": "대구 연계 교통망",
+      "voters": 230676,
+      "prevElection": {
+        "turnout": 43.4
+      }
+    },
+    {
+      "name": "의성군",
+      "population": 50000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김주수",
+        "party": "ppp"
+      },
+      "keyIssue": "마늘 산업 지원",
+      "voters": 47168,
+      "prevElection": {
+        "turnout": 74.1
+      }
+    },
+    {
+      "name": "청송군",
+      "population": 24000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "윤경희",
+        "party": "ppp"
+      },
+      "keyIssue": "지질공원 관광",
+      "voters": 22790,
+      "prevElection": {
+        "turnout": 73.9
+      }
+    },
+    {
+      "name": "영양군",
+      "population": 16000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "오도창",
+        "party": "ppp"
+      },
+      "keyIssue": "고추 산업 보호",
+      "voters": 14920,
+      "prevElection": {
+        "turnout": 77.3
+      }
+    },
+    {
+      "name": "영덕군",
+      "population": 35000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김광열",
+        "party": "ppp"
+      },
+      "keyIssue": "대게 어업 지원",
+      "voters": 32124,
+      "prevElection": {
+        "turnout": 67.1
+      }
+    },
+    {
+      "name": "청도군",
+      "population": 42000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김하수",
+        "party": "ppp"
+      },
+      "keyIssue": "소싸움 축제 관광",
+      "voters": 38574,
+      "prevElection": {
+        "turnout": 70.8
+      }
+    },
+    {
+      "name": "고령군",
+      "population": 33000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이남철",
+        "party": "ppp"
+      },
+      "keyIssue": "대가야 역사 관광",
+      "voters": 27757,
+      "prevElection": {
+        "turnout": 62.8
+      }
+    },
+    {
+      "name": "성주군",
+      "population": 44000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이병환",
+        "party": "ppp"
+      },
+      "keyIssue": "참외 산업 수출",
+      "voters": 39451,
+      "prevElection": {
+        "turnout": 67.5
+      }
+    },
+    {
+      "name": "칠곡군",
+      "population": 120000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김재욱",
+        "party": "ppp"
+      },
+      "keyIssue": "산업단지 교통",
+      "voters": 96081,
+      "prevElection": {
+        "turnout": 43.7
+      }
+    },
+    {
+      "name": "예천군",
+      "population": 55000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김학동",
+        "party": "ppp"
+      },
+      "keyIssue": "곤충산업 특구"
+    },
+    {
+      "name": "봉화군",
+      "population": 31000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박현국",
+        "party": "ppp"
+      },
+      "keyIssue": "산촌 생태 관광",
+      "voters": 27996,
+      "prevElection": {
+        "turnout": 67.4
+      }
+    },
+    {
+      "name": "울진군",
+      "population": 48000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "손병복",
+        "party": "ppp"
+      },
+      "keyIssue": "원전 지역 발전",
+      "voters": 42063,
+      "prevElection": {
+        "turnout": 67.3
+      }
+    },
+    {
+      "name": "울릉군",
+      "population": 9000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "남한권",
+        "party": "ppp"
+      },
+      "keyIssue": "독도 영토 관리",
+      "voters": 8339,
+      "prevElection": {
+        "turnout": 81.5
+      }
+    },
+    {
+      "name": "군위군",
+      "population": 22000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김진열",
+        "party": "ppp"
+      },
+      "keyIssue": "대구 편입 후 발전",
+      "voters": 22054,
+      "prevElection": {
+        "turnout": 80.9
+      }
+    }
+  ],
+  "gyeongnam": [
+    {
+      "name": "창원시",
+      "population": 1040000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "홍남표 시장 당선무효 (2025.4)"
+      },
+      "keyIssue": "기계산업 스마트 전환",
+      "voters": 874558,
+      "prevElection": {
+        "turnout": 51.7
+      }
+    },
+    {
+      "name": "진주시",
+      "population": 350000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조규일",
+        "party": "ppp"
+      },
+      "keyIssue": "항공 산업 클러스터",
+      "voters": 292168,
+      "prevElection": {
+        "turnout": 53.1
+      }
+    },
+    {
+      "name": "통영시",
+      "population": 128000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "천영기",
+        "party": "ppp"
+      },
+      "keyIssue": "해양 관광 도시",
+      "voters": 106064,
+      "prevElection": {
+        "turnout": 57.7
+      }
+    },
+    {
+      "name": "사천시",
+      "population": 112000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박동식",
+        "party": "ppp"
+      },
+      "keyIssue": "항공우주 산업 육성",
+      "voters": 93946,
+      "prevElection": {
+        "turnout": 59.1
+      }
+    },
+    {
+      "name": "김해시",
+      "population": 540000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "홍태용",
+        "party": "ppp"
+      },
+      "keyIssue": "부산 연계 교통망",
+      "voters": 444484,
+      "prevElection": {
+        "turnout": 45.8
+      }
+    },
+    {
+      "name": "밀양시",
+      "population": 105000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "안병구",
+        "party": "ppp"
+      },
+      "keyIssue": "송전탑 갈등 해결",
+      "voters": 92419,
+      "prevElection": {
+        "turnout": 54.7
+      }
+    },
+    {
+      "name": "거제시",
+      "population": 230000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "변광용",
+        "party": "democratic"
+      },
+      "keyIssue": "조선업 경기 회복",
+      "voters": 193369,
+      "prevElection": {
+        "turnout": 51.4
+      }
+    },
+    {
+      "name": "양산시",
+      "population": 360000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "나동연",
+        "party": "ppp"
+      },
+      "keyIssue": "부산 베드타운 인프라",
+      "voters": 294411,
+      "prevElection": {
+        "turnout": 47
+      }
+    },
+    {
+      "name": "의령군",
+      "population": 26000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "오태완",
+        "party": "independent"
+      },
+      "keyIssue": "농촌 소멸 위기 대응",
+      "voters": 24291,
+      "prevElection": {
+        "turnout": 75
+      }
+    },
+    {
+      "name": "함안군",
+      "population": 64000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "조근제",
+        "party": "ppp"
+      },
+      "keyIssue": "아라가야 역사 관광",
+      "voters": 54125,
+      "prevElection": {
+        "turnout": 59.3
+      }
+    },
+    {
+      "name": "창녕군",
+      "population": 60000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "성낙인",
+        "party": "independent"
+      },
+      "keyIssue": "우포늪 생태 관광",
+      "voters": 53616,
+      "prevElection": {
+        "turnout": 64.1
+      }
+    },
+    {
+      "name": "고성군",
+      "population": 52000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이상근",
+        "party": "ppp"
+      },
+      "keyIssue": "공룡 화석 관광"
+    },
+    {
+      "name": "남해군",
+      "population": 42000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "장충남",
+        "party": "democratic"
+      },
+      "keyIssue": "독일마을 관광 개발",
+      "voters": 38538,
+      "prevElection": {
+        "turnout": 70.6
+      }
+    },
+    {
+      "name": "하동군",
+      "population": 45000,
+      "leadParty": "independent",
+      "mayor": {
+        "name": "하승철",
+        "party": "independent"
+      },
+      "keyIssue": "녹차 재배 산업",
+      "voters": 39428,
+      "prevElection": {
+        "turnout": 73.8
+      }
+    },
+    {
+      "name": "산청군",
+      "population": 34000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이승화",
+        "party": "ppp"
+      },
+      "keyIssue": "한방 산업 특구",
+      "voters": 31488,
+      "prevElection": {
+        "turnout": 69.6
+      }
+    },
+    {
+      "name": "함양군",
+      "population": 38000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "진병영",
+        "party": "ppp"
+      },
+      "keyIssue": "산삼 항노화 산업",
+      "voters": 34399,
+      "prevElection": {
+        "turnout": 75.6
+      }
+    },
+    {
+      "name": "거창군",
+      "population": 61000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "구인모",
+        "party": "ppp"
+      },
+      "keyIssue": "사과 산업 지원",
+      "voters": 52803,
+      "prevElection": {
+        "turnout": 65.8
+      }
+    },
+    {
+      "name": "합천군",
+      "population": 43000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김윤철",
+        "party": "ppp"
+      },
+      "keyIssue": "해인사 문화 관광",
+      "voters": 39435,
+      "prevElection": {
+        "turnout": 69.4
+      }
+    }
+  ],
+  "gyeonggi": [
+    {
+      "name": "수원시",
+      "population": 1184000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이재준",
+        "party": "democratic"
+      },
+      "keyIssue": "교통 혁신",
+      "voters": 1012553,
+      "prevElection": {
+        "turnout": 51.3
+      }
+    },
+    {
+      "name": "성남시",
+      "population": 927000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "신상진",
+        "party": "ppp"
+      },
+      "keyIssue": "판교 테크노밸리",
+      "voters": 798508,
+      "prevElection": {
+        "turnout": 56.6
+      }
+    },
+    {
+      "name": "의정부시",
+      "population": 458000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김동근",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 개선",
+      "voters": 400177,
+      "prevElection": {
+        "turnout": 47
+      }
+    },
+    {
+      "name": "안양시",
+      "population": 553000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "최대호",
+        "party": "democratic"
+      },
+      "keyIssue": "도시재생",
+      "voters": 474037,
+      "prevElection": {
+        "turnout": 56.3
+      }
+    },
+    {
+      "name": "부천시",
+      "population": 815000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "조용익",
+        "party": "democratic"
+      },
+      "keyIssue": "문화 도시",
+      "voters": 702974,
+      "prevElection": {
+        "turnout": 49.4
+      }
+    },
+    {
+      "name": "광명시",
+      "population": 293000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "박승원",
+        "party": "democratic"
+      },
+      "keyIssue": "광명역세권",
+      "voters": 247233,
+      "prevElection": {
+        "turnout": 56.5
+      }
+    },
+    {
+      "name": "평택시",
+      "population": 570000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "정장선",
+        "party": "democratic"
+      },
+      "keyIssue": "미군기지 이전",
+      "voters": 478356,
+      "prevElection": {
+        "turnout": 43.5
+      }
+    },
+    {
+      "name": "동두천시",
+      "population": 95000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "박형덕",
+        "party": "ppp"
+      },
+      "keyIssue": "지역 활성화",
+      "voters": 81074,
+      "prevElection": {
+        "turnout": 49
+      }
+    },
+    {
+      "name": "안산시",
+      "population": 650000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "이민근",
+        "party": "democratic"
+      },
+      "keyIssue": "다문화 정책",
+      "voters": 571619,
+      "prevElection": {
+        "turnout": 45.6
+      }
+    },
+    {
+      "name": "고양시",
+      "population": 1077000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이동환",
+        "party": "ppp"
+      },
+      "keyIssue": "GTX 개통",
+      "voters": 924690,
+      "prevElection": {
+        "turnout": 52.3
+      }
+    },
+    {
+      "name": "과천시",
+      "population": 72000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "신계용",
+        "party": "ppp"
+      },
+      "keyIssue": "정부청사 이전",
+      "voters": 65220,
+      "prevElection": {
+        "turnout": 65.4
+      }
+    },
+    {
+      "name": "구리시",
+      "population": 197000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "백경현",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 혁신",
+      "voters": 164045,
+      "prevElection": {
+        "turnout": 53.8
+      }
+    },
+    {
+      "name": "남양주시",
+      "population": 730000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "주광덕",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 인프라",
+      "voters": 610260,
+      "prevElection": {
+        "turnout": 49.1
+      }
+    },
+    {
+      "name": "오산시",
+      "population": 233000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이권재",
+        "party": "ppp"
+      },
+      "keyIssue": "교육 도시",
+      "voters": 190375,
+      "prevElection": {
+        "turnout": 43.7
+      }
+    },
+    {
+      "name": "시흥시",
+      "population": 510000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "임병택",
+        "party": "democratic"
+      },
+      "keyIssue": "스마트시티",
+      "voters": 431352,
+      "prevElection": {
+        "turnout": 45.2
+      }
+    },
+    {
+      "name": "군포시",
+      "population": 267000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "하은호",
+        "party": "ppp"
+      },
+      "keyIssue": "주거 안정",
+      "voters": 231192,
+      "prevElection": {
+        "turnout": 55.5
+      }
+    },
+    {
+      "name": "의왕시",
+      "population": 160000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김성제",
+        "party": "democratic"
+      },
+      "keyIssue": "교통 접근성",
+      "voters": 138928,
+      "prevElection": {
+        "turnout": 58
+      }
+    },
+    {
+      "name": "하남시",
+      "population": 310000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이현재",
+        "party": "ppp"
+      },
+      "keyIssue": "미사 신도시",
+      "voters": 266856,
+      "prevElection": {
+        "turnout": 52.4
+      }
+    },
+    {
+      "name": "용인시",
+      "population": 1081000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이상일",
+        "party": "ppp"
+      },
+      "keyIssue": "반도체 클러스터",
+      "voters": 889545,
+      "prevElection": {
+        "turnout": 54.2
+      }
+    },
+    {
+      "name": "파주시",
+      "population": 480000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김경일",
+        "party": "democratic"
+      },
+      "keyIssue": "접경지역 발전",
+      "voters": 403729,
+      "prevElection": {
+        "turnout": 46.3
+      }
+    },
+    {
+      "name": "이천시",
+      "population": 222000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김경희",
+        "party": "democratic"
+      },
+      "keyIssue": "SK하이닉스",
+      "voters": 188563,
+      "prevElection": {
+        "turnout": 47.1
+      }
+    },
+    {
+      "name": "안성시",
+      "population": 188000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김보라",
+        "party": "democratic"
+      },
+      "keyIssue": "농업 혁신",
+      "voters": 163518,
+      "prevElection": {
+        "turnout": 50
+      }
+    },
+    {
+      "name": "김포시",
+      "population": 480000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김병수",
+        "party": "ppp"
+      },
+      "keyIssue": "교통 혁신",
+      "voters": 392604,
+      "prevElection": {
+        "turnout": 49.9
+      }
+    },
+    {
+      "name": "화성시",
+      "population": 920000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "정명근",
+        "party": "ppp"
+      },
+      "keyIssue": "삼성 반도체",
+      "voters": 711229,
+      "prevElection": {
+        "turnout": 47.3
+      }
+    },
+    {
+      "name": "광주시",
+      "population": 390000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "방세환",
+        "party": "ppp"
+      },
+      "keyIssue": "신도시 인프라",
+      "voters": 329651,
+      "prevElection": {
+        "turnout": 46.2
+      }
+    },
+    {
+      "name": "양주시",
+      "population": 235000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "강수현",
+        "party": "ppp"
+      },
+      "keyIssue": "신도시 개발",
+      "voters": 197751,
+      "prevElection": {
+        "turnout": 48.1
+      }
+    },
+    {
+      "name": "포천시",
+      "population": 148000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "백영현",
+        "party": "ppp"
+      },
+      "keyIssue": "관광·교통",
+      "voters": 131980,
+      "prevElection": {
+        "turnout": 51.4
+      }
+    },
+    {
+      "name": "여주시",
+      "population": 112000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "이충우",
+        "party": "ppp"
+      },
+      "keyIssue": "농업·관광",
+      "voters": 98333,
+      "prevElection": {
+        "turnout": 51.5
+      }
+    },
+    {
+      "name": "연천군",
+      "population": 43000,
+      "leadParty": "democratic",
+      "mayor": {
+        "name": "김덕현",
+        "party": "democratic"
+      },
+      "keyIssue": "접경지역 지원",
+      "voters": 37898,
+      "prevElection": {
+        "turnout": 60.2
+      }
+    },
+    {
+      "name": "가평군",
+      "population": 62000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "서태원",
+        "party": "ppp"
+      },
+      "keyIssue": "관광 산업",
+      "voters": 55791,
+      "prevElection": {
+        "turnout": 59.4
+      }
+    },
+    {
+      "name": "양평군",
+      "population": 118000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "전진선",
+        "party": "ppp"
+      },
+      "keyIssue": "친환경 관광",
+      "voters": 107165,
+      "prevElection": {
+        "turnout": 59.2
+      }
+    }
+  ]
+}

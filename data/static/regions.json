@@ -1,0 +1,2943 @@
+{
+  "seoul": {
+    "code": "11",
+    "name": "서울특별시",
+    "nameEng": "Seoul",
+    "population": 9304000,
+    "voters": 8310000,
+    "currentGovernor": {
+      "name": "오세훈",
+      "party": "ppp",
+      "since": 2021
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "오세훈",
+      "rate": 59,
+      "runner": "democratic",
+      "runnerName": "송영길",
+      "runnerRate": 39.2,
+      "turnout": 50.6
+    },
+    "keyIssues": [
+      "주거 안정",
+      "교통 인프라",
+      "도시 재생",
+      "미세먼지 대책"
+    ],
+    "subRegions": 25,
+    "candidates": [
+      {
+        "id": "seoul-1",
+        "name": "정원오",
+        "party": "democratic",
+        "age": 57,
+        "career": "3선 성동구청장 / 前 임종석 의원 보좌관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "시민 중심 행정 혁신",
+          "세금 아깝지 않은 서울",
+          "성동 모델 서울 확장"
+        ]
+      },
+      {
+        "id": "seoul-2",
+        "name": "박주민",
+        "party": "democratic",
+        "age": 52,
+        "career": "3선 국회의원 (은평갑) / 변호사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "기회특별시 서울",
+          "서울투자공사 설립",
+          "강북 바이오 클러스터"
+        ]
+      },
+      {
+        "id": "seoul-3",
+        "name": "김영배",
+        "party": "democratic",
+        "age": 58,
+        "career": "재선 국회의원 (성북갑) / 前 성북구청장 3선 / 前 청와대 민정비서관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "시간평등특별시",
+          "10분 역세권 서울",
+          "마을버스 완전 공영화"
+        ]
+      },
+      {
+        "id": "seoul-4",
+        "name": "전현희",
+        "party": "democratic",
+        "age": 61,
+        "career": "3선 국회의원 / 前 국민권익위원장 / 치과의사·변호사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "DDP 철거 후 서울 돔 건설",
+          "AI 서울 신문고",
+          "서울형 돌봄 기본소득"
+        ]
+      },
+      {
+        "id": "seoul-5",
+        "name": "김형남",
+        "party": "democratic",
+        "age": 35,
+        "career": "前 군인권센터 사무국장 / 민주당 시민참여 선대위 위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "세대교체 서울",
+          "시민 참여형 행정"
+        ]
+      },
+      {
+        "id": "seoul-6",
+        "name": "윤희숙",
+        "party": "ppp",
+        "age": 56,
+        "career": "前 국회의원 (서초갑) / KDI 연구위원 / 경제학 박사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "용적률 500% 제4종 주거지역",
+          "홍릉 AI 밸리",
+          "창동 서울시 2청사"
+        ]
+      },
+      {
+        "id": "seoul-7",
+        "name": "이상규",
+        "party": "ppp",
+        "age": 60,
+        "career": "국민의힘 성북을 당협위원장 / 경영인",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "서울 대개조"
+        ]
+      },
+      {
+        "id": "seoul-8",
+        "name": "김정철",
+        "party": "newReform",
+        "age": 49,
+        "career": "개혁신당 최고위원 / 형사법 전문 변호사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "양당 구태 타파",
+          "서울 행정 혁신"
+        ]
+      },
+      {
+        "id": "seoul-9",
+        "name": "한동훈",
+        "party": "independent",
+        "age": 52,
+        "career": "前 국민의힘 대표 / 前 법무부장관 / 검사장 출신",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "seoul-1": 38.2,
+          "seoul-2": 41.5,
+          "seoul-3": 12.1
+        },
+        "margin": 3.1,
+        "sampleSize": 1003
+      },
+      {
+        "date": "2026-01-29",
+        "source": "리얼미터",
+        "data": {
+          "seoul-1": 39.8,
+          "seoul-2": 40.1,
+          "seoul-3": 11.5
+        },
+        "margin": 2.8,
+        "sampleSize": 1502
+      },
+      {
+        "date": "2026-02-12",
+        "source": "한국갤럽",
+        "data": {
+          "seoul-1": 41.2,
+          "seoul-2": 39.8,
+          "seoul-3": 11
+        },
+        "margin": 3.1,
+        "sampleSize": 1005
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "seoul-1": 42.1,
+          "seoul-2": 38.5,
+          "seoul-3": 11.8
+        },
+        "margin": 2.9,
+        "sampleSize": 1500
+      }
+    ],
+    "partySupport": {
+      "democratic": 42.1,
+      "ppp": 38.5,
+      "reform": 11.8,
+      "newReform": 3.2,
+      "progressive": 1.5,
+      "independent": 2.9
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 48,
+        "ppp": 28,
+        "reform": 16,
+        "other": 8
+      },
+      "30-39": {
+        "democratic": 50,
+        "ppp": 25,
+        "reform": 15,
+        "other": 10
+      },
+      "40-49": {
+        "democratic": 45,
+        "ppp": 35,
+        "reform": 12,
+        "other": 8
+      },
+      "50-59": {
+        "democratic": 38,
+        "ppp": 45,
+        "reform": 10,
+        "other": 7
+      },
+      "60+": {
+        "democratic": 30,
+        "ppp": 55,
+        "reform": 5,
+        "other": 10
+      }
+    },
+    "hotspot": true
+  },
+  "busan": {
+    "code": "26",
+    "name": "부산광역시",
+    "nameEng": "Busan",
+    "population": 3239000,
+    "voters": 2884000,
+    "currentGovernor": {
+      "name": "박형준",
+      "party": "ppp",
+      "since": 2021
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "박형준",
+      "rate": 66.4,
+      "runner": "democratic",
+      "runnerName": "변성완",
+      "runnerRate": 32.2,
+      "turnout": 47.5
+    },
+    "keyIssues": [
+      "가덕도 신공항",
+      "도심 쇠퇴 대응",
+      "청년 인구 유출",
+      "해양 관광"
+    ],
+    "subRegions": 16,
+    "candidates": [
+      {
+        "id": "busan-1",
+        "name": "전재수",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (북구갑) / 前 해양수산부 장관",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "해수부 공공기관 부산 이전",
+          "동남투자공사 설립",
+          "해사전문법원 신설"
+        ]
+      },
+      {
+        "id": "busan-2",
+        "name": "박형준",
+        "party": "ppp",
+        "age": 66,
+        "career": "現 부산시장 (3선 도전) / 前 국회의원·청와대 정무수석",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "글로벌 도시 부산 완성"
+        ]
+      },
+      {
+        "id": "busan-3",
+        "name": "주진우",
+        "party": "ppp",
+        "age": null,
+        "career": "現 국회의원 (해운대갑)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "글로벌 해양수도",
+          "AI 메카 조성"
+        ]
+      },
+      {
+        "id": "busan-4",
+        "name": "이재성",
+        "party": "democratic",
+        "age": null,
+        "career": "前 민주당 부산시당위원장 / 이재명 인재영입 2호",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "다대포 테마파크 유치",
+          "북항 해수부 신청사"
+        ]
+      },
+      {
+        "id": "busan-5",
+        "name": "윤택근",
+        "party": "progressive",
+        "age": null,
+        "career": "前 민주노총 수석부위원장 / 前 부산지하철노조 위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "노동자 시장",
+          "좋은 일자리·공공성"
+        ]
+      },
+      {
+        "id": "busan-6",
+        "name": "정이한",
+        "party": "newReform",
+        "age": 37,
+        "career": "개혁신당 대변인 / 前 국회의원 선임비서관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "젊은 부산",
+          "청년 인구 유출 방지"
+        ]
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "busan-1": 35.5,
+          "busan-2": 44.2,
+          "busan-3": 8.1
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-01-29",
+        "source": "리얼미터",
+        "data": {
+          "busan-1": 37.1,
+          "busan-2": 42.8,
+          "busan-3": 7.5
+        },
+        "margin": 3.2,
+        "sampleSize": 1002
+      },
+      {
+        "date": "2026-02-12",
+        "source": "한국갤럽",
+        "data": {
+          "busan-1": 38.5,
+          "busan-2": 41,
+          "busan-3": 8.8
+        },
+        "margin": 3.5,
+        "sampleSize": 805
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "busan-1": 39.2,
+          "busan-2": 40.5,
+          "busan-3": 8.2
+        },
+        "margin": 3.1,
+        "sampleSize": 1005
+      }
+    ],
+    "partySupport": {
+      "democratic": 39.2,
+      "ppp": 40.5,
+      "reform": 8.2,
+      "newReform": 5.8,
+      "progressive": 2.1,
+      "independent": 4.2
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 45,
+        "ppp": 30,
+        "reform": 15,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 46,
+        "ppp": 28,
+        "reform": 14,
+        "other": 12
+      },
+      "40-49": {
+        "democratic": 40,
+        "ppp": 38,
+        "reform": 12,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 35,
+        "ppp": 48,
+        "reform": 8,
+        "other": 9
+      },
+      "60+": {
+        "democratic": 25,
+        "ppp": 60,
+        "reform": 4,
+        "other": 11
+      }
+    },
+    "hotspot": true
+  },
+  "daegu": {
+    "code": "27",
+    "name": "대구광역시",
+    "nameEng": "Daegu",
+    "population": 2351000,
+    "voters": 2052000,
+    "currentGovernor": {
+      "name": "김정기",
+      "party": "-",
+      "since": 2025,
+      "acting": true,
+      "actingReason": "홍준표 대선 출마 사퇴"
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "홍준표",
+      "rate": 78.8,
+      "runner": "democratic",
+      "runnerName": "서재헌",
+      "runnerRate": 18,
+      "turnout": 48.1
+    },
+    "keyIssues": [
+      "대구경북통합신공항",
+      "산업 구조 전환",
+      "인구 감소",
+      "의료 인프라"
+    ],
+    "subRegions": 8,
+    "candidates": [
+      {
+        "id": "daegu-1",
+        "name": "이진숙",
+        "party": "ppp",
+        "age": null,
+        "career": "前 방송통신위원장 / 前 대전MBC 사장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대구 살리기"
+        ]
+      },
+      {
+        "id": "daegu-2",
+        "name": "추경호",
+        "party": "ppp",
+        "age": null,
+        "career": "3선 국회의원 (달성) / 前 경제부총리",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대구 경제 재건"
+        ]
+      },
+      {
+        "id": "daegu-3",
+        "name": "주호영",
+        "party": "ppp",
+        "age": null,
+        "career": "6선 국회의원 (수성갑) / 現 국회 부의장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대구 재도약"
+        ]
+      },
+      {
+        "id": "daegu-4",
+        "name": "윤재옥",
+        "party": "ppp",
+        "age": null,
+        "career": "4선 국회의원 (달서을) / 前 원내대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "야전사령관형 리더십"
+        ]
+      },
+      {
+        "id": "daegu-5",
+        "name": "최은석",
+        "party": "ppp",
+        "age": null,
+        "career": "초선 국회의원 (동구·군위) / 前 CJ제일제당 대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "기업 경영 DNA로 대구 경제 재건"
+        ]
+      },
+      {
+        "id": "daegu-6",
+        "name": "유영하",
+        "party": "ppp",
+        "age": null,
+        "career": "초선 국회의원 (북구갑) / 前 윤석열 대통령 변호사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "daegu-7",
+        "name": "홍석준",
+        "party": "ppp",
+        "age": null,
+        "career": "前 국회의원 (달서갑)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "daegu-8",
+        "name": "김부겸",
+        "party": "democratic",
+        "age": null,
+        "career": "前 국무총리 / 前 행안부 장관 / 前 국회의원 (수성)",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "daegu-1": 25.5,
+          "daegu-2": 55.2
+        },
+        "margin": 4,
+        "sampleSize": 600
+      },
+      {
+        "date": "2026-02-12",
+        "source": "리얼미터",
+        "data": {
+          "daegu-1": 27.8,
+          "daegu-2": 52.1
+        },
+        "margin": 3.8,
+        "sampleSize": 802
+      },
+      {
+        "date": "2026-02-24",
+        "source": "한국갤럽",
+        "data": {
+          "daegu-1": 28.5,
+          "daegu-2": 51.8
+        },
+        "margin": 4,
+        "sampleSize": 603
+      }
+    ],
+    "partySupport": {
+      "democratic": 28.5,
+      "ppp": 51.8,
+      "reform": 7.5,
+      "newReform": 5.2,
+      "progressive": 1.8,
+      "independent": 5.2
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 38,
+        "ppp": 35,
+        "reform": 15,
+        "other": 12
+      },
+      "30-39": {
+        "democratic": 35,
+        "ppp": 38,
+        "reform": 14,
+        "other": 13
+      },
+      "40-49": {
+        "democratic": 28,
+        "ppp": 50,
+        "reform": 10,
+        "other": 12
+      },
+      "50-59": {
+        "democratic": 22,
+        "ppp": 60,
+        "reform": 6,
+        "other": 12
+      },
+      "60+": {
+        "democratic": 15,
+        "ppp": 72,
+        "reform": 3,
+        "other": 10
+      }
+    },
+    "hotspot": false
+  },
+  "incheon": {
+    "code": "28",
+    "name": "인천광역시",
+    "nameEng": "Incheon",
+    "population": 3054000,
+    "voters": 2583000,
+    "currentGovernor": {
+      "name": "유정복",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "유정복",
+      "rate": 52.1,
+      "runner": "democratic",
+      "runnerName": "박남춘",
+      "runnerRate": 44.5,
+      "turnout": 49.2
+    },
+    "keyIssues": [
+      "인천공항 연계 발전",
+      "수도권 교통",
+      "영종도 개발",
+      "제조업 활성화"
+    ],
+    "subRegions": 10,
+    "candidates": [
+      {
+        "id": "incheon-1",
+        "name": "박찬대",
+        "party": "democratic",
+        "age": 60,
+        "career": "4선 국회의원 (연수갑) / 前 원내대표·대표권한대행 / 공인회계사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "기업가적 인천 대전환",
+          "공익·민간 이익 공유"
+        ]
+      },
+      {
+        "id": "incheon-2",
+        "name": "유정복",
+        "party": "ppp",
+        "age": 68,
+        "career": "現 인천시장 (3선 도전) / 前 행안부·농림부 장관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "천원주택 확대",
+          "인천 제2의료원",
+          "F1 그랑프리 유치"
+        ]
+      },
+      {
+        "id": "incheon-3",
+        "name": "박남춘",
+        "party": "democratic",
+        "age": null,
+        "career": "前 인천시장 / 前 국회의원",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "poll",
+        "pledges": []
+      },
+      {
+        "id": "incheon-4",
+        "name": "김교흥",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (서구갑) / 前 인천시 정무부시장",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "poll",
+        "pledges": []
+      },
+      {
+        "id": "incheon-5",
+        "name": "이기붕",
+        "party": "newReform",
+        "age": null,
+        "career": "개혁신당 인천시당위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "리얼미터",
+        "data": {
+          "incheon-1": 40.2,
+          "incheon-2": 39.8,
+          "incheon-3": 10.5
+        },
+        "margin": 3.2,
+        "sampleSize": 1002
+      },
+      {
+        "date": "2026-02-12",
+        "source": "한국갤럽",
+        "data": {
+          "incheon-1": 42.5,
+          "incheon-2": 38.1,
+          "incheon-3": 10.8
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "incheon-1": 43.1,
+          "incheon-2": 37.5,
+          "incheon-3": 11.2
+        },
+        "margin": 3,
+        "sampleSize": 1100
+      }
+    ],
+    "partySupport": {
+      "democratic": 43.1,
+      "ppp": 37.5,
+      "reform": 11.2,
+      "newReform": 3.5,
+      "progressive": 1.5,
+      "independent": 3.2
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 50,
+        "ppp": 25,
+        "reform": 16,
+        "other": 9
+      },
+      "30-39": {
+        "democratic": 48,
+        "ppp": 27,
+        "reform": 14,
+        "other": 11
+      },
+      "40-49": {
+        "democratic": 44,
+        "ppp": 36,
+        "reform": 11,
+        "other": 9
+      },
+      "50-59": {
+        "democratic": 40,
+        "ppp": 42,
+        "reform": 10,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 32,
+        "ppp": 52,
+        "reform": 6,
+        "other": 10
+      }
+    },
+    "hotspot": true
+  },
+  "gwangju": {
+    "code": "29",
+    "name": "광주광역시",
+    "nameEng": "Gwangju",
+    "population": 1389000,
+    "voters": 1200000,
+    "currentGovernor": {
+      "name": "강기정",
+      "party": "democratic",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "democratic",
+      "winnerName": "강기정",
+      "rate": 74.9,
+      "runner": "ppp",
+      "runnerName": "주기환",
+      "runnerRate": 15.9,
+      "turnout": 37.66
+    },
+    "keyIssues": [
+      "광주-전남 행정통합",
+      "AI 산업 육성",
+      "광주형 일자리",
+      "문화수도"
+    ],
+    "subRegions": 5,
+    "candidates": [
+      {
+        "id": "gwangju-1",
+        "name": "민형배",
+        "party": "democratic",
+        "age": 58,
+        "career": "재선 국회의원 (광산을) / 前 광산구청장(재선)",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-2",
+        "name": "강기정",
+        "party": "democratic",
+        "age": 62,
+        "career": "現 광주시장 (재선 도전) / 前 청와대 정무수석 / 3선 국회의원",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "AI 산업 수도 광주",
+          "광주형 일자리 2.0"
+        ]
+      },
+      {
+        "id": "gwangju-3",
+        "name": "정준호",
+        "party": "democratic",
+        "age": null,
+        "career": "초선 국회의원 (북구갑)",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-4",
+        "name": "문인",
+        "party": "democratic",
+        "age": null,
+        "career": "現 광주 북구청장 / 前 광주시 행정부시장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-5",
+        "name": "이병훈",
+        "party": "democratic",
+        "age": null,
+        "career": "前 국회의원 (동구남구을)",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-6",
+        "name": "이형석",
+        "party": "democratic",
+        "age": null,
+        "career": "前 국회의원 (북구을) / 前 민주당 최고위원",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-7",
+        "name": "이종욱",
+        "party": "progressive",
+        "age": null,
+        "career": "前 민주노총 광주지역본부장 / 30년 공무원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-8",
+        "name": "이정현",
+        "party": "ppp",
+        "age": null,
+        "career": "前 3선 국회의원 / 前 새누리당 대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "gwangju-1": 52.1,
+          "gwangju-2": 30.5
+        },
+        "margin": 4.2,
+        "sampleSize": 500
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "gwangju-1": 50.8,
+          "gwangju-2": 32.1
+        },
+        "margin": 3.8,
+        "sampleSize": 700
+      }
+    ],
+    "partySupport": {
+      "democratic": 50.8,
+      "ppp": 8.5,
+      "reform": 32.1,
+      "newReform": 2.5,
+      "progressive": 3.2,
+      "independent": 2.9
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 45,
+        "ppp": 8,
+        "reform": 35,
+        "other": 12
+      },
+      "30-39": {
+        "democratic": 48,
+        "ppp": 7,
+        "reform": 33,
+        "other": 12
+      },
+      "40-49": {
+        "democratic": 55,
+        "ppp": 10,
+        "reform": 28,
+        "other": 7
+      },
+      "50-59": {
+        "democratic": 58,
+        "ppp": 12,
+        "reform": 22,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 55,
+        "ppp": 15,
+        "reform": 18,
+        "other": 12
+      }
+    },
+    "hotspot": false
+  },
+  "daejeon": {
+    "code": "30",
+    "name": "대전광역시",
+    "nameEng": "Daejeon",
+    "population": 1441000,
+    "voters": 1237000,
+    "currentGovernor": {
+      "name": "이장우",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "이장우",
+      "rate": 51.2,
+      "runner": "democratic",
+      "runnerName": "허태정",
+      "runnerRate": 48.8,
+      "turnout": 49.8
+    },
+    "keyIssues": [
+      "대전-충남 행정통합",
+      "과학기술 클러스터",
+      "도심 교통",
+      "세종시 연계"
+    ],
+    "subRegions": 5,
+    "candidates": [
+      {
+        "id": "daejeon-1",
+        "name": "이장우",
+        "party": "ppp",
+        "age": 61,
+        "career": "現 대전시장 (재선 도전) / 前 3선 국회의원 (동구)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "2048 대전 그랜드 플랜",
+          "스마트시티"
+        ]
+      },
+      {
+        "id": "daejeon-2",
+        "name": "이상민",
+        "party": "ppp",
+        "age": null,
+        "career": "前 국회의원 / 現 국민의힘 대전시당위원장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-3",
+        "name": "허태정",
+        "party": "democratic",
+        "age": 60,
+        "career": "前 대전시장 (민선7기) / 前 국회의원 (유성을)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "한국 제2경제수도",
+          "대전충남 행정통합"
+        ]
+      },
+      {
+        "id": "daejeon-4",
+        "name": "박범계",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (서구을) / 前 법무부장관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "실리콘밸리형 이노베이션 허브"
+        ]
+      },
+      {
+        "id": "daejeon-5",
+        "name": "장철민",
+        "party": "democratic",
+        "age": null,
+        "career": "재선 국회의원 (동구)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-6",
+        "name": "장종태",
+        "party": "democratic",
+        "age": null,
+        "career": "초선 국회의원 (서구갑)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "리얼미터",
+        "data": {
+          "daejeon-1": 44.5,
+          "daejeon-2": 42.1
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "한국갤럽",
+        "data": {
+          "daejeon-1": 46.2,
+          "daejeon-2": 40.8
+        },
+        "margin": 3.8,
+        "sampleSize": 700
+      }
+    ],
+    "partySupport": {
+      "democratic": 46.2,
+      "ppp": 40.8,
+      "reform": 6.5,
+      "newReform": 2.8,
+      "progressive": 1.2,
+      "independent": 2.5
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 52,
+        "ppp": 28,
+        "reform": 12,
+        "other": 8
+      },
+      "30-39": {
+        "democratic": 50,
+        "ppp": 30,
+        "reform": 10,
+        "other": 10
+      },
+      "40-49": {
+        "democratic": 46,
+        "ppp": 38,
+        "reform": 8,
+        "other": 8
+      },
+      "50-59": {
+        "democratic": 42,
+        "ppp": 45,
+        "reform": 6,
+        "other": 7
+      },
+      "60+": {
+        "democratic": 35,
+        "ppp": 52,
+        "reform": 4,
+        "other": 9
+      }
+    },
+    "hotspot": true
+  },
+  "ulsan": {
+    "code": "31",
+    "name": "울산광역시",
+    "nameEng": "Ulsan",
+    "population": 1090000,
+    "voters": 935000,
+    "currentGovernor": {
+      "name": "김두겸",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "김두겸",
+      "rate": 59.8,
+      "runner": "democratic",
+      "runnerName": "송철호",
+      "runnerRate": 40.2,
+      "turnout": 50.1
+    },
+    "keyIssues": [
+      "자동차 산업 전환",
+      "수소 경제",
+      "울산 혁신도시",
+      "환경 문제"
+    ],
+    "subRegions": 5,
+    "candidates": [
+      {
+        "id": "ulsan-1",
+        "name": "김두겸",
+        "party": "ppp",
+        "age": 68,
+        "career": "現 울산시장 (재선 도전) / 前 남구청장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "34조원 투자 유치 지속",
+          "분산에너지 특화지역"
+        ]
+      },
+      {
+        "id": "ulsan-2",
+        "name": "박맹우",
+        "party": "ppp",
+        "age": null,
+        "career": "前 울산시장(2선) / 前 국회의원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "ulsan-3",
+        "name": "김상욱",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (남구갑)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "민주도시·AX 선도도시"
+        ]
+      },
+      {
+        "id": "ulsan-4",
+        "name": "김종훈",
+        "party": "progressive",
+        "age": null,
+        "career": "現 울산 동구청장 / 前 국회의원 / 현대중공업 노조 출신",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "범진보 후보 단일화"
+        ]
+      },
+      {
+        "id": "ulsan-5",
+        "name": "안재현",
+        "party": "democratic",
+        "age": null,
+        "career": "前 노무현재단 울산 상임대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "부유식 해상풍력 완수"
+        ]
+      },
+      {
+        "id": "ulsan-6",
+        "name": "이선호",
+        "party": "democratic",
+        "age": null,
+        "career": "前 청와대 자치발전비서관 / 前 울주군수",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "ulsan-1": 40.8,
+          "ulsan-2": 45.2
+        },
+        "margin": 4,
+        "sampleSize": 600
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "ulsan-1": 42.5,
+          "ulsan-2": 43.8
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      }
+    ],
+    "partySupport": {
+      "democratic": 42.5,
+      "ppp": 43.8,
+      "reform": 5.5,
+      "newReform": 3.2,
+      "progressive": 2.5,
+      "independent": 2.5
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 48,
+        "ppp": 30,
+        "reform": 12,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 46,
+        "ppp": 32,
+        "reform": 10,
+        "other": 12
+      },
+      "40-49": {
+        "democratic": 44,
+        "ppp": 40,
+        "reform": 6,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 38,
+        "ppp": 48,
+        "reform": 5,
+        "other": 9
+      },
+      "60+": {
+        "democratic": 30,
+        "ppp": 58,
+        "reform": 3,
+        "other": 9
+      }
+    },
+    "hotspot": true
+  },
+  "sejong": {
+    "code": "36",
+    "name": "세종특별자치시",
+    "nameEng": "Sejong",
+    "population": 391000,
+    "voters": 301000,
+    "currentGovernor": {
+      "name": "최민호",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "최민호",
+      "rate": 52.8,
+      "runner": "democratic",
+      "runnerName": "이춘희",
+      "runnerRate": 47.2,
+      "turnout": 52.3
+    },
+    "keyIssues": [
+      "행정수도 완성",
+      "세종-대전 연계",
+      "신도시 인프라",
+      "교육 환경"
+    ],
+    "subRegions": 1,
+    "candidates": [
+      {
+        "id": "sejong-1",
+        "name": "최민호",
+        "party": "ppp",
+        "age": 70,
+        "career": "現 세종시장 / 前 국무총리 비서실장 / 31년 관료",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대한민국에서 가장 살기 좋은 도시",
+          "글로벌 행정수도 완성"
+        ]
+      },
+      {
+        "id": "sejong-2",
+        "name": "조상호",
+        "party": "democratic",
+        "age": null,
+        "career": "前 국정기획위원 / 前 세종시 경제부시장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "삼수도론",
+          "경제 중심 행정수도"
+        ]
+      },
+      {
+        "id": "sejong-3",
+        "name": "이춘희",
+        "party": "democratic",
+        "age": null,
+        "career": "前 세종시장 2·3대 / 前 행정도시건설청장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "행정수도 완성 마지막 기회"
+        ]
+      },
+      {
+        "id": "sejong-4",
+        "name": "김수현",
+        "party": "democratic",
+        "age": null,
+        "career": "더민주세종혁신회의 상임대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "sejong-5",
+        "name": "황운하",
+        "party": "reform",
+        "age": null,
+        "career": "現 비례대표 국회의원 (조국혁신당) / 前 대전경찰청장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "행정수도 완성의 종결자"
+        ]
+      },
+      {
+        "id": "sejong-6",
+        "name": "고준일",
+        "party": "democratic",
+        "age": null,
+        "career": "前 세종시의회 의장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "sejong-7",
+        "name": "이준배",
+        "party": "ppp",
+        "age": null,
+        "career": "前 세종시 경제부시장 / 前 국토부 과장",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "sejong-1": 48.5,
+          "sejong-2": 44.2
+        },
+        "margin": 4.5,
+        "sampleSize": 500
+      }
+    ],
+    "partySupport": {
+      "democratic": 48.5,
+      "ppp": 44.2,
+      "reform": 3.5,
+      "newReform": 1.5,
+      "progressive": 0.8,
+      "independent": 1.5
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 55,
+        "ppp": 28,
+        "reform": 10,
+        "other": 7
+      },
+      "30-39": {
+        "democratic": 55,
+        "ppp": 26,
+        "reform": 10,
+        "other": 9
+      },
+      "40-49": {
+        "democratic": 50,
+        "ppp": 35,
+        "reform": 6,
+        "other": 9
+      },
+      "50-59": {
+        "democratic": 42,
+        "ppp": 48,
+        "reform": 4,
+        "other": 6
+      },
+      "60+": {
+        "democratic": 35,
+        "ppp": 55,
+        "reform": 2,
+        "other": 8
+      }
+    },
+    "hotspot": true
+  },
+  "gyeonggi": {
+    "code": "41",
+    "name": "경기도",
+    "nameEng": "Gyeonggi",
+    "population": 13742000,
+    "voters": 11595000,
+    "currentGovernor": {
+      "name": "김동연",
+      "party": "democratic",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "democratic",
+      "winnerName": "김동연",
+      "rate": 49.1,
+      "runner": "ppp",
+      "runnerName": "김은혜",
+      "runnerRate": 48.9,
+      "turnout": 50.8
+    },
+    "keyIssues": [
+      "GTX 완성",
+      "신도시 교통",
+      "반도체 클러스터",
+      "수도권 균형발전"
+    ],
+    "subRegions": 31,
+    "candidates": [
+      {
+        "id": "gyeonggi-1",
+        "name": "김동연",
+        "party": "democratic",
+        "age": 69,
+        "career": "現 경기도지사 / 前 경제부총리 겸 기재부 장관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "경기국제공항 추진",
+          "경기북도 신설",
+          "피지컬 AI 비전"
+        ]
+      },
+      {
+        "id": "gyeonggi-2",
+        "name": "양향자",
+        "party": "ppp",
+        "age": null,
+        "career": "삼성전자 상무 출신 / 국민의힘 최고위원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "반도체 산업 육성",
+          "첨단산업 기반 경기도"
+        ]
+      },
+      {
+        "id": "gyeonggi-3",
+        "name": "추미애",
+        "party": "democratic",
+        "age": 67,
+        "career": "6선 국회의원 / 前 민주당 대표 / 前 법무부 장관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "경기 혁신 주도"
+        ]
+      },
+      {
+        "id": "gyeonggi-4",
+        "name": "한준호",
+        "party": "democratic",
+        "age": null,
+        "career": "재선 국회의원 (고양을) / 前 대통령 수행실장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "이재명 정부 실용주의 경기도 완성"
+        ]
+      },
+      {
+        "id": "gyeonggi-5",
+        "name": "권칠승",
+        "party": "democratic",
+        "age": null,
+        "career": "3선 국회의원 (화성병) / 前 중기부 장관",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "최소 환승 교통체계",
+          "중입자 암 치료센터"
+        ]
+      },
+      {
+        "id": "gyeonggi-6",
+        "name": "양기대",
+        "party": "democratic",
+        "age": null,
+        "career": "前 광명시장(재선) / 前 국회의원 (광명을)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gyeonggi-7",
+        "name": "함진규",
+        "party": "ppp",
+        "age": 67,
+        "career": "前 한국도로공사 사장 / 前 재선 국회의원 (시흥) / 前 정책위의장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gyeonggi-8",
+        "name": "홍성규",
+        "party": "progressive",
+        "age": 52,
+        "career": "진보당 수석대변인 / 화성노동인권센터 소장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "경기 노동부지사 임명",
+          "사회대개혁"
+        ]
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "gyeonggi-1": 43.5,
+          "gyeonggi-2": 37.8,
+          "gyeonggi-3": 10.2
+        },
+        "margin": 2.5,
+        "sampleSize": 1500
+      },
+      {
+        "date": "2026-01-29",
+        "source": "리얼미터",
+        "data": {
+          "gyeonggi-1": 44.2,
+          "gyeonggi-2": 36.5,
+          "gyeonggi-3": 11
+        },
+        "margin": 2.2,
+        "sampleSize": 2000
+      },
+      {
+        "date": "2026-02-12",
+        "source": "한국갤럽",
+        "data": {
+          "gyeonggi-1": 44.8,
+          "gyeonggi-2": 36.1,
+          "gyeonggi-3": 10.5
+        },
+        "margin": 2.5,
+        "sampleSize": 1502
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "gyeonggi-1": 45.5,
+          "gyeonggi-2": 35.2,
+          "gyeonggi-3": 11.2
+        },
+        "margin": 2.2,
+        "sampleSize": 2005
+      }
+    ],
+    "partySupport": {
+      "democratic": 45.5,
+      "ppp": 35.2,
+      "reform": 11.2,
+      "newReform": 3.5,
+      "progressive": 1.8,
+      "independent": 2.8
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 52,
+        "ppp": 25,
+        "reform": 15,
+        "other": 8
+      },
+      "30-39": {
+        "democratic": 50,
+        "ppp": 26,
+        "reform": 14,
+        "other": 10
+      },
+      "40-49": {
+        "democratic": 46,
+        "ppp": 34,
+        "reform": 12,
+        "other": 8
+      },
+      "50-59": {
+        "democratic": 42,
+        "ppp": 40,
+        "reform": 10,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 32,
+        "ppp": 52,
+        "reform": 6,
+        "other": 10
+      }
+    },
+    "hotspot": false
+  },
+  "gangwon": {
+    "code": "42",
+    "name": "강원특별자치도",
+    "nameEng": "Gangwon",
+    "population": 1507000,
+    "voters": 1332000,
+    "currentGovernor": {
+      "name": "김진태",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "김진태",
+      "rate": 54.1,
+      "runner": "democratic",
+      "runnerName": "이광재",
+      "runnerRate": 45.9,
+      "turnout": 52.5
+    },
+    "keyIssues": [
+      "관광 산업 활성화",
+      "인구 소멸 대응",
+      "특별자치도 자치권",
+      "동해안 개발"
+    ],
+    "subRegions": 18,
+    "candidates": [
+      {
+        "id": "gangwon-1",
+        "name": "우상호",
+        "party": "democratic",
+        "age": 63,
+        "career": "前 대통령비서실 정무수석 / 4선 국회의원 (서대문갑) / 前 원내대표",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "이해관계 조율·관리형 리더십",
+          "강원 발전 예산 확보"
+        ]
+      },
+      {
+        "id": "gangwon-2",
+        "name": "김진태",
+        "party": "ppp",
+        "age": 62,
+        "career": "現 강원도지사 / 前 3선 국회의원 / 검사 출신",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "미래산업 글로벌도시",
+          "AI·첨단산업 120개 사업"
+        ]
+      },
+      {
+        "id": "gangwon-3",
+        "name": "염동열",
+        "party": "ppp",
+        "age": 65,
+        "career": "前 재선 국회의원 (태백·영월·평창·정선)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "gangwon-1": 42.1,
+          "gangwon-2": 45.8
+        },
+        "margin": 3.8,
+        "sampleSize": 700
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "gangwon-1": 44.2,
+          "gangwon-2": 43.5
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      }
+    ],
+    "partySupport": {
+      "democratic": 44.2,
+      "ppp": 43.5,
+      "reform": 5,
+      "newReform": 3,
+      "progressive": 1.5,
+      "independent": 2.8
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 50,
+        "ppp": 30,
+        "reform": 10,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 48,
+        "ppp": 32,
+        "reform": 10,
+        "other": 10
+      },
+      "40-49": {
+        "democratic": 44,
+        "ppp": 40,
+        "reform": 6,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 40,
+        "ppp": 48,
+        "reform": 4,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 35,
+        "ppp": 55,
+        "reform": 3,
+        "other": 7
+      }
+    },
+    "hotspot": true
+  },
+  "chungbuk": {
+    "code": "43",
+    "name": "충청북도",
+    "nameEng": "Chungbuk",
+    "population": 1597000,
+    "voters": 1373000,
+    "currentGovernor": {
+      "name": "김영환",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "김영환",
+      "rate": 58.2,
+      "runner": "democratic",
+      "runnerName": "노영민",
+      "runnerRate": 41.8,
+      "turnout": 51.8
+    },
+    "keyIssues": [
+      "오송 참사 후속대책",
+      "바이오 산업",
+      "충북선 고속화",
+      "균형발전"
+    ],
+    "subRegions": 11,
+    "candidates": [
+      {
+        "id": "chungbuk-1",
+        "name": "김영환",
+        "party": "ppp",
+        "age": 63,
+        "career": "現 충북도지사 (재선 도전) / 前 3선 국회의원",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "오송 바이오클러스터",
+          "충북 반도체 단지",
+          "KTX 충북선 연장"
+        ]
+      },
+      {
+        "id": "chungbuk-2",
+        "name": "신용한",
+        "party": "democratic",
+        "age": null,
+        "career": "現 지방시대위 부위원장 / 前 교수",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "새로운 충북 개척",
+          "젊은 충북"
+        ]
+      },
+      {
+        "id": "chungbuk-3",
+        "name": "노영민",
+        "party": "democratic",
+        "age": null,
+        "career": "前 대통령 비서실장 / 前 주중 대사 / 3선 국회의원 (흥덕)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "국정 노하우 활용 지역 발전"
+        ]
+      },
+      {
+        "id": "chungbuk-4",
+        "name": "송기섭",
+        "party": "democratic",
+        "age": null,
+        "career": "前 진천군수 (3선)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "충북특별중심도 건설"
+        ]
+      },
+      {
+        "id": "chungbuk-5",
+        "name": "한범덕",
+        "party": "democratic",
+        "age": null,
+        "career": "前 청주시장 (재선)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "chungbuk-6",
+        "name": "조길형",
+        "party": "ppp",
+        "age": null,
+        "career": "前 충주시장 (재선)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "chungbuk-7",
+        "name": "윤갑근",
+        "party": "ppp",
+        "age": null,
+        "career": "前 충북도당위원장 / 前 대구고검 검사장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대한민국 중심 충북의 시대"
+        ]
+      },
+      {
+        "id": "chungbuk-8",
+        "name": "윤희근",
+        "party": "ppp",
+        "age": null,
+        "career": "前 경찰청장 (23대) / 국민의힘 입당",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "결과로 증명하는 도지사",
+          "반도체·바이오·AI 성장동력"
+        ]
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "리얼미터",
+        "data": {
+          "chungbuk-1": 45.8,
+          "chungbuk-2": 41.2
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "한국갤럽",
+        "data": {
+          "chungbuk-1": 47.2,
+          "chungbuk-2": 39.5
+        },
+        "margin": 3.8,
+        "sampleSize": 700
+      }
+    ],
+    "partySupport": {
+      "democratic": 47.2,
+      "ppp": 39.5,
+      "reform": 5.8,
+      "newReform": 3,
+      "progressive": 1.5,
+      "independent": 3
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 52,
+        "ppp": 28,
+        "reform": 10,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 50,
+        "ppp": 30,
+        "reform": 8,
+        "other": 12
+      },
+      "40-49": {
+        "democratic": 48,
+        "ppp": 36,
+        "reform": 6,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 44,
+        "ppp": 42,
+        "reform": 5,
+        "other": 9
+      },
+      "60+": {
+        "democratic": 38,
+        "ppp": 50,
+        "reform": 4,
+        "other": 8
+      }
+    },
+    "hotspot": true
+  },
+  "chungnam": {
+    "code": "44",
+    "name": "충청남도",
+    "nameEng": "Chungnam",
+    "population": 2136000,
+    "voters": 1825000,
+    "currentGovernor": {
+      "name": "김태흠",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "김태흠",
+      "rate": 53.9,
+      "runner": "democratic",
+      "runnerName": "양승조",
+      "runnerRate": 46.1,
+      "turnout": 51.2
+    },
+    "keyIssues": [
+      "대전-충남 행정통합",
+      "서해안 산업벨트",
+      "농업 혁신",
+      "천안-아산 메가시티"
+    ],
+    "subRegions": 15,
+    "candidates": [
+      {
+        "id": "chungnam-1",
+        "name": "김태흠",
+        "party": "ppp",
+        "age": 58,
+        "career": "現 충남도지사 / 前 3선 국회의원 (보령·서천)",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "AI 대전환",
+          "당진항 복합물류단지",
+          "대전·충남 행정통합"
+        ]
+      },
+      {
+        "id": "chungnam-2",
+        "name": "박수현",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (공주·부여·청양) / 前 청와대 대변인·국민소통수석",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "충남대전 AI 기본사회",
+          "대전충남 통합 완성"
+        ]
+      },
+      {
+        "id": "chungnam-3",
+        "name": "양승조",
+        "party": "democratic",
+        "age": null,
+        "career": "前 충남도지사 / 4선 국회의원 (천안갑)",
+        "photo": null,
+        "status": "WITHDRAWN",
+        "dataSource": "news",
+        "pledges": [
+          "대전충남 통합특별시"
+        ]
+      },
+      {
+        "id": "chungnam-4",
+        "name": "복기왕",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (아산갑) / 前 아산시장(재선)",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "chungnam-5",
+        "name": "나소열",
+        "party": "ppp",
+        "age": null,
+        "career": "現 국회의원 (천안갑) / 前 천안시장",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "chungnam-1": 44.5,
+          "chungnam-2": 43.2
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "chungnam-1": 46,
+          "chungnam-2": 41.8
+        },
+        "margin": 3.2,
+        "sampleSize": 1000
+      }
+    ],
+    "partySupport": {
+      "democratic": 46,
+      "ppp": 41.8,
+      "reform": 5.2,
+      "newReform": 3,
+      "progressive": 1.2,
+      "independent": 2.8
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 50,
+        "ppp": 30,
+        "reform": 10,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 48,
+        "ppp": 32,
+        "reform": 8,
+        "other": 12
+      },
+      "40-49": {
+        "democratic": 46,
+        "ppp": 38,
+        "reform": 6,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 42,
+        "ppp": 44,
+        "reform": 5,
+        "other": 9
+      },
+      "60+": {
+        "democratic": 38,
+        "ppp": 50,
+        "reform": 4,
+        "other": 8
+      }
+    },
+    "hotspot": true
+  },
+  "jeonbuk": {
+    "code": "45",
+    "name": "전북특별자치도",
+    "nameEng": "Jeonbuk",
+    "population": 1722000,
+    "voters": 1518000,
+    "currentGovernor": {
+      "name": "김관영",
+      "party": "democratic",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "democratic",
+      "winnerName": "김관영",
+      "rate": 82.1,
+      "runner": "ppp",
+      "runnerName": "조배숙",
+      "runnerRate": 17.9,
+      "turnout": 50.9
+    },
+    "keyIssues": [
+      "특별자치도 자치권",
+      "새만금 개발",
+      "탄소중립",
+      "농생명 산업"
+    ],
+    "subRegions": 14,
+    "candidates": [
+      {
+        "id": "jeonbuk-1",
+        "name": "김관영",
+        "party": "democratic",
+        "age": 58,
+        "career": "現 전북도지사 (재선 도전) / 前 3선 국회의원 (군산)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "전북특별자치도 특례 확대",
+          "새만금 활성화"
+        ]
+      },
+      {
+        "id": "jeonbuk-2",
+        "name": "안호영",
+        "party": "democratic",
+        "age": null,
+        "career": "3선 국회의원 (완주·진안·무주·장수) / 現 환경노동위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-3",
+        "name": "이원택",
+        "party": "democratic",
+        "age": null,
+        "career": "재선 국회의원 (전주갑) / 前 전북도 정무부지사",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-4",
+        "name": "정헌율",
+        "party": "democratic",
+        "age": null,
+        "career": "現 익산시장 (3선, 연임제한)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "jeonbuk-1": 55.2,
+          "jeonbuk-2": 28.5
+        },
+        "margin": 3.8,
+        "sampleSize": 700
+      }
+    ],
+    "partySupport": {
+      "democratic": 55.2,
+      "ppp": 8.5,
+      "reform": 28.5,
+      "newReform": 2,
+      "progressive": 3.5,
+      "independent": 2.3
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 48,
+        "ppp": 8,
+        "reform": 32,
+        "other": 12
+      },
+      "30-39": {
+        "democratic": 50,
+        "ppp": 7,
+        "reform": 30,
+        "other": 13
+      },
+      "40-49": {
+        "democratic": 58,
+        "ppp": 9,
+        "reform": 25,
+        "other": 8
+      },
+      "50-59": {
+        "democratic": 60,
+        "ppp": 10,
+        "reform": 22,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 58,
+        "ppp": 12,
+        "reform": 20,
+        "other": 10
+      }
+    },
+    "hotspot": false
+  },
+  "jeonnam": {
+    "code": "46",
+    "name": "전라남도",
+    "nameEng": "Jeonnam",
+    "population": 1777000,
+    "voters": 1565000,
+    "currentGovernor": {
+      "name": "김영록",
+      "party": "democratic",
+      "since": 2018
+    },
+    "prevElection": {
+      "winner": "democratic",
+      "winnerName": "김영록",
+      "rate": 75.7,
+      "runner": "ppp",
+      "runnerName": "이정현",
+      "runnerRate": 18.8,
+      "turnout": 50.9
+    },
+    "keyIssues": [
+      "광주-전남 행정통합",
+      "에너지 전환",
+      "농어촌 활성화",
+      "인구 소멸"
+    ],
+    "subRegions": 22,
+    "candidates": [
+      {
+        "id": "jeonnam-1",
+        "name": "김영록",
+        "party": "democratic",
+        "age": 68,
+        "career": "現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "전남 해상풍력 허브",
+          "광주-전남 메가시티"
+        ]
+      },
+      {
+        "id": "jeonnam-2",
+        "name": "주철현",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonnam-3",
+        "name": "신정훈",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (나주·화순) / 現 행안위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonnam-4",
+        "name": "이개호",
+        "party": "democratic",
+        "age": null,
+        "career": "4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonnam-5",
+        "name": "서삼석",
+        "party": "democratic",
+        "age": null,
+        "career": "3선 국회의원 (영암·무안·신안) / 前 무안군수",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "jeonnam-6",
+        "name": "김화진",
+        "party": "ppp",
+        "age": null,
+        "career": "現 국민의힘 전남도당위원장 (4연임)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-02-24",
+        "source": "한국갤럽",
+        "data": {
+          "jeonnam-1": 58.5,
+          "jeonnam-2": 25.2
+        },
+        "margin": 4,
+        "sampleSize": 600
+      }
+    ],
+    "partySupport": {
+      "democratic": 58.5,
+      "ppp": 6.8,
+      "reform": 25.2,
+      "newReform": 2.5,
+      "progressive": 4,
+      "independent": 3
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 50,
+        "ppp": 6,
+        "reform": 30,
+        "other": 14
+      },
+      "30-39": {
+        "democratic": 52,
+        "ppp": 5,
+        "reform": 28,
+        "other": 15
+      },
+      "40-49": {
+        "democratic": 60,
+        "ppp": 7,
+        "reform": 24,
+        "other": 9
+      },
+      "50-59": {
+        "democratic": 62,
+        "ppp": 8,
+        "reform": 22,
+        "other": 8
+      },
+      "60+": {
+        "democratic": 60,
+        "ppp": 10,
+        "reform": 18,
+        "other": 12
+      }
+    },
+    "hotspot": false
+  },
+  "gyeongbuk": {
+    "code": "47",
+    "name": "경상북도",
+    "nameEng": "Gyeongbuk",
+    "population": 2500000,
+    "voters": 2224000,
+    "currentGovernor": {
+      "name": "이철우",
+      "party": "ppp",
+      "since": 2018
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "이철우",
+      "rate": 78,
+      "runner": "democratic",
+      "runnerName": "임미애",
+      "runnerRate": 22,
+      "turnout": 49.5
+    },
+    "keyIssues": [
+      "포항 지진 복구",
+      "경북 북부 발전",
+      "울릉도 개발",
+      "반도체 산업"
+    ],
+    "subRegions": 23,
+    "candidates": [
+      {
+        "id": "gyeongbuk-1",
+        "name": "이철우",
+        "party": "ppp",
+        "age": 71,
+        "career": "現 경북도지사 (3선 도전) / 前 5선 국회의원 (김천)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "대구경북신공항 완수",
+          "국가산업단지 조성"
+        ]
+      },
+      {
+        "id": "gyeongbuk-2",
+        "name": "권오을",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국가보훈부 장관 / 前 3선 국회의원 (안동)",
+        "photo": null,
+        "status": "WITHDRAWN",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gyeongbuk-3",
+        "name": "오중기",
+        "party": "democratic",
+        "age": null,
+        "career": "民 포항북 지역위원장 / 前 청와대 균형발전비서관실",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "대기업 상생 생태계",
+          "청년창업 메카"
+        ]
+      },
+      {
+        "id": "gyeongbuk-4",
+        "name": "임미애",
+        "party": "democratic",
+        "age": null,
+        "career": "現 비례대표 국회의원 / 前 경북도의원",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "리얼미터",
+        "data": {
+          "gyeongbuk-1": 22.8,
+          "gyeongbuk-2": 58.5
+        },
+        "margin": 3.8,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "한국갤럽",
+        "data": {
+          "gyeongbuk-1": 24.5,
+          "gyeongbuk-2": 56.2
+        },
+        "margin": 4,
+        "sampleSize": 600
+      }
+    ],
+    "partySupport": {
+      "democratic": 24.5,
+      "ppp": 56.2,
+      "reform": 6.5,
+      "newReform": 5.8,
+      "progressive": 1.5,
+      "independent": 5.5
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 35,
+        "ppp": 38,
+        "reform": 14,
+        "other": 13
+      },
+      "30-39": {
+        "democratic": 30,
+        "ppp": 42,
+        "reform": 12,
+        "other": 16
+      },
+      "40-49": {
+        "democratic": 24,
+        "ppp": 55,
+        "reform": 8,
+        "other": 13
+      },
+      "50-59": {
+        "democratic": 20,
+        "ppp": 62,
+        "reform": 5,
+        "other": 13
+      },
+      "60+": {
+        "democratic": 15,
+        "ppp": 72,
+        "reform": 3,
+        "other": 10
+      }
+    },
+    "hotspot": false
+  },
+  "gyeongnam": {
+    "code": "48",
+    "name": "경상남도",
+    "nameEng": "Gyeongnam",
+    "population": 3201000,
+    "voters": 2780000,
+    "currentGovernor": {
+      "name": "박완수",
+      "party": "ppp",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "ppp",
+      "winnerName": "박완수",
+      "rate": 65.7,
+      "runner": "democratic",
+      "runnerName": "양문석",
+      "runnerRate": 29.4,
+      "turnout": 49.8
+    },
+    "keyIssues": [
+      "조선 산업 부활",
+      "진주 혁신도시",
+      "김해 가덕도 연계",
+      "농촌 활성화"
+    ],
+    "subRegions": 18,
+    "candidates": [
+      {
+        "id": "gyeongnam-1",
+        "name": "김경수",
+        "party": "democratic",
+        "age": null,
+        "career": "現 지방시대위원장 / 前 경남도지사 (민선7기)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-2",
+        "name": "박완수",
+        "party": "ppp",
+        "age": 71,
+        "career": "現 경남도지사 / 前 3선 창원시장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [
+          "산업 경쟁력 강화",
+          "도정 연속성"
+        ]
+      },
+      {
+        "id": "gyeongnam-3",
+        "name": "조해진",
+        "party": "ppp",
+        "age": null,
+        "career": "前 3선 국회의원 (밀양·의령·함안·창녕)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "남부권 제2 수도권",
+          "부울경 통합 지자체"
+        ]
+      },
+      {
+        "id": "gyeongnam-4",
+        "name": "전희영",
+        "party": "progressive",
+        "age": null,
+        "career": "前 전교조 위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "gyeongnam-1": 38.5,
+          "gyeongnam-2": 46.8
+        },
+        "margin": 3.5,
+        "sampleSize": 800
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "gyeongnam-1": 41.2,
+          "gyeongnam-2": 44.5
+        },
+        "margin": 3,
+        "sampleSize": 1000
+      }
+    ],
+    "partySupport": {
+      "democratic": 41.2,
+      "ppp": 44.5,
+      "reform": 5.8,
+      "newReform": 3.5,
+      "progressive": 2,
+      "independent": 3
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 48,
+        "ppp": 30,
+        "reform": 12,
+        "other": 10
+      },
+      "30-39": {
+        "democratic": 45,
+        "ppp": 32,
+        "reform": 10,
+        "other": 13
+      },
+      "40-49": {
+        "democratic": 40,
+        "ppp": 42,
+        "reform": 8,
+        "other": 10
+      },
+      "50-59": {
+        "democratic": 35,
+        "ppp": 50,
+        "reform": 5,
+        "other": 10
+      },
+      "60+": {
+        "democratic": 28,
+        "ppp": 60,
+        "reform": 3,
+        "other": 9
+      }
+    },
+    "hotspot": true
+  },
+  "jeju": {
+    "code": "50",
+    "name": "제주특별자치도",
+    "nameEng": "Jeju",
+    "population": 664000,
+    "voters": 567000,
+    "currentGovernor": {
+      "name": "오영훈",
+      "party": "democratic",
+      "since": 2022
+    },
+    "prevElection": {
+      "winner": "democratic",
+      "winnerName": "오영훈",
+      "rate": 55.1,
+      "runner": "ppp",
+      "runnerName": "허향진",
+      "runnerRate": 39.5,
+      "turnout": 53.5
+    },
+    "keyIssues": [
+      "제주 제2공항",
+      "관광 산업 혁신",
+      "환경 보전",
+      "이주민 정책"
+    ],
+    "subRegions": 2,
+    "candidates": [
+      {
+        "id": "jeju-1",
+        "name": "문대림",
+        "party": "democratic",
+        "age": 61,
+        "career": "現 국회의원 (제주시을) / 前 제주도의회 의장(최연소)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "5천억 민생회복 추경",
+          "20조원 투자 유치"
+        ]
+      },
+      {
+        "id": "jeju-2",
+        "name": "오영훈",
+        "party": "democratic",
+        "age": 57,
+        "career": "現 제주도지사 (재선 도전) / 前 국회의원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "AI·에너지·우주산업 중심 미래 제주",
+          "재생에너지 연금"
+        ]
+      },
+      {
+        "id": "jeju-3",
+        "name": "위성곤",
+        "party": "democratic",
+        "age": 58,
+        "career": "3선 국회의원 (서귀포) / 現 기후위기특별위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "제주사회 대전환 6대 비전"
+        ]
+      },
+      {
+        "id": "jeju-4",
+        "name": "문성유",
+        "party": "ppp",
+        "age": null,
+        "career": "前 기재부 기획조정실장 / 前 KAMCO 사장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "1차 산업 인력통합관리센터"
+        ]
+      },
+      {
+        "id": "jeju-5",
+        "name": "양윤녕",
+        "party": "democratic",
+        "age": null,
+        "career": "前 소나무당 → 민주당 복당 / 前 제주도의원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "polls": [
+      {
+        "date": "2026-01-15",
+        "source": "한국갤럽",
+        "data": {
+          "jeju-1": 40.2,
+          "jeju-2": 35.8,
+          "jeju-3": 12.5
+        },
+        "margin": 4.5,
+        "sampleSize": 500
+      },
+      {
+        "date": "2026-02-24",
+        "source": "리얼미터",
+        "data": {
+          "jeju-1": 42.5,
+          "jeju-2": 33.8,
+          "jeju-3": 13.2
+        },
+        "margin": 4,
+        "sampleSize": 600
+      }
+    ],
+    "partySupport": {
+      "democratic": 42.5,
+      "ppp": 33.8,
+      "reform": 5.5,
+      "newReform": 2,
+      "progressive": 1.5,
+      "independent": 14.7
+    },
+    "demographics": {
+      "18-29": {
+        "democratic": 48,
+        "ppp": 25,
+        "reform": 10,
+        "other": 17
+      },
+      "30-39": {
+        "democratic": 45,
+        "ppp": 28,
+        "reform": 8,
+        "other": 19
+      },
+      "40-49": {
+        "democratic": 42,
+        "ppp": 35,
+        "reform": 6,
+        "other": 17
+      },
+      "50-59": {
+        "democratic": 40,
+        "ppp": 40,
+        "reform": 5,
+        "other": 15
+      },
+      "60+": {
+        "democratic": 35,
+        "ppp": 45,
+        "reform": 4,
+        "other": 16
+      }
+    },
+    "hotspot": false
+  }
+}

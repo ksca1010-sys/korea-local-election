@@ -1,0 +1,898 @@
+{
+  "busan/강서구": {
+    "lastUpdated": "2026-03-17T10:15:35.774512",
+    "newsHash": "e815dcfe3011bc13a0541fa0b757028b"
+  },
+  "busan/금정구": {
+    "lastUpdated": "2026-03-17T10:15:47.221254",
+    "newsHash": "6b5daa9fe063a80605c01fea993bf399"
+  },
+  "busan/기장군": {
+    "lastUpdated": "2026-03-17T10:15:59.203337",
+    "newsHash": "463d8aca3ffb5278991f06aff06ff63e"
+  },
+  "busan/남구": {
+    "lastUpdated": "2026-03-17T10:16:09.105462",
+    "newsHash": "aa45f2639f0bf4b984684d6a730d579a"
+  },
+  "busan/동구": {
+    "lastUpdated": "2026-03-17T10:16:22.492494",
+    "newsHash": "85407b216bb9a56ef343218e59de6772"
+  },
+  "busan/동래구": {
+    "lastUpdated": "2026-03-17T10:16:35.395860",
+    "newsHash": "cd1b659d7b0b8b9077c020099d9dd027"
+  },
+  "busan/부산진구": {
+    "lastUpdated": "2026-03-17T10:16:47.236209",
+    "newsHash": "ef426cf002688fa6d8e5eaad816b9a77"
+  },
+  "busan/북구": {
+    "lastUpdated": "2026-03-17T10:16:57.689096",
+    "newsHash": "9f0af352e572a24a0fcb6e41ce9b7380"
+  },
+  "busan/사상구": {
+    "lastUpdated": "2026-03-17T10:17:12.125273",
+    "newsHash": "a1ed3b155596a310774beec77dafc84a"
+  },
+  "busan/사하구": {
+    "lastUpdated": "2026-03-17T10:17:21.795713",
+    "newsHash": "52e710081a39cf596937a47781dcfe21"
+  },
+  "busan/서구": {
+    "lastUpdated": "2026-03-17T10:17:33.152758",
+    "newsHash": "f54c3c8e26c6c111eb5c764df20ac9a9"
+  },
+  "busan/수영구": {
+    "lastUpdated": "2026-03-17T10:17:44.585868",
+    "newsHash": "588f32769396ef2bc290604267bdbb96"
+  },
+  "busan/연제구": {
+    "lastUpdated": "2026-03-17T10:17:56.116314",
+    "newsHash": "5cf99299493f4fcb7f8e0ab31e53ed33"
+  },
+  "busan/영도구": {
+    "lastUpdated": "2026-03-17T10:18:05.251168",
+    "newsHash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "busan/중구": {
+    "lastUpdated": "2026-03-17T10:18:16.620016",
+    "newsHash": "d7859d8341fdf78990acda0a35ef8633"
+  },
+  "busan/해운대구": {
+    "lastUpdated": "2026-03-17T10:18:26.144348",
+    "newsHash": "9494881bee82e4a6dfe354516a954a27"
+  },
+  "chungbuk/괴산군": {
+    "lastUpdated": "2026-03-17T10:18:37.247659",
+    "newsHash": "3a0b86a9a3a054d070711dc79c0025c1"
+  },
+  "chungbuk/단양군": {
+    "lastUpdated": "2026-03-17T10:18:49.294319",
+    "newsHash": "b7a387e682635f3aeecac73856d5c1c7"
+  },
+  "chungbuk/보은군": {
+    "lastUpdated": "2026-03-17T10:19:01.755206",
+    "newsHash": "9e72e31a9c81fc8cfabbb551f40f736e"
+  },
+  "chungbuk/영동군": {
+    "lastUpdated": "2026-03-17T10:19:14.888534",
+    "newsHash": "c0d18a53e0ea8b5a4e300cba8f570008"
+  },
+  "chungbuk/옥천군": {
+    "lastUpdated": "2026-03-17T10:19:27.369628",
+    "newsHash": "db8948abe9d572277b479eadcddd433d"
+  },
+  "chungbuk/음성군": {
+    "lastUpdated": "2026-03-17T10:19:39.567016",
+    "newsHash": "fe2382e327ec243cbd90c69256238a61"
+  },
+  "chungbuk/제천시": {
+    "lastUpdated": "2026-03-17T10:19:52.213149",
+    "newsHash": "26f72b760f593e558c4440a563dd7aeb"
+  },
+  "chungbuk/증평군": {
+    "lastUpdated": "2026-03-17T10:20:05.066439",
+    "newsHash": "abcde7c61651f55ac18b09551b1094ec"
+  },
+  "chungbuk/진천군": {
+    "lastUpdated": "2026-03-17T10:20:16.228176",
+    "newsHash": "414fb79bc2b3fc1719e2b819c8ffa2c2"
+  },
+  "chungbuk/청주시": {
+    "lastUpdated": "2026-03-17T10:20:30.398444",
+    "newsHash": "1d37fd65476db09f31f9d4f5f203bd7a"
+  },
+  "chungbuk/충주시": {
+    "lastUpdated": "2026-03-17T10:20:44.080130",
+    "newsHash": "89e465c444eec9e81690bbb63069f5b5"
+  },
+  "chungnam/계룡시": {
+    "lastUpdated": "2026-03-17T10:20:55.653268",
+    "newsHash": "8e2d7f4f685f48e35d4ce3f0a5bc22d5"
+  },
+  "chungnam/공주시": {
+    "lastUpdated": "2026-03-17T10:21:07.426993",
+    "newsHash": "b542fdb1b610d6fe51c50d2fc3ebc2c3"
+  },
+  "chungnam/금산군": {
+    "lastUpdated": "2026-03-17T10:21:20.636904",
+    "newsHash": "f084b69e36fff9ee5e6d1584ec41baab"
+  },
+  "chungnam/논산시": {
+    "lastUpdated": "2026-03-17T10:21:31.287187",
+    "newsHash": "6eb42b61a2daad0f89c03daeef2af723"
+  },
+  "chungnam/당진시": {
+    "lastUpdated": "2026-03-17T10:21:41.013076",
+    "newsHash": "6ad6cb6f16513625223cb06c9ccf8eee"
+  },
+  "chungnam/보령시": {
+    "lastUpdated": "2026-03-17T10:21:53.208151",
+    "newsHash": "b4c46f638597b6a74c6b8d698383ea7b"
+  },
+  "chungnam/부여군": {
+    "lastUpdated": "2026-03-17T10:22:06.205862",
+    "newsHash": "c601253d50180987aa4b201ded82d2bb"
+  },
+  "chungnam/서산시": {
+    "lastUpdated": "2026-03-17T10:22:18.390013",
+    "newsHash": "32fc63f764faa5d7aa6d9bc17088f750"
+  },
+  "chungnam/서천군": {
+    "lastUpdated": "2026-03-17T10:22:28.426740",
+    "newsHash": "76a77197da9d1c554be928b7828059ca"
+  },
+  "chungnam/아산시": {
+    "lastUpdated": "2026-03-17T10:22:41.840379",
+    "newsHash": "4060f807fdfec24282de6713e58c57fd"
+  },
+  "chungnam/예산군": {
+    "lastUpdated": "2026-03-17T10:22:51.364558",
+    "newsHash": "49fac2b4ff19dc0c3a5277a344850b7c"
+  },
+  "chungnam/천안시": {
+    "lastUpdated": "2026-03-17T10:23:05.700403",
+    "newsHash": "ab255a666fddfdfa34152e7ad3845461"
+  },
+  "chungnam/청양군": {
+    "lastUpdated": "2026-03-17T10:23:20.653307",
+    "newsHash": "9328b5dcc42b34c8d39fdb17a088e66a"
+  },
+  "chungnam/태안군": {
+    "lastUpdated": "2026-03-17T10:23:33.656554",
+    "newsHash": "6d5a402bd2f847fe8f2e2fc49715bcfe"
+  },
+  "chungnam/홍성군": {
+    "lastUpdated": "2026-03-17T10:23:46.458506",
+    "newsHash": "67c33bd96552c01754614a328920af01"
+  },
+  "daegu/남구": {
+    "lastUpdated": "2026-03-17T10:23:57.524602",
+    "newsHash": "4c5c0e5c643fbba7f6cb8e3d5deba11b"
+  },
+  "daegu/달서구": {
+    "lastUpdated": "2026-03-17T10:24:09.906125",
+    "newsHash": "fdcf30344b390cbbbc545d8397e0fbc0"
+  },
+  "daegu/달성군": {
+    "lastUpdated": "2026-03-17T10:24:23.874192",
+    "newsHash": "b879e0d2776adef7428aa8327687be51"
+  },
+  "daegu/동구": {
+    "lastUpdated": "2026-03-17T10:24:36.112546",
+    "newsHash": "4ac2ad552052686316f60b70f4360d71"
+  },
+  "daegu/북구": {
+    "lastUpdated": "2026-03-17T10:24:48.583878",
+    "newsHash": "afea35e2744bde2fd801cb86f7b789a1"
+  },
+  "daegu/서구": {
+    "lastUpdated": "2026-03-17T10:25:00.816185",
+    "newsHash": "42dbaeb1ef308e69e9ba53606bc00e1e"
+  },
+  "daegu/수성구": {
+    "lastUpdated": "2026-03-17T10:25:15.033440",
+    "newsHash": "fed933427bc1cd0b662fc72ba68a58f5"
+  },
+  "daegu/중구": {
+    "lastUpdated": "2026-03-17T10:25:26.091809",
+    "newsHash": "eee04a98f5bf55ab9ec2b6460adbe2a8"
+  },
+  "daejeon/대덕구": {
+    "lastUpdated": "2026-03-17T10:25:37.460195",
+    "newsHash": "600087e0dd8e4a591098fdbb3faafaab"
+  },
+  "daejeon/동구": {
+    "lastUpdated": "2026-03-17T10:25:50.052755",
+    "newsHash": "ff4edc904e44d0998d7a4b38984e9c2a"
+  },
+  "daejeon/서구": {
+    "lastUpdated": "2026-03-17T10:26:01.843516",
+    "newsHash": "cd8ed9757067b2a1bf437575620f6429"
+  },
+  "daejeon/유성구": {
+    "lastUpdated": "2026-03-17T10:26:12.582774",
+    "newsHash": "d86ac68b5273360aabd388e0b44ebd22"
+  },
+  "daejeon/중구": {
+    "lastUpdated": "2026-03-17T10:26:25.999438",
+    "newsHash": "aaaf25e0e2f75a637818016bda9c32d6"
+  },
+  "gangwon/강릉시": {
+    "lastUpdated": "2026-03-17T10:26:37.977052",
+    "newsHash": "c18de4ae4f2961355f8855ea45f0cd72"
+  },
+  "gangwon/고성군": {
+    "lastUpdated": "2026-03-17T10:26:46.682433",
+    "newsHash": "3f131bff4bf2643488cd7f9913108b03"
+  },
+  "gangwon/동해시": {
+    "lastUpdated": "2026-03-17T10:26:58.054838",
+    "newsHash": "2a6670bc050582d30fa8292d4e0106ce"
+  },
+  "gangwon/삼척시": {
+    "lastUpdated": "2026-03-17T10:27:07.470108",
+    "newsHash": "51dbd3ebe07700b26f3c463dc82e9285"
+  },
+  "gangwon/속초시": {
+    "lastUpdated": "2026-03-17T10:27:23.035462",
+    "newsHash": "d2cf904bccc151f9adb62d6679341d4f"
+  },
+  "gangwon/양구군": {
+    "lastUpdated": "2026-03-17T10:27:31.638620",
+    "newsHash": "87a62d7b90ef7422858c50f724b68769"
+  },
+  "gangwon/양양군": {
+    "lastUpdated": "2026-03-17T10:27:43.003870",
+    "newsHash": "e54510606b2a10cf98b3b303511413e1"
+  },
+  "gangwon/영월군": {
+    "lastUpdated": "2026-03-17T10:27:53.344601",
+    "newsHash": "53bec69a513839f76494f848196b5b13"
+  },
+  "gangwon/원주시": {
+    "lastUpdated": "2026-03-17T10:28:05.947528",
+    "newsHash": "bafa4c699bccd76e4496ab6a4a52ba11"
+  },
+  "gangwon/인제군": {
+    "lastUpdated": "2026-03-17T10:28:16.695675",
+    "newsHash": "49c24d822dac77f2644bc0e6a0d1bee8"
+  },
+  "gangwon/정선군": {
+    "lastUpdated": "2026-03-17T10:28:28.673056",
+    "newsHash": "dade6b85a81bca97506badeb3fb85e6a"
+  },
+  "gangwon/철원군": {
+    "lastUpdated": "2026-03-17T10:28:38.914255",
+    "newsHash": "f8cdabcb7fca4c34eb8dcd15aba04f15"
+  },
+  "gangwon/춘천시": {
+    "lastUpdated": "2026-03-17T10:28:50.895766",
+    "newsHash": "14879ac6f22d216b9ec18f175d5dc7c1"
+  },
+  "gangwon/태백시": {
+    "lastUpdated": "2026-03-17T10:29:02.363748",
+    "newsHash": "2bab7b8b846a3fb8f291abd4e09488d1"
+  },
+  "gangwon/평창군": {
+    "lastUpdated": "2026-03-17T10:29:13.526545",
+    "newsHash": "2dc4692cbfb44c04fa20a89dc9454e1c"
+  },
+  "gangwon/홍천군": {
+    "lastUpdated": "2026-03-17T10:29:25.711967",
+    "newsHash": "d25bdf9464e47747b3e74cdb18d00c9b"
+  },
+  "gangwon/화천군": {
+    "lastUpdated": "2026-03-17T10:29:36.259611",
+    "newsHash": "8114de23cd2d458ad587539eda7563cf"
+  },
+  "gangwon/횡성군": {
+    "lastUpdated": "2026-03-17T10:29:48.752690",
+    "newsHash": "f002b89f46a65aafb716ee302b22fc6a"
+  },
+  "gwangju/광산구": {
+    "lastUpdated": "2026-03-17T10:30:00.524971",
+    "newsHash": "5fd08c9bc22a737ad17b8054a7bd8e11"
+  },
+  "gwangju/남구": {
+    "lastUpdated": "2026-03-17T10:30:12.485414",
+    "newsHash": "0dbe44b9d4e95149c93d3faee48c0eb4"
+  },
+  "gwangju/동구": {
+    "lastUpdated": "2026-03-17T10:30:22.134527",
+    "newsHash": "236df6b06d131fea0564e1ee0585ad9a"
+  },
+  "gwangju/북구": {
+    "lastUpdated": "2026-03-17T10:30:33.193417",
+    "newsHash": "98d6dc1b3aeb9a29fd1f96b155f900a7"
+  },
+  "gwangju/서구": {
+    "lastUpdated": "2026-03-17T10:30:43.433051",
+    "newsHash": "8214e1b5a5b4b085785d8ff8a22da1ed"
+  },
+  "gyeongbuk/경산시": {
+    "lastUpdated": "2026-03-17T10:30:54.646564",
+    "newsHash": "617fd967c947210d3a09d6276757e289"
+  },
+  "gyeongbuk/경주시": {
+    "lastUpdated": "2026-03-17T10:31:10.365364",
+    "newsHash": "c3e23e19cc1b75ba15c460887991d9d0"
+  },
+  "gyeongbuk/고령군": {
+    "lastUpdated": "2026-03-17T10:31:23.679401",
+    "newsHash": "8abf64971bf71138ec5ebc3857a66d93"
+  },
+  "gyeongbuk/구미시": {
+    "lastUpdated": "2026-03-17T10:31:36.477440",
+    "newsHash": "1b3f834e7568536be9038b8eeff27959"
+  },
+  "gyeongbuk/군위군": {
+    "lastUpdated": "2026-03-17T10:31:51.777750",
+    "newsHash": "42d1af79b08fee1ea9c8372b8b86cae6"
+  },
+  "gyeongbuk/김천시": {
+    "lastUpdated": "2026-03-17T10:32:05.687523",
+    "newsHash": "71c5ce4b48336d15b7187cbdc5e7b2aa"
+  },
+  "gyeongbuk/문경시": {
+    "lastUpdated": "2026-03-17T10:32:17.958955",
+    "newsHash": "2d880e7604e6d33222caf9d9016d2fb9"
+  },
+  "gyeongbuk/봉화군": {
+    "lastUpdated": "2026-03-17T10:32:29.623919",
+    "newsHash": "d4fd518f0f7808253b0da77090b85520"
+  },
+  "gyeongbuk/상주시": {
+    "lastUpdated": "2026-03-17T10:32:40.774266",
+    "newsHash": "0e2e0bc46e489b14490eeb4e3ecd6239"
+  },
+  "gyeongbuk/성주군": {
+    "lastUpdated": "2026-03-17T10:32:52.461407",
+    "newsHash": "678f34ec846b97dd9c6a427e2d95a588"
+  },
+  "gyeongbuk/안동시": {
+    "lastUpdated": "2026-03-17T10:33:04.661505",
+    "newsHash": "ade22f5c6677388817b687a6f10f1e8f"
+  },
+  "gyeongbuk/영덕군": {
+    "lastUpdated": "2026-03-17T10:33:17.037607",
+    "newsHash": "26ff6638083cfb8671ff959171550c4e"
+  },
+  "gyeongbuk/영양군": {
+    "lastUpdated": "2026-03-17T10:33:28.405185",
+    "newsHash": "97f871e5e2a755d68ece8428e6357c02"
+  },
+  "gyeongbuk/영주시": {
+    "lastUpdated": "2026-03-17T10:33:41.715187",
+    "newsHash": "e106f45f8d9a9573793cd11a067e5ffb"
+  },
+  "gyeongbuk/울릉군": {
+    "lastUpdated": "2026-03-17T10:33:59.949884",
+    "newsHash": "a4fefc0b94c042517dbd6921a937c394"
+  },
+  "gyeongbuk/울진군": {
+    "lastUpdated": "2026-03-17T10:34:12.947534",
+    "newsHash": "c5e26f8ef425b7caa201bb95b42f3c1c"
+  },
+  "gyeongbuk/의성군": {
+    "lastUpdated": "2026-03-17T10:34:25.241542",
+    "newsHash": "3df0be3947bc06f1e59df8c88b8602b9"
+  },
+  "gyeongbuk/청도군": {
+    "lastUpdated": "2026-03-17T10:34:39.369688",
+    "newsHash": "c788b0d1bdb3b87afe3252cbc6a7d624"
+  },
+  "gyeongbuk/청송군": {
+    "lastUpdated": "2026-03-17T10:34:50.497568",
+    "newsHash": "d9d1950ad42afd9e2058ea5297b615e9"
+  },
+  "gyeongbuk/칠곡군": {
+    "lastUpdated": "2026-03-17T10:34:59.846104",
+    "newsHash": "e1e5d6325c369333f28aa19cd9085e6a"
+  },
+  "gyeongbuk/포항시": {
+    "lastUpdated": "2026-03-17T10:35:10.295156",
+    "newsHash": "0834df84c4de8e01637ffad455a9bc26"
+  },
+  "gyeonggi/가평군": {
+    "lastUpdated": "2026-03-17T10:35:24.466567",
+    "newsHash": "2f3e4016b64d4b4b0b7ce35dd08c92b9"
+  },
+  "gyeonggi/고양시": {
+    "lastUpdated": "2026-03-17T10:35:40.232574",
+    "newsHash": "3ec25ade4797fb6f9583c1a8b91b99dd"
+  },
+  "gyeonggi/과천시": {
+    "lastUpdated": "2026-03-17T10:35:53.057834",
+    "newsHash": "c4e4f88da87a61f836696c60c59bf9fe"
+  },
+  "gyeonggi/광명시": {
+    "lastUpdated": "2026-03-17T10:36:06.793387",
+    "newsHash": "cb32ee550932dcafd0f4b1b979413554"
+  },
+  "gyeonggi/광주시": {
+    "lastUpdated": "2026-03-17T10:36:21.367696",
+    "newsHash": "7ff5490c6d927bcf19db50dfb0b10871"
+  },
+  "gyeonggi/구리시": {
+    "lastUpdated": "2026-03-17T10:36:36.882178",
+    "newsHash": "ea0737641863ce32b1b6ed0d558e5105"
+  },
+  "gyeonggi/군포시": {
+    "lastUpdated": "2026-03-17T10:36:48.705407",
+    "newsHash": "ea18c4394845b32bc365352af8e03bb0"
+  },
+  "gyeonggi/김포시": {
+    "lastUpdated": "2026-03-17T10:36:59.759755",
+    "newsHash": "4cbed153e98c8eeda291cc7c958070e1"
+  },
+  "gyeonggi/남양주시": {
+    "lastUpdated": "2026-03-17T10:37:10.747506",
+    "newsHash": "8b62152c2e2f77eb81669e9266f48a04"
+  },
+  "gyeonggi/동두천시": {
+    "lastUpdated": "2026-03-17T10:37:21.763334",
+    "newsHash": "c5666d61757a949fde300dc1b0792fb1"
+  },
+  "gyeonggi/부천시": {
+    "lastUpdated": "2026-03-17T10:37:35.709339",
+    "newsHash": "20db48e1cda165f45141fc5dd4a68b12"
+  },
+  "gyeonggi/성남시": {
+    "lastUpdated": "2026-03-17T10:37:48.399979",
+    "newsHash": "208820f07685851a0426fb2f3f62acb7"
+  },
+  "gyeonggi/수원시": {
+    "lastUpdated": "2026-03-17T10:38:00.687950",
+    "newsHash": "84d0ba2e42fa68542a9ff4eb0bf55a83"
+  },
+  "gyeonggi/시흥시": {
+    "lastUpdated": "2026-03-17T10:38:11.869555",
+    "newsHash": "00de25d0f3053cee694734a79604a786"
+  },
+  "gyeonggi/안산시": {
+    "lastUpdated": "2026-03-17T10:38:25.556565",
+    "newsHash": "96fbbfeba002b256992026c167a32887"
+  },
+  "gyeonggi/안성시": {
+    "lastUpdated": "2026-03-17T10:38:38.268044",
+    "newsHash": "0b948f63de97a2c9ea243fec9a808c46"
+  },
+  "gyeonggi/안양시": {
+    "lastUpdated": "2026-03-17T10:38:52.607861",
+    "newsHash": "ac3dbbb3f3623ebc432845b1f95c7a95"
+  },
+  "gyeonggi/양주시": {
+    "lastUpdated": "2026-03-17T10:39:04.791033",
+    "newsHash": "eea92edacc075aecd7bb492c6680e417"
+  },
+  "gyeonggi/양평군": {
+    "lastUpdated": "2026-03-17T10:39:16.364321",
+    "newsHash": "b8a643f288cc35652c9188e9a77b2e12"
+  },
+  "gyeonggi/여주시": {
+    "lastUpdated": "2026-03-17T10:39:31.156016",
+    "newsHash": "c37ee9cf17ec6244fa496aaef5dcae65"
+  },
+  "gyeonggi/연천군": {
+    "lastUpdated": "2026-03-17T10:39:42.486236",
+    "newsHash": "8253bf19ffb9c14901f0fb3c47d26161"
+  },
+  "gyeonggi/오산시": {
+    "lastUpdated": "2026-03-17T10:39:53.344981",
+    "newsHash": "9677185f300214435e405e8ff20cf26b"
+  },
+  "gyeonggi/용인시": {
+    "lastUpdated": "2026-03-17T10:40:06.540601",
+    "newsHash": "f3078a3d5319ae4f0d200588a90225dc"
+  },
+  "gyeonggi/의왕시": {
+    "lastUpdated": "2026-03-17T10:40:20.139984",
+    "newsHash": "e54058fb7cdd4f941828ec735e08343a"
+  },
+  "gyeonggi/의정부시": {
+    "lastUpdated": "2026-03-17T10:40:32.300562",
+    "newsHash": "8b3bf3879bad376fc54cfde4b9337908"
+  },
+  "gyeonggi/이천시": {
+    "lastUpdated": "2026-03-17T10:40:45.040659",
+    "newsHash": "30924350285af7c3d6ceec935bf7c930"
+  },
+  "gyeonggi/파주시": {
+    "lastUpdated": "2026-03-17T10:40:57.179847",
+    "newsHash": "9012fa5ea37538a27f0558d26c041585"
+  },
+  "gyeonggi/평택시": {
+    "lastUpdated": "2026-03-17T10:41:11.506525",
+    "newsHash": "f9e02ab3450ef64284b4ba51274e98c8"
+  },
+  "gyeonggi/포천시": {
+    "lastUpdated": "2026-03-17T10:41:24.095992",
+    "newsHash": "370d18d9cc785ae1bb28669207282db7"
+  },
+  "gyeonggi/하남시": {
+    "lastUpdated": "2026-03-17T10:41:41.084639",
+    "newsHash": "cd2e6bc7d27f76b028eb5649c2c3f9e8"
+  },
+  "gyeonggi/화성시": {
+    "lastUpdated": "2026-03-17T10:41:53.820483",
+    "newsHash": "2b9e8071befaf6086aaca8e2bdcda1e5"
+  },
+  "gyeongnam/거제시": {
+    "lastUpdated": "2026-03-17T10:42:05.736450",
+    "newsHash": "71eeda81564b0e92810b0f313566898e"
+  },
+  "gyeongnam/거창군": {
+    "lastUpdated": "2026-03-17T10:42:16.179897",
+    "newsHash": "11c61594b53395450077dca3a4c34afd"
+  },
+  "gyeongnam/고성군": {
+    "lastUpdated": "2026-03-17T10:42:25.731135",
+    "newsHash": "546759f6a568be2b49c2813d909e8173"
+  },
+  "gyeongnam/김해시": {
+    "lastUpdated": "2026-03-17T10:42:40.671871",
+    "newsHash": "3e3afb552241f8380a2c36ce9ed857ca"
+  },
+  "gyeongnam/남해군": {
+    "lastUpdated": "2026-03-17T10:42:52.143464",
+    "newsHash": "571e9ba07046216e096592a4df297f8c"
+  },
+  "gyeongnam/밀양시": {
+    "lastUpdated": "2026-03-17T10:43:03.098553",
+    "newsHash": "47323b09ace02539bebf4fad9ca411b3"
+  },
+  "gyeongnam/사천시": {
+    "lastUpdated": "2026-03-17T10:43:13.415504",
+    "newsHash": "8fc296d068dbbf5d7597209e277c2d31"
+  },
+  "gyeongnam/산청군": {
+    "lastUpdated": "2026-03-17T10:43:24.453407",
+    "newsHash": "bf30e5067beaecddec251fc54fc04ac2"
+  },
+  "gyeongnam/양산시": {
+    "lastUpdated": "2026-03-17T10:43:34.169481",
+    "newsHash": "8fdf78686e65a73eeecd27b5bab9ecb4"
+  },
+  "gyeongnam/의령군": {
+    "lastUpdated": "2026-03-17T10:43:45.425451",
+    "newsHash": "eb5ccb990bf02410ab9b7ecdc0992ebb"
+  },
+  "gyeongnam/진주시": {
+    "lastUpdated": "2026-03-17T10:44:01.963758",
+    "newsHash": "8ca7875379802c7305230adaddb4f17b"
+  },
+  "gyeongnam/창녕군": {
+    "lastUpdated": "2026-03-17T10:44:12.204953",
+    "newsHash": "b93ef1f84b631e5d32706d4784ccac4d"
+  },
+  "gyeongnam/창원시": {
+    "lastUpdated": "2026-03-17T10:44:23.910274",
+    "newsHash": "d3a630ec40c8f614f7a49cd9c89ac5eb"
+  },
+  "gyeongnam/통영시": {
+    "lastUpdated": "2026-03-17T10:44:34.174797",
+    "newsHash": "7aa7258141f567993728b6b78dce380a"
+  },
+  "gyeongnam/하동군": {
+    "lastUpdated": "2026-03-17T10:44:45.655258",
+    "newsHash": "0a587ad23a87197ada775666aee4b48f"
+  },
+  "gyeongnam/함안군": {
+    "lastUpdated": "2026-03-17T10:44:57.056271",
+    "newsHash": "8ec3152f58aa150563172a5ee8220a99"
+  },
+  "gyeongnam/함양군": {
+    "lastUpdated": "2026-03-17T10:45:09.640333",
+    "newsHash": "3e616729c46ad45f27d204ee9182ab34"
+  },
+  "gyeongnam/합천군": {
+    "lastUpdated": "2026-03-17T10:45:22.349048",
+    "newsHash": "cd02c123870c84ccb535906f0010b017"
+  },
+  "incheon/강화군": {
+    "lastUpdated": "2026-03-17T10:45:37.301893",
+    "newsHash": "d265e8fcfc16dd2d3f48efe770e23270"
+  },
+  "incheon/계양구": {
+    "lastUpdated": "2026-03-17T10:45:51.119852",
+    "newsHash": "3b213f9ab0301d79a943f9466b195ebf"
+  },
+  "incheon/남동구": {
+    "lastUpdated": "2026-03-17T10:46:05.763213",
+    "newsHash": "aeabafa1adc43fad7801431ff970623e"
+  },
+  "incheon/동구": {
+    "lastUpdated": "2026-03-17T10:46:18.051126",
+    "newsHash": "076302d791dc392e8597088279cdbbe8"
+  },
+  "incheon/미추홀구": {
+    "lastUpdated": "2026-03-17T10:46:28.389360",
+    "newsHash": "99d414331b93b90d699c9435a217b2f5"
+  },
+  "incheon/부평구": {
+    "lastUpdated": "2026-03-17T10:46:40.372197",
+    "newsHash": "1922b1c370bc81e804ff71ed4128c99e"
+  },
+  "incheon/서구": {
+    "lastUpdated": "2026-03-17T10:46:51.784045",
+    "newsHash": "5cb2f61d174048d34f50c9d05e4f2f90"
+  },
+  "incheon/연수구": {
+    "lastUpdated": "2026-03-17T10:47:05.237168",
+    "newsHash": "d80ca13510c9ee89e6ddd2a067dc6540"
+  },
+  "incheon/옹진군": {
+    "lastUpdated": "2026-03-17T10:47:23.559120",
+    "newsHash": "a03c13593f2c6c73b988298ac6cb99f1"
+  },
+  "incheon/중구": {
+    "lastUpdated": "2026-03-17T10:47:35.289354",
+    "newsHash": "42063a61767d3f5b4dc84003f4b53977"
+  },
+  "jeonbuk/고창군": {
+    "lastUpdated": "2026-03-17T10:47:51.928568",
+    "newsHash": "063a12b14853828ef49bfeda4fbc9c8e"
+  },
+  "jeonbuk/군산시": {
+    "lastUpdated": "2026-03-17T10:48:02.193527",
+    "newsHash": "030d3bffd259d73902e7fbf418f7499f"
+  },
+  "jeonbuk/김제시": {
+    "lastUpdated": "2026-03-17T10:48:14.282959",
+    "newsHash": "703d7947d25a547f2b58a0776ccae52c"
+  },
+  "jeonbuk/남원시": {
+    "lastUpdated": "2026-03-17T10:48:27.701586",
+    "newsHash": "93b03af1fbfcec341671edb525883ae8"
+  },
+  "jeonbuk/무주군": {
+    "lastUpdated": "2026-03-17T10:48:41.489144",
+    "newsHash": "f32373627f9fbf54c35cbdb64b69516c"
+  },
+  "jeonbuk/부안군": {
+    "lastUpdated": "2026-03-17T10:48:55.434800",
+    "newsHash": "c632d371884dfa7184d73295f6d2bdc8"
+  },
+  "jeonbuk/순창군": {
+    "lastUpdated": "2026-03-17T10:49:05.867315",
+    "newsHash": "4c1565c6a653249b92444e5f69655a11"
+  },
+  "jeonbuk/완주군": {
+    "lastUpdated": "2026-03-17T10:49:19.713074",
+    "newsHash": "4f184e9699742a94ca78bd5ce9326cd3"
+  },
+  "jeonbuk/익산시": {
+    "lastUpdated": "2026-03-17T10:49:31.864651",
+    "newsHash": "3ee295fa8faea39ce222d7fae55c5368"
+  },
+  "jeonbuk/임실군": {
+    "lastUpdated": "2026-03-17T10:49:47.377044",
+    "newsHash": "57c28bdfcdc7c6709b452eb43933ce8c"
+  },
+  "jeonbuk/장수군": {
+    "lastUpdated": "2026-03-17T10:49:56.502257",
+    "newsHash": "98bcd34a598ff341eca5f5c5d9f03343"
+  },
+  "jeonbuk/전주시": {
+    "lastUpdated": "2026-03-17T10:50:12.350314",
+    "newsHash": "28804485aa32a21e56516016c924e9f2"
+  },
+  "jeonbuk/정읍시": {
+    "lastUpdated": "2026-03-17T10:50:25.765440",
+    "newsHash": "ea083e17fd57f4ee077502fc54e33761"
+  },
+  "jeonbuk/진안군": {
+    "lastUpdated": "2026-03-17T10:50:41.536582",
+    "newsHash": "a8c9407b4c933dce46cec931562c8a9d"
+  },
+  "jeonnam/강진군": {
+    "lastUpdated": "2026-03-17T10:50:55.980696",
+    "newsHash": "b60819f11b22ef127539d33127219a47"
+  },
+  "jeonnam/고흥군": {
+    "lastUpdated": "2026-03-17T10:51:07.354784",
+    "newsHash": "1efcf65dbe393e30b5abe2cb7c49d3b9"
+  },
+  "jeonnam/곡성군": {
+    "lastUpdated": "2026-03-17T10:51:21.780757",
+    "newsHash": "ebbcd7906af6e056aabe39042e4ca6d7"
+  },
+  "jeonnam/광양시": {
+    "lastUpdated": "2026-03-17T10:51:34.715239",
+    "newsHash": "107eabca0730063dbda9b5c7704eaa22"
+  },
+  "jeonnam/구례군": {
+    "lastUpdated": "2026-03-17T10:51:45.936121",
+    "newsHash": "53bb5bd005fd3239a8d8b1a7bc1dc837"
+  },
+  "jeonnam/나주시": {
+    "lastUpdated": "2026-03-17T10:51:55.160738",
+    "newsHash": "9fb2ec075468073ac130ef85d98e4adb"
+  },
+  "jeonnam/담양군": {
+    "lastUpdated": "2026-03-17T10:52:10.203877",
+    "newsHash": "aff3e09d4db4508a3e5503bb378924d8"
+  },
+  "jeonnam/목포시": {
+    "lastUpdated": "2026-03-17T10:52:23.559392",
+    "newsHash": "fc55cb00c008e3c388f1bfc8f6ba7cd5"
+  },
+  "jeonnam/무안군": {
+    "lastUpdated": "2026-03-17T10:52:38.336290",
+    "newsHash": "8c92e1ba0135001a003b6cd14b473082"
+  },
+  "jeonnam/보성군": {
+    "lastUpdated": "2026-03-17T10:52:51.233722",
+    "newsHash": "a472a994ce95af11eb6143c97b93cac0"
+  },
+  "jeonnam/순천시": {
+    "lastUpdated": "2026-03-17T10:53:02.433180",
+    "newsHash": "c175dc51f5bb86701eefd4491d0989a9"
+  },
+  "jeonnam/신안군": {
+    "lastUpdated": "2026-03-17T10:53:15.446042",
+    "newsHash": "a5f7fecf393a50d0b5221738e2521a03"
+  },
+  "jeonnam/여수시": {
+    "lastUpdated": "2026-03-17T10:53:29.071638",
+    "newsHash": "dcd22660874ee59914038cd0a45ed8fb"
+  },
+  "jeonnam/영광군": {
+    "lastUpdated": "2026-03-17T10:53:43.195799",
+    "newsHash": "417cef793c6e1179a0ca43305dc3f134"
+  },
+  "jeonnam/영암군": {
+    "lastUpdated": "2026-03-17T10:53:58.361280",
+    "newsHash": "fa95876774f7973898f456e4444990f3"
+  },
+  "jeonnam/완도군": {
+    "lastUpdated": "2026-03-17T10:54:12.588873",
+    "newsHash": "d73eb8f2c245fd59a0459517cbafc0aa"
+  },
+  "jeonnam/장성군": {
+    "lastUpdated": "2026-03-17T10:54:31.906490",
+    "newsHash": "9f4b2356316975c7181e1990133c9bf1"
+  },
+  "jeonnam/장흥군": {
+    "lastUpdated": "2026-03-17T10:54:47.239962",
+    "newsHash": "39854f3b49bab02be15644fe5e9ad08b"
+  },
+  "jeonnam/진도군": {
+    "lastUpdated": "2026-03-17T10:54:57.907475",
+    "newsHash": "8738501cfd93c4a487b959608ddcd7c1"
+  },
+  "jeonnam/함평군": {
+    "lastUpdated": "2026-03-17T10:55:13.467843",
+    "newsHash": "b9e2a30e97253564263a73b0c20bf0c0"
+  },
+  "jeonnam/해남군": {
+    "lastUpdated": "2026-03-17T10:55:25.191803",
+    "newsHash": "e3afc435bc6431d915e698d91466196b"
+  },
+  "jeonnam/화순군": {
+    "lastUpdated": "2026-03-17T10:55:36.377731",
+    "newsHash": "5e027a3d6a362396ca5e294aff2fa4a2"
+  },
+  "seoul/강남구": {
+    "lastUpdated": "2026-03-17T10:55:47.461509",
+    "newsHash": "6b3fd35a562192be3f3424e00e3ac1bb"
+  },
+  "seoul/강동구": {
+    "lastUpdated": "2026-03-17T10:55:58.710796",
+    "newsHash": "ef2f213667a1e1f344db4729d536348e"
+  },
+  "seoul/강북구": {
+    "lastUpdated": "2026-03-17T10:56:11.487975",
+    "newsHash": "19dc2e66fb1665cbd20e8f6f0a197fb7"
+  },
+  "seoul/강서구": {
+    "lastUpdated": "2026-03-17T10:56:21.658716",
+    "newsHash": "8b4071a11a9a3574e10bf8ce9f73275b"
+  },
+  "seoul/관악구": {
+    "lastUpdated": "2026-03-17T10:56:34.933544",
+    "newsHash": "c5ffabf219fa6a96761169eb5191ab35"
+  },
+  "seoul/광진구": {
+    "lastUpdated": "2026-03-17T10:56:47.140336",
+    "newsHash": "50e7f024795f6b1b7445ea645f54ab21"
+  },
+  "seoul/구로구": {
+    "lastUpdated": "2026-03-17T10:56:57.471556",
+    "newsHash": "03e45e6bb6daa12ab1ae96e22f51db58"
+  },
+  "seoul/금천구": {
+    "lastUpdated": "2026-03-17T10:57:09.943808",
+    "newsHash": "7d5998eec6a10ba8feb698cdb84d532a"
+  },
+  "seoul/노원구": {
+    "lastUpdated": "2026-03-17T10:57:23.256207",
+    "newsHash": "155f7effe21d294b67d8a92f7138f164"
+  },
+  "seoul/도봉구": {
+    "lastUpdated": "2026-03-17T10:57:33.492494",
+    "newsHash": "0073eba3908dcb69551fd2d64efae971"
+  },
+  "seoul/동대문구": {
+    "lastUpdated": "2026-03-17T10:57:45.094445",
+    "newsHash": "ee7a489cd0e160b4278c3ec0797af95e"
+  },
+  "seoul/동작구": {
+    "lastUpdated": "2026-03-17T10:57:57.082130",
+    "newsHash": "776640cbcd960e7afe10be637055b48e"
+  },
+  "seoul/마포구": {
+    "lastUpdated": "2026-03-17T10:58:13.176312",
+    "newsHash": "98d05241e480c72e42c4e79fdd711515"
+  },
+  "seoul/서대문구": {
+    "lastUpdated": "2026-03-17T10:58:26.950796",
+    "newsHash": "9215b56577301e210a82fdf722cc4cdb"
+  },
+  "seoul/서초구": {
+    "lastUpdated": "2026-03-17T10:58:38.728921",
+    "newsHash": "12ca37f94fd761b0eaafd18cf7fd0b7d"
+  },
+  "seoul/성동구": {
+    "lastUpdated": "2026-03-17T10:58:49.987790",
+    "newsHash": "9136c6a80aca309b0c5a867aa6a5082a"
+  },
+  "seoul/성북구": {
+    "lastUpdated": "2026-03-17T10:59:01.969044",
+    "newsHash": "5acfd8f9c2fdec24c72684f02f5ebdbc"
+  },
+  "seoul/송파구": {
+    "lastUpdated": "2026-03-17T10:59:13.550812",
+    "newsHash": "2003884978dac5ce32e95a267e2d76bf"
+  },
+  "seoul/양천구": {
+    "lastUpdated": "2026-03-17T10:59:43.555948",
+    "newsHash": "28423f2d0587b4a3271dd49b028af700"
+  },
+  "seoul/영등포구": {
+    "lastUpdated": "2026-03-17T10:59:55.247885",
+    "newsHash": "74c88d252b8c4ccc831127ce0308102f"
+  },
+  "seoul/용산구": {
+    "lastUpdated": "2026-03-17T11:00:08.132249",
+    "newsHash": "91354a0a0c2f96b3c914b4afeff05efc"
+  },
+  "seoul/은평구": {
+    "lastUpdated": "2026-03-17T11:00:20.206534",
+    "newsHash": "e7416d53e49db9efc1952f5a80012a5a"
+  },
+  "seoul/종로구": {
+    "lastUpdated": "2026-03-17T11:00:33.106388",
+    "newsHash": "3190413a9cdff398ddb3531f3e1de979"
+  },
+  "seoul/중구": {
+    "lastUpdated": "2026-03-17T11:00:41.641991",
+    "newsHash": "b38c3a52c8de77f448b6741939fbfa05"
+  },
+  "seoul/중랑구": {
+    "lastUpdated": "2026-03-17T11:00:53.994290",
+    "newsHash": "c927646416675c849c92ccb722aea5aa"
+  },
+  "ulsan/남구": {
+    "lastUpdated": "2026-03-17T11:01:06.696828",
+    "newsHash": "0820bb590ea59a8dc0be734b49171f9a"
+  },
+  "ulsan/동구": {
+    "lastUpdated": "2026-03-17T11:01:16.362714",
+    "newsHash": "57dbba079bf70447c5f98443d9cabe3b"
+  },
+  "ulsan/북구": {
+    "lastUpdated": "2026-03-17T11:01:33.224362",
+    "newsHash": "df27258f342a1d14706dca6cafe40cbd"
+  },
+  "ulsan/울주군": {
+    "lastUpdated": "2026-03-17T11:01:47.047889",
+    "newsHash": "36c20e60ec5060bcf4375bf07656339f"
+  },
+  "ulsan/중구": {
+    "lastUpdated": "2026-03-17T11:01:57.017894",
+    "newsHash": "1271650caa36216625f0be73094ea6b0"
+  }
+}

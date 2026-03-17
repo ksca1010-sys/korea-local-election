@@ -1,0 +1,5 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+observed-seoul-lee-han	seoul	all	governor		이준석 한동훈 회동 정치권 파장	서울 뉴스 전체에서 노출된 중앙정치 기사	https://example.com/observed/seoul-lee-han	false	사용자 제보 오탐
+observed-seoul-gyeongbuk-governor	seoul	all	governor		경북지사 선거 판세 요동	서울 뉴스 전체에서 노출된 경북지사 기사	https://example.com/observed/seoul-gyeongbuk-governor	false	사용자 제보 오탐
+observed-seoul-kimtaeheum	seoul	all	governor		김태흠 충남지사 재선 도전	서울 뉴스 전체에서 노출된 충남지사 기사	https://example.com/observed/seoul-kimtaeheum	false	사용자 제보 오탐
+observed-seoul-byelection-history	seoul	all	governor		서울시장 보궐선거 5주년…당시 판세 재조명	현재 지방선거가 아닌 과거 보궐선거 회고 기사	https://example.com/observed/seoul-byelection-history	false	사용자 제보 오탐

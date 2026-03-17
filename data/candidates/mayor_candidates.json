@@ -1,0 +1,4393 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-17",
+    "source": "auto-init from mayor_status.json",
+    "lastFactCheck": "2026-03-17T11:47:29.338400",
+    "lastSyncFromOverview": "2026-03-17",
+    "lastStatusSync": "2026-03-17",
+    "lastDiscovery": "2026-03-17"
+  },
+  "candidates": {
+    "seoul": {
+      "종로구": [
+        {
+          "name": "정문헌",
+          "party": "ppp",
+          "career": "현 종로구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "서용주",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "중구": [
+        {
+          "name": "김길성",
+          "party": "ppp",
+          "career": "현 중구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "길기영",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "용산구": [
+        {
+          "name": "박희영",
+          "party": "independent",
+          "career": "前 용산구 시장 (박희영 구청장 2024년 1월 25일 대법원 판결로 직위상실)",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "박희영 구청장 2024년 1월 25일 대법원 판결로 직위상실"
+        },
+        {
+          "name": "강태웅",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김윤재",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "조상현",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "성동구": [
+        {
+          "name": "정원오",
+          "party": "independent",
+          "career": "현 성동구 구청장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "정원오 서울시장 출마 사퇴 (2026.3)"
+        },
+        {
+          "name": "이인화",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "광진구": [
+        {
+          "name": "김경호",
+          "party": "ppp",
+          "career": "현 광진구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김선갑",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "동대문구": [
+        {
+          "name": "이필형",
+          "party": "ppp",
+          "career": "현 동대문구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최동민",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "중랑구": [
+        {
+          "name": "류경기",
+          "party": "democratic",
+          "career": "현 중랑구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "성북구": [
+        {
+          "name": "이승로",
+          "party": "democratic",
+          "career": "현 성북구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "윤진호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "강북구": [
+        {
+          "name": "이순희",
+          "party": "democratic",
+          "career": "현 강북구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "도봉구": [
+        {
+          "name": "오언석",
+          "party": "ppp",
+          "career": "현 도봉구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "노원구": [
+        {
+          "name": "오승록",
+          "party": "democratic",
+          "career": "현 노원구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "송재혁",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "은평구": [
+        {
+          "name": "김미경",
+          "party": "democratic",
+          "career": "현 은평구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "서대문구": [
+        {
+          "name": "이성헌",
+          "party": "ppp",
+          "career": "현 서대문구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김규진",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "박운기",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "마포구": [
+        {
+          "name": "박강수",
+          "party": "ppp",
+          "career": "현 마포구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "양천구": [
+        {
+          "name": "이기재",
+          "party": "ppp",
+          "career": "현 양천구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "우형찬",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "강서구": [
+        {
+          "name": "진교훈",
+          "party": "democratic",
+          "career": "현 강서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김진선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "구로구": [
+        {
+          "name": "문헌일",
+          "party": "ppp",
+          "career": "현 구로구 구청장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "2025.4 재보궐로 장인홍에게 교체"
+        },
+        {
+          "name": "박동웅",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "장인홍",
+          "party": "democratic",
+          "career": "현 구로구 단체장 (2025.4 재보궐 당선)",
+          "status": "EXPECTED",
+          "dataSource": "nec_byelection",
+          "pledges": []
+        }
+      ],
+      "금천구": [
+        {
+          "name": "유성훈",
+          "party": "democratic",
+          "career": "현 금천구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영등포구": [
+        {
+          "name": "최호권",
+          "party": "ppp",
+          "career": "현 영등포구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조유진",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "동작구": [
+        {
+          "name": "박일하",
+          "party": "ppp",
+          "career": "현 동작구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오영수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "관악구": [
+        {
+          "name": "박준희",
+          "party": "democratic",
+          "career": "현 관악구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "서초구": [
+        {
+          "name": "전성수",
+          "party": "ppp",
+          "career": "현 서초구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김재원",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "황인식",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "강남구": [
+        {
+          "name": "조성명",
+          "party": "ppp",
+          "career": "현 강남구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김현기",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김시곤",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "송파구": [
+        {
+          "name": "서강석",
+          "party": "ppp",
+          "career": "현 송파구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최윤석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박용모",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "강동구": [
+        {
+          "name": "이수희",
+          "party": "ppp",
+          "career": "현 강동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김종무",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ]
+    },
+    "busan": {
+      "중구": [
+        {
+          "name": "최진봉",
+          "party": "ppp",
+          "career": "현 중구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "공한수",
+          "party": "ppp",
+          "career": "현 서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최도석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "황정재",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "동구": [
+        {
+          "name": "김진홍",
+          "party": "ppp",
+          "career": "현 동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최형욱",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "영도구": [
+        {
+          "name": "김기재",
+          "party": "ppp",
+          "career": "현 영도구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김철훈",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "부산진구": [
+        {
+          "name": "김영욱",
+          "party": "ppp",
+          "career": "현 부산진구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김승주",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "동래구": [
+        {
+          "name": "장준용",
+          "party": "ppp",
+          "career": "현 동래구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "주순희",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "남구": [
+        {
+          "name": "박재범",
+          "party": "ppp",
+          "career": "현 남구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "북구": [
+        {
+          "name": "오태원",
+          "party": "ppp",
+          "career": "현 북구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "해운대구": [
+        {
+          "name": "김성수",
+          "party": "ppp",
+          "career": "현 해운대구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정성철",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "기장군": [
+        {
+          "name": "정원희",
+          "party": "ppp",
+          "career": "현 기장군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정명시",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "사하구": [
+        {
+          "name": "이갑준",
+          "party": "ppp",
+          "career": "현 사하구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김태석",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "금정구": [
+        {
+          "name": "김재윤",
+          "party": "ppp",
+          "career": "현 금정구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장보권",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "강서구": [
+        {
+          "name": "김형찬",
+          "party": "ppp",
+          "career": "현 강서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김진선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "연제구": [
+        {
+          "name": "주석수",
+          "party": "ppp",
+          "career": "현 연제구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이정식",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "수영구": [
+        {
+          "name": "유동철",
+          "party": "democratic",
+          "career": "현 수영구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김진",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "황진수",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "사상구": [
+        {
+          "name": "조병길",
+          "party": "ppp",
+          "career": "현 사상구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "서태경",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ]
+    },
+    "daegu": {
+      "중구": [
+        {
+          "name": "류규하",
+          "party": "ppp",
+          "career": "현 중구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정장수",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "동구": [
+        {
+          "name": "윤석준",
+          "party": "ppp",
+          "career": "현 동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "차수환",
+          "party": "ppp",
+          "career": "동구청장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정해용",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "송대호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "류한국",
+          "party": "ppp",
+          "career": "현 서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "권오상",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "남구": [
+        {
+          "name": "조재구",
+          "party": "ppp",
+          "career": "현 남구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "북구": [
+        {
+          "name": "배광식",
+          "party": "ppp",
+          "career": "현 북구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김지만",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이근수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "수성구": [
+        {
+          "name": "김대권",
+          "party": "ppp",
+          "career": "현 수성구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김대현",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박정권",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "달서구": [
+        {
+          "name": "이태훈",
+          "party": "ppp",
+          "career": "현 달서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조홍철",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김형일",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "홍성주",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "손인호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "달성군": [
+        {
+          "name": "최재훈",
+          "party": "ppp",
+          "career": "현 달성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ]
+    },
+    "incheon": {
+      "중구": [
+        {
+          "name": "김정헌",
+          "party": "ppp",
+          "career": "현 중구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "동구": [
+        {
+          "name": "김찬진",
+          "party": "ppp",
+          "career": "현 동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "미추홀구": [
+        {
+          "name": "이영훈",
+          "party": "ppp",
+          "career": "현 미추홀구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김정식",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "한기남",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "연수구": [
+        {
+          "name": "이재호",
+          "party": "ppp",
+          "career": "현 연수구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정지열",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "남동구": [
+        {
+          "name": "박종효",
+          "party": "ppp",
+          "career": "현 남동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이병래",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김성수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박인동",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "부평구": [
+        {
+          "name": "차준택",
+          "party": "democratic",
+          "career": "현 부평구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "강화수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "계양구": [
+        {
+          "name": "윤환",
+          "party": "democratic",
+          "career": "현 계양구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김광",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "박해진",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "박형우",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "강범석",
+          "party": "ppp",
+          "career": "현 서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "천성주",
+          "party": "independent",
+          "career": "검단구청장 출마 선언",
+          "status": "DECLARED",
+          "dataSource": "news_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김진규",
+          "party": "independent",
+          "career": "초대 검단구청장 도전",
+          "status": "DECLARED",
+          "dataSource": "news_discovery",
+          "pledges": []
+        }
+      ],
+      "강화군": [
+        {
+          "name": "유천호",
+          "party": "independent",
+          "career": "현 강화군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박흥열",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "옹진군": [
+        {
+          "name": "문경복",
+          "party": "ppp",
+          "career": "현 옹진군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ]
+    },
+    "gwangju": {
+      "동구": [
+        {
+          "name": "임택",
+          "party": "democratic",
+          "career": "현 동구 구청장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이철수",
+          "party": "democratic",
+          "career": "전 광주광역시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "김이강",
+          "party": "democratic",
+          "career": "현 서구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "남구": [
+        {
+          "name": "김병내",
+          "party": "democratic",
+          "career": "현 남구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "북구": [
+        {
+          "name": "문인",
+          "party": "democratic",
+          "career": "현 북구 구청장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "광주시장 출마"
+        },
+        {
+          "name": "신수정",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "정다은",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "광산구": [
+        {
+          "name": "박병규",
+          "party": "democratic",
+          "career": "현 광산구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박수기",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ]
+    },
+    "daejeon": {
+      "동구": [
+        {
+          "name": "박희조",
+          "party": "ppp",
+          "career": "현 동구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "신효철",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "중구": [
+        {
+          "name": "김제선",
+          "party": "democratic",
+          "career": "현 중구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김선광",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "서철모",
+          "party": "ppp",
+          "career": "현 서구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "주정봉",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "유성구": [
+        {
+          "name": "정용래",
+          "party": "democratic",
+          "career": "현 유성구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "대덕구": [
+        {
+          "name": "최충규",
+          "party": "ppp",
+          "career": "현 대덕구 구청장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김찬술",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ]
+    },
+    "ulsan": {
+      "중구": [
+        {
+          "name": "김영길",
+          "party": "ppp",
+          "career": "현 중구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "남구": [
+        {
+          "name": "서동욱",
+          "party": "ppp",
+          "career": "현 남구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "동구": [
+        {
+          "name": "김종훈",
+          "party": "independent",
+          "career": "현 동구 구청장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "김종훈 울산시장 출마 사퇴 (2026.1)"
+        }
+      ],
+      "북구": [
+        {
+          "name": "박천동",
+          "party": "ppp",
+          "career": "현 북구 구청장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "울주군": [
+        {
+          "name": "이순걸",
+          "party": "ppp",
+          "career": "현 울주군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ]
+    },
+    "gyeonggi": {
+      "수원시": [
+        {
+          "name": "이재준",
+          "party": "democratic",
+          "career": "현 수원시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "권혁우",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "성남시": [
+        {
+          "name": "신상진",
+          "party": "ppp",
+          "career": "현 성남시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김병욱",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "의정부시": [
+        {
+          "name": "김동근",
+          "party": "ppp",
+          "career": "현 의정부시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정진호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "오석규",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "안병용",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "안양시": [
+        {
+          "name": "최대호",
+          "party": "democratic",
+          "career": "현 안양시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "임채호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "부천시": [
+        {
+          "name": "조용익",
+          "party": "democratic",
+          "career": "현 부천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "광명시": [
+        {
+          "name": "박승원",
+          "party": "democratic",
+          "career": "현 광명시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김정호",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "평택시": [
+        {
+          "name": "정장선",
+          "party": "democratic",
+          "career": "현 평택시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "서현옥",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "양주시": [
+        {
+          "name": "강수현",
+          "party": "ppp",
+          "career": "현 양주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정덕영",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "동두천시": [
+        {
+          "name": "박형덕",
+          "party": "ppp",
+          "career": "현 동두천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박태희",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "안산시": [
+        {
+          "name": "이민근",
+          "party": "ppp",
+          "career": "현 안산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박천광",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "송바우나",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "고양시": [
+        {
+          "name": "이동환",
+          "party": "ppp",
+          "career": "현 고양시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "홍흥석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "최승원",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이재준",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "과천시": [
+        {
+          "name": "신계용",
+          "party": "ppp",
+          "career": "현 과천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김종천",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "의왕시": [
+        {
+          "name": "김성제",
+          "party": "ppp",
+          "career": "현 의왕시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오동현",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "구리시": [
+        {
+          "name": "백경현",
+          "party": "ppp",
+          "career": "현 구리시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김구영",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "신동화",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "권봉수",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "남양주시": [
+        {
+          "name": "주광덕",
+          "party": "ppp",
+          "career": "현 남양주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김한정",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김지훈",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "오산시": [
+        {
+          "name": "이권재",
+          "party": "ppp",
+          "career": "현 오산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김민주",
+          "party": "democratic",
+          "career": "오산시장 민주당 후보적합도 여론조사 언급",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "송영만",
+          "party": "democratic",
+          "career": "오산시장 민주당 후보적합도 여론조사 언급",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "화성시": [
+        {
+          "name": "정명근",
+          "party": "democratic",
+          "career": "현 화성시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "진석범",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "시흥시": [
+        {
+          "name": "임병택",
+          "party": "democratic",
+          "career": "현 시흥시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "군포시": [
+        {
+          "name": "하은호",
+          "party": "ppp",
+          "career": "현 군포시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "한대희",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "하남시": [
+        {
+          "name": "이현재",
+          "party": "ppp",
+          "career": "현 하남시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오수봉",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "강병덕",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "금광연",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "파주시": [
+        {
+          "name": "김경일",
+          "party": "democratic",
+          "career": "현 파주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "손배찬",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이용욱",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "여주시": [
+        {
+          "name": "이충우",
+          "party": "ppp",
+          "career": "현 여주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "전자로는",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "이천시": [
+        {
+          "name": "김경희",
+          "party": "ppp",
+          "career": "현 이천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조사에서",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "용인시": [
+        {
+          "name": "이상일",
+          "party": "ppp",
+          "career": "현 용인시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정원영",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "현근택",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "안성시": [
+        {
+          "name": "김보라",
+          "party": "democratic",
+          "career": "현 안성시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "황진택",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "김포시": [
+        {
+          "name": "김병수",
+          "party": "ppp",
+          "career": "현 김포시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "신임",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "광주시": [
+        {
+          "name": "방세환",
+          "party": "ppp",
+          "career": "현 광주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박해광",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "포천시": [
+        {
+          "name": "백영현",
+          "party": "ppp",
+          "career": "현 포천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박윤국",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "연천군": [
+        {
+          "name": "김덕현",
+          "party": "ppp",
+          "career": "현 연천군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "진명두",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김좌일",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "양평군": [
+        {
+          "name": "전진선",
+          "party": "ppp",
+          "career": "현 양평군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김주식",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "가평군": [
+        {
+          "name": "서태원",
+          "party": "ppp",
+          "career": "현 가평군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김경호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ]
+    },
+    "gangwon": {
+      "춘천시": [
+        {
+          "name": "육동한",
+          "party": "democratic",
+          "career": "현 춘천시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "변지량",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "허소영",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "원주시": [
+        {
+          "name": "원강수",
+          "party": "ppp",
+          "career": "현 원주시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "원창묵",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "구자열",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "곽문근",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "강릉시": [
+        {
+          "name": "김홍규",
+          "party": "ppp",
+          "career": "현 강릉시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김한근",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "동해시": [
+        {
+          "name": "심규언",
+          "party": "ppp",
+          "career": "현 동해시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정당의",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "삼척시": [
+        {
+          "name": "박상수",
+          "party": "ppp",
+          "career": "현 삼척시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김동완",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "태백시": [
+        {
+          "name": "이상호",
+          "party": "ppp",
+          "career": "현 태백시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최완식",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "정선군": [
+        {
+          "name": "최승준",
+          "party": "democratic",
+          "career": "현 정선군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "속초시": [
+        {
+          "name": "이병선",
+          "party": "ppp",
+          "career": "현 속초시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김철수",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "고성군": [
+        {
+          "name": "함명준",
+          "party": "democratic",
+          "career": "현 고성군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박효동",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "양양군": [
+        {
+          "name": "김진하",
+          "party": "ppp",
+          "career": "현 양양군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "진종호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김명선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김호열",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "인제군": [
+        {
+          "name": "최상기",
+          "party": "democratic",
+          "career": "현 인제군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "한수현",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "홍천군": [
+        {
+          "name": "신영재",
+          "party": "ppp",
+          "career": "현 홍천군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "안병석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "이규설",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "횡성군": [
+        {
+          "name": "김명기",
+          "party": "ppp",
+          "career": "현 횡성군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영월군": [
+        {
+          "name": "최명서",
+          "party": "ppp",
+          "career": "현 영월군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "평창군": [
+        {
+          "name": "심재국",
+          "party": "ppp",
+          "career": "현 평창군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "한왕기",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "장문혁",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "화천군": [
+        {
+          "name": "최문순",
+          "party": "ppp",
+          "career": "현 화천군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "주종성",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "양구군": [
+        {
+          "name": "서흥원",
+          "party": "ppp",
+          "career": "현 양구군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "철원군": [
+        {
+          "name": "이현종",
+          "party": "ppp",
+          "career": "현 철원군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ]
+    },
+    "chungbuk": {
+      "청주시": [
+        {
+          "name": "이범석",
+          "party": "ppp",
+          "career": "현 청주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김학관",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "허창원",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박완희",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "충주시": [
+        {
+          "name": "조길형",
+          "party": "independent",
+          "career": "현 충주시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "조길형 충북도지사 출마 사퇴 (2026.1)"
+        },
+        {
+          "name": "우건도",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "노승일",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "제천시": [
+        {
+          "name": "김창규",
+          "party": "ppp",
+          "career": "현 제천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이재우",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이상천",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이충형",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "단양군": [
+        {
+          "name": "김문근",
+          "party": "ppp",
+          "career": "현 단양군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오영탁",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "영동군": [
+        {
+          "name": "정영철",
+          "party": "ppp",
+          "career": "현 영동군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "윤석진",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "보은군": [
+        {
+          "name": "최재형",
+          "party": "ppp",
+          "career": "현 보은군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "하유정",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "옥천군": [
+        {
+          "name": "황규철",
+          "party": "democratic",
+          "career": "현 옥천군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "전상인",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "음성군": [
+        {
+          "name": "조병옥",
+          "party": "democratic",
+          "career": "현 음성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "주부시장",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "진천군": [
+        {
+          "name": "송기섭",
+          "party": "independent",
+          "career": "현 진천군 군수",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "송기섭 충북도지사 출마 사퇴 (2026.2)"
+        },
+        {
+          "name": "박양규",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "괴산군": [
+        {
+          "name": "송인헌",
+          "party": "ppp",
+          "career": "현 괴산군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이차영",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "증평군": [
+        {
+          "name": "이재영",
+          "party": "democratic",
+          "career": "현 증평군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최재옥",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ]
+    },
+    "chungnam": {
+      "공주시": [
+        {
+          "name": "최원철",
+          "party": "ppp",
+          "career": "현 공주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김정섭",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "보령시": [
+        {
+          "name": "김동일",
+          "party": "ppp",
+          "career": "현 보령시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김흥식",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "아산시": [
+        {
+          "name": "박경귀",
+          "party": "ppp",
+          "career": "현 아산시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "2025.4 재보궐로 오세현에게 교체"
+        },
+        {
+          "name": "안장헌",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "오세현",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "서산시": [
+        {
+          "name": "이완섭",
+          "party": "ppp",
+          "career": "현 서산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "한기남",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "태안군": [
+        {
+          "name": "가세로",
+          "party": "democratic",
+          "career": "현 태안군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "윤희신",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "윤희선",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김세호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "강철민",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "금산군": [
+        {
+          "name": "박범인",
+          "party": "ppp",
+          "career": "현 금산군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김태훈",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "문경주",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "논산시": [
+        {
+          "name": "백성현",
+          "party": "ppp",
+          "career": "현 논산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "권오성",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "계룡시": [
+        {
+          "name": "이응우",
+          "party": "ppp",
+          "career": "현 계룡시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "임강수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "정준영",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "부여군": [
+        {
+          "name": "박정현",
+          "party": "democratic",
+          "career": "현 부여군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "서천군": [
+        {
+          "name": "김기웅",
+          "party": "ppp",
+          "career": "현 서천군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "유승광",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "홍성군": [
+        {
+          "name": "이용록",
+          "party": "ppp",
+          "career": "현 홍성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이종화",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "손세희",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "박정주",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "청양군": [
+        {
+          "name": "김돈곤",
+          "party": "democratic",
+          "career": "현 청양군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김홍열",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "예산군": [
+        {
+          "name": "최재구",
+          "party": "ppp",
+          "career": "현 예산군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장병길",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "당진시": [
+        {
+          "name": "오성환",
+          "party": "ppp",
+          "career": "현 당진시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "송노섭",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "천안시": [
+        {
+          "name": "박상돈",
+          "party": "independent",
+          "career": "前 천안시 시장 (박상돈 시장 당선무효 (2025.4))",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "박상돈 시장 당선무효 (2025.4)"
+        },
+        {
+          "name": "권용태",
+          "party": "ppp",
+          "career": "국민의힘 천안시장 공천 면접 완료",
+          "status": "DECLARED",
+          "dataSource": "news_discovery",
+          "pledges": []
+        }
+      ]
+    },
+    "jeonbuk": {
+      "전주시": [
+        {
+          "name": "우범기",
+          "party": "democratic",
+          "career": "현 전주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조지훈",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "군산시": [
+        {
+          "name": "강임준",
+          "party": "democratic",
+          "career": "현 군산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "서동석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "익산시": [
+        {
+          "name": "정헌율",
+          "party": "democratic",
+          "career": "현 익산시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "전북도지사 출마"
+        },
+        {
+          "name": "최정호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "조용식",
+          "party": "independent",
+          "career": "",
+          "status": "WITHDRAWN",
+          "dataSource": "overview_narrative",
+          "pledges": [],
+          "_note": "교육감 출마"
+        },
+        {
+          "name": "황세연",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "정읍시": [
+        {
+          "name": "이학수",
+          "party": "democratic",
+          "career": "현 정읍시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김민영",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "남원시": [
+        {
+          "name": "최경식",
+          "party": "democratic",
+          "career": "현 남원시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이정린",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "김제시": [
+        {
+          "name": "정성주",
+          "party": "democratic",
+          "career": "현 김제시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "나인권",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "완주군": [
+        {
+          "name": "유희태",
+          "party": "democratic",
+          "career": "현 완주군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "국영석",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "진안군": [
+        {
+          "name": "전춘성",
+          "party": "democratic",
+          "career": "현 진안군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "천춘진",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "이우규",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "동창옥",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "무주군": [
+        {
+          "name": "황인홍",
+          "party": "independent",
+          "career": "현 무주군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "장수군": [
+        {
+          "name": "최훈식",
+          "party": "democratic",
+          "career": "현 장수군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장수군수",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "임실군": [
+        {
+          "name": "심민",
+          "party": "independent",
+          "career": "현 임실군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김진명",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "순창군": [
+        {
+          "name": "최영일",
+          "party": "independent",
+          "career": "현 순창군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "임종철",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "고창군": [
+        {
+          "name": "심덕섭",
+          "party": "democratic",
+          "career": "현 고창군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조민규",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "유기상",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "부안군": [
+        {
+          "name": "권익현",
+          "party": "democratic",
+          "career": "현 부안군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김성태",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ]
+    },
+    "jeonnam": {
+      "목포시": [
+        {
+          "name": "박홍률",
+          "party": "independent",
+          "career": "前 목포시 시장 (박홍률 시장 당선무효 (2025.3))",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "박홍률 시장 당선무효 (2025.3)"
+        },
+        {
+          "name": "강성휘",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "전경선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "여수시": [
+        {
+          "name": "정기명",
+          "party": "democratic",
+          "career": "현 여수시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "순천시": [
+        {
+          "name": "노관규",
+          "party": "independent",
+          "career": "현 순천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오하근",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "나주시": [
+        {
+          "name": "윤병태",
+          "party": "democratic",
+          "career": "현 나주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "광양시": [
+        {
+          "name": "정인화",
+          "party": "independent",
+          "career": "현 광양시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박성현",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "이충재",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "담양군": [
+        {
+          "name": "이병노",
+          "party": "democratic",
+          "career": "현 담양군 군수",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "2025년 재보궐에서 낙선/퇴임"
+        },
+        {
+          "name": "정철원",
+          "party": "reform",
+          "career": "현 담양군수 (조국혁신당 1호 단체장, 2025 재보궐 당선)",
+          "status": "EXPECTED",
+          "dataSource": "news_correction",
+          "pledges": []
+        },
+        {
+          "name": "박종원",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "장성군": [
+        {
+          "name": "김한종",
+          "party": "democratic",
+          "career": "현 장성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "유성수",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "소영호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김왕근",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "곡성군": [
+        {
+          "name": "이상철",
+          "party": "democratic",
+          "career": "현 곡성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조상래",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "강덕구",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "구례군": [
+        {
+          "name": "김순호",
+          "party": "democratic",
+          "career": "현 구례군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "고흥군": [
+        {
+          "name": "공영민",
+          "party": "democratic",
+          "career": "현 고흥군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "보성군": [
+        {
+          "name": "김철우",
+          "party": "democratic",
+          "career": "현 보성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "화순군": [
+        {
+          "name": "구복규",
+          "party": "democratic",
+          "career": "현 화순군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "윤영민",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "장흥군": [
+        {
+          "name": "김성",
+          "party": "democratic",
+          "career": "현 장흥군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "강진군": [
+        {
+          "name": "강진원",
+          "party": "independent",
+          "career": "현 강진군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김보미",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "완도군": [
+        {
+          "name": "신우철",
+          "party": "democratic",
+          "career": "현 완도군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김신",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "해남군": [
+        {
+          "name": "명현관",
+          "party": "democratic",
+          "career": "현 해남군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김성주",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김병덕",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "이길운",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "진도군": [
+        {
+          "name": "김희수",
+          "party": "independent",
+          "career": "현 진도군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영암군": [
+        {
+          "name": "우승희",
+          "party": "democratic",
+          "career": "현 영암군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "전동평",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "무안군": [
+        {
+          "name": "김산",
+          "party": "independent",
+          "career": "현 무안군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영광군": [
+        {
+          "name": "강종만",
+          "party": "independent",
+          "career": "현 영광군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이근철",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "오기원",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "함평군": [
+        {
+          "name": "이상익",
+          "party": "democratic",
+          "career": "현 함평군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조성철",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "이남오",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "신안군": [
+        {
+          "name": "박우량",
+          "party": "independent",
+          "career": "前 신안군 시장 (박우량 군수 직위상실 (2025.3))",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "박우량 군수 직위상실 (2025.3)"
+        }
+      ]
+    },
+    "gyeongbuk": {
+      "포항시": [
+        {
+          "name": "이강덕",
+          "party": "independent",
+          "career": "현 포항시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "이강덕 경북도지사 출마 사퇴 (2026.2)"
+        },
+        {
+          "name": "박용선",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박희정",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "울릉군": [
+        {
+          "name": "남한권",
+          "party": "independent",
+          "career": "현 울릉군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김병수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "경주시": [
+        {
+          "name": "주낙영",
+          "party": "ppp",
+          "career": "현 경주시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이창화",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "김천시": [
+        {
+          "name": "김충섭",
+          "party": "ppp",
+          "career": "현 김천시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "2025.4 재보궐로 배낙호에게 교체"
+        },
+        {
+          "name": "배낙호",
+          "party": "ppp",
+          "career": "현 김천시 단체장 (2025.4 재보궐 당선)",
+          "status": "EXPECTED",
+          "dataSource": "nec_byelection",
+          "pledges": []
+        }
+      ],
+      "안동시": [
+        {
+          "name": "권기창",
+          "party": "ppp",
+          "career": "현 안동시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "권광택",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "구미시": [
+        {
+          "name": "김장호",
+          "party": "ppp",
+          "career": "현 구미시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영주시": [
+        {
+          "name": "박남서",
+          "party": "independent",
+          "career": "前 영주시 시장 (박남서 시장 당선무효 (2025.3))",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "박남서 시장 당선무효 (2025.3)"
+        },
+        {
+          "name": "황병직",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "최영섭",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "영천시": [
+        {
+          "name": "최기문",
+          "party": "independent",
+          "career": "현 영천시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "상주시": [
+        {
+          "name": "강영석",
+          "party": "ppp",
+          "career": "현 상주시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "남영숙",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "문경시": [
+        {
+          "name": "신현국",
+          "party": "ppp",
+          "career": "현 문경시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김학홍이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "예천군": [
+        {
+          "name": "김학동",
+          "party": "ppp",
+          "career": "현 예천군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "도기욱",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "경산시": [
+        {
+          "name": "조현일",
+          "party": "ppp",
+          "career": "현 경산시 시장",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김기현",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "청도군": [
+        {
+          "name": "김하수",
+          "party": "ppp",
+          "career": "현 청도군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이선희와",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박권현",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "고령군": [
+        {
+          "name": "이남철",
+          "party": "ppp",
+          "career": "현 고령군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "성주군": [
+        {
+          "name": "이병환",
+          "party": "ppp",
+          "career": "현 성주군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정영길",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "칠곡군": [
+        {
+          "name": "김재욱",
+          "party": "ppp",
+          "career": "현 칠곡군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장세호",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "군위군": [
+        {
+          "name": "김진열",
+          "party": "ppp",
+          "career": "현 군위군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "의성군": [
+        {
+          "name": "김주수",
+          "party": "independent",
+          "career": "현 의성군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최유철",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "청송군": [
+        {
+          "name": "윤경희",
+          "party": "ppp",
+          "career": "현 청송군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "영양군": [
+        {
+          "name": "오도창",
+          "party": "ppp",
+          "career": "현 영양군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "권영택",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "영덕군": [
+        {
+          "name": "김광열",
+          "party": "ppp",
+          "career": "현 영덕군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이희진",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "봉화군": [
+        {
+          "name": "박현국",
+          "party": "ppp",
+          "career": "현 봉화군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박만우",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "홍성구",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "울진군": [
+        {
+          "name": "손병복",
+          "party": "ppp",
+          "career": "현 울진군 군수",
+          "status": "DECLARED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ]
+    },
+    "gyeongnam": {
+      "진주시": [
+        {
+          "name": "조규일",
+          "party": "ppp",
+          "career": "현 진주시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "황동간",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "장문석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "통영시": [
+        {
+          "name": "천영기",
+          "party": "ppp",
+          "career": "현 통영시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "강석주",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "고성군": [
+        {
+          "name": "이상근",
+          "party": "ppp",
+          "career": "현 고성군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "하학열",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "사천시": [
+        {
+          "name": "박동식",
+          "party": "ppp",
+          "career": "현 사천시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "유해남",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "김해시": [
+        {
+          "name": "홍태용",
+          "party": "ppp",
+          "career": "현 김해시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "밀양시": [
+        {
+          "name": "박일호",
+          "party": "ppp",
+          "career": "현 밀양시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "안병구",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "거제시": [
+        {
+          "name": "박종우",
+          "party": "ppp",
+          "career": "현 거제시 시장",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "2025.4 재보궐로 변광용에게 교체"
+        },
+        {
+          "name": "권민호",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "윤부원",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "변광용",
+          "party": "democratic",
+          "career": "현 거제시 단체장 (2025.4 재보궐 당선)",
+          "status": "EXPECTED",
+          "dataSource": "nec_byelection",
+          "pledges": []
+        }
+      ],
+      "의령군": [
+        {
+          "name": "오태완",
+          "party": "independent",
+          "career": "현 의령군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "함안군": [
+        {
+          "name": "조근제",
+          "party": "ppp",
+          "career": "현 함안군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이성용",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "정금효",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "창녕군": [
+        {
+          "name": "김부영",
+          "party": "ppp",
+          "career": "현 창녕군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "우기수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "곽철현",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "양산시": [
+        {
+          "name": "나동연",
+          "party": "ppp",
+          "career": "현 양산시 시장",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박대조",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "한옥문",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "하동군": [
+        {
+          "name": "하승철",
+          "party": "independent",
+          "career": "현 하동군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "제윤경",
+          "party": "democratic",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "남해군": [
+        {
+          "name": "장충남",
+          "party": "democratic",
+          "career": "현 남해군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "남해군수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "함양군": [
+        {
+          "name": "진병영",
+          "party": "independent",
+          "career": "현 함양군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        }
+      ],
+      "산청군": [
+        {
+          "name": "이승화",
+          "party": "ppp",
+          "career": "현 산청군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이성도",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "거창군": [
+        {
+          "name": "구인모",
+          "party": "ppp",
+          "career": "현 거창군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박현섭",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ],
+      "합천군": [
+        {
+          "name": "김윤철",
+          "party": "ppp",
+          "career": "현 합천군 군수",
+          "status": "EXPECTED",
+          "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이재욱",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "창원시": [
+        {
+          "name": "홍남표",
+          "party": "independent",
+          "career": "前 창원시 시장 (홍남표 시장 당선무효 (2025.4))",
+          "status": "WITHDRAWN",
+          "dataSource": "incumbent",
+          "pledges": [],
+          "_note": "홍남표 시장 당선무효 (2025.4)"
+        },
+        {
+          "name": "강기윤",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        }
+      ]
+    }
+  }
+}

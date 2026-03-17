@@ -1,0 +1,214 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-17",
+    "source": "뉴스 기반 수집 (Gemini gemini-2.5-flash)",
+    "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신."
+  },
+  "districts": {
+    "incheon-yeonsu": {
+      "region": "incheon",
+      "district": "인천 연수구갑",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "박찬대 의원 인천시장 출마 사퇴 예정",
+      "previousMember": {
+        "name": "박찬대",
+        "party": "democratic",
+        "term": "3선"
+      },
+      "status": "확정예정",
+      "voters": 148000,
+      "keyIssues": [
+        "재보궐선거의 '미니총선'화",
+        "인천시장 공천과 연수구갑 보궐선거의 연계",
+        "더불어민주당 내부 공천 경쟁",
+        "지역 연고성 및 적합성"
+      ],
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "박찬대",
+        "rate": 52.4,
+        "runner": "ppp",
+        "runnerName": "정승연",
+        "runnerRate": 46.1,
+        "turnout": 67.2
+      },
+      "candidates": [
+        {
+          "name": "김남준",
+          "career": "",
+          "pledges": [],
+          "status": "RUMORED",
+          "dataSource": "news",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당"
+        },
+        {
+          "name": "송영길",
+          "career": "",
+          "pledges": [],
+          "status": "RUMORED",
+          "dataSource": "news",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당"
+        }
+      ],
+      "statusNote": "인천 연수구갑 보궐선거는 '미니총선'으로 불리며 정치권의 높은 관심을 받고 있다. 더불어민주당 내 김남준, 송영길 등 여러 주자들이 거론되며 치열한 공천 경쟁이 예상된다."
+    },
+    "incheon-gyeyang": {
+      "region": "incheon",
+      "district": "인천 계양구을",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "이재명 대통령 당선에 따른 궐위",
+      "previousMember": {
+        "name": "이재명",
+        "party": "democratic",
+        "term": ""
+      },
+      "status": "확정",
+      "voters": 152000,
+      "keyIssues": [
+        "인천 계양을 공천 장기화",
+        "국회의원 보궐·지방선거 겹친 수도권 격전지 부상",
+        "구청장 경선까지 대리전 양상"
+      ],
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "이재명",
+        "rate": 50.6,
+        "runner": "ppp",
+        "runnerName": "윤형선",
+        "runnerRate": 45.2,
+        "turnout": 52.8
+      },
+      "candidates": [],
+      "statusNote": "인천 계양구을 국회의원 보궐선거의 공천 과정이 장기화되고 있으며, 지방선거와 겹쳐 수도권의 주요 격전지로 부상하고 있습니다. 현재까지 특정 후보의 출마 소식은 확인되지 않고 있습니다."
+    },
+    "gyeonggi-pyeongtaek": {
+      "region": "gyeonggi",
+      "district": "경기 평택시을",
+      "type": "국회의원 보궐",
+      "subType": "재선거",
+      "reason": "이병진 의원 선거법 위반 유죄 확정 (벌금 700만원)",
+      "previousMember": {
+        "name": "이병진",
+        "party": "democratic",
+        "term": ""
+      },
+      "status": "확정",
+      "voters": 165000,
+      "keyIssues": [
+        "평택 반도체 클러스터",
+        "국제도시 개발",
+        "교통 인프라",
+        "주한미군 상생"
+      ],
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "이병진",
+        "rate": 51.2,
+        "runner": "ppp",
+        "runnerName": "공병호",
+        "runnerRate": 44.8,
+        "turnout": 50.3
+      },
+      "candidates": [],
+      "statusNote": "최신 뉴스에 따르면 6월 3일 재보궐선거는 '미니총선'으로 불리며 여러 지역구에서 치러질 예정이나, 경기 평택시을 지역구에 대한 구체적인 후보자 동향은 확인되지 않습니다."
+    },
+    "chungnam-asan": {
+      "region": "chungnam",
+      "district": "충남 아산시을",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "강훈식 대통령비서실장 취임에 따른 사퇴",
+      "previousMember": {
+        "name": "강훈식",
+        "party": "democratic",
+        "term": ""
+      },
+      "status": "확정",
+      "voters": 129000,
+      "keyIssues": [
+        "노동",
+        "민생",
+        "산업단지"
+      ],
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "강훈식",
+        "rate": 53.2,
+        "runner": "ppp",
+        "runnerName": "이명수",
+        "runnerRate": 43.1,
+        "turnout": 51.5
+      },
+      "candidates": [
+        {
+          "name": "맹인섭",
+          "career": "언론인",
+          "pledges": [
+            "노동 중심 정책 비전 제시",
+            "노동·민생 혁신 기치",
+            "산업단지 맞춤형 노동 공약 제시"
+          ],
+          "status": "DECLARED",
+          "dataSource": "news",
+          "partyKey": "independent",
+          "partyName": null
+        }
+      ],
+      "statusNote": "맹인섭 후보가 아산을 보궐선거 행보를 본격화하며 노동 및 민생 중심의 정책 비전을 제시하고 있습니다. 현재까지 다른 후보의 출마 소식은 확인되지 않고 있습니다."
+    },
+    "jeonbuk-gunsan": {
+      "region": "jeonbuk",
+      "district": "전북 군산·김제·부안갑",
+      "type": "국회의원 보궐",
+      "subType": "재선거",
+      "reason": "신영대 의원 선거사무장 경선조작 유죄 확정",
+      "previousMember": {
+        "name": "신영대",
+        "party": "democratic",
+        "term": ""
+      },
+      "status": "확정",
+      "voters": 170000,
+      "keyIssues": [
+        "6·3 재보궐선거 미니총선급 규모 확대",
+        "정부 중간 평가",
+        "차기 대선 전초전",
+        "국민의힘 인물난 및 위기"
+      ],
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "신영대",
+        "rate": 55.8,
+        "runner": "ppp",
+        "runnerName": "박진술",
+        "runnerRate": 32.1,
+        "turnout": 48.9
+      },
+      "candidates": [
+        {
+          "name": "김의겸",
+          "career": "",
+          "pledges": [],
+          "status": "DECLARED",
+          "dataSource": "news",
+          "partyKey": "independent",
+          "partyName": ""
+        },
+        {
+          "name": "조국",
+          "career": "",
+          "pledges": [],
+          "status": "RUMORED",
+          "dataSource": "news",
+          "partyKey": "independent",
+          "partyName": ""
+        }
+      ],
+      "statusNote": "전북 군산·김제·부안갑 재선거는 김의겸 후보의 출마 선언과 조국 후보의 출마 가능성으로 뜨거워지고 있습니다. 전체 6·3 재보궐선거는 미니총선급으로 확대되어 현 정부 중간 평가의 성격을 띠며, 국민의힘은 인물난 등 어려움을 겪고 있습니다."
+    }
+  }
+}

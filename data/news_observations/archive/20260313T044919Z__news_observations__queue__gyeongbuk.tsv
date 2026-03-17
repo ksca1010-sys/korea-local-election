@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-gyeongbuk-governor-accept	gyeongbuk	all	governor		경북매일신문, 경북도지사 후보 공약 경쟁 본격화	경북도지사 선거 공약 비교와 지역 현안 기사	https://example.com/starter/gyeongbuk-governor-accept	true	뉴스 QA 추천 배치용 스타터. 경북 광역단체장 정탐 확인
+starter-gyeongbuk-governor-reject-superintendent	gyeongbuk	all	governor		경북교육감 후보 정책 토론회 개최	교육감 기사인데 경북 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/gyeongbuk-governor-reject-superintendent	false	뉴스 QA 추천 배치용 스타터. 다른 선거 종류 차단 확인

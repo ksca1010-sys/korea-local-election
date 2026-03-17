@@ -748,48 +748,18 @@ const MapModule = (() => {
                 }
                 parties.sort((a, b) => b.seats - a.seats);
 
-                // 득표율 (비의석 정당 포함)
-                const voteResults = regionPropData.voteResults || [];
-                const voteRows = voteResults.length > 0
-                    ? voteResults.map(v => {
-                        const pc = ElectionData.getPartyColor(v.party);
-                        const pn = v.partyName || ElectionData.getPartyName(v.party);
-                        const seatInfo = parties.find(p => p.party === v.party);
-                        const seatText = seatInfo ? `${seatInfo.seats}석` : '0석';
-                        return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
-                            <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
-                            <span style="color:#e0e0e0;font-size:0.85em">${pn}</span>
-                            <span style="color:#fff;font-weight:600">${seatText}</span>
-                            <span style="color:#999;font-size:0.8em">${v.voteShare}%</span>
-                        </div>`;
-                    }).join('')
-                    : parties.map(p => {
-                        const pc = ElectionData.getPartyColor(p.party);
-                        const share = totalSeats > 0 ? ` (${(p.seats / totalSeats * 100).toFixed(1)}%)` : '';
-                        return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
-                            <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
-                            <span style="color:#e0e0e0;font-size:0.85em">${ElectionData.getPartyName(p.party)}</span>
-                            <span style="color:#fff;font-weight:600">${p.seats}석${share}</span>
-                        </div>`;
-                    }).join('');
-
-                // 현직 의원 목록 (광역비례만)
-                let membersHtml = '';
-                if (isCouncilProp && regionPropData.members?.length) {
-                    const memberLines = regionPropData.members.map(m => {
-                        const mc = ElectionData.getPartyColor(m.party);
-                        const mn = ElectionData.getPartyName(m.party);
-                        return `<div style="display:flex;align-items:center;gap:8px;padding:1px 0">
-                            <span style="display:inline-block;width:10px;height:10px;min-width:10px;border-radius:2px;background:${mc}"></span>
-                            <span style="color:#e0e0e0;font-size:0.8em">${mn}</span>
-                            <span style="color:#fff;font-size:0.85em">${m.name}</span>
-                        </div>`;
-                    }).join('');
-                    membersHtml = `<div style="margin-top:6px;border-top:1px solid #333;padding-top:4px">
-                        <div style="color:#999;font-size:0.75em;margin-bottom:3px">현직 비례의원 ${regionPropData.members.length}명</div>
-                        <div style="max-height:120px;overflow-y:auto">${memberLines}</div>
+                // 의석을 받은 정당만 표시
+                const seatedParties = parties.filter(p => p.seats > 0);
+                const voteRows = seatedParties.map(p => {
+                    const pc = ElectionData.getPartyColor(p.party);
+                    const pn = ElectionData.getPartyName(p.party);
+                    const share = totalSeats > 0 ? ` (${(p.seats / totalSeats * 100).toFixed(1)}%)` : '';
+                    return `<div style="display:flex;align-items:center;gap:8px;padding:2px 0">
+                        <span style="display:inline-block;width:12px;height:12px;min-width:12px;border-radius:3px;background:${pc}"></span>
+                        <span style="color:#e0e0e0;font-size:0.85em">${pn}</span>
+                        <span style="color:#fff;font-weight:600">${p.seats}석${share}</span>
                     </div>`;
-                }
+                }).join('');
 
                 tooltipHtml = `
                     <div class="tooltip-title">${region.name} ${isCouncilProp ? '광역' : '기초'} 비례대표</div>
@@ -800,7 +770,6 @@ const MapModule = (() => {
                     <div style="margin-top:4px;border-top:1px solid #333;padding-top:4px">
                         ${voteRows}
                     </div>
-                    ${membersHtml}
                 `;
             } else {
                 tooltipHtml = `
@@ -2973,13 +2942,20 @@ const MapModule = (() => {
                     path.centroid({ type: 'FeatureCollection', features: filtered });
                 if (isNaN(centroid[0])) return;
 
-                // 활성 선거구 하이라이트
+                // 활성 선거구 하이라이트 + 클릭 이벤트
                 if (targetFeature) {
                     g.selectAll('.district')
                         .filter(d => d === targetFeature)
                         .attr('fill', '#14b8a633')
                         .attr('stroke', '#14b8a6')
-                        .attr('stroke-width', 2);
+                        .attr('stroke-width', 2)
+                        .style('cursor', 'pointer')
+                        .on('click', (event) => {
+                            event.stopPropagation();
+                            if (typeof App !== 'undefined' && App.onByElectionSelected) {
+                                App.onByElectionSelected(key);
+                            }
+                        });
                 }
 
                 const prevPartyColor = election.prevElection

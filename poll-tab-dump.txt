@@ -1,0 +1,372 @@
+poll-tab.js 없음
+#!/usr/bin/env python3
+from __future__ import annotations
+
+import json
+import os
+import re
+import time
+from pathlib import Path
+from typing import Dict, List, Optional, Tuple
+from urllib.parse import urljoin, urlparse, parse_qs, urlencode, urlunparse
+
+import httpx
+import pandas as pd
+from bs4 import BeautifulSoup
+
+
+BASE_LIST_URL = "https://www.nesdc.go.kr/portal/bbs/B0000005/list.do?menuNo=200467"
+STATE_PATH = Path("data/nesdc_state.json")
+OUTPUT_CSV = Path("latest_polls.csv")
+DEBUG_LIST_HTML = Path("data/nesdc_list_sample.html")
+SOURCE_TEXT = "출처: 중앙선거여론조사심의위원회"
+MAX_PAGES = 30
+DATA_JS_PATH = Path("js/data.js")
+
+USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 13_6_0) "
+    "AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/121.0.0.0 Safari/537.36"
+)
+
+
+def fetch_with_delay(client: httpx.Client, url: str) -> str:
+    time.sleep(2)
+    resp = client.get(url, timeout=30)
+    resp.raise_for_status()
+    return resp.text
+
+
+def load_state() -> Dict[str, int]:
+    if STATE_PATH.exists():
+        try:
+            data = json.loads(STATE_PATH.read_text(encoding="utf-8"))
+            return {"last_id": int(data.get("last_id", 0))}
+        except Exception:
+            return {"last_id": 0}
+    return {"last_id": 0}
+
+
+def save_state(last_id: int) -> None:
+    STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    STATE_PATH.write_text(json.dumps({"last_id": last_id}, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
+def build_list_url(page_index: int) -> str:
+    parsed = urlparse(BASE_LIST_URL)
+    query = parse_qs(parsed.query)
+    query["pageIndex"] = [str(page_index)]
+    new_query = urlencode(query, doseq=True)
+    return urlunparse(parsed._replace(query=new_query))
+
+
+def find_target_table(soup: BeautifulSoup):
+    tables = soup.find_all("table")
+    for table in tables:
+        headers = [th.get_text(strip=True) for th in table.find_all("th")]
+        if any("등록번호" in h for h in headers) and any("여론조사" in h for h in headers):
+            return table, headers
+    if tables:
+        return tables[0], [th.get_text(strip=True) for th in tables[0].find_all("th")]
+    return None, []
+
+
+def parse_board_div(soup: BeautifulSoup) -> List[Dict[str, str]]:
+    board = soup.find("div", class_="board")
+    if not board:
+        return []
+
+    header_row = board.find("p", class_=re.compile(r"\bth\b"))
+    headers = []
+    if header_row:
+        headers = [span.get_text(strip=True) for span in header_row.find_all("span", class_="col")]
+    header_index = {h: i for i, h in enumerate(headers)}
+
+    def find_header_index(keyword: str) -> Optional[int]:
+        for h, i in header_index.items():
+            if keyword in h:
+                return i
+        return None
+
+    id_idx = find_header_index("등록번호")
+    title_idx = find_header_index("여론조사")
+
+    items: List[Dict[str, str]] = []
+    for link in board.find_all("a", class_=re.compile(r"\btr\b")):
+        cols = [span.get_text(" ", strip=True) for span in link.find_all("span", class_="col")]
+        if not cols:
+            continue
+        title_text = cols[title_idx] if title_idx is not None and title_idx < len(cols) else ""
+        id_text = cols[id_idx] if id_idx is not None and id_idx < len(cols) else ""
+        if not id_text:
+            id_text = re.sub(r"[^\d]", "", title_text)
+        href = link.get("href", "")
+        detail_url = urljoin(BASE_LIST_URL, href)
+        items.append(
+            {
+                "id": id_text,
+                "title": title_text,
+                "url": detail_url,
+            }
+        )
+    return items
+
+
+def parse_list(html: str) -> List[Dict[str, str]]:
+    soup = BeautifulSoup(html, "html.parser")
+    board_items = parse_board_div(soup)
+    if board_items:
+        return board_items
+
+    table, headers = find_target_table(soup)
+    if not table:
+        return []
+
+    header_index = {h: i for i, h in enumerate(headers)}
+    def find_header_index(keyword: str) -> Optional[int]:
+        for h, i in header_index.items():
+            if keyword in h:
+                return i
+        return None
+
+    id_idx = find_header_index("등록번호")
+    title_idx = find_header_index("여론조사")
+
+    rows = table.find_all("tr")
+    items: List[Dict[str, str]] = []
+    for row in rows:
+        link = row.find("a", href=re.compile(r"view\.do"))
+        if not link:
+            continue
+        tds = row.find_all(["td", "th"])
+        if not tds:
+            continue
+
+        title_text = link.get_text(strip=True)
+        if title_idx is not None and title_idx < len(tds):
+            title_text = tds[title_idx].get_text(strip=True) or title_text
+
+        id_text = None
+        if id_idx is not None and id_idx < len(tds):
+            id_text = tds[id_idx].get_text(strip=True)
+        if not id_text:
+            id_text = re.sub(r"[^\d]", "", title_text)
+
+        href = link.get("href", "")
+        detail_url = urljoin(BASE_LIST_URL, href)
+
+        items.append(
+            {
+                "id": id_text,
+                "title": title_text,
+                "url": detail_url,
+            }
+        )
+    return items
+
+
+def extract_label_map(soup: BeautifulSoup) -> Dict[str, str]:
+    label_map: Dict[str, str] = {}
+
+    # Table-based labels
+    for table in soup.find_all("table"):
+        for row in table.find_all("tr"):
+            cells = row.find_all(["th", "td"])
+            if len(cells) >= 2:
+                label = cells[0].get_text(strip=True)
+                value = cells[1].get_text(" ", strip=True)
+                if label and value:
+                    label_map[label] = value
+
+    # Definition list labels
+    for dl in soup.find_all("dl"):
+        dts = dl.find_all("dt")
+        dds = dl.find_all("dd")
+        for dt, dd in zip(dts, dds):
+            label = dt.get_text(strip=True)
+            value = dd.get_text(" ", strip=True)
+            if label and value:
+                label_map[label] = value
+
+    return label_map
+
+
+def clean_text(value: Optional[str]) -> Optional[str]:
+    if value is None:
+        return None
+    cleaned = value.replace("\xa0", " ")
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned or None
+
+
+def normalize_date_range(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    text = value.replace("\xa0", " ")
+    dates = re.findall(r"\d{4}-\d{2}-\d{2}", text)
+    times = re.findall(r"(\d{1,2})\s*시\s*(\d{1,2})\s*분", text)
+    time_strs = [f"{int(h):02d}:{int(m):02d}" for h, m in times]
+
+    if dates:
+        if len(dates) >= 2:
+            start_date, end_date = dates[0], dates[1]
+        else:
+            start_date, end_date = dates[0], None
+        start_time = time_strs[0] if len(time_strs) >= 1 else None
+        end_time = time_strs[1] if len(time_strs) >= 2 else None
+
+        start = f"{start_date} {start_time}".strip() if start_time else start_date
+        if end_date:
+            end = f"{end_date} {end_time}".strip() if end_time else end_date
+            return f"{start} ~ {end}"
+        return start
+
+    return clean_text(value)
+
+
+def normalize_sample_size(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    text = value.replace("\xa0", " ")
+    numbers = re.findall(r"\d{3,6}", text)
+    if numbers:
+        return numbers[0]
+    return clean_text(value)
+
+
+def pick_value(label_map: Dict[str, str], candidates: List[str]) -> Optional[str]:
+    for key in label_map.keys():
+        for cand in candidates:
+            if cand in key:
+                return label_map[key]
+    return None
+
+
+def parse_detail(html: str) -> Dict[str, Optional[str]]:
+    soup = BeautifulSoup(html, "html.parser")
+    labels = extract_label_map(soup)
+
+    poll_org = clean_text(pick_value(labels, ["조사기관명", "조사기관"]))
+    client_org = clean_text(pick_value(labels, ["조사의뢰자", "의뢰기관"]))
+    date_range = normalize_date_range(pick_value(labels, ["조사일시", "조사 기간", "조사기간"]))
+    sample_size = normalize_sample_size(pick_value(labels, ["표본", "표본수", "접촉 후 응답완료 사례수"]))
+
+    return {
+        "poll_org": poll_org,
+        "client_org": client_org,
+        "date_range": date_range,
+        "sample_size": sample_size,
+    }
+
+
+def main() -> None:
+    full_refresh = os.environ.get("FULL_REFRESH") == "1"
+    update_data_js = os.environ.get("UPDATE_DATA_JS") == "1"
+    state = load_state()
+    last_id = 0 if full_refresh else state.get("last_id", 0)
+
+    client = httpx.Client(headers={"User-Agent": USER_AGENT})
+
+    new_items: List[Dict[str, Optional[str]]] = []
+    max_id = last_id
+
+    page = 1
+    while True:
+        print(f"Fetching list page {page}...")
+        list_url = build_list_url(page)
+        html = fetch_with_delay(client, list_url)
+        if page == 1:
+            DEBUG_LIST_HTML.parent.mkdir(parents=True, exist_ok=True)
+            DEBUG_LIST_HTML.write_text(html, encoding="utf-8")
+        items = parse_list(html)
+        if not items:
+            break
+
+        stop = False
+        for item in items:
+            try:
+                item_id = int(re.sub(r"[^\d]", "", item["id"]) or "0")
+            except ValueError:
+                item_id = 0
+
+            if item_id <= last_id:
+                stop = True
+                break
+
+            detail_html = fetch_with_delay(client, item["url"])
+            detail = parse_detail(detail_html)
+
+            record = {
+                "id": item_id,
+                "title": item["title"],
+                "poll_org": detail["poll_org"],
+                "client_org": detail["client_org"],
+                "date_range": detail["date_range"],
+                "sample_size": detail["sample_size"],
+                "url": item["url"],
+                "source": SOURCE_TEXT,
+            }
+            new_items.append(record)
+            if item_id > max_id:
+                max_id = item_id
+
+        if stop:
+            break
+        page += 1
+        if page > MAX_PAGES:
+            break
+
+    client.close()
+
+    if not new_items:
+        print("No new items found.")
+        return
+
+    df = pd.DataFrame(new_items).sort_values("id", ascending=False)
+    df.to_csv(OUTPUT_CSV, index=False, encoding="utf-8-sig")
+    save_state(max_id)
+    print(f"Saved {len(df)} rows to {OUTPUT_CSV}")
+
+    if update_data_js:
+        update_data_js_from_csv(OUTPUT_CSV, DATA_JS_PATH)
+
+
+def update_data_js_from_csv(csv_path: Path, data_js_path: Path) -> None:
+    if not csv_path.exists():
+        print("CSV not found for data.js update.")
+        return
+    if not data_js_path.exists():
+        print("data.js not found; skipping update.")
+        return
+
+    df = pd.read_csv(csv_path)
+    records = df.to_dict(orient="records")
+
+    begin = "// BEGIN NESDC_LATEST_POLLS"
+    end = "// END NESDC_LATEST_POLLS"
+    payload_lines = [begin, "const latestPolls = ["]
+    for rec in records:
+        payload_lines.append(
+            "  " + json.dumps(rec, ensure_ascii=False) + ","
+        )
+    payload_lines.append("];")
+    payload_lines.append(end)
+    payload = "\n".join(payload_lines)
+
+    text = data_js_path.read_text(encoding="utf-8")
+    if begin in text and end in text:
+        updated = re.sub(
+            rf"{re.escape(begin)}[\\s\\S]*?{re.escape(end)}",
+            payload,
+            text,
+        )
+    else:
+        updated = text + "\n\n" + payload + "\n"
+
+    data_js_path.write_text(updated, encoding="utf-8")
+    print(f"Updated {data_js_path} with latestPolls ({len(records)} rows).")
+
+
+if __name__ == "__main__":
+    main()
+polls.json은 data/polls/polls.json에 있음

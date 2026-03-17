@@ -1,0 +1,5 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+qa-seoul-governor	seoul	governor		5		trend	line			서울특별시,광역단체장	광역단체장선거		2	서울 광역단체장 화면 기본 QA 예시
+qa-jeonnam-mayor-overview	jeonnam	mayor		50		activity	bar	10		전라남도,기초단체장			전남 기초단체장 전체 화면 QA 예시
+qa-gyeongbuk-superintendent	gyeongbuk	superintendent		2		trend	line			경상북도,교육감	교육감선거	김상동,마숙자	2	경북 교육감 후보 추이 QA 예시
+qa-gyeonggi-pyeongtaek	gyeonggi	mayor	평택시	2		trend		0	평택시	평택시,기초단체장			0	평택시 개별 화면 QA 예시. 차트 없음이면 expectedChartType은 비워두고 수동 확인

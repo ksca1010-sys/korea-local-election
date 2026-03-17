@@ -1,0 +1,60 @@
+{
+  "totalVoters": 44281000,
+  "totalPopulation": 51105000,
+  "totalCandidates": 102,
+  "officialStats": {
+    "electionTypes": 7,
+    "regions": 17,
+    "sigungu": 226,
+    "votersFinalized": false,
+    "votersText": "확정 전"
+  },
+  "electionTypes": [
+    {
+      "name": "광역단체장",
+      "count": 17,
+      "description": "시도지사 선거"
+    },
+    {
+      "name": "기초단체장",
+      "count": 226,
+      "description": "시장·군수·구청장 선거"
+    },
+    {
+      "name": "광역의원",
+      "count": 779,
+      "description": "시도의회의원 선거"
+    },
+    {
+      "name": "기초의원",
+      "count": 2601,
+      "description": "시군구의회의원 선거"
+    },
+    {
+      "name": "교육감",
+      "count": 17,
+      "description": "시도교육감 선거"
+    },
+    {
+      "name": "비례대표 광역의원",
+      "count": 93,
+      "description": "시도의회 비례대표"
+    },
+    {
+      "name": "비례대표 기초의원",
+      "count": 386,
+      "description": "시군구의회 비례대표"
+    }
+  ],
+  "byElection": {
+    "name": "국회의원 재보궐선거",
+    "count": 5,
+    "districts": [
+      "인천 연수구갑",
+      "인천 계양구을",
+      "경기 평택시을",
+      "충남 아산시을",
+      "전북 군산·김제·부안갑"
+    ]
+  }
+}

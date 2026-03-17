@@ -1,0 +1,9 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+qa-seoul-governor-accept	seoul	all	governor		서울일보, 서울시장 후보 공약 발표 집중 점검	서울시장 선거에서 주거 정책 경쟁 본격화	https://www.seoulilbo.com/news/seoul-mayor	true	서울 광역단체장 정탐 예시
+qa-seoul-governor-reject-other-region	seoul	all	governor		경북지사 선거 판세 요동	서울 뉴스 전체에서 노출된 경북지사 기사	https://example.com/observed/seoul-gyeongbuk-governor	false	서울 광역단체장 오탐 예시
+qa-jeonnam-governor-reject-national	jeonnam	all	governor		송영길 계양을 출마설 재점화	전남 뉴스 전체에서 노출된 인천 계양을 기사	https://example.com/gyeyang-eul	false	전남 광역단체장 오탐 예시
+qa-jeonnam-suncheon-candidate	jeonnam	candidate	mayor	순천시	순천시장 후보 등록 임박…공약 경쟁 가열	순천시장 선거 출마 선언과 유세 일정 발표	https://example.com/suncheon-mayor	true	전남 기초단체장 정탐 예시
+qa-gyeongbuk-superintendent-reject	gyeongbuk	all	governor		경북교육감 후보 토론회 개최	교육감 선거 정책 검증 토론회	https://example.com/gj-superintendent	false	광역단체장 탭에서 교육감 기사 차단 예시
+qa-gyeongbuk-governor-accept	gyeongbuk	all	governor		경북매일신문, 경북도지사 후보 경선 구도 분석	경북도지사 선거 공약 경쟁 본격화	https://www.kbmaeil.com/news/articleView.html?idxno=1000001	true	경북 광역단체장 정탐 예시
+qa-gyeonggi-pyeongtaek-candidate	gyeonggi	candidate	mayor	평택시	평택시장 후보 출마 선언…유세전 본격화	평택시장 선거 캠프 출범과 현장 방문 일정	https://example.com/pyeongtaek-mayor	true	평택시 기초단체장 정탐 예시
+qa-gyeonggi-sports-reject	gyeonggi	all	governor		경기 막판 역전승…수원 홈팬 환호	프로축구 경기 결과와 선수 인터뷰	https://example.com/sports	false	경기 지역 스포츠 기사 차단 예시

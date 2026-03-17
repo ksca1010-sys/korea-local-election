@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-gwangju-governor-accept	gwangju	all	governor		광주일보, 광주시장 후보 토론회 개최	광주시장 선거 정책 토론회와 공약 검증 기사	https://example.com/starter/gwangju-governor-accept	true	뉴스 QA 추천 배치용 스타터. 광주 광역단체장 정탐 확인
+starter-gwangju-governor-reject-district	gwangju	all	governor		광산구청장 출마 선언 잇따라	기초단체장 기사인데 광주 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/gwangju-governor-reject-district	false	뉴스 QA 추천 배치용 스타터. 기초단체장 기사 차단 확인

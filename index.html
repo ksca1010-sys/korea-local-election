@@ -26,7 +26,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=64">
+    <link rel="stylesheet" href="css/style.css?v=69">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -38,14 +38,6 @@
         </div>
     </div>
 
-    <!-- Transparency Mission Banner (#10) -->
-    <div id="transparency-banner" class="transparency-banner">
-        <div class="banner-content">
-            <i class="fas fa-shield-halved"></i>
-            <span><strong>여론조사 투명성 플랫폼</strong> &mdash; 모든 여론조사 데이터는 중앙선거여론조사심의위원회 등록 자료에 기반하며, 조사기관·방법·표본수·오차범위를 투명하게 공개합니다.</span>
-            <button id="banner-close" class="banner-close"><i class="fas fa-times"></i></button>
-        </div>
-    </div>
 
     <!-- Header -->
     <header id="main-header">
@@ -59,7 +51,7 @@
         <div class="header-center">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input type="text" id="region-search" placeholder="지역 검색 (예: 영암, 서울)" autocomplete="off">
+                <input type="text" id="region-search" placeholder="지역 검색" autocomplete="off">
                 <div id="search-results" class="search-results"></div>
             </div>
         </div>
@@ -263,6 +255,7 @@
                             <div class="ov-date" id="overview-updated-date"></div>
                         </div>
                         <div class="ov-headline" id="overview-headline"></div>
+                        <div class="ov-narrative" id="overview-narrative" style="display:none;"></div>
                         <div class="ov-summary" id="overview-summary"></div>
                         <div class="ov-issues" id="overview-key-issues"></div>
                         <div class="ov-risk" id="overview-risk-factor"></div>
@@ -289,27 +282,27 @@
 
                 <!-- Polls Tab (#10 투명성 강조) -->
                 <div id="tab-polls" class="tab-content" style="display:none;">
-                    <!-- Transparency Notice -->
+                    <!-- 투명성 안내 -->
                     <div class="poll-transparency-box">
                         <div class="ptb-header"><i class="fas fa-shield-halved"></i> 여론조사 투명성 안내</div>
                         <p>이 페이지의 모든 여론조사는 <strong>중앙선거여론조사심의위원회</strong>에 등록된 자료를 기반으로 합니다. 조사기관, 조사방법, 표본수, 오차범위를 반드시 함께 확인하세요.</p>
                         <a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" class="ptb-link"><i class="fas fa-external-link-alt"></i> 선거여론조사심의위원회 바로가기</a>
                     </div>
-                    <div class="panel-card">
+
+                    <!-- 최신 여론조사 바차트 -->
+                    <div id="poll-latest-section" class="panel-card" style="display:none;">
                         <h4><i class="fas fa-poll"></i> 최신 여론조사</h4>
-                        <div class="poll-mock-badge"><i class="fas fa-flask"></i> 시뮬레이션 데이터 (실제 여론조사 아님)</div>
                         <div class="poll-source-info" id="poll-source-info"></div>
                         <canvas id="poll-bar-chart"></canvas>
                     </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-chart-line"></i> 여론조사 추이</h4>
-                        <canvas id="poll-trend-chart"></canvas>
-                    </div>
-                    <!-- NESDC 등록현황 카드 리스트 -->
-                    <div id="polls-cards-section">
-                        <div id="latest-polls-list" class="latest-polls-list"></div>
-                    </div>
-                    <!-- 투명성 안내 (하단 고정) -->
+
+                    <!-- 추이 차트 섹션 (동적 생성) -->
+                    <div id="poll-trends-section"></div>
+
+                    <!-- 전체 여론조사 카드 목록 -->
+                    <div id="poll-cards-section"></div>
+
+                    <!-- 투명성 안내 (하단) -->
                     <div class="poll-disclaimer">
                         <i class="fas fa-shield-halved"></i>
                         <div>
@@ -379,13 +372,22 @@
         </div>
     </footer>
 
-    <script src="js/news_filters.js?v=90"></script>
-    <script src="js/derived_issues.js?v=75"></script>
-    <script src="js/issue_engine.js?v=5"></script>
-    <script src="js/data.js?v=99"></script>
-    <script src="js/nec.js?v=75"></script>
-    <script src="js/map.js?v=147"></script>
-    <script src="js/charts.js?v=80"></script>
-    <script src="js/app.js?v=129"></script>
+    <!-- 1. 데이터 로더 -->
+    <script src="js/data-loader.js?v=108"></script>
+    <script src="js/data.js?v=108"></script>
+
+    <!-- 2. 독립 모듈 -->
+    <script src="js/news_filters.js?v=108"></script>
+    <script src="js/derived_issues.js?v=108"></script>
+    <script src="js/issue_engine.js?v=108"></script>
+    <script src="js/nec.js?v=108"></script>
+    <script src="js/map.js?v=108"></script>
+    <script src="js/charts.js?v=108"></script>
+
+    <!-- 3. 탭 모듈 -->
+    <script src="js/tabs/history-tab.js?v=108"></script>
+
+    <!-- 4. 메인 앱 (최후 로드) -->
+    <script src="js/app.js?v=108"></script>
 </body>
 </html>

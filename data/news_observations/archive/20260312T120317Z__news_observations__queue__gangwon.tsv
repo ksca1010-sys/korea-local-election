@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+observed-gangwon-chungbuk-primary	gangwon	all	governor		충북 경선 본격화	강원도 뉴스 전체에서 노출된 다른 지역 경선 기사	https://example.com/observed/gangwon-chungbuk-primary	false	사용자 제보 오탐
+observed-gangwon-busan-gyeongbuk-incumbents	gangwon	all	governor		부산 경북 등 현역 지자체장 거취 주목	강원도 뉴스 전체에서 노출된 타 지역 현역 지자체장 기사	https://example.com/observed/gangwon-busan-gyeongbuk	false	사용자 제보 오탐

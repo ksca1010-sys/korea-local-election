@@ -1,0 +1,1493 @@
+{
+  "seoul": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "democratic",
+      "winnerName": "조순",
+      "rate": 42.4,
+      "runner": "independent",
+      "runnerName": "박찬종",
+      "runnerRate": 33.5,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "고건",
+      "rate": 53.5,
+      "runner": "ppp",
+      "runnerName": "최병렬",
+      "runnerRate": 44,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "이명박",
+      "rate": 52.3,
+      "runner": "democratic",
+      "runnerName": "김민석",
+      "runnerRate": 43,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "오세훈",
+      "rate": 63.3,
+      "runner": "democratic",
+      "runnerName": "강금실",
+      "runnerRate": 25.9,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "오세훈",
+      "rate": 47.4,
+      "runner": "democratic",
+      "runnerName": "한명숙",
+      "runnerRate": 47.2,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "박원순",
+      "rate": 56.1,
+      "runner": "ppp",
+      "runnerName": "정몽준",
+      "runnerRate": 44.7,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "박원순",
+      "rate": 52.6,
+      "runner": "ppp",
+      "runnerName": "김문수",
+      "runnerRate": 20.6,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "오세훈",
+      "rate": 59,
+      "runner": "democratic",
+      "runnerName": "송영길",
+      "runnerRate": 39.2,
+      "turnout": 50.9
+    }
+  ],
+  "busan": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "ppp",
+      "winnerName": "문정수",
+      "rate": 51.4,
+      "runner": "democratic",
+      "runnerName": "노무현",
+      "runnerRate": 37.6,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "안상영",
+      "rate": 45.1,
+      "runner": "independent",
+      "runnerName": "김기재",
+      "runnerRate": 43.5,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "안상영",
+      "rate": 63.8,
+      "runner": "democratic",
+      "runnerName": "한이헌",
+      "runnerRate": 19.4,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "허남식",
+      "rate": 68.8,
+      "runner": "democratic",
+      "runnerName": "오거돈",
+      "runnerRate": 21.3,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "허남식",
+      "rate": 57,
+      "runner": "democratic",
+      "runnerName": "김정길",
+      "runnerRate": 43,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "서병수",
+      "rate": 51.8,
+      "runner": "independent",
+      "runnerName": "오거돈",
+      "runnerRate": 48.2,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "오거돈",
+      "rate": 58.6,
+      "runner": "ppp",
+      "runnerName": "서병수",
+      "runnerRate": 35.4,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "박형준",
+      "rate": 66.4,
+      "runner": "democratic",
+      "runnerName": "변성완",
+      "runnerRate": 32.2,
+      "turnout": 50.9
+    }
+  ],
+  "daegu": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "independent",
+      "winnerName": "문희갑",
+      "rate": 36.8,
+      "runner": "other",
+      "runnerName": "이의익",
+      "runnerRate": 22.1,
+      "turnout": 68.4,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "문희갑",
+      "rate": 72,
+      "runner": "other",
+      "runnerName": "이의익",
+      "runnerRate": 20.7,
+      "turnout": 52.7,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "조해녕",
+      "rate": 61.2,
+      "runner": "independent",
+      "runnerName": "이재용",
+      "runnerRate": 38.8,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "김범일",
+      "rate": 72.8,
+      "runner": "independent",
+      "runnerName": "이재용",
+      "runnerRate": 18.8,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "김범일",
+      "rate": 76.4,
+      "runner": "democratic",
+      "runnerName": "이승천",
+      "runnerRate": 15.3,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "권영진",
+      "rate": 55.6,
+      "runner": "democratic",
+      "runnerName": "김부겸",
+      "runnerRate": 41.5,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "ppp",
+      "winnerName": "권영진",
+      "rate": 52.2,
+      "runner": "democratic",
+      "runnerName": "임대윤",
+      "runnerRate": 41.4,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "홍준표",
+      "rate": 78.8,
+      "runner": "democratic",
+      "runnerName": "서재헌",
+      "runnerRate": 18,
+      "turnout": 50.9
+    }
+  ],
+  "incheon": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "ppp",
+      "winnerName": "최기선",
+      "rate": 40.8,
+      "runner": "democratic",
+      "runnerName": "신용석",
+      "runnerRate": 31.7,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "other",
+      "winnerName": "최기선",
+      "rate": 53.5,
+      "runner": "ppp",
+      "runnerName": "안상수",
+      "runnerRate": 34,
+      "turnout": 52.7,
+      "winnerPartyLabel": "국민신당"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "안상수",
+      "rate": 56.2,
+      "runner": "democratic",
+      "runnerName": "박상은",
+      "runnerRate": 32.1,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "안상수",
+      "rate": 63.7,
+      "runner": "democratic",
+      "runnerName": "최기선",
+      "runnerRate": 22,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "송영길",
+      "rate": 52.1,
+      "runner": "ppp",
+      "runnerName": "안상수",
+      "runnerRate": 45.5,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "유정복",
+      "rate": 49.4,
+      "runner": "democratic",
+      "runnerName": "송영길",
+      "runnerRate": 49.1,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "박남춘",
+      "rate": 59.3,
+      "runner": "ppp",
+      "runnerName": "유정복",
+      "runnerRate": 34.4,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "유정복",
+      "rate": 51.8,
+      "runner": "democratic",
+      "runnerName": "박남춘",
+      "runnerRate": 44.6,
+      "turnout": 50.9
+    }
+  ],
+  "gwangju": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "democratic",
+      "winnerName": "송언종",
+      "rate": 89.7,
+      "runner": "ppp",
+      "runnerName": "김동환",
+      "runnerRate": 10.3,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "고재유",
+      "rate": 67.2,
+      "runner": "independent",
+      "runnerName": "이승채",
+      "runnerRate": 32.8,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "democratic",
+      "winnerName": "박광태",
+      "rate": 46.8,
+      "runner": "independent",
+      "runnerName": "정동년",
+      "runnerRate": 27,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "democratic",
+      "winnerName": "박광태",
+      "rate": 55.2,
+      "runner": "democratic",
+      "runnerName": "조영택",
+      "runnerRate": 33.6,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "강운태",
+      "rate": 58.8,
+      "runner": "other",
+      "runnerName": "정찬용",
+      "runnerRate": 14.5,
+      "turnout": 54.5,
+      "runnerPartyLabel": "민주노동당"
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "윤장현",
+      "rate": 59.2,
+      "runner": "independent",
+      "runnerName": "강운태",
+      "runnerRate": 31.6,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "이용섭",
+      "rate": 83.6,
+      "runner": "ppp",
+      "runnerName": "나경채",
+      "runnerRate": 6.2,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "democratic",
+      "winnerName": "강기정",
+      "rate": 74.9,
+      "runner": "ppp",
+      "runnerName": "주기환",
+      "runnerRate": 15.9,
+      "turnout": 50.9
+    }
+  ],
+  "daejeon": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "other",
+      "winnerName": "홍선기",
+      "rate": 63.8,
+      "runner": "ppp",
+      "runnerName": "염홍철",
+      "runnerRate": 20.9,
+      "turnout": 68.4,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "other",
+      "winnerName": "홍선기",
+      "rate": 73.7,
+      "runner": "independent",
+      "runnerName": "송천영",
+      "runnerRate": 18.1,
+      "turnout": 52.7,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "염홍철",
+      "rate": 46.6,
+      "runner": "other",
+      "runnerName": "홍선기",
+      "runnerRate": 40.2,
+      "turnout": 48.9,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "박성효",
+      "rate": 44.5,
+      "runner": "democratic",
+      "runnerName": "염홍철",
+      "runnerRate": 42.5,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "other",
+      "winnerName": "염홍철",
+      "rate": 48.4,
+      "runner": "ppp",
+      "runnerName": "박성효",
+      "runnerRate": 28.2,
+      "turnout": 54.5,
+      "winnerPartyLabel": "자유선진당"
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "권선택",
+      "rate": 51.7,
+      "runner": "ppp",
+      "runnerName": "박성효",
+      "runnerRate": 48.3,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "허태정",
+      "rate": 56.4,
+      "runner": "ppp",
+      "runnerName": "박성효",
+      "runnerRate": 32.5,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "이장우",
+      "rate": 51.2,
+      "runner": "democratic",
+      "runnerName": "허태정",
+      "runnerRate": 48.8,
+      "turnout": 50.9
+    }
+  ],
+  "ulsan": [
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "심완구",
+      "rate": 42.7,
+      "runner": "independent",
+      "runnerName": "송철호",
+      "runnerRate": 39.4,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "박맹우",
+      "rate": 53.1,
+      "runner": "other",
+      "runnerName": "송철호",
+      "runnerRate": 43.6,
+      "turnout": 48.9,
+      "runnerPartyLabel": "민주노동당"
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "박맹우",
+      "rate": 66.6,
+      "runner": "other",
+      "runnerName": "노옥희",
+      "runnerRate": 24.3,
+      "turnout": 51.6,
+      "runnerPartyLabel": "민주노동당"
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "박맹우",
+      "rate": 63,
+      "runner": "other",
+      "runnerName": "김창현",
+      "runnerRate": 27.9,
+      "turnout": 54.5,
+      "runnerPartyLabel": "민주노동당"
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "김기현",
+      "rate": 64.6,
+      "runner": "other",
+      "runnerName": "조승수",
+      "runnerRate": 29.6,
+      "turnout": 56.8,
+      "runnerPartyLabel": "정의당"
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "송철호",
+      "rate": 55.3,
+      "runner": "ppp",
+      "runnerName": "김기현",
+      "runnerRate": 38.8,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "김두겸",
+      "rate": 59.8,
+      "runner": "democratic",
+      "runnerName": "송철호",
+      "runnerRate": 40.2,
+      "turnout": 50.9
+    }
+  ],
+  "sejong": [
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "이춘희",
+      "rate": 56.1,
+      "runner": "ppp",
+      "runnerName": "유한식",
+      "runnerRate": 43.9,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "이춘희",
+      "rate": 72.2,
+      "runner": "ppp",
+      "runnerName": "송아영",
+      "runnerRate": 18,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "최민호",
+      "rate": 52.8,
+      "runner": "democratic",
+      "runnerName": "이춘희",
+      "runnerRate": 47.2,
+      "turnout": 50.9
+    }
+  ],
+  "gyeonggi": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "ppp",
+      "winnerName": "이인제",
+      "rate": 40.6,
+      "runner": "democratic",
+      "runnerName": "장경우",
+      "runnerRate": 29.6,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "임창열",
+      "rate": 54.3,
+      "runner": "ppp",
+      "runnerName": "손학규",
+      "runnerRate": 45.7,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "손학규",
+      "rate": 58.4,
+      "runner": "democratic",
+      "runnerName": "진념",
+      "runnerRate": 36,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "김문수",
+      "rate": 60,
+      "runner": "democratic",
+      "runnerName": "진대제",
+      "runnerRate": 30.6,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "김문수",
+      "rate": 52.1,
+      "runner": "other",
+      "runnerName": "유시민",
+      "runnerRate": 47.9,
+      "turnout": 54.5,
+      "runnerPartyLabel": "국민참여당"
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "남경필",
+      "rate": 50.4,
+      "runner": "democratic",
+      "runnerName": "김진표",
+      "runnerRate": 49.6,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "이재명",
+      "rate": 56.4,
+      "runner": "ppp",
+      "runnerName": "남경필",
+      "runnerRate": 33.6,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "democratic",
+      "winnerName": "김동연",
+      "rate": 49.1,
+      "runner": "ppp",
+      "runnerName": "김은혜",
+      "runnerRate": 48.9,
+      "turnout": 50.9
+    }
+  ],
+  "gangwon": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "other",
+      "winnerName": "최각규",
+      "rate": 65.8,
+      "runner": "ppp",
+      "runnerName": "이상룡",
+      "runnerRate": 34.2,
+      "turnout": 68.4,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "김진선",
+      "rate": 39.3,
+      "runner": "other",
+      "runnerName": "한호선",
+      "runnerRate": 33.8,
+      "turnout": 52.7,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "김진선",
+      "rate": 71.1,
+      "runner": "democratic",
+      "runnerName": "남동우",
+      "runnerRate": 28.9,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "김진선",
+      "rate": 72.9,
+      "runner": "democratic",
+      "runnerName": "이창복",
+      "runnerRate": 19.6,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "이광재",
+      "rate": 53.4,
+      "runner": "ppp",
+      "runnerName": "이계진",
+      "runnerRate": 46.6,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "최문순",
+      "rate": 50.6,
+      "runner": "ppp",
+      "runnerName": "최흥집",
+      "runnerRate": 48.2,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "최문순",
+      "rate": 66.6,
+      "runner": "independent",
+      "runnerName": "정창수",
+      "runnerRate": 33.4,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "김진태",
+      "rate": 54.1,
+      "runner": "democratic",
+      "runnerName": "이광재",
+      "runnerRate": 45.9,
+      "turnout": 50.9
+    }
+  ],
+  "chungbuk": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "other",
+      "winnerName": "주병덕",
+      "rate": 36.4,
+      "runner": "democratic",
+      "runnerName": "이용희",
+      "runnerRate": 24.5,
+      "turnout": 68.4,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "other",
+      "winnerName": "이원종",
+      "rate": 74.1,
+      "runner": "ppp",
+      "runnerName": "주병덕",
+      "runnerRate": 25.9,
+      "turnout": 52.7,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "이원종",
+      "rate": 58.6,
+      "runner": "other",
+      "runnerName": "구천서",
+      "runnerRate": 33.5,
+      "turnout": 48.9,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "정우택",
+      "rate": 63.8,
+      "runner": "democratic",
+      "runnerName": "한범덕",
+      "runnerRate": 26.6,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "이시종",
+      "rate": 49.6,
+      "runner": "ppp",
+      "runnerName": "정우택",
+      "runnerRate": 48.5,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "이시종",
+      "rate": 50.3,
+      "runner": "ppp",
+      "runnerName": "윤진식",
+      "runnerRate": 48.2,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "이시종",
+      "rate": 65.4,
+      "runner": "ppp",
+      "runnerName": "박경국",
+      "runnerRate": 26.6,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "김영환",
+      "rate": 58.2,
+      "runner": "democratic",
+      "runnerName": "노영민",
+      "runnerRate": 41.8,
+      "turnout": 50.9
+    }
+  ],
+  "chungnam": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "other",
+      "winnerName": "심대평",
+      "rate": 67.9,
+      "runner": "ppp",
+      "runnerName": "박중배",
+      "runnerRate": 19.2,
+      "turnout": 68.4,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "other",
+      "winnerName": "심대평",
+      "rate": 84.6,
+      "runner": "ppp",
+      "runnerName": "한청수",
+      "runnerRate": 15.4,
+      "turnout": 52.7,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "other",
+      "winnerName": "심대평",
+      "rate": 67,
+      "runner": "ppp",
+      "runnerName": "박태권",
+      "runnerRate": 33,
+      "turnout": 48.9,
+      "winnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "이완구",
+      "rate": 46.7,
+      "runner": "other",
+      "runnerName": "이명수",
+      "runnerRate": 27,
+      "turnout": 51.6,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "안희정",
+      "rate": 41.4,
+      "runner": "other",
+      "runnerName": "박상돈",
+      "runnerRate": 38.8,
+      "turnout": 54.5,
+      "runnerPartyLabel": "자유선진당"
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "안희정",
+      "rate": 49.8,
+      "runner": "ppp",
+      "runnerName": "정진석",
+      "runnerRate": 48.1,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "양승조",
+      "rate": 63.7,
+      "runner": "ppp",
+      "runnerName": "이인제",
+      "runnerRate": 34.6,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "김태흠",
+      "rate": 53.9,
+      "runner": "democratic",
+      "runnerName": "양승조",
+      "runnerRate": 46.1,
+      "turnout": 50.9
+    }
+  ],
+  "jeonbuk": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "democratic",
+      "winnerName": "유종근",
+      "rate": 67.2,
+      "runner": "ppp",
+      "runnerName": "강현욱",
+      "runnerRate": 32.8,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "유종근",
+      "rate": 100,
+      "runner": null,
+      "runnerName": "(무투표)",
+      "runnerRate": 0,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "democratic",
+      "winnerName": "강현욱",
+      "rate": 74.6,
+      "runner": "independent",
+      "runnerName": "손주항",
+      "runnerRate": 17.1,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "democratic",
+      "winnerName": "김완주",
+      "rate": 58.9,
+      "runner": "democratic",
+      "runnerName": "정균환",
+      "runnerRate": 28.6,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "김완주",
+      "rate": 72.9,
+      "runner": "ppp",
+      "runnerName": "정운천",
+      "runnerRate": 16.4,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "송하진",
+      "rate": 69.2,
+      "runner": "ppp",
+      "runnerName": "박철곤",
+      "runnerRate": 20.5,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "송하진",
+      "rate": 75,
+      "runner": "ppp",
+      "runnerName": "임정엽",
+      "runnerRate": 17.8,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "democratic",
+      "winnerName": "김관영",
+      "rate": 82.1,
+      "runner": "ppp",
+      "runnerName": "조배숙",
+      "runnerRate": 17.9,
+      "turnout": 50.9
+    }
+  ],
+  "jeonnam": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "democratic",
+      "winnerName": "허경만",
+      "rate": 73.5,
+      "runner": "ppp",
+      "runnerName": "전석홍",
+      "runnerRate": 26.5,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "허경만",
+      "rate": 100,
+      "runner": null,
+      "runnerName": "(무투표)",
+      "runnerRate": 0,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "democratic",
+      "winnerName": "박태영",
+      "rate": 57.8,
+      "runner": "independent",
+      "runnerName": "송재구",
+      "runnerRate": 24.2,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "democratic",
+      "winnerName": "박준영",
+      "rate": 67.7,
+      "runner": "democratic",
+      "runnerName": "서범석",
+      "runnerRate": 19.2,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "democratic",
+      "winnerName": "박준영",
+      "rate": 68.3,
+      "runner": "ppp",
+      "runnerName": "김대식",
+      "runnerRate": 13.4,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "democratic",
+      "winnerName": "이낙연",
+      "rate": 78,
+      "runner": "other",
+      "runnerName": "이성수",
+      "runnerRate": 12.5,
+      "turnout": 56.8,
+      "runnerPartyLabel": "통합진보당"
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "김영록",
+      "rate": 77.1,
+      "runner": "other",
+      "runnerName": "민영삼",
+      "runnerRate": 10.6,
+      "turnout": 60.2,
+      "runnerPartyLabel": "민주평화당"
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "democratic",
+      "winnerName": "김영록",
+      "rate": 75.7,
+      "runner": "ppp",
+      "runnerName": "이정현",
+      "runnerRate": 18.8,
+      "turnout": 50.9
+    }
+  ],
+  "gyeongbuk": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "ppp",
+      "winnerName": "이의근",
+      "rate": 37.9,
+      "runner": "independent",
+      "runnerName": "이판석",
+      "runnerRate": 34.3,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "이의근",
+      "rate": 72,
+      "runner": "other",
+      "runnerName": "이판석",
+      "runnerRate": 28,
+      "turnout": 52.7,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "이의근",
+      "rate": 85.5,
+      "runner": "independent",
+      "runnerName": "조영건",
+      "runnerRate": 14.5,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "김관용",
+      "rate": 81,
+      "runner": "independent",
+      "runnerName": "박명재",
+      "runnerRate": 19,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "ppp",
+      "winnerName": "김관용",
+      "rate": 78,
+      "runner": "democratic",
+      "runnerName": "홍의락",
+      "runnerRate": 13,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "김관용",
+      "rate": 77.1,
+      "runner": "democratic",
+      "runnerName": "오중기",
+      "runnerRate": 17,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "ppp",
+      "winnerName": "이철우",
+      "rate": 54.9,
+      "runner": "democratic",
+      "runnerName": "오중기",
+      "runnerRate": 34.8,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "이철우",
+      "rate": 78,
+      "runner": "democratic",
+      "runnerName": "임미애",
+      "runnerRate": 22,
+      "turnout": 50.9
+    }
+  ],
+  "gyeongnam": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "ppp",
+      "winnerName": "김혁규",
+      "rate": 63.8,
+      "runner": "other",
+      "runnerName": "김용균",
+      "runnerRate": 36.2,
+      "turnout": 68.4,
+      "runnerPartyLabel": "자유민주연합"
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "ppp",
+      "winnerName": "김혁규",
+      "rate": 74.6,
+      "runner": "democratic",
+      "runnerName": "강신화",
+      "runnerRate": 12.8,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "ppp",
+      "winnerName": "김혁규",
+      "rate": 74.5,
+      "runner": "democratic",
+      "runnerName": "김두관",
+      "runnerRate": 16.9,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "ppp",
+      "winnerName": "김태호",
+      "rate": 64.1,
+      "runner": "democratic",
+      "runnerName": "김두관",
+      "runnerRate": 24.7,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "independent",
+      "winnerName": "김두관",
+      "rate": 51.5,
+      "runner": "ppp",
+      "runnerName": "이달곤",
+      "runnerRate": 48.5,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "홍준표",
+      "rate": 59.8,
+      "runner": "democratic",
+      "runnerName": "김경수",
+      "runnerRate": 36.6,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "democratic",
+      "winnerName": "김경수",
+      "rate": 56.8,
+      "runner": "ppp",
+      "runnerName": "김태호",
+      "runnerRate": 40.1,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "ppp",
+      "winnerName": "박완수",
+      "rate": 65.7,
+      "runner": "democratic",
+      "runnerName": "양문석",
+      "runnerRate": 29.4,
+      "turnout": 50.9
+    }
+  ],
+  "jeju": [
+    {
+      "election": 1,
+      "year": 1995,
+      "winner": "independent",
+      "winnerName": "신구범",
+      "rate": 40.6,
+      "runner": "ppp",
+      "runnerName": "우근민",
+      "runnerRate": 32.5,
+      "turnout": 68.4
+    },
+    {
+      "election": 2,
+      "year": 1998,
+      "winner": "democratic",
+      "winnerName": "우근민",
+      "rate": 52.8,
+      "runner": "independent",
+      "runnerName": "신구범",
+      "runnerRate": 30.8,
+      "turnout": 52.7
+    },
+    {
+      "election": 3,
+      "year": 2002,
+      "winner": "democratic",
+      "winnerName": "우근민",
+      "rate": 51.4,
+      "runner": "ppp",
+      "runnerName": "신구범",
+      "runnerRate": 45.4,
+      "turnout": 48.9
+    },
+    {
+      "election": 4,
+      "year": 2006,
+      "winner": "independent",
+      "winnerName": "김태환",
+      "rate": 45,
+      "runner": "ppp",
+      "runnerName": "현명관",
+      "runnerRate": 44,
+      "turnout": 51.6
+    },
+    {
+      "election": 5,
+      "year": 2010,
+      "winner": "independent",
+      "winnerName": "우근민",
+      "rate": 41.4,
+      "runner": "independent",
+      "runnerName": "현명관",
+      "runnerRate": 40.6,
+      "turnout": 54.5
+    },
+    {
+      "election": 6,
+      "year": 2014,
+      "winner": "ppp",
+      "winnerName": "원희룡",
+      "rate": 61.2,
+      "runner": "democratic",
+      "runnerName": "신구범",
+      "runnerRate": 34.6,
+      "turnout": 56.8
+    },
+    {
+      "election": 7,
+      "year": 2018,
+      "winner": "independent",
+      "winnerName": "원희룡",
+      "rate": 50.3,
+      "runner": "democratic",
+      "runnerName": "문대림",
+      "runnerRate": 41.8,
+      "turnout": 60.2
+    },
+    {
+      "election": 8,
+      "year": 2022,
+      "winner": "democratic",
+      "winnerName": "오영훈",
+      "rate": 55.1,
+      "runner": "ppp",
+      "runnerName": "허향진",
+      "runnerRate": 39.5,
+      "turnout": 50.9
+    }
+  ]
+}

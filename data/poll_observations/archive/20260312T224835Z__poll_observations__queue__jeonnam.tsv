@@ -1,0 +1,3 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+jeonnam-mayor-overview-activity	jeonnam	mayor		50		activity	bar	10		전라남도,기초단체장				전남 기초단체장 전체 분포
+jeonnam-jangseong-district-trend	jeonnam	mayor	장성군	4		trend	line		장성군	장성군,기초단체장		김한종,박노원		전남 장성군 후보 추이

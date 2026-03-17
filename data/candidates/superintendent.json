@@ -1,0 +1,760 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-17",
+    "source": "auto-init from superintendent_status.json",
+    "lastFactCheck": "2026-03-17T11:44:21.222714"
+  },
+  "candidates": {
+    "seoul": [
+      {
+        "id": "seoul-1",
+        "name": "정근식",
+        "stance": "진보",
+        "career": "현 서울특별시 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "[6·3 지선] 서울시교육감 진보 단일화 정근식 참여…",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "seoul-2",
+        "name": "김영희",
+        "stance": "진보",
+        "career": "전 한국교원단체총연합회 회장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-3",
+        "name": "조전혁",
+        "stance": "보수",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-4",
+        "name": "강신만",
+        "stance": "중도",
+        "career": "현장 31년",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-5",
+        "name": "김현철",
+        "stance": "중도",
+        "career": "前 서울시교육청 대변인",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-6",
+        "name": "임해규",
+        "stance": "보수",
+        "career": "전 국회의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-7",
+        "name": "강민정",
+        "stance": "진보",
+        "career": "전 국회의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "seoul-8",
+        "name": "한만중",
+        "stance": "진보",
+        "career": "교육운동가",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "busan": [
+      {
+        "id": "busan-1",
+        "name": "하윤수",
+        "stance": "보수",
+        "career": "현 부산광역시 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "하윤수 부산시 교육감, 2026년 재선 출마 공식 선언 (부산일보, 2026-03-10)",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "busan-2",
+        "name": "최윤홍",
+        "stance": "중도",
+        "career": "전 부산부교육감",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "busan-3",
+        "name": "김석준",
+        "stance": "진보",
+        "career": "전 부산광역시 교육감",
+        "status": "RUMORED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "daegu": [
+      {
+        "id": "daegu-1",
+        "name": "강은희",
+        "stance": "보수",
+        "career": "현 대구광역시 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-17",
+          "type": "status_change",
+          "detail": "강은희 교육감, 재선 도선 공식 선언 기자회견",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "daegu-2",
+        "name": "엄창옥",
+        "stance": "진보",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-17",
+          "type": "status_change",
+          "detail": "\"장애인교육권 보장하겠다\" 엄창옥 대구교육감 후보 공약",
+          "previous": "EXPECTED"
+        }
+      }
+    ],
+    "incheon": [
+      {
+        "id": "incheon-1",
+        "name": "도성훈",
+        "stance": "진보",
+        "career": "현 인천광역시 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "incheon-2",
+        "name": "연규원",
+        "stance": "중도",
+        "career": "34년 현장 경험",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "incheon-3",
+        "name": "임병구",
+        "stance": "중도",
+        "career": "상임대표",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "incheon-4",
+        "name": "이대형",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "gwangju": [
+      {
+        "id": "gwangju-1",
+        "name": "이정선",
+        "stance": "진보",
+        "career": "현 광주광역시 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-2",
+        "name": "정성홍",
+        "stance": "진보",
+        "career": "전 전교조 광주지부장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-3",
+        "name": "고두갑",
+        "stance": "중도",
+        "career": "목포대 교수",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gwangju-4",
+        "name": "오경미",
+        "stance": "중도",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "daejeon": [
+      {
+        "id": "daejeon-1",
+        "name": "설동호",
+        "stance": "중도",
+        "career": "현 대전광역시 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-2",
+        "name": "오석진",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-3",
+        "name": "맹수석",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-4",
+        "name": "정상신",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "daejeon-5",
+        "name": "성광진",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "ulsan": [
+      {
+        "id": "ulsan-1",
+        "name": "노옥희",
+        "stance": "진보",
+        "career": "현 울산광역시 교육감",
+        "status": "WITHDRAWN",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "withdrawn",
+          "detail": "노옥희 전 울산시 교육감은 2022년 12월 8일 별세하여 2026년 선거에 출마할 수 없음. (연합뉴스, 2022-12-08)",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "ulsan-2",
+        "name": "조용식",
+        "stance": "진보",
+        "career": "노옥희재단 이사장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "ulsan-3",
+        "name": "천창수",
+        "stance": "진보",
+        "career": "현 울산광역시 교육감",
+        "status": "WITHDRAWN",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "ulsan-4",
+        "name": "김주홍",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "gyeonggi": [
+      {
+        "id": "gyeonggi-1",
+        "name": "임태희",
+        "stance": "보수",
+        "career": "현 경기도 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "임태희 경기도 교육감, 2026년 지방선거 재선 도전 공식화 (연합뉴스, 2026-03-12)",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "gyeonggi-2",
+        "name": "유은혜",
+        "stance": "진보",
+        "career": "전 교육부 장관, 전 국회의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeonggi-3",
+        "name": "박효진",
+        "stance": "중도",
+        "career": "뉴스에 언급된 경력 없음",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeonggi-4",
+        "name": "안민석",
+        "stance": "진보",
+        "career": "전 국회의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "gangwon": [
+      {
+        "id": "gangwon-1",
+        "name": "신경호",
+        "stance": "보수",
+        "career": "현 강원특별자치도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "gangwon-2",
+        "name": "강삼영",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gangwon-3",
+        "name": "최광익",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gangwon-4",
+        "name": "유대균",
+        "stance": "중도",
+        "career": "",
+        "status": "EXPECTED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "chungbuk": [
+      {
+        "id": "chungbuk-1",
+        "name": "윤건영",
+        "stance": "보수",
+        "career": "현 충청북도 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "윤건영 충북교육감 재선 의지",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "chungbuk-2",
+        "name": "신문규",
+        "stance": "중도",
+        "career": "33년 행정 경력·교육 전문가",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "chungbuk-3",
+        "name": "조동욱",
+        "stance": "중도",
+        "career": "전 교수",
+        "status": "EXPECTED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "chungbuk-4",
+        "name": "김성근",
+        "stance": "진보",
+        "career": "경력 정보 없음",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "chungnam": [
+      {
+        "id": "chungnam-1",
+        "name": "김지철",
+        "stance": "진보",
+        "career": "현 충청남도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "chungnam-2",
+        "name": "이명수",
+        "stance": "중도",
+        "career": "행정고시 및 충남부지사 출신 전 4선 국회의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "chungnam-3",
+        "name": "이병도",
+        "stance": "중도",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "chungnam-4",
+        "name": "이병학",
+        "stance": "중도",
+        "career": "충남교육혁신연구소장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-17",
+          "type": "status_change",
+          "detail": "이병학, 충남교육감 선거 예비후보 등록",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "chungnam-5",
+        "name": "한상경",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "jeonbuk": [
+      {
+        "id": "jeonbuk-1",
+        "name": "서거석",
+        "stance": "진보",
+        "career": "현 전북특별자치도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-2",
+        "name": "이남호",
+        "stance": "진보",
+        "career": "전북교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-3",
+        "name": "유성동",
+        "stance": "중도",
+        "career": "전북교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-4",
+        "name": "천호성",
+        "stance": "진보",
+        "career": "교수",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "jeonnam": [
+      {
+        "id": "jeonnam-1",
+        "name": "김대중",
+        "stance": "진보",
+        "career": "현 전라남도 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "광주·전남 통합교육감 선거 본격화…김대중 26.1%·이정선 12.7%",
+          "previous": "EXPECTED"
+        }
+      },
+      {
+        "id": "jeonnam-2",
+        "name": "이정선",
+        "stance": "중도",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "name": "장관호",
+        "stance": "중도",
+        "career": "전남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      },
+      {
+        "name": "김해룡",
+        "stance": "중도",
+        "career": "전남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": []
+      }
+    ],
+    "gyeongbuk": [
+      {
+        "id": "gyeongbuk-1",
+        "name": "임종식",
+        "stance": "보수",
+        "career": "현 경상북도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "gyeongbuk-2",
+        "name": "김상동",
+        "stance": "중도",
+        "career": "전 경북대 총장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeongbuk-3",
+        "name": "이용기",
+        "stance": "진보",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "gyeongnam": [
+      {
+        "id": "gyeongnam-1",
+        "name": "박종훈",
+        "stance": "진보",
+        "career": "현 경상남도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-2",
+        "name": "권순기",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-3",
+        "name": "김영곤",
+        "stance": "중도",
+        "career": null,
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-4",
+        "name": "송영기",
+        "stance": "진보",
+        "career": "전 전교조 경남지부장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "name": "전창현",
+        "stance": "중도",
+        "career": "경남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "overview_narrative",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-6",
+        "name": "이현석",
+        "stance": "중도",
+        "career": "한국승강기대학교 총장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "gyeongnam-7",
+        "name": "오인태",
+        "stance": "중도",
+        "career": "경남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "jeju": [
+      {
+        "id": "jeju-1",
+        "name": "김광수",
+        "stance": "보수",
+        "career": "현 제주특별자치도 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "jeju-2",
+        "name": "고의숙",
+        "stance": "중도",
+        "career": "전 교육의원",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "jeju-3",
+        "name": "송문석",
+        "stance": "중도",
+        "career": "정보 없음",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ],
+    "sejong": [
+      {
+        "id": "sejong-1",
+        "name": "최교진",
+        "stance": "진보",
+        "career": "현 세종특별자치시 교육감",
+        "status": "EXPECTED",
+        "dataSource": "incumbent",
+        "pledges": []
+      },
+      {
+        "id": "sejong-2",
+        "name": "원성수",
+        "stance": "중도",
+        "career": "뉴스에 언급 없음",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "sejong-3",
+        "name": "안광식",
+        "stance": "중도",
+        "career": "현장 전문가",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "sejong-4",
+        "name": "유우석",
+        "stance": "중도",
+        "career": "평교사 출신 첫 공모교장",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "sejong-5",
+        "name": "임전수",
+        "stance": "중도",
+        "career": "뉴스에 언급 없음",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      },
+      {
+        "id": "sejong-6",
+        "name": "강미애",
+        "stance": "중도",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "gemini",
+        "pledges": []
+      }
+    ]
+  }
+}

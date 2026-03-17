@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-ulsan-governor-accept	ulsan	all	governor		울산매일, 울산시장 후보 산업 공약 대결	울산시장 선거 산업·일자리 공약 비교 기사	https://example.com/starter/ulsan-governor-accept	true	뉴스 QA 자동 배치용 스타터. 울산 광역단체장 정탐 확인
+starter-ulsan-governor-reject-district	ulsan	all	governor		동구청장 선거 출마 선언 잇따라	기초단체장 기사인데 울산 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/ulsan-governor-reject-district	false	뉴스 QA 자동 배치용 스타터. 기초단체장 기사 차단 확인

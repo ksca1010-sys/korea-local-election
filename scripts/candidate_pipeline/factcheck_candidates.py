@@ -66,7 +66,32 @@ def load_candidates():
     return {"_meta": {}, "candidates": {}}
 
 
-def build_prompt(candidates_data):
+def fetch_governor_news():
+    """전체 17개 시도 광역단체장 관련 최신 뉴스 수집"""
+    from local_news_search import search_naver_news
+    all_news = []
+    seen = set()
+
+    queries = [
+        "지방선거 시도지사 공천 출마 2026",
+        "지방선거 광역단체장 후보 경선",
+        "지방선거 도지사 시장 출마선언 사퇴",
+        "국민의힘 민주당 지방선거 공천",
+    ]
+    for rk, rn in REGION_NAMES.items():
+        queries.append(f"{rn} 시장 도지사 후보 출마")
+
+    for q in queries:
+        for item in search_naver_news(q, display=10):
+            title = item.get("title", "")
+            if title not in seen:
+                seen.add(title)
+                all_news.append(title)
+
+    return all_news[:60]
+
+
+def build_prompt(candidates_data, news=None):
     today_str = date.today().isoformat()
     regions = candidates_data.get("candidates", {})
 
@@ -90,20 +115,30 @@ def build_prompt(candidates_data):
 
     candidate_text = "\n".join(lines)
     total = sum(len(v) for v in regions.values())
+    news_text = "\n".join(f"- {n}" for n in news) if news else "(뉴스 없음)"
 
     return f"""당신은 2026년 6.3 지방선거 전문가입니다. 오늘: {today_str}
 
-아래는 17개 시도 광역단체장(시도지사) 후보 현황 {total}명입니다.
-최근 뉴스를 기반으로 변경사항만 팩트체크하세요:
+아래는 17개 시도 광역단체장(시도지사) 후보 현황 {total}명과, 오늘 기준 최신 뉴스입니다.
+**뉴스에서 확인되는 변경사항만** 팩트체크하세요.
 
-1. 새로운 출마 선언 (기존 목록에 없는 인물)
-2. 사퇴·불출마 선언 (기존 DECLARED/EXPECTED → WITHDRAWN)
+## 🚨 사실 소스 규칙
+- 아래 "최신 뉴스" 섹션에 **명시적으로 나오는 사실만** 변경사항으로 출력
+- 뉴스에 없는 변경사항은 당신이 아무리 확신하더라도 출력 금지
+- 학습 데이터에서 기억나는 사실을 추가하지 말 것
+
+## 찾아야 할 변경사항
+1. 뉴스에 나오지만 현재 데이터에 없는 새 후보 (출마 선언)
+2. 사퇴·불출마 선언
 3. 상태 변경 (RUMORED → DECLARED, EXPECTED → DECLARED 등)
 4. 정당 변경 (탈당·입당·공천)
 5. 공천 확정 (DECLARED → NOMINATED)
 
 ## 현재 데이터
 {candidate_text}
+
+## 최신 뉴스 (이 뉴스에서 확인되는 변경만 출력)
+{news_text}
 
 ## 출력 형식 (JSON)
 변경이 필요한 건만 JSON 배열로 출력. 없으면 []. JSON만 출력.
@@ -117,15 +152,22 @@ def build_prompt(candidates_data):
     "newStatus": "새 상태 (DECLARED|EXPECTED|RUMORED|WITHDRAWN|NOMINATED)",
     "party": "정당명 (한글, 새 후보 또는 정당변경 시)",
     "career": "경력 (새 후보 시, 1줄)",
-    "detail": "변경 내용 (날짜 포함)"
+    "detail": "변경 근거 — 뉴스 제목 인용"
   }}
 ]
 
 ## 주의사항
-- 확인되지 않은 사실 절대 포함 금지
+- 뉴스에서 확인된 사실만 출력. 뉴스에 없으면 출력 금지.
 - 이미 반영된 변경사항은 출력 금지
 - 2026 지방선거 광역단체장만 해당 (교육감, 기초단체장 제외)
-- 공천 확정은 당 공식 발표 기준"""
+- 공천 확정은 당 공식 발표 기준
+
+## ⚠️ status 판정 기준 (엄격 적용)
+- **DECLARED**: 본인이 직접 출마를 공식 선언한 경우만. 기자회견·SNS·예비후보 등록 등
+- **RUMORED**: 언론인/평론가 전망, "~출마 확실시", "~거론" 수준은 모두 RUMORED
+- **NOMINATED**: 당 공관위/최고위가 공식 발표한 경우만
+- **WITHDRAWN**: 본인이 직접 불출마/사퇴를 선언한 경우만. "컷오프"는 당의 결정이지 사퇴가 아님 — 본인이 수용 발언을 했는지 확인
+- "~확실", "~유력", "~관측" 같은 표현은 **절대 DECLARED로 판정하지 말 것** → RUMORED"""
 
 
 def call_gemini(prompt, api_key, max_retries=5):
@@ -171,12 +213,84 @@ def parse_changes(text):
         return []
 
 
+REVERSE_REGION = {v: k for k, v in REGION_NAMES.items()}
+
+
+def verify_changes_against_news(changes, news):
+    """
+    Gemini가 제안한 변경사항을 뉴스와 교차 검증.
+    뉴스에서 근거를 찾을 수 없는 변경은 필터링.
+    """
+    if not news:
+        return changes
+
+    news_text = " ".join(news).lower()
+    verified = []
+
+    for change in changes:
+        name = change.get("name", "")
+        change_type = change.get("changeType", "")
+        new_status = change.get("newStatus", "")
+        region = change.get("region", "")
+        region_name = REGION_NAMES.get(region, REVERSE_REGION.get(region, region))
+
+        # 1. 이름이 뉴스에 있는지 확인
+        if name and name not in news_text:
+            print(f"  [필터] {name}: 뉴스에 이름 없음 → 제외")
+            continue
+
+        # 2. WITHDRAWN: "사퇴" "불출마" "포기" 등 본인 행위 키워드 필요
+        if new_status == "WITHDRAWN":
+            withdraw_keywords = ["사퇴", "불출마", "출마 포기", "출마를 접", "출마 안"]
+            has_withdraw = any(kw in news_text for kw in withdraw_keywords if name in news_text)
+            # "컷오프"는 당 결정이지 본인 사퇴가 아님
+            is_cutoff_only = "컷오프" in news_text and not has_withdraw
+            if is_cutoff_only:
+                print(f"  [필터] {name}: 컷오프는 당 결정. 본인 사퇴 확인 안 됨 → 제외")
+                continue
+
+        # 3. NOMINATED: "공천" "단수" "확정" 등 키워드 + 이름 근접 확인
+        if new_status == "NOMINATED":
+            nominate_keywords = ["공천", "단수", "확정"]
+            # 이름과 공천 키워드가 같은 뉴스 문장에 있는지
+            found_in_same_news = False
+            for n in news:
+                n_lower = n.lower()
+                if name in n_lower and any(kw in n_lower for kw in nominate_keywords):
+                    found_in_same_news = True
+                    break
+            if not found_in_same_news:
+                print(f"  [필터] {name}: 공천 뉴스에서 이름+공천 동시 확인 안 됨 → 제외")
+                continue
+
+        # 4. new_candidate (DECLARED): "출마 선언" "예비후보 등록" 등 본인 행위 필요
+        if change_type == "new_candidate" and new_status in ("DECLARED", None, ""):
+            declare_keywords = ["출마 선언", "출마를 선언", "예비후보 등록", "출사표", "출마 공식"]
+            has_declare = any(kw in news_text for kw in declare_keywords if name in news_text)
+            # "확실" "유력" "거론"은 RUMORED
+            speculation = ["확실", "유력", "거론", "관측", "가능성"]
+            is_speculation = any(kw in news_text for kw in speculation if name in news_text) and not has_declare
+            if is_speculation:
+                print(f"  [필터] {name}: 전망/관측 수준 → DECLARED→RUMORED로 변경")
+                change["newStatus"] = "RUMORED"
+            elif not has_declare:
+                print(f"  [필터] {name}: 출마 선언 근거 부족 → RUMORED로 변경")
+                change["newStatus"] = "RUMORED"
+
+        verified.append(change)
+
+    return verified
+
+
 def apply_changes(data, changes, dry_run=False):
     applied = 0
     candidates = data.get("candidates", {})
 
     for change in changes:
         region = change.get("region", "")
+        # 한국어 시도명 → 영문 키 변환
+        if region not in candidates and region in REVERSE_REGION:
+            region = REVERSE_REGION[region]
         name = change.get("name", "")
         change_type = change.get("changeType", "")
         region_name = REGION_NAMES.get(region, region)
@@ -274,7 +388,11 @@ def main():
     total = sum(len(v) for v in data.get("candidates", {}).values())
     print(f"\n현재 후보: {total}명 ({len(data.get('candidates', {}))}개 시도)")
 
-    prompt = build_prompt(data)
+    print("\n뉴스 수집 중...")
+    news = fetch_governor_news()
+    print(f"  → {len(news)}건 수집")
+
+    prompt = build_prompt(data, news=news)
     print(f"\nGemini 팩트체크 중... (모델: {GEMINI_MODEL})")
 
     try:
@@ -284,7 +402,10 @@ def main():
         if not changes:
             print("  → 변경 없음")
         else:
-            print(f"  → {len(changes)}건 변경 감지")
+            print(f"  → {len(changes)}건 변경 감지 (Gemini)")
+            print("\n뉴스 교차 검증 중...")
+            changes = verify_changes_against_news(changes, news)
+            print(f"  → {len(changes)}건 검증 통과")
             applied = apply_changes(data, changes, dry_run)
             print(f"  → {applied}건 적용")
     except Exception as e:

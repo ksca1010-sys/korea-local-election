@@ -1,0 +1,6 @@
+{
+  "_description": "후보자 상태 수동 업데이트 파일. 파이프라인 실행 시 governor.json에 자동 적용됩니다.",
+  "_usage": "status: DECLARED|NOMINATED|WITHDRAWN|RUMORED|FINAL  /  새 후보 추가는 governor.json에 직접 추가",
+  "updates": [
+  ]
+}

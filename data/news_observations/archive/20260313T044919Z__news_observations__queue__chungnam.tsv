@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-chungnam-governor-accept	chungnam	all	governor		충청신문, 충남지사 후보 공약 검증 확대	충남지사 선거 공약과 지역 현안 기사	https://example.com/starter/chungnam-governor-accept	true	뉴스 QA 자동 배치용 스타터. 충남 광역단체장 정탐 확인
+starter-chungnam-governor-reject-sports	chungnam	all	governor		충남 경기 막판 결승골	스포츠 기사인데 충남 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/chungnam-governor-reject-sports	false	뉴스 QA 자동 배치용 스타터. 스포츠 기사 차단 확인

@@ -1,0 +1,35 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-busan-governor-accept	busan	all	governor		부산일보, 부산시장 후보 공약 경쟁 본격화	부산시장 선거에서 교통·주거 공약 비교 보도	https://example.com/starter/busan-governor-accept	true	뉴스 QA 추천 배치용 스타터. 부산 광역단체장 정탐 확인
+starter-busan-governor-reject-superintendent	busan	all	governor		부산교육감 후보 단일화 논의 재점화	교육감 선거 기사인데 부산 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/busan-governor-reject-superintendent	false	뉴스 QA 추천 배치용 스타터. 다른 선거 종류 차단 확인
+starter-gwangju-governor-accept	gwangju	all	governor		광주일보, 광주시장 후보 토론회 개최	광주시장 선거 정책 토론회와 공약 검증 기사	https://example.com/starter/gwangju-governor-accept	true	뉴스 QA 추천 배치용 스타터. 광주 광역단체장 정탐 확인
+starter-gwangju-governor-reject-district	gwangju	all	governor		광산구청장 출마 선언 잇따라	기초단체장 기사인데 광주 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/gwangju-governor-reject-district	false	뉴스 QA 추천 배치용 스타터. 기초단체장 기사 차단 확인
+starter-jeju-governor-accept	jeju	all	governor		제주일보, 제주도지사 선거 여론전 가열	제주도지사 선거 후보 간 공약 경쟁 기사	https://example.com/starter/jeju-governor-accept	true	뉴스 QA 추천 배치용 스타터. 제주 광역단체장 정탐 확인
+starter-jeju-governor-reject-national	jeju	all	governor		당대표 선거 앞두고 전국 순회 일정 공개	전국 정당 기사인데 제주 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/jeju-governor-reject-national	false	뉴스 QA 추천 배치용 스타터. 전국 정치 기사 차단 확인
+starter-chungbuk-governor-accept	chungbuk	all	governor		중부매일, 충북지사 후보 경선 구도 분석	충북지사 선거 구도와 지역 공약 비교 기사	https://example.com/starter/chungbuk-governor-accept	true	뉴스 QA 추천 배치용 스타터. 충북 광역단체장 정탐 확인
+starter-chungbuk-governor-reject-sports	chungbuk	all	governor		충북 경기 막판 역전승…팬들 환호	스포츠 기사인데 충북 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/chungbuk-governor-reject-sports	false	뉴스 QA 추천 배치용 스타터. 스포츠 오탐 차단 확인
+starter-gyeongbuk-governor-accept	gyeongbuk	all	governor		경북매일신문, 경북도지사 후보 공약 경쟁 본격화	경북도지사 선거 공약 비교와 지역 현안 기사	https://example.com/starter/gyeongbuk-governor-accept	true	뉴스 QA 추천 배치용 스타터. 경북 광역단체장 정탐 확인
+starter-gyeongbuk-governor-reject-superintendent	gyeongbuk	all	governor		경북교육감 후보 정책 토론회 개최	교육감 기사인데 경북 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/gyeongbuk-governor-reject-superintendent	false	뉴스 QA 추천 배치용 스타터. 다른 선거 종류 차단 확인
+starter-gyeonggi-governor-accept	gyeonggi	all	governor		경인일보, 경기지사 후보 공약 대결 본격화	경기지사 선거에서 교통·주거 공약 비교 기사	https://example.com/starter/gyeonggi-governor-accept	true	뉴스 QA 추천 배치용 스타터. 경기 광역단체장 정탐 확인
+starter-gyeonggi-governor-reject-other-region	gyeonggi	all	governor		충남지사 선거 판세 요동	다른 지역 광역단체장 기사인데 경기 탭에 섞이면 안 됨	https://example.com/starter/gyeonggi-governor-reject-other-region	false	뉴스 QA 추천 배치용 스타터. 타 지역 기사 차단 확인
+starter-incheon-governor-accept	incheon	all	governor		인천일보, 인천시장 후보 공약 검증 본격화	인천시장 선거 주요 공약과 지역 현안 비교 기사	https://example.com/starter/incheon-governor-accept	true	뉴스 QA 추천 배치용 스타터. 인천 광역단체장 정탐 확인
+starter-incheon-governor-reject-national	incheon	all	governor		국회의원 보궐선거 판세 분석	전국 단위 국회의원 선거 기사인데 인천 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/incheon-governor-reject-national	false	뉴스 QA 추천 배치용 스타터. 국회의원 기사 차단 확인
+starter-seoul-governor-accept	seoul	all	governor		서울일보, 서울시장 후보 공약 비교 본격화	서울시장 선거 핵심 공약과 지역 현안 비교 기사	https://example.com/starter/seoul-governor-accept	true	뉴스 QA 자동 배치용 스타터. 서울 광역단체장 정탐 확인
+starter-seoul-governor-reject-other-region	seoul	all	governor		경북지사 선거 판세 급변	다른 지역 광역단체장 기사인데 서울 탭에 섞이면 안 됨	https://example.com/starter/seoul-governor-reject-other-region	false	뉴스 QA 자동 배치용 스타터. 타 지역 기사 차단 확인
+starter-daegu-governor-accept	daegu	all	governor		대구일보, 대구시장 후보 공약 경쟁 심화	대구시장 선거 공약 비교와 지역 현안 기사	https://example.com/starter/daegu-governor-accept	true	뉴스 QA 자동 배치용 스타터. 대구 광역단체장 정탐 확인
+starter-daegu-governor-reject-superintendent	daegu	all	governor		대구교육감 후보 토론회 개최	교육감 기사인데 대구 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/daegu-governor-reject-superintendent	false	뉴스 QA 자동 배치용 스타터. 다른 선거 종류 차단 확인
+starter-daejeon-governor-accept	daejeon	all	governor		대전일보, 대전시장 후보 공약 검증 본격화	대전시장 선거 공약과 교통 현안 비교 기사	https://example.com/starter/daejeon-governor-accept	true	뉴스 QA 자동 배치용 스타터. 대전 광역단체장 정탐 확인
+starter-daejeon-governor-reject-party	daejeon	all	governor		당대표 선거 앞두고 충청권 순회 일정	정당 지도부 기사인데 대전 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/daejeon-governor-reject-party	false	뉴스 QA 자동 배치용 스타터. 전국 정치 기사 차단 확인
+starter-ulsan-governor-accept	ulsan	all	governor		울산매일, 울산시장 후보 산업 공약 대결	울산시장 선거 산업·일자리 공약 비교 기사	https://example.com/starter/ulsan-governor-accept	true	뉴스 QA 자동 배치용 스타터. 울산 광역단체장 정탐 확인
+starter-ulsan-governor-reject-district	ulsan	all	governor		동구청장 선거 출마 선언 잇따라	기초단체장 기사인데 울산 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/ulsan-governor-reject-district	false	뉴스 QA 자동 배치용 스타터. 기초단체장 기사 차단 확인
+starter-sejong-governor-accept	sejong	all	governor		세종포스트, 세종시장 후보 행정수도 공약 경쟁	세종시장 선거 공약과 현안 비교 기사	https://example.com/starter/sejong-governor-accept	true	뉴스 QA 자동 배치용 스타터. 세종 광역단체장 정탐 확인
+starter-sejong-governor-reject-national	sejong	all	governor		대선 주자 전국 순회 일정 발표	전국 정치 기사인데 세종 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/sejong-governor-reject-national	false	뉴스 QA 자동 배치용 스타터. 전국 정치 기사 차단 확인
+starter-gangwon-governor-accept	gangwon	all	governor		강원일보, 강원도지사 후보 공약 경쟁 본격화	강원도지사 선거 공약과 지역 균형발전 기사	https://example.com/starter/gangwon-governor-accept	true	뉴스 QA 자동 배치용 스타터. 강원 광역단체장 정탐 확인
+starter-gangwon-governor-reject-other-region	gangwon	all	governor		부산시장 선거 막판 변수 부상	다른 지역 광역단체장 기사인데 강원 탭에 섞이면 안 됨	https://example.com/starter/gangwon-governor-reject-other-region	false	뉴스 QA 자동 배치용 스타터. 타 지역 기사 차단 확인
+starter-chungnam-governor-accept	chungnam	all	governor		충청신문, 충남지사 후보 공약 검증 확대	충남지사 선거 공약과 지역 현안 기사	https://example.com/starter/chungnam-governor-accept	true	뉴스 QA 자동 배치용 스타터. 충남 광역단체장 정탐 확인
+starter-chungnam-governor-reject-sports	chungnam	all	governor		충남 경기 막판 결승골	스포츠 기사인데 충남 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/chungnam-governor-reject-sports	false	뉴스 QA 자동 배치용 스타터. 스포츠 기사 차단 확인
+starter-jeonbuk-governor-accept	jeonbuk	all	governor		전북일보, 전북지사 후보 공약 경쟁 본격화	전북지사 선거 공약과 지역 현안 비교 기사	https://example.com/starter/jeonbuk-governor-accept	true	뉴스 QA 자동 배치용 스타터. 전북 광역단체장 정탐 확인
+starter-jeonbuk-governor-reject-superintendent	jeonbuk	all	governor		전북교육감 후보 토론회 개최	교육감 기사인데 전북 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/jeonbuk-governor-reject-superintendent	false	뉴스 QA 자동 배치용 스타터. 다른 선거 종류 차단 확인
+starter-jeonnam-governor-accept	jeonnam	all	governor		남도일보, 전남지사 후보 공약 검증 본격화	전남지사 선거 공약과 지역 균형발전 기사	https://example.com/starter/jeonnam-governor-accept	true	뉴스 QA 자동 배치용 스타터. 전남 광역단체장 정탐 확인
+observed-jeonnam-song-younggil	jeonnam	all	governor		송영길 계양을 출마설 재점화	전국 단위 국회의원 기사인데 전남 탭에 섞이면 안 됨	https://example.com/starter/jeonnam-governor-reject-national	false	뉴스 QA 자동 배치용 스타터. 국회의원 기사 차단 확인
+starter-gyeongnam-governor-accept	gyeongnam	all	governor		경남도민일보, 경남지사 후보 공약 경쟁 본격화	경남지사 선거 공약과 지역 현안 비교 기사	https://example.com/starter/gyeongnam-governor-accept	true	뉴스 QA 자동 배치용 스타터. 경남 광역단체장 정탐 확인
+starter-gyeongnam-governor-reject-superintendent	gyeongnam	all	governor		경남교육감 후보 토론회 개최	교육감 기사인데 경남 광역단체장 탭에 섞이면 안 됨	https://example.com/starter/gyeongnam-governor-reject-superintendent	false	뉴스 QA 자동 배치용 스타터. 다른 선거 종류 차단 확인

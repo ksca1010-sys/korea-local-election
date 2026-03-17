@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-03-16",
+    "lastUpdated": "2026-03-17",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-03-16T00:00:00"
+    "lastFactCheck": "2026-03-17T10:20:30.054985"
   },
   "candidates": {
     "seoul": [
@@ -135,13 +135,7 @@
         "photo": null,
         "status": "DECLARED",
         "dataSource": "news",
-        "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "2026.03.15 서울시장 무소속 출마 선언",
-          "previous": "RUMORED"
-        }
+        "pledges": []
       }
     ],
     "busan": [
@@ -173,16 +167,16 @@
         "age": 66,
         "career": "現 부산시장 (3선 도전) / 前 국회의원·청와대 정무수석",
         "photo": null,
-        "status": "NOMINATED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [
           "글로벌 도시 부산 완성"
         ],
         "_lastChange": {
-          "date": "2026-03-16",
+          "date": "2026-03-17",
           "type": "status_change",
-          "detail": "2026.03.14 국민의힘 공천 확정",
-          "previous": "DECLARED"
+          "detail": "국민의힘 공관위, '컷오프 논란' 부산시장 '경선' 결정",
+          "previous": "NOMINATED"
         }
       },
       {
@@ -240,6 +234,17 @@
           "젊은 부산",
           "청년 인구 유출 방지"
         ]
+      },
+      {
+        "id": "busan-7",
+        "name": "한동훈",
+        "party": "independent",
+        "age": 52,
+        "career": "前 국민의힘 대표 / 前 법무부장관 / 검사장 출신",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "gemini",
+        "pledges": []
       }
     ],
     "daegu": [
@@ -579,17 +584,17 @@
         "age": 68,
         "career": "現 울산시장 (재선 도전) / 前 남구청장",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "34조원 투자 유치 지속",
           "분산에너지 특화지역"
         ],
         "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "2026.03.12 울산시장 출마 선언",
-          "previous": "EXPECTED"
+          "date": "2026-03-17",
+          "type": "nominated",
+          "detail": "국민의힘, 울산시장·경남지사·강원도지사 모두 현역 단수공천",
+          "previous": "DECLARED"
         }
       },
       {
@@ -918,12 +923,7 @@
           "충북 반도체 단지",
           "KTX 충북선 연장"
         ],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "2026.03.12 충북도지사 출마 선언",
-          "previous": "EXPECTED"
-        }
+        "_note": "국민의힘 공관위 컷오프 대상. 본인 수용 여부 미확인."
       },
       {
         "id": "chungbuk-2",
@@ -1290,17 +1290,17 @@
         "age": 71,
         "career": "現 경남도지사 / 前 3선 창원시장",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "산업 경쟁력 강화",
           "도정 연속성"
         ],
         "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "2026.03.10 경남도지사 출마 선언",
-          "previous": "EXPECTED"
+          "date": "2026-03-17",
+          "type": "nominated",
+          "detail": "국민의힘 경남지사 후보로 박완수 현 도지사 공천",
+          "previous": "DECLARED"
         }
       },
       {

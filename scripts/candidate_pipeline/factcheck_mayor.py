@@ -1,0 +1,348 @@
+#!/usr/bin/env python3
+"""
+기초단체장 후보자 상태 자동 팩트체크 파이프라인
+
+뉴스 기반으로 시군구 기초단체장 출마 선언·사퇴 등을 자동 감지하여
+mayor_candidates.json에 반영합니다. 시도별로 분할 처리.
+
+사용법:
+  python scripts/candidate_pipeline/factcheck_mayor.py
+  python scripts/candidate_pipeline/factcheck_mayor.py --dry-run
+  python scripts/candidate_pipeline/factcheck_mayor.py --region seoul
+
+환경변수:
+  GEMINI_API_KEY: Gemini API 키
+"""
+
+import json
+import os
+import sys
+import time
+import re
+from datetime import datetime, date
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
+STATUS_PATH = BASE_DIR / "data" / "candidates" / "mayor_status.json"
+ENV_FILE = BASE_DIR / ".env"
+
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+
+REGION_NAMES = {
+    "seoul": "서울특별시", "busan": "부산광역시", "daegu": "대구광역시",
+    "incheon": "인천광역시", "gwangju": "광주광역시", "daejeon": "대전광역시",
+    "ulsan": "울산광역시", "sejong": "세종특별자치시", "gyeonggi": "경기도",
+    "gangwon": "강원특별자치도", "chungbuk": "충청북도", "chungnam": "충청남도",
+    "jeonbuk": "전북특별자치도", "jeonnam": "전라남도", "gyeongbuk": "경상북도",
+    "gyeongnam": "경상남도", "jeju": "제주특별자치도",
+}
+
+PARTY_MAP = {
+    "더불어민주당": "democratic", "민주당": "democratic",
+    "국민의힘": "ppp", "조국혁신당": "reform",
+    "개혁신당": "newReform", "진보당": "progressive",
+    "정의당": "justice", "무소속": "independent",
+}
+PARTY_NAMES = {
+    "democratic": "더불어민주당", "ppp": "국민의힘",
+    "independent": "무소속", "reform": "조국혁신당",
+    "progressive": "진보당", "newReform": "개혁신당",
+}
+
+
+def load_env():
+    if ENV_FILE.exists():
+        for line in ENV_FILE.read_text().splitlines():
+            line = line.strip()
+            if line and not line.startswith("#") and "=" in line:
+                key, _, val = line.partition("=")
+                os.environ.setdefault(key.strip(), val.strip().strip("'\""))
+
+
+def load_candidates():
+    if CANDIDATES_PATH.exists():
+        return json.loads(CANDIDATES_PATH.read_text(encoding="utf-8"))
+    return init_from_status()
+
+
+def init_from_status():
+    """mayor_status.json에서 현직 기초단체장으로 초기 데이터 생성"""
+    data = {"_meta": {"lastUpdated": date.today().isoformat(), "source": "auto-init from mayor_status.json"}, "candidates": {}}
+    if STATUS_PATH.exists():
+        status = json.loads(STATUS_PATH.read_text(encoding="utf-8"))
+        for key, info in status.get("mayors", {}).items():
+            region = info.get("region", "")
+            district = info.get("district", "")
+            if not region or not district:
+                continue
+            if region not in data["candidates"]:
+                data["candidates"][region] = {}
+            name = info.get("name") or info.get("electedName", "")
+            if not name:
+                continue
+            party = info.get("party", "independent")
+            data["candidates"][region][district] = [{
+                "name": name,
+                "party": party,
+                "career": f"현 {district} {get_title(district)}",
+                "status": "EXPECTED",
+                "dataSource": "incumbent",
+                "pledges": [],
+            }]
+    return data
+
+
+def get_title(district):
+    if district.endswith("구") or district.endswith("군"):
+        return "구청장" if district.endswith("구") else "군수"
+    return "시장"
+
+
+from local_news_search import fetch_mayor_news
+from verify_changes import verify_changes_against_news
+
+
+def build_prompt_for_region(region_key, region_candidates, news=None):
+    today_str = date.today().isoformat()
+    region_name = REGION_NAMES.get(region_key, region_key)
+
+    lines = []
+    for district, candidates in sorted(region_candidates.items()):
+        for c in candidates:
+            party = PARTY_NAMES.get(c.get("party", ""), c.get("party", ""))
+            status_map = {"DECLARED": "출마선언", "EXPECTED": "출마거론", "RUMORED": "하마평", "WITHDRAWN": "사퇴", "NOMINATED": "공천확정"}
+            status_label = status_map.get(c.get("status", ""), c.get("status", ""))
+            lines.append(f"- {district}: {c['name']} ({party}) [{status_label}]")
+
+    candidate_text = "\n".join(lines)
+    total = sum(len(v) for v in region_candidates.values())
+    news_text = "\n".join(f"- {n}" for n in news) if news else "(뉴스 검색 결과 없음)"
+
+    return f"""당신은 2026년 6.3 지방선거 기초단체장 전문가입니다. 오늘: {today_str}
+
+{region_name} 기초단체장(시장/구청장/군수) 후보 현황을 아래 최신 뉴스와 비교하여 변경사항을 찾으세요.
+
+## 현재 데이터 ({region_name}, {total}명)
+{candidate_text}
+
+## 최신 뉴스 ({region_name} 기초단체장 관련)
+{news_text}
+
+## 찾아야 할 변경사항
+1. 뉴스에는 나오지만 현재 데이터에 없는 새 후보 (출마 선언, 예비후보 등록 등)
+2. 사퇴·불출마 선언
+3. 상태 변경 (거론 → 출마선언 등)
+4. 정당 변경 (탈당·입당·공천)
+5. 공천 확정
+
+## 출력 형식 (JSON)
+변경이 필요한 건만 JSON 배열로 출력. 없으면 []. JSON만 출력.
+
+[
+  {{
+    "district": "시군구명 (종로구, 수원시 등)",
+    "name": "후보 이름",
+    "changeType": "new_candidate|status_change|withdrawn|party_change|nominated",
+    "oldStatus": "이전 상태",
+    "newStatus": "새 상태 (DECLARED|EXPECTED|RUMORED|WITHDRAWN|NOMINATED)",
+    "party": "정당명 (한글)",
+    "career": "경력 (새 후보 시, 1줄)",
+    "detail": "변경 근거 (뉴스 제목 인용)"
+  }}
+]
+
+## 주의사항
+- 뉴스에서 확인되는 사실만 반영. 추측 금지
+- {region_name} 기초단체장(시장/구청장/군수)만 해당
+- 광역단체장(도지사), 교육감, 국회의원 제외
+
+## ⚠️ status 판정 기준 (엄격 적용)
+- DECLARED: 본인이 직접 출마를 공식 선언/예비후보 등록한 경우만
+- RUMORED: "~출마 확실시", "~거론", "~관측" 수준은 모두 RUMORED
+- NOMINATED: 당 공관위/최고위 공식 발표만
+- WITHDRAWN: 본인이 직접 불출마/사퇴를 선언한 경우만
+- "~확실", "~유력" 같은 표현은 절대 DECLARED로 판정 금지
+
+## 기초단체장 선거 특성 (감지 우선순위)
+- 현직 단체장의 재선 불출마·사퇴 여부
+- 야당 유력 도전자의 출마 선언
+- 국회의원·시도의원의 기초단체장 전환 출마
+- 무소속 출마 또는 탈당 후 출마
+- 공천 경선 결과"""
+
+
+def call_gemini(prompt, api_key, max_retries=5):
+    from google import genai
+    from google.genai import types
+
+    client = genai.Client(api_key=api_key)
+    for attempt in range(max_retries):
+        try:
+            response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=[prompt],
+                config=types.GenerateContentConfig(temperature=0.1, response_mime_type="application/json"),
+            )
+            return getattr(response, "text", "") or ""
+        except Exception as e:
+            err_str = str(e)
+            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                match = re.search(r"retry.*?(\d+)", err_str, re.IGNORECASE)
+                wait = int(match.group(1)) + 5 if match else 30 * (attempt + 1)
+                print(f"    [재시도] {min(wait, 120)}초 대기 ({attempt+1}/{max_retries})")
+                time.sleep(min(wait, 120))
+            else:
+                raise
+    return "[]"
+
+
+def parse_changes(text):
+    text = text.strip()
+    if text.startswith("```"):
+        text = text.split("\n", 1)[-1]
+        if text.endswith("```"):
+            text = text[:-3]
+        text = text.strip()
+    try:
+        result = json.loads(text)
+        return result if isinstance(result, list) else []
+    except json.JSONDecodeError:
+        return []
+
+
+def apply_changes(region_candidates, changes, region_key, dry_run=False):
+    applied = 0
+    region_name = REGION_NAMES.get(region_key, region_key)
+
+    for change in changes:
+        district = change.get("district", "")
+        name = change.get("name", "")
+        change_type = change.get("changeType", "")
+
+        if district not in region_candidates:
+            region_candidates[district] = []
+
+        candidates = region_candidates[district]
+        existing = next((c for c in candidates if c["name"] == name), None)
+
+        if change_type == "new_candidate":
+            if existing:
+                continue
+            party = PARTY_MAP.get(change.get("party", ""), "independent")
+            new_candidate = {
+                "name": name,
+                "party": party,
+                "career": change.get("career", ""),
+                "status": change.get("newStatus", "DECLARED"),
+                "dataSource": "gemini",
+                "pledges": [],
+            }
+            label = f"[신규] {district}: {name} ({PARTY_NAMES.get(party, party)}) - {change.get('detail', '')}"
+            if dry_run:
+                print(f"    [DRY] {label}")
+            else:
+                candidates.append(new_candidate)
+                print(f"    {label}")
+            applied += 1
+
+        elif change_type in ("status_change", "withdrawn", "nominated"):
+            if not existing:
+                continue
+            old_status = existing.get("status", "?")
+            new_status = change.get("newStatus", "WITHDRAWN" if change_type == "withdrawn" else "DECLARED")
+            if old_status == new_status:
+                continue
+            label = f"[상태] {district}: {name} {old_status}→{new_status} - {change.get('detail', '')}"
+            if dry_run:
+                print(f"    [DRY] {label}")
+            else:
+                existing["status"] = new_status
+                print(f"    {label}")
+            applied += 1
+
+        elif change_type == "party_change":
+            if not existing:
+                continue
+            new_party = PARTY_MAP.get(change.get("party", ""), "independent")
+            if existing.get("party") == new_party:
+                continue
+            label = f"[정당] {district}: {name} → {PARTY_NAMES.get(new_party, new_party)} - {change.get('detail', '')}"
+            if dry_run:
+                print(f"    [DRY] {label}")
+            else:
+                existing["party"] = new_party
+                print(f"    {label}")
+            applied += 1
+
+    return applied
+
+
+def main():
+    load_env()
+    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    dry_run = "--dry-run" in sys.argv
+    target_region = None
+    for arg in sys.argv[1:]:
+        if arg.startswith("--region"):
+            target_region = arg.split("=")[-1] if "=" in arg else (sys.argv[sys.argv.index(arg) + 1] if sys.argv.index(arg) + 1 < len(sys.argv) else None)
+
+    if not gemini_key:
+        print("[오류] GEMINI_API_KEY 미설정")
+        sys.exit(1)
+
+    print("=" * 60)
+    print("기초단체장 후보자 자동 팩트체크 파이프라인")
+    print(f"실행: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    if dry_run:
+        print("[DRY RUN]")
+    if target_region:
+        print(f"[대상: {REGION_NAMES.get(target_region, target_region)}]")
+    print("=" * 60)
+
+    data = load_candidates()
+    candidates = data.get("candidates", {})
+
+    regions_to_process = [target_region] if target_region else sorted(candidates.keys())
+    total_applied = 0
+
+    for rk in regions_to_process:
+        if rk not in candidates:
+            print(f"\n[건너뜀] {rk}: 데이터 없음")
+            continue
+        region_cands = candidates[rk]
+        count = sum(len(v) for v in region_cands.values())
+        region_name = REGION_NAMES.get(rk, rk)
+        news = fetch_mayor_news(rk, region_name)
+        print(f"\n[{region_name}] {count}명 팩트체크 중... (뉴스 {len(news)}건)")
+
+        prompt = build_prompt_for_region(rk, region_cands, news)
+        try:
+            raw = call_gemini(prompt, gemini_key)
+            changes = parse_changes(raw)
+            if not changes:
+                print(f"  → 변경 없음")
+            else:
+                print(f"  → {len(changes)}건 감지 (Gemini)")
+                changes = verify_changes_against_news(changes, news)
+                print(f"  → {len(changes)}건 검증 통과")
+                applied = apply_changes(region_cands, changes, rk, dry_run)
+                total_applied += applied
+        except Exception as e:
+            print(f"  [오류] {e}")
+
+        time.sleep(1)  # rate limit
+
+    if not dry_run:
+        data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
+        data["_meta"]["lastUpdated"] = date.today().isoformat()
+        CANDIDATES_PATH.write_text(
+            json.dumps(data, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print(f"\n총 {total_applied}건 적용")
+        print(f"[저장] {CANDIDATES_PATH}")
+
+
+if __name__ == "__main__":
+    main()

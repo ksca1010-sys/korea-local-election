@@ -6,8 +6,7 @@
 const ChartsModule = (() => {
     let pollBarChart = null;
     let pollTrendChart = null;
-    let partyDonutChart = null;
-    let demographicsChart = null;
+    const dynamicCharts = []; // 동적 생성 차트 추적
 
     // Chart.js global defaults
     Chart.defaults.color = '#8b99b5';
@@ -20,45 +19,40 @@ const ChartsModule = (() => {
     function destroyCharts() {
         if (pollBarChart) { pollBarChart.destroy(); pollBarChart = null; }
         if (pollTrendChart) { pollTrendChart.destroy(); pollTrendChart = null; }
-        if (partyDonutChart) { partyDonutChart.destroy(); partyDonutChart = null; }
-        if (demographicsChart) { demographicsChart.destroy(); demographicsChart = null; }
+        dynamicCharts.forEach(c => c.destroy());
+        dynamicCharts.length = 0;
     }
 
-    function renderPollBarChart(regionKey) {
-        const region = ElectionData.getRegion(regionKey);
-        if (!region || region.polls.length === 0) return;
+    /**
+     * 최신 여론조사 바차트 (polls.json 데이터 직접 사용)
+     * @param {Object} poll - polls.json의 개별 poll 객체
+     * @param {string|HTMLCanvasElement} canvasId - 캔버스 ID 또는 엘리먼트
+     * @returns {Chart|null}
+     */
+    function renderPollBarChart(poll, canvasId) {
+        if (!poll || !poll.results || poll.results.length < 2) return null;
 
-        const canvas = document.getElementById('poll-bar-chart');
-        if (!canvas) return;
-        if (pollBarChart) pollBarChart.destroy();
-
-        const latestPoll = region.polls[region.polls.length - 1];
-        const candidates = region.candidates;
-
-        const labels = [];
-        const data = [];
-        const colors = [];
-        const borderColors = [];
-
-        candidates.forEach(candidate => {
-            labels.push(candidate.name);
-            data.push(latestPoll.data[candidate.id] || 0);
-            const color = ElectionData.getPartyColor(candidate.party);
-            colors.push(color + 'cc');
-            borderColors.push(color);
-        });
-
-        // Source info
-        const sourceInfo = document.getElementById('poll-source-info');
-        if (sourceInfo) {
-            sourceInfo.innerHTML = `
-                <strong>${latestPoll.source}</strong> | ${latestPoll.date} |
-                표본수: ${latestPoll.sampleSize?.toLocaleString() || 'N/A'}명 |
-                오차범위: ±${latestPoll.margin}%p (95% 신뢰수준)
-            `;
+        const canvas = typeof canvasId === 'string' ? document.getElementById(canvasId) : canvasId;
+        if (!canvas) return null;
+        if (pollBarChart && typeof canvasId === 'string' && canvasId === 'poll-bar-chart') {
+            pollBarChart.destroy();
         }
 
-        pollBarChart = new Chart(canvas, {
+        const results = poll.results
+            .filter(r => r.candidateName && r.support > 0)
+            .sort((a, b) => b.support - a.support);
+
+        const labels = results.map(r => r.candidateName);
+        const data = results.map(r => r.support);
+        const colors = results.map(r => {
+            const pc = r._stanceColor || ElectionData.getPartyColor(r.party || 'independent');
+            return pc + 'cc';
+        });
+        const borderColors = results.map(r => {
+            return r._stanceColor || ElectionData.getPartyColor(r.party || 'independent');
+        });
+
+        const chart = new Chart(canvas, {
             type: 'bar',
             data: {
                 labels,
@@ -86,9 +80,9 @@ const ChartsModule = (() => {
                         titleFont: { weight: '600' },
                         callbacks: {
                             label: (ctx) => {
-                                const candidate = candidates[ctx.dataIndex];
-                                const partyName = ElectionData.getPartyName(candidate.party);
-                                return `${partyName}: ${ctx.raw}%`;
+                                const r = results[ctx.dataIndex];
+                                const label = r._stanceLabel || ElectionData.getPartyName(r.party || 'independent');
+                                return `${label}: ${ctx.raw}%`;
                             }
                         }
                     }
@@ -114,27 +108,67 @@ const ChartsModule = (() => {
                 }
             }
         });
+
+        if (typeof canvasId === 'string' && canvasId === 'poll-bar-chart') {
+            pollBarChart = chart;
+        } else {
+            dynamicCharts.push(chart);
+        }
+        return chart;
     }
 
-    function renderPollTrendChart(regionKey) {
-        const region = ElectionData.getRegion(regionKey);
-        if (!region || region.polls.length < 2) return;
+    /**
+     * 여론조사 추이 라인차트 (같은 조사기관 시계열)
+     * @param {Object} trendGroup - { pollOrg, polls: [...] }
+     * @param {string|HTMLCanvasElement} canvasId - 캔버스 ID 또는 엘리먼트
+     * @returns {Chart|null}
+     */
+    function renderPollTrendChart(trendGroup, canvasId) {
+        if (!trendGroup || !trendGroup.polls || trendGroup.polls.length < 2) return null;
 
-        const canvas = document.getElementById('poll-trend-chart');
-        if (!canvas) return;
-        if (pollTrendChart) pollTrendChart.destroy();
+        const canvas = typeof canvasId === 'string' ? document.getElementById(canvasId) : canvasId;
+        if (!canvas) return null;
+        if (pollTrendChart && typeof canvasId === 'string' && canvasId === 'poll-trend-chart') {
+            pollTrendChart.destroy();
+        }
 
-        const polls = region.polls;
-        const labels = polls.map(p => {
-            const d = new Date(p.date);
-            return `${d.getMonth() + 1}/${d.getDate()}`;
+        // 시간순 정렬 (오래된 것부터)
+        const polls = [...trendGroup.polls].sort((a, b) => {
+            const aDate = a.surveyDate?.end || a.publishDate || '';
+            const bDate = b.surveyDate?.end || b.publishDate || '';
+            return aDate.localeCompare(bDate);
         });
 
-        const datasets = region.candidates.map(candidate => {
-            const color = ElectionData.getPartyColor(candidate.party);
-            return {
-                label: `${candidate.name} (${ElectionData.parties[candidate.party]?.shortName || ''})`,
-                data: polls.map(p => p.data[candidate.id] || null),
+        // X축 라벨: 조사종료일
+        const labels = polls.map(p => {
+            const dateStr = p.surveyDate?.end || p.publishDate || '';
+            const d = new Date(dateStr);
+            return isNaN(d) ? dateStr : `${d.getMonth() + 1}/${d.getDate()}`;
+        });
+
+        // 모든 후보명 수집 (전체 조사에 등장한 후보 union)
+        const candidateSet = new Map(); // name → { party, stanceColor }
+        polls.forEach(p => {
+            (p.results || []).forEach(r => {
+                if (r.candidateName && r.support > 0 && !candidateSet.has(r.candidateName)) {
+                    candidateSet.set(r.candidateName, {
+                        party: r.party || 'independent',
+                        stanceColor: r._stanceColor || null
+                    });
+                }
+            });
+        });
+
+        // 후보별 라인 데이터셋
+        const datasets = [];
+        candidateSet.forEach((info, name) => {
+            const color = info.stanceColor || ElectionData.getPartyColor(info.party);
+            datasets.push({
+                label: name,
+                data: polls.map(p => {
+                    const r = (p.results || []).find(r => r.candidateName === name);
+                    return r ? r.support : null;
+                }),
                 borderColor: color,
                 backgroundColor: color + '20',
                 pointBackgroundColor: color,
@@ -145,20 +179,16 @@ const ChartsModule = (() => {
                 tension: 0.3,
                 fill: false,
                 spanGaps: true
-            };
+            });
         });
 
-        // Add margin of error bands for the leading candidate
-        const leadingCandidate = region.candidates[0];
-        if (leadingCandidate) {
-            const marginData = polls.map(p => ({
-                upper: (p.data[leadingCandidate.id] || 0) + p.margin,
-                lower: (p.data[leadingCandidate.id] || 0) - p.margin
-            }));
-
+        // 1위 후보 오차범위 밴드
+        if (datasets.length > 0 && polls[0]?.method?.marginOfError) {
+            const leadData = datasets[0].data;
+            const margin = polls[0].method.marginOfError;
             datasets.push({
                 label: '오차범위 (1위)',
-                data: marginData.map(d => d.upper),
+                data: leadData.map(v => v != null ? v + margin : null),
                 borderColor: 'transparent',
                 backgroundColor: 'rgba(59, 130, 246, 0.08)',
                 pointRadius: 0,
@@ -167,7 +197,7 @@ const ChartsModule = (() => {
             });
             datasets.push({
                 label: '',
-                data: marginData.map(d => d.lower),
+                data: leadData.map(v => v != null ? v - margin : null),
                 borderColor: 'transparent',
                 backgroundColor: 'transparent',
                 pointRadius: 0,
@@ -175,7 +205,7 @@ const ChartsModule = (() => {
             });
         }
 
-        pollTrendChart = new Chart(canvas, {
+        const chart = new Chart(canvas, {
             type: 'line',
             data: { labels, datasets },
             options: {
@@ -190,7 +220,7 @@ const ChartsModule = (() => {
                     legend: {
                         position: 'bottom',
                         labels: {
-                            filter: (item) => item.text !== ''
+                            filter: (item) => item.text !== '' && !item.text.includes('오차범위')
                         }
                     },
                     tooltip: {
@@ -225,152 +255,21 @@ const ChartsModule = (() => {
                 }
             }
         });
+
+        if (typeof canvasId === 'string' && canvasId === 'poll-trend-chart') {
+            pollTrendChart = chart;
+        } else {
+            dynamicCharts.push(chart);
+        }
+        return chart;
     }
 
-    // renderPartyDonutChart, renderDemographicsChart 제거됨 (HTML 캔버스 없음)
-
+    /**
+     * 호환성: 기존 renderAllCharts 호출 대응
+     * 새 구현에서는 renderPollTab에서 직접 호출
+     */
     function renderAllCharts(regionKey) {
         destroyCharts();
-        renderPollBarChart(regionKey);
-        renderPollTrendChart(regionKey);
-
-        const canvas = document.getElementById('party-donut-chart');
-        if (!canvas) return;
-        if (partyDonutChart) partyDonutChart.destroy();
-
-        const support = region.partySupport;
-        const partyKeys = Object.keys(support).filter(k => support[k] > 0);
-        const labels = partyKeys.map(k => ElectionData.getPartyName(k));
-        const data = partyKeys.map(k => support[k]);
-        const colors = partyKeys.map(k => ElectionData.getPartyColor(k));
-
-        partyDonutChart = new Chart(canvas, {
-            type: 'doughnut',
-            data: {
-                labels,
-                datasets: [{
-                    data,
-                    backgroundColor: colors.map(c => c + 'cc'),
-                    borderColor: colors,
-                    borderWidth: 1,
-                    hoverOffset: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                aspectRatio: 1.4,
-                cutout: '55%',
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            padding: 10,
-                            usePointStyle: true,
-                            pointStyle: 'circle',
-                            font: { size: 10 }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(26, 34, 54, 0.95)',
-                        borderColor: 'rgba(59, 130, 246, 0.3)',
-                        borderWidth: 1,
-                        padding: 10,
-                        cornerRadius: 8,
-                        callbacks: {
-                            label: (ctx) => `${ctx.label}: ${ctx.raw}%`
-                        }
-                    }
-                },
-                animation: {
-                    animateRotate: true,
-                    duration: 800
-                }
-            }
-        });
-    }
-
-    function renderDemographicsChart(regionKey) {
-        const region = ElectionData.getRegion(regionKey);
-        if (!region || !region.demographics) return;
-
-        const canvas = document.getElementById('demographics-chart');
-        if (!canvas) return;
-        if (demographicsChart) demographicsChart.destroy();
-
-        const ageGroups = Object.keys(region.demographics);
-        const partyKeys = ['democratic', 'ppp', 'reform'];
-
-        const datasets = partyKeys.map(key => ({
-            label: ElectionData.parties[key]?.shortName || key,
-            data: ageGroups.map(age => region.demographics[age][key] || 0),
-            backgroundColor: ElectionData.getPartyColor(key) + 'aa',
-            borderColor: ElectionData.getPartyColor(key),
-            borderWidth: 1,
-            borderRadius: 3
-        }));
-
-        // Add "other" category
-        datasets.push({
-            label: '기타',
-            data: ageGroups.map(age => region.demographics[age].other || 0),
-            backgroundColor: 'rgba(128, 128, 128, 0.5)',
-            borderColor: '#808080',
-            borderWidth: 1,
-            borderRadius: 3
-        });
-
-        demographicsChart = new Chart(canvas, {
-            type: 'bar',
-            data: {
-                labels: ageGroups.map(g => g + '세'),
-                datasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                aspectRatio: 1.6,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            usePointStyle: true,
-                            pointStyle: 'rect',
-                            font: { size: 10 }
-                        }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(26, 34, 54, 0.95)',
-                        borderColor: 'rgba(59, 130, 246, 0.3)',
-                        borderWidth: 1,
-                        padding: 10,
-                        cornerRadius: 8,
-                        callbacks: {
-                            label: (ctx) => `${ctx.dataset.label}: ${ctx.raw}%`
-                        }
-                    }
-                },
-                scales: {
-                    x: {
-                        stacked: true,
-                        grid: { display: false }
-                    },
-                    y: {
-                        stacked: true,
-                        max: 100,
-                        grid: { color: 'rgba(42, 53, 83, 0.3)' },
-                        ticks: {
-                            callback: (value) => value + '%',
-                            stepSize: 25
-                        }
-                    }
-                },
-                animation: {
-                    duration: 800,
-                    easing: 'easeOutQuart'
-                }
-            }
-        });
     }
 
     return {

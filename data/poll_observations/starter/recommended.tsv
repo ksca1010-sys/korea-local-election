@@ -1,0 +1,18 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+starter-busan-governor	busan	governor		1		trend	line			부산,광역단체장	광역단체장선거		2	여론조사 QA 추천 배치용 스타터. 부산 광역단체장 라인차트 확인
+starter-gyeonggi-superintendent	gyeonggi	superintendent		1		trend	bar			경기,교육감	교육감선거	참고 지지율	1	여론조사 QA 추천 배치용 스타터. 경기 교육감 참고 지지율 막대그래프 확인
+starter-incheon-governor	incheon	governor		1		trend	line			인천,광역단체장	광역단체장선거		2	여론조사 QA 추천 배치용 스타터. 인천 광역단체장 그래프 확인
+starter-daejeon-governor	daejeon	governor		1		trend	line			대전,광역단체장	광역단체장선거		2	여론조사 QA 추천 배치용 스타터. 대전 광역단체장 라인차트 확인
+ulsan-governor-summary-trend	ulsan	governor		1		trend	line			울산,광역단체장	광역단체장선거		2	여론조사 QA 추천 배치용 스타터. 울산 광역단체장 라인차트 확인
+gyeongnam-governor-summary-trend	gyeongnam	governor		1		trend	bar			경상남도,광역단체장	광역단체장선거	참고 지지율	1	여론조사 QA 추천 배치용 스타터. 경남 광역단체장 참고 지지율 막대그래프 확인
+starter-jeonbuk-governor	jeonbuk	governor		1		trend	bar			전북,광역단체장	광역단체장선거	참고 지지율	1	여론조사 QA 추천 배치용 스타터. 전북 광역단체장 참고 지지율 막대그래프 확인
+seoul-governor-summary-trend	seoul	governor		1		trend	line			서울,광역단체장	광역단체장선거		2	여론조사 QA 자동 배치용 스타터. 서울 광역단체장 라인차트 확인
+starter-daegu-superintendent	daegu	superintendent		1		trend	bar			대구,교육감	교육감선거	참고 지지율	1	여론조사 QA 자동 배치용 스타터. 대구 교육감 참고 지지율 막대그래프 확인
+gwangju-governor-summary-trend	gwangju	governor		1		trend	bar			광주,광역단체장	광역단체장선거	참고 지지율	1	여론조사 QA 자동 배치용 스타터. 광주 광역단체장 참고 지지율 막대그래프 확인
+starter-sejong-governor	sejong	governor		1		trend	line			세종,광역단체장	광역단체장선거		2	여론조사 QA 자동 배치용 스타터. 세종 광역단체장 라인차트 확인
+gangwon-governor-summary-trend	gangwon	governor		1		trend	line			강원,광역단체장	광역단체장선거		2	여론조사 QA 자동 배치용 스타터. 강원 광역단체장 라인차트 확인
+starter-chungbuk-governor	chungbuk	governor		1		trend	line			충청북도,광역단체장	광역단체장선거		2	여론조사 QA 자동 배치용 스타터. 충북 광역단체장 라인차트 확인
+chungnam-mayor-overview-activity	chungnam	mayor		20		activity	bar	5		충청남도,기초단체장			0	여론조사 QA 자동 배치용 스타터. 충남 기초단체장 전체 막대그래프 확인
+jeonnam-mayor-overview-activity	jeonnam	mayor		20		activity	bar	5		전라남도,기초단체장			0	여론조사 QA 자동 배치용 스타터. 전남 기초단체장 전체 막대그래프 확인
+gyeongbuk-superintendent-trend	gyeongbuk	superintendent		1		trend	line			경상북도,교육감	교육감선거		2	여론조사 QA 자동 배치용 스타터. 경북 교육감 라인차트 확인
+jeju-governor-summary-trend	jeju	governor		1		trend	bar			제주,광역단체장	광역단체장선거	참고 지지율	1	여론조사 QA 자동 배치용 스타터. 제주 광역단체장 참고 지지율 막대그래프 확인

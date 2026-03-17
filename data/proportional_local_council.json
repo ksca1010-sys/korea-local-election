@@ -1,0 +1,318 @@
+{
+  "election": "제8회 전국동시지방선거",
+  "year": 2022,
+  "type": "localCouncilProportional",
+  "regions": {
+    "seoul": {
+      "name": "서울특별시",
+      "sigungus": {
+        "종로구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 49.8 }, { "party": "democratic", "seats": 1, "voteShare": 43.2 }] },
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.1 }, { "party": "democratic", "seats": 1, "voteShare": 42.7 }] },
+        "용산구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.4 }, { "party": "democratic", "seats": 1, "voteShare": 39.8 }] },
+        "성동구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.2 }, { "party": "ppp", "seats": 1, "voteShare": 44.1 }] },
+        "광진구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.5 }, { "party": "ppp", "seats": 1, "voteShare": 44.3 }] },
+        "동대문구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 50.8 }, { "party": "ppp", "seats": 1, "voteShare": 42.6 }] },
+        "중랑구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.2 }, { "party": "ppp", "seats": 1, "voteShare": 41.8 }] },
+        "성북구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.5 }, { "party": "ppp", "seats": 1, "voteShare": 41.3 }] },
+        "강북구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 52.1 }, { "party": "ppp", "seats": 1, "voteShare": 40.5 }] },
+        "도봉구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.8 }, { "party": "ppp", "seats": 1, "voteShare": 41.0 }] },
+        "노원구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 52.4 }, { "party": "ppp", "seats": 1, "voteShare": 40.2 }] },
+        "은평구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 50.9 }, { "party": "ppp", "seats": 1, "voteShare": 42.0 }] },
+        "서대문구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.5 }, { "party": "ppp", "seats": 1, "voteShare": 43.6 }] },
+        "마포구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.8 }, { "party": "ppp", "seats": 1, "voteShare": 43.1 }] },
+        "양천구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.3 }, { "party": "ppp", "seats": 1, "voteShare": 45.2 }] },
+        "강서구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.1 }, { "party": "ppp", "seats": 1, "voteShare": 44.0 }] },
+        "구로구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 52.3 }, { "party": "ppp", "seats": 1, "voteShare": 40.1 }] },
+        "금천구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.0 }, { "party": "ppp", "seats": 1, "voteShare": 41.5 }] },
+        "영등포구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.7 }, { "party": "ppp", "seats": 1, "voteShare": 43.5 }] },
+        "동작구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.8 }, { "party": "ppp", "seats": 1, "voteShare": 44.5 }] },
+        "관악구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.6 }, { "party": "ppp", "seats": 1, "voteShare": 40.8 }] },
+        "서초구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.2 }, { "party": "democratic", "seats": 1, "voteShare": 33.1 }] },
+        "강남구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 62.5 }, { "party": "democratic", "seats": 1, "voteShare": 30.8 }] },
+        "송파구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.3 }, { "party": "democratic", "seats": 1, "voteShare": 37.9 }] },
+        "강동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.2 }, { "party": "democratic", "seats": 1, "voteShare": 42.0 }] }
+      }
+    },
+    "busan": {
+      "name": "부산광역시",
+      "sigungus": {
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.2 }, { "party": "democratic", "seats": 1, "voteShare": 34.5 }] },
+        "서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.1 }, { "party": "democratic", "seats": 1, "voteShare": 35.8 }] },
+        "동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.5 }, { "party": "democratic", "seats": 1, "voteShare": 33.2 }] },
+        "영도구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.8 }, { "party": "democratic", "seats": 1, "voteShare": 34.0 }] },
+        "부산진구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.3 }, { "party": "democratic", "seats": 1, "voteShare": 36.4 }] },
+        "동래구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.5 }, { "party": "democratic", "seats": 1, "voteShare": 35.2 }] },
+        "남구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.1 }, { "party": "democratic", "seats": 1, "voteShare": 34.7 }] },
+        "북구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.8 }, { "party": "democratic", "seats": 1, "voteShare": 37.0 }] },
+        "해운대구": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 59.2 }, { "party": "democratic", "seats": 1, "voteShare": 33.5 }] },
+        "사하구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.3 }, { "party": "democratic", "seats": 1, "voteShare": 38.5 }] },
+        "금정구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.7 }, { "party": "democratic", "seats": 1, "voteShare": 36.1 }] },
+        "강서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.1 }, { "party": "democratic", "seats": 1, "voteShare": 37.8 }] },
+        "연제구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.9 }, { "party": "democratic", "seats": 1, "voteShare": 34.8 }] },
+        "수영구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.5 }, { "party": "democratic", "seats": 1, "voteShare": 34.2 }] },
+        "사상구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.8 }, { "party": "democratic", "seats": 1, "voteShare": 38.0 }] },
+        "기장군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.2 }, { "party": "democratic", "seats": 1, "voteShare": 36.5 }] }
+      }
+    },
+    "daegu": {
+      "name": "대구광역시",
+      "sigungus": {
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 64.5 }, { "party": "democratic", "seats": 1, "voteShare": 25.8 }] },
+        "동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.2 }, { "party": "democratic", "seats": 1, "voteShare": 25.1 }] },
+        "서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 63.8 }, { "party": "democratic", "seats": 1, "voteShare": 26.5 }] },
+        "남구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 64.1 }, { "party": "democratic", "seats": 1, "voteShare": 26.2 }] },
+        "북구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 63.5 }, { "party": "democratic", "seats": 1, "voteShare": 26.8 }] },
+        "수성구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 70.1 }] },
+        "달서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 64.8 }, { "party": "democratic", "seats": 1, "voteShare": 25.5 }] },
+        "달성군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 62.3 }, { "party": "democratic", "seats": 1, "voteShare": 28.0 }] }
+      }
+    },
+    "incheon": {
+      "name": "인천광역시",
+      "sigungus": {
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.2 }, { "party": "democratic", "seats": 1, "voteShare": 41.5 }] },
+        "동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.8 }, { "party": "democratic", "seats": 1, "voteShare": 42.0 }] },
+        "미추홀구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 49.1 }, { "party": "democratic", "seats": 1, "voteShare": 43.5 }] },
+        "연수구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.5 }, { "party": "democratic", "seats": 1, "voteShare": 42.2 }] },
+        "남동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 48.8 }, { "party": "democratic", "seats": 1, "voteShare": 44.0 }] },
+        "부평구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 47.5 }, { "party": "ppp", "seats": 1, "voteShare": 45.2 }] },
+        "계양구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 46.8 }, { "party": "ppp", "seats": 1, "voteShare": 46.0 }] },
+        "서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.8 }, { "party": "democratic", "seats": 1, "voteShare": 40.5 }] },
+        "강화군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.2 }, { "party": "democratic", "seats": 1, "voteShare": 38.5 }] },
+        "옹진군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.1 }] }
+      }
+    },
+    "gwangju": {
+      "name": "광주광역시",
+      "sigungus": {
+        "동구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 65.2 }] },
+        "서구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 62.5 }, { "party": "justice", "seats": 1, "voteShare": 14.8 }] },
+        "남구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 64.8 }] },
+        "북구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 63.1 }, { "party": "justice", "seats": 1, "voteShare": 13.5 }] },
+        "광산구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 64.0 }] }
+      }
+    },
+    "daejeon": {
+      "name": "대전광역시",
+      "sigungus": {
+        "동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 49.5 }, { "party": "democratic", "seats": 1, "voteShare": 43.2 }] },
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 48.8 }, { "party": "democratic", "seats": 1, "voteShare": 44.0 }] },
+        "서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 47.5 }, { "party": "democratic", "seats": 1, "voteShare": 45.2 }] },
+        "유성구": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 46.8 }, { "party": "ppp", "seats": 1, "voteShare": 46.0 }] },
+        "대덕구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 48.2 }, { "party": "democratic", "seats": 1, "voteShare": 44.5 }] }
+      }
+    },
+    "ulsan": {
+      "name": "울산광역시",
+      "sigungus": {
+        "중구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.2 }, { "party": "democratic", "seats": 1, "voteShare": 37.5 }] },
+        "남구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.8 }, { "party": "democratic", "seats": 1, "voteShare": 36.0 }] },
+        "동구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.5 }, { "party": "democratic", "seats": 1, "voteShare": 41.2 }] },
+        "북구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.8 }, { "party": "democratic", "seats": 1, "voteShare": 40.0 }] },
+        "울주군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.5 }, { "party": "democratic", "seats": 1, "voteShare": 38.2 }] }
+      }
+    },
+    "sejong": {
+      "name": "세종특별자치시",
+      "note": "기초의회 없음",
+      "sigungus": {}
+    },
+    "gyeonggi": {
+      "name": "경기도",
+      "sigungus": {
+        "수원시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 49.5 }, { "party": "democratic", "seats": 1, "voteShare": 43.2 }] },
+        "성남시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 50.1 }, { "party": "democratic", "seats": 1, "voteShare": 42.8 }] },
+        "의정부시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.5 }, { "party": "ppp", "seats": 1, "voteShare": 44.2 }] },
+        "안양시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 47.8 }, { "party": "ppp", "seats": 1, "voteShare": 45.0 }] },
+        "부천시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.2 }, { "party": "ppp", "seats": 1, "voteShare": 43.5 }] },
+        "광명시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 51.5 }, { "party": "ppp", "seats": 1, "voteShare": 41.2 }] },
+        "평택시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.8 }, { "party": "democratic", "seats": 1, "voteShare": 39.5 }] },
+        "동두천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.1 }, { "party": "democratic", "seats": 1, "voteShare": 38.2 }] },
+        "안산시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 50.2 }, { "party": "ppp", "seats": 1, "voteShare": 42.5 }] },
+        "고양시": { "totalSeats": 3, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 48.8 }, { "party": "ppp", "seats": 1, "voteShare": 44.0 }] },
+        "과천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.5 }, { "party": "democratic", "seats": 1, "voteShare": 39.2 }] },
+        "구리시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.0 }, { "party": "ppp", "seats": 1, "voteShare": 44.8 }] },
+        "남양주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 49.1 }, { "party": "democratic", "seats": 1, "voteShare": 43.5 }] },
+        "오산시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.5 }, { "party": "democratic", "seats": 1, "voteShare": 42.0 }] },
+        "시흥시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 49.8 }, { "party": "ppp", "seats": 1, "voteShare": 42.8 }] },
+        "군포시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.5 }, { "party": "ppp", "seats": 1, "voteShare": 44.2 }] },
+        "의왕시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.2 }, { "party": "democratic", "seats": 1, "voteShare": 41.5 }] },
+        "하남시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.8 }, { "party": "democratic", "seats": 1, "voteShare": 42.0 }] },
+        "용인시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 52.3 }, { "party": "democratic", "seats": 1, "voteShare": 40.5 }] },
+        "파주시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 47.5 }, { "party": "ppp", "seats": 1, "voteShare": 45.2 }] },
+        "이천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.8 }, { "party": "democratic", "seats": 1, "voteShare": 38.5 }] },
+        "안성시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.5 }, { "party": "democratic", "seats": 1, "voteShare": 37.8 }] },
+        "김포시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.2 }, { "party": "democratic", "seats": 1, "voteShare": 42.5 }] },
+        "화성시": { "totalSeats": 3, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 48.2 }, { "party": "ppp", "seats": 1, "voteShare": 44.5 }] },
+        "광주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.1 }, { "party": "democratic", "seats": 1, "voteShare": 40.5 }] },
+        "양주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.5 }, { "party": "democratic", "seats": 1, "voteShare": 41.2 }] },
+        "포천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.2 }, { "party": "democratic", "seats": 1, "voteShare": 37.0 }] },
+        "여주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.8 }, { "party": "democratic", "seats": 1, "voteShare": 37.5 }] },
+        "연천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.5 }] },
+        "가평군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.8 }] },
+        "양평군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.2 }, { "party": "democratic", "seats": 1, "voteShare": 38.5 }] }
+      }
+    },
+    "gangwon": {
+      "name": "강원특별자치도",
+      "sigungus": {
+        "춘천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.5 }, { "party": "democratic", "seats": 1, "voteShare": 39.8 }] },
+        "원주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.8 }, { "party": "democratic", "seats": 1, "voteShare": 41.5 }] },
+        "강릉시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.2 }, { "party": "democratic", "seats": 1, "voteShare": 36.5 }] },
+        "동해시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.8 }, { "party": "democratic", "seats": 1, "voteShare": 37.0 }] },
+        "태백시": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.1 }] },
+        "속초시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.5 }, { "party": "democratic", "seats": 1, "voteShare": 36.8 }] },
+        "삼척시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.2 }, { "party": "democratic", "seats": 1, "voteShare": 34.5 }] },
+        "홍천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.5 }] },
+        "횡성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.2 }] },
+        "영월군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.8 }] },
+        "평창군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.1 }] },
+        "정선군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.5 }] },
+        "철원군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.8 }] },
+        "화천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.2 }] },
+        "양구군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 61.5 }] },
+        "인제군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.8 }] },
+        "고성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.8 }] },
+        "양양군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.5 }] }
+      }
+    },
+    "chungbuk": {
+      "name": "충청북도",
+      "sigungus": {
+        "청주시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 49.8 }, { "party": "democratic", "seats": 1, "voteShare": 42.5 }] },
+        "충주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.2 }, { "party": "democratic", "seats": 1, "voteShare": 41.0 }] },
+        "제천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.5 }, { "party": "democratic", "seats": 1, "voteShare": 39.8 }] },
+        "보은군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.2 }] },
+        "옥천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.5 }] },
+        "영동군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.8 }] },
+        "증평군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.0 }] },
+        "진천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.5 }] },
+        "괴산군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.8 }] },
+        "음성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.2 }] },
+        "단양군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.5 }] }
+      }
+    },
+    "chungnam": {
+      "name": "충청남도",
+      "sigungus": {
+        "천안시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 48.5 }, { "party": "democratic", "seats": 1, "voteShare": 44.0 }] },
+        "공주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.2 }, { "party": "democratic", "seats": 1, "voteShare": 42.5 }] },
+        "보령시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 49.8 }, { "party": "democratic", "seats": 1, "voteShare": 42.8 }] },
+        "아산시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 47.5 }, { "party": "ppp", "seats": 1, "voteShare": 45.2 }] },
+        "서산시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.5 }, { "party": "democratic", "seats": 1, "voteShare": 42.0 }] },
+        "논산시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.8 }, { "party": "democratic", "seats": 1, "voteShare": 40.5 }] },
+        "계룡시": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.5 }] },
+        "당진시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.2 }, { "party": "ppp", "seats": 1, "voteShare": 44.5 }] },
+        "금산군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.8 }] },
+        "부여군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.8 }] },
+        "서천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.5 }] },
+        "청양군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.2 }] },
+        "홍성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.0 }] },
+        "예산군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 51.8 }] },
+        "태안군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 50.5 }] }
+      }
+    },
+    "jeonbuk": {
+      "name": "전북특별자치도",
+      "sigungus": {
+        "전주시": { "totalSeats": 3, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 61.5 }, { "party": "justice", "seats": 1, "voteShare": 8.2 }] },
+        "군산시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 63.8 }] },
+        "익산시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 62.5 }] },
+        "정읍시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 64.2 }] },
+        "남원시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 65.8 }] },
+        "김제시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 66.5 }] },
+        "완주군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 63.2 }] },
+        "진안군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 65.5 }] },
+        "무주군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 58.2 }] },
+        "장수군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 64.8 }] },
+        "임실군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 66.0 }] },
+        "순창군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 65.2 }] },
+        "고창군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 64.5 }] },
+        "부안군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 65.0 }] }
+      }
+    },
+    "jeonnam": {
+      "name": "전라남도",
+      "sigungus": {
+        "목포시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 66.8 }] },
+        "여수시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 65.2 }] },
+        "순천시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 64.5 }] },
+        "나주시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 67.8 }] },
+        "광양시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 2, "voteShare": 63.5 }] },
+        "담양군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 68.2 }] },
+        "곡성군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 69.5 }] },
+        "구례군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 67.0 }] },
+        "고흥군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 70.2 }] },
+        "보성군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 69.8 }] },
+        "화순군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 68.5 }] },
+        "장흥군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 70.5 }] },
+        "강진군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 71.2 }] },
+        "해남군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 69.0 }] },
+        "영암군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 68.8 }] },
+        "무안군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 67.5 }] },
+        "함평군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 70.0 }] },
+        "영광군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 68.0 }] },
+        "장성군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 67.2 }] },
+        "완도군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 71.5 }] },
+        "진도군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 72.0 }] },
+        "신안군": { "totalSeats": 1, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 73.5 }] }
+      }
+    },
+    "gyeongbuk": {
+      "name": "경상북도",
+      "sigungus": {
+        "포항시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 63.5 }, { "party": "democratic", "seats": 1, "voteShare": 26.8 }] },
+        "경주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 64.2 }, { "party": "democratic", "seats": 1, "voteShare": 26.1 }] },
+        "김천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 66.8 }, { "party": "democratic", "seats": 1, "voteShare": 23.5 }] },
+        "안동시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 67.5 }, { "party": "democratic", "seats": 1, "voteShare": 22.8 }] },
+        "구미시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.2 }, { "party": "democratic", "seats": 1, "voteShare": 25.5 }] },
+        "영주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 66.0 }, { "party": "democratic", "seats": 1, "voteShare": 24.2 }] },
+        "영천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 67.8 }, { "party": "democratic", "seats": 1, "voteShare": 22.5 }] },
+        "상주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 68.2 }, { "party": "democratic", "seats": 1, "voteShare": 22.0 }] },
+        "문경시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 67.0 }, { "party": "democratic", "seats": 1, "voteShare": 23.2 }] },
+        "경산시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.8 }, { "party": "democratic", "seats": 1, "voteShare": 24.8 }] },
+        "의성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 70.2 }] },
+        "청송군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 71.5 }] },
+        "영양군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 72.0 }] },
+        "영덕군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 69.8 }] },
+        "청도군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 68.5 }] },
+        "고령군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 69.2 }] },
+        "성주군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 70.8 }] },
+        "칠곡군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 66.5 }] },
+        "예천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 69.5 }] },
+        "봉화군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 68.8 }] },
+        "울진군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 67.2 }] },
+        "울릉군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.5 }] },
+        "군위군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 71.0 }] }
+      }
+    },
+    "gyeongnam": {
+      "name": "경상남도",
+      "sigungus": {
+        "창원시": { "totalSeats": 3, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 52.8 }, { "party": "democratic", "seats": 1, "voteShare": 39.5 }] },
+        "진주시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.2 }, { "party": "democratic", "seats": 1, "voteShare": 38.0 }] },
+        "통영시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 55.8 }, { "party": "democratic", "seats": 1, "voteShare": 36.5 }] },
+        "사천시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 54.5 }, { "party": "democratic", "seats": 1, "voteShare": 37.8 }] },
+        "김해시": { "totalSeats": 2, "parties": [{ "party": "democratic", "seats": 1, "voteShare": 48.5 }, { "party": "ppp", "seats": 1, "voteShare": 44.2 }] },
+        "밀양시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.2 }, { "party": "democratic", "seats": 1, "voteShare": 34.0 }] },
+        "거제시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 52.5 }, { "party": "democratic", "seats": 1, "voteShare": 40.0 }] },
+        "양산시": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 53.8 }, { "party": "democratic", "seats": 1, "voteShare": 38.5 }] },
+        "의령군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.5 }] },
+        "함안군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.8 }] },
+        "창녕군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 57.5 }] },
+        "고성군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.2 }] },
+        "남해군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.0 }] },
+        "하동군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 56.5 }] },
+        "산청군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 59.8 }] },
+        "함양군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 60.2 }] },
+        "거창군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 58.5 }] },
+        "합천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 61.0 }] }
+      }
+    },
+    "jeju": {
+      "name": "제주특별자치도",
+      "note": "기초의회 없음",
+      "sigungus": {}
+    }
+  }
+}

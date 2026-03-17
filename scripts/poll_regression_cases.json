@@ -1,0 +1,468 @@
+[
+  {
+    "name": "seoul-governor-summary-trend",
+    "regionKey": "seoul",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "서울",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "seoul-mayor-overview-activity",
+    "regionKey": "seoul",
+    "electionType": "mayor",
+    "expectedMinCount": 2,
+    "expectedChartMode": "activity",
+    "expectedChartType": "bar",
+    "expectedChartReason": "activity",
+    "expectedMunicipalityCountMin": 2,
+    "expectedHeaderIncludes": [
+      "서울특별시",
+      "기초단체장"
+    ]
+  },
+  {
+    "name": "seoul-mapo-district-only",
+    "regionKey": "seoul",
+    "electionType": "mayor",
+    "districtName": "마포구",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
+    "expectedFirstMunicipality": "마포구",
+    "expectedHeaderIncludes": [
+      "마포구",
+      "기초단체장"
+    ],
+    "expectedDatasetLabels": [
+      "박강수",
+      "유동균"
+    ]
+  },
+  {
+    "name": "gyeonggi-pyeongtaek-district-trend",
+    "regionKey": "gyeonggi",
+    "electionType": "mayor",
+    "districtName": "평택시",
+    "expectedMinCount": 2,
+    "expectedChartMode": "trend",
+    "expectedChartType": "none",
+    "expectedChartReason": "no-candidate-results",
+    "expectedFirstMunicipality": "평택시",
+    "expectedHeaderIncludes": [
+      "평택시",
+      "기초단체장"
+    ]
+  },
+  {
+    "name": "jeonnam-mayor-overview-activity",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "expectedMinCount": 20,
+    "expectedChartMode": "activity",
+    "expectedChartType": "bar",
+    "expectedMunicipalityCountMin": 5,
+    "expectedHeaderIncludes": [
+      "전라남도",
+      "기초단체장"
+    ],
+    "expectedDatasetCountMin": 0
+  },
+  {
+    "name": "jeonnam-jangseong-district-trend",
+    "regionKey": "jeonnam",
+    "electionType": "mayor",
+    "districtName": "장성군",
+    "expectedMinCount": 4,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
+    "expectedFirstMunicipality": "장성군",
+    "expectedHeaderIncludes": [
+      "장성군",
+      "기초단체장"
+    ],
+    "expectedDatasetLabels": [
+      "김한종",
+      "박노원"
+    ]
+  },
+  {
+    "name": "gyeongbuk-superintendent-trend",
+    "regionKey": "gyeongbuk",
+    "electionType": "superintendent",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "경상북도",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "chungnam-mayor-overview-activity",
+    "regionKey": "chungnam",
+    "electionType": "mayor",
+    "expectedMinCount": 20,
+    "expectedChartMode": "activity",
+    "expectedChartType": "bar",
+    "expectedMunicipalityCountMin": 5,
+    "expectedHeaderIncludes": [
+      "충청남도",
+      "기초단체장"
+    ],
+    "expectedDatasetCountMin": 0
+  },
+  {
+    "name": "gangwon-governor-summary-trend",
+    "regionKey": "gangwon",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "강원",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "gwangju-governor-summary-trend",
+    "regionKey": "gwangju",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "광주",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "gwangju-superintendent-trend",
+    "regionKey": "gwangju",
+    "electionType": "superintendent",
+    "expectedMinCount": 5,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
+    "expectedHeaderIncludes": [
+      "광주광역시",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetLabels": [
+      "김용태",
+      "이정선"
+    ]
+  },
+  {
+    "name": "jeju-governor-summary-trend",
+    "regionKey": "jeju",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "제주",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "incheon-governor-summary-trend",
+    "regionKey": "incheon",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "인천",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "daejeon-governor-summary-trend",
+    "regionKey": "daejeon",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "대전",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "ulsan-governor-summary-trend",
+    "regionKey": "ulsan",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "울산",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "gyeongnam-governor-summary-trend",
+    "regionKey": "gyeongnam",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "경상남도",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "busan-superintendent-reference",
+    "regionKey": "busan",
+    "electionType": "superintendent",
+    "expectedMinCount": 2,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "부산광역시",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ]
+  },
+  {
+    "name": "daegu-superintendent-reference",
+    "regionKey": "daegu",
+    "electionType": "superintendent",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "대구광역시",
+      "교육감"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ]
+  },
+  {
+    "name": "incheon-superintendent-reference",
+    "regionKey": "incheon",
+    "electionType": "superintendent",
+    "expectedMinCount": 4,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "인천광역시",
+      "교육감"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ]
+  },
+  {
+    "name": "daejeon-superintendent-reference",
+    "regionKey": "daejeon",
+    "electionType": "superintendent",
+    "expectedMinCount": 2,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "대전광역시",
+      "교육감"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ]
+  },
+  {
+    "name": "gyeongnam-superintendent-trend",
+    "regionKey": "gyeongnam",
+    "electionType": "superintendent",
+    "expectedMinCount": 5,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
+    "expectedHeaderIncludes": [
+      "경상남도",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetLabels": [
+      "권순기",
+      "최병헌"
+    ]
+  },
+  {
+    "name": "starter-busan-governor",
+    "regionKey": "busan",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "부산",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "starter-chungbuk-governor",
+    "regionKey": "chungbuk",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "충청북도",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  },
+  {
+    "name": "starter-daegu-superintendent",
+    "regionKey": "daegu",
+    "electionType": "superintendent",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "대구",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "starter-gyeonggi-superintendent",
+    "regionKey": "gyeonggi",
+    "electionType": "superintendent",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "경기",
+      "교육감"
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "starter-jeonbuk-governor",
+    "regionKey": "jeonbuk",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
+    "expectedHeaderIncludes": [
+      "전북",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ],
+    "expectedDatasetCountMin": 1
+  },
+  {
+    "name": "starter-sejong-governor",
+    "regionKey": "sejong",
+    "electionType": "governor",
+    "expectedMinCount": 1,
+    "expectedChartMode": "trend",
+    "expectedChartType": "line",
+    "expectedHeaderIncludes": [
+      "세종",
+      "광역단체장"
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedDatasetCountMin": 2
+  }
+]

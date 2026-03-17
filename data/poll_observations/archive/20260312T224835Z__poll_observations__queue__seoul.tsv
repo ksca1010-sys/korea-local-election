@@ -1,0 +1,4 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+seoul-governor-summary-trend	seoul	governor		5		trend	line			서울특별시,광역단체장	광역단체장선거			서울 광역단체장 메인 추이
+seoul-mayor-overview-activity	seoul	mayor		2		activity	bar	2		서울특별시,기초단체장				서울 기초단체장 전체 분포
+seoul-mapo-district-only	seoul	mayor	마포구	1		trend	line		마포구	마포구,기초단체장		박강수,유동균		서울 마포구 후보 추이

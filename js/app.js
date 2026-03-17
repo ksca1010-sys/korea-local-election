@@ -40,6 +40,12 @@ const App = (() => {
     // Initialization
     // ============================================
     async function init() {
+        // DataLoader: JSON 파일에서 최신 데이터 로드 → ElectionData에 hot-swap
+        if (typeof DataLoader !== 'undefined') {
+            try { await DataLoader.applyToElectionData(ElectionData); }
+            catch(e) { console.warn('[init] DataLoader error:', e); }
+        }
+
         // Render sidebar data
         renderDday();
         renderStats();
@@ -59,22 +65,58 @@ const App = (() => {
         } catch(e) { console.warn('loadElectionStats error:', e); }
         // Load superintendent status (교육감 현황 팩트체크 데이터)
         try { await ElectionData.loadSuperintendentStatus?.(); } catch(e) { console.warn('loadSuperintendentStatus error:', e); }
+        // Load superintendent candidates (교육감 후보 팩트체크 데이터)
+        try { await ElectionData.loadSuperintendentCandidates?.(); } catch(e) { console.warn('loadSuperintendentCandidates error:', e); }
         // Load governor status (광역단체장 현황 팩트체크 데이터)
         try { await ElectionData.loadGovernorStatus?.(); } catch(e) { console.warn('loadGovernorStatus error:', e); }
         // Load mayor status (기초단체장 현황 팩트체크 데이터)
         try { await ElectionData.loadMayorStatus?.(); } catch(e) { console.warn('loadMayorStatus error:', e); }
+        // Load mayor candidates (기초단체장 후보 팩트체크 데이터)
+        try { await ElectionData.loadMayorCandidates?.(); } catch(e) { console.warn('loadMayorCandidates error:', e); }
+        // Load mayor history (기초단체장 역대 선거 결과)
+        try { await ElectionData.loadMayorHistory?.(); } catch(e) { console.warn('loadMayorHistory error:', e); }
         // Load council members data (광역의원 현직 정보)
         try { ElectionData.loadCouncilMembersData(); } catch(e) { console.warn('loadCouncilMembersData error:', e); }
         // Load candidates data
         try { ElectionData.loadCandidatesData?.(); } catch(e) { console.warn('loadCandidatesData error:', e); }
         // Load by-election data
         try { ElectionData.loadByElectionData?.(); } catch(e) { console.warn('loadByElectionData error:', e); }
+        // Load polls data (여론조사)
+        try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
-        // Load local media registry
+        // Load local media pool (새 통합 풀) + 기존 registry → 병합
         try {
-            const resp = await fetch('data/local_media_registry.json');
-            if (resp.ok) window.LocalMediaRegistry = await resp.json();
-        } catch(e) { console.warn('LocalMediaRegistry load error:', e); }
+            const [poolResp, regResp] = await Promise.all([
+                fetch('data/local_media_pool.json?v=' + Date.now()),
+                fetch('data/local_media_registry.json'),
+            ]);
+            if (poolResp.ok) window.LocalMediaPool = await poolResp.json();
+            if (regResp.ok) window.LocalMediaRegistry = await regResp.json();
+
+            // 새 풀의 언론사명을 기존 registry의 priorityNames에 병합
+            // → 기존 코드(LocalMediaRegistry.regions[rk].province.priorityNames)가 자동으로 확장됨
+            const pool = window.LocalMediaPool;
+            const reg = window.LocalMediaRegistry;
+            if (pool && reg?.regions) {
+                const regionKeyMap = {
+                    '서울특별시': 'seoul', '부산광역시': 'busan', '대구광역시': 'daegu',
+                    '인천광역시': 'incheon', '광주광역시': 'gwangju', '대전광역시': 'daejeon',
+                    '울산광역시': 'ulsan', '세종특별자치시': 'sejong', '경기도': 'gyeonggi',
+                    '강원특별자치도': 'gangwon', '충청북도': 'chungbuk', '충청남도': 'chungnam',
+                    '전북특별자치도': 'jeonbuk', '전라남도': 'jeonnam', '경상북도': 'gyeongbuk',
+                    '경상남도': 'gyeongnam', '제주특별자치도': 'jeju',
+                };
+                for (const [metroName, rk] of Object.entries(regionKeyMap)) {
+                    const metroPool = pool.metro?.[metroName]?.names || [];
+                    if (!metroPool.length) continue;
+                    if (!reg.regions[rk]) reg.regions[rk] = { province: {} };
+                    if (!reg.regions[rk].province) reg.regions[rk].province = {};
+                    const existing = new Set(reg.regions[rk].province.priorityNames || []);
+                    metroPool.forEach(n => existing.add(n));
+                    reg.regions[rk].province.priorityNames = [...existing];
+                }
+            }
+        } catch(e) { console.warn('LocalMedia load error:', e); }
 
         // Initialize map
         await MapModule.init();
@@ -84,6 +126,7 @@ const App = (() => {
         setupSearch();
         setupTabs();
         setupPanelClose();
+        setupPanelResize();
         setupHomeLink();
 
         // Hide loading screen
@@ -840,10 +883,9 @@ const App = (() => {
         const activeTab = document.getElementById(`tab-${tabName}`);
         if (activeTab) activeTab.style.display = 'block';
 
-        // Render chart if polls tab
+        // Render poll tab
         if (tabName === 'polls' && currentRegionKey) {
-            setTimeout(() => ChartsModule.renderAllCharts(currentRegionKey), 100);
-            renderLatestPolls(currentRegionKey);
+            renderPollTab(currentRegionKey, currentElectionType, currentDistrictName);
         }
 
         if (tabName === 'candidates' && currentRegionKey) {
@@ -856,7 +898,11 @@ const App = (() => {
         }
 
         if (tabName === 'history' && currentRegionKey) {
-            renderHistoryTab(currentRegionKey);
+            if (typeof HistoryTab !== 'undefined') {
+                HistoryTab.render(currentRegionKey, currentElectionType, currentDistrictName);
+            } else {
+                renderHistoryTab(currentRegionKey);
+            }
         }
     }
 
@@ -868,6 +914,39 @@ const App = (() => {
         if (closeBtn) {
             closeBtn.addEventListener('click', closePanel);
         }
+    }
+
+    function setupPanelResize() {
+        const handle = document.getElementById('panel-resize-handle');
+        const panel = document.getElementById('detail-panel');
+        if (!handle || !panel) return;
+
+        let isResizing = false;
+        let startX = 0;
+        let startWidth = 0;
+
+        handle.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startX = e.clientX;
+            startWidth = panel.offsetWidth;
+            document.body.style.cursor = 'col-resize';
+            document.body.style.userSelect = 'none';
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (!isResizing) return;
+            const diff = startX - e.clientX;
+            const newWidth = Math.max(300, Math.min(800, startWidth + diff));
+            panel.style.width = newWidth + 'px';
+        });
+
+        document.addEventListener('mouseup', () => {
+            if (!isResizing) return;
+            isResizing = false;
+            document.body.style.cursor = '';
+            document.body.style.userSelect = '';
+        });
     }
 
     /** 지역이 선택되어 패널에 데이터가 표시된 상태인지 */
@@ -1077,6 +1156,7 @@ const App = (() => {
 
         // Render superintendent overview
         renderSuperintendentOverview(regionKey, region, data);
+        renderOverviewTab(regionKey);
         renderNewsTab(regionKey);
     }
 
@@ -1227,7 +1307,7 @@ const App = (() => {
         document.getElementById('panel-region-name').textContent = `${region.name} ${config.label}`;
         document.getElementById('panel-region-info').textContent = data.description;
 
-        configurePanelTabs(['overview', 'news']);
+        configurePanelTabs(['overview', 'candidates', 'news']);
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
@@ -1336,7 +1416,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `광역의원 지역구 ${councilData ? councilData.districts.length : 0}개`;
 
-        configurePanelTabs(['overview', 'news']);
+        configurePanelTabs(['overview', 'candidates', 'news']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -1383,7 +1463,7 @@ function renderCouncilProvinceView(regionKey, region) {
         const totalCandidates = constituencies.reduce((sum, c) => sum + c.candidates.length, 0);
         document.getElementById('panel-region-name').textContent = `${municipality} 광역의원`;
         document.getElementById('panel-region-info').textContent = `${constituencies.length}개 지역구 · 후보 ${totalCandidates}명`;
-        configurePanelTabs(['overview', 'news']);
+        configurePanelTabs(['overview', 'candidates', 'news']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -1395,7 +1475,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     <div class="constituency-list">
                         ${constituencies.map(c => `<button class="constituency-chip" data-constituency="${c.name}">${c.name}</button>`).join('')}
                     </div>
-                    <p style="color:var(--text-muted);font-size:0.75rem;margin-top:8px">지역구를 클릭하면 후보 정보를 볼 수 있습니다.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem;margin-top:8px">지역구를 클릭하면 후보 정보를 볼 수 있습니다.</p>
                 `;
                 prevContainer.querySelectorAll('.constituency-chip').forEach(btn => {
                     btn.addEventListener('click', () => {
@@ -1481,7 +1561,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `시군구를 선택하면 기초의원 선거구를 확인할 수 있습니다.`;
 
-        configurePanelTabs(['overview', 'news']);
+        configurePanelTabs(['overview', 'candidates', 'news']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -1509,6 +1589,9 @@ function renderCouncilProvinceView(regionKey, region) {
         const data = ElectionData.getByElectionData(key);
         if (!data) return;
 
+        currentElectionType = 'byElection';
+        currentDistrictName = data.district;
+
         toggleSuperintendentSummary(false);
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
@@ -1517,7 +1600,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `${data.subType || '재보궐선거'} | ${data.type} | 후보 ${data.candidates.length}명`;
 
-        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news']);
 
         // Render by-election overview
         const prevContainer = document.getElementById('prev-election-result');
@@ -1576,6 +1659,11 @@ function renderCouncilProvinceView(regionKey, region) {
             issuesContainer.innerHTML = `<div class="issues-list">${data.keyIssues.map(issue => `<span class="issue-tag">${issue}</span>`).join('')}</div>`;
         }
 
+        // 개요 카드 렌더링 (narrative)
+        const regionKey = data.region || key.split('-')[0];
+        currentRegionKey = regionKey;
+        renderOverviewTab(regionKey);
+
         switchTabForRegion();
         openPanel();
     }
@@ -1632,68 +1720,25 @@ function renderCouncilProvinceView(regionKey, region) {
         const summary = ElectionData.getDistrictSummary(regionKey, districtName);
         const canonicalDistrict = ElectionData.getSubRegionByName(regionKey, districtName)?.name || districtName;
         const displayDistrict = summary?.name || districtName;
+        currentDistrictName = canonicalDistrict;
         const mayorData = ElectionData.getMayorData(regionKey, canonicalDistrict);
 
         document.getElementById('panel-region-name').textContent = `${displayDistrict} 기초단체장`;
         document.getElementById('panel-region-info').textContent =
             `기초단체장 선거 | 후보 ${mayorData ? mayorData.candidates.length : 0}명`;
 
-        configurePanelTabs(['overview', 'polls', 'candidates', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
 
-        if (mayorData) {
-            const prevContainer = document.getElementById('prev-election-result');
-            if (prevContainer) {
-                prevContainer.innerHTML = `
-                    <h5 style="color:var(--text-secondary);margin-bottom:8px;">기초단체장 후보</h5>
-                    ${mayorData.candidates.map(c => {
-                        const partyColor = ElectionData.getPartyColor(c.party);
-                        return `
-                            <div style="padding:10px;margin-bottom:6px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${partyColor}">
-                                <div style="display:flex;align-items:center;justify-content:space-between;">
-                                    <div>
-                                        <strong style="color:var(--text-primary)">${c.name}</strong>
-                                        <span class="party-badge" style="background:${partyColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;margin-left:6px">${ElectionData.getPartyName(c.party)}</span>
-                                    </div>
-                                    <span style="color:var(--text-muted);font-size:0.8rem">${c.age}세</span>
-                                </div>
-                                <div style="color:var(--text-muted);font-size:0.8rem;margin-top:4px">${c.career}</div>
-                            </div>
-                        `;
-                    }).join('')}
-                `;
-            }
-
-            // Show poll bars
-            const govContainer = document.getElementById('current-governor');
-            if (govContainer && mayorData.polls && mayorData.polls.length > 0) {
-                const latestPoll = mayorData.polls[mayorData.polls.length - 1];
-                govContainer.innerHTML = `
-                    <h5 style="color:var(--text-secondary);margin-bottom:8px;"><i class="fas fa-poll"></i> 최신 여론조사</h5>
-                    ${mayorData.candidates.map(c => {
-                        const pct = latestPoll.data[c.id] || 0;
-                        const partyColor = ElectionData.getPartyColor(c.party);
-                        return `
-                            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-                                <span style="min-width:50px;color:var(--text-primary);font-size:0.85rem">${c.name}</span>
-                                <div style="flex:1;height:20px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
-                                    <div style="height:100%;width:${pct}%;background:${partyColor};border-radius:4px;transition:width 0.5s"></div>
-                                </div>
-                                <span style="min-width:40px;text-align:right;color:var(--text-primary);font-weight:600;font-size:0.85rem">${pct}%</span>
-                            </div>
-                        `;
-                    }).join('')}
-                    <div style="color:var(--text-muted);font-size:0.7rem;margin-top:6px">
-                        ${latestPoll.source} (${latestPoll.date}) | 표본수: ${latestPoll.sampleSize}명 | 오차범위: ±${latestPoll.margin}%p
-                    </div>
-                `;
-            }
-        }
+        // prev-election-result, current-governor는 renderOverviewTab에서 처리
 
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) {
             const subRegion = ElectionData.getSubRegionByName(regionKey, canonicalDistrict);
             issuesContainer.innerHTML = `<div class="issues-list"><span class="issue-tag">${subRegion?.keyIssue || '지역 현안'}</span></div>`;
         }
+
+        // 현직 정보 + 개요 카드 렌더링
+        renderOverviewTab(regionKey);
 
         switchTabForRegion();
         openPanel();
@@ -1800,19 +1845,33 @@ function renderCouncilProvinceView(regionKey, region) {
         const overviewCard = document.getElementById('election-overview-card');
         if (overviewCard && ElectionData.loadElectionOverview) {
             ElectionData.loadElectionOverview().then(() => {
-                const ov = ElectionData.getElectionOverview(regionKey);
+                const ov = ElectionData.getElectionOverview(regionKey, currentElectionType, currentDistrictName);
                 if (ov) {
                     overviewCard.style.display = '';
                     const trendBadge = document.getElementById('overview-trend-badge');
                     const updatedDate = document.getElementById('overview-updated-date');
                     const headline = document.getElementById('overview-headline');
+                    const narrative = document.getElementById('overview-narrative');
                     const summary = document.getElementById('overview-summary');
                     const issues = document.getElementById('overview-key-issues');
                     const risk = document.getElementById('overview-risk-factor');
                     if (trendBadge) trendBadge.textContent = ov.trend || '';
                     if (updatedDate) updatedDate.textContent = ElectionData._overviewCache?.meta?.lastUpdated || '';
                     if (headline) headline.textContent = ov.headline || '';
-                    if (summary) summary.textContent = ov.summary || '';
+
+                    // narrative 모드: narrative가 있으면 summary 대신 표시
+                    if (narrative && ov.narrative) {
+                        narrative.textContent = ov.narrative;
+                        narrative.style.display = '';
+                        if (summary) summary.style.display = 'none';
+                    } else {
+                        if (narrative) narrative.style.display = 'none';
+                        if (summary) {
+                            summary.textContent = ov.summary || '';
+                            summary.style.display = '';
+                        }
+                    }
+
                     if (issues && Array.isArray(ov.keyIssues)) {
                         issues.innerHTML = ov.keyIssues.map(i =>
                             `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${i}</span>`
@@ -1827,56 +1886,172 @@ function renderCouncilProvinceView(regionKey, region) {
             });
         }
 
-        // Previous election result
+        // Previous election result (선거유형별 분기)
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
-            const prev = region.prevElection;
-            const winColor = ElectionData.getPartyColor(prev.winner);
-            const runColor = ElectionData.getPartyColor(prev.runner);
-            prevContainer.innerHTML = `
-                <div class="prev-result">
-                    <div class="prev-winner">
-                        <div class="name">${prev.winnerName}</div>
-                        <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(prev.winner)}</span>
-                        <div class="rate" style="color:${winColor}">${prev.rate}%</div>
-                    </div>
-                    <div class="prev-vs">VS</div>
-                    <div class="prev-winner">
-                        <div class="name">${prev.runnerName}</div>
-                        <span class="party-badge" style="background:${runColor}">${ElectionData.getPartyName(prev.runner)}</span>
-                        <div class="rate" style="color:${runColor}">${prev.runnerRate}%</div>
-                    </div>
-                </div>
-                <div class="prev-turnout">
-                    <i class="fas fa-person-booth"></i> 투표율: ${prev.turnout}%
-                </div>
-            `;
-        }
-
-        // Current governor
-        const govContainer = document.getElementById('current-governor');
-        if (govContainer) {
-            const gov = (ElectionData.getCurrentOfficeholder && ElectionData.getCurrentOfficeholder(regionKey, 'governor')) || region.currentGovernor;
-            if (!gov) {
-                govContainer.innerHTML = '';
-            } else {
-                const govColor = ElectionData.getPartyColor(gov.party);
-                const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
-                const statusText = gov.acting ? ' 권한대행' : ' 재임중';
-                govContainer.innerHTML = `
-                    <div class="governor-info">
-                        <div class="governor-avatar" style="background:${govColor}">
-                            ${gov.name.charAt(0)}
-                        </div>
-                        <div class="governor-details">
-                            <div class="name">${gov.name}</div>
-                            <div class="meta">
-                                <span class="party-badge" style="background:${govColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(gov.party)}</span>
-                                ${sinceText}${statusText}
+            if (currentElectionType === 'superintendent') {
+                // 교육감: 역대 데이터에서 최근 1건
+                const history = ElectionData.getSuperintendentHistoricalData(regionKey);
+                const lastElection = history.length ? history[history.length - 1] : null;
+                if (lastElection) {
+                    const winColor = ElectionData.getSuperintendentColor(lastElection.winner);
+                    const runColor = ElectionData.getSuperintendentColor(lastElection.runner);
+                    prevContainer.innerHTML = `
+                        <div class="prev-result">
+                            <div class="prev-winner">
+                                <div class="name">${lastElection.winnerName}</div>
+                                <span class="party-badge" style="background:${winColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.winner}</span>
+                                <div class="rate" style="color:${winColor}">${lastElection.rate}%</div>
+                            </div>
+                            <div class="prev-vs">VS</div>
+                            <div class="prev-winner">
+                                <div class="name">${lastElection.runnerName}</div>
+                                <span class="party-badge" style="background:${runColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.runner}</span>
+                                <div class="rate" style="color:${runColor}">${lastElection.runnerRate}%</div>
                             </div>
                         </div>
+                        <div class="prev-turnout"><i class="fas fa-person-booth"></i> ${lastElection.year}년 투표율: ${lastElection.turnout}%</div>
+                    `;
+                } else {
+                    prevContainer.innerHTML = '';
+                }
+            } else if (currentElectionType === 'mayor' && currentDistrictName) {
+                // 기초단체장: mayor_history.json에서 지난 선거결과 표시
+                const mayorHist = ElectionData.getMayorHistoricalData(regionKey, currentDistrictName);
+                if (mayorHist.length > 0) {
+                    const last = mayorHist[mayorHist.length - 1];
+                    const winColor = ElectionData.getPartyColor(last.winner);
+                    const winParty = last.winnerParty || ElectionData.getHistoricalPartyName(last.winner, last.election);
+                    const hasRunner = last.runnerName && last.runner;
+                    const runColor = hasRunner ? ElectionData.getPartyColor(last.runner) : '#666';
+                    const runParty = hasRunner ? (last.runnerParty || ElectionData.getHistoricalPartyName(last.runner, last.election)) : '';
+                    const turnoutHtml = last.turnout ? `<div class="prev-turnout"><i class="fas fa-person-booth"></i> ${last.year}년 투표율: ${last.turnout}%</div>` : '';
+
+                    prevContainer.innerHTML = `
+                        <h5 style="color:var(--text-secondary);margin-bottom:8px;"><i class="fas fa-clock-rotate-left"></i> 지난 선거 결과 (제${last.election}회)</h5>
+                        <div class="prev-result">
+                            <div class="prev-winner">
+                                <div class="name">${last.winnerName}</div>
+                                <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(last.winner)}</span>
+                                <div class="rate" style="color:${winColor}">${last.rate ? last.rate.toFixed(1) + '%' : '당선'}</div>
+                            </div>
+                            ${hasRunner ? `
+                            <div class="prev-vs">VS</div>
+                            <div class="prev-winner">
+                                <div class="name">${last.runnerName}</div>
+                                <span class="party-badge" style="background:${runColor}">${ElectionData.getPartyName(last.runner)}</span>
+                                <div class="rate" style="color:${runColor}">${last.runnerRate ? last.runnerRate.toFixed(1) + '%' : ''}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                        ${turnoutHtml}
+                    `;
+                } else {
+                    prevContainer.innerHTML = '';
+                }
+            } else if (region.prevElection) {
+                // 광역단체장: 기존 로직
+                const prev = region.prevElection;
+                const winColor = ElectionData.getPartyColor(prev.winner);
+                const runColor = ElectionData.getPartyColor(prev.runner);
+                prevContainer.innerHTML = `
+                    <div class="prev-result">
+                        <div class="prev-winner">
+                            <div class="name">${prev.winnerName}</div>
+                            <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(prev.winner)}</span>
+                            <div class="rate" style="color:${winColor}">${prev.rate}%</div>
+                        </div>
+                        <div class="prev-vs">VS</div>
+                        <div class="prev-winner">
+                            <div class="name">${prev.runnerName}</div>
+                            <span class="party-badge" style="background:${runColor}">${ElectionData.getPartyName(prev.runner)}</span>
+                            <div class="rate" style="color:${runColor}">${prev.runnerRate}%</div>
+                        </div>
                     </div>
+                    <div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${prev.turnout}%</div>
                 `;
+            } else {
+                prevContainer.innerHTML = '';
+            }
+        }
+
+        // Current officeholder (선거유형별 분기)
+        const govContainer = document.getElementById('current-governor');
+        if (govContainer) {
+            let gov = null;
+            let govColor = '';
+            let label = '';
+
+            if (currentElectionType === 'superintendent') {
+                const supt = ElectionData.getSuperintendentData(regionKey);
+                if (supt?.currentSuperintendent) {
+                    const s = supt.currentSuperintendent;
+                    govColor = ElectionData.getSuperintendentColor(s.stance);
+                    const sinceText = s.since ? ` ${s.since}년~` : '';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${govColor}">${s.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${s.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${govColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${s.stance}</span>
+                                    ${sinceText} 현직 교육감
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    govContainer.innerHTML = '';
+                }
+            } else if (currentElectionType === 'mayor' && currentDistrictName) {
+                // 기초단체장 현직자: subRegionData에서 가져오기
+                const distSummary = ElectionData.getDistrictSummary(regionKey, currentDistrictName);
+                const mayorInfo = distSummary?.mayor;
+                if (mayorInfo?.name) {
+                    const mColor = ElectionData.getPartyColor(mayorInfo.party);
+                    const statusText = mayorInfo.acting ? ' 권한대행' : ' 현직';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${mColor}">${mayorInfo.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${mayorInfo.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${mColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(mayorInfo.party)}</span>
+                                    ${statusText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (mayorInfo?.acting) {
+                    govContainer.innerHTML = `
+                        <div style="padding:8px;color:var(--text-muted);font-size:0.85rem">
+                            <i class="fas fa-user-clock"></i> 권한대행 중
+                        </div>
+                    `;
+                } else {
+                    govContainer.innerHTML = '';
+                }
+            } else {
+                gov = (ElectionData.getCurrentOfficeholder && ElectionData.getCurrentOfficeholder(regionKey, 'governor')) || region.currentGovernor;
+                if (!gov) {
+                    govContainer.innerHTML = '';
+                } else {
+                    govColor = ElectionData.getPartyColor(gov.party);
+                    const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
+                    const statusText = gov.acting ? ' 권한대행' : ' 재임중';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${govColor}">${gov.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${gov.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${govColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(gov.party)}</span>
+                                    ${sinceText}${statusText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
             }
         }
 
@@ -2030,6 +2205,61 @@ function renderCouncilProvinceView(regionKey, region) {
             };
         }
 
+        // 비례대표: 정당별 의석 배분 표시
+        if (currentElectionType === 'councilProportional' || currentElectionType === 'localCouncilProportional') {
+            const isCouncilProp = currentElectionType === 'councilProportional';
+            const typeLabel = isCouncilProp ? '광역 비례대표' : '기초 비례대표';
+            const propData = isCouncilProp
+                ? ElectionData.getProportionalCouncilRegion(regionKey)
+                : ElectionData.getProportionalLocalCouncilRegion(regionKey);
+
+            if (propData) {
+                const parties = (propData.parties || []).filter(p => p.seats > 0);
+                const candidates = parties.map(p => ({
+                    name: `${ElectionData.getPartyName(p.party)} (${p.seats}석)`,
+                    badgeLabel: `${p.seats}석`,
+                    badgeColor: ElectionData.getPartyColor(p.party),
+                    career: p.voteShare ? `득표율 ${p.voteShare}%` : '',
+                    pledges: [],
+                }));
+                return {
+                    title: `${region.name} ${typeLabel} 정당별 의석`,
+                    candidates,
+                    emptyMessage: `${typeLabel} 데이터가 없습니다.`
+                };
+            }
+        }
+
+        // 광역의원/기초의원: 현직 의원 데이터 표시
+        if (currentElectionType === 'council' || currentElectionType === 'localCouncil') {
+            const typeLabel = currentElectionType === 'council' ? '광역의원' : '기초의원';
+            // 현직 의원 데이터 가져오기
+            const councilData = ElectionData.getCouncilData(regionKey);
+            const members = [];
+            if (councilData?.municipalities) {
+                Object.values(councilData.municipalities).forEach(constituencies => {
+                    constituencies.forEach(c => {
+                        (c.candidates || []).forEach(m => {
+                            members.push({
+                                name: m.name,
+                                badgeLabel: ElectionData.getPartyName(m.party || 'independent'),
+                                badgeColor: ElectionData.getPartyColor(m.party || 'independent'),
+                                career: c.name || '',
+                                pledges: [],
+                                incumbent: true,
+                                statusMeta: { label: '현직', style: 'background:rgba(59,130,246,0.2);color:#60a5fa' },
+                            });
+                        });
+                    });
+                });
+            }
+            return {
+                title: `${region.name} ${typeLabel} 현직 의원`,
+                candidates: members,
+                emptyMessage: `${typeLabel} 의원 데이터가 아직 연결되지 않았습니다.`
+            };
+        }
+
         return {
             title: `${region.name} 후보자 정보`,
             candidates: [],
@@ -2044,7 +2274,7 @@ function renderCouncilProvinceView(regionKey, region) {
         const header = compareTargets.map((candidate) => `
             <div class="compare-col-header">
                 <div style="font-weight:700;color:var(--text-primary)">${candidate.name}</div>
-                <div style="font-size:0.72rem;color:var(--text-muted);margin-top:3px;">${candidate.badgeLabel}</div>
+                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:3px;">${candidate.badgeLabel}</div>
             </div>
         `).join('');
         const rows = Array.from({ length: rowCount }, (_, index) => `
@@ -2097,7 +2327,7 @@ function renderCouncilProvinceView(regionKey, region) {
                             <div class="candidate-info">
                                 <span class="candidate-name">${candidate.name}</span>
                                 ${candidate.age ? `<span class="candidate-age">${candidate.age}세</span>` : ''}
-                                <span class="party-badge" style="background:${candidate.badgeColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.72rem;color:white;">${candidate.badgeLabel}</span>
+                                <span class="party-badge" style="background:${candidate.badgeColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.8rem;color:white;">${candidate.badgeLabel}</span>
                             </div>
                             <div class="candidate-career">${candidate.career || '경력 정보 집계 중'}</div>
                             ${candidate.supportLabel ? `<div class="cand-core-message">${candidate.supportLabel}</div>` : ''}
@@ -2133,10 +2363,10 @@ function renderCouncilProvinceView(regionKey, region) {
             return '교육감 역대 비교 데이터는 아직 연결되지 않았습니다.';
         }
         if (currentElectionType === 'mayor' && !currentDistrictName) {
-            return '시군구를 선택하면 후보 정보는 확인할 수 있지만, 기초단체장 역대 비교 데이터는 아직 준비 중입니다.';
+            return '시군구를 선택하면 역대 기초단체장 선거 결과를 확인할 수 있습니다.';
         }
         if (currentElectionType === 'mayor') {
-            return '기초단체장 역대 비교 데이터는 아직 준비 중입니다.';
+            return '이 시군구의 역대 선거 데이터가 없습니다.';
         }
         return '현재 선택한 선거 유형의 역대 비교 데이터가 없습니다.';
     }
@@ -2147,13 +2377,22 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     function getHistoryBlocKey(partyKey) {
-        if (partyKey === 'democratic') return 'democratic';
-        if (partyKey === 'ppp') return 'ppp';
+        if (partyKey === 'democratic' || partyKey === '진보') return 'democratic';
+        if (partyKey === 'ppp' || partyKey === '보수') return 'ppp';
         if (partyKey === 'independent') return 'independent';
+        if (partyKey === '중도') return 'other';
         return 'other';
     }
 
     function getHistoryBlocLabel(blocKey) {
+        if (currentElectionType === 'superintendent') {
+            switch (blocKey) {
+                case 'democratic': return '진보';
+                case 'ppp': return '보수';
+                case 'other': return '중도';
+                default: return '기타';
+            }
+        }
         switch (blocKey) {
             case 'democratic':
                 return '민주계';
@@ -2184,6 +2423,10 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const history = currentElectionType === 'governor'
             ? (ElectionData.getHistoricalData(regionKey) || [])
+            : currentElectionType === 'superintendent'
+            ? (ElectionData.getSuperintendentHistoricalData(regionKey) || [])
+            : currentElectionType === 'mayor' && currentDistrictName
+            ? (ElectionData.getMayorHistoricalData(regionKey, currentDistrictName) || [])
             : [];
 
         if (!history.length) {
@@ -2211,12 +2454,19 @@ function renderCouncilProvinceView(regionKey, region) {
         }, new Map());
         const dominantParty = [...winnerCounts.entries()].sort((a, b) => b[1] - a[1])[0] || ['other', 0];
         const dominantPartyLabel = getHistoryBlocLabel(dominantParty[0]);
-        const historyBlocPalette = {
-            democratic: '#60a5fa',
-            ppp: '#f87171',
-            other: '#a78bfa',
-            independent: '#94a3b8'
-        };
+        const historyBlocPalette = currentElectionType === 'superintendent'
+            ? {
+                democratic: ElectionData.getSuperintendentColor('진보'),
+                ppp: ElectionData.getSuperintendentColor('보수'),
+                other: ElectionData.getSuperintendentColor('중도'),
+                independent: '#a0a0a0'
+            }
+            : {
+                democratic: ElectionData.getPartyColor('democratic'),
+                ppp: ElectionData.getPartyColor('ppp'),
+                other: ElectionData.getPartyColor('other'),
+                independent: ElectionData.getPartyColor('independent')
+            };
         const blocAppearances = history.reduce((counts, entry) => {
             const winnerBloc = getHistoryBlocKey(entry.winner);
             counts.set(winnerBloc, (counts.get(winnerBloc) || 0) + 1);
@@ -2254,7 +2504,7 @@ function renderCouncilProvinceView(regionKey, region) {
         flowEl.innerHTML = `
             <div class="hpf-timeline">
                 ${history.map((entry, index) => {
-                    const winnerPartyLabel = truncatePartyLabel(entry.winnerPartyLabel || ElectionData.getHistoricalPartyName(entry.winner, entry.election));
+                    const winnerPartyLabel = truncatePartyLabel(entry.winnerPartyLabel || entry.winnerParty || ElectionData.getHistoricalPartyName(entry.winner, entry.election));
                     const color = ElectionData.getPartyColor(entry.winner);
                     const changed = index > 0 && history[index - 1].winner !== entry.winner;
                     return `
@@ -2284,9 +2534,13 @@ function renderCouncilProvinceView(regionKey, region) {
             </div>
         `;
 
-        resultsEl.innerHTML = history.map((entry, idx) => {
-            const winnerColor = ElectionData.getPartyColor(entry.winner);
-            const runnerColor = ElectionData.getPartyColor(entry.runner || 'independent');
+        resultsEl.innerHTML = history.map((entry) => {
+            const winnerColor = currentElectionType === 'superintendent'
+                ? ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner)
+                : ElectionData.getPartyColor(entry.winner);
+            const runnerColor = currentElectionType === 'superintendent'
+                ? ElectionData.getSuperintendentColor(entry.runner) || ElectionData.getPartyColor(entry.runner || 'independent')
+                : ElectionData.getPartyColor(entry.runner || 'independent');
             const winnerPct = Number(entry.rate) || 0;
             const runnerPct = Number(entry.runnerRate) || 0;
             return `
@@ -2747,6 +3001,229 @@ function renderCouncilProvinceView(regionKey, region) {
     // ============================================
     // News Tab (#8 실시간 뉴스)
     // ============================================
+    // 교육 전문 언론사 (뉴스 부스트 대상)
+    // 교육 전문 언론사
+    const EDUCATION_MEDIA_HOSTS = [
+        'hangyo.com',           // 한국교육신문
+        'edupress.kr',          // 교육프레스
+        'veritas-a.com',        // 베리타스알파
+        'educhosun.com',        // 에듀조선
+        'edujin.co.kr',         // 에듀진
+        'dhnews.co.kr',         // 대학저널
+        'eduin.net',            // 에듀인뉴스
+        'eduinnews.co.kr',      // 교육인뉴스
+        'naeil.com',            // 내일신문 (교육면 강점)
+        'ilyosisa.co.kr',       // 일요시사 (교육)
+        'kfta.or.kr',           // 한국교총
+        'eduhope.net',          // 교육희망
+    ];
+
+    // 지역방송사 (전국)
+    const REGIONAL_BROADCAST_HOSTS = [
+        'knn.co.kr',            // KNN (부산경남)
+        'tbc.co.kr',            // TBC (대구)
+        'tjb.co.kr',            // TJB (대전충남)
+        'kbc.co.kr',            // 광주방송
+        'ubc.co.kr',            // UBC (울산)
+        'cjb.co.kr',            // CJB (청주충북)
+        'g1tv.co.kr',           // G1 (강원)
+        'jbn.co.kr',            // JTV (전북)
+        'jmbc.co.kr',           // MBC경남
+        'cstv.co.kr',           // CCS (충남)
+        'jibs.co.kr',           // JIBS (제주)
+        'obs.co.kr',            // OBS (경인)
+        'mbn.co.kr',            // MBN
+    ];
+
+    function buildSuperintendentNewsCategories(regionKey, regionName) {
+        const exactBase = `"${regionName} 교육감"`;
+        const exactEdu = `"${regionName}" "교육감"`;
+
+        const governorExclude = ['도지사', '지사 후보', '시장 후보', '시장', '구청장', '군수',
+            '광역단체장', '반도체', '공장', '국회의원', '국회'];
+
+        // 교육언론 + 지역방송 + 지역신문(LocalMediaRegistry) 통합 부스트
+        const localRegistry = window.LocalMediaRegistry?.regions?.[regionKey];
+        const localHosts = [
+            ...(localRegistry?.province?.hosts?.tier1 || []),
+            ...(localRegistry?.province?.hosts?.tier2 || [])
+        ];
+        const allBoostHosts = [...EDUCATION_MEDIA_HOSTS, ...REGIONAL_BROADCAST_HOSTS, ...localHosts];
+
+        // 지역신문명으로 직접 검색하는 쿼리 생성
+        const localMediaNames = localRegistry?.province?.priorityNames?.slice(0, 2) || [];
+        const localSearchQueries = localMediaNames.map(name => `${name} 교육감`);
+
+        return [
+            {
+                label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
+                query: `${exactBase} 선거`,
+                maxAgeDays: 60,
+                altQueries: [`${exactEdu} 선거 후보`, `${exactBase} 출마`, ...localSearchQueries],
+                focusKeywords: ['교육감', '교육', '선거', '후보', '출마'],
+                boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
+                relaxed: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude }
+            },
+            {
+                label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
+                query: `${exactBase} 여론조사`,
+                maxAgeDays: 60,
+                altQueries: [`${exactEdu} 지지율 적합도`, `${exactBase} 지지율`, ...localSearchQueries.map(q => q + ' 여론조사')],
+                focusKeywords: ['여론조사', '지지율', '적합도', '교육감'],
+                boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: ['교육감'], targetAny: ['여론조사', '지지율', '적합도'], excludeAny: governorExclude },
+                relaxed: { mustAny: ['교육감'], targetAny: ['여론조사', '지지율'], excludeAny: governorExclude }
+            },
+            {
+                label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
+                query: `${exactBase} 후보 출마`,
+                maxAgeDays: 60,
+                altQueries: [`${exactEdu} 후보 경력`, `${exactBase} 출마 선언`, ...localSearchQueries.map(q => q + ' 후보')],
+                focusKeywords: ['교육감', '후보', '출마', '경력'],
+                boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
+                relaxed: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude }
+            },
+            {
+                label: '교육정책', icon: 'fas fa-school', categoryId: 'policy',
+                query: `${exactEdu} 공약 교육정책`,
+                maxAgeDays: 60,
+                altQueries: [`${exactBase} 공약`, `"${regionName} 교육청" 정책`, ...localSearchQueries.map(q => q + ' 공약')],
+                focusKeywords: ['교육감', '교육청', '공약', '정책', '학교'],
+                boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: ['교육감', '교육청'], targetAny: [regionName], excludeAny: governorExclude },
+                relaxed: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude }
+            }
+        ].map(cat => ({
+            ...cat,
+            preferPopularity: true,
+            // 교육감: 지역성 가중치를 높임 (광역단체장 0.15 → 교육감 0.25)
+            scoreWeightsOverride: { time: 0.28, relevance: 0.25, credibility: 0.15, locality: 0.25, engagement: 0.07 }
+        }));
+    }
+
+    function buildProportionalNewsCategories(regionKey, regionName, electionType) {
+        const typeLabel = electionType === 'councilProportional' ? '광역비례' : '기초비례';
+        return [
+            {
+                label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
+                query: `"${regionName}" 비례대표 지방선거 정당`,
+                maxAgeDays: 60,
+                altQueries: [`${regionName} 비례대표 공천`, `지방선거 비례대표 정당 명부`],
+                focusKeywords: ['비례대표', '정당', '명부', '공천'],
+                strict: { mustAny: ['비례대표', '비례'], targetAny: [regionName, '지방선거'], excludeAny: ['국회', '총선'] },
+                relaxed: { mustAny: ['비례대표', '비례'], targetAny: ['지방선거'], excludeAny: ['국회', '총선'] }
+            },
+            {
+                label: '정당 지지율', icon: 'fas fa-chart-pie', categoryId: 'partySupport',
+                query: `"${regionName}" 정당지지율 지방선거`,
+                maxAgeDays: 60,
+                altQueries: [`${regionName} 정당 지지율`, `지방선거 정당지지도`],
+                focusKeywords: ['정당지지율', '정당지지도', '정당'],
+                strict: { mustAny: ['정당지지율', '정당지지도', '정당 지지'], targetAny: [regionName], excludeAny: ['국회', '총선', '대선'] },
+                relaxed: { mustAny: ['정당', '지지율'], targetAny: [regionName], excludeAny: ['국회', '총선', '대선'] }
+            }
+        ];
+    }
+
+    function buildCouncilNewsCategories(regionKey, regionName, electionType) {
+        const typeLabel = electionType === 'council' ? '광역의원' : '기초의원';
+        const typeShort = electionType === 'council' ? '시도의원' : '기초의원';
+        const localRegistry = window.LocalMediaRegistry?.regions?.[regionKey];
+        const localHosts = [
+            ...(localRegistry?.province?.hosts?.tier1 || []),
+            ...(localRegistry?.province?.hosts?.tier2 || [])
+        ];
+
+        return [
+            {
+                label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
+                query: `"${regionName}" "${typeShort}" 선거 공천`,
+                maxAgeDays: 60,
+                altQueries: [`${regionName} ${typeLabel} 공천`, `${regionName} 지방선거 ${typeShort}`],
+                focusKeywords: [typeShort, typeLabel, '공천', '선거구', '후보'],
+                boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: [typeShort, typeLabel, '의원'], targetAny: [regionName], excludeAny: ['도지사', '교육감', '국회의원', '국회'] },
+                relaxed: { mustAny: [typeShort, typeLabel], targetAny: [regionName], excludeAny: ['도지사', '교육감', '국회의원'] }
+            },
+            {
+                label: '공천·경선', icon: 'fas fa-vote-yea', categoryId: 'nomination',
+                query: `"${regionName}" "${typeShort}" 공천 경선`,
+                maxAgeDays: 60,
+                altQueries: [`${regionName} ${typeLabel} 공천`, `${regionName} ${typeShort} 경선`],
+                focusKeywords: ['공천', '경선', '당선권', '전략공천', '컷오프'],
+                boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: ['공천', '경선', '전략공천'], targetAny: [regionName, typeShort, typeLabel], excludeAny: ['도지사', '교육감', '국회의원'] },
+                relaxed: { mustAny: ['공천', '경선'], targetAny: [regionName], excludeAny: ['도지사', '교육감'] }
+            },
+            {
+                label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
+                query: `"${regionName}" "${typeShort}" 후보 출마`,
+                maxAgeDays: 60,
+                altQueries: [`${regionName} ${typeLabel} 출마`, `${regionName} ${typeShort} 후보`],
+                focusKeywords: [typeShort, '후보', '출마', '현역'],
+                boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                strict: { mustAny: [typeShort, typeLabel], targetAny: ['후보', '출마', '현역', regionName], excludeAny: ['도지사', '교육감', '국회의원'] },
+                relaxed: { mustAny: [typeShort, typeLabel], targetAny: [regionName], excludeAny: ['도지사', '교육감'] }
+            }
+        ];
+    }
+
+    function buildMayorNewsCategories(regionKey, regionName, districtName) {
+        const title = districtName.endsWith('구') ? '구청장' : districtName.endsWith('군') ? '군수' : '시장';
+        const base = `"${districtName}" "${title}"`;
+        const localRegistry = window.LocalMediaRegistry?.regions?.[regionKey];
+        const localHosts = localRegistry?.province?.hosts?.tier1 || [];
+
+        return [
+            {
+                label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
+                query: `${districtName} ${title} 선거 후보`,
+                maxAgeDays: 60,
+                altQueries: [`${base} 선거`, `${districtName} 지방선거 ${title}`],
+                focusKeywords: [districtName, title, '선거', '후보'],
+                boostHosts: localHosts,
+                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마'], excludeAny: ['도지사', '교육감', '국회의원'] },
+                relaxed: { mustAny: [districtName], targetAny: [title, '선거'], excludeAny: ['도지사', '교육감'] }
+            },
+            {
+                label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
+                query: `${districtName} ${title} 여론조사 지지율`,
+                maxAgeDays: 60,
+                altQueries: [`${base} 여론조사`, `${districtName} 여론조사`],
+                focusKeywords: ['여론조사', '지지율', districtName],
+                boostHosts: localHosts,
+                strict: { mustAny: [districtName], targetAny: ['여론조사', '지지율'], excludeAny: ['도지사', '교육감'] },
+                relaxed: { mustAny: [districtName], targetAny: ['여론조사', '지지율'], excludeAny: ['도지사', '교육감'] }
+            },
+            {
+                label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
+                query: `${districtName} ${title} 후보 출마`,
+                maxAgeDays: 60,
+                altQueries: [`${base} 출마`, `${districtName} ${title} 공천`],
+                focusKeywords: [districtName, title, '후보', '출마', '공천'],
+                boostHosts: localHosts,
+                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', title], excludeAny: ['도지사', '교육감', '국회의원'] },
+                relaxed: { mustAny: [districtName], targetAny: [title, '후보', '출마'], excludeAny: ['도지사', '교육감'] }
+            },
+            {
+                label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
+                query: `${districtName} ${title} 공약 정책`,
+                maxAgeDays: 60,
+                altQueries: [`${base} 공약`, `${districtName} 정책`],
+                focusKeywords: [districtName, '공약', '정책'],
+                boostHosts: localHosts,
+                strict: { mustAny: [districtName], targetAny: ['공약', '정책', title], excludeAny: ['도지사', '교육감'] },
+                relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: ['도지사', '교육감'] }
+            }
+        ].map(cat => ({
+            ...cat, localMediaPriority: true, _regionKey: regionKey, boostWeight: 5,
+            preferPopularity: true,
+            scoreWeightsOverride: { time: 0.25, relevance: 0.20, credibility: 0.10, locality: 0.35, engagement: 0.10 }
+        }));
+    }
+
     function renderNewsTab(regionKey) {
         const container = document.getElementById('news-feed');
         if (!container) return;
@@ -2754,13 +3231,23 @@ function renderCouncilProvinceView(regionKey, region) {
         const region = ElectionData.getRegion(regionKey);
         if (!region) return;
 
-        const mainSearchUrl = ElectionData.getNewsSearchUrl(regionKey);
         const regionName = region.name;
-        const governorQueryBase = getGovernorQueryBase(regionName);
-        const governorFocusTerms = getGovernorFocusTerms(regionName, governorQueryBase);
-        const governorRoleTerms = getGovernorRoleTerms(regionName, governorQueryBase);
+        let categories;
 
-        const categories = buildNewsCategories(regionKey, regionName, governorQueryBase, governorFocusTerms, governorRoleTerms);
+        if (currentElectionType === 'superintendent') {
+            categories = buildSuperintendentNewsCategories(regionKey, regionName);
+        } else if (currentElectionType === 'mayor' && currentDistrictName) {
+            categories = buildMayorNewsCategories(regionKey, regionName, currentDistrictName);
+        } else if (currentElectionType === 'council' || currentElectionType === 'localCouncil') {
+            categories = buildCouncilNewsCategories(regionKey, regionName, currentElectionType);
+        } else if (currentElectionType === 'councilProportional' || currentElectionType === 'localCouncilProportional') {
+            categories = buildProportionalNewsCategories(regionKey, regionName, currentElectionType);
+        } else {
+            const governorQueryBase = getGovernorQueryBase(regionName);
+            const governorFocusTerms = getGovernorFocusTerms(regionName, governorQueryBase);
+            const governorRoleTerms = getGovernorRoleTerms(regionName, governorQueryBase);
+            categories = buildNewsCategories(regionKey, regionName, governorQueryBase, governorFocusTerms, governorRoleTerms);
+        }
 
         let html = `
             <div class="news-live">
@@ -3147,7 +3634,13 @@ function renderCouncilProvinceView(regionKey, region) {
         const hasPollAgency = /리얼미터|한국갤럽|갤럽|nbs|한국리서치|엠브레인|코리아리서치|케이스탯리서치|입소스|넥스트리서치|조원씨앤아이|미디어토마토|한길리서치/i.test(pollText);
         const hasNonElectionSurveyContext = /검찰 조사|경찰 조사|감사 조사|실태조사|전수조사|진상조사|역학조사|교육청 조사|수사/i.test(pollText);
 
-        if (hasAny(strict.excludeAny)) return { ok: false, score: 0 };
+        // excludeAny 처리: mustAny 키워드가 제목에 있으면 excludeAny 무시 (통합 기사 허용)
+        if (hasAny(strict.excludeAny)) {
+            const titleLower = title;
+            const mustInTitle = Array.isArray(strict.mustAny) && strict.mustAny.some(w => titleLower.includes(String(w).toLowerCase()));
+            if (!mustInTitle) return { ok: false, score: 0 };
+            // mustAny가 제목에 있으면 통과 (예: "도지사·교육감 여론조사" → 교육감이 제목에 있으니 허용)
+        }
         if (!hasAny(strict.mustAny)) return { ok: false, score: 0 };
         if (!hasAny(strict.targetAny)) return { ok: false, score: 0 };
         if (strict.requiredGovernorAny && !hasAny(strict.requiredGovernorAny)) return { ok: false, score: 0 };
@@ -3196,6 +3689,26 @@ function renderCouncilProvinceView(regionKey, region) {
         if (hasAny(strict.boostAny)) score += 2;
         if (title.includes('여론조사')) score += 1;
         if (hasPercentPattern) score += 1;
+
+        // 선거유형별 언론사 가중치
+        if (item.link) {
+            const host = item.link.toLowerCase();
+            // 전문/지역 언론사 부스트
+            if (Array.isArray(category?.boostHosts) && category.boostHosts.some(h => host.includes(h))) {
+                score += category.boostWeight || 3;
+            }
+            // 기초단체장: 지역언론 추가 부스트 + 중앙언론 디부스트
+            if (category?.localMediaPriority) {
+                const localRegistry = window.LocalMediaRegistry?.regions?.[category._regionKey];
+                const allLocalHosts = [
+                    ...(localRegistry?.province?.hosts?.tier1 || []),
+                    ...(localRegistry?.province?.hosts?.tier2 || [])
+                ];
+                if (allLocalHosts.some(h => host.includes(h))) {
+                    score += 4; // 지역언론 강력 부스트
+                }
+            }
+        }
 
         return { ok: true, score };
     }
@@ -3374,7 +3887,8 @@ function renderCouncilProvinceView(regionKey, region) {
                 };
 
                 if (preferPopularity) {
-                    const sw = NEWS_FILTER_CONFIG.scoreWeights || { time: 0.32, relevance: 0.30, credibility: 0.18, locality: 0.15, engagement: 0.05 };
+                    const defaultSw = NEWS_FILTER_CONFIG.scoreWeights || { time: 0.32, relevance: 0.30, credibility: 0.18, locality: 0.15, engagement: 0.05 };
+                    const sw = selectedCategory.scoreWeightsOverride || defaultSw;
                     items.forEach((item) => {
                         const ageDays = (Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24);
                         const recencyScore = Math.max(0, 1 - (ageDays / Math.max(1, dayLimit)));
@@ -3500,41 +4014,166 @@ function renderCouncilProvinceView(regionKey, region) {
         }
     }
 
-    function renderLatestPolls(regionKey) {
-        const container = document.getElementById('latest-polls-list');
-        if (!container) return;
+    function renderPollTab(regionKey, electionType, districtName) {
+        ChartsModule.destroyCharts();
 
-        const all = Array.isArray(ElectionData.latestPolls) ? ElectionData.latestPolls : [];
-        if (!all.length) {
-            container.innerHTML = '<div class="district-no-data"><p>최신 등록현황 데이터가 없습니다.</p></div>';
+        const polls = ElectionData.getLatestPollsForDisplay(regionKey, electionType, districtName);
+        const latestSection = document.getElementById('poll-latest-section');
+        const trendsSection = document.getElementById('poll-trends-section');
+        const cardsSection = document.getElementById('poll-cards-section');
+
+        if (!latestSection || !trendsSection || !cardsSection) return;
+
+        // 초기화
+        latestSection.style.display = 'none';
+        trendsSection.innerHTML = '';
+        cardsSection.innerHTML = '';
+
+        // 교육감: 성향(진보/보수/중도) 기반 컬러 매핑
+        if (electionType === 'superintendent') {
+            polls.forEach(p => {
+                (p.results || []).forEach(r => {
+                    if (!r.party && r.candidateName) {
+                        const stance = ElectionData.getSuperintendentStance(regionKey, r.candidateName);
+                        if (stance) {
+                            r._stanceColor = ElectionData.getSuperintendentColor(stance);
+                            r._stanceLabel = stance;
+                        }
+                    }
+                });
+            });
+        }
+
+        if (!polls.length) {
+            cardsSection.innerHTML = '<div class="district-no-data"><p>이 지역에 등록된 여론조사가 아직 없습니다.</p><p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p></div>';
             return;
         }
 
-        const region = ElectionData.getRegion(regionKey);
-        const regionName = region?.name || '';
-        const filtered = regionName
-            ? all.filter(item => String(item.title || '').includes(regionName))
-            : [];
-        const sorted = (filtered.length ? filtered : all)
-            .slice()
-            .sort((a, b) => (b.date_range || '').localeCompare(a.date_range || ''));
-        const list = sorted.slice(0, 10);
+        // ── 1. 최신 여론조사 바차트 ──
+        const pollsWithResults = polls.filter(p => p.results && p.results.length >= 2);
+        if (pollsWithResults.length > 0) {
+            const latestPoll = pollsWithResults[0];
+            latestSection.style.display = 'block';
 
-        container.innerHTML = list.map(item => {
-            const title = item.title || '제목 없음';
-            const org = item.poll_org || '조사기관 미상';
-            const date = item.date_range || '일시 미상';
-            const url = item.url || '#';
-            return `
-                <a class="latest-poll-item" href="${url}" target="_blank" rel="noopener">
-                    <div class="latest-poll-title">${title}</div>
-                    <div class="latest-poll-meta">
-                        <span>${org}</span>
-                        <span>${date}</span>
-                    </div>
-                </a>
-            `;
+            // 소스 정보
+            const sourceInfo = document.getElementById('poll-source-info');
+            if (sourceInfo) {
+                const method = latestPoll.method || {};
+                const surveyEnd = latestPoll.surveyDate?.end || '';
+                sourceInfo.innerHTML = `
+                    <strong>${latestPoll.pollOrg || '조사기관 미상'}</strong> | ${surveyEnd} |
+                    ${method.type || ''} |
+                    표본수: ${method.sampleSize?.toLocaleString() || 'N/A'}명 |
+                    오차범위: ±${method.marginOfError || '?'}%p (95% 신뢰수준)
+                `;
+            }
+
+            setTimeout(() => ChartsModule.renderPollBarChart(latestPoll, 'poll-bar-chart'), 50);
+        }
+
+        // ── 2. 추이 차트 (같은 기관 2회 이상) ──
+        const trendGroups = ElectionData.getTrendGroups(regionKey, electionType, districtName);
+        if (trendGroups.length > 0) {
+            const maxTrends = 3;
+            const visibleGroups = trendGroups.slice(0, maxTrends);
+
+            visibleGroups.forEach((group, i) => {
+                const card = document.createElement('div');
+                card.className = 'panel-card poll-trend-card';
+                card.innerHTML = `
+                    <h4><i class="fas fa-chart-line"></i> ${group.pollOrg} 추이 (${group.polls.length}회 조사)</h4>
+                    <canvas id="poll-trend-dynamic-${i}"></canvas>
+                `;
+                trendsSection.appendChild(card);
+
+                setTimeout(() => ChartsModule.renderPollTrendChart(group, `poll-trend-dynamic-${i}`), 100 + i * 50);
+            });
+
+            if (trendGroups.length > maxTrends) {
+                const moreBtn = document.createElement('button');
+                moreBtn.className = 'poll-more-btn';
+                moreBtn.textContent = `추이 차트 ${trendGroups.length - maxTrends}개 더 보기`;
+                moreBtn.onclick = () => {
+                    moreBtn.remove();
+                    trendGroups.slice(maxTrends).forEach((group, i) => {
+                        const idx = maxTrends + i;
+                        const card = document.createElement('div');
+                        card.className = 'panel-card poll-trend-card';
+                        card.innerHTML = `
+                            <h4><i class="fas fa-chart-line"></i> ${group.pollOrg} 추이 (${group.polls.length}회 조사)</h4>
+                            <canvas id="poll-trend-dynamic-${idx}"></canvas>
+                        `;
+                        trendsSection.appendChild(card);
+                        setTimeout(() => ChartsModule.renderPollTrendChart(group, `poll-trend-dynamic-${idx}`), 50 + i * 50);
+                    });
+                };
+                trendsSection.appendChild(moreBtn);
+            }
+        }
+
+        // ── 3. 전체 여론조사 카드 목록 (최신순) ──
+        const cardListHtml = polls.map(poll => {
+            const method = poll.method || {};
+            const surveyStart = poll.surveyDate?.start || '';
+            const surveyEnd = poll.surveyDate?.end || '';
+            const publishDate = poll.publishDate || '';
+            const dateText = surveyStart && surveyEnd
+                ? `${surveyStart}~${surveyEnd} 조사`
+                : (publishDate ? `${publishDate} 공표` : '일시 미상');
+
+            let resultsHtml = '';
+            if (poll.results && poll.results.length > 0) {
+                const validResults = poll.results.filter(r => r.candidateName && r.support > 0);
+                if (validResults.length > 0) {
+                    const maxSupport = Math.max(...validResults.map(r => r.support));
+                    resultsHtml = validResults
+                        .sort((a, b) => b.support - a.support)
+                        .map(r => {
+                            const pc = r._stanceColor || ElectionData.getPartyColor(r.party || 'independent');
+                            const pn = r._stanceLabel || ElectionData.getPartyName(r.party || 'independent');
+                            const barWidth = maxSupport > 0 ? (r.support / maxSupport * 100) : 0;
+                            return `<div class="poll-card-result">
+                                <div class="poll-card-result-info">
+                                    <span class="poll-card-candidate">${r.candidateName}</span>
+                                    <span class="poll-card-party" style="color:${pc}">${pn}</span>
+                                    <span class="poll-card-support">${r.support}%</span>
+                                </div>
+                                <div class="poll-card-bar-bg">
+                                    <div class="poll-card-bar" style="width:${barWidth}%;background:${pc}"></div>
+                                </div>
+                            </div>`;
+                        }).join('');
+                }
+            }
+
+            if (!resultsHtml) {
+                resultsHtml = '<div class="poll-card-no-result">결과 상세는 여심위 원본에서 확인하세요</div>';
+            }
+
+            const sourceUrl = poll.sourceUrl || `https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=${poll.nttId}&menuNo=200467`;
+
+            return `<div class="poll-result-card">
+                <div class="poll-card-header">
+                    <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
+                    <span class="poll-card-method">${method.type || ''}</span>
+                    ${method.sampleSize ? `<span class="poll-card-sample">n=${method.sampleSize.toLocaleString()}</span>` : ''}
+                </div>
+                ${poll.clientOrg ? `<div class="poll-card-client" style="color:var(--text-muted);font-size:0.75rem;margin-top:2px;">의뢰: ${poll.clientOrg}</div>` : ''}
+                <div class="poll-card-date">${dateText}${publishDate ? ` / ${publishDate} 공표` : ''}</div>
+                ${method.marginOfError ? `<div class="poll-card-margin${method.marginOfError >= 5 ? ' poll-card-margin-warn' : ''}">오차범위 ±${method.marginOfError}%p (95% 신뢰수준)${method.sampleSize && method.sampleSize < 500 ? ' · 소규모 표본' : ''}</div>` : ''}
+                <div class="poll-card-results">${resultsHtml}</div>
+                <div class="poll-card-footer">
+                    <a href="${sourceUrl}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 여심위 원본 보기</a>
+                </div>
+            </div>`;
         }).join('');
+
+        cardsSection.innerHTML = `
+            <div class="poll-cards-header">
+                <h4><i class="fas fa-list"></i> 전체 여론조사 ${polls.length}건</h4>
+            </div>
+            <div class="poll-cards-list">${cardListHtml}</div>
+        `;
     }
 
     function getElectionTypeLabel(type) {

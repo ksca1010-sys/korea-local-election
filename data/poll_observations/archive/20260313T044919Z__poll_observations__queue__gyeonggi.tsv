@@ -1,0 +1,2 @@
+name	regionKey	electionType	districtName	expectedMinCount	expectedMaxCount	expectedChartMode	expectedChartType	expectedMunicipalityCountMin	expectedFirstMunicipality	expectedHeaderIncludes	expectedFirstTitleIncludes	expectedDatasetLabels	expectedDatasetCountMin	note
+starter-gyeonggi-superintendent	gyeonggi	superintendent		1		trend	line			경기,교육감	교육감선거		2	여론조사 QA 추천 배치용 스타터. 경기 교육감 라인차트 확인

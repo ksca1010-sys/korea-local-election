@@ -1,0 +1,3 @@
+name	regionKey	categoryId	electionType	districtName	title	description	link	expectedOk	note
+starter-jeonnam-governor-accept	jeonnam	all	governor		남도일보, 전남지사 후보 공약 검증 본격화	전남지사 선거 공약과 지역 균형발전 기사	https://example.com/starter/jeonnam-governor-accept	true	뉴스 QA 자동 배치용 스타터. 전남 광역단체장 정탐 확인
+observed-jeonnam-song-younggil	jeonnam	all	governor		송영길 계양을 출마설 재점화	전국 단위 국회의원 기사인데 전남 탭에 섞이면 안 됨	https://example.com/starter/jeonnam-governor-reject-national	false	뉴스 QA 자동 배치용 스타터. 국회의원 기사 차단 확인

@@ -1,0 +1,851 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-17",
+    "source": "polls.json 기반 자동 생성 + 수동 보정",
+    "description": "여론조사 기관 메타데이터. tier1=주요 리서치 기업, tier2=중견, tier3=소규모/자체조사"
+  },
+  "organizations": {
+    "(주)여론조사꽃": {
+      "tier": 3,
+      "pollCount": 36,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 1422,
+      "topClients": [
+        "조사기관 자체 : (주)여론조사꽃"
+      ],
+      "topRegions": [
+        "seoul"
+      ]
+    },
+    "한국갤럽조사연구소": {
+      "tier": 1,
+      "pollCount": 29,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 909,
+      "topClients": [
+        "조사기관 자체 : 한국갤럽 자체 조사",
+        "방송사 : KBS광주방송총국",
+        "전국단위 신문 : 국민일보"
+      ],
+      "topRegions": [
+        "gwangju"
+      ]
+    },
+    "(주)리얼미터": {
+      "tier": 1,
+      "pollCount": 25,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1005,
+      "topClients": [
+        "전국단위 신문 : 에너지경제신문",
+        "기타 : (주)라바웨이브",
+        "시·도단위 신문 : 광주일보"
+      ],
+      "topRegions": [
+        "jeju",
+        "jeonnam"
+      ]
+    },
+    "조원씨앤아이": {
+      "tier": 2,
+      "pollCount": 18,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1362,
+      "topClients": [
+        "인터넷언론 : 스트레이트뉴스",
+        "시·도단위 신문 : 경기일보",
+        "주·월간지 : 시사저널"
+      ],
+      "topRegions": [
+        "gyeonggi",
+        "jeonnam",
+        "incheon",
+        "jeonbuk"
+      ]
+    },
+    "(주)코리아정보리서치": {
+      "tier": 2,
+      "pollCount": 17,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1004,
+      "topClients": [
+        "전국단위 신문 : 천지일보"
+      ],
+      "topRegions": []
+    },
+    "메타보이스(주)": {
+      "tier": 2,
+      "pollCount": 17,
+      "primaryMethod": "unknown",
+      "avgSampleSize": 1084,
+      "topClients": [
+        "기타 : 사단법인 로컬에너지랩",
+        "인터넷언론 : 프라임경제",
+        "방송사 : JTBC"
+      ],
+      "topRegions": [
+        "gwangju",
+        "jeju",
+        "gyeongnam",
+        "gyeongbuk",
+        "jeonnam"
+      ]
+    },
+    "케이에스오아이 주식회사(한국사회여론연구소)": {
+      "tier": 2,
+      "pollCount": 10,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1004,
+      "topClients": [
+        "조사기관 자체 : 케이에스오아이 주식회사(한국사회여론연구소)"
+      ],
+      "topRegions": []
+    },
+    "미디어토마토": {
+      "tier": 3,
+      "pollCount": 9,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1035,
+      "topClients": [
+        "시·도단위 신문 : 뉴스토마토"
+      ],
+      "topRegions": []
+    },
+    "케이스탯리서치": {
+      "tier": 1,
+      "pollCount": 9,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 986,
+      "topClients": [
+        "조사기관 자체 : 조사기관 자체 : ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치",
+        "방송사 : KBS",
+        "방송사 : MBC"
+      ],
+      "topRegions": [
+        "gyeonggi"
+      ]
+    },
+    "(주)코리아리서치인터내셔널": {
+      "tier": 1,
+      "pollCount": 9,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 935,
+      "topClients": [
+        "방송사 : MBC",
+        "조사기관 자체 : ㈜코리아리서치인터내셔널, ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜한국리서치",
+        "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보"
+      ],
+      "topRegions": [
+        "gwangju",
+        "seoul"
+      ]
+    },
+    "(주)에브리리서치": {
+      "tier": 2,
+      "pollCount": 8,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1000,
+      "topClients": [
+        "인터넷언론/인터넷언론 : (주)에브리뉴스/미디어로컬(사단법인 한국지역언론인클럽)"
+      ],
+      "topRegions": []
+    },
+    "(주)한국리서치": {
+      "tier": 1,
+      "pollCount": 8,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 1788,
+      "topClients": [
+        "정책연구원/전국단위 신문/전국단위 신문 : 서울대학교 국가미래전략원/중앙일보/경향신문",
+        "조사기관 자체/조사기관 자체/조사기관 자체/조사기관 자체 : (주)한국리서치/케이스탯리서치/(주)코리아리서치인터내셔널/(주)엠브레인퍼블릭",
+        "기타 : (재) 돌봄과 미래"
+      ],
+      "topRegions": [
+        "gyeonggi",
+        "daejeon"
+      ]
+    },
+    "KOPRA": {
+      "tier": 3,
+      "pollCount": 7,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1002,
+      "topClients": [
+        "개인 : 대한민국 자유 유튜브 총연합회(회장 이영풍)",
+        "개인/개인/개인 : 고성국TV  /이영풍TV /강용석TV",
+        "개인/개인/개인 : 고성국TV /이영풍TV /강용석TV"
+      ],
+      "topRegions": []
+    },
+    "(주)비전코리아": {
+      "tier": 3,
+      "pollCount": 7,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 947,
+      "topClients": [
+        "전국단위 신문/인터넷언론 : 포털신문/올리서치",
+        "인터넷언론/전국단위 신문 : 올리서치/포털신문",
+        "전국단위 신문/구·시·군단위 신문 : 포털신문/영남매일뉴스"
+      ],
+      "topRegions": [
+        "daegu"
+      ]
+    },
+    "(주)엠브레인퍼블릭": {
+      "tier": 1,
+      "pollCount": 7,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 977,
+      "topClients": [
+        "방송사 : 목포MBC",
+        "조사기관 자체 : ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치",
+        "통신사 : 뉴스1"
+      ],
+      "topRegions": [
+        "busan"
+      ]
+    },
+    "(주)리서치뷰": {
+      "tier": 3,
+      "pollCount": 5,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1000,
+      "topClients": [
+        "조사기관 자체 : 리서치뷰",
+        "조사기관 자체/기타 : 리서치뷰/참여연대 조세재정개혁센터"
+      ],
+      "topRegions": []
+    },
+    "한길리서치": {
+      "tier": 3,
+      "pollCount": 4,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1027,
+      "topClients": [
+        "인터넷언론 : 쿠키뉴스"
+      ],
+      "topRegions": []
+    },
+    "리서치웰": {
+      "tier": 3,
+      "pollCount": 3,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1003,
+      "topClients": [
+        "인터넷언론 : 뉴데일리"
+      ],
+      "topRegions": []
+    },
+    "(주)에이스리서치": {
+      "tier": 3,
+      "pollCount": 3,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 837,
+      "topClients": [
+        "통신사 : 뉴시스",
+        "구·시·군단위 신문 : 주간고향신문"
+      ],
+      "topRegions": [
+        "gyeongbuk"
+      ]
+    },
+    "(주)알앤써치": {
+      "tier": 3,
+      "pollCount": 3,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1185,
+      "topClients": [
+        "방송사/인터넷언론/인터넷언론 : BBS 광주불교방송/프레시안 광주전남취재본부/대로미디어",
+        "시·도단위 신문/통신사 : 남도일보/뉴스원 광주 전남 취재 본부"
+      ],
+      "topRegions": []
+    },
+    "입소스 주식회사": {
+      "tier": 3,
+      "pollCount": 2,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 1004,
+      "topClients": [
+        "방송사 : SBS"
+      ],
+      "topRegions": []
+    },
+    "여론조사공정(주)": {
+      "tier": 3,
+      "pollCount": 2,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1000,
+      "topClients": [
+        "인터넷언론 : 펜앤마이크"
+      ],
+      "topRegions": []
+    },
+    "(주)시그널앤펄스": {
+      "tier": 3,
+      "pollCount": 2,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1008,
+      "topClients": [
+        "인터넷언론 : 서울의소리",
+        "인터넷언론 : 프레시안 광주전남취재본부"
+      ],
+      "topRegions": [
+        "gwangju"
+      ]
+    },
+    "(주)이너텍시스템즈": {
+      "tier": 3,
+      "pollCount": 2,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 661,
+      "topClients": [
+        "인터넷언론 : 폴리뉴스",
+        "구·시·군단위 신문 : 안양신문"
+      ],
+      "topRegions": [
+        "gyeongnam",
+        "gyeonggi"
+      ]
+    },
+    "(주)제로투원파트너스": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1006,
+      "topClients": [
+        "인터넷언론 : KPI뉴스"
+      ],
+      "topRegions": []
+    },
+    "주식회사 한민리서치": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1001,
+      "topClients": [
+        "시·도단위 신문 : 충청투데이"
+      ],
+      "topRegions": []
+    },
+    "리서치제이": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "ARS",
+      "avgSampleSize": 1001,
+      "topClients": [
+        "인터넷언론 : 헤드라인21"
+      ],
+      "topRegions": []
+    },
+    "(주)피앰아이": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "unknown",
+      "avgSampleSize": 2000,
+      "topClients": [
+        "기타 : 서울대학교 한국사회과학자료원"
+      ],
+      "topRegions": []
+    },
+    "(주)에스티아이": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "unknown",
+      "avgSampleSize": 2020,
+      "topClients": [
+        "전국단위 신문 : 한겨레"
+      ],
+      "topRegions": []
+    },
+    "(주)리서치앤리서치": {
+      "tier": 3,
+      "pollCount": 1,
+      "primaryMethod": "전화면접",
+      "avgSampleSize": 1004,
+      "topClients": [
+        "전국단위 신문 : 동아일보"
+      ],
+      "topRegions": []
+    }
+  },
+  "clients": {
+    "조사기관 자체 : (주)여론조사꽃": {
+      "type": "자체조사",
+      "pollCount": 36,
+      "preferredOrgs": [
+        "(주)여론조사꽃"
+      ]
+    },
+    "전국단위 신문 : 에너지경제신문": {
+      "type": "언론사",
+      "pollCount": 20,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "조사기관 자체 : 한국갤럽 자체 조사": {
+      "type": "자체조사",
+      "pollCount": 17,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "전국단위 신문 : 천지일보": {
+      "type": "언론사",
+      "pollCount": 17,
+      "preferredOrgs": [
+        "(주)코리아정보리서치"
+      ]
+    },
+    "인터넷언론 : 스트레이트뉴스": {
+      "type": "언론사",
+      "pollCount": 14,
+      "preferredOrgs": [
+        "조원씨앤아이"
+      ]
+    },
+    "기타 : 사단법인 로컬에너지랩": {
+      "type": "기타",
+      "pollCount": 14,
+      "preferredOrgs": [
+        "메타보이스(주)"
+      ]
+    },
+    "조사기관 자체 : 케이에스오아이 주식회사(한국사회여론연구소)": {
+      "type": "자체조사",
+      "pollCount": 10,
+      "preferredOrgs": [
+        "케이에스오아이 주식회사(한국사회여론연구소)"
+      ]
+    },
+    "시·도단위 신문 : 뉴스토마토": {
+      "type": "언론사",
+      "pollCount": 9,
+      "preferredOrgs": [
+        "미디어토마토"
+      ]
+    },
+    "인터넷언론/인터넷언론 : (주)에브리뉴스/미디어로컬(사단법인 한국지역언론인클럽)": {
+      "type": "언론사",
+      "pollCount": 8,
+      "preferredOrgs": [
+        "(주)에브리리서치"
+      ]
+    },
+    "방송사 : KBS광주방송총국": {
+      "type": "방송사",
+      "pollCount": 6,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "방송사 : MBC": {
+      "type": "방송사",
+      "pollCount": 5,
+      "preferredOrgs": [
+        "(주)코리아리서치인터내셔널",
+        "케이스탯리서치"
+      ]
+    },
+    "개인 : 대한민국 자유 유튜브 총연합회(회장 이영풍)": {
+      "type": "기타",
+      "pollCount": 4,
+      "preferredOrgs": [
+        "KOPRA"
+      ]
+    },
+    "조사기관 자체 : 조사기관 자체 : ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치": {
+      "type": "자체조사",
+      "pollCount": 4,
+      "preferredOrgs": [
+        "케이스탯리서치"
+      ]
+    },
+    "인터넷언론 : 쿠키뉴스": {
+      "type": "언론사",
+      "pollCount": 4,
+      "preferredOrgs": [
+        "한길리서치"
+      ]
+    },
+    "인터넷언론 : 뉴데일리": {
+      "type": "기타",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "리서치웰"
+      ]
+    },
+    "조사기관 자체 : 리서치뷰": {
+      "type": "자체조사",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "(주)리서치뷰"
+      ]
+    },
+    "전국단위 신문/인터넷언론 : 포털신문/올리서치": {
+      "type": "언론사",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "(주)비전코리아"
+      ]
+    },
+    "방송사 : KBS": {
+      "type": "방송사",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "케이스탯리서치"
+      ]
+    },
+    "인터넷언론/전국단위 신문 : 올리서치/포털신문": {
+      "type": "언론사",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "(주)비전코리아"
+      ]
+    },
+    "정책연구원/전국단위 신문/전국단위 신문 : 서울대학교 국가미래전략원/중앙일보/경향신문": {
+      "type": "전국지",
+      "pollCount": 3,
+      "preferredOrgs": [
+        "(주)한국리서치"
+      ]
+    },
+    "통신사 : 뉴시스": {
+      "type": "기타",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)에이스리서치"
+      ]
+    },
+    "방송사/인터넷언론/인터넷언론 : BBS 광주불교방송/프레시안 광주전남취재본부/대로미디어": {
+      "type": "방송사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)알앤써치"
+      ]
+    },
+    "방송사 : 목포MBC": {
+      "type": "방송사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)엠브레인퍼블릭"
+      ]
+    },
+    "방송사 : SBS": {
+      "type": "방송사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "입소스 주식회사"
+      ]
+    },
+    "조사기관 자체/조사기관 자체/조사기관 자체/조사기관 자체 : (주)한국리서치/케이스탯리서치/(주)코리아리서치인터내셔널/(주)엠브레인퍼블릭": {
+      "type": "자체조사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)한국리서치"
+      ]
+    },
+    "인터넷언론 : 펜앤마이크": {
+      "type": "기타",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "여론조사공정(주)"
+      ]
+    },
+    "조사기관 자체 : ㈜코리아리서치인터내셔널, ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜한국리서치": {
+      "type": "자체조사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)코리아리서치인터내셔널"
+      ]
+    },
+    "조사기관 자체 : ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치": {
+      "type": "자체조사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)엠브레인퍼블릭"
+      ]
+    },
+    "조사기관 자체/기타 : 리서치뷰/참여연대 조세재정개혁센터": {
+      "type": "자체조사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)리서치뷰"
+      ]
+    },
+    "통신사 : 뉴스1": {
+      "type": "언론사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)엠브레인퍼블릭"
+      ]
+    },
+    "전국단위 신문 : 국민일보": {
+      "type": "언론사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "전국단위 신문 : 중앙일보": {
+      "type": "전국지",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "한국갤럽조사연구소",
+        "케이스탯리서치"
+      ]
+    },
+    "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보": {
+      "type": "방송사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "(주)코리아리서치인터내셔널"
+      ]
+    },
+    "시·도단위 신문 : 경기일보": {
+      "type": "언론사",
+      "pollCount": 2,
+      "preferredOrgs": [
+        "조원씨앤아이"
+      ]
+    },
+    "인터넷언론 : KPI뉴스": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)제로투원파트너스"
+      ]
+    },
+    "주·월간지 : 시사저널": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "조원씨앤아이"
+      ]
+    },
+    "인터넷언론 : 프라임경제": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "메타보이스(주)"
+      ]
+    },
+    "시·도단위 신문/통신사 : 남도일보/뉴스원 광주 전남 취재 본부": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)알앤써치"
+      ]
+    },
+    "시·도단위 신문 : 충청투데이": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "주식회사 한민리서치"
+      ]
+    },
+    "기타 : (주)라바웨이브": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "시·도단위 신문 : 광주일보": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "전국단위 신문 : 세계일보": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "인터넷언론 : 헤드라인21": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "리서치제이"
+      ]
+    },
+    "시·도단위 신문/방송사 : 전북일보/JTV전주방송": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)코리아리서치인터내셔널"
+      ]
+    },
+    "기타 : 서울대학교 한국사회과학자료원": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)피앰아이"
+      ]
+    },
+    "인터넷언론 : 오마이뉴스": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "전국단위 신문 : 한겨레": {
+      "type": "전국지",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)에스티아이"
+      ]
+    },
+    "방송사 : JTBC": {
+      "type": "방송사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "메타보이스(주)"
+      ]
+    },
+    "전국단위 신문 : 동아일보": {
+      "type": "전국지",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리서치앤리서치"
+      ]
+    },
+    "개인/개인/개인 : 고성국TV  /이영풍TV /강용석TV": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "KOPRA"
+      ]
+    },
+    "방송사 : EBS": {
+      "type": "방송사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)엠브레인퍼블릭"
+      ]
+    },
+    "전국단위 신문 : 경향신문": {
+      "type": "전국지",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "기타 : (재) 돌봄과 미래": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)한국리서치"
+      ]
+    },
+    "기타 : 충남대학교": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "한국갤럽조사연구소"
+      ]
+    },
+    "개인/개인/개인 : 고성국TV /이영풍TV /강용석TV": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "KOPRA"
+      ]
+    },
+    "인터넷언론 : 서울의소리": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)시그널앤펄스"
+      ]
+    },
+    "개인/개인/개인 : 고성국TV /이영풍TV/강용석TV": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "KOPRA"
+      ]
+    },
+    "인터넷언론 : 오마이뉴스 광주전라본부": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "메타보이스(주)"
+      ]
+    },
+    "인터넷언론 : 프레시안 광주전남취재본부": {
+      "type": "기타",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)시그널앤펄스"
+      ]
+    },
+    "시·도단위 신문 : 경인일보": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)한국리서치"
+      ]
+    },
+    "전국단위 신문/구·시·군단위 신문 : 포털신문/영남매일뉴스": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)비전코리아"
+      ]
+    },
+    "방송사/시·도단위 신문/통신사/인터넷언론 : JIBS제주방송/제민일보/뉴스1제주본부/미디어제주": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "인터넷언론 : 시사매일신문": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)리얼미터"
+      ]
+    },
+    "통신사 : 뉴스1 전북": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "조원씨앤아이"
+      ]
+    },
+    "인터넷언론 : 폴리뉴스": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)이너텍시스템즈"
+      ]
+    },
+    "구·시·군단위 신문 : 안양신문": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)이너텍시스템즈"
+      ]
+    },
+    "방송사 : KBS대전": {
+      "type": "방송사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)한국리서치"
+      ]
+    },
+    "구·시·군단위 신문 : 주간고향신문": {
+      "type": "언론사",
+      "pollCount": 1,
+      "preferredOrgs": [
+        "(주)에이스리서치"
+      ]
+    }
+  }
+}
