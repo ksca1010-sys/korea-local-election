@@ -12,7 +12,7 @@ const App = (() => {
     let districtGeoPromise = null;
     let historyComparisonChart = null;
     const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
-    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'http://localhost:8787';
+    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || (location.hostname === 'localhost' ? 'http://localhost:8787' : 'https://election-news-proxy.ksca1010.workers.dev');
     const MAJOR_NEWS_HOSTS = Array.isArray(NEWS_FILTER_CONFIG.majorNewsHosts) && NEWS_FILTER_CONFIG.majorNewsHosts.length
         ? NEWS_FILTER_CONFIG.majorNewsHosts
         : [
