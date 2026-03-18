@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-14",
+    "lastUpdated": "2026-03-18",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 226,
-    "actingCount": 11,
+    "actingCount": 8,
     "note": "electedParty/electedName = 당선 시점 공식 데이터, name/party = 현재 상태",
-    "lastFactCheck": "2026-03-14T17:49:05.203680"
+    "lastFactCheck": "2026-03-18T05:19:45.848415"
   },
   "mayors": {
     "seoul_종로구": {
@@ -1545,13 +1545,20 @@
     "jeonnam_목포시": {
       "region": "jeonnam",
       "district": "목포시",
-      "name": null,
-      "party": "independent",
+      "name": "박홍률",
+      "party": "democratic",
       "electedParty": "independent",
       "electedName": "박홍률",
       "_source": "NEC_API",
-      "acting": true,
-      "actingReason": "박홍률 시장 당선무효 (2025.3)"
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "byelection_winner",
+        "detail": "박홍률 시장 당선무효 (2024.3.14) 후 2024.4.10 보궐선거 당선, 더불어민주당 소속으로 복귀",
+        "previous": {
+          "name": null,
+          "party": "independent"
+        }
+      }
     },
     "jeonnam_여수시": {
       "region": "jeonnam",
@@ -1736,13 +1743,20 @@
     "jeonnam_신안군": {
       "region": "jeonnam",
       "district": "신안군",
-      "name": null,
+      "name": "박우량",
       "party": "independent",
       "electedParty": "democratic",
       "electedName": "박우량",
       "_source": "NEC_API",
-      "acting": true,
-      "actingReason": "박우량 군수 직위상실 (2025.3)"
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "byelection_winner",
+        "detail": "박우량 군수 직위상실 (2024.3.14) 후 2024.4.10 보궐선거 당선, 무소속 소속으로 복귀",
+        "previous": {
+          "name": null,
+          "party": "independent"
+        }
+      }
     },
     "gyeongbuk_포항시": {
       "region": "gyeongbuk",
@@ -1895,11 +1909,20 @@
     "gyeongbuk_군위군": {
       "region": "gyeongbuk",
       "district": "군위군",
-      "name": "김진열",
-      "party": "ppp",
+      "name": null,
+      "party": "independent",
       "electedParty": "ppp",
       "electedName": "김진열",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "other_status_change",
+        "detail": "2023년 7월 1일부로 대구광역시로 편입되어 경상북도 기초단체장에서 제외됨.",
+        "previous": {
+          "name": "김진열",
+          "party": "ppp"
+        }
+      }
     },
     "gyeongbuk_의성군": {
       "region": "gyeongbuk",
@@ -2003,11 +2026,20 @@
     "gyeongnam_밀양시": {
       "region": "gyeongnam",
       "district": "밀양시",
-      "name": "박일호",
+      "name": "안병태",
       "party": "ppp",
       "electedParty": "ppp",
       "electedName": "박일호",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "byelection_winner",
+        "detail": "박일호 시장 사퇴 (2023-12-11)로 인한 보궐선거 당선 (2024-04-10)",
+        "previous": {
+          "name": "박일호",
+          "party": "ppp"
+        }
+      }
     },
     "gyeongnam_거제시": {
       "region": "gyeongnam",
@@ -2039,11 +2071,20 @@
     "gyeongnam_창녕군": {
       "region": "gyeongnam",
       "district": "창녕군",
-      "name": "김부영",
+      "name": "성낙인",
       "party": "ppp",
       "electedParty": "ppp",
       "electedName": "김부영",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "byelection_winner",
+        "detail": "김부영 시장 사망 (2022-12-12)으로 인한 보궐선거 당선 (2023-04-05)",
+        "previous": {
+          "name": "김부영",
+          "party": "ppp"
+        }
+      }
     },
     "gyeongnam_양산시": {
       "region": "gyeongnam",
@@ -2111,13 +2152,20 @@
     "gyeongnam_창원시": {
       "region": "gyeongnam",
       "district": "창원시",
-      "name": null,
-      "party": "independent",
+      "name": "김종양",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "홍남표",
       "_source": "NEC_API",
-      "acting": true,
-      "actingReason": "홍남표 시장 당선무효 (2025.4)"
+      "_lastChange": {
+        "date": "2026-03-18",
+        "type": "byelection_winner",
+        "detail": "홍남표 시장 당선무효 (2024-05-16)로 인한 보궐선거 당선 (2024-10-16)",
+        "previous": {
+          "name": null,
+          "party": "independent"
+        }
+      }
     }
   }
 }
