@@ -93,8 +93,8 @@ const App = (() => {
             if (poolResp.ok) window.LocalMediaPool = await poolResp.json();
             if (regResp.ok) window.LocalMediaRegistry = await regResp.json();
 
-            // 새 풀의 언론사명을 기존 registry의 priorityNames에 병합
-            // → 기존 코드(LocalMediaRegistry.regions[rk].province.priorityNames)가 자동으로 확장됨
+            // 새 풀(local_media_pool.json)을 기존 registry에 완전 병합
+            // metro → province (hosts + names), municipal → municipalities (hosts + names)
             const pool = window.LocalMediaPool;
             const reg = window.LocalMediaRegistry;
             if (pool && reg?.regions) {
@@ -106,14 +106,51 @@ const App = (() => {
                     '전북특별자치도': 'jeonbuk', '전라남도': 'jeonnam', '경상북도': 'gyeongbuk',
                     '경상남도': 'gyeongnam', '제주특별자치도': 'jeju',
                 };
+                // (1) metro → province: names + hosts 병합
                 for (const [metroName, rk] of Object.entries(regionKeyMap)) {
-                    const metroPool = pool.metro?.[metroName]?.names || [];
-                    if (!metroPool.length) continue;
-                    if (!reg.regions[rk]) reg.regions[rk] = { province: {} };
+                    const metroEntry = pool.metro?.[metroName];
+                    if (!metroEntry) continue;
+                    if (!reg.regions[rk]) reg.regions[rk] = { province: {}, municipalities: {} };
                     if (!reg.regions[rk].province) reg.regions[rk].province = {};
-                    const existing = new Set(reg.regions[rk].province.priorityNames || []);
-                    metroPool.forEach(n => existing.add(n));
-                    reg.regions[rk].province.priorityNames = [...existing];
+                    const prov = reg.regions[rk].province;
+                    // names → priorityNames
+                    const nameSet = new Set(prov.priorityNames || []);
+                    (metroEntry.names || []).forEach(n => nameSet.add(n));
+                    prov.priorityNames = [...nameSet];
+                    // hosts → province.hosts.tier2 (풀 호스트는 tier2로 추가)
+                    if (!prov.hosts) prov.hosts = { tier1: [], tier2: [] };
+                    const hostSet = new Set(prov.hosts.tier2 || []);
+                    (metroEntry.hosts || []).forEach(h => hostSet.add(h));
+                    prov.hosts.tier2 = [...hostSet];
+                }
+                // (2) municipal → municipalities: 시군구별 hosts + names 병합
+                // pool.municipal 키는 시군구명(예: '강릉시')이고, 소속 광역은 별도 매핑 필요
+                // → registry의 모든 region에서 해당 시군구명을 찾아 병합
+                const municipal = pool.municipal || {};
+                for (const [muniName, muniData] of Object.entries(municipal)) {
+                    const poolHosts = muniData.hosts || [];
+                    const poolNames = muniData.names || [];
+                    if (!poolHosts.length && !poolNames.length) continue;
+                    // registry의 어떤 region에 이 시군구가 속하는지 탐색
+                    for (const [rk, regionData] of Object.entries(reg.regions)) {
+                        if (!regionData.municipalities) regionData.municipalities = {};
+                        const munis = regionData.municipalities;
+                        // 이미 해당 시군구가 있거나, ElectionData subRegion에서 소속 확인
+                        if (munis[muniName] || ElectionData.getSubRegionByName?.(rk, muniName)) {
+                            if (!munis[muniName]) munis[muniName] = {};
+                            const entry = munis[muniName];
+                            // priorityNames 병합
+                            const nameSet = new Set(entry.priorityNames || []);
+                            poolNames.forEach(n => { if (n !== '인터넷신문') nameSet.add(n); });
+                            entry.priorityNames = [...nameSet];
+                            // hosts 병합 (tier2)
+                            if (!entry.hosts) entry.hosts = { tier1: [], tier2: [] };
+                            const hostSet = new Set(entry.hosts.tier2 || []);
+                            poolHosts.forEach(h => hostSet.add(h));
+                            entry.hosts.tier2 = [...hostSet];
+                            break; // 한 시군구는 하나의 광역에만 속함
+                        }
+                    }
                 }
             }
         } catch(e) { console.warn('LocalMedia load error:', e); }
