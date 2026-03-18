@@ -60,47 +60,90 @@ REGION_MAP = {
     "제주특별자치도": "jeju", "제주": "jeju",
 }
 
-# ── 선거종류 추출 패턴 ──
-ELECTION_TYPE_PATTERNS = [
-    (r"광역단체장선거|시장선거|도지사선거|시도지사", "governor"),
-    (r"기초단체장선거|구청장선거|군수선거|시장선거", "mayor"),
-    (r"교육감선거", "superintendent"),
-    (r"국회의원선거|재보궐", "byelection"),
-    (r"정당지지도", "party_support"),
-]
+# ── 분류 파싱 (계획안 3장 구현) ──
+
+def extract_election_types(title):
+    """제목에서 선거종류 복수 추출"""
+    types = []
+    if "광역단체장선거" in title:
+        types.append("governor")
+    if "기초단체장선거" in title:
+        types.append("mayor")
+    if "교육감선거" in title:
+        types.append("superintendent")
+    if "광역의원선거" in title:
+        types.append("council")
+    if "기초의원선거" in title:
+        types.append("localCouncil")
+    if "재보궐" in title or "보궐선거" in title:
+        types.append("byelection")
+    if not types and "정당지지도" in title:
+        types.append("party_support")
+    if not types and "정기(정례)조사" in title:
+        types.append("regular_survey")
+    return types
 
 
-def extract_region_and_type(title: str):
-    """제목에서 지역명과 선거종류 추출"""
-    region_key = None
-    municipality = None
-    election_type = None
+def extract_region(title, sido_field=None):
+    """제목에서 지역 분류 추출"""
+    # 전국 단위
+    if sido_field == "전국" or "전국" in title:
+        return {"level": "national", "metro": None, "metroKey": None, "municipality": None}
 
-    # 지역 추출: "서울특별시 강남구" or "경기도 수원시" 패턴
+    # 광역시도 추출
+    metro = None
+    metro_key = None
     for region_name, rk in sorted(REGION_MAP.items(), key=lambda x: -len(x[0])):
-        if region_name in title:
-            region_key = rk
-            # 시군구 추출
-            after = title[title.find(region_name) + len(region_name):].strip()
-            m = re.match(r'([가-힣]{2,5}(?:시|군|구))', after)
-            if m:
-                municipality = m.group(1)
+        if region_name in title or (sido_field and region_name in sido_field):
+            metro = region_name
+            metro_key = rk
             break
 
-    # 선거종류 추출
-    for pattern, etype in ELECTION_TYPE_PATTERNS:
-        if re.search(pattern, title):
-            # "기초단체장선거"와 "시장선거"가 겹칠 수 있으므로 구체적 패턴 우선
-            if etype == "mayor" and election_type == "governor":
-                election_type = "mayor"
-            elif not election_type:
-                election_type = etype
+    if not metro_key and sido_field:
+        for region_name, rk in sorted(REGION_MAP.items(), key=lambda x: -len(x[0])):
+            if region_name in sido_field:
+                metro = region_name
+                metro_key = rk
+                break
 
-    # "전체" 지역 + "광역단체장" → governor
-    if not election_type:
-        election_type = "party_support"
+    if not metro_key:
+        return {"level": "national", "metro": None, "metroKey": None, "municipality": None}
 
-    return region_key, municipality, election_type
+    # 기초지자체 추출
+    municipality = None
+    if metro:
+        after = title[title.find(metro) + len(metro):].strip() if metro in title else title
+        # "전체"가 나오면 광역 전체
+        if after.startswith("전체") or "전체" in title:
+            return {"level": "metro", "metro": metro, "metroKey": metro_key, "municipality": None}
+        # 시군구 추출
+        m = re.match(r'([가-힣]{2,5}(?:시|군|구))', after)
+        if m:
+            municipality = m.group(1)
+
+    if municipality:
+        return {"level": "municipality", "metro": metro, "metroKey": metro_key, "municipality": municipality}
+
+    return {"level": "metro", "metro": metro, "metroKey": metro_key, "municipality": None}
+
+
+def classify_poll(title, sido_field=None):
+    """여론조사 명칭에서 분류 정보 추출 (계획안 3.3 구조)"""
+    election_types = extract_election_types(title)
+    region = extract_region(title, sido_field)
+    has_party_support = "정당지지도" in title
+    is_regular = "정기(정례)조사" in title
+
+    # 광주/전남 → 전남광주통합특별시로 매핑
+    if region["metroKey"] in ("gwangju", "jeonnam"):
+        region["metroKey"] = "jeonnamgwangju"
+
+    return {
+        "region": region,
+        "electionTypes": election_types,
+        "hasPartySupport": has_party_support,
+        "isRegularSurvey": is_regular,
+    }
 
 
 def fetch_with_delay(client: httpx.Client, url: str) -> str:
@@ -391,8 +434,8 @@ def main() -> None:
             detail_html = fetch_with_delay(client, item["url"])
             detail = parse_detail(detail_html)
 
-            # 지역/선거종류 추출
-            region_key, municipality, election_type = extract_region_and_type(item["title"])
+            # 분류 파싱 (계획안 구조)
+            classification = classify_poll(item["title"])
 
             # nttId 추출 (URL에서)
             ntt_id = None
@@ -409,10 +452,14 @@ def main() -> None:
                 "sample_size": detail["sample_size"],
                 "url": item["url"],
                 "source": SOURCE_TEXT,
-                "regionKey": region_key,
-                "municipality": municipality,
-                "electionType": election_type,
                 "nttId": ntt_id,
+                # 분류 정보
+                "classification": classification,
+                # 하위 호환
+                "regionKey": classification["region"]["metroKey"],
+                "municipality": classification["region"]["municipality"],
+                "electionType": classification["electionTypes"][0] if classification["electionTypes"] else "party_support",
+                "electionTypes": classification["electionTypes"],
             }
             new_items.append(record)
             if item_id > max_id:
@@ -457,7 +504,9 @@ def main() -> None:
             "results": [],
             "regionKey": rec["regionKey"] or "",
             "electionType": rec["electionType"] or "",
-            "municipality": rec["municipality"],
+            "electionTypes": rec.get("electionTypes", []),
+            "municipality": rec.get("municipality"),
+            "classification": rec.get("classification"),
             "sourceUrl": rec["url"],
         })
 

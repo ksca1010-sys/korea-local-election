@@ -2026,6 +2026,124 @@ body {
     color: var(--text-primary);
 }
 
+/* News Skeleton Loading */
+@keyframes news-shimmer {
+    0% { background-position: -200px 0; }
+    100% { background-position: calc(200px + 100%) 0; }
+}
+.news-skeleton-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    margin-bottom: 6px;
+}
+.news-skeleton-bar {
+    height: 14px;
+    border-radius: 4px;
+    background: linear-gradient(90deg, rgba(42,53,83,0.4) 0%, rgba(42,53,83,0.8) 40%, rgba(42,53,83,0.4) 80%);
+    background-size: 200px 100%;
+    animation: news-shimmer 1.4s ease-in-out infinite;
+}
+.news-skeleton-bar.short { width: 40%; }
+.news-skeleton-bar.medium { width: 70%; }
+.news-skeleton-bar.long { width: 95%; }
+.news-skeleton-badges {
+    display: flex;
+    gap: 4px;
+}
+.news-skeleton-badge {
+    width: 40px;
+    height: 16px;
+    border-radius: 3px;
+    background: linear-gradient(90deg, rgba(42,53,83,0.4) 0%, rgba(42,53,83,0.8) 40%, rgba(42,53,83,0.4) 80%);
+    background-size: 200px 100%;
+    animation: news-shimmer 1.4s ease-in-out infinite;
+}
+.news-skeleton-meta {
+    display: flex;
+    gap: 8px;
+}
+
+/* News Error State */
+.news-error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 16px;
+    text-align: center;
+}
+.news-error-icon {
+    font-size: 2rem;
+    color: var(--text-muted);
+    opacity: 0.5;
+}
+.news-error-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+.news-error-detail {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+.news-retry-btn {
+    padding: 6px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.news-retry-btn:hover {
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+    background: var(--bg-card-hover);
+}
+
+/* Mobile Chart Responsive */
+@media (max-width: 768px) {
+    .panel-card canvas {
+        max-height: 220px;
+    }
+    .ht-row {
+        padding: 6px 0;
+    }
+    .ht-names {
+        font-size: 0.78rem;
+    }
+    .hpf-timeline {
+        gap: 2px;
+    }
+    .hpf-node {
+        min-width: 40px;
+    }
+    .hpf-label {
+        font-size: 0.7rem;
+    }
+    .hpf-party {
+        font-size: 0.65rem;
+    }
+}
+
+/* History - Uncontested Election */
+.ht-uncontested {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 2px 0;
+}
+
 .news-card {
     display: flex;
     gap: 12px;
@@ -2372,6 +2490,34 @@ canvas {
         margin-right: 0;
     }
 
+    /* 모바일: 리사이즈 핸들 숨김 */
+    .panel-resize-handle {
+        display: none;
+    }
+
+    /* 모바일: 패널 상단 스와이프 핸들 */
+    .panel-header::before {
+        content: '';
+        position: absolute;
+        top: 6px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 36px;
+        height: 4px;
+        border-radius: 2px;
+        background: var(--border-color);
+    }
+    .panel-header {
+        position: relative;
+        padding-top: 18px;
+    }
+
+    /* 모바일: 닫기 버튼 더 크게 */
+    .panel-close {
+        width: 36px;
+        height: 36px;
+        font-size: 1.1rem;
+    }
 }
 
 /* ============================================

@@ -2997,7 +2997,7 @@ const MapModule = (() => {
                     .text(election.district);
 
                 // Status badge
-                const statusColor = election.status === '확정' ? '#22c55e' : '#f59e0b';
+                const statusColor = '#f59e0b'; // 재보궐 시그니처 노란색
                 g.append('text')
                     .attr('class', 'byelection-label')
                     .attr('x', centroid[0]).attr('y', centroid[1] + 32)
@@ -3084,7 +3084,7 @@ const MapModule = (() => {
                     if (!tooltip) return;
                     const districtList = entries.map(e => {
                         const subType = e.election.subType || '보궐선거';
-                        const color = subType === '보궐선거' ? '#f59e0b' : '#ef4444';
+                        const color = '#f59e0b'; // 재보궐 시그니처 노란색
                         return `<div style="margin:3px 0"><span style="color:${color}">●</span> ${e.election.district} <span style="color:#999;font-size:11px">(${subType})</span></div>`;
                     }).join('');
                     tooltip.innerHTML = `
@@ -3118,7 +3118,7 @@ const MapModule = (() => {
         const tooltip = _mapTooltip;
         if (!tooltip) return;
 
-        const subTypeColor = '#f59e0b';
+        const subTypeColor = '#f59e0b'; // 재보궐 시그니처
         const prev = election.prevElection;
         const winColor = prev ? ElectionData.getPartyColor(prev.winner) : '#808080';
 

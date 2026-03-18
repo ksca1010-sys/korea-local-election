@@ -1,12 +1,22 @@
 {
   "metro": {
     "서울특별시": {
-      "hosts": [],
+      "hosts": [
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com",
+        "youthdaily.co.kr",
+        "etoday.co.kr",
+        "slist.kr",
+        "joongboo.com",
+        "idjnews.kr"
+      ],
       "names": [
         "서울신문",
         "서울경제",
         "SBS",
-        "TBS"
+        "TBS",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -24,17 +34,32 @@
         {
           "name": "TBS",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "부산광역시": {
-      "hosts": [],
+      "hosts": [
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr",
+        "busanmbc.co.kr",
+        "knnews.co.kr",
+        "pennmike.com",
+        "etoday.co.kr",
+        "youthdaily.co.kr",
+        "news.knn.co.kr"
+      ],
       "names": [
         "부산일보",
         "국제신문",
         "부산MBC",
         "KNN",
-        "KBS부산"
+        "KBS부산",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -56,11 +81,25 @@
         {
           "name": "KBS부산",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "대구광역시": {
-      "hosts": [],
+      "hosts": [
+        "imaeil.com",
+        "idaegu.co.kr",
+        "dgmbc.co.kr",
+        "tbc.co.kr",
+        "ksmnews.co.kr",
+        "kbmaeil.com",
+        "yeongnam.com",
+        "idaegu.com",
+        "hidomin.com"
+      ],
       "names": [
         "매일신문",
         "대구신문",
@@ -68,7 +107,8 @@
         "경북일보",
         "영남일보",
         "대구MBC",
-        "TBC"
+        "TBC",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -98,17 +138,30 @@
         {
           "name": "TBC",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "인천광역시": {
-      "hosts": [],
+      "hosts": [
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com",
+        "kyeongin.com",
+        "idomin.com",
+        "jeollailbo.com",
+        "joongboo.com"
+      ],
       "names": [
         "경인일보",
         "인천일보",
         "기호일보",
         "OBS",
-        "인천투데이"
+        "인천투데이",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -130,11 +183,23 @@
         {
           "name": "인천투데이",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "광주광역시": {
-      "hosts": [],
+      "hosts": [
+        "kwangju.co.kr",
+        "kjdaily.com",
+        "mdilbo.com",
+        "ikbc.co.kr",
+        "kjmbc.co.kr",
+        "gwangnam.co.kr",
+        "jnilbo.com"
+      ],
       "names": [
         "광주일보",
         "광남일보",
@@ -142,7 +207,8 @@
         "무등일보",
         "광주MBC",
         "KBC",
-        "KBS광주"
+        "KBS광주",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -172,18 +238,29 @@
         {
           "name": "KBS광주",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "대전광역시": {
-      "hosts": [],
+      "hosts": [
+        "daejonilbo.com",
+        "cctoday.co.kr",
+        "tjmbc.co.kr",
+        "chungnamilbo.co.kr",
+        "ccdn.co.kr"
+      ],
       "names": [
         "대전일보",
         "충청투데이",
         "중도일보",
         "금강일보",
         "대전MBC",
-        "TJB"
+        "TJB",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -209,17 +286,27 @@
         {
           "name": "TJB",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "울산광역시": {
-      "hosts": [],
+      "hosts": [
+        "iusm.co.kr",
+        "ujeil.com",
+        "usanmbc.co.kr",
+        "kyongbuk.co.kr"
+      ],
       "names": [
         "울산매일",
         "경상일보",
         "울산신문",
         "울산MBC",
-        "ubc울산방송"
+        "ubc울산방송",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -241,16 +328,23 @@
         {
           "name": "ubc울산방송",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "세종특별자치시": {
-      "hosts": [],
+      "hosts": [
+        "sjpost.co.kr"
+      ],
       "names": [
         "세종포스트",
         "세종의소리",
         "대전일보",
-        "중도일보"
+        "중도일보",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -268,11 +362,27 @@
         {
           "name": "중도일보",
           "src": "bk"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "경기도": {
-      "hosts": [],
+      "hosts": [
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr",
+        "slist.kr",
+        "siminilbo.co.kr",
+        "kihoilbo.co.kr",
+        "ccdailynews.com",
+        "joongboo.com",
+        "nspna.com",
+        "youthdaily.co.kr",
+        "hidomin.com"
+      ],
       "names": [
         "경인일보",
         "경기일보",
@@ -280,7 +390,8 @@
         "중부일보",
         "평택시민신문",
         "OBS",
-        "수원일보"
+        "수원일보",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -310,18 +421,29 @@
         {
           "name": "수원일보",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "강원특별자치도": {
-      "hosts": [],
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr",
+        "g1tv.co.kr",
+        "slist.kr"
+      ],
       "names": [
         "강원일보",
         "강원도민일보",
         "설악신문",
         "춘천MBC",
         "G1방송",
-        "KBS춘천"
+        "KBS춘천",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -347,11 +469,25 @@
         {
           "name": "KBS춘천",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "충청북도": {
-      "hosts": [],
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr",
+        "jbnews.com",
+        "pennmike.com",
+        "cctimes.kr",
+        "kihoilbo.co.kr",
+        "ccdn.co.kr",
+        "chungnamilbo.co.kr"
+      ],
       "names": [
         "충북일보",
         "충청일보",
@@ -359,7 +495,8 @@
         "중부매일",
         "충청타임즈",
         "MBC충북",
-        "CJB청주방송"
+        "CJB청주방송",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -389,11 +526,26 @@
         {
           "name": "CJB청주방송",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "충청남도": {
-      "hosts": [],
+      "hosts": [
+        "cctoday.co.kr",
+        "cnnews.co.kr",
+        "daejonilbo.com",
+        "naepo2day.co.kr",
+        "jbnews.com",
+        "cctimes.kr",
+        "ccdailynews.com",
+        "ccdn.co.kr",
+        "chungnamilbo.co.kr",
+        "idjnews.kr"
+      ],
       "names": [
         "충청투데이",
         "대전일보",
@@ -402,7 +554,8 @@
         "홍성신문",
         "충남일보",
         "내포투데이",
-        "TJB"
+        "TJB",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -436,11 +589,25 @@
         {
           "name": "TJB",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "전북특별자치도": {
-      "hosts": [],
+      "hosts": [
+        "jjan.kr",
+        "jbdomin.co.kr",
+        "sjbnews.com",
+        "jmbc.co.kr",
+        "domin.co.kr",
+        "jjn.co.kr",
+        "jeollailbo.com",
+        "jbnews.com",
+        "idaegu.com"
+      ],
       "names": [
         "전북일보",
         "전북도민일보",
@@ -448,7 +615,8 @@
         "전라일보",
         "전주MBC",
         "JTV",
-        "KBS전주"
+        "KBS전주",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -478,11 +646,25 @@
         {
           "name": "KBS전주",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "전라남도": {
-      "hosts": [],
+      "hosts": [
+        "jnilbo.com",
+        "honam.co.kr",
+        "namdonews.com",
+        "mdilbo.com",
+        "ikbc.co.kr",
+        "kjmbc.co.kr",
+        "imaeil.com",
+        "siminilbo.co.kr",
+        "nspna.com"
+      ],
       "names": [
         "전남일보",
         "남도일보",
@@ -492,7 +674,8 @@
         "광주MBC",
         "목포MBC",
         "여수MBC",
-        "KBC"
+        "KBC",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -530,11 +713,27 @@
         {
           "name": "KBC",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "경상북도": {
-      "hosts": [],
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr",
+        "idaegu.co.kr",
+        "kyongbuk.co.kr",
+        "ksmnews.co.kr",
+        "kbmaeil.com",
+        "nspna.com",
+        "yeongnam.com",
+        "idaegu.com",
+        "hidomin.com"
+      ],
       "names": [
         "매일신문",
         "경북일보",
@@ -544,7 +743,8 @@
         "대구MBC",
         "안동MBC",
         "포항MBC",
-        "TBC"
+        "TBC",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -582,18 +782,36 @@
         {
           "name": "TBC",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "경상남도": {
-      "hosts": [],
+      "hosts": [
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr",
+        "knnb.co.kr",
+        "idomin.com",
+        "kwnews.co.kr",
+        "kado.net",
+        "busan.com",
+        "gnnews.co.kr",
+        "kookje.co.kr",
+        "news.knn.co.kr",
+        "siminilbo.co.kr"
+      ],
       "names": [
         "경남신문",
         "경남도민일보",
         "경남일보",
         "MBC경남",
         "KNN",
-        "KBS창원"
+        "KBS창원",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -619,11 +837,19 @@
         {
           "name": "KBS창원",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
     "제주특별자치도": {
-      "hosts": [],
+      "hosts": [
+        "jejuilbo.net",
+        "ihalla.com",
+        "jemin.com"
+      ],
       "names": [
         "제주일보",
         "한라일보",
@@ -631,7 +857,8 @@
         "제주의소리",
         "제주MBC",
         "JIBS",
-        "KBS제주"
+        "KBS제주",
+        "인터넷신문"
       ],
       "media": [
         {
@@ -661,1083 +888,649 @@
         {
           "name": "KBS제주",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     }
   },
   "municipal": {
-    "종로구": {
-      "metro": "서울특별시",
-      "names": [
-        "종로타임즈"
-      ],
-      "media": [
-        {
-          "name": "종로타임즈",
-          "src": "p"
-        }
-      ]
-    },
-    "중구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "용산구": {
-      "metro": "서울특별시",
-      "names": [
-        "용산신문"
-      ],
-      "media": [
-        {
-          "name": "용산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "성동구": {
-      "metro": "서울특별시",
-      "names": [
-        "성동신문"
-      ],
-      "media": [
-        {
-          "name": "성동신문",
-          "src": "p"
-        }
-      ]
-    },
-    "광진구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "동대문구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "중랑구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "성북구": {
-      "metro": "서울특별시",
-      "names": [
-        "성북신문"
-      ],
-      "media": [
-        {
-          "name": "성북신문",
-          "src": "p"
-        }
-      ]
-    },
-    "강북구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "도봉구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "노원구": {
-      "metro": "서울특별시",
-      "names": [
-        "노원신문"
-      ],
-      "media": [
-        {
-          "name": "노원신문",
-          "src": "p"
-        }
-      ]
-    },
-    "은평구": {
-      "metro": "서울특별시",
-      "names": [
-        "은평시민신문"
-      ],
-      "media": [
-        {
-          "name": "은평시민신문",
-          "src": "p"
-        }
-      ]
-    },
-    "서대문구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "마포구": {
-      "metro": "서울특별시",
-      "names": [
-        "마포신문"
-      ],
-      "media": [
-        {
-          "name": "마포신문",
-          "src": "p"
-        }
-      ]
-    },
-    "양천구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
     "강서구": {
-      "metro": "서울특별시",
+      "hosts": [
+        "gynews.net",
+        "gangkyung.com",
+        "gsinews.tv",
+        "gangseo.seoul.kr",
+        "gsc.gangseo.seoul.kr",
+        "gsmedia.gangseo.seoul.kr"
+      ],
       "names": [
-        "강서양천신문"
+        "강서양천신문",
+        "강서경제신문",
+        "강서뉴스",
+        "강서까치뉴스",
+        "강서까치뉴스 &gt; 의회소식",
+        "강서뉴미디어지원센터"
       ],
       "media": [
         {
           "name": "강서양천신문",
-          "src": "p"
+          "host": "gynews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강서경제신문",
+          "host": "gangkyung.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강서뉴스",
+          "host": "gsinews.tv",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강서까치뉴스",
+          "host": "gangseo.seoul.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강서까치뉴스 &gt; 의회소식",
+          "host": "gsc.gangseo.seoul.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "강서뉴미디어지원센터",
+          "host": "gsmedia.gangseo.seoul.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
         }
       ]
     },
-    "구로구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "금천구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "영등포구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "동작구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "관악구": {
-      "metro": "서울특별시",
+    "금정구": {
+      "hosts": [
+        "ibknews.com",
+        "geumjeong.kpnnews.org"
+      ],
       "names": [
-        "관악신문"
+        "금정신문",
+        "금정공보뉴스"
       ],
       "media": [
         {
-          "name": "관악신문",
-          "src": "p"
+          "name": "금정신문",
+          "host": "ibknews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금정공보뉴스",
+          "host": "geumjeong.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
-    "서초구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "강남구": {
-      "metro": "서울특별시",
+    "기장군": {
+      "hosts": [
+        "gijang.kpnnews.org"
+      ],
       "names": [
-        "강남신문"
+        "기장공보뉴스"
       ],
       "media": [
         {
-          "name": "강남신문",
-          "src": "p"
+          "name": "기장공보뉴스",
+          "host": "gijang.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
-    "송파구": {
-      "metro": "서울특별시",
+    "남구": {
+      "hosts": [
+        "iusm.co.kr",
+        "ujeil.com",
+        "usanmbc.co.kr"
+      ],
       "names": [
-        "송파타임즈"
+        "울산매일",
+        "경상일보",
+        "울산신문"
       ],
       "media": [
         {
-          "name": "송파타임즈",
-          "src": "p"
+          "name": "울산매일",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경상일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "울산신문",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "강동구": {
-      "metro": "서울특별시",
-      "names": [],
-      "media": []
-    },
-    "부산중구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "부산서구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "부산동구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "영도구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "부산진구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
+    "동구": {
+      "hosts": [
+        "dgilbo.com"
+      ],
+      "names": [
+        "동구일보"
+      ],
+      "media": [
+        {
+          "name": "동구일보",
+          "host": "dgilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
     },
     "동래구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
+      "hosts": [
+        "dongnae.kpnnews.org",
+        "placeview.co.kr"
+      ],
+      "names": [
+        "동래공보뉴스",
+        "동래인터넷신문"
+      ],
+      "media": [
+        {
+          "name": "동래공보뉴스",
+          "host": "dongnae.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동래인터넷신문",
+          "host": "placeview.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
     },
-    "부산남구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
+    "부산진구": {
+      "hosts": [
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
+      ],
+      "names": [
+        "부산일보",
+        "국제신문",
+        "부산MBC"
+      ],
+      "media": [
+        {
+          "name": "부산일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "국제신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "부산MBC",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
     },
-    "부산북구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
+    "북구": {
+      "hosts": [
+        "iusm.co.kr",
+        "ujeil.com",
+        "usanmbc.co.kr"
+      ],
+      "names": [
+        "울산매일",
+        "경상일보",
+        "울산신문"
+      ],
+      "media": [
+        {
+          "name": "울산매일",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경상일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "울산신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "사상구": {
+      "hosts": [
+        "sasangnews.com"
+      ],
+      "names": [
+        "사상신문"
+      ],
+      "media": [
+        {
+          "name": "사상신문",
+          "host": "sasangnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "사하구": {
+      "hosts": [
+        "sh44.kr"
+      ],
+      "names": [
+        "사하신문"
+      ],
+      "media": [
+        {
+          "name": "사하신문",
+          "host": "sh44.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "서구": {
+      "hosts": [
+        "daejonilbo.com",
+        "cctoday.co.kr",
+        "tjmbc.co.kr"
+      ],
+      "names": [
+        "대전일보",
+        "충청투데이",
+        "중도일보"
+      ],
+      "media": [
+        {
+          "name": "대전일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "충청투데이",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "중도일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "수영구": {
+      "hosts": [
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
+      ],
+      "names": [
+        "부산일보",
+        "국제신문",
+        "부산MBC"
+      ],
+      "media": [
+        {
+          "name": "부산일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "국제신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "부산MBC",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "연제구": {
+      "hosts": [
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
+      ],
+      "names": [
+        "부산일보",
+        "국제신문",
+        "부산MBC"
+      ],
+      "media": [
+        {
+          "name": "부산일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "국제신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "부산MBC",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "영도구": {
+      "hosts": [
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
+      ],
+      "names": [
+        "부산일보",
+        "국제신문",
+        "부산MBC"
+      ],
+      "media": [
+        {
+          "name": "부산일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "국제신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "부산MBC",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "중구": {
+      "hosts": [
+        "junggunews.com",
+        "junggu.seoul.kr"
+      ],
+      "names": [
+        "중구신문",
+        "junggu.seoul.kr"
+      ],
+      "media": [
+        {
+          "name": "중구신문",
+          "host": "junggunews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "junggu.seoul.kr",
+          "host": "junggu.seoul.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
     },
     "해운대구": {
-      "metro": "부산광역시",
+      "hosts": [],
       "names": [
-        "해운대신문"
+        "해운대신문",
+        "인터넷신문"
       ],
       "media": [
         {
           "name": "해운대신문",
           "src": "p"
+        },
+        {
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
-    "사하구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "금정구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "강서구_부산": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "연제구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "수영구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "사상구": {
-      "metro": "부산광역시",
-      "names": [],
-      "media": []
-    },
-    "기장군": {
-      "metro": "부산광역시",
+    "괴산군": {
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
+      ],
       "names": [
-        "기장신문"
+        "충북일보",
+        "충청일보",
+        "동양일보"
       ],
       "media": [
         {
-          "name": "기장신문",
-          "src": "p"
+          "name": "충북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "충청일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "동양일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "대구중구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "대구동구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "대구서구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "대구남구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "대구북구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "수성구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "달서구": {
-      "metro": "대구광역시",
-      "names": [],
-      "media": []
-    },
-    "달성군": {
-      "metro": "대구광역시",
+    "단양군": {
+      "hosts": [
+        "dyitnews.com"
+      ],
       "names": [
-        "달성신문"
+        "단양뉴스",
+        "단양인터넷뉴스"
       ],
       "media": [
         {
-          "name": "달성신문",
-          "src": "p"
-        }
-      ]
-    },
-    "인천중구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "인천동구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "미추홀구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "연수구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "남동구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "부평구": {
-      "metro": "인천광역시",
-      "names": [
-        "부평신문"
-      ],
-      "media": [
-        {
-          "name": "부평신문",
-          "src": "p"
-        }
-      ]
-    },
-    "계양구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "인천서구": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "강화군": {
-      "metro": "인천광역시",
-      "names": [
-        "강화뉴스"
-      ],
-      "media": [
-        {
-          "name": "강화뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "옹진군": {
-      "metro": "인천광역시",
-      "names": [],
-      "media": []
-    },
-    "광주동구": {
-      "metro": "광주광역시",
-      "names": [],
-      "media": []
-    },
-    "광주서구": {
-      "metro": "광주광역시",
-      "names": [],
-      "media": []
-    },
-    "광주남구": {
-      "metro": "광주광역시",
-      "names": [],
-      "media": []
-    },
-    "광주북구": {
-      "metro": "광주광역시",
-      "names": [],
-      "media": []
-    },
-    "광산구": {
-      "metro": "광주광역시",
-      "names": [],
-      "media": []
-    },
-    "대전동구": {
-      "metro": "대전광역시",
-      "names": [],
-      "media": []
-    },
-    "대전중구": {
-      "metro": "대전광역시",
-      "names": [],
-      "media": []
-    },
-    "대전서구": {
-      "metro": "대전광역시",
-      "names": [],
-      "media": []
-    },
-    "유성구": {
-      "metro": "대전광역시",
-      "names": [],
-      "media": []
-    },
-    "대덕구": {
-      "metro": "대전광역시",
-      "names": [],
-      "media": []
-    },
-    "울산중구": {
-      "metro": "울산광역시",
-      "names": [],
-      "media": []
-    },
-    "울산남구": {
-      "metro": "울산광역시",
-      "names": [],
-      "media": []
-    },
-    "울산동구": {
-      "metro": "울산광역시",
-      "names": [],
-      "media": []
-    },
-    "울산북구": {
-      "metro": "울산광역시",
-      "names": [],
-      "media": []
-    },
-    "울주군": {
-      "metro": "울산광역시",
-      "names": [
-        "울주신문"
-      ],
-      "media": [
-        {
-          "name": "울주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "세종시": {
-      "metro": "세종특별자치시",
-      "names": [
-        "세종포스트",
-        "세종의소리"
-      ],
-      "media": [
-        {
-          "name": "세종포스트",
+          "name": "단양뉴스",
           "src": "p"
         },
         {
-          "name": "세종의소리",
-          "src": "p"
+          "name": "단양인터넷뉴스",
+          "host": "dyitnews.com",
+          "src": "web-search"
         }
       ]
     },
-    "수원시": {
-      "metro": "경기도",
+    "보은군": {
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
+      ],
       "names": [
-        "수원일보",
-        "수원화성신문"
+        "충북일보",
+        "충청일보",
+        "동양일보"
       ],
       "media": [
         {
-          "name": "수원일보",
-          "src": "p"
+          "name": "충북일보",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "수원화성신문",
-          "src": "p"
-        }
-      ]
-    },
-    "성남시": {
-      "metro": "경기도",
-      "names": [
-        "성남신문",
-        "성남일보"
-      ],
-      "media": [
-        {
-          "name": "성남신문",
-          "src": "p"
+          "name": "충청일보",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "성남일보",
-          "src": "p"
+          "name": "동양일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "고양시": {
-      "metro": "경기도",
+    "영동군": {
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
+      ],
       "names": [
-        "고양신문"
+        "충북일보",
+        "충청일보",
+        "동양일보"
       ],
       "media": [
         {
-          "name": "고양신문",
-          "src": "p"
-        }
-      ]
-    },
-    "용인시": {
-      "metro": "경기도",
-      "names": [
-        "용인시민신문"
-      ],
-      "media": [
-        {
-          "name": "용인시민신문",
-          "src": "p"
-        }
-      ]
-    },
-    "부천시": {
-      "metro": "경기도",
-      "names": [
-        "부천타임즈"
-      ],
-      "media": [
-        {
-          "name": "부천타임즈",
-          "src": "p"
-        }
-      ]
-    },
-    "안산시": {
-      "metro": "경기도",
-      "names": [
-        "안산신문"
-      ],
-      "media": [
-        {
-          "name": "안산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "안양시": {
-      "metro": "경기도",
-      "names": [
-        "안양신문"
-      ],
-      "media": [
-        {
-          "name": "안양신문",
-          "src": "p"
-        }
-      ]
-    },
-    "남양주시": {
-      "metro": "경기도",
-      "names": [
-        "남양주투데이"
-      ],
-      "media": [
-        {
-          "name": "남양주투데이",
-          "src": "p"
-        }
-      ]
-    },
-    "화성시": {
-      "metro": "경기도",
-      "names": [
-        "화성신문",
-        "화성시민신문"
-      ],
-      "media": [
-        {
-          "name": "화성신문",
-          "src": "p"
+          "name": "충북일보",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "화성시민신문",
-          "src": "p"
-        }
-      ]
-    },
-    "평택시": {
-      "metro": "경기도",
-      "names": [
-        "평택시민신문"
-      ],
-      "media": [
-        {
-          "name": "평택시민신문",
-          "src": "bk"
-        }
-      ]
-    },
-    "의정부시": {
-      "metro": "경기도",
-      "names": [
-        "의정부신문"
-      ],
-      "media": [
-        {
-          "name": "의정부신문",
-          "src": "p"
-        }
-      ]
-    },
-    "시흥시": {
-      "metro": "경기도",
-      "names": [
-        "시흥신문"
-      ],
-      "media": [
-        {
-          "name": "시흥신문",
-          "src": "p"
-        }
-      ]
-    },
-    "파주시": {
-      "metro": "경기도",
-      "names": [
-        "파주신문"
-      ],
-      "media": [
-        {
-          "name": "파주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "김포시": {
-      "metro": "경기도",
-      "names": [
-        "김포신문"
-      ],
-      "media": [
-        {
-          "name": "김포신문",
-          "src": "p"
-        }
-      ]
-    },
-    "광명시": {
-      "metro": "경기도",
-      "names": [
-        "광명시민신문"
-      ],
-      "media": [
-        {
-          "name": "광명시민신문",
-          "src": "p"
-        }
-      ]
-    },
-    "광주시": {
-      "metro": "경기도",
-      "names": [
-        "광주신문"
-      ],
-      "media": [
-        {
-          "name": "광주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "군포시": {
-      "metro": "경기도",
-      "names": [
-        "군포신문"
-      ],
-      "media": [
-        {
-          "name": "군포신문",
-          "src": "p"
-        }
-      ]
-    },
-    "하남시": {
-      "metro": "경기도",
-      "names": [
-        "하남신문"
-      ],
-      "media": [
-        {
-          "name": "하남신문",
-          "src": "p"
-        }
-      ]
-    },
-    "오산시": {
-      "metro": "경기도",
-      "names": [
-        "오산신문"
-      ],
-      "media": [
-        {
-          "name": "오산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "이천시": {
-      "metro": "경기도",
-      "names": [
-        "이천신문"
-      ],
-      "media": [
-        {
-          "name": "이천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "안성시": {
-      "metro": "경기도",
-      "names": [
-        "안성신문"
-      ],
-      "media": [
-        {
-          "name": "안성신문",
-          "src": "p"
-        }
-      ]
-    },
-    "의왕시": {
-      "metro": "경기도",
-      "names": [
-        "의왕신문"
-      ],
-      "media": [
-        {
-          "name": "의왕신문",
-          "src": "p"
-        }
-      ]
-    },
-    "양평군": {
-      "metro": "경기도",
-      "names": [
-        "양평시민의소리"
-      ],
-      "media": [
-        {
-          "name": "양평시민의소리",
-          "src": "p"
-        }
-      ]
-    },
-    "여주시": {
-      "metro": "경기도",
-      "names": [
-        "여주신문"
-      ],
-      "media": [
-        {
-          "name": "여주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "과천시": {
-      "metro": "경기도",
-      "names": [],
-      "media": []
-    },
-    "구리시": {
-      "metro": "경기도",
-      "names": [
-        "구리신문"
-      ],
-      "media": [
-        {
-          "name": "구리신문",
-          "src": "p"
-        }
-      ]
-    },
-    "포천시": {
-      "metro": "경기도",
-      "names": [
-        "포천신문"
-      ],
-      "media": [
-        {
-          "name": "포천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "양주시": {
-      "metro": "경기도",
-      "names": [
-        "양주신문"
-      ],
-      "media": [
-        {
-          "name": "양주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "동두천시": {
-      "metro": "경기도",
-      "names": [
-        "동두천신문"
-      ],
-      "media": [
-        {
-          "name": "동두천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "가평군": {
-      "metro": "경기도",
-      "names": [
-        "가평저널"
-      ],
-      "media": [
-        {
-          "name": "가평저널",
-          "src": "p"
-        }
-      ]
-    },
-    "연천군": {
-      "metro": "경기도",
-      "names": [
-        "연천신문"
-      ],
-      "media": [
-        {
-          "name": "연천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "춘천시": {
-      "metro": "강원특별자치도",
-      "names": [
-        "춘천사람들"
-      ],
-      "media": [
-        {
-          "name": "춘천사람들",
-          "src": "p"
-        }
-      ]
-    },
-    "원주시": {
-      "metro": "강원특별자치도",
-      "names": [
-        "원주투데이",
-        "원주MBC"
-      ],
-      "media": [
-        {
-          "name": "원주투데이",
-          "src": "p"
+          "name": "충청일보",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "원주MBC",
-          "src": "p"
+          "name": "동양일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "강릉시": {
-      "metro": "강원특별자치도",
+    "옥천군": {
+      "hosts": [
+        "okinews.com"
+      ],
       "names": [
-        "강릉뉴스",
-        "MBC강원영동"
+        "옥천신문"
       ],
       "media": [
         {
-          "name": "강릉뉴스",
-          "src": "p"
+          "name": "옥천신문",
+          "host": "okinews.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "음성군": {
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
+      ],
+      "names": [
+        "충북일보",
+        "충청일보",
+        "동양일보"
+      ],
+      "media": [
+        {
+          "name": "충북일보",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "MBC강원영동",
-          "src": "p"
+          "name": "충청일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "동양일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "동해시": {
-      "metro": "강원특별자치도",
+    "제천시": {
+      "hosts": [
+        "jcnews.co.kr",
+        "jdnews.kr"
+      ],
       "names": [
-        "동해신문"
+        "제천신문",
+        "제천단양뉴스"
       ],
       "media": [
         {
-          "name": "동해신문",
-          "src": "p"
+          "name": "제천신문",
+          "host": "jcnews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "제천단양뉴스",
+          "host": "jdnews.kr",
+          "src": "web-search"
         }
       ]
     },
-    "태백시": {
-      "metro": "강원특별자치도",
+    "증평군": {
+      "hosts": [
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
+      ],
       "names": [
-        "태백신문"
+        "충북일보",
+        "충청일보",
+        "동양일보"
       ],
       "media": [
         {
-          "name": "태백신문",
-          "src": "p"
+          "name": "충북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "충청일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "동양일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "속초시": {
-      "metro": "강원특별자치도",
+    "진천군": {
+      "hosts": [
+        "jc.newsk.com"
+      ],
       "names": [
-        "설악신문"
+        "진천신문"
       ],
       "media": [
         {
-          "name": "설악신문",
-          "src": "bk"
+          "name": "진천신문",
+          "host": "jc.newsk.com",
+          "src": "web-search"
         }
       ]
-    },
-    "삼척시": {
-      "metro": "강원특별자치도",
-      "names": [
-        "삼척신문"
-      ],
-      "media": [
-        {
-          "name": "삼척신문",
-          "src": "p"
-        }
-      ]
-    },
-    "홍천군": {
-      "metro": "강원특별자치도",
-      "names": [
-        "홍천뉴스"
-      ],
-      "media": [
-        {
-          "name": "홍천뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "횡성군": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
-    },
-    "영월군": {
-      "metro": "강원특별자치도",
-      "names": [
-        "영월신문"
-      ],
-      "media": [
-        {
-          "name": "영월신문",
-          "src": "p"
-        }
-      ]
-    },
-    "평창군": {
-      "metro": "강원특별자치도",
-      "names": [
-        "평창신문"
-      ],
-      "media": [
-        {
-          "name": "평창신문",
-          "src": "p"
-        }
-      ]
-    },
-    "정선군": {
-      "metro": "강원특별자치도",
-      "names": [
-        "정선신문"
-      ],
-      "media": [
-        {
-          "name": "정선신문",
-          "src": "p"
-        }
-      ]
-    },
-    "철원군": {
-      "metro": "강원특별자치도",
-      "names": [
-        "철원신문"
-      ],
-      "media": [
-        {
-          "name": "철원신문",
-          "src": "p"
-        }
-      ]
-    },
-    "화천군": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
-    },
-    "양구군": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
-    },
-    "인제군": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
-    },
-    "고성군_강원": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
-    },
-    "양양군": {
-      "metro": "강원특별자치도",
-      "names": [],
-      "media": []
     },
     "청주시": {
-      "metro": "충청북도",
+      "hosts": [
+        "ccreview.co.kr",
+        "cjb.co.kr"
+      ],
       "names": [
         "충청리뷰",
         "CJB청주방송"
@@ -1745,1047 +1538,6470 @@
       "media": [
         {
           "name": "충청리뷰",
-          "src": "p"
+          "host": "ccreview.co.kr",
+          "src": "web-search"
         },
         {
           "name": "CJB청주방송",
-          "src": "p"
+          "host": "cjb.co.kr",
+          "src": "web-search"
         }
       ]
     },
     "충주시": {
-      "metro": "충청북도",
+      "hosts": [
+        "cjwn.com"
+      ],
       "names": [
         "충주신문"
       ],
       "media": [
         {
           "name": "충주신문",
-          "src": "p"
+          "host": "cjwn.com",
+          "src": "web-search"
         }
       ]
     },
-    "제천시": {
-      "metro": "충청북도",
+    "계룡시": {
+      "hosts": [
+        "gyeryongilbo.com",
+        "grnews.kr",
+        "gyeryongjournal.co.kr",
+        "gytoday.kr"
+      ],
       "names": [
-        "제천신문"
+        "계룡일보",
+        "계룡신문",
+        "계룡뉴스저널",
+        "계룡투데이"
       ],
       "media": [
         {
-          "name": "제천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "보은군": {
-      "metro": "충청북도",
-      "names": [],
-      "media": []
-    },
-    "옥천군": {
-      "metro": "충청북도",
-      "names": [
-        "옥천신문"
-      ],
-      "media": [
+          "name": "계룡일보",
+          "host": "gyeryongilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
         {
-          "name": "옥천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "영동군": {
-      "metro": "충청북도",
-      "names": [],
-      "media": []
-    },
-    "증평군": {
-      "metro": "충청북도",
-      "names": [],
-      "media": []
-    },
-    "진천군": {
-      "metro": "충청북도",
-      "names": [
-        "진천신문"
-      ],
-      "media": [
+          "name": "계룡신문",
+          "host": "grnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
         {
-          "name": "진천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "괴산군": {
-      "metro": "충청북도",
-      "names": [],
-      "media": []
-    },
-    "음성군": {
-      "metro": "충청북도",
-      "names": [],
-      "media": []
-    },
-    "단양군": {
-      "metro": "충청북도",
-      "names": [
-        "단양뉴스"
-      ],
-      "media": [
+          "name": "계룡뉴스저널",
+          "host": "gyeryongjournal.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
         {
-          "name": "단양뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "천안시": {
-      "metro": "충청남도",
-      "names": [
-        "천안신문"
-      ],
-      "media": [
-        {
-          "name": "천안신문",
-          "src": "p"
+          "name": "계룡투데이",
+          "host": "gytoday.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
     "공주시": {
-      "metro": "충청남도",
+      "hosts": [
+        "e-gongju.com",
+        "gongjuilbo.kr",
+        "k-knowledge.kr"
+      ],
       "names": [
-        "공주신문"
+        "공주신문",
+        "공주일보",
+        "공주포스트"
       ],
       "media": [
         {
           "name": "공주신문",
-          "src": "p"
+          "host": "e-gongju.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "공주일보",
+          "host": "gongjuilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "공주포스트",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "금산군": {
+      "hosts": [
+        "igsnews.co.kr",
+        "geumsan.grandculture.net",
+        "geumsan.kpnnews.org",
+        "ngknews.co.kr",
+        "geumsantoday.com",
+        "geumsan-news.com"
+      ],
+      "names": [
+        "금산신문",
+        "『금산신문』",
+        "금산공보뉴스",
+        "금산뉴스",
+        "금산투데이",
+        "geumsan-news.com"
+      ],
+      "media": [
+        {
+          "name": "금산신문",
+          "host": "igsnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『금산신문』",
+          "host": "geumsan.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "금산공보뉴스",
+          "host": "geumsan.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금산뉴스",
+          "host": "ngknews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금산투데이",
+          "host": "geumsantoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "geumsan-news.com",
+          "host": "geumsan-news.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "논산시": {
+      "hosts": [
+        "enonsan.com",
+        "nsnews.kr",
+        "nonsan.grandculture.net",
+        "nsinews.co.kr",
+        "ngknews.co.kr",
+        "nonsan.kpnnews.org",
+        "nonsanilbo.kr"
+      ],
+      "names": [
+        "e논산신문",
+        "논산신문",
+        "김학용",
+        "논산인터넷뉴스",
+        "논산뉴스",
+        "논산공보뉴스",
+        "논산일보"
+      ],
+      "media": [
+        {
+          "name": "e논산신문",
+          "host": "enonsan.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "논산신문",
+          "host": "nsnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김학용",
+          "host": "nonsan.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "논산인터넷뉴스",
+          "host": "nsinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "논산뉴스",
+          "host": "ngknews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "논산공보뉴스",
+          "host": "nonsan.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "논산일보",
+          "host": "nonsanilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "당진시": {
+      "hosts": [
+        "idjnews.kr",
+        "grandculture.net",
+        "dangjin.grandculture.net",
+        "dangjinilbo.kr",
+        "djtoday.co.kr",
+        "djmail.co.kr"
+      ],
+      "names": [
+        "당진신문",
+        "당진 신문",
+        "당진 신문",
+        "당진일보",
+        "당진투데이",
+        "당진매일"
+      ],
+      "media": [
+        {
+          "name": "당진신문",
+          "host": "idjnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "당진 신문",
+          "host": "grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "당진 신문",
+          "host": "dangjin.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "당진일보",
+          "host": "dangjinilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "당진투데이",
+          "host": "djtoday.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "당진매일",
+          "host": "djmail.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
     "보령시": {
-      "metro": "충청남도",
+      "hosts": [
+        "charmnews.co.kr",
+        "brcity.kr",
+        "brcnews.co.kr",
+        "boryeong.grandculture.net",
+        "boryeongnews.com",
+        "boryeongilbo.kr",
+        "chamnews.co.kr",
+        "todaybr.net"
+      ],
       "names": [
-        "보령신문"
+        "보령신문",
+        "보령시장신문",
+        "보령시민신문",
+        "『보령신문』",
+        "(주)보령뉴스",
+        "보령일보",
+        "보령타임즈",
+        "보령투데이"
       ],
       "media": [
         {
           "name": "보령신문",
-          "src": "p"
+          "host": "charmnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "보령시장신문",
+          "host": "brcity.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "보령시민신문",
+          "host": "brcnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『보령신문』",
+          "host": "boryeong.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "(주)보령뉴스",
+          "host": "boryeongnews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "보령일보",
+          "host": "boryeongilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "보령타임즈",
+          "host": "chamnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "보령투데이",
+          "host": "todaybr.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "부여군": {
+      "hosts": [
+        "21cbuyeo.co.kr",
+        "buyeo.grandculture.net",
+        "k-knowledge.kr",
+        "bgnews.kr"
+      ],
+      "names": [
+        "e부여신문",
+        "『e부여신문』 표지",
+        "부여투데이",
+        "부여군민신문"
+      ],
+      "media": [
+        {
+          "name": "e부여신문",
+          "host": "21cbuyeo.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "『e부여신문』 표지",
+          "host": "buyeo.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "부여투데이",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부여군민신문",
+          "host": "bgnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "서산시": {
+      "hosts": [
+        "seosan.me",
+        "seosan.grandculture.net",
+        "seosannews.com",
+        "ssinews.co.kr",
+        "seosanilbo.kr",
+        "seosantimes.com",
+        "seosanpost.co.kr"
+      ],
+      "names": [
+        "서산신문",
+        "서산신문",
+        "seosannews.com",
+        "서산인터넷뉴스",
+        "서산일보",
+        "서산타임즈",
+        "seosanpost.co.kr"
+      ],
+      "media": [
+        {
+          "name": "서산신문",
+          "host": "seosan.me",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서산신문",
+          "host": "seosan.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "seosannews.com",
+          "host": "seosannews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "서산인터넷뉴스",
+          "host": "ssinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서산일보",
+          "host": "seosanilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서산타임즈",
+          "host": "seosantimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "seosanpost.co.kr",
+          "host": "seosanpost.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "서천군": {
+      "hosts": [
+        "seocheon.newsk.com",
+        "seocheonilbo.kr",
+        "seocheonmedia.co.kr"
+      ],
+      "names": [
+        "서천신문",
+        "서천일보",
+        "서천군미디어센터"
+      ],
+      "media": [
+        {
+          "name": "서천신문",
+          "host": "seocheon.newsk.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서천일보",
+          "host": "seocheonilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서천군미디어센터",
+          "host": "seocheonmedia.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
         }
       ]
     },
     "아산시": {
-      "metro": "충청남도",
+      "hosts": [
+        "asannews.co.kr",
+        "asantoday.com"
+      ],
       "names": [
-        "아산신문"
+        "아산신문",
+        "아산뉴스",
+        "아산투데이"
       ],
       "media": [
         {
           "name": "아산신문",
           "src": "p"
-        }
-      ]
-    },
-    "서산시": {
-      "metro": "충청남도",
-      "names": [
-        "서산신문"
-      ],
-      "media": [
+        },
         {
-          "name": "서산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "논산시": {
-      "metro": "충청남도",
-      "names": [
-        "논산신문"
-      ],
-      "media": [
+          "name": "아산뉴스",
+          "host": "asannews.co.kr",
+          "src": "web-search"
+        },
         {
-          "name": "논산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "계룡시": {
-      "metro": "충청남도",
-      "names": [],
-      "media": []
-    },
-    "당진시": {
-      "metro": "충청남도",
-      "names": [
-        "당진시대"
-      ],
-      "media": [
-        {
-          "name": "당진시대",
-          "src": "bk"
-        }
-      ]
-    },
-    "금산군": {
-      "metro": "충청남도",
-      "names": [
-        "금산신문"
-      ],
-      "media": [
-        {
-          "name": "금산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "부여군": {
-      "metro": "충청남도",
-      "names": [
-        "부여신문"
-      ],
-      "media": [
-        {
-          "name": "부여신문",
-          "src": "p"
-        }
-      ]
-    },
-    "서천군": {
-      "metro": "충청남도",
-      "names": [],
-      "media": []
-    },
-    "청양군": {
-      "metro": "충청남도",
-      "names": [],
-      "media": []
-    },
-    "홍성군": {
-      "metro": "충청남도",
-      "names": [
-        "홍성신문"
-      ],
-      "media": [
-        {
-          "name": "홍성신문",
-          "src": "bk"
+          "name": "아산투데이",
+          "host": "asantoday.com",
+          "src": "web-search"
         }
       ]
     },
     "예산군": {
-      "metro": "충청남도",
+      "hosts": [
+        "yesm.kr"
+      ],
       "names": [
-        "예산신문"
+        "예산신문",
+        "예산뉴스 무한정보"
       ],
       "media": [
         {
           "name": "예산신문",
           "src": "p"
+        },
+        {
+          "name": "예산뉴스 무한정보",
+          "host": "yesm.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "천안시": {
+      "hosts": [
+        "icj.kr",
+        "canews.kr"
+      ],
+      "names": [
+        "천안신문",
+        "천안아산신문"
+      ],
+      "media": [
+        {
+          "name": "천안신문",
+          "host": "icj.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "천안아산신문",
+          "host": "canews.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "청양군": {
+      "hosts": [
+        "cctoday.co.kr",
+        "cnnews.co.kr",
+        "daejonilbo.com"
+      ],
+      "names": [
+        "충청투데이",
+        "대전일보",
+        "금강일보"
+      ],
+      "media": [
+        {
+          "name": "충청투데이",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "대전일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "금강일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
     "태안군": {
-      "metro": "충청남도",
+      "hosts": [
+        "taeannews.co.kr"
+      ],
       "names": [
         "태안신문"
       ],
       "media": [
         {
           "name": "태안신문",
-          "src": "p"
+          "host": "taeannews.co.kr",
+          "src": "web-search"
         }
       ]
     },
-    "전주시": {
-      "metro": "전북특별자치도",
+    "홍성군": {
+      "hosts": [
+        "hsnews.co.kr"
+      ],
       "names": [
-        "전주시민미디어"
+        "홍성신문"
       ],
       "media": [
         {
-          "name": "전주시민미디어",
-          "src": "p"
+          "name": "홍성신문",
+          "host": "hsnews.co.kr",
+          "src": "web-search"
         }
       ]
     },
-    "군산시": {
-      "metro": "전북특별자치도",
+    "달서구": {
+      "hosts": [
+        "imaeil.com",
+        "idaegu.co.kr",
+        "dgmbc.co.kr"
+      ],
       "names": [
-        "군산신문"
+        "매일신문",
+        "대구신문",
+        "대구일보"
       ],
       "media": [
         {
-          "name": "군산신문",
-          "src": "p"
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "대구신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "대구일보",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "익산시": {
-      "metro": "전북특별자치도",
+    "달성군": {
+      "hosts": [],
       "names": [
-        "익산신문"
+        "달성신문",
+        "인터넷신문"
       ],
       "media": [
         {
-          "name": "익산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "정읍시": {
-      "metro": "전북특별자치도",
-      "names": [
-        "정읍신문"
-      ],
-      "media": [
-        {
-          "name": "정읍신문",
-          "src": "p"
-        }
-      ]
-    },
-    "남원시": {
-      "metro": "전북특별자치도",
-      "names": [
-        "남원신문"
-      ],
-      "media": [
-        {
-          "name": "남원신문",
-          "src": "p"
-        }
-      ]
-    },
-    "김제시": {
-      "metro": "전북특별자치도",
-      "names": [
-        "김제신문"
-      ],
-      "media": [
-        {
-          "name": "김제신문",
-          "src": "p"
-        }
-      ]
-    },
-    "완주군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "진안군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "무주군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "장수군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "임실군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "순창군": {
-      "metro": "전북특별자치도",
-      "names": [],
-      "media": []
-    },
-    "고창군": {
-      "metro": "전북특별자치도",
-      "names": [
-        "고창신문"
-      ],
-      "media": [
-        {
-          "name": "고창신문",
-          "src": "p"
-        }
-      ]
-    },
-    "부안군": {
-      "metro": "전북특별자치도",
-      "names": [
-        "부안신문"
-      ],
-      "media": [
-        {
-          "name": "부안신문",
-          "src": "p"
-        }
-      ]
-    },
-    "목포시": {
-      "metro": "전라남도",
-      "names": [
-        "목포시민신문",
-        "목포MBC"
-      ],
-      "media": [
-        {
-          "name": "목포시민신문",
+          "name": "달성신문",
           "src": "p"
         },
         {
-          "name": "목포MBC",
-          "src": "p"
+          "name": "인터넷신문",
+          "src": "mcst"
         }
       ]
     },
-    "여수시": {
-      "metro": "전라남도",
+    "수성구": {
+      "hosts": [
+        "imaeil.com",
+        "idaegu.co.kr",
+        "dgmbc.co.kr"
+      ],
       "names": [
-        "여수신문",
-        "여수MBC"
+        "매일신문",
+        "대구신문",
+        "대구일보"
       ],
       "media": [
         {
-          "name": "여수신문",
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "대구신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "대구일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "대덕구": {
+      "hosts": [
+        "daejonilbo.com",
+        "cctoday.co.kr",
+        "tjmbc.co.kr"
+      ],
+      "names": [
+        "대전일보",
+        "충청투데이",
+        "중도일보"
+      ],
+      "media": [
+        {
+          "name": "대전일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "충청투데이",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "중도일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "유성구": {
+      "hosts": [
+        "daejonilbo.com",
+        "cctoday.co.kr",
+        "tjmbc.co.kr"
+      ],
+      "names": [
+        "대전일보",
+        "충청투데이",
+        "중도일보"
+      ],
+      "media": [
+        {
+          "name": "대전일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "충청투데이",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "중도일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "강릉시": {
+      "hosts": [
+        "gangneungnews.kr"
+      ],
+      "names": [
+        "강릉뉴스"
+      ],
+      "media": [
+        {
+          "name": "강릉뉴스",
+          "host": "gangneungnews.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "고성군": {
+      "hosts": [
+        "gosnews.kr",
+        "gsmnews.co.kr",
+        "kstimes.kr"
+      ],
+      "names": [
+        "고성신문",
+        "고성매일신문",
+        "고성타임즈"
+      ],
+      "media": [
+        {
+          "name": "고성신문",
+          "host": "gosnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고성매일신문",
+          "host": "gsmnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고성타임즈",
+          "host": "kstimes.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "동해시": {
+      "hosts": [
+        "sdnews.co.kr"
+      ],
+      "names": [
+        "동해신문",
+        "삼척동해신문"
+      ],
+      "media": [
+        {
+          "name": "동해신문",
           "src": "p"
         },
         {
-          "name": "여수MBC",
-          "src": "p"
+          "name": "삼척동해신문",
+          "host": "sdnews.co.kr",
+          "src": "web-search"
         }
       ]
     },
-    "순천시": {
-      "metro": "전라남도",
+    "삼척시": {
+      "hosts": [
+        "sdnews.co.kr"
+      ],
       "names": [
-        "순천광장신문"
+        "삼척신문",
+        "삼척동해신문"
       ],
       "media": [
         {
-          "name": "순천광장신문",
-          "src": "p"
-        }
-      ]
-    },
-    "나주시": {
-      "metro": "전라남도",
-      "names": [
-        "나주신문"
-      ],
-      "media": [
-        {
-          "name": "나주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "광양시": {
-      "metro": "전라남도",
-      "names": [
-        "광양신문"
-      ],
-      "media": [
-        {
-          "name": "광양신문",
-          "src": "p"
-        }
-      ]
-    },
-    "담양군": {
-      "metro": "전라남도",
-      "names": [
-        "담양뉴스"
-      ],
-      "media": [
-        {
-          "name": "담양뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "곡성군": {
-      "metro": "전라남도",
-      "names": [],
-      "media": []
-    },
-    "구례군": {
-      "metro": "전라남도",
-      "names": [],
-      "media": []
-    },
-    "고흥군": {
-      "metro": "전라남도",
-      "names": [
-        "고흥신문"
-      ],
-      "media": [
-        {
-          "name": "고흥신문",
-          "src": "p"
-        }
-      ]
-    },
-    "보성군": {
-      "metro": "전라남도",
-      "names": [],
-      "media": []
-    },
-    "화순군": {
-      "metro": "전라남도",
-      "names": [
-        "화순뉴스"
-      ],
-      "media": [
-        {
-          "name": "화순뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "장흥군": {
-      "metro": "전라남도",
-      "names": [
-        "장흥신문"
-      ],
-      "media": [
-        {
-          "name": "장흥신문",
-          "src": "p"
-        }
-      ]
-    },
-    "강진군": {
-      "metro": "전라남도",
-      "names": [
-        "강진신문"
-      ],
-      "media": [
-        {
-          "name": "강진신문",
-          "src": "p"
-        }
-      ]
-    },
-    "해남군": {
-      "metro": "전라남도",
-      "names": [
-        "해남신문"
-      ],
-      "media": [
-        {
-          "name": "해남신문",
-          "src": "p"
-        }
-      ]
-    },
-    "영암군": {
-      "metro": "전라남도",
-      "names": [
-        "영암신문"
-      ],
-      "media": [
-        {
-          "name": "영암신문",
-          "src": "p"
-        }
-      ]
-    },
-    "무안군": {
-      "metro": "전라남도",
-      "names": [
-        "무안신문"
-      ],
-      "media": [
-        {
-          "name": "무안신문",
-          "src": "p"
-        }
-      ]
-    },
-    "함평군": {
-      "metro": "전라남도",
-      "names": [],
-      "media": []
-    },
-    "영광군": {
-      "metro": "전라남도",
-      "names": [
-        "영광신문"
-      ],
-      "media": [
-        {
-          "name": "영광신문",
-          "src": "p"
-        }
-      ]
-    },
-    "장성군": {
-      "metro": "전라남도",
-      "names": [
-        "장성신문"
-      ],
-      "media": [
-        {
-          "name": "장성신문",
-          "src": "p"
-        }
-      ]
-    },
-    "완도군": {
-      "metro": "전라남도",
-      "names": [
-        "완도신문"
-      ],
-      "media": [
-        {
-          "name": "완도신문",
-          "src": "p"
-        }
-      ]
-    },
-    "진도군": {
-      "metro": "전라남도",
-      "names": [
-        "진도신문"
-      ],
-      "media": [
-        {
-          "name": "진도신문",
-          "src": "p"
-        }
-      ]
-    },
-    "신안군": {
-      "metro": "전라남도",
-      "names": [],
-      "media": []
-    },
-    "포항시": {
-      "metro": "경상북도",
-      "names": [
-        "경북신문",
-        "포항MBC"
-      ],
-      "media": [
-        {
-          "name": "경북신문",
+          "name": "삼척신문",
           "src": "p"
         },
         {
-          "name": "포항MBC",
+          "name": "삼척동해신문",
+          "host": "sdnews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "속초시": {
+      "hosts": [
+        "soraknews.co.kr",
+        "srtoday.co.kr",
+        "seoraktimes.com"
+      ],
+      "names": [
+        "설악신문",
+        "설악투데이",
+        "설악타임즈"
+      ],
+      "media": [
+        {
+          "name": "설악신문",
+          "host": "soraknews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "설악투데이",
+          "host": "srtoday.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "설악타임즈",
+          "host": "seoraktimes.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "양구군": {
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
+      ],
+      "names": [
+        "강원일보",
+        "강원도민일보",
+        "설악신문"
+      ],
+      "media": [
+        {
+          "name": "강원일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "강원도민일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "설악신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "양양군": {
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
+      ],
+      "names": [
+        "강원일보",
+        "강원도민일보",
+        "설악신문"
+      ],
+      "media": [
+        {
+          "name": "강원일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "강원도민일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "설악신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "영월군": {
+      "hosts": [
+        "yeongwol-news.com"
+      ],
+      "names": [
+        "영월신문"
+      ],
+      "media": [
+        {
+          "name": "영월신문",
+          "host": "yeongwol-news.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "원주시": {
+      "hosts": [
+        "wonjutoday.co.kr",
+        "iwjnews.com"
+      ],
+      "names": [
+        "원주투데이",
+        "원주신문"
+      ],
+      "media": [
+        {
+          "name": "원주투데이",
+          "host": "wonjutoday.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "원주신문",
+          "host": "iwjnews.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "인제군": {
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
+      ],
+      "names": [
+        "강원일보",
+        "강원도민일보",
+        "설악신문"
+      ],
+      "media": [
+        {
+          "name": "강원일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "강원도민일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "설악신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "정선군": {
+      "hosts": [
+        "tjinews.co.kr"
+      ],
+      "names": [
+        "정선신문",
+        "태백정선인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "정선신문",
           "src": "p"
+        },
+        {
+          "name": "태백정선인터넷뉴스",
+          "host": "tjinews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "철원군": {
+      "hosts": [
+        "cheorwonnews.com",
+        "cwinews.co.kr"
+      ],
+      "names": [
+        "철원신문",
+        "철원인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "철원신문",
+          "host": "cheorwonnews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "철원인터넷뉴스",
+          "host": "cwinews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "춘천시": {
+      "hosts": [
+        "chunsa.kr",
+        "ccpost.co.kr"
+      ],
+      "names": [
+        "춘천사람들",
+        "춘천신문"
+      ],
+      "media": [
+        {
+          "name": "춘천사람들",
+          "host": "chunsa.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "춘천신문",
+          "host": "ccpost.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "태백시": {
+      "hosts": [
+        "tjinews.co.kr"
+      ],
+      "names": [
+        "태백신문",
+        "태백정선인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "태백신문",
+          "src": "p"
+        },
+        {
+          "name": "태백정선인터넷뉴스",
+          "host": "tjinews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "평창군": {
+      "hosts": [
+        "news700.kr"
+      ],
+      "names": [
+        "평창신문"
+      ],
+      "media": [
+        {
+          "name": "평창신문",
+          "host": "news700.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "홍천군": {
+      "hosts": [
+        "hcsinmoon.co.kr"
+      ],
+      "names": [
+        "홍천뉴스",
+        "홍천신문"
+      ],
+      "media": [
+        {
+          "name": "홍천뉴스",
+          "src": "p"
+        },
+        {
+          "name": "홍천신문",
+          "host": "hcsinmoon.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "화천군": {
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
+      ],
+      "names": [
+        "강원일보",
+        "강원도민일보",
+        "설악신문"
+      ],
+      "media": [
+        {
+          "name": "강원일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "강원도민일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "설악신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "횡성군": {
+      "hosts": [
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
+      ],
+      "names": [
+        "강원일보",
+        "강원도민일보",
+        "설악신문"
+      ],
+      "media": [
+        {
+          "name": "강원일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "강원도민일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "설악신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "광산구": {
+      "hosts": [
+        "kwangju.co.kr",
+        "kjdaily.com",
+        "mdilbo.com"
+      ],
+      "names": [
+        "광주일보",
+        "광남일보",
+        "광주매일신문"
+      ],
+      "media": [
+        {
+          "name": "광주일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "광남일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "광주매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "경산시": {
+      "hosts": [
+        "gsinews.com",
+        "ksinews.co.kr"
+      ],
+      "names": [
+        "경산신문",
+        "경산인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "경산신문",
+          "host": "gsinews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "경산인터넷뉴스",
+          "host": "ksinews.co.kr",
+          "src": "web-search"
         }
       ]
     },
     "경주시": {
-      "metro": "경상북도",
+      "hosts": [
+        "gjnews.com",
+        "gjinews.co.kr"
+      ],
       "names": [
-        "경주신문"
+        "경주신문",
+        "경주인터넷신문"
       ],
       "media": [
         {
           "name": "경주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "김천시": {
-      "metro": "경상북도",
-      "names": [
-        "김천신문"
-      ],
-      "media": [
-        {
-          "name": "김천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "안동시": {
-      "metro": "경상북도",
-      "names": [
-        "안동뉴스",
-        "안동MBC"
-      ],
-      "media": [
-        {
-          "name": "안동뉴스",
-          "src": "p"
+          "host": "gjnews.com",
+          "src": "web-search"
         },
         {
-          "name": "안동MBC",
-          "src": "p"
+          "name": "경주인터넷신문",
+          "host": "gjinews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "고령군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
     "구미시": {
-      "metro": "경상북도",
+      "hosts": [
+        "guminews.net",
+        "guminews.co.kr"
+      ],
       "names": [
-        "구미신문"
+        "구미신문",
+        "구미뉴스"
       ],
       "media": [
         {
           "name": "구미신문",
+          "host": "guminews.net",
+          "src": "web-search"
+        },
+        {
+          "name": "구미뉴스",
+          "host": "guminews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "군위군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "김천시": {
+      "hosts": [
+        "kimcheon.co.kr",
+        "gcinews.com"
+      ],
+      "names": [
+        "김천신문",
+        "김천인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "김천신문",
+          "host": "kimcheon.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "김천인터넷뉴스",
+          "host": "gcinews.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "문경시": {
+      "hosts": [
+        "mgnews.co.kr"
+      ],
+      "names": [
+        "문경신문",
+        "문경뉴스통신"
+      ],
+      "media": [
+        {
+          "name": "문경신문",
           "src": "p"
+        },
+        {
+          "name": "문경뉴스통신",
+          "host": "mgnews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "봉화군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "상주시": {
+      "hosts": [
+        "sangjunews.com",
+        "sminews.co.kr"
+      ],
+      "names": [
+        "상주신문",
+        "상주닷컴",
+        "상주문경매일신문"
+      ],
+      "media": [
+        {
+          "name": "상주신문",
+          "src": "p"
+        },
+        {
+          "name": "상주닷컴",
+          "host": "sangjunews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "상주문경매일신문",
+          "host": "sminews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "성주군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "안동시": {
+      "hosts": [
+        "adns.kr",
+        "adinews.co.kr"
+      ],
+      "names": [
+        "안동뉴스",
+        "안동인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "안동뉴스",
+          "host": "adns.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "안동인터넷뉴스",
+          "host": "adinews.co.kr",
+          "src": "web-search"
+        }
+      ]
+    },
+    "영덕군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "영양군": {
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
+      "names": [
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
+      ],
+      "media": [
+        {
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
     "영주시": {
-      "metro": "경상북도",
+      "hosts": [
+        "yjinews.com"
+      ],
       "names": [
         "영주시민신문"
       ],
       "media": [
         {
           "name": "영주시민신문",
-          "src": "bk"
+          "host": "yjinews.com",
+          "src": "web-search"
         }
       ]
     },
     "영천시": {
-      "metro": "경상북도",
+      "hosts": [
+        "ycinews.net",
+        "yctoday.net"
+      ],
       "names": [
-        "영천신문"
+        "영천신문",
+        "영천인터넷뉴스",
+        "영천투데이"
       ],
       "media": [
         {
           "name": "영천신문",
           "src": "p"
-        }
-      ]
-    },
-    "상주시": {
-      "metro": "경상북도",
-      "names": [
-        "상주신문"
-      ],
-      "media": [
+        },
         {
-          "name": "상주신문",
-          "src": "p"
-        }
-      ]
-    },
-    "문경시": {
-      "metro": "경상북도",
-      "names": [
-        "문경신문"
-      ],
-      "media": [
+          "name": "영천인터넷뉴스",
+          "host": "ycinews.net",
+          "src": "web-search"
+        },
         {
-          "name": "문경신문",
-          "src": "p"
+          "name": "영천투데이",
+          "host": "yctoday.net",
+          "src": "web-search"
         }
       ]
-    },
-    "경산시": {
-      "metro": "경상북도",
-      "names": [
-        "경산신문"
-      ],
-      "media": [
-        {
-          "name": "경산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "의성군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "청송군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "영양군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "영덕군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "청도군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "고령군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "성주군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "칠곡군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
     },
     "예천군": {
-      "metro": "경상북도",
+      "hosts": [
+        "ycnews.co.kr"
+      ],
       "names": [
         "예천신문"
       ],
       "media": [
         {
           "name": "예천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "봉화군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "울진군": {
-      "metro": "경상북도",
-      "names": [
-        "울진신문"
-      ],
-      "media": [
-        {
-          "name": "울진신문",
-          "src": "p"
+          "host": "ycnews.co.kr",
+          "src": "web-search"
         }
       ]
     },
     "울릉군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "군위군": {
-      "metro": "경상북도",
-      "names": [],
-      "media": []
-    },
-    "창원시": {
-      "metro": "경상남도",
+      "hosts": [
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
+      ],
       "names": [
-        "MBC경남",
-        "KBS창원"
+        "매일신문",
+        "경북일보",
+        "경북매일신문"
       ],
       "media": [
         {
-          "name": "MBC경남",
-          "src": "p"
+          "name": "매일신문",
+          "host": "",
+          "src": "metro_fallback"
         },
         {
-          "name": "KBS창원",
-          "src": "p"
+          "name": "경북일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "경북매일신문",
+          "host": "",
+          "src": "metro_fallback"
         }
       ]
     },
-    "진주시": {
-      "metro": "경상남도",
+    "울진군": {
+      "hosts": [
+        "uljinnews.co.kr",
+        "uljinnews.com",
+        "uljintoday.com",
+        "uljinilbo.co.kr",
+        "uljintimes.co.kr",
+        "m.uljintimes.co.kr",
+        "uljin.grandculture.net"
+      ],
       "names": [
-        "진주신문"
+        "울진신문",
+        "빠른뉴스! 울진뉴스",
+        "울진투데이",
+        "울진일보",
+        "울진타임즈",
+        "m.uljintimes.co.kr",
+        "울진타임즈"
       ],
       "media": [
         {
-          "name": "진주신문",
-          "src": "p"
+          "name": "울진신문",
+          "host": "uljinnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "빠른뉴스! 울진뉴스",
+          "host": "uljinnews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "울진투데이",
+          "host": "uljintoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "울진일보",
+          "host": "uljinilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "울진타임즈",
+          "host": "uljintimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "m.uljintimes.co.kr",
+          "host": "m.uljintimes.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "울진타임즈",
+          "host": "uljin.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
-    "통영시": {
-      "metro": "경상남도",
+    "의성군": {
+      "hosts": [
+        "114.co.kr",
+        "uiseong.grandculture.net",
+        "k-knowledge.kr"
+      ],
       "names": [
-        "통영신문"
+        "의성신문",
+        "『의성 신문』 제479호 1면",
+        "의성인터넷신문"
       ],
       "media": [
         {
-          "name": "통영신문",
-          "src": "p"
+          "name": "의성신문",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『의성 신문』 제479호 1면",
+          "host": "uiseong.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "의성인터넷신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "청도군": {
+      "hosts": [
+        "chdnews.com",
+        "cheongdo.grandculture.net",
+        "cdinews.co.kr",
+        "cdtoday.net"
+      ],
+      "names": [
+        "청도신문",
+        "청도 신문",
+        "청도인터넷뉴스",
+        "청도투데이"
+      ],
+      "media": [
+        {
+          "name": "청도신문",
+          "host": "chdnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "청도 신문",
+          "host": "cheongdo.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "청도인터넷뉴스",
+          "host": "cdinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "청도투데이",
+          "host": "cdtoday.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "청송군": {
+      "hosts": [
+        "cheongsongnews.co.kr"
+      ],
+      "names": [
+        "청송군민신문"
+      ],
+      "media": [
+        {
+          "name": "청송군민신문",
+          "host": "cheongsongnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "칠곡군": {
+      "hosts": [
+        "ismartnews.com",
+        "chilgok.grandculture.net",
+        "grandculture.net",
+        "cginews.net",
+        "cginews.co.kr"
+      ],
+      "names": [
+        "칠곡신문",
+        "「칠곡신문」",
+        "칠곡 신문",
+        "칠곡인터넷뉴스",
+        "칠곡군민신문"
+      ],
+      "media": [
+        {
+          "name": "칠곡신문",
+          "host": "ismartnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "「칠곡신문」",
+          "host": "chilgok.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "칠곡 신문",
+          "host": "grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "칠곡인터넷뉴스",
+          "host": "cginews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "칠곡군민신문",
+          "host": "cginews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "포항시": {
+      "hosts": [
+        "phnews.co.kr",
+        "phsmnews.com",
+        "kbtilbo.com"
+      ],
+      "names": [
+        "포항신문",
+        "포항시민신문",
+        "포항일보"
+      ],
+      "media": [
+        {
+          "name": "포항신문",
+          "host": "phnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "포항시민신문",
+          "host": "phsmnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "포항일보",
+          "host": "kbtilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "가평군": {
+      "hosts": [
+        "gpnewsweek.com",
+        "gapyeong.grandculture.net",
+        "gp21.com",
+        "grandculture.net",
+        "itn21.com"
+      ],
+      "names": [
+        "가평신문",
+        "가평신문",
+        "가평타임즈",
+        "가평타임즈",
+        "가평투데이"
+      ],
+      "media": [
+        {
+          "name": "가평신문",
+          "host": "gpnewsweek.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "가평신문",
+          "host": "gapyeong.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "가평타임즈",
+          "host": "gp21.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "가평타임즈",
+          "host": "grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "가평투데이",
+          "host": "itn21.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "고양시": {
+      "hosts": [
+        "mygoyang.com",
+        "goyangnews.co.kr",
+        "goyang1.com",
+        "goyangpajutoday.co.kr"
+      ],
+      "names": [
+        "고양신문",
+        "고양시에 관한 모든 것",
+        "고양일보",
+        "고양파주투데이"
+      ],
+      "media": [
+        {
+          "name": "고양신문",
+          "host": "mygoyang.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고양시에 관한 모든 것",
+          "host": "goyangnews.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "고양일보",
+          "host": "goyang1.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고양파주투데이",
+          "host": "goyangpajutoday.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "과천시": {
+      "hosts": [
+        "gwachonnews.co.kr",
+        "gwacheon.kpnnews.org",
+        "114.co.kr"
+      ],
+      "names": [
+        "과천시대신문",
+        "과천공보뉴스",
+        "과천저널"
+      ],
+      "media": [
+        {
+          "name": "과천시대신문",
+          "host": "gwachonnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "과천공보뉴스",
+          "host": "gwacheon.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "과천저널",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "광명시": {
+      "hosts": [
+        "kmtimes.net",
+        "gwangmyeong.grandculture.net",
+        "gmilbo.co.kr",
+        "chamhanahc.com",
+        "gmnewspaper.kr",
+        "thegmpost.com"
+      ],
+      "names": [
+        "광명시민신문",
+        "『광명신문』",
+        "광명일보",
+        "광명 웰페어 타임즈",
+        "광명매일신문",
+        "광명포스트"
+      ],
+      "media": [
+        {
+          "name": "광명시민신문",
+          "host": "kmtimes.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『광명신문』",
+          "host": "gwangmyeong.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "광명일보",
+          "host": "gmilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광명 웰페어 타임즈",
+          "host": "chamhanahc.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광명매일신문",
+          "host": "gmnewspaper.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광명포스트",
+          "host": "thegmpost.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "광주시": {
+      "hosts": [
+        "kwangju.co.kr",
+        "gjilbo.com",
+        "gwangju.grandculture.net",
+        "gjnews.net",
+        "gjtnews.com",
+        "gjitv.co.kr",
+        "kjdaily.com",
+        "todaygwangju.com"
+      ],
+      "names": [
+        "광주일보",
+        "광주신문",
+        "광주전남언론사",
+        "광주뉴스",
+        "광주타임즈",
+        "광주투데이",
+        "광주매일신문",
+        "todaygwangju.com"
+      ],
+      "media": [
+        {
+          "name": "광주일보",
+          "host": "kwangju.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광주신문",
+          "host": "gjilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광주전남언론사",
+          "host": "gwangju.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "광주뉴스",
+          "host": "gjnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광주타임즈",
+          "host": "gjtnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광주투데이",
+          "host": "gjitv.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광주매일신문",
+          "host": "kjdaily.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "todaygwangju.com",
+          "host": "todaygwangju.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "구리시": {
+      "hosts": [
+        "mediamap.co.kr",
+        "gnnews.org",
+        "guri.himedia.co.kr",
+        "guri.grandculture.net"
+      ],
+      "names": [
+        "구리신문",
+        "구리남양주뉴스",
+        "구리 하이미디어컴퓨터학원",
+        "남양주 구리 뉴스"
+      ],
+      "media": [
+        {
+          "name": "구리신문",
+          "host": "mediamap.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "구리남양주뉴스",
+          "host": "gnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "구리 하이미디어컴퓨터학원",
+          "host": "guri.himedia.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "남양주 구리 뉴스",
+          "host": "guri.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "군포시": {
+      "hosts": [
+        "gunponews.net",
+        "mediagunpo.co.kr"
+      ],
+      "names": [
+        "군포신문",
+        "mediagunpo.co.kr"
+      ],
+      "media": [
+        {
+          "name": "군포신문",
+          "host": "gunponews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "mediagunpo.co.kr",
+          "host": "mediagunpo.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "김포시": {
+      "hosts": [
+        "gimposenior.org",
+        "igimpo.com",
+        "gimponews25.com",
+        "gpsimin.com",
+        "gimpodaily.com",
+        "thegimpo.com",
+        "gimpotoday.com",
+        "gimpoeco.com",
+        "gimpojn.kr",
+        "gimpomaeil.com",
+        "focusgimpo.kr"
+      ],
+      "names": [
+        "gimposenior.org",
+        "김포신문",
+        "김포뉴스25",
+        "김포시민신문",
+        "김포데일리",
+        "thegimpo.com",
+        "김포투데이",
+        "gimpoeco.com",
+        "김포저널",
+        "김포매일뉴스",
+        "focusgimpo.kr"
+      ],
+      "media": [
+        {
+          "name": "gimposenior.org",
+          "host": "gimposenior.org",
+          "src": "verified",
+          "address": "김포시노인종합복지관"
+        },
+        {
+          "name": "김포신문",
+          "host": "igimpo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김포뉴스25",
+          "host": "gimponews25.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "김포시민신문",
+          "host": "gpsimin.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김포데일리",
+          "host": "gimpodaily.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "thegimpo.com",
+          "host": "thegimpo.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "김포투데이",
+          "host": "gimpotoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "gimpoeco.com",
+          "host": "gimpoeco.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "김포저널",
+          "host": "gimpojn.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김포매일뉴스",
+          "host": "gimpomaeil.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "focusgimpo.kr",
+          "host": "focusgimpo.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "남양주시": {
+      "hosts": [
+        "nyji.co.kr",
+        "nyjnews.net",
+        "wa-bu.net",
+        "namyangju.grandculture.net",
+        "nyjtoday.com",
+        "nyjjn.com"
+      ],
+      "names": [
+        "남양주신문",
+        "남양주뉴스",
+        "남양주타임즈",
+        "남양주뉴스",
+        "남양주투데이",
+        "남양주저널"
+      ],
+      "media": [
+        {
+          "name": "남양주신문",
+          "host": "nyji.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남양주뉴스",
+          "host": "nyjnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남양주타임즈",
+          "host": "wa-bu.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남양주뉴스",
+          "host": "namyangju.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남양주투데이",
+          "host": "nyjtoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남양주저널",
+          "host": "nyjjn.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "동두천시": {
+      "hosts": [
+        "ycgmnews.com",
+        "yangju.grandculture.net",
+        "y-ddc.com"
+      ],
+      "names": [
+        "동두천연천신문",
+        "동두천신문",
+        "동두천뉴스"
+      ],
+      "media": [
+        {
+          "name": "동두천연천신문",
+          "host": "ycgmnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동두천신문",
+          "host": "yangju.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동두천뉴스",
+          "host": "y-ddc.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "부천시": {
+      "hosts": [
+        "bucheonnews.net",
+        "mypuchon.com",
+        "bucheon21.com",
+        "bucheonnews.co.kr",
+        "bucheon.grandculture.net",
+        "bucheontimes.com",
+        "bucheonjournal.com",
+        "bcmaeil.com"
+      ],
+      "names": [
+        "부천신문",
+        "부천일보",
+        "부천시민신문",
+        "부천뉴스",
+        "부천일보",
+        "부천타임즈",
+        "부천저널",
+        "부천매일"
+      ],
+      "media": [
+        {
+          "name": "부천신문",
+          "host": "bucheonnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천일보",
+          "host": "mypuchon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천시민신문",
+          "host": "bucheon21.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천뉴스",
+          "host": "bucheonnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천일보",
+          "host": "bucheon.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천타임즈",
+          "host": "bucheontimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천저널",
+          "host": "bucheonjournal.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부천매일",
+          "host": "bcmaeil.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "성남시": {
+      "hosts": [
+        "snbnews.co.kr",
+        "snilbo.co.kr",
+        "snnews.kr",
+        "seongnam.grandculture.net",
+        "sungnammail.co.kr",
+        "snsiminnews.kr",
+        "snjournal.com"
+      ],
+      "names": [
+        "성남신문",
+        "성남일보",
+        "성남뉴스",
+        "성남타임즈",
+        "성남도시신문",
+        "성남시민신문",
+        "성남저널"
+      ],
+      "media": [
+        {
+          "name": "성남신문",
+          "host": "snbnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남일보",
+          "host": "snilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남뉴스",
+          "host": "snnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남타임즈",
+          "host": "seongnam.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남도시신문",
+          "host": "sungnammail.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남시민신문",
+          "host": "snsiminnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성남저널",
+          "host": "snjournal.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "수원시": {
+      "hosts": [
+        "suwon.com",
+        "urisuwon.com",
+        "suwonnews.co.kr",
+        "suwonilbo.kr",
+        "k-knowledge.kr",
+        "suwontoday.com"
+      ],
+      "names": [
+        "수원신문",
+        "수원시민신문",
+        "수원뉴스",
+        "수원일보",
+        "수원타임즈",
+        "수원투데이"
+      ],
+      "media": [
+        {
+          "name": "수원신문",
+          "host": "suwon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "수원시민신문",
+          "host": "urisuwon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "수원뉴스",
+          "host": "suwonnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "수원일보",
+          "host": "suwonilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "수원타임즈",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "수원투데이",
+          "host": "suwontoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "시흥시": {
+      "hosts": [
+        "shnews.net",
+        "ssnews.co.kr",
+        "siheung.grandculture.net",
+        "shtimes.kr"
+      ],
+      "names": [
+        "시흥신문",
+        "시흥시민신문",
+        "시흥신문",
+        "시흥타임즈"
+      ],
+      "media": [
+        {
+          "name": "시흥신문",
+          "host": "shnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "시흥시민신문",
+          "host": "ssnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "시흥신문",
+          "host": "siheung.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "시흥타임즈",
+          "host": "shtimes.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "안산시": {
+      "hosts": [
+        "ansansm.co.kr",
+        "ansan.grandculture.net",
+        "ansannews.co.kr",
+        "asinews.co.kr",
+        "ansanilbo1.com",
+        "ansantimes.co.kr",
+        "myansan.co.kr",
+        "todayansan.co.kr",
+        "031-499-4223.zeep.kr",
+        "asgshs.com"
+      ],
+      "names": [
+        "안산신문",
+        "안산신문",
+        "안산뉴스",
+        "안산인터넷뉴스",
+        "안산일보",
+        "안산타임스",
+        "신문사소개",
+        "todayansan.co.kr",
+        "안산시유압프레스 한길프레스",
+        "안산강서고등학교 인터넷신문"
+      ],
+      "media": [
+        {
+          "name": "안산신문",
+          "host": "ansansm.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산신문",
+          "host": "ansan.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산뉴스",
+          "host": "ansannews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산인터넷뉴스",
+          "host": "asinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산일보",
+          "host": "ansanilbo1.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산타임스",
+          "host": "ansantimes.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "신문사소개",
+          "host": "myansan.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "todayansan.co.kr",
+          "host": "todayansan.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "안산시유압프레스 한길프레스",
+          "host": "031-499-4223.zeep.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안산강서고등학교 인터넷신문",
+          "host": "asgshs.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "안성시": {
+      "hosts": [
+        "anseongnews.com",
+        "asns.co.kr",
+        "anseongtoday.co.kr",
+        "bww.co.kr"
+      ],
+      "names": [
+        "자치안성신문",
+        "안성뉴스",
+        "안성투데이",
+        "안성복지신문"
+      ],
+      "media": [
+        {
+          "name": "자치안성신문",
+          "host": "anseongnews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "안성뉴스",
+          "host": "asns.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안성투데이",
+          "host": "anseongtoday.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안성복지신문",
+          "host": "bww.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "안양시": {
+      "hosts": [
+        "anyangnews.co.kr",
+        "anyangnews.net",
+        "xn--z92b13l12bmi.com",
+        "aynews.co.kr"
+      ],
+      "names": [
+        "안양신문",
+        "anyangnews.net",
+        "안양신문",
+        "안양시민신문"
+      ],
+      "media": [
+        {
+          "name": "안양신문",
+          "host": "anyangnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "anyangnews.net",
+          "host": "anyangnews.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "안양신문",
+          "host": "xn--z92b13l12bmi.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "안양시민신문",
+          "host": "aynews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "양주시": {
+      "hosts": [
+        "yangju.grandculture.net"
+      ],
+      "names": [
+        "양주신문"
+      ],
+      "media": [
+        {
+          "name": "양주신문",
+          "host": "yangju.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "양평군": {
+      "hosts": [
+        "ypnews.kr",
+        "yangpyeong.kpnnews.org"
+      ],
+      "names": [
+        "양평백운신문",
+        "양평공보뉴스"
+      ],
+      "media": [
+        {
+          "name": "양평백운신문",
+          "host": "ypnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "양평공보뉴스",
+          "host": "yangpyeong.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "여주시": {
+      "hosts": [
+        "yeojunews.co.kr",
+        "yeoju.kpnnews.org",
+        "mediareport.co.kr",
+        "joongboo.com",
+        "yeojutoday.com",
+        "114.co.kr",
+        "k-knowledge.kr",
+        "yeojujournal.com"
+      ],
+      "names": [
+        "여주신문",
+        "여주공보뉴스",
+        "여주뉴스",
+        "여주뉴스",
+        "여주투데이",
+        "여주시민신문",
+        "여주시민신문",
+        "여주저널"
+      ],
+      "media": [
+        {
+          "name": "여주신문",
+          "host": "yeojunews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주공보뉴스",
+          "host": "yeoju.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주뉴스",
+          "host": "mediareport.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주뉴스",
+          "host": "joongboo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주투데이",
+          "host": "yeojutoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주시민신문",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주시민신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여주저널",
+          "host": "yeojujournal.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "연천군": {
+      "hosts": [
+        "yc-news.com",
+        "yeoncheonnews.com",
+        "114.co.kr"
+      ],
+      "names": [
+        "연천신문",
+        "연천뉴스",
+        "연천저널"
+      ],
+      "media": [
+        {
+          "name": "연천신문",
+          "host": "yc-news.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "연천뉴스",
+          "host": "yeoncheonnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "연천저널",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "오산시": {
+      "hosts": [
+        "osanilbo.com",
+        "osannews.net",
+        "osannews.co.kr",
+        "osinews.co.kr",
+        "osanin4news.com"
+      ],
+      "names": [
+        "오산일보",
+        "오산시민신문",
+        "회사소개",
+        "오산인터넷뉴스",
+        "인터넷 신문 오산인포커스 창간"
+      ],
+      "media": [
+        {
+          "name": "오산일보",
+          "host": "osanilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "오산시민신문",
+          "host": "osannews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "회사소개",
+          "host": "osannews.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "오산인터넷뉴스",
+          "host": "osinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "인터넷 신문 오산인포커스 창간",
+          "host": "osanin4news.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "용인시": {
+      "hosts": [
+        "yonginilbo.com",
+        "yongin21.co.kr",
+        "yonginnews.net",
+        "yiinews.com",
+        "yonginilbo.co.kr",
+        "yongin.grandculture.net"
+      ],
+      "names": [
+        "용인신문",
+        "용인시민신문",
+        "용인뉴스",
+        "용인뉴스",
+        "용인일보",
+        "『용인시민신문』(구)"
+      ],
+      "media": [
+        {
+          "name": "용인신문",
+          "host": "yonginilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "용인시민신문",
+          "host": "yongin21.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "용인뉴스",
+          "host": "yonginnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "용인뉴스",
+          "host": "yiinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "용인일보",
+          "host": "yonginilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『용인시민신문』(구)",
+          "host": "yongin.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "의왕시": {
+      "hosts": [
+        "xn--z92b13l31cu3a.com",
+        "newsv.kr",
+        "uiwangmedia.com"
+      ],
+      "names": [
+        "의왕신문",
+        "의왕신문",
+        "uiwangmedia.com"
+      ],
+      "media": [
+        {
+          "name": "의왕신문",
+          "host": "xn--z92b13l31cu3a.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "의왕신문",
+          "host": "newsv.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "uiwangmedia.com",
+          "host": "uiwangmedia.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "의정부시": {
+      "hosts": [
+        "ujbnews.kr",
+        "yangju.grandculture.net"
+      ],
+      "names": [
+        "의정부뉴스",
+        "의정부인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "의정부뉴스",
+          "host": "ujbnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "의정부인터넷뉴스",
+          "host": "yangju.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "이천시": {
+      "hosts": [
+        "ic119.co.kr",
+        "2000news.com",
+        "2000news.co.kr",
+        "2000ib.com",
+        "2000n.net"
+      ],
+      "names": [
+        "이천신문",
+        "이천설봉신문",
+        "이천뉴스",
+        "이천일보",
+        "이천저널"
+      ],
+      "media": [
+        {
+          "name": "이천신문",
+          "host": "ic119.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "이천설봉신문",
+          "host": "2000news.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "이천뉴스",
+          "host": "2000news.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "이천일보",
+          "host": "2000ib.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "이천저널",
+          "host": "2000n.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "파주시": {
+      "hosts": [
+        "pajui.co.kr",
+        "gninews.co.kr",
+        "pajunews.co.kr",
+        "atpaju.com",
+        "pajutimes.com",
+        "goyangpajutoday.co.kr",
+        "citizennews.co.kr",
+        "pajuilbo.com",
+        "pjjn.co.kr"
+      ],
+      "names": [
+        "파주일보",
+        "gninews.co.kr",
+        "파주신문",
+        "파주에서신문",
+        "파주타임스",
+        "goyangpajutoday.co.kr",
+        "파주 &gt; 정치 시민신문",
+        "시민연합신문",
+        "파주저널"
+      ],
+      "media": [
+        {
+          "name": "파주일보",
+          "host": "pajui.co.kr",
+          "src": "verified",
+          "address": "경기도 파주시 동패동 284"
+        },
+        {
+          "name": "gninews.co.kr",
+          "host": "gninews.co.kr",
+          "src": "verified",
+          "address": "경기 파주시 문발로 253문의"
+        },
+        {
+          "name": "파주신문",
+          "host": "pajunews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "파주에서신문",
+          "host": "atpaju.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "파주타임스",
+          "host": "pajutimes.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "goyangpajutoday.co.kr",
+          "host": "goyangpajutoday.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "파주 &gt; 정치 시민신문",
+          "host": "citizennews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "시민연합신문",
+          "host": "pajuilbo.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "파주저널",
+          "host": "pjjn.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "평택시": {
+      "hosts": [
+        "iptnews.kr",
+        "ptsisa.com",
+        "ptnewstimes.com",
+        "pttimes.com"
+      ],
+      "names": [
+        "평택신문",
+        "평택시사신문",
+        "평택뉴스타임즈",
+        "평택시민신문"
+      ],
+      "media": [
+        {
+          "name": "평택신문",
+          "host": "iptnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "평택시사신문",
+          "host": "ptsisa.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "평택뉴스타임즈",
+          "host": "ptnewstimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "평택시민신문",
+          "host": "pttimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "포천시": {
+      "hosts": [
+        "ipcs21.com",
+        "pocheon.grandculture.net",
+        "pcnt.kr",
+        "pcib21.com",
+        "pcmn.kr"
+      ],
+      "names": [
+        "포천신문",
+        "포천 신문사",
+        "포천 뉴스",
+        "포천일보",
+        "포천매일뉴스"
+      ],
+      "media": [
+        {
+          "name": "포천신문",
+          "host": "ipcs21.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "포천 신문사",
+          "host": "pocheon.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "포천 뉴스",
+          "host": "pcnt.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "포천일보",
+          "host": "pcib21.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "포천매일뉴스",
+          "host": "pcmn.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "하남시": {
+      "hosts": [
+        "ehanam.net",
+        "hanamilbo.net",
+        "mediamap.co.kr",
+        "hanamtimes.com",
+        "arihanam.com",
+        "hanamsiminnews.co.kr",
+        "ypdn.co.kr"
+      ],
+      "names": [
+        "하남신문",
+        "하남일보",
+        "하남뉴스",
+        "하남 Times",
+        "하남포털 아리하남 하남타임즈",
+        "hanamsiminnews.co.kr",
+        "하남양평매일뉴스"
+      ],
+      "media": [
+        {
+          "name": "하남신문",
+          "host": "ehanam.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하남일보",
+          "host": "hanamilbo.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하남뉴스",
+          "host": "mediamap.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하남 Times",
+          "host": "hanamtimes.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "하남포털 아리하남 하남타임즈",
+          "host": "arihanam.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "hanamsiminnews.co.kr",
+          "host": "hanamsiminnews.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "하남양평매일뉴스",
+          "host": "ypdn.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "화성시": {
+      "hosts": [
+        "ihsnews.com",
+        "hsinews.com",
+        "hwaseong.grandculture.net",
+        "hsnews.kr",
+        "hspublicpress.com",
+        "hstimes.kr",
+        "hstodays.com",
+        "ohmynews.com",
+        "hsj.co.kr"
+      ],
+      "names": [
+        "화성신문",
+        "화성인터넷신문",
+        "화성뉴스",
+        "화성일보",
+        "화성시민신문",
+        "화성타임즈",
+        "화성투데이",
+        "화성시민신문 님의 뉴스",
+        "화성저널"
+      ],
+      "media": [
+        {
+          "name": "화성신문",
+          "host": "ihsnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성인터넷신문",
+          "host": "hsinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성뉴스",
+          "host": "hwaseong.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성일보",
+          "host": "hsnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성시민신문",
+          "host": "hspublicpress.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성타임즈",
+          "host": "hstimes.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성투데이",
+          "host": "hstodays.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성시민신문 님의 뉴스",
+          "host": "ohmynews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화성저널",
+          "host": "hsj.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "거제시": {
+      "hosts": [
+        "geojenews.co.kr",
+        "geojeoneul.com",
+        "geojenews.kr",
+        "newseyegeoje.com",
+        "gjin.co.kr",
+        "gjn.kr",
+        "saegeoje.com",
+        "geojetimes.co.kr",
+        "geojejournal.co.kr",
+        "k-knowledge.kr"
+      ],
+      "names": [
+        "거제신문",
+        "거제통영오늘신문",
+        "거제뉴스",
+        "거제뉴스아이",
+        "거제인터넷뉴스",
+        "거제인터넷신문",
+        "새거제신문",
+        "거제타임즈",
+        "geojejournal.co.kr",
+        "거제저널"
+      ],
+      "media": [
+        {
+          "name": "거제신문",
+          "host": "geojenews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "거제통영오늘신문",
+          "host": "geojeoneul.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "거제뉴스",
+          "host": "geojenews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "거제뉴스아이",
+          "host": "newseyegeoje.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "거제인터넷뉴스",
+          "host": "gjin.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "거제인터넷신문",
+          "host": "gjn.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "새거제신문",
+          "host": "saegeoje.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "거제타임즈",
+          "host": "geojetimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "geojejournal.co.kr",
+          "host": "geojejournal.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "거제저널",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "거창군": {
+      "hosts": [
+        "gcinews.asia",
+        "gchannews.com",
+        "geochang.grandculture.net",
+        "geochangjournal.kr"
+      ],
+      "names": [
+        "거창인터넷신문",
+        "거창군민신문",
+        "경남 일보",
+        "거창저널"
+      ],
+      "media": [
+        {
+          "name": "거창인터넷신문",
+          "host": "gcinews.asia",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "거창군민신문",
+          "host": "gchannews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "경남 일보",
+          "host": "geochang.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "거창저널",
+          "host": "geochangjournal.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "김해시": {
+      "hosts": [
+        "gimhaeilbo.com",
+        "gimhaeinews.com",
+        "gimhaenews.co.kr",
+        "gimhae.grandculture.net"
+      ],
+      "names": [
+        "김해일보",
+        "김해인터넷신문/장유신문",
+        "김해뉴스",
+        "『김해뉴스』"
+      ],
+      "media": [
+        {
+          "name": "김해일보",
+          "host": "gimhaeilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김해인터넷신문/장유신문",
+          "host": "gimhaeinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김해뉴스",
+          "host": "gimhaenews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『김해뉴스』",
+          "host": "gimhae.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "남해군": {
+      "hosts": [
+        "namhae.tv",
+        "nhanews.com",
+        "nhmirae.com",
+        "nhin.news"
+      ],
+      "names": [
+        "남해신문",
+        "남해안신문",
+        "남해미래신문",
+        "남해뉴스"
+      ],
+      "media": [
+        {
+          "name": "남해신문",
+          "host": "namhae.tv",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남해안신문",
+          "host": "nhanews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남해미래신문",
+          "host": "nhmirae.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남해뉴스",
+          "host": "nhin.news",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "밀양시": {
+      "hosts": [
+        "miryang.newsk.com",
+        "miryang.grandculture.net",
+        "k-knowledge.kr"
+      ],
+      "names": [
+        "밀양신문",
+        "밀양시민신문 사무실 전경",
+        "밀양시민신문"
+      ],
+      "media": [
+        {
+          "name": "밀양신문",
+          "host": "miryang.newsk.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "밀양시민신문 사무실 전경",
+          "host": "miryang.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "밀양시민신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
     "사천시": {
-      "metro": "경상남도",
+      "hosts": [
+        "e4000news.com"
+      ],
       "names": [
         "사천신문"
       ],
       "media": [
         {
           "name": "사천신문",
-          "src": "p"
-        }
-      ]
-    },
-    "김해시": {
-      "metro": "경상남도",
-      "names": [
-        "김해뉴스"
-      ],
-      "media": [
-        {
-          "name": "김해뉴스",
-          "src": "p"
-        }
-      ]
-    },
-    "밀양시": {
-      "metro": "경상남도",
-      "names": [
-        "밀양신문"
-      ],
-      "media": [
-        {
-          "name": "밀양신문",
-          "src": "p"
-        }
-      ]
-    },
-    "거제시": {
-      "metro": "경상남도",
-      "names": [
-        "거제신문"
-      ],
-      "media": [
-        {
-          "name": "거제신문",
-          "src": "p"
-        }
-      ]
-    },
-    "양산시": {
-      "metro": "경상남도",
-      "names": [
-        "양산신문"
-      ],
-      "media": [
-        {
-          "name": "양산신문",
-          "src": "p"
-        }
-      ]
-    },
-    "의령군": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "함안군": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "창녕군": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "고성군_경남": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "남해군": {
-      "metro": "경상남도",
-      "names": [
-        "남해신문"
-      ],
-      "media": [
-        {
-          "name": "남해신문",
-          "src": "p"
-        }
-      ]
-    },
-    "하동군": {
-      "metro": "경상남도",
-      "names": [
-        "하동신문"
-      ],
-      "media": [
-        {
-          "name": "하동신문",
-          "src": "p"
+          "host": "e4000news.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
     "산청군": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "함양군": {
-      "metro": "경상남도",
-      "names": [],
-      "media": []
-    },
-    "거창군": {
-      "metro": "경상남도",
+      "hosts": [
+        "sancheongnews.com"
+      ],
       "names": [
-        "거창신문"
+        "산청인터넷신문"
       ],
       "media": [
         {
-          "name": "거창신문",
-          "src": "p"
+          "name": "산청인터넷신문",
+          "host": "sancheongnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "양산시": {
+      "hosts": [
+        "yangsanilbo.com",
+        "yangsan.grandculture.net",
+        "ysnews.co.kr"
+      ],
+      "names": [
+        "양산신문",
+        "양산신문사 전경",
+        "양산시민신문"
+      ],
+      "media": [
+        {
+          "name": "양산신문",
+          "host": "yangsanilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "양산신문사 전경",
+          "host": "yangsan.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "양산시민신문",
+          "host": "ysnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "의령군": {
+      "hosts": [
+        "urnews.co.kr",
+        "urgmnews.com",
+        "xn--vg1bk3iw4jsze.kr"
+      ],
+      "names": [
+        "의령신문",
+        "의령군민신문",
+        "의령뉴스"
+      ],
+      "media": [
+        {
+          "name": "의령신문",
+          "host": "urnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "의령군민신문",
+          "host": "urgmnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "의령뉴스",
+          "host": "xn--vg1bk3iw4jsze.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "진주시": {
+      "hosts": [
+        "newsjinju.kr",
+        "jinjutv.com",
+        "jinju.news",
+        "band.us"
+      ],
+      "names": [
+        "진주신문",
+        "진주뉴스",
+        "진주인터넷뉴스JINJU NEWS",
+        "진주인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "진주신문",
+          "host": "newsjinju.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진주뉴스",
+          "host": "jinjutv.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진주인터넷뉴스JINJU NEWS",
+          "host": "jinju.news",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "진주인터넷뉴스",
+          "host": "band.us",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "창녕군": {
+      "hosts": [
+        "icnnews.kr"
+      ],
+      "names": [
+        "창녕신문"
+      ],
+      "media": [
+        {
+          "name": "창녕신문",
+          "host": "icnnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "창원시": {
+      "hosts": [
+        "changwonilbo.com",
+        "m.changwonilbo.com",
+        "changwon.grandculture.net"
+      ],
+      "names": [
+        "창원일보",
+        "분야별기사",
+        "거창 군민 신문"
+      ],
+      "media": [
+        {
+          "name": "창원일보",
+          "host": "changwonilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "분야별기사",
+          "host": "m.changwonilbo.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "거창 군민 신문",
+          "host": "changwon.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "통영시": {
+      "hosts": [
+        "tynewspaper.co.kr",
+        "tynp.com"
+      ],
+      "names": [
+        "통영신문",
+        "통영뉴스"
+      ],
+      "media": [
+        {
+          "name": "통영신문",
+          "host": "tynewspaper.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "통영뉴스",
+          "host": "tynp.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "하동군": {
+      "hosts": [
+        "hadongsinmoon.com",
+        "hadong.grandculture.net",
+        "hadongnews.co.kr",
+        "hadongtimes.com",
+        "carmap.co.kr",
+        "hadonggol.com"
+      ],
+      "names": [
+        "하동신문",
+        "하동정론신문",
+        "하동뉴스",
+        "하동타임즈",
+        "하동미디어",
+        "남고홍매실"
+      ],
+      "media": [
+        {
+          "name": "하동신문",
+          "host": "hadongsinmoon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하동정론신문",
+          "host": "hadong.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하동뉴스",
+          "host": "hadongnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하동타임즈",
+          "host": "hadongtimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "하동미디어",
+          "host": "carmap.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남고홍매실",
+          "host": "hadonggol.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "함안군": {
+      "hosts": [
+        "hanews.co.kr",
+        "haman.grandculture.net",
+        "hamannews.kr",
+        "hamanna.kr"
+      ],
+      "names": [
+        "함안인터넷신문",
+        "함안 군민 신문",
+        "함안뉴스",
+        "인사말 &lt; 안내데스크"
+      ],
+      "media": [
+        {
+          "name": "함안인터넷신문",
+          "host": "hanews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함안 군민 신문",
+          "host": "haman.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함안뉴스",
+          "host": "hamannews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "인사말 &lt; 안내데스크",
+          "host": "hamanna.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "함양군": {
+      "hosts": [
+        "hamyangnews.com",
+        "hamyang.grandculture.net",
+        "m.hytimes.co.kr",
+        "hytoday.kr",
+        "hygn.co.kr",
+        "hyinews.com"
+      ],
+      "names": [
+        "hamyangnews.com",
+        "함양신문",
+        "함양타임즈",
+        "함양산청투데이",
+        "함양군민신문",
+        "함양인터넷뉴스"
+      ],
+      "media": [
+        {
+          "name": "hamyangnews.com",
+          "host": "hamyangnews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "함양신문",
+          "host": "hamyang.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함양타임즈",
+          "host": "m.hytimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함양산청투데이",
+          "host": "hytoday.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함양군민신문",
+          "host": "hygn.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함양인터넷뉴스",
+          "host": "hyinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
     "합천군": {
-      "metro": "경상남도",
+      "hosts": [
+        "hapcheonilbo.com",
+        "hc00.com",
+        "hcinews.asia"
+      ],
       "names": [
-        "합천신문"
+        "합천일보",
+        "합천 뉴스",
+        "합천인터넷뉴스"
       ],
       "media": [
         {
-          "name": "합천신문",
-          "src": "p"
+          "name": "합천일보",
+          "host": "hapcheonilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "합천 뉴스",
+          "host": "hc00.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "합천인터넷뉴스",
+          "host": "hcinews.asia",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
-    "제주시": {
-      "metro": "제주특별자치도",
+    "강화군": {
+      "hosts": [
+        "ghtoday.co.kr",
+        "ghnp.kr",
+        "ganghwailbo.com"
+      ],
       "names": [
-        "제주일보",
-        "한라일보",
-        "제민일보",
-        "제주의소리"
+        "강화투데이",
+        "강화신문",
+        "강화일보"
       ],
       "media": [
         {
-          "name": "제주일보",
-          "src": "bk"
+          "name": "강화투데이",
+          "host": "ghtoday.co.kr",
+          "src": "verified",
+          "address": "인천광역시 강화군 강화읍 송악길 4"
         },
         {
-          "name": "한라일보",
-          "src": "bk"
+          "name": "강화신문",
+          "host": "ghnp.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "제민일보",
-          "src": "bk"
-        },
-        {
-          "name": "제주의소리",
-          "src": "p"
+          "name": "강화일보",
+          "host": "ganghwailbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     },
-    "서귀포시": {
-      "metro": "제주특별자치도",
+    "계양구": {
+      "hosts": [
+        "gy1365.kr",
+        "gyeyang.kpnnews.org"
+      ],
       "names": [
-        "서귀포신문"
+        "계양V-뉴스(웹진)",
+        "계양공보뉴스"
       ],
       "media": [
         {
-          "name": "서귀포신문",
+          "name": "계양V-뉴스(웹진)",
+          "host": "gy1365.kr",
+          "src": "verified",
+          "address": "(21067) 인천광역시 계양구 계산새로 88"
+        },
+        {
+          "name": "계양공보뉴스",
+          "host": "gyeyang.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "남동구": {
+      "hosts": [
+        "namdongnews.co.kr"
+      ],
+      "names": [
+        "남동뉴스"
+      ],
+      "media": [
+        {
+          "name": "남동뉴스",
+          "host": "namdongnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "미추홀구": {
+      "hosts": [
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
+      ],
+      "names": [
+        "경인일보",
+        "인천일보",
+        "기호일보"
+      ],
+      "media": [
+        {
+          "name": "경인일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "인천일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "기호일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "부평구": {
+      "hosts": [
+        "bupyeongpost.com"
+      ],
+      "names": [
+        "부평신문",
+        "부평위클리"
+      ],
+      "media": [
+        {
+          "name": "부평신문",
           "src": "p"
+        },
+        {
+          "name": "부평위클리",
+          "host": "bupyeongpost.com",
+          "src": "web-search"
+        }
+      ]
+    },
+    "연수구": {
+      "hosts": [
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
+      ],
+      "names": [
+        "경인일보",
+        "인천일보",
+        "기호일보"
+      ],
+      "media": [
+        {
+          "name": "경인일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "인천일보",
+          "host": "",
+          "src": "metro_fallback"
+        },
+        {
+          "name": "기호일보",
+          "host": "",
+          "src": "metro_fallback"
+        }
+      ]
+    },
+    "옹진군": {
+      "hosts": [
+        "ongjinilbo.co.kr"
+      ],
+      "names": [
+        "옹진일보"
+      ],
+      "media": [
+        {
+          "name": "옹진일보",
+          "host": "ongjinilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "고창군": {
+      "hosts": [
+        "gcnb.tv",
+        "hdgochang.co.kr",
+        "gochang.grandculture.net",
+        "gcnews.kr"
+      ],
+      "names": [
+        "고창신문",
+        "hdgochang.co.kr",
+        "고창신문",
+        "고창뉴스"
+      ],
+      "media": [
+        {
+          "name": "고창신문",
+          "host": "gcnb.tv",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "hdgochang.co.kr",
+          "host": "hdgochang.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "고창신문",
+          "host": "gochang.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고창뉴스",
+          "host": "gcnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "군산시": {
+      "hosts": [
+        "gunsanews.com",
+        "newsgunsan.com",
+        "gunsan.grandculture.net",
+        "namwon.grandculture.net",
+        "gunsantimes.co.kr",
+        "todaygunsan.co.kr",
+        "newgunsan.kr"
+      ],
+      "names": [
+        "군산신문",
+        "군산의 일등신문, 군산뉴스",
+        "군산뉴스",
+        "군산일보",
+        "군산타임즈",
+        "투데이 군산",
+        "newgunsan.kr"
+      ],
+      "media": [
+        {
+          "name": "군산신문",
+          "host": "gunsanews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "군산의 일등신문, 군산뉴스",
+          "host": "newsgunsan.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "군산뉴스",
+          "host": "gunsan.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "군산일보",
+          "host": "namwon.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "군산타임즈",
+          "host": "gunsantimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "투데이 군산",
+          "host": "todaygunsan.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "newgunsan.kr",
+          "host": "newgunsan.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "김제시": {
+      "hosts": [
+        "kimje.newsk.com",
+        "gimje.grandculture.net"
+      ],
+      "names": [
+        "김제신문",
+        "김제신문사"
+      ],
+      "media": [
+        {
+          "name": "김제신문",
+          "host": "kimje.newsk.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "김제신문사",
+          "host": "gimje.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "남원시": {
+      "hosts": [
+        "namwonsinmun.co.kr",
+        "namwon.grandculture.net",
+        "namwonnews.com",
+        "namwon.net",
+        "namwontour.kr"
+      ],
+      "names": [
+        "남원신문",
+        "남원신문",
+        "np남원뉴스",
+        "남원넷",
+        "namwontour.kr"
+      ],
+      "media": [
+        {
+          "name": "남원신문",
+          "host": "namwonsinmun.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "남원신문",
+          "host": "namwon.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "np남원뉴스",
+          "host": "namwonnews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "남원넷",
+          "host": "namwon.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "namwontour.kr",
+          "host": "namwontour.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "무주군": {
+      "hosts": [
+        "mujupaper.com",
+        "mujunews.com",
+        "muju.kpnnews.org",
+        "muju.grandculture.net"
+      ],
+      "names": [
+        "무주신문",
+        "무주뉴스",
+        "무주공보뉴스",
+        "전주 일보"
+      ],
+      "media": [
+        {
+          "name": "무주신문",
+          "host": "mujupaper.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "무주뉴스",
+          "host": "mujunews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "무주공보뉴스",
+          "host": "muju.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "전주 일보",
+          "host": "muju.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "부안군": {
+      "hosts": [
+        "buan114.com",
+        "ibnews.kr",
+        "m.buan.tv",
+        "ibuan.com",
+        "mediabuan.co.kr",
+        "ssbuan.com",
+        "buan.tv",
+        "buan.grandculture.net"
+      ],
+      "names": [
+        "부안인터넷신문",
+        "부안뉴스",
+        "제10회 새만금컵국제요트대회 열려",
+        "ibuan.com",
+        "사람들",
+        "시사부안과 어깨 겯고 함께 합니다",
+        "“군민과 함께, 군민의 신문으로”",
+        "『부안 저널』 전경"
+      ],
+      "media": [
+        {
+          "name": "부안인터넷신문",
+          "host": "buan114.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "부안뉴스",
+          "host": "ibnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "제10회 새만금컵국제요트대회 열려",
+          "host": "m.buan.tv",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "ibuan.com",
+          "host": "ibuan.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "사람들",
+          "host": "mediabuan.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "시사부안과 어깨 겯고 함께 합니다",
+          "host": "ssbuan.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "“군민과 함께, 군민의 신문으로”",
+          "host": "buan.tv",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "『부안 저널』 전경",
+          "host": "buan.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "순창군": {
+      "hosts": [
+        "scnp.kr",
+        "sunchang.grandculture.net",
+        "sunchang.kpnnews.org"
+      ],
+      "names": [
+        "순창신문",
+        "순창 신문",
+        "순창공보뉴스"
+      ],
+      "media": [
+        {
+          "name": "순창신문",
+          "host": "scnp.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "순창 신문",
+          "host": "sunchang.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "순창공보뉴스",
+          "host": "sunchang.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "완주군": {
+      "hosts": [
+        "wj1news.com",
+        "wanjumediacenter.kr",
+        "wjgm.co.kr"
+      ],
+      "names": [
+        "완주신문",
+        "완주미디어센터",
+        "완주전주신문"
+      ],
+      "media": [
+        {
+          "name": "완주신문",
+          "host": "wj1news.com",
+          "src": "verified",
+          "address": "완주군 봉동읍 낙평신월1길 5-5"
+        },
+        {
+          "name": "완주미디어센터",
+          "host": "wanjumediacenter.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "완주전주신문",
+          "host": "wjgm.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "익산시": {
+      "hosts": [
+        "iksannews.com",
+        "iksan.grandculture.net",
+        "m.iksannews.com",
+        "iksanopennews.com",
+        "k-knowledge.kr"
+      ],
+      "names": [
+        "익산신문",
+        "익산신문",
+        "m.iksannews.com",
+        "iksanopennews.com",
+        "익산투데이"
+      ],
+      "media": [
+        {
+          "name": "익산신문",
+          "host": "iksannews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "익산신문",
+          "host": "iksan.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "m.iksannews.com",
+          "host": "m.iksannews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "iksanopennews.com",
+          "host": "iksanopennews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "익산투데이",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "임실군": {
+      "hosts": [
+        "imsil.tv",
+        "114.co.kr"
+      ],
+      "names": [
+        "임순남뉴스",
+        "임실뉴스"
+      ],
+      "media": [
+        {
+          "name": "임순남뉴스",
+          "host": "imsil.tv",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "임실뉴스",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "장수군": {
+      "hosts": [
+        "jangsunews.co.kr",
+        "jangsu.kpnnews.org",
+        "m.shjangsu.com",
+        "shjangsu.com"
+      ],
+      "names": [
+        "장수신문",
+        "장수공보뉴스",
+        "m.shjangsu.com",
+        "shjangsu.com"
+      ],
+      "media": [
+        {
+          "name": "장수신문",
+          "host": "jangsunews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "장수공보뉴스",
+          "host": "jangsu.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "m.shjangsu.com",
+          "host": "m.shjangsu.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "shjangsu.com",
+          "host": "shjangsu.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "전주시": {
+      "hosts": [
+        "jjilbo.com",
+        "jj1news.com",
+        "jjmaeil.com"
+      ],
+      "names": [
+        "전주일보",
+        "전주시민신문",
+        "전주매일"
+      ],
+      "media": [
+        {
+          "name": "전주일보",
+          "host": "jjilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "전주시민신문",
+          "host": "jj1news.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "전주매일",
+          "host": "jjmaeil.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "정읍시": {
+      "hosts": [
+        "jnewsk.com",
+        "jeongeup.grandculture.net",
+        "ejeongeup.kr",
+        "jeongeup.kpnnews.org",
+        "jetoday.net"
+      ],
+      "names": [
+        "정읍신문",
+        "『정읍신문』",
+        "정읍포털신문",
+        "정읍공보뉴스",
+        "정읍투데이"
+      ],
+      "media": [
+        {
+          "name": "정읍신문",
+          "host": "jnewsk.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "『정읍신문』",
+          "host": "jeongeup.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "정읍포털신문",
+          "host": "ejeongeup.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "정읍공보뉴스",
+          "host": "jeongeup.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "정읍투데이",
+          "host": "jetoday.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "진안군": {
+      "hosts": [
+        "janews.co.kr",
+        "jinan.grandculture.net",
+        "jinan.kpnnews.org",
+        "mjjnews.net"
+      ],
+      "names": [
+        "진안신문",
+        "진안 신문",
+        "진안공보뉴스",
+        "진안뉴스"
+      ],
+      "media": [
+        {
+          "name": "진안신문",
+          "host": "janews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진안 신문",
+          "host": "jinan.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진안공보뉴스",
+          "host": "jinan.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진안뉴스",
+          "host": "mjjnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "강진군": {
+      "hosts": [
+        "gjon.com",
+        "nsori.com",
+        "gangjintoday.co.kr"
+      ],
+      "names": [
+        "강진신문",
+        "강진일보",
+        "강진투데이"
+      ],
+      "media": [
+        {
+          "name": "강진신문",
+          "host": "gjon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강진일보",
+          "host": "nsori.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강진투데이",
+          "host": "gangjintoday.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "고흥군": {
+      "hosts": [
+        "newgh.kr",
+        "goheungnews.kr"
+      ],
+      "names": [
+        "고흥신문",
+        "고흥뉴스"
+      ],
+      "media": [
+        {
+          "name": "고흥신문",
+          "host": "newgh.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "고흥뉴스",
+          "host": "goheungnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "곡성군": {
+      "hosts": [
+        "gsilbo.co.kr",
+        "injournal.net"
+      ],
+      "names": [
+        "곡성일보",
+        "곡성투데이"
+      ],
+      "media": [
+        {
+          "name": "곡성일보",
+          "host": "gsilbo.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "곡성투데이",
+          "host": "injournal.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "광양시": {
+      "hosts": [
+        "gynet.co.kr",
+        "gymnews.net",
+        "gycitizen.com",
+        "gykoreaja.com",
+        "gymtoday.net"
+      ],
+      "names": [
+        "광양뉴스",
+        "광양만신문",
+        "광양시민신문",
+        "광양타임즈",
+        "광양만투데이"
+      ],
+      "media": [
+        {
+          "name": "광양뉴스",
+          "host": "gynet.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광양만신문",
+          "host": "gymnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광양시민신문",
+          "host": "gycitizen.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광양타임즈",
+          "host": "gykoreaja.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광양만투데이",
+          "host": "gymtoday.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "구례군": {
+      "hosts": [
+        "guryenews.com",
+        "guryeilbo.com",
+        "newsgurye.com"
+      ],
+      "names": [
+        "구례신문",
+        "구례일보",
+        "전남구례신문"
+      ],
+      "media": [
+        {
+          "name": "구례신문",
+          "host": "guryenews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "구례일보",
+          "host": "guryeilbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "전남구례신문",
+          "host": "newsgurye.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "나주시": {
+      "hosts": [
+        "najunews.kr",
+        "mainnaju.com",
+        "naju-senior.com",
+        "xn--910bk8uc9h4pb.com",
+        "najutoday.co.kr"
+      ],
+      "names": [
+        "나주신문",
+        "세계중심나주뉴스",
+        "나주뉴스 Archives",
+        "나주일보",
+        "나주투데이"
+      ],
+      "media": [
+        {
+          "name": "나주신문",
+          "host": "najunews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "세계중심나주뉴스",
+          "host": "mainnaju.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "나주뉴스 Archives",
+          "host": "naju-senior.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "나주일보",
+          "host": "xn--910bk8uc9h4pb.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "나주투데이",
+          "host": "najutoday.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "담양군": {
+      "hosts": [
+        "xn--jk1bu0n8rgz0c.kr",
+        "dyjachinews.co.kr",
+        "newsdy.co.kr",
+        "dnnews.co.kr",
+        "wdynews.co.kr",
+        "dymaeil.kr"
+      ],
+      "names": [
+        "담양신문",
+        "담양자치신문",
+        "담양군민신문",
+        "담양뉴스",
+        "담양인신문",
+        "담양매일신문"
+      ],
+      "media": [
+        {
+          "name": "담양신문",
+          "host": "xn--jk1bu0n8rgz0c.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "담양자치신문",
+          "host": "dyjachinews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "담양군민신문",
+          "host": "newsdy.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "담양뉴스",
+          "host": "dnnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "담양인신문",
+          "host": "wdynews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "담양매일신문",
+          "host": "dymaeil.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "목포시": {
+      "hosts": [
+        "mpmbc.co.kr",
+        "mokposm.co.kr",
+        "mokpotoday.com",
+        "mokpo.best",
+        "mokpotimes.com",
+        "mokpoabo.kr"
+      ],
+      "names": [
+        "오늘의 뉴스 &lt; 뉴스",
+        "목포시민신문",
+        "목포투데이",
+        "목포뉴스/신안신문(영광뉴스)",
+        "뉴스",
+        "필터프레스"
+      ],
+      "media": [
+        {
+          "name": "오늘의 뉴스 &lt; 뉴스",
+          "host": "mpmbc.co.kr",
+          "src": "verified",
+          "address": "전라남도 목포시 영산로 101 (명륜동 5-1)"
+        },
+        {
+          "name": "목포시민신문",
+          "host": "mokposm.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "목포투데이",
+          "host": "mokpotoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "목포뉴스/신안신문(영광뉴스)",
+          "host": "mokpo.best",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "뉴스",
+          "host": "mokpotimes.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "필터프레스",
+          "host": "mokpoabo.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "무안군": {
+      "hosts": [
+        "muannews.com",
+        "msonews.co.kr",
+        "muantimes.com",
+        "muangunmin.com"
+      ],
+      "names": [
+        "무안신문",
+        "무안신안뉴스",
+        "muantimes.com",
+        "무안군민신문"
+      ],
+      "media": [
+        {
+          "name": "무안신문",
+          "host": "muannews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "무안신안뉴스",
+          "host": "msonews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "muantimes.com",
+          "host": "muantimes.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "무안군민신문",
+          "host": "muangunmin.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "보성군": {
+      "hosts": [
+        "boseongnews.co.kr",
+        "boseong-senior.com"
+      ],
+      "names": [
+        "보성신문",
+        "보성시니어신문"
+      ],
+      "media": [
+        {
+          "name": "보성신문",
+          "host": "boseongnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "보성시니어신문",
+          "host": "boseong-senior.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "순천시": {
+      "hosts": [
+        "scnews.kr",
+        "agoranews.kr",
+        "sunchon123.com"
+      ],
+      "names": [
+        "순천신문",
+        "순천광장신문",
+        "순천독립신문"
+      ],
+      "media": [
+        {
+          "name": "순천신문",
+          "host": "scnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "순천광장신문",
+          "host": "agoranews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "순천독립신문",
+          "host": "sunchon123.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "신안군": {
+      "hosts": [
+        "moneypin.biz"
+      ],
+      "names": [
+        "신안프레스"
+      ],
+      "media": [
+        {
+          "name": "신안프레스",
+          "host": "moneypin.biz",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "여수시": {
+      "hosts": [
+        "yeosunews.net",
+        "yeosu.grandculture.net",
+        "xn--vg1bp01abmaj2i.kr",
+        "ysnewstimes.com",
+        "yeosutimes.com",
+        "ystimes.kr",
+        "ystdnews.com",
+        "yeosumedia.com",
+        "114.co.kr",
+        "yeosucci.korcham.net"
+      ],
+      "names": [
+        "여수신문",
+        "여수신문",
+        "여수뉴스",
+        "여수뉴스타임즈",
+        "여수타임스",
+        "여수타임즈",
+        "여수투데이",
+        "여수미디어",
+        "여수시민신문",
+        "여수 상공 저널"
+      ],
+      "media": [
+        {
+          "name": "여수신문",
+          "host": "yeosunews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수신문",
+          "host": "yeosu.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수뉴스",
+          "host": "xn--vg1bp01abmaj2i.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수뉴스타임즈",
+          "host": "ysnewstimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수타임스",
+          "host": "yeosutimes.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "여수타임즈",
+          "host": "ystimes.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수투데이",
+          "host": "ystdnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수미디어",
+          "host": "yeosumedia.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수시민신문",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "여수 상공 저널",
+          "host": "yeosucci.korcham.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "영광군": {
+      "hosts": [
+        "ygnews.co.kr",
+        "ygweekly.com",
+        "yhinews.com",
+        "ygjournal.com"
+      ],
+      "names": [
+        "영광신문",
+        "영광군민신문",
+        "영광함평장성인터넷뉴스",
+        "영광저널"
+      ],
+      "media": [
+        {
+          "name": "영광신문",
+          "host": "ygnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영광군민신문",
+          "host": "ygweekly.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영광함평장성인터넷뉴스",
+          "host": "yhinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영광저널",
+          "host": "ygjournal.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "영암군": {
+      "hosts": [
+        "yasinmoon.com",
+        "yeongam.grandculture.net",
+        "yeongam.kpnnews.org",
+        "yailbo.com",
+        "xn--6e0bx9yjva78vyyac9d.kr",
+        "yanews.net",
+        "www.openmedia.co.kr"
+      ],
+      "names": [
+        "영암신문",
+        "영암 신문사",
+        "영암공보뉴스",
+        "영암일보",
+        "영암군민일보",
+        "영암군민신문",
+        "영암열린신문"
+      ],
+      "media": [
+        {
+          "name": "영암신문",
+          "host": "yasinmoon.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영암 신문사",
+          "host": "yeongam.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "영암공보뉴스",
+          "host": "yeongam.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영암일보",
+          "host": "yailbo.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영암군민일보",
+          "host": "xn--6e0bx9yjva78vyyac9d.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영암군민신문",
+          "host": "yanews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영암열린신문",
+          "host": "www.openmedia.co.kr",
+          "src": "user-provided",
+          "address": ""
+        }
+      ]
+    },
+    "완도군": {
+      "hosts": [
+        "wandonews.com",
+        "ohmynews.com",
+        "wandoreport.com",
+        "wandostory.net",
+        "wandolive.com",
+        "wandonews.kr"
+      ],
+      "names": [
+        "완도신문",
+        "완도신문 님의 뉴스",
+        "완도뉴스",
+        "완도군민신문",
+        "wandolive.com",
+        "wandonews.kr"
+      ],
+      "media": [
+        {
+          "name": "완도신문",
+          "host": "wandonews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "완도신문 님의 뉴스",
+          "host": "ohmynews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "완도뉴스",
+          "host": "wandoreport.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "완도군민신문",
+          "host": "wandostory.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "wandolive.com",
+          "host": "wandolive.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "wandonews.kr",
+          "host": "wandonews.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "장성군": {
+      "hosts": [
+        "jsinews.com",
+        "newsinjs.com",
+        "jstnews.co.kr"
+      ],
+      "names": [
+        "장성뉴스",
+        "장성인뉴스",
+        "장성투데이"
+      ],
+      "media": [
+        {
+          "name": "장성뉴스",
+          "host": "jsinews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "장성인뉴스",
+          "host": "newsinjs.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "장성투데이",
+          "host": "jstnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "장흥군": {
+      "hosts": [
+        "jhnews.co.kr",
+        "jangheung.kpnnews.org",
+        "jhtoday.net"
+      ],
+      "names": [
+        "장흥신문",
+        "장흥공보뉴스",
+        "장흥투데이"
+      ],
+      "media": [
+        {
+          "name": "장흥신문",
+          "host": "jhnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "장흥공보뉴스",
+          "host": "jangheung.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "장흥투데이",
+          "host": "jhtoday.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "진도군": {
+      "hosts": [
+        "jindosinmun.co.kr",
+        "jindo.kpnnews.org",
+        "jindotoday.com",
+        "thetimesjindo.com"
+      ],
+      "names": [
+        "진도신문",
+        "진도공보뉴스",
+        "진도투데이닷컴",
+        "더 타임즈 진도"
+      ],
+      "media": [
+        {
+          "name": "진도신문",
+          "host": "jindosinmun.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진도공보뉴스",
+          "host": "jindo.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "진도투데이닷컴",
+          "host": "jindotoday.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "더 타임즈 진도",
+          "host": "thetimesjindo.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "함평군": {
+      "hosts": [
+        "hpnews.kr",
+        "hppnews.com",
+        "hptimes.kr"
+      ],
+      "names": [
+        "함평신문",
+        "함평군민신문",
+        "함평타임즈"
+      ],
+      "media": [
+        {
+          "name": "함평신문",
+          "host": "hpnews.kr",
+          "src": "verified",
+          "address": "매체정보 \r\n\t\t\t \r\n\t\t\t\t 전라남도 함평군 함평읍 중앙길"
+        },
+        {
+          "name": "함평군민신문",
+          "host": "hppnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "함평타임즈",
+          "host": "hptimes.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "해남군": {
+      "hosts": [
+        "hbcnews.kr",
+        "hnews.co.kr",
+        "hnsori.co.kr",
+        "haenam.grandculture.net"
+      ],
+      "names": [
+        "해남뉴스",
+        "해남신문",
+        "해남군민신문",
+        "해남신문"
+      ],
+      "media": [
+        {
+          "name": "해남뉴스",
+          "host": "hbcnews.kr",
+          "src": "verified",
+          "address": "전라남도 해남군 해남읍 북부순환로 250-33"
+        },
+        {
+          "name": "해남신문",
+          "host": "hnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "해남군민신문",
+          "host": "hnsori.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "해남신문",
+          "host": "haenam.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "화순군": {
+      "hosts": [
+        "hwasun1.com",
+        "hwasunnews.co.kr",
+        "hsmaeil.co.kr",
+        "hwasuntimes.com",
+        "hwasun.grandculture.net",
+        "injournal.net",
+        "hsjn.co.kr"
+      ],
+      "names": [
+        "화순일보",
+        "전체뉴스",
+        "화순매일신문",
+        "화순뉴스",
+        "디지탈 화순 뉴스",
+        "화순투데이",
+        "화순저널"
+      ],
+      "media": [
+        {
+          "name": "화순일보",
+          "host": "hwasun1.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "전체뉴스",
+          "host": "hwasunnews.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "화순매일신문",
+          "host": "hsmaeil.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화순뉴스",
+          "host": "hwasuntimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "디지탈 화순 뉴스",
+          "host": "hwasun.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "화순투데이",
+          "host": "injournal.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "화순저널",
+          "host": "hsjn.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "강남구": {
+      "hosts": [
+        "gangnamnews.net",
+        "gangnam.grandculture.net",
+        "egangnam.kr",
+        "gangnamtoday.com",
+        "gangnamcj.kr",
+        "presscoop.com",
+        "ignnews.kr"
+      ],
+      "names": [
+        "강남신문",
+        "강남신문",
+        "강남일보",
+        "GangnamToday",
+        "강남 소비자저널",
+        "강남구 소비자저널",
+        "강남포스트"
+      ],
+      "media": [
+        {
+          "name": "강남신문",
+          "host": "gangnamnews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강남신문",
+          "host": "gangnam.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강남일보",
+          "host": "egangnam.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "GangnamToday",
+          "host": "gangnamtoday.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "강남 소비자저널",
+          "host": "gangnamcj.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강남구 소비자저널",
+          "host": "presscoop.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강남포스트",
+          "host": "ignnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "강동구": {
+      "hosts": [
+        "gangdongnews.co.kr",
+        "gangdong.kpnnews.org"
+      ],
+      "names": [
+        "강동신문",
+        "강동공보뉴스"
+      ],
+      "media": [
+        {
+          "name": "강동신문",
+          "host": "gangdongnews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "강동공보뉴스",
+          "host": "gangdong.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "강북구": {
+      "hosts": [
+        "igangbuk.com",
+        "thekoreantoday.com"
+      ],
+      "names": [
+        "서울강북신문",
+        "강북 뉴스"
+      ],
+      "media": [
+        {
+          "name": "서울강북신문",
+          "host": "igangbuk.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "강북 뉴스",
+          "host": "thekoreantoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "관악구": {
+      "hosts": [
+        "gtimes.co.kr",
+        "ganews.co.kr"
+      ],
+      "names": [
+        "관악신문",
+        "관악뉴스"
+      ],
+      "media": [
+        {
+          "name": "관악신문",
+          "host": "gtimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "관악뉴스",
+          "host": "ganews.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "광진구": {
+      "hosts": [
+        "gwangjin.com",
+        "k-knowledge.kr",
+        "presscoop.com",
+        "moneypin.biz"
+      ],
+      "names": [
+        "새로운 지역신문 우리동네뉴스 창간.",
+        "광진타임즈",
+        "광진구 소비자저널",
+        "광진프레스"
+      ],
+      "media": [
+        {
+          "name": "새로운 지역신문 우리동네뉴스 창간.",
+          "host": "gwangjin.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "광진타임즈",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광진구 소비자저널",
+          "host": "presscoop.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "광진프레스",
+          "host": "moneypin.biz",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "구로구": {
+      "hosts": [
+        "guro.grandculture.net"
+      ],
+      "names": [
+        "『한국아파트신문』인터넷 메인화면"
+      ],
+      "media": [
+        {
+          "name": "『한국아파트신문』인터넷 메인화면",
+          "host": "guro.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "금천구": {
+      "hosts": [
+        "gc-tv.kr",
+        "gcnews.tv",
+        "114.co.kr",
+        "bizno.net"
+      ],
+      "names": [
+        "금천신문",
+        "금천뉴스",
+        "금천타임즈",
+        "금천구민신문"
+      ],
+      "media": [
+        {
+          "name": "금천신문",
+          "host": "gc-tv.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금천뉴스",
+          "host": "gcnews.tv",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금천타임즈",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "금천구민신문",
+          "host": "bizno.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "노원구": {
+      "hosts": [
+        "happynowon.kr",
+        "nowon.newsk.com",
+        "nowon.kr",
+        "nowonnews.net",
+        "presscoop.com",
+        "nowonarts.kr"
+      ],
+      "names": [
+        "노원에서 사회적경제로 살아가기",
+        "노원신문",
+        "nowon.kr",
+        "(노원뉴스) 나우온",
+        "노원구 소비자저널",
+        "nowonarts.kr"
+      ],
+      "media": [
+        {
+          "name": "노원에서 사회적경제로 살아가기",
+          "host": "happynowon.kr",
+          "src": "verified",
+          "address": "(01849) 서울특별시 노원구 동일로174길"
+        },
+        {
+          "name": "노원신문",
+          "host": "nowon.newsk.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "nowon.kr",
+          "host": "nowon.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "(노원뉴스) 나우온",
+          "host": "nowonnews.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "노원구 소비자저널",
+          "host": "presscoop.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "nowonarts.kr",
+          "host": "nowonarts.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "도봉구": {
+      "hosts": [
+        "dobong.grandculture.net"
+      ],
+      "names": [
+        "한겨레 신문"
+      ],
+      "media": [
+        {
+          "name": "한겨레 신문",
+          "host": "dobong.grandculture.net",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "동대문구": {
+      "hosts": [
+        "ddmnews.com",
+        "114.co.kr",
+        "k-knowledge.kr",
+        "belpost.co.kr"
+      ],
+      "names": [
+        "동대문신문",
+        "동대문구민신문",
+        "동대문구민신문",
+        "동대문 도매상가 벨포스트"
+      ],
+      "media": [
+        {
+          "name": "동대문신문",
+          "host": "ddmnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동대문구민신문",
+          "host": "114.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동대문구민신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "동대문 도매상가 벨포스트",
+          "host": "belpost.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "동작구": {
+      "hosts": [
+        "thedjnews.com",
+        "dongjaknews.com"
+      ],
+      "names": [
+        "동작신문",
+        "dongjaknews.com"
+      ],
+      "media": [
+        {
+          "name": "동작신문",
+          "host": "thedjnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "dongjaknews.com",
+          "host": "dongjaknews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "마포구": {
+      "hosts": [
+        "maponews.kr",
+        "maposhinmoon.com",
+        "play.google.com",
+        "mapotimes.co.kr"
+      ],
+      "names": [
+        "마포시민신문",
+        "마포신문사",
+        "마포뉴스",
+        "마포타임즈"
+      ],
+      "media": [
+        {
+          "name": "마포시민신문",
+          "host": "maponews.kr",
+          "src": "verified",
+          "address": "서울특별시 마포구 토정로 278"
+        },
+        {
+          "name": "마포신문사",
+          "host": "maposhinmoon.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "마포뉴스",
+          "host": "play.google.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "마포타임즈",
+          "host": "mapotimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "서대문구": {
+      "hosts": [
+        "newsjj.net",
+        "sdmsinmun.com",
+        "seodaemun.kpnnews.org",
+        "thekoreantoday.com"
+      ],
+      "names": [
+        "서대문자치신문",
+        "서대문신문",
+        "서대문공보뉴스",
+        "서대문 뉴스"
+      ],
+      "media": [
+        {
+          "name": "서대문자치신문",
+          "host": "newsjj.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서대문신문",
+          "host": "sdmsinmun.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서대문공보뉴스",
+          "host": "seodaemun.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서대문 뉴스",
+          "host": "thekoreantoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "서초구": {
+      "hosts": [
+        "seochonews.com",
+        "k-knowledge.kr",
+        "seochonews.net",
+        "seochotimes.com",
+        "seochogu.co.kr",
+        "seochosenior.org"
+      ],
+      "names": [
+        "서초신문",
+        "서초신문",
+        "서초뉴스",
+        "서초타임즈",
+        "Home",
+        "seochosenior.org"
+      ],
+      "media": [
+        {
+          "name": "서초신문",
+          "host": "seochonews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서초신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서초뉴스",
+          "host": "seochonews.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서초타임즈",
+          "host": "seochotimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "Home",
+          "host": "seochogu.co.kr",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "seochosenior.org",
+          "host": "seochosenior.org",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "성동구": {
+      "hosts": [
+        "sgilbo.kr",
+        "seongdongnews.com",
+        "chilgok.grandculture.net"
+      ],
+      "names": [
+        "성동신문",
+        "성동저널",
+        "성동일보"
+      ],
+      "media": [
+        {
+          "name": "성동신문",
+          "host": "sgilbo.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성동저널",
+          "host": "seongdongnews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성동일보",
+          "host": "chilgok.grandculture.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "성북구": {
+      "hosts": [
+        "k-knowledge.kr",
+        "seongbuk.kpnnews.org"
+      ],
+      "names": [
+        "성북신문",
+        "성북공보뉴스"
+      ],
+      "media": [
+        {
+          "name": "성북신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "성북공보뉴스",
+          "host": "seongbuk.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "송파구": {
+      "hosts": [
+        "songpanews.com",
+        "songpa.kpnnews.org",
+        "thekoreantoday.com",
+        "songpatimes.com"
+      ],
+      "names": [
+        "송파신문",
+        "송파공보뉴스",
+        "송파 뉴스",
+        "송파타임즈"
+      ],
+      "media": [
+        {
+          "name": "송파신문",
+          "host": "songpanews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "송파공보뉴스",
+          "host": "songpa.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "송파 뉴스",
+          "host": "thekoreantoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "송파타임즈",
+          "host": "songpatimes.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "양천구": {
+      "hosts": [
+        "ycnews.kr"
+      ],
+      "names": [
+        "양천신문"
+      ],
+      "media": [
+        {
+          "name": "양천신문",
+          "host": "ycnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "영등포구": {
+      "hosts": [
+        "ybstv.net",
+        "ydptoday.com",
+        "ydpcj.kr"
+      ],
+      "names": [
+        "영등포신문",
+        "영등포투데이",
+        "영등포 소비자저널"
+      ],
+      "media": [
+        {
+          "name": "영등포신문",
+          "host": "ybstv.net",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영등포투데이",
+          "host": "ydptoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "영등포 소비자저널",
+          "host": "ydpcj.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "용산구": {
+      "hosts": [
+        "yongsannews.com"
+      ],
+      "names": [
+        "용산 타임즈"
+      ],
+      "media": [
+        {
+          "name": "용산 타임즈",
+          "host": "yongsannews.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "은평구": {
+      "hosts": [
+        "ieps.co.kr",
+        "eptimes.co.kr"
+      ],
+      "names": [
+        "은평구의 중심! 은평신문",
+        "은평타임즈"
+      ],
+      "media": [
+        {
+          "name": "은평구의 중심! 은평신문",
+          "host": "ieps.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "은평타임즈",
+          "host": "eptimes.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "종로구": {
+      "hosts": [
+        "k-knowledge.kr",
+        "thekoreantoday.com",
+        "jongno.kpnnews.org",
+        "moneypin.biz",
+        "jongnonews.com"
+      ],
+      "names": [
+        "종로신문",
+        "종로 뉴스",
+        "종로공보뉴스",
+        "종로타임즈",
+        "jongnonews.com"
+      ],
+      "media": [
+        {
+          "name": "종로신문",
+          "host": "k-knowledge.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "종로 뉴스",
+          "host": "thekoreantoday.com",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "종로공보뉴스",
+          "host": "jongno.kpnnews.org",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "종로타임즈",
+          "host": "moneypin.biz",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "jongnonews.com",
+          "host": "jongnonews.com",
+          "src": "verified",
+          "address": "(host에 지역 로마자 포함)"
+        }
+      ]
+    },
+    "중랑구": {
+      "hosts": [
+        "jungnangnews.kr"
+      ],
+      "names": [
+        "중랑신문"
+      ],
+      "media": [
+        {
+          "name": "중랑신문",
+          "host": "jungnangnews.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
+        }
+      ]
+    },
+    "울주군": {
+      "hosts": [
+        "m.uljusinmun.co.kr"
+      ],
+      "names": [
+        "울주신문"
+      ],
+      "media": [
+        {
+          "name": "울주신문",
+          "host": "m.uljusinmun.co.kr",
+          "src": "verified",
+          "address": "(매체명 패턴 매칭)"
         }
       ]
     }
@@ -2895,5 +8111,113 @@
     "헬로디디",
     "홍성신문",
     "환경일보"
+  ],
+  "_national_discovered": [
+    "apnews.kr",
+    "asiatime.co.kr",
+    "asiatoday.co.kr",
+    "banronbodo.com",
+    "breaknews.com",
+    "businesspost.co.kr",
+    "bzeronews.com",
+    "cbci.co.kr",
+    "cnbnews.com",
+    "daily.hankooki.com",
+    "danbinews.com",
+    "discoverynews.kr",
+    "dnews.co.kr",
+    "dtnews24.com",
+    "econonews.co.kr",
+    "efnews.co.kr",
+    "ekn.kr",
+    "enewstoday.co.kr",
+    "eroun.net",
+    "etoday.co.kr",
+    "finomy.com",
+    "fintechpost.co.kr",
+    "fntimes.com",
+    "fntoday.co.kr",
+    "fpn119.co.kr",
+    "ggilbo.com",
+    "gginews.co.kr",
+    "gjdream.com",
+    "goodmorningcc.com",
+    "grandculture.net",
+    "gukjenews.com",
+    "idsn.co.kr",
+    "ilyo.co.kr",
+    "ilyoseoul.co.kr",
+    "ilyosisa.co.kr",
+    "iminju.net",
+    "incheonilbo.com",
+    "incheonnews.com",
+    "incheontoday.com",
+    "inthenews.co.kr",
+    "jbsori.com",
+    "jeonmae.co.kr",
+    "joongangenews.com",
+    "joongdo.co.kr",
+    "joynews24.com",
+    "kfenews.co.kr",
+    "kgnews.co.kr",
+    "knnews.co.kr",
+    "korea.kr",
+    "kpenews.com",
+    "kpinews.kr",
+    "ksmnews.co.kr",
+    "kukinews.com",
+    "kwangju.co.kr",
+    "kyeongin.com",
+    "lawissue.co.kr",
+    "m-i.kr",
+    "m.skyedaily.com",
+    "mediapen.com",
+    "metroseoul.co.kr",
+    "mhns.co.kr",
+    "mygoyang.com",
+    "naeil.com",
+    "newdaily.co.kr",
+    "news.bbsi.co.kr",
+    "news.ifm.kr",
+    "news.lghellovision.net",
+    "news.mtn.co.kr",
+    "news.skbroadband.com",
+    "news.tf.co.kr",
+    "news2day.co.kr",
+    "newscj.com",
+    "newsdream.kr",
+    "newsfarm.co.kr",
+    "newsfreezone.co.kr",
+    "newsprime.co.kr",
+    "newstnt.com",
+    "newstown.co.kr",
+    "newsworks.co.kr",
+    "onews.tv",
+    "pennmike.com",
+    "pinpointnews.co.kr",
+    "pn.or.kr",
+    "polinews.co.kr",
+    "popcornnews.net",
+    "ppss.kr",
+    "queen.co.kr",
+    "radio.ytn.co.kr",
+    "readersnews.com",
+    "sedaily.com",
+    "segye.com",
+    "seoulfn.com",
+    "shinailbo.co.kr",
+    "straightnews.co.kr",
+    "suwonilbo.kr",
+    "thebigdata.co.kr",
+    "thepublic.kr",
+    "topstarnews.net",
+    "travelitoday.com",
+    "veritas-a.com",
+    "viva100.com",
+    "weeklytoday.com",
+    "wolyo.co.kr",
+    "worktoday.co.kr",
+    "youngnong.co.kr",
+    "ytn.co.kr"
   ]
 }

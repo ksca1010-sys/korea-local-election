@@ -68,7 +68,7 @@ const ChartsModule = (() => {
             options: {
                 responsive: true,
                 maintainAspectRatio: true,
-                aspectRatio: 1.8,
+                aspectRatio: window.innerWidth <= 768 ? 1.2 : 1.8,
                 plugins: {
                     legend: { display: false },
                     tooltip: {
@@ -163,6 +163,7 @@ const ChartsModule = (() => {
         const datasets = [];
         candidateSet.forEach((info, name) => {
             const color = info.stanceColor || ElectionData.getPartyColor(info.party);
+            const isMerged = !!trendGroup._merged;
             datasets.push({
                 label: name,
                 data: polls.map(p => {
@@ -176,6 +177,7 @@ const ChartsModule = (() => {
                 pointRadius: 5,
                 pointHoverRadius: 7,
                 borderWidth: 2.5,
+                borderDash: isMerged ? [6, 3] : [],
                 tension: 0.3,
                 fill: false,
                 spanGaps: true
@@ -211,7 +213,7 @@ const ChartsModule = (() => {
             options: {
                 responsive: true,
                 maintainAspectRatio: true,
-                aspectRatio: 1.6,
+                aspectRatio: window.innerWidth <= 768 ? 1.1 : 1.6,
                 interaction: {
                     mode: 'index',
                     intersect: false
@@ -230,6 +232,17 @@ const ChartsModule = (() => {
                         padding: 10,
                         cornerRadius: 8,
                         callbacks: {
+                            title: (items) => {
+                                if (!items.length) return '';
+                                const idx = items[0].dataIndex;
+                                const poll = polls[idx];
+                                const base = items[0].label || '';
+                                // 통합 추이: 기관명 표시
+                                if (trendGroup._merged && poll?.pollOrg) {
+                                    return `${base} (${poll.pollOrg})`;
+                                }
+                                return base;
+                            },
                             label: (ctx) => {
                                 if (ctx.raw === null || ctx.dataset.label === '' || ctx.dataset.label.includes('오차범위')) return null;
                                 return `${ctx.dataset.label}: ${ctx.raw}%`;

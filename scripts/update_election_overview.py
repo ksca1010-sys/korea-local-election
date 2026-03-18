@@ -5,11 +5,13 @@
 - 기초단체장은 update_mayor_overview.py로 분리됨
 """
 
+import hashlib
 import json
 import os
 import sys
 import time
 from datetime import datetime, date
+from pathlib import Path
 
 from election_overview_utils import (
     BASE_DIR, OVERVIEW_PATH, CANDIDATES_PATH, SUPERINTENDENT_PATH, POLLS_PATH,
@@ -19,6 +21,39 @@ from election_overview_utils import (
     build_narrative_prompt,
 )
 from local_media_pool import get_media_text, METRO_MEDIA
+
+# ── 뉴스 해시 기반 스킵을 위한 상태 관리 ──
+GOV_STATE_PATH = BASE_DIR / "data" / "governor_overview_state.json"
+
+
+def _load_gov_state():
+    if GOV_STATE_PATH.exists():
+        return json.loads(GOV_STATE_PATH.read_text(encoding="utf-8"))
+    return {}
+
+
+def _save_gov_state(state):
+    GOV_STATE_PATH.write_text(
+        json.dumps(state, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8"
+    )
+
+
+def _content_hash(news, candidates=None, polls=None):
+    parts = ["NEWS:" + "\n".join(sorted(news))]
+    if candidates:
+        cand_keys = sorted(
+            f"{c.get('name','')}|{c.get('party','')}|{c.get('status','')}"
+            for c in candidates if c.get("status") != "WITHDRAWN"
+        )
+        parts.append("CAND:" + "\n".join(cand_keys))
+    if polls:
+        poll_keys = sorted(
+            f"{p.get('publishDate','')}|{p.get('pollOrg','')}"
+            for p in polls
+        )
+        parts.append("POLL:" + "\n".join(poll_keys))
+    return hashlib.md5("\n\n".join(parts).encode()).hexdigest()
 
 
 def fetch_news_for_region(region_name, election_type="governor"):
@@ -141,9 +176,11 @@ def main():
     candidates = load_candidates()
     polls = load_polls()
     current = load_current_overview()
+    gov_state = _load_gov_state()
 
     updated_regions = {}
     errors = []
+    skipped = 0
 
     for region_key, region_name in REGION_NAMES.items():
         print(f"\n[{region_key}] {region_name} 처리 중...")
@@ -153,11 +190,22 @@ def main():
         news = fetch_news_for_region(region_name, "governor")
         print(f"  뉴스 {len(news)}건 수집")
 
+        # 콘텐츠 해시 비교 (뉴스+후보+여론조사) — 변화 없으면 LLM 스킵
+        nh = _content_hash(news, region_candidates, region_polls)
+        state_key = f"governor/{region_key}"
+        prev_hash = gov_state.get(state_key, {}).get("contentHash")
+        prev = current.get("regions", {}).get(region_key, {})
+
+        if prev_hash == nh and prev.get("headline"):
+            print(f"  변화 없음, 기존 유지")
+            updated_regions[region_key] = prev
+            skipped += 1
+            continue
+
         cand_text = format_candidates_text(region_candidates, "governor")
         poll_text = format_polls_text(region_polls)
         news_text = chr(10).join(news) if news else "(뉴스 검색 결과 없음)"
 
-        prev = current.get("regions", {}).get(region_key, {})
         prev_text = prev.get("narrative") or prev.get("summary", "(없음)")
 
         prompt = build_narrative_prompt(
@@ -171,7 +219,7 @@ def main():
         )
 
         try:
-            raw = call_llm(prompt, api_key, max_tokens=2048,
+            raw = call_llm(prompt, api_key, max_tokens=1500,
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
 
@@ -183,6 +231,10 @@ def main():
                 continue
 
             updated_regions[region_key] = obj
+            gov_state[state_key] = {
+                "contentHash": nh,
+                "lastUpdated": datetime.now().isoformat(),
+            }
             print(f"  -> {obj['headline']}")
 
         except Exception as e:
@@ -206,9 +258,10 @@ def main():
         json.dumps(current, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8"
     )
+    _save_gov_state(gov_state)
 
     print("\n" + "=" * 55)
-    print(f"완료! {len(updated_regions)}개 지역 업데이트")
+    print(f"완료! {len(updated_regions)}개 지역 (LLM {len(updated_regions) - skipped}회, 스킵 {skipped}회)")
     if errors:
         print(f"오류 발생 지역 ({len(errors)}): {', '.join(errors)}")
     print(f"저장: {OVERVIEW_PATH}")
@@ -225,16 +278,30 @@ def update_superintendent_overview(api_key, current):
     if SUPERINTENDENT_PATH.exists():
         supt_data = json.loads(SUPERINTENDENT_PATH.read_text(encoding="utf-8")).get("candidates", {})
 
+    gov_state = _load_gov_state()
     updated = {}
+    skipped = 0
+
     for rk, rn in REGION_NAMES.items():
         candidates = supt_data.get(rk, [])
         news = fetch_news_for_region(rn, "superintendent")
         print(f"\n[{rk}] {rn} 교육감... (뉴스 {len(news)}건)")
 
+        # 콘텐츠 해시 비교 (뉴스+후보)
+        nh = _content_hash(news, candidates)
+        state_key = f"superintendent/{rk}"
+        prev_hash = gov_state.get(state_key, {}).get("contentHash")
+        prev = current.get("superintendent", {}).get(rk, {})
+
+        if prev_hash == nh and prev.get("headline"):
+            print(f"  변화 없음, 기존 유지")
+            updated[rk] = prev
+            skipped += 1
+            continue
+
         cand_text = format_candidates_text(candidates, "superintendent")
         news_text = chr(10).join(news) if news else "(뉴스 검색 결과 없음)"
 
-        prev = current.get("superintendent", {}).get(rk, {})
         prev_text = prev.get("narrative") or prev.get("summary", "(없음)")
 
         extra = """## 교육감 선거 특수 원칙
@@ -254,11 +321,15 @@ def update_superintendent_overview(api_key, current):
         )
 
         try:
-            raw = call_llm(prompt, api_key, max_tokens=2048,
+            raw = call_llm(prompt, api_key, max_tokens=1500,
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if obj and validate_overview(obj):
                 updated[rk] = obj
+                gov_state[state_key] = {
+                    "contentHash": nh,
+                    "lastUpdated": datetime.now().isoformat(),
+                }
                 print(f"  -> {obj['headline']}")
             else:
                 if prev:
@@ -270,6 +341,8 @@ def update_superintendent_overview(api_key, current):
                 updated[rk] = prev
         time.sleep(1)
 
+    _save_gov_state(gov_state)
+    print(f"\n교육감: LLM {len(updated) - skipped}회, 스킵 {skipped}회")
     return updated
 
 

@@ -571,8 +571,8 @@ const ElectionData = (() => {
         ],
         byElection: {
             name: '국회의원 재보궐선거',
-            count: 5,
-            districts: ['인천 연수구갑', '인천 계양구을', '경기 평택시을', '충남 아산시을', '전북 군산·김제·부안갑']
+            count: 6,
+            districts: ['인천 연수구갑', '인천 계양구을', '경기 평택시을', '경기 안산시갑', '충남 아산시을', '전북 군산·김제·부안갑']
         }
     };
 
@@ -881,9 +881,9 @@ const ElectionData = (() => {
         },
         byElection: {
             name: '재보궐선거',
-            count: 5,
+            count: 6,
             description: '국회의원 보궐선거',
-            detail: '공석이 된 5개 국회의원 지역구(인천 연수구갑, 인천 계양구을, 경기 평택시을, 충남 아산시을, 전북 군산·김제·부안갑)의 재보궐선거입니다.',
+            detail: '공석이 된 6개 국회의원 지역구(인천 연수구갑, 인천 계양구을, 경기 평택시을, 경기 안산시갑, 충남 아산시을, 전북 군산·김제·부안갑)의 재보궐선거입니다.',
             term: '잔여 임기',
             votersPer: '유권자 1인당 1표'
         }
@@ -2421,7 +2421,7 @@ const ElectionData = (() => {
         _byElectionCache: null,
         loadByElectionData() {
             if (this._byElectionCache) return Promise.resolve(this._byElectionCache);
-            return fetch('data/candidates/byelection.json')
+            return fetch('data/candidates/byelection.json?v=' + Date.now())
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     this._byElectionCache = data;
@@ -2439,7 +2439,7 @@ const ElectionData = (() => {
         _electionStatsLoaded: false,
         loadElectionStats() {
             if (this._electionStatsLoaded) return Promise.resolve();
-            return fetch('data/election_stats.json')
+            return fetch('data/election_stats.json?v=' + Date.now())
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.electionTypes) return;
@@ -3079,9 +3079,55 @@ const ElectionData = (() => {
             return [...seen.values()];
         },
 
-        // ── 여론조사 표시용 API ──
+        // ── 여론조사 표시용 API (classification 기반 필터 우선) ──
         getLatestPollsForDisplay(regionKey, electionType = 'governor', districtName = null) {
-            // getPollsForSelection은 이미 최신순 정렬되어 반환
+            // classification 필드가 있는 poll은 새 필터로 처리
+            const allPolls = this._pollsCache?.regions?.[regionKey] || [];
+            const classifiedPolls = allPolls.filter(p => p.classification);
+
+            if (classifiedPolls.length > 0) {
+                const typeMap = {
+                    'governor': 'governor', 'superintendent': 'superintendent',
+                    'mayor': 'mayor', 'byElection': 'byelection',
+                    'council': 'council', 'localCouncil': 'localCouncil',
+                };
+                const targetType = typeMap[electionType] || electionType;
+                const canonicalDistrict = districtName
+                    ? (this.getSubRegionByName(regionKey, districtName)?.name || districtName)
+                    : null;
+
+                let filtered = classifiedPolls.filter(p => {
+                    const cls = p.classification;
+                    const types = cls.electionTypes || [];
+                    const region = cls.region || {};
+
+                    // 선거종류 매칭
+                    if (!types.includes(targetType)) return false;
+
+                    // 지역 매칭
+                    if (targetType === 'governor' || targetType === 'superintendent') {
+                        return region.level === 'metro' || region.level === 'national';
+                    }
+                    if (targetType === 'mayor' && canonicalDistrict) {
+                        return region.municipality === canonicalDistrict || region.level === 'metro';
+                    }
+                    if (targetType === 'byelection') {
+                        return true; // 재보궐은 regionKey로 이미 필터됨
+                    }
+                    return true;
+                });
+
+                // 정당 매핑 + 정렬
+                const getPollDate = (p) => {
+                    const d = p.publishDate || p.surveyDate?.end || '';
+                    return d ? new Date(d).getTime() : 0;
+                };
+                filtered.sort((a, b) => getPollDate(b) - getPollDate(a));
+
+                if (filtered.length > 0) return filtered;
+            }
+
+            // fallback: 기존 로직
             return this.getPollsForSelection(regionKey, electionType, districtName);
         },
 
@@ -3090,19 +3136,29 @@ const ElectionData = (() => {
             const polls = this.getPollsForSelection(regionKey, electionType, districtName);
             const groups = {};
             polls.forEach(p => {
-                if (!p.results || p.results.length < 2) return; // 유효 결과 없으면 스킵
+                if (!p.results || p.results.length < 2) return;
                 const key = p.pollOrg || 'unknown';
                 if (!groups[key]) groups[key] = { pollOrg: key, polls: [] };
                 groups[key].polls.push(p);
             });
-            // 2회 이상만 반환, 최신 조사 기준 정렬
-            return Object.values(groups)
+
+            const result = Object.values(groups)
                 .filter(g => g.polls.length >= 2)
                 .sort((a, b) => {
                     const aDate = a.polls[0]?.publishDate || '';
                     const bDate = b.polls[0]?.publishDate || '';
                     return bDate.localeCompare(aDate);
                 });
+
+            // 같은 기관 2건+ 그룹이 없으면 → 전체 기관 통합 추이 (3건 이상일 때)
+            if (result.length === 0) {
+                const allWithResults = polls.filter(p => p.results && p.results.length >= 2);
+                if (allWithResults.length >= 2) {
+                    result.push({ pollOrg: '전체 기관 통합', polls: allWithResults, _merged: true });
+                }
+            }
+
+            return result;
         },
 
         getLatestPollPerElection(regionKey) {
@@ -3127,6 +3183,10 @@ const ElectionData = (() => {
         getElectionOverview(regionKey, electionType, districtName) {
             const cache = this._overviewCache;
             if (!cache) return null;
+            if (electionType === 'byElection' && districtName) {
+                // 재보궐: districtName이 byelection key (예: incheon-yeonsu)
+                return cache?.byelection?.[districtName] || null;
+            }
             if (electionType === 'superintendent') {
                 return cache?.superintendent?.[regionKey] || null;
             }

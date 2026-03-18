@@ -1,0 +1,670 @@
+{
+  "_meta": {
+    "lastRun": "2026-03-17T23:02:45.537429",
+    "totalDetections": 25,
+    "pendingCount": 25,
+    "approvedCount": 0,
+    "rejectedCount": 0
+  },
+  "detections": [
+    {
+      "key": "chungnam-아산시을",
+      "region": "chungnam",
+      "district": "아산시을",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 85,
+      "sources": [
+        {
+          "title": "충남 재보선 최대 이슈 與 인물난 속 野 틈새 공략",
+          "link": "https://www.cctoday.co.kr/news/articleView.html?idxno=2227130",
+          "date": "2026-03-17"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537262"
+    },
+    {
+      "key": "daejeon-지역구",
+      "region": "daejeon",
+      "district": "지역구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "양문석",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "용혜인 “안산갑 보궐 출마 진지하게 고민…민주당 독점으론 변화 어려...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8510540&ref=A",
+          "date": "2026-03-17"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537300"
+    },
+    {
+      "key": "incheon-지역구",
+      "region": "incheon",
+      "district": "지역구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "민주당",
+        "party": "democratic"
+      },
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "‘진보진영=도덕성’ 깨졌나…22대 4명째 ‘의원직 상실’",
+          "link": "https://www.naeil.com/news/read/581413?ref=naver",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "민주 &quot;6·3 국회의원 재보선 전략공천 방침&quot;…책임론 지적에는 말 아껴",
+          "link": "https://www.newspim.com/news/view/20260313000645",
+          "date": "2026-03-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537314"
+    },
+    {
+      "key": "busan-사직구",
+      "region": "busan",
+      "district": "사직구",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "어민주당",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'부산출마설' 한동훈, 최동원 유니폼 입고 사직구장 등장",
+          "link": "https://www.imaeil.com/page/view/2026031612121486129",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "조국·한동훈 설전…조국 “韓은 尹의 꼬붕관계” vs 한동훈 “李에 아...",
+          "link": "https://www.mk.co.kr/article/11988358",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "‘최동원 유니폼’ 입은 한동훈, 사직구장 깜짝 등장…팝콘 먹고 시민들...",
+          "link": "https://www.sedaily.com/article/20019936?ref=naver",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "‘부산 출마설’ 한동훈, 사직구장 깜짝 방문",
+          "link": "https://www.dt.co.kr/article/12051496?ref=naver",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "한동훈, 부산 사직구장서 시범경기 직관…일주일 만에 부산행",
+          "link": "http://www.yonhapnewstv.co.kr/AKR20260314171659gf9",
+          "date": "2026-03-14"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537318"
+    },
+    {
+      "key": "incheon-안산서도",
+      "region": "incheon",
+      "district": "안산서도",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "아직",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "군산 이어 안산서도 출마 요청...조국, 재선 도전 지역구는?",
+          "link": "https://www.mt.co.kr/politics/2026/03/16/2026031510170964167",
+          "date": "2026-03-15"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537324"
+    },
+    {
+      "key": "incheon-선거구",
+      "region": "incheon",
+      "district": "선거구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "reform"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "맹인섭, 아산을 보선 출마예정자 &quot;조국혁신당 공심위 부적격 인정못해&quot;",
+          "link": "http://www.breaknews.com/1191844",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "'안산갑·연수갑' 판 커진 재보선⋯'미니 총선' 급부상",
+          "link": "http://www.inews24.com/view/1948428",
+          "date": "2026-03-12"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537333"
+    },
+    {
+      "key": "incheon-수도",
+      "region": "incheon",
+      "district": "수도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "최대 10곳 이상 될 수도…‘미니 총선급’ 재보선 예고",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8508304&ref=A",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "최대 10곳 이상 될 수도…‘미니 총선급’ 재보선 예고",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8508043&ref=A",
+          "date": "2026-03-13"
+        },
+        {
+          "title": "국회의원 보궐·지방선거 겹친 인천 계양 수도권 격전지 부상",
+          "link": "https://www.sidae.com/article/2026031608411875488",
+          "date": "2026-03-16"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537336"
+    },
+    {
+      "key": "busan-전북군",
+      "region": "busan",
+      "district": "전북군",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "민주당",
+        "party": "democratic"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[맞수토론] 점점 판 커지는 '재보궐'…부산 겨냥한 굵직한 이름들",
+          "link": "https://news.jtbc.co.kr/article/NB12289521?influxDiv=NAVER",
+          "date": "2026-03-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537340"
+    },
+    {
+      "key": "gyeonggi-실시",
+      "region": "gyeonggi",
+      "district": "실시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "양문석",
+        "party": "democratic"
+      },
+      "confidence": 100,
+      "sources": [
+        {
+          "title": "전해철·김남국·김용, 안산갑 출마 거론…선관위 “헌재 결정따라 처리...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8507812&ref=A",
+          "date": "2026-03-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537343"
+    },
+    {
+      "key": "gyeonggi-주목도",
+      "region": "gyeonggi",
+      "district": "주목도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "주목도 시들한 평택을·안산갑 재보선… '전략공천' '인물부재' 때문에",
+          "link": "https://www.joongboo.com/news/articleView.html?idxno=363719979",
+          "date": "2026-03-17"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537348"
+    },
+    {
+      "key": "gyeonggi-지역구",
+      "region": "gyeonggi",
+      "district": "지역구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "의원의",
+        "party": "independent"
+      },
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "&quot;재판소원법, 또다른 이름은 '재판불복'&quot;…양문석이 쏘아올린 與 '사법...",
+          "link": "https://www.dailian.co.kr/news/view/1621037/?sc=Naver",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "&quot;재판소원법, 또다른 이름은 '재판불복'&quot;…양문석이 쏘아올린 與 '사법...",
+          "link": "https://www.dailian.co.kr/news/view/1621022/?sc=Naver",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "조국혁신당 안산지역위 &quot;조국 대표 안산갑 보궐선거 출마 요청&quot;",
+          "link": "https://www.newsis.com/view/NISX20260314_0003548311",
+          "date": "2026-03-15"
+        },
+        {
+          "title": "양문석 재판소원 예고…법조계 &quot;한 지역구 두 의원 생길 수도&quot;",
+          "link": "https://www.sisajournal.com/news/articleView.html?idxno=365642",
+          "date": "2026-03-12"
+        },
+        {
+          "title": "'대출 사기' 양문석 의원, 당선무효형 확정..안산갑 재선거",
+          "link": "http://www.breaknews.com/1191275",
+          "date": "2026-03-12"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537362"
+    },
+    {
+      "key": "gyeonggi-보궐선거도",
+      "region": "gyeonggi",
+      "district": "보궐선거도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "의원이",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[뉴스 더] 보궐선거도 '경우의 수'?…張-吳의 '공통분모' 찾기",
+          "link": "https://news.tvchosun.com/site/data/html_dir/2026/03/14/2026031490102.html",
+          "date": "2026-03-14"
+        },
+        {
+          "title": "[공감 2026] 내일 선고 '경기 안산갑'…재보선 커지나",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1516800",
+          "date": "2026-03-11"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537365"
+    },
+    {
+      "key": "incheon-인천시",
+      "region": "incheon",
+      "district": "인천시",
+      "electionType": "기초단체장",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "이병진",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "인천시장 선거 '행정 베테랑' 유정복 vs '미래 혁신' 박찬대 [굿모닝 인...",
+          "link": "https://news.ifm.kr/news/articleView.html?idxno=466964",
+          "date": "2026-03-17"
+        },
+        {
+          "title": "예년보다 빠른 인천시장 공천… ‘연수구갑 보궐’ 향방에 촉각",
+          "link": "https://www.kyeongin.com/article/1760347",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "정청래 &quot;안아보자&quot;…與, 박찬대 인천시장 단수 공천, 김용 두고 속앓이",
+          "link": "https://www.joongang.co.kr/article/25409163",
+          "date": "2026-03-04"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537368"
+    },
+    {
+      "key": "ulsan-울산시",
+      "region": "ulsan",
+      "district": "울산시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "&quot;이건 전쟁&quot;…민주 울산시당, 경선 갈등 '계파 대리전' 격화",
+          "link": "https://www.iusm.co.kr/news/articleView.html?idxno=1060627",
+          "date": "2026-03-16"
+        },
+        {
+          "title": "민주 '울산시장 후보' 빠르면 주말에 확정",
+          "link": "http://www.ujeil.com/news/articleView.html?idxno=382567",
+          "date": "2026-03-15"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537377"
+    },
+    {
+      "key": "busan-해운대구갑",
+      "region": "busan",
+      "district": "해운대구갑",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국민의힘",
+        "party": "independent"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "한동훈, 최동원 유니폼 입고 사직 경기 관람...일주일만 또 부산행",
+          "link": "https://www.jibs.co.kr/news/articles/articlesDetail/58952?feed=na",
+          "date": "2026-03-16"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537381"
+    },
+    {
+      "key": "gyeonggi-안산시",
+      "region": "gyeonggi",
+      "district": "안산시",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": null,
+      "confidence": 70,
+      "sources": [
+        {
+          "title": "양문석 당선무효형…안산시의회 국힘 &quot;민주당 사과하라&quot;",
+          "link": "https://www.newsis.com/view/NISX20260313_0003547137",
+          "date": "2026-03-13"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537387"
+    },
+    {
+      "key": "gyeonggi-평택시을",
+      "region": "gyeonggi",
+      "district": "평택시을",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "이병진",
+        "party": "democratic"
+      },
+      "confidence": 100,
+      "sources": [
+        {
+          "title": "[이슈] '대출사기' 양문석 당선무효형 확정…재보궐 6곳 확정 '미니총선...",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=725297",
+          "date": "2026-03-12"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537390"
+    },
+    {
+      "key": "gyeonggi-안산시갑",
+      "region": "gyeonggi",
+      "district": "안산시갑",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "양문석",
+        "party": "independent"
+      },
+      "confidence": 100,
+      "sources": [
+        {
+          "title": "6·3재보선 5곳 확대…與양문석 의원직 상실로 미니총선",
+          "link": "https://www.munhwa.com/article/11574132?ref=naver",
+          "date": "2026-03-12"
+        },
+        {
+          "title": "양문석 의원직 상실…6·3 국회의원 재보선 5곳으로 확대",
+          "link": "http://www.4th.kr/news/articleView.html?idxno=2108961",
+          "date": "2026-03-12"
+        },
+        {
+          "title": "대법원 최종 판결 앞두고 잠 못 이루는 안산갑…재선거 여부에 지역 정...",
+          "link": "https://www.dailian.co.kr/news/view/1619784/?sc=Naver",
+          "date": "2026-03-11"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537393"
+    },
+    {
+      "key": "incheon-요구",
+      "region": "incheon",
+      "district": "요구",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "어민주당",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "양문석, 의원직 상실형…경기·인천 최대 6곳 되나, 판 커진 '재보선'",
+          "link": "https://www.kyeonggi.com/article/20260312580177",
+          "date": "2026-03-12"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537395"
+    },
+    {
+      "key": "gyeonggi-지역도",
+      "region": "gyeonggi",
+      "district": "지역도",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "현역",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "미리 보는 6.3 재보선... 그래서 한동훈과 조국은 어디로?",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003213955&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-03-11"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537398"
+    },
+    {
+      "key": "gyeonggi-선되더라도",
+      "region": "gyeonggi",
+      "district": "선되더라도",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "이병진",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'李대통령 최측근' 김용, 지선 앞두고 광폭행보…'친명 후보' 감별사?",
+          "link": "https://www.news1.kr/politics/assembly/6097354",
+          "date": "2026-03-11"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537403"
+    },
+    {
+      "key": "incheon-평택시을",
+      "region": "incheon",
+      "district": "평택시을",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": null,
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "&quot;지선보다 재·보궐&quot;…경인 정치권 변수 촉각",
+          "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1318329",
+          "date": "2026-03-08"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537406"
+    },
+    {
+      "key": "gyeonggi-속도",
+      "region": "gyeonggi",
+      "district": "속도",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "이병진",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "민주당 지선 공천 속도전…김용·전재수 사법리스크 변수",
+          "link": "https://www.dailian.co.kr/news/view/1617415/?sc=Naver",
+          "date": "2026-03-06"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537408"
+    },
+    {
+      "key": "jeonbuk-겨뤄봅시",
+      "region": "jeonbuk",
+      "district": "겨뤄봅시",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "민주당",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "&quot;조국 대표님, 군산 오셔서 겨뤄봅시다&quot;…전수미 민주당 대변인 '한판 승...",
+          "link": "https://www.pressian.com/pages/articles/2026030506133855917?utm_source=naver&utm_medium=search",
+          "date": "2026-03-05"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537411"
+    },
+    {
+      "key": "jeonbuk-전북도",
+      "region": "jeonbuk",
+      "district": "전북도",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "reform"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "&quot;조국 대표 군산·김제·부안갑 국회의원 재선거 출마해야&quot;",
+          "link": "http://www.jmbc.co.kr/news/view/62826",
+          "date": "2026-03-04"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-17T23:02:45.537414"
+    }
+  ]
+}

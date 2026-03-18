@@ -125,10 +125,22 @@ def fetch_news_v2(region_name, district, region_key):
     return all_news[:15]
 
 
-def compute_news_hash(news_items):
-    """뉴스 목록의 MD5 해시"""
-    text = "\n".join(sorted(news_items))
-    return hashlib.md5(text.encode()).hexdigest()
+def compute_content_hash(news_items, candidates=None, polls=None):
+    """뉴스+후보+여론조사 통합 MD5 해시"""
+    parts = ["NEWS:" + "\n".join(sorted(news_items))]
+    if candidates:
+        cand_keys = sorted(
+            f"{c.get('name','')}|{c.get('party','')}|{c.get('status','')}"
+            for c in candidates if c.get("status") != "WITHDRAWN"
+        )
+        parts.append("CAND:" + "\n".join(cand_keys))
+    if polls:
+        poll_keys = sorted(
+            f"{p.get('publishDate','')}|{p.get('pollOrg','')}"
+            for p in polls
+        )
+        parts.append("POLL:" + "\n".join(poll_keys))
+    return hashlib.md5("\n\n".join(parts).encode()).hexdigest()
 
 
 # ═══════════════════════════════════════════
@@ -320,14 +332,14 @@ def load_district_polls():
 
 def process_district(region_key, region_name, district, candidates, current,
                      api_key, polls=None, prev_updated=None, dry_run=False):
-    """단일 시군구 처리. 반환: (result_obj | None, news_hash)"""
+    """단일 시군구 처리. 반환: (result_obj | None, content_hash)"""
     news = fetch_news_v2(region_name, district, region_key)
-    news_hash = compute_news_hash(news)
+    content_hash = compute_content_hash(news, candidates, polls)
     print(f"  {district} (뉴스 {len(news)}건)...", end="", flush=True)
 
     if dry_run:
-        print(f" [dry-run] news_hash={news_hash[:8]}")
-        return None, news_hash
+        print(f" [dry-run] hash={content_hash[:8]}")
+        return None, content_hash
 
     prompt = build_prompt_v2(
         region_key, region_name, district, candidates, current,
@@ -337,17 +349,17 @@ def process_district(region_key, region_name, district, candidates, current,
     max_attempts = 2
     for attempt in range(max_attempts):
         try:
-            raw = call_llm(prompt, api_key, max_tokens=2048,
+            raw = call_llm(prompt, api_key, max_tokens=1500,
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if not obj or not obj.get("headline"):
                 print(" [경고] 파싱 실패")
-                return None, news_hash
+                return None, content_hash
 
             # narrative 모드에서는 validate_overview 사용
             if not validate_overview(obj):
                 print(" [경고] 필수 필드 누락")
-                return None, news_hash
+                return None, content_hash
 
             passed, reason, severity = validate_quality(obj, news_provided=bool(news))
 
@@ -364,16 +376,16 @@ def process_district(region_key, region_name, district, candidates, current,
             if not passed:
                 print(f" [품질실패:{reason}]")
                 # 실패해도 결과는 반환 (기존 데이터보다 나을 수 있음)
-                return obj, news_hash
+                return obj, content_hash
 
             print(f" {obj['headline'][:20]}")
-            return obj, news_hash
+            return obj, content_hash
 
         except Exception as e:
             print(f" [오류] {e}")
-            return None, news_hash
+            return None, content_hash
 
-    return None, news_hash
+    return None, content_hash
 
 
 def main():
@@ -458,7 +470,7 @@ def main():
             # 여론조사
             polls = district_polls.get(state_key, [])
 
-            obj, news_hash = process_district(
+            obj, content_hash = process_district(
                 rk, rn, district, candidates, current,
                 api_key, polls=polls, prev_updated=prev_updated,
                 dry_run=args.dry_run
@@ -470,7 +482,7 @@ def main():
                 continue
 
             # 뉴스 해시 동일하면 LLM 결과가 None이어도 스킵
-            if obj is None and prev_entry.get("newsHash") == news_hash:
+            if obj is None and prev_entry.get("contentHash") == content_hash:
                 print(f"  {district} — 뉴스 변화 없음, 기존 유지")
                 total_skipped += 1
                 continue
@@ -479,7 +491,7 @@ def main():
                 updated_mayor[rk][district] = obj
                 state[state_key] = {
                     "lastUpdated": datetime.now().isoformat(),
-                    "newsHash": news_hash,
+                    "contentHash": content_hash,
                 }
                 total_updated += 1
 

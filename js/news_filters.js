@@ -53,6 +53,11 @@ window.NewsFilterConfig = {
       tier3: [ // 0.6 - 인터넷언론
         'ohmynews.com', 'nocutnews.co.kr', 'pressian.com', 'mediatoday.co.kr',
         'journalist.or.kr', 'newstof.com'
+      ],
+      tier4: [ // 0.52 - 전국 인터넷매체 (media_pool 자동 발견)
+        'ekn.kr', 'weeklytoday.com', 'gukjenews.com', 'apnews.kr',
+        'breaknews.com', 'kukinews.com', 'polinews.co.kr',
+        'news.lghellovision.net', 'news.skbroadband.com', 'news.bbsi.co.kr'
       ]
     },
     scores: {

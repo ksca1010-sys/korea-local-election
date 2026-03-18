@@ -668,10 +668,176 @@ def parse_pdf_results(pdf_path: Path) -> List[Dict[str, Any]]:
             if results:
                 return results
 
+            # Strategy 3: 정당지지도 (테이블 기반)
+            results = parse_pdf_party_support(pdf_path)
+            if results:
+                return results
+
+            # Strategy 4: 정당지지도 (텍스트 fallback)
+            results = _extract_party_support_inline(all_text)
+            if results:
+                return results
+
     except Exception as e:
         print(f"  PDF parse error: {e}")
 
     return []
+
+
+def _extract_party_support(text: str) -> List[Dict[str, Any]]:
+    """정당지지도 PDF에서 정당별 지지율 추출. (텍스트 기반 fallback)"""
+    return _extract_party_support_inline(text)
+
+
+def parse_pdf_party_support(pdf_path: Path) -> List[Dict[str, Any]]:
+    """정당지지도 전용 PDF 파서 — 테이블 기반.
+
+    여심위 PDF 정당지지도 테이블 구조 (pdfplumber):
+      헤더 행: ['구 분', ..., '더불어\n민주당', '국민의힘', '조국\n혁신당', ...]
+      전체 행: [None, None, '(504) (504)', None, '33.7', '43.0', '2.0', ...]
+
+    Returns list of {candidateName, party, support, type: 'party_support'} dicts.
+    """
+    PARTY_NORMALIZE = {
+        "국민의힘": ("국민의힘", "ppp"),
+        "더불어민주당": ("더불어민주당", "democratic"),
+        "더불어\n민주당": ("더불어민주당", "democratic"),
+        "민주당": ("더불어민주당", "democratic"),
+        "조국혁신당": ("조국혁신당", "reform"),
+        "조국\n혁신당": ("조국혁신당", "reform"),
+        "진보당": ("진보당", "progressive"),
+        "개혁신당": ("개혁신당", "newReform"),
+        "기타정당": None, "기타\n정당": None,
+        "없음": None, "잘 모름": None, "잘모름": None,
+        "잘\n모름": None, "모름/\n무응답": None,
+    }
+
+    try:
+        import pdfplumber
+    except ImportError:
+        return []
+
+    try:
+        with pdfplumber.open(pdf_path) as pdf:
+            if len(pdf.pages) <= 2:
+                return []
+
+            for page in pdf.pages:
+                text = page.extract_text() or ""
+                if "정당지지도" not in text and "정당 지지도" not in text:
+                    continue
+
+                tables = page.extract_tables() or []
+                for table in tables:
+                    if not table or len(table) < 2:
+                        continue
+
+                    # 헤더 행 찾기: 정당명이 2개 이상 포함
+                    header_row = None
+                    for row in table:
+                        party_hits = sum(1 for cell in (row or []) if cell and cell.strip().replace("\n","") in
+                            {k.replace("\n","") for k in PARTY_NORMALIZE})
+                        if party_hits >= 2:
+                            header_row = row
+                            break
+
+                    if not header_row:
+                        continue
+
+                    # 정당 인덱스 매핑
+                    party_indices = []
+                    for idx, cell in enumerate(header_row):
+                        if cell and cell.strip() in PARTY_NORMALIZE:
+                            norm = PARTY_NORMALIZE[cell.strip()]
+                            if norm:  # 기타/없음/모름 제외
+                                party_indices.append((idx, norm[0], norm[1]))
+
+                    if len(party_indices) < 2:
+                        continue
+
+                    # 전체/합계 행 찾기 (헤더 다음 첫 번째 데이터 행)
+                    data_row = None
+                    header_found = False
+                    for row in table:
+                        if row == header_row:
+                            header_found = True
+                            continue
+                        if header_found and row:
+                            data_row = row
+                            break
+
+                    if not data_row:
+                        continue
+
+                    # 값 추출
+                    results = []
+                    for col_idx, display_name, party_key in party_indices:
+                        if col_idx < len(data_row) and data_row[col_idx]:
+                            val_str = data_row[col_idx].strip().split("\n")[0]  # 첫 줄만 (전체)
+                            try:
+                                pct = float(val_str)
+                                if 0.5 <= pct <= 80:
+                                    results.append({
+                                        "candidateName": display_name,
+                                        "party": party_key,
+                                        "support": pct,
+                                        "type": "party_support",
+                                    })
+                            except ValueError:
+                                continue
+
+                    if len(results) >= 2:
+                        return results
+
+            # 테이블 파싱 실패 시 텍스트 fallback
+            all_text = "\n".join(p.extract_text() or "" for p in pdf.pages)
+            return _extract_party_support_inline(all_text)
+
+    except Exception as e:
+        print(f"  Party support PDF parse error: {e}")
+    return []
+
+
+def _extract_party_support_inline(text: str) -> List[Dict[str, Any]]:
+    """텍스트에서 인라인 정당지지도 추출"""
+    PARTY_MAP = {
+        "국민의힘": "ppp", "더불어민주당": "democratic", "민주당": "democratic",
+        "조국혁신당": "reform", "개혁신당": "newReform",
+        "진보당": "progressive", "정의당": "justice",
+    }
+
+    results = []
+    lines = text.split("\n")
+
+    # "정당지지도" 이후 줄에서 "전체 (N) (N) 33.7 43.0 2.0 ..." 패턴
+    in_section = False
+    for line in lines:
+        if re.search(r"정당\s*지지도", line):
+            in_section = True
+            continue
+        if in_section and re.search(r"전체|전\s*체|합계", line):
+            nums = re.findall(r'(\d{1,2}\.\d)', line)
+            if len(nums) >= 2:
+                # 정당지지도 섹션의 전체 행 - 이미 헤더에서 정당 순서를 알아야 함
+                break
+
+    # fallback: "국민의힘 N.N" 인라인 매칭
+    for line in lines:
+        matches = re.findall(
+            r'(국민의힘|더불어민주당|민주당|조국혁신당|개혁신당|진보당)\s+(\d{1,2}\.\d)',
+            line
+        )
+        if len(matches) >= 2:
+            for party_name, pct in matches:
+                results.append({
+                    "candidateName": party_name,
+                    "party": PARTY_MAP.get(party_name, "other"),
+                    "support": float(pct),
+                    "type": "party_support",
+                })
+            return results
+
+    return results
 
 
 # 무효 이름 (교차분석표 행 라벨로 나오는 것들)

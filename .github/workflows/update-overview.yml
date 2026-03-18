@@ -46,16 +46,24 @@ jobs:
           PYTHONPATH: scripts
         run: python scripts/update_mayor_overview.py --stale-only
 
+      - name: Update byelection overview (재보궐)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          PYTHONPATH: scripts
+        run: python scripts/update_byelection_overview.py
+
       - name: Check for changes
         id: diff
         run: |
-          git diff --quiet data/election_overview.json data/mayor_overview_state.json 2>/dev/null || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet data/election_overview.json data/mayor_overview_state.json data/governor_overview_state.json data/byelection_overview_state.json 2>/dev/null || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/election_overview.json data/mayor_overview_state.json
+          git add data/election_overview.json data/mayor_overview_state.json data/governor_overview_state.json data/byelection_overview_state.json
           git commit -m "chore: auto-update election overview $(date +%Y-%m-%d)"
           git push
