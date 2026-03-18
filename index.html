@@ -26,7 +26,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=70">
+    <link rel="stylesheet" href="css/style.css?v=116">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -69,6 +69,9 @@
             </div>
         </div>
     </header>
+
+    <!-- Election Calendar Banner (시기별 자동 표시) -->
+    <div id="election-banner" class="election-banner" style="display:none"></div>
 
     <!-- Mobile Bottom Sheet for Election Filters -->
     <div id="mobile-filter-sheet" class="mobile-filter-sheet">
@@ -154,6 +157,12 @@
                         <div class="filter-tooltip" id="tooltip-byElection"></div>
                     </div>
                 </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3 class="section-title"><i class="fas fa-calendar-days"></i> 앞으로의 주요 일정</h3>
+                <div id="election-calendar-list" class="election-calendar-list"></div>
+                <div id="election-calendar-note" class="election-calendar-note"></div>
             </div>
 
 
@@ -373,21 +382,24 @@
     </footer>
 
     <!-- 1. 데이터 로더 -->
-    <script src="js/data-loader.js?v=115"></script>
-    <script src="js/data.js?v=115"></script>
+    <script src="js/data-loader.js?v=116"></script>
+    <script src="js/data.js?v=116"></script>
 
     <!-- 2. 독립 모듈 -->
-    <script src="js/news_filters.js?v=115"></script>
-    <script src="js/derived_issues.js?v=115"></script>
-    <script src="js/issue_engine.js?v=115"></script>
-    <script src="js/nec.js?v=115"></script>
-    <script src="js/map.js?v=115"></script>
-    <script src="js/charts.js?v=115"></script>
+    <script src="js/news_filters.js?v=116"></script>
+    <script src="js/derived_issues.js?v=116"></script>
+    <script src="js/issue_engine.js?v=116"></script>
+    <script src="js/nec.js?v=116"></script>
+    <script src="js/map.js?v=116"></script>
+    <script src="js/charts.js?v=116"></script>
 
-    <!-- 3. 탭 모듈 -->
-    <script src="js/tabs/history-tab.js?v=115"></script>
+    <!-- 3. 선거 캘린더 (법적 필수 + 편의 로직) -->
+    <script src="js/election-calendar.js?v=116"></script>
 
-    <!-- 4. 메인 앱 (최후 로드) -->
-    <script src="js/app.js?v=115"></script>
+    <!-- 4. 탭 모듈 -->
+    <script src="js/tabs/history-tab.js?v=116"></script>
+
+    <!-- 5. 메인 앱 (최후 로드) -->
+    <script src="js/app.js?v=116"></script>
 </body>
 </html>

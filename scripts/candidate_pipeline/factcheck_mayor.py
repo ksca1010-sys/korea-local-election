@@ -108,54 +108,71 @@ def build_prompt_for_region(region_key, region_candidates, news=None):
     region_name = REGION_NAMES.get(region_key, region_key)
 
     lines = []
+    info_gaps = []
     for district, candidates in sorted(region_candidates.items()):
         for c in candidates:
             party = PARTY_NAMES.get(c.get("party", ""), c.get("party", ""))
+            career = (c.get("career") or "").strip()
             status_map = {"DECLARED": "출마선언", "EXPECTED": "출마거론", "RUMORED": "하마평", "WITHDRAWN": "사퇴", "NOMINATED": "공천확정"}
             status_label = status_map.get(c.get("status", ""), c.get("status", ""))
-            lines.append(f"- {district}: {c['name']} ({party}) [{status_label}]")
+            career_tag = f" 경력:{career}" if career else " ⚠경력미상"
+            party_tag = "" if party and party != "무소속" else " ⚠정당미상" if c.get("party") == "independent" else ""
+            lines.append(f"- {district}: {c['name']} ({party}) [{status_label}]{career_tag}{party_tag}")
+            if not career or c.get("party") == "independent":
+                info_gaps.append(f"{district}/{c['name']}")
 
     candidate_text = "\n".join(lines)
     total = sum(len(v) for v in region_candidates.values())
     news_text = "\n".join(f"- {n}" for n in news) if news else "(뉴스 검색 결과 없음)"
+    gaps_text = ", ".join(info_gaps[:30]) if info_gaps else "없음"
 
     return f"""당신은 2026년 6.3 지방선거 기초단체장 전문가입니다. 오늘: {today_str}
 
-{region_name} 기초단체장(시장/구청장/군수) 후보 현황을 아래 최신 뉴스와 비교하여 변경사항을 찾으세요.
+{region_name} 기초단체장(시장/구청장/군수) 후보 현황을 아래 최신 뉴스와 비교하여 두 가지를 수행하세요:
+(A) 새 후보 발굴 및 상태 변경 감지
+(B) ⚠표시된 후보의 경력·정당 정보 보강
 
 ## 현재 데이터 ({region_name}, {total}명)
 {candidate_text}
 
-## 최신 뉴스 ({region_name} 기초단체장 관련)
+## 정보 미비 후보 ({len(info_gaps)}명)
+{gaps_text}
+
+## 최신 뉴스 ({region_name} 기초단체장 관련, {len(news) if news else 0}건)
 {news_text}
 
-## 찾아야 할 변경사항
-1. 뉴스에는 나오지만 현재 데이터에 없는 새 후보 (출마 선언, 예비후보 등록 등)
+## (A) 찾아야 할 변경사항
+1. 뉴스에는 나오지만 현재 데이터에 없는 새 후보 (출마 선언, 예비후보 등록, 출판기념회 등)
 2. 사퇴·불출마 선언
 3. 상태 변경 (거론 → 출마선언 등)
 4. 정당 변경 (탈당·입당·공천)
 5. 공천 확정
 
+## (B) 정보 보강
+뉴스에서 ⚠경력미상/⚠정당미상 후보의 정보를 찾아 보강하세요:
+- 경력: "전 ○○시의원", "현 ○○도의원", "전 ○○부시장", "변호사", "기업인" 등 1줄
+- 정당: 뉴스에서 확인되는 소속 정당 (민주당/국민의힘/조국혁신당/무소속 등)
+
 ## 출력 형식 (JSON)
-변경이 필요한 건만 JSON 배열로 출력. 없으면 []. JSON만 출력.
+(A)와 (B) 모두 하나의 JSON 배열로 출력. 없으면 []. JSON만 출력.
 
 [
   {{
-    "district": "시군구명 (종로구, 수원시 등)",
+    "district": "시군구명",
     "name": "후보 이름",
-    "changeType": "new_candidate|status_change|withdrawn|party_change|nominated",
-    "oldStatus": "이전 상태",
-    "newStatus": "새 상태 (DECLARED|EXPECTED|RUMORED|WITHDRAWN|NOMINATED)",
-    "party": "정당명 (한글)",
-    "career": "경력 (새 후보 시, 1줄)",
-    "detail": "변경 근거 (뉴스 제목 인용)"
+    "changeType": "new_candidate|status_change|withdrawn|party_change|nominated|info_update",
+    "oldStatus": "이전 상태 (info_update시 생략 가능)",
+    "newStatus": "새 상태 (info_update시 생략 가능)",
+    "party": "정당명 (한글). 뉴스에서 확인된 정당. 확인 안 되면 생략",
+    "career": "경력 1줄. 뉴스에서 확인된 경력. 확인 안 되면 생략",
+    "detail": "근거 (뉴스 제목 인용)"
   }}
 ]
 
 ## 주의사항
 - 뉴스에서 확인되는 사실만 반영. 추측 금지
-- {region_name} 기초단체장(시장/구청장/군수)만 해당
-- 광역단체장(도지사), 교육감, 국회의원 제외
+- {region_name} 기초단체장(시장/구청장/군수)만 해당. 광역단체장·교육감·국회의원 제외
+- info_update: 뉴스에서 경력 또는 정당이 확인되는 경우만. 추측으로 채우지 말 것
 
 ## ⚠️ status 판정 기준 (엄격 적용)
 - DECLARED: 본인이 직접 출마를 공식 선언/예비후보 등록한 경우만
@@ -169,7 +186,9 @@ def build_prompt_for_region(region_key, region_candidates, news=None):
 - 야당 유력 도전자의 출마 선언
 - 국회의원·시도의원의 기초단체장 전환 출마
 - 무소속 출마 또는 탈당 후 출마
-- 공천 경선 결과"""
+- 공천 경선 결과
+- 출판기념회 개최 (사실상 출마 선언)
+- 여론조사 결과에서 언급되는 후보"""
 
 
 def call_gemini(prompt, api_key, max_retries=5):
@@ -275,6 +294,31 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 print(f"    {label}")
             applied += 1
 
+        elif change_type == "info_update":
+            if not existing:
+                continue
+            updated_fields = []
+            new_career = (change.get("career") or "").strip()
+            new_party_str = (change.get("party") or "").strip()
+            old_career = (existing.get("career") or "").strip()
+            if new_career and not old_career:
+                if not dry_run:
+                    existing["career"] = new_career
+                updated_fields.append(f"경력={new_career}")
+            if new_party_str:
+                new_party = PARTY_MAP.get(new_party_str, None)
+                if new_party and existing.get("party") == "independent" and new_party != "independent":
+                    if not dry_run:
+                        existing["party"] = new_party
+                    updated_fields.append(f"정당={PARTY_NAMES.get(new_party, new_party)}")
+            if updated_fields:
+                label = f"[보강] {district}: {name} {', '.join(updated_fields)} - {change.get('detail', '')}"
+                if dry_run:
+                    print(f"    [DRY] {label}")
+                else:
+                    print(f"    {label}")
+                applied += 1
+
     return applied
 
 
@@ -313,8 +357,20 @@ def main():
         region_cands = candidates[rk]
         count = sum(len(v) for v in region_cands.values())
         region_name = REGION_NAMES.get(rk, rk)
+
+        # 시도 전체 뉴스 + 시군구별 개별 뉴스 병합
         news = fetch_mayor_news(rk, region_name)
-        print(f"\n[{region_name}] {count}명 팩트체크 중... (뉴스 {len(news)}건)")
+        seen_titles = set(news)
+        districts = list(region_cands.keys())
+        for dist in districts:
+            dist_news = fetch_mayor_news(rk, region_name, district=dist)
+            for title in dist_news:
+                if title not in seen_titles:
+                    seen_titles.add(title)
+                    news.append(title)
+            time.sleep(0.1)  # API rate limit
+
+        print(f"\n[{region_name}] {count}명 팩트체크 중... (뉴스 {len(news)}건, {len(districts)}개 시군구)")
 
         prompt = build_prompt_for_region(rk, region_cands, news)
         try:

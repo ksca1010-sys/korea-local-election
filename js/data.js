@@ -45,6 +45,164 @@ const ElectionData = (() => {
         start: new Date('2026-05-29T06:00:00+09:00'),
         end: new Date('2026-05-30T18:00:00+09:00')
     };
+    const electionCalendarSources = [
+        {
+            label: '중앙선관위 주요사무일정',
+            url: 'https://m.nec.go.kr/site/nec/ex/bbs/View.do?bcIdx=289351&cbIdx=1104'
+        },
+        {
+            label: '한눈에 보는 지방선거 일정',
+            url: 'https://us.nec.go.kr/us/bbs/B0000265/view.do?category1=us&category2=usnamgu&deleteCd=0&menuNo=800043&nttId=274671&pageIndex=1'
+        },
+        {
+            label: '공직선거법 제108조',
+            url: 'https://www.law.go.kr/법령/공직선거법/제108조'
+        }
+    ];
+    const electionCalendar = [
+        {
+            id: 'report-ban',
+            title: '의정활동 보고 금지',
+            category: 'rule',
+            audience: '국회의원·지방의원',
+            description: '의정활동 보고는 6월 3일 투표 마감 전까지 제한된다.',
+            startDate: '2026-03-05',
+            endDate: '2026-06-03',
+            endTime: '18:00'
+        },
+        {
+            id: 'deepfake-ban',
+            title: '딥페이크 영상 등을 이용한 선거운동 금지',
+            category: 'rule',
+            audience: '누구든지',
+            description: 'AI 합성물 등 딥페이크 기반 선거운동은 6월 3일 투표 마감 전까지 금지된다.',
+            startDate: '2026-03-05',
+            endDate: '2026-06-03',
+            endTime: '18:00'
+        },
+        {
+            id: 'preliminary-registration-gun',
+            title: '군수·지역구군의원 예비후보자 등록 시작',
+            category: 'registration',
+            audience: '군수·지역구군의원',
+            description: '3월 22일부터 해당 선거의 예비후보 등록 신청이 가능하다.',
+            startDate: '2026-03-22'
+        },
+        {
+            id: 'independent-recommendation',
+            title: '무소속후보자 추천장 검인·교부',
+            category: 'registration',
+            audience: '교육감·무소속 예정자',
+            description: '교육감선거후보자 및 무소속후보 예정자에게 추천장을 검인·교부한다.',
+            startDate: '2026-05-09',
+            endDate: '2026-05-15'
+        },
+        {
+            id: 'candidate-registration',
+            title: '후보자 등록 신청',
+            category: 'registration',
+            audience: '전체 후보자',
+            description: '선거구위원회에서 후보자 등록을 접수한다.',
+            startDate: '2026-05-14',
+            endDate: '2026-05-15',
+            startTime: '09:00',
+            endTime: '18:00',
+            timeLabel: '매일 09:00~18:00'
+        },
+        {
+            id: 'voter-roll-and-absentee',
+            title: '선거인명부 작성·거소투표 신고',
+            category: 'admin',
+            audience: '구·군의 장 / 거소투표 대상자',
+            description: '선거인명부를 작성하고 거소투표 신고를 받는 기간이다.',
+            startDate: '2026-05-14',
+            endDate: '2026-05-16'
+        },
+        {
+            id: 'official-campaign',
+            title: '공식 선거운동 기간',
+            category: 'campaign',
+            audience: '정당·후보자',
+            description: '5월 21일부터 6월 2일까지 법정 선거운동이 가능하다.',
+            startDate: '2026-05-21',
+            endDate: '2026-06-02'
+        },
+        {
+            id: 'poll-blackout',
+            title: '선거여론조사 결과 공표 금지',
+            category: 'poll',
+            audience: '언론·조사기관·누구든지',
+            description: '공직선거법 제108조 기준으로 5월 28일부터 6월 3일 투표 마감 시각까지 공표·인용보도가 금지된다.',
+            startDate: '2026-05-28',
+            endDate: '2026-06-03',
+            endTime: '18:00'
+        },
+        {
+            id: 'early-voting',
+            title: '사전투표',
+            category: 'vote',
+            audience: '유권자',
+            description: '별도 신고 없이 전국 사전투표소 어디서나 투표할 수 있다.',
+            startDate: '2026-05-29',
+            endDate: '2026-05-30',
+            startTime: '06:00',
+            endTime: '18:00',
+            timeLabel: '매일 06:00~18:00'
+        },
+        {
+            id: 'election-day',
+            title: '선거일 투표 및 개표',
+            category: 'vote',
+            audience: '유권자·선관위',
+            description: '6월 3일 본투표와 개표가 진행된다.',
+            startDate: '2026-06-03',
+            startTime: '06:00',
+            endTime: '18:00',
+            timeLabel: '06:00~18:00'
+        }
+    ];
+
+    function createKoreaDate(dateString, timeString = '00:00') {
+        return new Date(`${dateString}T${timeString}:00+09:00`);
+    }
+
+    function getSeoulDateKey(date) {
+        return date.toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+    }
+
+    function getElectionCalendar(referenceDate = new Date()) {
+        const now = referenceDate instanceof Date ? referenceDate : new Date(referenceDate);
+        const todayKey = getSeoulDateKey(now);
+
+        return electionCalendar
+            .map((event) => {
+                const startDate = createKoreaDate(event.startDate, event.startTime || '00:00');
+                const endDate = createKoreaDate(event.endDate || event.startDate, event.endTime || '23:59');
+                const isActive = startDate <= now && now <= endDate;
+                const isUpcoming = now < startDate;
+
+                return {
+                    ...event,
+                    startDate,
+                    endDate,
+                    isActive,
+                    isUpcoming,
+                    startsToday: getSeoulDateKey(startDate) === todayKey,
+                    endsToday: getSeoulDateKey(endDate) === todayKey,
+                    daysUntilStart: Math.ceil((startDate - now) / (1000 * 60 * 60 * 24))
+                };
+            })
+            .filter((event) => event.isActive || event.isUpcoming)
+            .sort((a, b) => a.startDate - b.startDate || a.endDate - b.endDate);
+    }
+
+    function getElectionCalendarSections(referenceDate = new Date()) {
+        const events = getElectionCalendar(referenceDate);
+        return {
+            active: events.filter((event) => event.isActive),
+            upcoming: events.filter((event) => event.isUpcoming)
+        };
+    }
 
     // 17개 시도 지역 데이터
     const regions = {
@@ -2172,6 +2330,7 @@ const ElectionData = (() => {
         regions,
         electionDate,
         preVoteDates,
+        electionCalendarSources,
         nationalSummary,
         superintendents,
         gallupNationalPoll,
@@ -2180,6 +2339,9 @@ const ElectionData = (() => {
         latestPolls,
         getHotspots,
         getDday,
+        getElectionCalendar,
+        getElectionCalendarSections,
+        getElectionCalendarSources: () => electionCalendarSources,
         getPartyDominance,
         getNewsSearchUrl,
         getRegion: (key) => regions[key],

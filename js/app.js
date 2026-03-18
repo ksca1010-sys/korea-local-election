@@ -23,6 +23,12 @@ const App = (() => {
         'hankyung.com', 'edaily.co.kr', 'fnnews.com', 'mt.co.kr',
         'sisajournal.com', 'ohmynews.com', 'nocutnews.co.kr'
     ];
+    const calendarDayFormatter = new Intl.DateTimeFormat('ko-KR', {
+        timeZone: 'Asia/Seoul',
+        month: 'numeric',
+        day: 'numeric',
+        weekday: 'short'
+    });
 
     // Election type icon mapping
     const electionTypeIcons = {
@@ -51,6 +57,7 @@ const App = (() => {
         renderStats();
         renderNationalPartyBar();
         renderGallupSource();
+        renderElectionCalendar();
         renderFooterPartyBar();
         setupFilterTooltips();
         setupFilterButtons();
@@ -176,8 +183,15 @@ const App = (() => {
             }
         }, 800);
 
-        // Update D-day every minute
-        setInterval(renderDday, 60000);
+        // 선거 캘린더 배너 초기 렌더링
+        renderElectionBanner();
+
+        // Update D-day + 배너 every hour (자정 phase 전환 대비)
+        setInterval(() => {
+            renderDday();
+            renderElectionCalendar();
+            renderElectionBanner();
+        }, 60 * 60 * 1000);
     }
 
     // ============================================
@@ -256,11 +270,158 @@ const App = (() => {
     // D-Day Counter
     // ============================================
     function renderDday() {
-        const dday = ElectionData.getDday();
         const ddayEl = document.getElementById('dday-number');
         if (ddayEl) {
-            ddayEl.textContent = dday > 0 ? `D-${dday}` : dday === 0 ? 'D-DAY' : `D+${Math.abs(dday)}`;
+            ddayEl.textContent = typeof ElectionCalendar !== 'undefined'
+                ? ElectionCalendar.getDday()
+                : (() => { const d = ElectionData.getDday(); return d > 0 ? `D-${d}` : d === 0 ? 'D-DAY' : `D+${Math.abs(d)}`; })();
         }
+    }
+
+    // ── 선거 캘린더 배너 렌더링 (Layer 3) ──
+    function renderElectionBanner() {
+        if (typeof ElectionCalendar === 'undefined') return;
+        const config = ElectionCalendar.getBannerConfig();
+        const banner = document.getElementById('election-banner');
+        if (!banner) return;
+
+        if (!config.show) {
+            banner.style.display = 'none';
+            document.body.classList.add('banner-hidden');
+            return;
+        }
+
+        const iconHtml = config.icon ? `<i class="${config.icon}"></i> ` : '';
+        const linkHtml = config.link
+            ? ` <a href="${config.link.url}" target="_blank" rel="noopener" class="banner-link">${config.link.label} <i class="fas fa-external-link-alt"></i></a>`
+            : '';
+        banner.innerHTML = `
+            <div class="election-banner-content banner-${config.type}">
+                <span class="banner-text">${iconHtml}${config.text}${linkHtml}</span>
+                <button class="banner-close-btn" id="election-banner-close"><i class="fas fa-times"></i></button>
+            </div>
+        `;
+        banner.style.display = '';
+        document.body.classList.remove('banner-hidden');
+
+        document.getElementById('election-banner-close')?.addEventListener('click', () => {
+            banner.style.display = 'none';
+            document.body.classList.add('banner-hidden');
+        });
+    }
+
+    function renderElectionCalendar() {
+        const list = document.getElementById('election-calendar-list');
+        const note = document.getElementById('election-calendar-note');
+        if (!list) return;
+
+        const sections = ElectionData.getElectionCalendarSections?.() || { active: [], upcoming: [] };
+        const groups = [];
+
+        if (sections.active.length) {
+            groups.push(buildElectionCalendarGroup('진행 중', sections.active));
+        }
+        if (sections.upcoming.length) {
+            groups.push(buildElectionCalendarGroup('다가오는 일정', sections.upcoming));
+        }
+
+        list.innerHTML = groups.length
+            ? groups.join('')
+            : '<div class="calendar-empty">6월 3일까지 남은 주요 일정이 없습니다.</div>';
+
+        if (note) {
+            const sources = ElectionData.getElectionCalendarSources?.() || [];
+            note.innerHTML = sources.length
+                ? `기준: ${sources.map((source) => `<a href="${source.url}" target="_blank" rel="noopener">${escapeHtml(source.label)}</a>`).join(' · ')}`
+                : '';
+        }
+    }
+
+    function buildElectionCalendarGroup(title, events) {
+        return `
+            <div class="calendar-group">
+                <div class="calendar-group-title">${escapeHtml(title)}</div>
+                ${events.map((event) => renderElectionCalendarItem(event)).join('')}
+            </div>
+        `;
+    }
+
+    function renderElectionCalendarItem(event) {
+        const statusLabel = getElectionCalendarStatusLabel(event);
+        const statusClass = event.isActive
+            ? 'calendar-status--active'
+            : event.category === 'poll'
+                ? 'calendar-status--warning'
+                : 'calendar-status--upcoming';
+
+        return `
+            <article class="calendar-item calendar-item--${escapeHtml(event.category)} ${event.isActive ? 'is-active' : 'is-upcoming'}">
+                <div class="calendar-item-head">
+                    <div class="calendar-item-date">${escapeHtml(formatElectionCalendarRange(event))}</div>
+                    <div class="calendar-item-status ${statusClass}">${escapeHtml(statusLabel)}</div>
+                </div>
+                <div class="calendar-item-title">${escapeHtml(event.title)}</div>
+                <div class="calendar-item-meta">
+                    <span class="calendar-chip">${escapeHtml(getElectionCalendarCategoryLabel(event.category))}</span>
+                    ${event.audience ? `<span class="calendar-chip calendar-chip--subtle">${escapeHtml(event.audience)}</span>` : ''}
+                </div>
+                ${event.description ? `<div class="calendar-item-description">${escapeHtml(event.description)}</div>` : ''}
+            </article>
+        `;
+    }
+
+    function getElectionCalendarStatusLabel(event) {
+        if (event.isActive) {
+            return event.endsToday ? '오늘 마감' : '진행 중';
+        }
+        if (event.startsToday) {
+            return '오늘 시작';
+        }
+        if (event.daysUntilStart === 1) {
+            return '내일';
+        }
+        return `D-${event.daysUntilStart}`;
+    }
+
+    function getElectionCalendarCategoryLabel(category) {
+        const labels = {
+            rule: '규정',
+            registration: '등록',
+            admin: '절차',
+            campaign: '선거운동',
+            poll: '여론조사',
+            vote: '투표'
+        };
+        return labels[category] || '일정';
+    }
+
+    function formatElectionCalendarRange(event) {
+        const startText = formatElectionCalendarDay(event.startDate);
+        const endText = formatElectionCalendarDay(event.endDate);
+        const sameDay = getSeoulDateKey(event.startDate) === getSeoulDateKey(event.endDate);
+        const base = sameDay ? startText : `${startText} - ${endText}`;
+        return event.timeLabel ? `${base} · ${event.timeLabel}` : base;
+    }
+
+    function formatElectionCalendarDay(date) {
+        const parts = calendarDayFormatter.formatToParts(date);
+        const month = parts.find((part) => part.type === 'month')?.value || '';
+        const day = parts.find((part) => part.type === 'day')?.value || '';
+        const weekday = parts.find((part) => part.type === 'weekday')?.value || '';
+        return `${month}.${day}(${weekday})`;
+    }
+
+    function getSeoulDateKey(date) {
+        return date.toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+    }
+
+    function escapeHtml(value) {
+        return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
     }
 
     // ============================================
@@ -2433,13 +2594,23 @@ function renderCouncilProvinceView(regionKey, region) {
         if (!listEl || !compareCardEl || !compareEl) return;
 
         const model = buildCandidateTabModel(regionKey);
-        // 상태 우선순위 정렬: 출마선언 > 거론 > 하마평 > 사퇴
-        const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3, WITHDRAWN: 4 };
-        model.candidates.sort((a, b) => {
-            const sa = statusOrder[a.status] ?? 1;
-            const sb = statusOrder[b.status] ?? 1;
-            return sa - sb;
-        });
+        // Layer 2B: 정렬 모드 판정
+        const sortMode = typeof ElectionCalendar !== 'undefined'
+            ? ElectionCalendar.getCandidateSortMode()
+            : 'status_priority';
+
+        if (sortMode === 'ballot_number') {
+            // 5/15 이후: 기호순 정렬 (기호번호 없으면 뒤로)
+            model.candidates.sort((a, b) => (a.ballotNumber || 999) - (b.ballotNumber || 999));
+        } else {
+            // 상태 우선순위 정렬: 공천확정 > 출마선언 > 거론 > 하마평 > 사퇴
+            const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3, WITHDRAWN: 4 };
+            model.candidates.sort((a, b) => {
+                const sa = statusOrder[a.status] ?? 1;
+                const sb = statusOrder[b.status] ?? 1;
+                return sa - sb;
+            });
+        }
         if (!model.candidates.length) {
             listEl.innerHTML = buildEmptyTabMessage(model.emptyMessage, 'fa-user-tie');
             compareEl.innerHTML = '';
@@ -2463,7 +2634,7 @@ function renderCouncilProvinceView(regionKey, region) {
                                 ${candidate.age ? `<span class="candidate-age">${candidate.age}세</span>` : ''}
                                 <span class="party-badge" style="background:${candidate.badgeColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.8rem;color:white;">${candidate.badgeLabel}</span>
                             </div>
-                            <div class="candidate-career">${candidate.career || '경력 정보 집계 중'}</div>
+                            <div class="candidate-career">${candidate.career || '<span style="color:var(--text-muted);font-style:italic">경력 정보 수집 중</span>'}</div>
                             ${candidate.supportLabel ? `<div class="cand-core-message">${candidate.supportLabel}</div>` : ''}
                         </div>
                     </div>
@@ -3306,50 +3477,67 @@ function renderCouncilProvinceView(regionKey, region) {
 
     function buildMayorNewsCategories(regionKey, regionName, districtName) {
         const title = districtName.endsWith('구') ? '구청장' : districtName.endsWith('군') ? '군수' : '시장';
-        const base = `"${districtName}" "${title}"`;
-        const localRegistry = window.LocalMediaRegistry?.regions?.[regionKey];
-        const localHosts = localRegistry?.province?.hosts?.tier1 || [];
+        const bundle = getDebugRegionMediaBundle(regionKey, districtName);
+        const localHosts = bundle.primaryHosts || [];
 
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
-                query: `${districtName} ${title} 선거 후보`,
+                query: `${districtName}${title} 선거 후보`,
                 maxAgeDays: 60,
-                altQueries: [`${base} 선거`, `${districtName} 지방선거 ${title}`],
-                focusKeywords: [districtName, title, '선거', '후보'],
+                altQueries: [
+                    `${districtName}${title} 출마`, `${districtName}${title} 예비후보`,
+                    `${districtName} 6.3 지방선거`, `${districtName} 기초단체장`,
+                    `${districtName}${title} 출판기념회`
+                ],
+                focusKeywords: [districtName, title, '선거', '후보', '출마', '예비후보', '출판기념회'],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마'], excludeAny: ['도지사', '교육감', '국회의원'] },
+                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마', '예비후보', '공천', '출판기념회'], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [districtName], targetAny: [title, '선거'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
-                query: `${districtName} ${title} 여론조사 지지율`,
+                query: `${districtName}${title} 여론조사`,
                 maxAgeDays: 60,
-                altQueries: [`${base} 여론조사`, `${districtName} 여론조사`],
-                focusKeywords: ['여론조사', '지지율', districtName],
+                altQueries: [`${districtName}${title} 지지율`, `${districtName} 적합도 조사`, `${districtName}${title} 가상대결`],
+                focusKeywords: ['여론조사', '지지율', '적합도', '가상대결', districtName],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['여론조사', '지지율'], excludeAny: ['도지사', '교육감'] },
+                strict: { mustAny: [districtName], targetAny: ['여론조사', '지지율', '적합도', '가상대결'], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['여론조사', '지지율'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
-                query: `${districtName} ${title} 후보 출마`,
+                query: `${districtName}${title} 후보 출마`,
                 maxAgeDays: 60,
-                altQueries: [`${base} 출마`, `${districtName} ${title} 공천`],
-                focusKeywords: [districtName, title, '후보', '출마', '공천'],
+                altQueries: [
+                    `${districtName}${title} 공천`, `${districtName}${title} 예비후보`,
+                    `${districtName}${title} 출판기념회`, `${districtName}${title} 경선`
+                ],
+                focusKeywords: [districtName, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선'],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', title], excludeAny: ['도지사', '교육감', '국회의원'] },
+                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [districtName], targetAny: [title, '후보', '출마'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
-                query: `${districtName} ${title} 공약 정책`,
+                query: `${districtName}${title} 공약 정책`,
                 maxAgeDays: 60,
-                altQueries: [`${base} 공약`, `${districtName} 정책`],
-                focusKeywords: [districtName, '공약', '정책'],
+                altQueries: [`${districtName} 현안 쟁점`, `${districtName}${title} 비전`, `${districtName} 지역과제`],
+                focusKeywords: [districtName, '공약', '정책', '현안', '비전'],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['공약', '정책', title], excludeAny: ['도지사', '교육감'] },
+                strict: { mustAny: [districtName], targetAny: ['공약', '정책', '현안', '비전', title], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: ['도지사', '교육감'] }
+            },
+            {
+                label: '지역언론', icon: 'fas fa-broadcast-tower', categoryId: 'local',
+                query: `${districtName}${title}`,
+                maxAgeDays: 60,
+                altQueries: (bundle.priorityNames || []).slice(0, 5).map(name => `${name} ${districtName}`),
+                focusKeywords: [districtName, title, ...(bundle.priorityNames || []).slice(0, 3)],
+                boostHosts: localHosts,
+                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마'], excludeAny: ['도지사', '교육감'] },
+                relaxed: { mustAny: [districtName], excludeAny: [] },
+                localOnly: true
             }
         ].map(cat => ({
             ...cat, localMediaPriority: true, _regionKey: regionKey, _districtName: districtName, boostWeight: 5,
@@ -3756,10 +3944,25 @@ function renderCouncilProvinceView(regionKey, region) {
         actionWrap.addEventListener('click', (e) => {
             const btn = e.target.closest('.news-live-btn');
             if (!btn) return;
-            actionWrap.querySelectorAll('.news-live-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+
+            // Layer 2A: 여론조사 카테고리 공표금지 체크
             const idx = Number(btn.dataset.idx || 0);
             const selected = safeCategories[idx] || safeCategories[0];
+            if (typeof ElectionCalendar !== 'undefined' && selected.categoryId === 'polls') {
+                const check = ElectionCalendar.isNewsSubTabDisabled('여론조사');
+                if (check.disabled) {
+                    list.innerHTML = `<div class="poll-ban-notice" style="padding:24px 16px">
+                        <i class="fas fa-gavel"></i>
+                        <p>${check.notice}</p>
+                    </div>`;
+                    actionWrap.querySelectorAll('.news-live-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    return;
+                }
+            }
+
+            actionWrap.querySelectorAll('.news-live-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
             fetchLatestNews(selected, regionKey);
         });
 
@@ -4156,13 +4359,21 @@ function renderCouncilProvinceView(regionKey, region) {
                 allItems = runFilter('relaxed', maxAgeDays);
             }
 
+            // 지역언론 카테고리: 지역언론 기사만 필터
+            if (selectedCategory.localOnly) {
+                allItems = allItems.filter(item => item.isLocalMedia);
+            }
+
             if (!allItems.length) {
                 const catLabel = selectedCategory.label || '전체';
+                const localOnlyMsg = selectedCategory.localOnly
+                    ? '지역언론사에서 발행한 기사가 검색되지 않았습니다.'
+                    : `최근 ${maxAgeDays}일 이내 해당 카테고리의 뉴스가 검색되지 않았습니다.<br>다른 카테고리를 선택해보세요.`;
                 list.innerHTML = `
                     <div class="news-error">
-                        <div class="news-error-icon"><i class="fas fa-newspaper"></i></div>
+                        <div class="news-error-icon"><i class="fas fa-${selectedCategory.localOnly ? 'broadcast-tower' : 'newspaper'}"></i></div>
                         <div class="news-error-title">'${catLabel}' 관련 뉴스가 없습니다</div>
-                        <div class="news-error-detail">최근 ${maxAgeDays}일 이내 해당 카테고리의 뉴스가 검색되지 않았습니다.<br>다른 카테고리를 선택해보세요.</div>
+                        <div class="news-error-detail">${localOnlyMsg}</div>
                     </div>`;
                 const loadMoreBtn = document.getElementById('news-load-more-btn');
                 if (loadMoreBtn) loadMoreBtn.style.display = 'none';
@@ -4310,12 +4521,29 @@ function renderCouncilProvinceView(regionKey, region) {
     function renderPollTab(regionKey, electionType, districtName) {
         ChartsModule.destroyCharts();
 
-        const polls = ElectionData.getLatestPollsForDisplay(regionKey, electionType, districtName);
         const latestSection = document.getElementById('poll-latest-section');
         const trendsSection = document.getElementById('poll-trends-section');
         const cardsSection = document.getElementById('poll-cards-section');
 
         if (!latestSection || !trendsSection || !cardsSection) return;
+
+        // Layer 2A: 공표금지 체크 (법적 필수)
+        if (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned()) {
+            latestSection.style.display = 'none';
+            trendsSection.innerHTML = '';
+            cardsSection.innerHTML = `
+                <div class="poll-ban-notice">
+                    <i class="fas fa-gavel"></i>
+                    <h4>여론조사 공표금지 기간</h4>
+                    <p>공직선거법 제108조에 따라<br>여론조사 결과를 표시할 수 없습니다.</p>
+                    <div class="poll-ban-period">5월 28일 00:00 ~ 6월 3일 18:00</div>
+                    <small>위반 시 3년 이하 징역 또는 600만원 이하 벌금</small>
+                </div>
+            `;
+            return;
+        }
+
+        const polls = ElectionData.getLatestPollsForDisplay(regionKey, electionType, districtName);
 
         // 초기화
         latestSection.style.display = 'none';

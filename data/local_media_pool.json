@@ -1293,10 +1293,13 @@
       ]
     },
     "해운대구": {
-      "hosts": [],
+      "hosts": [
+        "ctnews.co.kr"
+      ],
       "names": [
         "해운대신문",
-        "인터넷신문"
+        "인터넷신문",
+        "시티뉴스"
       ],
       "media": [
         {
@@ -1306,6 +1309,11 @@
         {
           "name": "인터넷신문",
           "src": "mcst"
+        },
+        {
+          "name": "시티뉴스",
+          "host": "ctnews.co.kr",
+          "src": "web-search"
         }
       ]
     },
@@ -1463,11 +1471,15 @@
     "제천시": {
       "hosts": [
         "jcnews.co.kr",
-        "jdnews.kr"
+        "jdnews.kr",
+        "jnjl.kr",
+        "tjnews.co.kr"
       ],
       "names": [
         "제천신문",
-        "제천단양뉴스"
+        "제천단양뉴스",
+        "제천뉴스저널",
+        "제천단양투데이"
       ],
       "media": [
         {
@@ -1478,6 +1490,16 @@
         {
           "name": "제천단양뉴스",
           "host": "jdnews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "제천뉴스저널",
+          "host": "jnjl.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "제천단양투데이",
+          "host": "tjnews.co.kr",
           "src": "web-search"
         }
       ]
@@ -1529,11 +1551,27 @@
     "청주시": {
       "hosts": [
         "ccreview.co.kr",
-        "cjb.co.kr"
+        "cjb.co.kr",
+        "ccdn.co.kr",
+        "dynews.co.kr",
+        "cctimes.kr",
+        "inews365.com",
+        "jbnews.com",
+        "cbnews.kr",
+        "ccdailynews.com",
+        "cbinews.co.kr"
       ],
       "names": [
         "충청리뷰",
-        "CJB청주방송"
+        "CJB청주방송",
+        "충청매일",
+        "동양일보",
+        "충청타임즈",
+        "충북일보",
+        "중부매일",
+        "충북뉴스",
+        "충청일보",
+        "충북인뉴스"
       ],
       "media": [
         {
@@ -1545,20 +1583,81 @@
           "name": "CJB청주방송",
           "host": "cjb.co.kr",
           "src": "web-search"
+        },
+        {
+          "name": "충청매일",
+          "host": "ccdn.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "동양일보",
+          "host": "dynews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "충청타임즈",
+          "host": "cctimes.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "충북일보",
+          "host": "inews365.com",
+          "src": "web-search"
+        },
+        {
+          "name": "중부매일",
+          "host": "jbnews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "충북뉴스",
+          "host": "cbnews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "충청일보",
+          "host": "ccdailynews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "충북인뉴스",
+          "host": "cbinews.co.kr",
+          "src": "web-search"
         }
       ]
     },
     "충주시": {
       "hosts": [
-        "cjwn.com"
+        "cjwn.com",
+        "inews365.com",
+        "jbnews.com",
+        "cbnews.kr"
       ],
       "names": [
-        "충주신문"
+        "충주신문",
+        "충북일보",
+        "중부매일",
+        "충북뉴스"
       ],
       "media": [
         {
           "name": "충주신문",
           "host": "cjwn.com",
+          "src": "web-search"
+        },
+        {
+          "name": "충북일보",
+          "host": "inews365.com",
+          "src": "web-search"
+        },
+        {
+          "name": "중부매일",
+          "host": "jbnews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "충북뉴스",
+          "host": "cbnews.kr",
           "src": "web-search"
         }
       ]
@@ -2022,12 +2121,19 @@
     "아산시": {
       "hosts": [
         "asannews.co.kr",
-        "asantoday.com"
+        "asantoday.com",
+        "asandaily.kr",
+        "asansisa.com",
+        "asanmiraenews.com",
+        "assinmun.kr"
       ],
       "names": [
         "아산신문",
         "아산뉴스",
-        "아산투데이"
+        "아산투데이",
+        "아산데일리",
+        "아산시사신문",
+        "아산미래신문"
       ],
       "media": [
         {
@@ -2042,6 +2148,26 @@
         {
           "name": "아산투데이",
           "host": "asantoday.com",
+          "src": "web-search"
+        },
+        {
+          "name": "아산데일리",
+          "host": "asandaily.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "아산시사신문",
+          "host": "asansisa.com",
+          "src": "web-search"
+        },
+        {
+          "name": "아산미래신문",
+          "host": "asanmiraenews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "아산신문",
+          "host": "assinmun.kr",
           "src": "web-search"
         }
       ]
@@ -2069,11 +2195,15 @@
     "천안시": {
       "hosts": [
         "icj.kr",
-        "canews.kr"
+        "canews.kr",
+        "casnews.kr",
+        "cailbo.com"
       ],
       "names": [
         "천안신문",
-        "천안아산신문"
+        "천안아산신문",
+        "천안아산뉴스",
+        "천안일보"
       ],
       "media": [
         {
@@ -2084,6 +2214,16 @@
         {
           "name": "천안아산신문",
           "host": "canews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "천안아산뉴스",
+          "host": "casnews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "천안일보",
+          "host": "cailbo.com",
           "src": "web-search"
         }
       ]
@@ -2282,15 +2422,22 @@
     },
     "강릉시": {
       "hosts": [
-        "gangneungnews.kr"
+        "gangneungnews.kr",
+        "sisazoom.co.kr"
       ],
       "names": [
-        "강릉뉴스"
+        "강릉뉴스",
+        "시사줌뉴스"
       ],
       "media": [
         {
           "name": "강릉뉴스",
           "host": "gangneungnews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "시사줌뉴스",
+          "host": "sisazoom.co.kr",
           "src": "web-search"
         }
       ]
@@ -2586,11 +2733,13 @@
     },
     "태백시": {
       "hosts": [
-        "tjinews.co.kr"
+        "tjinews.co.kr",
+        "gwinews.asia"
       ],
       "names": [
         "태백신문",
-        "태백정선인터넷뉴스"
+        "태백정선인터넷뉴스",
+        "강원인터넷신문"
       ],
       "media": [
         {
@@ -2600,6 +2749,11 @@
         {
           "name": "태백정선인터넷뉴스",
           "host": "tjinews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "강원인터넷신문",
+          "host": "gwinews.asia",
           "src": "web-search"
         }
       ]
@@ -2728,22 +2882,37 @@
     },
     "경산시": {
       "hosts": [
-        "gsinews.com",
-        "ksinews.co.kr"
+        "ksinews.co.kr",
+        "newsgs.co.kr",
+        "kyeongsan.co.kr",
+        "kiinews.kr"
       ],
       "names": [
         "경산신문",
-        "경산인터넷뉴스"
+        "경산인터넷뉴스",
+        "경산뉴스",
+        "경산시민신문",
+        "경일신문"
       ],
       "media": [
         {
-          "name": "경산신문",
-          "host": "gsinews.com",
+          "name": "경산인터넷뉴스",
+          "host": "ksinews.co.kr",
           "src": "web-search"
         },
         {
-          "name": "경산인터넷뉴스",
-          "host": "ksinews.co.kr",
+          "name": "경산뉴스",
+          "host": "newsgs.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "경산시민신문",
+          "host": "kyeongsan.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "경일신문",
+          "host": "kiinews.kr",
           "src": "web-search"
         }
       ]
@@ -2751,11 +2920,15 @@
     "경주시": {
       "hosts": [
         "gjnews.com",
-        "gjinews.co.kr"
+        "gjinews.co.kr",
+        "gjsiminnews.com",
+        "gjfocus.co.kr"
       ],
       "names": [
         "경주신문",
-        "경주인터넷신문"
+        "경주인터넷신문",
+        "경주시민신문",
+        "경주포커스"
       ],
       "media": [
         {
@@ -2766,6 +2939,16 @@
         {
           "name": "경주인터넷신문",
           "host": "gjinews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "경주시민신문",
+          "host": "gjsiminnews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "경주포커스",
+          "host": "gjfocus.co.kr",
           "src": "web-search"
         }
       ]
@@ -2802,11 +2985,15 @@
     "구미시": {
       "hosts": [
         "guminews.net",
-        "guminews.co.kr"
+        "guminews.co.kr",
+        "gmilbo.net",
+        "gbin.co.kr"
       ],
       "names": [
         "구미신문",
-        "구미뉴스"
+        "구미뉴스",
+        "구미일보",
+        "경북인터넷뉴스"
       ],
       "media": [
         {
@@ -2817,6 +3004,16 @@
         {
           "name": "구미뉴스",
           "host": "guminews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "구미일보",
+          "host": "gmilbo.net",
+          "src": "web-search"
+        },
+        {
+          "name": "경북인터넷뉴스",
+          "host": "gbin.co.kr",
           "src": "web-search"
         }
       ]
@@ -2853,11 +3050,17 @@
     "김천시": {
       "hosts": [
         "kimcheon.co.kr",
-        "gcinews.com"
+        "gcinews.com",
+        "gcilbo.kr",
+        "sgcnews.kr",
+        "newsingc.com"
       ],
       "names": [
         "김천신문",
-        "김천인터넷뉴스"
+        "김천인터넷뉴스",
+        "김천일보",
+        "새김천신문",
+        "뉴스인김천"
       ],
       "media": [
         {
@@ -2869,16 +3072,37 @@
           "name": "김천인터넷뉴스",
           "host": "gcinews.com",
           "src": "web-search"
+        },
+        {
+          "name": "김천일보",
+          "host": "gcilbo.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "새김천신문",
+          "host": "sgcnews.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "뉴스인김천",
+          "host": "newsingc.com",
+          "src": "web-search"
         }
       ]
     },
     "문경시": {
       "hosts": [
-        "mgnews.co.kr"
+        "mgnews.co.kr",
+        "mginews.co.kr",
+        "mgmaeil.com",
+        "localsj.co.kr"
       ],
       "names": [
         "문경신문",
-        "문경뉴스통신"
+        "문경뉴스통신",
+        "문경인터넷뉴스",
+        "문경매일신문",
+        "상주문경로컬신문"
       ],
       "media": [
         {
@@ -2888,6 +3112,21 @@
         {
           "name": "문경뉴스통신",
           "host": "mgnews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "문경인터넷뉴스",
+          "host": "mginews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "문경매일신문",
+          "host": "mgmaeil.com",
+          "src": "web-search"
+        },
+        {
+          "name": "상주문경로컬신문",
+          "host": "localsj.co.kr",
           "src": "web-search"
         }
       ]
@@ -2924,12 +3163,16 @@
     "상주시": {
       "hosts": [
         "sangjunews.com",
-        "sminews.co.kr"
+        "sminews.co.kr",
+        "sjinews.co.kr",
+        "localsj.co.kr"
       ],
       "names": [
         "상주신문",
         "상주닷컴",
-        "상주문경매일신문"
+        "상주문경매일신문",
+        "상주인터넷뉴스",
+        "상주문경로컬신문"
       ],
       "media": [
         {
@@ -2944,6 +3187,16 @@
         {
           "name": "상주문경매일신문",
           "host": "sminews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "상주인터넷뉴스",
+          "host": "sjinews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "상주문경로컬신문",
+          "host": "localsj.co.kr",
           "src": "web-search"
         }
       ]
@@ -2980,11 +3233,17 @@
     "안동시": {
       "hosts": [
         "adns.kr",
-        "adinews.co.kr"
+        "adinews.co.kr",
+        "andonginews.com",
+        "andongnews.co.kr",
+        "andongnews.net"
       ],
       "names": [
         "안동뉴스",
-        "안동인터넷뉴스"
+        "안동인터넷뉴스",
+        "안동인터넷신문",
+        "A뉴스",
+        "안동신문"
       ],
       "media": [
         {
@@ -2995,6 +3254,21 @@
         {
           "name": "안동인터넷뉴스",
           "host": "adinews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "안동인터넷신문",
+          "host": "andonginews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "A뉴스",
+          "host": "andongnews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "안동신문",
+          "host": "andongnews.net",
           "src": "web-search"
         }
       ]
@@ -3059,15 +3333,22 @@
     },
     "영주시": {
       "hosts": [
-        "yjinews.com"
+        "yjinews.com",
+        "yeongjunews.co.kr"
       ],
       "names": [
-        "영주시민신문"
+        "영주시민신문",
+        "영주신문"
       ],
       "media": [
         {
           "name": "영주시민신문",
           "host": "yjinews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "영주신문",
+          "host": "yeongjunews.co.kr",
           "src": "web-search"
         }
       ]
@@ -3075,12 +3356,14 @@
     "영천시": {
       "hosts": [
         "ycinews.net",
-        "yctoday.net"
+        "yctoday.net",
+        "yc24.kr"
       ],
       "names": [
         "영천신문",
         "영천인터넷뉴스",
-        "영천투데이"
+        "영천투데이",
+        "영천뉴스24"
       ],
       "media": [
         {
@@ -3095,6 +3378,11 @@
         {
           "name": "영천투데이",
           "host": "yctoday.net",
+          "src": "web-search"
+        },
+        {
+          "name": "영천뉴스24",
+          "host": "yc24.kr",
           "src": "web-search"
         }
       ]
@@ -3666,11 +3954,14 @@
     "군포시": {
       "hosts": [
         "gunponews.net",
-        "mediagunpo.co.kr"
+        "mediagunpo.co.kr",
+        "vision21.kr"
       ],
       "names": [
         "군포신문",
-        "mediagunpo.co.kr"
+        "mediagunpo.co.kr",
+        "군포시민신문",
+        "비전21뉴스"
       ],
       "media": [
         {
@@ -3684,6 +3975,11 @@
           "host": "mediagunpo.co.kr",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "비전21뉴스",
+          "host": "vision21.kr",
+          "src": "web-search"
         }
       ]
     },
@@ -4273,10 +4569,14 @@
     },
     "양주시": {
       "hosts": [
-        "yangju.grandculture.net"
+        "yangju.grandculture.net",
+        "yangjunews.co.kr",
+        "simin24.com"
       ],
       "names": [
-        "양주신문"
+        "양주신문",
+        "양주뉴스",
+        "경기북부시민신문"
       ],
       "media": [
         {
@@ -4284,6 +4584,16 @@
           "host": "yangju.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "양주뉴스",
+          "host": "yangjunews.co.kr",
+          "src": "web-search"
+        },
+        {
+          "name": "경기북부시민신문",
+          "host": "simin24.com",
+          "src": "web-search"
         }
       ]
     },
@@ -4554,11 +4864,15 @@
     "의정부시": {
       "hosts": [
         "ujbnews.kr",
-        "yangju.grandculture.net"
+        "yangju.grandculture.net",
+        "ujbnews.net",
+        "bukbuissue.com"
       ],
       "names": [
         "의정부뉴스",
-        "의정부인터넷뉴스"
+        "의정부인터넷뉴스",
+        "의정부신문",
+        "경기북부이슈"
       ],
       "media": [
         {
@@ -4572,6 +4886,16 @@
           "host": "yangju.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "의정부신문",
+          "host": "ujbnews.net",
+          "src": "web-search"
+        },
+        {
+          "name": "경기북부이슈",
+          "host": "bukbuissue.com",
+          "src": "web-search"
         }
       ]
     },
@@ -5177,10 +5501,13 @@
     },
     "사천시": {
       "hosts": [
-        "e4000news.com"
+        "e4000news.com",
+        "news4000.com"
       ],
       "names": [
-        "사천신문"
+        "사천신문",
+        "뉴스사천",
+        "e사천신문"
       ],
       "media": [
         {
@@ -5188,6 +5515,11 @@
           "host": "e4000news.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "뉴스사천",
+          "host": "news4000.com",
+          "src": "web-search"
         }
       ]
     },
@@ -5362,11 +5694,17 @@
     "통영시": {
       "hosts": [
         "tynewspaper.co.kr",
-        "tynp.com"
+        "tynp.com",
+        "tyinews.com",
+        "sisaty.com",
+        "hansannews.com"
       ],
       "names": [
         "통영신문",
-        "통영뉴스"
+        "통영뉴스",
+        "통영인터넷뉴스",
+        "시사통영",
+        "한산신문"
       ],
       "media": [
         {
@@ -5380,6 +5718,21 @@
           "host": "tynp.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "통영인터넷뉴스",
+          "host": "tyinews.com",
+          "src": "web-search"
+        },
+        {
+          "name": "시사통영",
+          "host": "sisaty.com",
+          "src": "web-search"
+        },
+        {
+          "name": "한산신문",
+          "host": "hansannews.com",
+          "src": "web-search"
         }
       ]
     },
@@ -5625,10 +5978,14 @@
     },
     "남동구": {
       "hosts": [
-        "namdongnews.co.kr"
+        "namdongnews.co.kr",
+        "incheonin.com",
+        "mediaic.co.kr"
       ],
       "names": [
-        "남동뉴스"
+        "남동뉴스",
+        "인천in",
+        "미디어인천신문"
       ],
       "media": [
         {
@@ -5636,6 +5993,16 @@
           "host": "namdongnews.co.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "인천in",
+          "host": "incheonin.com",
+          "src": "web-search"
+        },
+        {
+          "name": "미디어인천신문",
+          "host": "mediaic.co.kr",
+          "src": "web-search"
         }
       ]
     },
@@ -5670,11 +6037,15 @@
     },
     "부평구": {
       "hosts": [
-        "bupyeongpost.com"
+        "bupyeongpost.com",
+        "incheonin.com",
+        "mediaic.co.kr"
       ],
       "names": [
         "부평신문",
-        "부평위클리"
+        "부평위클리",
+        "인천in",
+        "미디어인천신문"
       ],
       "media": [
         {
@@ -5684,6 +6055,16 @@
         {
           "name": "부평위클리",
           "host": "bupyeongpost.com",
+          "src": "web-search"
+        },
+        {
+          "name": "인천in",
+          "host": "incheonin.com",
+          "src": "web-search"
+        },
+        {
+          "name": "미디어인천신문",
+          "host": "mediaic.co.kr",
           "src": "web-search"
         }
       ]
@@ -7304,11 +7685,14 @@
     "강동구": {
       "hosts": [
         "gangdongnews.co.kr",
-        "gangdong.kpnnews.org"
+        "gangdong.kpnnews.org",
+        "dongbunews.co.kr"
       ],
       "names": [
         "강동신문",
-        "강동공보뉴스"
+        "강동공보뉴스",
+        "서울동부신문",
+        "강동뉴스"
       ],
       "media": [
         {
@@ -7322,6 +7706,11 @@
           "host": "gangdong.kpnnews.org",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서울동부신문",
+          "host": "dongbunews.co.kr",
+          "src": "web-search"
         }
       ]
     },
@@ -7476,7 +7865,8 @@
         "nowon.kr",
         "nowonnews.net",
         "presscoop.com",
-        "nowonarts.kr"
+        "nowonarts.kr",
+        "bukbu.kr"
       ],
       "names": [
         "노원에서 사회적경제로 살아가기",
@@ -7484,7 +7874,8 @@
         "nowon.kr",
         "(노원뉴스) 나우온",
         "노원구 소비자저널",
-        "nowonarts.kr"
+        "nowonarts.kr",
+        "북부신문"
       ],
       "media": [
         {
@@ -7522,6 +7913,11 @@
           "host": "nowonarts.kr",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
+        },
+        {
+          "name": "북부신문",
+          "host": "bukbu.kr",
+          "src": "web-search"
         }
       ]
     },
@@ -7802,13 +8198,15 @@
         "songpanews.com",
         "songpa.kpnnews.org",
         "thekoreantoday.com",
-        "songpatimes.com"
+        "songpatimes.com",
+        "dongbunews.co.kr"
       ],
       "names": [
         "송파신문",
         "송파공보뉴스",
         "송파 뉴스",
-        "송파타임즈"
+        "송파타임즈",
+        "서울동부신문"
       ],
       "media": [
         {
@@ -7834,6 +8232,11 @@
           "host": "songpatimes.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
+        },
+        {
+          "name": "서울동부신문",
+          "host": "dongbunews.co.kr",
+          "src": "web-search"
         }
       ]
     },

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-18",
+    "lastUpdated": "2026-03-19",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-17T11:47:29.338400",
+    "lastFactCheck": "2026-03-19T01:19:28.076918",
     "lastSyncFromOverview": "2026-03-17",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
@@ -27,12 +27,20 @@
           "name": "서용주",
           "party": "democratic",
           "career": "",
-          "status": "DECLARED",
+          "status": "WITHDRAWN",
           "dataSource": "gemini_discovery",
           "pledges": [
             "다시 뛰는 성장도시 종로",
             "정치 1번지서 민생 1번지로"
           ]
+        },
+        {
+          "name": "정재호",
+          "party": "independent",
+          "career": "현 종로구의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "중구": [
@@ -68,7 +76,7 @@
         {
           "name": "강태웅",
           "party": "democratic",
-          "career": "",
+          "career": "전 서울시 부시장, 30년 행정전문가",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
@@ -78,7 +86,7 @@
         {
           "name": "김윤재",
           "party": "ppp",
-          "career": "",
+          "career": "부동산 박사",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
@@ -99,7 +107,7 @@
       "성동구": [
         {
           "name": "정원오",
-          "party": "independent",
+          "party": "democratic",
           "career": "현 성동구 구청장",
           "status": "WITHDRAWN",
           "dataSource": "incumbent",
@@ -131,8 +139,24 @@
           "name": "김선갑",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "전병주",
+          "party": "independent",
+          "career": "현 서울시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "조상훈",
+          "party": "independent",
+          "career": "현 노무현재단 기획위원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -149,10 +173,18 @@
         },
         {
           "name": "최동민",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김인호",
+          "party": "democratic",
+          "career": "전 서울시의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -161,7 +193,7 @@
           "name": "류경기",
           "party": "democratic",
           "career": "현 중랑구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         }
@@ -178,7 +210,7 @@
         {
           "name": "윤진호",
           "party": "independent",
-          "career": "",
+          "career": "국정 설계 경험",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
@@ -192,7 +224,7 @@
           "name": "이순희",
           "party": "democratic",
           "career": "현 강북구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "신강북선 유치",
@@ -204,9 +236,17 @@
         {
           "name": "최선",
           "party": "independent",
-          "career": "",
+          "career": "전 청와대 행정관",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이승훈",
+          "party": "independent",
+          "career": "20년 동네 인권변호사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -218,6 +258,14 @@
           "status": "EXPECTED",
           "dataSource": "incumbent",
           "pledges": []
+        },
+        {
+          "name": "김동욱",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "노원구": [
@@ -225,19 +273,35 @@
           "name": "오승록",
           "party": "democratic",
           "career": "현 노원구 구청장",
-          "status": "EXPECTED",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": []
         },
         {
           "name": "송재혁",
           "party": "independent",
-          "career": "",
+          "career": "현 서울시의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "공릉동 경제활성화 방안 수립"
           ]
+        },
+        {
+          "name": "서준오",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "임재혁",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "은평구": [
@@ -245,7 +309,7 @@
           "name": "김미경",
           "party": "democratic",
           "career": "현 은평구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         }
@@ -265,8 +329,8 @@
         },
         {
           "name": "김규진",
-          "party": "independent",
-          "career": "",
+          "party": "democratic",
+          "career": "현 서대문구의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -274,7 +338,7 @@
         {
           "name": "박운기",
           "party": "democratic",
-          "career": "",
+          "career": "전 서울시 의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
@@ -287,13 +351,21 @@
           "name": "박강수",
           "party": "ppp",
           "career": "현 마포구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "한강뷰 피트니스 조성",
             "도심 천문대 신설 추진",
             "구민센터 프리미엄화"
           ]
+        },
+        {
+          "name": "박경수",
+          "party": "independent",
+          "career": "현 마포미래발전연구원 원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "양천구": [
@@ -313,7 +385,7 @@
         {
           "name": "우형찬",
           "party": "democratic",
-          "career": "",
+          "career": "전 서울시부의장, 현 서울시의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -332,13 +404,29 @@
         },
         {
           "name": "김진선",
-          "party": "independent",
-          "career": "",
+          "party": "ppp",
+          "career": "36년 공직, 전 국민의힘 강서병 당협위원장",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "살기 좋은 강서구 조성"
           ]
+        },
+        {
+          "name": "김상훈",
+          "party": "ppp",
+          "career": "전 서울시의원, 수의사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박상준",
+          "party": "democratic",
+          "career": "",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "구로구": [
@@ -353,7 +441,7 @@
         },
         {
           "name": "박동웅",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
@@ -365,11 +453,43 @@
           "name": "장인홍",
           "party": "democratic",
           "career": "현 구로구 단체장 (2025.4 재보궐 당선)",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "nec_byelection",
           "pledges": [
             "구민 품격 있는 삶 토대 마련"
           ]
+        },
+        {
+          "name": "박무영",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김인제",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박용순",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정대근",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "금천구": [
@@ -377,8 +497,16 @@
           "name": "유성훈",
           "party": "democratic",
           "career": "현 금천구 구청장",
-          "status": "EXPECTED",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "최기찬",
+          "party": "democratic",
+          "career": "현 서울시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -415,7 +543,7 @@
         },
         {
           "name": "오영수",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
@@ -429,12 +557,44 @@
           "name": "박준희",
           "party": "democratic",
           "career": "현 관악구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "관악S밸리 벤처·창업 거점 업그레이드",
             "관악S밸리 2030년까지 1000개 벤처기업 유치"
           ]
+        },
+        {
+          "name": "유정희",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "장현수",
+          "party": "independent",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이성심",
+          "party": "ppp",
+          "career": "현 국민의힘 관악구을 당협위원장",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "천범룡",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "서초구": [
@@ -442,7 +602,7 @@
           "name": "전성수",
           "party": "ppp",
           "career": "현 서초구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "양재 AI 특구 조성",
@@ -453,7 +613,7 @@
         {
           "name": "김재원",
           "party": "democratic",
-          "career": "",
+          "career": "현 티엠지홀딩스 대표",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -482,8 +642,8 @@
         },
         {
           "name": "김현기",
-          "party": "independent",
-          "career": "",
+          "party": "ppp",
+          "career": "전 서울시의회 의장",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -491,13 +651,45 @@
         {
           "name": "김시곤",
           "party": "independent",
-          "career": "",
+          "career": "전 과기대 교수, GTX 산파",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "재산세와 종부세 통합 세금감면 추진",
             "강남구 어디서나 5분 역세권 구축"
           ]
+        },
+        {
+          "name": "윤승현",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "전선영",
+          "party": "ppp",
+          "career": "전 국민공감비서관",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "장석명",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이진수",
+          "party": "independent",
+          "career": "삼성證·이승만기념사업회 경력",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "송파구": [
@@ -505,7 +697,7 @@
           "name": "서강석",
           "party": "ppp",
           "career": "현 송파구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "한예종 송파구 유치 추진",
@@ -515,7 +707,7 @@
         {
           "name": "최윤석",
           "party": "independent",
-          "career": "",
+          "career": "행정·정무·민간 경력 갖춘 사람",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
@@ -535,6 +727,46 @@
             "송파 교통 혁신 추진",
             "송파 생활행정 혁신 추진"
           ]
+        },
+        {
+          "name": "강감창",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박성수",
+          "party": "independent",
+          "career": "전 송파구청장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "안준호",
+          "party": "ppp",
+          "career": "전 송파 부구청장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박종현",
+          "party": "independent",
+          "career": "현 송파구의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "유광후",
+          "party": "independent",
+          "career": "변호사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "강동구": [
@@ -551,8 +783,8 @@
         },
         {
           "name": "김종무",
-          "party": "independent",
-          "career": "",
+          "party": "democratic",
+          "career": "전 서울시의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -599,6 +831,22 @@
           "status": "RUMORED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "한상구",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "황정",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "동구": [
@@ -617,6 +865,14 @@
           "status": "RUMORED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "유순희",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "영도구": [
@@ -624,7 +880,7 @@
           "name": "김기재",
           "party": "ppp",
           "career": "현 영도구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "원도심 재생"
@@ -634,11 +890,35 @@
           "name": "김철훈",
           "party": "independent",
           "career": "",
-          "status": "DECLARED",
+          "status": "NOMINATED",
           "dataSource": "overview_narrative",
           "pledges": [
             "원도심 재생"
           ]
+        },
+        {
+          "name": "안성민",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박성윤",
+          "party": "democratic",
+          "career": "전 부산시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "신기삼",
+          "party": "independent",
+          "career": "영도구의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "부산진구": [
@@ -652,13 +932,21 @@
         },
         {
           "name": "김승주",
-          "party": "independent",
+          "party": "ppp",
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "청년 유입 활기찬 도시 조성"
           ]
+        },
+        {
+          "name": "서은숙",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "동래구": [
@@ -679,15 +967,39 @@
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "박중묵",
+          "party": "ppp",
+          "career": "시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "권오성",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "남구": [
         {
           "name": "박재범",
-          "party": "ppp",
+          "party": "democratic",
           "career": "현 남구 구청장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "오은택",
+          "party": "ppp",
+          "career": "현 남구청장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -698,6 +1010,14 @@
           "career": "현 북구 구청장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "정명희",
+          "party": "democratic",
+          "career": "",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -740,11 +1060,35 @@
           "name": "정명시",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "주민 참여형 군정 실현"
           ]
+        },
+        {
+          "name": "최택용",
+          "party": "democratic",
+          "career": "",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "우성빈",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이승우",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "사하구": [
@@ -778,7 +1122,7 @@
         },
         {
           "name": "장보권",
-          "party": "independent",
+          "party": "ppp",
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
@@ -786,6 +1130,14 @@
             "금정 경제 르네상스 추진",
             "세일즈 구청장 역할 수행"
           ]
+        },
+        {
+          "name": "최봉환",
+          "party": "independent",
+          "career": "전 구의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "강서구": [
@@ -800,9 +1152,17 @@
         {
           "name": "김진선",
           "party": "independent",
-          "career": "",
+          "career": "36년 공직, 전 국민의힘 강서병 당협위원장",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "박상준",
+          "party": "democratic",
+          "career": "",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -824,6 +1184,14 @@
           "pledges": [
             "지역 경제 활성화"
           ]
+        },
+        {
+          "name": "안재권",
+          "party": "independent",
+          "career": "부산시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "수영구": [
@@ -846,7 +1214,7 @@
         {
           "name": "황진수",
           "party": "ppp",
-          "career": "",
+          "career": "수영발전협의회 회장",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
@@ -858,7 +1226,7 @@
       "사상구": [
         {
           "name": "조병길",
-          "party": "ppp",
+          "party": "independent",
           "career": "현 사상구 구청장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
@@ -1068,12 +1436,28 @@
           "name": "김정헌",
           "party": "ppp",
           "career": "현 중구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "영종권역 중진료권 신설",
             "영종 종합병원 유치"
           ]
+        },
+        {
+          "name": "장현수",
+          "party": "progressive",
+          "career": "전 건설노조본부장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정장수",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "동구": [
@@ -1081,8 +1465,16 @@
           "name": "김찬진",
           "party": "ppp",
           "career": "현 동구 구청장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "유순희",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -1112,6 +1504,14 @@
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "김종배",
+          "party": "ppp",
+          "career": "전 인천시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "연수구": [
@@ -1126,7 +1526,7 @@
         {
           "name": "정지열",
           "party": "democratic",
-          "career": "",
+          "career": "전 연수구의원",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
@@ -1167,7 +1567,7 @@
         },
         {
           "name": "박인동",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
@@ -1187,7 +1587,7 @@
         },
         {
           "name": "강화수",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
@@ -1195,6 +1595,14 @@
             "생활권 중심 공공기관 재편",
             "부평에 첨단 산업 유치"
           ]
+        },
+        {
+          "name": "유길종",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "계양구": [
@@ -1202,7 +1610,7 @@
           "name": "윤환",
           "party": "democratic",
           "career": "현 계양구 구청장",
-          "status": "EXPECTED",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [
             "계양문화광장 조성",
@@ -1215,7 +1623,7 @@
           "name": "김광",
           "party": "democratic",
           "career": "",
-          "status": "RUMORED",
+          "status": "EXPECTED",
           "dataSource": "gemini_discovery",
           "pledges": []
         },
@@ -1223,7 +1631,7 @@
           "name": "박해진",
           "party": "democratic",
           "career": "",
-          "status": "RUMORED",
+          "status": "EXPECTED",
           "dataSource": "gemini_discovery",
           "pledges": []
         },
@@ -1231,8 +1639,16 @@
           "name": "박형우",
           "party": "democratic",
           "career": "",
-          "status": "RUMORED",
+          "status": "EXPECTED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "전영성",
+          "party": "reform",
+          "career": "지역위원장",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -1282,7 +1698,7 @@
           "name": "박흥열",
           "party": "democratic",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "국립강화고려박물관 후보지 제안",
@@ -1298,6 +1714,84 @@
           "status": "EXPECTED",
           "dataSource": "incumbent",
           "pledges": []
+        },
+        {
+          "name": "김태진",
+          "party": "independent",
+          "career": "전 옹진군 국장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "영종구": [
+        {
+          "name": "강원모",
+          "party": "independent",
+          "career": "전 인천시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "신성영",
+          "party": "ppp",
+          "career": "현 인천시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "손화정",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "안광호",
+          "party": "reform",
+          "career": "전 인천경제청 본부장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박광운",
+          "party": "democratic",
+          "career": "민주당 부대변인",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "제물포구": [
+        {
+          "name": "남궁형",
+          "party": "independent",
+          "career": "전 인천시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        }
+      ],
+      "검단구": [
+        {
+          "name": "박세훈",
+          "party": "independent",
+          "career": "전 사회수석",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "강남규",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ]
     },
@@ -1307,7 +1801,7 @@
           "name": "임택",
           "party": "democratic",
           "career": "현 동구 구청장",
-          "status": "WITHDRAWN",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -1315,6 +1809,14 @@
           "name": "이철수",
           "party": "democratic",
           "career": "전 광주광역시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "유순희",
+          "party": "independent",
+          "career": "",
           "status": "DECLARED",
           "dataSource": "gemini",
           "pledges": []
@@ -1327,6 +1829,14 @@
           "career": "현 서구 구청장",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "조승환",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -1341,6 +1851,14 @@
             "경제·문화·교육 중심도시 도약",
             "광주·전남 통합시대 남구 도약"
           ]
+        },
+        {
+          "name": "하상용",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "북구": [
@@ -1376,6 +1894,14 @@
           "pledges": [
             "광주특별시 대표도시 북구"
           ]
+        },
+        {
+          "name": "정달성",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "광산구": [
@@ -1396,6 +1922,14 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "차승세",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ]
@@ -1424,6 +1958,14 @@
             "공항후적지 AI 밸리 조성",
             "일자리 1만 개 창출"
           ]
+        },
+        {
+          "name": "유순희",
+          "party": "independent",
+          "career": "동구청장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "중구": [
@@ -1446,6 +1988,14 @@
             "삶이 살아나는 중구 조성",
             "도약하는 중구 조성"
           ]
+        },
+        {
+          "name": "이동한",
+          "party": "independent",
+          "career": "전 중구청장 권한대행",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "서구": [
@@ -1463,6 +2013,14 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "전문학",
+          "party": "independent",
+          "career": "대전 서구청장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -1496,6 +2054,14 @@
           "pledges": [
             "대덕 중심축 위상 확립"
           ]
+        },
+        {
+          "name": "박종래",
+          "party": "democratic",
+          "career": "전 대덕구 지역위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ]
     },
@@ -1507,6 +2073,14 @@
           "career": "현 중구 구청장",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장현수",
+          "party": "progressive",
+          "career": "전 건설노조본부장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -1526,7 +2100,7 @@
       "동구": [
         {
           "name": "김종훈",
-          "party": "independent",
+          "party": "progressive",
           "career": "현 동구 구청장",
           "status": "WITHDRAWN",
           "dataSource": "incumbent",
@@ -1551,6 +2125,14 @@
           "career": "현 울주군 군수",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "강상규",
+          "party": "progressive",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ]
@@ -1611,7 +2193,7 @@
           "name": "김동근",
           "party": "ppp",
           "career": "현 의정부시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -1772,7 +2354,7 @@
           "name": "이민근",
           "party": "ppp",
           "career": "현 안산시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -1799,6 +2381,30 @@
             "장애인복지 지출 확대",
             "장애인 이동권 정책"
           ]
+        },
+        {
+          "name": "김철민",
+          "party": "democratic",
+          "career": "전 안산시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "제종길",
+          "party": "democratic",
+          "career": "전 안산시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박현탁",
+          "party": "democratic",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "고양시": [
@@ -1862,7 +2468,7 @@
           "name": "김종천",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "AI-바이오 중심도시 조성",
@@ -1898,7 +2504,7 @@
           "name": "백경현",
           "party": "ppp",
           "career": "현 구리시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -1959,6 +2565,14 @@
           "pledges": [
             "낡은 엔진 교체, 강한 도시 건설"
           ]
+        },
+        {
+          "name": "조성대",
+          "party": "independent",
+          "career": "전 남양주시의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "오산시": [
@@ -2001,7 +2615,7 @@
           "name": "정명근",
           "party": "democratic",
           "career": "현 화성시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -2016,6 +2630,14 @@
             "체감형 교통 개선 추진",
             "화성습지 UNESCO 세계자연유산 등재 추진"
           ]
+        },
+        {
+          "name": "서철모",
+          "party": "democratic",
+          "career": "전 화성시장",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "시흥시": [
@@ -2037,7 +2659,7 @@
           "name": "하은호",
           "party": "ppp",
           "career": "현 군포시 시장",
-          "status": "EXPECTED",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": [
             "군포시 철도 지하화 추진",
@@ -2048,12 +2670,28 @@
           "name": "한대희",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "군포시 철도 지하화 추진",
             "금정역 복합 개발 추진"
           ]
+        },
+        {
+          "name": "이길호",
+          "party": "independent",
+          "career": "전 군포시의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정윤경",
+          "party": "democratic",
+          "career": "경기도의회 부의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "하남시": [
@@ -2061,7 +2699,7 @@
           "name": "이현재",
           "party": "ppp",
           "career": "현 하남시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -2146,6 +2784,30 @@
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "이항진",
+          "party": "democratic",
+          "career": "전 여주시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박시선",
+          "party": "independent",
+          "career": "여주시의회 부의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이대직",
+          "party": "independent",
+          "career": "전 여주부시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "이천시": [
@@ -2171,7 +2833,7 @@
           "name": "이상일",
           "party": "ppp",
           "career": "현 용인시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "경기남부광역철도 국가철도망 반영"
@@ -2218,6 +2880,14 @@
             "철도 인프라 확충",
             "AI 기반 5대 신성장 공약 제시"
           ]
+        },
+        {
+          "name": "박명수",
+          "party": "ppp",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "김포시": [
@@ -2237,6 +2907,14 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "조승현",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -2269,7 +2947,7 @@
           "name": "백영현",
           "party": "ppp",
           "career": "현 포천시 시장",
-          "status": "EXPECTED",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -2277,8 +2955,16 @@
           "name": "박윤국",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이현자",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -2297,7 +2983,7 @@
         },
         {
           "name": "진명두",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
@@ -2319,7 +3005,7 @@
           "name": "전진선",
           "party": "ppp",
           "career": "현 양평군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -2389,6 +3075,22 @@
           "pledges": [
             "순환하는 기본사회 춘천 구현"
           ]
+        },
+        {
+          "name": "이재수",
+          "party": "independent",
+          "career": "전 춘천시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "한중일",
+          "party": "ppp",
+          "career": "국민의힘 강원도당 대변인",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "원주시": [
@@ -2450,6 +3152,14 @@
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "김중남",
+          "party": "independent",
+          "career": "위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "동해시": [
@@ -2467,6 +3177,22 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김종문",
+          "party": "independent",
+          "career": "전 동해부시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이상웅",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -2491,6 +3217,14 @@
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "이광우",
+          "party": "independent",
+          "career": "삼척시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "태백시": [
@@ -2514,6 +3248,14 @@
             "태백살이 사업으로 생활인구 확대",
             "산업전사 특별법 추진"
           ]
+        },
+        {
+          "name": "김천수",
+          "party": "independent",
+          "career": "태백시의장",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "정선군": [
@@ -2563,6 +3305,22 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이지영",
+          "party": "independent",
+          "career": "강원특별자치도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김일용",
+          "party": "independent",
+          "career": "고성군의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -2651,7 +3409,7 @@
         },
         {
           "name": "이규설",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
@@ -2671,6 +3429,14 @@
           "pledges": [
             "군민이 부자되는 횡성"
           ]
+        },
+        {
+          "name": "장신상",
+          "party": "independent",
+          "career": "전 횡성군수",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "영월군": [
@@ -2716,6 +3482,22 @@
             "세계적 치유 관광지 도약",
             "선거구 획정 차별 방지"
           ]
+        },
+        {
+          "name": "최호영",
+          "party": "democratic",
+          "career": "민주당도당 부위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김진석",
+          "party": "independent",
+          "career": "전 강원도의원",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "화천군": [
@@ -2738,6 +3520,22 @@
           "pledges": [
             "돈 도는 화천 조성"
           ]
+        },
+        {
+          "name": "최수명",
+          "party": "independent",
+          "career": "화천부군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김세훈",
+          "party": "democratic",
+          "career": "민주 도당 부위원장",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "양구군": [
@@ -2748,6 +3546,14 @@
           "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
+        },
+        {
+          "name": "정창수",
+          "party": "independent",
+          "career": "양구군의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "철원군": [
@@ -2755,7 +3561,7 @@
           "name": "이현종",
           "party": "ppp",
           "career": "현 철원군 군수",
-          "status": "DECLARED",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": []
         }
@@ -2808,6 +3614,14 @@
             "폐기물 반입 협력금 부과",
             "청주 탄소제로 도시 조성"
           ]
+        },
+        {
+          "name": "이장섭",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "충주시": [
@@ -3729,7 +4543,7 @@
           "name": "박홍률",
           "party": "independent",
           "career": "前 목포시 시장 (박홍률 시장 당선무효 (2025.3))",
-          "status": "WITHDRAWN",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "박홍률 시장 당선무효 (2025.3)"
@@ -3749,6 +4563,22 @@
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "이호균",
+          "party": "independent",
+          "career": "출판기념회 개최",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박용안",
+          "party": "reform",
+          "career": "조국혁신당 목포시지역위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "여수시": [
@@ -3756,8 +4586,40 @@
           "name": "정기명",
           "party": "democratic",
           "career": "현 여수시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "명창환",
+          "party": "reform",
+          "career": "전 전남부지사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "서영학",
+          "party": "independent",
+          "career": "여수시장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "원용규",
+          "party": "independent",
+          "career": "전 시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김영규",
+          "party": "independent",
+          "career": "시의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -3776,12 +4638,20 @@
           "name": "오하근",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "매년 25만원 시민배당",
             "순천만 리조트 조성"
           ]
+        },
+        {
+          "name": "손훈모",
+          "party": "independent",
+          "career": "변호사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "나주시": [
@@ -3789,11 +4659,19 @@
           "name": "윤병태",
           "party": "democratic",
           "career": "현 나주시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "에너지산업 육성 및 발전 추진"
           ]
+        },
+        {
+          "name": "이재태",
+          "party": "independent",
+          "career": "전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "광양시": [
@@ -3801,7 +4679,7 @@
           "name": "정인화",
           "party": "independent",
           "career": "현 광양시 시장",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "광양 르네상스 완성",
@@ -3831,6 +4709,22 @@
             "광양시 청렴도 개선",
             "광양 민생 현안 해결"
           ]
+        },
+        {
+          "name": "김태균",
+          "party": "independent",
+          "career": "전라남도의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김재무",
+          "party": "democratic",
+          "career": "민주당 광양시장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "담양군": [
@@ -3847,7 +4741,7 @@
           "name": "정철원",
           "party": "reform",
           "career": "현 담양군수 (조국혁신당 1호 단체장, 2025 재보궐 당선)",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "news_correction",
           "pledges": []
         },
@@ -3855,7 +4749,7 @@
           "name": "박종원",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "전라남특별자치도 설치"
@@ -3867,7 +4761,7 @@
           "name": "김한종",
           "party": "democratic",
           "career": "현 장성군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "평생학습도시 지정",
@@ -3887,7 +4781,7 @@
         },
         {
           "name": "소영호",
-          "party": "independent",
+          "party": "democratic",
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
@@ -3903,6 +4797,14 @@
             "홍익인간 정치 실현",
             "동탄형 미래도시 조성"
           ]
+        },
+        {
+          "name": "박노원",
+          "party": "democratic",
+          "career": "전 행정관",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "곡성군": [
@@ -3935,6 +4837,14 @@
             "농업 정책 비전 제시",
             "전남광주특별시 전환"
           ]
+        },
+        {
+          "name": "정환대",
+          "party": "independent",
+          "career": "전 민주당 곡성군수 후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "구례군": [
@@ -3942,8 +4852,24 @@
           "name": "김순호",
           "party": "democratic",
           "career": "현 구례군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "장길선",
+          "party": "independent",
+          "career": "구례군수 출마 예정자",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이현창",
+          "party": "independent",
+          "career": "전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -3952,8 +4878,24 @@
           "name": "공영민",
           "party": "democratic",
           "career": "현 고흥군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "박준희",
+          "party": "independent",
+          "career": "전 고흥군기획실장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "안정민",
+          "party": "independent",
+          "career": "전 의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -3962,8 +4904,16 @@
           "name": "김철우",
           "party": "democratic",
           "career": "현 보성군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "윤영주",
+          "party": "independent",
+          "career": "박사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -3982,13 +4932,21 @@
           "name": "윤영민",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "화순 에어돔 건립",
             "데이터 행정 시스템 도입",
             "실용 행정 시스템 구현"
           ]
+        },
+        {
+          "name": "임지락",
+          "party": "independent",
+          "career": "전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "장흥군": [
@@ -3996,8 +4954,24 @@
           "name": "김성",
           "party": "democratic",
           "career": "현 장흥군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "곽태수",
+          "party": "independent",
+          "career": "전 도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "왕윤채",
+          "party": "independent",
+          "career": "장흥군의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4006,7 +4980,7 @@
           "name": "강진원",
           "party": "independent",
           "career": "현 강진군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "관광객 500만명 유치",
@@ -4019,6 +4993,14 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "차영수",
+          "party": "independent",
+          "career": "전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4040,6 +5022,14 @@
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "신의준",
+          "party": "independent",
+          "career": "전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "해남군": [
@@ -4047,7 +5037,7 @@
           "name": "명현관",
           "party": "democratic",
           "career": "현 해남군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "AI데이터센터·컴퓨팅센터 유치"
@@ -4057,7 +5047,7 @@
           "name": "김성주",
           "party": "independent",
           "career": "",
-          "status": "RUMORED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
         },
@@ -4085,8 +5075,16 @@
           "name": "김희수",
           "party": "independent",
           "career": "현 진도군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이재각",
+          "party": "independent",
+          "career": "진도군수 후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4108,6 +5106,14 @@
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "최영열",
+          "party": "independent",
+          "career": "전 전남도 종합민원실장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "무안군": [
@@ -4115,8 +5121,32 @@
           "name": "김산",
           "party": "independent",
           "career": "현 무안군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "류춘오",
+          "party": "independent",
+          "career": "무안군체육회장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이혜자",
+          "party": "independent",
+          "career": "전 전남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "나광국",
+          "party": "independent",
+          "career": "무안군수 후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4133,7 +5163,7 @@
           "name": "이근철",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "에너지 산업 육성",
@@ -4144,8 +5174,40 @@
           "name": "오기원",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "김혜영",
+          "party": "independent",
+          "career": "영광군수 예비후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "장세일",
+          "party": "independent",
+          "career": "영광군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이석하",
+          "party": "progressive",
+          "career": "진보당 영광군수 후보",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "장현",
+          "party": "reform",
+          "career": "조국당 영광군수 후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4154,7 +5216,7 @@
           "name": "이상익",
           "party": "democratic",
           "career": "현 함평군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -4178,6 +5240,14 @@
           "pledges": [
             "교육 때문에 떠나지 않는 함평"
           ]
+        },
+        {
+          "name": "이윤행",
+          "party": "independent",
+          "career": "전 함평군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "신안군": [
@@ -4185,10 +5255,26 @@
           "name": "박우량",
           "party": "independent",
           "career": "前 신안군 시장 (박우량 군수 직위상실 (2025.3))",
-          "status": "WITHDRAWN",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "박우량 군수 직위상실 (2025.3)"
+        },
+        {
+          "name": "고봉기",
+          "party": "reform",
+          "career": "조국혁신당 신안군 지역위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김태성",
+          "party": "independent",
+          "career": "신안군수 출마 후보",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ]
     },
@@ -4217,9 +5303,57 @@
         {
           "name": "박희정",
           "party": "democratic",
+          "career": "현 포항시의원",
+          "status": "NOMINATED",
+          "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "박승호",
+          "party": "independent",
           "career": "",
           "status": "EXPECTED",
-          "dataSource": "gemini_discovery",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김일만",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "문충운",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김병욱",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "최용규",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박대기",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4260,6 +5394,22 @@
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "박병훈",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정병두",
+          "party": "ppp",
+          "career": "경주 경제 연구원장",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "김천시": [
@@ -4279,6 +5429,22 @@
           "status": "EXPECTED",
           "dataSource": "nec_byelection",
           "pledges": []
+        },
+        {
+          "name": "나영민",
+          "party": "independent",
+          "career": "김천시의회의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이창재",
+          "party": "ppp",
+          "career": "전 김천부시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "안동시": [
@@ -4297,6 +5463,30 @@
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": []
+        },
+        {
+          "name": "이삼걸",
+          "party": "democratic",
+          "career": "",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "김의승",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "권백신",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "구미시": [
@@ -4306,6 +5496,14 @@
           "career": "현 구미시 시장",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김상욱",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4338,6 +5536,22 @@
           "pledges": [
             "6대 분야 33개 과제 제시"
           ]
+        },
+        {
+          "name": "유정근",
+          "party": "ppp",
+          "career": "국민의힘 반도체·AI 첨단산업특위 부위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박성만",
+          "party": "independent",
+          "career": "경북도의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "영천시": [
@@ -4347,6 +5561,22 @@
           "career": "현 영천시 시장",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "김섭",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이정훈",
+          "party": "democratic",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4369,6 +5599,22 @@
             "스마트농업 발전 정책 추진",
             "공공기관 상주 유치 추진"
           ]
+        },
+        {
+          "name": "안경숙",
+          "party": "independent",
+          "career": "상주시의회 의장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "윤위영",
+          "party": "independent",
+          "career": "전 영덕부군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "문경시": [
@@ -4405,6 +5651,22 @@
           "status": "EXPECTED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "윤동춘",
+          "party": "democratic",
+          "career": "",
+          "status": "NOMINATED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "안병윤",
+          "party": "independent",
+          "career": "전 부총장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "경산시": [
@@ -4412,7 +5674,7 @@
           "name": "조현일",
           "party": "ppp",
           "career": "현 경산시 시장",
-          "status": "DECLARED",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": [
             "경산-울산 고속도로 신설"
@@ -4420,13 +5682,21 @@
         },
         {
           "name": "김기현",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
+          "party": "democratic",
+          "career": "민주당 지역위원장",
+          "status": "NOMINATED",
           "dataSource": "overview_narrative",
           "pledges": [
             "경산 독자 노선 선언"
           ]
+        },
+        {
+          "name": "최병국",
+          "party": "independent",
+          "career": "전 경산시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "청도군": [
@@ -4449,13 +5719,21 @@
         {
           "name": "박권현",
           "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
+          "career": "전 경북도의원",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "청도 대통합",
             "청도 재건"
           ]
+        },
+        {
+          "name": "이승민",
+          "party": "independent",
+          "career": "청도군의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "고령군": [
@@ -4463,8 +5741,16 @@
           "name": "이남철",
           "party": "ppp",
           "career": "현 고령군 군수",
-          "status": "DECLARED",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "노성환",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4483,6 +5769,14 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "최성곤",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4515,6 +5809,22 @@
           "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
+        },
+        {
+          "name": "김영만",
+          "party": "ppp",
+          "career": "전 군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박창석",
+          "party": "independent",
+          "career": "대구시의회 문화복지위원장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "의성군": [
@@ -4528,9 +5838,9 @@
         },
         {
           "name": "최유철",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
+          "party": "ppp",
+          "career": "전 의성군의회 의장",
+          "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
             "의성 농업 미래 산업화",
@@ -4552,6 +5862,14 @@
             "1200억 산림레포츠 단지 조성",
             "스마트팜으로 기후 위기 정면돌파"
           ]
+        },
+        {
+          "name": "우병윤",
+          "party": "ppp",
+          "career": "전 경북도 경제부지사",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "영양군": [
@@ -4592,6 +5910,22 @@
             "영덕 블루연금 프로젝트",
             "풍력으로 군민 1인당 연 240만원 연금"
           ]
+        },
+        {
+          "name": "강웅원",
+          "party": "ppp",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "조주홍",
+          "party": "ppp",
+          "career": "전 국회부의장 비서관",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "봉화군": [
@@ -4606,7 +5940,7 @@
         {
           "name": "박만우",
           "party": "independent",
-          "career": "",
+          "career": "행정경륜 보유",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
@@ -4617,9 +5951,17 @@
         {
           "name": "홍성구",
           "party": "independent",
-          "career": "",
+          "career": "전 김천시장 권한대행",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "최기영",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4630,6 +5972,14 @@
           "career": "현 울진군 군수",
           "status": "DECLARED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "전찬걸",
+          "party": "independent",
+          "career": "전 울진군수",
+          "status": "DECLARED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ]
@@ -4662,6 +6012,22 @@
             "꿈의 암 치료기 지역 의료기관 유치",
             "의료·돌봄·인권 강화"
           ]
+        },
+        {
+          "name": "김권수",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박명균",
+          "party": "independent",
+          "career": "전 경남도 행정부지사",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "통영시": [
@@ -4680,7 +6046,7 @@
           "name": "강석주",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "NOMINATED",
           "dataSource": "overview_narrative",
           "pledges": [
             "포스트 코로나 대비 정책개발"
@@ -4727,6 +6093,30 @@
           "pledges": [
             "공직사회 혁신 및 개편"
           ]
+        },
+        {
+          "name": "최상화",
+          "party": "democratic",
+          "career": "전 청와대 춘추관장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "정대웅",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "임철규",
+          "party": "independent",
+          "career": "경남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "김해시": [
@@ -4734,7 +6124,7 @@
           "name": "홍태용",
           "party": "ppp",
           "career": "현 김해시 시장",
-          "status": "EXPECTED",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": [
             "국제물류진흥지역 조성",
@@ -4762,6 +6152,14 @@
             "폴리텍 밀양캠퍼스 설립",
             "밀양 국가산단 활성화"
           ]
+        },
+        {
+          "name": "김성근",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "거제시": [
@@ -4798,7 +6196,7 @@
           "name": "변광용",
           "party": "democratic",
           "career": "현 거제시 단체장 (2025.4 재보궐 당선)",
-          "status": "EXPECTED",
+          "status": "NOMINATED",
           "dataSource": "nec_byelection",
           "pledges": []
         }
@@ -4837,6 +6235,30 @@
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": []
+        },
+        {
+          "name": "차석호",
+          "party": "independent",
+          "career": "전 진주부시장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "조영제",
+          "party": "independent",
+          "career": "경남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "조인제",
+          "party": "independent",
+          "career": "경남도의원",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "창녕군": [
@@ -4868,6 +6290,14 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "gemini_discovery",
+          "pledges": []
+        },
+        {
+          "name": "성이경",
+          "party": "independent",
+          "career": "창녕농협 조합장",
+          "status": "RUMORED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4902,6 +6332,30 @@
             "부산대 유휴부지 메디콘밸리 조성",
             "50만 중견도시 조성"
           ]
+        },
+        {
+          "name": "이용식",
+          "party": "ppp",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "조문관",
+          "party": "independent",
+          "career": "전 경남도의원",
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "윤종운",
+          "party": "ppp",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "하동군": [
@@ -4927,6 +6381,14 @@
           "pledges": [
             "아이 셋 낳으면 1억 지급 공약"
           ]
+        },
+        {
+          "name": "김현수",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "남해군": [
@@ -4934,7 +6396,7 @@
           "name": "장충남",
           "party": "democratic",
           "career": "현 남해군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": []
         },
@@ -4947,6 +6409,22 @@
           "pledges": [
             "인구 5만 남해 달성"
           ]
+        },
+        {
+          "name": "류경완",
+          "party": "democratic",
+          "career": null,
+          "status": "RUMORED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "문준홍",
+          "party": "independent",
+          "career": null,
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "함양군": [
@@ -4956,6 +6434,22 @@
           "career": "현 함양군 군수",
           "status": "EXPECTED",
           "dataSource": "incumbent",
+          "pledges": []
+        },
+        {
+          "name": "이영철",
+          "party": "independent",
+          "career": "전 함양시민연대 사무처장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "이철우",
+          "party": "independent",
+          "career": "전 함양군수",
+          "status": "RUMORED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -4985,7 +6479,7 @@
           "name": "구인모",
           "party": "ppp",
           "career": "현 거창군 군수",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "지속 가능한 거창 조성",
@@ -4996,12 +6490,20 @@
           "name": "박현섭",
           "party": "ppp",
           "career": "",
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "gemini_discovery",
           "pledges": [
             "관리 아닌 경영 군정",
             "경영형 군수로 거창 재설계"
           ]
+        },
+        {
+          "name": "김일수",
+          "party": "independent",
+          "career": "경남도의원",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ],
       "합천군": [
@@ -5015,10 +6517,18 @@
         },
         {
           "name": "이재욱",
-          "party": "independent",
+          "party": "ppp",
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "이종학",
+          "party": "independent",
+          "career": null,
+          "status": "RUMORED",
+          "dataSource": "gemini",
           "pledges": []
         }
       ],
@@ -5043,6 +6553,22 @@
             "일자리 10만개 창출",
             "에너지 연금 100만원 지급"
           ]
+        },
+        {
+          "name": "송형근",
+          "party": "independent",
+          "career": "34년 행정 전문가",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
+        },
+        {
+          "name": "박성호",
+          "party": "independent",
+          "career": "전 창원대 총장",
+          "status": "DECLARED",
+          "dataSource": "gemini",
+          "pledges": []
         }
       ]
     }
