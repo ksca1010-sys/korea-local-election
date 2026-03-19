@@ -488,24 +488,24 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    border-radius: 10px;
-    padding: 4px 14px;
+    background: rgba(59, 130, 246, 0.08);
+    border: none;
+    border-radius: 8px;
+    padding: var(--space-4) var(--space-16);
 }
 
 .dday-label {
-    font-size: 0.65rem;
+    font-size: var(--text-micro);
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .dday-number {
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: var(--accent-blue);
-    line-height: 1.2;
+    font-size: var(--text-headline);
+    font-weight: var(--font-bold);
+    color: var(--color-info);
+    line-height: var(--leading-tight);
 }
 
 .pre-vote-info {
@@ -541,10 +541,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
    ============================================ */
 .sidebar {
     width: var(--sidebar-width);
-    background: var(--bg-secondary);
-    border-right: 1px solid var(--border-color);
+    background: var(--bg-primary);
+    border-right: 1px solid var(--border-subtle);
     overflow-y: auto;
-    padding: 16px;
+    padding: var(--space-16);
     flex-shrink: 0;
     transition: width 0.3s ease, padding 0.3s ease;
     position: relative;
@@ -591,24 +591,24 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 .sidebar-section {
-    margin-bottom: 20px;
+    margin-bottom: var(--space-24);
 }
 
 .section-title {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--text-secondary);
+    font-size: var(--text-caption);
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 12px;
+    margin-bottom: var(--space-8);
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-6);
 }
 
 .section-title i {
-    color: var(--accent-blue);
-    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-size: var(--text-caption);
 }
 
 .election-calendar-list {
@@ -805,27 +805,26 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 .filter-icon {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(59, 130, 246, 0.1);
-    font-size: 0.8rem;
+    background: transparent;
+    font-size: var(--text-caption);
+    color: var(--text-muted);
 }
 
 .filter-btn.active .filter-icon {
-    background: rgba(59, 130, 246, 0.2);
+    color: var(--color-info);
 }
 
 .filter-count {
     margin-left: auto;
-    background: var(--bg-input);
-    padding: 2px 8px;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    font-size: var(--text-caption);
+    font-weight: var(--font-bold);
+    color: var(--text-muted);
 }
 
 /* Stats Grid */
@@ -835,31 +834,32 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 8px;
 }
 
+/* 통계 카드 — 토스 매트릭 스타일 (작은 라벨 + 큰 숫자) */
 .stat-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 12px 10px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: var(--space-12);
     text-align: center;
-    transition: var(--transition);
+    transition: background 0.15s;
 }
 
 .stat-card:hover {
-    border-color: var(--accent-blue);
-    transform: translateY(-1px);
+    background: var(--bg-elevated);
 }
 
 .stat-value {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--accent-cyan);
-    line-height: 1.2;
+    font-size: var(--text-headline);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
 }
 
 .stat-label {
-    font-size: 0.7rem;
+    font-size: var(--text-micro);
     color: var(--text-muted);
-    margin-top: 4px;
+    margin-top: var(--space-2);
 }
 
 /* Party Dominance */
