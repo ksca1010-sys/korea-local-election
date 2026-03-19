@@ -47,20 +47,20 @@ const ProportionalTab = (() => {
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
 
-        // 비례대표 후보 데이터 lazy-load
-        ElectionData.loadProportionalCandidates?.();
-        // 비례대표 의석 데이터 lazy-load
-        if (electionType === 'councilProportional') {
-            ElectionData.loadProportionalCouncilData?.();
-        } else {
-            ElectionData.loadProportionalLocalCouncilData?.();
-        }
-
-        // 약간의 지연 후 다시 렌더 (lazy-load 완료 후)
-        setTimeout(() => _renderProportionalOverviewHTML(regionKey, electionType, label, regionName), 300);
-
         // 즉시 렌더 (캐시 있으면 바로 표시)
         _renderProportionalOverviewHTML(regionKey, electionType, label, regionName);
+
+        // 비례대표 데이터 lazy-load → 완료 후 다시 렌더
+        const loads = [
+            ElectionData.loadProportionalCandidates?.() || Promise.resolve(),
+            electionType === 'councilProportional'
+                ? (ElectionData.loadProportionalCouncilData?.() || Promise.resolve())
+                : (ElectionData.loadProportionalLocalCouncilData?.() || Promise.resolve()),
+        ];
+
+        Promise.all(loads).then(() => {
+            _renderProportionalOverviewHTML(regionKey, electionType, label, regionName);
+        });
     }
 
     function _renderProportionalOverviewHTML(regionKey, electionType, label, regionName) {
