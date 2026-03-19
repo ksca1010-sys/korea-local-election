@@ -1604,13 +1604,11 @@ const App = (() => {
         configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
-        // ProportionalTab으로 개요 렌더링 위임
+        // ProportionalTab으로 개요 렌더링 위임 (개요 박스 + 현직자 정보 박스 모두 처리)
         if (typeof ProportionalTab !== 'undefined') {
             ProportionalTab.renderOverview(regionKey, typeKey);
         }
 
-        const govContainer = document.getElementById('current-governor');
-        if (govContainer) govContainer.innerHTML = '';
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) issuesContainer.innerHTML = '';
 
