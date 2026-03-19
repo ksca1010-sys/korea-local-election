@@ -157,6 +157,7 @@ const ProportionalTab = (() => {
             '민주노동당':'progressive','통합진보당':'progressive',
             // 역대 중도/기타
             '바른미래당':'newReform','자유선진당':'independent','국민참여당':'democratic',
+            '열린우리당':'democratic','국민중심당':'independent','미래연합':'independent',
         };
         return map[name] || 'independent';
     }
