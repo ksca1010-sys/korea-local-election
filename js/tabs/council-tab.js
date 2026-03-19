@@ -431,42 +431,92 @@ const CouncilTab = (() => {
                 return;
             }
 
+            // 광역의원: 3~8회 전체 나열
+            if (electionType === 'council') {
+                const normalized = districtName.replace(/\s+/g, '');
+                const electionNums = [8, 7, 6, 5, 4, 3];
+                const electionYears = {8:2022, 7:2018, 6:2014, 5:2010, 4:2006, 3:2002};
+                const label = getElectionLabel(electionType);
+
+                let html = `<div class="panel-section">
+                    <h4 style="color:var(--text-secondary);margin-bottom:12px;">
+                        <i class="fas fa-history" style="margin-right:6px;"></i> 역대 ${label} 선거 결과
+                    </h4>
+                    <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;">
+                        <i class="fas fa-info-circle" style="margin-right:4px;"></i>선거구 경계가 이전 선거와 다를 수 있습니다.
+                    </p>`;
+
+                let hasAny = false;
+                electionNums.forEach(num => {
+                    const key = num === 8 ? 'council' : `council_${num}`;
+                    const regionData = data[key]?.[regionKey] || {};
+
+                    // 선거구명 매칭
+                    let winners = regionData[districtName] || [];
+                    if (!winners.length) {
+                        for (const [k, v] of Object.entries(regionData)) {
+                            if (k.replace(/\s+/g, '') === normalized) { winners = v; break; }
+                        }
+                    }
+
+                    if (!winners.length) return;
+                    hasAny = true;
+
+                    const sorted = [...winners].sort((a, b) => b.votes - a.votes);
+                    const maxVotes = sorted[0]?.votes || 1;
+
+                    html += `
+                        <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
+                            <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);font-weight:600;font-size:0.85rem;color:var(--text-primary);">
+                                제${num}회 (${electionYears[num]})
+                            </div>
+                            <div style="padding:12px;">
+                    `;
+
+                    sorted.forEach(w => {
+                        const pc = ElectionData.getPartyColor(w.party || 'independent');
+                        const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                        const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
+                        const rateText = w.rate ? `${w.rate}%` : '';
+
+                        html += `
+                            <div style="display:grid;grid-template-columns:80px 1fr 55px;align-items:center;gap:8px;margin-bottom:6px;">
+                                <span style="font-size:0.82rem;color:${pc};font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${pn}</span>
+                                <div style="height:18px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
+                                    <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;"></div>
+                                </div>
+                                <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${rateText || w.votes.toLocaleString()}</span>
+                            </div>
+                        `;
+                    });
+
+                    html += `</div></div>`;
+                });
+
+                if (!hasAny) {
+                    html += `<div class="district-no-data"><p>이 선거구의 역대 결과를 찾을 수 없습니다.</p></div>`;
+                }
+
+                html += `</div>`;
+                container.innerHTML = html;
+                return;
+            }
+
+            // 기초의원: 8회만 (기존 로직)
             let winners = [];
             let matchKey = '';
+            const regionData = data.local_council?.[regionKey] || {};
+            const normalized = districtName.replace(/\s+/g, '');
 
-            if (electionType === 'council') {
-                // 광역의원: council.{regionKey}.{districtName}
-                winners = data.council?.[regionKey]?.[districtName] || [];
-                matchKey = districtName;
-
-                // 선거구명 매칭 시도 (공백 유무 차이)
-                if (!winners.length) {
-                    const normalized = districtName.replace(/\s+/g, '');
-                    const regionData = data.council?.[regionKey] || {};
-                    for (const [k, v] of Object.entries(regionData)) {
-                        if (k.replace(/\s+/g, '') === normalized) {
-                            winners = v;
-                            matchKey = k;
-                            break;
-                        }
+            for (const [sgg, districts] of Object.entries(regionData)) {
+                for (const [dk, dv] of Object.entries(districts)) {
+                    if (dk === districtName || dk.replace(/\s+/g, '') === normalized) {
+                        winners = dv;
+                        matchKey = dk;
+                        break;
                     }
                 }
-            } else {
-                // 기초의원: local_council.{regionKey}.{sigungu}.{districtName}
-                // districtName 형식: "종로구가선거구" or "종로구 가선거구"
-                const regionData = data.local_council?.[regionKey] || {};
-                const normalized = districtName.replace(/\s+/g, '');
-
-                for (const [sgg, districts] of Object.entries(regionData)) {
-                    for (const [dk, dv] of Object.entries(districts)) {
-                        if (dk === districtName || dk.replace(/\s+/g, '') === normalized) {
-                            winners = dv;
-                            matchKey = dk;
-                            break;
-                        }
-                    }
-                    if (winners.length) break;
-                }
+                if (winners.length) break;
             }
 
             if (!winners.length) {
