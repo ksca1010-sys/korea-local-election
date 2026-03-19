@@ -4630,45 +4630,53 @@ function renderCouncilProvinceView(regionKey, region) {
         const consensusSummary = _calcConsensusTrend(polls);
         if (consensusSummary) {
             const summaryCard = document.createElement('div');
-            summaryCard.className = 'panel-card';
-            summaryCard.style.cssText = 'padding:12px;margin-bottom:12px;border-radius:8px;background:var(--accent-primary)06;border:1px solid var(--accent-primary)22;';
+            summaryCard.className = 'poll-result-card';
+            summaryCard.style.cssText = 'margin-bottom:var(--space-16);';
             const maxEst = Math.max(...Object.values(consensusSummary.estimates));
             let summaryHtml = `
-                <h4 style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:10px;">
-                    <i class="fas fa-chart-area" style="margin-right:4px;"></i> 통합 추정 (최근 ${consensusSummary.windowDays}일, ${consensusSummary.pollCount}건 가중평균)
-                </h4>
+                <div style="font-size:var(--text-caption);color:var(--text-muted);margin-bottom:var(--space-12);">
+                    통합 추정 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 가중평균
+                </div>
             `;
             Object.entries(consensusSummary.estimates)
                 .sort((a, b) => b[1] - a[1])
                 .forEach(([name, support]) => {
                     const candidate = _findCandidateParty(polls, name);
-                    const pc = candidate ? ElectionData.getPartyColor(candidate) : '#808080';
+                    const pc = candidate ? ElectionData.getPartyColor(candidate) : 'var(--text-muted)';
                     const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
                     summaryHtml += `
-                        <div style="margin-bottom:6px;">
-                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
-                                <span style="font-size:0.85rem;color:var(--text-primary);font-weight:500;">${name}</span>
-                                <span style="font-size:0.9rem;color:var(--text-primary);font-weight:600;">${support.toFixed(1)}%</span>
+                        <div class="poll-card-result" style="margin-bottom:var(--space-12);">
+                            <div class="poll-card-result-info">
+                                <span class="poll-card-candidate">${name}</span>
+                                <span class="poll-card-party" style="color:${pc}"></span>
+                                <span class="poll-card-support">${support.toFixed(1)}%</span>
                             </div>
-                            <div style="height:14px;background:var(--bg-secondary);border-radius:3px;overflow:hidden;">
-                                <div style="width:${barW}%;height:100%;background:${pc};border-radius:3px;"></div>
+                            <div class="poll-card-bar-bg">
+                                <div class="poll-card-bar" style="width:${barW}%;background:${pc};"></div>
                             </div>
                         </div>
                     `;
                 });
 
-            // 1위-2위 격차 해석
+            // 1위-2위 격차 해석 — 뱃지 스타일
             const sorted = Object.entries(consensusSummary.estimates).sort((a, b) => b[1] - a[1]);
             if (sorted.length >= 2) {
                 const gap = sorted[0][1] - sorted[1][1];
                 const avgMargin = consensusSummary.avgMargin || 3;
-                const gapLabel = gap <= avgMargin * 2
-                    ? `<span style="color:#f59e0b;"><i class="fas fa-balance-scale"></i> 접전 (격차 ${gap.toFixed(1)}%p, 평균 오차범위 ±${avgMargin.toFixed(1)}%p 내)</span>`
-                    : `<span style="color:var(--text-muted);">격차 ${gap.toFixed(1)}%p</span>`;
-                summaryHtml += `<div style="margin-top:6px;font-size:0.75rem;">${gapLabel}</div>`;
+                if (gap <= avgMargin * 2) {
+                    summaryHtml += `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">
+                        <span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:var(--space-2) var(--space-8);border-radius:4px;background:rgba(245,158,11,0.15);color:#F59E0B;">접전</span>
+                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p · 오차범위 ±${avgMargin.toFixed(1)}%p 내</span>
+                    </div>`;
+                } else {
+                    summaryHtml += `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">
+                        <span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:var(--space-2) var(--space-8);border-radius:4px;background:rgba(34,197,94,0.15);color:#22C55E;">우세</span>
+                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p</span>
+                    </div>`;
+                }
             }
 
-            summaryHtml += `<div style="margin-top:6px;font-size:0.7rem;color:var(--text-muted);">※ 여러 기관의 조사를 최신성·표본크기 기반 가중평균한 추정치입니다.</div>`;
+            summaryHtml += `<div style="margin-top:var(--space-8);font-size:var(--text-micro);color:var(--text-disabled);">여러 기관의 조사를 최신성·표본크기 기반 가중평균한 추정치</div>`;
             summaryCard.innerHTML = summaryHtml;
             trendsSection.appendChild(summaryCard);
         }
@@ -4763,13 +4771,13 @@ function renderCouncilProvinceView(regionKey, region) {
             // 돌출 조사 여부
             const isOutlier = outlierInfo.outlierIds?.has(poll.nttId);
             const methodBadge = method.type === 'ARS'
-                ? '<span style="background:#6366f122;color:#818cf8;border:1px solid #6366f133;padding:0 5px;border-radius:3px;font-size:0.65rem;">ARS</span>'
+                ? '<span class="poll-card-method" style="background:rgba(99,102,241,0.12);color:#818cf8;">ARS</span>'
                 : method.type === '전화면접'
-                    ? '<span style="background:#22c55e15;color:#4ade80;border:1px solid #22c55e33;padding:0 5px;border-radius:3px;font-size:0.65rem;">전화면접</span>'
+                    ? '<span class="poll-card-method" style="background:rgba(34,197,94,0.1);color:#4ade80;">전화면접</span>'
                     : '';
 
-            return `<div class="poll-result-card${isOutlier ? ' poll-outlier' : ''}" ${isOutlier ? 'style="border:1px solid rgba(245,158,11,0.4);"' : ''}>
-                ${isOutlier ? '<div style="padding:4px 8px;background:rgba(245,158,11,0.08);border-radius:4px 4px 0 0;font-size:0.7rem;color:#f59e0b;"><i class="fas fa-exclamation-triangle"></i> 돌출 조사 — 다른 조사 평균과 크게 다릅니다</div>' : ''}
+            return `<div class="poll-result-card${isOutlier ? ' poll-outlier' : ''}">
+                ${isOutlier ? '<div style="padding:var(--space-4) var(--space-8);font-size:var(--text-micro);color:var(--color-warning);margin-bottom:var(--space-8);"><i class="fas fa-exclamation-triangle" style="margin-right:var(--space-4);"></i>돌출 조사 — 다른 조사 평균과 크게 다릅니다</div>' : ''}
                 <div class="poll-card-header">
                     <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
                     ${methodBadge}
