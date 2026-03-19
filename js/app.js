@@ -1722,13 +1722,13 @@ function renderCouncilProvinceView(regionKey, region) {
             } else {
                 const html = [`<div class="municipality-grid">`];
                 municipalities.forEach(([municipality, list]) => {
-                    const totalCandidates = list.reduce((sum, c) => sum + c.candidates.length, 0);
+                    const totalCandidates = list.reduce((sum, c) => sum + (c.candidates?.length || c.members?.length || 0), 0);
                     const constituencyCount = list.length;
                     const partyColor = ElectionData.getPartyColor(list[0]?.leadParty || 'independent');
                     html.push(`
                         <button class="municipality-card" data-municipality="${municipality}" style="border-color:${partyColor};">
                             <div class="municipality-name">${municipality} 광역의원</div>
-                            <div class="municipality-meta">${constituencyCount}개 지역구 · 후보 ${totalCandidates}명</div>
+                            <div class="municipality-meta">${constituencyCount}개 지역구 · ${totalCandidates}명</div>
                             <div class="municipality-hint">지도를 클릭하거나 탭에서 상세보기</div>
                         </button>
                     `);
