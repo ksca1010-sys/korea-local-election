@@ -1344,6 +1344,11 @@ const App = (() => {
         currentRegionKey = regionKey;
         currentDistrictName = null;
 
+        // 기초비례: 광역 선택 시 welcome 유지, 패널 안 열림
+        if (currentElectionType === 'localCouncilProportional') {
+            return;
+        }
+
         // Hide welcome, show content
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
@@ -1376,11 +1381,6 @@ const App = (() => {
                 break;
             default:
                 renderGovernorView(regionKey, region);
-        }
-
-        // 기초비례: 광역 선택 시 패널 열지 않음 (welcome 유지, 지도만 줌)
-        if (currentElectionType === 'localCouncilProportional') {
-            return;
         }
 
         // Switch to overview and show it
