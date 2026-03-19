@@ -4598,8 +4598,56 @@ function renderCouncilProvinceView(regionKey, region) {
             return;
         }
 
-        // ── 1. 최신 여론조사 바차트 제거 — 전체 카드 목록으로 통합 ──
+        // ── 0. 통합 추세 요약 (가중 이동평균) ──
         latestSection.style.display = 'none';
+        const consensusSummary = _calcConsensusTrend(polls);
+        if (consensusSummary) {
+            const summaryCard = document.createElement('div');
+            summaryCard.className = 'panel-card';
+            summaryCard.style.cssText = 'padding:12px;margin-bottom:12px;border-radius:8px;background:var(--accent-primary)06;border:1px solid var(--accent-primary)22;';
+            const maxEst = Math.max(...Object.values(consensusSummary.estimates));
+            let summaryHtml = `
+                <h4 style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:10px;">
+                    <i class="fas fa-chart-area" style="margin-right:4px;"></i> 통합 추정 (최근 ${consensusSummary.windowDays}일, ${consensusSummary.pollCount}건 가중평균)
+                </h4>
+            `;
+            Object.entries(consensusSummary.estimates)
+                .sort((a, b) => b[1] - a[1])
+                .forEach(([name, support]) => {
+                    const candidate = _findCandidateParty(polls, name);
+                    const pc = candidate ? ElectionData.getPartyColor(candidate) : '#808080';
+                    const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
+                    summaryHtml += `
+                        <div style="margin-bottom:6px;">
+                            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2px;">
+                                <span style="font-size:0.85rem;color:var(--text-primary);font-weight:500;">${name}</span>
+                                <span style="font-size:0.9rem;color:var(--text-primary);font-weight:600;">${support.toFixed(1)}%</span>
+                            </div>
+                            <div style="height:14px;background:var(--bg-secondary);border-radius:3px;overflow:hidden;">
+                                <div style="width:${barW}%;height:100%;background:${pc};border-radius:3px;"></div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+            // 1위-2위 격차 해석
+            const sorted = Object.entries(consensusSummary.estimates).sort((a, b) => b[1] - a[1]);
+            if (sorted.length >= 2) {
+                const gap = sorted[0][1] - sorted[1][1];
+                const avgMargin = consensusSummary.avgMargin || 3;
+                const gapLabel = gap <= avgMargin * 2
+                    ? `<span style="color:#f59e0b;"><i class="fas fa-balance-scale"></i> 접전 (격차 ${gap.toFixed(1)}%p, 평균 오차범위 ±${avgMargin.toFixed(1)}%p 내)</span>`
+                    : `<span style="color:var(--text-muted);">격차 ${gap.toFixed(1)}%p</span>`;
+                summaryHtml += `<div style="margin-top:6px;font-size:0.75rem;">${gapLabel}</div>`;
+            }
+
+            summaryHtml += `<div style="margin-top:6px;font-size:0.7rem;color:var(--text-muted);">※ 여러 기관의 조사를 최신성·표본크기 기반 가중평균한 추정치입니다.</div>`;
+            summaryCard.innerHTML = summaryHtml;
+            trendsSection.appendChild(summaryCard);
+        }
+
+        // ── 1. 돌출 조사 감지 ──
+        const outlierInfo = _detectOutliers(polls);
 
         // ── 2. 추이 차트 (같은 기관 2회 이상) ──
         const trendGroups = ElectionData.getTrendGroups(regionKey, electionType, districtName);
@@ -4685,10 +4733,19 @@ function renderCouncilProvinceView(regionKey, region) {
 
             const sourceUrl = poll.sourceUrl || `https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=${poll.nttId}&menuNo=200467`;
 
-            return `<div class="poll-result-card">
+            // 돌출 조사 여부
+            const isOutlier = outlierInfo.outlierIds?.has(poll.nttId);
+            const methodBadge = method.type === 'ARS'
+                ? '<span style="background:#6366f122;color:#818cf8;border:1px solid #6366f133;padding:0 5px;border-radius:3px;font-size:0.65rem;">ARS</span>'
+                : method.type === '전화면접'
+                    ? '<span style="background:#22c55e15;color:#4ade80;border:1px solid #22c55e33;padding:0 5px;border-radius:3px;font-size:0.65rem;">전화면접</span>'
+                    : '';
+
+            return `<div class="poll-result-card${isOutlier ? ' poll-outlier' : ''}" ${isOutlier ? 'style="border:1px solid rgba(245,158,11,0.4);"' : ''}>
+                ${isOutlier ? '<div style="padding:4px 8px;background:rgba(245,158,11,0.08);border-radius:4px 4px 0 0;font-size:0.7rem;color:#f59e0b;"><i class="fas fa-exclamation-triangle"></i> 돌출 조사 — 다른 조사 평균과 크게 다릅니다</div>' : ''}
                 <div class="poll-card-header">
                     <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
-                    <span class="poll-card-method">${method.type || ''}</span>
+                    ${methodBadge}
                     ${method.sampleSize ? `<span class="poll-card-sample">n=${method.sampleSize.toLocaleString()}</span>` : ''}
                 </div>
                 ${poll.clientOrg ? `<div class="poll-card-client" style="color:var(--text-muted);font-size:0.75rem;margin-top:2px;">의뢰: ${poll.clientOrg}</div>` : ''}
@@ -4721,6 +4778,80 @@ function renderCouncilProvinceView(regionKey, region) {
             </div>
             <div class="poll-cards-list">${cardListHtml}</div>
         `;
+    }
+
+    // ── 통합 추세 계산 (가중 이동평균) ──
+    function _calcConsensusTrend(polls, windowDays = 21) {
+        const cutoff = Date.now() - windowDays * 86400000;
+        const recent = polls.filter(p => {
+            const d = p.surveyDate?.end || p.publishDate || '';
+            return d && Date.parse(d) >= cutoff && p.results?.some(r => r.support > 0);
+        });
+
+        if (recent.length < 2) return null;
+
+        // 후보별 가중평균
+        const candidateMap = {};
+        let totalWeight = 0;
+        let totalMargin = 0;
+
+        recent.forEach(p => {
+            const surveyEnd = Date.parse(p.surveyDate?.end || p.publishDate || '');
+            const recency = Math.max(0.1, 1 - (Date.now() - surveyEnd) / (windowDays * 86400000));
+            const sampleWeight = Math.sqrt((p.method?.sampleSize || 500) / 1000);
+            const weight = recency * sampleWeight;
+            totalWeight += weight;
+            totalMargin += (p.method?.marginOfError || 3) * weight;
+
+            (p.results || []).forEach(r => {
+                if (!r.candidateName || r.support <= 0) return;
+                if (!candidateMap[r.candidateName]) candidateMap[r.candidateName] = { sum: 0, weight: 0 };
+                candidateMap[r.candidateName].sum += r.support * weight;
+                candidateMap[r.candidateName].weight += weight;
+            });
+        });
+
+        const estimates = {};
+        for (const [name, data] of Object.entries(candidateMap)) {
+            if (data.weight > 0) estimates[name] = data.sum / data.weight;
+        }
+
+        if (Object.keys(estimates).length < 2) return null;
+
+        return { estimates, pollCount: recent.length, windowDays, avgMargin: totalWeight > 0 ? totalMargin / totalWeight : 3 };
+    }
+
+    function _findCandidateParty(polls, candidateName) {
+        for (const p of polls) {
+            const r = (p.results || []).find(r => r.candidateName === candidateName);
+            if (r?.party) return r.party;
+        }
+        return 'independent';
+    }
+
+    // ── 돌출 조사 감지 ──
+    function _detectOutliers(polls) {
+        const withResults = polls.filter(p => p.results?.length >= 2 && p.results.some(r => r.support > 0));
+        if (withResults.length < 4) return { outlierIds: new Set() };
+
+        // 1위-2위 격차 계산
+        const gaps = withResults.map(p => {
+            const sorted = [...p.results].filter(r => r.support > 0).sort((a, b) => b.support - a.support);
+            return { nttId: p.nttId, gap: sorted.length >= 2 ? sorted[0].support - sorted[1].support : 0 };
+        });
+
+        const avgGap = gaps.reduce((s, g) => s + g.gap, 0) / gaps.length;
+        const sdGap = Math.sqrt(gaps.reduce((s, g) => s + Math.pow(g.gap - avgGap, 2), 0) / gaps.length);
+
+        const outlierIds = new Set();
+        if (sdGap > 0) {
+            gaps.forEach(g => {
+                const z = Math.abs(g.gap - avgGap) / sdGap;
+                if (z >= 2.0) outlierIds.add(g.nttId);
+            });
+        }
+
+        return { outlierIds };
     }
 
     function getElectionTypeLabel(type) {
