@@ -367,10 +367,12 @@ const ProportionalTab = (() => {
                 return;
             }
 
+            const isLocal = electionType === 'localCouncilProportional';
             let html = `<div class="panel-section">
                 <h4 style="color:var(--text-secondary);margin-bottom:12px;">
                     <i class="fas fa-history" style="margin-right:6px;"></i> 역대 비례대표 투표 결과
-                </h4>`;
+                </h4>
+                ${isLocal ? '<p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;"><i class="fas fa-info-circle" style="margin-right:4px;"></i>당선 정당의 의석 배분만 표시됩니다. 전체 정당 득표율은 선관위 원본에서 확인하세요.</p>' : ''}`;
 
             histData.elections.sort((a, b) => b.electionNumber - a.electionNumber).forEach(el => {
                 html += `
