@@ -1601,7 +1601,7 @@ const App = (() => {
         document.getElementById('panel-region-name').textContent = `${region.name} ${label}`;
         document.getElementById('panel-region-info').textContent = `${label} · 정당 투표로 의석 배분`;
 
-        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
         // ProportionalTab으로 개요 렌더링 위임 (개요 박스 + 현직자 정보 박스 모두 처리)
@@ -1626,7 +1626,7 @@ const App = (() => {
         document.getElementById('panel-region-name').textContent = `${region.name} 기초의원 비례대표`;
         document.getElementById('panel-region-info').textContent = `시군구를 선택하면 기초비례 정보를 확인할 수 있습니다.`;
 
-        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        configurePanelTabs(['overview', 'candidates', 'news', 'history']);
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
@@ -2130,7 +2130,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-name').textContent = `${districtName} 기초의원 비례대표`;
         document.getElementById('panel-region-info').textContent = `${regionName} ${districtName} · 정당 투표로 의석 배분`;
 
-        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
         const welcome = document.getElementById('panel-welcome');
