@@ -1767,27 +1767,7 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     function showCouncilConstituencyDetail(regionKey, municipality, district) {
-        const govContainer = document.getElementById('current-governor');
-        if (!govContainer) return;
-
-        document.getElementById('panel-region-name').textContent = `${municipality} ${district.name}`;
-        document.getElementById('panel-region-info').textContent = `${district.seats}석 · 후보 ${district.candidates.length}명`;
-
-        govContainer.innerHTML = `
-            <div>
-                <h5 style="color:var(--text-secondary);margin-bottom:8px;">${district.name} 후보</h5>
-                ${district.candidates.map(c => {
-                    const partyColor = ElectionData.getPartyColor(c.party);
-                    return `
-                        <div style="padding:8px;margin-bottom:6px;border-radius:6px;background:var(--bg-secondary);border-left:3px solid ${partyColor}">
-                            <strong style="color:var(--text-primary)">${c.name}</strong>
-                            <span class="party-badge" style="background:${partyColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;margin-left:6px">${ElectionData.getPartyName(c.party)}</span>
-                            <div style="color:var(--text-muted);font-size:0.8rem;margin-top:4px">${c.career} | ${c.age}세</div>
-                        </div>
-                    `;
-                }).join('')}
-            </div>
-        `;
+        onConstituencySelected(regionKey, municipality, district.name);
     }
 
     function showCouncilSubdistrictPanel(regionKey, districtName) {
