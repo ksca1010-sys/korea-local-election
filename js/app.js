@@ -1971,6 +1971,8 @@ function renderCouncilProvinceView(regionKey, region) {
             showMayorDistrictDetail(regionKey, districtName);
         } else if (currentElectionType === 'localCouncil') {
             showLocalCouncilDistrictDetail(regionKey, districtName);
+        } else if (currentElectionType === 'localCouncilProportional') {
+            showLocalCouncilProportionalDetail(regionKey, districtName);
         } else {
             switchTabForRegion();
             openPanel();
@@ -2084,6 +2086,40 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const govContainer = document.getElementById('current-governor');
         if (govContainer) govContainer.innerHTML = '';
+        const issuesContainer = document.getElementById('key-issues');
+        if (issuesContainer) issuesContainer.innerHTML = '';
+
+        switchTabForRegion();
+        openPanel();
+
+        if (MapModule.updateBreadcrumb) {
+            MapModule.updateBreadcrumb('district', regionKey, districtName);
+        }
+    }
+
+    // ============================================
+    // Local Council Proportional District Detail (기초비례 시군구 선택)
+    // ============================================
+    function showLocalCouncilProportionalDetail(regionKey, districtName) {
+        const region = ElectionData.getRegion(regionKey);
+        const regionName = region?.name || '';
+
+        currentDistrictName = districtName;
+
+        document.getElementById('panel-region-name').textContent = `${districtName} 기초의원 비례대표`;
+        document.getElementById('panel-region-info').textContent = `${regionName} ${districtName} · 정당 투표로 의석 배분`;
+
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        toggleSuperintendentSummary(false);
+
+        const welcome = document.getElementById('panel-welcome');
+        if (welcome) welcome.style.display = 'none';
+
+        // ProportionalTab으로 개요+현직자 렌더링 위임
+        if (typeof ProportionalTab !== 'undefined') {
+            ProportionalTab.renderOverview(regionKey, 'localCouncilProportional');
+        }
+
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) issuesContainer.innerHTML = '';
 
