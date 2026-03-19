@@ -1369,13 +1369,18 @@ const App = (() => {
                 renderCouncilProportionalView(regionKey, region);
                 break;
             case 'localCouncilProportional':
-                // 기초비례는 시군구 선택 전에는 패널 안 열림
-                return;
+                // 기초비례는 시군구 선택 전에는 패널 안 열림 (welcome 유지)
+                break;
             case 'byElection':
                 renderGovernorView(regionKey, region);
                 break;
             default:
                 renderGovernorView(regionKey, region);
+        }
+
+        // 기초비례: 광역 선택 시 패널 열지 않음 (welcome 유지, 지도만 줌)
+        if (currentElectionType === 'localCouncilProportional') {
+            return;
         }
 
         // Switch to overview and show it
