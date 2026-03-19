@@ -79,25 +79,33 @@ const ProportionalTab = (() => {
         const prevContainer = document.getElementById('prev-election-result');
         if (!prevContainer) return;
 
-        let html = `<div class="council-overview">`;
+        const isMetro = electionType === 'councilProportional';
+        const typeDesc = isMetro
+            ? '광역의회(시·도의회) 비례대표는 지역구 투표와 별도로 정당에 투표하여, 정당 득표율에 따라 의석을 배분하는 제도입니다.'
+            : '기초의회(구·시·군의회) 비례대표는 지역구 투표와 별도로 정당에 투표하여, 정당 득표율에 따라 의석을 배분하는 제도입니다.';
 
-        // ── 비례대표 개요 ──
-        html += `
-            <div style="padding:12px;margin-bottom:12px;border-radius:8px;background:var(--bg-secondary);">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">${displayName}</span>
-                    <span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--accent-primary)15;color:var(--accent-primary);border:1px solid var(--accent-primary)33;">
-                        ${totalSeats}석
-                    </span>
+        prevContainer.innerHTML = `
+            <div style="padding:14px;border-radius:10px;background:var(--bg-secondary);border:1px solid var(--border-color);">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                    <i class="fas fa-landmark" style="color:var(--accent-primary);font-size:1.1rem;"></i>
+                    <span style="font-size:0.95rem;font-weight:600;color:var(--text-primary);">${isMetro ? '광역의원' : '기초의원'} 비례대표</span>
                 </div>
-                <p style="color:var(--text-muted);font-size:0.82rem;line-height:1.5;">
-                    유권자는 정당에 투표하고, 정당 득표율에 따라 의석이 배분됩니다.
+                <p style="color:var(--text-secondary);font-size:0.82rem;line-height:1.6;margin-bottom:12px;">
+                    ${typeDesc}
                 </p>
+                <div style="display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:8px;background:var(--accent-primary)08;border:1px solid var(--accent-primary)22;">
+                    <div style="text-align:center;">
+                        <div style="font-size:1.4rem;font-weight:700;color:var(--accent-primary);">${totalSeats}</div>
+                        <div style="font-size:0.7rem;color:var(--text-muted);">배분 의석</div>
+                    </div>
+                    <div style="width:1px;height:28px;background:var(--border-color);"></div>
+                    <div style="font-size:0.78rem;color:var(--text-muted);line-height:1.5;">
+                        ${_currentDistrictName ? `${_currentDistrictName}` : regionName} 지역<br>
+                        정당 득표율 비례배분 (5% 봉쇄조항)
+                    </div>
+                </div>
             </div>
         `;
-
-        html += `</div>`;
-        prevContainer.innerHTML = html;
 
         // ── 현직 비례대표 의원 → "현직자 정보" 박스에 표시 ──
         const govContainer = document.getElementById('current-governor');
