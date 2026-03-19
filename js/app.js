@@ -2112,7 +2112,6 @@ function renderCouncilProvinceView(regionKey, region) {
     // Local Council Proportional District Detail (기초비례 시군구 선택)
     // ============================================
     function showLocalCouncilProportionalDetail(regionKey, districtName) {
-        console.log('[APP-DEBUG] showLocalCouncilProportionalDetail', regionKey, districtName);
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
 
@@ -2134,6 +2133,8 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) issuesContainer.innerHTML = '';
+
+        renderNewsTab(regionKey);
 
         switchTabForRegion();
         openPanel();

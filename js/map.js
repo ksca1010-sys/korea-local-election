@@ -3567,7 +3567,6 @@ const MapModule = (() => {
         updateBreadcrumb('district', regionKey, sggName);
 
         // App에 시군구 선택 알림
-        console.log('[MAP-DEBUG] switchToProportionalSigunguDetail', regionKey, sggName);
         if (typeof App !== 'undefined' && App.onDistrictSelected) {
             App.onDistrictSelected(regionKey, sggName);
         }
