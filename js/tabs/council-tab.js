@@ -223,7 +223,6 @@ const CouncilTab = (() => {
                     <div style="margin-bottom:8px;padding:8px 10px;border-radius:6px;background:var(--bg-secondary);${isWinner ? 'border:1px solid ' + pc + '44;' : ''}">
                         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
                             <div style="display:flex;align-items:center;gap:6px;">
-                                ${isWinner ? '<i class="fas fa-crown" style="color:#f59e0b;font-size:0.65rem;"></i>' : '<span style="width:12px;"></span>'}
                                 <strong style="font-size:0.85rem;color:var(--text-primary);">${w.name}</strong>
                                 <span style="padding:0 6px;border-radius:3px;font-size:0.65rem;background:${pc}20;color:${pc};border:1px solid ${pc}33;">${pn}</span>
                                 ${isWinner ? '<span style="font-size:0.6rem;color:#f59e0b;font-weight:600;">당선</span>' : ''}
@@ -504,7 +503,7 @@ const CouncilTab = (() => {
                 const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                 const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                 const rateText = w.rate ? `${w.rate}%` : '';
-                const rankIcon = i === 0 ? '<i class="fas fa-crown" style="color:#f59e0b;margin-right:4px;font-size:0.7rem;"></i>' : '';
+                const rankIcon = '';
 
                 html += `
                     <div style="margin-bottom:10px;">
