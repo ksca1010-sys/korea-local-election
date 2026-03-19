@@ -257,8 +257,11 @@ const ProportionalTab = (() => {
                 ? '<span style="background:#22c55e15;color:#4ade80;border:1px solid #22c55e33;padding:0 5px;border-radius:3px;font-size:0.65rem;">전화면접</span>'
                 : '';
 
+        const titleText = poll.title ? poll.title.replace(/\s+/g, ' ').trim() : '';
+
         return `
             <div class="poll-result-card">
+                ${titleText ? `<div style="font-size:0.75rem;color:var(--text-muted);padding:6px 10px 0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${titleText}</div>` : ''}
                 <div class="poll-card-header">
                     <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
                     ${methodBadge}

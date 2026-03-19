@@ -2679,22 +2679,24 @@ const ElectionData = (() => {
             return Object.values(partyMap).sort((a, b) => b.seats - a.seats);
         },
 
-        // ── 정당지지도 (비례대표용) — 순수 정당지지도만, 인물/잡음 완전 제외 ──
+        // ── 정당지지도 (비례대표용) — 순수 정당지지도만 ──
         getPartySupport(regionKey) {
             if (!this._pollsCache?.regions?.[regionKey]) return [];
-            // 정확 일치 화이트리스트
             const ALLOWED = new Set([
                 '더불어민주당','국민의힘','조국혁신당','개혁신당','진보당','정의당',
                 '무소속','새로운미래','기타','기타정당','모름/무응답','없음','모르겠다',
                 '무응답','기본소득당','녹색당','노동당','사회민주당',
             ]);
+            // 제외 키워드: 후보 지지율 조사에 딸린 정당지지도
+            const EXCLUDE_TITLE = ['기초단체장', '국회의원', '시장선거', '구청장', '군수'];
             return this._pollsCache.regions[regionKey].filter(p => {
                 const title = p.title || '';
                 const types = p.classification?.electionTypes || [];
                 if (!title.includes('정당지지도') && !types.includes('정당지지도')) return false;
+                // title에 기초단체장/국회의원 등이 포함되면 제외 (혼합 조사)
+                if (EXCLUDE_TITLE.some(kw => title.includes(kw))) return false;
                 const results = (p.results || []).filter(r => r.support > 0);
                 if (results.length < 2) return false;
-                // 모든 candidateName이 화이트리스트에 정확히 있어야 함
                 return results.every(r => !r.candidateName || ALLOWED.has(r.candidateName));
             });
         },
