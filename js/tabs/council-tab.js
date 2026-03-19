@@ -136,7 +136,7 @@ const CouncilTab = (() => {
             `;
         }
 
-        // ── 현직 의원 정보 (핵심) ──
+        // ── 현직 의원 정보 ──
         html += `
             <div style="margin-bottom:12px;">
                 <h5 style="color:var(--text-secondary);margin-bottom:6px;font-size:0.85rem;">
@@ -167,11 +167,90 @@ const CouncilTab = (() => {
             html += `<p style="color:var(--text-muted);font-size:0.85rem;padding:8px;">현직 의원 정보가 없습니다.</p>`;
         }
 
-        html += `</div></div>`;
+        html += `</div>`;
+
+        // ── 지난 선거 결과 (개요에 통합) ──
+        html += `<div id="council-overview-history" style="margin-bottom:12px;"><div class="panel-loading" style="padding:12px;"><div class="panel-loading-spinner"></div></div></div>`;
+
+        html += `</div>`;
         prevContainer.innerHTML = html;
+
+        // 지난 선거 결과 비동기 로드
+        _loadPrevElectionInOverview(regionKey, districtName, electionType);
 
         const govContainer = document.getElementById('current-governor');
         if (govContainer) govContainer.innerHTML = '';
+    }
+
+    function _loadPrevElectionInOverview(regionKey, districtName, electionType) {
+        loadCouncilHistory().then(data => {
+            const container = document.getElementById('council-overview-history');
+            if (!container || !data) {
+                if (container) container.innerHTML = '';
+                return;
+            }
+
+            let winners = [];
+            if (electionType === 'council') {
+                winners = data.council?.[regionKey]?.[districtName] || [];
+                if (!winners.length) {
+                    const normalized = districtName.replace(/\s+/g, '');
+                    for (const [k, v] of Object.entries(data.council?.[regionKey] || {})) {
+                        if (k.replace(/\s+/g, '') === normalized) { winners = v; break; }
+                    }
+                }
+            } else {
+                const normalized = districtName.replace(/\s+/g, '');
+                for (const [sgg, districts] of Object.entries(data.local_council?.[regionKey] || {})) {
+                    for (const [dk, dv] of Object.entries(districts)) {
+                        if (dk === districtName || dk.replace(/\s+/g, '') === normalized) { winners = dv; break; }
+                    }
+                    if (winners.length) break;
+                }
+            }
+
+            if (!winners.length) {
+                container.innerHTML = '';
+                return;
+            }
+
+            const sorted = [...winners].sort((a, b) => b.votes - a.votes);
+            const maxVotes = sorted[0]?.votes || 1;
+            const totalVotes = sorted.reduce((s, w) => s + w.votes, 0);
+
+            let html = `
+                <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
+                    <i class="fas fa-poll" style="margin-right:4px;"></i> 제8회 지방선거 결과 (2022)
+                </h5>
+            `;
+
+            sorted.forEach((w, i) => {
+                const pc = ElectionData.getPartyColor(w.party || 'independent');
+                const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
+                const voteRate = w.rate || (totalVotes > 0 ? (w.votes / totalVotes * 100).toFixed(1) : '0');
+                const isWinner = i === 0;
+
+                html += `
+                    <div style="margin-bottom:8px;padding:8px 10px;border-radius:6px;background:var(--bg-secondary);${isWinner ? 'border:1px solid ' + pc + '44;' : ''}">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+                            <div style="display:flex;align-items:center;gap:6px;">
+                                ${isWinner ? '<i class="fas fa-crown" style="color:#f59e0b;font-size:0.65rem;"></i>' : '<span style="width:12px;"></span>'}
+                                <strong style="font-size:0.85rem;color:var(--text-primary);">${w.name}</strong>
+                                <span style="padding:0 6px;border-radius:3px;font-size:0.65rem;background:${pc}20;color:${pc};border:1px solid ${pc}33;">${pn}</span>
+                                ${isWinner ? '<span style="font-size:0.6rem;color:#f59e0b;font-weight:600;">당선</span>' : ''}
+                            </div>
+                            <span style="font-size:0.8rem;color:var(--text-secondary);font-weight:500;">${voteRate}%</span>
+                        </div>
+                        <div style="height:14px;background:var(--bg-tertiary);border-radius:3px;overflow:hidden;">
+                            <div style="width:${barWidth}%;height:100%;background:${pc};border-radius:3px;"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+        });
     }
 
     // ── 여론조사탭 ──
