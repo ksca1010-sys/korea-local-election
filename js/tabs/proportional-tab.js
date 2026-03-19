@@ -96,51 +96,43 @@ const ProportionalTab = (() => {
             </div>
         `;
 
-        // ── 현직 비례대표 의원 ──
-        const incumbents = histData?.incumbents || {};
-        const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
-
-        // 소스 우선순위: histData.incumbents > propCandidates.parties
-        const partyGroups = Object.keys(incumbents).length > 0
-            ? Object.entries(incumbents).sort((a, b) => b[1].length - a[1].length)
-            : (propCandidates?.parties || []).filter(p => p.candidates?.length).map(p => [
-                ElectionData.getPartyName(p.party), p.candidates
-            ]);
-
-        if (partyGroups.length > 0) {
-            html += `
-                <div style="margin-bottom:12px;">
-                    <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
-                        <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 비례대표 의원 (제8회 당선)
-                    </h5>
-            `;
-            partyGroups.forEach(([partyName, members]) => {
-                const pc = ElectionData.getPartyColor(
-                    _partyNameToKey(partyName)
-                );
-                html += `
-                    <div style="margin-bottom:8px;padding:10px 12px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
-                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-                            <span style="width:8px;height:8px;border-radius:50%;background:${pc};flex-shrink:0;"></span>
-                            <span style="font-weight:600;font-size:0.85rem;color:${pc};">${partyName}</span>
-                            <span style="color:var(--text-muted);font-size:0.75rem;">(${members.length}석)</span>
-                        </div>
-                        <div style="color:var(--text-secondary);font-size:0.82rem;line-height:1.6;padding-left:14px;">
-                            ${members.map(m => m.name).join(' · ')}
-                        </div>
-                    </div>
-                `;
-            });
-            html += `</div>`;
-        }
-
-        // 지난 선거 결과는 역대비교탭에서 표시 (개요에서 제거)
-
         html += `</div>`;
         prevContainer.innerHTML = html;
 
+        // ── 현직 비례대표 의원 → "현직자 정보" 박스에 표시 ──
         const govContainer = document.getElementById('current-governor');
-        if (govContainer) govContainer.innerHTML = '';
+        if (govContainer) {
+            const incumbents = histData?.incumbents || {};
+            const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
+
+            const partyGroups = Object.keys(incumbents).length > 0
+                ? Object.entries(incumbents).sort((a, b) => b[1].length - a[1].length)
+                : (propCandidates?.parties || []).filter(p => p.candidates?.length).map(p => [
+                    ElectionData.getPartyName(p.party), p.candidates
+                ]);
+
+            if (partyGroups.length > 0) {
+                let govHtml = '';
+                partyGroups.forEach(([partyName, members]) => {
+                    const pc = ElectionData.getPartyColor(_partyNameToKey(partyName));
+                    govHtml += `
+                        <div style="margin-bottom:8px;padding:8px 10px;border-radius:6px;background:var(--bg-secondary);border-left:3px solid ${pc};">
+                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                                <span style="width:8px;height:8px;border-radius:50%;background:${pc};flex-shrink:0;"></span>
+                                <span style="font-weight:600;font-size:0.85rem;color:${pc};">${partyName}</span>
+                                <span style="color:var(--text-muted);font-size:0.75rem;">(${members.length}석)</span>
+                            </div>
+                            <div style="color:var(--text-secondary);font-size:0.82rem;line-height:1.6;padding-left:14px;">
+                                ${members.map(m => m.name).join(' · ')}
+                            </div>
+                        </div>
+                    `;
+                });
+                govContainer.innerHTML = govHtml;
+            } else {
+                govContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">현직 비례대표 의원 정보가 없습니다.</p>';
+            }
+        }
     }
 
     function _partyNameToKey(name) {
