@@ -214,7 +214,7 @@ const CouncilTab = (() => {
 
             sorted.forEach((w, i) => {
                 const pc = ElectionData.getPartyColor(w.party || 'independent');
-                const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
                 const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                 const voteRate = w.rate || (totalVotes > 0 ? (w.votes / totalVotes * 100).toFixed(1) : '0');
                 const isWinner = i === 0;
@@ -478,7 +478,7 @@ const CouncilTab = (() => {
                     if (isUncontested) {
                         const w = sorted[0];
                         const pc = ElectionData.getPartyColor(w.party || 'independent');
-                        const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                        const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
                         html += `
                             <div style="display:flex;align-items:center;gap:8px;">
                                 <span style="font-size:0.85rem;color:${pc};font-weight:600;">${w.name}</span>
@@ -489,7 +489,7 @@ const CouncilTab = (() => {
                     } else {
                         sorted.forEach(w => {
                             const pc = ElectionData.getPartyColor(w.party || 'independent');
-                            const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                            const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
                             const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                             const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
 
@@ -565,7 +565,7 @@ const CouncilTab = (() => {
 
             sorted.forEach((w, i) => {
                 const pc = ElectionData.getPartyColor(w.party || 'independent');
-                const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
                 const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                 const rateText = w.rate ? `${w.rate}%` : '';
                 const rankIcon = '';
