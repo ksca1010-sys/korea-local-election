@@ -144,9 +144,20 @@ const ProportionalTab = (() => {
     }
 
     function _partyNameToKey(name) {
-        const map = {'더불어민주당':'democratic','국민의힘':'ppp','정의당':'justice',
+        const map = {
+            // 현행 정당
+            '더불어민주당':'democratic','국민의힘':'ppp','정의당':'justice',
             '진보당':'progressive','무소속':'independent','조국혁신당':'reform',
-            '개혁신당':'newReform','기본소득당':'basicIncome'};
+            '개혁신당':'newReform','기본소득당':'basicIncome',
+            // 역대 보수 계열
+            '한나라당':'ppp','새누리당':'ppp','자유한국당':'ppp','친박연합':'ppp',
+            // 역대 민주 계열
+            '민주당':'democratic','새정치민주연합':'democratic','민주평화당':'democratic',
+            // 역대 진보 계열
+            '민주노동당':'progressive','통합진보당':'progressive',
+            // 역대 중도/기타
+            '바른미래당':'newReform','자유선진당':'independent','국민참여당':'democratic',
+        };
         return map[name] || 'independent';
     }
 
