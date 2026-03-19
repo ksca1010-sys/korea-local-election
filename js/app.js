@@ -1345,7 +1345,11 @@ const App = (() => {
         currentDistrictName = null;
 
         // 기초비례: 광역 선택 시 welcome 유지, 패널 안 열림
+        // 단, subDistrict가 있으면 시군구 detail로 바로 이동
         if (currentElectionType === 'localCouncilProportional') {
+            if (options?.subDistrict) {
+                showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
+            }
             return;
         }
 
