@@ -98,53 +98,40 @@ const ProportionalTab = (() => {
                     </div>
             `;
 
-            // 현재 정당별 비례 의석 (8회 지선)
+            // 현직 비례대표 의원 (정당별 의석 + 의원명)
+            const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
+
             if (proportionalData?.parties?.length) {
-                html += `<h5 style="margin-top:12px;color:var(--text-secondary);font-size:0.85rem;"><i class="fas fa-chart-pie" style="margin-right:4px;"></i> 현 의석 구성 (제8회)</h5>`;
-                html += `<div style="margin-top:8px;">`;
+                html += `
+                    <h5 style="margin-top:12px;color:var(--text-secondary);font-size:0.85rem;">
+                        <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 비례대표 의원 (제8회 당선)
+                    </h5>
+                `;
+
                 proportionalData.parties.forEach(p => {
                     const pc = ElectionData.getPartyColor(p.party);
                     const pn = ElectionData.getPartyName(p.party);
-                    const barWidth = totalSeats > 0 ? (p.seats / totalSeats * 100) : 0;
-                    html += `
-                        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-                            <span style="width:8px;height:8px;border-radius:50%;background:${pc};flex-shrink:0"></span>
-                            <span style="min-width:80px;color:var(--text-primary);font-size:0.85rem;">${pn}</span>
-                            <div style="flex:1;height:16px;background:var(--bg-secondary);border-radius:4px;overflow:hidden;">
-                                <div style="width:${barWidth}%;height:100%;background:${pc};border-radius:4px;"></div>
-                            </div>
-                            <span style="min-width:30px;text-align:right;color:var(--text-secondary);font-size:0.85rem;">${p.seats}석</span>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
-            }
+                    // 해당 정당의 현직 의원 이름 조회
+                    const partyMembers = propCandidates?.parties?.find(pp => pp.party === p.party)?.candidates || [];
 
-            // 현직 비례대표 의원 명단
-            const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
-            if (propCandidates?.parties?.length) {
-                html += `
-                    <h5 style="margin-top:16px;color:var(--text-secondary);font-size:0.85rem;">
-                        <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 비례대표 의원
-                    </h5>
-                `;
-                propCandidates.parties.forEach(party => {
-                    if (!party.candidates?.length) return;
-                    const pc = ElectionData.getPartyColor(party.party);
-                    const pn = ElectionData.getPartyName(party.party);
                     html += `
-                        <div style="margin-top:8px;padding:10px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
-                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
-                                <strong style="color:${pc};font-size:0.85rem;">${pn}</strong>
-                                <span style="color:var(--text-muted);font-size:0.75rem;">${party.candidates.length}명</span>
+                        <div style="margin-bottom:10px;padding:10px 12px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
+                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+                                <div style="display:flex;align-items:center;gap:6px;">
+                                    <span style="padding:1px 8px;border-radius:4px;font-size:0.7rem;background:${pc};color:white;">${pn}</span>
+                                    <span style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">${p.seats}석</span>
+                                </div>
+                                ${p.voteShare ? `<span style="font-size:0.75rem;color:var(--text-muted);">득표 ${p.voteShare}%</span>` : ''}
                             </div>
-                            <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                                ${party.candidates.map(c => `
-                                    <span style="font-size:0.78rem;padding:2px 8px;border-radius:4px;background:${pc}12;color:var(--text-primary);border:1px solid ${pc}22;">
-                                        ${c.name}
-                                    </span>
-                                `).join('')}
-                            </div>
+                            ${partyMembers.length > 0 ? `
+                                <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                                    ${partyMembers.map(c => `
+                                        <span style="font-size:0.78rem;padding:2px 8px;border-radius:4px;background:${pc}10;color:var(--text-primary);border:1px solid ${pc}22;">
+                                            ${c.name}
+                                        </span>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
                         </div>
                     `;
                 });
