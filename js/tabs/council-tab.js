@@ -343,24 +343,132 @@ const CouncilTab = (() => {
 
     // ── 역대비교탭 ──
 
-    function renderHistory(regionKey, districtName, electionType) {
-        if (typeof HistoryTab !== 'undefined') {
-            HistoryTab.render(regionKey, electionType, districtName);
-            return;
-        }
+    const _historyCache = {};
 
+    function loadCouncilHistory() {
+        if (_historyCache.data) return Promise.resolve(_historyCache.data);
+        return fetch('data/council_history.json')
+            .then(r => r.ok ? r.json() : null)
+            .then(data => { _historyCache.data = data; return data; })
+            .catch(() => null);
+    }
+
+    function renderHistory(regionKey, districtName, electionType) {
         const container = document.getElementById('tab-history');
-        if (container) {
-            container.innerHTML = `
+        if (!container) return;
+
+        container.innerHTML = '<div class="panel-section"><div class="panel-loading"><div class="panel-loading-spinner"></div></div></div>';
+
+        loadCouncilHistory().then(data => {
+            if (!data) {
+                container.innerHTML = '<div class="panel-section"><div class="district-no-data"><p>역대 선거 데이터를 불러올 수 없습니다.</p></div></div>';
+                return;
+            }
+
+            let winners = [];
+            let matchKey = '';
+
+            if (electionType === 'council') {
+                // 광역의원: council.{regionKey}.{districtName}
+                winners = data.council?.[regionKey]?.[districtName] || [];
+                matchKey = districtName;
+
+                // 선거구명 매칭 시도 (공백 유무 차이)
+                if (!winners.length) {
+                    const normalized = districtName.replace(/\s+/g, '');
+                    const regionData = data.council?.[regionKey] || {};
+                    for (const [k, v] of Object.entries(regionData)) {
+                        if (k.replace(/\s+/g, '') === normalized) {
+                            winners = v;
+                            matchKey = k;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                // 기초의원: local_council.{regionKey}.{sigungu}.{districtName}
+                // districtName 형식: "종로구가선거구" or "종로구 가선거구"
+                const regionData = data.local_council?.[regionKey] || {};
+                const normalized = districtName.replace(/\s+/g, '');
+
+                for (const [sgg, districts] of Object.entries(regionData)) {
+                    for (const [dk, dv] of Object.entries(districts)) {
+                        if (dk === districtName || dk.replace(/\s+/g, '') === normalized) {
+                            winners = dv;
+                            matchKey = dk;
+                            break;
+                        }
+                    }
+                    if (winners.length) break;
+                }
+            }
+
+            if (!winners.length) {
+                container.innerHTML = `
+                    <div class="panel-section">
+                        <div class="district-no-data">
+                            <p>이 선거구의 제8회 지선 결과를 찾을 수 없습니다.</p>
+                            <p style="margin-top:4px;color:var(--text-muted);font-size:0.8rem;">
+                                <i class="fas fa-info-circle"></i> 선거구 경계가 이전 선거와 다를 수 있습니다.
+                            </p>
+                        </div>
+                    </div>`;
+                return;
+            }
+
+            // 당선자 결과 렌더링
+            const sorted = [...winners].sort((a, b) => b.votes - a.votes);
+            const maxVotes = sorted[0]?.votes || 1;
+            const label = getElectionLabel(electionType);
+
+            let html = `
                 <div class="panel-section">
-                    <div class="district-no-data">
-                        <p>이 선거구의 역대 선거 결과를 준비 중입니다.</p>
-                        <p style="margin-top:4px;color:var(--text-muted);font-size:0.8rem;">
-                            <i class="fas fa-info-circle"></i> 선거구 경계가 이전 선거와 다를 수 있습니다.
-                        </p>
+                    <h4 style="color:var(--text-secondary);margin-bottom:12px;">
+                        <i class="fas fa-history" style="margin-right:6px;"></i>
+                        제8회 지방선거 결과 (2022)
+                    </h4>
+                    <div style="padding:8px 10px;margin-bottom:12px;border-radius:6px;background:var(--bg-secondary);font-size:0.8rem;color:var(--text-muted);">
+                        ${matchKey} · ${label} · 당선 ${sorted.length}명
                     </div>
-                </div>`;
-        }
+            `;
+
+            sorted.forEach((w, i) => {
+                const pc = ElectionData.getPartyColor(w.party || 'independent');
+                const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
+                const rateText = w.rate ? `${w.rate}%` : '';
+                const rankIcon = i === 0 ? '<i class="fas fa-crown" style="color:#f59e0b;margin-right:4px;font-size:0.7rem;"></i>' : '';
+
+                html += `
+                    <div style="margin-bottom:10px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+                            <div style="display:flex;align-items:center;gap:6px;">
+                                ${rankIcon}
+                                <strong style="color:var(--text-primary);font-size:0.9rem;">${w.name}</strong>
+                                <span style="padding:1px 6px;border-radius:3px;font-size:0.65rem;background:${pc};color:white;">${pn}</span>
+                            </div>
+                            <div style="text-align:right;">
+                                <span style="color:var(--text-primary);font-size:0.85rem;font-weight:600;">${w.votes.toLocaleString()}표</span>
+                                ${rateText ? `<span style="color:var(--text-muted);font-size:0.75rem;margin-left:4px;">(${rateText})</span>` : ''}
+                            </div>
+                        </div>
+                        <div style="height:20px;background:var(--bg-secondary);border-radius:4px;overflow:hidden;">
+                            <div style="width:${barWidth}%;height:100%;background:${pc};border-radius:4px;transition:width 0.5s;"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            html += `
+                    <p style="margin-top:12px;padding:8px;border-radius:6px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);color:var(--text-muted);font-size:0.75rem;">
+                        <i class="fas fa-exclamation-triangle" style="color:#f59e0b;margin-right:4px;"></i>
+                        선거구 경계가 이전 선거와 다를 수 있습니다. 단순 비교에 유의하세요.
+                    </p>
+                </div>
+            `;
+
+            container.innerHTML = html;
+        });
     }
 
     // ── Public API ──
