@@ -464,31 +464,46 @@ const CouncilTab = (() => {
 
                     const sorted = [...winners].sort((a, b) => b.votes - a.votes);
                     const maxVotes = sorted[0]?.votes || 1;
+                    const isUncontested = sorted.length === 1 && (!sorted[0].votes || sorted[0].rate === '0' || sorted[0].rate === '');
 
                     html += `
                         <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
-                            <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);font-weight:600;font-size:0.85rem;color:var(--text-primary);">
-                                제${num}회 (${electionYears[num]})
+                            <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+                                <span style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">제${num}회 (${electionYears[num]})</span>
+                                ${isUncontested ? '<span style="font-size:0.65rem;color:var(--text-muted);background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;">무투표 당선</span>' : ''}
                             </div>
                             <div style="padding:12px;">
                     `;
 
-                    sorted.forEach(w => {
+                    if (isUncontested) {
+                        const w = sorted[0];
                         const pc = ElectionData.getPartyColor(w.party || 'independent');
                         const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
-                        const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
-                        const rateText = w.rate ? `${w.rate}%` : '';
-
                         html += `
-                            <div style="display:grid;grid-template-columns:80px 1fr 55px;align-items:center;gap:8px;margin-bottom:6px;">
-                                <span style="font-size:0.82rem;color:${pc};font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${pn}</span>
-                                <div style="height:18px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
-                                    <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;"></div>
-                                </div>
-                                <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${rateText || w.votes.toLocaleString()}</span>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span style="font-size:0.85rem;color:${pc};font-weight:600;">${w.name}</span>
+                                <span style="padding:1px 6px;border-radius:3px;font-size:0.65rem;background:${pc};color:white;">${pn}</span>
+                                <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto;">무투표 당선</span>
                             </div>
                         `;
-                    });
+                    } else {
+                        sorted.forEach(w => {
+                            const pc = ElectionData.getPartyColor(w.party || 'independent');
+                            const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
+                            const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
+                            const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
+
+                            html += `
+                                <div style="display:grid;grid-template-columns:80px 1fr 55px;align-items:center;gap:8px;margin-bottom:6px;">
+                                    <span style="font-size:0.82rem;color:${pc};font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${pn}</span>
+                                    <div style="height:18px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
+                                        <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;"></div>
+                                    </div>
+                                    <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${rateText || w.votes.toLocaleString()}</span>
+                                </div>
+                            `;
+                        });
+                    }
 
                     html += `</div></div>`;
                 });
