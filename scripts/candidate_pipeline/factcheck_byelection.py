@@ -24,7 +24,8 @@ ENV_FILE = BASE_DIR / ".env"
 sys.path.insert(0, str(BASE_DIR / "scripts"))
 sys.path.insert(0, str(BASE_DIR / "scripts" / "candidate_pipeline"))
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+from election_overview_utils import call_claude_json
+
 
 PARTY_MAP = {
     "더불어민주당": "democratic", "민주당": "democratic",
@@ -128,27 +129,6 @@ def build_prompt(dist, news):
 - 출판기념회 개최 → EXPECTED"""
 
 
-def call_gemini(prompt, api_key):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-    for attempt in range(5):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL, contents=[prompt],
-                config=types.GenerateContentConfig(temperature=0.1, response_mime_type="application/json"),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            if "429" in str(e) or "503" in str(e):
-                wait = min(60 * (attempt + 1), 120)
-                print(f"    [재시도] {wait}초 대기")
-                time.sleep(wait)
-            else:
-                raise
-    return "[]"
-
 
 def parse_changes(text):
     text = text.strip()
@@ -227,11 +207,11 @@ def apply_changes(dist, changes, dry_run=False):
 
 def main():
     load_env()
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
 
-    if not gemini_key:
-        print("[오류] GEMINI_API_KEY 미설정")
+    if not llm_key:
+        print("[오류] ANTHROPIC_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 55)
@@ -254,7 +234,7 @@ def main():
         # Gemini 팩트체크
         prompt = build_prompt(dist, news)
         try:
-            raw = call_gemini(prompt, gemini_key)
+            raw = call_claude_json(prompt, llm_key)
             changes = parse_changes(raw)
 
             if not changes:

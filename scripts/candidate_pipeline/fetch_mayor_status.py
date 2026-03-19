@@ -5,6 +5,9 @@
 [1단계] 선관위 당선인 API → 공식 당선 데이터 (100% 정확한 베이스라인)
 [2단계] Gemini → 당선 이후 변경사항만 검증 (사퇴, 탈당, 당선무효 등)
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
 이 구조로 기본 데이터는 공식 소스에서 가져오고,
 AI는 변경사항 탐지 보조 역할만 수행합니다.
 
@@ -16,7 +19,7 @@ AI는 변경사항 탐지 보조 역할만 수행합니다.
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계 필수)
-  GEMINI_API_KEY: Gemini API 키 (2단계 필수)
+  ANTHROPIC_API_KEY: Anthropic API 키 (2단계 필수)
 """
 
 import json
@@ -30,11 +33,13 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 MAYOR_STATUS_PATH = BASE_DIR / "data" / "candidates" / "mayor_status.json"
 ENV_FILE = BASE_DIR / ".env"
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 # 선관위 API
 NEC_API_BASE = "http://apis.data.go.kr/9760000"
@@ -257,35 +262,6 @@ def build_gemini_prompt(region_key, mayors_in_region):
 - 새로 발생한 변경사항만 출력"""
 
 
-def call_gemini(prompt, api_key, max_retries=5):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=[prompt],
-                config=types.GenerateContentConfig(
-                    temperature=0.1,
-                    response_mime_type="application/json",
-                ),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                match = re.search(r"retry.*?(\d+)", err_str, re.IGNORECASE)
-                wait = int(match.group(1)) + 5 if match else 30 * (attempt + 1)
-                wait = min(wait, 120)
-                print(f"    [재시도] {wait}초 대기 ({attempt+1}/{max_retries})")
-                time.sleep(wait)
-            else:
-                raise
-    return "[]"
-
 
 def parse_changes(text):
     text = text.strip()
@@ -357,7 +333,7 @@ def apply_changes(data, region_key, changes):
 def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
     target_region = None
@@ -424,9 +400,8 @@ def main():
         return
 
     # ── 2단계: Gemini 변경사항 탐지 ──
-    print(f"\n[2단계] Gemini 변경사항 탐지 (모델: {GEMINI_MODEL})")
-    if not gemini_key:
-        print("  [건너뜀] GEMINI_API_KEY 미설정")
+    if not llm_key:
+        print("  [건너뜀] ANTHROPIC_API_KEY 미설정")
     else:
         mayors = data.get("mayors", {})
         region_groups = {}
@@ -448,7 +423,7 @@ def main():
             prompt = build_gemini_prompt(region_key, region_mayors)
 
             try:
-                raw = call_gemini(prompt, gemini_key)
+                raw = call_claude_json(prompt, llm_key)
                 changes = parse_changes(raw)
 
                 if not changes:

@@ -15,11 +15,12 @@ from datetime import datetime, date
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(BASE_DIR / "scripts"))
+from election_overview_utils import call_claude_json
+
 BYELECTION_PATH = BASE_DIR / "data" / "candidates" / "byelection.json"
 ENV_FILE = BASE_DIR / ".env"
-
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
-API_KEY_ENV = "GEMINI_API_KEY"
+API_KEY_ENV = "ANTHROPIC_API_KEY"
 
 PARTY_MAP = {
     "더불어민주당": "democratic", "민주당": "democratic",
@@ -134,34 +135,6 @@ def build_prompt(key, dist, news=None):
 - WITHDRAWN: 본인 직접 사퇴/불출마 선언만"""
 
 
-def call_gemini(prompt, api_key, max_retries=5):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=MODEL,
-                contents=[prompt],
-                config=types.GenerateContentConfig(
-                    temperature=0.2,
-                    response_mime_type="application/json",
-                ),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                match = re.search(r'retry.*?(\d+)', err_str, re.IGNORECASE)
-                wait = int(match.group(1)) + 5 if match else 30 * (attempt + 1)
-                wait = min(wait, 120)
-                print(f"  [재시도] 쿼터 초과, {wait}초 대기 ({attempt+1}/{max_retries})")
-                time.sleep(wait)
-            else:
-                raise
-
 
 def parse_response(text):
     text = text.strip()
@@ -248,7 +221,7 @@ def main():
         prompt = build_prompt(key, dist, news=news)
 
         try:
-            raw = call_gemini(prompt, api_key)
+            raw = call_claude_json(prompt, api_key)
             obj = parse_response(raw)
 
             if not obj:

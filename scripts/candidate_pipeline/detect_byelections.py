@@ -168,13 +168,12 @@ def fetch_history_for_district(sd_name, sgg_hint, api_key):
 
 def fetch_runners_with_gemini(district_name, history):
     """Gemini로 역대 차점자 수집"""
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
-    if not gemini_key or not history:
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not llm_key or not history:
         return
 
     try:
-        from google import genai
-        from google.genai import types
+        import anthropic
     except ImportError:
         return
 
@@ -189,11 +188,10 @@ def fetch_runners_with_gemini(district_name, history):
 확실한 것만. 모르면 제외.
 [{{"election":17,"runnerName":"이름","runnerParty":"정당명","runnerRate":42.1}}]"""
 
-    client = genai.Client(api_key=gemini_key)
+    client = genai.Client(api_key=llm_key)
     for attempt in range(3):
         try:
             response = client.models.generate_content(
-                model=os.environ.get("GEMINI_MODEL", "gemini-2.5-flash"),
                 contents=[prompt],
                 config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
             )

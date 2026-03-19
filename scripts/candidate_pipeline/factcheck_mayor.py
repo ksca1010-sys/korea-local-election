@@ -5,13 +5,16 @@
 뉴스 기반으로 시군구 기초단체장 출마 선언·사퇴 등을 자동 감지하여
 mayor_candidates.json에 반영합니다. 시도별로 분할 처리.
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
 사용법:
   python scripts/candidate_pipeline/factcheck_mayor.py
   python scripts/candidate_pipeline/factcheck_mayor.py --dry-run
   python scripts/candidate_pipeline/factcheck_mayor.py --region seoul
 
 환경변수:
-  GEMINI_API_KEY: Gemini API 키
+  ANTHROPIC_API_KEY: Anthropic API 키
 """
 
 import json
@@ -22,12 +25,14 @@ import re
 from datetime import datetime, date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
 STATUS_PATH = BASE_DIR / "data" / "candidates" / "mayor_status.json"
 ENV_FILE = BASE_DIR / ".env"
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 REGION_NAMES = {
     "seoul": "서울특별시", "busan": "부산광역시", "daegu": "대구광역시",
@@ -191,30 +196,6 @@ def build_prompt_for_region(region_key, region_candidates, news=None):
 - 여론조사 결과에서 언급되는 후보"""
 
 
-def call_gemini(prompt, api_key, max_retries=5):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=[prompt],
-                config=types.GenerateContentConfig(temperature=0.1, response_mime_type="application/json"),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                match = re.search(r"retry.*?(\d+)", err_str, re.IGNORECASE)
-                wait = int(match.group(1)) + 5 if match else 30 * (attempt + 1)
-                print(f"    [재시도] {min(wait, 120)}초 대기 ({attempt+1}/{max_retries})")
-                time.sleep(min(wait, 120))
-            else:
-                raise
-    return "[]"
-
 
 def parse_changes(text):
     text = text.strip()
@@ -254,7 +235,7 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 "party": party,
                 "career": change.get("career", ""),
                 "status": change.get("newStatus", "DECLARED"),
-                "dataSource": "gemini",
+                "dataSource": "claude",
                 "pledges": [],
             }
             label = f"[신규] {district}: {name} ({PARTY_NAMES.get(party, party)}) - {change.get('detail', '')}"
@@ -324,15 +305,15 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
 
 def main():
     load_env()
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     target_region = None
     for arg in sys.argv[1:]:
         if arg.startswith("--region"):
             target_region = arg.split("=")[-1] if "=" in arg else (sys.argv[sys.argv.index(arg) + 1] if sys.argv.index(arg) + 1 < len(sys.argv) else None)
 
-    if not gemini_key:
-        print("[오류] GEMINI_API_KEY 미설정")
+    if not llm_key:
+        print("[오류] ANTHROPIC_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 60)
@@ -374,7 +355,7 @@ def main():
 
         prompt = build_prompt_for_region(rk, region_cands, news)
         try:
-            raw = call_gemini(prompt, gemini_key)
+            raw = call_claude_json(prompt, llm_key)
             changes = parse_changes(raw)
             if not changes:
                 print(f"  → 변경 없음")

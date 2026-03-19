@@ -30,20 +30,18 @@
     "seoul_용산구": {
       "region": "seoul",
       "district": "용산구",
-      "name": null,
+      "name": "박희영",
       "party": "independent",
       "electedParty": "ppp",
       "electedName": "박희영",
       "_source": "NEC_API",
-      "acting": true,
-      "actingReason": "박희영 구청장 2024년 1월 25일 대법원 판결로 직위상실",
       "_lastChange": {
-        "date": "2026-03-14",
-        "type": "invalidated",
-        "detail": "박희영 구청장 2024년 1월 25일 대법원 판결로 직위상실, 권한대행 체제 전환",
+        "date": "2026-03-19",
+        "type": "restored",
+        "detail": "박희영 구청장 1심 무죄 판결(2024) 후 직무 복귀, 국힘 복당 불허로 무소속 재직",
         "previous": {
-          "name": "박희영",
-          "party": "ppp"
+          "acting": true,
+          "actingReason": "대법원 판결 직위상실"
         }
       }
     },

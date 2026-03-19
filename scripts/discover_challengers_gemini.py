@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-도전자 후보 집중 발굴 (Gemini 활용)
+도전자 후보 집중 발굴 (Claude 활용)
 - 1명뿐인 인구 20만+ 시군구 대상
 - 시군구별 뉴스 수집 → Gemini가 후보 추출 → 교차검증 후 적용
 
@@ -23,10 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(BASE_DIR / "scripts"))
 sys.path.insert(0, str(BASE_DIR / "scripts" / "candidate_pipeline"))
 
-from election_overview_utils import load_env, search_latest_news, REGION_NAMES
+from election_overview_utils import load_env, search_latest_news, REGION_NAMES, call_claude_json
 from verify_changes import verify_changes_against_news
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 PARTY_MAP = {
     "더불어민주당": "democratic", "민주당": "democratic",
@@ -35,28 +34,6 @@ PARTY_MAP = {
     "무소속": "independent",
 }
 
-
-def call_gemini(prompt, api_key):
-    from google import genai
-    from google.genai import types
-    client = genai.Client(api_key=api_key)
-    for attempt in range(3):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=[prompt],
-                config=types.GenerateContentConfig(
-                    temperature=0.1,
-                    response_mime_type="application/json",
-                ),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-                time.sleep(30 * (attempt + 1))
-            else:
-                raise
-    return "[]"
 
 
 def fetch_district_news(region_name, district, title):
@@ -107,9 +84,9 @@ def main():
     args = parser.parse_args()
 
     load_env()
-    api_key = os.environ.get("GEMINI_API_KEY", "")
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
     if not api_key:
-        print("[오류] GEMINI_API_KEY 미설정")
+        print("[오류] ANTHROPIC_API_KEY 미설정")
         sys.exit(1)
 
     mayor = json.loads((BASE_DIR / "data/candidates/mayor_candidates.json").read_text(encoding="utf-8"))
@@ -150,7 +127,7 @@ def main():
         prompt = build_prompt(rn, dist, title, active, news)
 
         try:
-            raw = call_gemini(prompt, api_key)
+            raw = call_claude_json(prompt, api_key)
             raw = raw.strip()
             if raw.startswith("```"):
                 raw = raw.split("\n", 1)[-1]
@@ -196,7 +173,7 @@ def main():
                         "party": party_key,
                         "career": "",
                         "status": v["newStatus"],
-                        "dataSource": "gemini_discovery",
+                        "dataSource": "claude_discovery",
                         "pledges": [],
                     })
                     total_added += 1

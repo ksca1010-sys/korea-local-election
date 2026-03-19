@@ -12,7 +12,7 @@ const App = (() => {
     let districtGeoPromise = null;
     let historyComparisonChart = null;
     const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
-    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || (location.hostname === 'localhost' ? 'http://localhost:8787' : 'https://election-news-proxy.ksca1010.workers.dev');
+    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'https://election-news-proxy.ksca1010.workers.dev';
     const MAJOR_NEWS_HOSTS = Array.isArray(NEWS_FILTER_CONFIG.majorNewsHosts) && NEWS_FILTER_CONFIG.majorNewsHosts.length
         ? NEWS_FILTER_CONFIG.majorNewsHosts
         : [
@@ -3528,17 +3528,6 @@ function renderCouncilProvinceView(regionKey, region) {
                 strict: { mustAny: [districtName], targetAny: ['공약', '정책', '현안', '비전', title], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: ['도지사', '교육감'] }
             },
-            {
-                label: '지역언론', icon: 'fas fa-broadcast-tower', categoryId: 'local',
-                query: `${districtName}${title}`,
-                maxAgeDays: 60,
-                altQueries: (bundle.priorityNames || []).slice(0, 5).map(name => `${name} ${districtName}`),
-                focusKeywords: [districtName, title, ...(bundle.priorityNames || []).slice(0, 3)],
-                boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마'], excludeAny: ['도지사', '교육감'] },
-                relaxed: { mustAny: [districtName], excludeAny: [] },
-                localOnly: true
-            }
         ].map(cat => ({
             ...cat, localMediaPriority: true, _regionKey: regionKey, _districtName: districtName, boostWeight: 5,
             preferPopularity: true,
@@ -3548,7 +3537,7 @@ function renderCouncilProvinceView(regionKey, region) {
 
     function renderNewsTab(regionKey) {
         const container = document.getElementById('news-feed');
-        if (!container) return;
+        if (!container) { console.warn('[뉴스] news-feed 컨테이너 없음'); return; }
 
         const region = ElectionData.getRegion(regionKey);
         if (!region && currentElectionType !== 'byElection') return;
@@ -4126,6 +4115,14 @@ function renderCouncilProvinceView(regionKey, region) {
     async function fetchLatestNews(category, regionKey) {
         const list = document.getElementById('news-live-list');
         if (!list) return;
+
+        // 더보기 버튼 초기화 — 이전 카테고리 핸들러 제거
+        const loadMoreBtnInit = document.getElementById('news-load-more-btn');
+        if (loadMoreBtnInit) {
+            loadMoreBtnInit.style.display = 'none';
+            loadMoreBtnInit.onclick = null;
+        }
+
         const query = category?.query || '';
         const selectedCategory = category || { query: '', focusKeywords: [] };
         const maxAgeDays = Number.isFinite(Number(selectedCategory.maxAgeDays)) ? Number(selectedCategory.maxAgeDays) : 45;
@@ -4359,21 +4356,13 @@ function renderCouncilProvinceView(regionKey, region) {
                 allItems = runFilter('relaxed', maxAgeDays);
             }
 
-            // 지역언론 카테고리: 지역언론 기사만 필터
-            if (selectedCategory.localOnly) {
-                allItems = allItems.filter(item => item.isLocalMedia);
-            }
-
             if (!allItems.length) {
                 const catLabel = selectedCategory.label || '전체';
-                const localOnlyMsg = selectedCategory.localOnly
-                    ? '지역언론사에서 발행한 기사가 검색되지 않았습니다.'
-                    : `최근 ${maxAgeDays}일 이내 해당 카테고리의 뉴스가 검색되지 않았습니다.<br>다른 카테고리를 선택해보세요.`;
                 list.innerHTML = `
                     <div class="news-error">
-                        <div class="news-error-icon"><i class="fas fa-${selectedCategory.localOnly ? 'broadcast-tower' : 'newspaper'}"></i></div>
+                        <div class="news-error-icon"><i class="fas fa-newspaper"></i></div>
                         <div class="news-error-title">'${catLabel}' 관련 뉴스가 없습니다</div>
-                        <div class="news-error-detail">${localOnlyMsg}</div>
+                        <div class="news-error-detail">최근 ${maxAgeDays}일 이내 해당 카테고리의 뉴스가 검색되지 않았습니다.<br>다른 카테고리를 선택해보세요.</div>
                     </div>`;
                 const loadMoreBtn = document.getElementById('news-load-more-btn');
                 if (loadMoreBtn) loadMoreBtn.style.display = 'none';

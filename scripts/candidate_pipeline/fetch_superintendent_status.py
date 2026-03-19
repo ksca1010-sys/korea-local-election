@@ -5,6 +5,9 @@
 [1단계] 선관위 당선인 API → 17명 공식 당선 데이터 + 보궐선거 반영
 [2단계] Gemini → 당선 이후 변경사항만 검증 (사퇴, 직위상실 등)
 
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
 교육감 특이사항: 무소속 (정당 추천 없음), 성향(진보/보수/중도)으로 구분
 
 사용법:
@@ -14,7 +17,7 @@
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계)
-  GEMINI_API_KEY: Gemini API 키 (2단계)
+  ANTHROPIC_API_KEY: Anthropic API 키 (2단계)
 """
 
 import json
@@ -28,11 +31,13 @@ import xml.etree.ElementTree as ET
 from datetime import datetime, date
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from election_overview_utils import call_claude_json
+
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 STATUS_PATH = BASE_DIR / "data" / "candidates" / "superintendent_status.json"
 ENV_FILE = BASE_DIR / ".env"
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 NEC_API_BASE = "http://apis.data.go.kr/9760000"
 WINNER_SERVICE = f"{NEC_API_BASE}/WinnerInfoInqireService2"
@@ -204,29 +209,6 @@ def build_gemini_prompt(supers):
 주의: 확인되지 않은 사실 절대 포함 금지. 이미 반영된 변경은 출력 금지."""
 
 
-def call_gemini(prompt, api_key, max_retries=5):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL, contents=[prompt],
-                config=types.GenerateContentConfig(
-                    temperature=0.1, response_mime_type="application/json",
-                ),
-            )
-            return getattr(response, "text", "") or ""
-        except Exception as e:
-            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
-                wait = min(30 * (attempt + 1), 120)
-                print(f"    [재시도] {wait}초 대기 ({attempt+1}/{max_retries})")
-                time.sleep(wait)
-            else:
-                raise
-    return "[]"
-
 
 def parse_changes(text):
     text = text.strip()
@@ -282,7 +264,7 @@ def apply_changes(data, changes):
 def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
 
@@ -308,15 +290,14 @@ def main():
         else:
             data = existing
 
-    if baseline_only or not gemini_key:
-        if not gemini_key and not baseline_only:
-            print("\n[2단계] [건너뜀] GEMINI_API_KEY 미설정")
+    if baseline_only or not llm_key:
+        if not llm_key and not baseline_only:
+            print("\n[2단계] [건너뜀] ANTHROPIC_API_KEY 미설정")
     else:
         # ── 2단계 ──
-        print(f"\n[2단계] Gemini 변경사항 탐지 (모델: {GEMINI_MODEL})")
         prompt = build_gemini_prompt(data.get("superintendents", {}))
         try:
-            raw = call_gemini(prompt, gemini_key)
+            raw = call_claude_json(prompt, llm_key)
             changes = parse_changes(raw)
             if not changes:
                 print("  → 변경 없음")

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-03-19",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-17T11:44:21.222714"
+    "lastFactCheck": "2026-03-19T12:56:06.325498"
   },
   "candidates": {
     "seoul": [
@@ -27,7 +27,7 @@
         "stance": "진보",
         "career": "전 한국교원단체총연합회 회장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -36,7 +36,7 @@
         "stance": "보수",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -45,7 +45,7 @@
         "stance": "중도",
         "career": "현장 31년",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -54,7 +54,7 @@
         "stance": "중도",
         "career": "前 서울시교육청 대변인",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -63,7 +63,7 @@
         "stance": "보수",
         "career": "전 국회의원",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -72,7 +72,7 @@
         "stance": "진보",
         "career": "전 국회의원",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -81,7 +81,7 @@
         "stance": "진보",
         "career": "교육운동가",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -107,7 +107,7 @@
         "stance": "중도",
         "career": "전 부산부교육감",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -115,9 +115,15 @@
         "name": "김석준",
         "stance": "진보",
         "career": "전 부산광역시 교육감",
-        "status": "RUMORED",
-        "dataSource": "gemini",
-        "pledges": []
+        "status": "DECLARED",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "부산교육감 선거, 김석준·최윤홍 '양자구도' 전망 - 양자구도 전망은 김석준의 출마가 확정된 상황을 반영",
+          "previous": "EXPECTED"
+        }
       }
     ],
     "daegu": [
@@ -142,7 +148,7 @@
         "stance": "진보",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-17",
@@ -168,7 +174,7 @@
         "stance": "중도",
         "career": "34년 현장 경험",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -177,7 +183,7 @@
         "stance": "중도",
         "career": "상임대표",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -186,7 +192,16 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
+        "pledges": []
+      },
+      {
+        "id": "incheon-5",
+        "name": "이현준",
+        "stance": "중도",
+        "career": "인천시 교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "claude",
         "pledges": []
       }
     ],
@@ -206,7 +221,7 @@
         "stance": "진보",
         "career": "전 전교조 광주지부장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -215,7 +230,7 @@
         "stance": "중도",
         "career": "목포대 교수",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -224,7 +239,7 @@
         "stance": "중도",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -244,7 +259,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -253,7 +268,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -262,7 +277,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -271,7 +286,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -297,7 +312,7 @@
         "stance": "진보",
         "career": "노옥희재단 이사장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -306,7 +321,7 @@
         "stance": "진보",
         "career": "현 울산광역시 교육감",
         "status": "WITHDRAWN",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -315,7 +330,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -341,7 +356,7 @@
         "stance": "진보",
         "career": "전 교육부 장관, 전 국회의원",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -350,7 +365,7 @@
         "stance": "중도",
         "career": "뉴스에 언급된 경력 없음",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -359,8 +374,23 @@
         "stance": "진보",
         "career": "전 국회의원",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
+      },
+      {
+        "id": "gyeonggi-5",
+        "name": "성기선",
+        "stance": "보수",
+        "career": "경기도교육감 예비후보",
+        "status": "RUMORED",
+        "dataSource": "claude",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "성기선 경기교감 예비후보 \"단일화 과정서 정책 검증 필요\"…경선 일... - 예비후보 상태 재확인, 단일화 참여 의지 표현",
+          "previous": "EXPECTED"
+        }
       }
     ],
     "gangwon": [
@@ -369,27 +399,45 @@
         "name": "신경호",
         "stance": "보수",
         "career": "현 강원특별자치도 교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "신경호 '현직' 예비후보등록 예고",
+          "previous": "EXPECTED"
+        }
       },
       {
         "id": "gangwon-2",
         "name": "강삼영",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
-        "dataSource": "gemini",
-        "pledges": []
+        "status": "EXPECTED",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "강삼영 교육감 예비후보 공약 발표 및 예비후보 활동 확인",
+          "previous": "DECLARED"
+        }
       },
       {
         "id": "gangwon-3",
         "name": "최광익",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
-        "dataSource": "gemini",
-        "pledges": []
+        "status": "EXPECTED",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "최광익 도교육감 예비후보 선거 관련 발언 및 활동 확인",
+          "previous": "DECLARED"
+        }
       },
       {
         "id": "gangwon-4",
@@ -397,7 +445,22 @@
         "stance": "중도",
         "career": "",
         "status": "EXPECTED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "유대균 예비후보 미래교육 5대 과제 발표 및 예비후보 활동 확인",
+          "previous": "DECLARED"
+        }
+      },
+      {
+        "id": "gangwon-5",
+        "name": "박현숙",
+        "stance": "중도",
+        "career": "도교육감 예비후보",
+        "status": "EXPECTED",
+        "dataSource": "claude",
         "pledges": []
       }
     ],
@@ -423,7 +486,7 @@
         "stance": "중도",
         "career": "33년 행정 경력·교육 전문가",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -432,7 +495,7 @@
         "stance": "중도",
         "career": "전 교수",
         "status": "EXPECTED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -441,8 +504,14 @@
         "stance": "진보",
         "career": "경력 정보 없음",
         "status": "DECLARED",
-        "dataSource": "gemini",
-        "pledges": []
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "김성근, 충북교육감 예비후보 등록 및 출판기념회 개최",
+          "previous": "EXPECTED"
+        }
       }
     ],
     "chungnam": [
@@ -461,7 +530,7 @@
         "stance": "중도",
         "career": "행정고시 및 충남부지사 출신 전 4선 국회의원",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -470,7 +539,7 @@
         "stance": "중도",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -479,7 +548,7 @@
         "stance": "중도",
         "career": "충남교육혁신연구소장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-17",
@@ -494,7 +563,16 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
+        "pledges": []
+      },
+      {
+        "id": "chungnam-6",
+        "name": "김영춘",
+        "stance": "중도",
+        "career": "미상",
+        "status": "EXPECTED",
+        "dataSource": "claude",
         "pledges": []
       }
     ],
@@ -514,7 +592,7 @@
         "stance": "진보",
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -523,7 +601,7 @@
         "stance": "중도",
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -532,7 +610,16 @@
         "stance": "진보",
         "career": "교수",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
+        "pledges": []
+      },
+      {
+        "id": "jeonbuk-5",
+        "name": "황호진",
+        "stance": "중도",
+        "career": "전북교육감 예비후보",
+        "status": "EXPECTED",
+        "dataSource": "claude",
         "pledges": []
       }
     ],
@@ -558,7 +645,7 @@
         "stance": "중도",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -593,9 +680,15 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "DECLARED",
-        "dataSource": "gemini",
-        "pledges": []
+        "status": "EXPECTED",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "김상동 전 경북대 총장 '경북교육감 예비후보' 등록 - 출마선언에서 예비후보 등록으로 상태 변경",
+          "previous": "DECLARED"
+        }
       },
       {
         "id": "gyeongbuk-3",
@@ -603,7 +696,7 @@
         "stance": "진보",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -623,7 +716,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -632,7 +725,7 @@
         "stance": "중도",
         "career": null,
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -641,7 +734,7 @@
         "stance": "진보",
         "career": "전 전교조 경남지부장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -658,7 +751,7 @@
         "stance": "중도",
         "career": "한국승강기대학교 총장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -667,7 +760,7 @@
         "stance": "중도",
         "career": "경남교육감 예비후보",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -686,9 +779,15 @@
         "name": "고의숙",
         "stance": "중도",
         "career": "전 교육의원",
-        "status": "DECLARED",
-        "dataSource": "gemini",
-        "pledges": []
+        "status": "EXPECTED",
+        "dataSource": "news_verified",
+        "pledges": [],
+        "_lastChange": {
+          "date": "2026-03-19",
+          "type": "status_change",
+          "detail": "교육의원직 사퇴하고 제주교육감 예비후보 등록 ('교육의원 사퇴...제주교육감 예비후보 등록')",
+          "previous": "DECLARED"
+        }
       },
       {
         "id": "jeju-3",
@@ -696,7 +795,7 @@
         "stance": "중도",
         "career": "정보 없음",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ],
@@ -716,7 +815,7 @@
         "stance": "중도",
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -725,7 +824,7 @@
         "stance": "중도",
         "career": "현장 전문가",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -734,7 +833,7 @@
         "stance": "중도",
         "career": "평교사 출신 첫 공모교장",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -743,7 +842,7 @@
         "stance": "중도",
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       },
       {
@@ -752,7 +851,7 @@
         "stance": "중도",
         "career": "",
         "status": "DECLARED",
-        "dataSource": "gemini",
+        "dataSource": "news_verified",
         "pledges": []
       }
     ]

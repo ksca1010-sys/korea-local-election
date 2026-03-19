@@ -14,7 +14,7 @@
   python scripts/candidate_pipeline/collect_mayor_pledges.py --force  # 기존 공약 있어도 재수집
 
 환경변수:
-  GEMINI_API_KEY: Gemini API 키
+  ANTHROPIC_API_KEY: Anthropic API 키
   NAVER_CLIENT_ID / NAVER_CLIENT_SECRET: 네이버 검색 API
 """
 
@@ -31,7 +31,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
 ENV_FILE = BASE_DIR / ".env"
 
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
 
 REGION_NAMES = {
     "seoul": "서울특별시", "busan": "부산광역시", "daegu": "대구광역시",
@@ -61,6 +60,7 @@ def load_candidates():
 # ── 뉴스 검색 ──
 
 sys.path.insert(0, str(BASE_DIR / "scripts" / "candidate_pipeline"))
+from election_overview_utils import call_claude_json
 sys.path.insert(0, str(BASE_DIR / "scripts"))
 from local_news_search import search_naver_news
 
@@ -109,33 +109,6 @@ def build_pledge_prompt(name, district, region_name, news_titles):
 ## 출력 (JSON만)
 ["공약1", "공약2", ...]"""
 
-
-def call_gemini(prompt, api_key, max_retries=5):
-    from google import genai
-    from google.genai import types
-
-    client = genai.Client(api_key=api_key)
-    for attempt in range(max_retries):
-        try:
-            response = client.models.generate_content(
-                model=GEMINI_MODEL,
-                contents=[prompt],
-                config=types.GenerateContentConfig(
-                    temperature=0.0,
-                    response_mime_type="application/json",
-                ),
-            )
-            return getattr(response, "text", "") or "[]"
-        except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                match = re.search(r"retry.*?(\d+)", err_str, re.IGNORECASE)
-                wait = int(match.group(1)) + 5 if match else 30 * (attempt + 1)
-                print(f"    [재시도] {min(wait, 120)}초 대기 ({attempt+1}/{max_retries})")
-                time.sleep(min(wait, 120))
-            else:
-                raise
-    return "[]"
 
 
 def parse_pledges(text):
@@ -220,15 +193,14 @@ def main():
     args = parser.parse_args()
 
     load_env()
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
-    if not gemini_key:
-        print("[오류] GEMINI_API_KEY 미설정")
+    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    if not llm_key:
+        print("[오류] ANTHROPIC_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 60)
     print("기초단체장 공약 자동 수집")
     print(f"실행: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"모델: {GEMINI_MODEL}")
     if args.dry_run:
         print("[DRY RUN]")
     if args.force:
@@ -294,14 +266,14 @@ def main():
                 if len(candidates_with_news) > 1:
                     # 배치: 한 시군구 후보들을 한 번에
                     prompt = build_batch_prompt(district, region_name, candidates_with_news)
-                    raw = call_gemini(prompt, gemini_key)
+                    raw = call_claude_json(prompt, llm_key)
                     names = [name for name, _ in candidates_with_news]
                     pledges_map = parse_batch_pledges(raw, names)
                 else:
                     # 개별: 1명
                     name, news = candidates_with_news[0]
                     prompt = build_pledge_prompt(name, district, region_name, news)
-                    raw = call_gemini(prompt, gemini_key)
+                    raw = call_claude_json(prompt, llm_key)
                     pledges_map = {name: parse_pledges(raw)}
 
                 # 결과 반영
