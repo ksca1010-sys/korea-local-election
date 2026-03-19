@@ -9,11 +9,11 @@
           "voteShare": [
             {
               "party": "국민의힘",
-              "percent": 0
+              "percent": 54.55
             },
             {
               "party": "더불어민주당",
-              "percent": 0
+              "percent": 45.45
             }
           ],
           "seatDistribution": [
@@ -25,7 +25,8 @@
               "party": "더불어민주당",
               "seats": 5
             }
-          ]
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 5,
@@ -40,7 +41,17 @@
               "seats": 5
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 50.0
+            },
+            {
+              "party": "민주당",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -55,7 +66,17 @@
               "seats": 5
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -78,7 +99,25 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 30.0
+            },
+            {
+              "party": "정의당",
+              "percent": 10.0
+            },
+            {
+              "party": "바른미래당",
+              "percent": 10.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -161,7 +200,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 60.0
+            },
+            {
+              "party": "민주당",
+              "percent": 40.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -176,7 +225,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 60.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 40.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -191,7 +250,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 60.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 40.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -256,7 +325,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 66.67
+            },
+            {
+              "party": "친박연합",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -271,7 +350,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 66.67
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -286,7 +375,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "자유한국당",
+              "percent": 66.67
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -314,11 +413,11 @@
           "voteShare": [
             {
               "party": "국민의힘",
-              "percent": 0
+              "percent": 50.0
             },
             {
               "party": "더불어민주당",
-              "percent": 0
+              "percent": 50.0
             }
           ],
           "seatDistribution": [
@@ -330,7 +429,8 @@
               "party": "더불어민주당",
               "seats": 2
             }
-          ]
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 5,
@@ -345,7 +445,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "한나라당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -360,7 +470,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -379,7 +499,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 25.0
+            },
+            {
+              "party": "정의당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -441,7 +575,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "민주노동당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -456,7 +600,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새정치민주연합",
+              "percent": 66.67
+            },
+            {
+              "party": "통합진보당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -471,7 +625,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "정의당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -534,7 +698,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 33.33
+            },
+            {
+              "party": "민주당",
+              "percent": 33.33
+            },
+            {
+              "party": "자유선진당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -549,7 +727,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새정치민주연합",
+              "percent": 66.67
+            },
+            {
+              "party": "새누리당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -564,7 +752,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "자유한국당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -623,7 +821,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 66.67
+            },
+            {
+              "party": "민주노동당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -638,7 +846,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 66.67
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -653,7 +871,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "자유한국당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -712,7 +940,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -727,7 +965,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -752,11 +1000,11 @@
           "voteShare": [
             {
               "party": "국민의힘",
-              "percent": 0
+              "percent": 53.33
             },
             {
               "party": "더불어민주당",
-              "percent": 0
+              "percent": 46.67
             }
           ],
           "seatDistribution": [
@@ -768,7 +1016,8 @@
               "party": "더불어민주당",
               "seats": 7
             }
-          ]
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 5,
@@ -787,7 +1036,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 50.0
+            },
+            {
+              "party": "민주당",
+              "percent": 41.67
+            },
+            {
+              "party": "국민참여당",
+              "percent": 8.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -802,7 +1065,17 @@
               "seats": 6
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -825,7 +1098,25 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 53.85
+            },
+            {
+              "party": "자유한국당",
+              "percent": 23.08
+            },
+            {
+              "party": "정의당",
+              "percent": 15.38
+            },
+            {
+              "party": "바른미래당",
+              "percent": 7.69
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -920,7 +1211,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 50.0
+            },
+            {
+              "party": "민주당",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -935,7 +1236,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -950,7 +1261,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 60.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 40.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1015,7 +1336,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "한나라당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1030,7 +1361,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 66.67
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1045,7 +1386,17 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "자유한국당",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1111,7 +1462,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "자유선진당",
+              "percent": 50.0
+            },
+            {
+              "party": "한나라당",
+              "percent": 25.0
+            },
+            {
+              "party": "민주당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1126,7 +1491,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 50.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1145,7 +1520,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "정의당",
+              "percent": 25.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1222,7 +1611,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "한나라당",
+              "percent": 25.0
+            },
+            {
+              "party": "민주노동당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1241,7 +1644,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새정치민주연합",
+              "percent": 50.0
+            },
+            {
+              "party": "통합진보당",
+              "percent": 25.0
+            },
+            {
+              "party": "새누리당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1260,7 +1677,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "민주평화당",
+              "percent": 25.0
+            },
+            {
+              "party": "정의당",
+              "percent": 25.0
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1336,7 +1767,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "한나라당",
+              "percent": 16.67
+            },
+            {
+              "party": "민주노동당",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1355,7 +1800,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새정치민주연합",
+              "percent": 66.67
+            },
+            {
+              "party": "통합진보당",
+              "percent": 16.67
+            },
+            {
+              "party": "새누리당",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1374,7 +1833,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 66.67
+            },
+            {
+              "party": "정의당",
+              "percent": 16.67
+            },
+            {
+              "party": "민주평화당",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1448,7 +1921,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 66.67
+            },
+            {
+              "party": "민주당",
+              "percent": 16.67
+            },
+            {
+              "party": "친박연합",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1463,7 +1950,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 66.67
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 33.33
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1482,7 +1979,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "자유한국당",
+              "percent": 50.0
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 33.33
+            },
+            {
+              "party": "바른미래당",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1554,7 +2065,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 60.0
+            },
+            {
+              "party": "민주당",
+              "percent": 20.0
+            },
+            {
+              "party": "민주노동당",
+              "percent": 20.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1569,7 +2094,17 @@
               "seats": 2
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 60.0
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 40.0
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1588,7 +2123,21 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 50.0
+            },
+            {
+              "party": "자유한국당",
+              "percent": 33.33
+            },
+            {
+              "party": "정의당",
+              "percent": 16.67
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
@@ -1664,7 +2213,25 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "한나라당",
+              "percent": 42.86
+            },
+            {
+              "party": "민주당",
+              "percent": 28.57
+            },
+            {
+              "party": "민주노동당",
+              "percent": 14.29
+            },
+            {
+              "party": "국민참여당",
+              "percent": 14.29
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 6,
@@ -1679,7 +2246,17 @@
               "seats": 3
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "새누리당",
+              "percent": 57.14
+            },
+            {
+              "party": "새정치민주연합",
+              "percent": 42.86
+            }
+          ],
+          "_voteShareEstimated": true
         },
         {
           "electionNumber": 7,
@@ -1702,7 +2279,25 @@
               "seats": 1
             }
           ],
-          "voteShare": []
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 57.14
+            },
+            {
+              "party": "정의당",
+              "percent": 14.29
+            },
+            {
+              "party": "바른미래당",
+              "percent": 14.29
+            },
+            {
+              "party": "자유한국당",
+              "percent": 14.29
+            }
+          ],
+          "_voteShareEstimated": true
         }
       ],
       "incumbents": {
