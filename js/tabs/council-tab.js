@@ -494,12 +494,15 @@ const CouncilTab = (() => {
                             const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
 
                             html += `
-                                <div style="display:grid;grid-template-columns:80px 1fr 55px;align-items:center;gap:8px;margin-bottom:6px;">
-                                    <span style="font-size:0.82rem;color:${pc};font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${pn}</span>
-                                    <div style="height:18px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
-                                        <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;"></div>
+                                <div style="margin-bottom:var(--space-12);">
+                                    <div style="display:flex;align-items:baseline;gap:var(--space-6);margin-bottom:var(--space-4);">
+                                        <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name || pn}</span>
+                                        <span style="font-size:var(--text-caption);color:${pc};">${pn}</span>
+                                        <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || w.votes.toLocaleString()}</span>
                                     </div>
-                                    <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${rateText || w.votes.toLocaleString()}</span>
+                                    <div style="height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
+                                        <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
+                                    </div>
                                 </div>
                             `;
                         });
