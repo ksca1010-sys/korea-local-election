@@ -1338,19 +1338,20 @@ const App = (() => {
     // Region Selected Handler
     // ============================================
     function onRegionSelected(regionKey, options = {}) {
-        console.log('[DEBUG] onRegionSelected', { regionKey, options, currentElectionType });
         const region = ElectionData.getRegion(regionKey);
         if (!region) return;
 
         currentRegionKey = regionKey;
         currentDistrictName = null;
 
-        // 기초비례: 광역 선택 시 welcome 유지, 패널 안 열림
-        // 단, subDistrict가 있으면 시군구 detail로 바로 이동
+        // 기초비례: 광역 선택 시 시군구 지도 전환 (패널은 안 열림)
         if (currentElectionType === 'localCouncilProportional') {
             if (options?.subDistrict) {
                 showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
+                switchTabForRegion();
+                openPanel();
             }
+            // 시군구 지도만 표시하고 패널은 welcome 유지
             return;
         }
 
@@ -1961,7 +1962,6 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     function onDistrictSelected(regionKey, districtName) {
-        console.log('[DEBUG] onDistrictSelected', { regionKey, districtName, currentElectionType, currentRegionKey });
         if (!regionKey || !districtName) return;
 
         if (currentRegionKey !== regionKey) {

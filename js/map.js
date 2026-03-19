@@ -3502,6 +3502,12 @@ const MapModule = (() => {
                 .on('mouseout', function() {
                     handleMouseOut();
                 })
+                .on('click', function(event, d) {
+                    const districtName = getDistrictName(d);
+                    const effName = getEffectiveDistrictName(regionKey, districtName);
+                    switchToProportionalSigunguDetail(regionKey, effName);
+                })
+                .style('cursor', 'pointer')
                 .attr('opacity', 1);
 
             // 시군구 라벨 + 의석수 통합 ("시군구명 N석")
@@ -3559,6 +3565,11 @@ const MapModule = (() => {
         setMapModeLabel(`${sggName} 기초의원 비례대표`);
         toggleBackButton(true);
         updateBreadcrumb('district', regionKey, sggName);
+
+        // App에 시군구 선택 알림
+        if (typeof App !== 'undefined' && App.onDistrictSelected) {
+            App.onDistrictSelected(regionKey, sggName);
+        }
 
         // 시군구 영역만 확대
         loadDistrictGeo().then(geo => {
