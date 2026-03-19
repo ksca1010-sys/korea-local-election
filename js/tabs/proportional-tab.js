@@ -366,26 +366,34 @@ const ProportionalTab = (() => {
                         <div style="padding:12px;">
                 `;
 
-                // 득표율 바
-                if (el.voteShare?.length) {
-                    const maxPct = Math.max(...el.voteShare.map(v => v.percent));
-                    el.voteShare.sort((a, b) => b.percent - a.percent).forEach(v => {
+                // 득표율 바 OR 의석 배분 바 (득표율 없으면 의석으로 대체)
+                const hasVoteShare = el.voteShare?.length > 0;
+                const chartData = hasVoteShare ? el.voteShare : (el.seatDistribution || []);
+                const chartLabel = hasVoteShare ? '득표율' : '의석 배분';
+
+                if (chartData.length > 0) {
+                    const sorted = [...chartData].sort((a, b) => (b.percent || b.seats || 0) - (a.percent || a.seats || 0));
+                    const maxVal = Math.max(...sorted.map(v => v.percent || v.seats || 0));
+
+                    sorted.forEach(v => {
+                        const val = v.percent || v.seats || 0;
+                        const unit = v.percent ? '%' : '석';
                         const pc = ElectionData.getPartyColor(_partyNameToKey(v.party));
-                        const w = maxPct > 0 ? (v.percent / maxPct * 100) : 0;
+                        const w = maxVal > 0 ? (val / maxVal * 100) : 0;
                         html += `
                             <div style="display:grid;grid-template-columns:80px 1fr 42px;align-items:center;gap:8px;margin-bottom:4px;">
                                 <span style="font-size:0.8rem;color:${pc};font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${v.party}</span>
                                 <div style="height:14px;background:var(--bg-tertiary);border-radius:3px;overflow:hidden;">
                                     <div style="width:${w}%;height:100%;background:${pc};border-radius:3px;"></div>
                                 </div>
-                                <span style="font-size:0.8rem;color:var(--text-primary);text-align:right;font-weight:500;">${v.percent}%</span>
+                                <span style="font-size:0.8rem;color:var(--text-primary);text-align:right;font-weight:500;">${val}${unit}</span>
                             </div>
                         `;
                     });
                 }
 
-                // 의석 배분
-                if (el.seatDistribution?.length) {
+                // 의석 배분 텍스트 (득표율 있을 때만 별도 표시)
+                if (hasVoteShare && el.seatDistribution?.length) {
                     const seatText = el.seatDistribution.sort((a, b) => b.seats - a.seats)
                         .map(s => `${s.party} ${s.seats}석`).join(' | ');
                     html += `<div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;">배분: ${seatText}</div>`;
