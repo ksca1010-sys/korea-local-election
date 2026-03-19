@@ -26,7 +26,11 @@ const ProportionalTab = (() => {
 
     // ── 메인 렌더 ──
 
+    // districtName을 모듈 내에서 보존
+    let _currentDistrictName = null;
+
     function render(tabName, regionKey, districtName, electionType) {
+        _currentDistrictName = districtName;
         switch (tabName) {
             case 'overview':   renderOverview(regionKey, electionType); break;
             case 'polls':      renderPolls(regionKey, electionType); break;
@@ -60,8 +64,9 @@ const ProportionalTab = (() => {
     }
 
     function _renderProportionalOverviewHTML(regionKey, electionType, label, regionName) {
-        const proportionalData = ElectionData.getProportionalData?.(regionKey, electionType);
+        const proportionalData = ElectionData.getProportionalData?.(regionKey, electionType, _currentDistrictName);
         const totalSeats = proportionalData?.totalSeats || (electionType === 'councilProportional' ? 10 : 5);
+        const displayName = _currentDistrictName ? `${_currentDistrictName} ${label}` : `${regionName} ${label}`;
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
@@ -80,7 +85,7 @@ const ProportionalTab = (() => {
 
                         <div class="council-info-row">
                             <span class="council-info-label">선거 유형</span>
-                            <span class="council-info-value">${regionName} ${label}</span>
+                            <span class="council-info-value">${displayName}</span>
                         </div>
                         <div class="council-info-row">
                             <span class="council-info-label">배분 의석</span>

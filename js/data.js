@@ -2647,13 +2647,36 @@ const ElectionData = (() => {
             const key = electionType === 'councilProportional' ? 'council_proportional' : 'local_council_proportional';
             return this._proportionalCache?.[key]?.[regionKey] || null;
         },
-        getProportionalData(regionKey, electionType) {
+        getProportionalData(regionKey, electionType, districtName) {
             // 비례대표 개요 데이터 (의석 수, 현 정당별 구성)
             if (electionType === 'councilProportional') {
                 return this._proportionalCouncilCache?.regions?.[regionKey] || null;
             }
-            return this._proportionalLocalCouncilCache?.regions?.sigungus?.[regionKey] ||
-                   this._proportionalLocalCouncilCache?.regions?.[regionKey] || null;
+            // 기초비례: 시군구 단위
+            const regionData = this._proportionalLocalCouncilCache?.regions?.[regionKey];
+            if (districtName && regionData?.sigungus?.[districtName]) {
+                return regionData.sigungus[districtName];
+            }
+            // 시군구 미선택 시 시도 전체 합산
+            if (regionData?.sigungus) {
+                const allSgg = Object.values(regionData.sigungus);
+                return {
+                    totalSeats: allSgg.reduce((s, d) => s + (d.totalSeats || 0), 0),
+                    parties: this._mergePartiesHelper(allSgg),
+                };
+            }
+            return null;
+        },
+
+        _mergePartiesHelper(sigungus) {
+            const partyMap = {};
+            sigungus.forEach(sgg => {
+                (sgg.parties || []).forEach(p => {
+                    if (!partyMap[p.party]) partyMap[p.party] = { party: p.party, seats: 0 };
+                    partyMap[p.party].seats += p.seats || 0;
+                });
+            });
+            return Object.values(partyMap).sort((a, b) => b.seats - a.seats);
         },
 
         // ── 정당지지도 (비례대표용) ──
