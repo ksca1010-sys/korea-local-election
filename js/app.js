@@ -1622,7 +1622,28 @@ const App = (() => {
 
     function renderLocalCouncilProportionalView(regionKey, region) {
         toggleSuperintendentSummary(false);
-        renderProportionalView(regionKey, region, 'localCouncilProportional');
+
+        document.getElementById('panel-region-name').textContent = `${region.name} 기초의원 비례대표`;
+        document.getElementById('panel-region-info').textContent = `시군구를 선택하면 기초비례 정보를 확인할 수 있습니다.`;
+
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+
+        const prevContainer = document.getElementById('prev-election-result');
+        if (prevContainer) {
+            prevContainer.innerHTML = `
+                <div style="text-align:center;padding:16px;">
+                    <i class="fas fa-mouse-pointer" style="font-size:2rem;color:var(--accent-primary);margin-bottom:8px;display:block;"></i>
+                    <p style="color:var(--text-secondary)">지도에서 시군구를 선택하면<br>해당 지역의 기초의원 비례대표<br>정보를 확인할 수 있습니다.</p>
+                </div>
+            `;
+        }
+
+        const govContainer = document.getElementById('current-governor');
+        if (govContainer) govContainer.innerHTML = '';
+        const issuesContainer = document.getElementById('key-issues');
+        if (issuesContainer) issuesContainer.innerHTML = '';
+
+        renderNewsTab(regionKey);
     }
 
     // ============================================
