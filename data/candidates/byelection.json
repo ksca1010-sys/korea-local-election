@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-03-19",
     "source": "뉴스 기반 수집 (Gemini gemini-2.5-flash)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
     "lastDetection": "2026-03-17",
@@ -56,7 +56,7 @@
           "party": "democratic"
         }
       ],
-      "statusNote": "인천 연수구갑 보궐선거는 '미니총선'의 한 축으로 주목받고 있으며, 더불어민주당 내 김남준, 송영길 후보 간 공천 경쟁이 치열한 것으로 알려졌으나, 공천 향방은 여전히 불확실합니다.",
+      "statusNote": "최신 뉴스에 업데이트된 정보가 없습니다.",
       "history": [
         {
           "election": 17,
@@ -173,25 +173,28 @@
           "career": "변호사",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
-          "pledges": []
+          "pledges": [],
+          "partyName": "independent"
         },
         {
           "name": "송영길",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
-          "pledges": []
+          "pledges": [],
+          "partyName": "democratic"
         },
         {
           "name": "김남준",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "DECLARED",
           "dataSource": "news_factcheck",
-          "pledges": []
+          "pledges": [],
+          "partyName": "democratic"
         }
       ],
       "statusNote": "인천 계양구을 지역구는 공천이 장기화되고 있으며, '대통령 배출지'로서 민주당 올드보이들의 출마 가능성이 거론되고 있으나, 특정 후보의 출마 선언이나 공천 소식은 아직 확인되지 않았습니다.",
@@ -324,7 +327,7 @@
           "pledges": []
         }
       ],
-      "statusNote": "경기 평택시을은 6월 3일 치러지는 국회의원 재보궐 선거 지역구 중 한 곳으로, 수도권 재보선 지역에 포함되어 '미니총선'의 한 축을 이룰 것으로 예상됩니다. 현재까지 평택시을 지역구에 대한 구체적인 후보자 출마 소식은 보도되지 않았습니다.",
+      "statusNote": "최신 뉴스 업데이트가 없어 현재 동향을 파악하기 어렵습니다.",
       "history": [
         {
           "election": 17,
@@ -445,12 +448,12 @@
           ],
           "status": "DECLARED",
           "dataSource": "news",
-          "partyKey": "democratic",
-          "partyName": "None",
+          "partyKey": "independent",
+          "partyName": "무소속",
           "party": "democratic"
         }
       ],
-      "statusNote": "충남 재보선 전반적으로 여당의 인물난이 언급되는 가운데, 맹인섭 후보가 아산을에서 노동·민생 중심의 정책 행보를 본격화하고 있다.",
+      "statusNote": "최신 뉴스에 따르면, 현재까지 충남 아산시을 국회의원 보궐선거와 관련하여 새로운 후보자 정보나 선거 동향은 확인되지 않았습니다.",
       "history": [
         {
           "election": 17,
@@ -582,7 +585,7 @@
           "party": "reform"
         }
       ],
-      "statusNote": "김의겸 후보가 출마를 선언한 가운데, 조국 후보의 출마 여부에 따라 빅매치 가능성이 점쳐지며 선거 열기가 뜨거워지고 있다.",
+      "statusNote": "최신 뉴스 정보가 없습니다.",
       "history": [
         {
           "election": 17,
