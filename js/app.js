@@ -1338,6 +1338,7 @@ const App = (() => {
     // Region Selected Handler
     // ============================================
     function onRegionSelected(regionKey, options = {}) {
+        console.log('[DEBUG] onRegionSelected', { regionKey, options, currentElectionType });
         const region = ElectionData.getRegion(regionKey);
         if (!region) return;
 
@@ -1960,6 +1961,7 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     function onDistrictSelected(regionKey, districtName) {
+        console.log('[DEBUG] onDistrictSelected', { regionKey, districtName, currentElectionType, currentRegionKey });
         if (!regionKey || !districtName) return;
 
         if (currentRegionKey !== regionKey) {
