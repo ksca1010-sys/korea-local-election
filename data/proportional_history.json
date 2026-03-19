@@ -1,0 +1,8822 @@
+{
+  "council_proportional": {
+    "seoul": {
+      "totalSeats": 11,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 0
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 0
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 6
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 5
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "황유정"
+          },
+          {
+            "name": "이상욱"
+          },
+          {
+            "name": "윤영희"
+          },
+          {
+            "name": "이종배"
+          },
+          {
+            "name": "이효원"
+          },
+          {
+            "name": "송경택"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "이소라"
+          },
+          {
+            "name": "박강산"
+          },
+          {
+            "name": "아이수루"
+          },
+          {
+            "name": "이원형"
+          },
+          {
+            "name": "최재란"
+          }
+        ]
+      }
+    },
+    "busan": {
+      "totalSeats": 5,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 63.0
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 33.38
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 3
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "서지연"
+          },
+          {
+            "name": "반선호"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "문영미"
+          },
+          {
+            "name": "박진수"
+          },
+          {
+            "name": "정채숙"
+          }
+        ]
+      }
+    },
+    "daegu": {
+      "totalSeats": 3,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 76.8
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 19.23
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "육정미"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "김정옥"
+          },
+          {
+            "name": "박종필"
+          }
+        ]
+      }
+    },
+    "incheon": {
+      "totalSeats": 4,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 0
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 0
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "박판순"
+          },
+          {
+            "name": "박창호"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "장성숙"
+          },
+          {
+            "name": "김대영"
+          }
+        ]
+      }
+    },
+    "gwangju": {
+      "totalSeats": 3,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 68.63
+            },
+            {
+              "party": "국민의힘",
+              "percent": 14.11
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "국민의힘",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "채은지"
+          },
+          {
+            "name": "서용규"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "김용님"
+          }
+        ]
+      }
+    },
+    "daejeon": {
+      "totalSeats": 3,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 52.69
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 42.2
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "안경자"
+          },
+          {
+            "name": "황경아"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "김민숙"
+          }
+        ]
+      }
+    },
+    "ulsan": {
+      "totalSeats": 3,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 57.9
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 34.56
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "손명희"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "천미경"
+          },
+          {
+            "name": "권순용"
+          }
+        ]
+      }
+    },
+    "sejong": {
+      "totalSeats": 2,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 48.5
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 45.79
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 1
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "이소희"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "여미전"
+          }
+        ]
+      }
+    },
+    "gyeonggi": {
+      "totalSeats": 15,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 0
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 0
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 8
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 7
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "이자형"
+          },
+          {
+            "name": "장민수"
+          },
+          {
+            "name": "최효숙"
+          },
+          {
+            "name": "김선영"
+          },
+          {
+            "name": "황세주"
+          },
+          {
+            "name": "박재용"
+          },
+          {
+            "name": "김옥순"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "조희선"
+          },
+          {
+            "name": "김도훈"
+          },
+          {
+            "name": "이용호"
+          },
+          {
+            "name": "정경자"
+          },
+          {
+            "name": "이서영"
+          },
+          {
+            "name": "양우식"
+          },
+          {
+            "name": "최승용"
+          },
+          {
+            "name": "이채영"
+          }
+        ]
+      }
+    },
+    "gangwon": {
+      "totalSeats": 5,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 56.85
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 38.45
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 3
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "유순옥"
+          },
+          {
+            "name": "원미희"
+          },
+          {
+            "name": "임미선"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "이승진"
+          },
+          {
+            "name": "이지영"
+          }
+        ]
+      }
+    },
+    "chungbuk": {
+      "totalSeats": 4,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 55.86
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 39.19
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "안지윤"
+          },
+          {
+            "name": "유상용"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "박진희"
+          },
+          {
+            "name": "안치영"
+          }
+        ]
+      }
+    },
+    "chungnam": {
+      "totalSeats": 5,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 55.52
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 39.95
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 3
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "이지윤"
+          },
+          {
+            "name": "김민수"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "이현숙"
+          },
+          {
+            "name": "신순옥"
+          },
+          {
+            "name": "박미옥"
+          }
+        ]
+      }
+    },
+    "jeonbuk": {
+      "totalSeats": 4,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 71.88
+            },
+            {
+              "party": "국민의힘",
+              "percent": 16.43
+            },
+            {
+              "party": "정의당",
+              "percent": 8.52
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "국민의힘",
+              "seats": 1
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "정의당": [
+          {
+            "name": "오현숙"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "이수진"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "김슬지"
+          },
+          {
+            "name": "장연국"
+          }
+        ]
+      }
+    },
+    "jeonnam": {
+      "totalSeats": 6,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 73.71
+            },
+            {
+              "party": "국민의힘",
+              "percent": 11.83
+            },
+            {
+              "party": "정의당",
+              "percent": 7.41
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 4
+            },
+            {
+              "party": "국민의힘",
+              "seats": 1
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "정의당": [
+          {
+            "name": "김미경"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "박현숙"
+          },
+          {
+            "name": "최동익"
+          },
+          {
+            "name": "장은영"
+          },
+          {
+            "name": "김주웅"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "전서현"
+          }
+        ]
+      }
+    },
+    "gyeongbuk": {
+      "totalSeats": 6,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 75.43
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 19.49
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 4
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "황명강"
+          },
+          {
+            "name": "박선하"
+          },
+          {
+            "name": "정경민"
+          },
+          {
+            "name": "박규탁"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "김경숙"
+          },
+          {
+            "name": "임기진"
+          }
+        ]
+      }
+    },
+    "gyeongnam": {
+      "totalSeats": 6,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "국민의힘",
+              "percent": 62.36
+            },
+            {
+              "party": "더불어민주당",
+              "percent": 31.49
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "국민의힘",
+              "seats": 4
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "더불어민주당": [
+          {
+            "name": "한상현"
+          },
+          {
+            "name": "유형준"
+          }
+        ],
+        "국민의힘": [
+          {
+            "name": "노치환"
+          },
+          {
+            "name": "박진현"
+          },
+          {
+            "name": "전현숙"
+          },
+          {
+            "name": "이춘덕"
+          }
+        ]
+      }
+    },
+    "jeju": {
+      "totalSeats": 8,
+      "elections": [
+        {
+          "electionNumber": 8,
+          "year": 2022,
+          "voteShare": [
+            {
+              "party": "더불어민주당",
+              "percent": 45.25
+            },
+            {
+              "party": "국민의힘",
+              "percent": 44.24
+            }
+          ],
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 4
+            },
+            {
+              "party": "국민의힘",
+              "seats": 4
+            }
+          ]
+        }
+      ],
+      "incumbents": {
+        "국민의힘": [
+          {
+            "name": "원화자"
+          },
+          {
+            "name": "이남근"
+          },
+          {
+            "name": "강하영"
+          },
+          {
+            "name": "강경문"
+          }
+        ],
+        "더불어민주당": [
+          {
+            "name": "양홍식"
+          },
+          {
+            "name": "박두화"
+          },
+          {
+            "name": "현지홍"
+          },
+          {
+            "name": "이경심"
+          }
+        ]
+      }
+    }
+  },
+  "local_council_proportional": {
+    "seoul": {
+      "종로구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 43.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이미자"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "박희연"
+            }
+          ]
+        }
+      },
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.7
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "양은미"
+            }
+          ]
+        }
+      },
+      "용산구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.4
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "윤정회"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이인호"
+            }
+          ]
+        }
+      },
+      "성동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이현숙"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이영심"
+            }
+          ]
+        }
+      },
+      "광진구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.3
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "고상순"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "서민우"
+            }
+          ]
+        }
+      },
+      "동대문구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 50.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 42.6
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "성해란"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이강숙"
+            }
+          ]
+        }
+      },
+      "중랑구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 41.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김민주"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "전유정"
+            }
+          ]
+        }
+      },
+      "성북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 41.3
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "경수현"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "강수진"
+            },
+            {
+              "name": "고영옥"
+            }
+          ]
+        }
+      },
+      "강북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 52.1
+              },
+              {
+                "party": "국민의힘",
+                "percent": 40.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "곽인혜"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "윤성자"
+            }
+          ]
+        }
+      },
+      "도봉구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 41.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "강혜란"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "홍은정"
+            }
+          ]
+        }
+      },
+      "노원구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 52.4
+              },
+              {
+                "party": "국민의힘",
+                "percent": 40.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "오금란"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이용아"
+            },
+            {
+              "name": "유웅상"
+            }
+          ]
+        }
+      },
+      "은평구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 50.9
+              },
+              {
+                "party": "국민의힘",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정병호"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "장연순"
+            }
+          ]
+        }
+      },
+      "서대문구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 43.6
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "안양식"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "홍정희"
+            }
+          ]
+        }
+      },
+      "마포구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 43.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "장정희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "권인순"
+            }
+          ]
+        }
+      },
+      "양천구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.3
+              },
+              {
+                "party": "국민의힘",
+                "percent": 45.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "신우정"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "곽고은"
+            }
+          ]
+        }
+      },
+      "강서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.1
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최세진"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "정재봉"
+            },
+            {
+              "name": "신찬호"
+            }
+          ]
+        }
+      },
+      "구로구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 52.3
+              },
+              {
+                "party": "국민의힘",
+                "percent": 40.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김미주"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "전미숙"
+            }
+          ]
+        }
+      },
+      "금천구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.0
+              },
+              {
+                "party": "국민의힘",
+                "percent": 41.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "고성미"
+            }
+          ]
+        }
+      },
+      "영등포구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.7
+              },
+              {
+                "party": "국민의힘",
+                "percent": 43.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "우경란"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "최인순"
+            }
+          ]
+        }
+      },
+      "동작구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김영림"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이영주"
+            }
+          ]
+        }
+      },
+      "관악구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.6
+              },
+              {
+                "party": "국민의힘",
+                "percent": 40.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김연옥"
+            },
+            {
+              "name": "임창빈"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "노광자"
+            }
+          ]
+        }
+      },
+      "서초구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 33.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이은경"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "하서영"
+            }
+          ]
+        }
+      },
+      "강남구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 62.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 30.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "오온누리"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "노애자"
+            },
+            {
+              "name": "이동호"
+            }
+          ]
+        }
+      },
+      "송파구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.3
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.9
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김샤인"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "전정"
+            },
+            {
+              "name": "곽노상"
+            }
+          ]
+        }
+      },
+      "강동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이동매"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "강유진"
+            }
+          ]
+        }
+      }
+    },
+    "busan": {
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "한지원"
+            }
+          ]
+        }
+      },
+      "서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 35.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "강경미"
+            }
+          ]
+        }
+      },
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 33.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김미연"
+            }
+          ]
+        }
+      },
+      "영도구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김은명"
+            }
+          ]
+        }
+      },
+      "부산진구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.3
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.4
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "강도희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김민경"
+            }
+          ]
+        }
+      },
+      "동래구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 35.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김미화"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "권영원"
+            }
+          ]
+        }
+      },
+      "남구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.7
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이영경"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "박경숙"
+            }
+          ]
+        }
+      },
+      "북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박순자"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "문천순"
+            }
+          ]
+        }
+      },
+      "해운대구": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 33.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김미희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "남지원"
+            }
+          ]
+        }
+      },
+      "사하구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.3
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이임선"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "장재희"
+            }
+          ]
+        }
+      },
+      "금정구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.7
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "양달막"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김진아"
+            }
+          ]
+        }
+      },
+      "강서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "구정란"
+            }
+          ]
+        }
+      },
+      "연제구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.9
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "소수련"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김미화"
+            }
+          ]
+        }
+      },
+      "수영구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "손사라"
+            }
+          ]
+        }
+      },
+      "사상구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김윤경"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "황수진"
+            }
+          ]
+        }
+      },
+      "기장군": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "구혜진"
+            }
+          ]
+        }
+      }
+    },
+    "daegu": {
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 64.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 25.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "배태숙"
+            }
+          ]
+        }
+      },
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 65.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 25.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김은옥"
+            },
+            {
+              "name": "배홍연"
+            }
+          ]
+        }
+      },
+      "서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 63.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 26.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이금태"
+            }
+          ]
+        }
+      },
+      "남구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 64.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 26.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "성윤희"
+            }
+          ]
+        }
+      },
+      "북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 63.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 26.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김종련"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이소림"
+            },
+            {
+              "name": "차대식"
+            }
+          ]
+        }
+      },
+      "수성구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 70.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최명숙"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "최현숙"
+            },
+            {
+              "name": "백지은"
+            }
+          ]
+        }
+      },
+      "달서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 64.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 25.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "임미연"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "남현주"
+            },
+            {
+              "name": "도하석"
+            }
+          ]
+        }
+      },
+      "달성군": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 62.3
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 28.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "양은숙"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이연숙"
+            }
+          ]
+        }
+      }
+    },
+    "incheon": {
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "손은비"
+            }
+          ]
+        }
+      },
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "오수연"
+            }
+          ]
+        }
+      },
+      "미추홀구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 43.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "황숙경"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "김오현"
+            }
+          ]
+        }
+      },
+      "연수구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정보현"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김영임"
+            }
+          ]
+        }
+      },
+      "남동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 48.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 44.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김은숙"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이연주"
+            }
+          ]
+        }
+      },
+      "부평구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 47.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 45.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정예지"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "강연숙"
+            }
+          ]
+        }
+      },
+      "계양구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 46.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 46.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "신지수"
+            }
+          ]
+        }
+      },
+      "서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "송이"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "유은희"
+            }
+          ]
+        }
+      },
+      "강화군": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "고복숙"
+            }
+          ]
+        }
+      },
+      "옹진군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김민애"
+            }
+          ]
+        }
+      }
+    },
+    "gwangju": {
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이지애"
+            }
+          ]
+        }
+      },
+      "서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 62.5
+              },
+              {
+                "party": "정의당",
+                "percent": 14.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "정의당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "오미섭"
+            },
+            {
+              "name": "김균호"
+            }
+          ]
+        }
+      },
+      "남구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "노소영"
+            },
+            {
+              "name": "은봉희"
+            }
+          ]
+        }
+      },
+      "북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 63.1
+              },
+              {
+                "party": "정의당",
+                "percent": 13.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "정의당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김귀성"
+            },
+            {
+              "name": "정상용"
+            }
+          ]
+        }
+      },
+      "광산구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "박미옥"
+            },
+            {
+              "name": "강한솔"
+            }
+          ]
+        }
+      }
+    },
+    "daejeon": {
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 43.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김영희"
+            }
+          ]
+        }
+      },
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 48.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 44.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김선옥"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "오한숙"
+            }
+          ]
+        }
+      },
+      "서구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 47.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 45.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최미자"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "신현대"
+            }
+          ]
+        }
+      },
+      "유성구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 46.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 46.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김미희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이희래"
+            }
+          ]
+        }
+      },
+      "대덕구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 48.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 44.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "양영자"
+            }
+          ]
+        }
+      }
+    },
+    "ulsan": {
+      "중구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "홍영진"
+            }
+          ]
+        }
+      },
+      "남구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이양임"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이혜인"
+            }
+          ]
+        }
+      },
+      "동구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박은심"
+            }
+          ]
+        }
+      },
+      "북구": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "조문경"
+            }
+          ]
+        }
+      },
+      "울주군": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "노미경"
+            }
+          ]
+        }
+      }
+    },
+    "sejong": {},
+    "gyeonggi": {
+      "수원시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 43.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "성남시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "의정부시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정미영"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김현채"
+            }
+          ]
+        }
+      },
+      "안양시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 47.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 45.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "부천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 43.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "장해영"
+            },
+            {
+              "name": "김선화"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "박혜숙"
+            }
+          ]
+        }
+      },
+      "광명시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 51.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 41.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정지혜"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "김정미"
+            }
+          ]
+        }
+      },
+      "평택시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최선자"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김순이"
+            }
+          ]
+        }
+      },
+      "동두천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이은경"
+            }
+          ]
+        }
+      },
+      "안산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 50.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 42.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "고양시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "과천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "하영주"
+            }
+          ]
+        }
+      },
+      "구리시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.0
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이경희"
+            }
+          ]
+        }
+      },
+      "남양주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 43.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "손정자"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "전혜연"
+            }
+          ]
+        }
+      },
+      "오산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정미섭"
+            }
+          ]
+        }
+      },
+      "시흥시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 49.8
+              },
+              {
+                "party": "국민의힘",
+                "percent": 42.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김수연"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "한지숙"
+            }
+          ]
+        }
+      },
+      "군포시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이혜승"
+            }
+          ]
+        }
+      },
+      "의왕시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박혜숙"
+            }
+          ]
+        }
+      },
+      "하남시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "오지연"
+            }
+          ]
+        }
+      },
+      "용인시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.3
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "파주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 47.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 45.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이혜정"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이진아"
+            }
+          ]
+        }
+      },
+      "이천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "송옥란"
+            }
+          ]
+        }
+      },
+      "안성시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정토근"
+            }
+          ]
+        }
+      },
+      "김포시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정영혜"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김현주"
+            }
+          ]
+        }
+      },
+      "화성시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "명미정"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "위영란"
+            },
+            {
+              "name": "이용운"
+            }
+          ]
+        }
+      },
+      "광주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.1
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "왕정훈"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "조예란"
+            }
+          ]
+        }
+      },
+      "양주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "강혜숙"
+            }
+          ]
+        }
+      },
+      "포천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "조진숙"
+            }
+          ]
+        }
+      },
+      "여주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이상숙"
+            }
+          ]
+        }
+      },
+      "연천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "배두영"
+            }
+          ]
+        }
+      },
+      "가평군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이진옥"
+            }
+          ]
+        }
+      },
+      "양평군": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "오혜자"
+            }
+          ]
+        }
+      }
+    },
+    "gangwon": {
+      "춘천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "남숙희"
+            },
+            {
+              "name": "지승민"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "나유경"
+            }
+          ]
+        }
+      },
+      "원주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "신익선"
+            },
+            {
+              "name": "나윤선"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "차은숙"
+            }
+          ]
+        }
+      },
+      "강릉시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김은숙"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "신보금"
+            }
+          ]
+        }
+      },
+      "동해시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "민귀희"
+            }
+          ]
+        }
+      },
+      "태백시": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이경숙"
+            }
+          ]
+        }
+      },
+      "속초시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이명애"
+            }
+          ]
+        }
+      },
+      "삼척시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정정순"
+            }
+          ]
+        }
+      },
+      "홍천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "황경화"
+            }
+          ]
+        }
+      },
+      "횡성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박승남"
+            }
+          ]
+        }
+      },
+      "영월군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박해경"
+            }
+          ]
+        }
+      },
+      "평창군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박춘희"
+            }
+          ]
+        }
+      },
+      "정선군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "송수옥"
+            }
+          ]
+        }
+      },
+      "철원군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이미경"
+            }
+          ]
+        }
+      },
+      "화천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이선희"
+            }
+          ]
+        }
+      },
+      "양구군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 61.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김정미"
+            }
+          ]
+        }
+      },
+      "인제군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "황현희"
+            }
+          ]
+        }
+      },
+      "고성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이순매"
+            }
+          ]
+        }
+      },
+      "양양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이명숙"
+            }
+          ]
+        }
+      }
+    },
+    "chungbuk": {
+      "청주시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "충주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 41.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김자운"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이옥순"
+            }
+          ]
+        }
+      },
+      "제천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이경리"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "한명숙"
+            }
+          ]
+        }
+      },
+      "보은군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "장은영"
+            }
+          ]
+        }
+      },
+      "옥천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김경숙"
+            }
+          ]
+        }
+      },
+      "영동군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김은하"
+            }
+          ]
+        }
+      },
+      "증평군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "홍종숙"
+            }
+          ]
+        }
+      },
+      "진천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "성한경"
+            }
+          ]
+        }
+      },
+      "괴산군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "송영순"
+            }
+          ]
+        }
+      },
+      "음성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "송춘홍"
+            }
+          ]
+        }
+      },
+      "단양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김혜숙"
+            }
+          ]
+        }
+      }
+    },
+    "chungnam": {
+      "천안시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 48.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 44.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "공주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "임규연"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "권경운"
+            }
+          ]
+        }
+      },
+      "보령시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 49.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "추보라"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "서경옥"
+            }
+          ]
+        }
+      },
+      "아산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 47.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 45.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "신미진"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "김은복"
+            }
+          ]
+        }
+      },
+      "서산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 42.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "가선숙"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "한석화"
+            }
+          ]
+        }
+      },
+      "논산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "윤금숙"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "허명숙"
+            }
+          ]
+        }
+      },
+      "계룡시": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "최국락"
+            }
+          ]
+        }
+      },
+      "당진시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.2
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "전선아"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "한상화"
+            }
+          ]
+        }
+      },
+      "금산군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정기수"
+            }
+          ]
+        }
+      },
+      "부여군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "윤선예"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "장소미"
+            }
+          ]
+        }
+      },
+      "서천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "홍성희"
+            }
+          ]
+        }
+      },
+      "청양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정혜선"
+            }
+          ]
+        }
+      },
+      "홍성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이정희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "윤일순"
+            }
+          ]
+        }
+      },
+      "예산군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 51.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이정순"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "심완례"
+            }
+          ]
+        }
+      },
+      "태안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 50.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박선의"
+            }
+          ]
+        }
+      }
+    },
+    "jeonbuk": {
+      "전주시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 61.5
+              },
+              {
+                "party": "정의당",
+                "percent": 8.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              },
+              {
+                "party": "정의당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "군산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 63.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이연화"
+            },
+            {
+              "name": "양세용"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "윤세자"
+            }
+          ]
+        }
+      },
+      "익산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 62.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "송영자"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "김미선"
+            },
+            {
+              "name": "양정민"
+            }
+          ]
+        }
+      },
+      "정읍시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "한선미"
+            },
+            {
+              "name": "송기순"
+            }
+          ]
+        }
+      },
+      "남원시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "오창숙"
+            },
+            {
+              "name": "이숙자"
+            }
+          ]
+        }
+      },
+      "김제시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 66.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "문순자"
+            },
+            {
+              "name": "전수관"
+            }
+          ]
+        }
+      },
+      "완주군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 63.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최광호"
+            },
+            {
+              "name": "이순덕"
+            }
+          ]
+        }
+      },
+      "진안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이미옥"
+            }
+          ]
+        }
+      },
+      "무주군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 58.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이영희"
+            }
+          ]
+        }
+      },
+      "장수군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "유경자"
+            }
+          ]
+        }
+      },
+      "임실군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 66.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정일윤"
+            }
+          ]
+        }
+      },
+      "순창군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김정숙"
+            }
+          ]
+        }
+      },
+      "고창군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이선덕"
+            }
+          ]
+        }
+      },
+      "부안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김두례"
+            }
+          ]
+        }
+      }
+    },
+    "jeonnam": {
+      "목포시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 66.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최유란"
+            },
+            {
+              "name": "박수경"
+            }
+          ],
+          "정의당": [
+            {
+              "name": "박유정"
+            }
+          ]
+        }
+      },
+      "여수시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 65.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "진명숙"
+            },
+            {
+              "name": "김채경"
+            },
+            {
+              "name": "홍현숙"
+            }
+          ]
+        }
+      },
+      "순천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 64.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "신정란"
+            },
+            {
+              "name": "유승현"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이세은"
+            }
+          ]
+        }
+      },
+      "나주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 67.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "조영미"
+            },
+            {
+              "name": "최정기"
+            }
+          ]
+        }
+      },
+      "광양시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 63.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 2
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김정임"
+            },
+            {
+              "name": "박문섭"
+            }
+          ]
+        }
+      },
+      "담양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 68.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "박은서"
+            }
+          ]
+        }
+      },
+      "곡성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 69.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김홍순"
+            }
+          ]
+        }
+      },
+      "구례군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 67.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "문승옥"
+            }
+          ]
+        }
+      },
+      "고흥군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 70.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "전명숙"
+            },
+            {
+              "name": "김미경"
+            }
+          ]
+        }
+      },
+      "보성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 69.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "문점숙"
+            }
+          ]
+        }
+      },
+      "화순군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 68.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "조명순"
+            }
+          ]
+        }
+      },
+      "장흥군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 70.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "홍정임"
+            }
+          ]
+        }
+      },
+      "강진군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 71.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "유경숙"
+            }
+          ]
+        }
+      },
+      "해남군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 69.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이상미"
+            },
+            {
+              "name": "이기우"
+            }
+          ]
+        }
+      },
+      "영암군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 68.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정선희"
+            }
+          ]
+        }
+      },
+      "무안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 67.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정은경"
+            }
+          ]
+        }
+      },
+      "함평군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 70.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김은영"
+            }
+          ]
+        }
+      },
+      "영광군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 68.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "정선우"
+            }
+          ]
+        }
+      },
+      "장성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 67.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최미화"
+            }
+          ]
+        }
+      },
+      "완도군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 71.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "지민"
+            }
+          ]
+        }
+      },
+      "진도군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 72.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김옥정"
+            }
+          ]
+        }
+      },
+      "신안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 73.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "고인숙"
+            }
+          ]
+        }
+      }
+    },
+    "gyeongbuk": {
+      "포항시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 63.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 26.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "경주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 64.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 26.1
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "이강희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "한순희"
+            },
+            {
+              "name": "김종우"
+            }
+          ]
+        }
+      },
+      "김천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 66.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 23.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "우지연"
+            },
+            {
+              "name": "박복순"
+            }
+          ]
+        }
+      },
+      "안동시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 67.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 22.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김정림"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "여주희"
+            }
+          ]
+        }
+      },
+      "구미시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 65.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 25.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "추은희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이정희"
+            },
+            {
+              "name": "김근한"
+            }
+          ]
+        }
+      },
+      "영주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 66.0
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 24.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김정숙"
+            },
+            {
+              "name": "김세연"
+            }
+          ]
+        }
+      },
+      "영천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 67.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 22.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "배수예"
+            },
+            {
+              "name": "박주학"
+            }
+          ]
+        }
+      },
+      "상주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 68.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 22.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박점숙"
+            },
+            {
+              "name": "김세경"
+            }
+          ]
+        }
+      },
+      "문경시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 67.0
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 23.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김영숙"
+            }
+          ]
+        }
+      },
+      "경산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 65.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 24.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "손말남"
+            },
+            {
+              "name": "김계태"
+            }
+          ]
+        }
+      },
+      "의성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 70.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박선희"
+            },
+            {
+              "name": "이경원"
+            }
+          ]
+        }
+      },
+      "청송군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 71.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박신영"
+            }
+          ]
+        }
+      },
+      "영양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 72.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김귀임"
+            }
+          ]
+        }
+      },
+      "영덕군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 69.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "신정희"
+            }
+          ]
+        }
+      },
+      "청도군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 68.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이수연"
+            }
+          ]
+        }
+      },
+      "고령군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 69.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "유희순"
+            }
+          ]
+        }
+      },
+      "성주군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 70.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "이화숙"
+            }
+          ]
+        }
+      },
+      "칠곡군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 66.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "박남희"
+            }
+          ]
+        }
+      },
+      "예천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 69.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "안양숙"
+            }
+          ]
+        }
+      },
+      "봉화군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 68.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김옥랑"
+            }
+          ]
+        }
+      },
+      "울진군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 67.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김복남"
+            }
+          ]
+        }
+      },
+      "울릉군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 65.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "한종인"
+            }
+          ]
+        }
+      },
+      "군위군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 71.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김영숙"
+            }
+          ]
+        }
+      }
+    },
+    "gyeongnam": {
+      "창원시": {
+        "totalSeats": 3,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 39.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 2
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {}
+      },
+      "진주시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "양해영"
+            },
+            {
+              "name": "최호연"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "신서경"
+            }
+          ]
+        }
+      },
+      "통영시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 55.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 36.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김희자"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "최미선"
+            }
+          ]
+        }
+      },
+      "사천시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 54.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 37.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "임봉남"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "정서연"
+            }
+          ]
+        }
+      },
+      "김해시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "더불어민주당",
+                "percent": 48.5
+              },
+              {
+                "party": "국민의힘",
+                "percent": 44.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              },
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "허수정"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "배현주"
+            },
+            {
+              "name": "이미애"
+            }
+          ]
+        }
+      },
+      "밀양시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.2
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 34.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "배심교"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "손제란"
+            }
+          ]
+        }
+      },
+      "거제시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 52.5
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 40.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "정명희"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "한은진"
+            }
+          ]
+        }
+      },
+      "양산시": {
+        "totalSeats": 2,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 53.8
+              },
+              {
+                "party": "더불어민주당",
+                "percent": 38.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              },
+              {
+                "party": "더불어민주당",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최순희"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "송은영"
+            }
+          ]
+        }
+      },
+      "의령군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김행연"
+            }
+          ]
+        }
+      },
+      "함안군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "안말남"
+            }
+          ]
+        }
+      },
+      "창녕군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "김정선"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "이가은"
+            }
+          ]
+        }
+      },
+      "고성군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "허옥희"
+            }
+          ],
+          "더불어민주당": [
+            {
+              "name": "이정숙"
+            }
+          ]
+        }
+      },
+      "남해군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "장영자"
+            }
+          ]
+        }
+      },
+      "하동군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 56.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "최민경"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김민연"
+            }
+          ]
+        }
+      },
+      "산청군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 59.8
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김남순"
+            }
+          ]
+        }
+      },
+      "함양군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 60.2
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "배우진"
+            }
+          ]
+        }
+      },
+      "거창군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 58.5
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "더불어민주당": [
+            {
+              "name": "신미정"
+            }
+          ],
+          "국민의힘": [
+            {
+              "name": "김혜숙"
+            }
+          ]
+        }
+      },
+      "합천군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 61.0
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김문숙"
+            },
+            {
+              "name": "이태련"
+            }
+          ]
+        }
+      }
+    },
+    "jeju": {}
+  }
+}

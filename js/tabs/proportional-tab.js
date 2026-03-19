@@ -1,33 +1,41 @@
 /**
  * ProportionalTab — 광역비례 + 기초비례 탭 렌더러
- *
- * app.js에서 electionType이 councilProportional/localCouncilProportional일 때 위임.
  * 비례대표 특성: 후보가 아닌 정당에 투표, 정당지지도 활용, 명부 등록은 5/14~15.
  */
 const ProportionalTab = (() => {
 
-    // 후보 등록 마감일 (KST)
     const CANDIDATE_REG_END = new Date('2026-05-15T18:00:00+09:00');
+    let _currentDistrictName = null;
+    let _historyCache = null;
 
     function getKST() {
-        if (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.getKST) {
-            return ElectionCalendar.getKST();
-        }
+        if (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.getKST) return ElectionCalendar.getKST();
         return new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Seoul' }));
     }
 
-    function getLabel(electionType) {
-        return electionType === 'councilProportional' ? '광역 비례대표' : '기초 비례대표';
+    function getLabel(t) { return t === 'councilProportional' ? '광역의원 비례대표' : '기초의원 비례대표'; }
+
+    function loadHistory() {
+        if (_historyCache) return Promise.resolve(_historyCache);
+        return fetch('data/proportional_history.json')
+            .then(r => r.ok ? r.json() : null)
+            .then(d => { _historyCache = d; return d; })
+            .catch(() => null);
     }
 
-    function getUnitLabel(electionType) {
-        return electionType === 'councilProportional' ? '시·도의원' : '구·시·군의원';
+    function getHistoryData(regionKey, electionType) {
+        if (!_historyCache) return null;
+        if (electionType === 'councilProportional') {
+            return _historyCache.council_proportional?.[regionKey] || null;
+        }
+        // 기초비례: 시군구 단위
+        if (_currentDistrictName) {
+            return _historyCache.local_council_proportional?.[regionKey]?.[_currentDistrictName] || null;
+        }
+        return null;
     }
 
-    // ── 메인 렌더 ──
-
-    // districtName을 모듈 내에서 보존
-    let _currentDistrictName = null;
+    // ── 메인 ──
 
     function render(tabName, regionKey, districtName, electionType) {
         _currentDistrictName = districtName;
@@ -40,112 +48,157 @@ const ProportionalTab = (() => {
         }
     }
 
-    // ── 개요탭 ──
+    // ══════════════════════════════════════
+    // 개요탭
+    // ══════════════════════════════════════
 
     function renderOverview(regionKey, electionType) {
-        const label = getLabel(electionType);
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
+        const label = getLabel(electionType);
 
-        // 즉시 렌더 (캐시 있으면 바로 표시)
-        _renderProportionalOverviewHTML(regionKey, electionType, label, regionName);
+        // 즉시 렌더
+        _buildOverview(regionKey, electionType, label, regionName);
 
-        // 비례대표 데이터 lazy-load → 완료 후 다시 렌더
-        const loads = [
+        // 데이터 로드 후 재렌더
+        Promise.all([
             ElectionData.loadProportionalCandidates?.() || Promise.resolve(),
             electionType === 'councilProportional'
                 ? (ElectionData.loadProportionalCouncilData?.() || Promise.resolve())
                 : (ElectionData.loadProportionalLocalCouncilData?.() || Promise.resolve()),
-        ];
-
-        Promise.all(loads).then(() => {
-            _renderProportionalOverviewHTML(regionKey, electionType, label, regionName);
-        });
+            loadHistory(),
+        ]).then(() => _buildOverview(regionKey, electionType, label, regionName));
     }
 
-    function _renderProportionalOverviewHTML(regionKey, electionType, label, regionName) {
-        const proportionalData = ElectionData.getProportionalData?.(regionKey, electionType, _currentDistrictName);
-        const totalSeats = proportionalData?.totalSeats || (electionType === 'councilProportional' ? 10 : 5);
+    function _buildOverview(regionKey, electionType, label, regionName) {
+        const propData = ElectionData.getProportionalData?.(regionKey, electionType, _currentDistrictName);
+        const totalSeats = propData?.totalSeats || (electionType === 'councilProportional' ? 10 : 2);
         const displayName = _currentDistrictName ? `${_currentDistrictName} ${label}` : `${regionName} ${label}`;
+        const histData = getHistoryData(regionKey, electionType);
 
         const prevContainer = document.getElementById('prev-election-result');
-        if (prevContainer) {
-            let html = `
-                <div class="proportional-overview">
-                    <div class="council-info-card">
-                        <div style="padding:12px;margin-bottom:12px;border-radius:8px;background:var(--accent-primary)08;border:1px solid var(--accent-primary)22;">
-                            <h5 style="color:var(--accent-primary);margin-bottom:8px;"><i class="fas fa-info-circle"></i> ${label}란?</h5>
-                            <p style="color:var(--text-secondary);font-size:0.85rem;line-height:1.5;">
-                                유권자는 <strong>정당에 투표</strong>하고, 정당 득표율에 따라 의석이 배분됩니다.
-                                ${electionType === 'councilProportional'
-                                    ? '광역의회 비례대표는 시·도 단위로 선출됩니다.'
-                                    : '기초의회 비례대표는 시·군·구 단위로 선출됩니다.'}
-                            </p>
-                        </div>
+        if (!prevContainer) return;
 
-                        <div class="council-info-row">
-                            <span class="council-info-label">선거 유형</span>
-                            <span class="council-info-value">${displayName}</span>
-                        </div>
-                        <div class="council-info-row">
-                            <span class="council-info-label">배분 의석</span>
-                            <span class="council-info-value">${totalSeats}석</span>
-                        </div>
-                        <div class="council-info-row">
-                            <span class="council-info-label">배분 방식</span>
-                            <span class="council-info-value">정당 득표율 비례배분 (5% 봉쇄조항)</span>
-                        </div>
-                    </div>
-            `;
+        let html = `<div class="council-overview">`;
 
-            // 현직 비례대표 의원 (정당별 의석 + 의원명)
-            const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
+        // ── 비례대표 개요 ──
+        html += `
+            <div style="padding:12px;margin-bottom:12px;border-radius:8px;background:var(--bg-secondary);">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">${displayName}</span>
+                    <span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--accent-primary)15;color:var(--accent-primary);border:1px solid var(--accent-primary)33;">
+                        ${totalSeats}석
+                    </span>
+                </div>
+                <p style="color:var(--text-muted);font-size:0.82rem;line-height:1.5;">
+                    유권자는 정당에 투표하고, 정당 득표율에 따라 의석이 배분됩니다.
+                </p>
+            </div>
+        `;
 
-            if (proportionalData?.parties?.length) {
-                html += `
-                    <h5 style="margin-top:12px;color:var(--text-secondary);font-size:0.85rem;">
+        // ── 현직 비례대표 의원 ──
+        const incumbents = histData?.incumbents || {};
+        const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
+
+        // 소스 우선순위: histData.incumbents > propCandidates.parties
+        const partyGroups = Object.keys(incumbents).length > 0
+            ? Object.entries(incumbents).sort((a, b) => b[1].length - a[1].length)
+            : (propCandidates?.parties || []).filter(p => p.candidates?.length).map(p => [
+                ElectionData.getPartyName(p.party), p.candidates
+            ]);
+
+        if (partyGroups.length > 0) {
+            html += `
+                <div style="margin-bottom:12px;">
+                    <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
                         <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 비례대표 의원 (제8회 당선)
                     </h5>
+            `;
+            partyGroups.forEach(([partyName, members]) => {
+                const pc = ElectionData.getPartyColor(
+                    _partyNameToKey(partyName)
+                );
+                html += `
+                    <div style="margin-bottom:8px;padding:10px 12px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
+                        <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                            <span style="width:8px;height:8px;border-radius:50%;background:${pc};flex-shrink:0;"></span>
+                            <span style="font-weight:600;font-size:0.85rem;color:${pc};">${partyName}</span>
+                            <span style="color:var(--text-muted);font-size:0.75rem;">(${members.length}석)</span>
+                        </div>
+                        <div style="color:var(--text-secondary);font-size:0.82rem;line-height:1.6;padding-left:14px;">
+                            ${members.map(m => m.name).join(' · ')}
+                        </div>
+                    </div>
                 `;
+            });
+            html += `</div>`;
+        }
 
-                proportionalData.parties.forEach(p => {
-                    const pc = ElectionData.getPartyColor(p.party);
-                    const pn = ElectionData.getPartyName(p.party);
-                    // 해당 정당의 현직 의원 이름 조회
-                    const partyMembers = propCandidates?.parties?.find(pp => pp.party === p.party)?.candidates || [];
+        // ── 지난 선거 결과 (제8회) ──
+        const election = histData?.elections?.[0];
+        if (election) {
+            html += `
+                <div style="margin-bottom:12px;">
+                    <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
+                        <i class="fas fa-poll" style="margin-right:4px;"></i> 제${election.electionNumber}회 비례 투표 결과 (${election.year})
+                    </h5>
+            `;
 
+            // 의석 배분 바
+            if (election.seatDistribution?.length) {
+                html += `<div style="margin-bottom:10px;"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">비례 의석 ${totalSeats}석 배분</div>`;
+                const maxSeats = Math.max(...election.seatDistribution.map(s => s.seats));
+                election.seatDistribution.sort((a, b) => b.seats - a.seats).forEach(s => {
+                    const pc = ElectionData.getPartyColor(_partyNameToKey(s.party));
+                    const w = maxSeats > 0 ? (s.seats / maxSeats * 100) : 0;
                     html += `
-                        <div style="margin-bottom:10px;padding:10px 12px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
-                            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
-                                <div style="display:flex;align-items:center;gap:6px;">
-                                    <span style="padding:1px 8px;border-radius:4px;font-size:0.7rem;background:${pc};color:white;">${pn}</span>
-                                    <span style="font-size:0.85rem;color:var(--text-primary);font-weight:600;">${p.seats}석</span>
-                                </div>
-                                ${p.voteShare ? `<span style="font-size:0.75rem;color:var(--text-muted);">득표 ${p.voteShare}%</span>` : ''}
+                        <div style="display:grid;grid-template-columns:80px 1fr 36px;align-items:center;gap:8px;margin-bottom:4px;">
+                            <span style="font-size:0.8rem;color:${pc};font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${s.party}</span>
+                            <div style="height:14px;background:var(--bg-tertiary);border-radius:3px;overflow:hidden;">
+                                <div style="width:${w}%;height:100%;background:${pc};border-radius:3px;"></div>
                             </div>
-                            ${partyMembers.length > 0 ? `
-                                <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                                    ${partyMembers.map(c => `
-                                        <span style="font-size:0.78rem;padding:2px 8px;border-radius:4px;background:${pc}10;color:var(--text-primary);border:1px solid ${pc}22;">
-                                            ${c.name}
-                                        </span>
-                                    `).join('')}
-                                </div>
-                            ` : ''}
+                            <span style="font-size:0.8rem;color:var(--text-primary);text-align:right;font-weight:500;">${s.seats}석</span>
                         </div>
                     `;
                 });
+                html += `</div>`;
+            }
+
+            // 득표율
+            if (election.voteShare?.length) {
+                html += `<div style="margin-bottom:8px;"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">비례 득표율</div>`;
+                election.voteShare.sort((a, b) => b.percent - a.percent).forEach(v => {
+                    const pc = ElectionData.getPartyColor(_partyNameToKey(v.party));
+                    html += `
+                        <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:3px;">
+                            <span style="color:${pc};">${v.party}</span>
+                            <span style="color:var(--text-primary);font-weight:500;">${v.percent}%</span>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
             }
 
             html += `</div>`;
-            prevContainer.innerHTML = html;
         }
+
+        html += `</div>`;
+        prevContainer.innerHTML = html;
 
         const govContainer = document.getElementById('current-governor');
         if (govContainer) govContainer.innerHTML = '';
     }
 
-    // ── 여론조사탭 ──
+    function _partyNameToKey(name) {
+        const map = {'더불어민주당':'democratic','국민의힘':'ppp','정의당':'justice',
+            '진보당':'progressive','무소속':'independent','조국혁신당':'reform',
+            '개혁신당':'newReform','기본소득당':'basicIncome'};
+        return map[name] || 'independent';
+    }
+
+    // ══════════════════════════════════════
+    // 여론조사탭 — 정당지지도만
+    // ══════════════════════════════════════
 
     function renderPolls(regionKey, electionType) {
         const cardsSection = document.getElementById('poll-cards-section');
@@ -155,105 +208,139 @@ const ProportionalTab = (() => {
         if (latestSection) latestSection.style.display = 'none';
         if (trendsSection) trendsSection.innerHTML = '';
 
-        // 공표금지 체크
         if (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned()) {
             if (cardsSection) cardsSection.innerHTML = `
-                <div class="poll-ban-notice">
-                    <i class="fas fa-gavel"></i>
-                    <h4>여론조사 공표금지 기간</h4>
-                    <p>공직선거법 제108조에 따라<br>여론조사 결과를 표시할 수 없습니다.</p>
-                </div>`;
+                <div class="poll-ban-notice"><i class="fas fa-gavel"></i>
+                <h4>여론조사 공표금지 기간</h4>
+                <p>공직선거법 제108조에 따라 여론조사 결과를 표시할 수 없습니다.</p></div>`;
             return;
         }
 
-        // 정당지지도 표시
         const partyPolls = ElectionData.getPartySupport?.(regionKey) || [];
 
-        if (cardsSection) {
-            if (partyPolls.length > 0) {
-                cardsSection.innerHTML = partyPolls.map(poll => renderPartySupportCard(poll)).join('');
-            } else {
-                cardsSection.innerHTML = `
-                    <div class="district-no-data">
-                        <p>이 지역의 정당지지도 여론조사가 아직 없습니다.</p>
-                        <p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;">
-                            전국 정당지지도를 참고하세요.
-                        </p>
-                        <p style="margin-top:6px">
-                            <a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">
-                                여심위에서 직접 확인하기
-                            </a>
-                        </p>
+        if (!cardsSection) return;
+
+        if (partyPolls.length > 0) {
+            // 한줄 요약
+            const insight = _generatePartySupportInsight(partyPolls);
+            let html = '';
+            if (insight) {
+                html += `
+                    <div style="padding:10px 12px;margin-bottom:12px;border-radius:8px;background:${insight.badgeColor}10;border:1px solid ${insight.badgeColor}33;">
+                        <span style="font-size:0.7rem;padding:1px 6px;border-radius:3px;background:${insight.badgeColor};color:white;margin-right:6px;">${insight.badge}</span>
+                        <span style="font-size:0.82rem;color:var(--text-primary);">${insight.text}</span>
+                        <div style="font-size:0.7rem;color:var(--text-muted);margin-top:4px;">
+                            ${insight.source.org} ${insight.source.date} | n=${insight.source.sampleSize?.toLocaleString() || '?'} | ±${insight.source.marginOfError || '?'}%p
+                        </div>
                     </div>
                 `;
             }
+
+            html += `<div class="poll-cards-header"><h4><i class="fas fa-list"></i> 정당지지도 ${partyPolls.length}건</h4></div>`;
+            html += partyPolls.map(poll => _renderPartySupportCard(poll)).join('');
+            cardsSection.innerHTML = html;
+        } else {
+            cardsSection.innerHTML = `
+                <div class="district-no-data">
+                    <p>해당 지역의 정당지지도 조사가 아직 없습니다.</p>
+                    <p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;">전국 정당지지도를 참고하세요.</p>
+                    <p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue);">여심위에서 직접 확인하기</a></p>
+                </div>`;
         }
     }
 
-    function renderPartySupportCard(poll) {
-        const results = (poll.results || []).filter(r => r.support > 0);
+    function _generatePartySupportInsight(polls) {
+        const latest = polls.filter(p => p.results?.some(r => r.support > 0))
+            .sort((a, b) => Date.parse(b.publishDate || 0) - Date.parse(a.publishDate || 0))[0];
+        if (!latest?.results) return null;
+
+        const sorted = latest.results
+            .filter(r => r.candidateName && r.support > 0 && !['모르겠다','무응답','없음'].includes(r.candidateName))
+            .sort((a, b) => b.support - a.support);
+        if (sorted.length < 2) return null;
+
+        const gap = sorted[0].support - sorted[1].support;
+        const moe = latest.method?.marginOfError || 3.5;
+        let badge, badgeColor, text;
+
+        if (gap <= moe) {
+            badge = '접전'; badgeColor = '#f59e0b';
+            text = `${sorted[0].candidateName} vs ${sorted[1].candidateName} — 오차범위 내`;
+        } else if (gap <= moe * 2) {
+            badge = '경합'; badgeColor = '#00bcd4';
+            text = `${sorted[0].candidateName} ${gap.toFixed(1)}%p 앞서`;
+        } else {
+            badge = '우세'; badgeColor = '#22c55e';
+            text = `${sorted[0].candidateName} ${gap.toFixed(1)}%p 우세`;
+        }
+
+        return { badge, badgeColor, text, source: {
+            org: latest.pollOrg, date: latest.publishDate,
+            sampleSize: latest.method?.sampleSize, marginOfError: moe
+        }};
+    }
+
+    function _renderPartySupportCard(poll) {
+        const results = (poll.results || []).filter(r => r.candidateName && r.support > 0);
         if (!results.length) return '';
 
         const maxSupport = Math.max(...results.map(r => r.support));
         const dateText = poll.publishDate || '일시 미상';
+        const methodBadge = poll.method?.type === 'ARS'
+            ? '<span style="background:#6366f122;color:#818cf8;border:1px solid #6366f133;padding:0 5px;border-radius:3px;font-size:0.65rem;">ARS</span>'
+            : poll.method?.type === '전화면접'
+                ? '<span style="background:#22c55e15;color:#4ade80;border:1px solid #22c55e33;padding:0 5px;border-radius:3px;font-size:0.65rem;">전화면접</span>'
+                : '';
 
         return `
             <div class="poll-result-card">
                 <div class="poll-card-header">
                     <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
-                    <span class="poll-card-method">정당지지도</span>
+                    ${methodBadge}
+                    <span style="font-size:0.7rem;color:var(--text-muted);">정당지지도</span>
                 </div>
                 <div class="poll-card-date">${dateText}</div>
                 <div class="poll-card-results">
                     ${results.sort((a, b) => b.support - a.support).map(r => {
-                        const pc = ElectionData.getPartyColor(r.party || 'independent');
-                        const pn = r.candidateName || ElectionData.getPartyName(r.party || 'independent');
-                        const barWidth = maxSupport > 0 ? (r.support / maxSupport * 100) : 0;
-                        return `
-                            <div class="poll-card-result">
-                                <div class="poll-card-result-info">
-                                    <span class="poll-card-candidate">${pn}</span>
-                                    <span class="poll-card-support">${r.support}%</span>
-                                </div>
-                                <div class="poll-card-bar-bg">
-                                    <div class="poll-card-bar" style="width:${barWidth}%;background:${pc}"></div>
-                                </div>
+                        const pc = ElectionData.getPartyColor(_partyNameToKey(r.candidateName) || r.party || 'independent');
+                        const barW = maxSupport > 0 ? (r.support / maxSupport * 100) : 0;
+                        return `<div class="poll-card-result">
+                            <div class="poll-card-result-info">
+                                <span class="poll-card-candidate">${r.candidateName}</span>
+                                <span class="poll-card-support">${r.support}%</span>
                             </div>
-                        `;
+                            <div class="poll-card-bar-bg">
+                                <div class="poll-card-bar" style="width:${barW}%;background:${pc}"></div>
+                            </div>
+                        </div>`;
                     }).join('')}
+                </div>
+                <div class="poll-card-footer">
+                    <a href="${poll.sourceUrl || 'https://www.nesdc.go.kr/'}" target="_blank" rel="noopener"><i class="fas fa-external-link-alt"></i> 여심위 원본 보기</a>
                 </div>
             </div>
         `;
     }
 
-    // ── 후보자탭 ──
+    // ══════════════════════════════════════
+    // 후보자탭 — 현행 유지
+    // ══════════════════════════════════════
 
     function renderCandidates(regionKey, electionType) {
         const container = document.getElementById('candidates-list');
         if (!container) return;
 
-        const now = getKST();
-
-        if (now < CANDIDATE_REG_END) {
-            // 5/15 이전: 안내 문구
-            container.innerHTML = `
-                <div class="district-no-data">
-                    <p><i class="fas fa-clipboard-list"></i> 비례대표 후보 명부는 후보자 등록 기간(5/14~15)에 확정됩니다.</p>
-                    <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem;">
-                        현재 각 정당의 비례대표 공천 과정이 진행 중입니다.
-                    </p>
-                </div>
-            `;
+        if (getKST() < CANDIDATE_REG_END) {
+            container.innerHTML = `<div class="district-no-data">
+                <p><i class="fas fa-clipboard-list"></i> 비례대표 후보 명부는 후보자 등록 기간(5/14~15)에 확정됩니다.</p>
+                <p style="margin-top:8px;color:var(--text-muted);font-size:0.85rem;">현재 각 정당의 비례대표 공천 과정이 진행 중입니다.</p>
+            </div>`;
             return;
         }
 
-        // 5/15 이후: 정당별 명부 테이블
         const data = ElectionData.getProportionalCandidates?.(regionKey, electionType);
-        if (!data || !data.parties?.length) {
-            container.innerHTML = `
-                <div class="district-no-data">
-                    <p>비례대표 후보 명부 데이터를 준비 중입니다.</p>
-                </div>`;
+        if (!data?.parties?.length) {
+            container.innerHTML = `<div class="district-no-data"><p>비례대표 후보 명부 데이터를 준비 중입니다.</p></div>`;
             return;
         }
 
@@ -268,64 +355,95 @@ const ProportionalTab = (() => {
                         <span style="color:var(--text-muted);font-size:0.8rem;margin-left:auto">${party.candidates.length}명</span>
                     </div>
                     <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
-                        <thead>
-                            <tr style="background:var(--bg-secondary);">
-                                <th style="padding:4px 8px;text-align:center;width:40px;color:var(--text-muted)">순번</th>
-                                <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">이름</th>
-                                <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">약력</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            ${party.candidates.map((c, i) => `
-                                <tr style="border-top:1px solid var(--border-color);">
-                                    <td style="padding:4px 8px;text-align:center;color:var(--text-muted)">${i + 1}</td>
-                                    <td style="padding:4px 8px;color:var(--text-primary)">${c.name}</td>
-                                    <td style="padding:4px 8px;color:var(--text-muted)">${c.career || ''}</td>
-                                </tr>
-                            `).join('')}
+                        <thead><tr style="background:var(--bg-secondary);">
+                            <th style="padding:4px 8px;text-align:center;width:40px;color:var(--text-muted)">순번</th>
+                            <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">이름</th>
+                            <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">약력</th>
+                        </tr></thead>
+                        <tbody>${party.candidates.map((c, i) => `
+                            <tr style="border-top:1px solid var(--border-color);">
+                                <td style="padding:4px 8px;text-align:center;color:var(--text-muted)">${i + 1}</td>
+                                <td style="padding:4px 8px;color:var(--text-primary)">${c.name}</td>
+                                <td style="padding:4px 8px;color:var(--text-muted)">${c.career || ''}</td>
+                            </tr>`).join('')}
                         </tbody>
                     </table>
-                </div>
-            `;
+                </div>`;
         }).join('');
     }
 
-    // ── 뉴스탭 ──
+    // ══════════════════════════════════════
+    // 뉴스탭 — 현행 유지
+    // ══════════════════════════════════════
 
     function renderNews(regionKey, electionType) {
-        if (typeof renderNewsTab === 'function') {
-            renderNewsTab(regionKey);
-        }
+        if (typeof renderNewsTab === 'function') renderNewsTab(regionKey);
     }
 
-    // ── 역대비교탭 ──
+    // ══════════════════════════════════════
+    // 역대비교탭 — 비례 투표결과만
+    // ══════════════════════════════════════
 
     function renderHistory(regionKey, electionType) {
-        if (typeof HistoryTab !== 'undefined') {
-            HistoryTab.render(regionKey, electionType, null);
-            return;
-        }
-
         const container = document.getElementById('tab-history');
-        if (container) {
-            container.innerHTML = `
-                <div class="panel-section">
-                    <div class="district-no-data">
-                        <p>비례대표 역대 득표율 데이터를 준비 중입니다.</p>
-                    </div>
-                </div>`;
-        }
+        if (!container) return;
+
+        container.innerHTML = '<div class="panel-section"><div class="panel-loading"><div class="panel-loading-spinner"></div></div></div>';
+
+        loadHistory().then(data => {
+            const histData = getHistoryData(regionKey, electionType);
+
+            if (!histData?.elections?.length) {
+                container.innerHTML = `<div class="panel-section"><div class="district-no-data"><p>역대 비례대표 투표 결과를 준비 중입니다.</p></div></div>`;
+                return;
+            }
+
+            let html = `<div class="panel-section">
+                <h4 style="color:var(--text-secondary);margin-bottom:12px;">
+                    <i class="fas fa-history" style="margin-right:6px;"></i> 역대 비례대표 투표 결과
+                </h4>`;
+
+            histData.elections.sort((a, b) => b.electionNumber - a.electionNumber).forEach(el => {
+                html += `
+                    <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
+                        <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);font-weight:600;font-size:0.85rem;color:var(--text-primary);">
+                            제${el.electionNumber}회 (${el.year})
+                        </div>
+                        <div style="padding:12px;">
+                `;
+
+                // 득표율 바
+                if (el.voteShare?.length) {
+                    const maxPct = Math.max(...el.voteShare.map(v => v.percent));
+                    el.voteShare.sort((a, b) => b.percent - a.percent).forEach(v => {
+                        const pc = ElectionData.getPartyColor(_partyNameToKey(v.party));
+                        const w = maxPct > 0 ? (v.percent / maxPct * 100) : 0;
+                        html += `
+                            <div style="display:grid;grid-template-columns:80px 1fr 42px;align-items:center;gap:8px;margin-bottom:4px;">
+                                <span style="font-size:0.8rem;color:${pc};font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${v.party}</span>
+                                <div style="height:14px;background:var(--bg-tertiary);border-radius:3px;overflow:hidden;">
+                                    <div style="width:${w}%;height:100%;background:${pc};border-radius:3px;"></div>
+                                </div>
+                                <span style="font-size:0.8rem;color:var(--text-primary);text-align:right;font-weight:500;">${v.percent}%</span>
+                            </div>
+                        `;
+                    });
+                }
+
+                // 의석 배분
+                if (el.seatDistribution?.length) {
+                    const seatText = el.seatDistribution.sort((a, b) => b.seats - a.seats)
+                        .map(s => `${s.party} ${s.seats}석`).join(' | ');
+                    html += `<div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;">배분: ${seatText}</div>`;
+                }
+
+                html += `</div></div>`;
+            });
+
+            html += `</div>`;
+            container.innerHTML = html;
+        });
     }
 
-    // ── Public API ──
-
-    return {
-        render,
-        renderOverview,
-        renderPolls,
-        renderCandidates,
-        renderNews,
-        renderHistory,
-    };
-
+    return { render, renderOverview, renderPolls, renderCandidates, renderNews, renderHistory };
 })();
