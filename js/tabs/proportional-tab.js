@@ -40,11 +40,26 @@ const ProportionalTab = (() => {
 
     function renderOverview(regionKey, electionType) {
         const label = getLabel(electionType);
-        const unitLabel = getUnitLabel(electionType);
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
 
-        // 비례대표 의석 수 (데이터에서 조회, 없으면 기본값)
+        // 비례대표 후보 데이터 lazy-load
+        ElectionData.loadProportionalCandidates?.();
+        // 비례대표 의석 데이터 lazy-load
+        if (electionType === 'councilProportional') {
+            ElectionData.loadProportionalCouncilData?.();
+        } else {
+            ElectionData.loadProportionalLocalCouncilData?.();
+        }
+
+        // 약간의 지연 후 다시 렌더 (lazy-load 완료 후)
+        setTimeout(() => _renderProportionalOverviewHTML(regionKey, electionType, label, regionName), 300);
+
+        // 즉시 렌더 (캐시 있으면 바로 표시)
+        _renderProportionalOverviewHTML(regionKey, electionType, label, regionName);
+    }
+
+    function _renderProportionalOverviewHTML(regionKey, electionType, label, regionName) {
         const proportionalData = ElectionData.getProportionalData?.(regionKey, electionType);
         const totalSeats = proportionalData?.totalSeats || (electionType === 'councilProportional' ? 10 : 5);
 
@@ -80,7 +95,7 @@ const ProportionalTab = (() => {
 
             // 현재 정당별 비례 의석 (8회 지선)
             if (proportionalData?.parties?.length) {
-                html += `<h5 style="margin-top:12px;color:var(--text-secondary)"><i class="fas fa-chart-pie"></i> 현 의석 구성 (제8회)</h5>`;
+                html += `<h5 style="margin-top:12px;color:var(--text-secondary);font-size:0.85rem;"><i class="fas fa-chart-pie" style="margin-right:4px;"></i> 현 의석 구성 (제8회)</h5>`;
                 html += `<div style="margin-top:8px;">`;
                 proportionalData.parties.forEach(p => {
                     const pc = ElectionData.getPartyColor(p.party);
@@ -98,6 +113,36 @@ const ProportionalTab = (() => {
                     `;
                 });
                 html += `</div>`;
+            }
+
+            // 현직 비례대표 의원 명단
+            const propCandidates = ElectionData.getProportionalCandidates?.(regionKey, electionType);
+            if (propCandidates?.parties?.length) {
+                html += `
+                    <h5 style="margin-top:16px;color:var(--text-secondary);font-size:0.85rem;">
+                        <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 비례대표 의원
+                    </h5>
+                `;
+                propCandidates.parties.forEach(party => {
+                    if (!party.candidates?.length) return;
+                    const pc = ElectionData.getPartyColor(party.party);
+                    const pn = ElectionData.getPartyName(party.party);
+                    html += `
+                        <div style="margin-top:8px;padding:10px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
+                            <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                                <strong style="color:${pc};font-size:0.85rem;">${pn}</strong>
+                                <span style="color:var(--text-muted);font-size:0.75rem;">${party.candidates.length}명</span>
+                            </div>
+                            <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                                ${party.candidates.map(c => `
+                                    <span style="font-size:0.78rem;padding:2px 8px;border-radius:4px;background:${pc}12;color:var(--text-primary);border:1px solid ${pc}22;">
+                                        ${c.name}
+                                    </span>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
             }
 
             html += `</div>`;

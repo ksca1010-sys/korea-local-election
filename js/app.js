@@ -1596,57 +1596,23 @@ const App = (() => {
 
     function renderProportionalView(regionKey, region, typeKey) {
         const config = proportionalConfig[typeKey];
-        if (!config) return;
-        const data = config.getData();
-        if (!data) return;
+        const label = config?.label || '비례대표';
 
-        document.getElementById('panel-region-name').textContent = `${region.name} ${config.label}`;
-        document.getElementById('panel-region-info').textContent = data.description;
+        document.getElementById('panel-region-name').textContent = `${region.name} ${label}`;
+        document.getElementById('panel-region-info').textContent = `${label} · 정당 투표로 의석 배분`;
 
-        configurePanelTabs(['overview', 'candidates', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        toggleSuperintendentSummary(false);
 
-        const prevContainer = document.getElementById('prev-election-result');
-        if (prevContainer) {
-            prevContainer.innerHTML = `
-                <div class="proportional-summary">
-                    <div class="proportional-summary-row">
-                        <span class="summary-label">비례대표석</span>
-                        <strong>${data.seats}석</strong>
-                        <span class="summary-meta">${data.ballot}</span>
-                    </div>
-                    <div class="proportional-summary-row">
-                        <span class="summary-label">최근 투표율</span>
-                        <strong>${data.lastTurnout}%</strong>
-                        <span class="summary-meta">${data.note}</span>
-                    </div>
-                </div>
-            `;
+        // ProportionalTab으로 개요 렌더링 위임
+        if (typeof ProportionalTab !== 'undefined') {
+            ProportionalTab.renderOverview(regionKey, typeKey);
         }
 
         const govContainer = document.getElementById('current-governor');
-        if (govContainer) {
-            govContainer.innerHTML = `
-                <div class="proportional-party-list">
-                    ${data.partyAllocation.map(p => `
-                        <div class="proportional-party-row">
-                            <span class="party-dot" style="background:${ElectionData.getPartyColor(p.party)}"></span>
-                            <span class="party-name">${ElectionData.getPartyName(p.party)}</span>
-                            <span class="party-seats">${p.seats}석</span>
-                            <span class="party-share">${p.share}%</span>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-        }
-
+        if (govContainer) govContainer.innerHTML = '';
         const issuesContainer = document.getElementById('key-issues');
-        if (issuesContainer) {
-            issuesContainer.innerHTML = `
-                <div class="issues-list">
-                    ${data.keyIssues.map(issue => `<span class="issue-tag">${issue}</span>`).join('')}
-                </div>
-            `;
-        }
+        if (issuesContainer) issuesContainer.innerHTML = '';
 
         renderNewsTab(regionKey);
     }
