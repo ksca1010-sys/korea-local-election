@@ -568,7 +568,28 @@ const App = (() => {
         updateElectionTypeLabel(null);
     }
 
+    function getElectionUnit(type) {
+        switch(type) {
+            case 'governor': case 'superintendent': return 'metro';
+            case 'mayor': return 'district';
+            case 'council': case 'localCouncil': return 'constituency';
+            case 'councilProportional': return 'metro';
+            case 'localCouncilProportional': return 'district';
+            case 'byElection': return 'constituency';
+            default: return 'metro';
+        }
+    }
+
     function onElectionTypeChanged(type) {
+        const prevType = currentElectionType;
+
+        // 선거 단위가 다르면 districtName 초기화
+        const prevUnit = getElectionUnit(prevType);
+        const newUnit = getElectionUnit(type);
+        if (prevUnit !== newUnit) {
+            currentDistrictName = null;
+        }
+
         // Reset panel to welcome state
         resetPanelToWelcome();
 
@@ -1095,6 +1116,21 @@ const App = (() => {
             }
         }
 
+        // 의원급 지역구 → CouncilTab에 위임
+        if ((currentElectionType === 'council' || currentElectionType === 'localCouncil')
+            && currentDistrictName && typeof CouncilTab !== 'undefined') {
+            CouncilTab.render(tabName, currentRegionKey, currentDistrictName, currentElectionType);
+            return;
+        }
+
+        // 비례대표 → ProportionalTab에 위임
+        if ((currentElectionType === 'councilProportional' || currentElectionType === 'localCouncilProportional')
+            && typeof ProportionalTab !== 'undefined') {
+            ProportionalTab.render(tabName, currentRegionKey, currentDistrictName, currentElectionType);
+            return;
+        }
+
+        // 기존 로직 (governor, mayor, superintendent, byElection)
         // Render poll tab
         if (tabName === 'polls' && currentRegionKey) {
             renderPollTab(currentRegionKey, currentElectionType, currentDistrictName);
@@ -1676,7 +1712,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `광역의원 지역구 ${councilData ? councilData.districts.length : 0}개`;
 
-        configurePanelTabs(['overview', 'candidates', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -1821,7 +1857,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `시군구를 선택하면 기초의원 선거구를 확인할 수 있습니다.`;
 
-        configurePanelTabs(['overview', 'candidates', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -2027,7 +2063,7 @@ function renderCouncilProvinceView(regionKey, region) {
         document.getElementById('panel-region-info').textContent =
             `기초의원 선거구 ${lcData ? lcData.districts.length : 0}개 | 총 ${lcData ? lcData.totalSeats : 0}석`;
 
-        configurePanelTabs(['overview', 'news']);
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer && lcData) {
@@ -5110,11 +5146,44 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     // Public API
+    // ============================================
+    // Council Constituency Selected (의원급 선거구 선택)
+    // ============================================
+    function onConstituencySelected(regionKey, municipalityName, constituencyName) {
+        if (!regionKey || !constituencyName) return;
+
+        currentRegionKey = regionKey;
+        currentDistrictName = constituencyName;
+
+        const label = currentElectionType === 'localCouncil' ? '기초의원' : '광역의원';
+        document.getElementById('panel-region-name').textContent = constituencyName;
+        document.getElementById('panel-region-info').textContent = `${municipalityName} ${label}`;
+
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
+        toggleSuperintendentSummary(false);
+
+        const welcome = document.getElementById('panel-welcome');
+        if (welcome) welcome.style.display = 'none';
+
+        // CouncilTab으로 렌더링 위임
+        if (typeof CouncilTab !== 'undefined') {
+            CouncilTab.renderOverview(regionKey, constituencyName, currentElectionType);
+        }
+
+        switchTabForRegion();
+        openPanel();
+
+        if (MapModule.updateBreadcrumb) {
+            MapModule.updateBreadcrumb('constituency', regionKey, constituencyName);
+        }
+    }
+
     return {
         onRegionSelected,
         onDistrictSelected,
         onSubdistrictSelected,
         onByElectionSelected,
+        onConstituencySelected,
         onBreadcrumbNational,
         closePanel,
         switchTab,

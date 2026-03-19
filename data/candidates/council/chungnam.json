@@ -1,0 +1,482 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-19",
+    "source": "council_members.json 현직 기반",
+    "region": "chungnam"
+  },
+  "candidates": {
+    "천안시 제1선거구": [
+      {
+        "name": "홍성현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제2선거구": [
+      {
+        "name": "신한철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제3선거구": [
+      {
+        "name": "안종혁",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제4선거구": [
+      {
+        "name": "구형서",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제5선거구": [
+      {
+        "name": "유성재",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제7선거구": [
+      {
+        "name": "오인철",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제8선거구": [
+      {
+        "name": "정병인",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제9선거구": [
+      {
+        "name": "박정수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제10선거구": [
+      {
+        "name": "김선태",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제11선거구": [
+      {
+        "name": "양경모",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "당진시 제1선거구": [
+      {
+        "name": "이철수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "당진시 제2선거구": [
+      {
+        "name": "이해선",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "당진시 제3선거구": [
+      {
+        "name": "홍기후",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "청양군 선거구": [
+      {
+        "name": "이정우",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "공주시 제1선거구": [
+      {
+        "name": "고광철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "공주시 제2선거구": [
+      {
+        "name": "박기영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "보령시 제2선거구": [
+      {
+        "name": "편삼범",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제1선거구": [
+      {
+        "name": "오안영",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제2선거구": [
+      {
+        "name": "김응규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제3선거구": [
+      {
+        "name": "박정식",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제4선거구": [
+      {
+        "name": "조철기",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "서산시 제1선거구": [
+      {
+        "name": "김옥수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "서산시 제2선거구": [
+      {
+        "name": "이용국",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "서산시 제3선거구": [
+      {
+        "name": "이연희",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "논산시 제1선거구": [
+      {
+        "name": "윤기형",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "논산시 제2선거구": [
+      {
+        "name": "오인환",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "계룡시 선거구": [
+      {
+        "name": "이재운",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "금산군 제1선거구": [
+      {
+        "name": "김석곤",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "금산군 제2선거구": [
+      {
+        "name": "김복만",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "부여군 제1선거구": [
+      {
+        "name": "김기서",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "부여군 제2선거구": [
+      {
+        "name": "조길연",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "서천군 제1선거구": [
+      {
+        "name": "전익현",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "서천군 제2선거구": [
+      {
+        "name": "신영호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "홍성군 제1선거구": [
+      {
+        "name": "이상근",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "홍성군 제2선거구": [
+      {
+        "name": "이종화",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "예산군 제1선거구": [
+      {
+        "name": "방한일",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "예산군 제2선거구": [
+      {
+        "name": "주진하",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "태안군 제1선거구": [
+      {
+        "name": "윤희신",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "태안군 제2선거구": [
+      {
+        "name": "정광섭",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "보령시 제1선거구": [
+      {
+        "name": "최광희",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제5선거구": [
+      {
+        "name": "안장헌",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "아산시 제6선거구": [
+      {
+        "name": "지민규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "천안시 제6선거구": [
+      {
+        "name": "김도훈",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ]
+  }
+}

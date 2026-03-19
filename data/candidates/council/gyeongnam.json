@@ -1,0 +1,647 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-19",
+    "source": "council_members.json 현직 기반",
+    "region": "gyeongnam"
+  },
+  "candidates": {
+    "창원시 제1선거구": [
+      {
+        "name": "서민호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제2선거구": [
+      {
+        "name": "백태현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제3선거구": [
+      {
+        "name": "박해영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제4선거구": [
+      {
+        "name": "박준",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제5선거구": [
+      {
+        "name": "이찬호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제6선거구": [
+      {
+        "name": "이재두",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제7선거구": [
+      {
+        "name": "박남용",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제8선거구": [
+      {
+        "name": "강용범",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제9선거구": [
+      {
+        "name": "정규헌",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제10선거구": [
+      {
+        "name": "정쌍학",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제11선거구": [
+      {
+        "name": "진상락",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제12선거구": [
+      {
+        "name": "정희성",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제13선거구": [
+      {
+        "name": "조영명",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제14선거구": [
+      {
+        "name": "박동철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제15선거구": [
+      {
+        "name": "김순택",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창원시 제16선거구": [
+      {
+        "name": "이치우",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제1선거구": [
+      {
+        "name": "최학범",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제2선거구": [
+      {
+        "name": "서희봉",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제3선거구": [
+      {
+        "name": "최동원",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제4선거구": [
+      {
+        "name": "권요찬",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제5선거구": [
+      {
+        "name": "주봉한",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제6선거구": [
+      {
+        "name": "박병영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제7선거구": [
+      {
+        "name": "이시영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "김해시 제8선거구": [
+      {
+        "name": "손덕상",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제1선거구": [
+      {
+        "name": "이용식",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제2선거구": [
+      {
+        "name": "이영수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제3선거구": [
+      {
+        "name": "최영호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제4선거구": [
+      {
+        "name": "권혁준",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제5선거구": [
+      {
+        "name": "박인",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "양산시 제6선거구": [
+      {
+        "name": "허용복",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "밀양시 제1선거구": [
+      {
+        "name": "장병국",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "밀양시 제2선거구": [
+      {
+        "name": "조인종",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "진주시 제1선거구": [
+      {
+        "name": "정재욱",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "진주시 제2선거구": [
+      {
+        "name": "이준부",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "진주시 제3선거구": [
+      {
+        "name": "조현신",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "진주시 제4선거구": [
+      {
+        "name": "유계현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "진주시 제5선거구": [
+      {
+        "name": "김진부",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "거제시 제1선거구": [
+      {
+        "name": "정수만",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "거제시 제2선거구": [
+      {
+        "name": "전기풍",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "거제시 제3선거구": [
+      {
+        "name": "윤준영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "통영시 제1선거구": [
+      {
+        "name": "강성중",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "통영시 제2선거구": [
+      {
+        "name": "김태규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "사천시 제1선거구": [
+      {
+        "name": "임철규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "사천시 제2선거구": [
+      {
+        "name": "김현철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "의령군 선거구": [
+      {
+        "name": "권원만",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "함안군 제1선거구": [
+      {
+        "name": "조영제",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "함안군 제2선거구": [
+      {
+        "name": "조인제",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창녕군 제1선거구": [
+      {
+        "name": "이경재",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "창녕군 제2선거구": [
+      {
+        "name": "우기수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "고성군 제1선거구": [
+      {
+        "name": "백수명",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "고성군 제2선거구": [
+      {
+        "name": "허동원",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "남해군 선거구": [
+      {
+        "name": "류경완",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "하동군 선거구": [
+      {
+        "name": "김구연",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "산청군 선거구": [
+      {
+        "name": "신종철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "함양군 선거구": [
+      {
+        "name": "김재웅",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "거창군 제1선거구": [
+      {
+        "name": "박주언",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "거창군 제2선거구": [
+      {
+        "name": "김일수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ],
+    "합천군 선거구": [
+      {
+        "name": "장진영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "pledges": []
+      }
+    ]
+  }
+}

@@ -9343,7 +9343,23 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-17 14시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김학동",
+            "party": "",
+            "support": 31.0
+          },
+          {
+            "candidateName": "도기욱",
+            "party": "",
+            "support": 34.4
+          },
+          {
+            "candidateName": "안병윤",
+            "party": "",
+            "support": 27.5
+          }
+        ],
         "regionKey": "gyeongbuk",
         "municipality": "예천군",
         "electionType": "district_mayor",

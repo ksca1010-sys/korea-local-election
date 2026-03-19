@@ -2579,6 +2579,91 @@ const ElectionData = (() => {
             return { districts: Object.values(region.districtMembers).flat(), municipalities };
         },
 
+        // ── 기초의원 시군구 데이터 조회 ──
+        getLocalCouncilData(regionKey, districtName) {
+            const members = this.getLocalCouncilMembers(regionKey, districtName);
+            if (!members?.length) {
+                // mock 데이터 폴백
+                const mockData = localCouncil?.[regionKey]?.[districtName];
+                return mockData || null;
+            }
+            // 현직 의원 데이터를 선거구별로 그룹핑
+            const districtMap = {};
+            members.forEach(m => {
+                const dName = m.district || m.name || '미분류';
+                if (!districtMap[dName]) districtMap[dName] = { name: dName, seats: 1, candidates: [], leadParty: 'independent' };
+                districtMap[dName].candidates.push({
+                    name: m.name, party: m.party || 'independent',
+                    career: m.career || '', isIncumbent: true, status: 'DECLARED'
+                });
+                districtMap[dName].leadParty = m.party || districtMap[dName].leadParty;
+            });
+            const districts = Object.values(districtMap);
+            return { districts, totalSeats: districts.reduce((sum, d) => sum + d.seats, 0) };
+        },
+
+        // ── 의원급 후보자 조회 (council-tab.js에서 사용) ──
+        _councilCandidateCache: {},
+        async loadCouncilCandidates(regionKey, electionType) {
+            const folder = electionType === 'council' ? 'council' : 'local_council';
+            const cacheKey = `${folder}_${regionKey}`;
+            if (this._councilCandidateCache[cacheKey]) return;
+            try {
+                const data = await fetch(`data/candidates/${folder}/${regionKey}.json`).then(r => r.json());
+                this._councilCandidateCache[cacheKey] = data;
+            } catch(e) {
+                this._councilCandidateCache[cacheKey] = { candidates: {} };
+            }
+        },
+        getCouncilCandidates(regionKey, districtName, electionType) {
+            const folder = electionType === 'council' ? 'council' : 'local_council';
+            const cacheKey = `${folder}_${regionKey}`;
+            const data = this._councilCandidateCache[cacheKey];
+            if (data?.candidates?.[districtName]) {
+                return data.candidates[districtName].filter(c => c.status !== 'WITHDRAWN');
+            }
+            // 폴백: 현직 의원 데이터에서 조회
+            if (electionType === 'council') {
+                const members = this.getCouncilMembers(regionKey, districtName);
+                return members.map(m => ({
+                    name: m.name, party: m.party || 'independent',
+                    career: m.career || '', isIncumbent: true, status: 'DECLARED'
+                }));
+            }
+            return [];
+        },
+
+        // ── 비례대표 데이터 ──
+        _proportionalCache: null,
+        async loadProportionalCandidates() {
+            if (this._proportionalCache) return;
+            try {
+                this._proportionalCache = await fetch('data/candidates/proportional.json').then(r => r.json());
+            } catch(e) {
+                this._proportionalCache = {};
+            }
+        },
+        getProportionalCandidates(regionKey, electionType) {
+            const key = electionType === 'councilProportional' ? 'council_proportional' : 'local_council_proportional';
+            return this._proportionalCache?.[key]?.[regionKey] || null;
+        },
+        getProportionalData(regionKey, electionType) {
+            // 비례대표 개요 데이터 (의석 수, 현 정당별 구성)
+            if (electionType === 'councilProportional') {
+                return this._proportionalCouncilCache?.regions?.[regionKey] || null;
+            }
+            return this._proportionalLocalCouncilCache?.regions?.sigungus?.[regionKey] ||
+                   this._proportionalLocalCouncilCache?.regions?.[regionKey] || null;
+        },
+
+        // ── 정당지지도 (비례대표용) ──
+        getPartySupport(regionKey) {
+            if (!this._pollsCache?.regions?.[regionKey]) return [];
+            return this._pollsCache.regions[regionKey].filter(p =>
+                p.title?.includes('정당지지도') || p.classification?.electionTypes?.includes('정당지지도')
+            );
+        },
+
         // ── 재보궐 외부 JSON 로드 API ──
         _byElectionCache: null,
         loadByElectionData() {

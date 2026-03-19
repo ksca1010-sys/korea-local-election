@@ -1,0 +1,1375 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-03-19",
+    "source": "local_council_members.json 현직 기반",
+    "region": "chungbuk"
+  },
+  "candidates": {
+    "청주시가선거구": [
+      {
+        "name": "남일현",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "김병국",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "청주시나선거구": [
+      {
+        "name": "박봉규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "김성택",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "한병수",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시다선거구": [
+      {
+        "name": "김완식",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "신승호",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "이화정",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "이명식",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "청주시사선거구": [
+      {
+        "name": "김현기",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "박노학",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "허철",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시아선거구": [
+      {
+        "name": "이우균",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "남연심",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "한동순",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시자선거구": [
+      {
+        "name": "한재학",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "유광욱",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "충주시가선거구": [
+      {
+        "name": "홍성억",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "신효일",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "충주시나선거구": [
+      {
+        "name": "이두원",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "최지원",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "충주시다선거구": [
+      {
+        "name": "채희락",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "박상호",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "정용학",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "충주시라선거구": [
+      {
+        "name": "고민서",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 5,
+        "pledges": []
+      },
+      {
+        "name": "서원복",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 5,
+        "pledges": []
+      },
+      {
+        "name": "김낙우",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 5,
+        "pledges": []
+      },
+      {
+        "name": "유영기",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 5,
+        "pledges": []
+      },
+      {
+        "name": "손상우",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 5,
+        "pledges": []
+      }
+    ],
+    "충주시마선거구": [
+      {
+        "name": "손상현",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "강명철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "충주시바선거구": [
+      {
+        "name": "김영석",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "곽명환",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "충주시사선거구": [
+      {
+        "name": "박해수",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "이회수",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "제천시가선거구": [
+      {
+        "name": "박해윤",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "홍석용",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "제천시나선거구": [
+      {
+        "name": "김진환",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이정임",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이정현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "제천시다선거구": [
+      {
+        "name": "김수완",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "송수연",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "제천시라선거구": [
+      {
+        "name": "박영기",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "이재신",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "제천시마선거구": [
+      {
+        "name": "권오규",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "윤치국",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이영순",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "단양군가선거구": [
+      {
+        "name": "김영길",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "장영갑",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "조성룡",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김영길",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "단양군나선거구": [
+      {
+        "name": "강미숙",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이상훈",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "오시백",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시차선거구": [
+      {
+        "name": "홍순철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "김은숙",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "정연숙",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시카선거구": [
+      {
+        "name": "정영석",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "최재호",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "청주시타선거구": [
+      {
+        "name": "박정희",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이영신",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "정재우",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시파선거구": [
+      {
+        "name": "임정수",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "정태훈",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "청주시하선거구": [
+      {
+        "name": "이한국",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "변은영",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "영동군가선거구": [
+      {
+        "name": "이수동",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "황승연",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "신현광",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김은하",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "영동군나선거구": [
+      {
+        "name": "이승주",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "안정훈",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "영동군다선거구": [
+      {
+        "name": "이대호",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "김오봉",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "보은군가선거구": [
+      {
+        "name": "이경노",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김도화",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "윤대성",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "최승민",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "보은군나선거구": [
+      {
+        "name": "성제홍",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "김응철",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "보은군다선거구": [
+      {
+        "name": "윤석영",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "최부림",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "옥천군가선거구": [
+      {
+        "name": "박한범",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이병우",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "조규룡",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "옥천군나선거구": [
+      {
+        "name": "박정옥",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "김외식",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "옥천군다선거구": [
+      {
+        "name": "송윤섭",
+        "party": "progressive",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "추복성",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "음성군가선거구": [
+      {
+        "name": "박흥식",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "안해성",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "서효석",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "서형석",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "음성군나선거구": [
+      {
+        "name": "유창원",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "조천희",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "음성군다선거구": [
+      {
+        "name": "최용락",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "김영호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "진천군가선거구": [
+      {
+        "name": "윤대영",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김기복",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "이재명",
+        "party": "vacant",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김상봉",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "진천군나선거구": [
+      {
+        "name": "이강선",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "임정열",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "장동현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      },
+      {
+        "name": "김성우",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 4,
+        "pledges": []
+      }
+    ],
+    "괴산군가선거구": [
+      {
+        "name": "최경섭",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "김영희",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "안미선",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "괴산군나선거구": [
+      {
+        "name": "김주성",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "장옥자",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "괴산군다선거구": [
+      {
+        "name": "김낙영",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "신송규",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "증평군가선거구": [
+      {
+        "name": "조윤성",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "연제광",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "증평군나선거구": [
+      {
+        "name": "이동령",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "최명호",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "증평군다선거구": [
+      {
+        "name": "이금선",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      },
+      {
+        "name": "이창규",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 2,
+        "pledges": []
+      }
+    ],
+    "청주시라선거구": [
+      {
+        "name": "안성현",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "박완희",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "임은성",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시마선거구": [
+      {
+        "name": "김태순",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "이완복",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "김기동",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ],
+    "청주시바선거구": [
+      {
+        "name": "홍성각",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "신민수",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      },
+      {
+        "name": "김영근",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "isIncumbent": true,
+        "_seats": 3,
+        "pledges": []
+      }
+    ]
+  }
+}
