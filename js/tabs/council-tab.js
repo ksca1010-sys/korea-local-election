@@ -101,85 +101,73 @@ const CouncilTab = (() => {
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
 
+        // ── 개요 박스: 선거구 정보 + 관할 읍면동 ──
         const prevContainer = document.getElementById('prev-election-result');
-        if (!prevContainer) return;
-
-        let html = `<div class="council-overview">`;
-
-        // ── 선거구 기본 정보 ──
-        html += `
-            <div class="council-info-card" style="padding:12px;border-radius:8px;background:var(--bg-secondary);margin-bottom:12px;">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                    <span style="font-size:1.05rem;font-weight:600;color:var(--text-primary);">${districtName}</span>
-                    <span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--accent-primary)15;color:var(--accent-primary);border:1px solid var(--accent-primary)33;">
-                        ${label} · ${seats > 1 ? `중대선거구 ${seats}석` : '소선거구 1석'}
-                    </span>
-                </div>
-                <div style="display:flex;gap:16px;font-size:0.8rem;color:var(--text-muted);">
-                    <span><i class="fas fa-map-marker-alt" style="margin-right:4px;"></i>${regionName}</span>
-                    <span><i class="fas fa-users" style="margin-right:4px;"></i>후보 ${activeCandidates.length}명</span>
-                </div>
-            </div>
-        `;
-
-        // ── 관할 읍면동 ──
-        if (dongs.length > 0) {
-            html += `
-                <div style="margin-bottom:12px;">
-                    <h5 style="color:var(--text-secondary);margin-bottom:6px;font-size:0.85rem;">
-                        <i class="fas fa-map" style="margin-right:4px;"></i> 관할 지역 (${dongs.length}개)
-                    </h5>
-                    <div style="display:flex;flex-wrap:wrap;gap:4px;">
-                        ${dongs.map(d => `<span style="font-size:0.75rem;padding:2px 8px;border-radius:4px;background:var(--bg-tertiary);color:var(--text-secondary);">${d}</span>`).join('')}
+        if (prevContainer) {
+            let html = `
+                <div style="padding:14px;border-radius:10px;background:var(--bg-secondary);border:1px solid var(--border-color);">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+                        <i class="fas fa-landmark" style="color:var(--accent-primary);font-size:1.1rem;"></i>
+                        <span style="font-size:0.95rem;font-weight:600;color:var(--text-primary);">${districtName}</span>
+                        <span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:var(--accent-primary)15;color:var(--accent-primary);border:1px solid var(--accent-primary)33;margin-left:auto;">
+                            ${label} · ${seats > 1 ? `${seats}석` : '1석'}
+                        </span>
                     </div>
-                </div>
+                    <div style="display:flex;gap:16px;font-size:0.8rem;color:var(--text-muted);margin-bottom:${dongs.length > 0 ? '10' : '0'}px;">
+                        <span><i class="fas fa-map-marker-alt" style="margin-right:4px;"></i>${regionName}</span>
+                        <span><i class="fas fa-users" style="margin-right:4px;"></i>후보 ${activeCandidates.length}명</span>
+                    </div>
             `;
-        }
 
-        // ── 현직 의원 정보 ──
-        html += `
-            <div style="margin-bottom:12px;">
-                <h5 style="color:var(--text-secondary);margin-bottom:6px;font-size:0.85rem;">
-                    <i class="fas fa-user-tie" style="margin-right:4px;"></i> 현직 의원 (제8회 당선)
-                </h5>
-        `;
-
-        if (incumbents.length > 0) {
-            incumbents.forEach(c => {
-                const pc = ElectionData.getPartyColor(c.party || 'independent');
-                const pn = ElectionData.getPartyName(c.party || 'independent');
+            if (dongs.length > 0) {
                 html += `
-                    <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:6px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
-                        <div style="width:36px;height:36px;border-radius:50%;background:${pc}20;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                            <i class="fas fa-user" style="color:${pc};font-size:0.9rem;"></i>
-                        </div>
-                        <div style="flex:1;">
-                            <div style="display:flex;align-items:center;gap:6px;">
-                                <strong style="font-size:0.95rem;color:var(--text-primary);">${c.name}</strong>
-                                <span style="padding:1px 8px;border-radius:4px;font-size:0.7rem;background:${pc};color:white;">${pn}</span>
-                            </div>
-                            ${c.career ? `<div style="color:var(--text-muted);font-size:0.8rem;margin-top:2px;">${c.career}</div>` : ''}
-                        </div>
+                    <div style="display:flex;flex-wrap:wrap;gap:4px;">
+                        ${dongs.map(d => `<span style="font-size:0.72rem;padding:2px 7px;border-radius:4px;background:var(--bg-tertiary);color:var(--text-secondary);">${d}</span>`).join('')}
                     </div>
                 `;
-            });
-        } else {
-            html += `<p style="color:var(--text-muted);font-size:0.85rem;padding:8px;">현직 의원 정보가 없습니다.</p>`;
+            }
+
+            html += `</div>`;
+            prevContainer.innerHTML = html;
         }
 
-        html += `</div>`;
-
-        // ── 지난 선거 결과 (개요에 통합) ──
-        html += `<div id="council-overview-history" style="margin-bottom:12px;"><div class="panel-loading" style="padding:12px;"><div class="panel-loading-spinner"></div></div></div>`;
-
-        html += `</div>`;
-        prevContainer.innerHTML = html;
-
-        // 지난 선거 결과 비동기 로드
-        _loadPrevElectionInOverview(regionKey, districtName, electionType);
-
+        // ── 현직자 정보 박스: 현직 의원 + 지선 결과 ──
         const govContainer = document.getElementById('current-governor');
-        if (govContainer) govContainer.innerHTML = '';
+        if (govContainer) {
+            let govHtml = '';
+
+            // 현직 의원
+            if (incumbents.length > 0) {
+                incumbents.forEach(c => {
+                    const pc = ElectionData.getPartyColor(c.party || 'independent');
+                    const pn = ElectionData.getPartyName(c.party || 'independent');
+                    govHtml += `
+                        <div style="display:flex;align-items:center;gap:10px;padding:10px 12px;margin-bottom:6px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc};">
+                            <div style="width:36px;height:36px;border-radius:50%;background:${pc}20;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                                <i class="fas fa-user" style="color:${pc};font-size:0.9rem;"></i>
+                            </div>
+                            <div style="flex:1;">
+                                <div style="display:flex;align-items:center;gap:6px;">
+                                    <strong style="font-size:0.95rem;color:var(--text-primary);">${c.name}</strong>
+                                    <span style="padding:1px 8px;border-radius:4px;font-size:0.7rem;background:${pc};color:white;">${pn}</span>
+                                </div>
+                                ${c.career ? `<div style="color:var(--text-muted);font-size:0.8rem;margin-top:2px;">${c.career}</div>` : ''}
+                            </div>
+                        </div>
+                    `;
+                });
+            } else {
+                govHtml += `<p style="color:var(--text-muted);font-size:0.85rem;padding:8px;">현직 의원 정보가 없습니다.</p>`;
+            }
+
+            // 지선 결과 (비동기 로드 영역)
+            govHtml += `<div id="council-overview-history" style="margin-top:10px;"><div class="panel-loading" style="padding:8px;"><div class="panel-loading-spinner"></div></div></div>`;
+
+            govContainer.innerHTML = govHtml;
+
+            // 지선 결과 비동기 로드
+            _loadPrevElectionInOverview(regionKey, districtName, electionType);
+        }
     }
 
     function _loadPrevElectionInOverview(regionKey, districtName, electionType) {
