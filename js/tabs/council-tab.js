@@ -18,10 +18,17 @@ const CouncilTab = (() => {
 
     function getSeats(regionKey, districtName, electionType) {
         if (electionType === 'council') return 1; // 소선거구
-        // 기초의원: 데이터에서 선출 인원 조회
-        const data = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType);
-        if (data && data._seats) return data._seats;
-        return 2; // 기본값 (중대선거구)
+
+        // 기초의원: 후보 데이터에서 _seats 조회
+        const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
+        if (candidates.length > 0 && candidates[0]._seats) return candidates[0]._seats;
+
+        // 폴백: basic_district_mapping에서 조회
+        // 현직 수 = 의석 수 (현직 기반 데이터이므로)
+        const incumbents = candidates.filter(c => c.isIncumbent);
+        if (incumbents.length > 0) return incumbents.length;
+
+        return 2; // 최종 기본값
     }
 
     // ── 메인 렌더 ──

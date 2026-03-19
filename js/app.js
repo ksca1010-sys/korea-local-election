@@ -1756,10 +1756,14 @@ function renderCouncilProvinceView(regionKey, region) {
     function showCouncilMunicipalityDetail(regionKey, municipality) {
         const councilData = ElectionData.getCouncilData(regionKey);
         const constituencies = councilData?.municipalities?.[municipality] || [];
-        const totalCandidates = constituencies.reduce((sum, c) => sum + c.candidates.length, 0);
+        const totalCandidates = constituencies.reduce((sum, c) => sum + (c.members?.length || c.candidates?.length || 0), 0);
+
+        // 후보 데이터 lazy-load
+        ElectionData.loadCouncilCandidates?.(regionKey, 'council');
+
         document.getElementById('panel-region-name').textContent = `${municipality} 광역의원`;
-        document.getElementById('panel-region-info').textContent = `${constituencies.length}개 지역구 · 후보 ${totalCandidates}명`;
-        configurePanelTabs(['overview', 'candidates', 'news']);
+        document.getElementById('panel-region-info').textContent = `${constituencies.length}개 지역구 · ${totalCandidates}명`;
+        configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
         const prevContainer = document.getElementById('prev-election-result');
@@ -1767,19 +1771,30 @@ function renderCouncilProvinceView(regionKey, region) {
             if (!constituencies.length) {
                 prevContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center">선거구 데이터가 없습니다.</p>';
             } else {
-                prevContainer.innerHTML = `
-                    <div class="constituency-list">
-                        ${constituencies.map(c => `<button class="constituency-chip" data-constituency="${c.name}">${c.name}</button>`).join('')}
+                let html = `
+                    <div style="padding:8px 10px;margin-bottom:10px;border-radius:6px;background:var(--accent-primary)08;border:1px solid var(--accent-primary)22;font-size:0.85rem;color:var(--text-secondary);text-align:center;">
+                        <i class="fas fa-map-marked-alt" style="color:var(--accent-primary);margin-right:4px;"></i>
+                        ${constituencies.length}개 선거구 · 선거구를 클릭하면 후보 정보를 확인할 수 있습니다.
                     </div>
-                    <p style="color:var(--text-muted);font-size:0.8rem;margin-top:8px">지역구를 클릭하면 후보 정보를 볼 수 있습니다.</p>
+                    <div class="constituency-list" style="display:flex;flex-wrap:wrap;gap:6px;">
                 `;
+                constituencies.forEach(c => {
+                    const pc = ElectionData.getPartyColor(c.leadParty || 'independent');
+                    const memberCount = c.members?.length || c.candidates?.length || 0;
+                    html += `<button class="constituency-chip" data-constituency="${c.name}" style="
+                        padding:6px 12px;border-radius:6px;cursor:pointer;
+                        background:${pc}12;border:1px solid ${pc}44;color:var(--text-primary);
+                        font-size:0.8rem;transition:background 0.15s;">
+                        ${c.name} <span style="color:var(--text-muted);font-size:0.7rem;">(${memberCount}명)</span>
+                    </button>`;
+                });
+                html += `</div>`;
+                prevContainer.innerHTML = html;
+
                 prevContainer.querySelectorAll('.constituency-chip').forEach(btn => {
                     btn.addEventListener('click', () => {
                         const constituencyName = btn.dataset.constituency;
-                        const district = constituencies.find(c => c.name === constituencyName);
-                        if (district) {
-                            showCouncilConstituencyDetail(regionKey, municipality, district);
-                        }
+                        onConstituencySelected(regionKey, municipality, constituencyName);
                     });
                 });
             }
@@ -2059,6 +2074,9 @@ function renderCouncilProvinceView(regionKey, region) {
     function showLocalCouncilDistrictDetail(regionKey, districtName) {
         const lcData = ElectionData.getLocalCouncilData(regionKey, districtName);
 
+        // 후보 데이터 lazy-load
+        ElectionData.loadCouncilCandidates?.(regionKey, 'localCouncil');
+
         document.getElementById('panel-region-name').textContent = `${districtName} 기초의원`;
         document.getElementById('panel-region-info').textContent =
             `기초의원 선거구 ${lcData ? lcData.districts.length : 0}개 | 총 ${lcData ? lcData.totalSeats : 0}석`;
@@ -2067,30 +2085,55 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer && lcData) {
-            let html = `<div class="local-council-districts">`;
+            let html = `
+                <div style="padding:10px;margin-bottom:12px;border-radius:8px;background:var(--accent-primary)08;border:1px solid var(--accent-primary)22;text-align:center;">
+                    <i class="fas fa-users" style="color:var(--accent-primary);margin-right:4px;"></i>
+                    <strong>${lcData.districts.length}</strong>개 선거구 · 총 <strong>${lcData.totalSeats}</strong>석
+                    <span style="color:var(--text-muted);font-size:0.8rem;display:block;margin-top:4px;">선거구를 클릭하면 후보 정보를 볼 수 있습니다.</span>
+                </div>
+                <div class="local-council-districts">
+            `;
             lcData.districts.forEach(d => {
                 const partyColor = ElectionData.getPartyColor(d.leadParty);
+                const candidateCount = d.candidates ? d.candidates.length : 0;
                 html += `
-                    <div style="margin-bottom:12px;padding:10px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${partyColor}">
-                        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
-                            <strong style="color:var(--text-primary)">${d.name}</strong>
-                            <span style="color:var(--text-muted);font-size:0.8rem">${d.seats}석</span>
+                    <button class="local-council-district-btn" data-constituency="${d.name}" style="
+                        display:block;width:100%;text-align:left;cursor:pointer;
+                        margin-bottom:8px;padding:10px 12px;border-radius:8px;
+                        background:var(--bg-secondary);border:1px solid var(--border-color);
+                        border-left:3px solid ${partyColor};
+                        transition:background 0.15s;">
+                        <div style="display:flex;justify-content:space-between;align-items:center;">
+                            <strong style="color:var(--text-primary);font-size:0.9rem;">${d.name}</strong>
+                            <div style="display:flex;align-items:center;gap:8px;">
+                                <span style="color:var(--text-muted);font-size:0.75rem;">${d.seats}석 · ${candidateCount}명</span>
+                                <i class="fas fa-chevron-right" style="color:var(--text-muted);font-size:0.65rem;"></i>
+                            </div>
                         </div>
-                        ${d.candidates.map(c => {
-                            const cColor = ElectionData.getPartyColor(c.party);
-                            return `
-                                <div style="display:flex;align-items:center;gap:6px;margin-bottom:3px;font-size:0.8rem;">
-                                    <span style="width:6px;height:6px;border-radius:50%;background:${cColor};flex-shrink:0"></span>
-                                    <span style="color:var(--text-primary)">${c.name}</span>
-                                    <span style="color:var(--text-muted);font-size:0.7rem">${ElectionData.getPartyName(c.party)}</span>
-                                </div>
-                            `;
-                        }).join('')}
-                    </div>
+                        ${d.candidates && d.candidates.length > 0 ? `
+                            <div style="margin-top:6px;display:flex;flex-wrap:wrap;gap:4px;">
+                                ${d.candidates.slice(0, 6).map(c => {
+                                    const cColor = ElectionData.getPartyColor(c.party);
+                                    return `<span style="font-size:0.75rem;padding:1px 6px;border-radius:3px;background:${cColor}15;color:${cColor};border:1px solid ${cColor}33;">${c.name}</span>`;
+                                }).join('')}
+                                ${d.candidates.length > 6 ? `<span style="font-size:0.75rem;color:var(--text-muted);">+${d.candidates.length - 6}</span>` : ''}
+                            </div>
+                        ` : ''}
+                    </button>
                 `;
             });
             html += `</div>`;
             prevContainer.innerHTML = html;
+
+            // 선거구 클릭 이벤트
+            prevContainer.querySelectorAll('.local-council-district-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const constituencyName = btn.dataset.constituency;
+                    onConstituencySelected(regionKey, districtName, constituencyName);
+                });
+            });
+        } else if (prevContainer) {
+            prevContainer.innerHTML = `<p style="color:var(--text-muted);text-align:center;padding:16px;">기초의원 데이터를 준비 중입니다.</p>`;
         }
 
         const govContainer = document.getElementById('current-governor');
