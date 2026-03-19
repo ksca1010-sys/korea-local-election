@@ -134,53 +134,7 @@ const ProportionalTab = (() => {
             html += `</div>`;
         }
 
-        // ── 지난 선거 결과 (제8회) ──
-        const election = histData?.elections?.[0];
-        if (election) {
-            html += `
-                <div style="margin-bottom:12px;">
-                    <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
-                        <i class="fas fa-poll" style="margin-right:4px;"></i> 제${election.electionNumber}회 비례 투표 결과 (${election.year})
-                    </h5>
-            `;
-
-            // 의석 배분 바
-            if (election.seatDistribution?.length) {
-                html += `<div style="margin-bottom:10px;"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">비례 의석 ${totalSeats}석 배분</div>`;
-                const maxSeats = Math.max(...election.seatDistribution.map(s => s.seats));
-                election.seatDistribution.sort((a, b) => b.seats - a.seats).forEach(s => {
-                    const pc = ElectionData.getPartyColor(_partyNameToKey(s.party));
-                    const w = maxSeats > 0 ? (s.seats / maxSeats * 100) : 0;
-                    html += `
-                        <div style="display:grid;grid-template-columns:80px 1fr 36px;align-items:center;gap:8px;margin-bottom:4px;">
-                            <span style="font-size:0.8rem;color:${pc};font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${s.party}</span>
-                            <div style="height:14px;background:var(--bg-tertiary);border-radius:3px;overflow:hidden;">
-                                <div style="width:${w}%;height:100%;background:${pc};border-radius:3px;"></div>
-                            </div>
-                            <span style="font-size:0.8rem;color:var(--text-primary);text-align:right;font-weight:500;">${s.seats}석</span>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
-            }
-
-            // 득표율
-            if (election.voteShare?.length) {
-                html += `<div style="margin-bottom:8px;"><div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">비례 득표율</div>`;
-                election.voteShare.sort((a, b) => b.percent - a.percent).forEach(v => {
-                    const pc = ElectionData.getPartyColor(_partyNameToKey(v.party));
-                    html += `
-                        <div style="display:flex;justify-content:space-between;font-size:0.8rem;margin-bottom:3px;">
-                            <span style="color:${pc};">${v.party}</span>
-                            <span style="color:var(--text-primary);font-weight:500;">${v.percent}%</span>
-                        </div>
-                    `;
-                });
-                html += `</div>`;
-            }
-
-            html += `</div>`;
-        }
+        // 지난 선거 결과는 역대비교탭에서 표시 (개요에서 제거)
 
         html += `</div>`;
         prevContainer.innerHTML = html;

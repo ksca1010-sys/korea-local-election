@@ -26,6 +26,59 @@
               "seats": 5
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 5
+            },
+            {
+              "party": "민주당",
+              "seats": 5
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 5
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 5
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 5
+            },
+            {
+              "party": "자유한국당",
+              "seats": 3
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            },
+            {
+              "party": "바른미래당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -94,6 +147,51 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 3
+            },
+            {
+              "party": "민주당",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 3
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 3
+            },
+            {
+              "party": "자유한국당",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -144,6 +242,51 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 2
+            },
+            {
+              "party": "친박연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "자유한국당",
+              "seats": 2
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -188,6 +331,55 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "민주당",
+              "seats": 2
+            },
+            {
+              "party": "한나라당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -235,6 +427,51 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "민주당",
+              "seats": 2
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            },
+            {
+              "party": "통합진보당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -279,6 +516,55 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 1
+            },
+            {
+              "party": "민주당",
+              "seats": 1
+            },
+            {
+              "party": "자유선진당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            },
+            {
+              "party": "새누리당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -323,6 +609,51 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 2
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -367,6 +698,36 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 1
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 1
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -408,6 +769,63 @@
               "seats": 7
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 6
+            },
+            {
+              "party": "민주당",
+              "seats": 5
+            },
+            {
+              "party": "국민참여당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 6
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 6
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 7
+            },
+            {
+              "party": "자유한국당",
+              "seats": 3
+            },
+            {
+              "party": "정의당",
+              "seats": 2
+            },
+            {
+              "party": "바른미래당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -488,6 +906,51 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 2
+            },
+            {
+              "party": "민주당",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 3
+            },
+            {
+              "party": "자유한국당",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -538,6 +1001,51 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "민주당",
+              "seats": 2
+            },
+            {
+              "party": "한나라당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -585,6 +1093,59 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "자유선진당",
+              "seats": 2
+            },
+            {
+              "party": "한나라당",
+              "seats": 1
+            },
+            {
+              "party": "민주당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 2
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -643,6 +1204,63 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "민주당",
+              "seats": 2
+            },
+            {
+              "party": "한나라당",
+              "seats": 1
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            },
+            {
+              "party": "통합진보당",
+              "seats": 1
+            },
+            {
+              "party": "새누리당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "민주평화당",
+              "seats": 1
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -700,6 +1318,63 @@
               "seats": 1
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "민주당",
+              "seats": 4
+            },
+            {
+              "party": "한나라당",
+              "seats": 1
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새정치민주연합",
+              "seats": 4
+            },
+            {
+              "party": "통합진보당",
+              "seats": 1
+            },
+            {
+              "party": "새누리당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 4
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            },
+            {
+              "party": "민주평화당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -755,6 +1430,59 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 4
+            },
+            {
+              "party": "민주당",
+              "seats": 1
+            },
+            {
+              "party": "친박연합",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 4
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "자유한국당",
+              "seats": 3
+            },
+            {
+              "party": "더불어민주당",
+              "seats": 2
+            },
+            {
+              "party": "바른미래당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -808,6 +1536,59 @@
               "seats": 2
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 3
+            },
+            {
+              "party": "민주당",
+              "seats": 1
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 3
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 2
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 3
+            },
+            {
+              "party": "자유한국당",
+              "seats": 2
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
@@ -861,6 +1642,67 @@
               "seats": 4
             }
           ]
+        },
+        {
+          "electionNumber": 5,
+          "year": 2010,
+          "seatDistribution": [
+            {
+              "party": "한나라당",
+              "seats": 3
+            },
+            {
+              "party": "민주당",
+              "seats": 2
+            },
+            {
+              "party": "민주노동당",
+              "seats": 1
+            },
+            {
+              "party": "국민참여당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 6,
+          "year": 2014,
+          "seatDistribution": [
+            {
+              "party": "새누리당",
+              "seats": 4
+            },
+            {
+              "party": "새정치민주연합",
+              "seats": 3
+            }
+          ],
+          "voteShare": []
+        },
+        {
+          "electionNumber": 7,
+          "year": 2018,
+          "seatDistribution": [
+            {
+              "party": "더불어민주당",
+              "seats": 4
+            },
+            {
+              "party": "정의당",
+              "seats": 1
+            },
+            {
+              "party": "바른미래당",
+              "seats": 1
+            },
+            {
+              "party": "자유한국당",
+              "seats": 1
+            }
+          ],
+          "voteShare": []
         }
       ],
       "incumbents": {
