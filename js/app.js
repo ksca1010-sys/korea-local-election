@@ -1369,8 +1369,8 @@ const App = (() => {
                 renderCouncilProportionalView(regionKey, region);
                 break;
             case 'localCouncilProportional':
-                renderLocalCouncilProportionalView(regionKey, region);
-                break;
+                // 기초비례는 시군구 선택 전에는 패널 안 열림
+                return;
             case 'byElection':
                 renderGovernorView(regionKey, region);
                 break;
