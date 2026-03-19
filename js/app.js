@@ -2122,7 +2122,7 @@ function renderCouncilProvinceView(regionKey, region) {
 
         // ProportionalTab으로 개요+현직자 렌더링 위임
         if (typeof ProportionalTab !== 'undefined') {
-            ProportionalTab.renderOverview(regionKey, 'localCouncilProportional');
+            ProportionalTab.render('overview', regionKey, districtName, 'localCouncilProportional');
         }
 
         const issuesContainer = document.getElementById('key-issues');
