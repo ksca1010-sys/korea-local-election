@@ -349,25 +349,25 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     margin: 0 24px;
 }
 
+/* 검색 — 토스식 라운드 인풋 */
 .search-box {
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--bg-input);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 0 12px;
-    transition: var(--transition);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: 20px;
+    padding: 0 var(--space-16);
+    transition: border-color 0.15s;
 }
 
 .search-box:focus-within {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    border-color: var(--color-info);
 }
 
 .search-box i {
     color: var(--text-muted);
-    font-size: 0.85rem;
+    font-size: var(--text-body);
 }
 
 .search-box input {
@@ -376,13 +376,13 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     border: none;
     outline: none;
     color: var(--text-primary);
-    font-size: 0.9rem;
-    padding: 8px 10px;
+    font-size: var(--text-body);
+    padding: var(--space-8) var(--space-12);
     font-family: var(--font-family);
 }
 
 .search-box input::placeholder {
-    color: var(--text-muted);
+    color: var(--text-disabled);
 }
 
 .search-results {
@@ -1121,20 +1121,21 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding-left: 2px;
 }
 
+/* 줌 컨트롤 — 미니멀 */
 .map-zoom-controls {
     display: flex;
     flex-direction: column;
-    gap: 2px;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 4px;
+    gap: var(--space-2);
+    background: rgba(15, 17, 23, 0.85);
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: var(--space-4);
 }
 
 .map-zoom-controls button {
-    width: 100%;
-    height: 32px;
-    min-width: 88px;
+    width: 36px;
+    height: 36px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1143,19 +1144,16 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     border-radius: 8px;
     color: var(--text-secondary);
     cursor: pointer;
-    transition: var(--transition);
-    font-size: 0.85rem;
-    gap: 6px;
-    padding: 0 8px;
+    transition: background 0.15s, color 0.15s;
+    font-size: 16px;
 }
 
 .map-zoom-controls button span {
-    font-size: 0.8rem;
-    letter-spacing: 0.2px;
+    display: none;
 }
 
 .map-zoom-controls button:hover {
-    background: var(--bg-card-hover);
+    background: var(--bg-elevated);
     color: var(--text-primary);
 }
 
@@ -1171,16 +1169,16 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 
 /* Map paths */
 #korea-map .region {
-    stroke: var(--border-color);
+    stroke: rgba(255, 255, 255, 0.08);
     stroke-width: 0.8;
     cursor: pointer;
-    transition: fill 0.2s ease, stroke 0.2s ease, stroke-width 0.2s ease;
+    transition: fill 0.15s, stroke 0.15s, stroke-width 0.15s;
 }
 
 #korea-map .region:hover {
-    stroke: var(--accent-cyan);
-    stroke-width: 2;
-    filter: brightness(1.3);
+    stroke: rgba(255, 255, 255, 0.3);
+    stroke-width: 1.5;
+    filter: brightness(1.2);
 }
 
 #korea-map .region.selected {
