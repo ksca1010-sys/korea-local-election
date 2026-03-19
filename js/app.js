@@ -1717,32 +1717,14 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
-            if (!municipalities.length) {
-                prevContainer.innerHTML = '<p style="color:var(--text-muted);text-align:center">광역의원 데이터가 준비 중입니다.</p>';
-            } else {
-                const html = [`<div class="municipality-grid">`];
-                municipalities.forEach(([municipality, list]) => {
-                    const totalCandidates = list.reduce((sum, c) => sum + (c.candidates?.length || c.members?.length || 0), 0);
-                    const constituencyCount = list.length;
-                    const partyColor = ElectionData.getPartyColor(list[0]?.leadParty || 'independent');
-                    html.push(`
-                        <button class="municipality-card" data-municipality="${municipality}" style="border-color:${partyColor};">
-                            <div class="municipality-name">${municipality} 광역의원</div>
-                            <div class="municipality-meta">${constituencyCount}개 지역구 · ${totalCandidates}명</div>
-                            <div class="municipality-hint">지도를 클릭하거나 탭에서 상세보기</div>
-                        </button>
-                    `);
-                });
-                html.push(`</div>`);
-                prevContainer.innerHTML = html.join('');
-
-                prevContainer.querySelectorAll('.municipality-card').forEach(card => {
-                    card.addEventListener('click', () => {
-                        const municipality = card.dataset.municipality;
-                        showCouncilMunicipalityDetail(regionKey, municipality);
-                    });
-                });
-            }
+            const districtCount = councilData ? councilData.districts.length : 0;
+            prevContainer.innerHTML = `
+                <div style="text-align:center;padding:16px;">
+                    <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--accent-primary);margin-bottom:8px;display:block;"></i>
+                    <p style="color:var(--text-secondary)">지도에서 시군구를 클릭하면<br>해당 지역의 광역의원 선거구를<br>확인할 수 있습니다.</p>
+                    <p style="color:var(--text-muted);font-size:0.8rem;margin-top:8px;">${municipalities.length}개 시군구 · ${districtCount}개 선거구</p>
+                </div>
+            `;
         }
 
         const govContainer = document.getElementById('current-governor');
