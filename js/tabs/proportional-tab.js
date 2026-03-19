@@ -371,8 +371,9 @@ const ProportionalTab = (() => {
             histData.elections.sort((a, b) => b.electionNumber - a.electionNumber).forEach(el => {
                 html += `
                     <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
-                        <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);font-weight:600;font-size:0.85rem;color:var(--text-primary);">
-                            제${el.electionNumber}회 (${el.year})
+                        <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">제${el.electionNumber}회 (${el.year})</span>
+                            ${el._voteShareEstimated ? '<span style="font-size:0.65rem;color:var(--text-muted);background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;">의석비율 추정</span>' : ''}
                         </div>
                         <div style="padding:12px;">
                 `;
@@ -392,7 +393,7 @@ const ProportionalTab = (() => {
                                 <div style="height:18px;background:var(--bg-tertiary);border-radius:4px;overflow:hidden;">
                                     <div style="width:${w}%;height:100%;background:${pc};border-radius:4px;"></div>
                                 </div>
-                                <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${v.percent}%</span>
+                                <span style="font-size:0.82rem;color:var(--text-primary);text-align:right;font-weight:600;">${Number(v.percent).toFixed(2)}%</span>
                             </div>
                         `;
                     });
