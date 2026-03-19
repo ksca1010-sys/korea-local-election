@@ -377,9 +377,10 @@ const ProportionalTab = (() => {
                         <div style="padding:12px;">
                 `;
 
-                // 득표율 바 OR 의석 배분 바 (득표율 없으면 의석으로 대체)
-                const hasVoteShare = el.voteShare?.length > 0;
-                const chartData = hasVoteShare ? el.voteShare : (el.seatDistribution || []);
+                // 득표율 바 OR 의석 배분 바 (득표율 없거나 0이면 의석으로 대체)
+                const validVoteShare = (el.voteShare || []).filter(v => v.percent > 0);
+                const hasVoteShare = validVoteShare.length > 0;
+                const chartData = hasVoteShare ? validVoteShare : (el.seatDistribution || []);
                 const chartLabel = hasVoteShare ? '득표율' : '의석 배분';
 
                 if (chartData.length > 0) {
