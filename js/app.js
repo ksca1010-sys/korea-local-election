@@ -631,10 +631,11 @@ const App = (() => {
         const panel = document.getElementById('detail-panel');
         if (panel) panel.classList.remove('collapsed');
 
-        const regionName = document.getElementById('panel-region-name');
-        if (regionName) regionName.textContent = '지역을 선택하세요';
-        const regionInfo = document.getElementById('panel-region-info');
-        if (regionInfo) regionInfo.textContent = '';
+        // 헤더와 탭 숨기기 (선거+지역 선택 전)
+        const panelHeader = document.querySelector('.panel-header');
+        if (panelHeader) panelHeader.style.display = 'none';
+        const panelTabs = document.querySelector('.panel-tabs');
+        if (panelTabs) panelTabs.style.display = 'none';
 
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = '';
@@ -1290,10 +1291,11 @@ const App = (() => {
         const panel = document.getElementById('detail-panel');
         if (panel) panel.classList.remove('collapsed');
 
-        const regionName = document.getElementById('panel-region-name');
-        if (regionName) regionName.textContent = '지역을 선택하세요';
-        const regionInfo = document.getElementById('panel-region-info');
-        if (regionInfo) regionInfo.textContent = '';
+        // 헤더와 탭 숨기기
+        const panelHeader = document.querySelector('.panel-header');
+        if (panelHeader) panelHeader.style.display = 'none';
+        const panelTabs = document.querySelector('.panel-tabs');
+        if (panelTabs) panelTabs.style.display = 'none';
 
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = '';
@@ -1355,9 +1357,13 @@ const App = (() => {
             return;
         }
 
-        // Hide welcome, show content
+        // Hide welcome, show content — 헤더와 탭 복원
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
+        const panelHeader = document.querySelector('.panel-header');
+        if (panelHeader) panelHeader.style.display = '';
+        const panelTabs = document.querySelector('.panel-tabs');
+        if (panelTabs) panelTabs.style.display = '';
 
         // Branch based on election type
         switch (currentElectionType) {
@@ -1856,6 +1862,11 @@ function renderCouncilProvinceView(regionKey, region) {
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
 
+        const _ph = document.querySelector('.panel-header');
+        if (_ph) _ph.style.display = '';
+        const _pt = document.querySelector('.panel-tabs');
+        if (_pt) _pt.style.display = '';
+
         document.getElementById('panel-region-name').textContent = data.district;
         document.getElementById('panel-region-info').textContent =
             `${data.subType || '재보궐선거'} | ${data.type} | 후보 ${data.candidates.length}명`;
@@ -2117,6 +2128,11 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
+
+        const _ph = document.querySelector('.panel-header');
+        if (_ph) _ph.style.display = '';
+        const _pt = document.querySelector('.panel-tabs');
+        if (_pt) _pt.style.display = '';
 
         // ProportionalTab으로 개요+현직자 렌더링 위임
         if (typeof ProportionalTab !== 'undefined') {
@@ -5333,6 +5349,11 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
+
+        const _ph = document.querySelector('.panel-header');
+        if (_ph) _ph.style.display = '';
+        const _pt = document.querySelector('.panel-tabs');
+        if (_pt) _pt.style.display = '';
 
         // 불필요한 빈 박스 숨기기
         const overviewCard = document.querySelector('.election-overview-card');
