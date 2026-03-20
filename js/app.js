@@ -1138,7 +1138,11 @@ const App = (() => {
         }
 
         if (tabName === 'candidates' && currentRegionKey) {
-            renderCandidatesTab(currentRegionKey);
+            // 의원급은 CouncilTab에서 처리 (위에서 return됨). 여기 도달하면 광역단체장/기초단체장/교육감만
+            const councilTypes = ['council', 'localCouncil', 'councilProportional', 'localCouncilProportional'];
+            if (!councilTypes.includes(currentElectionType)) {
+                renderCandidatesTab(currentRegionKey);
+            }
         }
 
         // Render news if news tab
