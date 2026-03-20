@@ -3505,7 +3505,12 @@ const MapModule = (() => {
                 .on('click', function(event, d) {
                     const districtName = getDistrictName(d);
                     const effName = getEffectiveDistrictName(regionKey, districtName);
-                    switchToProportionalSigunguDetail(regionKey, effName);
+                    // 시군구 선택만 (상세 줌인 안 함)
+                    g.selectAll('.district').classed('selected', false);
+                    d3.select(this).classed('selected', true);
+                    if (typeof App !== 'undefined' && App.onDistrictSelected) {
+                        App.onDistrictSelected(regionKey, effName);
+                    }
                 })
                 .style('cursor', 'pointer')
                 .attr('opacity', 1);
@@ -3537,7 +3542,14 @@ const MapModule = (() => {
                     .attr('opacity', 0)
                     .on('click', () => {
                         const effName = getEffectiveDistrictName(regionKey, districtName);
-                        switchToProportionalSigunguDetail(regionKey, effName);
+                        // 시군구 선택만 (상세 줌인 안 함)
+                        g.selectAll('.district').classed('selected', false);
+                        g.selectAll(`.district`).each(function(dd) {
+                            if (getDistrictName(dd) === districtName) d3.select(this).classed('selected', true);
+                        });
+                        if (typeof App !== 'undefined' && App.onDistrictSelected) {
+                            App.onDistrictSelected(regionKey, effName);
+                        }
                     });
 
                 labelG.append('text')
