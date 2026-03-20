@@ -2216,7 +2216,10 @@ function renderCouncilProvinceView(regionKey, region) {
                     const issues = document.getElementById('overview-key-issues');
                     const risk = document.getElementById('overview-risk-factor');
                     if (trendBadge) trendBadge.textContent = ov.trend || '';
-                    if (updatedDate) updatedDate.textContent = ElectionData._overviewCache?.meta?.lastUpdated || '';
+                    if (updatedDate) {
+                        const updated = ElectionData._overviewCache?.meta?.lastUpdated || '';
+                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--color-warning);margin-left:var(--space-4);"><i class="fas fa-robot"></i> AI 생성</span>`;
+                    }
                     if (headline) headline.textContent = ov.headline || '';
 
                     // narrative 모드: narrative가 있으면 summary 대신 표시
@@ -2238,7 +2241,10 @@ function renderCouncilProvinceView(regionKey, region) {
                         ).join('');
                     }
                     if (risk && ov.riskFactor) {
-                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${ov.riskFactor}`;
+                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${ov.riskFactor}
+                            <div style="font-size:var(--text-micro);color:var(--text-disabled);margin-top:var(--space-4);">
+                                <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
+                            </div>`;
                     }
                 } else {
                     overviewCard.style.display = 'none';
