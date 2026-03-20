@@ -159,14 +159,41 @@ const ChartsModule = (() => {
             });
         });
 
-        // 후보별 라인 데이터셋 — 도형으로 구분
+        // 후보별 라인 데이터셋 — 도형 + 선 스타일 + 색상 변조로 구분
         const pointStyles = ['circle', 'rect', 'triangle', 'rectRot', 'star', 'crossRot'];
+        const dashPatterns = [[], [8, 4], [3, 3], [12, 4, 3, 4], [6, 2], [2, 2]];
+        // 같은 정당 후보끼리 밝기 변조
+        const partyCount = {};
+        candidateSet.forEach((info) => {
+            partyCount[info.party] = (partyCount[info.party] || 0) + 1;
+        });
+        const partyIdx = {};
+
         const datasets = [];
         let candidateIdx = 0;
         candidateSet.forEach((info, name) => {
-            const color = info.stanceColor || ElectionData.getPartyColor(info.party);
+            let color = info.stanceColor || ElectionData.getPartyColor(info.party);
+            const party = info.party;
+
+            // 같은 정당 2명 이상이면 밝기 변조
+            if (!partyIdx[party]) partyIdx[party] = 0;
+            const samePartyIdx = partyIdx[party]++;
+            if (partyCount[party] > 1 && samePartyIdx > 0) {
+                // HSL 변조: 밝기를 점진적으로 높임
+                const brightness = 1 + samePartyIdx * 0.25;
+                const r = parseInt(color.slice(1,3), 16);
+                const g = parseInt(color.slice(3,5), 16);
+                const b = parseInt(color.slice(5,7), 16);
+                const nr = Math.min(255, Math.round(r * brightness));
+                const ng = Math.min(255, Math.round(g * brightness));
+                const nb = Math.min(255, Math.round(b * brightness));
+                color = `#${nr.toString(16).padStart(2,'0')}${ng.toString(16).padStart(2,'0')}${nb.toString(16).padStart(2,'0')}`;
+            }
+
             const isMerged = !!trendGroup._merged;
             const style = pointStyles[candidateIdx % pointStyles.length];
+            const dash = isMerged ? [6, 3] : dashPatterns[candidateIdx % dashPatterns.length];
+
             datasets.push({
                 label: name,
                 data: polls.map(p => {
@@ -180,9 +207,9 @@ const ChartsModule = (() => {
                 pointBorderWidth: 2,
                 pointStyle: style,
                 pointRadius: 6,
-                pointHoverRadius: 8,
+                pointHoverRadius: 9,
                 borderWidth: 2.5,
-                borderDash: isMerged ? [6, 3] : [],
+                borderDash: dash,
                 tension: 0.3,
                 fill: false,
                 spanGaps: true
@@ -228,6 +255,8 @@ const ChartsModule = (() => {
                     legend: {
                         position: 'bottom',
                         labels: {
+                            usePointStyle: true,
+                            pointStyleWidth: 10,
                             filter: (item) => item.text !== '' && !item.text.includes('오차범위')
                         }
                     },
