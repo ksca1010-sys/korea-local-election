@@ -1615,6 +1615,16 @@ const App = (() => {
         configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
+        // 개요 스크립트 영역 비우기 (이전 선거 유형의 LLM 개요 잔존 방지)
+        const overviewCard = document.querySelector('.election-overview-card');
+        if (overviewCard) overviewCard.innerHTML = '';
+        const ovSummary = document.getElementById('overview-summary');
+        if (ovSummary) ovSummary.innerHTML = '';
+        const ovIssues = document.getElementById('overview-key-issues');
+        if (ovIssues) ovIssues.innerHTML = '';
+        const ovRisk = document.getElementById('overview-risk-factor');
+        if (ovRisk) ovRisk.innerHTML = '';
+
         // ProportionalTab으로 개요 렌더링 위임 (개요 박스 + 현직자 정보 박스 모두 처리)
         if (typeof ProportionalTab !== 'undefined') {
             ProportionalTab.renderOverview(regionKey, typeKey);
