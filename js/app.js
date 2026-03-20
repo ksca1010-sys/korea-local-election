@@ -1350,10 +1350,14 @@ const App = (() => {
         currentRegionKey = regionKey;
         currentDistrictName = null;
 
-        // 기초비례: 광역 선택 시 시군구 지도 전환 (패널은 안 열림)
-        if (currentElectionType === 'localCouncilProportional') {
+        // 기초의원/기초비례: 광역 선택 시 welcome 유지 (시군구 선택 전)
+        if (currentElectionType === 'localCouncilProportional' || currentElectionType === 'localCouncil') {
             if (options?.subDistrict) {
-                showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
+                if (currentElectionType === 'localCouncilProportional') {
+                    showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
+                } else {
+                    showLocalCouncilDistrictDetail(regionKey, options.subDistrict);
+                }
                 switchTabForRegion();
                 openPanel();
             }
