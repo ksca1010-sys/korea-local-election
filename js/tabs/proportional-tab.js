@@ -136,6 +136,47 @@ const ProportionalTab = (() => {
                         </div>
                     `;
                 });
+                // ── 8회 선거 결과 (득표율 바차트) ──
+                const election = histData?.elections?.find(e => e.electionNumber === 8);
+                if (election) {
+                    const voteShare = (election.voteShare || []).filter(v => v.percent > 0);
+                    if (voteShare.length > 0) {
+                        const sorted = [...voteShare].sort((a, b) => b.percent - a.percent);
+                        const maxPct = sorted[0].percent;
+                        govHtml += `
+                            <div style="margin-top:var(--space-12);padding-top:var(--space-12);border-top:1px solid var(--border-subtle);">
+                                <p style="font-size:var(--text-caption);color:var(--text-muted);margin-bottom:var(--space-8);">제8회 비례 득표율</p>
+                        `;
+                        sorted.forEach(v => {
+                            const pc = ElectionData.getPartyColor(_partyNameToKey(v.party));
+                            const w = maxPct > 0 ? (v.percent / maxPct * 100) : 0;
+                            govHtml += `
+                                <div style="margin-bottom:var(--space-8);">
+                                    <div style="display:flex;align-items:baseline;gap:var(--space-6);margin-bottom:var(--space-4);">
+                                        <span style="font-size:var(--text-body);font-weight:var(--font-bold);color:${pc};">${v.party}</span>
+                                        <span style="margin-left:auto;font-size:var(--text-body);font-weight:var(--font-bold);color:var(--text-primary);">${v.percent}%</span>
+                                    </div>
+                                    <div style="height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
+                                        <div style="width:${w}%;height:100%;background:${pc};border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        // 의석 배분
+                        if (election.seatDistribution?.length) {
+                            const seatText = [...election.seatDistribution].sort((a, b) => b.seats - a.seats)
+                                .map(s => {
+                                    const spc = ElectionData.getPartyColor(_partyNameToKey(s.party));
+                                    return `<span style="color:${spc};font-weight:var(--font-bold);">${s.party}</span> ${s.seats}석`;
+                                }).join(' <span style="color:var(--border-color);">|</span> ');
+                            govHtml += `<div style="font-size:var(--text-caption);color:var(--text-muted);margin-top:var(--space-4);">배분: ${seatText}</div>`;
+                        }
+
+                        govHtml += `</div>`;
+                    }
+                }
+
                 govContainer.innerHTML = govHtml;
             } else {
                 govContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">제8회 비례대표 당선자 정보가 없습니다.</p>';
