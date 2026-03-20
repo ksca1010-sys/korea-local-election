@@ -58,14 +58,14 @@
     --sidebar-width: 320px;
     --panel-width: 420px;
 
-    /* 타이포 — 토스식 정보 위계 */
+    /* 타이포 — 토스식 정보 위계 (전체 +2px) */
     --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
-    --text-display: 28px;
-    --text-headline: 20px;
-    --text-title: 16px;
-    --text-body: 14px;
-    --text-caption: 12px;
-    --text-micro: 11px;
+    --text-display: 32px;
+    --text-headline: 22px;
+    --text-title: 18px;
+    --text-body: 15px;
+    --text-caption: 13px;
+    --text-micro: 12px;
     --font-regular: 400;
     --font-bold: 600;
     --leading-tight: 1.3;
@@ -97,7 +97,7 @@
 }
 
 html {
-    font-size: 14px;
+    font-size: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: var(--leading-normal);
