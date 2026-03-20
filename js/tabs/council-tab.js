@@ -214,7 +214,27 @@ const CouncilTab = (() => {
             }
 
             if (!winners.length) {
-                container.innerHTML = '';
+                // 현직자가 있으면 무투표 당선
+                const incumbents = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
+                const currentIncumbents = incumbents.filter(c => c.isIncumbent);
+                if (currentIncumbents.length > 0) {
+                    let uhtml = `
+                        <h5 style="color:var(--text-secondary);margin-bottom:8px;font-size:0.85rem;">
+                            <i class="fas fa-poll" style="margin-right:4px;"></i> 제8회 지방선거 결과 (2022)
+                        </h5>
+                        <div style="padding:8px 10px;border-radius:6px;background:var(--bg-secondary);font-size:var(--text-caption);color:var(--text-muted);">
+                            <span style="background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;font-size:var(--text-micro);margin-right:6px;">무투표 당선</span>
+                    `;
+                    currentIncumbents.forEach(c => {
+                        const pc = ElectionData.getPartyColor(c.party || 'independent');
+                        const pn = ElectionData.getPartyName(c.party || 'independent');
+                        uhtml += `<span style="color:var(--text-primary);font-weight:var(--font-bold);margin-right:4px;">${c.name}</span><span style="color:${pc};margin-right:8px;">${pn}</span>`;
+                    });
+                    uhtml += `</div>`;
+                    container.innerHTML = uhtml;
+                } else {
+                    container.innerHTML = '';
+                }
                 return;
             }
 
@@ -599,7 +619,34 @@ const CouncilTab = (() => {
                     if (winners.length) break;
                 }
 
-                if (!winners.length) return;
+                if (!winners.length) {
+                    // 현직자 있으면 무투표 당선 표시
+                    if (num === 8) {
+                        const inc = ElectionData.getCouncilCandidates?.(regionKey, districtName, 'localCouncil') || [];
+                        const currentInc = inc.filter(c => c.isIncumbent);
+                        if (currentInc.length > 0) {
+                            lcHasAny = true;
+                            lcHtml += `
+                                <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
+                                    <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+                                        <span style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">제8회 (2022)</span>
+                                        <span style="font-size:0.65rem;color:var(--text-muted);background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;">무투표 당선</span>
+                                    </div>
+                                    <div style="padding:12px;">
+                                        ${currentInc.map(c => {
+                                            const pc = ElectionData.getPartyColor(c.party || 'independent');
+                                            const pn = ElectionData.getPartyName(c.party || 'independent');
+                                            return `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;">
+                                                <span style="font-size:0.85rem;color:${pc};font-weight:600;">${c.name}</span>
+                                                <span style="padding:1px 6px;border-radius:3px;font-size:0.65rem;background:${pc};color:white;">${pn}</span>
+                                            </div>`;
+                                        }).join('')}
+                                    </div>
+                                </div>`;
+                        }
+                    }
+                    return;
+                }
                 lcHasAny = true;
 
                 const sorted = [...winners].sort((a, b) => b.votes - a.votes);
