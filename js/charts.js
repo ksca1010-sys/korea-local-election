@@ -159,11 +159,14 @@ const ChartsModule = (() => {
             });
         });
 
-        // 후보별 라인 데이터셋
+        // 후보별 라인 데이터셋 — 도형으로 구분
+        const pointStyles = ['circle', 'rect', 'triangle', 'rectRot', 'star', 'crossRot'];
         const datasets = [];
+        let candidateIdx = 0;
         candidateSet.forEach((info, name) => {
             const color = info.stanceColor || ElectionData.getPartyColor(info.party);
             const isMerged = !!trendGroup._merged;
+            const style = pointStyles[candidateIdx % pointStyles.length];
             datasets.push({
                 label: name,
                 data: polls.map(p => {
@@ -173,15 +176,18 @@ const ChartsModule = (() => {
                 borderColor: color,
                 backgroundColor: color + '20',
                 pointBackgroundColor: color,
-                pointBorderColor: color,
-                pointRadius: 5,
-                pointHoverRadius: 7,
+                pointBorderColor: '#0F1117',
+                pointBorderWidth: 2,
+                pointStyle: style,
+                pointRadius: 6,
+                pointHoverRadius: 8,
                 borderWidth: 2.5,
                 borderDash: isMerged ? [6, 3] : [],
                 tension: 0.3,
                 fill: false,
                 spanGaps: true
             });
+            candidateIdx++;
         });
 
         // 1위 후보 오차범위 밴드
