@@ -57,7 +57,7 @@ const HistoryTab = (() => {
         if (electionType === 'mayor') {
             return '이 시군구의 역대 선거 데이터가 없습니다.';
         }
-        return '현재 선택한 선거 유형의 역대 비교 데이터가 없습니다.';
+        return '현재 선택한 선거 유형의 역대 선거 데이터가 없습니다.';
     }
 
     /**
@@ -106,7 +106,7 @@ const HistoryTab = (() => {
             emptyEl.style.display = '';
             emptyEl.innerHTML = buildEmptyMessage(getEmptyMessage(electionType, districtName), 'fa-clock-rotate-left');
             if (chartCardTitle) {
-                chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 역대 비교 그래프';
+                chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 역대 선거 그래프';
             }
             flowEl.innerHTML = buildEmptyMessage(getEmptyMessage(electionType, districtName), 'fa-shuffle');
             resultsEl.innerHTML = buildEmptyMessage(getEmptyMessage(electionType, districtName), 'fa-table-list');

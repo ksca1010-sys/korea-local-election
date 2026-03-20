@@ -2806,7 +2806,7 @@ function renderCouncilProvinceView(regionKey, region) {
             emptyEl.style.display = '';
             emptyEl.innerHTML = buildEmptyTabMessage(getHistoryEmptyMessage(), 'fa-clock-rotate-left');
             if (chartCardTitle) {
-                chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 역대 비교 그래프';
+                chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 역대 선거 그래프';
             }
             flowEl.innerHTML = buildEmptyTabMessage(getHistoryEmptyMessage(), 'fa-shuffle');
             resultsEl.innerHTML = buildEmptyTabMessage(getHistoryEmptyMessage(), 'fa-table-list');
