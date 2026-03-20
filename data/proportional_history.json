@@ -23852,11 +23852,15 @@
             "voteShare": [
               {
                 "party": "국민의힘",
-                "percent": 63.5
+                "percent": 74.41
               },
               {
                 "party": "더불어민주당",
-                "percent": 26.8
+                "percent": 21.3
+              },
+              {
+                "party": "정의당",
+                "percent": 4.3
               }
             ],
             "seatDistribution": [
@@ -26573,19 +26577,19 @@
             "voteShare": [
               {
                 "party": "한나라당",
-                "percent": 46.26
+                "percent": 53.32
+              },
+              {
+                "party": "민주당",
+                "percent": 23.97
               },
               {
                 "party": "민주노동당",
-                "percent": 43.62
+                "percent": 17.81
               },
               {
-                "party": "친박연합",
-                "percent": 8.01
-              },
-              {
-                "party": "미래연합",
-                "percent": 2.11
+                "party": "자유선진당",
+                "percent": 4.89
               }
             ]
           }
