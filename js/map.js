@@ -1139,16 +1139,15 @@ const MapModule = (() => {
 
         const legendOrder = ['democratic', 'ppp', 'reform', 'newReform', 'progressive', 'justice', 'independent'];
 
-        if (currentElectionType === 'localCouncil') {
-            if (currentMapMode === 'province') {
-                container.innerHTML = `
-                    <div class="legend-item">
-                        <span class="legend-color" style="background:#3a5080"></span>
-                        <span>시도를 클릭하여 시군구 선택</span>
-                    </div>`;
-                return;
-            }
-            // district 모드: 정당 범례 표시 (아래로 fall-through)
+        // drill-down 선거종류: province 모드에서는 안내 범례
+        const drillDownTypes = ['mayor', 'localCouncil', 'council', 'localCouncilProportional'];
+        if (drillDownTypes.includes(currentElectionType) && currentMapMode === 'province') {
+            container.innerHTML = `
+                <div class="legend-item">
+                    <span class="legend-color" style="background:#3a5080"></span>
+                    <span>시도를 클릭하여 지역 선택</span>
+                </div>`;
+            return;
         }
 
         if (currentElectionType === 'byElection' && currentMapMode === 'province') {
