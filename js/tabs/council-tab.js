@@ -552,90 +552,96 @@ const CouncilTab = (() => {
                 return;
             }
 
-            // 기초의원: 8회만 (기존 로직)
-            let winners = [];
-            let matchKey = '';
-            const regionData = data.local_council?.[regionKey] || {};
-            const normalized = districtName.replace(/\s+/g, '');
+            // 기초의원: 5~8회 전체 나열
+            const lcNums = [8, 7, 6, 5];
+            const lcYears = {8:2022, 7:2018, 6:2014, 5:2010};
+            const lcNormalized = districtName.replace(/\s+/g, '');
 
-            for (const [sgg, districts] of Object.entries(regionData)) {
-                for (const [dk, dv] of Object.entries(districts)) {
-                    if (dk === districtName || dk.replace(/\s+/g, '') === normalized) {
-                        winners = dv;
-                        matchKey = dk;
-                        break;
+            let lcHtml = `<div class="panel-section">
+                <h4 style="color:var(--text-secondary);margin-bottom:12px;">
+                    <i class="fas fa-history" style="margin-right:6px;"></i> 역대 기초의원 선거 결과
+                </h4>
+                <p style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;">
+                    <i class="fas fa-info-circle" style="margin-right:4px;"></i>선거구 경계가 이전 선거와 다를 수 있습니다.
+                </p>`;
+
+            let lcHasAny = false;
+            lcNums.forEach(num => {
+                const key = num === 8 ? 'local_council' : `local_council_${num}`;
+                const regionData = data[key]?.[regionKey] || {};
+
+                // 선거구명 매칭 (시군구 > 선거구)
+                let winners = [];
+                for (const [sgg, districts] of Object.entries(regionData)) {
+                    if (!districts || typeof districts !== 'object') continue;
+                    for (const [dk, dv] of Object.entries(districts)) {
+                        if (dk === districtName || dk.replace(/\s+/g, '') === lcNormalized) {
+                            winners = dv;
+                            break;
+                        }
                     }
+                    if (winners.length) break;
                 }
-                if (winners.length) break;
-            }
 
-            if (!winners.length) {
-                container.innerHTML = `
-                    <div class="panel-section">
-                        <div class="district-no-data">
-                            <p>이 선거구의 제8회 지선 결과를 찾을 수 없습니다.</p>
-                            <p style="margin-top:4px;color:var(--text-muted);font-size:0.8rem;">
-                                <i class="fas fa-info-circle"></i> 선거구 경계가 이전 선거와 다를 수 있습니다.
-                            </p>
+                if (!winners.length) return;
+                lcHasAny = true;
+
+                const sorted = [...winners].sort((a, b) => b.votes - a.votes);
+                const maxVotes = sorted[0]?.votes || 1;
+                const isUncontested = sorted.length === 1 && (!sorted[0].votes || sorted[0].rate === '0');
+
+                lcHtml += `
+                    <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
+                        <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
+                            <span style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">제${num}회 (${lcYears[num]})</span>
+                            ${isUncontested ? '<span style="font-size:0.65rem;color:var(--text-muted);background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;">무투표 당선</span>' : ''}
                         </div>
-                    </div>`;
-                return;
-            }
-
-            // 당선자 결과 렌더링
-            const sorted = [...winners].sort((a, b) => b.votes - a.votes);
-            const maxVotes = sorted[0]?.votes || 1;
-            const label = getElectionLabel(electionType);
-
-            let html = `
-                <div class="panel-section">
-                    <h4 style="color:var(--text-secondary);margin-bottom:12px;">
-                        <i class="fas fa-history" style="margin-right:6px;"></i>
-                        제8회 지방선거 결과 (2022)
-                    </h4>
-                    <div style="padding:8px 10px;margin-bottom:12px;border-radius:6px;background:var(--bg-secondary);font-size:0.8rem;color:var(--text-muted);">
-                        ${matchKey} · ${label} · 당선 ${sorted.length}명
-                    </div>
-            `;
-
-            sorted.forEach((w, i) => {
-                const pc = ElectionData.getPartyColor(w.party || 'independent');
-                const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
-                const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
-                const rateText = w.rate ? `${w.rate}%` : '';
-                const rankIcon = '';
-
-                html += `
-                    <div style="margin-bottom:10px;">
-                        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
-                            <div style="display:flex;align-items:center;gap:6px;">
-                                ${rankIcon}
-                                <strong style="color:var(--text-primary);font-size:0.9rem;">${w.name}</strong>
-                                <span style="padding:1px 6px;border-radius:3px;font-size:0.65rem;background:${pc};color:white;">${pn}</span>
-                            </div>
-                            <div style="text-align:right;">
-                                <span style="color:var(--text-primary);font-size:0.85rem;font-weight:600;">${w.votes.toLocaleString()}표</span>
-                                ${rateText ? `<span style="color:var(--text-muted);font-size:0.75rem;margin-left:4px;">(${rateText})</span>` : ''}
-                            </div>
-                        </div>
-                        <div style="height:20px;background:var(--bg-secondary);border-radius:4px;overflow:hidden;">
-                            <div style="width:${barWidth}%;height:100%;background:${pc};border-radius:4px;transition:width 0.5s;"></div>
-                        </div>
-                    </div>
+                        <div style="padding:12px;">
                 `;
+
+                if (isUncontested) {
+                    const w = sorted[0];
+                    const pc = ElectionData.getPartyColor(w.party || 'independent');
+                    const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                    lcHtml += `
+                        <div style="display:flex;align-items:center;gap:8px;">
+                            <span style="font-size:0.85rem;color:${pc};font-weight:600;">${w.name}</span>
+                            <span style="padding:1px 6px;border-radius:3px;font-size:0.65rem;background:${pc};color:white;">${pn}</span>
+                            <span style="font-size:0.75rem;color:var(--text-muted);margin-left:auto;">무투표 당선</span>
+                        </div>`;
+                } else {
+                    sorted.forEach(w => {
+                        const pc = ElectionData.getPartyColor(w.party || 'independent');
+                        const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                        const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
+                        const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
+                        lcHtml += `
+                            <div style="margin-bottom:var(--space-12);">
+                                <div style="display:flex;align-items:baseline;gap:var(--space-6);margin-bottom:var(--space-4);">
+                                    <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name || pn}</span>
+                                    <span style="font-size:var(--text-caption);color:${pc};">${pn}</span>
+                                    <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || w.votes.toLocaleString()}</span>
+                                </div>
+                                <div style="height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
+                                    <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
+                                </div>
+                            </div>`;
+                    });
+                }
+
+                lcHtml += `</div></div>`;
             });
 
-            html += `
-                    <p style="margin-top:12px;padding:8px;border-radius:6px;background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.15);color:var(--text-muted);font-size:0.75rem;">
-                        <i class="fas fa-exclamation-triangle" style="color:#f59e0b;margin-right:4px;"></i>
-                        선거구 경계가 이전 선거와 다를 수 있습니다. 단순 비교에 유의하세요.
-                    </p>
-                </div>
-            `;
+            if (!lcHasAny) {
+                lcHtml += `<div class="district-no-data"><p>이 선거구의 역대 결과를 찾을 수 없습니다.</p></div>`;
+            }
 
-            container.innerHTML = html;
+            lcHtml += `</div>`;
+            container.innerHTML = lcHtml;
+            return;
         });
     }
+
 
     // ── Public API ──
 
