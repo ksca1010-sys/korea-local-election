@@ -107,7 +107,7 @@ const ProportionalTab = (() => {
             </div>
         `;
 
-        // ── 현직 비례대표 의원 → "현직자 정보" 박스에 표시 ──
+        // ── 제8회 비례대표 당선자 → "현직자 정보" 박스에 표시 ──
         const govContainer = document.getElementById('current-governor');
         if (govContainer) {
             const incumbents = histData?.incumbents || {};
@@ -138,7 +138,7 @@ const ProportionalTab = (() => {
                 });
                 govContainer.innerHTML = govHtml;
             } else {
-                govContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">현직 비례대표 의원 정보가 없습니다.</p>';
+                govContainer.innerHTML = '<p style="color:var(--text-muted);font-size:0.85rem;">제8회 비례대표 당선자 정보가 없습니다.</p>';
             }
         }
     }
