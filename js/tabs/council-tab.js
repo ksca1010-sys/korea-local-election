@@ -287,19 +287,51 @@ const CouncilTab = (() => {
         const container = document.getElementById('candidates-list');
         if (!container) return;
 
-        const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
-        const activeCandidates = candidates.filter(c => c.status !== 'WITHDRAWN');
+        // lazy-load 후 재렌더
+        const tryRender = () => {
+            const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
+            const activeCandidates = candidates.filter(c => c.status !== 'WITHDRAWN');
+            return activeCandidates;
+        };
+
+        let activeCandidates = tryRender();
 
         if (!activeCandidates.length) {
+            container.innerHTML = '<div class="panel-loading"><div class="panel-loading-spinner"></div></div>';
+            // 데이터 로드 시도
+            const loadPromise = ElectionData.loadCouncilCandidates?.(regionKey, electionType);
+            if (loadPromise && loadPromise.then) {
+                loadPromise.then(() => {
+                    activeCandidates = tryRender();
+                    if (activeCandidates.length) {
+                        _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
+                    } else {
+                        container.innerHTML = `
+                            <div class="district-no-data">
+                                <p>이 선거구의 후보자 정보가 아직 등록되지 않았습니다.</p>
+                                <p style="margin-top:var(--space-4);color:var(--text-muted);font-size:var(--text-caption);">
+                                    후보자 등록 기간(5/14~15) 이후 업데이트됩니다.
+                                </p>
+                            </div>`;
+                    }
+                });
+                return;
+            }
+
             container.innerHTML = `
                 <div class="district-no-data">
                     <p>이 선거구의 후보자 정보가 아직 등록되지 않았습니다.</p>
-                    <p style="margin-top:4px;color:var(--text-muted);font-size:0.8rem;">
+                    <p style="margin-top:var(--space-4);color:var(--text-muted);font-size:var(--text-caption);">
                         후보자 등록 기간(5/14~15) 이후 업데이트됩니다.
                     </p>
                 </div>`;
             return;
         }
+
+        _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
+    }
+
+    function _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType) {
 
         const seats = getSeats(regionKey, districtName, electionType);
 
