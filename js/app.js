@@ -1615,9 +1615,11 @@ const App = (() => {
         configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
-        // 개요 스크립트 영역 비우기 (이전 선거 유형의 LLM 개요 잔존 방지)
+        // 개요 스크립트 영역 숨기기 (비례대표에서는 불필요)
         const overviewCard = document.querySelector('.election-overview-card');
-        if (overviewCard) overviewCard.innerHTML = '';
+        if (overviewCard) { overviewCard.innerHTML = ''; overviewCard.style.display = 'none'; }
+        const districtDetail = document.getElementById('district-detail');
+        if (districtDetail) districtDetail.style.display = 'none';
         const ovSummary = document.getElementById('overview-summary');
         if (ovSummary) ovSummary.innerHTML = '';
         const ovIssues = document.getElementById('overview-key-issues');
@@ -5331,6 +5333,12 @@ function renderCouncilProvinceView(regionKey, region) {
 
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
+
+        // 불필요한 빈 박스 숨기기
+        const overviewCard = document.querySelector('.election-overview-card');
+        if (overviewCard) { overviewCard.innerHTML = ''; overviewCard.style.display = 'none'; }
+        const districtDetail = document.getElementById('district-detail');
+        if (districtDetail) districtDetail.style.display = 'none';
 
         // CouncilTab으로 렌더링 위임
         if (typeof CouncilTab !== 'undefined') {
