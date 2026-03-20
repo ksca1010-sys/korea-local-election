@@ -2619,15 +2619,25 @@ const ElectionData = (() => {
             const folder = electionType === 'council' ? 'council' : 'local_council';
             const cacheKey = `${folder}_${regionKey}`;
             const data = this._councilCandidateCache[cacheKey];
-            if (data?.candidates?.[districtName]) {
-                return data.candidates[districtName].filter(c => c.status !== 'WITHDRAWN');
+            if (data?.candidates) {
+                // 정확 매칭
+                if (data.candidates[districtName]) {
+                    return data.candidates[districtName].filter(c => c.status !== 'WITHDRAWN');
+                }
+                // 정규화 매칭 (공백 제거)
+                const normalized = districtName.replace(/\s+/g, '');
+                for (const [k, v] of Object.entries(data.candidates)) {
+                    if (k.replace(/\s+/g, '') === normalized) {
+                        return v.filter(c => c.status !== 'WITHDRAWN');
+                    }
+                }
             }
             // 폴백: 현직 의원 데이터에서 조회
             if (electionType === 'council') {
                 const members = this.getCouncilMembers(regionKey, districtName);
                 return members.map(m => ({
                     name: m.name, party: m.party || 'independent',
-                    career: m.career || '', isIncumbent: true, status: 'DECLARED'
+                    career: m.career || '', isIncumbent: true, status: 'EXPECTED'
                 }));
             }
             return [];
