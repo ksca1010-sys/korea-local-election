@@ -4105,12 +4105,20 @@ function renderCouncilProvinceView(regionKey, region) {
         const hasPollAgency = /리얼미터|한국갤럽|갤럽|nbs|한국리서치|엠브레인|코리아리서치|케이스탯리서치|입소스|넥스트리서치|조원씨앤아이|미디어토마토|한길리서치/i.test(pollText);
         const hasNonElectionSurveyContext = /검찰 조사|경찰 조사|감사 조사|실태조사|전수조사|진상조사|역학조사|교육청 조사|수사/i.test(pollText);
 
-        // excludeAny 처리: mustAny 키워드가 제목에 있으면 excludeAny 무시 (통합 기사 허용)
+        // excludeAny 처리: 제목에 exclude 키워드가 있으면 제외
+        // 단, 광역단체장 키워드도 동시에 있는 통합 기사는 감점만 (완전 제외하지 않음)
         if (hasAny(strict.excludeAny)) {
-            const titleLower = title;
-            const mustInTitle = Array.isArray(strict.mustAny) && strict.mustAny.some(w => titleLower.includes(String(w).toLowerCase()));
-            if (!mustInTitle) return { ok: false, score: 0 };
-            // mustAny가 제목에 있으면 통과 (예: "도지사·교육감 여론조사" → 교육감이 제목에 있으니 허용)
+            const excludeInTitle = Array.isArray(strict.excludeAny) && strict.excludeAny.some(w => title.includes(String(w).toLowerCase()));
+            const governorInTitle = Array.isArray(strict.requiredGovernorRoleAny) && strict.requiredGovernorRoleAny.some(w => title.includes(String(w).toLowerCase()));
+
+            if (excludeInTitle && !governorInTitle) {
+                // 교육감/구청장 등만 있고 도지사/시장이 없으면 완전 제외
+                return { ok: false, score: 0 };
+            }
+            if (excludeInTitle && governorInTitle) {
+                // 통합 기사 (도지사+교육감): 감점만
+                score -= 2;
+            }
         }
         if (!hasAny(strict.mustAny)) return { ok: false, score: 0 };
         if (!hasAny(strict.targetAny)) return { ok: false, score: 0 };
