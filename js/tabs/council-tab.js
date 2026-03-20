@@ -8,6 +8,22 @@ const CouncilTab = (() => {
 
     // ── 유틸리티 ──
 
+    function _partyNameToKey(name) {
+        if (!name) return '';
+        const map = {
+            '더불어민주당':'democratic','국민의힘':'ppp','정의당':'justice',
+            '진보당':'progressive','무소속':'independent','조국혁신당':'reform',
+            '개혁신당':'newReform','기본소득당':'basicIncome',
+            '한나라당':'ppp','새누리당':'ppp','자유한국당':'ppp','친박연합':'ppp',
+            '민주당':'democratic','새정치민주연합':'democratic','민주평화당':'democratic',
+            '열린우리당':'democratic','새천년민주당':'democratic',
+            '민주노동당':'progressive','통합진보당':'progressive',
+            '바른미래당':'newReform','자유선진당':'independent','국민참여당':'democratic',
+            '국민중심당':'independent','미래연합':'independent',
+        };
+        return map[name] || '';
+    }
+
     function getElectionLabel(electionType) {
         return electionType === 'council' ? '광역의원' : '기초의원';
     }
@@ -213,8 +229,8 @@ const CouncilTab = (() => {
             `;
 
             sorted.forEach((w, i) => {
-                const pc = ElectionData.getPartyColor(w.party || 'independent');
-                const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                const pc = ElectionData.getPartyColor(w.party || _partyNameToKey(w.partyName) || 'independent');
+                const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                 const barWidth = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                 const voteRate = w.rate || (totalVotes > 0 ? (w.votes / totalVotes * 100).toFixed(1) : '0');
                 const isWinner = i === 0;
@@ -509,8 +525,8 @@ const CouncilTab = (() => {
 
                     if (isUncontested) {
                         const w = sorted[0];
-                        const pc = ElectionData.getPartyColor(w.party || 'independent');
-                        const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                        const pc = ElectionData.getPartyColor(w.party || _partyNameToKey(w.partyName) || 'independent');
+                        const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                         html += `
                             <div style="display:flex;align-items:center;gap:8px;">
                                 <span style="font-size:0.85rem;color:${pc};font-weight:600;">${w.name}</span>
@@ -520,8 +536,8 @@ const CouncilTab = (() => {
                         `;
                     } else {
                         sorted.forEach(w => {
-                            const pc = ElectionData.getPartyColor(w.party || 'independent');
-                            const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                            const pc = ElectionData.getPartyColor(w.party || _partyNameToKey(w.partyName) || 'independent');
+                            const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                             const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                             const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
 
@@ -601,8 +617,8 @@ const CouncilTab = (() => {
 
                 if (isUncontested) {
                     const w = sorted[0];
-                    const pc = ElectionData.getPartyColor(w.party || 'independent');
-                    const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                    const pc = ElectionData.getPartyColor(w.party || _partyNameToKey(w.partyName) || 'independent');
+                    const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                     lcHtml += `
                         <div style="display:flex;align-items:center;gap:8px;">
                             <span style="font-size:0.85rem;color:${pc};font-weight:600;">${w.name}</span>
@@ -611,8 +627,8 @@ const CouncilTab = (() => {
                         </div>`;
                 } else {
                     sorted.forEach(w => {
-                        const pc = ElectionData.getPartyColor(w.party || 'independent');
-                        const pn = ElectionData.getPartyName(w.party || 'independent') || w.partyName;
+                        const pc = ElectionData.getPartyColor(w.party || _partyNameToKey(w.partyName) || 'independent');
+                        const pn = w.partyName || ElectionData.getPartyName(w.party || 'independent');
                         const barW = maxVotes > 0 ? (w.votes / maxVotes * 100) : 0;
                         const rateText = (w.rate && w.rate !== '0') ? `${w.rate}%` : '';
                         lcHtml += `
