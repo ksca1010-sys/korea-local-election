@@ -1357,13 +1357,15 @@ const App = (() => {
             return;
         }
 
-        // Hide welcome, show content — 헤더와 탭 복원
+        // Hide welcome, show content — 헤더와 탭 복원 + 페이드인
         const welcome = document.getElementById('panel-welcome');
         if (welcome) welcome.style.display = 'none';
         const panelHeader = document.querySelector('.panel-header');
         if (panelHeader) panelHeader.style.display = '';
         const panelTabs = document.querySelector('.panel-tabs');
         if (panelTabs) panelTabs.style.display = '';
+        const _dp = document.getElementById('detail-panel');
+        if (_dp) { _dp.classList.remove('panel-fade-in'); void _dp.offsetWidth; _dp.classList.add('panel-fade-in'); }
 
         // Branch based on election type
         switch (currentElectionType) {

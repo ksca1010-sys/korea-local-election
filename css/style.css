@@ -1386,6 +1386,19 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     margin-right: calc(-1 * var(--panel-width));
 }
 
+/* 패널 페이드인 */
+@keyframes panelFadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.panel-fade-in .panel-header,
+.panel-fade-in .panel-tabs,
+.panel-fade-in .panel-content {
+    animation: panelFadeIn 0.25s ease-out both;
+}
+.panel-fade-in .panel-tabs { animation-delay: 0.05s; }
+.panel-fade-in .panel-content { animation-delay: 0.1s; }
+
 /* Panel Header — 토스 스타일 */
 .panel-header {
     display: flex;
