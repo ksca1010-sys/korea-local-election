@@ -120,7 +120,7 @@ const ProportionalTab = (() => {
                 ]);
 
             if (partyGroups.length > 0) {
-                let govHtml = '';
+                let govHtml = `<p style="font-size:var(--text-micro);color:var(--text-muted);margin-bottom:var(--space-8);">제8회 비례대표 당선자로 표기합니다</p>`;
                 partyGroups.forEach(([partyName, members]) => {
                     const pc = ElectionData.getPartyColor(_partyNameToKey(partyName));
                     govHtml += `
