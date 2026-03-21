@@ -188,14 +188,15 @@ def fetch_runners_with_gemini(district_name, history):
 확실한 것만. 모르면 제외.
 [{{"election":17,"runnerName":"이름","runnerParty":"정당명","runnerRate":42.1}}]"""
 
-    client = genai.Client(api_key=llm_key)
+    client = anthropic.Anthropic(api_key=llm_key)
     for attempt in range(3):
         try:
-            response = client.models.generate_content(
-                contents=[prompt],
-                config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
+            response = client.messages.create(
+                model="claude-haiku-4-5-20251001",
+                max_tokens=512,
+                messages=[{"role": "user", "content": prompt}],
             )
-            raw = getattr(response, "text", "") or ""
+            raw = response.content[0].text if response.content else ""
             if raw.startswith("```"): raw = raw.split("\n", 1)[-1]
             if raw.endswith("```"): raw = raw[:-3]
             results = json.loads(raw.strip()) if raw.strip() else []
@@ -210,7 +211,7 @@ def fetch_runners_with_gemini(district_name, history):
                     h["runnerRate"] = r.get("runnerRate", 0)
             return
         except Exception as e:
-            if "429" in str(e) or "503" in str(e):
+            if "529" in str(e) or "overloaded" in str(e).lower():
                 time.sleep(60 * (attempt + 1))
             else:
                 return

@@ -202,9 +202,8 @@ def main():
         sys.exit(1)
 
     print("=" * 55)
-    print("재보궐선거 후보·현황 자동 업데이트 (Gemini)")
+    print("재보궐선거 후보·현황 자동 업데이트 (Claude)")
     print(f"실행 시각: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"모델: {MODEL}")
     print("=" * 55)
 
     current = load_current()
@@ -258,7 +257,7 @@ def main():
 
     # 저장
     current["_meta"]["lastUpdated"] = date.today().isoformat()
-    current["_meta"]["source"] = f"뉴스 기반 수집 (Gemini {MODEL})"
+    current["_meta"]["source"] = "뉴스 기반 수집 (Claude)"
     current["districts"] = districts
 
     BYELECTION_PATH.write_text(
