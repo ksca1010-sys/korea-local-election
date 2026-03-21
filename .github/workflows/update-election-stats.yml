@@ -24,7 +24,16 @@ jobs:
       - name: Run election stats pipeline
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/fetch_election_stats.py
+          NECDC_API_KEY: ${{ secrets.NECDC_API_KEY }}
+          NECDC_KEY: ${{ secrets.NECDC_KEY }}
+          NECDC_SERVICE_KEY: ${{ secrets.NECDC_SERVICE_KEY }}
+          NECDC_PUBLIC_KEY: ${{ secrets.NECDC_PUBLIC_KEY }}
+          NECDC_CLIENT_KEY: ${{ secrets.NECDC_CLIENT_KEY }}
+        run: |
+          # NECDC 계열 키 중 설정된 것을 NEC_API_KEY로 통합
+          KEY="${NEC_API_KEY:-${NECDC_API_KEY:-${NECDC_KEY:-${NECDC_SERVICE_KEY:-${NECDC_PUBLIC_KEY:-$NECDC_CLIENT_KEY}}}}}"
+          export NEC_API_KEY="$KEY"
+          python scripts/fetch_election_stats.py
 
       - name: Check for changes
         id: diff

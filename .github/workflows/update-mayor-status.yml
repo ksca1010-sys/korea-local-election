@@ -27,8 +27,15 @@ jobs:
       - name: Run mayor status factcheck
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+          NECDC_API_KEY: ${{ secrets.NECDC_API_KEY }}
+          NECDC_KEY: ${{ secrets.NECDC_KEY }}
+          NECDC_SERVICE_KEY: ${{ secrets.NECDC_SERVICE_KEY }}
+          NECDC_PUBLIC_KEY: ${{ secrets.NECDC_PUBLIC_KEY }}
+          NECDC_CLIENT_KEY: ${{ secrets.NECDC_CLIENT_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/candidate_pipeline/fetch_mayor_status.py
+        run: |
+          KEY="${NEC_API_KEY:-${NECDC_API_KEY:-${NECDC_KEY:-${NECDC_SERVICE_KEY:-${NECDC_PUBLIC_KEY:-$NECDC_CLIENT_KEY}}}}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/fetch_mayor_status.py
 
       - name: Check for changes
         id: diff
