@@ -2,7 +2,9 @@
   "_meta": {
     "lastUpdated": "2026-03-19",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-19T12:56:06.325498"
+    "lastFactCheck": "2026-03-20",
+    "sourceUrlCoverage": "0%",
+    "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
   "candidates": {
     "seoul": [
@@ -19,7 +21,10 @@
           "type": "status_change",
           "detail": "[6·3 지선] 서울시교육감 진보 단일화 정근식 참여…",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-2",
@@ -28,7 +33,10 @@
         "career": "전 한국교원단체총연합회 회장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-3",
@@ -37,7 +45,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-4",
@@ -46,7 +57,10 @@
         "career": "현장 31년",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-5",
@@ -55,7 +69,10 @@
         "career": "前 서울시교육청 대변인",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-6",
@@ -64,7 +81,10 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-7",
@@ -73,7 +93,10 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "seoul-8",
@@ -82,7 +105,10 @@
         "career": "교육운동가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "busan": [
@@ -99,7 +125,10 @@
           "type": "status_change",
           "detail": "하윤수 부산시 교육감, 2026년 재선 출마 공식 선언 (부산일보, 2026-03-10)",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "busan-2",
@@ -108,7 +137,10 @@
         "career": "전 부산부교육감",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "busan-3",
@@ -123,7 +155,10 @@
           "type": "status_change",
           "detail": "부산교육감 선거, 김석준·최윤홍 '양자구도' 전망 - 양자구도 전망은 김석준의 출마가 확정된 상황을 반영",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "daegu": [
@@ -140,7 +175,10 @@
           "type": "status_change",
           "detail": "강은희 교육감, 재선 도선 공식 선언 기자회견",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "daegu-2",
@@ -155,7 +193,10 @@
           "type": "status_change",
           "detail": "\"장애인교육권 보장하겠다\" 엄창옥 대구교육감 후보 공약",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "incheon": [
@@ -166,7 +207,10 @@
         "career": "현 인천광역시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "incheon-2",
@@ -175,7 +219,10 @@
         "career": "34년 현장 경험",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "incheon-3",
@@ -184,7 +231,10 @@
         "career": "상임대표",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "incheon-4",
@@ -193,7 +243,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "incheon-5",
@@ -202,7 +255,10 @@
         "career": "인천시 교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "claude",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "gwangju": [
@@ -213,7 +269,10 @@
         "career": "현 광주광역시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gwangju-2",
@@ -222,7 +281,10 @@
         "career": "전 전교조 광주지부장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gwangju-3",
@@ -231,7 +293,10 @@
         "career": "목포대 교수",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gwangju-4",
@@ -240,7 +305,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "daejeon": [
@@ -251,7 +319,10 @@
         "career": "현 대전광역시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "daejeon-2",
@@ -260,7 +331,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "daejeon-3",
@@ -269,7 +343,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "daejeon-4",
@@ -278,7 +355,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "daejeon-5",
@@ -287,7 +367,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "ulsan": [
@@ -304,7 +387,10 @@
           "type": "withdrawn",
           "detail": "노옥희 전 울산시 교육감은 2022년 12월 8일 별세하여 2026년 선거에 출마할 수 없음. (연합뉴스, 2022-12-08)",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "ulsan-2",
@@ -313,7 +399,10 @@
         "career": "노옥희재단 이사장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "ulsan-3",
@@ -322,7 +411,10 @@
         "career": "현 울산광역시 교육감",
         "status": "WITHDRAWN",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "ulsan-4",
@@ -331,7 +423,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "gyeonggi": [
@@ -348,7 +443,10 @@
           "type": "status_change",
           "detail": "임태희 경기도 교육감, 2026년 지방선거 재선 도전 공식화 (연합뉴스, 2026-03-12)",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeonggi-2",
@@ -357,7 +455,10 @@
         "career": "전 교육부 장관, 전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeonggi-3",
@@ -366,7 +467,10 @@
         "career": "뉴스에 언급된 경력 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeonggi-4",
@@ -375,7 +479,10 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeonggi-5",
@@ -390,7 +497,10 @@
           "type": "status_change",
           "detail": "성기선 경기교감 예비후보 \"단일화 과정서 정책 검증 필요\"…경선 일... - 예비후보 상태 재확인, 단일화 참여 의지 표현",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "gangwon": [
@@ -407,7 +517,10 @@
           "type": "status_change",
           "detail": "신경호 '현직' 예비후보등록 예고",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gangwon-2",
@@ -422,7 +535,10 @@
           "type": "status_change",
           "detail": "강삼영 교육감 예비후보 공약 발표 및 예비후보 활동 확인",
           "previous": "DECLARED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gangwon-3",
@@ -437,7 +553,10 @@
           "type": "status_change",
           "detail": "최광익 도교육감 예비후보 선거 관련 발언 및 활동 확인",
           "previous": "DECLARED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gangwon-4",
@@ -452,7 +571,10 @@
           "type": "status_change",
           "detail": "유대균 예비후보 미래교육 5대 과제 발표 및 예비후보 활동 확인",
           "previous": "DECLARED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gangwon-5",
@@ -461,7 +583,10 @@
         "career": "도교육감 예비후보",
         "status": "EXPECTED",
         "dataSource": "claude",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "chungbuk": [
@@ -478,7 +603,10 @@
           "type": "status_change",
           "detail": "윤건영 충북교육감 재선 의지",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungbuk-2",
@@ -487,7 +615,10 @@
         "career": "33년 행정 경력·교육 전문가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungbuk-3",
@@ -496,7 +627,10 @@
         "career": "전 교수",
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungbuk-4",
@@ -511,7 +645,10 @@
           "type": "status_change",
           "detail": "김성근, 충북교육감 예비후보 등록 및 출판기념회 개최",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "chungnam": [
@@ -522,7 +659,10 @@
         "career": "현 충청남도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungnam-2",
@@ -531,7 +671,10 @@
         "career": "행정고시 및 충남부지사 출신 전 4선 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungnam-3",
@@ -540,7 +683,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungnam-4",
@@ -555,7 +701,10 @@
           "type": "status_change",
           "detail": "이병학, 충남교육감 선거 예비후보 등록",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungnam-5",
@@ -564,7 +713,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "chungnam-6",
@@ -573,7 +725,10 @@
         "career": "미상",
         "status": "EXPECTED",
         "dataSource": "claude",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "jeonbuk": [
@@ -584,7 +739,10 @@
         "career": "현 전북특별자치도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeonbuk-2",
@@ -593,7 +751,10 @@
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeonbuk-3",
@@ -602,7 +763,10 @@
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeonbuk-4",
@@ -611,7 +775,10 @@
         "career": "교수",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeonbuk-5",
@@ -620,7 +787,10 @@
         "career": "전북교육감 예비후보",
         "status": "EXPECTED",
         "dataSource": "claude",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "jeonnam": [
@@ -637,7 +807,10 @@
           "type": "status_change",
           "detail": "광주·전남 통합교육감 선거 본격화…김대중 26.1%·이정선 12.7%",
           "previous": "EXPECTED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeonnam-2",
@@ -646,7 +819,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "name": "장관호",
@@ -654,7 +830,10 @@
         "career": "전남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "name": "김해룡",
@@ -662,7 +841,10 @@
         "career": "전남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "gyeongbuk": [
@@ -673,7 +855,10 @@
         "career": "현 경상북도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongbuk-2",
@@ -688,7 +873,10 @@
           "type": "status_change",
           "detail": "김상동 전 경북대 총장 '경북교육감 예비후보' 등록 - 출마선언에서 예비후보 등록으로 상태 변경",
           "previous": "DECLARED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongbuk-3",
@@ -697,7 +885,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "gyeongnam": [
@@ -708,7 +899,10 @@
         "career": "현 경상남도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongnam-2",
@@ -717,7 +911,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongnam-3",
@@ -726,7 +923,10 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongnam-4",
@@ -735,7 +935,10 @@
         "career": "전 전교조 경남지부장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "name": "전창현",
@@ -743,7 +946,10 @@
         "career": "경남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "overview_narrative",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongnam-6",
@@ -752,7 +958,10 @@
         "career": "한국승강기대학교 총장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "gyeongnam-7",
@@ -761,7 +970,10 @@
         "career": "경남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "jeju": [
@@ -772,7 +984,10 @@
         "career": "현 제주특별자치도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeju-2",
@@ -787,7 +1002,10 @@
           "type": "status_change",
           "detail": "교육의원직 사퇴하고 제주교육감 예비후보 등록 ('교육의원 사퇴...제주교육감 예비후보 등록')",
           "previous": "DECLARED"
-        }
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "jeju-3",
@@ -796,7 +1014,10 @@
         "career": "정보 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "sejong": [
@@ -807,7 +1028,10 @@
         "career": "현 세종특별자치시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "sejong-2",
@@ -816,7 +1040,10 @@
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "sejong-3",
@@ -825,7 +1052,10 @@
         "career": "현장 전문가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "sejong-4",
@@ -834,7 +1064,10 @@
         "career": "평교사 출신 첫 공모교장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "sejong-5",
@@ -843,7 +1076,10 @@
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       },
       {
         "id": "sejong-6",
@@ -852,7 +1088,10 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": []
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ]
   }
