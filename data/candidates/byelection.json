@@ -36,24 +36,26 @@
       },
       "candidates": [
         {
-          "name": "김남준",
-          "career": "",
-          "pledges": [],
+          "name": "박남춘",
           "status": "RUMORED",
-          "dataSource": "news",
+          "party": "democratic",
           "partyKey": "democratic",
-          "partyName": "더불어민주당",
-          "party": "democratic"
+          "career": "前 인천광역시장 · 3선 국회의원",
+          "dataSource": "news",
+          "sourceLabel": "경인일보",
+          "sourceUrl": "https://v.daum.net/v/20260304172834185",
+          "sourcePublishedAt": "2026-03-04"
         },
         {
-          "name": "송영길",
-          "career": "",
-          "pledges": [],
+          "name": "정승연",
           "status": "RUMORED",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "career": "국민의힘 연수구갑 당협위원장",
           "dataSource": "news",
-          "partyKey": "democratic",
-          "partyName": "더불어민주당",
-          "party": "democratic"
+          "sourceLabel": "경인일보",
+          "sourceUrl": "https://v.daum.net/v/20260304172834185",
+          "sourcePublishedAt": "2026-03-04"
         }
       ],
       "statusNote": "최신 뉴스에 업데이트된 정보가 없습니다.",
@@ -181,10 +183,13 @@
           "party": "democratic",
           "partyKey": "independent",
           "career": null,
-          "status": "RUMORED",
+          "status": "EXPECTED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic"
+          "partyName": "democratic",
+          "sourceLabel": "데일리안·디지털타임스",
+          "sourceUrl": "https://www.dailian.co.kr/news/view/1612102",
+          "sourcePublishedAt": "2026-02-23"
         },
         {
           "name": "김남준",
@@ -194,7 +199,10 @@
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic"
+          "partyName": "democratic",
+          "sourceLabel": "헤럴드경제",
+          "sourceUrl": "https://biz.heraldcorp.com/article/10679239",
+          "sourcePublishedAt": "2026-02-19"
         }
       ],
       "statusNote": "인천 계양구을 지역구는 공천이 장기화되고 있으며, '대통령 배출지'로서 민주당 올드보이들의 출마 가능성이 거론되고 있으나, 특정 후보의 출마 선언이나 공천 소식은 아직 확인되지 않았습니다.",
@@ -308,15 +316,6 @@
         "turnout": 50.3
       },
       "candidates": [
-        {
-          "name": "조국",
-          "party": "reform",
-          "partyKey": "reform",
-          "career": null,
-          "status": "RUMORED",
-          "dataSource": "news_factcheck",
-          "pledges": []
-        },
         {
           "name": "김용",
           "party": "democratic",
@@ -582,7 +581,10 @@
           "dataSource": "news",
           "partyKey": "reform",
           "partyName": "",
-          "party": "reform"
+          "party": "reform",
+          "sourceLabel": "시사저널",
+          "sourceUrl": "https://www.sisajournal.com/news/articleView.html?idxno=366296",
+          "sourcePublishedAt": "2026-03-21"
         }
       ],
       "statusNote": "최신 뉴스 정보가 없습니다.",
