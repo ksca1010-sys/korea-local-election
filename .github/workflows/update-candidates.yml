@@ -110,12 +110,3 @@ jobs:
           git commit -m "chore: auto-update candidate data $(date +%Y-%m-%d)"
           git push
 
-    outputs:
-      changed: ${{ steps.diff.outputs.changed }}
-
-  # 후보 데이터 변경 시 개요 narrative 연쇄 갱신
-  trigger-overview:
-    needs: update
-    if: needs.update.outputs.changed == 'true'
-    uses: ./.github/workflows/update-overview.yml
-    secrets: inherit
