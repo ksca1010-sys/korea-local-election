@@ -99,17 +99,23 @@ const CouncilTab = (() => {
     function renderOverview(regionKey, districtName, electionType) {
         const label = getElectionLabel(electionType);
         const seats = getSeats(regionKey, districtName, electionType);
-        const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
-        const activeCandidates = candidates.filter(c => c.status !== 'WITHDRAWN');
-        const incumbents = activeCandidates.filter(c => c.isIncumbent);
 
-        // 관할 읍면동 로드 후 렌더
-        loadDistrictMapping(regionKey, electionType).then(() => {
+        function doRender() {
+            const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
+            const activeCandidates = candidates.filter(c => c.status !== 'WITHDRAWN');
+            const incumbents = activeCandidates.filter(c => c.isIncumbent);
             _renderOverviewHTML(regionKey, districtName, electionType, label, seats, activeCandidates, incumbents);
-        });
+        }
 
-        // 먼저 즉시 렌더 (읍면동 없이)
-        _renderOverviewHTML(regionKey, districtName, electionType, label, seats, activeCandidates, incumbents);
+        // 먼저 즉시 렌더
+        doRender();
+
+        // 기초의원: 현직 데이터 로드 후 재렌더
+        const promises = [loadDistrictMapping(regionKey, electionType)];
+        if (electionType === 'localCouncil' && ElectionData.loadLocalCouncilMembersData) {
+            promises.push(ElectionData.loadLocalCouncilMembersData());
+        }
+        Promise.all(promises).then(doRender);
     }
 
     function _renderOverviewHTML(regionKey, districtName, electionType, label, seats, activeCandidates, incumbents) {
@@ -261,7 +267,6 @@ const CouncilTab = (() => {
                             <div style="display:flex;align-items:center;gap:6px;">
                                 <strong style="font-size:0.85rem;color:var(--text-primary);">${w.name}</strong>
                                 <span style="padding:0 6px;border-radius:3px;font-size:0.65rem;background:${pc}20;color:${pc};border:1px solid ${pc}33;">${pn}</span>
-                                ${isWinner ? '<span style="font-size:0.6rem;color:#f59e0b;font-weight:600;">당선</span>' : ''}
                             </div>
                             <span style="font-size:0.8rem;color:var(--text-secondary);font-weight:500;">${voteRate}%</span>
                         </div>

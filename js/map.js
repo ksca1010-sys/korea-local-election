@@ -386,7 +386,7 @@ const MapModule = (() => {
 
         // Setup zoom
         zoom = d3.zoom()
-            .scaleExtent([1, 8])
+            .scaleExtent([0.5, 8])
             .filter(event => {
                 // 터치 이벤트: 핀치(멀티터치)만 줌 허용, 단일 터치는 클릭으로 처리
                 if (event.type === 'touchstart') return event.touches.length >= 2;

@@ -5242,12 +5242,29 @@ function renderCouncilProvinceView(regionKey, region) {
         const officialFallbackNames = getFallbackCandidateNames(regionKey, electionType, districtName);
         const supplementalPollNames = ElectionData.getPollCandidates?.(regionKey, electionType, districtName)?.map((candidate) => candidate.name) || [];
         const forceTrend = forcedTrendRegions[electionType]?.has(regionKey);
+        // 교육감은 무정당 선거 → 정당지지도 결과(정당명·정치인명)가 후보명으로 오염 방지
+        // 광역단체장 후보 제거 + 2건 이상 등장한 이름만 신뢰
+        let cleanSupplemental = supplementalPollNames;
+        if (electionType === 'superintendent') {
+            const governorNames = new Set((ElectionData.getRegion(regionKey)?.candidates || []).map((c) => c.name).filter(Boolean));
+            const freqMap = new Map();
+            polls.forEach((poll) => {
+                const seen = new Set();
+                (poll.results || []).forEach((r) => {
+                    const name = normalizeKeyword(r?.candidateName || '');
+                    if (name && !seen.has(name)) { seen.add(name); freqMap.set(name, (freqMap.get(name) || 0) + 1); }
+                });
+            });
+            cleanSupplemental = supplementalPollNames.filter((name) =>
+                !governorNames.has(name) && (freqMap.get(name) || 0) >= 2
+            );
+        }
         const knownNames = new Set(
-            forceTrend && supplementalPollNames.length >= 2
-                ? mergeUniqueArrays(supplementalPollNames, officialFallbackNames)
+            forceTrend && cleanSupplemental.length >= 2
+                ? mergeUniqueArrays(cleanSupplemental, officialFallbackNames)
                 : officialFallbackNames.length
                     ? officialFallbackNames
-                    : mergeUniqueArrays(officialFallbackNames, supplementalPollNames)
+                    : mergeUniqueArrays(officialFallbackNames, cleanSupplemental)
         );
 
         polls.forEach((poll) => {

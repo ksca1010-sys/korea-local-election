@@ -3,44 +3,48 @@
    Dark Theme Dashboard Styles
    ============================================ */
 
-/* CSS Variables — 토스/카카오 스타일 디자인 시스템 */
+/* CSS Variables — Civic Beacon 디자인 시스템 */
 :root {
-    /* 배경 3단계 — 깊이감 표현 */
-    --bg-primary: #0F1117;
-    --bg-secondary: #161922;
-    --bg-tertiary: #1C1F2E;
-    --bg-card: #161922;
-    --bg-card-hover: #1C1F2E;
-    --bg-input: #161922;
-    --bg-surface: #161922;
-    --bg-elevated: #1C1F2E;
+    /* Surface 계층 — Deep Navy 기반 네스팅 */
+    --bg-primary: #0D1228;          /* Level 0: Base */
+    --bg-secondary: #191E35;        /* Level 1: Sections */
+    --bg-tertiary: #242940;         /* Level 2: Cards/Modules */
+    --bg-card: #191E35;
+    --bg-card-hover: #242940;
+    --bg-input: #10152A;            /* Recessed (lowest) */
+    --bg-surface: #191E35;
+    --bg-elevated: #242940;
 
-    /* 테두리 — 거의 안 보이게 */
-    --border-color: rgba(255, 255, 255, 0.10);
-    --border-light: rgba(255, 255, 255, 0.06);
-    --border-subtle: rgba(255, 255, 255, 0.06);
-    --border-default: rgba(255, 255, 255, 0.10);
-    --border-strong: rgba(255, 255, 255, 0.15);
+    /* 테두리 — Ghost Border (느껴지되 보이지 않게) */
+    --border-color: rgba(169, 199, 255, 0.08);
+    --border-light: rgba(169, 199, 255, 0.05);
+    --border-subtle: rgba(169, 199, 255, 0.05);
+    --border-default: rgba(169, 199, 255, 0.08);
+    --border-strong: rgba(169, 199, 255, 0.12);
 
-    /* 텍스트 4단계 — 위계 구분 */
-    --text-primary: #FFFFFF;
-    --text-secondary: #B0B8C8;
-    --text-muted: #6B7280;
-    --text-accent: #3B82F6;
-    --text-disabled: #404759;
+    /* 텍스트 — Off-white + Blue-gray 계층 */
+    --text-primary: #DDE1FF;
+    --text-secondary: #A9C7FF;
+    --text-muted: #5D6B8F;
+    --text-accent: #2E8BFF;
+    --text-disabled: #3A4060;
 
-    /* 시맨틱 컬러 */
-    --accent-blue: #3B82F6;
-    --accent-primary: #3B82F6;
+    /* 시맨틱 컬러 — Civic Beacon 팔레트 */
+    --accent-blue: #2E8BFF;
+    --accent-primary: #2E8BFF;
     --accent-cyan: #22d3ee;
-    --accent-green: #22C55E;
+    --accent-green: #10B981;
     --accent-yellow: #F59E0B;
     --accent-red: #EF4444;
     --accent-purple: #8B5CF6;
-    --color-info: #3B82F6;
-    --color-success: #22C55E;
+    --color-info: #2E8BFF;
+    --color-success: #10B981;
     --color-warning: #F59E0B;
     --color-danger: #EF4444;
+
+    /* Primary 그라데이션 */
+    --primary-gradient: linear-gradient(135deg, #A9C7FF, #3D90FF);
+    --primary-glow: 0 0 20px rgba(61, 144, 255, 0.15);
 
     /* 정당색 (고정) */
     --party-democratic: #1A5CF0;
@@ -50,7 +54,7 @@
     --party-progressive: #D6001C;
     --party-justice: #00A85A;
     --party-newfuture: #45B97C;
-    --party-independent: #6B7280;
+    --party-independent: #5D6B8F;
 
     /* 레이아웃 */
     --header-height: 56px;
@@ -58,8 +62,9 @@
     --sidebar-width: 320px;
     --panel-width: 420px;
 
-    /* 타이포 — 토스식 정보 위계 (전체 +2px) */
-    --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* 타이포 — Inter + Public Sans 기반 */
+    --font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-label: 'Public Sans', 'Inter', 'Noto Sans KR', sans-serif;
     --text-display: 32px;
     --text-headline: 22px;
     --text-title: 18px;
@@ -83,10 +88,15 @@
     --space-32: 32px;
     --space-40: 40px;
 
-    /* 트랜지션 — 토스 0.15s */
+    /* 트랜지션 */
     --transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-    --shadow: none;
-    --shadow-lg: none;
+    /* Ambient Shadow — tinted navy, never pure black */
+    --shadow: 0 2px 16px rgba(13, 18, 40, 0.25);
+    --shadow-lg: 0 4px 32px rgba(13, 18, 40, 0.35);
+    /* Glassmorphism */
+    --glass-bg: rgba(25, 30, 53, 0.80);
+    --glass-blur: blur(16px);
+    --glass-border: rgba(169, 199, 255, 0.08);
 }
 
 /* Reset */
@@ -293,9 +303,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     left: 0;
     right: 0;
     height: var(--header-height);
-    background: rgba(17, 24, 39, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -341,7 +352,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: var(--text-muted);
     font-size: var(--text-caption);
     padding-left: var(--space-12);
-    border-left: 1px solid var(--border-subtle);
+    border-left: none;
 }
 
 .header-center {
@@ -350,20 +361,20 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     margin: 0 24px;
 }
 
-/* 검색 — 토스식 라운드 인풋 */
+/* 검색 — Civic Beacon recessed input */
 .search-box {
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--bg-surface);
-    border: 1px solid var(--border-default);
+    background: var(--bg-input);
+    border: none;
     border-radius: 20px;
     padding: 0 var(--space-16);
-    transition: border-color 0.15s;
+    transition: box-shadow 0.15s;
 }
 
 .search-box:focus-within {
-    border-color: var(--color-info);
+    box-shadow: 0 0 0 2px rgba(46, 139, 255, 0.3);
 }
 
 .search-box i {
@@ -392,7 +403,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     left: 0;
     right: 0;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 0 0 8px 8px;
     max-height: 300px;
     overflow-y: auto;
@@ -412,7 +423,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     align-items: center;
     gap: 10px;
     transition: var(--transition);
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: none;
 }
 
 .search-result-item:hover {
@@ -470,7 +481,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding: 2px 6px;
     border-radius: 4px;
     flex-shrink: 0;
-    border: 1px solid var(--border-light);
+    border: none;
 }
 
 .search-results {
@@ -518,7 +529,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     background: var(--bg-card);
     padding: 6px 12px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
 }
 
 .pre-vote-info i {
@@ -542,8 +553,8 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
    ============================================ */
 .sidebar {
     width: var(--sidebar-width);
-    background: var(--bg-primary);
-    border-right: 1px solid var(--border-subtle);
+    background: var(--bg-secondary);
+    border-right: none;
     overflow-y: auto;
     padding: var(--space-16);
     flex-shrink: 0;
@@ -567,7 +578,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     height: 28px;
     border-radius: 50%;
     background: var(--bg-secondary);
-    border: 1px solid var(--border-color);
+    border: none;
     color: var(--text-muted);
     cursor: pointer;
     display: flex;
@@ -638,14 +649,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 8px;
     padding: 12px;
     border-radius: 12px;
-    border: 1px solid var(--border-color);
-    background: linear-gradient(180deg, rgba(26, 34, 54, 0.94), rgba(17, 24, 39, 0.98));
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    border: none;
+    background: var(--bg-tertiary);
+    box-shadow: none;
 }
 
 .calendar-item.is-active {
     border-color: rgba(16, 185, 129, 0.4);
-    background: linear-gradient(180deg, rgba(15, 78, 59, 0.2), rgba(17, 24, 39, 0.98));
+    background: linear-gradient(180deg, rgba(16, 185, 129, 0.08), var(--bg-tertiary));
 }
 
 .calendar-item--registration {
@@ -727,8 +738,8 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     align-items: center;
     padding: 3px 8px;
     border-radius: 999px;
-    border: 1px solid var(--border-light);
-    background: rgba(15, 22, 41, 0.9);
+    border: none;
+    background: var(--glass-bg);
     color: var(--text-secondary);
     font-size: 0.68rem;
     font-weight: 600;
@@ -800,7 +811,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 .filter-btn.active {
-    background: rgba(59, 130, 246, 0.12);
+    background: rgba(46, 139, 255, 0.10);
     border-color: var(--accent-blue);
     color: var(--accent-blue);
 }
@@ -838,7 +849,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 /* 통계 카드 — 토스 매트릭 스타일 (작은 라벨 + 큰 숫자) */
 .stat-card {
     background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    border: none;
     border-radius: 12px;
     padding: var(--space-12);
     text-align: center;
@@ -877,7 +888,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding: 8px 10px;
     background: var(--bg-card);
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
 }
 
 .party-color-dot {
@@ -926,7 +937,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 10px;
     padding: 8px 10px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
@@ -1030,8 +1041,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     left: 16px;
     right: auto;
     max-width: clamp(220px, calc(100% - 280px), 620px);
-    background: rgba(15, 22, 41, 0.85);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 10px;
     padding: 10px 14px;
     font-size: 0.85rem;
@@ -1050,9 +1063,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     position: absolute;
     bottom: 16px;
     right: 16px;
-    background: rgba(15, 22, 41, 0.9);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--glass-border);
     padding: 12px 14px;
     max-width: 220px;
     color: var(--text-secondary);
@@ -1097,7 +1112,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 
 .map-mode-btn {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     color: var(--text-secondary);
     border-radius: 8px;
     padding: 6px 10px;
@@ -1122,14 +1137,15 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding-left: 2px;
 }
 
-/* 줌 컨트롤 — 미니멀 */
+/* 줌 컨트롤 — Glassmorphism */
 .map-zoom-controls {
     display: flex;
     flex-direction: column;
     gap: var(--space-2);
-    background: rgba(15, 17, 23, 0.85);
-    backdrop-filter: blur(8px);
-    border: 1px solid var(--border-subtle);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 8px;
     padding: var(--space-4);
 }
@@ -1277,18 +1293,19 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
-/* Map Tooltip */
+/* Map Tooltip — Glassmorphism */
 .map-tooltip {
     position: fixed;
     padding: 10px 14px;
-    background: rgba(26, 34, 54, 0.95);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 10px;
     pointer-events: none;
     z-index: 500;
     display: none;
-    backdrop-filter: blur(8px);
-    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: var(--shadow-lg);
     max-width: 260px;
     font-size: 0.85rem;
 }
@@ -1372,13 +1389,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .detail-panel {
     width: var(--panel-width);
     background: var(--bg-secondary);
-    border-left: 1px solid var(--border-color);
+    border-left: none;
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     transform: translateX(0);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     overflow: hidden;
+    box-shadow: -4px 0 32px rgba(13, 18, 40, 0.4);
 }
 
 .detail-panel.collapsed {
@@ -1399,13 +1417,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .panel-fade-in .panel-tabs { animation-delay: 0.05s; }
 .panel-fade-in .panel-content { animation-delay: 0.1s; }
 
-/* Panel Header — 토스 스타일 */
+/* Panel Header — Civic Beacon */
 .panel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: var(--space-16);
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: none;
+    background: var(--bg-tertiary);
     flex-shrink: 0;
 }
 
@@ -1442,13 +1461,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: var(--text-primary);
 }
 
-/* Panel Tabs — 토스 스타일 */
+/* Panel Tabs — Civic Beacon */
 .panel-tabs {
     display: flex;
     gap: 0;
-    border-bottom: 1px solid var(--border-subtle);
+    border-bottom: none;
+    background: var(--bg-tertiary);
     flex-shrink: 0;
-    margin-bottom: var(--space-20);
+    margin-bottom: 0;
 }
 
 .panel-tab {
@@ -1474,9 +1494,9 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 .panel-tab.active {
-    color: var(--text-primary);
+    color: var(--accent-blue);
     font-weight: var(--font-bold);
-    border-bottom-color: var(--text-primary);
+    border-bottom-color: var(--accent-blue);
 }
 
 /* Panel Content */
@@ -1497,8 +1517,8 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .welcome-icon {
     width: 64px;
     height: 64px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.2);
+    background: rgba(46, 139, 255, 0.08);
+    border: none;
     border-radius: 16px;
     display: flex;
     align-items: center;
@@ -1528,7 +1548,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding: 12px;
     background: var(--bg-card);
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     text-align: left;
 }
 
@@ -1544,10 +1564,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     line-height: 1.5;
 }
 
-/* Panel Cards — 토스 스타일 */
+/* Panel Cards — Civic Beacon */
 .panel-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    background: var(--bg-tertiary);
+    border: none;
     border-radius: 12px;
     padding: var(--space-16);
     margin-bottom: var(--space-12);
@@ -1564,7 +1584,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     border-radius: 999px;
     font-size: 0.85rem;
     color: #facc15;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: none;
 }
 
 .panel-card h4 {
@@ -1583,10 +1603,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     font-size: var(--text-caption);
 }
 
-/* Election Overview Card — 토스 스타일 (그라데이션 제거, flat) */
+/* Election Overview Card — Civic Beacon */
 .election-overview-card {
-    background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    background: var(--bg-tertiary);
+    border: none;
     border-radius: 12px;
     padding: var(--space-16);
     margin-bottom: var(--space-12);
@@ -1702,7 +1722,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     text-align: center;
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid var(--border-light);
+    border-top: none;
     font-size: 0.8rem;
     color: var(--text-secondary);
 }
@@ -1743,16 +1763,15 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     display: flex;
     gap: 12px;
     padding: 12px;
-    background: var(--bg-input);
-    border-radius: 8px;
-    border: 1px solid var(--border-light);
+    background: var(--bg-tertiary);
+    border-radius: 12px;
+    border: none;
     margin-bottom: 8px;
     transition: var(--transition);
 }
 
 .candidate-card:hover {
-    border-color: var(--accent-blue);
-    background: var(--bg-card-hover);
+    background: var(--bg-elevated);
 }
 
 .candidate-avatar {
@@ -1913,7 +1932,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 2px;
     padding: 7px 9px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     background: var(--bg-input);
 }
 
@@ -1987,7 +2006,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 /* ── 여론조사 카드 ── */
 .poll-result-card {
     padding: var(--space-16);
-    border: 1px solid var(--border-subtle);
+    border: none;
     border-radius: 12px;
     background: var(--bg-surface);
     transition: background 0.15s;
@@ -2027,6 +2046,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 
 /* 날짜 */
 .poll-card-date {
+    font-family: var(--font-label);
     font-size: var(--text-caption);
     color: var(--text-muted);
     margin-bottom: var(--space-8);
@@ -2087,6 +2107,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     height: 100%;
     border-radius: 4px;
     transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 0 8px currentColor;
 }
 
 /* 결과 없음 */
@@ -2100,7 +2121,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .poll-card-footer {
     margin-top: var(--space-12);
     padding-top: var(--space-8);
-    border-top: 1px solid var(--border-subtle);
+    border-top: none;
 }
 .poll-card-footer a {
     font-size: var(--text-caption);
@@ -2116,7 +2137,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .poll-trend-card {
     margin-bottom: var(--space-12);
     background: var(--bg-surface);
-    border: 1px solid var(--border-subtle);
+    border: none;
     border-radius: 12px;
     padding: var(--space-16);
 }
@@ -2134,7 +2155,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding: var(--space-12);
     margin-top: var(--space-12);
     background: transparent;
-    border: 1px solid var(--border-subtle);
+    border: none;
     border-radius: 12px;
     color: var(--text-secondary);
     font-size: var(--text-body);
@@ -2156,7 +2177,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 
 .news-live {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 10px;
     padding: 12px;
 }
@@ -2182,7 +2203,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 .news-live-btn {
-    border: 1px solid var(--border-color);
+    border: none;
     background: var(--bg-input);
     color: var(--text-secondary);
     padding: 4px 8px;
@@ -2217,7 +2238,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 6px;
     padding: 10px 12px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     background: var(--bg-card);
     text-decoration: none;
     color: var(--text-primary);
@@ -2242,11 +2263,13 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .news-live-item-meta {
+    font-family: var(--font-label);
     font-size: 0.78rem;
     color: var(--text-muted);
     display: flex;
@@ -2336,7 +2359,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 /* Local Media Section */
 .local-media-details {
     margin-top: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     overflow: hidden;
 }
@@ -2372,7 +2395,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     font-size: 0.7rem;
     background: rgba(255,255,255,0.05);
     color: var(--text-muted);
-    border: 1px solid var(--border-color);
+    border: none;
 }
 .local-media-tag.tier1 {
     background: rgba(20, 184, 166, 0.1);
@@ -2384,7 +2407,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     width: 100%;
     padding: 8px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     color: var(--text-secondary);
     font-size: 0.8rem;
@@ -2408,7 +2431,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 8px;
     padding: 10px 12px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
     background: var(--bg-card);
     margin-bottom: 6px;
 }
@@ -2465,7 +2488,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 .news-retry-btn {
     padding: 6px 16px;
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 6px;
     background: var(--bg-card);
     color: var(--text-secondary);
@@ -2520,7 +2543,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 12px;
     padding: 12px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
@@ -2601,7 +2624,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     padding: 10px 8px;
     text-align: left;
     font-size: 0.8rem;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: none;
 }
 
 .compare-table th {
@@ -2643,7 +2666,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     right: 0;
     height: var(--footer-height);
     background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    border-top: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -2727,7 +2750,7 @@ canvas {
 .mobile-filter-toggle {
     display: none;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     color: var(--text-primary);
     width: 36px;
     height: 36px;
@@ -2762,7 +2785,7 @@ canvas {
     left: 0;
     right: 0;
     background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
+    border-top: none;
     border-radius: 16px 16px 0 0;
     padding: 12px 16px 24px;
     max-height: 70vh;
@@ -3198,7 +3221,7 @@ body.banner-hidden #main-content {
     gap: 8px;
     padding: 10px 14px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     font-size: 0.82rem;
     color: var(--text-secondary);
@@ -3221,7 +3244,7 @@ body.banner-hidden #main-content {
 
 .districts-map-wrap {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 12px;
     padding: 12px;
     margin-bottom: 10px;
@@ -3246,7 +3269,7 @@ body.banner-hidden #main-content {
     height: 240px;
     background: radial-gradient(circle at 30% 20%, rgba(59,130,246,0.08), transparent 45%),
         radial-gradient(circle at 70% 80%, rgba(14,165,233,0.08), transparent 50%);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 10px;
     overflow: hidden;
 }
@@ -3283,7 +3306,7 @@ body.banner-hidden #main-content {
 .district-detail {
     display: none;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 10px;
     padding: 12px;
     margin-bottom: 10px;
@@ -3314,7 +3337,7 @@ body.banner-hidden #main-content {
 
 .district-detail-card {
     background: var(--bg-input);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     padding: 8px 10px;
 }
@@ -3341,7 +3364,7 @@ body.banner-hidden #main-content {
 .district-info-header {
     padding: 12px 14px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 10px;
     margin-bottom: 8px;
 }
@@ -3365,7 +3388,7 @@ body.banner-hidden #main-content {
     gap: 10px;
     padding: 10px 12px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: var(--transition);
@@ -3464,7 +3487,7 @@ body.banner-hidden #main-content {
 .news-cat-btn {
     padding: 5px 12px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 20px;
     color: var(--text-secondary);
     font-size: 0.8rem;
@@ -3504,7 +3527,7 @@ body.banner-hidden #main-content {
 .news-notice {
     padding: 10px 12px;
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     font-size: 0.8rem;
     color: var(--text-muted);
@@ -3536,7 +3559,7 @@ body.banner-hidden #main-content {
     background: rgba(10, 14, 23, 0.85);
     backdrop-filter: blur(8px);
     border-radius: 6px;
-    border: 1px solid var(--border-color);
+    border: none;
     font-size: 0.8rem;
 }
 
@@ -3755,7 +3778,7 @@ body.banner-hidden #main-content {
 }
 .info-card {
     background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
-    border: 1px solid var(--border-light);
+    border: none;
     border-radius: 10px;
     padding: 12px;
     min-height: 110px;
@@ -3866,7 +3889,7 @@ body.banner-hidden #main-content {
 }
 .candidate-card-full {
     background: var(--bg-card);
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 8px;
     padding: 12px;
     margin-bottom: 8px;
@@ -3901,7 +3924,7 @@ body.banner-hidden #main-content {
 .candidate-pledges {
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px solid var(--border-light);
+    border-top: none;
 }
 .pledges-title { font-size: 0.78rem; font-weight: 600; color: var(--text-muted); margin-bottom: 4px; }
 .pledge-item {
@@ -4013,7 +4036,7 @@ body.banner-hidden #main-content {
     justify-content: space-around;
     padding: 10px 0;
     margin-top: 8px;
-    border-top: 1px solid var(--border-color);
+    border-top: none;
     gap: 8px;
 }
 .hpf-stat {
@@ -4024,7 +4047,7 @@ body.banner-hidden #main-content {
     padding: 6px 4px;
     background: var(--bg-card);
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: none;
 }
 .hpf-stat-val {
     font-weight: 700;
@@ -4043,7 +4066,7 @@ body.banner-hidden #main-content {
     align-items: center;
     gap: 10px;
     padding: 9px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: none;
 }
 .ht-row:last-child { border-bottom: none; }
 
@@ -4092,7 +4115,7 @@ body.banner-hidden #main-content {
     align-items: center;
     gap: 8px;
     padding: 6px 0;
-    border-bottom: 1px solid var(--border-light);
+    border-bottom: none;
     font-size: 0.82rem;
 }
 .history-results .hr-year {

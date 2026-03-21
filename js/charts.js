@@ -203,7 +203,7 @@ const ChartsModule = (() => {
                 borderColor: color,
                 backgroundColor: color + '20',
                 pointBackgroundColor: color,
-                pointBorderColor: '#0F1117',
+                pointBorderColor: '#0D1228',
                 pointBorderWidth: 2,
                 pointStyle: style,
                 pointRadius: 6,
