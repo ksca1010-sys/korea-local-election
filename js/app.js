@@ -1104,6 +1104,10 @@ const App = (() => {
         const activeTab = document.getElementById(`tab-${tabName}`);
         if (activeTab) activeTab.style.display = 'block';
 
+        // 탭 전환 시 스크롤 최상단으로 리셋
+        const panelContent = document.querySelector('.panel-content');
+        if (panelContent) panelContent.scrollTop = 0;
+
         // 탭 전환 시 로딩 표시 (비동기 탭)
         const asyncTabs = ['polls', 'news', 'history'];
         if (asyncTabs.includes(tabName) && activeTab) {
