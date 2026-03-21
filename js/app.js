@@ -4556,11 +4556,6 @@ function renderCouncilProvinceView(regionKey, region) {
                 const majorBadge = isMajor ? '<span class="news-badge news-badge-major">주요</span>' : '';
                 const localBadge = item.isLocalMedia ? '<span class="news-badge news-badge-local">지역</span>' : '';
                 const timeText = ageDays === 0 ? '오늘' : ageDays === 1 ? '어제' : `${ageDays}일 전`;
-                const rawScore = item.rankScore || 0;
-                const penalty = item._filterPenalty || 0;
-                const adjustedScore = Math.max(0, rawScore - penalty);
-                const score = adjustedScore ? Math.round(adjustedScore * 100) : null;
-                const scoreBar = score !== null ? `<div class="news-score"><div class="news-score-bar" style="width:${score}%"></div><span>${score}점</span></div>` : '';
                 return `
                     <a class="news-live-item" href="${item.link}" target="_blank" rel="noopener">
                         <div class="news-live-item-badges">${freshBadge}${majorBadge}${localBadge}<span class="news-badge" style="background:${catBadge.color}22;color:${catBadge.color};border-color:${catBadge.color}44">${catBadge.label}</span></div>
@@ -4569,7 +4564,6 @@ function renderCouncilProvinceView(regionKey, region) {
                             <span class="news-press">${press}</span>
                             <span class="news-time">${timeText}</span>
                         </div>
-                        ${scoreBar}
                     </a>
                 `;
             }
