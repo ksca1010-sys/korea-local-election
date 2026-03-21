@@ -4030,7 +4030,9 @@ function renderCouncilProvinceView(regionKey, region) {
         };
         const regionOverrides = getRegionFilterOverrides(regionKey);
 
-        return templates.filter(t => t.categoryId !== 'analysis' && t.categoryId !== 'campaign').map((tpl) => {
+        const phase = typeof ElectionCalendar !== 'undefined' ? ElectionCalendar.getCurrentPhase() : '';
+        const showCampaign = phase === 'CAMPAIGN' || phase === 'PRE_ELECTION_DAY' || phase === 'EARLY_VOTING';
+        return templates.filter(t => t.categoryId !== 'analysis' && (t.categoryId !== 'campaign' || showCampaign)).map((tpl) => {
             const built = applyNewsTemplateValue(tpl, context);
             const override = applyNewsTemplateValue(regionOverrides[built.categoryId] || {}, context);
             const merged = deepMergeNewsConfig(built, override);
@@ -4081,7 +4083,16 @@ function renderCouncilProvinceView(regionKey, region) {
             fetchLatestNews(selected, regionKey);
         });
 
-        fetchLatestNews(safeCategories[0], regionKey);
+        const defaultSubTab = typeof ElectionCalendar !== 'undefined'
+            ? ElectionCalendar.getDefaultNewsSubTab()
+            : '전체';
+        const defaultCat = safeCategories.find(c => c.label === defaultSubTab) || safeCategories[0];
+        const defaultBtn = actionWrap.querySelector(`.news-live-btn[data-idx="${safeCategories.indexOf(defaultCat)}"]`);
+        if (defaultBtn && safeCategories.indexOf(defaultCat) !== 0) {
+            actionWrap.querySelectorAll('.news-live-btn').forEach(b => b.classList.remove('active'));
+            defaultBtn.classList.add('active');
+        }
+        fetchLatestNews(defaultCat, regionKey);
     }
 
     function sanitizeHtml(text) {
