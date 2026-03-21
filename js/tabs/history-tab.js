@@ -220,7 +220,7 @@ const HistoryTab = (() => {
                             <div class="hpf-node">
                                 ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
                                 <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
-                                <div class="hpf-label">${entry.year}</div>
+                                <div class="hpf-label">'${String(entry.year).slice(-2)}</div>
                                 <div class="hpf-party" style="color:${color}">${winnerPartyLabel}</div>
                                 ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
                             </div>
@@ -390,7 +390,7 @@ const HistoryTab = (() => {
                         <div class="hpf-node">
                             <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
                             <div class="hpf-dot hpf-dot--circle" style="background:${subTypeColor}"></div>
-                            <div class="hpf-label">2026.06.03</div>
+                            <div class="hpf-label">'26.6.3</div>
                             <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
                         </div>
                     </div>
@@ -431,7 +431,7 @@ const HistoryTab = (() => {
                             <div class="hpf-node">
                                 ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
                                 <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
-                                <div class="hpf-label">${entry.election}대(${entry.year})</div>
+                                <div class="hpf-label">${entry.election}대('${String(entry.year).slice(-2)})</div>
                                 <div class="hpf-party" style="color:${color}">${label}</div>
                                 ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
                             </div>
@@ -442,7 +442,7 @@ const HistoryTab = (() => {
                     <div class="hpf-node">
                         <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
                         <div class="hpf-dot hpf-dot--circle" style="background:${subTypeColor}"></div>
-                        <div class="hpf-label">2026</div>
+                        <div class="hpf-label">'26</div>
                         <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
                     </div>
                 </div>

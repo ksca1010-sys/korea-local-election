@@ -2576,12 +2576,6 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
         gap: 0;
         padding: 28px 8px 12px;
     }
-    .hpf-label {
-        font-size: 0.6rem;
-    }
-    .hpf-party {
-        font-size: 0.58rem;
-    }
     .hpf-line {
         width: 6px;
     }
@@ -4114,13 +4108,13 @@ body.banner-hidden #main-content {
 .hpf-dot--diamond { border-radius: 2px; transform: rotate(45deg); }
 .hpf-dot--dash    { border-radius: 2px; width: 14px; height: 6px; margin-bottom: 10px; }
 .hpf-label {
-    font-size: 0.64rem;
+    font-size: 0.7rem;
     color: var(--text-secondary);
     font-weight: 600;
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: clip;
     max-width: 100%;
 }
 .hpf-rate {
