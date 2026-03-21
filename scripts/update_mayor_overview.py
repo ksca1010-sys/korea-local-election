@@ -19,7 +19,7 @@ from election_overview_utils import (
     MODEL, API_KEY_ENV, ELECTION_DATE, REGION_NAMES,
     load_env, search_latest_news, get_local_media_info_merged,
     call_llm, parse_response, validate_overview, load_current_overview,
-    build_narrative_prompt,
+    build_narrative_prompt, extract_facts,
 )
 from local_media_pool import get_media_text, get_media_list, get_media_pool
 
@@ -488,6 +488,7 @@ def main():
                 continue
 
             if obj:
+                obj["facts"] = extract_facts(candidates, polls, "district_mayor")
                 updated_mayor[rk][district] = obj
                 state[state_key] = {
                     "lastUpdated": datetime.now().isoformat(),

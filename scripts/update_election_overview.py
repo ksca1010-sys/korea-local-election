@@ -18,7 +18,7 @@ from election_overview_utils import (
     MODEL, API_KEY_ENV, ELECTION_DATE, REGION_NAMES,
     load_env, search_latest_news, get_local_media_info,
     call_llm, parse_response, validate_overview, load_current_overview,
-    build_narrative_prompt,
+    build_narrative_prompt, extract_facts,
 )
 from local_media_pool import get_media_text, METRO_MEDIA
 
@@ -230,6 +230,7 @@ def main():
                 errors.append(region_key)
                 continue
 
+            obj["facts"] = extract_facts(region_candidates, region_polls, "governor")
             updated_regions[region_key] = obj
             gov_state[state_key] = {
                 "contentHash": nh,
@@ -325,6 +326,7 @@ def update_superintendent_overview(api_key, current):
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if obj and validate_overview(obj):
+                obj["facts"] = extract_facts(candidates, [], "superintendent")
                 updated[rk] = obj
                 gov_state[state_key] = {
                     "contentHash": nh,

@@ -24,7 +24,7 @@ sys.path.insert(0, str(BASE_DIR / "scripts"))
 from election_overview_utils import (
     OVERVIEW_PATH, MODEL, API_KEY_ENV,
     load_env, search_latest_news, call_llm, parse_response,
-    validate_overview, build_narrative_prompt,
+    validate_overview, build_narrative_prompt, extract_facts,
 )
 
 BYE_STATE_PATH = BASE_DIR / "data" / "byelection_overview_state.json"
@@ -150,6 +150,7 @@ def main():
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if obj and validate_overview(obj):
+                obj["facts"] = extract_facts(dist_candidates, [], "byelection")
                 overview["byelection"][key] = obj
                 bye_state[key] = {
                     "contentHash": nh,

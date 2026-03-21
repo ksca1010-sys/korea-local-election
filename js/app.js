@@ -2246,6 +2246,30 @@ function renderCouncilProvinceView(regionKey, region) {
                                 <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
                             </div>`;
                     }
+
+                    // facts 섹션 — LLM 없이 구조화된 데이터에서 추출한 검증 가능 팩트
+                    const factsEl = document.getElementById('overview-facts');
+                    if (factsEl && ov.facts) {
+                        const f = ov.facts;
+                        const pollHtml = f.latestPoll && f.latestPoll.results && f.latestPoll.results.length
+                            ? `<div style="margin-top:var(--space-8);">
+                                <span style="font-size:var(--text-micro);color:var(--text-muted);">최신 여론조사 (${f.latestPoll.org || ''} · ${f.latestPoll.date || ''})</span>
+                                <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-4);">
+                                ${f.latestPoll.results.map(r =>
+                                    `<span style="font-size:var(--text-caption);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:4px;">${r.name} ${r.support}%</span>`
+                                ).join('')}
+                                </div>
+                               </div>`
+                            : '';
+                        factsEl.innerHTML = `
+                            <div style="font-size:var(--text-micro);color:var(--color-success);margin-bottom:var(--space-8);">
+                                <i class="fas fa-database"></i> 데이터 출처 확인 가능 — 후보자 ${f.candidateCount || 0}명 · 여론조사 ${f.pollCount || 0}건
+                            </div>
+                            ${pollHtml}`;
+                        factsEl.style.display = '';
+                    } else if (factsEl) {
+                        factsEl.style.display = 'none';
+                    }
                 } else {
                     overviewCard.style.display = 'none';
                 }

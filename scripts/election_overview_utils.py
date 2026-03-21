@@ -431,6 +431,58 @@ narrative의 모든 사실 주장에 대해 빠짐없이 출처를 적으세요.
 출처를 댈 수 없는 문장은 narrative에서 반드시 삭제하세요."""
 
 
+def extract_facts(candidates, polls, election_type="governor"):
+    """LLM 없이 구조화된 데이터에서 검증 가능한 팩트만 추출.
+
+    이 함수가 반환하는 데이터는 LLM 해석이 아닌 원본 JSON 데이터의
+    직접 추출값이므로 사실 여부를 역추적 가능하다.
+    """
+    PARTY_MAP = {
+        "democratic": "더불어민주당", "ppp": "국민의힘",
+        "reform": "조국혁신당", "newReform": "새로운미래",
+        "progressive": "진보당", "independent": "무소속",
+        "justice": "정의당",
+    }
+
+    active = [c for c in (candidates or []) if c.get("status") != "WITHDRAWN"]
+    top_candidates = []
+    for c in active[:6]:
+        entry = {
+            "name": c.get("name", ""),
+            "status": c.get("status", ""),
+        }
+        if election_type == "superintendent":
+            entry["stance"] = c.get("stance", "")
+        else:
+            entry["party"] = PARTY_MAP.get(c.get("party", ""), c.get("party", ""))
+        top_candidates.append(entry)
+
+    latest_poll = None
+    if polls:
+        p = polls[0]
+        latest_poll = {
+            "date": p.get("publishDate", ""),
+            "org": p.get("pollOrg", ""),
+            "sampleSize": p.get("sampleSize") or (p.get("method") or {}).get("sampleSize"),
+            "results": [
+                {
+                    "name": r.get("candidateName", r.get("name", "")),
+                    "support": r.get("support", r.get("rate", "")),
+                }
+                for r in (p.get("results") or [])[:5]
+                if r.get("candidateName") or r.get("name")
+            ],
+        }
+
+    return {
+        "candidateCount": len(active),
+        "topCandidates": top_candidates,
+        "pollCount": len(polls) if polls else 0,
+        "latestPoll": latest_poll,
+        "dataSource": "data/candidates + data/polls/state.json",
+    }
+
+
 def load_current_overview():
     """현재 overview 로드"""
     if not OVERVIEW_PATH.exists():
