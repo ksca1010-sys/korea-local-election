@@ -24,15 +24,13 @@ jobs:
 
       - name: Run local council members factcheck
         env:
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-          NECDC_API_KEY: ${{ secrets.NECDC_API_KEY }}
-          NECDC_KEY: ${{ secrets.NECDC_KEY }}
-          NECDC_SERVICE_KEY: ${{ secrets.NECDC_SERVICE_KEY }}
-          NECDC_PUBLIC_KEY: ${{ secrets.NECDC_PUBLIC_KEY }}
-          NECDC_CLIENT_KEY: ${{ secrets.NECDC_CLIENT_KEY }}
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          KEY="${NEC_API_KEY:-${NECDC_API_KEY:-${NECDC_KEY:-${NECDC_SERVICE_KEY:-${NECDC_PUBLIC_KEY:-$NECDC_CLIENT_KEY}}}}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/fetch_local_council_members.py
 
       - name: Check for changes
