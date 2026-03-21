@@ -1632,12 +1632,13 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: var(--text-muted);
 }
 .ov-headline {
-    font-size: var(--text-title);
-    font-weight: var(--font-bold);
+    font-size: var(--text-headline);
+    font-weight: 800;
     color: var(--text-primary);
     margin-bottom: var(--space-8);
     line-height: var(--leading-tight);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    word-break: keep-all;
 }
 .ov-narrative {
     font-size: var(--text-body);
@@ -1986,6 +1987,61 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
    여론조사 탭 — 토스 스타일 리디자인
    핵심: "3초 만에 누가 앞서는지"
    ══════════════════════════════════════════════ */
+
+/* 통합 추세 히어로 — 1위 강조 */
+.poll-consensus-hero {
+    display: flex;
+    align-items: stretch;
+    gap: var(--space-12);
+    margin-bottom: var(--space-16);
+}
+.poll-consensus-leader {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    padding: var(--space-16);
+    border-radius: 12px;
+    background: var(--bg-surface);
+    border-left: 3px solid transparent;
+}
+.poll-consensus-leader-meta {
+    font-size: var(--text-micro);
+    color: var(--text-disabled);
+    font-weight: 500;
+}
+.poll-consensus-leader-name {
+    font-size: var(--text-title);
+    font-weight: var(--font-bold);
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+.poll-consensus-leader-party {
+    font-size: var(--text-caption);
+    font-weight: 600;
+}
+.poll-consensus-leader-pct {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-top: var(--space-4);
+}
+.poll-consensus-bar-section {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding: var(--space-16);
+    border-radius: 12px;
+    background: var(--bg-surface);
+    flex: 1;
+    justify-content: center;
+}
+.poll-consensus-bar-label {
+    font-size: var(--text-caption);
+    color: var(--text-muted);
+    margin-bottom: var(--space-8);
+}
 
 /* 카드 목록 헤더 */
 .poll-cards-header h4 {

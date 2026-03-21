@@ -4707,53 +4707,63 @@ function renderCouncilProvinceView(regionKey, region) {
         if (consensusSummary) {
             const summaryCard = document.createElement('div');
             summaryCard.className = 'poll-result-card';
-            summaryCard.style.cssText = 'margin-bottom:var(--space-16);';
-            const maxEst = Math.max(...Object.values(consensusSummary.estimates));
-            let summaryHtml = `
-                <div style="font-size:var(--text-caption);color:var(--text-muted);margin-bottom:var(--space-12);">
-                    통합 추정 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 가중평균
-                </div>
-            `;
-            Object.entries(consensusSummary.estimates)
-                .sort((a, b) => b[1] - a[1])
-                .forEach(([name, support]) => {
-                    const candidate = _findCandidateParty(polls, name);
-                    const pc = candidate ? ElectionData.getPartyColor(candidate) : 'var(--text-muted)';
-                    const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
-                    summaryHtml += `
-                        <div class="poll-card-result" style="margin-bottom:var(--space-12);">
-                            <div class="poll-card-result-info">
-                                <span class="poll-card-candidate">${name}</span>
-                                <span class="poll-card-party" style="color:${pc}"></span>
-                                <span class="poll-card-support">${support.toFixed(1)}%</span>
-                            </div>
-                            <div class="poll-card-bar-bg">
-                                <div class="poll-card-bar" style="width:${barW}%;background:${pc};"></div>
-                            </div>
-                        </div>
-                    `;
-                });
+            summaryCard.style.cssText = 'margin-bottom:var(--space-16);padding:0;background:transparent;';
 
-            // 1위-2위 격차 해석 — 뱃지 스타일
             const sorted = Object.entries(consensusSummary.estimates).sort((a, b) => b[1] - a[1]);
+            const maxEst = sorted.length > 0 ? sorted[0][1] : 1;
+            const avgMargin = consensusSummary.avgMargin || 3;
+
+            // 1위 히어로
+            const [leaderName, leaderPct] = sorted[0] || ['', 0];
+            const leaderCand = _findCandidateParty(polls, leaderName);
+            const leaderColor = leaderCand ? ElectionData.getPartyColor(leaderCand) : 'var(--text-muted)';
+            const leaderParty = leaderCand ? ElectionData.getPartyName(leaderCand) : '';
+
+            // 나머지 후보 바차트
+            const restBars = sorted.slice(1).map(([name, support]) => {
+                const cand = _findCandidateParty(polls, name);
+                const pc = cand ? ElectionData.getPartyColor(cand) : 'var(--text-muted)';
+                const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
+                return `<div class="poll-card-result">
+                    <div class="poll-card-result-info">
+                        <span class="poll-card-candidate" style="font-size:var(--text-body);">${name}</span>
+                        <span class="poll-card-support" style="font-size:var(--text-body);">${support.toFixed(1)}%</span>
+                    </div>
+                    <div class="poll-card-bar-bg">
+                        <div class="poll-card-bar" style="width:${barW}%;background:${pc};"></div>
+                    </div>
+                </div>`;
+            }).join('');
+
+            // 격차 뱃지
+            let gapBadge = '';
             if (sorted.length >= 2) {
                 const gap = sorted[0][1] - sorted[1][1];
-                const avgMargin = consensusSummary.avgMargin || 3;
                 if (gap <= avgMargin * 2) {
-                    summaryHtml += `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">
-                        <span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:var(--space-2) var(--space-8);border-radius:4px;background:rgba(245,158,11,0.15);color:#F59E0B;">접전</span>
-                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p · 오차범위 ±${avgMargin.toFixed(1)}%p 내</span>
-                    </div>`;
+                    gapBadge = `<span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:2px 8px;border-radius:4px;background:rgba(245,158,11,0.15);color:#F59E0B;">접전</span>
+                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p · ±${avgMargin.toFixed(1)}%p 내</span>`;
                 } else {
-                    summaryHtml += `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">
-                        <span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:var(--space-2) var(--space-8);border-radius:4px;background:rgba(34,197,94,0.15);color:#22C55E;">우세</span>
-                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p</span>
-                    </div>`;
+                    gapBadge = `<span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:2px 8px;border-radius:4px;background:rgba(34,197,94,0.15);color:#22C55E;">우세</span>
+                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${(sorted[0][1]-sorted[1][1]).toFixed(1)}%p</span>`;
                 }
             }
 
-            summaryHtml += `<div style="margin-top:var(--space-8);font-size:var(--text-micro);color:var(--text-disabled);">여러 기관의 조사를 최신성·표본크기 기반 가중평균한 추정치</div>`;
-            summaryCard.innerHTML = summaryHtml;
+            summaryCard.innerHTML = `
+                <div class="poll-consensus-hero">
+                    <div class="poll-consensus-leader" style="border-left-color:${leaderColor};">
+                        <div class="poll-consensus-leader-meta">통합 추정 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건</div>
+                        <div class="poll-consensus-leader-name">${leaderName}</div>
+                        <div class="poll-consensus-leader-party" style="color:${leaderColor};">${leaderParty}</div>
+                        <div class="poll-consensus-leader-pct" style="color:${leaderColor};">${leaderPct.toFixed(1)}%</div>
+                        ${gapBadge ? `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">${gapBadge}</div>` : ''}
+                    </div>
+                    ${restBars ? `<div class="poll-consensus-bar-section">
+                        <div class="poll-consensus-bar-label">다른 후보</div>
+                        ${restBars}
+                    </div>` : ''}
+                </div>
+                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:0 4px;">최신성·표본크기 기반 가중평균 추정치</div>
+            `;
             trendsSection.appendChild(summaryCard);
         }
 
