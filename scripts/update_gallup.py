@@ -2,9 +2,11 @@
 """
 한국갤럽 정당지지율 자동 업데이트 스크립트
 - 갤럽 보고서 목록에서 최신 '데일리 오피니언' 호를 찾고
-- 정당지지율 데이터를 추출하여 js/data.js를 자동 업데이트
+- js/data.js (사이드바 차트) 업데이트
+- data/polls/state.json (NESDC 여론조사 히스토리) 동기화
 """
 
+import json
 import re
 import sys
 import os
@@ -233,6 +235,112 @@ def update_data_js(poll_data):
     return True
 
 
+PARTY_NAME_MAP = {
+    'democratic': '더불어민주당',
+    'ppp': '국민의힘',
+    'reform': '조국혁신당',
+    'newReform': '개혁신당',
+    'progressive': '진보당',
+    'basicIncome': '기본소득당',
+    'independent': '무당층',
+}
+
+
+def sync_state_json(poll_data):
+    """data/polls/state.json 의 Gallup party_support 항목을 동기화"""
+    state_path = os.path.join(PROJECT_ROOT, 'data', 'polls', 'state.json')
+    polls_path = os.path.join(PROJECT_ROOT, 'data', 'polls', 'polls.json')
+
+    if not os.path.exists(state_path):
+        print('  [건너뜀] data/polls/state.json 없음')
+        return False
+
+    with open(state_path, 'r', encoding='utf-8') as f:
+        state = json.load(f)
+
+    polls = state.get('polls', [])
+    publish_date = poll_data.get('publish_date', '')
+    report_no = poll_data.get('report_no', '')
+
+    # 같은 주차의 기존 Gallup 항목 찾기 (publishDate 또는 reportNo로 매칭)
+    target = None
+    for p in polls:
+        if p.get('electionType') != 'party_support':
+            continue
+        if p.get('pollOrg', '') != '한국갤럽':
+            continue
+        if publish_date and p.get('publishDate', '') == publish_date:
+            target = p
+            break
+        if report_no and report_no in (p.get('title', '') + p.get('reportNo', '')):
+            target = p
+            break
+
+    # 없으면 최신 Gallup 항목을 업데이트 대상으로 사용
+    if target is None:
+        gallup_polls = [p for p in polls if p.get('electionType') == 'party_support'
+                        and p.get('pollOrg', '') == '한국갤럽']
+        if gallup_polls:
+            gallup_polls.sort(key=lambda p: p.get('publishDate', ''), reverse=True)
+            target = gallup_polls[0]
+
+    if target is None:
+        print('  [건너뜀] state.json에서 갤럽 항목을 찾지 못했습니다')
+        return False
+
+    # results 갱신
+    new_results = []
+    for key, val in poll_data['data'].items():
+        if key == 'independent':
+            continue
+        party_name = PARTY_NAME_MAP.get(key, key)
+        new_results.append({
+            'candidateName': party_name,
+            'party': key,
+            'support': float(val),
+            'type': 'party_support',
+        })
+    new_results.sort(key=lambda r: r['support'], reverse=True)
+
+    target['results'] = new_results
+    if publish_date:
+        target['publishDate'] = publish_date
+    if report_no:
+        target['reportNo'] = report_no
+
+    state['meta'] = state.get('meta', {})
+    state['meta']['lastUpdated'] = datetime.now().strftime('%Y-%m-%d')
+
+    with open(state_path, 'w', encoding='utf-8') as f:
+        json.dump(state, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+
+    # polls.json 재생성 (간단히 state 기반 재구성)
+    try:
+        by_region = {}
+        national = []
+        for p in polls:
+            region = p.get('regionKey')
+            if not region:
+                national.append(p)
+            else:
+                by_region.setdefault(region, []).append(p)
+
+        output = {
+            'meta': state.get('meta', {}),
+            'national': national,
+            'byRegion': by_region,
+        }
+        with open(polls_path, 'w', encoding='utf-8') as f:
+            json.dump(output, f, ensure_ascii=False, indent=2)
+            f.write('\n')
+        print(f'  → polls.json 재생성 완료')
+    except Exception as e:
+        print(f'  [경고] polls.json 재생성 실패: {e}')
+
+    return True
+
+
 def main():
     print('=' * 50)
     print('한국갤럽 정당지지율 자동 업데이트')
@@ -262,7 +370,7 @@ def main():
     for key, value in poll_data['data'].items():
         print(f'     {key}: {value}%')
 
-    # 3단계: data.js 업데이트
+    # 3단계: data.js 업데이트 (사이드바 차트)
     print('\n[3/3] js/data.js 업데이트 중...')
     success = update_data_js(poll_data)
 
@@ -273,6 +381,10 @@ def main():
     else:
         print('  → 업데이트 실패')
         sys.exit(1)
+
+    # 4단계: data/polls/state.json 동기화
+    print('\n[4/4] data/polls/state.json 동기화 중...')
+    sync_state_json(poll_data)
 
     print('\n' + '=' * 50)
     print('완료! 브라우저를 새로고침하여 확인하세요.')

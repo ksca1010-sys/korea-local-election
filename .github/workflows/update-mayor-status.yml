@@ -22,12 +22,12 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install google-genai google-generativeai
+        run: pip install anthropic httpx
 
       - name: Run mayor status factcheck
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/candidate_pipeline/fetch_mayor_status.py
 
       - name: Check for changes

@@ -26,14 +26,14 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          git diff --quiet js/data.js || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet js/data.js data/polls/state.json data/polls/polls.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add js/data.js
+          git add js/data.js data/polls/state.json data/polls/polls.json
           git commit -m "chore: auto-update gallup national poll $(date +%Y-%m-%d)"
           git push
 

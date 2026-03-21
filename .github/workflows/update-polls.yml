@@ -21,11 +21,9 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install httpx beautifulsoup4 google-genai google-generativeai
+        run: pip install httpx beautifulsoup4 pdfplumber
 
       - name: Run NESDC poll pipeline
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python scripts/nesdc_poll_pipeline.py
 
       - name: Check for changes
