@@ -3758,8 +3758,8 @@ function renderCouncilProvinceView(regionKey, region) {
                         `).join('')}
                     </div>
                     <div class="news-sort-toggle" id="news-sort-toggle">
-                        <button class="news-sort-btn active" data-sort="score"><i class="fas fa-star"></i> 종합</button>
-                        <button class="news-sort-btn" data-sort="date"><i class="fas fa-clock"></i> 최신</button>
+                        <button class="news-sort-btn active" data-sort="date"><i class="fas fa-clock"></i> 최신</button>
+                        <button class="news-sort-btn" data-sort="score"><i class="fas fa-star"></i> 종합</button>
                     </div>
                 </div>
                 <div class="news-live-list" id="news-live-list"></div>
@@ -4575,7 +4575,7 @@ function renderCouncilProvinceView(regionKey, region) {
             }
 
             let showCount = 6;
-            let currentSort = 'score';
+            let currentSort = 'date';
             let sortedItems = [...allItems];
 
             function refreshList() {
