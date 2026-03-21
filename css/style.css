@@ -2753,6 +2753,15 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: var(--border-color);
 }
 
+.footer-info a {
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    color: var(--text-secondary);
+}
+
 /* ============================================
    Chart Styles
    ============================================ */
