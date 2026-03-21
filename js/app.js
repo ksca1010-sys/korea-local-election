@@ -3475,7 +3475,8 @@ function renderCouncilProvinceView(regionKey, region) {
         const exactEdu = `"${regionName}" "교육감"`;
 
         const governorExclude = ['도지사', '지사 후보', '시장 후보', '시장', '구청장', '군수',
-            '광역단체장', '반도체', '공장', '국회의원', '국회'];
+            '광역단체장', '반도체', '공장', '국회의원', '국회',
+            '시의원', '도의원', '군의원', '기초의원', '지방의원', '지역위원장', '지역 밀착'];
 
         // 교육언론 + 지역방송 + 지역신문(LocalMediaRegistry) 통합 부스트
         const localRegistry = window.LocalMediaRegistry?.regions?.[regionKey];
@@ -3497,7 +3498,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [`${exactEdu} 선거 후보`, `${exactBase} 출마`, ...localSearchQueries],
                 focusKeywords: ['교육감', '교육', '선거', '후보', '출마'],
                 boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
-                strict: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
+                strict: { mustAny: ['교육감'], titleMustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
                 relaxed: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude }
             },
             {
@@ -3517,7 +3518,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [`${exactEdu} 후보 경력`, `${exactBase} 출마 선언`, ...localSearchQueries.map(q => q + ' 후보')],
                 focusKeywords: ['교육감', '후보', '출마', '경력'],
                 boostHosts: allBoostHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
-                strict: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
+                strict: { mustAny: ['교육감'], titleMustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude },
                 relaxed: { mustAny: ['교육감'], targetAny: [regionName], excludeAny: governorExclude }
             },
             {
@@ -4185,6 +4186,11 @@ function renderCouncilProvinceView(regionKey, region) {
         if (strict.requiredGovernorAny && !hasAny(strict.requiredGovernorAny)) return { ok: false, score: 0 };
         if (strict.requiredGovernorRoleAny && !hasAny(strict.requiredGovernorRoleAny)) return { ok: false, score: 0 };
         if (strict.requiredRegionAny && !hasAny(strict.requiredRegionAny)) return { ok: false, score: 0 };
+        // titleMustAny: 제목에도 반드시 포함돼야 하는 키워드 (설명에만 있고 제목과 무관한 기사 차단)
+        if (Array.isArray(strict.titleMustAny) && strict.titleMustAny.length) {
+            const hasInTitle = strict.titleMustAny.some(w => title.includes(String(w).toLowerCase()));
+            if (!hasInTitle) return { ok: false, score: 0 };
+        }
         if (hasLocalChiefPattern && strict.requiredGovernorRoleAny && !hasAny(strict.requiredGovernorRoleAny)) {
             return { ok: false, score: 0 };
         }
