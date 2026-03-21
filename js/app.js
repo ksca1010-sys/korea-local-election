@@ -2581,7 +2581,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     age: candidate.age,
                     career: candidate.career,
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
-                    supportLabel: Number.isFinite(Number(candidate.support)) ? `최근 조사 ${Number(candidate.support).toFixed(1)}%` : '',
+                    supportLabel: (Number.isFinite(Number(candidate.support)) && Number(candidate.support) > 0) ? `최근 조사 ${Number(candidate.support).toFixed(1)}%` : '',
                     incumbent: incumbentName === candidate.name
                 })),
                 emptyMessage: '등록된 교육감 후보 데이터가 없습니다.'
