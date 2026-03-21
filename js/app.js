@@ -2251,7 +2251,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     const factsEl = document.getElementById('overview-facts');
                     if (factsEl && ov.facts) {
                         const f = ov.facts;
-                        const pollHtml = f.latestPoll && f.latestPoll.results && f.latestPoll.results.length
+                        const pollBanned = typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned();
+                        const pollHtml = !pollBanned && f.latestPoll && f.latestPoll.results && f.latestPoll.results.length
                             ? `<div style="margin-top:var(--space-8);">
                                 <span style="font-size:var(--text-micro);color:var(--text-muted);">최신 여론조사 (${f.latestPoll.org || ''} · ${f.latestPoll.date || ''})</span>
                                 <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-4);">
@@ -2263,7 +2264,7 @@ function renderCouncilProvinceView(regionKey, region) {
                             : '';
                         factsEl.innerHTML = `
                             <div style="font-size:var(--text-micro);color:var(--color-success);margin-bottom:var(--space-8);">
-                                <i class="fas fa-database"></i> 데이터 출처 확인 가능 — 후보자 ${f.candidateCount || 0}명 · 여론조사 ${f.pollCount || 0}건
+                                <i class="fas fa-database"></i> 데이터 출처 확인 가능 — 후보자 ${f.candidateCount || 0}명${pollBanned ? '' : ` · 여론조사 ${f.pollCount || 0}건`}
                             </div>
                             ${pollHtml}`;
                         factsEl.style.display = '';
