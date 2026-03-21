@@ -1372,7 +1372,7 @@
           "name": "유순희",
           "party": "democratic",
           "career": "전 부산여성신문 대표",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
@@ -1657,7 +1657,7 @@
           "name": "최택용",
           "party": "democratic",
           "career": "",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
@@ -1877,7 +1877,7 @@
           "name": "조병길",
           "party": "independent",
           "career": "현 사상구 구청장",
-          "status": "[사퇴]",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
@@ -2656,7 +2656,7 @@
           "name": "유순희",
           "party": "democratic",
           "career": "전 부산여성신문 대표",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "원도심 재생",
@@ -3043,7 +3043,7 @@
           "name": "장현수",
           "party": "progressive",
           "career": "전 건설노조본부장",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
@@ -3336,7 +3336,7 @@
           "name": "신상진",
           "party": "ppp",
           "career": "현 성남시 시장",
-          "status": "공천확정",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": [
             "경기남부광역철도 국가철도망 반영"
@@ -3421,7 +3421,7 @@
           "name": "오석규",
           "party": "democratic",
           "career": "경기도의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "교통·일자리 4대 비전",
