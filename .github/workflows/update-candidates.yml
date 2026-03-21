@@ -20,51 +20,66 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install httpx google-genai google-generativeai
+        run: pip install anthropic httpx
 
       # 0-a단계: 재보궐 뉴스 자동감지 + NEC 교차검증
       - name: Detect byelection news
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/candidate_pipeline/detect_byelection_news.py
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/detect_byelection_news.py
 
       # 0-b단계: 재보궐 선거구 자동 감지 (선관위 API)
       - name: Detect new byelection districts
         env:
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python scripts/candidate_pipeline/detect_byelections.py --apply
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/detect_byelections.py --apply
 
-      # 0-b단계: 재보궐 당선 결과 동기화 (선관위 API)
+      # 0-c단계: 재보궐 당선 결과 동기화 (선관위 API)
       - name: Sync byelection winners
         env:
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/candidate_pipeline/sync_byelection_winners.py
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/sync_byelection_winners.py
 
-      # 1단계: 광역단체장 팩트체크 (Gemini + 뉴스 + 교차검증)
+      # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
       - name: Factcheck governor candidates
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: python scripts/candidate_pipeline/factcheck_candidates.py
 
-      # 2단계: 교육감 팩트체크 (Gemini + 지역뉴스 + 교차검증)
+      # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck superintendent candidates
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: python scripts/candidate_pipeline/factcheck_superintendent.py
 
-      # 3단계: 기초단체장 팩트체크 (Gemini + 지역뉴스 + 교차검증)
+      # 3단계: 기초단체장 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck mayor candidates
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -73,7 +88,7 @@ jobs:
       # 4단계: 재보궐 후보 팩트체크 (뉴스 기반 + 교차검증)
       - name: Factcheck byelection candidates
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -82,7 +97,7 @@ jobs:
       # 4.5단계: 기초단체장 공약 수집 (공약 없는 후보만)
       - name: Collect mayor pledges
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -109,4 +124,3 @@ jobs:
           git add data/candidates/
           git commit -m "chore: auto-update candidate data $(date +%Y-%m-%d)"
           git push
-
