@@ -17,9 +17,10 @@ const HistoryTab = (() => {
         return `<div class="no-data-message"><i class="fas ${icon}"></i><p>${message}</p></div>`;
     }
 
+    // Fix #4: 6자로 완화 (더불어민주 → 더불어민주당 6자 수용)
     function truncatePartyLabel(label) {
         const text = String(label || '');
-        return text.length > 5 ? `${text.slice(0, 5)}…` : text;
+        return text.length > 6 ? `${text.slice(0, 6)}…` : text;
     }
 
     function getBlocKey(partyKey) {
@@ -47,7 +48,12 @@ const HistoryTab = (() => {
         }
     }
 
+    // Fix #8: 의원 선거 빈 상태 안내 개선
     function getEmptyMessage(electionType, districtName) {
+        if (electionType === 'council' || electionType === 'localCouncil'
+            || electionType === 'councilProportional' || electionType === 'localCouncilProportional') {
+            return '의원 선거는 선거구 단위 특성상 역대 비교 데이터를 제공하지 않습니다.\n광역단체장 또는 교육감 탭에서 확인하세요.';
+        }
         if (electionType === 'superintendent') {
             return '이 지역의 교육감 역대 선거 데이터가 없습니다.';
         }
@@ -60,11 +66,26 @@ const HistoryTab = (() => {
         return '현재 선택한 선거 유형의 역대 선거 데이터가 없습니다.';
     }
 
+    // Fix #2: 색상 외 형태로도 계열 구분 (접근성)
+    function dotShapeClass(blocKey) {
+        switch (blocKey) {
+            case 'democratic': return 'hpf-dot--circle';   // 원
+            case 'ppp':        return 'hpf-dot--square';   // 사각
+            case 'independent':return 'hpf-dot--diamond';  // 마름모
+            default:           return 'hpf-dot--dash';     // 점선 원
+        }
+    }
+    function smallDotShapeClass(blocKey) {
+        switch (blocKey) {
+            case 'democratic': return 'ht-dot--circle';
+            case 'ppp':        return 'ht-dot--square';
+            case 'independent':return 'ht-dot--diamond';
+            default:           return 'ht-dot--dash';
+        }
+    }
+
     /**
      * 역대비교 탭 렌더링
-     * @param {string} regionKey - 시도 키
-     * @param {string} electionType - 선거 유형
-     * @param {string|null} districtName - 시군구명 (기초단체장용)
      */
     function render(regionKey, electionType, districtName) {
         const flowEl = document.getElementById('history-party-flow');
@@ -82,7 +103,7 @@ const HistoryTab = (() => {
             canvas.insertAdjacentElement('afterend', emptyEl);
         }
 
-        // 재보궐: byelection.json의 prevElection으로 역대비교 렌더링
+        // 재보궐
         if (electionType === 'byElection' && districtName) {
             const byeData = ElectionData.getByElectionData(districtName);
             if (byeData?.prevElection) {
@@ -109,7 +130,7 @@ const HistoryTab = (() => {
                 chartCardTitle.innerHTML = '<i class="fas fa-chart-area"></i> 역대 선거 그래프';
             }
             flowEl.innerHTML = buildEmptyMessage(getEmptyMessage(electionType, districtName), 'fa-shuffle');
-            resultsEl.innerHTML = buildEmptyMessage(getEmptyMessage(electionType, districtName), 'fa-table-list');
+            resultsEl.innerHTML = '';
             return;
         }
 
@@ -118,7 +139,10 @@ const HistoryTab = (() => {
             if (index === 0) return count;
             return count + (history[index - 1].winner !== entry.winner ? 1 : 0);
         }, 0);
-        const avgTurnout = (history.reduce((sum, entry) => sum + (Number(entry.turnout) || 0), 0) / history.length).toFixed(1);
+        const turnoutEntries = history.filter(e => Number(e.turnout) > 0);
+        const avgTurnout = turnoutEntries.length
+            ? (turnoutEntries.reduce((s, e) => s + Number(e.turnout), 0) / turnoutEntries.length).toFixed(1)
+            : null;
         const winnerCounts = history.reduce((counts, entry) => {
             const bk = getBlocKey(entry.winner);
             counts.set(bk, (counts.get(bk) || 0) + 1);
@@ -177,45 +201,52 @@ const HistoryTab = (() => {
                 borderWidth: 2.5
             }));
 
-        // ── 타임라인 렌더링 ──
+        // Fix #1: 타임라인 스크롤 힌트 래퍼 + Fix #5: badge overflow용 padding-top
+        // Fix #2: 도트에 형태 클래스 추가 + Fix #12: 득표율 노드에 표시
         flowEl.innerHTML = `
-            <div class="hpf-timeline">
-                ${history.map((entry, index) => {
-                    const winnerPartyLabel = electionType === 'superintendent'
-                        ? (entry.winner || entry.winnerParty || '?')
-                        : truncatePartyLabel(entry.winnerPartyLabel || entry.winnerParty || ElectionData.getHistoricalPartyName(entry.winner, entry.election));
-                    const color = electionType === 'superintendent'
-                        ? (ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner))
-                        : ElectionData.getPartyColor(entry.winner);
-                    const changed = index > 0 && history[index - 1].winner !== entry.winner;
-                    return `
-                        <div class="hpf-node">
-                            ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
-                            <div class="hpf-dot" style="background:${color}"></div>
-                            <div class="hpf-label">${entry.year}</div>
-                            <div class="hpf-party" style="color:${color}">${winnerPartyLabel}</div>
-                        </div>
-                        ${index < history.length - 1 ? `<div class="hpf-line" style="background:${color}"></div>` : ''}
-                    `;
-                }).join('')}
+            <div class="hpf-timeline-wrap">
+                <div class="hpf-timeline">
+                    ${history.map((entry, index) => {
+                        const winnerPartyLabel = electionType === 'superintendent'
+                            ? (entry.winner || entry.winnerParty || '?')
+                            : truncatePartyLabel(entry.winnerPartyLabel || entry.winnerParty || ElectionData.getHistoricalPartyName(entry.winner, entry.election));
+                        const color = electionType === 'superintendent'
+                            ? (ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner))
+                            : ElectionData.getPartyColor(entry.winner);
+                        const blocKey = getBlocKey(entry.winner);
+                        const changed = index > 0 && history[index - 1].winner !== entry.winner;
+                        const rate = Number(entry.rate);
+                        return `
+                            <div class="hpf-node">
+                                ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
+                                <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
+                                <div class="hpf-label">${entry.year}</div>
+                                <div class="hpf-party" style="color:${color}">${winnerPartyLabel}</div>
+                                ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
+                            </div>
+                            ${index < history.length - 1 ? `<div class="hpf-line" style="background:${color}"></div>` : ''}
+                        `;
+                    }).join('')}
+                </div>
             </div>
             <div class="hpf-summary">
-                <div class="hpf-stat">
-                    <span class="hpf-stat-val">${changeCount}회</span>
-                    <span class="hpf-stat-lbl">정권 교체</span>
-                </div>
                 <div class="hpf-stat">
                     <span class="hpf-stat-val">${dominantPartyLabel} ${dominantParty[1]}회</span>
                     <span class="hpf-stat-lbl">최다 승리</span>
                 </div>
                 <div class="hpf-stat">
+                    <span class="hpf-stat-val">${changeCount}회</span>
+                    <span class="hpf-stat-lbl">정권 교체</span>
+                </div>
+                ${avgTurnout !== null ? `
+                <div class="hpf-stat">
                     <span class="hpf-stat-val">${avgTurnout}%</span>
                     <span class="hpf-stat-lbl">평균 투표율</span>
-                </div>
+                </div>` : ''}
             </div>
         `;
 
-        // ── 결과 테이블 ──
+        // Fix #9: 연도 강조 + Fix #6: 투표율 행 추가 + Fix #3: bar 높이(CSS에서)
         resultsEl.innerHTML = history.map((entry) => {
             const winnerColor = electionType === 'superintendent'
                 ? ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner)
@@ -223,9 +254,12 @@ const HistoryTab = (() => {
             const runnerColor = electionType === 'superintendent'
                 ? ElectionData.getSuperintendentColor(entry.runner) || ElectionData.getPartyColor(entry.runner || 'independent')
                 : ElectionData.getPartyColor(entry.runner || 'independent');
+            const winnerBloc = getBlocKey(entry.winner);
+            const runnerBloc = getBlocKey(entry.runner || 'independent');
             const winnerPct = Number(entry.rate) || 0;
             const runnerPct = Number(entry.runnerRate) || 0;
             const isUncontested = winnerPct === 0 && !entry.runnerName;
+            const turnout = Number(entry.turnout);
             return `
                 <div class="ht-row">
                     <div class="ht-left">
@@ -239,23 +273,25 @@ const HistoryTab = (() => {
                             </div>`
                         }
                         <div class="ht-names">
-                            <span><span class="ht-dot" style="background:${winnerColor}"></span>${entry.winnerName}${isUncontested ? '' : ` <b>${winnerPct.toFixed(1)}%</b>`}</span>
+                            <span><span class="ht-dot ${smallDotShapeClass(winnerBloc)}" style="background:${winnerColor}"></span>${entry.winnerName}${isUncontested ? '' : ` <b>${winnerPct.toFixed(1)}%</b>`}</span>
                             ${entry.runnerName
-                                ? `<span class="ht-sub"><span class="ht-dot" style="background:${runnerColor}"></span>${entry.runnerName} ${runnerPct.toFixed(1)}%</span>`
-                                : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem;">${isUncontested ? (entry.winnerParty || ElectionData.getPartyName(entry.winner)) : (entry.winnerParty || ElectionData.getPartyName(entry.winner))}</span>`
+                                ? `<span class="ht-sub"><span class="ht-dot ${smallDotShapeClass(runnerBloc)}" style="background:${runnerColor}"></span>${entry.runnerName} ${runnerPct.toFixed(1)}%</span>`
+                                : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem;">${entry.winnerParty || ElectionData.getPartyName(entry.winner)}</span>`
                             }
                         </div>
+                        ${turnout > 0 ? `<div class="ht-turnout">투표율 ${turnout.toFixed(1)}%</div>` : ''}
                     </div>
                 </div>
             `;
         }).reverse().join('');
 
-        // ── 비교 차트 ──
+        // Fix #7: 차트 부드럽게 + Fix #11: 차트 범례 설명 각주
         destroyChart();
         const chartCard = document.getElementById('history-chart-card');
         if (chartCard) {
             chartCard.style.display = '';
             chartCard.querySelector('h4')?.remove();
+            chartCard.querySelector('.history-chart-footnote')?.remove();
             const h4 = document.createElement('h4');
             h4.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
             chartCard.insertBefore(h4, canvas);
@@ -304,18 +340,27 @@ const HistoryTab = (() => {
                 }
             }
         });
+
+        // Fix #11: 범례 설명 각주
+        if (chartCard) {
+            const footnote = document.createElement('div');
+            footnote.className = 'history-chart-footnote';
+            footnote.textContent = electionType === 'superintendent'
+                ? '진보·보수는 교육감 후보 성향 분류 기준입니다.'
+                : '민주계·보수계는 정당 계열 기준이며, 동일 선거 1·2위 득표율을 표시합니다.';
+            chartCard.appendChild(footnote);
+        }
     }
 
     /**
-     * 재보궐 역대비교 — 17대~22대 역대 국회의원 선거 결과를 광역단체장과 같은 양식으로
+     * 재보궐 역대비교
      */
     function renderByElectionHistory(flowEl, resultsEl, canvas, emptyEl, chartCardTitle, byeData) {
         const history = byeData.history || [];
         const reason = byeData.reason || '';
         const subType = byeData.subType || '보궐선거';
-        const subTypeColor = '#f59e0b'; // 재보궐 시그니처 노란색
+        const subTypeColor = '#f59e0b';
 
-        // 사유 배너
         const bannerHtml = `
             <div style="margin-bottom:16px;padding:10px 14px;border-radius:8px;background:${subTypeColor}10;border:1px solid ${subTypeColor}30;">
                 <div style="color:${subTypeColor};font-weight:600;font-size:0.85rem;margin-bottom:4px;">
@@ -326,40 +371,38 @@ const HistoryTab = (() => {
         `;
 
         if (!history.length) {
-            // history가 없으면 prevElection만
             destroyChart();
             canvas.style.display = 'none';
             emptyEl.style.display = 'none';
 
             const prev = byeData.prevElection || {};
             const winColor = ElectionData.getPartyColor(prev.winner || 'independent');
-            const runColor = ElectionData.getPartyColor(prev.runner || 'independent');
 
             flowEl.innerHTML = bannerHtml + `
-                <div class="hpf-timeline">
-                    <div class="hpf-node">
-                        <div class="hpf-dot" style="background:${winColor}"></div>
-                        <div class="hpf-label">이전 선거</div>
-                        <div class="hpf-party" style="color:${winColor}">${ElectionData.getPartyName(prev.winner)}</div>
-                    </div>
-                    <div class="hpf-line" style="background:${subTypeColor}"></div>
-                    <div class="hpf-node">
-                        <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
-                        <div class="hpf-dot" style="background:${subTypeColor}"></div>
-                        <div class="hpf-label">2026.06.03</div>
-                        <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
+                <div class="hpf-timeline-wrap">
+                    <div class="hpf-timeline">
+                        <div class="hpf-node">
+                            <div class="hpf-dot ${dotShapeClass(getBlocKey(prev.winner || 'independent'))}" style="background:${winColor}"></div>
+                            <div class="hpf-label">이전 선거</div>
+                            <div class="hpf-party" style="color:${winColor}">${ElectionData.getPartyName(prev.winner)}</div>
+                        </div>
+                        <div class="hpf-line" style="background:${subTypeColor}"></div>
+                        <div class="hpf-node">
+                            <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
+                            <div class="hpf-dot hpf-dot--circle" style="background:${subTypeColor}"></div>
+                            <div class="hpf-label">2026.06.03</div>
+                            <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
+                        </div>
                     </div>
                 </div>`;
             resultsEl.innerHTML = '';
             return;
         }
 
-        // ── 역대 타임라인 (광역단체장과 동일 양식) ──
         const changeCount = history.reduce((count, entry, index) => {
             if (index === 0) return count;
             return count + (history[index - 1].winner !== entry.winner ? 1 : 0);
         }, 0);
-
         const winnerCounts = history.reduce((counts, entry) => {
             const bk = getBlocKey(entry.winner);
             counts.set(bk, (counts.get(bk) || 0) + 1);
@@ -376,53 +419,61 @@ const HistoryTab = (() => {
         };
 
         flowEl.innerHTML = bannerHtml + `
-            <div class="hpf-timeline">
-                ${history.map((entry, index) => {
-                    const label = truncatePartyLabel(entry.winnerParty || ElectionData.getPartyName(entry.winner));
-                    const color = ElectionData.getPartyColor(entry.winner);
-                    const changed = index > 0 && history[index - 1].winner !== entry.winner;
-                    return `
-                        <div class="hpf-node">
-                            ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
-                            <div class="hpf-dot" style="background:${color}"></div>
-                            <div class="hpf-label">${entry.election}대(${entry.year})</div>
-                            <div class="hpf-party" style="color:${color}">${label}</div>
-                        </div>
-                        ${index < history.length - 1 ? `<div class="hpf-line" style="background:${color}"></div>` : ''}
-                    `;
-                }).join('')}
-                <div class="hpf-line" style="background:${subTypeColor}"></div>
-                <div class="hpf-node">
-                    <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
-                    <div class="hpf-dot" style="background:${subTypeColor}"></div>
-                    <div class="hpf-label">2026</div>
-                    <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
+            <div class="hpf-timeline-wrap">
+                <div class="hpf-timeline">
+                    ${history.map((entry, index) => {
+                        const label = truncatePartyLabel(entry.winnerParty || ElectionData.getPartyName(entry.winner));
+                        const color = ElectionData.getPartyColor(entry.winner);
+                        const blocKey = getBlocKey(entry.winner);
+                        const changed = index > 0 && history[index - 1].winner !== entry.winner;
+                        const rate = Number(entry.rate);
+                        return `
+                            <div class="hpf-node">
+                                ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
+                                <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
+                                <div class="hpf-label">${entry.election}대(${entry.year})</div>
+                                <div class="hpf-party" style="color:${color}">${label}</div>
+                                ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
+                            </div>
+                            ${index < history.length - 1 ? `<div class="hpf-line" style="background:${color}"></div>` : ''}
+                        `;
+                    }).join('')}
+                    <div class="hpf-line" style="background:${subTypeColor}"></div>
+                    <div class="hpf-node">
+                        <span class="hpf-change-mark" style="background:${subTypeColor}">공석</span>
+                        <div class="hpf-dot hpf-dot--circle" style="background:${subTypeColor}"></div>
+                        <div class="hpf-label">2026</div>
+                        <div class="hpf-party" style="color:${subTypeColor}">투표 예정</div>
+                    </div>
                 </div>
             </div>
             <div class="hpf-summary">
                 <div class="hpf-stat">
-                    <span class="hpf-stat-val">${changeCount}회</span>
-                    <span class="hpf-stat-lbl">정권 교체</span>
-                </div>
-                <div class="hpf-stat">
                     <span class="hpf-stat-val">${dominantLabel} ${dominantParty[1]}회</span>
                     <span class="hpf-stat-lbl">최다 승리</span>
+                </div>
+                <div class="hpf-stat">
+                    <span class="hpf-stat-val">${changeCount}회</span>
+                    <span class="hpf-stat-lbl">정권 교체</span>
                 </div>
             </div>
         `;
 
-        // ── 결과 테이블 (광역단체장과 동일 양식 — 당선자 + 차점자) ──
+        // Fix #10: 재보궐 결과 테이블에 선거 유형 헤더 추가
         const prev = byeData.prevElection || {};
-        resultsEl.innerHTML = history.map((entry, idx) => {
+        resultsEl.innerHTML = `
+            <div class="ht-section-label">역대 국회의원 선거 결과</div>
+        ` + history.map((entry, idx) => {
             const winColor = ElectionData.getPartyColor(entry.winner);
+            const winnerBloc = getBlocKey(entry.winner);
             const winPct = Number(entry.rate) || 0;
 
-            // runner: history 자체에 있으면 사용, 마지막 건은 prevElection fallback
             const isLatest = idx === history.length - 1;
             const runnerName = entry.runnerName || (isLatest ? prev.runnerName : '') || '';
             const runnerRate = Number(entry.runnerRate || (isLatest ? prev.runnerRate : 0)) || 0;
             const runnerParty = entry.runner || (isLatest ? prev.runner : '') || 'independent';
             const runColor = ElectionData.getPartyColor(runnerParty);
+            const runnerBloc = getBlocKey(runnerParty);
 
             return `
                 <div class="ht-row">
@@ -434,8 +485,8 @@ const HistoryTab = (() => {
                             <div class="ht-bar-fill" style="width:${winPct}%;background:${winColor}"></div>
                         </div>
                         <div class="ht-names">
-                            <span><span class="ht-dot" style="background:${winColor}"></span>${entry.winnerName} <b>${winPct.toFixed(1)}%</b></span>
-                            ${runnerName ? `<span class="ht-sub"><span class="ht-dot" style="background:${runColor}"></span>${runnerName} ${runnerRate.toFixed(1)}%</span>` : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem">${entry.winnerParty || ''}</span>`}
+                            <span><span class="ht-dot ${smallDotShapeClass(winnerBloc)}" style="background:${winColor}"></span>${entry.winnerName} <b>${winPct.toFixed(1)}%</b></span>
+                            ${runnerName ? `<span class="ht-sub"><span class="ht-dot ${smallDotShapeClass(runnerBloc)}" style="background:${runColor}"></span>${runnerName} ${runnerRate.toFixed(1)}%</span>` : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem">${entry.winnerParty || ''}</span>`}
                         </div>
                     </div>
                 </div>
@@ -449,10 +500,8 @@ const HistoryTab = (() => {
             </div>
         `;
 
-        // ── 득표율 변화 차트 (당선자 + 차점자 양당 추이) ──
         destroyChart();
 
-        // winner + runner 블록 모두 수집
         const blocAppearancesLocal = history.reduce((counts, entry) => {
             const wb = getBlocKey(entry.winner);
             counts.set(wb, (counts.get(wb) || 0) + 1);
@@ -501,6 +550,7 @@ const HistoryTab = (() => {
         if (chartCard) {
             chartCard.style.display = '';
             chartCard.querySelector('h4')?.remove();
+            chartCard.querySelector('.history-chart-footnote')?.remove();
             const h4 = document.createElement('h4');
             h4.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
             chartCard.insertBefore(h4, canvas);
@@ -537,6 +587,13 @@ const HistoryTab = (() => {
                 }
             }
         });
+
+        if (chartCard) {
+            const footnote = document.createElement('div');
+            footnote.className = 'history-chart-footnote';
+            footnote.textContent = '민주계·보수계는 정당 계열 기준이며, 동일 선거 1·2위 득표율을 표시합니다.';
+            chartCard.appendChild(footnote);
+        }
     }
 
     return { render, destroyChart };

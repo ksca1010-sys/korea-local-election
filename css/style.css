@@ -4067,13 +4067,28 @@ body.banner-hidden #main-content {
 .compare-cell { flex: 1; font-size: 0.78rem; color: var(--text-secondary); padding: 4px 6px; background: var(--bg-card); border-radius: 4px; }
 
 /* ── History Tab ── */
+.hpf-timeline-wrap {
+    position: relative;
+    overflow: hidden;
+}
+.hpf-timeline-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 100%;
+    background: linear-gradient(to right, transparent, var(--bg-card));
+    pointer-events: none;
+    z-index: 1;
+}
 .hpf-timeline {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0;
     overflow-x: auto;
-    padding: 16px 16px 12px;
+    padding: 28px 16px 12px;
     scrollbar-width: thin;
 }
 .hpf-node {
@@ -4092,10 +4107,22 @@ body.banner-hidden #main-content {
     border: 2px solid var(--bg-card);
     box-shadow: 0 0 0 1px rgba(255,255,255,0.1);
 }
+/* Dot shape variants for color-blind accessibility */
+.hpf-dot--circle  { border-radius: 50%; }
+.hpf-dot--square  { border-radius: 2px; }
+.hpf-dot--diamond { border-radius: 2px; transform: rotate(45deg); }
+.hpf-dot--dash    { border-radius: 2px; width: 14px; height: 6px; margin-bottom: 10px; }
 .hpf-label {
     font-size: 0.7rem;
     color: var(--text-secondary);
     font-weight: 600;
+}
+.hpf-rate {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    text-align: center;
+    white-space: nowrap;
 }
 .hpf-party {
     font-size: 0.62rem;
@@ -4159,9 +4186,24 @@ body.banner-hidden #main-content {
     align-items: center;
     gap: 10px;
     padding: 9px 0;
-    border-bottom: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
 }
 .ht-row:last-child { border-bottom: none; }
+.ht-turnout {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    margin-top: 3px;
+}
+.ht-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 10px 0 4px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    margin-bottom: 4px;
+}
 
 .ht-left {
     flex-shrink: 0;
@@ -4169,15 +4211,15 @@ body.banner-hidden #main-content {
     text-align: right;
 }
 .ht-year {
-    font-size: 0.78rem;
+    font-size: 0.82rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: var(--text-primary);
 }
 
 .ht-center { flex: 1; min-width: 0; }
 .ht-bar-track {
-    height: 5px;
-    border-radius: 3px;
+    height: 8px;
+    border-radius: 4px;
     background: rgba(255,255,255,0.06);
     overflow: hidden;
     margin-bottom: 5px;
@@ -4202,6 +4244,11 @@ body.banner-hidden #main-content {
     margin-right: 4px;
     vertical-align: middle;
 }
+/* Small result dot shape variants */
+.ht-dot--circle  { border-radius: 50%; }
+.ht-dot--square  { border-radius: 1px; }
+.ht-dot--diamond { border-radius: 1px; transform: rotate(45deg); }
+.ht-dot--dash    { border-radius: 1px; width: 10px; height: 4px; vertical-align: middle; }
 
 .history-results .hr-item {
     display: flex;
@@ -4223,6 +4270,13 @@ body.banner-hidden #main-content {
 .history-results .hr-rate {
     color: var(--text-secondary);
     margin-left: auto;
+}
+.history-chart-footnote {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 6px 0 2px;
+    line-height: 1.5;
 }
 
 /* ── Panel Resize Handle ── */
