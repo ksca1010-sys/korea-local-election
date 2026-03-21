@@ -1306,10 +1306,30 @@
     },
     "사하구": {
       "hosts": [
-        "sh44.kr"
+        "sh44.kr",
+        "kookje.co.kr",
+        "busan.com",
+        "news.knn.co.kr",
+        "nbntv.co.kr",
+        "hankookilbo.com",
+        "thepowernews.co.kr",
+        "suhyup.co.kr",
+        "idomin.com",
+        "dpi1004.com",
+        "koreaff.or.kr"
       ],
       "names": [
-        "사하신문"
+        "사하신문",
+        "kookje.co.kr",
+        "busan.com",
+        "news.knn.co.kr",
+        "nbntv.co.kr",
+        "hankookilbo.com",
+        "thepowernews.co.kr",
+        "suhyup.co.kr",
+        "idomin.com",
+        "dpi1004.com",
+        "koreaff.or.kr"
       ],
       "media": [
         {
@@ -1323,6 +1343,66 @@
           "name": "ikld.kr",
           "src": "naver",
           "count": 2
+        },
+        {
+          "host": "kookje.co.kr",
+          "name": "kookje.co.kr",
+          "src": "naver",
+          "count": 20
+        },
+        {
+          "host": "busan.com",
+          "name": "busan.com",
+          "src": "naver",
+          "count": 9
+        },
+        {
+          "host": "news.knn.co.kr",
+          "name": "news.knn.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "nbntv.co.kr",
+          "name": "nbntv.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "hankookilbo.com",
+          "name": "hankookilbo.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "thepowernews.co.kr",
+          "name": "thepowernews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "suhyup.co.kr",
+          "name": "suhyup.co.kr",
+          "src": "kakao",
+          "count": 2
+        },
+        {
+          "host": "idomin.com",
+          "name": "idomin.com",
+          "src": "kakao",
+          "count": 2
+        },
+        {
+          "host": "dpi1004.com",
+          "name": "dpi1004.com",
+          "src": "kakao",
+          "count": 1
+        },
+        {
+          "host": "koreaff.or.kr",
+          "name": "koreaff.or.kr",
+          "src": "kakao",
+          "count": 1
         }
       ]
     },
@@ -2757,10 +2837,30 @@
     },
     "청양군": {
       "hosts": [
-        "cnnews.co.kr"
+        "cnnews.co.kr",
+        "goodmorningcc.com",
+        "cctoday.co.kr",
+        "joongdo.co.kr",
+        "newstown.co.kr",
+        "newstnt.com",
+        "cctimes.kr",
+        "ccdailynews.com",
+        "ccnnews.co.kr",
+        "app.yonhapnews.co.kr",
+        "kihoilbo.co.kr"
       ],
       "names": [
-        "충청투데이"
+        "충청투데이",
+        "goodmorningcc.com",
+        "cctoday.co.kr",
+        "joongdo.co.kr",
+        "newstown.co.kr",
+        "newstnt.com",
+        "cctimes.kr",
+        "ccdailynews.com",
+        "ccnnews.co.kr",
+        "app.yonhapnews.co.kr",
+        "kihoilbo.co.kr"
       ],
       "media": [
         {
@@ -2781,6 +2881,66 @@
         {
           "host": "weekly.hankooki.com",
           "name": "weekly.hankooki.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "goodmorningcc.com",
+          "name": "goodmorningcc.com",
+          "src": "naver",
+          "count": 38
+        },
+        {
+          "host": "cctoday.co.kr",
+          "name": "cctoday.co.kr",
+          "src": "naver",
+          "count": 12
+        },
+        {
+          "host": "joongdo.co.kr",
+          "name": "joongdo.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "newstown.co.kr",
+          "name": "newstown.co.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "newstnt.com",
+          "name": "newstnt.com",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "cctimes.kr",
+          "name": "cctimes.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "ccdailynews.com",
+          "name": "ccdailynews.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "ccnnews.co.kr",
+          "name": "ccnnews.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "app.yonhapnews.co.kr",
+          "name": "app.yonhapnews.co.kr",
+          "src": "naver",
+          "count": 3
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
           "src": "naver",
           "count": 2
         }
@@ -2851,10 +3011,30 @@
     },
     "홍성군": {
       "hosts": [
-        "hsnews.co.kr"
+        "hsnews.co.kr",
+        "goodmorningcc.com",
+        "idjnews.kr",
+        "joongdo.co.kr",
+        "cctoday.co.kr",
+        "chungnamilbo.co.kr",
+        "kihoilbo.co.kr",
+        "welfarenews.net",
+        "gosiweek.com",
+        "ccdailynews.com",
+        "newstown.co.kr"
       ],
       "names": [
-        "홍성신문"
+        "홍성신문",
+        "goodmorningcc.com",
+        "idjnews.kr",
+        "joongdo.co.kr",
+        "cctoday.co.kr",
+        "chungnamilbo.co.kr",
+        "kihoilbo.co.kr",
+        "welfarenews.net",
+        "gosiweek.com",
+        "ccdailynews.com",
+        "newstown.co.kr"
       ],
       "media": [
         {
@@ -2865,6 +3045,66 @@
         {
           "host": "insight.co.kr",
           "name": "insight.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "goodmorningcc.com",
+          "name": "goodmorningcc.com",
+          "src": "naver",
+          "count": 50
+        },
+        {
+          "host": "idjnews.kr",
+          "name": "idjnews.kr",
+          "src": "naver",
+          "count": 16
+        },
+        {
+          "host": "joongdo.co.kr",
+          "name": "joongdo.co.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "cctoday.co.kr",
+          "name": "cctoday.co.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "chungnamilbo.co.kr",
+          "name": "chungnamilbo.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "welfarenews.net",
+          "name": "welfarenews.net",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "gosiweek.com",
+          "name": "gosiweek.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "ccdailynews.com",
+          "name": "ccdailynews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "newstown.co.kr",
+          "name": "newstown.co.kr",
           "src": "naver",
           "count": 2
         }
@@ -2912,8 +3152,30 @@
       ]
     },
     "달성군": {
-      "hosts": [],
-      "names": [],
+      "hosts": [
+        "yeongnam.com",
+        "idaegu.com",
+        "idaegu.co.kr",
+        "imaeil.com",
+        "hankookilbo.com",
+        "sjsori.com",
+        "danbinews.com",
+        "cfnews.kr",
+        "readersnews.com",
+        "fnnews.com"
+      ],
+      "names": [
+        "yeongnam.com",
+        "idaegu.com",
+        "idaegu.co.kr",
+        "imaeil.com",
+        "hankookilbo.com",
+        "sjsori.com",
+        "danbinews.com",
+        "cfnews.kr",
+        "readersnews.com",
+        "fnnews.com"
+      ],
       "media": [
         {
           "name": "달성신문",
@@ -2928,15 +3190,91 @@
           "name": "news.einfomax.co.kr",
           "src": "naver",
           "count": 4
+        },
+        {
+          "host": "yeongnam.com",
+          "name": "yeongnam.com",
+          "src": "naver",
+          "count": 20
+        },
+        {
+          "host": "idaegu.com",
+          "name": "idaegu.com",
+          "src": "naver",
+          "count": 10
+        },
+        {
+          "host": "idaegu.co.kr",
+          "name": "idaegu.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "imaeil.com",
+          "name": "imaeil.com",
+          "src": "naver",
+          "count": 5
+        },
+        {
+          "host": "hankookilbo.com",
+          "name": "hankookilbo.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "sjsori.com",
+          "name": "sjsori.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "danbinews.com",
+          "name": "danbinews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "cfnews.kr",
+          "name": "cfnews.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "readersnews.com",
+          "name": "readersnews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "fnnews.com",
+          "name": "fnnews.com",
+          "src": "naver",
+          "count": 2
         }
       ]
     },
     "수성구": {
       "hosts": [
-        "dgmbc.co.kr"
+        "dgmbc.co.kr",
+        "yeongnam.com",
+        "idaegu.com",
+        "idaegu.co.kr",
+        "imaeil.com",
+        "hankookilbo.com",
+        "cfnews.kr",
+        "sentv.co.kr",
+        "whimoonob.net"
       ],
       "names": [
-        "매일신문"
+        "매일신문",
+        "yeongnam.com",
+        "idaegu.com",
+        "idaegu.co.kr",
+        "imaeil.com",
+        "hankookilbo.com",
+        "cfnews.kr",
+        "sentv.co.kr",
+        "whimoonob.net"
       ],
       "media": [
         {
@@ -2958,6 +3296,54 @@
           "host": "smartbizn.com",
           "name": "smartbizn.com",
           "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "yeongnam.com",
+          "name": "yeongnam.com",
+          "src": "naver",
+          "count": 23
+        },
+        {
+          "host": "idaegu.com",
+          "name": "idaegu.com",
+          "src": "naver",
+          "count": 14
+        },
+        {
+          "host": "idaegu.co.kr",
+          "name": "idaegu.co.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "imaeil.com",
+          "name": "imaeil.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "hankookilbo.com",
+          "name": "hankookilbo.com",
+          "src": "naver",
+          "count": 3
+        },
+        {
+          "host": "cfnews.kr",
+          "name": "cfnews.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "sentv.co.kr",
+          "name": "sentv.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "whimoonob.net",
+          "name": "whimoonob.net",
+          "src": "kakao",
           "count": 2
         }
       ]
@@ -3539,10 +3925,28 @@
     },
     "정선군": {
       "hosts": [
-        "tjinews.co.kr"
+        "tjinews.co.kr",
+        "kwnews.co.kr",
+        "kado.net",
+        "g1tv.co.kr",
+        "danbinews.com",
+        "pinpointnews.co.kr",
+        "newsfarm.co.kr",
+        "newsclaim.co.kr",
+        "app.yonhapnews.co.kr",
+        "kwtimes.co.kr"
       ],
       "names": [
-        "정선신문"
+        "정선신문",
+        "kwnews.co.kr",
+        "kado.net",
+        "g1tv.co.kr",
+        "danbinews.com",
+        "pinpointnews.co.kr",
+        "newsfarm.co.kr",
+        "newsclaim.co.kr",
+        "app.yonhapnews.co.kr",
+        "kwtimes.co.kr"
       ],
       "media": [
         {
@@ -3570,6 +3974,60 @@
           "host": "dhnews.co.kr",
           "name": "dhnews.co.kr",
           "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "kwnews.co.kr",
+          "name": "kwnews.co.kr",
+          "src": "naver",
+          "count": 15
+        },
+        {
+          "host": "kado.net",
+          "name": "kado.net",
+          "src": "naver",
+          "count": 14
+        },
+        {
+          "host": "g1tv.co.kr",
+          "name": "g1tv.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "danbinews.com",
+          "name": "danbinews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "pinpointnews.co.kr",
+          "name": "pinpointnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "newsfarm.co.kr",
+          "name": "newsfarm.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "newsclaim.co.kr",
+          "name": "newsclaim.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "app.yonhapnews.co.kr",
+          "name": "app.yonhapnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "kwtimes.co.kr",
+          "name": "kwtimes.co.kr",
+          "src": "kakao",
           "count": 2
         }
       ]
@@ -3708,10 +4166,34 @@
     },
     "평창군": {
       "hosts": [
-        "news700.kr"
+        "news700.kr",
+        "kwnews.co.kr",
+        "kado.net",
+        "g1tv.co.kr",
+        "queen.co.kr",
+        "mjmedi.com",
+        "seongjuro.co.kr",
+        "doctorsnews.co.kr",
+        "youngnong.co.kr",
+        "app.yonhapnews.co.kr",
+        "docdocdoc.co.kr",
+        "mbceg.co.kr",
+        "news.mtn.co.kr"
       ],
       "names": [
-        "평창신문"
+        "평창신문",
+        "kwnews.co.kr",
+        "kado.net",
+        "g1tv.co.kr",
+        "queen.co.kr",
+        "mjmedi.com",
+        "seongjuro.co.kr",
+        "doctorsnews.co.kr",
+        "youngnong.co.kr",
+        "app.yonhapnews.co.kr",
+        "docdocdoc.co.kr",
+        "mbceg.co.kr",
+        "news.mtn.co.kr"
       ],
       "media": [
         {
@@ -3724,15 +4206,111 @@
           "name": "catchnews.kr",
           "src": "naver",
           "count": 2
+        },
+        {
+          "host": "kwnews.co.kr",
+          "name": "kwnews.co.kr",
+          "src": "naver",
+          "count": 24
+        },
+        {
+          "host": "kado.net",
+          "name": "kado.net",
+          "src": "naver",
+          "count": 9
+        },
+        {
+          "host": "g1tv.co.kr",
+          "name": "g1tv.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "queen.co.kr",
+          "name": "queen.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "mjmedi.com",
+          "name": "mjmedi.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "seongjuro.co.kr",
+          "name": "seongjuro.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "doctorsnews.co.kr",
+          "name": "doctorsnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "youngnong.co.kr",
+          "name": "youngnong.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "app.yonhapnews.co.kr",
+          "name": "app.yonhapnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "docdocdoc.co.kr",
+          "name": "docdocdoc.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "mbceg.co.kr",
+          "name": "mbceg.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "news.mtn.co.kr",
+          "name": "news.mtn.co.kr",
+          "src": "naver",
+          "count": 2
         }
       ]
     },
     "홍천군": {
       "hosts": [
-        "hcsinmoon.co.kr"
+        "hcsinmoon.co.kr",
+        "kado.net",
+        "kwnews.co.kr",
+        "kihoilbo.co.kr",
+        "pinpointnews.co.kr",
+        "readersnews.com",
+        "newsian.co.kr",
+        "cfnews.kr",
+        "newsfarm.co.kr",
+        "queen.co.kr",
+        "ikpnews.net",
+        "news.mtn.co.kr",
+        "promakeup.or.kr"
       ],
       "names": [
-        "홍천뉴스"
+        "홍천뉴스",
+        "kado.net",
+        "kwnews.co.kr",
+        "kihoilbo.co.kr",
+        "pinpointnews.co.kr",
+        "readersnews.com",
+        "newsian.co.kr",
+        "cfnews.kr",
+        "newsfarm.co.kr",
+        "queen.co.kr",
+        "ikpnews.net",
+        "news.mtn.co.kr",
+        "promakeup.or.kr"
       ],
       "media": [
         {
@@ -3755,15 +4333,107 @@
           "name": "news.cjhello.com",
           "src": "naver",
           "count": 2
+        },
+        {
+          "host": "kado.net",
+          "name": "kado.net",
+          "src": "naver",
+          "count": 21
+        },
+        {
+          "host": "kwnews.co.kr",
+          "name": "kwnews.co.kr",
+          "src": "naver",
+          "count": 17
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "pinpointnews.co.kr",
+          "name": "pinpointnews.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "readersnews.com",
+          "name": "readersnews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "newsian.co.kr",
+          "name": "newsian.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "cfnews.kr",
+          "name": "cfnews.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "newsfarm.co.kr",
+          "name": "newsfarm.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "queen.co.kr",
+          "name": "queen.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "ikpnews.net",
+          "name": "ikpnews.net",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "news.mtn.co.kr",
+          "name": "news.mtn.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "promakeup.or.kr",
+          "name": "promakeup.or.kr",
+          "src": "kakao",
+          "count": 2
         }
       ]
     },
     "화천군": {
       "hosts": [
-        "chmbc.co.kr"
+        "chmbc.co.kr",
+        "kado.net",
+        "kwnews.co.kr",
+        "geconomy.co.kr",
+        "app.yonhapnews.co.kr",
+        "readersnews.com",
+        "travelitoday.com",
+        "womennews.co.kr",
+        "kihoilbo.co.kr",
+        "mstoday.co.kr",
+        "promakeup.or.kr"
       ],
       "names": [
-        "강원일보"
+        "강원일보",
+        "kado.net",
+        "kwnews.co.kr",
+        "geconomy.co.kr",
+        "app.yonhapnews.co.kr",
+        "readersnews.com",
+        "travelitoday.com",
+        "womennews.co.kr",
+        "kihoilbo.co.kr",
+        "mstoday.co.kr",
+        "promakeup.or.kr"
       ],
       "media": [
         {
@@ -3791,6 +4461,66 @@
           "host": "news.heraldcorp.com",
           "name": "news.heraldcorp.com",
           "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "kado.net",
+          "name": "kado.net",
+          "src": "naver",
+          "count": 17
+        },
+        {
+          "host": "kwnews.co.kr",
+          "name": "kwnews.co.kr",
+          "src": "naver",
+          "count": 15
+        },
+        {
+          "host": "geconomy.co.kr",
+          "name": "geconomy.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "app.yonhapnews.co.kr",
+          "name": "app.yonhapnews.co.kr",
+          "src": "naver",
+          "count": 3
+        },
+        {
+          "host": "readersnews.com",
+          "name": "readersnews.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "travelitoday.com",
+          "name": "travelitoday.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "womennews.co.kr",
+          "name": "womennews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "mstoday.co.kr",
+          "name": "mstoday.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "promakeup.or.kr",
+          "name": "promakeup.or.kr",
+          "src": "kakao",
           "count": 2
         }
       ]
@@ -9270,10 +10000,27 @@
     },
     "신안군": {
       "hosts": [
-        "mokposm.co.kr"
+        "mokposm.co.kr",
+        "jnilbo.com",
+        "namdonews.com",
+        "jndn.com",
+        "sentv.co.kr",
+        "cfnews.kr",
+        "djtimes.co.kr",
+        "facten.co.kr",
+        "mpmbc.co.kr",
+        "foodnews.co.kr"
       ],
       "names": [
-        "jnilbo.com"
+        "jnilbo.com",
+        "namdonews.com",
+        "jndn.com",
+        "sentv.co.kr",
+        "cfnews.kr",
+        "djtimes.co.kr",
+        "facten.co.kr",
+        "mpmbc.co.kr",
+        "foodnews.co.kr"
       ],
       "media": [
         {
@@ -9291,6 +10038,60 @@
         {
           "host": "dailyvet.co.kr",
           "name": "dailyvet.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "jnilbo.com",
+          "name": "jnilbo.com",
+          "src": "naver",
+          "count": 18
+        },
+        {
+          "host": "namdonews.com",
+          "name": "namdonews.com",
+          "src": "naver",
+          "count": 16
+        },
+        {
+          "host": "jndn.com",
+          "name": "jndn.com",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "sentv.co.kr",
+          "name": "sentv.co.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "cfnews.kr",
+          "name": "cfnews.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "djtimes.co.kr",
+          "name": "djtimes.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "facten.co.kr",
+          "name": "facten.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "mpmbc.co.kr",
+          "name": "mpmbc.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "foodnews.co.kr",
+          "name": "foodnews.co.kr",
           "src": "naver",
           "count": 2
         }
@@ -10219,10 +11020,22 @@
     },
     "구로구": {
       "hosts": [
-        "cwn.kr"
+        "cwn.kr",
+        "ulsanpress.net",
+        "mjmedi.com",
+        "idsn.co.kr",
+        "thepublic.kr",
+        "m-joongang.com",
+        "ms.smc.seoul.kr"
       ],
       "names": [
-        "『한국아파트신문』인터넷 메인화면"
+        "『한국아파트신문』인터넷 메인화면",
+        "ulsanpress.net",
+        "mjmedi.com",
+        "idsn.co.kr",
+        "thepublic.kr",
+        "m-joongang.com",
+        "ms.smc.seoul.kr"
       ],
       "media": [
         {
@@ -10241,6 +11054,42 @@
           "host": "lawleader.co.kr",
           "name": "lawleader.co.kr",
           "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "ulsanpress.net",
+          "name": "ulsanpress.net",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "mjmedi.com",
+          "name": "mjmedi.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "idsn.co.kr",
+          "name": "idsn.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "thepublic.kr",
+          "name": "thepublic.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "m-joongang.com",
+          "name": "m-joongang.com",
+          "src": "kakao",
+          "count": 2
+        },
+        {
+          "host": "ms.smc.seoul.kr",
+          "name": "ms.smc.seoul.kr",
+          "src": "kakao",
           "count": 2
         }
       ]
@@ -10985,10 +11834,30 @@
     },
     "용산구": {
       "hosts": [
-        "yongsannews.com"
+        "yongsannews.com",
+        "doctorsnews.co.kr",
+        "ddanzi.com",
+        "topstarnews.net",
+        "geconomy.co.kr",
+        "bigtanews.co.kr",
+        "betanews.net",
+        "queen.co.kr",
+        "jmagazine.joins.com",
+        "straightnews.co.kr",
+        "tbs.seoul.kr"
       ],
       "names": [
-        "용산 타임즈"
+        "용산 타임즈",
+        "doctorsnews.co.kr",
+        "ddanzi.com",
+        "topstarnews.net",
+        "geconomy.co.kr",
+        "bigtanews.co.kr",
+        "betanews.net",
+        "queen.co.kr",
+        "jmagazine.joins.com",
+        "straightnews.co.kr",
+        "tbs.seoul.kr"
       ],
       "media": [
         {
@@ -11008,6 +11877,66 @@
           "name": "sisaon.co.kr",
           "src": "discover",
           "count": 6
+        },
+        {
+          "host": "doctorsnews.co.kr",
+          "name": "doctorsnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "ddanzi.com",
+          "name": "ddanzi.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "topstarnews.net",
+          "name": "topstarnews.net",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "geconomy.co.kr",
+          "name": "geconomy.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "bigtanews.co.kr",
+          "name": "bigtanews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "betanews.net",
+          "name": "betanews.net",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "queen.co.kr",
+          "name": "queen.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "jmagazine.joins.com",
+          "name": "jmagazine.joins.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "straightnews.co.kr",
+          "name": "straightnews.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "tbs.seoul.kr",
+          "name": "tbs.seoul.kr",
+          "src": "naver",
+          "count": 2
         }
       ]
     },
@@ -11355,10 +12284,27 @@
     },
     "영종구": {
       "hosts": [
-        "livesnews.com"
+        "livesnews.com",
+        "incheonilbo.com",
+        "kyeongin.com",
+        "kihoilbo.co.kr",
+        "incheontoday.com",
+        "news.ifm.kr",
+        "kmaeil.com",
+        "incheonin.com",
+        "slist.kr",
+        "incheonnews.com"
       ],
       "names": [
-        "incheonilbo.com"
+        "incheonilbo.com",
+        "kyeongin.com",
+        "kihoilbo.co.kr",
+        "incheontoday.com",
+        "news.ifm.kr",
+        "kmaeil.com",
+        "incheonin.com",
+        "slist.kr",
+        "incheonnews.com"
       ],
       "media": [
         {
@@ -11372,12 +12318,88 @@
           "name": "sidae.com",
           "src": "naver",
           "count": 2
+        },
+        {
+          "host": "incheonilbo.com",
+          "name": "incheonilbo.com",
+          "src": "naver",
+          "count": 18
+        },
+        {
+          "host": "kyeongin.com",
+          "name": "kyeongin.com",
+          "src": "naver",
+          "count": 12
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
+          "src": "naver",
+          "count": 11
+        },
+        {
+          "host": "incheontoday.com",
+          "name": "incheontoday.com",
+          "src": "naver",
+          "count": 10
+        },
+        {
+          "host": "news.ifm.kr",
+          "name": "news.ifm.kr",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "kmaeil.com",
+          "name": "kmaeil.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "incheonin.com",
+          "name": "incheonin.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "slist.kr",
+          "name": "slist.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "incheonnews.com",
+          "name": "incheonnews.com",
+          "src": "naver",
+          "count": 2
         }
       ]
     },
     "제물포구": {
-      "hosts": [],
-      "names": [],
+      "hosts": [
+        "incheonilbo.com",
+        "incheontoday.com",
+        "kyeongin.com",
+        "news.ifm.kr",
+        "kihoilbo.co.kr",
+        "incheonnews.com",
+        "fnnews.com",
+        "incheonin.com",
+        "hankookilbo.com",
+        "chogabje.com"
+      ],
+      "names": [
+        "incheonilbo.com",
+        "incheontoday.com",
+        "kyeongin.com",
+        "news.ifm.kr",
+        "kihoilbo.co.kr",
+        "incheonnews.com",
+        "fnnews.com",
+        "incheonin.com",
+        "hankookilbo.com",
+        "chogabje.com"
+      ],
       "media": [
         {
           "host": "sidae.com",
@@ -11390,6 +12412,66 @@
           "name": "maria.catholic.or.kr",
           "src": "kakao",
           "count": 2
+        },
+        {
+          "host": "incheonilbo.com",
+          "name": "incheonilbo.com",
+          "src": "naver",
+          "count": 20
+        },
+        {
+          "host": "incheontoday.com",
+          "name": "incheontoday.com",
+          "src": "naver",
+          "count": 18
+        },
+        {
+          "host": "kyeongin.com",
+          "name": "kyeongin.com",
+          "src": "naver",
+          "count": 12
+        },
+        {
+          "host": "news.ifm.kr",
+          "name": "news.ifm.kr",
+          "src": "naver",
+          "count": 10
+        },
+        {
+          "host": "kihoilbo.co.kr",
+          "name": "kihoilbo.co.kr",
+          "src": "naver",
+          "count": 10
+        },
+        {
+          "host": "incheonnews.com",
+          "name": "incheonnews.com",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "fnnews.com",
+          "name": "fnnews.com",
+          "src": "naver",
+          "count": 3
+        },
+        {
+          "host": "incheonin.com",
+          "name": "incheonin.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "hankookilbo.com",
+          "name": "hankookilbo.com",
+          "src": "naver",
+          "count": 1
+        },
+        {
+          "host": "chogabje.com",
+          "name": "chogabje.com",
+          "src": "kakao",
+          "count": 1
         }
       ]
     },
