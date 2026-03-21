@@ -2573,16 +2573,17 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
         font-size: 0.78rem;
     }
     .hpf-timeline {
-        gap: 2px;
-    }
-    .hpf-node {
-        min-width: 40px;
+        gap: 0;
+        padding: 28px 8px 12px;
     }
     .hpf-label {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
     .hpf-party {
-        font-size: 0.65rem;
+        font-size: 0.58rem;
+    }
+    .hpf-line {
+        width: 6px;
     }
 }
 
@@ -4085,19 +4086,19 @@ body.banner-hidden #main-content {
 .hpf-timeline {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0;
-    overflow-x: auto;
+    overflow-x: hidden;
     padding: 28px 16px 12px;
-    scrollbar-width: thin;
 }
 .hpf-node {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 44px;
+    flex: 1;
+    min-width: 0;
     position: relative;
-    flex-shrink: 0;
+    overflow: hidden;
 }
 .hpf-dot {
     width: 14px;
@@ -4113,9 +4114,14 @@ body.banner-hidden #main-content {
 .hpf-dot--diamond { border-radius: 2px; transform: rotate(45deg); }
 .hpf-dot--dash    { border-radius: 2px; width: 14px; height: 6px; margin-bottom: 10px; }
 .hpf-label {
-    font-size: 0.7rem;
+    font-size: 0.64rem;
     color: var(--text-secondary);
     font-weight: 600;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
 }
 .hpf-rate {
     font-size: 0.6rem;
@@ -4128,13 +4134,13 @@ body.banner-hidden #main-content {
     font-size: 0.62rem;
     font-weight: 600;
     white-space: nowrap;
-    max-width: 50px;
+    max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
     text-align: center;
 }
 .hpf-line {
-    width: 16px;
+    width: 8px;
     height: 2px;
     flex-shrink: 0;
     margin-top: -24px;
