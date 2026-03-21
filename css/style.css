@@ -2925,19 +2925,23 @@ canvas {
         display: none;
     }
 
+    /* 모바일: 패널 하단 슬라이드업 시트 */
     .detail-panel {
         position: fixed;
-        top: var(--header-height);
-        right: 0;
         bottom: var(--footer-height);
+        left: 0;
+        right: 0;
+        top: auto;
         width: 100%;
         max-width: 100%;
+        height: 82vh;
+        border-radius: 16px 16px 0 0;
         z-index: 500;
+        transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
     }
 
     .detail-panel.collapsed {
-        transform: translateX(100%);
-        margin-right: 0;
+        transform: translateY(calc(100% + var(--footer-height)));
     }
 
     /* 모바일: 리사이즈 핸들 숨김 */
@@ -2949,17 +2953,17 @@ canvas {
     .panel-header::before {
         content: '';
         position: absolute;
-        top: 6px;
+        top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        width: 36px;
+        width: 40px;
         height: 4px;
         border-radius: 2px;
-        background: var(--border-color);
+        background: var(--border-default);
     }
     .panel-header {
         position: relative;
-        padding-top: 18px;
+        padding-top: 20px;
     }
 
     /* 모바일: 닫기 버튼 더 크게 */
@@ -3946,9 +3950,33 @@ body.banner-hidden #main-content {
 .candidate-card-full {
     background: var(--bg-card);
     border: none;
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 12px;
+    padding: 14px;
     margin-bottom: 8px;
+    border-left: 3px solid transparent;
+    transition: background 0.15s;
+}
+.candidate-card-full:hover {
+    background: var(--bg-elevated);
+}
+/* 공천확정 — 가장 강조 */
+.candidate-card-full.status-nominated {
+    border-left-color: var(--color-success);
+    background: rgba(34, 197, 94, 0.04);
+}
+/* 출마선언 — 중간 강조 */
+.candidate-card-full.status-declared {
+    border-left-color: var(--color-info);
+}
+/* 이름 크기: 공천확정은 조금 더 크게 */
+.candidate-card-full.status-nominated .candidate-name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+.candidate-card-full.status-nominated .candidate-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
 }
 .candidate-header {
     display: flex;

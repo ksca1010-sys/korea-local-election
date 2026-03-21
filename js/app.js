@@ -1209,36 +1209,36 @@ const App = (() => {
         document.addEventListener('touchend', endResize);
     }
 
-    // ── 모바일 패널 스와이프 닫기 ──
+    // ── 모바일 패널 스와이프 닫기 (아래로 스와이프) ──
     function setupMobilePanelSwipe() {
         const panel = document.getElementById('detail-panel');
         const header = panel?.querySelector('.panel-header');
         if (!panel || !header) return;
 
-        let swipeStartX = 0;
+        let swipeStartY = 0;
         let swiping = false;
 
         header.addEventListener('touchstart', (e) => {
             if (window.innerWidth > 768) return;
-            swipeStartX = e.touches[0].clientX;
+            swipeStartY = e.touches[0].clientY;
             swiping = true;
         }, { passive: true });
 
         header.addEventListener('touchmove', (e) => {
             if (!swiping || window.innerWidth > 768) return;
-            const dx = e.touches[0].clientX - swipeStartX;
-            if (dx > 30) {
-                // 오른쪽 스와이프 → 닫기 미리보기
-                panel.style.transform = `translateX(${Math.min(dx, 200)}px)`;
+            const dy = e.touches[0].clientY - swipeStartY;
+            if (dy > 10) {
+                // 아래로 스와이프 → 닫기 미리보기
+                panel.style.transform = `translateY(${Math.min(dy, 200)}px)`;
             }
         }, { passive: true });
 
         header.addEventListener('touchend', (e) => {
             if (!swiping || window.innerWidth > 768) return;
             swiping = false;
-            const dx = (e.changedTouches[0]?.clientX || 0) - swipeStartX;
-            if (dx > 80) {
-                // 충분히 스와이프 → 닫기
+            const dy = (e.changedTouches[0]?.clientY || 0) - swipeStartY;
+            if (dy > 80) {
+                // 충분히 아래로 스와이프 → 닫기
                 panel.classList.add('collapsed');
                 panel.style.transform = '';
             } else {
@@ -2744,8 +2744,11 @@ function renderCouncilProvinceView(regionKey, region) {
             <div class="cand-count-summary">
                 <i class="fas fa-list-ul"></i>${model.title} · ${model.candidates.length}명
             </div>
-            ${model.candidates.map((candidate) => `
-                <div class="candidate-card-full">
+            ${model.candidates.map((candidate) => {
+                const statusClass = candidate.status === 'NOMINATED' ? 'status-nominated'
+                    : candidate.status === 'DECLARED' ? 'status-declared' : '';
+                return `
+                <div class="candidate-card-full ${statusClass}">
                     <div class="candidate-header">
                         <div class="candidate-avatar" style="background:${candidate.badgeColor}">
                             ${candidate.name?.charAt(0) || '?'}
@@ -2777,7 +2780,7 @@ function renderCouncilProvinceView(regionKey, region) {
                         ${candidate.sourceLabel ? `<span class="cand-source-badge"><i class="fas fa-database"></i>${candidate.sourceLabel}</span>` : ''}
                     </div>
                 </div>
-            `).join('')}
+            `;}).join('')}
         `;
 
         const compareHtml = renderCandidateCompareTable(model.candidates);
