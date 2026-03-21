@@ -384,6 +384,14 @@ def parse_region_from_title(title: str) -> Dict[str, Optional[str]]:
                 municipality = muni_match.group(1)
             break
 
+    # 전국 정당지지도 — 지방선거 후보 없는 정기조사
+    if region_key is None and "정당지지도" in title and ("전국" in title or "정기" in title):
+        return {
+            "regionKey": None,
+            "municipality": None,
+            "electionType": "party_support",
+        }
+
     # Check election type
     for type_name, type_key in ELECTION_TYPE_MAP.items():
         if type_name in title:

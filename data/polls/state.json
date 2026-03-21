@@ -699,7 +699,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 3월 2주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17672&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-13"
@@ -764,7 +764,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17671&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-12"
@@ -793,7 +793,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17670&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-12"
@@ -1062,7 +1062,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17656&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-11"
@@ -1091,7 +1091,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17655&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-11"
@@ -1156,7 +1156,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17653&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-11"
@@ -2175,7 +2175,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17615&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
       "registrationDate": "2026-03-09"
@@ -2304,7 +2304,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17611&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
       "registrationDate": "2026-03-08"
@@ -2662,7 +2662,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17601&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
       "registrationDate": "2026-03-07"
@@ -2691,7 +2691,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17600&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
       "registrationDate": "2026-03-07"
@@ -2843,7 +2843,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 3월 1주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17596&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
       "registrationDate": "2026-03-06"
@@ -3395,7 +3395,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17583&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
       "registrationDate": "2026-03-05"
@@ -3841,7 +3841,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 대통령선거정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17575&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=6",
       "registrationDate": "2026-03-04"
@@ -4437,7 +4437,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정치현안",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17565&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
       "registrationDate": "2026-03-03"
@@ -4497,7 +4497,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 정치현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17564&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
       "registrationDate": "2026-03-03"
@@ -4806,7 +4806,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17559&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
       "registrationDate": "2026-03-03"
@@ -5416,7 +5416,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17545&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
       "registrationDate": "2026-02-28"
@@ -5540,7 +5540,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17543&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
       "registrationDate": "2026-02-28"
@@ -5699,7 +5699,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 2월 4주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17539&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
       "registrationDate": "2026-02-27"
@@ -6534,7 +6534,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17518&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
       "registrationDate": "2026-02-26"
@@ -6599,7 +6599,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17517&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
       "registrationDate": "2026-02-26"
@@ -6781,7 +6781,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17513&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
       "registrationDate": "2026-02-26"
@@ -6987,7 +6987,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17509&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
       "registrationDate": "2026-02-25"
@@ -7122,7 +7122,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17507&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
       "registrationDate": "2026-02-25"
@@ -7863,7 +7863,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17495&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=12",
       "registrationDate": "2026-02-24"
@@ -8304,7 +8304,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17487&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
       "registrationDate": "2026-02-23"
@@ -8427,7 +8427,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17485&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
       "registrationDate": "2026-02-22"
@@ -8456,7 +8456,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17481&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
       "registrationDate": "2026-02-21"
@@ -8485,7 +8485,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17480&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
       "registrationDate": "2026-02-21"
@@ -8939,7 +8939,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 2월 3주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17470&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=14",
       "registrationDate": "2026-02-20"
@@ -9142,7 +9142,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17466&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=14",
       "registrationDate": "2026-02-20"
@@ -9569,7 +9569,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17457&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=15",
       "registrationDate": "2026-02-15"
@@ -9813,7 +9813,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17452&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=16",
       "registrationDate": "2026-02-15"
@@ -9842,7 +9842,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17451&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=16",
       "registrationDate": "2026-02-15"
@@ -10108,7 +10108,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사 설날특집 정치 사회 현안 조사(2차)",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17446&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=16",
       "registrationDate": "2026-02-14"
@@ -10181,7 +10181,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정당지지도정기(정례)조사 설날특집 정치 사회 현안 조사(2차)",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17444&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=16",
       "registrationDate": "2026-02-14"
@@ -10404,7 +10404,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 2월 2주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17436&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=17",
       "registrationDate": "2026-02-13"
@@ -11140,7 +11140,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17404&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
       "registrationDate": "2026-02-12"
@@ -12076,7 +12076,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17381&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
       "registrationDate": "2026-02-12"
@@ -13090,7 +13090,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17361&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
       "registrationDate": "2026-02-11"
@@ -13285,7 +13285,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17358&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
       "registrationDate": "2026-02-11"
@@ -13350,7 +13350,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17355&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
       "registrationDate": "2026-02-11"
@@ -13838,7 +13838,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17346&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
       "registrationDate": "2026-02-10"
@@ -14058,7 +14058,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17342&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
       "registrationDate": "2026-02-10"
@@ -15348,7 +15348,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17311&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
       "registrationDate": "2026-02-10"
@@ -16133,7 +16133,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17290&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
       "registrationDate": "2026-02-09"
@@ -16979,7 +16979,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17275&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=30",
       "registrationDate": "2026-02-07"
@@ -17008,7 +17008,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17274&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=30",
       "registrationDate": "2026-02-07"
@@ -17630,7 +17630,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 2월 1주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17262&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=31",
       "registrationDate": "2026-02-06"
@@ -19018,7 +19018,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 (사회 현안 등)",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17237&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=33",
       "registrationDate": "2026-02-05"
@@ -21189,7 +21189,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17190&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=37",
       "registrationDate": "2026-02-01"
@@ -21269,7 +21269,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17188&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=37",
       "registrationDate": "2026-02-01"
@@ -21368,7 +21368,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17186&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=38",
       "registrationDate": "2026-01-31"
@@ -21397,7 +21397,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17185&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=38",
       "registrationDate": "2026-01-31"
@@ -21426,7 +21426,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 1월 5주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17183&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=38",
       "registrationDate": "2026-01-30"
@@ -21524,7 +21524,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17179&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=38",
       "registrationDate": "2026-01-29"
@@ -21788,7 +21788,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17174&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
       "registrationDate": "2026-01-28"
@@ -21998,7 +21998,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17170&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
       "registrationDate": "2026-01-27"
@@ -23011,7 +23011,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17149&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
       "registrationDate": "2026-01-26"
@@ -23059,7 +23059,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17148&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
       "registrationDate": "2026-01-28"
@@ -23356,7 +23356,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17142&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
       "registrationDate": "2026-01-26"
@@ -23486,7 +23486,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정당지지도대통령선거정기(정례)조사",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17140&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
       "registrationDate": "2026-01-26"
@@ -23515,7 +23515,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17139&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
       "registrationDate": "2026-01-24"
@@ -23544,7 +23544,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17138&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
       "registrationDate": "2026-01-24"
@@ -23810,7 +23810,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 1월 4주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17133&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
       "registrationDate": "2026-01-23"
@@ -23895,7 +23895,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17131&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
       "registrationDate": "2026-01-22"
@@ -24103,7 +24103,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17125&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=43",
       "registrationDate": "2026-01-22"
@@ -24168,7 +24168,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17123&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=43",
       "registrationDate": "2026-01-21"
@@ -25338,7 +25338,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17100&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
       "registrationDate": "2026-01-17"
@@ -25367,7 +25367,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17099&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
       "registrationDate": "2026-01-17"
@@ -25506,7 +25506,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사 1월 3주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17096&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
       "registrationDate": "2026-01-16"
@@ -25632,7 +25632,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17091&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-15"
@@ -25757,7 +25757,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17089&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-14"
@@ -25857,7 +25857,7 @@
       ],
       "regionKey": "gwangju",
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 광주전남 행정통합 찬반, 찬반이유, 통합단체장 선출시점",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17086&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-14"
@@ -25922,7 +25922,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17084&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-13"
@@ -26037,7 +26037,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17081&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-13"
@@ -26085,7 +26085,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17080&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
       "registrationDate": "2026-01-12"
@@ -26160,7 +26160,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17079&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
       "registrationDate": "2026-01-12"
@@ -26437,7 +26437,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17073&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
       "registrationDate": "2026-01-12"
@@ -26591,7 +26591,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17070&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
       "registrationDate": "2026-01-11"
@@ -26620,7 +26620,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17069&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
       "registrationDate": "2026-01-10"
@@ -26649,7 +26649,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17068&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=48",
       "registrationDate": "2026-01-10"
@@ -26733,7 +26733,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사 1월 2주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17066&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=48",
       "registrationDate": "2026-01-09"
@@ -26952,7 +26952,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17060&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=48",
       "registrationDate": "2026-01-08"
@@ -27031,7 +27031,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 정치사회현안",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17058&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=49",
       "registrationDate": "2026-01-07"
@@ -27294,7 +27294,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17053&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=49",
       "registrationDate": "2026-01-07"
@@ -28395,7 +28395,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17031&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
       "registrationDate": "2026-01-03"
@@ -28424,7 +28424,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17030&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
       "registrationDate": "2026-01-03"
@@ -28778,7 +28778,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 1월 1주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17021&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
       "registrationDate": "2026-01-02"
@@ -28807,7 +28807,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17016&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
       "registrationDate": "2026-01-01"
@@ -28911,7 +28911,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17014&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
       "registrationDate": "2026-01-01"
@@ -28996,7 +28996,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정기(정례)조사 신년특집 정치 사회 현안 조사",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17012&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
       "registrationDate": "2026-01-01"
@@ -29263,7 +29263,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17006&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=53",
       "registrationDate": "2025-12-31"
@@ -29323,7 +29323,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도 정치현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17005&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=53",
       "registrationDate": "2025-12-31"
@@ -29542,7 +29542,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17000&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
       "registrationDate": "2025-12-31"
@@ -29691,7 +29691,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16997&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
       "registrationDate": "2025-12-31"
@@ -31543,7 +31543,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정당지지도 정치사회현안",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16957&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=57",
       "registrationDate": "2025-12-30"
@@ -31622,7 +31622,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16954&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
       "registrationDate": "2025-12-30"
@@ -32125,7 +32125,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16945&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=58",
       "registrationDate": "2025-12-30"
@@ -32734,7 +32734,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16933&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=60",
       "registrationDate": "2025-12-30"
@@ -33813,7 +33813,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16905&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=62",
       "registrationDate": "2025-12-29"
@@ -34166,7 +34166,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 12월 4주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16897&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=62",
       "registrationDate": "2025-12-26"
@@ -34254,7 +34254,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16894&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=62"
     },
@@ -34301,7 +34301,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16894&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=63",
       "registrationDate": "2025-12-25"
@@ -34682,7 +34682,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16888&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=63",
       "registrationDate": "2025-12-24"
@@ -34942,7 +34942,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16880&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
       "registrationDate": "2025-12-22"
@@ -35127,7 +35127,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16876&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
       "registrationDate": "2025-12-21"
@@ -35156,7 +35156,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16875&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
       "registrationDate": "2025-12-20"
@@ -35185,7 +35185,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16874&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
       "registrationDate": "2025-12-20"
@@ -35269,7 +35269,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 12월 3주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16871&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
       "registrationDate": "2025-12-19"
@@ -35338,7 +35338,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16869&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
       "registrationDate": "2025-12-18"
@@ -35464,7 +35464,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16866&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
       "registrationDate": "2025-12-17"
@@ -35786,7 +35786,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16859&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
       "registrationDate": "2025-12-16"
@@ -36503,7 +36503,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16842&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
       "registrationDate": "2025-12-15"
@@ -36753,7 +36753,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16837&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
       "registrationDate": "2025-12-14"
@@ -36847,7 +36847,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16835&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
       "registrationDate": "2025-12-13"
@@ -36876,7 +36876,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16834&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
       "registrationDate": "2025-12-13"
@@ -37060,7 +37060,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 12월 2주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16829&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
       "registrationDate": "2025-12-12"
@@ -37277,7 +37277,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 (사회 현안 등)",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16821&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
       "registrationDate": "2025-12-11"
@@ -37342,7 +37342,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16820&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
       "registrationDate": "2025-12-10"
@@ -37578,7 +37578,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16816&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
       "registrationDate": "2025-12-08"
@@ -37727,7 +37727,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16812&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
       "registrationDate": "2025-12-07"
@@ -37756,7 +37756,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16811&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
       "registrationDate": "2025-12-06"
@@ -37814,7 +37814,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16809&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
       "registrationDate": "2025-12-06"
@@ -37843,7 +37843,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 12월 1주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16808&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
       "registrationDate": "2025-12-05"
@@ -37872,7 +37872,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 대통령선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16807&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
       "registrationDate": "2025-12-04"
@@ -38108,7 +38108,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16802&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
       "registrationDate": "2025-12-02"
@@ -38333,7 +38333,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16798&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
       "registrationDate": "2025-12-01"
@@ -38393,7 +38393,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16797&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-12-01"
@@ -38556,7 +38556,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 대통령선거정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16794&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-11-30"
@@ -38626,7 +38626,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16793&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-11-30"
@@ -38655,7 +38655,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16792&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-11-29"
@@ -38684,7 +38684,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16791&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-11-29"
@@ -38778,7 +38778,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 정치사회현안",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16789&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
       "registrationDate": "2025-12-01"
@@ -38862,7 +38862,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 11월 4주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16787&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
       "registrationDate": "2025-11-28"
@@ -38987,7 +38987,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16784&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
       "registrationDate": "2025-11-27"
@@ -39016,7 +39016,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 정치사회현안",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16783&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
       "registrationDate": "2025-11-26"
@@ -39081,7 +39081,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16782&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
       "registrationDate": "2025-11-26"
@@ -39654,7 +39654,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16771&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
       "registrationDate": "2025-11-24"
@@ -39724,7 +39724,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16770&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
       "registrationDate": "2025-11-23"
@@ -39753,7 +39753,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16769&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
       "registrationDate": "2025-11-22"
@@ -39782,7 +39782,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16768&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
       "registrationDate": "2025-11-22"
@@ -39876,7 +39876,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 11월 3주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16766&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
       "registrationDate": "2025-11-21"
@@ -40035,7 +40035,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16763&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=74",
       "registrationDate": "2025-11-20"
@@ -40211,7 +40211,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16759&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=74",
       "registrationDate": "2025-11-19"
@@ -40271,7 +40271,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국 전체 정기(정례)조사정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16758&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=74",
       "registrationDate": "2025-11-18"
@@ -40341,7 +40341,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16757&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=74",
       "registrationDate": "2025-11-16"
@@ -40435,7 +40435,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16755&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-15"
@@ -40464,7 +40464,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16754&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-15"
@@ -40493,7 +40493,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 11월 2주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16753&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-14"
@@ -40603,7 +40603,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16752&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-13"
@@ -40632,7 +40632,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16751&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-12"
@@ -40697,7 +40697,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16750&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-12"
@@ -40822,7 +40822,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16744&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-11"
@@ -40936,7 +40936,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16742&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
       "registrationDate": "2025-11-10"
@@ -40984,7 +40984,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16740&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-09"
@@ -41054,7 +41054,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16739&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-09"
@@ -41198,7 +41198,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16735&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-08"
@@ -41227,7 +41227,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16734&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-08"
@@ -41256,7 +41256,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 11월 1주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16733&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-07"
@@ -41285,7 +41285,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16732&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-06"
@@ -41355,7 +41355,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16731&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
       "registrationDate": "2025-11-05"
@@ -42110,7 +42110,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정당지지도 지방선거 투표할 후보 정당",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16713&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=78",
       "registrationDate": "2025-11-04"
@@ -42170,7 +42170,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16712&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=78",
       "registrationDate": "2025-11-03"
@@ -42296,7 +42296,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   대통령선거 정당지지도 국정 현안 등",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16710&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=78",
       "registrationDate": "2025-11-03"
@@ -42679,7 +42679,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16702&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
       "registrationDate": "2025-11-02"
@@ -42758,7 +42758,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16700&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
       "registrationDate": "2025-11-01"
@@ -42818,7 +42818,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16699&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
       "registrationDate": "2025-11-01"
@@ -43199,7 +43199,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도 10월 5주차 주간집계",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16693&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
       "registrationDate": "2025-10-31"
@@ -43228,7 +43228,7 @@
       "results": [],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16692&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
       "registrationDate": "2025-10-30"
@@ -43352,7 +43352,7 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16687&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
       "registrationDate": "2025-10-30"
@@ -43477,14 +43477,14 @@
       ],
       "regionKey": null,
       "municipality": null,
-      "electionType": null,
+      "electionType": "party_support",
       "title": "전국   정기(정례)조사 정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16677&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
       "registrationDate": "2025-10-29"
     }
   ],
   "meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-21",
     "lastPipelineRun": "2026-03-20",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
@@ -43492,7 +43492,7 @@
     "withRegistrationDate": 809,
     "withRegistrationId": 794,
     "withResults": 660,
-    "unknownElectionTypeCount": 172,
+    "unknownElectionTypeCount": 0,
     "electionTypes": {
       "district_mayor": 355,
       "mayor": 267,
