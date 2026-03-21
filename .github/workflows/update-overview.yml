@@ -67,4 +67,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/election_overview.json data/mayor_overview_state.json data/governor_overview_state.json data/byelection_overview_state.json
           git commit -m "chore: auto-update election overview $(date +%Y-%m-%d)"
-          git push
+          git pull --rebase origin main && git push

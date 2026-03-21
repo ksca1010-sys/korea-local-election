@@ -45,4 +45,4 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/superintendent_status.json
           git commit -m "chore: auto-update superintendent status $(date +%Y-%m-%d)"
-          git push
+          git pull --rebase origin main && git push
