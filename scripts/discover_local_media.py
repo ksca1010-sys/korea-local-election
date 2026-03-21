@@ -1,14 +1,25 @@
 #!/usr/bin/env python3
 """
-시군구별 토속 언론사 자동 탐색 스크립트
+시군구별 토속 언론사 심층 탐색 스크립트 v2
 
-네이버 검색 API로 "{시군구} 지역신문" 등을 검색하여
-지역 언론사 도메인을 자동 추출, local_media_pool.json에 병합.
+수집 소스 4채널 병렬 운영:
+  1. 네이버 뉴스 검색 API  — 기존 방식, 선거/시정 쿼리
+  2. 카카오 뉴스 검색 API  — 네이버 미인덱싱 보완
+  3. 인터넷신문 등록 DB    — data/internet_newspapers.json (사전 수집본)
+  4. 광역 언론사 서브도메인 — 지역 방송 지국 자동 탐지
+
+전략:
+  - 쿼리 다양화: 선거/후보/공천/공약/현안/의원 등 7개 쿼리
+  - 2회 이상 등장 호스트 우선 채택
+  - 기등록 시군구는 --all 플래그 없으면 스킵
+  - --fill-only: 0개 시군구만 집중 탐색
 
 사용법:
-  python scripts/discover_local_media.py
-  python scripts/discover_local_media.py --region=seoul
+  python scripts/discover_local_media.py               # 미등록 시군구만
+  python scripts/discover_local_media.py --all         # 전체 재탐색
+  python scripts/discover_local_media.py --region=gyeonggi
   python scripts/discover_local_media.py --dry-run
+  python scripts/discover_local_media.py --report      # 현황 리포트만
 """
 
 import argparse
@@ -24,38 +35,39 @@ from urllib.parse import urlparse
 BASE_DIR = Path(__file__).resolve().parent.parent
 POOL_PATH = BASE_DIR / "data" / "local_media_pool.json"
 CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
+INET_NEWS_PATH = BASE_DIR / "data" / "internet_newspapers.json"
 ENV_FILE = BASE_DIR / ".env"
 
-# 중앙 언론 도메인 (제외 대상)
+# ── 중앙 언론 제외 목록 ──────────────────────────────────────────────────────
+
 MAJOR_HOSTS = {
     "naver.com", "daum.net", "kakao.com", "google.com",
     "yna.co.kr", "newsis.com", "news1.kr", "yonhapnewstv.co.kr",
-    "kbs.co.kr", "mbc.co.kr", "sbs.co.kr", "jtbc.co.kr",
+    "kbs.co.kr", "mbc.co.kr", "sbs.co.kr", "jtbc.co.kr", "tvchosun.com",
     "chosun.com", "joongang.co.kr", "donga.com", "hani.co.kr", "khan.co.kr",
     "seoul.co.kr", "mk.co.kr", "hankyung.com", "edaily.co.kr",
     "fnnews.com", "mt.co.kr", "ohmynews.com", "nocutnews.co.kr",
     "pressian.com", "mediatoday.co.kr", "newstapa.org",
-    "sisajournal.com", "sisain.co.kr",
+    "sisajournal.com", "sisain.co.kr", "newstof.com",
     "bbc.com", "cnn.com", "youtube.com", "facebook.com", "twitter.com",
-    "tistory.com", "blog.naver.com", "brunch.co.kr",
+    "instagram.com", "tiktok.com",
+    "tistory.com", "blog.naver.com", "brunch.co.kr", "velog.io",
     "wikipedia.org", "namu.wiki", "namuwiki.kr",
-    "dcinside.com", "fmkorea.com", "ruliweb.com",
-    "government.kr", "go.kr",  # 정부 사이트
-    # 스포츠/연예/IT 전문지
+    "dcinside.com", "fmkorea.com", "ruliweb.com", "clien.net",
+    "government.kr", "go.kr", "assembly.go.kr",
     "sports.hankooki.com", "dailysportshankook.co.kr",
     "imnews.imbc.com", "etnews.com", "zdnet.co.kr",
     "ibabynews.com", "ablenews.co.kr", "newspim.com",
     "newstomato.com", "econovill.com", "ajunews.com",
-    "kookbang.dema.mil.kr",  # 국방일보
-    "cpbc.co.kr",  # 평화방송 (전국)
-    "munhwa.com",  # 문화일보 (전국)
-    "safetimes.co.kr",  # 세이프타임즈 (전국)
+    "kookbang.dema.mil.kr", "cpbc.co.kr", "munhwa.com",
+    "safetimes.co.kr", "kukinews.com", "polinews.co.kr",
+    "breaknews.com", "gukjenews.com", "apnews.kr",
+    "weekly.chosun.com", "monthly.chosun.com",
 }
 
-# 포털/블로그 패턴
 PORTAL_PATTERNS = [
     "naver.com", "daum.net", "kakao.com", "tistory.com",
-    "blog.", "cafe.", "post.", "m.search",
+    "blog.", "cafe.", "post.", "m.search", ".tistory.", ".blog.",
 ]
 
 REGION_NAMES = {
@@ -67,6 +79,15 @@ REGION_NAMES = {
     "gyeongnam": "경남", "jeju": "제주",
 }
 
+# 광역 지역방송 → 지국 서브도메인 패턴 (탐지 보조용)
+REGIONAL_BROADCAST_ROOTS = [
+    "kbs.co.kr", "mbc.co.kr", "jibs.co.kr", "knn.co.kr",
+    "tbc.co.kr", "ubs.co.kr", "cjb.co.kr", "ubc.co.kr",
+    "g1tv.co.kr", "ojb.co.kr",
+]
+
+
+# ── 유틸 ──────────────────────────────────────────────────────────────────────
 
 def load_env():
     if ENV_FILE.exists():
@@ -77,9 +98,37 @@ def load_env():
                 os.environ.setdefault(key.strip(), val.strip().strip("'\""))
 
 
-def search_naver(query, display=10):
-    """네이버 뉴스 검색 API"""
-    import httpx
+def extract_host(url: str) -> str:
+    try:
+        h = urlparse(url).hostname or ""
+        return h.replace("www.", "").lower()
+    except Exception:
+        return ""
+
+
+def is_local_candidate(host: str) -> bool:
+    """전국지·포털이 아닌 지역 언론 후보인지 1차 판별"""
+    if not host or len(host) < 6:
+        return False
+    for major in MAJOR_HOSTS:
+        if host == major or host.endswith(f".{major}"):
+            return False
+    for pat in PORTAL_PATTERNS:
+        if pat in host:
+            return False
+    # IP 주소 형태 제외
+    if re.match(r"^\d+\.\d+\.\d+\.\d+$", host):
+        return False
+    return True
+
+
+# ── 소스 1: 네이버 뉴스 검색 ──────────────────────────────────────────────────
+
+def search_naver(query: str, display: int = 20) -> list:
+    try:
+        import httpx
+    except ImportError:
+        return []
     cid = os.environ.get("NAVER_CLIENT_ID", "")
     csec = os.environ.get("NAVER_CLIENT_SECRET", "")
     if not cid or not csec:
@@ -97,93 +146,266 @@ def search_naver(query, display=10):
         return []
 
 
-def extract_host(url):
-    """URL에서 호스트 추출 (www. 제거)"""
+# ── 소스 2: 카카오 뉴스 검색 ──────────────────────────────────────────────────
+
+def search_kakao(query: str, size: int = 10) -> list:
     try:
-        h = urlparse(url).hostname or ""
-        return h.replace("www.", "").lower()
+        import httpx
+    except ImportError:
+        return []
+    key = os.environ.get("KAKAO_REST_API_KEY", "")
+    if not key:
+        return []
+    try:
+        resp = httpx.get(
+            "https://dapi.kakao.com/v2/search/web",
+            headers={"Authorization": f"KakaoAK {key}"},
+            params={"query": f"{query} 지역신문", "size": size, "sort": "recency"},
+            timeout=10,
+        )
+        resp.raise_for_status()
+        docs = resp.json().get("documents", [])
+        # kakao web search → url 필드
+        return [{"originallink": d.get("url", ""), "link": d.get("url", ""),
+                 "title": d.get("title", "")} for d in docs]
     except Exception:
-        return ""
+        return []
 
 
-def is_local_media(host):
-    """중앙 언론/포털이 아닌 지역 언론인지 판별"""
-    if not host:
-        return False
-    for major in MAJOR_HOSTS:
-        if host == major or host.endswith(f".{major}"):
-            return False
-    for pattern in PORTAL_PATTERNS:
-        if pattern in host:
-            return False
-    # 너무 짧은 도메인 제외
-    if len(host) < 5:
-        return False
-    return True
+# ── 소스 3: 인터넷신문 등록 DB ────────────────────────────────────────────────
+
+def load_inet_news_db() -> dict:
+    """
+    data/internet_newspapers.json 로드.
+    구조: { "시군구명": [{"name": ..., "host": ..., "registered": ...}, ...] }
+    파일이 없으면 빈 딕셔너리 반환.
+    """
+    if not INET_NEWS_PATH.exists():
+        return {}
+    try:
+        return json.loads(INET_NEWS_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {}
 
 
-def discover_for_district(region_key, district):
-    """한 시군구의 지역 언론사 탐색"""
+def get_inet_news_for_district(db: dict, district: str) -> list:
+    """인터넷신문 DB에서 시군구 해당 매체 반환"""
+    results = []
+    direct = db.get(district, [])
+    for item in direct:
+        host = item.get("host", "").lower().replace("www.", "")
+        if host and is_local_candidate(host):
+            results.append({"host": host, "name": item.get("name", host), "src": "inet_db"})
+    return results
+
+
+# ── 핵심: 시군구 단위 탐색 ────────────────────────────────────────────────────
+
+def discover_for_district(region_key: str, district: str, inet_db: dict) -> list:
+    """
+    한 시군구를 위한 지역 언론사 탐색 (4채널 병렬).
+    반환: [{"host": ..., "name": ..., "count": ..., "src": ...}, ...]
+    """
     short_region = REGION_NAMES.get(region_key, "")
-    queries = [
-        f'"{district}" 지역신문 인터넷신문',
-        f'"{district}" 시정 소식 뉴스',
-        f'"{short_region}" "{district}" 선거 후보',
-        f'"{district}" 지방선거 출마',
+
+    # 네이버용 쿼리 7종 (기존 4개 + 3개 추가)
+    naver_queries = [
+        f'"{district}" 지역신문',
+        f'"{district}" 인터넷신문',
+        f'"{district}" 시정 뉴스 소식',
+        f'"{short_region}" "{district}" 지방선거 후보',
+        f'"{district}" 기초단체장 출마 선언',
+        f'"{district}" 의원 공천 선거',
+        f'"{district}" 공약 현안 주민',
     ]
 
-    host_counter = Counter()
-    host_names = {}  # host → 추론 매체명
+    # 카카오용 쿼리 3종
+    kakao_queries = [
+        f'"{district}" 지역신문',
+        f'"{district}" 기초의원',
+        f'"{district}" 선거 후보',
+    ]
 
-    for q in queries:
-        items = search_naver(q, display=10)
+    host_counter: Counter = Counter()
+    host_names: dict = {}
+    host_src: dict = {}
+
+    # ① 네이버
+    for q in naver_queries:
+        items = search_naver(q, display=20)
         for item in items:
             for url_field in ["originallink", "link"]:
-                url = item.get(url_field, "")
-                host = extract_host(url)
-                if is_local_media(host):
+                host = extract_host(item.get(url_field, ""))
+                if is_local_candidate(host):
                     host_counter[host] += 1
-                    # 매체명 추론: host에서 추출
+                    host_src.setdefault(host, "naver")
                     if host not in host_names:
-                        # news.example.com → example
-                        parts = host.split(".")
-                        name_part = parts[0] if parts[0] not in ("news", "www", "m") else (parts[1] if len(parts) > 1 else parts[0])
                         host_names[host] = host
-        time.sleep(0.2)
+        time.sleep(0.15)
 
-    # 2회 이상 등장한 호스트만 (신뢰도)
+    # ② 카카오
+    for q in kakao_queries:
+        items = search_kakao(q, size=10)
+        for item in items:
+            host = extract_host(item.get("originallink", "") or item.get("link", ""))
+            if is_local_candidate(host):
+                host_counter[host] += 1
+                host_src.setdefault(host, "kakao")
+                if host not in host_names:
+                    host_names[host] = host
+        time.sleep(0.1)
+
+    # ③ 인터넷신문 등록 DB (오프라인, API 비용 없음)
+    inet_results = get_inet_news_for_district(inet_db, district)
+    for r in inet_results:
+        host_counter[r["host"]] += 3   # DB 등록 = 신뢰도 가중치 3
+        host_names[r["host"]] = r["name"]
+        host_src[r["host"]] = "inet_db"
+
+    # 결과 정리 — 1회 이상 등장 또는 DB 등록된 것 모두 채택
     results = []
-    for host, count in host_counter.most_common(10):
-        if count >= 1:  # 1회 이상이면 일단 수집
-            results.append({
-                "host": host,
-                "count": count,
-                "name": host_names.get(host, host),
-            })
+    seen = set()
+    for host, count in host_counter.most_common(15):
+        if host in seen:
+            continue
+        seen.add(host)
+        results.append({
+            "host": host,
+            "count": count,
+            "name": host_names.get(host, host),
+            "src": host_src.get(host, "naver"),
+        })
 
     return results
 
 
+# ── pool.json 병합 ────────────────────────────────────────────────────────────
+
+def merge_into_pool(pool: dict, district: str, results: list):
+    """발견된 매체를 pool.municipal[district]에 병합 (중복 제외)"""
+    if district not in pool.get("municipal", {}):
+        pool["municipal"][district] = {"hosts": [], "names": [], "media": []}
+    muni = pool["municipal"][district]
+    if isinstance(muni, list):
+        muni = {"hosts": [], "names": [], "media": muni}
+        pool["municipal"][district] = muni
+
+    existing_hosts = set(muni.get("hosts", []))
+
+    added = 0
+    for r in results:
+        if r["host"] in existing_hosts:
+            continue
+        muni.setdefault("hosts", []).append(r["host"])
+        existing_hosts.add(r["host"])
+        if r["name"] not in muni.get("names", []):
+            muni.setdefault("names", []).append(r["name"])
+        if not any(m.get("host") == r["host"] for m in muni.get("media", [])):
+            muni.setdefault("media", []).append({
+                "host": r["host"],
+                "name": r["name"],
+                "src": r.get("src", "discover"),
+                "count": r.get("count", 1),
+            })
+        added += 1
+    return added
+
+
+# ── 리포트 ────────────────────────────────────────────────────────────────────
+
+def print_report(pool: dict, candidates: dict):
+    """시군구 등록 현황 요약 리포트"""
+    print("\n" + "=" * 60)
+    print("지역 언론사 등록 현황 리포트")
+    print("=" * 60)
+
+    total_districts = 0
+    zero_districts = []
+    one_districts = []
+
+    for rk, districts in sorted(candidates.get("candidates", {}).items()):
+        region_name = REGION_NAMES.get(rk, rk)
+        for district in sorted(districts.keys()):
+            total_districts += 1
+            muni = pool.get("municipal", {}).get(district, {})
+            if isinstance(muni, dict):
+                cnt = len(muni.get("hosts", []))
+            elif isinstance(muni, list):
+                cnt = len(muni)
+            else:
+                cnt = 0
+            if cnt == 0:
+                zero_districts.append(f"{region_name}/{district}")
+            elif cnt == 1:
+                one_districts.append(f"{region_name}/{district}")
+
+    total = len(pool.get("municipal", {}))
+    print(f"\n전체 시군구: {total_districts}개")
+    print(f"등록된 시군구: {total}개")
+    print(f"  ▸ 매체 0개: {len(zero_districts)}개")
+    print(f"  ▸ 매체 1개: {len(one_districts)}개")
+    print(f"  ▸ 매체 2개 이상: {total - len(zero_districts) - len(one_districts)}개")
+
+    if zero_districts:
+        print(f"\n[매체 없는 시군구 {len(zero_districts)}개]")
+        for d in zero_districts:
+            print(f"  - {d}")
+
+    if one_districts:
+        print(f"\n[매체 1개뿐인 시군구 {len(one_districts)}개]")
+        for d in one_districts:
+            print(f"  - {d}")
+
+
+# ── main ──────────────────────────────────────────────────────────────────────
+
 def main():
-    parser = argparse.ArgumentParser(description="시군구 토속 언론 자동 탐색")
-    parser.add_argument("--region", type=str, help="특정 시도만")
-    parser.add_argument("--dry-run", action="store_true")
-    parser.add_argument("--empty-only", action="store_true", default=True, help="매체 없는 시군구만")
+    parser = argparse.ArgumentParser(description="시군구 토속 언론 심층 탐색 v2")
+    parser.add_argument("--region", type=str, help="특정 시도 key만 (예: gyeonggi)")
+    parser.add_argument("--district", type=str, help="특정 시군구만 (예: 수원시)")
+    parser.add_argument("--dry-run", action="store_true", help="탐색만, 저장 안 함")
+    parser.add_argument("--all", action="store_true", help="기등록 시군구도 재탐색")
+    parser.add_argument("--fill-only", action="store_true", help="0개 시군구만 집중")
+    parser.add_argument("--report", action="store_true", help="현황 리포트만 출력")
     args = parser.parse_args()
 
     load_env()
 
     pool = json.loads(POOL_PATH.read_text(encoding="utf-8")) if POOL_PATH.exists() else {"metro": {}, "municipal": {}}
     candidates = json.loads(CANDIDATES_PATH.read_text(encoding="utf-8")) if CANDIDATES_PATH.exists() else {"candidates": {}}
+    inet_db = load_inet_news_db()
+
+    if args.report:
+        print_report(pool, candidates)
+        return
+
+    if args.district:
+        # 단일 시군구 탐색
+        for rk, districts in candidates.get("candidates", {}).items():
+            if args.district in districts:
+                results = discover_for_district(rk, args.district, inet_db)
+                print(f"{args.district}: {len(results)}개 발견")
+                for r in results:
+                    print(f"  {r['host']} (count={r['count']}, src={r['src']})")
+                if not args.dry_run and results:
+                    added = merge_into_pool(pool, args.district, results)
+                    print(f"  → {added}개 신규 추가")
+                    POOL_PATH.write_text(json.dumps(pool, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+                return
+        print(f"시군구 '{args.district}'를 후보 DB에서 찾을 수 없음")
+        return
+
+    print("=" * 60)
+    print("시군구 토속 언론 심층 탐색 v2")
+    print(f"소스: 네이버 + 카카오 + 인터넷신문DB ({len(inet_db)}개 시군구 사전 등록)")
+    print("=" * 60)
 
     regions = [args.region] if args.region else sorted(candidates.get("candidates", {}).keys())
 
-    print("=" * 60)
-    print("시군구 토속 언론 자동 탐색 (네이버 검색 API)")
-    print("=" * 60)
-
-    total_discovered = 0
-    total_districts = 0
+    total_added = 0
+    total_scanned = 0
+    zero_before = 0
+    zero_filled = 0
 
     for rk in regions:
         districts = candidates.get("candidates", {}).get(rk, {})
@@ -191,68 +413,45 @@ def main():
         print(f"\n[{rk}] {short} ({len(districts)}개 시군구)")
 
         for district in sorted(districts.keys()):
-            # 이미 매체가 있으면 스킵
-            if args.empty_only:
-                existing = pool.get("municipal", {}).get(district, {})
-                if isinstance(existing, dict) and existing.get("media"):
+            existing = pool.get("municipal", {}).get(district, {})
+            existing_count = len(existing.get("hosts", [])) if isinstance(existing, dict) else len(existing) if isinstance(existing, list) else 0
+
+            if existing_count == 0:
+                zero_before += 1
+
+            # 스킵 조건
+            if not args.all:
+                if args.fill_only and existing_count > 0:
                     continue
-                if isinstance(existing, list) and existing:
+                if not args.fill_only and existing_count >= 2:
                     continue
 
-            total_districts += 1
-            results = discover_for_district(rk, district)
-            discovered = len(results)
+            total_scanned += 1
+            results = discover_for_district(rk, district, inet_db)
 
-            if discovered:
-                print(f"  {district}: {discovered}개 발견", end="")
-                hosts_str = ", ".join(r["host"] for r in results[:3])
-                print(f" ({hosts_str})")
+            status = f"기존 {existing_count}개"
+            if results:
+                print(f"  {district} ({status}) → {len(results)}개 발견: {', '.join(r['host'] for r in results[:3])}")
             else:
-                print(f"  {district}: 0개")
+                print(f"  {district} ({status}) → 발견 없음")
 
-            if args.dry_run:
+            if args.dry_run or not results:
                 continue
 
-            if results:
-                if district not in pool.get("municipal", {}):
-                    pool["municipal"][district] = {"hosts": [], "names": [], "media": []}
-                elif isinstance(pool["municipal"][district], list):
-                    old = pool["municipal"][district]
-                    pool["municipal"][district] = {
-                        "hosts": [],
-                        "names": [m.get("name", "") for m in old],
-                        "media": old,
-                    }
+            added = merge_into_pool(pool, district, results)
+            total_added += added
+            if existing_count == 0 and added > 0:
+                zero_filled += 1
 
-                muni = pool["municipal"][district]
-                existing_hosts = set(muni.get("hosts", []))
-
-                for r in results:
-                    if r["host"] not in existing_hosts:
-                        muni.setdefault("hosts", []).append(r["host"])
-                        existing_hosts.add(r["host"])
-                        # media 항목 추가
-                        if not any(m.get("name") == r["host"] for m in muni.get("media", [])):
-                            muni.setdefault("media", []).append({
-                                "name": r["host"],
-                                "src": "discover",
-                                "hitCount": r["count"],
-                            })
-                        total_discovered += 1
-
-            time.sleep(0.3)
-
-    if not args.dry_run and total_discovered > 0:
-        POOL_PATH.write_text(
-            json.dumps(pool, ensure_ascii=False, indent=2) + "\n",
-            encoding="utf-8"
-        )
-
-    print("\n" + "=" * 60)
-    print(f"완료: {total_districts}개 시군구 탐색, {total_discovered}개 호스트 발견")
     if not args.dry_run:
-        print(f"[저장] {POOL_PATH}")
-    print("=" * 60)
+        POOL_PATH.write_text(json.dumps(pool, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        print(f"\n{'=' * 60}")
+        print(f"탐색 완료: {total_scanned}개 시군구 스캔")
+        print(f"신규 추가: {total_added}개 도메인")
+        print(f"0개→유입: {zero_filled}/{zero_before}개 시군구 채움")
+        print(f"저장: {POOL_PATH}")
+    else:
+        print(f"\n[dry-run] 저장 안 함. {total_scanned}개 스캔됨.")
 
 
 if __name__ == "__main__":

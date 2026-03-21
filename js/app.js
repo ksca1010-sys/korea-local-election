@@ -91,14 +91,19 @@ const App = (() => {
         // Load polls data (여론조사)
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
-        // Load local media pool (새 통합 풀) + 기존 registry → 병합
+        // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
         try {
-            const [poolResp, regResp] = await Promise.all([
+            const [poolResp, regResp, issuesResp] = await Promise.all([
                 fetch('data/local_media_pool.json?v=' + Date.now()),
                 fetch('data/local_media_registry.json'),
+                fetch('data/regional_issues.json'),
             ]);
             if (poolResp.ok) window.LocalMediaPool = await poolResp.json();
             if (regResp.ok) window.LocalMediaRegistry = await regResp.json();
+            if (issuesResp.ok) {
+                const issuesData = await issuesResp.json();
+                window.REGIONAL_ISSUES = issuesData;
+            }
 
             // 새 풀(local_media_pool.json)을 기존 registry에 완전 병합
             // metro → province (hosts + names), municipal → municipalities (hosts + names)
@@ -3539,7 +3544,7 @@ function renderCouncilProvinceView(regionKey, region) {
 
         // 광역·기초의원은 전국언론보다 지역언론이 실질적으로 더 중요 →
         // preferPopularity + locality 가중치 높게 설정
-        const councilScoreWeights = { time: 0.25, relevance: 0.20, credibility: 0.08, locality: 0.40, engagement: 0.07 };
+        const councilScoreWeights = { time: 0.22, relevance: 0.18, credibility: 0.06, locality: 0.48, engagement: 0.06 };
 
         return [
             {
@@ -3583,6 +3588,25 @@ function renderCouncilProvinceView(regionKey, region) {
         const bundle = getDebugRegionMediaBundle(regionKey, districtName);
         const localHosts = bundle.primaryHosts || [];
 
+        // 후보자 이름 쿼리 — 해당 시군구 후보자 이름으로 직접 검색
+        const districtCandidates = (() => {
+            try {
+                const allCands = window.ElectionData?.getMayorCandidates?.(regionKey) || {};
+                const list = allCands[districtName] || [];
+                return list.filter(c => c.status !== 'WITHDRAWN').map(c => c.name).slice(0, 4);
+            } catch (e) { return []; }
+        })();
+        const candQueries = districtCandidates.map(n => `${n} ${districtName}`);
+
+        // 지역 현안 키워드 — REGIONAL_ISSUES JSON에서 로드 (있으면 사용)
+        const issueKeywords = (() => {
+            try {
+                const key = `${regionKey}_${districtName}`;
+                return window.REGIONAL_ISSUES?.[key] || window.REGIONAL_ISSUES?.[districtName] || [];
+            } catch (e) { return []; }
+        })();
+        const issueQuery = issueKeywords.length ? `${districtName} ${issueKeywords.slice(0, 3).join(' ')}` : null;
+
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
@@ -3591,8 +3615,10 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [
                     `${districtName}${title} 출마`, `${districtName}${title} 예비후보`,
                     `${districtName} 6.3 지방선거`, `${districtName} 기초단체장`,
-                    `${districtName}${title} 출판기념회`
-                ],
+                    `${districtName}${title} 출판기념회`,
+                    ...candQueries.slice(0, 2),
+                    ...(issueQuery ? [issueQuery] : [])
+                ].filter(Boolean),
                 focusKeywords: [districtName, title, '선거', '후보', '출마', '예비후보', '출판기념회'],
                 boostHosts: localHosts,
                 strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마', '예비후보', '공천', '출판기념회'], excludeAny: ['도지사', '교육감', '국회의원'] },
@@ -3614,27 +3640,31 @@ function renderCouncilProvinceView(regionKey, region) {
                 maxAgeDays: 60,
                 altQueries: [
                     `${districtName}${title} 공천`, `${districtName}${title} 예비후보`,
-                    `${districtName}${title} 출판기념회`, `${districtName}${title} 경선`
-                ],
-                focusKeywords: [districtName, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선'],
+                    `${districtName}${title} 출판기념회`, `${districtName}${title} 경선`,
+                    ...candQueries  // 후보 이름 직접 검색
+                ].filter(Boolean),
+                focusKeywords: [districtName, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선', ...districtCandidates],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title], excludeAny: ['도지사', '교육감', '국회의원'] },
+                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title, ...districtCandidates], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [districtName], targetAny: [title, '후보', '출마'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
                 query: `${districtName}${title} 공약 정책`,
                 maxAgeDays: 60,
-                altQueries: [`${districtName} 현안 쟁점`, `${districtName}${title} 비전`, `${districtName} 지역과제`],
-                focusKeywords: [districtName, '공약', '정책', '현안', '비전'],
+                altQueries: [
+                    `${districtName} 현안 쟁점`, `${districtName}${title} 비전`, `${districtName} 지역과제`,
+                    ...(issueKeywords.slice(0, 3).map(kw => `${districtName} ${kw}`))
+                ].filter(Boolean),
+                focusKeywords: [districtName, '공약', '정책', '현안', '비전', ...issueKeywords.slice(0, 3)],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['공약', '정책', '현안', '비전', title], excludeAny: ['도지사', '교육감'] },
+                strict: { mustAny: [districtName], targetAny: ['공약', '정책', '현안', '비전', title, ...issueKeywords.slice(0, 3)], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: ['도지사', '교육감'] }
             },
         ].map(cat => ({
             ...cat, localMediaPriority: true, _regionKey: regionKey, _districtName: districtName, boostWeight: 5,
             preferPopularity: true,
-            scoreWeightsOverride: { time: 0.25, relevance: 0.20, credibility: 0.10, locality: 0.35, engagement: 0.10 }
+            scoreWeightsOverride: { time: 0.22, relevance: 0.18, credibility: 0.06, locality: 0.48, engagement: 0.06 }
         }));
     }
 
@@ -4446,10 +4476,24 @@ function renderCouncilProvinceView(regionKey, region) {
                     if (!host) return false;
                     return localTier1.some(h => host === h || host.endsWith(`.${h}`));
                 };
+                // 시군구 전용 매체 (pool.municipal 에 등록된 것) → 기초지역 뉴스에서 최우선
+                const districtHosts = (() => {
+                    const pool = window.LocalMediaPool;
+                    if (!pool || !currentDistrictName) return new Set();
+                    const muni = pool.municipal?.[currentDistrictName];
+                    const hosts = new Set();
+                    if (muni?.hosts) muni.hosts.forEach(h => hosts.add(h));
+                    return hosts;
+                })();
+                const isDistrictMedia = (host) => {
+                    if (!host || districtHosts.size === 0) return false;
+                    return [...districtHosts].some(h => host === h || host.endsWith(`.${h}`));
+                };
 
                 if (preferPopularity) {
                     const defaultSw = NEWS_FILTER_CONFIG.scoreWeights || { time: 0.32, relevance: 0.30, credibility: 0.18, locality: 0.15, engagement: 0.05 };
                     const sw = selectedCategory.scoreWeightsOverride || defaultSw;
+                    const localPriority = !!selectedCategory.localMediaPriority;
                     // relevance 정규화: 카테고리별 focusKeywords 수 + boostAny 2점 + 기타 보너스 4점을 상한으로 사용
                     // 하드코딩 /8 대신 카테고리 실제 가중치 상한에 맞춘 동적 maxScore
                     const focusCount = Array.isArray(selectedCategory.focusKeywords) ? selectedCategory.focusKeywords.length : 0;
@@ -4461,9 +4505,14 @@ function renderCouncilProvinceView(regionKey, region) {
                         const recencyScore = Math.max(0, 1 - (ageDays / Math.max(1, dayLimit)));
                         const simScore = rankToScore(item.simRank);
                         const relevanceScore = Math.min(1, item.relevance / relevanceMaxScore);
-                        const credibilityScore = isMajorOutlet(item.host) ? 1 : isLocalTier1(item.host) ? 0.85 : isLocalMedia(item.host) ? 0.75 : 0.4;
-                        const localityScore = isLocalMedia(item.host) ? 1 : 0;
+                        // localMediaPriority 카테고리(의원/재보궐)에서는 전국지 credibility를 0.55로 캡핑
+                        // → 지역언론이 전국지보다 credibility에서 역전당하지 않게 보정
+                        const rawCred = isMajorOutlet(item.host) ? 1 : isLocalTier1(item.host) ? 0.85 : isLocalMedia(item.host) ? 0.75 : 0.4;
+                        const credibilityScore = (localPriority && isMajorOutlet(item.host)) ? 0.55 : rawCred;
+                        // localityScore: 시군구 전용 매체 1.0 → 광역 지역언론 0.8 → 비지역 0
+                        const localityScore = isDistrictMedia(item.host) ? 1.0 : isLocalMedia(item.host) ? 0.8 : 0;
                         item.isLocalMedia = isLocalMedia(item.host);
+                        item.isDistrictMedia = isDistrictMedia(item.host);
                         item.rankScore = (recencyScore * sw.time)
                             + (relevanceScore * sw.relevance)
                             + (credibilityScore * sw.credibility)
@@ -4519,7 +4568,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 const ageDays = Math.floor((Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24));
                 const freshBadge = ageDays <= 1 ? '<span class="news-badge news-badge-fresh">NEW</span>' : '';
                 const majorBadge = isMajor ? '<span class="news-badge news-badge-major">주요</span>' : '';
-                const localBadge = item.isLocalMedia ? '<span class="news-badge news-badge-local">지역</span>' : '';
+                const localBadge = item.isDistrictMedia ? '<span class="news-badge news-badge-local">지역</span>' : item.isLocalMedia ? '<span class="news-badge news-badge-local" style="opacity:0.7">지역</span>' : '';
                 const timeText = ageDays === 0 ? '오늘' : ageDays === 1 ? '어제' : `${ageDays}일 전`;
                 return `
                     <a class="news-live-item" href="${item.link}" target="_blank" rel="noopener">

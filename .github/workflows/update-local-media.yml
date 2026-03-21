@@ -1,0 +1,63 @@
+name: Update Local Media Pool
+
+on:
+  schedule:
+    # 매주 일요일 KST 01:00 (UTC 16:00 토요일) — 주간 갱신
+    - cron: '0 16 * * 6'
+  workflow_dispatch:
+    inputs:
+      region:
+        description: '특정 시도만 탐색 (예: gyeonggi). 비워두면 전체'
+        required: false
+      fill_only:
+        description: '매체 0개 시군구만 집중 탐색'
+        required: false
+        default: 'false'
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install httpx
+
+      - name: Run local media discovery
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+          KAKAO_REST_API_KEY: ${{ secrets.KAKAO_REST_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.region }}" ]; then
+            ARGS="--region=${{ github.event.inputs.region }}"
+          fi
+          if [ "${{ github.event.inputs.fill_only }}" = "true" ]; then
+            ARGS="$ARGS --fill-only"
+          fi
+          python scripts/discover_local_media.py $ARGS
+
+      - name: Print coverage report
+        run: python scripts/discover_local_media.py --report
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/local_media_pool.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/local_media_pool.json
+          git commit -m "chore: auto-update local media pool $(date +%Y-%m-%d)"
+          git pull --rebase origin main && git push
