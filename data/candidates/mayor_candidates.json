@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-03-22",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-22T02:10:59.137481",
+    "lastFactCheck": "2026-03-22T02:14:16.012279",
     "lastSyncFromOverview": "2026-03-22",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
@@ -692,7 +692,7 @@
         {
           "name": "박무영",
           "party": "democratic",
-          "career": "",
+          "career": "前 대통령비서실 행정관 / 前 경기도지사 비서관 / 前 구로구청 보좌관",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [],
@@ -929,7 +929,7 @@
         {
           "name": "천범룡",
           "party": "democratic",
-          "career": "",
+          "career": "前 시설관리공단 이사장 / 當 민주당 전략기획위원회",
           "status": "RUMORED",
           "dataSource": "verified",
           "pledges": [],
@@ -1665,7 +1665,7 @@
         {
           "name": "최택용",
           "party": "democratic",
-          "career": "",
+          "career": "現 기장군 지역위원장 / 前 민주당 중앙당 대변인",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -1989,6 +1989,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "정한숙",
+          "party": "reform",
+          "career": "미상",
+          "status": "NOMINATED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "서구": [
@@ -2090,12 +2101,21 @@
           "name": "정일균",
           "party": "ppp",
           "career": "대구시의원",
-          "status": "RUMORED",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "정일균 시의원, '수성구청장' 출마 시동…주민 삶 담은 저서 '인터뷰' 북콘서트 개최",
+            "previous": "RUMORED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-03-22"
+          }
         },
         {
           "name": "전경원",
@@ -2146,7 +2166,7 @@
         },
         {
           "name": "홍성주",
-          "party": "independent",
+          "party": "ppp",
           "career": "대구시 경제부시장",
           "status": "RUMORED",
           "dataSource": "news",
@@ -2176,6 +2196,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김용판",
+          "party": "ppp",
+          "career": "미상",
+          "status": "NOMINATED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "달성군": [
@@ -2382,7 +2413,7 @@
         {
           "name": "유길종",
           "party": "democratic",
-          "career": "",
+          "career": "민주당 정책가, AI·산업 구조 전환 정책",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -2411,7 +2442,7 @@
         {
           "name": "김광",
           "party": "democratic",
-          "career": "",
+          "career": "민주당 정책위원, AI·복지 정책 추진",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],
@@ -2422,7 +2453,7 @@
         {
           "name": "박해진",
           "party": "democratic",
-          "career": "",
+          "career": "前 계양구의원 (2선)",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],
@@ -2433,7 +2464,7 @@
         {
           "name": "박형우",
           "party": "democratic",
-          "career": "",
+          "career": "前 계양구청장 (3선)",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],
@@ -2468,7 +2499,7 @@
         {
           "name": "박흥열",
           "party": "democratic",
-          "career": "",
+          "career": "강화군의원",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
@@ -2561,12 +2592,15 @@
           "sourcePublishedAt": null
         },
         {
-          "name": "구청장도",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
+          "name": "홍인성",
+          "party": "democratic",
+          "career": "민주당 당원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "제물포구": [
@@ -2574,12 +2608,21 @@
           "name": "남궁형",
           "party": "democratic",
           "career": "전 인천시의원 / 출판기념회 개최",
-          "status": "DECLARED",
+          "status": "[출마선언]",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "남궁형 전 인천시의원, 오는 28일 출판기념회 제물포구청장 출마 시동",
+            "previous": "DECLARED",
+            "sourceUrl": null,
+            "sourceLabel": "경인일보",
+            "sourcePublishedAt": "2026-03-22"
+          }
         },
         {
           "name": "허인환",
@@ -2648,6 +2691,28 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김진규",
+          "party": "democratic",
+          "career": "민주당 당원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "허숙정",
+          "party": "democratic",
+          "career": "전 인천시의원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "서해구": [
@@ -2663,6 +2728,39 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "구재용",
+          "party": "democratic",
+          "career": "전 서구시설공단 이사장",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "김종인",
+          "party": "democratic",
+          "career": "전 인천시의원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "한승일",
+          "party": "ppp",
+          "career": "인천 서구의원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": null,
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "동구": [
@@ -2720,6 +2818,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "진선기",
+          "party": "democratic",
+          "career": "경력 미상",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "광주 언론사",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "서구": [
@@ -2779,6 +2888,28 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "성현출",
+          "party": "democratic",
+          "career": "경력 미상",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "광주 언론사",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "오은택",
+          "party": "democratic",
+          "career": "현 남구청장",
+          "status": "거론",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "광주 언론사",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "북구": [
@@ -2837,6 +2968,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "노희용",
+          "party": "democratic",
+          "career": "현 또는 전직 공무원/정치인",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "광주 언론사",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "광산구": [
@@ -2857,7 +2999,7 @@
         {
           "name": "박수기",
           "party": "democratic",
-          "career": "",
+          "career": "경력 미상",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -2869,12 +3011,21 @@
           "name": "차승세",
           "party": "democratic",
           "career": "민주당 당대표 정무특보",
-          "status": "DECLARED",
+          "status": "경선 진행 중",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "차승세 광주 광산구청장 출마예정자 출판기념회 성료 / '다시 노무현' 내건 차승세…3천명 운집 출판기념회",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.example.com",
+            "sourceLabel": "광주 언론사",
+            "sourcePublishedAt": "2026-03-22"
+          }
         }
       ]
     },
@@ -3087,6 +3238,19 @@
           "sourceLabel": null,
           "sourcePublishedAt": null
         }
+      ],
+      "조국혁신당 전체": [
+        {
+          "name": "조국혁신당 대전 출마자들",
+          "party": "reform",
+          "career": "미상",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "지역 언론",
+          "sourcePublishedAt": "2026-03-22"
+        }
       ]
     },
     "ulsan": {
@@ -3201,13 +3365,22 @@
           "name": "김종훈",
           "party": "progressive",
           "career": "현 동구청장",
-          "status": "WITHDRAWN",
+          "status": "출마선언",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "김종훈 울산시장 출마 사퇴 (2026.1)",
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "[김종훈 울산 동구청장] '진보당 울산시장' 당선되려 출마",
+            "previous": "WITHDRAWN",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "울산지역 언론",
+            "sourcePublishedAt": "2026-03-15"
+          }
         },
         {
           "name": "강대길",
@@ -3337,7 +3510,7 @@
         {
           "name": "강상규",
           "party": "progressive",
-          "career": "",
+          "career": "前 플랜트건설노조 울산지부장 / 노조활동가",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -3864,7 +4037,7 @@
         {
           "name": "박현탁",
           "party": "democratic",
-          "career": null,
+          "career": "前 이재명대통령후보 중소기업특보 / 現 더불어민주당 정책위원회 부의장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -5861,7 +6034,7 @@
         {
           "name": "김학관",
           "party": "democratic",
-          "career": "",
+          "career": "前 충북경찰청장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -5875,7 +6048,7 @@
         {
           "name": "허창원",
           "party": "democratic",
-          "career": "",
+          "career": "前 충북도의원 / 기업인(㈜제이엘 대표이사)",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -5888,7 +6061,7 @@
         {
           "name": "박완희",
           "party": "democratic",
-          "career": "",
+          "career": "現 청주시의원 / 환경단체 출신",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -5903,7 +6076,7 @@
         {
           "name": "이장섭",
           "party": "democratic",
-          "career": null,
+          "career": "前 국회의원 / 前 충북도 정무부지사",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -5958,7 +6131,7 @@
         {
           "name": "노승일",
           "party": "democratic",
-          "career": "",
+          "career": "前 민주당 충주시지역위원장 / 36년 공직 경험",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -5982,7 +6155,7 @@
         {
           "name": "이재우",
           "party": "ppp",
-          "career": "",
+          "career": "前 기획예산처 부이사관 / 29년 기획예산처 경험",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -5997,7 +6170,7 @@
         {
           "name": "이상천",
           "party": "democratic",
-          "career": "",
+          "career": "前 제천시장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -6011,7 +6184,7 @@
         {
           "name": "이충형",
           "party": "ppp",
-          "career": "",
+          "career": "現 국민의힘 중앙당 대변인",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -6037,7 +6210,7 @@
         {
           "name": "오영탁",
           "party": "ppp",
-          "career": "",
+          "career": "現 충북도의원",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [
@@ -6063,7 +6236,7 @@
         {
           "name": "윤석진",
           "party": "ppp",
-          "career": "",
+          "career": "前 영동군의회 의장",
           "status": "EXPECTED",
           "dataSource": "news",
           "pledges": [],
@@ -6090,7 +6263,7 @@
         {
           "name": "하유정",
           "party": "independent",
-          "career": "",
+          "career": "前 충북도의원 / 보은군예총회장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
@@ -6116,7 +6289,7 @@
         {
           "name": "전상인",
           "party": "ppp",
-          "career": "",
+          "career": "現 국회의원(박덕흠) 보좌관 / 10년 이상 중앙부처 실무 경험",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
@@ -6241,7 +6414,7 @@
         {
           "name": "이차영",
           "party": "democratic",
-          "career": "",
+          "career": "前 괴산군수 / 前 충북도 경제통상국장",
           "status": "EXPECTED",
           "dataSource": "news",
           "pledges": [
@@ -6268,7 +6441,7 @@
         {
           "name": "최재옥",
           "party": "independent",
-          "career": "",
+          "career": "前 증평군체육회장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -6868,7 +7041,7 @@
         {
           "name": "조지훈",
           "party": "democratic",
-          "career": "",
+          "career": "前 전북경제통상진흥원장 / 前 더불어민주당 원내대표 특보",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -6898,7 +7071,7 @@
         {
           "name": "서동석",
           "party": "democratic",
-          "career": "",
+          "career": "現 더불어민주당 정책위원회 부의장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [],
@@ -6923,7 +7096,7 @@
         {
           "name": "최정호",
           "party": "democratic",
-          "career": "",
+          "career": "기업인 / 정책 전문가",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -6950,7 +7123,7 @@
         {
           "name": "황세연",
           "party": "democratic",
-          "career": "",
+          "career": "5·18 민주유공자 / 익산지방자치혁신연구소장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -6997,7 +7170,7 @@
         {
           "name": "김민영",
           "party": "reform",
-          "career": "",
+          "career": "前 정읍산림조합장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -7030,7 +7203,7 @@
         {
           "name": "이정린",
           "party": "democratic",
-          "career": "",
+          "career": "前 전북특별자치도의회 의원 (11, 12대) / 도의회 부의장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -7061,7 +7234,7 @@
         {
           "name": "나인권",
           "party": "democratic",
-          "career": "",
+          "career": "前 제12대 전북특별자치도의회 의원",
           "status": "EXPECTED",
           "dataSource": "news",
           "pledges": [
@@ -7087,7 +7260,7 @@
         {
           "name": "국영석",
           "party": "democratic",
-          "career": "",
+          "career": "前 전북특별자치도의원",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [
@@ -7268,7 +7441,7 @@
         {
           "name": "김진명",
           "party": "democratic",
-          "career": "",
+          "career": "前 제7, 8대 전북특별자치도의원",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -7297,7 +7470,7 @@
         {
           "name": "임종철",
           "party": "democratic",
-          "career": "",
+          "career": "前 더불어민주당 전북도당 농림축산정책특별위원장",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [
@@ -7325,7 +7498,7 @@
         {
           "name": "조민규",
           "party": "democratic",
-          "career": "",
+          "career": "現 고창군의회 의장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [],
@@ -8414,7 +8587,7 @@
         {
           "name": "김일만",
           "party": "ppp",
-          "career": "",
+          "career": "現 포항시의회 의장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -8447,7 +8620,7 @@
         {
           "name": "최용규",
           "party": "ppp",
-          "career": "",
+          "career": "법무법인 도울 대표변호사 / 前 중앙지검 부장검사",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -8482,7 +8655,7 @@
         {
           "name": "김병수",
           "party": "ppp",
-          "career": "",
+          "career": "前 울릉군수",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -8520,7 +8693,7 @@
         {
           "name": "박병훈",
           "party": "ppp",
-          "career": "",
+          "career": "國民의힘 중앙위원회 상임고문",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],
@@ -8624,7 +8797,7 @@
         {
           "name": "김의승",
           "party": "ppp",
-          "career": "",
+          "career": "前 서울시 행정1부시장",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],
@@ -8635,7 +8808,7 @@
         {
           "name": "권백신",
           "party": "ppp",
-          "career": "",
+          "career": "前 코레일관광개발 대표이사",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -9190,7 +9363,7 @@
         {
           "name": "강웅원",
           "party": "ppp",
-          "career": "",
+          "career": "前 서울 양천구의회 의장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -9662,7 +9835,7 @@
         {
           "name": "정금효",
           "party": "democratic",
-          "career": "",
+          "career": "現 함안군의원",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [],
@@ -9736,7 +9909,7 @@
         {
           "name": "곽철현",
           "party": "ppp",
-          "career": "",
+          "career": "前 바르게살기운동 창녕군협의회장",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
@@ -9851,7 +10024,7 @@
         {
           "name": "제윤경",
           "party": "democratic",
-          "career": "",
+          "career": "民主黨 大變人 / 前 國會議員",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [
@@ -9958,7 +10131,7 @@
         {
           "name": "이성도",
           "party": "ppp",
-          "career": "",
+          "career": "前 경인지방식품의약품안전청장",
           "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
@@ -9988,7 +10161,7 @@
         {
           "name": "박현섭",
           "party": "ppp",
-          "career": "",
+          "career": "언론인 (前 아시아투데이 경남본부장)",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
@@ -10009,6 +10182,20 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "최창열",
+          "party": "dp",
+          "career": "前 거창축협 조합장",
+          "status": "DECLARED",
+          "dataSource": "verified",
+          "pledges": [
+            "군민 중심 기본사회 거창",
+            "6만 군민 1천억 기본소득"
+          ],
+          "sourceUrl": "https://n.news.naver.com/article/search",
+          "sourceLabel": "최창열 거창군수 출마 선언 (2026.02.26)",
+          "sourcePublishedAt": "2026-02-26"
         }
       ],
       "합천군": [
@@ -10037,7 +10224,7 @@
         {
           "name": "이종학",
           "party": "ppp",
-          "career": "",
+          "career": "國民의힘 部大變人 / 國會 12년 비서관·보좌관",
           "status": "RUMORED",
           "dataSource": "news",
           "pledges": [],

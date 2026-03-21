@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-03-22",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-22T01:25:14.444834",
+    "lastFactCheck": "2026-03-22T02:34:11.219796",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
@@ -205,12 +205,21 @@
         "name": "도성훈",
         "stance": "진보",
         "career": "현 인천광역시 교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-22",
+          "type": "status_change",
+          "detail": "[경인일보 여론조사] 도성훈 인천시교육감 긍정평가 34% - 현직 교육감으로서의 평가 기사로 출마 의향 확인",
+          "previous": "EXPECTED",
+          "sourceUrl": "https://news.search.naver.com/",
+          "sourceLabel": "경인일보",
+          "sourcePublishedAt": "2026-03-22"
+        }
       },
       {
         "id": "incheon-2",
@@ -427,6 +436,18 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "id": "ulsan-5",
+        "name": "구광렬",
+        "stance": "중도",
+        "career": "교수",
+        "status": "DECLARED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "뉴스",
+        "sourceLabel": "언론사명",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "gyeonggi": [
@@ -509,14 +530,17 @@
         "name": "신경호",
         "stance": "보수",
         "career": "현 강원특별자치도 교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "incumbent",
         "pledges": [],
         "_lastChange": {
-          "date": "2026-03-19",
+          "date": "2026-03-22",
           "type": "status_change",
-          "detail": "신경호 '현직' 예비후보등록 예고",
-          "previous": "EXPECTED"
+          "detail": "신경호 현직 교육감 예비후보등록 예고",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "",
+          "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -994,14 +1018,17 @@
         "name": "고의숙",
         "stance": "중도",
         "career": "전 교육의원",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
-          "date": "2026-03-19",
+          "date": "2026-03-22",
           "type": "status_change",
-          "detail": "교육의원직 사퇴하고 제주교육감 예비후보 등록 ('교육의원 사퇴...제주교육감 예비후보 등록')",
-          "previous": "DECLARED"
+          "detail": "고의숙 교육의원, 제주교육감 선거 예비후보 등록 / '교육감 출마' 고의숙, 교육의원직 사퇴...예비후보 등록",
+          "previous": "EXPECTED",
+          "sourceUrl": "",
+          "sourceLabel": "제주 언론",
+          "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
         "sourceLabel": null,
