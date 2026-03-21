@@ -390,7 +390,7 @@ def process_district(region_key, region_name, district, candidates, current,
 
 def main():
     parser = argparse.ArgumentParser(description="기초단체장 개요 업데이트")
-    parser.add_argument("--region", type=str, help="특정 시도만 처리 (예: gyeonggi)")
+    parser.add_argument("--region", type=str, nargs="+", help="특정 시도만 처리 (예: gyeonggi gyeongnam)")
     parser.add_argument("--district", type=str, help="단일 시군구만 처리 (예: 강남구)")
     parser.add_argument("--stale-only", action="store_true", help="2일 이상 미갱신 지역만")
     parser.add_argument("--dry-run", action="store_true", help="뉴스 수집만, LLM 미호출")
@@ -427,7 +427,7 @@ def main():
 
     # 대상 시도 결정
     if args.region:
-        target_regions = [args.region]
+        target_regions = args.region if isinstance(args.region, list) else [args.region]
     else:
         target_regions = sorted(mayor_data.keys())
 
