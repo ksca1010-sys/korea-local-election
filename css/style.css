@@ -2359,6 +2359,12 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: #5eead4;
     border-color: rgba(20, 184, 166, 0.3);
 }
+/* 풀에 등록된 시군구 전용 언론사 (토속) */
+.news-badge-district {
+    background: rgba(251, 191, 36, 0.15);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.3);
+}
 
 /* News Score Bar */
 .news-score {
@@ -2457,6 +2463,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     background: rgba(20, 184, 166, 0.1);
     color: #5eead4;
     border-color: rgba(20, 184, 166, 0.25);
+}
+.local-media-tag.district {
+    background: rgba(251, 191, 36, 0.1);
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.25);
 }
 
 .news-load-more-btn {
