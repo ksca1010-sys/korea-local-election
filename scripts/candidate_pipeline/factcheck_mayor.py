@@ -170,7 +170,10 @@ def build_prompt_for_region(region_key, region_candidates, news=None):
     "newStatus": "새 상태 (info_update시 생략 가능)",
     "party": "정당명 (한글). 뉴스에서 확인된 정당. 확인 안 되면 생략",
     "career": "경력 1줄. 뉴스에서 확인된 경력. 확인 안 되면 생략",
-    "detail": "근거 (뉴스 제목 인용)"
+    "detail": "근거 (뉴스 제목 인용)",
+    "sourceUrl": "근거 뉴스 URL (반드시 포함)",
+    "sourceLabel": "언론사명",
+    "sourcePublishedAt": "뉴스 발행일 (YYYY-MM-DD)"
   }}
 ]
 
@@ -237,6 +240,9 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 "status": change.get("newStatus", "DECLARED"),
                 "dataSource": "claude",
                 "pledges": [],
+                "sourceUrl": change.get("sourceUrl"),
+                "sourceLabel": change.get("sourceLabel"),
+                "sourcePublishedAt": change.get("sourcePublishedAt"),
             }
             label = f"[신규] {district}: {name} ({PARTY_NAMES.get(party, party)}) - {change.get('detail', '')}"
             if dry_run:
@@ -258,6 +264,15 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 print(f"    [DRY] {label}")
             else:
                 existing["status"] = new_status
+                existing["_lastChange"] = {
+                    "date": date.today().isoformat(),
+                    "type": change_type,
+                    "detail": change.get("detail", ""),
+                    "previous": old_status,
+                    "sourceUrl": change.get("sourceUrl"),
+                    "sourceLabel": change.get("sourceLabel"),
+                    "sourcePublishedAt": change.get("sourcePublishedAt"),
+                }
                 print(f"    {label}")
             applied += 1
 

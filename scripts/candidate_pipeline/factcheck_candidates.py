@@ -157,7 +157,10 @@ def build_prompt(candidates_data, news=None):
     "newStatus": "새 상태 (DECLARED|EXPECTED|RUMORED|WITHDRAWN|NOMINATED)",
     "party": "정당명 (한글, 새 후보 또는 정당변경 시)",
     "career": "경력 (새 후보 시, 1줄)",
-    "detail": "변경 근거 — 뉴스 제목 인용"
+    "detail": "변경 근거 — 뉴스 제목 인용",
+    "sourceUrl": "근거 뉴스 URL (반드시 포함)",
+    "sourceLabel": "언론사명",
+    "sourcePublishedAt": "뉴스 발행일 (YYYY-MM-DD)"
   }}
 ]
 
@@ -295,6 +298,9 @@ def apply_changes(data, changes, dry_run=False):
                 "status": change.get("newStatus", "DECLARED"),
                 "dataSource": "claude",
                 "pledges": [],
+                "sourceUrl": change.get("sourceUrl"),
+                "sourceLabel": change.get("sourceLabel"),
+                "sourcePublishedAt": change.get("sourcePublishedAt"),
             }
             label = f"[신규] {region_name}: {name} ({PARTY_NAMES.get(party, party)}) - {change.get('detail', '')}"
             if dry_run:
@@ -322,6 +328,9 @@ def apply_changes(data, changes, dry_run=False):
                     "type": change_type,
                     "detail": change.get("detail", ""),
                     "previous": old_status,
+                    "sourceUrl": change.get("sourceUrl"),
+                    "sourceLabel": change.get("sourceLabel"),
+                    "sourcePublishedAt": change.get("sourcePublishedAt"),
                 }
                 print(f"  {label}")
             applied += 1

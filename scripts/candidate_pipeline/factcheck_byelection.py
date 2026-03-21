@@ -117,7 +117,10 @@ def build_prompt(dist, news):
     "newStatus": "DECLARED|EXPECTED|RUMORED|WITHDRAWN|NOMINATED",
     "party": "정당명 (한글)",
     "career": "경력 (새 후보 시)",
-    "detail": "변경 근거 — 뉴스 제목 인용"
+    "detail": "변경 근거 — 뉴스 제목 인용",
+    "sourceUrl": "근거 뉴스 URL (반드시 포함)",
+    "sourceLabel": "언론사명",
+    "sourcePublishedAt": "뉴스 발행일 (YYYY-MM-DD)"
   }}
 ]
 
@@ -171,6 +174,9 @@ def apply_changes(dist, changes, dry_run=False):
                     "status": new_status,
                     "dataSource": "news_factcheck",
                     "pledges": [],
+                    "sourceUrl": change.get("sourceUrl"),
+                    "sourceLabel": change.get("sourceLabel"),
+                    "sourcePublishedAt": change.get("sourcePublishedAt"),
                 })
                 print(f"    {label}")
             applied += 1

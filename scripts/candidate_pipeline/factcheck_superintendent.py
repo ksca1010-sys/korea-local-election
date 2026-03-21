@@ -126,7 +126,10 @@ def build_prompt_for_region(region_key, region_name, candidates, news):
     "newStatus": "새 상태 (DECLARED|EXPECTED|RUMORED|WITHDRAWN)",
     "stance": "성향 (진보|보수|중도)",
     "career": "경력 1줄 (새 후보 시)",
-    "detail": "변경 근거 (뉴스 제목 인용)"
+    "detail": "변경 근거 (뉴스 제목 인용)",
+    "sourceUrl": "근거 뉴스 URL (반드시 포함)",
+    "sourceLabel": "언론사명",
+    "sourcePublishedAt": "뉴스 발행일 (YYYY-MM-DD)"
   }}
 ]
 
@@ -187,6 +190,9 @@ def apply_changes(data, changes, dry_run=False):
                 "status": change.get("newStatus", "DECLARED"),
                 "dataSource": "claude",
                 "pledges": [],
+                "sourceUrl": change.get("sourceUrl"),
+                "sourceLabel": change.get("sourceLabel"),
+                "sourcePublishedAt": change.get("sourcePublishedAt"),
             }
             label = f"[신규] {region_name}: {name} ({stance}) - {change.get('detail', '')}"
             if dry_run:
@@ -214,6 +220,9 @@ def apply_changes(data, changes, dry_run=False):
                     "type": change_type,
                     "detail": change.get("detail", ""),
                     "previous": old_status,
+                    "sourceUrl": change.get("sourceUrl"),
+                    "sourceLabel": change.get("sourceLabel"),
+                    "sourcePublishedAt": change.get("sourcePublishedAt"),
                 }
                 print(f"  {label}")
             applied += 1

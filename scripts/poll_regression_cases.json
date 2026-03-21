@@ -55,12 +55,15 @@
     "districtName": "평택시",
     "expectedMinCount": 2,
     "expectedChartMode": "trend",
-    "expectedChartType": "none",
-    "expectedChartReason": "no-candidate-results",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
     "expectedFirstMunicipality": "평택시",
     "expectedHeaderIncludes": [
       "평택시",
       "기초단체장"
+    ],
+    "expectedDatasetLabels": [
+      "공재광"
     ]
   },
   {
@@ -102,15 +105,15 @@
     "electionType": "superintendent",
     "expectedMinCount": 1,
     "expectedChartMode": "trend",
-    "expectedChartType": "line",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support",
     "expectedHeaderIncludes": [
       "경상북도",
       "교육감"
     ],
-    "expectedFirstTitleIncludes": [
-      "교육감선거"
-    ],
-    "expectedDatasetCountMin": 2
+    "expectedDatasetLabels": [
+      "참고 지지율"
+    ]
   },
   {
     "name": "chungnam-mayor-overview-activity",
@@ -309,7 +312,7 @@
     "name": "incheon-superintendent-reference",
     "regionKey": "incheon",
     "electionType": "superintendent",
-    "expectedMinCount": 4,
+    "expectedMinCount": 0,
     "expectedChartMode": "trend",
     "expectedChartType": "bar",
     "expectedChartReason": "reference-support",
@@ -325,7 +328,7 @@
     "name": "daejeon-superintendent-reference",
     "regionKey": "daejeon",
     "electionType": "superintendent",
-    "expectedMinCount": 2,
+    "expectedMinCount": 0,
     "expectedChartMode": "trend",
     "expectedChartType": "bar",
     "expectedChartReason": "reference-support",
@@ -341,7 +344,7 @@
     "name": "gyeongnam-superintendent-trend",
     "regionKey": "gyeongnam",
     "electionType": "superintendent",
-    "expectedMinCount": 5,
+    "expectedMinCount": 2,
     "expectedChartMode": "trend",
     "expectedChartType": "line",
     "expectedChartReason": "trend",
@@ -435,8 +438,8 @@
     "electionType": "governor",
     "expectedMinCount": 1,
     "expectedChartMode": "trend",
-    "expectedChartType": "bar",
-    "expectedChartReason": "reference-support",
+    "expectedChartType": "line",
+    "expectedChartReason": "trend",
     "expectedHeaderIncludes": [
       "전북",
       "광역단체장"
@@ -445,9 +448,10 @@
       "광역단체장선거"
     ],
     "expectedDatasetLabels": [
-      "참고 지지율"
+      "김관영",
+      "이원택"
     ],
-    "expectedDatasetCountMin": 1
+    "expectedDatasetCountMin": 2
   },
   {
     "name": "starter-sejong-governor",

@@ -16,6 +16,7 @@ import os
 import re
 import sys
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from urllib.parse import urljoin, urlparse, parse_qs, urlencode, urlunparse
@@ -121,6 +122,22 @@ def load_state() -> Dict[str, Any]:
 
 def save_state(state: Dict[str, Any]) -> None:
     STATE_PATH.parent.mkdir(parents=True, exist_ok=True)
+    # meta 자동 갱신
+    polls = state.get("polls", [])
+    from collections import Counter
+    type_counts = Counter(p.get("electionType") or "unknown" for p in polls)
+    state["meta"] = {
+        "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
+        "lastPipelineRun": datetime.now().strftime("%Y-%m-%d"),
+        "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
+        "sourceUrl": "https://nesdc.go.kr",
+        "pollCount": len(polls),
+        "withRegistrationDate": sum(1 for p in polls if p.get("registrationDate")),
+        "withRegistrationId": sum(1 for p in polls if p.get("registrationId")),
+        "withResults": sum(1 for p in polls if p.get("results")),
+        "unknownElectionTypeCount": type_counts.get("unknown", 0),
+        "electionTypes": dict(type_counts),
+    }
     STATE_PATH.write_text(json.dumps(state, ensure_ascii=False, indent=2), "utf-8")
 
 
