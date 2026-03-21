@@ -675,33 +675,46 @@ def parse_pdf_results(pdf_path: Path) -> List[Dict[str, Any]]:
             if len(pdf.pages) <= 2:
                 return []
 
-            results = _extract_table_results(pdf)
-            if results:
-                return results
+            # 첫 페이지에서 정당지지도 전용 PDF 감지
+            # 갤럽 교차집계표처럼 후보자 없이 정당지지도만 있는 PDF
+            first_text = (pdf.pages[0].extract_text() or "").replace("\n", " ")
+            is_party_only = (
+                re.search(r"정당\s*지지도", first_text)
+                and not re.search(r"후보\s*자\s*지지도|적합도|후보\s*지지", first_text)
+            )
 
-            all_text = ""
-            for page in pdf.pages:
-                all_text += (page.extract_text() or "") + "\n"
+            if not is_party_only:
+                results = _extract_table_results(pdf)
+                if results:
+                    return results
 
-            # Strategy 1: 교차분석표 파싱 (적합도/지지도 섹션)
-            results = _extract_crosstab(all_text)
-            if results:
-                return results
+            page_texts = [page.extract_text() or "" for page in pdf.pages]
+            all_text = "\n".join(page_texts)
 
-            # Strategy 2: "이름(정당) N%" 패턴
-            results = _extract_inline_pattern(all_text)
-            if results:
-                return results
+            if not is_party_only:
+                # Strategy 1: 교차분석표 파싱 (적합도/지지도 섹션)
+                results = _extract_crosstab(all_text)
+                if results:
+                    return results
+
+                # Strategy 2: "이름(정당) N%" 패턴
+                results = _extract_inline_pattern(all_text)
+                if results:
+                    return results
 
             # Strategy 3: 정당지지도 (테이블 기반)
-            results = parse_pdf_party_support(pdf_path)
-            if results:
-                return results
+            # 갤럽 교차집계표(is_party_only)는 테이블 파서가 오염된 테이블을 읽으므로 스킵
+            if not is_party_only:
+                results = parse_pdf_party_support(pdf_path)
+                if results:
+                    return results
 
-            # Strategy 4: 정당지지도 (텍스트 fallback)
-            results = _extract_party_support_inline(all_text)
-            if results:
-                return results
+            # Strategy 4: 정당지지도 (페이지별 텍스트 fallback — 갤럽 교차집계표 포맷 포함)
+            # 전체 합본 텍스트 사용 시 다른 페이지 "전체" 행과 혼동되므로 페이지별 실행
+            for page_text in page_texts:
+                results = _extract_party_support_inline(page_text)
+                if results:
+                    return results
 
     except Exception as e:
         print(f"  PDF parse error: {e}")
@@ -824,29 +837,63 @@ def parse_pdf_party_support(pdf_path: Path) -> List[Dict[str, Any]]:
 
 
 def _extract_party_support_inline(text: str) -> List[Dict[str, Any]]:
-    """텍스트에서 인라인 정당지지도 추출"""
+    """텍스트에서 인라인 정당지지도 추출.
+
+    지원 포맷:
+      A) 소수점: "국민의힘 33.7  더불어민주당 43.0 ..."
+      B) 정수%: "전체 1,004 1,004 46% 20% 3% ..." (갤럽 교차집계표 포맷)
+    """
     PARTY_MAP = {
         "국민의힘": "ppp", "더불어민주당": "democratic", "민주당": "democratic",
         "조국혁신당": "reform", "개혁신당": "newReform",
         "진보당": "progressive", "정의당": "justice",
+        "기본소득당": "other", "사회민주당": "other",
     }
+    # 갤럽 교차집계표 정당 순서 (헤더에서 읽음)
+    GALLUP_PARTY_ORDER = ["더불어민주당", "국민의힘", "조국혁신당", "진보당", "개혁신당", "기본소득당", "사회민주당"]
 
     results = []
     lines = text.split("\n")
 
-    # "정당지지도" 이후 줄에서 "전체 (N) (N) 33.7 43.0 2.0 ..." 패턴
-    in_section = False
-    for line in lines:
-        if re.search(r"정당\s*지지도", line):
-            in_section = True
-            continue
-        if in_section and re.search(r"전체|전\s*체|합계", line):
-            nums = re.findall(r'(\d{1,2}\.\d)', line)
-            if len(nums) >= 2:
-                # 정당지지도 섹션의 전체 행 - 이미 헤더에서 정당 순서를 알아야 함
-                break
+    # ── 포맷 B: 갤럽 교차집계표 — 헤더에서 정당 순서, 전체 행에서 정수% 추출 ──
+    # 헤더 패턴: "더불어 국민의 조국 ..." 또는 "더불어민주당 국민의힘 조국혁신당"
+    party_order = []
+    for i, line in enumerate(lines):
+        if re.search(r"더불어|국민의힘", line) and re.search(r"혁신당|개혁신당|진보당", line):
+            # 헤더 행 발견 — 이 줄 + 다음 줄 합쳐서 정당 순서 추출
+            combined = line + " " + (lines[i + 1] if i + 1 < len(lines) else "")
+            combined = combined.replace("더불어\n민주당", "더불어민주당").replace("조국\n혁신당", "조국혁신당")
+            for party in GALLUP_PARTY_ORDER:
+                short = party[:3]
+                if short in combined:
+                    party_order.append(party)
+            break
 
-    # fallback: "국민의힘 N.N" 인라인 매칭
+    if party_order:
+        # 전체 행 찾기 — "전체" 로 시작하고 "%"가 포함된 줄
+        for line in lines:
+            if re.match(r"전\s*체", line) and "%" in line:
+                # 공백 정규화 ("1 ,004" → "1004")
+                clean = re.sub(r'(\d)\s+,\s*(\d)', r'\1\2', line)
+                clean = re.sub(r'(\d)\s+(\d)', r'\1\2', clean)
+                pcts = re.findall(r'(\d{1,2}(?:\.\d)?)\s*%', clean)
+                if len(pcts) >= len(party_order):
+                    for j, party in enumerate(party_order):
+                        try:
+                            val = float(pcts[j])
+                            if 0 < val <= 80:
+                                results.append({
+                                    "candidateName": party,
+                                    "party": PARTY_MAP.get(party, "other"),
+                                    "support": val,
+                                    "type": "party_support",
+                                })
+                        except (ValueError, IndexError):
+                            pass
+                    if len(results) >= 2:
+                        return results
+
+    # ── 포맷 A: 소수점 인라인 매칭 ──
     for line in lines:
         matches = re.findall(
             r'(국민의힘|더불어민주당|민주당|조국혁신당|개혁신당|진보당)\s+(\d{1,2}\.\d)',
