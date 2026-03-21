@@ -41,25 +41,54 @@ ENV_FILE = BASE_DIR / ".env"
 # ── 중앙 언론 제외 목록 ──────────────────────────────────────────────────────
 
 MAJOR_HOSTS = {
+    # 포털·SNS
     "naver.com", "daum.net", "kakao.com", "google.com",
-    "yna.co.kr", "newsis.com", "news1.kr", "yonhapnewstv.co.kr",
-    "kbs.co.kr", "mbc.co.kr", "sbs.co.kr", "jtbc.co.kr", "tvchosun.com",
-    "chosun.com", "joongang.co.kr", "donga.com", "hani.co.kr", "khan.co.kr",
-    "seoul.co.kr", "mk.co.kr", "hankyung.com", "edaily.co.kr",
-    "fnnews.com", "mt.co.kr", "ohmynews.com", "nocutnews.co.kr",
-    "pressian.com", "mediatoday.co.kr", "newstapa.org",
-    "sisajournal.com", "sisain.co.kr", "newstof.com",
-    "bbc.com", "cnn.com", "youtube.com", "facebook.com", "twitter.com",
-    "instagram.com", "tiktok.com",
+    "youtube.com", "facebook.com", "twitter.com", "instagram.com", "tiktok.com",
+    "play.google.com",
+    # 블로그·커뮤니티
     "tistory.com", "blog.naver.com", "brunch.co.kr", "velog.io",
-    "wikipedia.org", "namu.wiki", "namuwiki.kr",
     "dcinside.com", "fmkorea.com", "ruliweb.com", "clien.net",
+    "wikitree.co.kr",
+    # 백과사전
+    "wikipedia.org", "namu.wiki", "namuwiki.kr", "grandculture.net",
+    # 정부·기관
     "government.kr", "go.kr", "assembly.go.kr",
-    "sports.hankooki.com", "dailysportshankook.co.kr",
-    "imnews.imbc.com", "etnews.com", "zdnet.co.kr",
-    "ibabynews.com", "ablenews.co.kr", "newspim.com",
-    "newstomato.com", "econovill.com", "ajunews.com",
-    "kookbang.dema.mil.kr", "cpbc.co.kr", "munhwa.com",
+    # 전국 통신사
+    "yna.co.kr", "newsis.com", "news1.kr", "yonhapnewstv.co.kr",
+    # 전국 방송
+    "kbs.co.kr", "mbc.co.kr", "sbs.co.kr", "jtbc.co.kr", "tvchosun.com",
+    "ytn.co.kr", "radio.ytn.co.kr", "kbsm.net",
+    # 전국 방송 케이블
+    "news.lghellovision.net", "news.skbroadband.com", "news.bbsi.co.kr",
+    # 전국 종합지
+    "chosun.com", "joongang.co.kr", "donga.com", "hani.co.kr", "khan.co.kr",
+    "seoul.co.kr", "munhwa.com", "naeil.com",
+    # 전국 경제지
+    "mk.co.kr", "hankyung.com", "edaily.co.kr", "fntimes.com",
+    "mt.co.kr", "viva100.com", "biz.heraldcorp.com", "view.asiae.co.kr",
+    "hansbiz.co.kr", "cnbnews.com",
+    # 전국 인터넷 언론
+    "ohmynews.com", "nocutnews.co.kr", "pressian.com", "mediatoday.co.kr",
+    "newstapa.org", "sisajournal.com", "sisain.co.kr", "newstof.com",
+    "newspim.com", "newstomato.com", "econovill.com", "ajunews.com",
+    "ekn.kr", "weeklytoday.com", "enewstoday.co.kr", "econonews.co.kr",
+    "newsfreezone.co.kr", "kpinews.kr", "shinailbo.co.kr",
+    "joygm.com", "hidomin.com", "bzeronews.com", "dtnews24.com",
+    "news2day.co.kr", "getnews.co.kr", "newsworks.co.kr",
+    "newsprime.co.kr", "nspna.com", "m-i.kr", "onews.tv",
+    "newsmaker.or.kr", "newsworker.co.kr", "siminsori.com",
+    "ikbc.co.kr", "skyedaily.com", "slownews.kr", "ppss.kr",
+    "k-knowledge.kr", "ilyoseoul.co.kr",
+    # 전국 전문지 (스포츠·IT·법률·농업 등)
+    "sports.hankooki.com", "dailysportshankook.co.kr", "sportsseoul.com",
+    "daily.hankooki.com", "ilyosisa.co.kr",
+    "imnews.imbc.com", "etnews.com", "zdnet.co.kr", "inews24.com",
+    "lawissue.co.kr", "agrinet.co.kr",
+    "ibabynews.com", "ablenews.co.kr",
+    "catholictimes.org", "minjok.or.kr",
+    "pennmike.com", "hg-times.com", "joongboo.com",
+    # 기타 전국
+    "kookbang.dema.mil.kr", "cpbc.co.kr",
     "safetimes.co.kr", "kukinews.com", "polinews.co.kr",
     "breaknews.com", "gukjenews.com", "apnews.kr",
     "weekly.chosun.com", "monthly.chosun.com",
@@ -68,7 +97,72 @@ MAJOR_HOSTS = {
 PORTAL_PATTERNS = [
     "naver.com", "daum.net", "kakao.com", "tistory.com",
     "blog.", "cafe.", "post.", "m.search", ".tistory.", ".blog.",
+    "grandculture.net",   # 한국학중앙연구원 백과사전
+    "play.google.com",
 ]
+
+# 광역 언론사 — 해당 광역 시군구에서만 유효, 타 광역엔 추가 안 함
+REGIONAL_RESTRICT = {
+    "kyeongin.com":      {"gyeonggi", "incheon"},
+    "incheonilbo.com":   {"incheon"},
+    "incheontoday.com":  {"incheon"},
+    "incheonnews.com":   {"incheon"},
+    "incheonin.com":     {"incheon"},
+    "idomin.com":        {"gyeongnam", "busan", "ulsan"},
+    "ksilbo.co.kr":      {"gyeongnam", "busan", "ulsan"},
+    "knnews.co.kr":      {"gyeongnam", "busan"},
+    "news.knn.co.kr":    {"gyeongnam", "busan"},
+    "kookje.co.kr":      {"busan"},
+    "busan.com":         {"busan"},
+    "iusm.co.kr":        {"ulsan"},
+    "ujeil.com":         {"ulsan"},
+    "idaegu.co.kr":      {"daegu"},
+    "idaegu.com":        {"daegu"},
+    "imaeil.com":        {"daegu", "gyeongbuk"},
+    "yeongnam.com":      {"daegu", "gyeongbuk", "gyeongnam"},
+    "ksmnews.co.kr":     {"gyeongnam"},
+    "gnnews.co.kr":      {"gyeongnam"},
+    "gnmaeil.com":       {"gyeongnam"},
+    "gndomin.com":       {"gyeongnam"},
+    "kyongbuk.co.kr":    {"gyeongbuk"},
+    "kbmaeil.com":       {"gyeongbuk"},
+    "dkilbo.com":        {"gyeongbuk"},
+    "kyeonggi.com":      {"gyeonggi"},
+    "suwonilbo.kr":      {"gyeonggi"},
+    "joongboo.com":      {"gyeonggi"},
+    "kado.net":          {"gangwon"},
+    "kwnews.co.kr":      {"gangwon"},
+    "g1tv.co.kr":        {"gangwon"},
+    "jbnews.com":        {"jeonbuk"},
+    "jbsori.com":        {"jeonbuk"},
+    "jeonmae.co.kr":     {"jeonbuk", "jeonnam"},
+    "jeollailbo.com":    {"jeonbuk", "jeonnam"},
+    "jnilbo.com":        {"jeonnam"},
+    "jndn.com":          {"jeonnam"},
+    "namdonews.com":     {"jeonnam"},
+    "mdilbo.com":        {"gwangju"},
+    "kwangju.co.kr":     {"gwangju"},
+    "siminilbo.co.kr":   {"gwangju", "jeonnam"},
+    "gjdream.com":       {"gwangju"},
+    "kjdaily.com":       {"gwangju"},
+    "cctoday.co.kr":     {"chungnam", "chungbuk", "daejeon", "sejong"},
+    "ccdailynews.com":   {"chungnam", "chungbuk", "daejeon", "sejong"},
+    "ccnnews.co.kr":     {"chungnam", "chungbuk", "daejeon", "sejong"},
+    "goodmorningcc.com": {"chungnam", "chungbuk", "daejeon", "sejong"},
+    "newstnt.com":       {"chungnam", "chungbuk", "daejeon", "sejong"},
+    "cctimes.kr":        {"chungnam", "chungbuk"},
+    "chungnamilbo.co.kr":{"chungnam"},
+    "daejonilbo.com":    {"daejeon"},
+    "dnews.co.kr":       {"daejeon"},
+    "joongdo.co.kr":     {"daejeon", "chungnam"},
+    "jjan.kr":           {"jeonbuk"},
+    "m.jjan.kr":         {"jeonbuk"},
+    "dynews.co.kr":      {"chungbuk"},
+    "inews365.com":      {"chungbuk"},
+    "ccdn.co.kr":        {"chungbuk"},
+    "metroseoul.co.kr":  {"seoul", "gyeonggi", "incheon"},
+    "pn.or.kr":          {"busan", "gyeongnam"},
+}
 
 REGION_NAMES = {
     "seoul": "서울", "busan": "부산", "daegu": "대구",
@@ -262,6 +356,12 @@ def discover_for_district(region_key: str, district: str, inet_db: dict) -> list
         host_names[r["host"]] = r["name"]
         host_src[r["host"]] = "inet_db"
 
+    # 광역 제한 필터 — 타 광역 언론사 제거
+    def is_allowed_for_region(host):
+        if host in REGIONAL_RESTRICT:
+            return region_key in REGIONAL_RESTRICT[host]
+        return True
+
     # 결과 정리 — 1회 이상 등장 또는 DB 등록된 것 모두 채택
     results = []
     seen = set()
@@ -269,6 +369,8 @@ def discover_for_district(region_key: str, district: str, inet_db: dict) -> list
         if host in seen:
             continue
         seen.add(host)
+        if not is_allowed_for_region(host):
+            continue
         results.append({
             "host": host,
             "count": count,
