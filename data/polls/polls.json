@@ -1,5 +1,5 @@
 {
-  "generated": "2026-03-21T11:29:52",
+  "generated": "2026-03-21T03:18:51",
   "totalCount": 842,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
@@ -24,7 +24,50 @@
         "end": "2026-03-18"
       },
       "publishDate": "2026-03-20 10시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 46.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 20.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 3.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "기본소득당",
+          "party": "other",
+          "support": 0.2,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "사회민주당",
+          "party": "other",
+          "support": 1.0,
+          "type": "party_support"
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "party_support",
@@ -28080,7 +28123,32 @@
           "end": "2026-03-17"
         },
         "publishDate": "2026-03-19 16시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "더불어민주당",
+            "party": "democratic",
+            "support": 23.8,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "국민의힘",
+            "party": "ppp",
+            "support": 4.5,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "조국혁신당",
+            "party": "reform",
+            "support": 16.9,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "진보당",
+            "party": "progressive",
+            "support": 42.7,
+            "type": "party_support"
+          }
+        ],
         "regionKey": "gyeongbuk",
         "municipality": "경주시",
         "electionType": "district_mayor",
@@ -28109,7 +28177,23 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-17 14시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김학동",
+            "party": "",
+            "support": 31.0
+          },
+          {
+            "candidateName": "도기욱",
+            "party": "",
+            "support": 34.4
+          },
+          {
+            "candidateName": "안병윤",
+            "party": "",
+            "support": 27.5
+          }
+        ],
         "regionKey": "gyeongbuk",
         "municipality": "예천군",
         "electionType": "district_mayor",
