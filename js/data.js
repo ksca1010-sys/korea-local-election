@@ -115,7 +115,7 @@ const ElectionData = (() => {
             category: 'admin',
             audience: '구·군의 장 / 거소투표 대상자',
             description: '선거인명부를 작성하고 거소투표 신고를 받는 기간이다.',
-            startDate: '2026-05-14',
+            startDate: '2026-05-12',
             endDate: '2026-05-16'
         },
         {
@@ -959,23 +959,24 @@ const ElectionData = (() => {
     }
 
     // 한국갤럽 전국 정당 지지율 데이터 (#4)
-    // 데일리 오피니언 제655호 (2026년 3월 2주)
+    // 데일리 오피니언 제656호 (2026년 3월 3주)
     const gallupNationalPoll = {
         source: '한국갤럽',
-        surveyDate: '2026년 3월 2주',
-        publishDate: '2026-03-12',
-        sampleSize: 1002,
+        surveyDate: '2026년 3월 3주',
+        publishDate: '2026-03-19',
+        sampleSize: 1004,
         method: '',
         confidence: '95%',
         margin: 3.1,
         responseRate: '',
-        reportNo: '데일리 오피니언 제655호',
-        url: 'https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1625',
+        reportNo: '데일리 오피니언 제656호',
+        url: 'https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1627',
         data: {
-            democratic: 47,
+            democratic: 46,
             ppp: 20,
-            reform: 2,
-            independent: 28
+            reform: 3,
+            newReform: 2,
+            independent: 27
         }
     };
 
@@ -2640,6 +2641,22 @@ const ElectionData = (() => {
                     career: m.career || '', isIncumbent: true, status: 'EXPECTED'
                 }));
             }
+            // 기초의원: 현직 데이터에서 선거구 키로 직접 조회
+            if (electionType === 'localCouncil') {
+                const lcData = this._localCouncilMembersCache;
+                if (lcData?.sigungus) {
+                    const normalizedDist = districtName.replace(/\s+/g, '');
+                    const key = `${regionKey}_${normalizedDist}`;
+                    const entry = lcData.sigungus[key]
+                        || lcData.sigungus[`${regionKey}_${districtName}`];
+                    if (entry?.members?.length) {
+                        return entry.members.map(mem => ({
+                            name: mem.name, party: mem.party || 'independent',
+                            career: mem.career || '', isIncumbent: true, status: 'EXPECTED'
+                        }));
+                    }
+                }
+            }
             return [];
         },
 
@@ -3045,7 +3062,13 @@ const ElectionData = (() => {
                 // 실데이터 검증에서 반복 확인된 오염 토큰
                 '비후보','항시장','비서실','경일보','일신문','양뉴스',
                 '구소장','공약','전문성','경험','가능성','이어','부의장','부지사'
-                ,'기타후보','잘모르겠다','적합한','경북교육감','통합교육감'
+                ,'기타후보','잘모르겠다','적합한','경북교육감','통합교육감',
+                // 정당명·정당 약칭 (정당지지도 조사 파싱 오염 방지)
+                '민주당','더불어','국민의힘','개혁신당','혁신당','진보당','조국혁신',
+                '새누리','새정치','바른정당','바른미래','자유한국','열린우리',
+                '국민의당','새시대','한나라당','민주노동','창조한국','미래통합',
+                // 문장 파편
+                '후보가','후보를','후보는','후보의','좋아질','나빠질','인물이','기타후'
             ]);
             const isValidResultName = (name) => {
                 const normalized = normalizeText(name);
