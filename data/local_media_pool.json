@@ -1564,7 +1564,6 @@
     },
     "서구": {
       "hosts": [
-        "daejonilbo.com",
         "tjmbc.co.kr",
         "newdaily.co.kr",
         "gocj.net",
@@ -1852,7 +1851,6 @@
         "tbc.co.kr",
         "journalist.or.kr",
         "dailycc.net",
-        "ccnnews.co.kr",
         "chungnamilbo.co.kr",
         "tjmbc.co.kr",
         "ujeil.com",
@@ -1928,12 +1926,6 @@
           "name": "dailycc.net",
           "src": "kakao",
           "count": 3
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "chungnamilbo.co.kr",
@@ -2368,8 +2360,7 @@
         "cbilbo.com",
         "ccreview.co.kr",
         "inews365.com",
-        "cctimes.kr",
-        "daejonilbo.com"
+        "cctimes.kr"
       ],
       "names": [
         "충북일보",
@@ -2422,12 +2413,6 @@
           "name": "cctimes.kr",
           "src": "naver",
           "count": 6
-        },
-        {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 3
         }
       ]
     },
@@ -2796,7 +2781,6 @@
         "grnews.kr",
         "gyeryongjournal.co.kr",
         "gytoday.kr",
-        "ccnnews.co.kr",
         "cctimes.kr",
         "siminsori.kr"
       ],
@@ -2845,12 +2829,6 @@
           "host": "gytoday.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 10
         },
         {
           "host": "cctimes.kr",
@@ -2930,7 +2908,6 @@
     "금산군": {
       "hosts": [
         "igsnews.co.kr",
-        "geumsan.grandculture.net",
         "geumsan.kpnnews.org",
         "ngknews.co.kr",
         "geumsantoday.com",
@@ -2968,12 +2945,6 @@
           "host": "igsnews.co.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "『금산신문』",
-          "host": "geumsan.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "name": "금산공보뉴스",
@@ -3023,14 +2994,11 @@
       "hosts": [
         "enonsan.com",
         "nsnews.kr",
-        "nonsan.grandculture.net",
         "nsinews.co.kr",
         "ngknews.co.kr",
         "nonsan.kpnnews.org",
         "nonsanilbo.kr",
         "chungnamilbo.co.kr",
-        "ccnnews.co.kr",
-        "daejonilbo.com",
         "siminsori.kr"
       ],
       "names": [
@@ -3071,12 +3039,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "김학용",
-          "host": "nonsan.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "논산인터넷뉴스",
           "host": "nsinews.co.kr",
           "src": "verified",
@@ -3107,18 +3069,6 @@
           "count": 6
         },
         {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
-        },
-        {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 5
-        },
-        {
           "host": "siminsori.kr",
           "name": "siminsori.kr",
           "src": "kakao",
@@ -3129,13 +3079,10 @@
     "당진시": {
       "hosts": [
         "idjnews.kr",
-        "grandculture.net",
-        "dangjin.grandculture.net",
         "dangjinilbo.kr",
         "djtoday.co.kr",
         "djmail.co.kr",
-        "djtimes.co.kr",
-        "daejonilbo.com"
+        "djtimes.co.kr"
       ],
       "names": [
         "당진신문",
@@ -3167,18 +3114,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "당진 신문",
-          "host": "grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "당진 신문",
-          "host": "dangjin.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "당진일보",
           "host": "dangjinilbo.kr",
           "src": "verified",
@@ -3201,12 +3136,6 @@
           "name": "djtimes.co.kr",
           "src": "naver",
           "count": 19
-        },
-        {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 5
         }
       ]
     },
@@ -3215,14 +3144,11 @@
         "charmnews.co.kr",
         "brcity.kr",
         "brcnews.co.kr",
-        "boryeong.grandculture.net",
         "boryeongnews.com",
         "boryeongilbo.kr",
         "chamnews.co.kr",
         "todaybr.net",
-        "daejonilbo.com",
         "chungnamilbo.co.kr",
-        "ccnnews.co.kr",
         "news.einfomax.co.kr"
       ],
       "names": [
@@ -3270,12 +3196,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "『보령신문』",
-          "host": "boryeong.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "(주)보령뉴스",
           "host": "boryeongnews.com",
           "src": "verified",
@@ -3300,20 +3220,8 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 7
-        },
-        {
           "host": "chungnamilbo.co.kr",
           "name": "chungnamilbo.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
           "src": "naver",
           "count": 4
         },
@@ -3328,7 +3236,6 @@
     "부여군": {
       "hosts": [
         "21cbuyeo.co.kr",
-        "buyeo.grandculture.net",
         "bgnews.kr",
         "app.yonhapnews.co.kr"
       ],
@@ -3361,12 +3268,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "name": "『e부여신문』 표지",
-          "host": "buyeo.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "부여군민신문",
           "host": "bgnews.kr",
           "src": "verified",
@@ -3383,14 +3284,11 @@
     "서산시": {
       "hosts": [
         "seosan.me",
-        "seosan.grandculture.net",
         "seosannews.com",
         "ssinews.co.kr",
         "seosanilbo.kr",
         "seosantimes.com",
         "seosanpost.co.kr",
-        "daejonilbo.com",
-        "ccnnews.co.kr",
         "jejusori.net",
         "incheonnews.com",
         "sjsori.com"
@@ -3427,12 +3325,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "서산신문",
-          "host": "seosan.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "seosannews.com",
           "host": "seosannews.com",
           "src": "verified",
@@ -3463,18 +3355,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 7
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
-        },
-        {
           "host": "jejusori.net",
           "name": "jejusori.net",
           "src": "naver",
@@ -3499,7 +3379,6 @@
         "seocheon.newsk.com",
         "seocheonilbo.kr",
         "seocheonmedia.co.kr",
-        "daejonilbo.com",
         "chungnamilbo.co.kr",
         "newstown.co.kr",
         "news.einfomax.co.kr"
@@ -3544,12 +3423,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 5
-        },
-        {
           "host": "chungnamilbo.co.kr",
           "name": "chungnamilbo.co.kr",
           "src": "naver",
@@ -3578,7 +3451,6 @@
         "asanmiraenews.com",
         "assinmun.kr",
         "sisanews24.co.kr",
-        "ccnnews.co.kr",
         "newstown.co.kr"
       ],
       "names": [
@@ -3646,12 +3518,6 @@
           "count": 12
         },
         {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 8
-        },
-        {
           "host": "newstown.co.kr",
           "name": "newstown.co.kr",
           "src": "naver",
@@ -3663,8 +3529,7 @@
       "hosts": [
         "yesm.kr",
         "chungnamilbo.co.kr",
-        "cc.newdaily.co.kr",
-        "ccnnews.co.kr"
+        "cc.newdaily.co.kr"
       ],
       "names": [
         "예산신문",
@@ -3706,12 +3571,6 @@
           "name": "cc.newdaily.co.kr",
           "src": "naver",
           "count": 6
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
         }
       ]
     },
@@ -3721,8 +3580,7 @@
         "canews.kr",
         "casnews.kr",
         "cailbo.com",
-        "sisanews24.co.kr",
-        "ccnnews.co.kr"
+        "sisanews24.co.kr"
       ],
       "names": [
         "천안신문",
@@ -3771,22 +3629,14 @@
           "name": "sisanews24.co.kr",
           "src": "naver",
           "count": 14
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 10
         }
       ]
     },
     "청양군": {
       "hosts": [
         "cnnews.co.kr",
-        "daejonilbo.com",
         "newstown.co.kr",
-        "cctimes.kr",
-        "ccnnews.co.kr"
+        "cctimes.kr"
       ],
       "names": [
         "충청투데이",
@@ -3834,12 +3684,6 @@
           "name": "cctimes.kr",
           "src": "naver",
           "count": 4
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 4
         }
       ]
     },
@@ -3847,10 +3691,8 @@
       "hosts": [
         "taeannews.co.kr",
         "ngonews.kr",
-        "ccnnews.co.kr",
         "popcornnews.net",
-        "djtimes.co.kr",
-        "daejonilbo.com"
+        "djtimes.co.kr"
       ],
       "names": [
         "태안신문",
@@ -3883,12 +3725,6 @@
           "count": 6
         },
         {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
-        },
-        {
           "host": "popcornnews.net",
           "name": "popcornnews.net",
           "src": "naver",
@@ -3899,12 +3735,6 @@
           "name": "djtimes.co.kr",
           "src": "naver",
           "count": 4
-        },
-        {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 4
         }
       ]
     },
@@ -3912,8 +3742,7 @@
       "hosts": [
         "hsnews.co.kr",
         "idjnews.kr",
-        "chungnamilbo.co.kr",
-        "daejonilbo.com"
+        "chungnamilbo.co.kr"
       ],
       "names": [
         "홍성신문",
@@ -3950,12 +3779,6 @@
           "name": "chungnamilbo.co.kr",
           "src": "naver",
           "count": 4
-        },
-        {
-          "host": "daejonilbo.com",
-          "name": "daejonilbo.com",
-          "src": "naver",
-          "count": 3
         }
       ]
     },
@@ -4102,9 +3925,7 @@
     },
     "대덕구": {
       "hosts": [
-        "daejonilbo.com",
         "tjmbc.co.kr",
-        "ccnnews.co.kr",
         "chungnamilbo.co.kr",
         "gocj.net"
       ],
@@ -4145,12 +3966,6 @@
           "src": "metro_fallback"
         },
         {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 14
-        },
-        {
           "host": "chungnamilbo.co.kr",
           "name": "chungnamilbo.co.kr",
           "src": "naver",
@@ -4166,10 +3981,8 @@
     },
     "유성구": {
       "hosts": [
-        "daejonilbo.com",
         "tjmbc.co.kr",
         "chungnamilbo.co.kr",
-        "ccnnews.co.kr",
         "sisaweek.com",
         "cc.newdaily.co.kr",
         "gocj.net"
@@ -4214,12 +4027,6 @@
           "name": "chungnamilbo.co.kr",
           "src": "naver",
           "count": 10
-        },
-        {
-          "host": "ccnnews.co.kr",
-          "name": "ccnnews.co.kr",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "sisaweek.com",
@@ -4519,7 +4326,6 @@
         "soraknews.co.kr",
         "srtoday.co.kr",
         "seoraktimes.com",
-        "sportsseoul.com",
         "djtimes.co.kr"
       ],
       "names": [
@@ -4557,12 +4363,6 @@
           "name": "설악타임즈",
           "host": "seoraktimes.com",
           "src": "web-search"
-        },
-        {
-          "host": "sportsseoul.com",
-          "name": "sportsseoul.com",
-          "src": "naver",
-          "count": 5
         },
         {
           "host": "djtimes.co.kr",
@@ -4778,7 +4578,6 @@
         "iwjnews.com",
         "mbceg.co.kr",
         "chmbc.co.kr",
-        "sportsseoul.com",
         "news.mtn.co.kr"
       ],
       "names": [
@@ -4822,12 +4621,6 @@
           "name": "chmbc.co.kr",
           "src": "naver",
           "count": 7
-        },
-        {
-          "host": "sportsseoul.com",
-          "name": "sportsseoul.com",
-          "src": "naver",
-          "count": 4
         },
         {
           "host": "news.mtn.co.kr",
@@ -6482,7 +6275,6 @@
         "uljinilbo.co.kr",
         "uljintimes.co.kr",
         "m.uljintimes.co.kr",
-        "uljin.grandculture.net",
         "newsfarm.co.kr"
       ],
       "names": [
@@ -6547,12 +6339,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "name": "울진타임즈",
-          "host": "uljin.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "host": "newsfarm.co.kr",
           "name": "newsfarm.co.kr",
           "src": "naver",
@@ -6562,7 +6348,6 @@
     },
     "의성군": {
       "hosts": [
-        "uiseong.grandculture.net",
         "dkilbo.com",
         "andongmbc.co.kr"
       ],
@@ -6588,12 +6373,6 @@
       ],
       "media": [
         {
-          "name": "『의성 신문』 제479호 1면",
-          "host": "uiseong.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "host": "dkilbo.com",
           "name": "dkilbo.com",
           "src": "naver",
@@ -6610,7 +6389,6 @@
     "청도군": {
       "hosts": [
         "chdnews.com",
-        "cheongdo.grandculture.net",
         "cdinews.co.kr",
         "cdtoday.net",
         "dkilbo.com",
@@ -6641,12 +6419,6 @@
         {
           "name": "청도신문",
           "host": "chdnews.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "청도 신문",
-          "host": "cheongdo.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -6710,8 +6482,6 @@
     "칠곡군": {
       "hosts": [
         "ismartnews.com",
-        "chilgok.grandculture.net",
-        "grandculture.net",
         "cginews.net",
         "cginews.co.kr",
         "dkilbo.com"
@@ -6742,18 +6512,6 @@
         {
           "name": "칠곡신문",
           "host": "ismartnews.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "「칠곡신문」",
-          "host": "chilgok.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "name": "칠곡 신문",
-          "host": "grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -6834,9 +6592,7 @@
     "가평군": {
       "hosts": [
         "gpnewsweek.com",
-        "gapyeong.grandculture.net",
         "gp21.com",
-        "grandculture.net",
         "itn21.com",
         "straightnews.co.kr"
       ],
@@ -6870,20 +6626,8 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "가평신문",
-          "host": "gapyeong.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "가평타임즈",
           "host": "gp21.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "가평타임즈",
-          "host": "grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -7026,7 +6770,6 @@
     "광명시": {
       "hosts": [
         "kmtimes.net",
-        "gwangmyeong.grandculture.net",
         "gmilbo.co.kr",
         "chamhanahc.com",
         "gmnewspaper.kr",
@@ -7065,12 +6808,6 @@
           "host": "kmtimes.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "『광명신문』",
-          "host": "gwangmyeong.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "name": "광명일보",
@@ -7125,13 +6862,11 @@
     "광주시": {
       "hosts": [
         "gjilbo.com",
-        "gwangju.grandculture.net",
         "gjnews.net",
         "gjtnews.com",
         "gjitv.co.kr",
         "todaygwangju.com",
         "straightnews.co.kr",
-        "newsworker.co.kr",
         "paxetv.com"
       ],
       "names": [
@@ -7165,12 +6900,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "광주전남언론사",
-          "host": "gwangju.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "광주뉴스",
           "host": "gjnews.net",
           "src": "verified",
@@ -7201,12 +6930,6 @@
           "count": 6
         },
         {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 6
-        },
-        {
           "host": "paxetv.com",
           "name": "paxetv.com",
           "src": "naver",
@@ -7219,7 +6942,6 @@
         "mediamap.co.kr",
         "gnnews.org",
         "guri.himedia.co.kr",
-        "guri.grandculture.net",
         "g-enews.com",
         "joongang.tv"
       ],
@@ -7260,12 +6982,6 @@
         {
           "name": "구리 하이미디어컴퓨터학원",
           "host": "guri.himedia.co.kr",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "name": "남양주 구리 뉴스",
-          "host": "guri.grandculture.net",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
         },
@@ -7452,7 +7168,6 @@
         "nyji.co.kr",
         "nyjnews.net",
         "wa-bu.net",
-        "namyangju.grandculture.net",
         "nyjtoday.com",
         "nyjjn.com"
       ],
@@ -7499,12 +7214,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "남양주뉴스",
-          "host": "namyangju.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "남양주투데이",
           "host": "nyjtoday.com",
           "src": "verified",
@@ -7521,7 +7230,6 @@
     "동두천시": {
       "hosts": [
         "ycgmnews.com",
-        "yangju.grandculture.net",
         "y-ddc.com",
         "obsnews.co.kr",
         "fntoday.co.kr"
@@ -7554,12 +7262,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "동두천신문",
-          "host": "yangju.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "동두천뉴스",
           "host": "y-ddc.com",
           "src": "verified",
@@ -7585,7 +7287,6 @@
         "mypuchon.com",
         "bucheon21.com",
         "bucheonnews.co.kr",
-        "bucheon.grandculture.net",
         "bucheontimes.com",
         "bucheonjournal.com",
         "bcmaeil.com",
@@ -7642,12 +7343,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "부천일보",
-          "host": "bucheon.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "부천타임즈",
           "host": "bucheontimes.com",
           "src": "verified",
@@ -7678,7 +7373,6 @@
         "snbnews.co.kr",
         "snilbo.co.kr",
         "snnews.kr",
-        "seongnam.grandculture.net",
         "sungnammail.co.kr",
         "snsiminnews.kr",
         "snjournal.com",
@@ -7729,12 +7423,6 @@
         {
           "name": "성남뉴스",
           "host": "snnews.kr",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "성남타임즈",
-          "host": "seongnam.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -7883,7 +7571,6 @@
       "hosts": [
         "shnews.net",
         "ssnews.co.kr",
-        "siheung.grandculture.net",
         "shtimes.kr",
         "m-economynews.com",
         "g-enews.com",
@@ -7924,12 +7611,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "시흥신문",
-          "host": "siheung.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "시흥타임즈",
           "host": "shtimes.kr",
           "src": "verified",
@@ -7958,7 +7639,6 @@
     "안산시": {
       "hosts": [
         "ansansm.co.kr",
-        "ansan.grandculture.net",
         "ansannews.co.kr",
         "asinews.co.kr",
         "ansanilbo1.com",
@@ -8003,12 +7683,6 @@
         {
           "name": "안산신문",
           "host": "ansansm.co.kr",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "안산신문",
-          "host": "ansan.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -8226,7 +7900,6 @@
     },
     "양주시": {
       "hosts": [
-        "yangju.grandculture.net",
         "yangjunews.co.kr",
         "simin24.com",
         "etoday.co.kr",
@@ -8253,12 +7926,6 @@
         "cnbnews.com"
       ],
       "media": [
-        {
-          "name": "양주신문",
-          "host": "yangju.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
         {
           "name": "양주뉴스",
           "host": "yangjunews.co.kr",
@@ -8547,7 +8214,6 @@
         "yonginnews.net",
         "yiinews.com",
         "yonginilbo.co.kr",
-        "yongin.grandculture.net",
         "joongangenews.com",
         "thereport.co.kr"
       ],
@@ -8604,12 +8270,6 @@
           "host": "yonginilbo.co.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "『용인시민신문』(구)",
-          "host": "yongin.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "host": "joongangenews.com",
@@ -8682,7 +8342,6 @@
     "의정부시": {
       "hosts": [
         "ujbnews.kr",
-        "yangju.grandculture.net",
         "ujbnews.net",
         "bukbuissue.com",
         "fntoday.co.kr",
@@ -8714,12 +8373,6 @@
         {
           "name": "의정부뉴스",
           "host": "ujbnews.kr",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "의정부인터넷뉴스",
-          "host": "yangju.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -9025,7 +8678,6 @@
     "포천시": {
       "hosts": [
         "ipcs21.com",
-        "pocheon.grandculture.net",
         "pcnt.kr",
         "pcib21.com",
         "pcmn.kr",
@@ -9061,12 +8713,6 @@
           "host": "ipcs21.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "포천 신문사",
-          "host": "pocheon.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "name": "포천 뉴스",
@@ -9203,7 +8849,6 @@
       "hosts": [
         "ihsnews.com",
         "hsinews.com",
-        "hwaseong.grandculture.net",
         "hsnews.kr",
         "hspublicpress.com",
         "hstimes.kr",
@@ -9250,12 +8895,6 @@
         {
           "name": "화성인터넷신문",
           "host": "hsinews.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "화성뉴스",
-          "host": "hwaseong.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -9422,7 +9061,6 @@
       "hosts": [
         "gcinews.asia",
         "gchannews.com",
-        "geochang.grandculture.net",
         "geochangjournal.kr",
         "seobunews.com"
       ],
@@ -9461,12 +9099,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "경남 일보",
-          "host": "geochang.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "거창저널",
           "host": "geochangjournal.kr",
           "src": "verified",
@@ -9485,7 +9117,6 @@
         "gimhaeilbo.com",
         "gimhaeinews.com",
         "gimhaenews.co.kr",
-        "gimhae.grandculture.net",
         "pointe.co.kr",
         "topstarnews.net"
       ],
@@ -9527,12 +9158,6 @@
           "host": "gimhaenews.co.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "『김해뉴스』",
-          "host": "gimhae.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "host": "pointe.co.kr",
@@ -9606,7 +9231,6 @@
     "밀양시": {
       "hosts": [
         "miryang.newsk.com",
-        "miryang.grandculture.net",
         "yangsanilbo.com",
         "ksilbo.co.kr"
       ],
@@ -9636,12 +9260,6 @@
           "host": "miryang.newsk.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "밀양시민신문 사무실 전경",
-          "host": "miryang.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "host": "yangsanilbo.com",
@@ -9758,7 +9376,6 @@
     "양산시": {
       "hosts": [
         "yangsanilbo.com",
-        "yangsan.grandculture.net",
         "ysnews.co.kr",
         "topstarnews.net",
         "ksilbo.co.kr"
@@ -9788,12 +9405,6 @@
           "host": "yangsanilbo.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "양산신문사 전경",
-          "host": "yangsan.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
         },
         {
           "name": "양산시민신문",
@@ -10001,7 +9612,6 @@
       "hosts": [
         "changwonilbo.com",
         "m.changwonilbo.com",
-        "changwon.grandculture.net",
         "mbcgn.kr",
         "straightnews.co.kr",
         "sidae.com"
@@ -10036,12 +9646,6 @@
         {
           "name": "분야별기사",
           "host": "m.changwonilbo.com",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "name": "거창 군민 신문",
-          "host": "changwon.grandculture.net",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
         },
@@ -10142,12 +9746,10 @@
     "하동군": {
       "hosts": [
         "hadongsinmoon.com",
-        "hadong.grandculture.net",
         "hadongnews.co.kr",
         "hadongtimes.com",
         "carmap.co.kr",
         "hadonggol.com",
-        "newsmaker.or.kr",
         "fntoday.co.kr"
       ],
       "names": [
@@ -10181,12 +9783,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "하동정론신문",
-          "host": "hadong.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "하동뉴스",
           "host": "hadongnews.co.kr",
           "src": "verified",
@@ -10211,12 +9807,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "host": "newsmaker.or.kr",
-          "name": "newsmaker.or.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "fntoday.co.kr",
           "name": "fntoday.co.kr",
           "src": "naver",
@@ -10227,7 +9817,6 @@
     "함안군": {
       "hosts": [
         "hanews.co.kr",
-        "haman.grandculture.net",
         "hamannews.kr",
         "hamanna.kr"
       ],
@@ -10260,12 +9849,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "함안 군민 신문",
-          "host": "haman.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "함안뉴스",
           "host": "hamannews.kr",
           "src": "verified",
@@ -10282,7 +9865,6 @@
     "함양군": {
       "hosts": [
         "hamyangnews.com",
-        "hamyang.grandculture.net",
         "m.hytimes.co.kr",
         "hytoday.kr",
         "hygn.co.kr",
@@ -10320,12 +9902,6 @@
           "host": "hamyangnews.com",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "name": "함양신문",
-          "host": "hamyang.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
         },
         {
           "name": "함양타임즈",
@@ -10907,9 +10483,7 @@
       "hosts": [
         "gcnb.tv",
         "hdgochang.co.kr",
-        "gochang.grandculture.net",
         "gcnews.kr",
-        "sjbnews.com",
         "jeollailbo.com",
         "yangsanilbo.com",
         "jjn.co.kr",
@@ -10953,22 +10527,10 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "name": "고창신문",
-          "host": "gochang.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "고창뉴스",
           "host": "gcnews.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 10
         },
         {
           "host": "jeollailbo.com",
@@ -11018,15 +10580,12 @@
       "hosts": [
         "gunsanews.com",
         "newsgunsan.com",
-        "gunsan.grandculture.net",
-        "namwon.grandculture.net",
         "gunsantimes.co.kr",
         "todaygunsan.co.kr",
         "newgunsan.kr",
         "jeollailbo.com",
         "jjn.co.kr",
         "jeonmin.co.kr",
-        "sjbnews.com",
         "m-joongang.com",
         "todayan.com"
       ],
@@ -11068,18 +10627,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "군산뉴스",
-          "host": "gunsan.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "군산일보",
-          "host": "namwon.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "군산타임즈",
           "host": "gunsantimes.co.kr",
           "src": "verified",
@@ -11116,12 +10663,6 @@
           "count": 4
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "m-joongang.com",
           "name": "m-joongang.com",
           "src": "naver",
@@ -11138,10 +10679,8 @@
     "김제시": {
       "hosts": [
         "kimje.newsk.com",
-        "gimje.grandculture.net",
         "jeollailbo.com",
         "jjn.co.kr",
-        "sjbnews.com",
         "jeonmin.co.kr",
         "ibuan.com",
         "jmbc.co.kr",
@@ -11174,12 +10713,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "김제신문사",
-          "host": "gimje.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "host": "jeollailbo.com",
           "name": "jeollailbo.com",
           "src": "naver",
@@ -11190,12 +10723,6 @@
           "name": "jjn.co.kr",
           "src": "naver",
           "count": 12
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 10
         },
         {
           "host": "jeonmin.co.kr",
@@ -11226,12 +10753,10 @@
     "남원시": {
       "hosts": [
         "namwonsinmun.co.kr",
-        "namwon.grandculture.net",
         "namwonnews.com",
         "namwon.net",
         "namwontour.kr",
         "jeollailbo.com",
-        "sjbnews.com",
         "jjn.co.kr",
         "jtv.co.kr",
         "jmbc.co.kr",
@@ -11268,12 +10793,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "남원신문",
-          "host": "namwon.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "np남원뉴스",
           "host": "namwonnews.com",
           "src": "verified",
@@ -11296,12 +10815,6 @@
           "name": "jeollailbo.com",
           "src": "naver",
           "count": 20
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 8
         },
         {
           "host": "jjn.co.kr",
@@ -11340,11 +10853,9 @@
         "mujupaper.com",
         "mujunews.com",
         "muju.kpnnews.org",
-        "muju.grandculture.net",
         "jeollailbo.com",
         "jeonmin.co.kr",
         "jjn.co.kr",
-        "sjbnews.com",
         "jmbc.co.kr",
         "mediaus.co.kr",
         "jtv.co.kr",
@@ -11391,12 +10902,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "전주 일보",
-          "host": "muju.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "host": "jeollailbo.com",
           "name": "jeollailbo.com",
           "src": "naver",
@@ -11411,12 +10916,6 @@
         {
           "host": "jjn.co.kr",
           "name": "jjn.co.kr",
-          "src": "naver",
-          "count": 6
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
           "src": "naver",
           "count": 6
         },
@@ -11455,9 +10954,7 @@
         "mediabuan.co.kr",
         "ssbuan.com",
         "buan.tv",
-        "buan.grandculture.net",
         "jeollailbo.com",
-        "sjbnews.com",
         "jeonmin.co.kr",
         "jtv.co.kr",
         "jjn.co.kr",
@@ -11531,22 +11028,10 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "name": "『부안 저널』 전경",
-          "host": "buan.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "host": "jeollailbo.com",
           "name": "jeollailbo.com",
           "src": "naver",
           "count": 20
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "jeonmin.co.kr",
@@ -11577,7 +11062,6 @@
     "순창군": {
       "hosts": [
         "scnp.kr",
-        "sunchang.grandculture.net",
         "sunchang.kpnnews.org",
         "jeollailbo.com",
         "jjn.co.kr",
@@ -11609,12 +11093,6 @@
         {
           "name": "순창신문",
           "host": "scnp.kr",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "순창 신문",
-          "host": "sunchang.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -11663,7 +11141,6 @@
         "wjgm.co.kr",
         "jjn.co.kr",
         "jeollailbo.com",
-        "sjbnews.com",
         "jmbc.co.kr",
         "beopbo.com",
         "kjmbc.co.kr"
@@ -11720,12 +11197,6 @@
           "count": 12
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 12
-        },
-        {
           "host": "jmbc.co.kr",
           "name": "jmbc.co.kr",
           "src": "naver",
@@ -11748,11 +11219,9 @@
     "익산시": {
       "hosts": [
         "iksannews.com",
-        "iksan.grandculture.net",
         "m.iksannews.com",
         "iksanopennews.com",
         "jeollailbo.com",
-        "sjbnews.com",
         "ibuan.com",
         "jjn.co.kr",
         "jmbc.co.kr",
@@ -11788,12 +11257,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "익산신문",
-          "host": "iksan.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "m.iksannews.com",
           "host": "m.iksannews.com",
           "src": "verified",
@@ -11810,12 +11273,6 @@
           "name": "jeollailbo.com",
           "src": "naver",
           "count": 16
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "ibuan.com",
@@ -11848,7 +11305,6 @@
         "imsil.tv",
         "jeollailbo.com",
         "jjn.co.kr",
-        "sjbnews.com",
         "jmbc.co.kr",
         "mediaus.co.kr",
         "iminju.net",
@@ -11894,12 +11350,6 @@
           "count": 10
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 6
-        },
-        {
           "host": "jmbc.co.kr",
           "name": "jmbc.co.kr",
           "src": "naver",
@@ -11940,7 +11390,6 @@
         "jeollailbo.com",
         "jtv.co.kr",
         "newsian.co.kr",
-        "sjbnews.com",
         "jjn.co.kr",
         "christiandaily.co.kr",
         "todayan.com"
@@ -12010,12 +11459,6 @@
           "count": 4
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "jjn.co.kr",
           "name": "jjn.co.kr",
           "src": "naver",
@@ -12042,7 +11485,6 @@
         "jjmaeil.com",
         "jeollailbo.com",
         "jjn.co.kr",
-        "sjbnews.com",
         "todayan.com"
       ],
       "names": [
@@ -12097,12 +11539,6 @@
           "count": 16
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 6
-        },
-        {
           "host": "todayan.com",
           "name": "todayan.com",
           "src": "kakao",
@@ -12113,13 +11549,11 @@
     "정읍시": {
       "hosts": [
         "jnewsk.com",
-        "jeongeup.grandculture.net",
         "ejeongeup.kr",
         "jeongeup.kpnnews.org",
         "jetoday.net",
         "jeollailbo.com",
         "jjn.co.kr",
-        "sjbnews.com",
         "yangsanilbo.com",
         "jeonmin.co.kr",
         "jmbc.co.kr",
@@ -12155,12 +11589,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "『정읍신문』",
-          "host": "jeongeup.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "정읍포털신문",
           "host": "ejeongeup.kr",
           "src": "verified",
@@ -12191,12 +11619,6 @@
           "count": 12
         },
         {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 10
-        },
-        {
           "host": "yangsanilbo.com",
           "name": "yangsanilbo.com",
           "src": "naver",
@@ -12225,13 +11647,11 @@
     "진안군": {
       "hosts": [
         "janews.co.kr",
-        "jinan.grandculture.net",
         "jinan.kpnnews.org",
         "mjjnews.net",
         "jeollailbo.com",
         "jtv.co.kr",
         "jeonmin.co.kr",
-        "sjbnews.com",
         "jjn.co.kr",
         "jmbc.co.kr",
         "ibuan.com"
@@ -12265,12 +11685,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "진안 신문",
-          "host": "jinan.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "name": "진안공보뉴스",
           "host": "jinan.kpnnews.org",
           "src": "verified",
@@ -12299,12 +11713,6 @@
           "name": "jeonmin.co.kr",
           "src": "naver",
           "count": 6
-        },
-        {
-          "host": "sjbnews.com",
-          "name": "sjbnews.com",
-          "src": "naver",
-          "count": 4
         },
         {
           "host": "jjn.co.kr",
@@ -12399,7 +11807,6 @@
         "newgh.kr",
         "goheungnews.kr",
         "jemin.com",
-        "newsworker.co.kr",
         "jndn.com",
         "tongilnews.com",
         "seoulfn.com"
@@ -12443,12 +11850,6 @@
           "count": 6
         },
         {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "jndn.com",
           "name": "jndn.com",
           "src": "naver",
@@ -12473,7 +11874,6 @@
         "gsilbo.co.kr",
         "injournal.net",
         "jndn.com",
-        "newsworker.co.kr",
         "sisafocus.co.kr",
         "ddanzi.com"
       ],
@@ -12516,12 +11916,6 @@
           "count": 8
         },
         {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "sisafocus.co.kr",
           "name": "sisafocus.co.kr",
           "src": "naver",
@@ -12543,8 +11937,6 @@
         "gykoreaja.com",
         "gymtoday.net",
         "jndn.com",
-        "siminsori.com",
-        "newsworker.co.kr",
         "ysmbc.co.kr"
       ],
       "names": [
@@ -12607,18 +11999,6 @@
           "count": 8
         },
         {
-          "host": "siminsori.com",
-          "name": "siminsori.com",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "ysmbc.co.kr",
           "name": "ysmbc.co.kr",
           "src": "naver",
@@ -12631,7 +12011,6 @@
         "guryenews.com",
         "guryeilbo.com",
         "newsgurye.com",
-        "newsworker.co.kr",
         "sisafocus.co.kr",
         "womennews.co.kr"
       ],
@@ -12675,12 +12054,6 @@
           "address": "(host에 지역 로마자 포함)"
         },
         {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 8
-        },
-        {
           "host": "sisafocus.co.kr",
           "name": "sisafocus.co.kr",
           "src": "naver",
@@ -12702,7 +12075,6 @@
         "xn--910bk8uc9h4pb.com",
         "najutoday.co.kr",
         "jndn.com",
-        "siminsori.com",
         "asiaa.co.kr",
         "ngtv.tv"
       ],
@@ -12766,12 +12138,6 @@
           "count": 4
         },
         {
-          "host": "siminsori.com",
-          "name": "siminsori.com",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "asiaa.co.kr",
           "name": "asiaa.co.kr",
           "src": "naver",
@@ -12793,7 +12159,6 @@
         "dnnews.co.kr",
         "wdynews.co.kr",
         "dymaeil.kr",
-        "newsworker.co.kr",
         "jndn.com",
         "sentv.co.kr",
         "ngtv.tv"
@@ -12857,12 +12222,6 @@
           "host": "dymaeil.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "jndn.com",
@@ -13070,10 +12429,8 @@
         "boseongnews.co.kr",
         "boseong-senior.com",
         "sentv.co.kr",
-        "newsmaker.or.kr",
         "news.mtn.co.kr",
-        "jndn.com",
-        "ikbc.co.kr"
+        "jndn.com"
       ],
       "names": [
         "보성신문",
@@ -13114,12 +12471,6 @@
           "count": 6
         },
         {
-          "host": "newsmaker.or.kr",
-          "name": "newsmaker.or.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
           "host": "news.mtn.co.kr",
           "name": "news.mtn.co.kr",
           "src": "naver",
@@ -13130,12 +12481,6 @@
           "name": "jndn.com",
           "src": "naver",
           "count": 4
-        },
-        {
-          "host": "ikbc.co.kr",
-          "name": "ikbc.co.kr",
-          "src": "naver",
-          "count": 3
         }
       ]
     },
@@ -13218,8 +12563,7 @@
       "hosts": [
         "moneypin.biz",
         "jndn.com",
-        "sentv.co.kr",
-        "ikbc.co.kr"
+        "sentv.co.kr"
       ],
       "names": [
         "신안프레스",
@@ -13257,19 +12601,12 @@
           "name": "sentv.co.kr",
           "src": "naver",
           "count": 6
-        },
-        {
-          "host": "ikbc.co.kr",
-          "name": "ikbc.co.kr",
-          "src": "naver",
-          "count": 4
         }
       ]
     },
     "여수시": {
       "hosts": [
         "yeosunews.net",
-        "yeosu.grandculture.net",
         "xn--vg1bp01abmaj2i.kr",
         "ysnewstimes.com",
         "yeosutimes.com",
@@ -13313,12 +12650,6 @@
         {
           "name": "여수신문",
           "host": "yeosunews.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "여수신문",
-          "host": "yeosu.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -13398,8 +12729,7 @@
         "ygjournal.com",
         "koreareport.co.kr",
         "seoulfn.com",
-        "mediapen.com",
-        "siminsori.com"
+        "mediapen.com"
       ],
       "names": [
         "영광신문",
@@ -13464,28 +12794,17 @@
           "name": "mediapen.com",
           "src": "naver",
           "count": 4
-        },
-        {
-          "host": "siminsori.com",
-          "name": "siminsori.com",
-          "src": "naver",
-          "count": 4
         }
       ]
     },
     "영암군": {
       "hosts": [
         "yasinmoon.com",
-        "yeongam.grandculture.net",
         "yeongam.kpnnews.org",
         "yailbo.com",
         "xn--6e0bx9yjva78vyyac9d.kr",
         "yanews.net",
-        "www.openmedia.co.kr",
-        "siminsori.com",
-        "newsmaker.or.kr",
-        "newsworker.co.kr",
-        "ikbc.co.kr"
+        "www.openmedia.co.kr"
       ],
       "names": [
         "영암신문",
@@ -13519,12 +12838,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "영암 신문사",
-          "host": "yeongam.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "영암공보뉴스",
           "host": "yeongam.kpnnews.org",
           "src": "verified",
@@ -13553,30 +12866,6 @@
           "host": "www.openmedia.co.kr",
           "src": "user-provided",
           "address": ""
-        },
-        {
-          "host": "siminsori.com",
-          "name": "siminsori.com",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "newsmaker.or.kr",
-          "name": "newsmaker.or.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "ikbc.co.kr",
-          "name": "ikbc.co.kr",
-          "src": "naver",
-          "count": 3
         }
       ]
     },
@@ -13929,9 +13218,7 @@
         "hbcnews.kr",
         "hnews.co.kr",
         "hnsori.co.kr",
-        "haenam.grandculture.net",
         "sisafocus.co.kr",
-        "newsworker.co.kr",
         "cfnews.kr",
         "danbinews.com"
       ],
@@ -13976,20 +13263,8 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "해남신문",
-          "host": "haenam.grandculture.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
           "host": "sisafocus.co.kr",
           "name": "sisafocus.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
           "src": "naver",
           "count": 4
         },
@@ -14013,10 +13288,8 @@
         "hwasunnews.co.kr",
         "hsmaeil.co.kr",
         "hwasuntimes.com",
-        "hwasun.grandculture.net",
         "injournal.net",
         "hsjn.co.kr",
-        "newsworker.co.kr",
         "thebigdata.co.kr",
         "ttlnews.com",
         "mhns.co.kr",
@@ -14072,12 +13345,6 @@
           "address": "(매체명 패턴 매칭)"
         },
         {
-          "name": "디지탈 화순 뉴스",
-          "host": "hwasun.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
-        {
           "name": "화순투데이",
           "host": "injournal.net",
           "src": "verified",
@@ -14088,12 +13355,6 @@
           "host": "hsjn.co.kr",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "newsworker.co.kr",
-          "name": "newsworker.co.kr",
-          "src": "naver",
-          "count": 6
         },
         {
           "host": "thebigdata.co.kr",
@@ -14124,7 +13385,6 @@
     "강남구": {
       "hosts": [
         "gangnamnews.net",
-        "gangnam.grandculture.net",
         "egangnam.kr",
         "gangnamtoday.com",
         "gangnamcj.kr",
@@ -14136,8 +13396,7 @@
         "joynews24.com",
         "cbci.co.kr",
         "dailian.co.kr",
-        "dailycc.net",
-        "ntoday.co.kr"
+        "dailycc.net"
       ],
       "names": [
         "강남신문",
@@ -14167,12 +13426,6 @@
         {
           "name": "강남신문",
           "host": "gangnamnews.net",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "강남신문",
-          "host": "gangnam.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -14247,12 +13500,6 @@
           "name": "dailycc.net",
           "src": "kakao",
           "count": 3
-        },
-        {
-          "host": "ntoday.co.kr",
-          "name": "ntoday.co.kr",
-          "src": "naver",
-          "count": 2
         }
       ]
     },
@@ -14487,7 +13734,6 @@
     },
     "구로구": {
       "hosts": [
-        "guro.grandculture.net",
         "boannews.com",
         "cwn.kr",
         "ulsanpress.net",
@@ -14512,12 +13758,6 @@
         "weekly.cnbnews.com"
       ],
       "media": [
-        {
-          "name": "『한국아파트신문』인터넷 메인화면",
-          "host": "guro.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
         {
           "host": "boannews.com",
           "name": "boannews.com",
@@ -14549,7 +13789,6 @@
         "gc-tv.kr",
         "gcnews.tv",
         "bizno.net",
-        "ntoday.co.kr",
         "mediapen.com",
         "ngonews.kr",
         "korea.kr"
@@ -14593,12 +13832,6 @@
           "host": "bizno.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "ntoday.co.kr",
-          "name": "ntoday.co.kr",
-          "src": "naver",
-          "count": 4
         },
         {
           "host": "mediapen.com",
@@ -14714,7 +13947,6 @@
     },
     "도봉구": {
       "hosts": [
-        "dobong.grandculture.net",
         "boannews.com",
         "etoday.co.kr",
         "meconomynews.com"
@@ -14738,12 +13970,6 @@
         "wikitree.co.kr"
       ],
       "media": [
-        {
-          "name": "한겨레 신문",
-          "host": "dobong.grandculture.net",
-          "src": "verified",
-          "address": "(host에 지역 로마자 포함)"
-        },
         {
           "host": "boannews.com",
           "name": "boannews.com",
@@ -14823,7 +14049,6 @@
       "hosts": [
         "thedjnews.com",
         "dongjaknews.com",
-        "ntoday.co.kr",
         "djtimes.co.kr",
         "ibuan.com",
         "mygoyang.com",
@@ -14863,12 +14088,6 @@
           "host": "dongjaknews.com",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "host": "ntoday.co.kr",
-          "name": "ntoday.co.kr",
-          "src": "naver",
-          "count": 4
         },
         {
           "host": "djtimes.co.kr",
@@ -14918,7 +14137,6 @@
       "hosts": [
         "maponews.kr",
         "maposhinmoon.com",
-        "play.google.com",
         "mapotimes.co.kr",
         "dailian.co.kr",
         "m-economynews.com",
@@ -14959,12 +14177,6 @@
           "host": "maposhinmoon.com",
           "src": "verified",
           "address": "(host에 지역 로마자 포함)"
-        },
-        {
-          "name": "마포뉴스",
-          "host": "play.google.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
         },
         {
           "name": "마포타임즈",
@@ -15190,7 +14402,6 @@
       "hosts": [
         "sgilbo.kr",
         "seongdongnews.com",
-        "chilgok.grandculture.net",
         "newsmin.co.kr",
         "kmib.co.kr",
         "siminsori.kr",
@@ -15226,12 +14437,6 @@
         {
           "name": "성동저널",
           "host": "seongdongnews.com",
-          "src": "verified",
-          "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "name": "성동일보",
-          "host": "chilgok.grandculture.net",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
         },
@@ -15569,7 +14774,6 @@
     "용산구": {
       "hosts": [
         "yongsannews.com",
-        "ntoday.co.kr",
         "ngonews.kr",
         "sisaon.co.kr",
         "doctorsnews.co.kr",
@@ -15600,12 +14804,6 @@
           "host": "yongsannews.com",
           "src": "verified",
           "address": "(매체명 패턴 매칭)"
-        },
-        {
-          "host": "ntoday.co.kr",
-          "name": "ntoday.co.kr",
-          "src": "naver",
-          "count": 4
         },
         {
           "host": "ngonews.kr",
@@ -15694,7 +14892,6 @@
         "sisaon.co.kr",
         "sedaily.com",
         "newdaily.co.kr",
-        "ntoday.co.kr",
         "ngonews.kr",
         "straightnews.co.kr",
         "mygoyang.com",
@@ -15762,12 +14959,6 @@
         {
           "host": "newdaily.co.kr",
           "name": "newdaily.co.kr",
-          "src": "naver",
-          "count": 4
-        },
-        {
-          "host": "ntoday.co.kr",
-          "name": "ntoday.co.kr",
           "src": "naver",
           "count": 4
         },
