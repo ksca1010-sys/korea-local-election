@@ -1633,7 +1633,7 @@ const App = (() => {
 
         // 개요 스크립트 영역 숨기기 (비례대표에서는 불필요)
         const overviewCard = document.querySelector('.election-overview-card');
-        if (overviewCard) { overviewCard.innerHTML = ''; overviewCard.style.display = 'none'; }
+        if (overviewCard) { overviewCard.style.display = 'none'; }
         const districtDetail = document.getElementById('district-detail');
         if (districtDetail) districtDetail.style.display = 'none';
         const ovSummary = document.getElementById('overview-summary');
@@ -5447,7 +5447,7 @@ function renderCouncilProvinceView(regionKey, region) {
 
         // 불필요한 빈 박스 숨기기
         const overviewCard = document.querySelector('.election-overview-card');
-        if (overviewCard) { overviewCard.innerHTML = ''; overviewCard.style.display = 'none'; }
+        if (overviewCard) { overviewCard.style.display = 'none'; }
         const districtDetail = document.getElementById('district-detail');
         if (districtDetail) districtDetail.style.display = 'none';
 
