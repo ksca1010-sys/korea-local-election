@@ -16,6 +16,7 @@
 
 import argparse
 import json
+import sys
 from pathlib import Path
 from datetime import date
 
@@ -24,6 +25,10 @@ MAYOR_STATUS = BASE_DIR / "data" / "candidates" / "mayor_status.json"
 MAYOR_CANDIDATES = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
 GOVERNOR_CANDIDATES = BASE_DIR / "data" / "candidates" / "governor.json"
 SUPT_CANDIDATES = BASE_DIR / "data" / "candidates" / "superintendent.json"
+BYELECTION_CANDIDATES = BASE_DIR / "data" / "candidates" / "byelection.json"
+
+# 출처 없어도 허용하는 dataSource (자동 수집 파이프라인 출처)
+TRUSTED_SOURCES = {"incumbent", "news_verified", "claude", "news_factcheck"}
 
 
 def check_acting_consistency(fix=False):
@@ -141,6 +146,73 @@ def check_duplicate_names():
     return issues
 
 
+def check_byelection_duplicates():
+    """5. 재보궐: 같은 인물이 여러 선거구에 등록 (불가능한 케이스 — 하드 오류)"""
+    bye = json.loads(BYELECTION_CANDIDATES.read_text(encoding="utf-8"))
+    name_districts = {}
+    for key, district in bye.get("districts", {}).items():
+        for c in district.get("candidates", []):
+            if c.get("status") == "WITHDRAWN":
+                continue
+            name = c["name"]
+            if name not in name_districts:
+                name_districts[name] = []
+            name_districts[name].append(key)
+    issues = []
+    for name, keys in name_districts.items():
+        if len(keys) > 1:
+            issues.append({"type": "byelection_duplicate", "name": name, "districts": keys})
+    return issues
+
+
+def check_missing_sources():
+    """6. 출처 없는 DECLARED/NOMINATED 후보 — 근거 미확인 경고"""
+    issues = []
+    files = [
+        ("governor", GOVERNOR_CANDIDATES, "governor"),
+        ("superintendent", SUPT_CANDIDATES, "superintendent"),
+    ]
+    for label, path, key in files:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        for region, candidates in data.get("candidates", {}).items():
+            for c in candidates:
+                if c.get("status") not in ("DECLARED", "NOMINATED"):
+                    continue
+                if c.get("dataSource") in TRUSTED_SOURCES:
+                    continue
+                if c.get("sourceUrl") or c.get("sourceLabel"):
+                    continue
+                issues.append({
+                    "type": "missing_source",
+                    "file": label,
+                    "region": region,
+                    "name": c["name"],
+                    "status": c.get("status"),
+                    "dataSource": c.get("dataSource"),
+                })
+
+    # 재보궐도 확인
+    bye = json.loads(BYELECTION_CANDIDATES.read_text(encoding="utf-8"))
+    for key, district in bye.get("districts", {}).items():
+        for c in district.get("candidates", []):
+            if c.get("status") not in ("DECLARED", "NOMINATED"):
+                continue
+            if c.get("dataSource") in TRUSTED_SOURCES:
+                continue
+            if c.get("sourceUrl") or c.get("sourceLabel"):
+                continue
+            issues.append({
+                "type": "missing_source",
+                "file": "byelection",
+                "region": key,
+                "name": c["name"],
+                "status": c.get("status"),
+                "dataSource": c.get("dataSource"),
+            })
+
+    return issues
+
+
 def main():
     parser = argparse.ArgumentParser(description="후보자 다중 교차 검증")
     parser.add_argument("--fix", action="store_true", help="자동 수정")
@@ -154,30 +226,47 @@ def main():
     issues1 = check_acting_consistency(fix=args.fix)
     print(f"\n[1] 권한대행 vs 후보자 불일치: {len(issues1)}건")
     for i in issues1:
-        print(f"  ⚠️ {i['region']}/{i['district']}: {i['name']} ({i['current_status']}) — {i['reason']}")
+        print(f"  ⚠️  {i['region']}/{i['district']}: {i['name']} ({i['current_status']}) — {i['reason']}")
 
     # 2. 광역 출마자 중복
     issues2 = check_governor_overlap()
     print(f"\n[2] 광역 출마자가 기초에 남아있음: {len(issues2)}건")
     for i in issues2:
-        print(f"  ⚠️ {i['region']}/{i['district']}: {i['name']} (기초 {i['mayor_status']})")
+        print(f"  ⚠️  {i['region']}/{i['district']}: {i['name']} (기초 {i['mayor_status']})")
 
     # 3. 교육감 출마자 중복
     issues3 = check_superintendent_overlap()
     print(f"\n[3] 교육감 출마자가 기초에 남아있음: {len(issues3)}건")
     for i in issues3:
-        print(f"  ⚠️ {i['region']}/{i['district']}: {i['name']}")
+        print(f"  ⚠️  {i['region']}/{i['district']}: {i['name']}")
 
-    # 4. 중복 이름
+    # 4. 기초 중복 이름
     issues4 = check_duplicate_names()
     print(f"\n[4] 같은 이름 여러 시군구 등록: {len(issues4)}건")
     for i in issues4:
-        print(f"  ⚠️ {i['name']}: {', '.join(i['locations'])}")
+        print(f"  ⚠️  {i['name']}: {', '.join(i['locations'])}")
 
-    total = len(issues1) + len(issues2) + len(issues3) + len(issues4)
+    # 5. 재보궐 인물 중복 (하드 오류)
+    issues5 = check_byelection_duplicates()
+    print(f"\n[5] 재보궐 동일 인물 중복 선거구: {len(issues5)}건")
+    for i in issues5:
+        print(f"  🚨 {i['name']}: {', '.join(i['districts'])}")
+
+    # 6. 출처 없는 DECLARED/NOMINATED (경고)
+    issues6 = check_missing_sources()
+    print(f"\n[6] 출처 미확인 DECLARED/NOMINATED: {len(issues6)}건")
+    for i in issues6:
+        print(f"  ⚠️  [{i['file']}] {i['region']}: {i['name']} ({i['status']}, dataSource={i['dataSource']})")
+
+    total = len(issues1) + len(issues2) + len(issues3) + len(issues4) + len(issues5) + len(issues6)
     print(f"\n총 이슈: {total}건")
     if args.fix:
         print("(자동 수정 적용됨)")
+
+    # 하드 오류: 재보궐 중복은 CI 실패 처리
+    if issues5:
+        print("\n[오류] 재보궐 중복 인물이 있습니다. 데이터를 수정 후 다시 실행하세요.")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
