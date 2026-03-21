@@ -60,7 +60,7 @@
     --header-height: 56px;
     --footer-height: 44px;
     --sidebar-width: 320px;
-    --panel-width: 420px;
+    --panel-width: 520px;
 
     /* 타이포 — Inter + Public Sans 기반 */
     --font-family: 'Inter', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -2791,14 +2791,14 @@ canvas {
 @media (max-width: 1400px) {
     :root {
         --sidebar-width: 280px;
-        --panel-width: 380px;
+        --panel-width: 460px;
     }
 }
 
 @media (max-width: 1200px) {
     :root {
         --sidebar-width: 260px;
-        --panel-width: 360px;
+        --panel-width: 400px;
     }
 
     .header-subtitle {
