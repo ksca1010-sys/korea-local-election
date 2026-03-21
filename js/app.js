@@ -1584,33 +1584,11 @@ const App = (() => {
             updatedText = meta.updatedAt;
         }
 
-        const methodLabelMap = {
-            'news-keyword-weighted-v1': '뉴스 키워드 가중치 v1',
-            'news-detailed-topic-weighted-v2': '뉴스 세부주제 가중치 v2',
-            'news-detailed-topic-weighted-v3': '뉴스 세부주제+추세 v3'
-        };
-        const methodLabel = methodLabelMap[meta.methodology] || meta.methodology;
-        const evidenceItems = issues.map((issue) => {
-            const sig = signals?.[issue];
-            if (!sig) return null;
-            const sourceText = Array.isArray(sig.topSources) && sig.topSources.length
-                ? sig.topSources.join(', ')
-                : '출처 집계 중';
-            return `
-                <div class="issues-evidence-item">
-                    <span class="issue-name">${issue}</span>
-                    <span class="issue-evidence-meta">7일 ${sig.count7 || 0}건 · 30일 ${sig.count30 || 0}건 · 추세 ${sig.trend || '유지'}</span>
-                    <span class="issue-evidence-source">${sourceText}</span>
-                </div>
-            `;
-        }).filter(Boolean).join('');
-
         return `
             ${tagsHtml}
             <div class="issues-meta">
-                산출 시각: ${updatedText} · 방식: ${methodLabel}
+                산출 시각: ${updatedText}
             </div>
-            ${evidenceItems ? `<div class="issues-evidence">${evidenceItems}</div>` : ''}
         `;
     }
 
@@ -2222,7 +2200,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     if (trendBadge) trendBadge.textContent = ov.trend || '';
                     if (updatedDate) {
                         const updated = ElectionData._overviewCache?.meta?.lastUpdated || '';
-                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--color-warning);margin-left:var(--space-4);"><i class="fas fa-robot"></i> AI 생성</span>`;
+                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--text-muted);margin-left:var(--space-4);">AI 분석</span>`;
                     }
                     if (headline) headline.textContent = ov.headline || '';
 
@@ -2507,16 +2485,6 @@ function renderCouncilProvinceView(regionKey, region) {
         }
     }
 
-    function getCandidateSourceLabel(source) {
-        switch (source) {
-            case 'news':
-                return '뉴스 기준';
-            case 'poll':
-                return '여론조사 기준';
-            default:
-                return '';
-        }
-    }
 
     function buildCandidateTabModel(regionKey) {
         // 재보궐: byelection.json에서 후보 로드
@@ -2536,7 +2504,6 @@ function renderCouncilProvinceView(regionKey, region) {
                             pledges: Array.isArray(c.pledges) ? c.pledges.filter(Boolean) : [],
                             status: c.status,
                             statusMeta: getCandidateStatusMeta(c.status),
-                            sourceLabel: getCandidateSourceLabel(c.dataSource),
                             incumbent: false,
                         })),
                     emptyMessage: '등록된 재보궐 후보 데이터가 없습니다. 공천 확정 후 업데이트됩니다.'
@@ -2562,7 +2529,6 @@ function renderCouncilProvinceView(regionKey, region) {
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
                     status: candidate.status,
                     statusMeta: getCandidateStatusMeta(candidate.status),
-                    sourceLabel: getCandidateSourceLabel(candidate.dataSource),
                     incumbent: incumbentName === candidate.name
                 })),
                 emptyMessage: '등록된 광역단체장 후보 데이터가 없습니다.'
@@ -2608,7 +2574,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     name: candidate.name,
                     party: candidate.party || districtSummary?.leadParty || 'independent',
                     age: null,
-                    career: '실측 여론조사 기반 후보명',
+                    career: '',
                     pledges: []
                 }));
 
@@ -2782,7 +2748,6 @@ function renderCouncilProvinceView(regionKey, region) {
                     <div class="cand-card-footer">
                         ${candidate.incumbent ? `<span class="cand-incumbent-badge"><i class="fas fa-star"></i>현직</span>` : ''}
                         ${candidate.statusMeta ? `<span class="cand-status-badge" style="${candidate.statusMeta.style}">${candidate.statusMeta.label}</span>` : ''}
-                        ${candidate.sourceLabel ? `<span class="cand-source-badge"><i class="fas fa-database"></i>${candidate.sourceLabel}</span>` : ''}
                     </div>
                 </div>
             `;}).join('')}
