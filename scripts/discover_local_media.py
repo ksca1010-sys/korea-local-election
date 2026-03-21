@@ -108,6 +108,27 @@ MAJOR_HOSTS = {
     "ttlnews.com", "newscj.com", "ggilbo.com",
     "g-enews.com", "worldkorean.net", "fieldnews.kr",
     "cbci.co.kr", "mediawatch.kr", "kgnews.co.kr",
+    # 전국 정제 2차 — 지리 불일치·전문지·정부청사
+    "weeklytrade.co.kr", "pointdaily.co.kr", "seoulfn.com", "moneypin.biz",
+    "news.einfomax.co.kr", "globalepic.co.kr", "dailyimpact.co.kr", "ebn.co.kr",
+    "sateconomy.co.kr", "webeconomy.co.kr", "esgeconomy.com", "kbiznews.co.kr",
+    "moneys.co.kr", "bizno.net",
+    "ichannela.com", "news.heraldcorp.com", "biz.heraldm.com", "metroseoul.co.kr",
+    "newsway.co.kr", "news.cjhello.com", "weekly.hankooki.com", "futurechosun.com",
+    "thekoreantoday.com", "insight.co.kr",
+    "kyosu.net", "laborplus.co.kr", "news.inochong.org", "labortoday.co.kr",
+    "safetynews.co.kr", "startuptoday.co.kr", "tournews21.com", "smartbizn.com",
+    "dailyvet.co.kr", "dentalnews.or.kr", "artinsight.co.kr", "ibulgyo.com",
+    "multi-culture.co.kr", "presscoop.com", "lawtimes.co.kr", "lawtalknews.co.kr",
+    "lawleader.co.kr", "k-health.com", "digitalbizon.com", "news.dongascience.com",
+    "newsculture.press",
+    "catchnews.kr", "gokorea.kr", "tcatmon.com", "nbntv.kr", "ikld.kr",
+    "inthenews.co.kr", "hdhy.co.kr", "dhnews.co.kr", "lcnews.co.kr", "mhj21.com",
+    "jemin.com", "hbnpress.com", "iminju.net", "kfenews.co.kr",
+    "newskr.kr", "newswhoplus.com", "newsverse.kr", "sisunnews.co.kr",
+    "tfnews.co.kr", "ditoday.com", "sidae.com",
+    "korea.kr", "gangseo.seoul.kr", "gsc.gangseo.seoul.kr", "junggu.seoul.kr",
+    "jwomen.or.kr", "maria.catholic.or.kr",
 }
 
 PORTAL_PATTERNS = [
