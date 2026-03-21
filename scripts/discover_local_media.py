@@ -100,10 +100,14 @@ MAJOR_HOSTS = {
     "banronbodo.com", "sisafocus.co.kr", "sisaon.co.kr",
     "discoverynews.kr", "asiaa.co.kr", "news.unn.net",
     "news.dealsitetv.com", "newsmin.co.kr", "m-economynews.com",
-    "news.tf.co.kr", "news.ifm.kr", "youthdaily.co.kr",
+    "news.tf.co.kr", "youthdaily.co.kr",
     "dailycc.net", "domin.co.kr",
     "breaknews.com", "gukjenews.com", "apnews.kr",
     "weekly.chosun.com", "monthly.chosun.com",
+    # 재탐색 10구 정제에서 추가된 전국지·허수
+    "ttlnews.com", "newscj.com", "ggilbo.com",
+    "g-enews.com", "worldkorean.net", "fieldnews.kr",
+    "cbci.co.kr", "mediawatch.kr", "kgnews.co.kr",
 }
 
 PORTAL_PATTERNS = [
