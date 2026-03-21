@@ -3567,6 +3567,10 @@ function renderCouncilProvinceView(regionKey, region) {
             ...(localRegistry?.province?.hosts?.tier2 || [])
         ];
 
+        // 광역·기초의원은 전국언론보다 지역언론이 실질적으로 더 중요 →
+        // preferPopularity + locality 가중치 높게 설정
+        const councilScoreWeights = { time: 0.25, relevance: 0.20, credibility: 0.08, locality: 0.40, engagement: 0.07 };
+
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
@@ -3575,6 +3579,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [`${regionName} ${typeLabel} 공천`, `${regionName} 지방선거 ${typeShort}`],
                 focusKeywords: [typeShort, typeLabel, '공천', '선거구', '후보'],
                 boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                preferPopularity: true, scoreWeightsOverride: councilScoreWeights,
                 strict: { mustAny: [typeShort, typeLabel, '의원'], targetAny: [regionName], excludeAny: ['도지사', '교육감', '국회의원', '국회'] },
                 relaxed: { mustAny: [typeShort, typeLabel], targetAny: [regionName], excludeAny: ['도지사', '교육감', '국회의원'] }
             },
@@ -3585,6 +3590,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [`${regionName} ${typeLabel} 공천`, `${regionName} ${typeShort} 경선`],
                 focusKeywords: ['공천', '경선', '당선권', '전략공천', '컷오프'],
                 boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                preferPopularity: true, scoreWeightsOverride: councilScoreWeights,
                 strict: { mustAny: ['공천', '경선', '전략공천'], targetAny: [regionName, typeShort, typeLabel], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: ['공천', '경선'], targetAny: [regionName], excludeAny: ['도지사', '교육감'] }
             },
@@ -3595,6 +3601,7 @@ function renderCouncilProvinceView(regionKey, region) {
                 altQueries: [`${regionName} ${typeLabel} 출마`, `${regionName} ${typeShort} 후보`],
                 focusKeywords: [typeShort, '후보', '출마', '현역'],
                 boostHosts: localHosts, boostWeight: 5, localMediaPriority: true, _regionKey: regionKey,
+                preferPopularity: true, scoreWeightsOverride: councilScoreWeights,
                 strict: { mustAny: [typeShort, typeLabel], targetAny: ['후보', '출마', '현역', regionName], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [typeShort, typeLabel], targetAny: [regionName], excludeAny: ['도지사', '교육감'] }
             }
@@ -3680,6 +3687,8 @@ function renderCouncilProvinceView(regionKey, region) {
             const byeData = ElectionData.getByElectionData(currentDistrictName);
             const distName = byeData?.district || currentDistrictName;
             const exactDist = `"${distName}"`;
+            // 총선·대선·전당대회 관련 기사 혼입 방지 (지역구명이 총선 기사에도 등장하므로)
+            const byeExclude = ['국회의원', '총선', '대선', '대통령', '전당대회', '당대표', '원내대표', '당권'];
             categories = [
                 {
                     label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
@@ -3687,8 +3696,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     maxAgeDays: 60,
                     altQueries: [`${exactDist} 선거`, `${exactDist} 후보 출마`, `${exactDist} 공천`, `${exactDist} 여론조사`, `${exactDist} 공약`],
                     focusKeywords: ['보궐', '재보궐', '후보', '공천', '출마', '선거', '여론조사', '공약'],
-                    strict: { mustAny: [distName], targetAny: [distName, distName.split(' ').pop(), '보궐', '선거', '후보', '공천', '출마'], excludeAny: [] },
-                    relaxed: { mustAny: [distName.split(' ').pop()], targetAny: [distName.split(' ').pop(), '보궐', '선거'], excludeAny: [] }
+                    strict: { mustAny: [distName], targetAny: [distName, distName.split(' ').pop(), '보궐', '선거', '후보', '공천', '출마'], excludeAny: byeExclude },
+                    relaxed: { mustAny: [distName.split(' ').pop()], targetAny: [distName.split(' ').pop(), '보궐', '선거'], excludeAny: byeExclude }
                 },
                 {
                     label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
@@ -3696,8 +3705,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     maxAgeDays: 60,
                     altQueries: [`${exactDist} 지지율`, `${exactDist} 적합도 조사`],
                     focusKeywords: ['여론조사', '지지율', '적합도', '지지도'],
-                    strict: { mustAny: [distName], targetAny: ['여론조사', '지지율', '적합도'], excludeAny: [] },
-                    relaxed: { mustAny: [distName], targetAny: ['여론조사', '지지율'], excludeAny: [] }
+                    strict: { mustAny: [distName], targetAny: ['여론조사', '지지율', '적합도'], excludeAny: byeExclude },
+                    relaxed: { mustAny: [distName], targetAny: ['여론조사', '지지율'], excludeAny: byeExclude }
                 },
                 {
                     label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
@@ -3705,8 +3714,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     maxAgeDays: 60,
                     altQueries: [`${exactDist} 예비후보 경선`, `${exactDist} 출마 선언`, `${exactDist} 출판기념회`],
                     focusKeywords: ['후보', '공천', '출마', '경선', '예비후보', '출판기념회'],
-                    strict: { mustAny: [distName], targetAny: ['후보', '출마', '공천'], excludeAny: [] },
-                    relaxed: { mustAny: [distName], excludeAny: [] }
+                    strict: { mustAny: [distName], targetAny: ['후보', '출마', '공천'], excludeAny: byeExclude },
+                    relaxed: { mustAny: [distName], excludeAny: byeExclude }
                 },
                 {
                     label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
@@ -3714,8 +3723,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     maxAgeDays: 60,
                     altQueries: [`${exactDist} 현안 쟁점`, `${exactDist} 지역 과제`],
                     focusKeywords: ['공약', '정책', '현안', '쟁점', '과제', '비전'],
-                    strict: { mustAny: [distName], targetAny: ['공약', '정책', '현안'], excludeAny: [] },
-                    relaxed: { mustAny: [distName], excludeAny: [] }
+                    strict: { mustAny: [distName], targetAny: ['공약', '정책', '현안'], excludeAny: byeExclude },
+                    relaxed: { mustAny: [distName], excludeAny: byeExclude }
                 },
             ];
         } else if (currentElectionType === 'superintendent') {
@@ -4134,7 +4143,15 @@ function renderCouncilProvinceView(regionKey, region) {
             return { ok: focusKeywords.length === 0 || score > 0, score };
         }
 
-        const hasAny = (words) => Array.isArray(words) && words.some(w => text.includes(String(w).toLowerCase()));
+        // 형태소 경계 보완: 2자 이하 단어는 앞뒤에 한글이 붙으면 다른 단어의 일부로 간주해 제외
+        // 예: "지사" → "지사관" "고지사항" 오탐 방지. 3자 이상은 단순 includes 유지 (성능·실용성)
+        const hasWord = (w, t) => {
+            const s = String(w).toLowerCase();
+            if (s.length >= 3) return t.includes(s);
+            const re = new RegExp(`(?<![가-힣])${s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}(?![가-힣])`);
+            return re.test(t);
+        };
+        const hasAny = (words) => Array.isArray(words) && words.some(w => hasWord(w, text));
         const pollText = `${item.title || ''} ${item.description || ''}`;
         const percentMatches = pollText.match(/[0-9]{1,2}(?:\.[0-9])?\s?%/g) || [];
         const hasPercentPattern = /([0-9]{1,2}(\.[0-9])?\s?%|[0-9]{1,2}\.[0-9]\s?%p|오차범위|표본오차|응답률|표본\s?[0-9])/i.test(pollText);
@@ -4191,7 +4208,9 @@ function renderCouncilProvinceView(regionKey, region) {
             if (percentMatches.length >= 2) pollEvidenceScore += 1;
             if (hasPollMethodology) pollEvidenceScore += 1;
             if (hasPollAgency) pollEvidenceScore += 1;
-            const requiredEvidence = mode === 'relaxed' ? 2 : 3;
+            // description이 짧으면(50자 미만) API가 본문을 거의 안 준 것 — evidence 기준 1 완화
+            const descIsShort = (item.description || '').length < 50;
+            const requiredEvidence = mode === 'relaxed' ? (descIsShort ? 1 : 2) : (descIsShort ? 2 : 3);
             if (pollEvidenceScore < requiredEvidence) {
                 return { ok: false, score: 0 };
             }
@@ -4208,32 +4227,9 @@ function renderCouncilProvinceView(regionKey, region) {
         if (title.includes('여론조사')) score += 1;
         if (hasPercentPattern) score += 1;
 
-        // 선거유형별 언론사 가중치
-        if (item.link) {
-            const host = item.link.toLowerCase();
-            // 전문/지역 언론사 부스트
-            if (Array.isArray(category?.boostHosts) && category.boostHosts.some(h => host.includes(h))) {
-                score += category.boostWeight || 3;
-            }
-            // 지역언론 부스트 (Registry + MediaPool 통합)
-            if (category?.localMediaPriority) {
-                const rk = category._regionKey;
-                const localRegistry = window.LocalMediaRegistry?.regions?.[rk];
-                const registryHosts = [
-                    ...(localRegistry?.province?.hosts?.tier1 || []),
-                    ...(localRegistry?.province?.hosts?.tier2 || [])
-                ];
-                // MediaPool hosts
-                const pool = window.LocalMediaPool;
-                const poolMetro = pool?.metro?.[ElectionData.getRegion(rk)?.name]?.hosts || [];
-                const poolMuni = (category._districtName && pool?.municipal?.[category._districtName]?.hosts) || [];
-                const allLocalHosts = [...new Set([...registryHosts, ...poolMetro, ...poolMuni])];
-
-                if (allLocalHosts.some(h => host.includes(h))) {
-                    score += 5; // 지역언론 강력 부스트
-                }
-            }
-        }
+        // 언론사 가중치는 fetchLatestNews의 localityScore / credibilityScore 에서 일괄 처리
+        // (여기서 relevance에 직접 더하면 점수 채널이 두 곳이 되어 locality가 이중 반영됨)
+        // boostHosts는 필터 통과 여부(ok) 판단에만 참고하고 score에는 더하지 않음
 
         return { ok: true, score };
     }
@@ -4324,12 +4320,19 @@ function renderCouncilProvinceView(regionKey, region) {
                 }).filter(x => x.ok);
 
                 const normalizeTitleKey = (title) => String(title || '').toLowerCase().replace(/\s+/g, ' ').trim();
+                // URL 기반 중복 추적: originallink가 같은 기사는 도메인이 달라도 동일 기사로 처리
+                const seenUrls = new Set();
                 const dedup = new Map();
                 matched.forEach(({ item, relevance }) => {
                     const title = sanitizeHtml(item.title || '');
                     const origin = sanitizeHtml(item.originallink || item.link || '');
                     const host = getHostFromUrl(origin);
                     const publishedAt = item.pubDate ? Date.parse(item.pubDate) : 0;
+                    // 동일 originallink는 먼저 들어온 것만 남김 (받아쓰기 중복 제거)
+                    if (origin && origin !== '#') {
+                        if (seenUrls.has(origin)) return;
+                        seenUrls.add(origin);
+                    }
                     const normalizedKey = `${normalizeTitleKey(title)}|${host}`;
                     const candidate = {
                         title,
@@ -4472,11 +4475,17 @@ function renderCouncilProvinceView(regionKey, region) {
                 if (preferPopularity) {
                     const defaultSw = NEWS_FILTER_CONFIG.scoreWeights || { time: 0.32, relevance: 0.30, credibility: 0.18, locality: 0.15, engagement: 0.05 };
                     const sw = selectedCategory.scoreWeightsOverride || defaultSw;
+                    // relevance 정규화: 카테고리별 focusKeywords 수 + boostAny 2점 + 기타 보너스 4점을 상한으로 사용
+                    // 하드코딩 /8 대신 카테고리 실제 가중치 상한에 맞춘 동적 maxScore
+                    const focusCount = Array.isArray(selectedCategory.focusKeywords) ? selectedCategory.focusKeywords.length : 0;
+                    const boostMax = 2; // boostAny 최대 보너스
+                    const extraMax = 4; // 여론조사 evidence + 기타 보너스
+                    const relevanceMaxScore = Math.max(focusCount + boostMax + extraMax, 8);
                     items.forEach((item) => {
                         const ageDays = (Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24);
                         const recencyScore = Math.max(0, 1 - (ageDays / Math.max(1, dayLimit)));
                         const simScore = rankToScore(item.simRank);
-                        const relevanceScore = Math.min(1, item.relevance / 8);
+                        const relevanceScore = Math.min(1, item.relevance / relevanceMaxScore);
                         const credibilityScore = isMajorOutlet(item.host) ? 1 : isLocalTier1(item.host) ? 0.85 : isLocalMedia(item.host) ? 0.75 : 0.4;
                         const localityScore = isLocalMedia(item.host) ? 1 : 0;
                         item.isLocalMedia = isLocalMedia(item.host);
@@ -4497,7 +4506,12 @@ function renderCouncilProvinceView(regionKey, region) {
             };
 
             let allItems = runFilter('strict', maxAgeDays);
-            if (allItems.length < 3) {
+            // relaxed 폴백 조건: 기사가 5건 미만이면서 평균 relevance가 2 이하인 경우만 허용
+            // (기사 수만으로 폴백하면 품질 낮은 기사가 대거 유입됨)
+            const strictAvgRelevance = allItems.length
+                ? allItems.reduce((s, x) => s + (x.relevance || 0), 0) / allItems.length
+                : 0;
+            if (allItems.length < 5 && strictAvgRelevance <= 2) {
                 allItems = runFilter('relaxed', maxAgeDays);
             }
 
