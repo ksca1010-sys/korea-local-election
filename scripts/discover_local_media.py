@@ -90,6 +90,18 @@ MAJOR_HOSTS = {
     # 기타 전국
     "kookbang.dema.mil.kr", "cpbc.co.kr",
     "safetimes.co.kr", "kukinews.com", "polinews.co.kr",
+    # 재탐색에서 발견된 전국지 추가
+    "segye.com", "asiatoday.co.kr", "ilyo.co.kr", "ntoday.co.kr",
+    "newdaily.co.kr", "ic.newdaily.co.kr", "cc.newdaily.co.kr",
+    "sedaily.com", "journalist.or.kr", "kmib.co.kr", "nongmin.com",
+    "mediapen.com", "dailian.co.kr", "womaneconomy.co.kr",
+    "boannews.com", "etoday.co.kr", "newswatch.kr", "joseilbo.com",
+    "fntoday.co.kr", "goodnews1.com", "ngonews.kr", "akomnews.com",
+    "banronbodo.com", "sisafocus.co.kr", "sisaon.co.kr",
+    "discoverynews.kr", "asiaa.co.kr", "news.unn.net",
+    "news.dealsitetv.com", "newsmin.co.kr", "m-economynews.com",
+    "news.tf.co.kr", "news.ifm.kr", "youthdaily.co.kr",
+    "dailycc.net", "domin.co.kr",
     "breaknews.com", "gukjenews.com", "apnews.kr",
     "weekly.chosun.com", "monthly.chosun.com",
 }
