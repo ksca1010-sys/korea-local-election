@@ -1,14 +1,15 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-19",
+    "lastUpdated": "2026-03-22",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-20",
-    "lastSyncFromOverview": "2026-03-17",
+    "lastFactCheck": "2026-03-22T02:10:59.137481",
+    "lastSyncFromOverview": "2026-03-22",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
     "lastPledgeCollection": "2026-03-19T13:20:26.947705",
     "sourceUrlCoverage": "0%",
-    "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
+    "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
+    "lastByelectionSync": "2026-03-22"
   },
   "candidates": {
     "seoul": {
@@ -987,6 +988,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "황인식이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "강남구": [
@@ -2203,6 +2212,16 @@
           "sourceLabel": null,
           "sourcePublishedAt": null
         }
+      ],
+      "남구": [
+        {
+          "name": "조재구",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
       ]
     },
     "incheon": {
@@ -2540,6 +2559,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "구청장도",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "제물포구": [
@@ -2637,6 +2664,34 @@
           "sourceLabel": null,
           "sourcePublishedAt": null
         }
+      ],
+      "동구": [
+        {
+          "name": "신효철",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "김찬진",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
+      ],
+      "서구": [
+        {
+          "name": "강범석",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        }
       ]
     },
     "gwangju": {
@@ -2689,6 +2744,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "이상이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "남구": [
@@ -4657,6 +4720,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "신임",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "광주시": [
@@ -4859,6 +4930,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "정동균",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "가평군": [
@@ -5155,6 +5234,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "한편",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "태백시": [
@@ -5263,6 +5350,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "주대하",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "고성군": [
@@ -5380,6 +5475,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "한수현",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "홍천군": [
@@ -5810,6 +5913,22 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "이후",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "서민석",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "충주시": [
@@ -6210,6 +6329,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김흥식",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "아산시": [
@@ -6316,6 +6443,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "권에서는",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "금산군": [
@@ -6572,6 +6707,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "장병길",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "당진시": [
@@ -6819,6 +6962,22 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "최근",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "심보균",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "정읍시": [
@@ -7189,6 +7348,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김성태",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ]
     },
@@ -7915,6 +8082,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "조사에서",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "영암군": [
@@ -7952,6 +8127,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "최영열이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "무안군": [
@@ -8167,6 +8350,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김행원",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ]
     },
@@ -8816,6 +9007,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "정영길이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "칠곡군": [
@@ -9201,6 +9400,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "고성군수",
+          "party": "ppp",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "사천시": [
@@ -9376,6 +9583,22 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "김선민",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "윤부원",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "의령군": [
