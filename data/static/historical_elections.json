@@ -9,7 +9,7 @@
       "runner": "independent",
       "runnerName": "박찬종",
       "runnerRate": 33.5,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -20,7 +20,7 @@
       "runner": "ppp",
       "runnerName": "최병렬",
       "runnerRate": 44,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -31,7 +31,7 @@
       "runner": "democratic",
       "runnerName": "김민석",
       "runnerRate": 43,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -42,7 +42,7 @@
       "runner": "democratic",
       "runnerName": "강금실",
       "runnerRate": 25.9,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -53,7 +53,7 @@
       "runner": "democratic",
       "runnerName": "한명숙",
       "runnerRate": 47.2,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -64,7 +64,7 @@
       "runner": "ppp",
       "runnerName": "정몽준",
       "runnerRate": 44.7,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -75,7 +75,7 @@
       "runner": "ppp",
       "runnerName": "김문수",
       "runnerRate": 20.6,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -86,7 +86,7 @@
       "runner": "democratic",
       "runnerName": "송영길",
       "runnerRate": 39.2,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "busan": [
@@ -99,7 +99,7 @@
       "runner": "democratic",
       "runnerName": "노무현",
       "runnerRate": 37.6,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -110,7 +110,7 @@
       "runner": "independent",
       "runnerName": "김기재",
       "runnerRate": 43.5,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -121,7 +121,7 @@
       "runner": "democratic",
       "runnerName": "한이헌",
       "runnerRate": 19.4,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -132,7 +132,7 @@
       "runner": "democratic",
       "runnerName": "오거돈",
       "runnerRate": 21.3,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -143,7 +143,7 @@
       "runner": "democratic",
       "runnerName": "김정길",
       "runnerRate": 43,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -154,7 +154,7 @@
       "runner": "independent",
       "runnerName": "오거돈",
       "runnerRate": 48.2,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -165,7 +165,7 @@
       "runner": "ppp",
       "runnerName": "서병수",
       "runnerRate": 35.4,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -176,7 +176,7 @@
       "runner": "democratic",
       "runnerName": "변성완",
       "runnerRate": 32.2,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "daegu": [
@@ -189,7 +189,7 @@
       "runner": "other",
       "runnerName": "이의익",
       "runnerRate": 22.1,
-      "turnout": 68.4,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -201,7 +201,7 @@
       "runner": "other",
       "runnerName": "이의익",
       "runnerRate": 20.7,
-      "turnout": 52.7,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -213,7 +213,7 @@
       "runner": "independent",
       "runnerName": "이재용",
       "runnerRate": 38.8,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -224,7 +224,7 @@
       "runner": "independent",
       "runnerName": "이재용",
       "runnerRate": 18.8,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -235,7 +235,7 @@
       "runner": "democratic",
       "runnerName": "이승천",
       "runnerRate": 15.3,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -246,7 +246,7 @@
       "runner": "democratic",
       "runnerName": "김부겸",
       "runnerRate": 41.5,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -257,7 +257,7 @@
       "runner": "democratic",
       "runnerName": "임대윤",
       "runnerRate": 41.4,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -268,7 +268,7 @@
       "runner": "democratic",
       "runnerName": "서재헌",
       "runnerRate": 18,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "incheon": [
@@ -281,7 +281,7 @@
       "runner": "democratic",
       "runnerName": "신용석",
       "runnerRate": 31.7,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -292,7 +292,7 @@
       "runner": "ppp",
       "runnerName": "안상수",
       "runnerRate": 34,
-      "turnout": 52.7,
+      "turnout": null,
       "winnerPartyLabel": "국민신당"
     },
     {
@@ -304,7 +304,7 @@
       "runner": "democratic",
       "runnerName": "박상은",
       "runnerRate": 32.1,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -315,7 +315,7 @@
       "runner": "democratic",
       "runnerName": "최기선",
       "runnerRate": 22,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -326,7 +326,7 @@
       "runner": "ppp",
       "runnerName": "안상수",
       "runnerRate": 45.5,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -337,7 +337,7 @@
       "runner": "democratic",
       "runnerName": "송영길",
       "runnerRate": 49.1,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -348,7 +348,7 @@
       "runner": "ppp",
       "runnerName": "유정복",
       "runnerRate": 34.4,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -359,7 +359,7 @@
       "runner": "democratic",
       "runnerName": "박남춘",
       "runnerRate": 44.6,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "gwangju": [
@@ -372,7 +372,7 @@
       "runner": "ppp",
       "runnerName": "김동환",
       "runnerRate": 10.3,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -383,7 +383,7 @@
       "runner": "independent",
       "runnerName": "이승채",
       "runnerRate": 32.8,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -394,7 +394,7 @@
       "runner": "independent",
       "runnerName": "정동년",
       "runnerRate": 27,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -405,7 +405,7 @@
       "runner": "democratic",
       "runnerName": "조영택",
       "runnerRate": 33.6,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -416,7 +416,7 @@
       "runner": "other",
       "runnerName": "정찬용",
       "runnerRate": 14.5,
-      "turnout": 54.5,
+      "turnout": null,
       "runnerPartyLabel": "민주노동당"
     },
     {
@@ -428,7 +428,7 @@
       "runner": "independent",
       "runnerName": "강운태",
       "runnerRate": 31.6,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -439,7 +439,7 @@
       "runner": "ppp",
       "runnerName": "나경채",
       "runnerRate": 6.2,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -450,7 +450,7 @@
       "runner": "ppp",
       "runnerName": "주기환",
       "runnerRate": 15.9,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "daejeon": [
@@ -463,7 +463,7 @@
       "runner": "ppp",
       "runnerName": "염홍철",
       "runnerRate": 20.9,
-      "turnout": 68.4,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -475,7 +475,7 @@
       "runner": "independent",
       "runnerName": "송천영",
       "runnerRate": 18.1,
-      "turnout": 52.7,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -487,7 +487,7 @@
       "runner": "other",
       "runnerName": "홍선기",
       "runnerRate": 40.2,
-      "turnout": 48.9,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -499,7 +499,7 @@
       "runner": "democratic",
       "runnerName": "염홍철",
       "runnerRate": 42.5,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -510,7 +510,7 @@
       "runner": "ppp",
       "runnerName": "박성효",
       "runnerRate": 28.2,
-      "turnout": 54.5,
+      "turnout": null,
       "winnerPartyLabel": "자유선진당"
     },
     {
@@ -522,7 +522,7 @@
       "runner": "ppp",
       "runnerName": "박성효",
       "runnerRate": 48.3,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -533,7 +533,7 @@
       "runner": "ppp",
       "runnerName": "박성효",
       "runnerRate": 32.5,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -544,7 +544,7 @@
       "runner": "democratic",
       "runnerName": "허태정",
       "runnerRate": 48.8,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "ulsan": [
@@ -557,7 +557,7 @@
       "runner": "independent",
       "runnerName": "송철호",
       "runnerRate": 39.4,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -568,7 +568,7 @@
       "runner": "other",
       "runnerName": "송철호",
       "runnerRate": 43.6,
-      "turnout": 48.9,
+      "turnout": null,
       "runnerPartyLabel": "민주노동당"
     },
     {
@@ -580,7 +580,7 @@
       "runner": "other",
       "runnerName": "노옥희",
       "runnerRate": 24.3,
-      "turnout": 51.6,
+      "turnout": null,
       "runnerPartyLabel": "민주노동당"
     },
     {
@@ -592,7 +592,7 @@
       "runner": "other",
       "runnerName": "김창현",
       "runnerRate": 27.9,
-      "turnout": 54.5,
+      "turnout": null,
       "runnerPartyLabel": "민주노동당"
     },
     {
@@ -604,7 +604,7 @@
       "runner": "other",
       "runnerName": "조승수",
       "runnerRate": 29.6,
-      "turnout": 56.8,
+      "turnout": null,
       "runnerPartyLabel": "정의당"
     },
     {
@@ -616,7 +616,7 @@
       "runner": "ppp",
       "runnerName": "김기현",
       "runnerRate": 38.8,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -627,7 +627,7 @@
       "runner": "democratic",
       "runnerName": "송철호",
       "runnerRate": 40.2,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "sejong": [
@@ -640,7 +640,7 @@
       "runner": "ppp",
       "runnerName": "유한식",
       "runnerRate": 43.9,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -651,7 +651,7 @@
       "runner": "ppp",
       "runnerName": "송아영",
       "runnerRate": 18,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -662,7 +662,7 @@
       "runner": "democratic",
       "runnerName": "이춘희",
       "runnerRate": 47.2,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "gyeonggi": [
@@ -675,7 +675,7 @@
       "runner": "democratic",
       "runnerName": "장경우",
       "runnerRate": 29.6,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -686,7 +686,7 @@
       "runner": "ppp",
       "runnerName": "손학규",
       "runnerRate": 45.7,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -697,7 +697,7 @@
       "runner": "democratic",
       "runnerName": "진념",
       "runnerRate": 36,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -708,7 +708,7 @@
       "runner": "democratic",
       "runnerName": "진대제",
       "runnerRate": 30.6,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -719,7 +719,7 @@
       "runner": "other",
       "runnerName": "유시민",
       "runnerRate": 47.9,
-      "turnout": 54.5,
+      "turnout": null,
       "runnerPartyLabel": "국민참여당"
     },
     {
@@ -731,7 +731,7 @@
       "runner": "democratic",
       "runnerName": "김진표",
       "runnerRate": 49.6,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -742,7 +742,7 @@
       "runner": "ppp",
       "runnerName": "남경필",
       "runnerRate": 33.6,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -753,7 +753,7 @@
       "runner": "ppp",
       "runnerName": "김은혜",
       "runnerRate": 48.9,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "gangwon": [
@@ -766,7 +766,7 @@
       "runner": "ppp",
       "runnerName": "이상룡",
       "runnerRate": 34.2,
-      "turnout": 68.4,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -778,7 +778,7 @@
       "runner": "other",
       "runnerName": "한호선",
       "runnerRate": 33.8,
-      "turnout": 52.7,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -790,7 +790,7 @@
       "runner": "democratic",
       "runnerName": "남동우",
       "runnerRate": 28.9,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -801,7 +801,7 @@
       "runner": "democratic",
       "runnerName": "이창복",
       "runnerRate": 19.6,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -812,7 +812,7 @@
       "runner": "ppp",
       "runnerName": "이계진",
       "runnerRate": 46.6,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -823,7 +823,7 @@
       "runner": "ppp",
       "runnerName": "최흥집",
       "runnerRate": 48.2,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -834,7 +834,7 @@
       "runner": "independent",
       "runnerName": "정창수",
       "runnerRate": 33.4,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -845,7 +845,7 @@
       "runner": "democratic",
       "runnerName": "이광재",
       "runnerRate": 45.9,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "chungbuk": [
@@ -858,7 +858,7 @@
       "runner": "democratic",
       "runnerName": "이용희",
       "runnerRate": 24.5,
-      "turnout": 68.4,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -870,7 +870,7 @@
       "runner": "ppp",
       "runnerName": "주병덕",
       "runnerRate": 25.9,
-      "turnout": 52.7,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -882,7 +882,7 @@
       "runner": "other",
       "runnerName": "구천서",
       "runnerRate": 33.5,
-      "turnout": 48.9,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -894,7 +894,7 @@
       "runner": "democratic",
       "runnerName": "한범덕",
       "runnerRate": 26.6,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -905,7 +905,7 @@
       "runner": "ppp",
       "runnerName": "정우택",
       "runnerRate": 48.5,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -916,7 +916,7 @@
       "runner": "ppp",
       "runnerName": "윤진식",
       "runnerRate": 48.2,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -927,7 +927,7 @@
       "runner": "ppp",
       "runnerName": "박경국",
       "runnerRate": 26.6,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -938,7 +938,7 @@
       "runner": "democratic",
       "runnerName": "노영민",
       "runnerRate": 41.8,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "chungnam": [
@@ -951,7 +951,7 @@
       "runner": "ppp",
       "runnerName": "박중배",
       "runnerRate": 19.2,
-      "turnout": 68.4,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -963,7 +963,7 @@
       "runner": "ppp",
       "runnerName": "한청수",
       "runnerRate": 15.4,
-      "turnout": 52.7,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -975,7 +975,7 @@
       "runner": "ppp",
       "runnerName": "박태권",
       "runnerRate": 33,
-      "turnout": 48.9,
+      "turnout": null,
       "winnerPartyLabel": "자유민주연합"
     },
     {
@@ -987,7 +987,7 @@
       "runner": "other",
       "runnerName": "이명수",
       "runnerRate": 27,
-      "turnout": 51.6,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -999,7 +999,7 @@
       "runner": "other",
       "runnerName": "박상돈",
       "runnerRate": 38.8,
-      "turnout": 54.5,
+      "turnout": null,
       "runnerPartyLabel": "자유선진당"
     },
     {
@@ -1011,7 +1011,7 @@
       "runner": "ppp",
       "runnerName": "정진석",
       "runnerRate": 48.1,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -1022,7 +1022,7 @@
       "runner": "ppp",
       "runnerName": "이인제",
       "runnerRate": 34.6,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -1033,7 +1033,7 @@
       "runner": "democratic",
       "runnerName": "양승조",
       "runnerRate": 46.1,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "jeonbuk": [
@@ -1046,7 +1046,7 @@
       "runner": "ppp",
       "runnerName": "강현욱",
       "runnerRate": 32.8,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -1057,7 +1057,7 @@
       "runner": null,
       "runnerName": "(무투표)",
       "runnerRate": 0,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -1068,7 +1068,7 @@
       "runner": "independent",
       "runnerName": "손주항",
       "runnerRate": 17.1,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -1079,7 +1079,7 @@
       "runner": "democratic",
       "runnerName": "정균환",
       "runnerRate": 28.6,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -1090,7 +1090,7 @@
       "runner": "ppp",
       "runnerName": "정운천",
       "runnerRate": 16.4,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -1101,7 +1101,7 @@
       "runner": "ppp",
       "runnerName": "박철곤",
       "runnerRate": 20.5,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -1112,7 +1112,7 @@
       "runner": "ppp",
       "runnerName": "임정엽",
       "runnerRate": 17.8,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -1123,7 +1123,7 @@
       "runner": "ppp",
       "runnerName": "조배숙",
       "runnerRate": 17.9,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "jeonnam": [
@@ -1136,7 +1136,7 @@
       "runner": "ppp",
       "runnerName": "전석홍",
       "runnerRate": 26.5,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -1147,7 +1147,7 @@
       "runner": null,
       "runnerName": "(무투표)",
       "runnerRate": 0,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -1158,7 +1158,7 @@
       "runner": "independent",
       "runnerName": "송재구",
       "runnerRate": 24.2,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -1169,7 +1169,7 @@
       "runner": "democratic",
       "runnerName": "서범석",
       "runnerRate": 19.2,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -1180,7 +1180,7 @@
       "runner": "ppp",
       "runnerName": "김대식",
       "runnerRate": 13.4,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -1191,7 +1191,7 @@
       "runner": "other",
       "runnerName": "이성수",
       "runnerRate": 12.5,
-      "turnout": 56.8,
+      "turnout": null,
       "runnerPartyLabel": "통합진보당"
     },
     {
@@ -1203,7 +1203,7 @@
       "runner": "other",
       "runnerName": "민영삼",
       "runnerRate": 10.6,
-      "turnout": 60.2,
+      "turnout": null,
       "runnerPartyLabel": "민주평화당"
     },
     {
@@ -1215,7 +1215,7 @@
       "runner": "ppp",
       "runnerName": "이정현",
       "runnerRate": 18.8,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "gyeongbuk": [
@@ -1228,7 +1228,7 @@
       "runner": "independent",
       "runnerName": "이판석",
       "runnerRate": 34.3,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -1239,7 +1239,7 @@
       "runner": "other",
       "runnerName": "이판석",
       "runnerRate": 28,
-      "turnout": 52.7,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -1251,7 +1251,7 @@
       "runner": "independent",
       "runnerName": "조영건",
       "runnerRate": 14.5,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -1262,7 +1262,7 @@
       "runner": "independent",
       "runnerName": "박명재",
       "runnerRate": 19,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -1273,7 +1273,7 @@
       "runner": "democratic",
       "runnerName": "홍의락",
       "runnerRate": 13,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -1284,7 +1284,7 @@
       "runner": "democratic",
       "runnerName": "오중기",
       "runnerRate": 17,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -1295,7 +1295,7 @@
       "runner": "democratic",
       "runnerName": "오중기",
       "runnerRate": 34.8,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -1306,7 +1306,7 @@
       "runner": "democratic",
       "runnerName": "임미애",
       "runnerRate": 22,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "gyeongnam": [
@@ -1319,7 +1319,7 @@
       "runner": "other",
       "runnerName": "김용균",
       "runnerRate": 36.2,
-      "turnout": 68.4,
+      "turnout": null,
       "runnerPartyLabel": "자유민주연합"
     },
     {
@@ -1331,7 +1331,7 @@
       "runner": "democratic",
       "runnerName": "강신화",
       "runnerRate": 12.8,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -1342,7 +1342,7 @@
       "runner": "democratic",
       "runnerName": "김두관",
       "runnerRate": 16.9,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -1353,7 +1353,7 @@
       "runner": "democratic",
       "runnerName": "김두관",
       "runnerRate": 24.7,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -1364,7 +1364,7 @@
       "runner": "ppp",
       "runnerName": "이달곤",
       "runnerRate": 48.5,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -1375,7 +1375,7 @@
       "runner": "democratic",
       "runnerName": "김경수",
       "runnerRate": 36.6,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -1386,7 +1386,7 @@
       "runner": "ppp",
       "runnerName": "김태호",
       "runnerRate": 40.1,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -1397,7 +1397,7 @@
       "runner": "democratic",
       "runnerName": "양문석",
       "runnerRate": 29.4,
-      "turnout": 50.9
+      "turnout": null
     }
   ],
   "jeju": [
@@ -1410,7 +1410,7 @@
       "runner": "ppp",
       "runnerName": "우근민",
       "runnerRate": 32.5,
-      "turnout": 68.4
+      "turnout": null
     },
     {
       "election": 2,
@@ -1421,7 +1421,7 @@
       "runner": "independent",
       "runnerName": "신구범",
       "runnerRate": 30.8,
-      "turnout": 52.7
+      "turnout": null
     },
     {
       "election": 3,
@@ -1432,7 +1432,7 @@
       "runner": "ppp",
       "runnerName": "신구범",
       "runnerRate": 45.4,
-      "turnout": 48.9
+      "turnout": null
     },
     {
       "election": 4,
@@ -1443,7 +1443,7 @@
       "runner": "ppp",
       "runnerName": "현명관",
       "runnerRate": 44,
-      "turnout": 51.6
+      "turnout": null
     },
     {
       "election": 5,
@@ -1454,7 +1454,7 @@
       "runner": "independent",
       "runnerName": "현명관",
       "runnerRate": 40.6,
-      "turnout": 54.5
+      "turnout": null
     },
     {
       "election": 6,
@@ -1465,7 +1465,7 @@
       "runner": "democratic",
       "runnerName": "신구범",
       "runnerRate": 34.6,
-      "turnout": 56.8
+      "turnout": null
     },
     {
       "election": 7,
@@ -1476,7 +1476,7 @@
       "runner": "democratic",
       "runnerName": "문대림",
       "runnerRate": 41.8,
-      "turnout": 60.2
+      "turnout": null
     },
     {
       "election": 8,
@@ -1487,7 +1487,10 @@
       "runner": "ppp",
       "runnerName": "허향진",
       "runnerRate": 39.5,
-      "turnout": 50.9
+      "turnout": null
     }
-  ]
+  ],
+  "_meta": {
+    "turnoutNote": "투표율은 선관위 실데이터 확보 후 교체 예정. 현재 null."
+  }
 }

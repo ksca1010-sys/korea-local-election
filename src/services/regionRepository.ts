@@ -11,8 +11,6 @@ import type {
 } from '../types/RegionData';
 
 const REGION_API_BASE = (window as any).REGION_API_BASE || '/api/regions';
-const LOCAL_FALLBACK_PATH = 'data/mock-region-data.json';
-
 interface RegionApiRecord {
   id: string;
   name: string;
@@ -79,10 +77,9 @@ export async function fetchRegionData(): Promise<RegionData[]> {
         response = await fetch(REGION_API_BASE);
         if (!response.ok) throw new Error('API status ' + response.status);
     } catch (error) {
-        response = await fetch(LOCAL_FALLBACK_PATH);
-        if (!response.ok) {
-            throw new Error(`Region API fetch failed and fallback missing (${response.status})`);
-        }
+        // No mock fallback — return empty if API is unavailable
+        cachedRegions = [];
+        return cachedRegions;
     }
 
     const payload: RegionApiRecord[] = await response.json();
