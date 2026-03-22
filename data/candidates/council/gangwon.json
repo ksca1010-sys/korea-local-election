@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "gangwon"
   },
@@ -267,6 +267,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "최광호",
+        "party": "democratic",
+        "career": "전 정선신문 대표, 언론인",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "최광호 전 정선신문 대표, 정선군 선거구 도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "철원군 제1선거구": [
@@ -278,6 +290,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "지형운",
+        "party": "democratic",
+        "career": "강원도당 평화안보특별위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "6·3지선 예비후보 등록 첫 날 강원도의원(철원) 예비후보 2명 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "철원군 제2선거구": [
@@ -300,14 +324,38 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "조재규",
+        "party": "democratic",
+        "career": "화천군의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "조재규 화천군의원, 강원도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "한응삼",
+        "party": "democratic",
+        "career": "강원도당 부위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "한응삼 더불어민주당 강원특별자치도당 부위원장, 강원도의원 선거 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "양구군 선거구": [
       {
         "name": "김왕규",
         "party": "independent",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "현직 강원도의원, 강원테크노파크 정책기획단장 역임",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -476,6 +524,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이지영",
+        "party": "democratic",
+        "career": "강원도의원 (농림수산위원회)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이지영 도의원, 6·3 지방선거 고성군 예비후보 첫 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "양양군 선거구": [

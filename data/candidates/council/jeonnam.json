@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "jeonnam"
   },
@@ -53,8 +53,8 @@
       {
         "name": "전경선",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "목포시의원 역임, 전남도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -80,6 +80,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "최남선",
+        "party": "democratic",
+        "career": "민주당 여수(을) 전 사무국장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "최남선 민주당 여수(을) 전 사무국장, 전남도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "여수시 제3선거구": [
@@ -119,8 +131,8 @@
       {
         "name": "주종섭",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전남도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -163,8 +175,8 @@
       {
         "name": "서동욱",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전 전라남도의회 의장, 24년 정치 경력",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -240,8 +252,8 @@
       {
         "name": "이재태",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전남도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -405,8 +417,8 @@
       {
         "name": "박형대",
         "party": "progressive",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전남도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -427,8 +439,8 @@
       {
         "name": "차영수",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전남도의회 예산결산특별위원장, 의회운영위원장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -443,6 +455,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "조영천",
+        "party": "democratic",
+        "career": "전 해남교육지원청 교육장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "조영천 전 해남교육장, 해남제1선거구 전남도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "해남군 제2선거구": [
@@ -493,8 +517,8 @@
       {
         "name": "나광국",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "8년간 전남도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []

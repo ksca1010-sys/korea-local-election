@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "seoul"
   },
@@ -278,6 +278,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "정태교",
+        "party": "independent",
+        "career": "경기도 미래노동대응전문관",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "정태교 전 경기도 미래노동대응전문관, 시의원 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "광진구 제3선거구": [
@@ -839,6 +851,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "심광식",
+        "party": "independent",
+        "career": "전 양천구의회 의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "심광식, 서울시의원 도전…'신월동 발전' 최우선",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "양천구 제2선거구": [
@@ -1004,6 +1028,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "조상지",
+        "party": "independent",
+        "career": "노들장애인야학 활동가, 탈시설 장애인",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "'탈시설 장애인' 조상지 씨 서울시의원 출마…'장애인도 시민'",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "중구 제1선거구": [

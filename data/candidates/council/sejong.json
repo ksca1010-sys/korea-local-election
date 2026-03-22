@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "sejong"
   },
@@ -14,6 +14,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "정연희",
+        "party": "democratic",
+        "career": "세종시당 부위원장 (현)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "정연희 세종시의원 예비후보, 사통팔달 조치원, '전철 타고 서울 가는'",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제3선거구": [
@@ -25,6 +37,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "황관영",
+        "party": "ppp",
+        "career": "세종시의회 의장 비서실장 (전), 국회의원 보좌진 (전)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "의회와 국회 경험한 세종시 제3선거구 황관영 예비후보 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제4선거구": [
@@ -69,6 +93,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김민정",
+        "party": "democratic",
+        "career": "MBC 방송작가 (30여 년)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김민정 예비후보, \"도담동의 거리에 새로운 이야기가 시작된다\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제8선거구": [
@@ -102,6 +138,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "양진호",
+        "party": "ppp",
+        "career": "법무부 소속 공무원 (33년), 가락마을 6단지 입주자대표회의 회장 (현)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "현안마다 현장에 선 양진호 예비후보… 고운동 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제13선거구": [
@@ -113,6 +161,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박윤경",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박윤경 예비후보, 세종의 랜드마크 '이응다리' '미래 경제 잇는 다리'로",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제14선거구": [
@@ -124,6 +184,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이윤희",
+        "party": "democratic",
+        "career": "보건학 박사",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이윤희 세종시의원 예비후보, \"보건학 박사의 전문성으로 소담의 내일\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제15선거구": [
@@ -135,6 +207,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박지영",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박지영 세종시의원 예비후보 \"시민이 이해할 수 있는 정치를 하겠다\"",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "김창연",
+        "party": "democratic",
+        "career": "민주당 세종갑지역위원회 교육연수위원장 (현)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김창연, 세종시의원 (반곡동.집현동) 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제16선거구": [
@@ -157,6 +253,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박동명",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박동명 세종시의원 예비후보,\"나성·어진의 일상을 바꾸고 미래를 열겠다\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "세종시 제18선거구": [
@@ -179,6 +287,56 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이종인",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이종인 예비후보, \"주민의 눈물 닦아주는 따뜻한 의정활동 펼칠 것\"",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "손인수",
+        "party": "democratic",
+        "career": "세종시의원 (전), 예산결산특별위원장·윤리특별위원장·교육안전위원회 부위원장 (전)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "\"새롬동 진짜 일꾼\" 손인수 전 세종시의원, 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "김법준",
+        "party": "democratic",
+        "career": "아름동 거주 11년",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김법준 세종시의원 예비후보,\"생활 밀착형 정치 실현하겠다\"",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "세종시 제2선거구": [
+      {
+        "name": "홍순기",
+        "party": "reform",
+        "career": "조치원읍장 (전)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "조국혁신당 홍순기 전 조치원읍장, 세종시의원 제2선거구 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ]
   }

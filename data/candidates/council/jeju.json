@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "jeju"
   },
@@ -14,6 +14,42 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이성재",
+        "party": "democratic",
+        "career": "전 제주청년센터장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이성재 전 제주청년센터장, 연동갑 도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "이정석",
+        "party": "democratic",
+        "career": "한국관악협회 제주특별자치도지회장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "'문화로 상권 살린다'…이정석 연동갑 도의원 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "강경문",
+        "party": "ppp",
+        "career": "현직 도의원, 비례대표",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "\"연동의 다음 50년 준비하겠다\"… 강경문 도의원, 재선 도전 시동",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제2선거구": [
@@ -25,6 +61,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김희현",
+        "party": "democratic",
+        "career": "전 제주도 정무부지사, 3선 도의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "제주도의원 선거 '일도2동'에 승부수",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "김순애",
+        "party": "independent",
+        "career": "제주녹색당 운영위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "녹색당 김순애, 제주도의원 비례대표 선거 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제3·4선거구": [
@@ -45,6 +105,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "양정철",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "양정철 대표, 제주 구좌읍.우도면 선거구 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "강동우",
+        "party": "democratic",
+        "career": "전 교육의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "6·3 지방선거 제주도의원 예비후보 등록 시작",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제5선거구": [
@@ -56,6 +140,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "강순아",
+        "party": "justice",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "여성·청년 공천 확대...제주 정치권",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제6선거구": [
@@ -67,6 +163,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김영익",
+        "party": "independent",
+        "career": "국민주권 도민행복 실천본부 공동대표, 제주넷 대표이사",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김영익, 도의원 출마 선언…\"애월 고향에서 답 찾겠다\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제7선거구": [
@@ -78,6 +186,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김형미",
+        "party": "progressive",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "여성·청년 공천 확대...제주 정치권",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제8선거구": [
@@ -120,6 +240,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김영심",
+        "party": "democratic",
+        "career": "전 도의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[6.3 지방선거-제주시지역] 제주도의원 누가 나오나",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "이창민",
+        "party": "democratic",
+        "career": "제주시갑지역위원회 상무위원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[6.3 지방선거-제주시지역] 제주도의원 누가 나오나",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "제주시 제12·13선거구": [
@@ -177,8 +321,8 @@
       {
         "name": "양용만",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "현직",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -188,8 +332,8 @@
       {
         "name": "고태민",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "현직",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -252,8 +396,8 @@
       {
         "name": "강상수",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "현직 도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []

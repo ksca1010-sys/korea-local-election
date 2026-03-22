@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "chungbuk"
   },
@@ -36,6 +36,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이성용",
+        "party": "ppp",
+        "career": "전 서원대학교 총무처장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이성용 전 서원대 총무처장, 충북도의원 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "청주시 제4선거구": [
@@ -234,6 +246,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김도화",
+        "party": "ppp",
+        "career": "보은군의원, 충북도의원 선거 출마 선언",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김도화 보은군의원 사퇴… 충북도의원 선거 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "옥천군 제1선거구": [
@@ -262,11 +286,23 @@
       {
         "name": "김국기",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "재선 충북도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "신현광",
+        "party": "ppp",
+        "career": "영동군의회 의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "신현광 영동군의장, 도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "증평군 선거구": [
@@ -284,8 +320,8 @@
       {
         "name": "임영은",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "재선 충북도의원, 부의장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -322,6 +358,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "안해성",
+        "party": "democratic",
+        "career": "음성군의회 의원, 의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "안해성 음성군의원, 충북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "박봉규",
+        "party": "democratic",
+        "career": "전 음성경찰서장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박봉규 전 음성경찰서장, 충북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "음성군 제2선거구": [
@@ -339,8 +399,8 @@
       {
         "name": "오영탁",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "재선 충북도의원, 단양군의회 의장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []

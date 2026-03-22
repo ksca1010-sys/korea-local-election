@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "seoul"
   },
@@ -145,6 +145,18 @@
         "isIncumbent": true,
         "_seats": 2,
         "pledges": []
+      },
+      {
+        "name": "김봉수",
+        "party": "reform",
+        "career": "공직 경험",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "조국혁신당 대전 출마자들 중구의원에 도전 한 김봉수",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "중구다선거구": [
@@ -341,6 +353,18 @@
         "isIncumbent": true,
         "_seats": 3,
         "pledges": []
+      },
+      {
+        "name": "이호엽",
+        "party": "independent",
+        "career": "예비후보",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "성동구나선거구": [
@@ -587,6 +611,18 @@
         "isIncumbent": true,
         "_seats": 2,
         "pledges": []
+      },
+      {
+        "name": "이호엽",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "동대문구나선거구": [
@@ -785,7 +821,7 @@
       {
         "name": "조성연",
         "party": "ppp",
-        "career": "",
+        "career": "현직 구의원, 의장",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -797,7 +833,7 @@
       {
         "name": "조현우",
         "party": "ppp",
-        "career": "",
+        "career": "현직 구의원",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -817,7 +853,7 @@
       {
         "name": "신예진",
         "party": "ppp",
-        "career": "",
+        "career": "현직 구의원",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -1209,6 +1245,18 @@
         "isIncumbent": true,
         "_seats": 3,
         "pledges": []
+      },
+      {
+        "name": "문혜원",
+        "party": "democratic",
+        "career": "구의원 예비후보",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[6·3지선] 문혜원 \"약자보호 더 필요한 강북구, 억강부약 실천할 것\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "강북구라선거구": [
@@ -1355,7 +1403,7 @@
       {
         "name": "이태용",
         "party": "democratic",
-        "career": "",
+        "career": "도봉구의회 부의장, 도봉구청장 예비후보 자격 심사 접수",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -1667,7 +1715,7 @@
       {
         "name": "양기열",
         "party": "ppp",
-        "career": "",
+        "career": "중앙위원회 청년분과위원장, 제8대·제9대 구의원 재선",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -1775,8 +1823,8 @@
       {
         "name": "주이삭",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "개혁신당 최고위원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "_seats": 3,
@@ -1831,7 +1879,7 @@
       {
         "name": "이용준",
         "party": "ppp",
-        "career": "",
+        "career": "서대문을 국민의힘 소속 시·구의원 지지선언 참여",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -1863,7 +1911,7 @@
       {
         "name": "박진우",
         "party": "ppp",
-        "career": "",
+        "career": "서대문을 국민의힘 소속 시·구의원 지지선언 참여",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -2059,7 +2107,7 @@
       {
         "name": "신종갑",
         "party": "democratic",
-        "career": "",
+        "career": "전직 구의원 (성산2동·상암동 7·8·9대 구의원 역임, 현재 서울시의원 선거 예비후보)",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -2097,6 +2145,18 @@
         "isIncumbent": true,
         "_seats": 2,
         "pledges": []
+      },
+      {
+        "name": "이호엽",
+        "party": "independent",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "양천구나선거구": [
@@ -2569,8 +2629,8 @@
       {
         "name": "홍용민",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "신도림동, 구로5동 담당",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "_seats": 2,
@@ -2581,7 +2641,7 @@
       {
         "name": "김철수",
         "party": "ppp",
-        "career": "",
+        "career": "서울시립대학교 행정학 박사, 구로구의회 제2, 3대 구의원, 제13기 민주평통 구로구협의회장, 민선4기 열린우리당 구로구청장 후보, 서울시의회 예산정책담당관",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -3131,6 +3191,18 @@
         "isIncumbent": true,
         "_seats": 3,
         "pledges": []
+      },
+      {
+        "name": "김민지",
+        "party": "progressive",
+        "career": "청년 예비후보",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "진보당 손솔 의원과 지선 출마자들 \"차별금지법, 모두의 먹고사는 문제\"",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "관악구라선거구": [
@@ -3505,7 +3577,7 @@
       {
         "name": "김형대",
         "party": "ppp",
-        "career": "",
+        "career": "강남구의회 의장",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -3593,7 +3665,7 @@
       {
         "name": "우종혁",
         "party": "ppp",
-        "career": "",
+        "career": "10대부터 정치 활동, 22세에 강남구의회 최연소 의원으로 등원",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -3875,7 +3947,7 @@
       {
         "name": "문현섭",
         "party": "ppp",
-        "career": "",
+        "career": "현직 구의원",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -3939,7 +4011,7 @@
       {
         "name": "남효선",
         "party": "ppp",
-        "career": "",
+        "career": "구의원 예비후보, 움집 캠핑장 공약 제안",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -4041,6 +4113,178 @@
         "isIncumbent": true,
         "_seats": 3,
         "pledges": []
+      }
+    ],
+    "중구": [
+      {
+        "name": "김옥향",
+        "party": "ppp",
+        "career": "중구의회 부의장, 재선 구의원",
+        "status": "WITHDRAWN",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김옥향 대전 중구의회 부의장, 9회 지방선거 불출마 선언",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "용산구선거구": [
+      {
+        "name": "함대건",
+        "party": "democratic",
+        "career": "용산구의원 → 서울시의회 비례대표 출마",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[6·3 지선 주자] 함대건 \"서울, 청년 디지털 구독 지원·연금 활용 주택...\"",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "광진구선거구": [
+      {
+        "name": "이진현",
+        "party": "newReform",
+        "career": "28세",
+        "status": "NOMINATED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[손병관의 뉴스프레소] 박근혜 사저, 가세연이 가압류한 사연 / 국힘이 헤매는 사이… '선거 실험' 치고나간 개혁신당",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "동대문구선거구": [
+      {
+        "name": "박남규",
+        "party": "democratic",
+        "career": "전 동대문구의원",
+        "status": "WITHDRAWN",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박남규 서울시의원 예비후보, 구의원 사퇴 후 현수막",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "성북구선거구": [
+      {
+        "name": "박영화",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "김철만",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "이주환",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "김채환",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서울시 6개 자치구 구청장·시의원·구의원 출마 움직임 본격화",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "서울시 성북구을 당협위원장",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "안 나가면 선거는 끝…오세훈의 고민, 시의회 33% 저지선 사수 승부",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "이승현",
+        "party": "ppp",
+        "career": "인팩코리아 대표",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "안 나가면 선거는 끝…오세훈의 고민, 시의회 33% 저지선 사수 승부",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "양천구선거구": [
+      {
+        "name": "정초신",
+        "party": "ppp",
+        "career": "영화감독",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "영화감독 정초신, 양천구 구의원 출마…\"문화로 지역 바꾸겠다\"",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "강서구선거구": [
+      {
+        "name": "이상욱",
+        "party": "justice",
+        "career": "정의당 강서구위원회 위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "정의당 이상욱 강서구의원 출마선언",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "영등포구선거구": [
+      {
+        "name": "서천열",
+        "party": "independent",
+        "career": "영등포구 구의회 예비후보",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "서천열 영등포 구의회 예비후보, '6·3 지방선거 영등포구... 첫 예비후...",
+        "sourcePublishedAt": "2026-03-22"
       }
     ]
   }

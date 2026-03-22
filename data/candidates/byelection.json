@@ -4,7 +4,7 @@
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
     "lastDetection": "2026-03-22",
-    "lastFactCheck": "2026-03-17T22:49:59.854779"
+    "lastFactCheck": "2026-03-22T09:06:53.109352"
   },
   "districts": {
     "incheon-yeonsu": {
@@ -56,6 +56,18 @@
           "sourceLabel": "경인일보",
           "sourceUrl": "https://v.daum.net/v/20260304172834185",
           "sourcePublishedAt": "2026-03-04"
+        },
+        {
+          "name": "정지열",
+          "party": "democratic",
+          "partyKey": "democratic",
+          "career": "연수구청장",
+          "status": "RUMORED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceUrl": "not_provided",
+          "sourceLabel": "언론보도",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "statusNote": "최신 뉴스에 업데이트된 정보가 없습니다.",
@@ -183,7 +195,7 @@
           "party": "democratic",
           "partyKey": "independent",
           "career": null,
-          "status": "EXPECTED",
+          "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
           "partyName": "democratic",
@@ -324,6 +336,18 @@
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": []
+        },
+        {
+          "name": "조국",
+          "party": "democratic",
+          "partyKey": "democratic",
+          "career": "전 법무부 장관",
+          "status": "RUMORED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceUrl": "미상",
+          "sourceLabel": "종합 뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "statusNote": "최신 뉴스 업데이트가 없어 현재 동향을 파악하기 어렵습니다.",
@@ -698,6 +722,18 @@
           "partyKey": "democratic",
           "partyName": "국민의힘",
           "party": "democratic"
+        },
+        {
+          "name": "염정우",
+          "party": "democratic",
+          "partyKey": "democratic",
+          "career": "안산시의원",
+          "status": "EXPECTED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceUrl": "",
+          "sourceLabel": "언론사 미상",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "keyIssues": [],

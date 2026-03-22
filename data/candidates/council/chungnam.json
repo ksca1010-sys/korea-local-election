@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "chungnam"
   },
@@ -9,7 +9,7 @@
       {
         "name": "홍성현",
         "party": "ppp",
-        "career": "",
+        "career": "충남도의회 제2부의장, 12대 의회 후반기 의장",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -157,6 +157,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김홍열",
+        "party": "democratic",
+        "career": "제9·10대 충남도의원, 호서대학교 부총장, 충청남도 정무수석 보좌관",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김홍열 호서대 부총장, 청양군수 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "공주시 제1선거구": [
@@ -311,6 +323,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "황인봉",
+        "party": "ppp",
+        "career": "국민의힘 충남도당 대변인, 충청남도 정책특별보좌관",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "황인봉 국민의힘 충남도당 대변인, 도의원 출마",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "금산군 제2선거구": [
@@ -333,6 +357,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김민수",
+        "party": "democratic",
+        "career": "충남도의원(비례대표)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김민수 충남도의원, 부여군수 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "부여군 제2선거구": [
@@ -383,7 +419,7 @@
       {
         "name": "이종화",
         "party": "democratic",
-        "career": "",
+        "career": "충청남도의원, 의정활동 38건 조례안 대표발의",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -394,7 +430,7 @@
       {
         "name": "방한일",
         "party": "ppp",
-        "career": "",
+        "career": "충남도의회 운영위원장, 예산결산특별위원장, 원내대표",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -416,8 +452,8 @@
       {
         "name": "윤희신",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "충청남도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []

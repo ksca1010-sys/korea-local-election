@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-03-22",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-22T02:14:16.012279",
+    "lastFactCheck": "2026-03-22T08:59:49.126654",
     "lastSyncFromOverview": "2026-03-22",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
@@ -1381,12 +1381,21 @@
           "name": "유순희",
           "party": "democratic",
           "career": "전 부산여성신문 대표",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "국힘으로 '구청장 도전', 동구는 유순희·사하구는 노재갑 - 동구에서 유순희 (민주당) 출마",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-03-22"
+          }
         }
       ],
       "영도구": [
@@ -1720,6 +1729,39 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "노재갑",
+          "party": "ppp",
+          "career": "전 부산시의원",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "이복조",
+          "party": "ppp",
+          "career": "부산시의원",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "이성권",
+          "party": "ppp",
+          "career": "전 부산시 경제부시장",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "금정구": [
@@ -1886,14 +1928,23 @@
           "name": "조병길",
           "party": "independent",
           "career": "현 사상구 구청장",
-          "status": "WITHDRAWN",
+          "status": "사퇴",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "withdrawn",
+            "detail": "국힘, '부동산 투기 의혹' 조병길 제명…사퇴 상태 확인",
+            "previous": "WITHDRAWN",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-03-22"
+          }
         },
         {
           "name": "서태경",
@@ -1972,12 +2023,21 @@
           "name": "정해용",
           "party": "ppp",
           "career": "전 대구시 경제부시장 / 국민의힘 혁신위원",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "정해용 동대구 역세권 경제 거점 정책 발표. '[6.3지방선거 이것이 정책] 정해용 동대구역세권 새로고침 프로젝트'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-19"
+          }
         },
         {
           "name": "신효철",
@@ -2079,12 +2139,21 @@
           "name": "김대현",
           "party": "ppp",
           "career": "국민의힘 중앙연수위 부위원장 / 전 대구시의원",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "김대현 수성구청장 예비후보 선거사무소 21일 개소 및 정책 발표. '김대현 수성구청장 예비후보 강남 능가할 수성구 청사진 제시'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-21"
+          }
         },
         {
           "name": "박정권",
@@ -2101,7 +2170,7 @@
           "name": "정일균",
           "party": "ppp",
           "career": "대구시의원",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
@@ -2110,23 +2179,32 @@
           "_lastChange": {
             "date": "2026-03-22",
             "type": "status_change",
-            "detail": "정일균 시의원, '수성구청장' 출마 시동…주민 삶 담은 저서 '인터뷰' 북콘서트 개최",
-            "previous": "RUMORED",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "뉴스",
-            "sourcePublishedAt": "2026-03-22"
+            "detail": "수성구청장 출마 예정 정일균 대구시의원이 주민 15인 대화 책 출판. '수성구청장 출마 예정 정일균 대구시의원, 주민 15인 대화 엮은 책 출판'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-20"
           }
         },
         {
           "name": "전경원",
           "party": "ppp",
           "career": "대구시의원",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "전경원 대구시의원 수성구청장 예비후보 등록 및 선거사무소 개소. '전경원, 수성구청장 예비후보 등록⋯보여주기 행정 끝내고 생활 변화'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-21"
+          }
         }
       ],
       "달서구": [
@@ -2157,12 +2235,21 @@
           "name": "김형일",
           "party": "ppp",
           "career": "전 달서구 부구청장",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "김형일 시니어 일자리 1만개 정책 발표. '[6.3 지방선거 이것이 정책] 김형일, 시니어 일자리 1만개 시대·월배차 문제해결'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-19"
+          }
         },
         {
           "name": "홍성주",
@@ -2179,12 +2266,21 @@
           "name": "손인호",
           "party": "ppp",
           "career": "건축사사무소 대표",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "손인호 예비후보가 홍성주 달서구청장 예비후보 지지 선언. '손인호 대구 달서구청장 예비후보, 국민의힘 홍성주 예비후보 지지선언'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-03-20"
+          }
         },
         {
           "name": "권근상",
@@ -2225,12 +2321,21 @@
           "name": "김보경",
           "party": "democratic",
           "career": "달성군의회 부의장",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "김보경 달성군의회 부의장 출판기념회 개최. '달성군수 출마 김보경, 출판기념회 성료'",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "대구매일신문",
+            "sourcePublishedAt": "2026-03-18"
+          }
         },
         {
           "name": "강성환",
@@ -2476,12 +2581,21 @@
           "name": "전영성",
           "party": "reform",
           "career": "지역위원장",
-          "status": "NOMINATED",
+          "status": "[공천확정]",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "nominated",
+            "detail": "조국혁신당, 계양구청장 후보에 전영성 지역위원장 단수 공천",
+            "previous": "NOMINATED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "경인일보",
+            "sourcePublishedAt": "2026-03-15"
+          }
         }
       ],
       "강화군": [
@@ -2685,12 +2799,21 @@
           "name": "강남규",
           "party": "democratic",
           "career": "민주당 정책위원회 부의장",
-          "status": "DECLARED",
+          "status": "[출마선언]",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "강남규 전 서구의원, 검단구청장 출마 선언",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "경인일보",
+            "sourcePublishedAt": "2026-03-16"
+          }
         },
         {
           "name": "김진규",
@@ -2823,12 +2946,21 @@
           "name": "진선기",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "출마선언",
+          "status": "nominated",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.example.com",
           "sourceLabel": "광주 언론사",
-          "sourcePublishedAt": "2026-03-22"
+          "sourcePublishedAt": "2026-03-22",
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "노희용 동구청장 예비후보와 결선투표 단일화 완료",
+            "previous": "출마선언",
+            "sourceUrl": "https://www.news.example.com",
+            "sourceLabel": "광주방송",
+            "sourcePublishedAt": "2026-03-21"
+          }
         }
       ],
       "서구": [
@@ -2904,12 +3036,21 @@
           "name": "오은택",
           "party": "democratic",
           "career": "현 남구청장",
-          "status": "거론",
+          "status": "출마선언",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.example.com",
           "sourceLabel": "광주 언론사",
-          "sourcePublishedAt": "2026-03-22"
+          "sourcePublishedAt": "2026-03-22",
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "공식 선거운동 돌입 및 '공천 못 받으면 2년뒤 총선 출마' 논의에서 현직 구청장으로 확인",
+            "previous": "거론",
+            "sourceUrl": "https://www.news.example.com",
+            "sourceLabel": "광주일보",
+            "sourcePublishedAt": "2026-03-20"
+          }
         }
       ],
       "북구": [
@@ -8540,13 +8681,22 @@
           "name": "이강덕",
           "party": "independent",
           "career": "현 포항시 시장",
-          "status": "WITHDRAWN",
+          "status": "출마선언",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "이강덕 경북도지사 출마 사퇴 (2026.2)",
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "이강덕 경북도지사 예비후보, 이대공 전 포스코교육재단 이사장 후원회 구성",
+            "previous": "WITHDRAWN",
+            "sourceUrl": "https://www.newsis.com",
+            "sourceLabel": "뉴시스",
+            "sourcePublishedAt": "2026-03-22"
+          }
         },
         {
           "name": "박용선",
@@ -8631,13 +8781,24 @@
         {
           "name": "박대기",
           "party": "ppp",
-          "career": "",
+          "career": "경력 미상",
           "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "안승대",
+          "party": "ppp",
+          "career": "경력 미상",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://www.newsis.com",
+          "sourceLabel": "뉴시스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "울릉군": [
@@ -8662,6 +8823,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "정성환",
+          "party": "democratic",
+          "career": "전 울릉군의회 의장",
+          "status": "공천확정",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://www.newsis.com",
+          "sourceLabel": "뉴시스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "경주시": [
@@ -8711,6 +8883,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "여준기",
+          "party": "ppp",
+          "career": "경력 미상",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://www.newsis.com",
+          "sourceLabel": "뉴시스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "김천시": [
@@ -8832,7 +9015,7 @@
         {
           "name": "김상욱",
           "party": "ppp",
-          "career": "",
+          "career": "경력 미상",
           "status": "EXPECTED",
           "dataSource": "verified",
           "pledges": [],

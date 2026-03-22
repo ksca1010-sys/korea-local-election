@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "gyeongnam"
   },
@@ -102,6 +102,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "손성호",
+        "party": "ppp",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "손성호 경남도의원 예비후보 선거사무소 개소",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "창원시 제10선거구": [
@@ -212,6 +224,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김진기",
+        "party": "democratic",
+        "career": "제11대 경상남도의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김진기 전 경남도의원 '김해 미래 준비'...재선 도전",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "김해시 제4선거구": [
@@ -256,6 +280,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박준호",
+        "party": "democratic",
+        "career": "제11대 경상남도의원, 경제환경위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박준호 제11대 경남도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "김해시 제8선거구": [
@@ -476,6 +512,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이종범",
+        "party": "ppp",
+        "career": "전 사천시의회 부의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이종범 전 사천시의회 부의장, 경남도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "사천시 제2선거구": [
@@ -504,8 +552,8 @@
       {
         "name": "조영제",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "제11·12대 경상남도의회 재선의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -537,8 +585,8 @@
       {
         "name": "우기수",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "경상남도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -559,8 +607,8 @@
       {
         "name": "허동원",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "경남도의원",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -597,14 +645,26 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "권희성",
+        "party": "ppp",
+        "career": "전 산청군 체육회장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "권희성 전 산청군 체육회장, 경남도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "함양군 선거구": [
       {
         "name": "김재웅",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "경남도의원, 국민의힘 탈당",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []

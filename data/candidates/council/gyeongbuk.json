@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "gyeongbuk"
   },
@@ -14,6 +14,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박정호",
+        "party": "ppp",
+        "career": "전 포항시의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박정호 전 포항시의원, 경북도의원 출사표…",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "포항시 제2선거구": [
@@ -64,8 +76,8 @@
       {
         "name": "서석영",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "경상북도의회 의원 (12대)",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -196,8 +208,8 @@
       {
         "name": "권광택",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "경상북도의회 행정보건복지위원장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -300,6 +312,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "임명해",
+        "party": "ppp",
+        "career": "전 구미시유치원연합회 회장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "임명해, 구미시 제8선거구(양포동) 도의원 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "영주시 제1선거구": [
@@ -322,6 +346,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "우영선",
+        "party": "ppp",
+        "career": "전 영주시새마을회장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[6.3지방선거 인터뷰] 우영선 전 영주시새마을회장, 경북도의원 영주 제",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "영천시 제1선거구": [
@@ -355,6 +391,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "송병길",
+        "party": "ppp",
+        "career": "경북도의원 예비후보자",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "[인터뷰] 송병길 경북도의원(상주시 제1선거구) 예비후보자",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "상주시 제2선거구": [
@@ -471,7 +519,7 @@
       {
         "name": "신효광",
         "party": "ppp",
-        "career": "",
+        "career": "경상북도의회 농수산위원장, 농촌마을보호지구 육성 조례 최초 발의",
         "status": "EXPECTED",
         "dataSource": "incumbent",
         "isIncumbent": true,
@@ -564,6 +612,30 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "남정해",
+        "party": "democratic",
+        "career": "경상북도의회 기획경제수석전문위원 (33년 공직)",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "남정해 경북도의회 수석전문위원, 33년 공직 마감…예천군 '도의원'",
+        "sourcePublishedAt": "2026-03-22"
+      },
+      {
+        "name": "윤동춘",
+        "party": "democratic",
+        "career": "전 경상북도 경찰청장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "민주당 경북도당, 기초단체장·광역의원 1차 공천 심사 결과 발표",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "예천군 제2선거구": [
@@ -575,6 +647,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "이승희",
+        "party": "ppp",
+        "career": "국민의힘 경북도당 부대변인",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "이승희, 예천군 제2선거구 도의원 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "봉화군 선거구": [

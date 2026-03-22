@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "daegu"
   },
@@ -75,8 +75,8 @@
       {
         "name": "김대현",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "국민의힘 중앙연수위원회 부위원장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -207,8 +207,8 @@
       {
         "name": "전경원",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "대구광역시의회 국민의힘 원내대표",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -234,6 +234,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김성태",
+        "party": "democratic",
+        "career": "달서구의회 재선 의원, 제8대 대구광역시의원, 달서구 지역위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김성태 전 대구시의원, 달서구청장 예비후보 등록",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "달서구 제2선거구": [
@@ -256,6 +268,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "조홍철",
+        "party": "ppp",
+        "career": "6·7대 달서구의원, 대구시의원, 한국산업단지공단 비상임이사",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "조홍철 달서구청장 예비후보",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "달서구 제4선거구": [
@@ -322,6 +346,34 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      }
+    ],
+    "군위군 제1선거구": [
+      {
+        "name": "박수현",
+        "party": "ppp",
+        "career": "군위군의원 8년, 군위군의회 의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박수현, 대구시의원 출마로 지역 발전의 새 장 열다",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "대구광역시의원 비례대표": [
+      {
+        "name": "김민정",
+        "party": "basicIncome",
+        "career": "기본소득당 부위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "기본소income당 김민정, 대구시의원 비례대표 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ]
   }

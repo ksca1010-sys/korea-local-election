@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "gyeonggi"
   },
@@ -223,6 +223,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김시의원",
+        "party": "ppp",
+        "career": "구리시의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "국힘에서 나온 공돌이 출신 '작은 영웅' — 김 시의원은 구리시의원을 넘어 경기도의원에 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "구리시 제2선거구": [

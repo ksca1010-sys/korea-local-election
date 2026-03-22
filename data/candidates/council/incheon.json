@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "incheon"
   },
@@ -130,8 +130,8 @@
       {
         "name": "신성영",
         "party": "ppp",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "인천시의회 산업경제위원회 부위원장",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -399,6 +399,32 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "조영홍",
+        "party": "democratic",
+        "career": "전 인천시의원, 2022년 인천광역시 및 인천교육청 결산검사위원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "민주당 조영홍 전 시의원, 예비후보 등록...미추홀 4선거구 출마",
+        "sourcePublishedAt": "2026-03-22"
+      }
+    ],
+    "연수구 다선거구": [
+      {
+        "name": "탁현수",
+        "party": "ppp",
+        "career": "국민의힘 인천연수갑 전 청년위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "탁현수 전 국힘 연수갑청년위원장, 연수구 다선거구 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ]
   }

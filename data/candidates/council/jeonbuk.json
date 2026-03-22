@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-20",
+    "lastUpdated": "2026-03-22",
     "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
     "region": "jeonbuk"
   },
@@ -58,6 +58,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "박형배",
+        "party": "democratic",
+        "career": "전주시의원 12년(3선), 효자5동",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "박형배 전주시의원, 전북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "전주시 제6선거구": [
@@ -130,8 +142,8 @@
       {
         "name": "국주영은",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "전북특별자치도의회 의장, 전주시의원 8년, 도의원 12년(4대)",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -163,8 +175,8 @@
       {
         "name": "박정희",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -201,6 +213,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "류동곤",
+        "party": "democratic",
+        "career": "전북특별자치도플로어볼협회 회장, 법무부 청소년범죄예방 익산지부 위원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "류동곤, 전북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "익산시 제3선거구": [
@@ -212,6 +236,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김경진",
+        "party": "democratic",
+        "career": "익산시의회 의장, 익산시의원",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "익산시의회 김경진 의장, 전북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "익산시 제4선거구": [
@@ -234,6 +270,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "고경윤",
+        "party": "democratic",
+        "career": "정읍시의회 의원 12년, 제8대 부의장, 제9대 전반기 의장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "고경윤, 전북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "정읍시 제2선거구": [
@@ -251,8 +299,8 @@
       {
         "name": "이정린",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "시의원 8년, 도의원 8년 총 16년 의정경험",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
@@ -273,11 +321,23 @@
       {
         "name": "나인권",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "도의원 2선, 농업·농촌 정책 상임위원회 활동",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김영자",
+        "party": "democratic",
+        "career": "김제시의원 16년",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "김영자 김제시의원, 전북도의원 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "김제시 제2선거구": [
@@ -355,6 +415,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "김철호",
+        "party": "basicIncome",
+        "career": "기본소득당위원장",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "기본소득당 김철호 도의원 예비후보 출마 선언",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "순창군 선거구": [
@@ -366,6 +438,18 @@
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
+      },
+      {
+        "name": "장승필",
+        "party": "democratic",
+        "career": "",
+        "status": "DECLARED",
+        "dataSource": "verified",
+        "isIncumbent": false,
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": "장승필 예비후보 '더 필승캠프' 개소식",
+        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "고창군 제1선거구": [
@@ -394,8 +478,8 @@
       {
         "name": "김정기",
         "party": "democratic",
-        "career": "",
-        "status": "EXPECTED",
+        "career": "도의원",
+        "status": "WITHDRAWN",
         "dataSource": "incumbent",
         "isIncumbent": true,
         "pledges": []
