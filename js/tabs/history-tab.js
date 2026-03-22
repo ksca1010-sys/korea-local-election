@@ -13,6 +13,17 @@ const HistoryTab = (() => {
         }
     }
 
+    /** Insert a sr-only table next to a canvas for screen readers. */
+    function _insertSrTable(canvas, html) {
+        const prev = canvas.nextElementSibling;
+        if (prev && prev.classList.contains('sr-only')) prev.remove();
+        const tbl = document.createElement('table');
+        tbl.className = 'sr-only';
+        tbl.innerHTML = html;
+        canvas.setAttribute('aria-hidden', 'true');
+        canvas.parentNode.insertBefore(tbl, canvas.nextSibling);
+    }
+
     function buildEmptyMessage(message, icon = 'fa-circle-info') {
         return `<div class="no-data-message"><i class="fas ${icon}"></i><p>${message}</p></div>`;
     }
@@ -341,6 +352,18 @@ const HistoryTab = (() => {
             }
         });
 
+        // Accessible sr-only table for screen readers
+        _insertSrTable(canvas,
+            `<caption>정당 계열 득표율 변화</caption>` +
+            `<tr><th>연도</th>${chartDatasets.map(ds => `<th>${ds.label}</th>`).join('')}</tr>` +
+            history.map((entry, i) => {
+                return `<tr><td>${entry.year}</td>${chartDatasets.map(ds => {
+                    const v = ds.data[i];
+                    return `<td>${v !== null ? v + '%' : '-'}</td>`;
+                }).join('')}</tr>`;
+            }).join('')
+        );
+
         // Fix #11: 범례 설명 각주
         if (chartCard) {
             const footnote = document.createElement('div');
@@ -587,6 +610,18 @@ const HistoryTab = (() => {
                 }
             }
         });
+
+        // Accessible sr-only table for screen readers
+        _insertSrTable(canvas,
+            `<caption>정당 계열 득표율 변화 (재보궐)</caption>` +
+            `<tr><th>연도</th>${datasets.map(ds => `<th>${ds.label}</th>`).join('')}</tr>` +
+            history.map((entry, i) => {
+                return `<tr><td>${entry.year}</td>${datasets.map(ds => {
+                    const v = ds.data[i];
+                    return `<td>${v !== null ? v + '%' : '-'}</td>`;
+                }).join('')}</tr>`;
+            }).join('')
+        );
 
         if (chartCard) {
             const footnote = document.createElement('div');

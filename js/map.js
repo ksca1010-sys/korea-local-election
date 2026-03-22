@@ -17,6 +17,11 @@ const MapModule = (() => {
     let currentSubdistrictName = null;
     let subdistrictContext = { regionKey: null, districtName: null };
     let _mapTooltip = null; // cached tooltip element
+
+    // CSS 변수에서 지도 색상 읽기 (라이트/다크 모드 대응)
+    function mapColor(varName, fallback) {
+        return getComputedStyle(document.documentElement).getPropertyValue(varName).trim() || fallback;
+    }
     const subdistrictSources = {
         seoul: 'data/서울_행정동_경계_2017_topo.json'
     };
@@ -320,9 +325,18 @@ const MapModule = (() => {
         });
     }
 
+    function _neutralFill() { return mapColor('--map-bg', '#1a2236'); }
+    function _isLightMode() {
+        return document.documentElement.classList.contains('light-mode') ||
+            (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches && !document.documentElement.classList.contains('dark-mode'));
+    }
+    function _disabledFill() {
+        return _isLightMode() ? '#c0c8d4' : '#252535';
+    }
+
     function getRegionColor(regionKey) {
         if (!colorModeActive) {
-            return '#1a2236';
+            return _neutralFill();
         }
 
         if (currentElectionType === 'superintendent') {
@@ -334,14 +348,14 @@ const MapModule = (() => {
 
         // 비례대표: 지역 대표가 아니므로 무색(중립색)
         if (currentElectionType === 'councilProportional' || currentElectionType === 'localCouncilProportional') {
-            if (regionKey === 'sejong' || regionKey === 'jeju') return '#252535';
-            return '#1e2a42';
+            if (regionKey === 'sejong' || regionKey === 'jeju') return _disabledFill();
+            return _neutralFill();
         }
 
         // 기초의원: 전국 지도에서는 중립색, 세종/제주는 비활성
         if (currentElectionType === 'localCouncil') {
-            if (regionKey === 'sejong' || regionKey === 'jeju') return '#252535';
-            return '#1e2a42';
+            if (regionKey === 'sejong' || regionKey === 'jeju') return _disabledFill();
+            return _neutralFill();
         }
 
         // 재보궐: 대상 광역만 컬러, 나머지 비활성
@@ -350,13 +364,13 @@ const MapModule = (() => {
             if (byElections) {
                 const hasBy = Object.values(byElections).some(e => e.region === regionKey);
                 if (hasBy) return '#14b8a655'; // 파란 계열 활성
-                return '#1a1f2e'; // 비활성 회색조
+                return _disabledFill();
             }
-            return '#1a1f2e';
+            return _disabledFill();
         }
 
         const region = ElectionData.getRegion(regionKey);
-        if (!region) return '#1a2236';
+        if (!region) return _neutralFill();
 
         const gov = region.currentGovernor;
         // 권한대행이면 무소속(회색) 표시
@@ -486,7 +500,7 @@ const MapModule = (() => {
             .attr('d', path)
             .attr('fill', d => {
                 const key = getRegionKey(d);
-                return key ? getRegionColor(key) : '#1a2236';
+                return key ? getRegionColor(key) : _neutralFill();
             })
             .attr('data-region', d => getRegionKey(d))
             .on('mouseover', handleMouseOver)
@@ -1071,7 +1085,7 @@ const MapModule = (() => {
                 if ((currentElectionType === 'localCouncil' || currentElectionType === 'localCouncilProportional') &&
                     (key === 'sejong' || key === 'jeju')) {
                     el.classed('region-disabled', true)
-                        .transition().duration(400).attr('fill', '#2a2a3a');
+                        .transition().duration(400).attr('fill', getComputedStyle(document.documentElement).getPropertyValue('--map-hover-fill').trim() || '#2a2a3a');
                     el.on('mouseover.disabled', function(event) {
                         const tooltip = _mapTooltip;
                         if (!tooltip) return;
@@ -1116,7 +1130,7 @@ const MapModule = (() => {
                     읍면동 기반
                 </div>
                 <div class="legend-item">
-                    <span class="legend-color" style="background:#ffffff"></span>
+                    <span class="legend-color" style="background:var(--text-muted)"></span>
                     경계는 공공데이터 기반
                 </div>
             `;
@@ -1157,7 +1171,7 @@ const MapModule = (() => {
                     <span>재보궐 대상 광역</span>
                 </div>
                 <div class="legend-item">
-                    <span class="legend-color" style="background:#1a1f2e"></span>
+                    <span class="legend-color" style="background:var(--bg-tertiary)"></span>
                     <span>비대상</span>
                 </div>`;
             return;
@@ -1384,7 +1398,7 @@ const MapModule = (() => {
                 .attr('d', path)
                 .attr('fill', d => {
                     // 기초의원 모드: 중립 색상 (시군구 클릭 후 선거구 지도에서 색상 표시)
-                    if (currentElectionType === 'localCouncil') return '#1e2a42';
+                    if (currentElectionType === 'localCouncil') return _neutralFill();
                     const name = getEffectiveDistrictName(regionKey, getDistrictName(d));
                     const summary = ElectionData.getDistrictSummary(regionKey, name);
                     // 권한대행이면 무소속(회색) 표시
@@ -1393,7 +1407,7 @@ const MapModule = (() => {
                     return ElectionData.getPartyColor(party) + '88';
                 })
                 .attr('stroke', d => {
-                    if (currentElectionType === 'localCouncil') return '#3a5080';
+                    if (currentElectionType === 'localCouncil') return mapColor('--map-district-stroke', '#3a5080');
                     const name = getEffectiveDistrictName(regionKey, getDistrictName(d));
                     const summary = ElectionData.getDistrictSummary(regionKey, name);
                     const mayor = summary?.mayor;
@@ -1426,7 +1440,25 @@ const MapModule = (() => {
                 })
                 .attr('opacity', 1);
 
-            // Add district labels
+            // Add district labels — 면적 기반 동적 크기 + 충돌 방지
+            const districtCount = renderFeatures.length;
+            const baseFontSize = districtCount <= 3 ? 14 : districtCount <= 8 ? 11 : districtCount <= 15 ? 9 : 8;
+
+            // 면적 계산 → 작은 지역 라벨 숨김 기준
+            const areaMap = new Map();
+            renderFeatures.forEach(d => {
+                const b = path.bounds(d);
+                areaMap.set(d, (b[1][0] - b[0][0]) * (b[1][1] - b[0][1]));
+            });
+            const areaValues = [...areaMap.values()].sort((a, b) => a - b);
+            const medianArea = areaValues[Math.floor(areaValues.length / 2)] || 0;
+
+            // 라벨 충돌 검사용 배열
+            const placedRects = [];
+            function rectsOverlap(a, b) {
+                return !(a.x + a.w < b.x || b.x + b.w < a.x || a.y + a.h < b.y || b.y + b.h < a.y);
+            }
+
             g.selectAll('.district-label')
                 .data(renderFeatures)
                 .enter()
@@ -1439,11 +1471,35 @@ const MapModule = (() => {
                 })
                 .attr('text-anchor', 'middle')
                 .attr('dy', '.35em')
-                .attr('fill', '#ffffff')
-                .attr('font-size', '9px')
+                .attr('fill', mapColor('--map-label-fill', '#ffffff'))
+                .attr('font-size', d => {
+                    const area = areaMap.get(d) || 0;
+                    // 면적에 비례한 폰트 크기 (최소~최대 범위)
+                    return Math.max(7, Math.min(baseFontSize, Math.sqrt(area) / 4)) + 'px';
+                })
                 .attr('pointer-events', 'auto')
                 .attr('opacity', 0)
-                .text(d => getDistrictName(d))
+                .text(d => {
+                    const name = getDistrictName(d);
+                    if (districtCount > 8 && name.length > 3) {
+                        return name.replace(/특별자치시|광역시|특별시/, '').replace(/시$|군$|구$/, '');
+                    }
+                    return name;
+                })
+                .each(function(d) {
+                    // 충돌 검사: 겹치면 숨김
+                    const c = path.centroid(d);
+                    const fs = parseFloat(d3.select(this).attr('font-size'));
+                    const text = d3.select(this).text();
+                    const w = text.length * fs * 0.7;
+                    const h = fs * 1.3;
+                    const rect = { x: c[0] - w/2, y: c[1] - h/2, w, h };
+                    if (placedRects.some(p => rectsOverlap(rect, p))) {
+                        d3.select(this).attr('opacity', 0).attr('data-hidden', 'true');
+                        return;
+                    }
+                    placedRects.push(rect);
+                })
                 .style('pointer-events', 'auto')
                 .on('mouseover', (event, d) => {
                     const districtName = getEffectiveDistrictName(regionKey, getDistrictName(d));
@@ -1883,8 +1939,8 @@ const MapModule = (() => {
                 groupLabel.append('text')
                     .attr('text-anchor', 'middle')
                     .attr('dy', '.35em')
-                    .attr('fill', '#000000')
-                    .attr('stroke', '#000000')
+                    .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000000')))
+                    .attr('stroke', mapColor('--map-label-stroke', '#000000'))
                     .attr('stroke-width', 3)
                     .attr('font-size', groupFontSize + 'px')
                     .attr('font-weight', 700)
@@ -1894,7 +1950,7 @@ const MapModule = (() => {
                 groupLabel.append('text')
                     .attr('text-anchor', 'middle')
                     .attr('dy', '.35em')
-                    .attr('fill', '#ffffff')
+                    .attr('fill', mapColor('--map-label-fill', '#ffffff'))
                     .attr('font-size', groupFontSize + 'px')
                     .attr('font-weight', 700)
                     .text(sgg);
@@ -1934,8 +1990,8 @@ const MapModule = (() => {
                         numLabel.append('text')
                             .attr('text-anchor', 'middle')
                             .attr('dy', '.35em')
-                            .attr('fill', '#000000')
-                            .attr('stroke', '#000000')
+                            .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000000')))
+                            .attr('stroke', mapColor('--map-label-stroke', '#000000'))
                             .attr('stroke-width', 2)
                             .attr('font-size', fontSize + 'px')
                             .attr('font-weight', 600)
@@ -1945,7 +2001,7 @@ const MapModule = (() => {
                         numLabel.append('text')
                             .attr('text-anchor', 'middle')
                             .attr('dy', '.35em')
-                            .attr('fill', '#e0e8ff')
+                            .attr('fill', _isLightMode() ? '#c0d0e8' : '#e0e8ff')
                             .attr('font-size', fontSize + 'px')
                             .attr('font-weight', 600)
                             .text(numText);
@@ -2042,7 +2098,7 @@ const MapModule = (() => {
                             .datum(mergedBg)
                             .attr('class', 'council-bg-fill')
                             .attr('d', path)
-                            .attr('fill', '#1a1a2e')
+                            .attr('fill', _neutralFill())
                             .attr('stroke', 'none')
                             .attr('pointer-events', 'none');
                     } catch(e) { /* merge 실패 시 무시 */ }
@@ -2097,19 +2153,31 @@ const MapModule = (() => {
             });
             const medArea = areas.slice().sort((a, b) => a - b)[Math.floor(areas.length / 2)];
 
+            // 시군구별 선거구 수 집계 — 같은 시군구에 2개 이상이면 시군구명 생략
+            const sggCounts = {};
+            filtered.forEach(d => {
+                const fn = d.properties.district_name || '';
+                const m = fn.match(/^(.+?)\s*제?\d+선거구$/);
+                const sgg = m ? m[1] : fn;
+                sggCounts[sgg] = (sggCounts[sgg] || 0) + 1;
+            });
+
             filtered.forEach((d) => {
                 const b = path.bounds(d);
                 const area = (b[1][0] - b[0][0]) * (b[1][1] - b[0][1]);
                 const c = path.centroid(d);
-                // 선거구 수가 적으면 면적 필터 완화 (거창군 등 2개 선거구)
                 const areaThreshold = filtered.length <= 3 ? 0 : medArea * 0.12;
                 if (area < areaThreshold || isNaN(c[0])) return;
 
                 const fontSize = Math.max(7, Math.min(12, Math.sqrt(area) / 3.5));
                 const fullName = d.properties.district_name;
                 const match = fullName.match(/^(.+?)\s*제?(\d+)선거구$/);
-                const label1 = match ? match[1] : fullName;
-                const label2 = match ? `제${match[2]}` : '';
+                const sggName = match ? match[1] : fullName;
+                const num = match ? match[2] : '';
+                // 같은 시군구에 선거구 2개 이상이면 번호만, 1개이면 시군구명 표시
+                const showSggName = (sggCounts[sggName] || 0) <= 1;
+                const label1 = showSggName ? sggName : `제${num}`;
+                const label2 = showSggName && num ? `제${num}` : '';
 
                 const lbl = g.append('g')
                     .attr('class', 'council-label')
@@ -2119,23 +2187,23 @@ const MapModule = (() => {
                 // 배경 stroke
                 lbl.append('text')
                     .attr('text-anchor', 'middle').attr('dy', label2 ? '-0.2em' : '.35em')
-                    .attr('fill', '#000').attr('stroke', '#000').attr('stroke-width', 2.5)
+                    .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000'))).attr('stroke', mapColor('--map-label-stroke', '#000')).attr('stroke-width', 2.5)
                     .attr('font-size', fontSize + 'px').attr('font-weight', 600)
                     .attr('pointer-events', 'none').text(label1);
                 lbl.append('text')
                     .attr('text-anchor', 'middle').attr('dy', label2 ? '-0.2em' : '.35em')
-                    .attr('fill', '#fff').attr('font-size', fontSize + 'px').attr('font-weight', 600)
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', fontSize + 'px').attr('font-weight', 600)
                     .attr('pointer-events', 'none').text(label1);
 
                 if (label2 && area > medArea * 0.3) {
                     lbl.append('text')
                         .attr('text-anchor', 'middle').attr('dy', '1em')
-                        .attr('fill', '#000').attr('stroke', '#000').attr('stroke-width', 2)
+                        .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000'))).attr('stroke', mapColor('--map-label-stroke', '#000')).attr('stroke-width', 2)
                         .attr('font-size', (fontSize - 1) + 'px')
                         .attr('pointer-events', 'none').text(label2);
                     lbl.append('text')
                         .attr('text-anchor', 'middle').attr('dy', '1em')
-                        .attr('fill', '#ccddff').attr('font-size', (fontSize - 1) + 'px')
+                        .attr('fill', mapColor('--map-label-fill', '#ccddff')).attr('font-size', (fontSize - 1) + 'px')
                         .attr('pointer-events', 'none').text(label2);
                 }
 
@@ -2253,8 +2321,8 @@ const MapModule = (() => {
                         .datum(bf)
                         .attr('class', 'basic-sigungu-bg')
                         .attr('d', path)
-                        .attr('fill', '#1a1f2e')
-                        .attr('stroke', '#2a3550')
+                        .attr('fill', _disabledFill())
+                        .attr('stroke', mapColor('--map-region-stroke', '#2a3550'))
                         .attr('stroke-width', 0.5)
                         .attr('pointer-events', 'none');
                 });
@@ -2411,24 +2479,24 @@ const MapModule = (() => {
                 // 배경 stroke
                 lbl.append('text')
                     .attr('text-anchor', 'middle').attr('dy', seats ? '-0.2em' : '.35em')
-                    .attr('fill', '#000').attr('stroke', '#000').attr('stroke-width', 2.5)
+                    .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000'))).attr('stroke', mapColor('--map-label-stroke', '#000')).attr('stroke-width', 2.5)
                     .attr('font-size', fontSize + 'px').attr('font-weight', 600)
                     .attr('pointer-events', 'none').text(label1);
                 // 전경
                 lbl.append('text')
                     .attr('text-anchor', 'middle').attr('dy', seats ? '-0.2em' : '.35em')
-                    .attr('fill', '#fff').attr('font-size', fontSize + 'px').attr('font-weight', 600)
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', fontSize + 'px').attr('font-weight', 600)
                     .attr('pointer-events', 'none').text(label1);
 
                 if (seats && area > medArea * 0.3) {
                     lbl.append('text')
                         .attr('text-anchor', 'middle').attr('dy', '1em')
-                        .attr('fill', '#000').attr('stroke', '#000').attr('stroke-width', 2)
+                        .attr('fill', mapColor('--map-label-stroke', mapColor('--map-label-stroke', '#000'))).attr('stroke', mapColor('--map-label-stroke', '#000')).attr('stroke-width', 2)
                         .attr('font-size', (fontSize - 1) + 'px')
                         .attr('pointer-events', 'none').text(seats);
                     lbl.append('text')
                         .attr('text-anchor', 'middle').attr('dy', '1em')
-                        .attr('fill', '#aaddff').attr('font-size', (fontSize - 1) + 'px')
+                        .attr('fill', mapColor('--map-label-fill', '#aaddff')).attr('font-size', (fontSize - 1) + 'px')
                         .attr('pointer-events', 'none').text(seats);
                 }
 
@@ -2913,8 +2981,8 @@ const MapModule = (() => {
                 .append('path')
                 .attr('class', 'district')
                 .attr('d', path)
-                .attr('fill', '#1a1f2e')
-                .attr('stroke', '#2a3550')
+                .attr('fill', _disabledFill())
+                .attr('stroke', mapColor('--map-region-stroke', '#2a3550'))
                 .attr('stroke-width', 0.8)
                 .attr('opacity', 1);
 
@@ -2926,7 +2994,7 @@ const MapModule = (() => {
                     .attr('class', 'district-label')
                     .attr('transform', `translate(${c[0]},${c[1]})`)
                     .attr('text-anchor', 'middle').attr('dy', '.35em')
-                    .attr('fill', '#666').attr('font-size', '7px')
+                    .attr('fill', mapColor('--text-muted', '#666')).attr('font-size', '7px')
                     .attr('pointer-events', 'none')
                     .text(getDistrictName(d));
             });
@@ -2994,7 +3062,7 @@ const MapModule = (() => {
                     .attr('class', 'byelection-label')
                     .attr('x', centroid[0]).attr('y', centroid[1] + 20)
                     .attr('text-anchor', 'middle')
-                    .attr('fill', '#fff').attr('font-size', '10px')
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', '10px')
                     .attr('font-weight', 600)
                     .text(election.district);
 
@@ -3333,7 +3401,7 @@ const MapModule = (() => {
                     labelG.append('text')
                         .attr('text-anchor', 'middle')
                         .attr('dy', '-0.6em')
-                        .attr('fill', '#fff')
+                        .attr('fill', mapColor('--map-label-fill', '#fff'))
                         .attr('font-size', '10px')
                         .attr('font-weight', 600)
                         .attr('pointer-events', 'none')
@@ -3341,30 +3409,30 @@ const MapModule = (() => {
                     const circleY = 12;
                     labelG.append('circle')
                         .attr('cy', circleY).attr('r', 10)
-                        .attr('fill', '#2a3450').attr('stroke', '#6b7fa0').attr('stroke-width', 1);
+                        .attr('fill', _neutralFill()).attr('stroke', mapColor('--map-district-stroke', '#6b7fa0')).attr('stroke-width', 1);
                     labelG.append('text')
                         .attr('text-anchor', 'middle').attr('y', circleY).attr('dy', '.35em')
-                        .attr('fill', '#dde').attr('font-size', '8px').attr('font-weight', 700)
+                        .attr('fill', mapColor('--map-label-fill', '#dde')).attr('font-size', '8px').attr('font-weight', 700)
                         .attr('pointer-events', 'none').text(totalSeats);
                 } else if (preset === 'B') {
                     // B안: 한 줄 컴팩트 텍스트 — "서울 11석"
                     labelG.append('text')
                         .attr('text-anchor', 'middle')
                         .attr('dy', '.35em')
-                        .attr('fill', '#fff')
+                        .attr('fill', mapColor('--map-label-fill', '#fff'))
                         .attr('font-size', '9px')
                         .attr('font-weight', 600)
                         .attr('pointer-events', 'none')
-                        .text(`${shortNames[key] || ''} ${totalSeats}석`);
+                        .text(shortNames[key] || '');
                 } else if (preset === 'C') {
                     // C안: 동그라미만 — 지역명은 hover 시 툴팁으로
                     const r = Math.max(10, Math.min(16, totalSeats * 0.9 + 4));
                     labelG.append('circle')
                         .attr('r', r)
-                        .attr('fill', '#2a3450').attr('stroke', '#6b7fa0').attr('stroke-width', 1.2);
+                        .attr('fill', _neutralFill()).attr('stroke', mapColor('--map-district-stroke', '#6b7fa0')).attr('stroke-width', 1.2);
                     labelG.append('text')
                         .attr('text-anchor', 'middle').attr('dy', '.35em')
-                        .attr('fill', '#dde').attr('font-size', r > 12 ? '9px' : '8px').attr('font-weight', 700)
+                        .attr('fill', mapColor('--map-label-fill', '#dde')).attr('font-size', r > 12 ? '9px' : '8px').attr('font-weight', 700)
                         .attr('pointer-events', 'none').text(totalSeats);
                     // hover 시 지역명 표시
                     labelG.append('title').text(`${shortNames[key] || key} 비례대표 ${totalSeats}석`);
@@ -3407,8 +3475,8 @@ const MapModule = (() => {
                 .append('path')
                 .attr('class', 'district')
                 .attr('d', path)
-                .attr('fill', '#2a3450')
-                .attr('stroke', '#5a6d8a')
+                .attr('fill', _neutralFill())
+                .attr('stroke', mapColor('--map-district-stroke', '#5a6d8a'))
                 .attr('stroke-width', 0.5)
                 .attr('pointer-events', 'none');
 
@@ -3429,7 +3497,7 @@ const MapModule = (() => {
                 g.append('text')
                     .attr('x', c[0]).attr('y', c[1] - 30)
                     .attr('text-anchor', 'middle')
-                    .attr('fill', '#fff').attr('font-size', '18px').attr('font-weight', 700)
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', '18px').attr('font-weight', 700)
                     .text(`${region.name} 광역 비례대표 ${totalSeats}석`);
 
                 // 바 차트
@@ -3449,7 +3517,7 @@ const MapModule = (() => {
 
                     g.append('text')
                         .attr('x', barX + Math.max(w, 4) + 6).attr('y', y + 14)
-                        .attr('fill', '#fff').attr('font-size', '12px').attr('font-weight', 500)
+                        .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', '12px').attr('font-weight', 500)
                         .text(`${partyName} ${p.seats}석`);
                 });
             });
@@ -3492,8 +3560,8 @@ const MapModule = (() => {
                 .append('path')
                 .attr('class', 'district')
                 .attr('d', path)
-                .attr('fill', '#2a3450')
-                .attr('stroke', '#5a6d8a')
+                .attr('fill', _neutralFill())
+                .attr('stroke', mapColor('--map-district-stroke', '#5a6d8a'))
                 .attr('stroke-width', 1)
                 .attr('opacity', 0)
                 .on('mouseover', function(event, d) {
@@ -3523,19 +3591,22 @@ const MapModule = (() => {
     }
 
     function renderProportionalDistrictLabels(regionKey, features) {
-        // "시군구명 N석" 한 줄 컴팩트 라벨 (B안 동일 포맷)
         ElectionData.loadProportionalLocalCouncilData().then(data => {
             const regionData = data?.regions?.[regionKey];
+            const fCount = features.length;
+            const fontSize = fCount <= 3 ? '14px' : fCount <= 8 ? '11px' : fCount <= 15 ? '9px' : '8px';
 
             features.forEach(feature => {
                 const districtName = getDistrictName(feature);
                 const c = path.centroid(feature);
                 if (isNaN(c[0])) return;
 
-                // 의석수 조회 (데이터 없으면 시군구명만 표시)
                 const sggData = regionData?.sigungus?.[districtName];
                 const totalSeats = sggData?.totalSeats || 0;
-                const label = totalSeats > 0 ? `${districtName} ${totalSeats}석` : districtName;
+                // 시군구 수 많으면 이름 축약
+                const label = fCount > 8 && districtName.length > 3
+                    ? districtName.replace(/시$|군$|구$/, '')
+                    : districtName;
 
                 const labelG = g.append('g')
                     .attr('class', 'proportional-label')
@@ -3556,7 +3627,7 @@ const MapModule = (() => {
 
                 labelG.append('text')
                     .attr('text-anchor', 'middle').attr('dy', '.35em')
-                    .attr('fill', '#fff').attr('font-size', '8px')
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', fontSize)
                     .attr('font-weight', 600).attr('pointer-events', 'none')
                     .text(label);
 
@@ -3608,8 +3679,8 @@ const MapModule = (() => {
                 .append('path')
                 .attr('class', 'district')
                 .attr('d', path)
-                .attr('fill', '#2a3450')
-                .attr('stroke', '#5a6d8a')
+                .attr('fill', _neutralFill())
+                .attr('stroke', mapColor('--map-district-stroke', '#5a6d8a'))
                 .attr('stroke-width', 1)
                 .on('mouseover', (event) => {
                     showProportionalDistrictTooltip(event, regionKey, sggName);
@@ -3647,7 +3718,7 @@ const MapModule = (() => {
 
             headerG.append('text')
                 .attr('text-anchor', 'middle').attr('dy', '-0.5em')
-                .attr('fill', '#fff').attr('font-size', '18px').attr('font-weight', 700)
+                .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', '18px').attr('font-weight', 700)
                 .text(`비례대표 ${totalSeats}석`);
 
             headerG.attr('opacity', 1);
@@ -3671,7 +3742,7 @@ const MapModule = (() => {
 
                 g.append('text')
                     .attr('x', barX + Math.max(w, 4) + 6).attr('y', y + 14)
-                    .attr('fill', '#fff').attr('font-size', '12px').attr('font-weight', 500)
+                    .attr('fill', mapColor('--map-label-fill', '#fff')).attr('font-size', '12px').attr('font-weight', 500)
                     .text(`${partyName} ${p.seats}석${shareText}`);
             });
         });
@@ -3762,6 +3833,40 @@ const MapModule = (() => {
         switchToBasicCouncilMap,
         switchToCouncilSubdistrictMap,
         switchToProportionalDistrictMap,
-        switchToProportionalSigunguDetail
+        switchToProportionalSigunguDetail,
+        refreshColors() {
+            if (!svg) return;
+            const labelFill = mapColor('--map-label-fill', '#fff');
+            const strokeColor = mapColor('--map-region-stroke', '#2a3550');
+            const distStroke = mapColor('--map-district-stroke', '#5a6d8a');
+
+            // 광역 지역
+            svg.selectAll('.region').each(function() {
+                const el = d3.select(this);
+                const key = el.attr('data-region');
+                if (key) el.attr('fill', getRegionColor(key));
+                else el.attr('fill', _neutralFill());
+            }).attr('stroke', strokeColor);
+
+            // 시군구
+            svg.selectAll('.district').each(function() {
+                const el = d3.select(this);
+                const currentFill = el.attr('fill');
+                // 정당색이 아닌 중립색이면 업데이트
+                if (!currentFill || currentFill.length <= 7) {
+                    el.attr('fill', _neutralFill());
+                }
+                el.attr('stroke', distStroke);
+            });
+
+            // 선거구 영역 (council-district 등)
+            svg.selectAll('.council-district, .council-bg-fill, .basic-bg-fill').each(function() {
+                const el = d3.select(this);
+                el.attr('stroke', distStroke);
+            });
+
+            // 모든 라벨
+            svg.selectAll('.region-label, .district-label').attr('fill', labelFill);
+        }
     };
 })();

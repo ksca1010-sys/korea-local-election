@@ -49,11 +49,15 @@ const CouncilTab = (() => {
 
     // ── 메인 렌더 ──
 
-    function render(tabName, regionKey, districtName, electionType) {
+    async function render(tabName, regionKey, districtName, electionType) {
         if (!districtName) {
-            // 선거구 미선택 → 안내 표시 (기존 province view가 처리)
             return;
         }
+
+        // 후보자 JSON을 먼저 로드한 뒤 탭 렌더 (현직+신규 모두 포함)
+        try {
+            await ElectionData.loadCouncilCandidates?.(regionKey, electionType);
+        } catch(e) { /* 로드 실패 시 폴백 사용 */ }
 
         switch (tabName) {
             case 'overview':   renderOverview(regionKey, districtName, electionType); break;
@@ -107,11 +111,14 @@ const CouncilTab = (() => {
             _renderOverviewHTML(regionKey, districtName, electionType, label, seats, activeCandidates, incumbents);
         }
 
-        // 먼저 즉시 렌더
+        // 먼저 즉시 렌더 (캐시에 있는 데이터로)
         doRender();
 
-        // 기초의원: 현직 데이터 로드 후 재렌더
+        // 후보자 JSON + 매핑 데이터 로드 후 재렌더
         const promises = [loadDistrictMapping(regionKey, electionType)];
+        if (ElectionData.loadCouncilCandidates) {
+            promises.push(ElectionData.loadCouncilCandidates(regionKey, electionType));
+        }
         if (electionType === 'localCouncil' && ElectionData.loadLocalCouncilMembersData) {
             promises.push(ElectionData.loadLocalCouncilMembersData());
         }
@@ -328,6 +335,10 @@ const CouncilTab = (() => {
         const container = document.getElementById('candidates-list');
         if (!container) return;
 
+        // 도지사 공약비교 카드 숨김 (의원급에는 해당 없음)
+        const compareCardEl = document.getElementById('candidate-compare-card');
+        if (compareCardEl) compareCardEl.style.display = 'none';
+
         // lazy-load 후 재렌더
         const tryRender = () => {
             const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
@@ -335,41 +346,32 @@ const CouncilTab = (() => {
             return activeCandidates;
         };
 
+        // 먼저 캐시 데이터로 즉시 렌더
         let activeCandidates = tryRender();
-
-        if (!activeCandidates.length) {
+        if (activeCandidates.length) {
+            _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
+        } else {
             container.innerHTML = '<div class="panel-loading"><div class="panel-loading-spinner"></div></div>';
-            // 데이터 로드 시도
-            const loadPromise = ElectionData.loadCouncilCandidates?.(regionKey, electionType);
-            if (loadPromise && loadPromise.then) {
-                loadPromise.then(() => {
-                    activeCandidates = tryRender();
-                    if (activeCandidates.length) {
-                        _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
-                    } else {
-                        container.innerHTML = `
-                            <div class="district-no-data">
-                                <p>이 선거구의 후보자 정보가 아직 등록되지 않았습니다.</p>
-                                <p style="margin-top:var(--space-4);color:var(--text-muted);font-size:var(--text-caption);">
-                                    후보자 등록 기간(5/14~15) 이후 업데이트됩니다.
-                                </p>
-                            </div>`;
-                    }
-                });
-                return;
-            }
-
-            container.innerHTML = `
-                <div class="district-no-data">
-                    <p>이 선거구의 후보자 정보가 아직 등록되지 않았습니다.</p>
-                    <p style="margin-top:var(--space-4);color:var(--text-muted);font-size:var(--text-caption);">
-                        후보자 등록 기간(5/14~15) 이후 업데이트됩니다.
-                    </p>
-                </div>`;
-            return;
         }
 
-        _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
+        // 후보자 JSON 로드 후 재렌더 (신규 후보 포함)
+        const loadPromise = ElectionData.loadCouncilCandidates?.(regionKey, electionType);
+        if (loadPromise && loadPromise.then) {
+            loadPromise.then(() => {
+                activeCandidates = tryRender();
+                if (activeCandidates.length) {
+                    _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType);
+                } else {
+                    container.innerHTML = `
+                        <div class="district-no-data">
+                            <p>이 선거구의 후보자 정보가 아직 등록되지 않았습니다.</p>
+                            <p style="margin-top:var(--space-4);color:var(--text-muted);font-size:var(--text-caption);">
+                                후보자 등록 기간(5/14~15) 이후 업데이트됩니다.
+                            </p>
+                        </div>`;
+                }
+            });
+        }
     }
 
     function _renderCandidatesContent(container, activeCandidates, regionKey, districtName, electionType) {
@@ -431,7 +433,7 @@ const CouncilTab = (() => {
         let html = `
             <div class="council-seats-info" style="padding:10px;margin-bottom:12px;border-radius:8px;background:var(--accent-primary)11;border:1px solid var(--accent-primary)33;text-align:center;">
                 <i class="fas fa-users" style="color:var(--accent-primary)"></i>
-                선출 인원: <strong>${seats}명</strong> (이 중 ${seats}명이 당선됩니다)
+                선출 인원: <strong>${seats}명</strong>
             </div>
         `;
 
@@ -462,11 +464,6 @@ const CouncilTab = (() => {
             `;
         });
 
-        html += `
-            <div style="text-align:center;padding:8px;color:var(--text-muted);font-size:0.85rem;border-top:1px solid var(--border-color);margin-top:8px;">
-                전체 ${candidates.length}명 출마 → ${seats}명 당선
-            </div>
-        `;
 
         container.innerHTML = html;
     }

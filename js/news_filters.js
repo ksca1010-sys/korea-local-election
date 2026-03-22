@@ -179,9 +179,6 @@ window.NewsFilterConfig = {
       maxAgeDays: 60,
       preferPopularity: true,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 선거 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 후보 공약 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 여론조사 지지율 -교육감 -구청장 -군수',
         '{{REGION_NAME}} 도지사 선거 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['선거', '지사', '시장', '후보', '공약', '여론조사'],
@@ -211,9 +208,7 @@ window.NewsFilterConfig = {
       categoryId: 'poll',
       maxAgeDays: 45,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 지지율 여론조사 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 지방선거 여론조사 지사 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 가상대결 양자대결 다자대결 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 지지율 가상대결 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['여론조사', '지지율', '지지도', '후보별', '가상대결', '다자대결', '양자대결', '이슈 여론조사', '찬반조사', '정당지지율', '표본오차', '응답률', '리얼미터', '한국갤럽', 'nbs'],
       strict: {
@@ -240,10 +235,7 @@ window.NewsFilterConfig = {
       categoryId: 'candidate',
       maxAgeDays: 60,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 유세 방문 간담회 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 출마 경선 공천 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 지사 후보 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 선거운동 지사 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 출마 공천 경선 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['후보', '출마', '공천', '경선', '단일화', '사퇴', '입후보', '유세', '방문', '간담회', '회동', '지지선언', '캠프', '선대위', '토론회'],
       strict: {
@@ -270,10 +262,7 @@ window.NewsFilterConfig = {
       categoryId: 'policy',
       maxAgeDays: 60,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 정책공약 공약발표 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 핵심공약 이행계획 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 도지사 공약 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 도정 비전 공약 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 핵심공약 정책발표 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['공약', '정책', '발표', '비전', '정책공약', '핵심공약', '이행', '로드맵', '공약집', '이행계획', '매니페스토', '공약검증'],
       strict: {
@@ -301,9 +290,7 @@ window.NewsFilterConfig = {
       maxAgeDays: 60,
       preferPopularity: true,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 전망 분석 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 지방선거 판세 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 격전지 경합 -교육감 -구청장 -군수'
+        '{{REGION_NAME}} 지방선거 판세 격전지 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['판세', '전망', '분석', '격전지', '경합', '우세', '열세', '접전', '캐스팅보트', '정치지형'],
       strict: {
@@ -330,9 +317,7 @@ window.NewsFilterConfig = {
       categoryId: 'campaign',
       maxAgeDays: 45,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 토론 토론회 -교육감 -구청장 -군수',
-        '{{GOVERNOR_QUERY_BASE}} 선거법 네거티브 -교육감 -구청장 -군수',
-        '{{REGION_NAME}} 지사 유세 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 토론회 유세 선거법 -교육감 -구청장 -군수'
       ],
       focusKeywords: ['유세', '토론', '토론회', '선거운동', '거리유세', '선거법', '선거비용', '네거티브', '흑색선전', '사전선거운동'],
       strict: {
@@ -360,10 +345,7 @@ window.NewsFilterConfig = {
       all: {
         query: '{{GOVERNOR_QUERY_BASE}} 지방선거 후보 공약 여론조사 -교육감 -하남시장 -구리시장 -고양시장',
         altQueries: [
-          '{{GOVERNOR_QUERY_BASE}} 선거',
-          '{{GOVERNOR_QUERY_BASE}} 후보 공약',
-          '{{GOVERNOR_QUERY_BASE}} 여론조사 지지율',
-          '경기도지사 선거'
+          '경기도지사 선거 -교육감 -구청장 -군수'
         ],
         strict: {
           excludeAny: ['교육감', '교육청', '학교장', '하남시장', '구리시장', '고양시장', '수원시장', '성남시장', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']

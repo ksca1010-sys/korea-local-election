@@ -25,9 +25,9 @@
     /* 텍스트 — Off-white + Blue-gray 계층 */
     --text-primary: #DDE1FF;
     --text-secondary: #A9C7FF;
-    --text-muted: #5D6B8F;
+    --text-muted: #8B95B0;
     --text-accent: #2E8BFF;
-    --text-disabled: #3A4060;
+    --text-disabled: #5A6180;
 
     /* 시맨틱 컬러 — Civic Beacon 팔레트 */
     --accent-blue: #2E8BFF;
@@ -46,15 +46,16 @@
     --primary-gradient: linear-gradient(135deg, #A9C7FF, #3D90FF);
     --primary-glow: 0 0 20px rgba(61, 144, 255, 0.15);
 
-    /* 정당색 (고정) */
-    --party-democratic: #1A5CF0;
+    /* 정당색 (고정 — data/static/parties.json과 동기화) */
+    --party-democratic: #2E8BFF;
     --party-ppp: #E61E2B;
-    --party-reform: #FF6D2E;
+    --party-reform: #3B6ABF;
     --party-newreform: #FF7210;
     --party-progressive: #D6001C;
-    --party-justice: #00A85A;
+    --party-justice: #FFCC00;
     --party-newfuture: #45B97C;
-    --party-independent: #5D6B8F;
+    --party-independent: #a0a0a0;
+    --party-other: #9370DB;
 
     /* 레이아웃 */
     --header-height: 56px;
@@ -97,6 +98,149 @@
     --glass-bg: rgba(25, 30, 53, 0.80);
     --glass-blur: blur(16px);
     --glass-border: rgba(169, 199, 255, 0.08);
+
+    /* Chart/Map theme-adaptive colors */
+    --chart-text: #8b99b5;
+    --chart-grid: rgba(42, 53, 83, 0.5);
+    --chart-tick: #94a3b8;
+    --chart-legend: #cbd5e1;
+    --chart-grid-line: rgba(148, 163, 184, 0.08);
+    --tooltip-bg: rgba(26, 34, 54, 0.95);
+    --tooltip-border: rgba(59, 130, 246, 0.3);
+    --map-hover-fill: #2a2a3a;
+    --map-bg: #1a2236;
+    --map-region-stroke: #2a3550;
+    --map-label-fill: #ffffff;
+    --map-label-stroke: #000000;
+    --map-district-stroke: #5a6d8a;
+    --map-legend-text: #ffffff;
+    --map-legend-bg: #2a3450;
+    --map-container-shadow: none;
+}
+
+/* ── Light Mode ── */
+@media (prefers-color-scheme: light) {
+  :root:not(.dark-mode) {
+    --bg-primary: #F5F7FA;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #EDF0F5;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #EDF0F5;
+    --bg-input: #E8EBF0;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EDF0F5;
+
+    --border-color: rgba(0, 0, 0, 0.10);
+    --border-light: rgba(0, 0, 0, 0.06);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-default: rgba(0, 0, 0, 0.10);
+    --border-strong: rgba(0, 0, 0, 0.15);
+
+    --text-primary: #1A1D2E;
+    --text-secondary: #4A5068;
+    --text-muted: #6B7280;
+    --text-accent: #2563EB;
+    --text-disabled: #9CA3AF;
+
+    --accent-blue: #2563EB;
+    --accent-primary: #2563EB;
+    --accent-cyan: #0891B2;
+    --accent-green: #059669;
+    --accent-yellow: #D97706;
+    --accent-red: #DC2626;
+    --accent-purple: #7C3AED;
+    --color-info: #2563EB;
+    --color-success: #059669;
+    --color-warning: #D97706;
+    --color-danger: #DC2626;
+
+    --primary-gradient: linear-gradient(135deg, #60A5FA, #2563EB);
+    --primary-glow: 0 0 20px rgba(37, 99, 235, 0.12);
+
+    --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 32px rgba(0, 0, 0, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-blur: blur(16px);
+    --glass-border: rgba(0, 0, 0, 0.08);
+
+    --chart-text: #4A5068;
+    --chart-grid: rgba(0, 0, 0, 0.08);
+    --chart-tick: #6B7280;
+    --chart-legend: #4A5068;
+    --chart-grid-line: rgba(0, 0, 0, 0.06);
+    --tooltip-bg: rgba(255, 255, 255, 0.95);
+    --tooltip-border: rgba(37, 99, 235, 0.25);
+    --map-hover-fill: #c8ced8;
+    --map-bg: #d0d6e0;
+    --map-region-stroke: #b8bfcc;
+    --map-label-fill: #2a2f3e;
+    --map-label-stroke: rgba(255,255,255,0.6);
+    --map-district-stroke: #a8b0be;
+    --map-legend-text: #2a2f3e;
+    --map-legend-bg: rgba(255,255,255,0.85);
+    --map-container-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  }
+}
+
+.light-mode {
+    --bg-primary: #F5F7FA;
+    --bg-secondary: #FFFFFF;
+    --bg-tertiary: #EDF0F5;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #EDF0F5;
+    --bg-input: #E8EBF0;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EDF0F5;
+
+    --border-color: rgba(0, 0, 0, 0.10);
+    --border-light: rgba(0, 0, 0, 0.06);
+    --border-subtle: rgba(0, 0, 0, 0.06);
+    --border-default: rgba(0, 0, 0, 0.10);
+    --border-strong: rgba(0, 0, 0, 0.15);
+
+    --text-primary: #1A1D2E;
+    --text-secondary: #4A5068;
+    --text-muted: #6B7280;
+    --text-accent: #2563EB;
+    --text-disabled: #9CA3AF;
+
+    --accent-blue: #2563EB;
+    --accent-primary: #2563EB;
+    --accent-cyan: #0891B2;
+    --accent-green: #059669;
+    --accent-yellow: #D97706;
+    --accent-red: #DC2626;
+    --accent-purple: #7C3AED;
+    --color-info: #2563EB;
+    --color-success: #059669;
+    --color-warning: #D97706;
+    --color-danger: #DC2626;
+
+    --primary-gradient: linear-gradient(135deg, #60A5FA, #2563EB);
+    --primary-glow: 0 0 20px rgba(37, 99, 235, 0.12);
+
+    --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 32px rgba(0, 0, 0, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-blur: blur(16px);
+    --glass-border: rgba(0, 0, 0, 0.08);
+
+    --chart-text: #4A5068;
+    --chart-grid: rgba(0, 0, 0, 0.08);
+    --chart-tick: #6B7280;
+    --chart-legend: #4A5068;
+    --chart-grid-line: rgba(0, 0, 0, 0.06);
+    --tooltip-bg: rgba(255, 255, 255, 0.95);
+    --tooltip-border: rgba(37, 99, 235, 0.25);
+    --map-hover-fill: #c8ced8;
+    --map-bg: #d0d6e0;
+    --map-region-stroke: #b8bfcc;
+    --map-label-fill: #2a2f3e;
+    --map-label-stroke: rgba(255,255,255,0.6);
+    --map-district-stroke: #a8b0be;
+    --map-legend-text: #2a2f3e;
+    --map-legend-bg: rgba(255,255,255,0.85);
+    --map-container-shadow: 0 2px 12px rgba(0,0,0,0.08);
 }
 
 /* Reset */
@@ -1184,6 +1328,20 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     height: 100%;
 }
 
+/* 라이트모드 지도: 배경과 구분되도록 그림자 추가 */
+.light-mode #map-container {
+    border-radius: 12px;
+    box-shadow: var(--map-container-shadow);
+    margin: 8px;
+}
+@media (prefers-color-scheme: light) {
+    :root:not(.dark-mode) #map-container {
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        margin: 8px;
+    }
+}
+
 /* Map paths */
 #korea-map .region {
     stroke: rgba(255, 255, 255, 0.2);
@@ -1285,12 +1443,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 }
 
 #korea-map .region-label {
-    fill: var(--text-primary);
+    fill: var(--map-label-fill);
     font-size: 10px;
-    font-weight: 500;
+    font-weight: 600;
     text-anchor: middle;
     pointer-events: none;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+    stroke: var(--map-label-stroke);
+    stroke-width: 2.5px;
+    paint-order: stroke;
 }
 
 /* Map Tooltip — Glassmorphism */
@@ -2998,7 +3158,9 @@ canvas {
 .text-newreform { color: var(--party-newreform); }
 .text-progressive { color: var(--party-progressive); }
 .text-newfuture { color: var(--party-newfuture); }
+.text-justice { color: var(--party-justice); }
 .text-independent { color: var(--party-independent); }
+.text-other { color: var(--party-other); }
 
 .bg-democratic { background-color: var(--party-democratic); }
 .bg-ppp { background-color: var(--party-ppp); }
@@ -3006,7 +3168,9 @@ canvas {
 .bg-newreform { background-color: var(--party-newreform); }
 .bg-progressive { background-color: var(--party-progressive); }
 .bg-newfuture { background-color: var(--party-newfuture); }
+.bg-justice { background-color: var(--party-justice); }
 .bg-independent { background-color: var(--party-independent); }
+.bg-other { background-color: var(--party-other); }
 
 /* ============================================
    Transparency Banner (#10)
@@ -3770,8 +3934,11 @@ body.banner-hidden #main-content {
 .district-label {
     pointer-events: auto;
     cursor: pointer;
-    text-shadow: 0 1px 3px rgba(0,0,0,0.8), 0 0 6px rgba(0,0,0,0.5);
-    font-weight: 500;
+    fill: var(--map-label-fill);
+    stroke: var(--map-label-stroke);
+    stroke-width: 2px;
+    paint-order: stroke;
+    font-weight: 600;
 }
 
 /* ============================================
@@ -4342,7 +4509,111 @@ body.banner-hidden #main-content {
     background: rgba(59, 130, 246, 0.08);
 }
 
+/* ── Election Term Tooltips ── */
+.term-tooltip {
+    border-bottom: 1px dotted var(--text-muted);
+    cursor: pointer;
+    position: relative;
+}
+.term-tooltip:hover::after,
+.term-tooltip:focus::after {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 4px);
+    left: 0;
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: var(--text-caption);
+    white-space: normal;
+    width: max-content;
+    max-width: 250px;
+    z-index: 1000;
+    box-shadow: var(--shadow-md);
+    line-height: 1.4;
+    pointer-events: none;
+}
+
+/* ── Screen Reader Only (Accessibility) ── */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 /* ── District Detail ── */
 .district-detail {
     margin-bottom: 12px;
+}
+
+/* ── Theme Toggle Button ── */
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-size: 16px;
+    flex-shrink: 0;
+}
+.theme-toggle-btn:hover {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+/* ── Light-mode specific overrides ── */
+.light-mode .loading-content h2 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+.light-mode .logo-text {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Override hardcoded inline white/light text in tooltips for light mode */
+.light-mode .map-tooltip span[style*="color:#fff"],
+.light-mode .map-tooltip span[style*="color: #fff"] {
+    color: var(--text-primary) !important;
+}
+.light-mode .map-tooltip span[style*="color:#e0e0e0"],
+.light-mode .map-tooltip span[style*="color: #e0e0e0"] {
+    color: var(--text-secondary) !important;
+}
+.light-mode .map-tooltip div[style*="color:#888"],
+.light-mode .map-tooltip div[style*="color: #888"] {
+    color: var(--text-muted) !important;
+}
+.light-mode .map-tooltip div[style*="color:#6b7280"],
+.light-mode .map-tooltip div[style*="color: #6b7280"] {
+    color: var(--text-muted) !important;
+}
+.light-mode .map-tooltip .tooltip-temporary {
+    color: #92400e;
+}
+
+/* Loading screen light mode */
+.light-mode #loading-screen {
+    background: var(--bg-primary);
+}
+.light-mode .loading-spinner {
+    border-color: var(--border-color);
+    border-top-color: var(--accent-primary);
 }

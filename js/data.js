@@ -210,7 +210,7 @@ const ElectionData = (() => {
             code: '11', name: '서울특별시', nameEng: 'Seoul',
             population: 9304000, voters: 8310000,
             currentGovernor: { name: '오세훈', party: 'ppp', since: 2021 },
-            prevElection: { winner: 'ppp', winnerName: '오세훈', rate: 59.0, runner: 'democratic', runnerName: '송영길', runnerRate: 39.2, turnout: 50.6 },
+            prevElection: { winner: 'ppp', winnerName: '오세훈', rate: 59.0, runner: 'democratic', runnerName: '송영길', runnerRate: 39.2, turnout: null },
             keyIssues: ['주거 안정', '교통 인프라', '도시 재생', '미세먼지 대책'],
             subRegions: 25,
             candidates: [
@@ -224,27 +224,14 @@ const ElectionData = (() => {
                 { id: 'seoul-8', name: '김정철', party: 'newReform', age: 49, career: '개혁신당 최고위원 / 형사법 전문 변호사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['양당 구태 타파', '서울 행정 혁신'] },
                 { id: 'seoul-9', name: '한동훈', party: 'independent', age: 52, career: '前 국민의힘 대표 / 前 법무부장관 / 검사장 출신', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'seoul-1': 38.2, 'seoul-2': 41.5, 'seoul-3': 12.1 }, margin: 3.1, sampleSize: 1003 },
-                { date: '2026-01-29', source: '리얼미터', data: { 'seoul-1': 39.8, 'seoul-2': 40.1, 'seoul-3': 11.5 }, margin: 2.8, sampleSize: 1502 },
-                { date: '2026-02-12', source: '한국갤럽', data: { 'seoul-1': 41.2, 'seoul-2': 39.8, 'seoul-3': 11.0 }, margin: 3.1, sampleSize: 1005 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'seoul-1': 42.1, 'seoul-2': 38.5, 'seoul-3': 11.8 }, margin: 2.9, sampleSize: 1500 }
-            ],
-            partySupport: { democratic: 42.1, ppp: 38.5, reform: 11.8, newReform: 3.2, progressive: 1.5, independent: 2.9 },
-            demographics: {
-                '18-29': { democratic: 48, ppp: 28, reform: 16, other: 8 },
-                '30-39': { democratic: 50, ppp: 25, reform: 15, other: 10 },
-                '40-49': { democratic: 45, ppp: 35, reform: 12, other: 8 },
-                '50-59': { democratic: 38, ppp: 45, reform: 10, other: 7 },
-                '60+': { democratic: 30, ppp: 55, reform: 5, other: 10 }
-            },
+            polls: [],
             hotspot: true
         },
         'busan': {
             code: '26', name: '부산광역시', nameEng: 'Busan',
             population: 3239000, voters: 2884000,
             currentGovernor: { name: '박형준', party: 'ppp', since: 2021 },
-            prevElection: { winner: 'ppp', winnerName: '박형준', rate: 66.4, runner: 'democratic', runnerName: '변성완', runnerRate: 32.2, turnout: 47.5 },
+            prevElection: { winner: 'ppp', winnerName: '박형준', rate: 66.4, runner: 'democratic', runnerName: '변성완', runnerRate: 32.2, turnout: null },
             keyIssues: ['가덕도 신공항', '도심 쇠퇴 대응', '청년 인구 유출', '해양 관광'],
             subRegions: 16,
             candidates: [
@@ -255,27 +242,14 @@ const ElectionData = (() => {
                 { id: 'busan-5', name: '윤택근', party: 'progressive', age: null, career: '前 민주노총 수석부위원장 / 前 부산지하철노조 위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['노동자 시장', '좋은 일자리·공공성'] },
                 { id: 'busan-6', name: '정이한', party: 'newReform', age: 37, career: '개혁신당 대변인 / 前 국회의원 선임비서관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['젊은 부산', '청년 인구 유출 방지'] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'busan-1': 35.5, 'busan-2': 44.2, 'busan-3': 8.1 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-01-29', source: '리얼미터', data: { 'busan-1': 37.1, 'busan-2': 42.8, 'busan-3': 7.5 }, margin: 3.2, sampleSize: 1002 },
-                { date: '2026-02-12', source: '한국갤럽', data: { 'busan-1': 38.5, 'busan-2': 41.0, 'busan-3': 8.8 }, margin: 3.5, sampleSize: 805 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'busan-1': 39.2, 'busan-2': 40.5, 'busan-3': 8.2 }, margin: 3.1, sampleSize: 1005 }
-            ],
-            partySupport: { democratic: 39.2, ppp: 40.5, reform: 8.2, newReform: 5.8, progressive: 2.1, independent: 4.2 },
-            demographics: {
-                '18-29': { democratic: 45, ppp: 30, reform: 15, other: 10 },
-                '30-39': { democratic: 46, ppp: 28, reform: 14, other: 12 },
-                '40-49': { democratic: 40, ppp: 38, reform: 12, other: 10 },
-                '50-59': { democratic: 35, ppp: 48, reform: 8, other: 9 },
-                '60+': { democratic: 25, ppp: 60, reform: 4, other: 11 }
-            },
+            polls: [],
             hotspot: true
         },
         'daegu': {
             code: '27', name: '대구광역시', nameEng: 'Daegu',
             population: 2351000, voters: 2052000,
             currentGovernor: { name: '김정기', party: '-', since: 2025, acting: true, actingReason: '홍준표 대선 출마 사퇴' },
-            prevElection: { winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: 48.1 },
+            prevElection: { winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: null },
             keyIssues: ['대구경북통합신공항', '산업 구조 전환', '인구 감소', '의료 인프라'],
             subRegions: 8,
             candidates: [
@@ -288,26 +262,14 @@ const ElectionData = (() => {
                 { id: 'daegu-7', name: '홍석준', party: 'ppp', age: null, career: '前 국회의원 (달서갑)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'daegu-8', name: '김부겸', party: 'democratic', age: null, career: '前 국무총리 / 前 행안부 장관 / 前 국회의원 (수성)', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'daegu-1': 25.5, 'daegu-2': 55.2 }, margin: 4.0, sampleSize: 600 },
-                { date: '2026-02-12', source: '리얼미터', data: { 'daegu-1': 27.8, 'daegu-2': 52.1 }, margin: 3.8, sampleSize: 802 },
-                { date: '2026-02-24', source: '한국갤럽', data: { 'daegu-1': 28.5, 'daegu-2': 51.8 }, margin: 4.0, sampleSize: 603 }
-            ],
-            partySupport: { democratic: 28.5, ppp: 51.8, reform: 7.5, newReform: 5.2, progressive: 1.8, independent: 5.2 },
-            demographics: {
-                '18-29': { democratic: 38, ppp: 35, reform: 15, other: 12 },
-                '30-39': { democratic: 35, ppp: 38, reform: 14, other: 13 },
-                '40-49': { democratic: 28, ppp: 50, reform: 10, other: 12 },
-                '50-59': { democratic: 22, ppp: 60, reform: 6, other: 12 },
-                '60+': { democratic: 15, ppp: 72, reform: 3, other: 10 }
-            },
+            polls: [],
             hotspot: false
         },
         'incheon': {
             code: '28', name: '인천광역시', nameEng: 'Incheon',
             population: 3054000, voters: 2583000,
             currentGovernor: { name: '유정복', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '유정복', rate: 52.1, runner: 'democratic', runnerName: '박남춘', runnerRate: 44.5, turnout: 49.2 },
+            prevElection: { winner: 'ppp', winnerName: '유정복', rate: 52.1, runner: 'democratic', runnerName: '박남춘', runnerRate: 44.5, turnout: null },
             keyIssues: ['인천공항 연계 발전', '수도권 교통', '영종도 개발', '제조업 활성화'],
             subRegions: 10,
             candidates: [
@@ -317,26 +279,14 @@ const ElectionData = (() => {
                 { id: 'incheon-4', name: '김교흥', party: 'democratic', age: null, career: '現 국회의원 (서구갑) / 前 인천시 정무부시장', photo: null, status: 'RUMORED', dataSource: 'poll', pledges: [] },
                 { id: 'incheon-5', name: '이기붕', party: 'newReform', age: null, career: '개혁신당 인천시당위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '리얼미터', data: { 'incheon-1': 40.2, 'incheon-2': 39.8, 'incheon-3': 10.5 }, margin: 3.2, sampleSize: 1002 },
-                { date: '2026-02-12', source: '한국갤럽', data: { 'incheon-1': 42.5, 'incheon-2': 38.1, 'incheon-3': 10.8 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'incheon-1': 43.1, 'incheon-2': 37.5, 'incheon-3': 11.2 }, margin: 3.0, sampleSize: 1100 }
-            ],
-            partySupport: { democratic: 43.1, ppp: 37.5, reform: 11.2, newReform: 3.5, progressive: 1.5, independent: 3.2 },
-            demographics: {
-                '18-29': { democratic: 50, ppp: 25, reform: 16, other: 9 },
-                '30-39': { democratic: 48, ppp: 27, reform: 14, other: 11 },
-                '40-49': { democratic: 44, ppp: 36, reform: 11, other: 9 },
-                '50-59': { democratic: 40, ppp: 42, reform: 10, other: 8 },
-                '60+': { democratic: 32, ppp: 52, reform: 6, other: 10 }
-            },
+            polls: [],
             hotspot: true
         },
         'gwangju': {
             code: '29', name: '광주광역시', nameEng: 'Gwangju',
             population: 1389000, voters: 1200000,
             currentGovernor: { name: '강기정', party: 'democratic', since: 2022 },
-            prevElection: { winner: 'democratic', winnerName: '강기정', rate: 74.9, runner: 'ppp', runnerName: '주기환', runnerRate: 15.9, turnout: 37.66 },
+            prevElection: { winner: 'democratic', winnerName: '강기정', rate: 74.9, runner: 'ppp', runnerName: '주기환', runnerRate: 15.9, turnout: null },
             keyIssues: ['광주-전남 행정통합', 'AI 산업 육성', '광주형 일자리', '문화수도'],
             subRegions: 5,
             candidates: [
@@ -349,25 +299,14 @@ const ElectionData = (() => {
                 { id: 'gwangju-7', name: '이종욱', party: 'progressive', age: null, career: '前 민주노총 광주지역본부장 / 30년 공무원', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'gwangju-8', name: '이정현', party: 'ppp', age: null, career: '前 3선 국회의원 / 前 새누리당 대표', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'gwangju-1': 52.1, 'gwangju-2': 30.5 }, margin: 4.2, sampleSize: 500 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'gwangju-1': 50.8, 'gwangju-2': 32.1 }, margin: 3.8, sampleSize: 700 }
-            ],
-            partySupport: { democratic: 50.8, ppp: 8.5, reform: 32.1, newReform: 2.5, progressive: 3.2, independent: 2.9 },
-            demographics: {
-                '18-29': { democratic: 45, ppp: 8, reform: 35, other: 12 },
-                '30-39': { democratic: 48, ppp: 7, reform: 33, other: 12 },
-                '40-49': { democratic: 55, ppp: 10, reform: 28, other: 7 },
-                '50-59': { democratic: 58, ppp: 12, reform: 22, other: 8 },
-                '60+': { democratic: 55, ppp: 15, reform: 18, other: 12 }
-            },
+            polls: [],
             hotspot: false
         },
         'daejeon': {
             code: '30', name: '대전광역시', nameEng: 'Daejeon',
             population: 1441000, voters: 1237000,
             currentGovernor: { name: '이장우', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '이장우', rate: 51.2, runner: 'democratic', runnerName: '허태정', runnerRate: 48.8, turnout: 49.8 },
+            prevElection: { winner: 'ppp', winnerName: '이장우', rate: 51.2, runner: 'democratic', runnerName: '허태정', runnerRate: 48.8, turnout: null },
             keyIssues: ['대전-충남 행정통합', '과학기술 클러스터', '도심 교통', '세종시 연계'],
             subRegions: 5,
             candidates: [
@@ -378,25 +317,14 @@ const ElectionData = (() => {
                 { id: 'daejeon-5', name: '장철민', party: 'democratic', age: null, career: '재선 국회의원 (동구)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'daejeon-6', name: '장종태', party: 'democratic', age: null, career: '초선 국회의원 (서구갑)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '리얼미터', data: { 'daejeon-1': 44.5, 'daejeon-2': 42.1 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-02-24', source: '한국갤럽', data: { 'daejeon-1': 46.2, 'daejeon-2': 40.8 }, margin: 3.8, sampleSize: 700 }
-            ],
-            partySupport: { democratic: 46.2, ppp: 40.8, reform: 6.5, newReform: 2.8, progressive: 1.2, independent: 2.5 },
-            demographics: {
-                '18-29': { democratic: 52, ppp: 28, reform: 12, other: 8 },
-                '30-39': { democratic: 50, ppp: 30, reform: 10, other: 10 },
-                '40-49': { democratic: 46, ppp: 38, reform: 8, other: 8 },
-                '50-59': { democratic: 42, ppp: 45, reform: 6, other: 7 },
-                '60+': { democratic: 35, ppp: 52, reform: 4, other: 9 }
-            },
+            polls: [],
             hotspot: true
         },
         'ulsan': {
             code: '31', name: '울산광역시', nameEng: 'Ulsan',
             population: 1090000, voters: 935000,
             currentGovernor: { name: '김두겸', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '김두겸', rate: 59.8, runner: 'democratic', runnerName: '송철호', runnerRate: 40.2, turnout: 50.1 },
+            prevElection: { winner: 'ppp', winnerName: '김두겸', rate: 59.8, runner: 'democratic', runnerName: '송철호', runnerRate: 40.2, turnout: null },
             keyIssues: ['자동차 산업 전환', '수소 경제', '울산 혁신도시', '환경 문제'],
             subRegions: 5,
             candidates: [
@@ -407,25 +335,14 @@ const ElectionData = (() => {
                 { id: 'ulsan-5', name: '안재현', party: 'democratic', age: null, career: '前 노무현재단 울산 상임대표', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['부유식 해상풍력 완수'] },
                 { id: 'ulsan-6', name: '이선호', party: 'democratic', age: null, career: '前 청와대 자치발전비서관 / 前 울주군수', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'ulsan-1': 40.8, 'ulsan-2': 45.2 }, margin: 4.0, sampleSize: 600 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'ulsan-1': 42.5, 'ulsan-2': 43.8 }, margin: 3.5, sampleSize: 800 }
-            ],
-            partySupport: { democratic: 42.5, ppp: 43.8, reform: 5.5, newReform: 3.2, progressive: 2.5, independent: 2.5 },
-            demographics: {
-                '18-29': { democratic: 48, ppp: 30, reform: 12, other: 10 },
-                '30-39': { democratic: 46, ppp: 32, reform: 10, other: 12 },
-                '40-49': { democratic: 44, ppp: 40, reform: 6, other: 10 },
-                '50-59': { democratic: 38, ppp: 48, reform: 5, other: 9 },
-                '60+': { democratic: 30, ppp: 58, reform: 3, other: 9 }
-            },
+            polls: [],
             hotspot: true
         },
         'sejong': {
             code: '36', name: '세종특별자치시', nameEng: 'Sejong',
             population: 391000, voters: 301000,
             currentGovernor: { name: '최민호', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '최민호', rate: 52.8, runner: 'democratic', runnerName: '이춘희', runnerRate: 47.2, turnout: 52.3 },
+            prevElection: { winner: 'ppp', winnerName: '최민호', rate: 52.8, runner: 'democratic', runnerName: '이춘희', runnerRate: 47.2, turnout: null },
             keyIssues: ['행정수도 완성', '세종-대전 연계', '신도시 인프라', '교육 환경'],
             subRegions: 1,
             candidates: [
@@ -437,24 +354,14 @@ const ElectionData = (() => {
                 { id: 'sejong-6', name: '고준일', party: 'democratic', age: null, career: '前 세종시의회 의장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'sejong-7', name: '이준배', party: 'ppp', age: null, career: '前 세종시 경제부시장 / 前 국토부 과장', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-02-24', source: '리얼미터', data: { 'sejong-1': 48.5, 'sejong-2': 44.2 }, margin: 4.5, sampleSize: 500 }
-            ],
-            partySupport: { democratic: 48.5, ppp: 44.2, reform: 3.5, newReform: 1.5, progressive: 0.8, independent: 1.5 },
-            demographics: {
-                '18-29': { democratic: 55, ppp: 28, reform: 10, other: 7 },
-                '30-39': { democratic: 55, ppp: 26, reform: 10, other: 9 },
-                '40-49': { democratic: 50, ppp: 35, reform: 6, other: 9 },
-                '50-59': { democratic: 42, ppp: 48, reform: 4, other: 6 },
-                '60+': { democratic: 35, ppp: 55, reform: 2, other: 8 }
-            },
+            polls: [],
             hotspot: true
         },
         'gyeonggi': {
             code: '41', name: '경기도', nameEng: 'Gyeonggi',
             population: 13742000, voters: 11595000,
             currentGovernor: { name: '김동연', party: 'democratic', since: 2022 },
-            prevElection: { winner: 'democratic', winnerName: '김동연', rate: 49.1, runner: 'ppp', runnerName: '김은혜', runnerRate: 48.9, turnout: 50.8 },
+            prevElection: { winner: 'democratic', winnerName: '김동연', rate: 49.1, runner: 'ppp', runnerName: '김은혜', runnerRate: 48.9, turnout: null },
             keyIssues: ['GTX 완성', '신도시 교통', '반도체 클러스터', '수도권 균형발전'],
             subRegions: 31,
             candidates: [
@@ -467,27 +374,14 @@ const ElectionData = (() => {
                 { id: 'gyeonggi-7', name: '함진규', party: 'ppp', age: 67, career: '前 한국도로공사 사장 / 前 재선 국회의원 (시흥) / 前 정책위의장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'gyeonggi-8', name: '홍성규', party: 'progressive', age: 52, career: '진보당 수석대변인 / 화성노동인권센터 소장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['경기 노동부지사 임명', '사회대개혁'] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'gyeonggi-1': 43.5, 'gyeonggi-2': 37.8, 'gyeonggi-3': 10.2 }, margin: 2.5, sampleSize: 1500 },
-                { date: '2026-01-29', source: '리얼미터', data: { 'gyeonggi-1': 44.2, 'gyeonggi-2': 36.5, 'gyeonggi-3': 11.0 }, margin: 2.2, sampleSize: 2000 },
-                { date: '2026-02-12', source: '한국갤럽', data: { 'gyeonggi-1': 44.8, 'gyeonggi-2': 36.1, 'gyeonggi-3': 10.5 }, margin: 2.5, sampleSize: 1502 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'gyeonggi-1': 45.5, 'gyeonggi-2': 35.2, 'gyeonggi-3': 11.2 }, margin: 2.2, sampleSize: 2005 }
-            ],
-            partySupport: { democratic: 45.5, ppp: 35.2, reform: 11.2, newReform: 3.5, progressive: 1.8, independent: 2.8 },
-            demographics: {
-                '18-29': { democratic: 52, ppp: 25, reform: 15, other: 8 },
-                '30-39': { democratic: 50, ppp: 26, reform: 14, other: 10 },
-                '40-49': { democratic: 46, ppp: 34, reform: 12, other: 8 },
-                '50-59': { democratic: 42, ppp: 40, reform: 10, other: 8 },
-                '60+': { democratic: 32, ppp: 52, reform: 6, other: 10 }
-            },
+            polls: [],
             hotspot: false
         },
         'gangwon': {
             code: '42', name: '강원특별자치도', nameEng: 'Gangwon',
             population: 1507000, voters: 1332000,
             currentGovernor: { name: '김진태', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '김진태', rate: 54.1, runner: 'democratic', runnerName: '이광재', runnerRate: 45.9, turnout: 52.5 },
+            prevElection: { winner: 'ppp', winnerName: '김진태', rate: 54.1, runner: 'democratic', runnerName: '이광재', runnerRate: 45.9, turnout: null },
             keyIssues: ['관광 산업 활성화', '인구 소멸 대응', '특별자치도 자치권', '동해안 개발'],
             subRegions: 18,
             candidates: [
@@ -495,25 +389,14 @@ const ElectionData = (() => {
                 { id: 'gangwon-2', name: '김진태', party: 'ppp', age: 62, career: '現 강원도지사 / 前 3선 국회의원 / 검사 출신', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['미래산업 글로벌도시', 'AI·첨단산업 120개 사업'] },
                 { id: 'gangwon-3', name: '염동열', party: 'ppp', age: 65, career: '前 재선 국회의원 (태백·영월·평창·정선)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'gangwon-1': 42.1, 'gangwon-2': 45.8 }, margin: 3.8, sampleSize: 700 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'gangwon-1': 44.2, 'gangwon-2': 43.5 }, margin: 3.5, sampleSize: 800 }
-            ],
-            partySupport: { democratic: 44.2, ppp: 43.5, reform: 5.0, newReform: 3.0, progressive: 1.5, independent: 2.8 },
-            demographics: {
-                '18-29': { democratic: 50, ppp: 30, reform: 10, other: 10 },
-                '30-39': { democratic: 48, ppp: 32, reform: 10, other: 10 },
-                '40-49': { democratic: 44, ppp: 40, reform: 6, other: 10 },
-                '50-59': { democratic: 40, ppp: 48, reform: 4, other: 8 },
-                '60+': { democratic: 35, ppp: 55, reform: 3, other: 7 }
-            },
+            polls: [],
             hotspot: true
         },
         'chungbuk': {
             code: '43', name: '충청북도', nameEng: 'Chungbuk',
             population: 1597000, voters: 1373000,
             currentGovernor: { name: '김영환', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '김영환', rate: 58.2, runner: 'democratic', runnerName: '노영민', runnerRate: 41.8, turnout: 51.8 },
+            prevElection: { winner: 'ppp', winnerName: '김영환', rate: 58.2, runner: 'democratic', runnerName: '노영민', runnerRate: 41.8, turnout: null },
             keyIssues: ['오송 참사 후속대책', '바이오 산업', '충북선 고속화', '균형발전'],
             subRegions: 11,
             candidates: [
@@ -526,25 +409,14 @@ const ElectionData = (() => {
                 { id: 'chungbuk-7', name: '윤갑근', party: 'ppp', age: null, career: '前 충북도당위원장 / 前 대구고검 검사장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대한민국 중심 충북의 시대'] },
                 { id: 'chungbuk-8', name: '윤희근', party: 'ppp', age: null, career: '前 경찰청장 (23대) / 국민의힘 입당', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['결과로 증명하는 도지사', '반도체·바이오·AI 성장동력'] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '리얼미터', data: { 'chungbuk-1': 45.8, 'chungbuk-2': 41.2 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-02-24', source: '한국갤럽', data: { 'chungbuk-1': 47.2, 'chungbuk-2': 39.5 }, margin: 3.8, sampleSize: 700 }
-            ],
-            partySupport: { democratic: 47.2, ppp: 39.5, reform: 5.8, newReform: 3.0, progressive: 1.5, independent: 3.0 },
-            demographics: {
-                '18-29': { democratic: 52, ppp: 28, reform: 10, other: 10 },
-                '30-39': { democratic: 50, ppp: 30, reform: 8, other: 12 },
-                '40-49': { democratic: 48, ppp: 36, reform: 6, other: 10 },
-                '50-59': { democratic: 44, ppp: 42, reform: 5, other: 9 },
-                '60+': { democratic: 38, ppp: 50, reform: 4, other: 8 }
-            },
+            polls: [],
             hotspot: true
         },
         'chungnam': {
             code: '44', name: '충청남도', nameEng: 'Chungnam',
             population: 2136000, voters: 1825000,
             currentGovernor: { name: '김태흠', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '김태흠', rate: 53.9, runner: 'democratic', runnerName: '양승조', runnerRate: 46.1, turnout: 51.2 },
+            prevElection: { winner: 'ppp', winnerName: '김태흠', rate: 53.9, runner: 'democratic', runnerName: '양승조', runnerRate: 46.1, turnout: null },
             keyIssues: ['대전-충남 행정통합', '서해안 산업벨트', '농업 혁신', '천안-아산 메가시티'],
             subRegions: 15,
             candidates: [
@@ -554,25 +426,14 @@ const ElectionData = (() => {
                 { id: 'chungnam-4', name: '복기왕', party: 'democratic', age: null, career: '現 국회의원 (아산갑) / 前 아산시장(재선)', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
                 { id: 'chungnam-5', name: '나소열', party: 'ppp', age: null, career: '現 국회의원 (천안갑) / 前 천안시장', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'chungnam-1': 44.5, 'chungnam-2': 43.2 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'chungnam-1': 46.0, 'chungnam-2': 41.8 }, margin: 3.2, sampleSize: 1000 }
-            ],
-            partySupport: { democratic: 46.0, ppp: 41.8, reform: 5.2, newReform: 3.0, progressive: 1.2, independent: 2.8 },
-            demographics: {
-                '18-29': { democratic: 50, ppp: 30, reform: 10, other: 10 },
-                '30-39': { democratic: 48, ppp: 32, reform: 8, other: 12 },
-                '40-49': { democratic: 46, ppp: 38, reform: 6, other: 10 },
-                '50-59': { democratic: 42, ppp: 44, reform: 5, other: 9 },
-                '60+': { democratic: 38, ppp: 50, reform: 4, other: 8 }
-            },
+            polls: [],
             hotspot: true
         },
         'jeonbuk': {
             code: '45', name: '전북특별자치도', nameEng: 'Jeonbuk',
             population: 1722000, voters: 1518000,
             currentGovernor: { name: '김관영', party: 'democratic', since: 2022 },
-            prevElection: { winner: 'democratic', winnerName: '김관영', rate: 82.1, runner: 'ppp', runnerName: '조배숙', runnerRate: 17.9, turnout: 50.9 },
+            prevElection: { winner: 'democratic', winnerName: '김관영', rate: 82.1, runner: 'ppp', runnerName: '조배숙', runnerRate: 17.9, turnout: null },
             keyIssues: ['특별자치도 자치권', '새만금 개발', '탄소중립', '농생명 산업'],
             subRegions: 14,
             candidates: [
@@ -581,24 +442,14 @@ const ElectionData = (() => {
                 { id: 'jeonbuk-3', name: '이원택', party: 'democratic', age: null, career: '재선 국회의원 (전주갑) / 前 전북도 정무부지사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'jeonbuk-4', name: '정헌율', party: 'democratic', age: null, career: '現 익산시장 (3선, 연임제한)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-02-24', source: '리얼미터', data: { 'jeonbuk-1': 55.2, 'jeonbuk-2': 28.5 }, margin: 3.8, sampleSize: 700 }
-            ],
-            partySupport: { democratic: 55.2, ppp: 8.5, reform: 28.5, newReform: 2.0, progressive: 3.5, independent: 2.3 },
-            demographics: {
-                '18-29': { democratic: 48, ppp: 8, reform: 32, other: 12 },
-                '30-39': { democratic: 50, ppp: 7, reform: 30, other: 13 },
-                '40-49': { democratic: 58, ppp: 9, reform: 25, other: 8 },
-                '50-59': { democratic: 60, ppp: 10, reform: 22, other: 8 },
-                '60+': { democratic: 58, ppp: 12, reform: 20, other: 10 }
-            },
+            polls: [],
             hotspot: false
         },
         'jeonnam': {
             code: '46', name: '전라남도', nameEng: 'Jeonnam',
             population: 1777000, voters: 1565000,
             currentGovernor: { name: '김영록', party: 'democratic', since: 2018 },
-            prevElection: { winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: 50.9 },
+            prevElection: { winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: null },
             keyIssues: ['광주-전남 행정통합', '에너지 전환', '농어촌 활성화', '인구 소멸'],
             subRegions: 22,
             candidates: [
@@ -609,24 +460,14 @@ const ElectionData = (() => {
                 { id: 'jeonnam-5', name: '서삼석', party: 'democratic', age: null, career: '3선 국회의원 (영암·무안·신안) / 前 무안군수', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] },
                 { id: 'jeonnam-6', name: '김화진', party: 'ppp', age: null, career: '現 국민의힘 전남도당위원장 (4연임)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-02-24', source: '한국갤럽', data: { 'jeonnam-1': 58.5, 'jeonnam-2': 25.2 }, margin: 4.0, sampleSize: 600 }
-            ],
-            partySupport: { democratic: 58.5, ppp: 6.8, reform: 25.2, newReform: 2.5, progressive: 4.0, independent: 3.0 },
-            demographics: {
-                '18-29': { democratic: 50, ppp: 6, reform: 30, other: 14 },
-                '30-39': { democratic: 52, ppp: 5, reform: 28, other: 15 },
-                '40-49': { democratic: 60, ppp: 7, reform: 24, other: 9 },
-                '50-59': { democratic: 62, ppp: 8, reform: 22, other: 8 },
-                '60+': { democratic: 60, ppp: 10, reform: 18, other: 12 }
-            },
+            polls: [],
             hotspot: false
         },
         'gyeongbuk': {
             code: '47', name: '경상북도', nameEng: 'Gyeongbuk',
             population: 2500000, voters: 2224000,
             currentGovernor: { name: '이철우', party: 'ppp', since: 2018 },
-            prevElection: { winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: 49.5 },
+            prevElection: { winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: null },
             keyIssues: ['포항 지진 복구', '경북 북부 발전', '울릉도 개발', '반도체 산업'],
             subRegions: 23,
             candidates: [
@@ -635,25 +476,14 @@ const ElectionData = (() => {
                 { id: 'gyeongbuk-3', name: '오중기', party: 'democratic', age: null, career: '民 포항북 지역위원장 / 前 청와대 균형발전비서관실', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['대기업 상생 생태계', '청년창업 메카'] },
                 { id: 'gyeongbuk-4', name: '임미애', party: 'democratic', age: null, career: '現 비례대표 국회의원 / 前 경북도의원', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '리얼미터', data: { 'gyeongbuk-1': 22.8, 'gyeongbuk-2': 58.5 }, margin: 3.8, sampleSize: 800 },
-                { date: '2026-02-24', source: '한국갤럽', data: { 'gyeongbuk-1': 24.5, 'gyeongbuk-2': 56.2 }, margin: 4.0, sampleSize: 600 }
-            ],
-            partySupport: { democratic: 24.5, ppp: 56.2, reform: 6.5, newReform: 5.8, progressive: 1.5, independent: 5.5 },
-            demographics: {
-                '18-29': { democratic: 35, ppp: 38, reform: 14, other: 13 },
-                '30-39': { democratic: 30, ppp: 42, reform: 12, other: 16 },
-                '40-49': { democratic: 24, ppp: 55, reform: 8, other: 13 },
-                '50-59': { democratic: 20, ppp: 62, reform: 5, other: 13 },
-                '60+': { democratic: 15, ppp: 72, reform: 3, other: 10 }
-            },
+            polls: [],
             hotspot: false
         },
         'gyeongnam': {
             code: '48', name: '경상남도', nameEng: 'Gyeongnam',
             population: 3201000, voters: 2780000,
             currentGovernor: { name: '박완수', party: 'ppp', since: 2022 },
-            prevElection: { winner: 'ppp', winnerName: '박완수', rate: 65.7, runner: 'democratic', runnerName: '양문석', runnerRate: 29.4, turnout: 49.8 },
+            prevElection: { winner: 'ppp', winnerName: '박완수', rate: 65.7, runner: 'democratic', runnerName: '양문석', runnerRate: 29.4, turnout: null },
             keyIssues: ['조선 산업 부활', '진주 혁신도시', '김해 가덕도 연계', '농촌 활성화'],
             subRegions: 18,
             candidates: [
@@ -662,25 +492,14 @@ const ElectionData = (() => {
                 { id: 'gyeongnam-3', name: '조해진', party: 'ppp', age: null, career: '前 3선 국회의원 (밀양·의령·함안·창녕)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['남부권 제2 수도권', '부울경 통합 지자체'] },
                 { id: 'gyeongnam-4', name: '전희영', party: 'progressive', age: null, career: '前 전교조 위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'gyeongnam-1': 38.5, 'gyeongnam-2': 46.8 }, margin: 3.5, sampleSize: 800 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'gyeongnam-1': 41.2, 'gyeongnam-2': 44.5 }, margin: 3.0, sampleSize: 1000 }
-            ],
-            partySupport: { democratic: 41.2, ppp: 44.5, reform: 5.8, newReform: 3.5, progressive: 2.0, independent: 3.0 },
-            demographics: {
-                '18-29': { democratic: 48, ppp: 30, reform: 12, other: 10 },
-                '30-39': { democratic: 45, ppp: 32, reform: 10, other: 13 },
-                '40-49': { democratic: 40, ppp: 42, reform: 8, other: 10 },
-                '50-59': { democratic: 35, ppp: 50, reform: 5, other: 10 },
-                '60+': { democratic: 28, ppp: 60, reform: 3, other: 9 }
-            },
+            polls: [],
             hotspot: true
         },
         'jeju': {
             code: '50', name: '제주특별자치도', nameEng: 'Jeju',
             population: 664000, voters: 567000,
             currentGovernor: { name: '오영훈', party: 'democratic', since: 2022 },
-            prevElection: { winner: 'democratic', winnerName: '오영훈', rate: 55.1, runner: 'ppp', runnerName: '허향진', runnerRate: 39.5, turnout: 53.5 },
+            prevElection: { winner: 'democratic', winnerName: '오영훈', rate: 55.1, runner: 'ppp', runnerName: '허향진', runnerRate: 39.5, turnout: null },
             keyIssues: ['제주 제2공항', '관광 산업 혁신', '환경 보전', '이주민 정책'],
             subRegions: 2,
             candidates: [
@@ -690,18 +509,7 @@ const ElectionData = (() => {
                 { id: 'jeju-4', name: '문성유', party: 'ppp', age: null, career: '前 기재부 기획조정실장 / 前 KAMCO 사장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['1차 산업 인력통합관리센터'] },
                 { id: 'jeju-5', name: '양윤녕', party: 'democratic', age: null, career: '前 소나무당 → 민주당 복당 / 前 제주도의원', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
-            polls: [
-                { date: '2026-01-15', source: '한국갤럽', data: { 'jeju-1': 40.2, 'jeju-2': 35.8, 'jeju-3': 12.5 }, margin: 4.5, sampleSize: 500 },
-                { date: '2026-02-24', source: '리얼미터', data: { 'jeju-1': 42.5, 'jeju-2': 33.8, 'jeju-3': 13.2 }, margin: 4.0, sampleSize: 600 }
-            ],
-            partySupport: { democratic: 42.5, ppp: 33.8, reform: 5.5, newReform: 2.0, progressive: 1.5, independent: 14.7 },
-            demographics: {
-                '18-29': { democratic: 48, ppp: 25, reform: 10, other: 17 },
-                '30-39': { democratic: 45, ppp: 28, reform: 8, other: 19 },
-                '40-49': { democratic: 42, ppp: 35, reform: 6, other: 17 },
-                '50-59': { democratic: 40, ppp: 40, reform: 5, other: 15 },
-                '60+': { democratic: 35, ppp: 45, reform: 4, other: 16 }
-            },
+            polls: [],
             hotspot: false
         }
     };
@@ -740,168 +548,168 @@ const ElectionData = (() => {
     // 역대 광역단체장 선거 결과 (민선 1기~8기, 1995~2022)
     const historicalElections = {
         seoul: [
-            { election: 1, year: 1995, winner: 'democratic', winnerName: '조순', rate: 42.4, runner: 'independent', runnerName: '박찬종', runnerRate: 33.5, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '고건', rate: 53.5, runner: 'ppp', runnerName: '최병렬', runnerRate: 44.0, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '이명박', rate: 52.3, runner: 'democratic', runnerName: '김민석', runnerRate: 43.0, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '오세훈', rate: 63.3, runner: 'democratic', runnerName: '강금실', runnerRate: 25.9, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '오세훈', rate: 47.4, runner: 'democratic', runnerName: '한명숙', runnerRate: 47.2, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '박원순', rate: 56.1, runner: 'ppp', runnerName: '정몽준', runnerRate: 44.7, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '박원순', rate: 52.6, runner: 'ppp', runnerName: '김문수', runnerRate: 20.6, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '오세훈', rate: 59.0, runner: 'democratic', runnerName: '송영길', runnerRate: 39.2, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'democratic', winnerName: '조순', rate: 42.4, runner: 'independent', runnerName: '박찬종', runnerRate: 33.5, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '고건', rate: 53.5, runner: 'ppp', runnerName: '최병렬', runnerRate: 44.0, turnout: null },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '이명박', rate: 52.3, runner: 'democratic', runnerName: '김민석', runnerRate: 43.0, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '오세훈', rate: 63.3, runner: 'democratic', runnerName: '강금실', runnerRate: 25.9, turnout: null },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '오세훈', rate: 47.4, runner: 'democratic', runnerName: '한명숙', runnerRate: 47.2, turnout: null },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '박원순', rate: 56.1, runner: 'ppp', runnerName: '정몽준', runnerRate: 44.7, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '박원순', rate: 52.6, runner: 'ppp', runnerName: '김문수', runnerRate: 20.6, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '오세훈', rate: 59.0, runner: 'democratic', runnerName: '송영길', runnerRate: 39.2, turnout: null }
         ],
         busan: [
-            { election: 1, year: 1995, winner: 'ppp', winnerName: '문정수', rate: 51.4, runner: 'democratic', runnerName: '노무현', runnerRate: 37.6, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '안상영', rate: 45.1, runner: 'independent', runnerName: '김기재', runnerRate: 43.5, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '안상영', rate: 63.8, runner: 'democratic', runnerName: '한이헌', runnerRate: 19.4, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '허남식', rate: 68.8, runner: 'democratic', runnerName: '오거돈', runnerRate: 21.3, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '허남식', rate: 57.0, runner: 'democratic', runnerName: '김정길', runnerRate: 43.0, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '서병수', rate: 51.8, runner: 'independent', runnerName: '오거돈', runnerRate: 48.2, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '오거돈', rate: 58.6, runner: 'ppp', runnerName: '서병수', runnerRate: 35.4, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '박형준', rate: 66.4, runner: 'democratic', runnerName: '변성완', runnerRate: 32.2, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'ppp', winnerName: '문정수', rate: 51.4, runner: 'democratic', runnerName: '노무현', runnerRate: 37.6, turnout: null },
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '안상영', rate: 45.1, runner: 'independent', runnerName: '김기재', runnerRate: 43.5, turnout: null },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '안상영', rate: 63.8, runner: 'democratic', runnerName: '한이헌', runnerRate: 19.4, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '허남식', rate: 68.8, runner: 'democratic', runnerName: '오거돈', runnerRate: 21.3, turnout: null },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '허남식', rate: 57.0, runner: 'democratic', runnerName: '김정길', runnerRate: 43.0, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '서병수', rate: 51.8, runner: 'independent', runnerName: '오거돈', runnerRate: 48.2, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '오거돈', rate: 58.6, runner: 'ppp', runnerName: '서병수', runnerRate: 35.4, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '박형준', rate: 66.4, runner: 'democratic', runnerName: '변성완', runnerRate: 32.2, turnout: null }
         ],
         daegu: [
-            { election: 1, year: 1995, winner: 'independent', winnerName: '문희갑', rate: 36.8, runner: 'other', runnerName: '이의익', runnerRate: 22.1, turnout: 68.4, runnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '문희갑', rate: 72.0, runner: 'other', runnerName: '이의익', runnerRate: 20.7, turnout: 52.7, runnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '조해녕', rate: 61.2, runner: 'independent', runnerName: '이재용', runnerRate: 38.8, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '김범일', rate: 72.8, runner: 'independent', runnerName: '이재용', runnerRate: 18.8, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '김범일', rate: 76.4, runner: 'democratic', runnerName: '이승천', runnerRate: 15.3, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '권영진', rate: 55.6, runner: 'democratic', runnerName: '김부겸', runnerRate: 41.5, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'ppp', winnerName: '권영진', rate: 52.2, runner: 'democratic', runnerName: '임대윤', runnerRate: 41.4, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'independent', winnerName: '문희갑', rate: 36.8, runner: 'other', runnerName: '이의익', runnerRate: 22.1, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '문희갑', rate: 72.0, runner: 'other', runnerName: '이의익', runnerRate: 20.7, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '조해녕', rate: 61.2, runner: 'independent', runnerName: '이재용', runnerRate: 38.8, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '김범일', rate: 72.8, runner: 'independent', runnerName: '이재용', runnerRate: 18.8, turnout: null },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '김범일', rate: 76.4, runner: 'democratic', runnerName: '이승천', runnerRate: 15.3, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '권영진', rate: 55.6, runner: 'democratic', runnerName: '김부겸', runnerRate: 41.5, turnout: null },
+            { election: 7, year: 2018, winner: 'ppp', winnerName: '권영진', rate: 52.2, runner: 'democratic', runnerName: '임대윤', runnerRate: 41.4, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: null }
         ],
         incheon: [
-            { election: 1, year: 1995, winner: 'ppp', winnerName: '최기선', rate: 40.8, runner: 'democratic', runnerName: '신용석', runnerRate: 31.7, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'other', winnerName: '최기선', rate: 53.5, runner: 'ppp', runnerName: '안상수', runnerRate: 34.0, turnout: 52.7, winnerPartyLabel: '국민신당' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '안상수', rate: 56.2, runner: 'democratic', runnerName: '박상은', runnerRate: 32.1, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '안상수', rate: 63.7, runner: 'democratic', runnerName: '최기선', runnerRate: 22.0, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '송영길', rate: 52.1, runner: 'ppp', runnerName: '안상수', runnerRate: 45.5, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '유정복', rate: 49.4, runner: 'democratic', runnerName: '송영길', runnerRate: 49.1, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '박남춘', rate: 59.3, runner: 'ppp', runnerName: '유정복', runnerRate: 34.4, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '유정복', rate: 51.8, runner: 'democratic', runnerName: '박남춘', runnerRate: 44.6, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'ppp', winnerName: '최기선', rate: 40.8, runner: 'democratic', runnerName: '신용석', runnerRate: 31.7, turnout: null },
+            { election: 2, year: 1998, winner: 'other', winnerName: '최기선', rate: 53.5, runner: 'ppp', runnerName: '안상수', runnerRate: 34.0, turnout: null, winnerPartyLabel: '국민신당' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '안상수', rate: 56.2, runner: 'democratic', runnerName: '박상은', runnerRate: 32.1, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '안상수', rate: 63.7, runner: 'democratic', runnerName: '최기선', runnerRate: 22.0, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '송영길', rate: 52.1, runner: 'ppp', runnerName: '안상수', runnerRate: 45.5, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '유정복', rate: 49.4, runner: 'democratic', runnerName: '송영길', runnerRate: 49.1, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '박남춘', rate: 59.3, runner: 'ppp', runnerName: '유정복', runnerRate: 34.4, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '유정복', rate: 51.8, runner: 'democratic', runnerName: '박남춘', runnerRate: 44.6, turnout: null }
         ],
         gwangju: [
-            { election: 1, year: 1995, winner: 'democratic', winnerName: '송언종', rate: 89.7, runner: 'ppp', runnerName: '김동환', runnerRate: 10.3, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '고재유', rate: 67.2, runner: 'independent', runnerName: '이승채', runnerRate: 32.8, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'democratic', winnerName: '박광태', rate: 46.8, runner: 'independent', runnerName: '정동년', runnerRate: 27.0, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'democratic', winnerName: '박광태', rate: 55.2, runner: 'democratic', runnerName: '조영택', runnerRate: 33.6, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '강운태', rate: 58.8, runner: 'other', runnerName: '정찬용', runnerRate: 14.5, turnout: 54.5, runnerPartyLabel: '민주노동당' },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '윤장현', rate: 59.2, runner: 'independent', runnerName: '강운태', runnerRate: 31.6, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '이용섭', rate: 83.6, runner: 'ppp', runnerName: '나경채', runnerRate: 6.2, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'democratic', winnerName: '강기정', rate: 74.9, runner: 'ppp', runnerName: '주기환', runnerRate: 15.9, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'democratic', winnerName: '송언종', rate: 89.7, runner: 'ppp', runnerName: '김동환', runnerRate: 10.3, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '고재유', rate: 67.2, runner: 'independent', runnerName: '이승채', runnerRate: 32.8, turnout: null },
+            { election: 3, year: 2002, winner: 'democratic', winnerName: '박광태', rate: 46.8, runner: 'independent', runnerName: '정동년', runnerRate: 27.0, turnout: null },
+            { election: 4, year: 2006, winner: 'democratic', winnerName: '박광태', rate: 55.2, runner: 'democratic', runnerName: '조영택', runnerRate: 33.6, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '강운태', rate: 58.8, runner: 'other', runnerName: '정찬용', runnerRate: 14.5, turnout: null, runnerPartyLabel: '민주노동당' },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '윤장현', rate: 59.2, runner: 'independent', runnerName: '강운태', runnerRate: 31.6, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '이용섭', rate: 83.6, runner: 'ppp', runnerName: '나경채', runnerRate: 6.2, turnout: null },
+            { election: 8, year: 2022, winner: 'democratic', winnerName: '강기정', rate: 74.9, runner: 'ppp', runnerName: '주기환', runnerRate: 15.9, turnout: null }
         ],
         daejeon: [
-            { election: 1, year: 1995, winner: 'other', winnerName: '홍선기', rate: 63.8, runner: 'ppp', runnerName: '염홍철', runnerRate: 20.9, turnout: 68.4, winnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'other', winnerName: '홍선기', rate: 73.7, runner: 'independent', runnerName: '송천영', runnerRate: 18.1, turnout: 52.7, winnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '염홍철', rate: 46.6, runner: 'other', runnerName: '홍선기', runnerRate: 40.2, turnout: 48.9, runnerPartyLabel: '자유민주연합' },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '박성효', rate: 44.5, runner: 'democratic', runnerName: '염홍철', runnerRate: 42.5, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'other', winnerName: '염홍철', rate: 48.4, runner: 'ppp', runnerName: '박성효', runnerRate: 28.2, turnout: 54.5, winnerPartyLabel: '자유선진당' },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '권선택', rate: 51.7, runner: 'ppp', runnerName: '박성효', runnerRate: 48.3, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '허태정', rate: 56.4, runner: 'ppp', runnerName: '박성효', runnerRate: 32.5, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '이장우', rate: 51.2, runner: 'democratic', runnerName: '허태정', runnerRate: 48.8, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'other', winnerName: '홍선기', rate: 63.8, runner: 'ppp', runnerName: '염홍철', runnerRate: 20.9, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'other', winnerName: '홍선기', rate: 73.7, runner: 'independent', runnerName: '송천영', runnerRate: 18.1, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '염홍철', rate: 46.6, runner: 'other', runnerName: '홍선기', runnerRate: 40.2, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '박성효', rate: 44.5, runner: 'democratic', runnerName: '염홍철', runnerRate: 42.5, turnout: null },
+            { election: 5, year: 2010, winner: 'other', winnerName: '염홍철', rate: 48.4, runner: 'ppp', runnerName: '박성효', runnerRate: 28.2, turnout: null, winnerPartyLabel: '자유선진당' },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '권선택', rate: 51.7, runner: 'ppp', runnerName: '박성효', runnerRate: 48.3, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '허태정', rate: 56.4, runner: 'ppp', runnerName: '박성효', runnerRate: 32.5, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '이장우', rate: 51.2, runner: 'democratic', runnerName: '허태정', runnerRate: 48.8, turnout: null }
         ],
         ulsan: [
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '심완구', rate: 42.7, runner: 'independent', runnerName: '송철호', runnerRate: 39.4, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '박맹우', rate: 53.1, runner: 'other', runnerName: '송철호', runnerRate: 43.6, turnout: 48.9, runnerPartyLabel: '민주노동당' },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '박맹우', rate: 66.6, runner: 'other', runnerName: '노옥희', runnerRate: 24.3, turnout: 51.6, runnerPartyLabel: '민주노동당' },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '박맹우', rate: 63.0, runner: 'other', runnerName: '김창현', runnerRate: 27.9, turnout: 54.5, runnerPartyLabel: '민주노동당' },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '김기현', rate: 64.6, runner: 'other', runnerName: '조승수', runnerRate: 29.6, turnout: 56.8, runnerPartyLabel: '정의당' },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '송철호', rate: 55.3, runner: 'ppp', runnerName: '김기현', runnerRate: 38.8, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '김두겸', rate: 59.8, runner: 'democratic', runnerName: '송철호', runnerRate: 40.2, turnout: 50.9 }
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '심완구', rate: 42.7, runner: 'independent', runnerName: '송철호', runnerRate: 39.4, turnout: null },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '박맹우', rate: 53.1, runner: 'other', runnerName: '송철호', runnerRate: 43.6, turnout: null, runnerPartyLabel: '민주노동당' },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '박맹우', rate: 66.6, runner: 'other', runnerName: '노옥희', runnerRate: 24.3, turnout: null, runnerPartyLabel: '민주노동당' },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '박맹우', rate: 63.0, runner: 'other', runnerName: '김창현', runnerRate: 27.9, turnout: null, runnerPartyLabel: '민주노동당' },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '김기현', rate: 64.6, runner: 'other', runnerName: '조승수', runnerRate: 29.6, turnout: null, runnerPartyLabel: '정의당' },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '송철호', rate: 55.3, runner: 'ppp', runnerName: '김기현', runnerRate: 38.8, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '김두겸', rate: 59.8, runner: 'democratic', runnerName: '송철호', runnerRate: 40.2, turnout: null }
         ],
         sejong: [
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '이춘희', rate: 56.1, runner: 'ppp', runnerName: '유한식', runnerRate: 43.9, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '이춘희', rate: 72.2, runner: 'ppp', runnerName: '송아영', runnerRate: 18.0, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '최민호', rate: 52.8, runner: 'democratic', runnerName: '이춘희', runnerRate: 47.2, turnout: 50.9 }
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '이춘희', rate: 56.1, runner: 'ppp', runnerName: '유한식', runnerRate: 43.9, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '이춘희', rate: 72.2, runner: 'ppp', runnerName: '송아영', runnerRate: 18.0, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '최민호', rate: 52.8, runner: 'democratic', runnerName: '이춘희', runnerRate: 47.2, turnout: null }
         ],
         gyeonggi: [
-            { election: 1, year: 1995, winner: 'ppp', winnerName: '이인제', rate: 40.6, runner: 'democratic', runnerName: '장경우', runnerRate: 29.6, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '임창열', rate: 54.3, runner: 'ppp', runnerName: '손학규', runnerRate: 45.7, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '손학규', rate: 58.4, runner: 'democratic', runnerName: '진념', runnerRate: 36.0, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '김문수', rate: 60.0, runner: 'democratic', runnerName: '진대제', runnerRate: 30.6, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '김문수', rate: 52.1, runner: 'other', runnerName: '유시민', runnerRate: 47.9, turnout: 54.5, runnerPartyLabel: '국민참여당' },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '남경필', rate: 50.4, runner: 'democratic', runnerName: '김진표', runnerRate: 49.6, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '이재명', rate: 56.4, runner: 'ppp', runnerName: '남경필', runnerRate: 33.6, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'democratic', winnerName: '김동연', rate: 49.1, runner: 'ppp', runnerName: '김은혜', runnerRate: 48.9, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'ppp', winnerName: '이인제', rate: 40.6, runner: 'democratic', runnerName: '장경우', runnerRate: 29.6, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '임창열', rate: 54.3, runner: 'ppp', runnerName: '손학규', runnerRate: 45.7, turnout: null },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '손학규', rate: 58.4, runner: 'democratic', runnerName: '진념', runnerRate: 36.0, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '김문수', rate: 60.0, runner: 'democratic', runnerName: '진대제', runnerRate: 30.6, turnout: null },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '김문수', rate: 52.1, runner: 'other', runnerName: '유시민', runnerRate: 47.9, turnout: null, runnerPartyLabel: '국민참여당' },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '남경필', rate: 50.4, runner: 'democratic', runnerName: '김진표', runnerRate: 49.6, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '이재명', rate: 56.4, runner: 'ppp', runnerName: '남경필', runnerRate: 33.6, turnout: null },
+            { election: 8, year: 2022, winner: 'democratic', winnerName: '김동연', rate: 49.1, runner: 'ppp', runnerName: '김은혜', runnerRate: 48.9, turnout: null }
         ],
         gangwon: [
-            { election: 1, year: 1995, winner: 'other', winnerName: '최각규', rate: 65.8, runner: 'ppp', runnerName: '이상룡', runnerRate: 34.2, turnout: 68.4, winnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '김진선', rate: 39.3, runner: 'other', runnerName: '한호선', runnerRate: 33.8, turnout: 52.7, runnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '김진선', rate: 71.1, runner: 'democratic', runnerName: '남동우', runnerRate: 28.9, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '김진선', rate: 72.9, runner: 'democratic', runnerName: '이창복', runnerRate: 19.6, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '이광재', rate: 53.4, runner: 'ppp', runnerName: '이계진', runnerRate: 46.6, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '최문순', rate: 50.6, runner: 'ppp', runnerName: '최흥집', runnerRate: 48.2, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '최문순', rate: 66.6, runner: 'independent', runnerName: '정창수', runnerRate: 33.4, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '김진태', rate: 54.1, runner: 'democratic', runnerName: '이광재', runnerRate: 45.9, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'other', winnerName: '최각규', rate: 65.8, runner: 'ppp', runnerName: '이상룡', runnerRate: 34.2, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '김진선', rate: 39.3, runner: 'other', runnerName: '한호선', runnerRate: 33.8, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '김진선', rate: 71.1, runner: 'democratic', runnerName: '남동우', runnerRate: 28.9, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '김진선', rate: 72.9, runner: 'democratic', runnerName: '이창복', runnerRate: 19.6, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '이광재', rate: 53.4, runner: 'ppp', runnerName: '이계진', runnerRate: 46.6, turnout: null },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '최문순', rate: 50.6, runner: 'ppp', runnerName: '최흥집', runnerRate: 48.2, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '최문순', rate: 66.6, runner: 'independent', runnerName: '정창수', runnerRate: 33.4, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '김진태', rate: 54.1, runner: 'democratic', runnerName: '이광재', runnerRate: 45.9, turnout: null }
         ],
         chungbuk: [
-            { election: 1, year: 1995, winner: 'other', winnerName: '주병덕', rate: 36.4, runner: 'democratic', runnerName: '이용희', runnerRate: 24.5, turnout: 68.4, winnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'other', winnerName: '이원종', rate: 74.1, runner: 'ppp', runnerName: '주병덕', runnerRate: 25.9, turnout: 52.7, winnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '이원종', rate: 58.6, runner: 'other', runnerName: '구천서', runnerRate: 33.5, turnout: 48.9, runnerPartyLabel: '자유민주연합' },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '정우택', rate: 63.8, runner: 'democratic', runnerName: '한범덕', runnerRate: 26.6, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '이시종', rate: 49.6, runner: 'ppp', runnerName: '정우택', runnerRate: 48.5, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '이시종', rate: 50.3, runner: 'ppp', runnerName: '윤진식', runnerRate: 48.2, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '이시종', rate: 65.4, runner: 'ppp', runnerName: '박경국', runnerRate: 26.6, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '김영환', rate: 58.2, runner: 'democratic', runnerName: '노영민', runnerRate: 41.8, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'other', winnerName: '주병덕', rate: 36.4, runner: 'democratic', runnerName: '이용희', runnerRate: 24.5, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'other', winnerName: '이원종', rate: 74.1, runner: 'ppp', runnerName: '주병덕', runnerRate: 25.9, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '이원종', rate: 58.6, runner: 'other', runnerName: '구천서', runnerRate: 33.5, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '정우택', rate: 63.8, runner: 'democratic', runnerName: '한범덕', runnerRate: 26.6, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '이시종', rate: 49.6, runner: 'ppp', runnerName: '정우택', runnerRate: 48.5, turnout: null },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '이시종', rate: 50.3, runner: 'ppp', runnerName: '윤진식', runnerRate: 48.2, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '이시종', rate: 65.4, runner: 'ppp', runnerName: '박경국', runnerRate: 26.6, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '김영환', rate: 58.2, runner: 'democratic', runnerName: '노영민', runnerRate: 41.8, turnout: null }
         ],
         chungnam: [
-            { election: 1, year: 1995, winner: 'other', winnerName: '심대평', rate: 67.9, runner: 'ppp', runnerName: '박중배', runnerRate: 19.2, turnout: 68.4, winnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'other', winnerName: '심대평', rate: 84.6, runner: 'ppp', runnerName: '한청수', runnerRate: 15.4, turnout: 52.7, winnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'other', winnerName: '심대평', rate: 67.0, runner: 'ppp', runnerName: '박태권', runnerRate: 33.0, turnout: 48.9, winnerPartyLabel: '자유민주연합' },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '이완구', rate: 46.7, runner: 'other', runnerName: '이명수', runnerRate: 27.0, turnout: 51.6, runnerPartyLabel: '자유민주연합' },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '안희정', rate: 41.4, runner: 'other', runnerName: '박상돈', runnerRate: 38.8, turnout: 54.5, runnerPartyLabel: '자유선진당' },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '안희정', rate: 49.8, runner: 'ppp', runnerName: '정진석', runnerRate: 48.1, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '양승조', rate: 63.7, runner: 'ppp', runnerName: '이인제', runnerRate: 34.6, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '김태흠', rate: 53.9, runner: 'democratic', runnerName: '양승조', runnerRate: 46.1, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'other', winnerName: '심대평', rate: 67.9, runner: 'ppp', runnerName: '박중배', runnerRate: 19.2, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'other', winnerName: '심대평', rate: 84.6, runner: 'ppp', runnerName: '한청수', runnerRate: 15.4, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'other', winnerName: '심대평', rate: 67.0, runner: 'ppp', runnerName: '박태권', runnerRate: 33.0, turnout: null, winnerPartyLabel: '자유민주연합' },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '이완구', rate: 46.7, runner: 'other', runnerName: '이명수', runnerRate: 27.0, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '안희정', rate: 41.4, runner: 'other', runnerName: '박상돈', runnerRate: 38.8, turnout: null, runnerPartyLabel: '자유선진당' },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '안희정', rate: 49.8, runner: 'ppp', runnerName: '정진석', runnerRate: 48.1, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '양승조', rate: 63.7, runner: 'ppp', runnerName: '이인제', runnerRate: 34.6, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '김태흠', rate: 53.9, runner: 'democratic', runnerName: '양승조', runnerRate: 46.1, turnout: null }
         ],
         jeonbuk: [
-            { election: 1, year: 1995, winner: 'democratic', winnerName: '유종근', rate: 67.2, runner: 'ppp', runnerName: '강현욱', runnerRate: 32.8, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '유종근', rate: 100.0, runner: null, runnerName: '(무투표)', runnerRate: 0, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'democratic', winnerName: '강현욱', rate: 74.6, runner: 'independent', runnerName: '손주항', runnerRate: 17.1, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'democratic', winnerName: '김완주', rate: 58.9, runner: 'democratic', runnerName: '정균환', runnerRate: 28.6, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '김완주', rate: 72.9, runner: 'ppp', runnerName: '정운천', runnerRate: 16.4, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '송하진', rate: 69.2, runner: 'ppp', runnerName: '박철곤', runnerRate: 20.5, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '송하진', rate: 75.0, runner: 'ppp', runnerName: '임정엽', runnerRate: 17.8, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'democratic', winnerName: '김관영', rate: 82.1, runner: 'ppp', runnerName: '조배숙', runnerRate: 17.9, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'democratic', winnerName: '유종근', rate: 67.2, runner: 'ppp', runnerName: '강현욱', runnerRate: 32.8, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '유종근', rate: 100.0, runner: null, runnerName: '(무투표)', runnerRate: 0, turnout: null },
+            { election: 3, year: 2002, winner: 'democratic', winnerName: '강현욱', rate: 74.6, runner: 'independent', runnerName: '손주항', runnerRate: 17.1, turnout: null },
+            { election: 4, year: 2006, winner: 'democratic', winnerName: '김완주', rate: 58.9, runner: 'democratic', runnerName: '정균환', runnerRate: 28.6, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '김완주', rate: 72.9, runner: 'ppp', runnerName: '정운천', runnerRate: 16.4, turnout: null },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '송하진', rate: 69.2, runner: 'ppp', runnerName: '박철곤', runnerRate: 20.5, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '송하진', rate: 75.0, runner: 'ppp', runnerName: '임정엽', runnerRate: 17.8, turnout: null },
+            { election: 8, year: 2022, winner: 'democratic', winnerName: '김관영', rate: 82.1, runner: 'ppp', runnerName: '조배숙', runnerRate: 17.9, turnout: null }
         ],
         jeonnam: [
-            { election: 1, year: 1995, winner: 'democratic', winnerName: '허경만', rate: 73.5, runner: 'ppp', runnerName: '전석홍', runnerRate: 26.5, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '허경만', rate: 100.0, runner: null, runnerName: '(무투표)', runnerRate: 0, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'democratic', winnerName: '박태영', rate: 57.8, runner: 'independent', runnerName: '송재구', runnerRate: 24.2, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'democratic', winnerName: '박준영', rate: 67.7, runner: 'democratic', runnerName: '서범석', runnerRate: 19.2, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'democratic', winnerName: '박준영', rate: 68.3, runner: 'ppp', runnerName: '김대식', runnerRate: 13.4, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'democratic', winnerName: '이낙연', rate: 78.0, runner: 'other', runnerName: '이성수', runnerRate: 12.5, turnout: 56.8, runnerPartyLabel: '통합진보당' },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '김영록', rate: 77.1, runner: 'other', runnerName: '민영삼', runnerRate: 10.6, turnout: 60.2, runnerPartyLabel: '민주평화당' },
-            { election: 8, year: 2022, winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'democratic', winnerName: '허경만', rate: 73.5, runner: 'ppp', runnerName: '전석홍', runnerRate: 26.5, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '허경만', rate: 100.0, runner: null, runnerName: '(무투표)', runnerRate: 0, turnout: null },
+            { election: 3, year: 2002, winner: 'democratic', winnerName: '박태영', rate: 57.8, runner: 'independent', runnerName: '송재구', runnerRate: 24.2, turnout: null },
+            { election: 4, year: 2006, winner: 'democratic', winnerName: '박준영', rate: 67.7, runner: 'democratic', runnerName: '서범석', runnerRate: 19.2, turnout: null },
+            { election: 5, year: 2010, winner: 'democratic', winnerName: '박준영', rate: 68.3, runner: 'ppp', runnerName: '김대식', runnerRate: 13.4, turnout: null },
+            { election: 6, year: 2014, winner: 'democratic', winnerName: '이낙연', rate: 78.0, runner: 'other', runnerName: '이성수', runnerRate: 12.5, turnout: null, runnerPartyLabel: '통합진보당' },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '김영록', rate: 77.1, runner: 'other', runnerName: '민영삼', runnerRate: 10.6, turnout: null, runnerPartyLabel: '민주평화당' },
+            { election: 8, year: 2022, winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: null }
         ],
         gyeongbuk: [
-            { election: 1, year: 1995, winner: 'ppp', winnerName: '이의근', rate: 37.9, runner: 'independent', runnerName: '이판석', runnerRate: 34.3, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '이의근', rate: 72.0, runner: 'other', runnerName: '이판석', runnerRate: 28.0, turnout: 52.7, runnerPartyLabel: '자유민주연합' },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '이의근', rate: 85.5, runner: 'independent', runnerName: '조영건', runnerRate: 14.5, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '김관용', rate: 81.0, runner: 'independent', runnerName: '박명재', runnerRate: 19.0, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'ppp', winnerName: '김관용', rate: 78.0, runner: 'democratic', runnerName: '홍의락', runnerRate: 13.0, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '김관용', rate: 77.1, runner: 'democratic', runnerName: '오중기', runnerRate: 17.0, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'ppp', winnerName: '이철우', rate: 54.9, runner: 'democratic', runnerName: '오중기', runnerRate: 34.8, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'ppp', winnerName: '이의근', rate: 37.9, runner: 'independent', runnerName: '이판석', runnerRate: 34.3, turnout: null },
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '이의근', rate: 72.0, runner: 'other', runnerName: '이판석', runnerRate: 28.0, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '이의근', rate: 85.5, runner: 'independent', runnerName: '조영건', runnerRate: 14.5, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '김관용', rate: 81.0, runner: 'independent', runnerName: '박명재', runnerRate: 19.0, turnout: null },
+            { election: 5, year: 2010, winner: 'ppp', winnerName: '김관용', rate: 78.0, runner: 'democratic', runnerName: '홍의락', runnerRate: 13.0, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '김관용', rate: 77.1, runner: 'democratic', runnerName: '오중기', runnerRate: 17.0, turnout: null },
+            { election: 7, year: 2018, winner: 'ppp', winnerName: '이철우', rate: 54.9, runner: 'democratic', runnerName: '오중기', runnerRate: 34.8, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: null }
         ],
         gyeongnam: [
-            { election: 1, year: 1995, winner: 'ppp', winnerName: '김혁규', rate: 63.8, runner: 'other', runnerName: '김용균', runnerRate: 36.2, turnout: 68.4, runnerPartyLabel: '자유민주연합' },
-            { election: 2, year: 1998, winner: 'ppp', winnerName: '김혁규', rate: 74.6, runner: 'democratic', runnerName: '강신화', runnerRate: 12.8, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'ppp', winnerName: '김혁규', rate: 74.5, runner: 'democratic', runnerName: '김두관', runnerRate: 16.9, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'ppp', winnerName: '김태호', rate: 64.1, runner: 'democratic', runnerName: '김두관', runnerRate: 24.7, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'independent', winnerName: '김두관', rate: 51.5, runner: 'ppp', runnerName: '이달곤', runnerRate: 48.5, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '홍준표', rate: 59.8, runner: 'democratic', runnerName: '김경수', runnerRate: 36.6, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'democratic', winnerName: '김경수', rate: 56.8, runner: 'ppp', runnerName: '김태호', runnerRate: 40.1, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'ppp', winnerName: '박완수', rate: 65.7, runner: 'democratic', runnerName: '양문석', runnerRate: 29.4, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'ppp', winnerName: '김혁규', rate: 63.8, runner: 'other', runnerName: '김용균', runnerRate: 36.2, turnout: null, runnerPartyLabel: '자유민주연합' },
+            { election: 2, year: 1998, winner: 'ppp', winnerName: '김혁규', rate: 74.6, runner: 'democratic', runnerName: '강신화', runnerRate: 12.8, turnout: null },
+            { election: 3, year: 2002, winner: 'ppp', winnerName: '김혁규', rate: 74.5, runner: 'democratic', runnerName: '김두관', runnerRate: 16.9, turnout: null },
+            { election: 4, year: 2006, winner: 'ppp', winnerName: '김태호', rate: 64.1, runner: 'democratic', runnerName: '김두관', runnerRate: 24.7, turnout: null },
+            { election: 5, year: 2010, winner: 'independent', winnerName: '김두관', rate: 51.5, runner: 'ppp', runnerName: '이달곤', runnerRate: 48.5, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '홍준표', rate: 59.8, runner: 'democratic', runnerName: '김경수', runnerRate: 36.6, turnout: null },
+            { election: 7, year: 2018, winner: 'democratic', winnerName: '김경수', rate: 56.8, runner: 'ppp', runnerName: '김태호', runnerRate: 40.1, turnout: null },
+            { election: 8, year: 2022, winner: 'ppp', winnerName: '박완수', rate: 65.7, runner: 'democratic', runnerName: '양문석', runnerRate: 29.4, turnout: null }
         ],
         jeju: [
-            { election: 1, year: 1995, winner: 'independent', winnerName: '신구범', rate: 40.6, runner: 'ppp', runnerName: '우근민', runnerRate: 32.5, turnout: 68.4 },
-            { election: 2, year: 1998, winner: 'democratic', winnerName: '우근민', rate: 52.8, runner: 'independent', runnerName: '신구범', runnerRate: 30.8, turnout: 52.7 },
-            { election: 3, year: 2002, winner: 'democratic', winnerName: '우근민', rate: 51.4, runner: 'ppp', runnerName: '신구범', runnerRate: 45.4, turnout: 48.9 },
-            { election: 4, year: 2006, winner: 'independent', winnerName: '김태환', rate: 45.0, runner: 'ppp', runnerName: '현명관', runnerRate: 44.0, turnout: 51.6 },
-            { election: 5, year: 2010, winner: 'independent', winnerName: '우근민', rate: 41.4, runner: 'independent', runnerName: '현명관', runnerRate: 40.6, turnout: 54.5 },
-            { election: 6, year: 2014, winner: 'ppp', winnerName: '원희룡', rate: 61.2, runner: 'democratic', runnerName: '신구범', runnerRate: 34.6, turnout: 56.8 },
-            { election: 7, year: 2018, winner: 'independent', winnerName: '원희룡', rate: 50.3, runner: 'democratic', runnerName: '문대림', runnerRate: 41.8, turnout: 60.2 },
-            { election: 8, year: 2022, winner: 'democratic', winnerName: '오영훈', rate: 55.1, runner: 'ppp', runnerName: '허향진', runnerRate: 39.5, turnout: 50.9 }
+            { election: 1, year: 1995, winner: 'independent', winnerName: '신구범', rate: 40.6, runner: 'ppp', runnerName: '우근민', runnerRate: 32.5, turnout: null },
+            { election: 2, year: 1998, winner: 'democratic', winnerName: '우근민', rate: 52.8, runner: 'independent', runnerName: '신구범', runnerRate: 30.8, turnout: null },
+            { election: 3, year: 2002, winner: 'democratic', winnerName: '우근민', rate: 51.4, runner: 'ppp', runnerName: '신구범', runnerRate: 45.4, turnout: null },
+            { election: 4, year: 2006, winner: 'independent', winnerName: '김태환', rate: 45.0, runner: 'ppp', runnerName: '현명관', runnerRate: 44.0, turnout: null },
+            { election: 5, year: 2010, winner: 'independent', winnerName: '우근민', rate: 41.4, runner: 'independent', runnerName: '현명관', runnerRate: 40.6, turnout: null },
+            { election: 6, year: 2014, winner: 'ppp', winnerName: '원희룡', rate: 61.2, runner: 'democratic', runnerName: '신구범', runnerRate: 34.6, turnout: null },
+            { election: 7, year: 2018, winner: 'independent', winnerName: '원희룡', rate: 50.3, runner: 'democratic', runnerName: '문대림', runnerRate: 41.8, turnout: null },
+            { election: 8, year: 2022, winner: 'democratic', winnerName: '오영훈', rate: 55.1, runner: 'ppp', runnerName: '허향진', runnerRate: 39.5, turnout: null }
         ]
     };
 
@@ -1055,125 +863,125 @@ const ElectionData = (() => {
         'seoul': [
             { name: '종로구', population: 148000, leadParty: 'ppp', mayor: { name: '정문헌', party: 'ppp' }, keyIssue: '도심 재생' ,
             voters: 129816,
-            prevElection: { turnout: 54.4 } },
+            prevElection: { turnout: null } },
             { name: '중구', population: 125000, leadParty: 'ppp', mayor: { name: '김길성', party: 'ppp' }, keyIssue: '관광 활성화' ,
             voters: 112039,
-            prevElection: { turnout: 53.8 } },
+            prevElection: { turnout: null } },
             { name: '용산구', population: 228000, leadParty: 'independent', mayor: { name: '박희영', party: 'independent' }, keyIssue: '용산공원 개발' ,
             voters: 199061,
-            prevElection: { turnout: 52.6 } },
+            prevElection: { turnout: null } },
             { name: '성동구', population: 298000, leadParty: 'democratic', mayor: { name: null, party: 'independent', acting: true, actingReason: '정원오 서울시장 출마 사퇴 (2026.3)' }, keyIssue: '성수 도시재생' ,
             voters: 251990,
-            prevElection: { turnout: 55.5 } },
+            prevElection: { turnout: null } },
             { name: '광진구', population: 345000, leadParty: 'ppp', mayor: { name: '김경호', party: 'ppp' }, keyIssue: '교통 개선' ,
             voters: 305462,
-            prevElection: { turnout: 51.4 } },
+            prevElection: { turnout: null } },
             { name: '동대문구', population: 343000, leadParty: 'ppp', mayor: { name: '이필형', party: 'ppp' }, keyIssue: '패션산업 활성화' ,
             voters: 302024,
-            prevElection: { turnout: 52.0 } },
+            prevElection: { turnout: null } },
             { name: '중랑구', population: 388000, leadParty: 'democratic', mayor: { name: '류경기', party: 'democratic' }, keyIssue: '주거 환경 개선' ,
             voters: 348762,
-            prevElection: { turnout: 51.0 } },
+            prevElection: { turnout: null } },
             { name: '성북구', population: 427000, leadParty: 'democratic', mayor: { name: '이승로', party: 'democratic' }, keyIssue: '교육 인프라' ,
             voters: 379123,
-            prevElection: { turnout: 53.3 } },
+            prevElection: { turnout: null } },
             { name: '강북구', population: 297000, leadParty: 'democratic', mayor: { name: '이순희', party: 'democratic' }, keyIssue: '균형 발전' ,
             voters: 268130,
-            prevElection: { turnout: 49.7 } },
+            prevElection: { turnout: null } },
             { name: '도봉구', population: 316000, leadParty: 'ppp', mayor: { name: '오언석', party: 'ppp' }, keyIssue: '교통 접근성' ,
             voters: 280913,
-            prevElection: { turnout: 52.9 } },
+            prevElection: { turnout: null } },
             { name: '노원구', population: 507000, leadParty: 'democratic', mayor: { name: '오승록', party: 'democratic' }, keyIssue: '교육·일자리' ,
             voters: 441748,
-            prevElection: { turnout: 55.5 } },
+            prevElection: { turnout: null } },
             { name: '은평구', population: 465000, leadParty: 'democratic', mayor: { name: '김미경', party: 'democratic' }, keyIssue: '도시 재생' ,
             voters: 418387,
-            prevElection: { turnout: 51.6 } },
+            prevElection: { turnout: null } },
             { name: '서대문구', population: 304000, leadParty: 'ppp', mayor: { name: '이성헌', party: 'ppp' }, keyIssue: '대학가 활성화' ,
             voters: 271718,
-            prevElection: { turnout: 54.1 } },
+            prevElection: { turnout: null } },
             { name: '마포구', population: 368000, leadParty: 'ppp', mayor: { name: '박강수', party: 'ppp' }, keyIssue: '문화 산업' ,
             voters: 324528,
-            prevElection: { turnout: 53.9 } },
+            prevElection: { turnout: null } },
             { name: '양천구', population: 448000, leadParty: 'ppp', mayor: { name: '이기재', party: 'ppp' }, keyIssue: '교육 특구' ,
             voters: 378444,
-            prevElection: { turnout: 55.4 } },
+            prevElection: { turnout: null } },
             { name: '강서구', population: 565000, leadParty: 'democratic', mayor: { name: '진교훈', party: 'democratic' }, keyIssue: '마곡지구 개발' ,
             voters: 504606,
-            prevElection: { turnout: 51.7 } },
+            prevElection: { turnout: null } },
             { name: '구로구', population: 396000, leadParty: 'democratic', mayor: { name: '장인홍', party: 'democratic' }, keyIssue: '디지털단지 재생' ,
             voters: 353697,
-            prevElection: { turnout: 53.2 } },
+            prevElection: { turnout: null } },
             { name: '금천구', population: 229000, leadParty: 'democratic', mayor: { name: '유성훈', party: 'democratic' }, keyIssue: '산업 전환' ,
             voters: 212879,
-            prevElection: { turnout: 49.7 } },
+            prevElection: { turnout: null } },
             { name: '영등포구', population: 388000, leadParty: 'ppp', mayor: { name: '최호권', party: 'ppp' }, keyIssue: '여의도 개발' ,
             voters: 340017,
-            prevElection: { turnout: 53.3 } },
+            prevElection: { turnout: null } },
             { name: '동작구', population: 389000, leadParty: 'ppp', mayor: { name: '박일하', party: 'ppp' }, keyIssue: '주거 안정' ,
             voters: 344280,
-            prevElection: { turnout: 54.4 } },
+            prevElection: { turnout: null } },
             { name: '관악구', population: 488000, leadParty: 'democratic', mayor: { name: '박준희', party: 'democratic' }, keyIssue: '청년 주거' ,
             voters: 450180,
-            prevElection: { turnout: 50.4 } },
+            prevElection: { turnout: null } },
             { name: '서초구', population: 422000, leadParty: 'ppp', mayor: { name: '전성수', party: 'ppp' }, keyIssue: '교육·문화' ,
             voters: 342589,
-            prevElection: { turnout: 56.0 } },
+            prevElection: { turnout: null } },
             { name: '강남구', population: 533000, leadParty: 'ppp', mayor: { name: '조성명', party: 'ppp' }, keyIssue: '도시 경쟁력' ,
             voters: 450895,
-            prevElection: { turnout: 53.6 } },
+            prevElection: { turnout: null } },
             { name: '송파구', population: 655000, leadParty: 'ppp', mayor: { name: '서강석', party: 'ppp' }, keyIssue: '교통 인프라' ,
             voters: 569507,
-            prevElection: { turnout: 55.0 } },
+            prevElection: { turnout: null } },
             { name: '강동구', population: 448000, leadParty: 'ppp', mayor: { name: '이수희', party: 'ppp' }, keyIssue: '신도시 개발' ,
             voters: 397544,
-            prevElection: { turnout: 53.8 } }
+            prevElection: { turnout: null } }
         ],
         'busan': [
             { name: '중구', population: 40000, leadParty: 'ppp', mayor: { name: '최진봉', party: 'ppp' }, keyIssue: '원도심 재생' },
             { name: '서구', population: 99000, leadParty: 'ppp', mayor: { name: '공한수', party: 'ppp' }, keyIssue: '도심 활성화' ,
             voters: 93426,
-            prevElection: { turnout: 50.4 } },
+            prevElection: { turnout: null } },
             { name: '동구', population: 81000, leadParty: 'ppp', mayor: { name: '김진홍', party: 'ppp' }, keyIssue: '항만 재개발' ,
             voters: 80869,
-            prevElection: { turnout: 50.5 } },
+            prevElection: { turnout: null } },
             { name: '영도구', population: 105000, leadParty: 'ppp', mayor: { name: '김기재', party: 'ppp' }, keyIssue: '조선산업' ,
             voters: 99395,
-            prevElection: { turnout: 50.5 } },
+            prevElection: { turnout: null } },
             { name: '부산진구', population: 352000, leadParty: 'ppp', mayor: { name: '김영욱', party: 'ppp' }, keyIssue: '서면 상권' ,
             voters: 313025,
-            prevElection: { turnout: 47.6 } },
+            prevElection: { turnout: null } },
             { name: '동래구', population: 265000, leadParty: 'ppp', mayor: { name: '장준용', party: 'ppp' }, keyIssue: '전통시장' ,
             voters: 234034,
-            prevElection: { turnout: 49.9 } },
+            prevElection: { turnout: null } },
             { name: '남구', population: 261000, leadParty: 'ppp', mayor: { name: '박재범', party: 'ppp' }, keyIssue: '유엔기념공원' ,
             voters: 227019,
-            prevElection: { turnout: 52.2 } },
+            prevElection: { turnout: null } },
             { name: '북구', population: 277000, leadParty: 'ppp', mayor: { name: '오태원', party: 'ppp' }, keyIssue: '교통 개선' ,
             voters: 245787,
-            prevElection: { turnout: 51.3 } },
+            prevElection: { turnout: null } },
             { name: '해운대구', population: 406000, leadParty: 'ppp', mayor: { name: '김성수', party: 'ppp' }, keyIssue: '관광 인프라' ,
             voters: 337958,
-            prevElection: { turnout: 48.8 } },
+            prevElection: { turnout: null } },
             { name: '사하구', population: 305000, leadParty: 'ppp', mayor: { name: '이갑준', party: 'ppp' }, keyIssue: '낙동강 환경' ,
             voters: 268863,
-            prevElection: { turnout: 47.1 } },
+            prevElection: { turnout: null } },
             { name: '금정구', population: 228000, leadParty: 'ppp', mayor: { name: '김재윤', party: 'ppp' }, keyIssue: '대학가 활성화' ,
             voters: 200445,
-            prevElection: { turnout: 51.3 } },
+            prevElection: { turnout: null } },
             { name: '강서구', population: 120000, leadParty: 'ppp', mayor: { name: '김형찬', party: 'ppp' }, keyIssue: '가덕도 신공항' },
             { name: '연제구', population: 204000, leadParty: 'ppp', mayor: { name: '주석수', party: 'ppp' }, keyIssue: '행정중심' ,
             voters: 180173,
-            prevElection: { turnout: 51.1 } },
+            prevElection: { turnout: null } },
             { name: '수영구', population: 170000, leadParty: 'democratic', mayor: { name: '유동철', party: 'democratic' }, keyIssue: '해양스포츠' ,
             voters: 156247,
-            prevElection: { turnout: 47.9 } },
+            prevElection: { turnout: null } },
             { name: '사상구', population: 211000, leadParty: 'ppp', mayor: { name: '조병길', party: 'ppp' }, keyIssue: '산업단지 전환' ,
             voters: 184625,
-            prevElection: { turnout: 47.5 } },
+            prevElection: { turnout: null } },
             { name: '기장군', population: 188000, leadParty: 'ppp', mayor: { name: '정원희', party: 'ppp' }, keyIssue: '신도시 개발' ,
             voters: 143871,
-            prevElection: { turnout: 44.7 } }
+            prevElection: { turnout: null } }
         ],
         'daegu': [
             { name: '중구', population: 73000, leadParty: 'ppp', mayor: { name: '류규하', party: 'ppp' }, keyIssue: '원도심 재생' },
@@ -1183,37 +991,37 @@ const ElectionData = (() => {
             { name: '북구', population: 428000, leadParty: 'ppp', mayor: { name: '배광식', party: 'ppp' }, keyIssue: '교통 인프라' },
             { name: '수성구', population: 421000, leadParty: 'ppp', mayor: { name: '김대권', party: 'ppp' }, keyIssue: '교육 특구' ,
             voters: 349048,
-            prevElection: { turnout: 45.1 } },
+            prevElection: { turnout: null } },
             { name: '달서구', population: 551000, leadParty: 'ppp', mayor: { name: '이태훈', party: 'ppp' }, keyIssue: '성서산단 전환' },
             { name: '달성군', population: 270000, leadParty: 'ppp', mayor: { name: '최재훈', party: 'ppp' }, keyIssue: '테크노폴리스' ,
             voters: 214580,
-            prevElection: { turnout: 42.6 } }
+            prevElection: { turnout: null } }
         ],
         'incheon': [
             { name: '중구', population: 120000, leadParty: 'ppp', mayor: { name: '김정헌', party: 'ppp' }, keyIssue: '차이나타운 관광' },
             { name: '동구', population: 63000, leadParty: 'ppp', mayor: { name: '김찬진', party: 'ppp' }, keyIssue: '원도심 재생' },
             { name: '미추홀구', population: 384000, leadParty: 'ppp', mayor: { name: '이영훈', party: 'ppp' }, keyIssue: '주거 재정비' ,
             voters: 358612,
-            prevElection: { turnout: 44.7 } },
+            prevElection: { turnout: null } },
             { name: '연수구', population: 374000, leadParty: 'ppp', mayor: { name: '이재호', party: 'ppp' }, keyIssue: '송도 국제도시' ,
             voters: 317883,
-            prevElection: { turnout: 51.7 } },
+            prevElection: { turnout: null } },
             { name: '남동구', population: 512000, leadParty: 'ppp', mayor: { name: '박종효', party: 'ppp' }, keyIssue: '산업단지 혁신' ,
             voters: 441226,
-            prevElection: { turnout: 48.1 } },
+            prevElection: { turnout: null } },
             { name: '부평구', population: 492000, leadParty: 'democratic', mayor: { name: '차준택', party: 'democratic' }, keyIssue: '지역경제 활성화' ,
             voters: 426463,
-            prevElection: { turnout: 47.5 } },
+            prevElection: { turnout: null } },
             { name: '계양구', population: 290000, leadParty: 'democratic', mayor: { name: '윤환', party: 'democratic' }, keyIssue: '신도시 개발' ,
             voters: 258156,
-            prevElection: { turnout: 56.1 } },
+            prevElection: { turnout: null } },
             { name: '서구', population: 550000, leadParty: 'ppp', mayor: { name: '강범석', party: 'ppp' }, keyIssue: '청라 국제도시' },
             { name: '강화군', population: 65000, leadParty: 'independent', mayor: { name: '유천호', party: 'independent' }, keyIssue: '접경지역 발전' ,
             voters: 63147,
-            prevElection: { turnout: 61.9 } },
+            prevElection: { turnout: null } },
             { name: '옹진군', population: 20000, leadParty: 'ppp', mayor: { name: '문경복', party: 'ppp' }, keyIssue: '섬 지역 발전' ,
             voters: 18895,
-            prevElection: { turnout: 67.2 } }
+            prevElection: { turnout: null } }
         ],
         'gwangju': [
             { name: '동구', population: 92000, leadParty: 'democratic', mayor: { name: '임택', party: 'democratic' }, keyIssue: '문화전당 활성화' },
@@ -1228,10 +1036,10 @@ const ElectionData = (() => {
             { name: '서구', population: 470000, leadParty: 'ppp', mayor: { name: '서철모', party: 'ppp' }, keyIssue: '둔산 도심 혁신' },
             { name: '유성구', population: 370000, leadParty: 'democratic', mayor: { name: '정용래', party: 'democratic' }, keyIssue: '과학벨트' ,
             voters: 289980,
-            prevElection: { turnout: 51.6 } },
+            prevElection: { turnout: null } },
             { name: '대덕구', population: 178000, leadParty: 'ppp', mayor: { name: '최충규', party: 'ppp' }, keyIssue: '대덕연구단지' ,
             voters: 152766,
-            prevElection: { turnout: 49.8 } }
+            prevElection: { turnout: null } }
         ],
         'ulsan': [
             { name: '중구', population: 217000, leadParty: 'ppp', mayor: { name: '김영길', party: 'ppp' }, keyIssue: '도심 재생 및 상권 활성화' },
@@ -1240,7 +1048,7 @@ const ElectionData = (() => {
             { name: '북구', population: 197000, leadParty: 'ppp', mayor: { name: '박천동', party: 'ppp' }, keyIssue: '자동차 산업 클러스터' },
             { name: '울주군', population: 277000, leadParty: 'ppp', mayor: { name: '이순걸', party: 'ppp' }, keyIssue: '원전 안전 및 지역 발전' ,
             voters: 189051,
-            prevElection: { turnout: 52.6 } }
+            prevElection: { turnout: null } }
         ],
         'sejong': [
             { name: '세종시', population: 380000, leadParty: 'ppp', mayor: { name: '최민호', party: 'ppp' }, keyIssue: '행정수도 완성 및 인프라 확충' }
@@ -1252,466 +1060,466 @@ const ElectionData = (() => {
         'gangwon': [
             { name: '춘천시', population: 285000, leadParty: 'democratic', mayor: { name: '육동한', party: 'democratic' }, keyIssue: '관광 인프라 확대' ,
             voters: 244406,
-            prevElection: { turnout: 56.4 } },
+            prevElection: { turnout: null } },
             { name: '원주시', population: 360000, leadParty: 'ppp', mayor: { name: '원강수', party: 'ppp' }, keyIssue: '혁신도시 활성화' ,
             voters: 304060,
-            prevElection: { turnout: 51.8 } },
+            prevElection: { turnout: null } },
             { name: '강릉시', population: 213000, leadParty: 'ppp', mayor: { name: '김홍규', party: 'ppp' }, keyIssue: '관광 산업 육성' ,
             voters: 185804,
-            prevElection: { turnout: 54.9 } },
+            prevElection: { turnout: null } },
             { name: '동해시', population: 90000, leadParty: 'ppp', mayor: { name: '심규언', party: 'ppp' }, keyIssue: '항만 물류 발전' ,
             voters: 76886,
-            prevElection: { turnout: 54.7 } },
+            prevElection: { turnout: null } },
             { name: '태백시', population: 42000, leadParty: 'ppp', mayor: { name: '이상호', party: 'ppp' }, keyIssue: '폐광 지역 경제 전환' ,
             voters: 35236,
-            prevElection: { turnout: 64.0 } },
+            prevElection: { turnout: null } },
             { name: '속초시', population: 82000, leadParty: 'ppp', mayor: { name: '이병선', party: 'ppp' }, keyIssue: '관광 특구 개발' ,
             voters: 71621,
-            prevElection: { turnout: 51.8 } },
+            prevElection: { turnout: null } },
             { name: '삼척시', population: 65000, leadParty: 'ppp', mayor: { name: '박상수', party: 'ppp' }, keyIssue: '해양 자원 개발' ,
             voters: 57023,
-            prevElection: { turnout: 65.8 } },
+            prevElection: { turnout: null } },
             { name: '홍천군', population: 68000, leadParty: 'ppp', mayor: { name: '신영재', party: 'ppp' }, keyIssue: '농촌 고령화 대책' ,
             voters: 60743,
-            prevElection: { turnout: 60.8 } },
+            prevElection: { turnout: null } },
             { name: '횡성군', population: 44000, leadParty: 'ppp', mayor: { name: '김명기', party: 'ppp' }, keyIssue: '한우 산업 지원' ,
             voters: 41777,
-            prevElection: { turnout: 66.4 } },
+            prevElection: { turnout: null } },
             { name: '영월군', population: 38000, leadParty: 'ppp', mayor: { name: '최명서', party: 'ppp' }, keyIssue: '폐광 지역 재생' ,
             voters: 34371,
-            prevElection: { turnout: 66.3 } },
+            prevElection: { turnout: null } },
             { name: '평창군', population: 41000, leadParty: 'ppp', mayor: { name: '심재국', party: 'ppp' }, keyIssue: '올림픽 유산 활용' ,
             voters: 37372,
-            prevElection: { turnout: 67.9 } },
+            prevElection: { turnout: null } },
             { name: '정선군', population: 35000, leadParty: 'democratic', mayor: { name: '최승준', party: 'democratic' }, keyIssue: '카지노 지역 경제' ,
             voters: 32001,
-            prevElection: { turnout: 69.0 } },
+            prevElection: { turnout: null } },
             { name: '철원군', population: 44000, leadParty: 'ppp', mayor: { name: '이현종', party: 'ppp' }, keyIssue: '접경 지역 개발' ,
             voters: 37099,
-            prevElection: { turnout: 60.5 } },
+            prevElection: { turnout: null } },
             { name: '화천군', population: 25000, leadParty: 'ppp', mayor: { name: '최문순', party: 'ppp' }, keyIssue: '군사시설 보호구역 해제' ,
             voters: 21055,
-            prevElection: { turnout: 65.7 } },
+            prevElection: { turnout: null } },
             { name: '양구군', population: 22000, leadParty: 'ppp', mayor: { name: '서흥원', party: 'ppp' }, keyIssue: '접경 지역 지원' ,
             voters: 18552,
-            prevElection: { turnout: 69.0 } },
+            prevElection: { turnout: null } },
             { name: '인제군', population: 31000, leadParty: 'democratic', mayor: { name: '최상기', party: 'democratic' }, keyIssue: '생태관광 개발' ,
             voters: 27939,
-            prevElection: { turnout: 66.4 } },
+            prevElection: { turnout: null } },
             { name: '고성군', population: 27000, leadParty: 'democratic', mayor: { name: '함명준', party: 'democratic' }, keyIssue: '금강산 관광 재개' ,
             voters: 24776,
-            prevElection: { turnout: 67.7 } },
+            prevElection: { turnout: null } },
             { name: '양양군', population: 27000, leadParty: 'ppp', mayor: { name: '김진하', party: 'ppp' }, keyIssue: '서핑 관광 활성화' ,
             voters: 25359,
-            prevElection: { turnout: 65.7 } }
+            prevElection: { turnout: null } }
         ],
         'chungbuk': [
             { name: '청주시', population: 855000, leadParty: 'ppp', mayor: { name: '이범석', party: 'ppp' }, keyIssue: '반도체 클러스터 유치' ,
             voters: 712524,
-            prevElection: { turnout: 46.4 } },
+            prevElection: { turnout: null } },
             { name: '충주시', population: 210000, leadParty: 'ppp', mayor: { name: null, party: 'independent', acting: true, actingReason: '조길형 충북도지사 출마 사퇴 (2026.1)' }, keyIssue: '기업도시 활성화' ,
             voters: 181044,
-            prevElection: { turnout: 49.6 } },
+            prevElection: { turnout: null } },
             { name: '제천시', population: 132000, leadParty: 'ppp', mayor: { name: '김창규', party: 'ppp' }, keyIssue: '바이오 산업 육성' ,
             voters: 115563,
-            prevElection: { turnout: 54.3 } },
+            prevElection: { turnout: null } },
             { name: '보은군', population: 32000, leadParty: 'ppp', mayor: { name: '최재형', party: 'ppp' }, keyIssue: '농촌 인구 감소 대책' ,
             voters: 28963,
-            prevElection: { turnout: 67.5 } },
+            prevElection: { turnout: null } },
             { name: '옥천군', population: 51000, leadParty: 'democratic', mayor: { name: '황규철', party: 'democratic' }, keyIssue: '교통 인프라 개선' ,
             voters: 44686,
-            prevElection: { turnout: 64.6 } },
+            prevElection: { turnout: null } },
             { name: '영동군', population: 44000, leadParty: 'ppp', mayor: { name: '정영철', party: 'ppp' }, keyIssue: '포도 산업 지원' ,
             voters: 41123,
-            prevElection: { turnout: 66.0 } },
+            prevElection: { turnout: null } },
             { name: '증평군', population: 38000, leadParty: 'democratic', mayor: { name: '이재영', party: 'democratic' }, keyIssue: '산업단지 확장' ,
             voters: 31366,
-            prevElection: { turnout: 54.3 } },
+            prevElection: { turnout: null } },
             { name: '진천군', population: 85000, leadParty: 'democratic', mayor: { name: null, party: 'independent', acting: true, actingReason: '송기섭 충북도지사 출마 사퇴 (2026.2)' }, keyIssue: '혁신도시 정주 환경' ,
             voters: 71725,
-            prevElection: { turnout: 48.2 } },
+            prevElection: { turnout: null } },
             { name: '괴산군', population: 36000, leadParty: 'ppp', mayor: { name: '송인헌', party: 'ppp' }, keyIssue: '유기농 특구 발전' ,
             voters: 34674,
-            prevElection: { turnout: 68.4 } },
+            prevElection: { turnout: null } },
             { name: '음성군', population: 95000, leadParty: 'democratic', mayor: { name: '조병옥', party: 'democratic' }, keyIssue: '산업단지 교통 개선' ,
             voters: 81419,
-            prevElection: { turnout: 49.9 } },
+            prevElection: { turnout: null } },
             { name: '단양군', population: 29000, leadParty: 'ppp', mayor: { name: '김문근', party: 'ppp' }, keyIssue: '관광 자원 개발' ,
             voters: 25692,
-            prevElection: { turnout: 67.8 } }
+            prevElection: { turnout: null } }
         ],
         'chungnam': [
             { name: '천안시', population: 660000, leadParty: 'ppp', mayor: { name: null, party: 'independent', acting: true, actingReason: '박상돈 시장 당선무효 (2025.4)' }, keyIssue: '수도권 연계 교통망' ,
             voters: 548022,
-            prevElection: { turnout: 42.2 } },
+            prevElection: { turnout: null } },
             { name: '공주시', population: 106000, leadParty: 'ppp', mayor: { name: '최원철', party: 'ppp' }, keyIssue: '백제 문화유산 활용' ,
             voters: 91847,
-            prevElection: { turnout: 56.0 } },
+            prevElection: { turnout: null } },
             { name: '보령시', population: 100000, leadParty: 'ppp', mayor: { name: '김동일', party: 'ppp' }, keyIssue: '석탄화력 전환 대책' ,
             voters: 86264,
-            prevElection: { turnout: 60.9 } },
+            prevElection: { turnout: null } },
             { name: '아산시', population: 340000, leadParty: 'democratic', mayor: { name: '오세현', party: 'democratic' }, keyIssue: '반도체 산업 인프라' ,
             voters: 268765,
-            prevElection: { turnout: 44.4 } },
+            prevElection: { turnout: null } },
             { name: '서산시', population: 175000, leadParty: 'ppp', mayor: { name: '이완섭', party: 'ppp' }, keyIssue: '석유화학 산업 환경' ,
             voters: 148744,
-            prevElection: { turnout: 48.6 } },
+            prevElection: { turnout: null } },
             { name: '논산시', population: 118000, leadParty: 'ppp', mayor: { name: '백성현', party: 'ppp' }, keyIssue: '군부대 이전 대책' ,
             voters: 99942,
-            prevElection: { turnout: 53.8 } },
+            prevElection: { turnout: null } },
             { name: '계룡시', population: 44000, leadParty: 'ppp', mayor: { name: '이응우', party: 'ppp' }, keyIssue: '군사도시 자족기능' ,
             voters: 34875,
-            prevElection: { turnout: 55.4 } },
+            prevElection: { turnout: null } },
             { name: '당진시', population: 168000, leadParty: 'ppp', mayor: { name: '오성환', party: 'ppp' }, keyIssue: '제철소 환경 문제' ,
             voters: 140008,
-            prevElection: { turnout: 46.3 } },
+            prevElection: { turnout: null } },
             { name: '금산군', population: 51000, leadParty: 'ppp', mayor: { name: '박범인', party: 'ppp' }, keyIssue: '인삼 산업 글로벌화' ,
             voters: 44747,
-            prevElection: { turnout: 64.1 } },
+            prevElection: { turnout: null } },
             { name: '부여군', population: 63000, leadParty: 'democratic', mayor: { name: '박정현', party: 'democratic' }, keyIssue: '백제 역사 관광' ,
             voters: 57322,
-            prevElection: { turnout: 63.6 } },
+            prevElection: { turnout: null } },
             { name: '서천군', population: 51000, leadParty: 'ppp', mayor: { name: '김기웅', party: 'ppp' }, keyIssue: '해양 생태 보전' ,
             voters: 45864,
-            prevElection: { turnout: 63.8 } },
+            prevElection: { turnout: null } },
             { name: '청양군', population: 30000, leadParty: 'democratic', mayor: { name: '김돈곤', party: 'democratic' }, keyIssue: '농촌 인구 유입' ,
             voters: 27932,
-            prevElection: { turnout: 70.5 } },
+            prevElection: { turnout: null } },
             { name: '홍성군', population: 89000, leadParty: 'ppp', mayor: { name: '이용록', party: 'ppp' }, keyIssue: '내포신도시 개발' ,
             voters: 84260,
-            prevElection: { turnout: 54.3 } },
+            prevElection: { turnout: null } },
             { name: '예산군', population: 79000, leadParty: 'ppp', mayor: { name: '최재구', party: 'ppp' }, keyIssue: '농업 기반 경제' ,
             voters: 69069,
-            prevElection: { turnout: 56.1 } },
+            prevElection: { turnout: null } },
             { name: '태안군', population: 47000, leadParty: 'democratic', mayor: { name: '가세로', party: 'democratic' }, keyIssue: '해양 환경 복원' ,
             voters: 55435,
-            prevElection: { turnout: 62.6 } }
+            prevElection: { turnout: null } }
         ],
         'jeonbuk': [
             { name: '전주시', population: 658000, leadParty: 'democratic', mayor: { name: '우범기', party: 'democratic' }, keyIssue: '탄소 산업 전환' ,
             voters: 550442,
-            prevElection: { turnout: 40.4 } },
+            prevElection: { turnout: null } },
             { name: '군산시', population: 265000, leadParty: 'democratic', mayor: { name: '강임준', party: 'democratic' }, keyIssue: '산업단지 구조조정' ,
             voters: 224926,
-            prevElection: { turnout: 38.7 } },
+            prevElection: { turnout: null } },
             { name: '익산시', population: 285000, leadParty: 'democratic', mayor: { name: '정헌율', party: 'democratic' }, keyIssue: '보석산업 활성화' ,
             voters: 239077,
-            prevElection: { turnout: 44.9 } },
+            prevElection: { turnout: null } },
             { name: '정읍시', population: 108000, leadParty: 'democratic', mayor: { name: '이학수', party: 'democratic' }, keyIssue: '방사광 가속기 활용' ,
             voters: 93307,
-            prevElection: { turnout: 58.2 } },
+            prevElection: { turnout: null } },
             { name: '남원시', population: 78000, leadParty: 'democratic', mayor: { name: '최경식', party: 'democratic' }, keyIssue: '관광 문화 도시' ,
             voters: 69007,
-            prevElection: { turnout: 64.5 } },
+            prevElection: { turnout: null } },
             { name: '김제시', population: 83000, leadParty: 'democratic', mayor: { name: '정성주', party: 'democratic' }, keyIssue: '농업 스마트화' ,
             voters: 72358,
-            prevElection: { turnout: 59.0 } },
+            prevElection: { turnout: null } },
             { name: '완주군', population: 97000, leadParty: 'democratic', mayor: { name: '유희태', party: 'democratic' }, keyIssue: '혁신도시 연계 발전' ,
             voters: 78284,
-            prevElection: { turnout: 52.9 } },
+            prevElection: { turnout: null } },
             { name: '진안군', population: 24000, leadParty: 'democratic', mayor: { name: '전춘성', party: 'democratic' }, keyIssue: '고원 관광 개발' ,
             voters: 22634,
-            prevElection: { turnout: 73.4 } },
+            prevElection: { turnout: null } },
             { name: '무주군', population: 23000, leadParty: 'independent', mayor: { name: '황인홍', party: 'independent' }, keyIssue: '리조트 관광 활성화' ,
             voters: 21279,
-            prevElection: { turnout: 76.4 } },
+            prevElection: { turnout: null } },
             { name: '장수군', population: 21000, leadParty: 'democratic', mayor: { name: '최훈식', party: 'democratic' }, keyIssue: '농촌 체류형 관광' ,
             voters: 19380,
-            prevElection: { turnout: 75.3 } },
+            prevElection: { turnout: null } },
             { name: '임실군', population: 27000, leadParty: 'independent', mayor: { name: '심민', party: 'independent' }, keyIssue: '치즈 산업 특화' ,
             voters: 24346,
-            prevElection: { turnout: 72.4 } },
+            prevElection: { turnout: null } },
             { name: '순창군', population: 26000, leadParty: 'independent', mayor: { name: '최영일', party: 'independent' }, keyIssue: '장류 산업 육성' ,
             voters: 23898,
-            prevElection: { turnout: 77.8 } },
+            prevElection: { turnout: null } },
             { name: '고창군', population: 53000, leadParty: 'democratic', mayor: { name: '심덕섭', party: 'democratic' }, keyIssue: '유네스코 생물권 보전' ,
             voters: 47581,
-            prevElection: { turnout: 72.9 } },
+            prevElection: { turnout: null } },
             { name: '부안군', population: 52000, leadParty: 'democratic', mayor: { name: '권익현', party: 'democratic' }, keyIssue: '새만금 개발 사업' ,
             voters: 45614,
-            prevElection: { turnout: 60.3 } }
+            prevElection: { turnout: null } }
         ],
         'jeonnam': [
             { name: '목포시', population: 218000, leadParty: 'democratic', mayor: { name: '박홍률', party: 'democratic' }, keyIssue: '원도심 재생 사업' ,
             voters: 183412,
-            prevElection: { turnout: 52.9 } },
+            prevElection: { turnout: null } },
             { name: '여수시', population: 278000, leadParty: 'democratic', mayor: { name: '정기명', party: 'democratic' }, keyIssue: '석유화학 환경 관리' ,
             voters: 236881,
-            prevElection: { turnout: 46.1 } },
+            prevElection: { turnout: null } },
             { name: '순천시', population: 282000, leadParty: 'independent', mayor: { name: '노관규', party: 'independent' }, keyIssue: '생태수도 조성' ,
             voters: 235432,
-            prevElection: { turnout: 54.4 } },
+            prevElection: { turnout: null } },
             { name: '나주시', population: 115000, leadParty: 'democratic', mayor: { name: '윤병태', party: 'democratic' }, keyIssue: '에너지 신산업 클러스터' ,
             voters: 98951,
-            prevElection: { turnout: 53.6 } },
+            prevElection: { turnout: null } },
             { name: '광양시', population: 155000, leadParty: 'independent', mayor: { name: '정인화', party: 'independent' }, keyIssue: '제철소 탄소중립' ,
             voters: 126604,
-            prevElection: { turnout: 54.6 } },
+            prevElection: { turnout: null } },
             { name: '담양군', population: 46000, leadParty: 'reform', mayor: { name: '정철원', party: 'reform' }, keyIssue: '대나무 생태 관광' ,
             voters: 41720,
-            prevElection: { turnout: 63.8 } },
+            prevElection: { turnout: null } },
             { name: '곡성군', population: 27000, leadParty: 'democratic', mayor: { name: '이상철', party: 'democratic' }, keyIssue: '기차마을 관광' ,
             voters: 25196,
-            prevElection: { turnout: 74.0 } },
+            prevElection: { turnout: null } },
             { name: '구례군', population: 25000, leadParty: 'democratic', mayor: { name: '김순호', party: 'democratic' }, keyIssue: '지리산 생태 관광' ,
             voters: 22848,
-            prevElection: { turnout: 76.2 } },
+            prevElection: { turnout: null } },
             { name: '고흥군', population: 62000, leadParty: 'democratic', mayor: { name: '공영민', party: 'democratic' }, keyIssue: '우주항공 산업 육성' ,
             voters: 57371,
-            prevElection: { turnout: 77.9 } },
+            prevElection: { turnout: null } },
             { name: '보성군', population: 39000, leadParty: 'democratic', mayor: { name: '김철우', party: 'democratic' }, keyIssue: '녹차 산업 활성화' },
             { name: '화순군', population: 62000, leadParty: 'democratic', mayor: { name: '구복규', party: 'democratic' }, keyIssue: '고인돌 유적 활용' ,
             voters: 55284,
-            prevElection: { turnout: 58.7 } },
+            prevElection: { turnout: null } },
             { name: '장흥군', population: 35000, leadParty: 'democratic', mayor: { name: '김성', party: 'democratic' }, keyIssue: '통합의학 특구' ,
             voters: 32510,
-            prevElection: { turnout: 71.5 } },
+            prevElection: { turnout: null } },
             { name: '강진군', population: 33000, leadParty: 'independent', mayor: { name: '강진원', party: 'independent' }, keyIssue: '도자기 문화 관광' ,
             voters: 30148,
-            prevElection: { turnout: 72.8 } },
+            prevElection: { turnout: null } },
             { name: '해남군', population: 68000, leadParty: 'democratic', mayor: { name: '명현관', party: 'democratic' }, keyIssue: '해양에너지 개발' },
             { name: '영암군', population: 54000, leadParty: 'democratic', mayor: { name: '우승희', party: 'democratic' }, keyIssue: 'F1 경기장 활용' ,
             voters: 46851,
-            prevElection: { turnout: 61.2 } },
+            prevElection: { turnout: null } },
             { name: '무안군', population: 92000, leadParty: 'independent', mayor: { name: '김산', party: 'independent' }, keyIssue: '공항 연계 개발' ,
             voters: 74895,
-            prevElection: { turnout: 55.2 } },
+            prevElection: { turnout: null } },
             { name: '함평군', population: 31000, leadParty: 'democratic', mayor: { name: '이상익', party: 'democratic' }, keyIssue: '나비축제 관광' ,
             voters: 28381,
-            prevElection: { turnout: 64.2 } },
+            prevElection: { turnout: null } },
             { name: '영광군', population: 53000, leadParty: 'independent', mayor: { name: '강종만', party: 'independent' }, keyIssue: '원전 해체 대책' ,
             voters: 45299,
-            prevElection: { turnout: 70.2 } },
+            prevElection: { turnout: null } },
             { name: '장성군', population: 43000, leadParty: 'democratic', mayor: { name: '김한종', party: 'democratic' }, keyIssue: '교육 특구 조성' ,
             voters: 38470,
-            prevElection: { turnout: 68.9 } },
+            prevElection: { turnout: null } },
             { name: '완도군', population: 47000, leadParty: 'democratic', mayor: { name: '신우철', party: 'democratic' }, keyIssue: '해조류 산업 수출' ,
             voters: 42697,
-            prevElection: { turnout: 69.8 } },
+            prevElection: { turnout: null } },
             { name: '진도군', population: 30000, leadParty: 'independent', mayor: { name: '김희수', party: 'independent' }, keyIssue: '해양문화 관광' ,
             voters: 26748,
-            prevElection: { turnout: 76.3 } },
+            prevElection: { turnout: null } },
             { name: '신안군', population: 38000, leadParty: 'independent', mayor: { name: '박우량', party: 'independent' }, keyIssue: '태양광 섬 에너지' ,
             voters: 35246,
-            prevElection: { turnout: 74.9 } }
+            prevElection: { turnout: null } }
         ],
         'gyeongbuk': [
             { name: '포항시', population: 502000, leadParty: 'ppp', mayor: { name: null, party: 'independent', acting: true, actingReason: '이강덕 경북도지사 출마 사퇴 (2026.2)' }, keyIssue: '지진 피해 복구 및 안전' ,
             voters: 427687,
-            prevElection: { turnout: 45.9 } },
+            prevElection: { turnout: null } },
             { name: '경주시', population: 254000, leadParty: 'ppp', mayor: { name: '주낙영', party: 'ppp' }, keyIssue: '문화유산 관광 활성화' ,
             voters: 220490,
-            prevElection: { turnout: 49.7 } },
+            prevElection: { turnout: null } },
             { name: '김천시', population: 140000, leadParty: 'ppp', mayor: { name: '배낙호', party: 'ppp' }, keyIssue: '교통 허브 도시' ,
             voters: 120471,
-            prevElection: { turnout: 55.8 } },
+            prevElection: { turnout: null } },
             { name: '안동시', population: 158000, leadParty: 'ppp', mayor: { name: '권기창', party: 'ppp' }, keyIssue: '전통문화 수도 조성' ,
             voters: 135862,
-            prevElection: { turnout: 54.9 } },
+            prevElection: { turnout: null } },
             { name: '구미시', population: 412000, leadParty: 'ppp', mayor: { name: '김장호', party: 'ppp' }, keyIssue: '전자산업 구조 전환' ,
             voters: 337510,
-            prevElection: { turnout: 42.8 } },
+            prevElection: { turnout: null } },
             { name: '영주시', population: 103000, leadParty: 'ppp', mayor: { name: null, party: 'independent', acting: true, actingReason: '박남서 시장 당선무효 (2025.3)' }, keyIssue: '소백산 관광 개발' ,
             voters: 89061,
-            prevElection: { turnout: 63.2 } },
+            prevElection: { turnout: null } },
             { name: '영천시', population: 100000, leadParty: 'independent', mayor: { name: '최기문', party: 'independent' }, keyIssue: '농업 첨단화' ,
             voters: 90932,
-            prevElection: { turnout: 56.9 } },
+            prevElection: { turnout: null } },
             { name: '상주시', population: 96000, leadParty: 'ppp', mayor: { name: '강영석', party: 'ppp' }, keyIssue: '농촌 인구 감소' ,
             voters: 84980,
-            prevElection: { turnout: 64.0 } },
+            prevElection: { turnout: null } },
             { name: '문경시', population: 70000, leadParty: 'ppp', mayor: { name: '신현국', party: 'ppp' }, keyIssue: '옛길 관광 자원화' ,
             voters: 64160,
-            prevElection: { turnout: 62.9 } },
+            prevElection: { turnout: null } },
             { name: '경산시', population: 280000, leadParty: 'ppp', mayor: { name: '조현일', party: 'ppp' }, keyIssue: '대구 연계 교통망' ,
             voters: 230676,
-            prevElection: { turnout: 43.4 } },
+            prevElection: { turnout: null } },
             { name: '의성군', population: 50000, leadParty: 'independent', mayor: { name: '김주수', party: 'independent' }, keyIssue: '마늘 산업 지원' ,
             voters: 47168,
-            prevElection: { turnout: 74.1 } },
+            prevElection: { turnout: null } },
             { name: '청송군', population: 24000, leadParty: 'ppp', mayor: { name: '윤경희', party: 'ppp' }, keyIssue: '지질공원 관광' ,
             voters: 22790,
-            prevElection: { turnout: 73.9 } },
+            prevElection: { turnout: null } },
             { name: '영양군', population: 16000, leadParty: 'ppp', mayor: { name: '오도창', party: 'ppp' }, keyIssue: '고추 산업 보호' ,
             voters: 14920,
-            prevElection: { turnout: 77.3 } },
+            prevElection: { turnout: null } },
             { name: '영덕군', population: 35000, leadParty: 'ppp', mayor: { name: '김광열', party: 'ppp' }, keyIssue: '대게 어업 지원' ,
             voters: 32124,
-            prevElection: { turnout: 67.1 } },
+            prevElection: { turnout: null } },
             { name: '청도군', population: 42000, leadParty: 'ppp', mayor: { name: '김하수', party: 'ppp' }, keyIssue: '소싸움 축제 관광' ,
             voters: 38574,
-            prevElection: { turnout: 70.8 } },
+            prevElection: { turnout: null } },
             { name: '고령군', population: 33000, leadParty: 'ppp', mayor: { name: '이남철', party: 'ppp' }, keyIssue: '대가야 역사 관광' ,
             voters: 27757,
-            prevElection: { turnout: 62.8 } },
+            prevElection: { turnout: null } },
             { name: '성주군', population: 44000, leadParty: 'ppp', mayor: { name: '이병환', party: 'ppp' }, keyIssue: '참외 산업 수출' ,
             voters: 39451,
-            prevElection: { turnout: 67.5 } },
+            prevElection: { turnout: null } },
             { name: '칠곡군', population: 120000, leadParty: 'ppp', mayor: { name: '김재욱', party: 'ppp' }, keyIssue: '산업단지 교통' ,
             voters: 96081,
-            prevElection: { turnout: 43.7 } },
+            prevElection: { turnout: null } },
             { name: '예천군', population: 55000, leadParty: 'ppp', mayor: { name: '김학동', party: 'ppp' }, keyIssue: '곤충산업 특구' },
             { name: '봉화군', population: 31000, leadParty: 'ppp', mayor: { name: '박현국', party: 'ppp' }, keyIssue: '산촌 생태 관광' ,
             voters: 27996,
-            prevElection: { turnout: 67.4 } },
+            prevElection: { turnout: null } },
             { name: '울진군', population: 48000, leadParty: 'ppp', mayor: { name: '손병복', party: 'ppp' }, keyIssue: '원전 지역 발전' ,
             voters: 42063,
-            prevElection: { turnout: 67.3 } },
+            prevElection: { turnout: null } },
             { name: '울릉군', population: 9000, leadParty: 'independent', mayor: { name: '남한권', party: 'independent' }, keyIssue: '독도 영토 관리' ,
             voters: 8339,
-            prevElection: { turnout: 81.5 } },
+            prevElection: { turnout: null } },
             { name: '군위군', population: 22000, leadParty: 'ppp', mayor: { name: '김진열', party: 'ppp' }, keyIssue: '대구 편입 후 발전' ,
             voters: 22054,
-            prevElection: { turnout: 80.9 } }
+            prevElection: { turnout: null } }
         ],
         'gyeongnam': [
             { name: '창원시', population: 1040000, leadParty: 'ppp', mayor: { name: '김종양', party: 'ppp' }, keyIssue: '기계산업 스마트 전환' ,
             voters: 874558,
-            prevElection: { turnout: 51.7 } },
+            prevElection: { turnout: null } },
             { name: '진주시', population: 350000, leadParty: 'ppp', mayor: { name: '조규일', party: 'ppp' }, keyIssue: '항공 산업 클러스터' ,
             voters: 292168,
-            prevElection: { turnout: 53.1 } },
+            prevElection: { turnout: null } },
             { name: '통영시', population: 128000, leadParty: 'ppp', mayor: { name: '천영기', party: 'ppp' }, keyIssue: '해양 관광 도시' ,
             voters: 106064,
-            prevElection: { turnout: 57.7 } },
+            prevElection: { turnout: null } },
             { name: '사천시', population: 112000, leadParty: 'ppp', mayor: { name: '박동식', party: 'ppp' }, keyIssue: '항공우주 산업 육성' ,
             voters: 93946,
-            prevElection: { turnout: 59.1 } },
+            prevElection: { turnout: null } },
             { name: '김해시', population: 540000, leadParty: 'ppp', mayor: { name: '홍태용', party: 'ppp' }, keyIssue: '부산 연계 교통망' ,
             voters: 444484,
-            prevElection: { turnout: 45.8 } },
+            prevElection: { turnout: null } },
             { name: '밀양시', population: 105000, leadParty: 'ppp', mayor: { name: '안병태', party: 'ppp' }, keyIssue: '송전탑 갈등 해결' ,
             voters: 92419,
-            prevElection: { turnout: 54.7 } },
+            prevElection: { turnout: null } },
             { name: '거제시', population: 230000, leadParty: 'democratic', mayor: { name: '변광용', party: 'democratic' }, keyIssue: '조선업 경기 회복' ,
             voters: 193369,
-            prevElection: { turnout: 51.4 } },
+            prevElection: { turnout: null } },
             { name: '양산시', population: 360000, leadParty: 'ppp', mayor: { name: '나동연', party: 'ppp' }, keyIssue: '부산 베드타운 인프라' ,
             voters: 294411,
-            prevElection: { turnout: 47.0 } },
+            prevElection: { turnout: null } },
             { name: '의령군', population: 26000, leadParty: 'independent', mayor: { name: '오태완', party: 'independent' }, keyIssue: '농촌 소멸 위기 대응' ,
             voters: 24291,
-            prevElection: { turnout: 75.0 } },
+            prevElection: { turnout: null } },
             { name: '함안군', population: 64000, leadParty: 'ppp', mayor: { name: '조근제', party: 'ppp' }, keyIssue: '아라가야 역사 관광' ,
             voters: 54125,
-            prevElection: { turnout: 59.3 } },
+            prevElection: { turnout: null } },
             { name: '창녕군', population: 60000, leadParty: 'ppp', mayor: { name: '성낙인', party: 'ppp' }, keyIssue: '우포늪 생태 관광' ,
             voters: 53616,
-            prevElection: { turnout: 64.1 } },
+            prevElection: { turnout: null } },
             { name: '고성군', population: 52000, leadParty: 'ppp', mayor: { name: '이상근', party: 'ppp' }, keyIssue: '공룡 화석 관광' },
             { name: '남해군', population: 42000, leadParty: 'democratic', mayor: { name: '장충남', party: 'democratic' }, keyIssue: '독일마을 관광 개발' ,
             voters: 38538,
-            prevElection: { turnout: 70.6 } },
+            prevElection: { turnout: null } },
             { name: '하동군', population: 45000, leadParty: 'independent', mayor: { name: '하승철', party: 'independent' }, keyIssue: '녹차 재배 산업' ,
             voters: 39428,
-            prevElection: { turnout: 73.8 } },
+            prevElection: { turnout: null } },
             { name: '산청군', population: 34000, leadParty: 'ppp', mayor: { name: '이승화', party: 'ppp' }, keyIssue: '한방 산업 특구' ,
             voters: 31488,
-            prevElection: { turnout: 69.6 } },
+            prevElection: { turnout: null } },
             { name: '함양군', population: 38000, leadParty: 'independent', mayor: { name: '진병영', party: 'independent' }, keyIssue: '산삼 항노화 산업' ,  /* 무소속 당선 후 2024.3 국민의힘 복당 */
             voters: 34399,
-            prevElection: { turnout: 75.6 } },
+            prevElection: { turnout: null } },
             { name: '거창군', population: 61000, leadParty: 'ppp', mayor: { name: '구인모', party: 'ppp' }, keyIssue: '사과 산업 지원' ,
             voters: 52803,
-            prevElection: { turnout: 65.8 } },
+            prevElection: { turnout: null } },
             { name: '합천군', population: 43000, leadParty: 'ppp', mayor: { name: '김윤철', party: 'ppp' }, keyIssue: '해인사 문화 관광' ,
             voters: 39435,
-            prevElection: { turnout: 69.4 } }
+            prevElection: { turnout: null } }
         ],
         'gyeonggi': [
             { name: '수원시', population: 1184000, leadParty: 'democratic', mayor: { name: '이재준', party: 'democratic' }, keyIssue: '교통 혁신' ,
             voters: 1012553,
-            prevElection: { turnout: 51.3 } },
+            prevElection: { turnout: null } },
             { name: '성남시', population: 927000, leadParty: 'ppp', mayor: { name: '신상진', party: 'ppp' }, keyIssue: '판교 테크노밸리' ,
             voters: 798508,
-            prevElection: { turnout: 56.6 } },
+            prevElection: { turnout: null } },
             { name: '의정부시', population: 458000, leadParty: 'ppp', mayor: { name: '김동근', party: 'ppp' }, keyIssue: '교통 개선' ,
             voters: 400177,
-            prevElection: { turnout: 47.0 } },
+            prevElection: { turnout: null } },
             { name: '안양시', population: 553000, leadParty: 'democratic', mayor: { name: '최대호', party: 'democratic' }, keyIssue: '도시재생' ,
             voters: 474037,
-            prevElection: { turnout: 56.3 } },
+            prevElection: { turnout: null } },
             { name: '부천시', population: 815000, leadParty: 'democratic', mayor: { name: '조용익', party: 'democratic' }, keyIssue: '문화 도시' ,
             voters: 702974,
-            prevElection: { turnout: 49.4 } },
+            prevElection: { turnout: null } },
             { name: '광명시', population: 293000, leadParty: 'democratic', mayor: { name: '박승원', party: 'democratic' }, keyIssue: '광명역세권' ,
             voters: 247233,
-            prevElection: { turnout: 56.5 } },
+            prevElection: { turnout: null } },
             { name: '평택시', population: 570000, leadParty: 'democratic', mayor: { name: '정장선', party: 'democratic' }, keyIssue: '미군기지 이전' ,
             voters: 478356,
-            prevElection: { turnout: 43.5 } },
+            prevElection: { turnout: null } },
             { name: '동두천시', population: 95000, leadParty: 'ppp', mayor: { name: '박형덕', party: 'ppp' }, keyIssue: '지역 활성화' ,
             voters: 81074,
-            prevElection: { turnout: 49.0 } },
+            prevElection: { turnout: null } },
             { name: '안산시', population: 650000, leadParty: 'ppp', mayor: { name: '이민근', party: 'ppp' }, keyIssue: '다문화 정책' ,
             voters: 571619,
-            prevElection: { turnout: 45.6 } },
+            prevElection: { turnout: null } },
             { name: '고양시', population: 1077000, leadParty: 'ppp', mayor: { name: '이동환', party: 'ppp' }, keyIssue: 'GTX 개통' ,
             voters: 924690,
-            prevElection: { turnout: 52.3 } },
+            prevElection: { turnout: null } },
             { name: '과천시', population: 72000, leadParty: 'ppp', mayor: { name: '신계용', party: 'ppp' }, keyIssue: '정부청사 이전' ,
             voters: 65220,
-            prevElection: { turnout: 65.4 } },
+            prevElection: { turnout: null } },
             { name: '구리시', population: 197000, leadParty: 'ppp', mayor: { name: '백경현', party: 'ppp' }, keyIssue: '교통 혁신' ,
             voters: 164045,
-            prevElection: { turnout: 53.8 } },
+            prevElection: { turnout: null } },
             { name: '남양주시', population: 730000, leadParty: 'ppp', mayor: { name: '주광덕', party: 'ppp' }, keyIssue: '교통 인프라' ,
             voters: 610260,
-            prevElection: { turnout: 49.1 } },
+            prevElection: { turnout: null } },
             { name: '오산시', population: 233000, leadParty: 'ppp', mayor: { name: '이권재', party: 'ppp' }, keyIssue: '교육 도시' ,
             voters: 190375,
-            prevElection: { turnout: 43.7 } },
+            prevElection: { turnout: null } },
             { name: '시흥시', population: 510000, leadParty: 'democratic', mayor: { name: '임병택', party: 'democratic' }, keyIssue: '스마트시티' ,
             voters: 431352,
-            prevElection: { turnout: 45.2 } },
+            prevElection: { turnout: null } },
             { name: '군포시', population: 267000, leadParty: 'ppp', mayor: { name: '하은호', party: 'ppp' }, keyIssue: '주거 안정' ,
             voters: 231192,
-            prevElection: { turnout: 55.5 } },
+            prevElection: { turnout: null } },
             { name: '의왕시', population: 160000, leadParty: 'ppp', mayor: { name: '김성제', party: 'ppp' }, keyIssue: '교통 접근성' ,
             voters: 138928,
-            prevElection: { turnout: 58.0 } },
+            prevElection: { turnout: null } },
             { name: '하남시', population: 310000, leadParty: 'ppp', mayor: { name: '이현재', party: 'ppp' }, keyIssue: '미사 신도시' ,
             voters: 266856,
-            prevElection: { turnout: 52.4 } },
+            prevElection: { turnout: null } },
             { name: '용인시', population: 1081000, leadParty: 'ppp', mayor: { name: '이상일', party: 'ppp' }, keyIssue: '반도체 클러스터' ,
             voters: 889545,
-            prevElection: { turnout: 54.2 } },
+            prevElection: { turnout: null } },
             { name: '파주시', population: 480000, leadParty: 'democratic', mayor: { name: '김경일', party: 'democratic' }, keyIssue: '접경지역 발전' ,
             voters: 403729,
-            prevElection: { turnout: 46.3 } },
+            prevElection: { turnout: null } },
             { name: '이천시', population: 222000, leadParty: 'ppp', mayor: { name: '김경희', party: 'ppp' }, keyIssue: 'SK하이닉스' ,
             voters: 188563,
-            prevElection: { turnout: 47.1 } },
+            prevElection: { turnout: null } },
             { name: '안성시', population: 188000, leadParty: 'democratic', mayor: { name: '김보라', party: 'democratic' }, keyIssue: '농업 혁신' ,
             voters: 163518,
-            prevElection: { turnout: 50.0 } },
+            prevElection: { turnout: null } },
             { name: '김포시', population: 480000, leadParty: 'ppp', mayor: { name: '김병수', party: 'ppp' }, keyIssue: '교통 혁신' ,
             voters: 392604,
-            prevElection: { turnout: 49.9 } },
+            prevElection: { turnout: null } },
             { name: '화성시', population: 920000, leadParty: 'democratic', mayor: { name: '정명근', party: 'democratic' }, keyIssue: '삼성 반도체' ,
             voters: 711229,
-            prevElection: { turnout: 47.3 } },
+            prevElection: { turnout: null } },
             { name: '광주시', population: 390000, leadParty: 'ppp', mayor: { name: '방세환', party: 'ppp' }, keyIssue: '신도시 인프라' ,
             voters: 329651,
-            prevElection: { turnout: 46.2 } },
+            prevElection: { turnout: null } },
             { name: '양주시', population: 235000, leadParty: 'ppp', mayor: { name: '강수현', party: 'ppp' }, keyIssue: '신도시 개발' ,
             voters: 197751,
-            prevElection: { turnout: 48.1 } },
+            prevElection: { turnout: null } },
             { name: '포천시', population: 148000, leadParty: 'ppp', mayor: { name: '백영현', party: 'ppp' }, keyIssue: '관광·교통' ,
             voters: 131980,
-            prevElection: { turnout: 51.4 } },
+            prevElection: { turnout: null } },
             { name: '여주시', population: 112000, leadParty: 'ppp', mayor: { name: '이충우', party: 'ppp' }, keyIssue: '농업·관광' ,
             voters: 98333,
-            prevElection: { turnout: 51.5 } },
+            prevElection: { turnout: null } },
             { name: '연천군', population: 43000, leadParty: 'ppp', mayor: { name: '김덕현', party: 'ppp' }, keyIssue: '접경지역 지원' ,
             voters: 37898,
-            prevElection: { turnout: 60.2 } },
+            prevElection: { turnout: null } },
             { name: '가평군', population: 62000, leadParty: 'ppp', mayor: { name: '서태원', party: 'ppp' }, keyIssue: '관광 산업' ,
             voters: 55791,
-            prevElection: { turnout: 59.4 } },
+            prevElection: { turnout: null } },
             { name: '양평군', population: 118000, leadParty: 'ppp', mayor: { name: '전진선', party: 'ppp' }, keyIssue: '친환경 관광' ,
             voters: 107165,
-            prevElection: { turnout: 59.2 } }
+            prevElection: { turnout: null } }
         ]
     };
 
@@ -1747,583 +1555,112 @@ const ElectionData = (() => {
     // 교육감은 정당 공천이 없으므로 진보/보수/중도로 분류
     const superintendentHistory = {
         seoul:    [
-            { election: 2, year: 2010, winner: '진보', winnerName: '곽노현', rate: 44.5, runner: '보수', runnerName: '이원희', runnerRate: 42.3, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '조희연', rate: 33.4, runner: '보수', runnerName: '고승덕', runnerRate: 32.9, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '조희연', rate: 47.8, runner: '보수', runnerName: '조영달', runnerRate: 28.0, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '조희연', rate: 45.6, runner: '보수', runnerName: '조전혁', runnerRate: 44.6, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '곽노현', rate: 44.5, runner: '보수', runnerName: '이원희', runnerRate: 42.3, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '조희연', rate: 33.4, runner: '보수', runnerName: '고승덕', runnerRate: 32.9, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '조희연', rate: 47.8, runner: '보수', runnerName: '조영달', runnerRate: 28.0, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '조희연', rate: 45.6, runner: '보수', runnerName: '조전혁', runnerRate: 44.6, turnout: null }
         ],
         busan:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '임혜경', rate: 33.0, runner: '진보', runnerName: '김석준', runnerRate: 31.1, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '보수', winnerName: '김석준', rate: 40.6, runner: '진보', runnerName: '임혜경', runnerRate: 34.9, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김석준', rate: 43.5, runner: '보수', runnerName: '하윤수', runnerRate: 39.6, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '하윤수', rate: 52.8, runner: '진보', runnerName: '김석준', runnerRate: 26.2, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '임혜경', rate: 33.0, runner: '진보', runnerName: '김석준', runnerRate: 31.1, turnout: null },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김석준', rate: 40.6, runner: '진보', runnerName: '임혜경', runnerRate: 34.9, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김석준', rate: 43.5, runner: '보수', runnerName: '하윤수', runnerRate: 39.6, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '하윤수', rate: 52.8, runner: '진보', runnerName: '김석준', runnerRate: 26.2, turnout: null }
         ],
         daegu:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이청우', rate: 44.4, runner: '보수', runnerName: '반상진', runnerRate: 38.2, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '보수', winnerName: '우동기', rate: 53.5, runner: '보수', runnerName: '이수진', runnerRate: 23.2, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '보수', winnerName: '강은희', rate: 50.2, runner: '진보', runnerName: '김인경', runnerRate: 21.1, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '강은희', rate: 66.5, runner: '진보', runnerName: '박성혁', runnerRate: 27.7, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이청우', rate: 44.4, runner: '보수', runnerName: '반상진', runnerRate: 38.2, turnout: null },
+            { election: 3, year: 2014, winner: '보수', winnerName: '우동기', rate: 53.5, runner: '보수', runnerName: '이수진', runnerRate: 23.2, turnout: null },
+            { election: 4, year: 2018, winner: '보수', winnerName: '강은희', rate: 50.2, runner: '진보', runnerName: '김인경', runnerRate: 21.1, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '강은희', rate: 66.5, runner: '진보', runnerName: '박성혁', runnerRate: 27.7, turnout: null }
         ],
         incheon:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '나길채', rate: 43.2, runner: '보수', runnerName: '김점덕', runnerRate: 39.7, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이청연', rate: 41.4, runner: '보수', runnerName: '이기찬', runnerRate: 38.1, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '도성훈', rate: 47.2, runner: '보수', runnerName: '고승의', runnerRate: 30.8, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '도성훈', rate: 45.2, runner: '보수', runnerName: '이달곤', runnerRate: 43.2, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '나길채', rate: 43.2, runner: '보수', runnerName: '김점덕', runnerRate: 39.7, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이청연', rate: 41.4, runner: '보수', runnerName: '이기찬', runnerRate: 38.1, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '도성훈', rate: 47.2, runner: '보수', runnerName: '고승의', runnerRate: 30.8, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '도성훈', rate: 45.2, runner: '보수', runnerName: '이달곤', runnerRate: 43.2, turnout: null }
         ],
         gwangju:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '장휘국', rate: 57.4, runner: '진보', runnerName: '박우식', runnerRate: 18.3, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '장휘국', rate: 61.8, runner: '진보', runnerName: '이정선', runnerRate: 21.5, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '장휘국', rate: 67.3, runner: '진보', runnerName: '이정선', runnerRate: 15.1, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '이정선', rate: 41.8, runner: '진보', runnerName: '정성홍', runnerRate: 22.4, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '장휘국', rate: 57.4, runner: '진보', runnerName: '박우식', runnerRate: 18.3, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장휘국', rate: 61.8, runner: '진보', runnerName: '이정선', runnerRate: 21.5, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장휘국', rate: 67.3, runner: '진보', runnerName: '이정선', runnerRate: 15.1, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '이정선', rate: 41.8, runner: '진보', runnerName: '정성홍', runnerRate: 22.4, turnout: null }
         ],
         daejeon:  [
-            { election: 2, year: 2010, winner: '중도', winnerName: '설동호', rate: 34.8, runner: '진보', runnerName: '김기동', runnerRate: 31.5, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '중도', winnerName: '설동호', rate: 48.8, runner: '진보', runnerName: '김기동', runnerRate: 40.5, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '중도', winnerName: '설동호', rate: 50.5, runner: '진보', runnerName: '김기동', runnerRate: 28.2, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '중도', winnerName: '설동호', rate: 52.3, runner: '보수', runnerName: '이영우', runnerRate: 25.1, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '중도', winnerName: '설동호', rate: 34.8, runner: '진보', runnerName: '김기동', runnerRate: 31.5, turnout: null },
+            { election: 3, year: 2014, winner: '중도', winnerName: '설동호', rate: 48.8, runner: '진보', runnerName: '김기동', runnerRate: 40.5, turnout: null },
+            { election: 4, year: 2018, winner: '중도', winnerName: '설동호', rate: 50.5, runner: '진보', runnerName: '김기동', runnerRate: 28.2, turnout: null },
+            { election: 5, year: 2022, winner: '중도', winnerName: '설동호', rate: 52.3, runner: '보수', runnerName: '이영우', runnerRate: 25.1, turnout: null }
         ],
         ulsan:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '김복만', rate: 52.7, runner: '진보', runnerName: '노옥희', runnerRate: 47.3, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '보수', winnerName: '김복만', rate: 50.5, runner: '진보', runnerName: '노옥희', runnerRate: 49.5, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '노옥희', rate: 53.8, runner: '보수', runnerName: '김복만', runnerRate: 46.2, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '노옥희', rate: 51.8, runner: '보수', runnerName: '천창수', runnerRate: 48.2, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '김복만', rate: 52.7, runner: '진보', runnerName: '노옥희', runnerRate: 47.3, turnout: null },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김복만', rate: 50.5, runner: '진보', runnerName: '노옥희', runnerRate: 49.5, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '노옥희', rate: 53.8, runner: '보수', runnerName: '김복만', runnerRate: 46.2, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '노옥희', rate: 51.8, runner: '보수', runnerName: '천창수', runnerRate: 48.2, turnout: null }
         ],
         sejong:   [
-            { election: 4, year: 2018, winner: '진보', winnerName: '최교진', rate: 62.4, runner: '보수', runnerName: '오경석', runnerRate: 37.6, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '최교진', rate: 55.2, runner: '보수', runnerName: '강태중', runnerRate: 44.8, turnout: 50.9 }
+            { election: 4, year: 2018, winner: '진보', winnerName: '최교진', rate: 62.4, runner: '보수', runnerName: '오경석', runnerRate: 37.6, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '최교진', rate: 55.2, runner: '보수', runnerName: '강태중', runnerRate: 44.8, turnout: null }
         ],
         gyeonggi: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김상곤', rate: 50.2, runner: '보수', runnerName: '이재정', runnerRate: 49.8, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이재정', rate: 33.7, runner: '보수', runnerName: '이범희', runnerRate: 33.4, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '이재정', rate: 52.3, runner: '보수', runnerName: '인요한', runnerRate: 29.5, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '임태희', rate: 50.6, runner: '진보', runnerName: '이재정', runnerRate: 37.1, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김상곤', rate: 50.2, runner: '보수', runnerName: '이재정', runnerRate: 49.8, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이재정', rate: 33.7, runner: '보수', runnerName: '이범희', runnerRate: 33.4, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이재정', rate: 52.3, runner: '보수', runnerName: '인요한', runnerRate: 29.5, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임태희', rate: 50.6, runner: '진보', runnerName: '이재정', runnerRate: 37.1, turnout: null }
         ],
         gangwon:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '민병희', rate: 42.5, runner: '보수', runnerName: '임창환', runnerRate: 38.2, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '민병희', rate: 51.2, runner: '보수', runnerName: '박운서', runnerRate: 48.8, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '민병희', rate: 55.1, runner: '보수', runnerName: '이상인', runnerRate: 44.9, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '신경호', rate: 51.7, runner: '진보', runnerName: '민병희', runnerRate: 48.3, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '민병희', rate: 42.5, runner: '보수', runnerName: '임창환', runnerRate: 38.2, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '민병희', rate: 51.2, runner: '보수', runnerName: '박운서', runnerRate: 48.8, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '민병희', rate: 55.1, runner: '보수', runnerName: '이상인', runnerRate: 44.9, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '신경호', rate: 51.7, runner: '진보', runnerName: '민병희', runnerRate: 48.3, turnout: null }
         ],
         chungbuk: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이기우', rate: 47.1, runner: '진보', runnerName: '심의보', runnerRate: 39.8, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김병우', rate: 47.8, runner: '보수', runnerName: '이기우', runnerRate: 43.1, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김병우', rate: 56.2, runner: '보수', runnerName: '심의보', runnerRate: 43.8, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '윤건영', rate: 52.1, runner: '진보', runnerName: '심의보', runnerRate: 47.9, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이기우', rate: 47.1, runner: '진보', runnerName: '심의보', runnerRate: 39.8, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김병우', rate: 47.8, runner: '보수', runnerName: '이기우', runnerRate: 43.1, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김병우', rate: 56.2, runner: '보수', runnerName: '심의보', runnerRate: 43.8, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '윤건영', rate: 52.1, runner: '진보', runnerName: '심의보', runnerRate: 47.9, turnout: null }
         ],
         chungnam: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김지철', rate: 45.2, runner: '보수', runnerName: '최병우', runnerRate: 37.5, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김지철', rate: 56.3, runner: '보수', runnerName: '오세열', runnerRate: 43.7, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김지철', rate: 60.8, runner: '보수', runnerName: '오세열', runnerRate: 39.2, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '김지철', rate: 51.4, runner: '보수', runnerName: '오연호', runnerRate: 48.6, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김지철', rate: 45.2, runner: '보수', runnerName: '최병우', runnerRate: 37.5, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김지철', rate: 56.3, runner: '보수', runnerName: '오세열', runnerRate: 43.7, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김지철', rate: 60.8, runner: '보수', runnerName: '오세열', runnerRate: 39.2, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김지철', rate: 51.4, runner: '보수', runnerName: '오연호', runnerRate: 48.6, turnout: null }
         ],
         jeonbuk: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김승환', rate: 62.3, runner: '보수', runnerName: '양춘삼', runnerRate: 20.4, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김승환', rate: 73.6, runner: '중도', runnerName: '김규성', runnerRate: 26.4, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김승환', rate: 76.2, runner: '중도', runnerName: '황종현', runnerRate: 23.8, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '서거석', rate: 63.5, runner: '보수', runnerName: '이창식', runnerRate: 36.5, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김승환', rate: 62.3, runner: '보수', runnerName: '양춘삼', runnerRate: 20.4, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김승환', rate: 73.6, runner: '중도', runnerName: '김규성', runnerRate: 26.4, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김승환', rate: 76.2, runner: '중도', runnerName: '황종현', runnerRate: 23.8, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '서거석', rate: 63.5, runner: '보수', runnerName: '이창식', runnerRate: 36.5, turnout: null }
         ],
         jeonnam:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '장만채', rate: 57.1, runner: '진보', runnerName: '이봉길', runnerRate: 22.8, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '장만채', rate: 72.5, runner: '진보', runnerName: '고석규', runnerRate: 27.5, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '장석웅', rate: 68.3, runner: '보수', runnerName: '고영진', runnerRate: 31.7, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '김대중', rate: 54.1, runner: '보수', runnerName: '박정일', runnerRate: 25.8, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '장만채', rate: 57.1, runner: '진보', runnerName: '이봉길', runnerRate: 22.8, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장만채', rate: 72.5, runner: '진보', runnerName: '고석규', runnerRate: 27.5, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장석웅', rate: 68.3, runner: '보수', runnerName: '고영진', runnerRate: 31.7, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김대중', rate: 54.1, runner: '보수', runnerName: '박정일', runnerRate: 25.8, turnout: null }
         ],
         gyeongbuk: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이영우', rate: 56.5, runner: '보수', runnerName: '안양옥', runnerRate: 33.2, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '보수', winnerName: '이영우', rate: 58.1, runner: '진보', runnerName: '안양옥', runnerRate: 41.9, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '보수', winnerName: '임종식', rate: 55.3, runner: '진보', runnerName: '이영국', runnerRate: 44.7, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '임종식', rate: 58.9, runner: '진보', runnerName: '안형준', runnerRate: 41.1, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이영우', rate: 56.5, runner: '보수', runnerName: '안양옥', runnerRate: 33.2, turnout: null },
+            { election: 3, year: 2014, winner: '보수', winnerName: '이영우', rate: 58.1, runner: '진보', runnerName: '안양옥', runnerRate: 41.9, turnout: null },
+            { election: 4, year: 2018, winner: '보수', winnerName: '임종식', rate: 55.3, runner: '진보', runnerName: '이영국', runnerRate: 44.7, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임종식', rate: 58.9, runner: '진보', runnerName: '안형준', runnerRate: 41.1, turnout: null }
         ],
         gyeongnam: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '고대준', rate: 49.1, runner: '진보', runnerName: '권정호', runnerRate: 42.5, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '박종훈', rate: 50.8, runner: '보수', runnerName: '고대준', runnerRate: 49.2, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '박종훈', rate: 60.5, runner: '보수', runnerName: '권정오', runnerRate: 39.5, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '진보', winnerName: '박종훈', rate: 51.1, runner: '보수', runnerName: '김태진', runnerRate: 48.9, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '보수', winnerName: '고대준', rate: 49.1, runner: '진보', runnerName: '권정호', runnerRate: 42.5, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '박종훈', rate: 50.8, runner: '보수', runnerName: '고대준', runnerRate: 49.2, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '박종훈', rate: 60.5, runner: '보수', runnerName: '권정오', runnerRate: 39.5, turnout: null },
+            { election: 5, year: 2022, winner: '진보', winnerName: '박종훈', rate: 51.1, runner: '보수', runnerName: '김태진', runnerRate: 48.9, turnout: null }
         ],
         jeju:     [
-            { election: 2, year: 2010, winner: '진보', winnerName: '이석문', rate: 52.8, runner: '보수', runnerName: '양성봉', runnerRate: 47.2, turnout: 54.5 },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이석문', rate: 55.1, runner: '보수', runnerName: '고석화', runnerRate: 44.9, turnout: 56.8 },
-            { election: 4, year: 2018, winner: '진보', winnerName: '이석문', rate: 58.6, runner: '보수', runnerName: '김광수', runnerRate: 41.4, turnout: 60.2 },
-            { election: 5, year: 2022, winner: '보수', winnerName: '김광수', rate: 51.2, runner: '진보', runnerName: '이석문', runnerRate: 48.8, turnout: 50.9 }
+            { election: 2, year: 2010, winner: '진보', winnerName: '이석문', rate: 52.8, runner: '보수', runnerName: '양성봉', runnerRate: 47.2, turnout: null },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이석문', rate: 55.1, runner: '보수', runnerName: '고석화', runnerRate: 44.9, turnout: null },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이석문', rate: 58.6, runner: '보수', runnerName: '김광수', runnerRate: 41.4, turnout: null },
+            { election: 5, year: 2022, winner: '보수', winnerName: '김광수', rate: 51.2, runner: '진보', runnerName: '이석문', runnerRate: 48.8, turnout: null }
         ]
     };
 
     // BEGIN NESDC_LATEST_POLLS
     const latestPolls = [];
     // END NESDC_LATEST_POLLS
-    let generatedElectionDataCache = null;
+    // (Mock data generator removed — real data comes from data/candidates/ and data/polls/)
 
-    // ============================================
-    // Mock Election Data Generator
-    // ============================================
-    function generateMockElectionData(forceRefresh = false) {
-        if (generatedElectionDataCache && !forceRefresh) {
-            return generatedElectionDataCache;
-        }
-        const surnames = ['김', '이', '박', '최', '정', '강', '조', '윤', '장', '임', '한', '오', '서', '신', '권', '황', '안', '송', '류', '홍'];
-        const givenNames = ['민수', '영희', '지훈', '수진', '현우', '미경', '성호', '은영', '태훈', '지영', '상현', '혜진', '동욱', '나래', '준호', '소영', '재혁', '유진', '승민', '다은', '정훈', '서연', '원석', '미래', '기철', '보람', '대성', '하늘', '용준', '세진'];
-
-        const allRegionKeys = ['seoul', 'busan', 'daegu', 'incheon', 'gwangju', 'daejeon', 'ulsan', 'sejong', 'gyeonggi', 'gangwon', 'chungbuk', 'chungnam', 'jeonbuk', 'jeonnam', 'gyeongbuk', 'gyeongnam', 'jeju'];
-
-        // --- Deterministic random helpers ---
-        function hash(str) {
-            let h = 0;
-            for (let i = 0; i < str.length; i++) {
-                h = ((h << 5) - h) + str.charCodeAt(i);
-                h |= 0;
-            }
-            return Math.abs(h);
-        }
-
-        function seededRandom(seed) {
-            // Returns a value between 0 and 1 based on the seed
-            const x = Math.sin(seed) * 10000;
-            return x - Math.floor(x);
-        }
-
-        function pickName(seed) {
-            return surnames[seed % surnames.length] + givenNames[(seed * 7 + 3) % givenNames.length];
-        }
-
-        function pickAge(seed) {
-            return 40 + (seed % 26); // 40-65
-        }
-
-        function pickFrom(arr, seed) {
-            return arr[seed % arr.length];
-        }
-
-        // --- Career pools ---
-        const mayorCareers = ['前 시의원', '前 구청 부구청장', '시민단체 대표', '前 국회의원 보좌관', '교수', '前 도의원', '前 구청장', '변호사', '前 시청 국장', '사업가', '前 군수', '前 시의회 의장'];
-        const councilCareers = ['前 시의원', '현 시의원', '시민운동가', '前 구의원', '교수', '변호사', '前 공무원', '기업인', '노동운동가', '前 구청 과장'];
-        const localCouncilCareers = ['현 구의원', '前 구의원', '통장', '시민단체 활동가', '자영업', '교사', '사회복지사', '전문직', '前 동장', '마을활동가'];
-        const superintendentCareers = ['현 교육감', '前 교육부 차관', '대학교수', '前 교육위원', '교육시민단체 대표', '前 교육청 부교육감', '前 학교장', '교육정책연구원장'];
-        const superintendentPledges = [
-            ['학급당 학생수 20명 이하', '무상교육 확대', '디지털 교육 혁신'],
-            ['교권 보호 강화', '영재교육 확대', '학교 안전 강화'],
-            ['교육 격차 해소', '돌봄교실 확대', '진로교육 내실화'],
-            ['학교 시설 현대화', '교원 처우 개선', '특수교육 확대'],
-            ['AI 교육 도입', '자율형 학교 확대', '체육·예술 교육 강화']
-        ];
-        const educationIssues = [
-            '학급당 학생수', '교권 보호', '디지털 교육', '무상급식',
-            '돌봄 서비스', '교육 격차', '학교 안전', '입시 제도',
-            '교원 처우', '특수교육', '학교 시설', '방과후 프로그램'
-        ];
-
-        const pollSources = ['한국갤럽', '리얼미터', 'KSOI', 'NBS'];
-        const pollDates = ['2026-01-15', '2026-01-29', '2026-02-12', '2026-02-24'];
-
-        const thirdParties = ['reform', 'newReform', 'independent'];
-        const subDistrictLabels = ['가', '나', '다', '라', '마'];
-
-        // ============================================
-        // 1. Mayor (기초단체장) Data
-        // ============================================
-        const mayor = {};
-        Object.keys(subRegionData).forEach(regionKey => {
-            const districts = subRegionData[regionKey];
-            if (!districts) return;
-            mayor[regionKey] = {};
-
-            districts.forEach((district, districtIdx) => {
-                const key = `${regionKey}-${districtIdx}-mayor`;
-                const seed = hash(key);
-                const leadParty = district.leadParty || 'democratic';
-                const opponentParty = leadParty === 'democratic' ? 'ppp' : 'democratic';
-                const hasThird = seededRandom(seed + 99) > 0.45;
-                const numCandidates = hasThird ? 3 : 2;
-
-                const candidates = [];
-                // Lead candidate
-                candidates.push({
-                    id: `${regionKey}-${districtIdx}-mayor-0`,
-                    name: pickName(seed),
-                    party: leadParty,
-                    age: pickAge(seed + 10),
-                    career: pickFrom(mayorCareers, seed + 20)
-                });
-                // Opponent
-                candidates.push({
-                    id: `${regionKey}-${districtIdx}-mayor-1`,
-                    name: pickName(seed + 50),
-                    party: opponentParty,
-                    age: pickAge(seed + 60),
-                    career: pickFrom(mayorCareers, seed + 70)
-                });
-                // Third (if applicable)
-                if (hasThird) {
-                    candidates.push({
-                        id: `${regionKey}-${districtIdx}-mayor-2`,
-                        name: pickName(seed + 100),
-                        party: pickFrom(thirdParties, seed + 110),
-                        age: pickAge(seed + 120),
-                        career: pickFrom(mayorCareers, seed + 130)
-                    });
-                }
-
-                // Generate 2 polls
-                const polls = [];
-                for (let p = 0; p < 2; p++) {
-                    const pSeed = seed + p * 1000;
-                    const leadPct = 38 + seededRandom(pSeed) * 17; // 38-55
-                    const oppPct = 30 + seededRandom(pSeed + 1) * 18; // 30-48
-                    const thirdPct = hasThird ? (5 + seededRandom(pSeed + 2) * 10) : 0; // 5-15
-                    const total = leadPct + oppPct + thirdPct;
-                    const norm = 100 / total;
-
-                    const data = {};
-                    data[candidates[0].id] = parseFloat((leadPct * norm * 0.85).toFixed(1));
-                    data[candidates[1].id] = parseFloat((oppPct * norm * 0.85).toFixed(1));
-                    if (hasThird) {
-                        data[candidates[2].id] = parseFloat((thirdPct * norm * 0.85).toFixed(1));
-                    }
-
-                    polls.push({
-                        date: pollDates[p * 2],
-                        source: pickFrom(pollSources, pSeed),
-                        data: data,
-                        margin: parseFloat((2.5 + seededRandom(pSeed + 3) * 2).toFixed(1)),
-                        sampleSize: 500 + Math.floor(seededRandom(pSeed + 4) * 600)
-                    });
-                }
-
-                mayor[regionKey][district.name] = {
-                    candidates,
-                    polls,
-                    leadParty
-                };
-            });
-        });
-
-        // ============================================
-        // 2. Council (광역의원) Data
-        // ============================================
-        const council = {};
-        Object.keys(subRegionData).forEach(regionKey => {
-            const districts = subRegionData[regionKey];
-            if (!districts) return;
-
-            const councilDistricts = districts.map((subRegion, idx) => {
-                const key = `${regionKey}-${idx}-council`;
-                const seed = hash(key);
-                const seats = subRegion.population > 300000 ? 2 : 1;
-                const leadParty = subRegion.leadParty || 'democratic';
-                const opponentParty = leadParty === 'democratic' ? 'ppp' : 'democratic';
-                const hasThird = seededRandom(seed + 200) > 0.5;
-
-                const candidates = [];
-                candidates.push({
-                    id: `${regionKey}-${idx}-council-0`,
-                    name: pickName(seed + 300),
-                    party: leadParty,
-                    age: pickAge(seed + 310),
-                    career: pickFrom(councilCareers, seed + 320)
-                });
-                candidates.push({
-                    id: `${regionKey}-${idx}-council-1`,
-                    name: pickName(seed + 350),
-                    party: opponentParty,
-                    age: pickAge(seed + 360),
-                    career: pickFrom(councilCareers, seed + 370)
-                });
-                if (hasThird) {
-                    candidates.push({
-                        id: `${regionKey}-${idx}-council-2`,
-                        name: pickName(seed + 400),
-                        party: pickFrom(thirdParties, seed + 410),
-                        age: pickAge(seed + 420),
-                        career: pickFrom(councilCareers, seed + 430)
-                    });
-                }
-
-                return {
-                    name: `${subRegion.name} 선거구`,
-                    municipality: subRegion.name,
-                    seats,
-                    candidates,
-                    leadParty
-                };
-            });
-
-            council[regionKey] = { districts: councilDistricts };
-        });
-
-        // ============================================
-        // 3. LocalCouncil (기초의원) Data
-        // ============================================
-        const localCouncil = {};
-        Object.keys(subRegionData).forEach(regionKey => {
-            const districts = subRegionData[regionKey];
-            if (!districts) return;
-            localCouncil[regionKey] = {};
-
-            districts.forEach((subRegion, districtIdx) => {
-                const population = subRegion.population || 100000;
-                const totalSeats = Math.max(7, Math.round(population / 50000));
-                const numSubDistricts = Math.min(5, Math.max(3, Math.round(totalSeats / 3)));
-                const leadParty = subRegion.leadParty || 'democratic';
-
-                const subDistricts = [];
-                let assignedSeats = 0;
-
-                for (let i = 0; i < numSubDistricts; i++) {
-                    const key = `${regionKey}-${districtIdx}-local-${i}`;
-                    const seed = hash(key);
-                    const isLast = (i === numSubDistricts - 1);
-                    const seats = isLast
-                        ? Math.max(2, totalSeats - assignedSeats)
-                        : (2 + (seed % 2)); // 2 or 3
-                    assignedSeats += seats;
-
-                    const opponentParty = leadParty === 'democratic' ? 'ppp' : 'democratic';
-                    const hasThird = seededRandom(seed + 500) > 0.4;
-
-                    const candidates = [];
-                    // Generate candidates: seats + 1 or seats + 2 to have competition
-                    const numCandidates = seats + 1 + (hasThird ? 1 : 0);
-                    for (let c = 0; c < numCandidates; c++) {
-                        let cParty;
-                        if (c === 0) cParty = leadParty;
-                        else if (c === 1) cParty = opponentParty;
-                        else if (c < seats) cParty = pickFrom([leadParty, opponentParty], seed + c);
-                        else cParty = pickFrom(thirdParties, seed + c * 7);
-
-                        candidates.push({
-                            id: `${regionKey}-${districtIdx}-local-${i}-${c}`,
-                            name: pickName(seed + c * 13 + 600),
-                            party: cParty,
-                            age: pickAge(seed + c * 11 + 610),
-                            career: pickFrom(localCouncilCareers, seed + c * 9 + 620)
-                        });
-                    }
-
-                    // Use label style based on region count
-                    const subDistrictName = numSubDistricts <= 5
-                        ? `${subRegion.name} ${subDistrictLabels[i]}선거구`
-                        : `제${i + 1}선거구`;
-
-                    subDistricts.push({
-                        name: subDistrictName,
-                        seats,
-                        candidates,
-                        leadParty: (seededRandom(seed + 700) > 0.3) ? leadParty : opponentParty
-                    });
-                }
-
-                localCouncil[regionKey][subRegion.name] = {
-                    totalSeats,
-                    districts: subDistricts
-                };
-            });
-        });
-
-        // ============================================
-        // 4. Superintendent (교육감) Data
-        // ============================================
-        const superintendent = {};
-        const stances = ['진보', '보수', '중도'];
-
-        allRegionKeys.forEach(regionKey => {
-            const key = `${regionKey}-superintendent`;
-            const seed = hash(key);
-            const region = regions[regionKey];
-            const regionName = region ? region.name : regionKey;
-            const hasThird = seededRandom(seed + 800) > 0.45;
-            const numCandidates = hasThird ? 3 : 2;
-
-            const candidates = [];
-            for (let i = 0; i < numCandidates; i++) {
-                const cSeed = seed + i * 100 + 900;
-                candidates.push({
-                    id: `${regionKey}-superintendent-${i}`,
-                    name: pickName(cSeed),
-                    stance: stances[i % stances.length],
-                    party: null,
-                    age: pickAge(cSeed + 10),
-                    career: pickFrom(superintendentCareers, cSeed + 20),
-                    pledges: superintendentPledges[cSeed % superintendentPledges.length]
-                });
-            }
-
-            // Generate polls
-            const polls = [];
-            const numPolls = 1 + (seed % 2); // 1 or 2 polls
-            for (let p = 0; p < numPolls; p++) {
-                const pSeed = seed + p * 2000;
-                const firstPct = 35 + seededRandom(pSeed) * 20; // 35-55
-                const secondPct = 30 + seededRandom(pSeed + 1) * 18; // 30-48
-                const thirdPct = hasThird ? (5 + seededRandom(pSeed + 2) * 12) : 0;
-                const total = firstPct + secondPct + thirdPct;
-                const norm = 90 / total;
-
-                const data = {};
-                data[candidates[0].id] = parseFloat((firstPct * norm).toFixed(1));
-                data[candidates[1].id] = parseFloat((secondPct * norm).toFixed(1));
-                if (hasThird) {
-                    data[candidates[2].id] = parseFloat((thirdPct * norm).toFixed(1));
-                }
-
-                polls.push({
-                    date: pollDates[p * 2],
-                    source: pickFrom(pollSources, pSeed + 5),
-                    data: data,
-                    margin: parseFloat((3.0 + seededRandom(pSeed + 6) * 2).toFixed(1)),
-                    sampleSize: 400 + Math.floor(seededRandom(pSeed + 7) * 600)
-                });
-            }
-
-            // Key issues (education-related)
-            const keyIssues = [];
-            const numIssues = 3 + (seed % 2);
-            for (let j = 0; j < numIssues; j++) {
-                keyIssues.push(educationIssues[(seed + j * 3) % educationIssues.length]);
-            }
-
-            superintendent[regionKey] = {
-                regionName,
-                candidates,
-                polls,
-                keyIssues
-            };
-        });
-
-        // ============================================
-        // 5. ByElection (재보궐) Data
-        // ============================================
-        // 2026.03.09 기준 확정 5개 재보궐선거 지역
-        const byElectionDefs = [
-            {
-                key: 'incheon-yeonsu',
-                region: 'incheon',
-                district: '인천 연수구갑',
-                type: '국회의원 보궐',
-                subType: '보궐선거',
-                reason: '박찬대 의원 인천시장 출마 사퇴 예정',
-                previousMember: { name: '박찬대', party: 'democratic', term: '3선' },
-                status: '확정예정',
-                voters: 148000,
-                keyIssues: ['송도국제도시 발전', '교통 인프라', '교육 환경', '인천시장 공백'],
-                prevElection: { winner: 'democratic', winnerName: '박찬대', rate: 52.4, runner: 'ppp', runnerName: '정승연', runnerRate: 46.1, turnout: 67.2 }
-            },
-            {
-                key: 'incheon-gyeyang',
-                region: 'incheon',
-                district: '인천 계양구을',
-                type: '국회의원 보궐',
-                subType: '보궐선거',
-                reason: '이재명 대통령 당선에 따른 궐위',
-                previousMember: { name: '이재명', party: 'democratic', term: '' },
-                status: '확정',
-                voters: 152000,
-                keyIssues: ['인천 신도시 교통', '주거 인프라', '교육 환경', '환경 보전'],
-                prevElection: { winner: 'democratic', winnerName: '이재명', rate: 50.6, runner: 'ppp', runnerName: '윤형선', runnerRate: 45.2, turnout: 52.8 }
-            },
-            {
-                key: 'gyeonggi-pyeongtaek',
-                region: 'gyeonggi',
-                district: '경기 평택시을',
-                type: '국회의원 보궐',
-                subType: '재선거',
-                reason: '이병진 의원 선거법 위반 유죄 확정 (벌금 700만원)',
-                previousMember: { name: '이병진', party: 'democratic', term: '' },
-                status: '확정',
-                voters: 165000,
-                keyIssues: ['평택 반도체 클러스터', '국제도시 개발', '교통 인프라', '주한미군 상생'],
-                prevElection: { winner: 'democratic', winnerName: '이병진', rate: 51.2, runner: 'ppp', runnerName: '공병호', runnerRate: 44.8, turnout: 50.3 }
-            },
-            {
-                key: 'chungnam-asan',
-                region: 'chungnam',
-                district: '충남 아산시을',
-                type: '국회의원 보궐',
-                subType: '보궐선거',
-                reason: '강훈식 대통령비서실장 취임에 따른 사퇴',
-                previousMember: { name: '강훈식', party: 'democratic', term: '' },
-                status: '확정',
-                voters: 129000,
-                keyIssues: ['아산 신도시 발전', '삼성 디스플레이 클러스터', '교통 인프라', '인구 유입 대응'],
-                prevElection: { winner: 'democratic', winnerName: '강훈식', rate: 53.2, runner: 'ppp', runnerName: '이명수', runnerRate: 43.1, turnout: 51.5 }
-            },
-            {
-                key: 'jeonbuk-gunsan',
-                region: 'jeonbuk',
-                district: '전북 군산·김제·부안갑',
-                type: '국회의원 보궐',
-                subType: '재선거',
-                reason: '신영대 의원 선거사무장 경선조작 유죄 확정',
-                previousMember: { name: '신영대', party: 'democratic', term: '' },
-                status: '확정',
-                voters: 170000,
-                keyIssues: ['새만금 개발', '군산 조선 산업', '농어업 지원', '지역 균형발전'],
-                prevElection: { winner: 'democratic', winnerName: '신영대', rate: 55.8, runner: 'ppp', runnerName: '박진술', runnerRate: 32.1, turnout: 48.9 }
-            }
-        ];
-
-        const byElection = {};
-        byElectionDefs.forEach(def => {
-            const seed = hash(def.key + '-byelection');
-
-            const candidates = [];
-            const byParties = ['democratic', 'ppp', 'reform'];
-            for (let i = 0; i < 3; i++) {
-                const cSeed = seed + i * 100 + 1500;
-                candidates.push({
-                    id: `${def.key}-byelection-${i}`,
-                    name: pickName(cSeed),
-                    party: byParties[i],
-                    age: pickAge(cSeed + 10),
-                    career: pickFrom(mayorCareers, cSeed + 20)
-                });
-            }
-
-            // 3 polls
-            const polls = [];
-            for (let p = 0; p < 3; p++) {
-                const pSeed = seed + p * 3000;
-                const demPct = 38 + seededRandom(pSeed) * 15; // 38-53
-                const pppPct = 35 + seededRandom(pSeed + 1) * 14; // 35-49
-                const reformPct = 5 + seededRandom(pSeed + 2) * 10; // 5-15
-
-                const data = {};
-                data[candidates[0].id] = parseFloat(demPct.toFixed(1));
-                data[candidates[1].id] = parseFloat(pppPct.toFixed(1));
-                data[candidates[2].id] = parseFloat(reformPct.toFixed(1));
-
-                polls.push({
-                    date: pollDates[p < 3 ? p : 2],
-                    source: pickFrom(pollSources, pSeed + 5),
-                    data: data,
-                    margin: parseFloat((2.5 + seededRandom(pSeed + 6) * 2).toFixed(1)),
-                    sampleSize: 600 + Math.floor(seededRandom(pSeed + 7) * 500)
-                });
-            }
-
-            byElection[def.key] = {
-                region: def.region,
-                district: def.district,
-                type: def.type,
-                subType: def.subType || '보궐선거',
-                reason: def.reason,
-                previousMember: def.previousMember || null,
-                status: def.status || '확정',
-                voters: def.voters,
-                candidates,
-                polls,
-                keyIssues: def.keyIssues,
-                prevElection: def.prevElection
-            };
-        });
-
-        generatedElectionDataCache = {
-            mayor,
-            council,
-            localCouncil,
-            superintendent,
-            byElection
-        };
-        return generatedElectionDataCache;
-    }
 
     // Public API
     return {
@@ -2395,9 +1732,8 @@ const ElectionData = (() => {
         getLeadingParty: (regionKey) => {
             const region = regions[regionKey];
             if (!region) return null;
-            const entries = Object.entries(region.partySupport);
-            entries.sort((a, b) => b[1] - a[1]);
-            return entries[0][0];
+            // 직전 선거 당선 정당 기반 (partySupport 추정치 대신 팩트 사용)
+            return region.prevElection?.winner || null;
         },
         getSuperintendentData: (regionKey) => superintendents[regionKey] || null,
         getSuperintendentColor: (stance) => superintendentStanceColors[stance] || '#888888',
@@ -2437,9 +1773,8 @@ const ElectionData = (() => {
                     }));
                 if (cands.length) return { candidates: cands };
             }
-            // fallback: mock data
-            const data = generateMockElectionData();
-            return data?.mayor?.[regionKey]?.[districtName] || null;
+            // no data available yet
+            return null;
         },
         getByElectionData: (key) => {
             // 외부 JSON 로드 데이터 우선, 없으면 mock fallback
@@ -2478,14 +1813,12 @@ const ElectionData = (() => {
                 });
                 return all;
             }
-            const data = generateMockElectionData();
-            return key ? data.byElection[key] : data.byElection;
+            // no mock fallback — real data comes from loadByElectionData()
+            return key ? null : {};
         },
         getAllByElections: () => {
             return ElectionData.getByElectionData();
         },
-        generateMockElectionData,
-
         // ── 지역 이슈 API ──
         getRegionIssues: (regionKey) => {
             const derived = window.DerivedIssuesData;
@@ -2584,9 +1917,7 @@ const ElectionData = (() => {
         getLocalCouncilData(regionKey, districtName) {
             const members = this.getLocalCouncilMembers(regionKey, districtName);
             if (!members?.length) {
-                // mock 데이터 폴백
-                const mockData = localCouncil?.[regionKey]?.[districtName];
-                return mockData || null;
+                return null;
             }
             // 현직 의원 데이터를 선거구별로 그룹핑
             const districtMap = {};
@@ -2741,7 +2072,7 @@ const ElectionData = (() => {
                     return data;
                 })
                 .catch(err => {
-                    console.warn('[ByElectionData] Failed to load, using mock data:', err);
+                    console.warn('[ByElectionData] Failed to load:', err);
                     return null;
                 });
         },

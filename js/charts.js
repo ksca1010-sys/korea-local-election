@@ -8,9 +8,12 @@ const ChartsModule = (() => {
     let pollTrendChart = null;
     const dynamicCharts = []; // 동적 생성 차트 추적
 
-    // Chart.js global defaults
-    Chart.defaults.color = '#8b99b5';
-    Chart.defaults.borderColor = 'rgba(42, 53, 83, 0.5)';
+    // Chart.js global defaults (theme-adaptive via CSS variables)
+    (function initChartDefaults() {
+        const s = getComputedStyle(document.documentElement);
+        Chart.defaults.color = s.getPropertyValue('--chart-text').trim() || '#8b99b5';
+        Chart.defaults.borderColor = s.getPropertyValue('--chart-grid').trim() || 'rgba(42, 53, 83, 0.5)';
+    })();
     Chart.defaults.font.family = "'Noto Sans KR', sans-serif";
     Chart.defaults.font.size = 11;
     Chart.defaults.plugins.legend.labels.boxWidth = 12;
@@ -21,6 +24,23 @@ const ChartsModule = (() => {
         if (pollTrendChart) { pollTrendChart.destroy(); pollTrendChart = null; }
         dynamicCharts.forEach(c => c.destroy());
         dynamicCharts.length = 0;
+    }
+
+    /**
+     * Insert a sr-only table next to a canvas for screen readers.
+     * Removes any previous sr-only table sibling to avoid duplicates on re-render.
+     */
+    function _insertSrTable(canvas, html) {
+        // Remove previous sr-only table if present
+        const prev = canvas.nextElementSibling;
+        if (prev && prev.classList.contains('sr-only')) {
+            prev.remove();
+        }
+        const tbl = document.createElement('table');
+        tbl.className = 'sr-only';
+        tbl.innerHTML = html;
+        canvas.setAttribute('aria-hidden', 'true');
+        canvas.parentNode.insertBefore(tbl, canvas.nextSibling);
     }
 
     /**
@@ -109,6 +129,17 @@ const ChartsModule = (() => {
             }
         });
 
+        // Accessible sr-only table for screen readers
+        const srcCaption = [poll.pollOrg, poll.publishDate].filter(Boolean).join(' ');
+        _insertSrTable(canvas,
+            `<caption>여론조사 결과${srcCaption ? ' (' + srcCaption + ')' : ''}</caption>` +
+            `<tr><th>후보</th><th>정당</th><th>지지율</th></tr>` +
+            results.map(r => {
+                const partyName = r._stanceLabel || ElectionData.getPartyName(r.party || 'independent');
+                return `<tr><td>${r.candidateName}</td><td>${partyName}</td><td>${r.support}%</td></tr>`;
+            }).join('')
+        );
+
         if (typeof canvasId === 'string' && canvasId === 'poll-bar-chart') {
             pollBarChart = chart;
         } else {
@@ -160,7 +191,7 @@ const ChartsModule = (() => {
         });
 
         // 후보별 라인 데이터셋 — 도형 + 선 스타일 + 색상 변조로 구분
-        const pointStyles = ['circle', 'rect', 'triangle', 'rectRot', 'star', 'crossRot'];
+        const pointStyles = ['circle', 'triangle', 'rectRounded', 'star', 'rect'];
         const dashPatterns = [[], [8, 4], [3, 3], [12, 4, 3, 4], [6, 2], [2, 2]];
         // 같은 정당 후보끼리 밝기 변조
         const partyCount = {};
@@ -203,11 +234,11 @@ const ChartsModule = (() => {
                 borderColor: color,
                 backgroundColor: color + '20',
                 pointBackgroundColor: color,
-                pointBorderColor: '#0D1228',
+                pointBorderColor: getComputedStyle(document.documentElement).getPropertyValue('--bg-primary').trim() || '#0D1228',
                 pointBorderWidth: 2,
                 pointStyle: style,
-                pointRadius: 6,
-                pointHoverRadius: 9,
+                pointRadius: 7,
+                pointHoverRadius: 10,
                 borderWidth: 2.5,
                 borderDash: dash,
                 tension: 0.3,
@@ -303,6 +334,19 @@ const ChartsModule = (() => {
                 }
             }
         });
+
+        // Accessible sr-only table for screen readers
+        const candidateNames = [...candidateSet.keys()];
+        _insertSrTable(canvas,
+            `<caption>여론조사 추이 (${trendGroup.pollOrg || '통합'})</caption>` +
+            `<tr><th>조사일</th>${candidateNames.map(n => `<th>${n}</th>`).join('')}</tr>` +
+            polls.map((p, i) => {
+                return `<tr><td>${labels[i]}</td>${candidateNames.map(n => {
+                    const r = (p.results || []).find(r => r.candidateName === n);
+                    return `<td>${r ? r.support + '%' : '-'}</td>`;
+                }).join('')}</tr>`;
+            }).join('')
+        );
 
         if (typeof canvasId === 'string' && canvasId === 'poll-trend-chart') {
             pollTrendChart = chart;

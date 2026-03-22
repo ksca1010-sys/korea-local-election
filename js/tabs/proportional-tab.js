@@ -340,6 +340,10 @@ const ProportionalTab = (() => {
         const container = document.getElementById('candidates-list');
         if (!container) return;
 
+        // 도지사 공약비교 카드 숨김 (비례대표에는 해당 없음)
+        const compareCardEl = document.getElementById('candidate-compare-card');
+        if (compareCardEl) compareCardEl.style.display = 'none';
+
         if (getKST() < CANDIDATE_REG_END) {
             container.innerHTML = `<div class="district-no-data">
                 <p><i class="fas fa-clipboard-list"></i> 비례대표 후보 명부는 후보자 등록 기간(5/14~15)에 확정됩니다.</p>
