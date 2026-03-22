@@ -25,3 +25,9 @@ node_modules/
 # API key files
 *.key
 secrets.json
+
+# Logs
+logs/
+
+# Backup files
+*.bak.py
