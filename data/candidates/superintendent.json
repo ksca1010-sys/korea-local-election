@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-03-22",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-22T08:46:41.388394",
+    "lastFactCheck": "2026-03-22T09:08:16.100188",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
@@ -135,12 +135,21 @@
         "name": "최윤홍",
         "stance": "중도",
         "career": "전 부산부교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-22",
+          "type": "status_change",
+          "detail": "최윤홍 전 부산부교육감, 부산교육감 예비후보 1호 등록",
+          "previous": "DECLARED",
+          "sourceUrl": "없음",
+          "sourceLabel": "뉴스 제목",
+          "sourcePublishedAt": "2026-03-22"
+        }
       },
       {
         "id": "busan-3",
@@ -530,16 +539,16 @@
         "name": "신경호",
         "stance": "보수",
         "career": "현 강원특별자치도 교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "incumbent",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
-          "detail": "신경호 '현직' 예비후보등록 예고, 강원도교육감 선거판 요동",
-          "previous": "EXPECTED",
+          "detail": "신경호 '현직' 예비후보등록 예고",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
+          "sourceLabel": "강원도교육감 선거",
           "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
@@ -551,16 +560,16 @@
         "name": "강삼영",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
-          "detail": "강삼영 교육감 예비후보 강원인재성장협의회 신설 공약 발표, 출판기념회 개최",
-          "previous": "EXPECTED",
+          "detail": "강삼영 교육감 예비후보 출판기념회 개최",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
+          "sourceLabel": "강원도교육감 선거",
           "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
@@ -572,16 +581,16 @@
         "name": "최광익",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
-          "detail": "최광익 도교육감 예비후보 선거 관련 주장 발표",
-          "previous": "EXPECTED",
+          "detail": "최광익 도교육감 예비후보 '선거에 유령후보 개입' 주장 보도",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
+          "sourceLabel": "강원도교육감 선거",
           "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
@@ -593,16 +602,16 @@
         "name": "유대균",
         "stance": "중도",
         "career": "",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
-          "detail": "유대균 강원교육감 선거 예비후보 선거사무소 개소, 미래교육 5대 과제 발표",
-          "previous": "EXPECTED",
+          "detail": "유대균 강원교육감 선거 예비후보 선거사무소 개소",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
+          "sourceLabel": "강원도교육감 선거",
           "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
@@ -614,7 +623,7 @@
         "name": "박현숙",
         "stance": "중도",
         "career": "도교육감 예비후보",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": null,
@@ -624,9 +633,9 @@
           "date": "2026-03-22",
           "type": "status_change",
           "detail": "박현숙 도교육감 예비후보 출판기념회 개최",
-          "previous": "EXPECTED",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
+          "sourceLabel": "강원도교육감 선거",
           "sourcePublishedAt": "2026-03-22"
         }
       }
@@ -951,7 +960,7 @@
         "name": "권순기",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "RUMORED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
@@ -961,10 +970,10 @@
           "date": "2026-03-22",
           "type": "status_change",
           "detail": "권순기 경남교육감 예비후보 \"경남 학교 자율형 교복 도입\"",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "",
-          "sourcePublishedAt": ""
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "경남 언론",
+          "sourcePublishedAt": "2026-03-22"
         }
       },
       {
@@ -972,7 +981,7 @@
         "name": "김영곤",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "RUMORED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
@@ -982,10 +991,10 @@
           "date": "2026-03-22",
           "type": "status_change",
           "detail": "김영곤 경남교육감 예비후보 '경남형 초등 기초학력 책임진단·지원제'",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "",
-          "sourcePublishedAt": ""
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "경남 언론",
+          "sourcePublishedAt": "2026-03-22"
         }
       },
       {
@@ -1063,16 +1072,16 @@
         "name": "고의숙",
         "stance": "중도",
         "career": "전 교육의원",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
-          "detail": "고의숙 교육의원, 제주교육감 선거 예비후보 등록 / '교육감 출마' 고의숙, 교육의원직 사퇴...예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "제주 언론",
+          "detail": "고의숙 교육의원이 제주교육감 예비후보로 등록하고 교육의원직 사퇴. 여론조사에서 김광수에 맹추격 중이며 송문석과의 단일화 여부 주목",
+          "previous": "DECLARED",
+          "sourceUrl": "제주언론 보도",
+          "sourceLabel": "제민일보 등",
           "sourcePublishedAt": "2026-03-22"
         },
         "sourceUrl": null,
@@ -1084,12 +1093,21 @@
         "name": "송문석",
         "stance": "중도",
         "career": "정보 없음",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-22",
+          "type": "status_change",
+          "detail": "제주도교육감 선거 '3파전' 양상으로 보도되며 고의숙과의 단일화 여부가 주목됨",
+          "previous": "DECLARED",
+          "sourceUrl": "제주언론 보도",
+          "sourceLabel": "제민일보 등",
+          "sourcePublishedAt": "2026-03-22"
+        }
       }
     ],
     "sejong": [
