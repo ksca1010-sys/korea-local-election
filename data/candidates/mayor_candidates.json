@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-03-22",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-22T08:59:49.126654",
+    "lastFactCheck": "2026-03-22T10:14:45.521575",
     "lastSyncFromOverview": "2026-03-22",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
@@ -1928,7 +1928,7 @@
           "name": "조병길",
           "party": "independent",
           "career": "현 사상구 구청장",
-          "status": "사퇴",
+          "status": "[사퇴]",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
@@ -1939,11 +1939,11 @@
           "_lastChange": {
             "date": "2026-03-22",
             "type": "withdrawn",
-            "detail": "국힘, '부동산 투기 의혹' 조병길 제명…사퇴 상태 확인",
-            "previous": "WITHDRAWN",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "뉴스",
-            "sourcePublishedAt": "2026-03-22"
+            "detail": "국힘, '부동산 투기 의혹' 조병길 제명…'친한계' 김종혁은 '주의'",
+            "previous": "사퇴",
+            "sourceUrl": "https://busan.com",
+            "sourceLabel": "부산일보",
+            "sourcePublishedAt": "2026-03-10"
           }
         },
         {
@@ -1965,12 +1965,21 @@
           "name": "류규하",
           "party": "ppp",
           "career": "현 중구 구청장",
-          "status": "EXPECTED",
+          "status": "출마거론",
           "dataSource": "incumbent",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "status_change",
+            "detail": "[단독] 류규하 대구 중구청장, 공천 면접에 '관용차 사용' 논란",
+            "previous": "EXPECTED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "언론사",
+            "sourcePublishedAt": "2026-03-17"
+          }
         },
         {
           "name": "정장수",
@@ -2054,12 +2063,21 @@
           "name": "정한숙",
           "party": "reform",
           "career": "미상",
-          "status": "NOMINATED",
+          "status": "공천확정",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.naver.com",
           "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-03-22"
+          "sourcePublishedAt": "2026-03-22",
+          "_lastChange": {
+            "date": "2026-03-22",
+            "type": "nominated",
+            "detail": "조국혁신당, 정한숙 '대구 동구청장' 후보 공천...TK 광역·기초의원 등...",
+            "previous": "NOMINATED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "언론사",
+            "sourcePublishedAt": "2026-03-19"
+          }
         }
       ],
       "서구": [
@@ -2266,7 +2284,7 @@
           "name": "손인호",
           "party": "ppp",
           "career": "건축사사무소 대표",
-          "status": "출마선언",
+          "status": "출마거론",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
@@ -2275,11 +2293,11 @@
           "_lastChange": {
             "date": "2026-03-22",
             "type": "status_change",
-            "detail": "손인호 예비후보가 홍성주 달서구청장 예비후보 지지 선언. '손인호 대구 달서구청장 예비후보, 국민의힘 홍성주 예비후보 지지선언'",
-            "previous": "DECLARED",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "대구일보",
-            "sourcePublishedAt": "2026-03-20"
+            "detail": "손인호, 홍성주 지지 선언⋯달서구청장 경선 단일화",
+            "previous": "출마선언",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "언론사",
+            "sourcePublishedAt": "2026-03-21"
           }
         },
         {
@@ -2946,7 +2964,7 @@
           "name": "진선기",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "nominated",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.example.com",
@@ -2955,12 +2973,23 @@
           "_lastChange": {
             "date": "2026-03-22",
             "type": "status_change",
-            "detail": "노희용 동구청장 예비후보와 결선투표 단일화 완료",
-            "previous": "출마선언",
-            "sourceUrl": "https://www.news.example.com",
-            "sourceLabel": "광주방송",
-            "sourcePublishedAt": "2026-03-21"
+            "detail": "노희용·진선기 광주 동구청장 예비후보 결선 단일화",
+            "previous": "nominated",
+            "sourceUrl": "https://example.com",
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-03-22"
           }
+        },
+        {
+          "name": "권기일",
+          "party": "democratic",
+          "career": "경력 미상",
+          "status": "RUMORED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "서구": [
@@ -3120,6 +3149,28 @@
           "sourceUrl": "https://news.example.com",
           "sourceLabel": "광주 언론사",
           "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "신정훈",
+          "party": "democratic",
+          "career": "경력 미상",
+          "status": "RUMORED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
+        },
+        {
+          "name": "강기정",
+          "party": "democratic",
+          "career": "경력 미상",
+          "status": "RUMORED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ],
       "광산구": [
@@ -3167,6 +3218,19 @@
             "sourceLabel": "광주 언론사",
             "sourcePublishedAt": "2026-03-22"
           }
+        }
+      ],
+      "광주시": [
+        {
+          "name": "김영록",
+          "party": "democratic",
+          "career": "전 전남지사",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-22"
         }
       ]
     },
