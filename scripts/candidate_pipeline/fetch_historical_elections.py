@@ -380,20 +380,19 @@ def build_historical_data(api_key, election_types, election_ids, dry_run=False):
 
 
 def build_summary(full_data):
-    """프론트엔드용 요약 데이터 생성 (historical_elections.json 호환)"""
-    summary = {
-        "_meta": {
-            "source": "공공데이터포털 선관위 API — 팩트 데이터",
-            "lastUpdated": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
-            "note": "역대 전국동시지방선거 시도별 당선 정당·투표율 요약",
-        },
-        "regions": {},
-    }
+    """프론트엔드용 요약 데이터 생성 — data.js historicalElections 형식 호환
 
-    # 지역별로 정리
+    기존 형식:
+      { election: 3, year: 2002, winner: 'ppp', winnerName: '이명박',
+        rate: 52.3, runner: 'democratic', runnerName: '김민석',
+        runnerRate: 43.0, turnout: 45.8 }
+    """
+    summary = {}
+
+    # 지역 목록 수집
     regions = set()
     for sg_id, election in full_data["elections"].items():
-        for type_name, type_data in election.get("types", {}).items():
+        for type_data in election.get("types", {}).values():
             for w in type_data.get("winners", []):
                 if w["region"] and w["region"] != "national":
                     regions.add(w["region"])
@@ -405,49 +404,40 @@ def build_summary(full_data):
             if not election:
                 continue
 
-            entry = {
-                "year": election["year"],
-                "nth": election["nth"],
-                "sgId": sg_id,
-            }
-
-            # 광역단체장 당선인
             gov_data = election.get("types", {}).get("governor", {})
             gov_winners = [w for w in gov_data.get("winners", [])
                           if w["region"] == region]
-            if gov_winners:
-                w = gov_winners[0]
-                entry["governor"] = {
-                    "name": w["name"],
-                    "party": w["party"],
-                    "partyKey": w["partyKey"],
-                    "votes": w["votes"],
-                    "voteRate": w["voteRate"],
-                }
+            if not gov_winners:
+                continue
+
+            w = gov_winners[0]
 
             # 투표율
             gov_vote = [v for v in gov_data.get("voteStatus", [])
                        if v["region"] == region]
-            if gov_vote:
-                entry["turnout"] = gov_vote[0]["turnout"]
+            turnout = gov_vote[0]["turnout"] if gov_vote else None
 
-            # 교육감 당선인
-            sup_data = election.get("types", {}).get("superintendent", {})
-            sup_winners = [w for w in sup_data.get("winners", [])
-                          if w["region"] == region]
-            if sup_winners:
-                w = sup_winners[0]
-                entry["superintendent"] = {
-                    "name": w["name"],
-                    "party": w["party"],
-                    "partyKey": w["partyKey"],
-                }
+            # 같은 선거구의 2위 후보 찾기 (개표 데이터에서)
+            runner = None
+            runner_name = None
+            runner_rate = None
+            # 당선인 목록에서 같은 지역 다른 후보는 없으므로
+            # 기존 data.js의 차점자 정보는 별도 소스 필요
+            # 여기서는 당선인 데이터만으로 구성
 
-            if len(entry) > 3:  # year, nth, sgId 외에 데이터가 있으면
-                region_history.append(entry)
+            entry = {
+                "election": election["nth"],
+                "year": election["year"],
+                "winner": w["partyKey"],
+                "winnerName": w["name"],
+                "rate": w["voteRate"],
+                "turnout": turnout,
+            }
+
+            region_history.append(entry)
 
         if region_history:
-            summary["regions"][region] = region_history
+            summary[region] = region_history
 
     return summary
 
