@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-18",
+    "lastUpdated": "2026-03-23",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 226,
     "actingCount": 8,
     "note": "electedParty/electedName = 당선 시점 공식 데이터, name/party = 현재 상태",
-    "lastFactCheck": "2026-03-18T05:19:45.848415"
+    "lastFactCheck": "2026-03-23T14:55:01.021262"
   },
   "mayors": {
     "seoul_종로구": {
@@ -176,8 +176,8 @@
     "seoul_구로구": {
       "region": "seoul",
       "district": "구로구",
-      "name": "장인홍",
-      "party": "democratic",
+      "name": "문헌일",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "문헌일",
       "_source": "NEC_API"
@@ -1298,8 +1298,8 @@
     "chungnam_아산시": {
       "region": "chungnam",
       "district": "아산시",
-      "name": "오세현",
-      "party": "democratic",
+      "name": "박경귀",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "박경귀",
       "_source": "NEC_API"
@@ -1543,18 +1543,20 @@
     "jeonnam_목포시": {
       "region": "jeonnam",
       "district": "목포시",
-      "name": "박홍률",
-      "party": "democratic",
+      "name": null,
+      "party": "independent",
       "electedParty": "independent",
       "electedName": "박홍률",
       "_source": "NEC_API",
+      "acting": true,
+      "actingReason": "박홍률 시장 배우자 선거법 위반 대법원 확정 → 당선무효 (2025.3.27)",
       "_lastChange": {
-        "date": "2026-03-18",
-        "type": "byelection_winner",
-        "detail": "박홍률 시장 당선무효 (2024.3.14) 후 2024.4.10 보궐선거 당선, 더불어민주당 소속으로 복귀",
+        "date": "2025-03-27",
+        "type": "invalidation",
+        "detail": "배우자 공직선거법 위반 대법원 확정, 당선무효 → 부시장 직무대행",
         "previous": {
-          "name": null,
-          "party": "independent"
+          "name": "박홍률",
+          "party": "democratic"
         }
       }
     },
@@ -1597,12 +1599,11 @@
     "jeonnam_담양군": {
       "region": "jeonnam",
       "district": "담양군",
-      "name": "정철원",
-      "party": "reform",
-      "electedParty": "reform",
-      "electedName": "정철원",
-      "_source": "NEC_API",
-      "_note": "2025.4 재보궐 당선 (조국혁신당 1호 단체장)"
+      "name": "이병노",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "이병노",
+      "_source": "NEC_API"
     },
     "jeonnam_장성군": {
       "region": "jeonnam",
@@ -1789,7 +1790,7 @@
     "gyeongbuk_김천시": {
       "region": "gyeongbuk",
       "district": "김천시",
-      "name": "배낙호",
+      "name": "김충섭",
       "party": "ppp",
       "electedParty": "ppp",
       "electedName": "김충섭",
@@ -1908,7 +1909,7 @@
     "gyeongbuk_군위군": {
       "region": "gyeongbuk",
       "district": "군위군",
-      "name": null,
+      "name": "김진열",
       "party": "independent",
       "electedParty": "ppp",
       "electedName": "김진열",
@@ -2043,8 +2044,8 @@
     "gyeongnam_거제시": {
       "region": "gyeongnam",
       "district": "거제시",
-      "name": "변광용",
-      "party": "democratic",
+      "name": "박종우",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "박종우",
       "_source": "NEC_API"

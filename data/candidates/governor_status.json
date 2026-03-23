@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-17",
+    "lastUpdated": "2026-03-23",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 17,
-    "actingCount": 0,
-    "lastFactCheck": "2026-03-17T03:57:20.500333"
+    "actingCount": 1,
+    "lastFactCheck": "2026-03-23T14:54:45.116255"
   },
   "governors": {
     "seoul": {
@@ -26,11 +26,22 @@
     },
     "daegu": {
       "region": "daegu",
-      "name": "홍준표",
-      "party": "ppp",
+      "name": null,
+      "party": "independent",
       "electedParty": "ppp",
       "electedName": "홍준표",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": true,
+      "actingReason": "홍준표 대선 출마 사퇴 (2025.4.11)",
+      "_lastChange": {
+        "date": "2025-04-11",
+        "type": "resignation",
+        "detail": "홍준표 대구시장 대선 출마를 위해 사퇴, 부시장 권한대행",
+        "previous": {
+          "name": "홍준표",
+          "party": "ppp"
+        }
+      }
     },
     "incheon": {
       "region": "incheon",
