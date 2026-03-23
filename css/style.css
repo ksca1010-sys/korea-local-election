@@ -183,14 +183,14 @@
 }
 
 .light-mode {
-    --bg-primary: #F5F7FA;
-    --bg-secondary: #FFFFFF;
-    --bg-tertiary: #EDF0F5;
-    --bg-card: #FFFFFF;
-    --bg-card-hover: #EDF0F5;
-    --bg-input: #E8EBF0;
-    --bg-surface: #FFFFFF;
-    --bg-elevated: #EDF0F5;
+    --bg-primary: #F5F1EB;
+    --bg-secondary: #FAF8F5;
+    --bg-tertiary: #EDE8E0;
+    --bg-card: #FAF8F5;
+    --bg-card-hover: #EDE8E0;
+    --bg-input: #E8E3DB;
+    --bg-surface: #FAF8F5;
+    --bg-elevated: #EDE8E0;
 
     --border-color: rgba(0, 0, 0, 0.10);
     --border-light: rgba(0, 0, 0, 0.06);
@@ -2887,45 +2887,202 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     left: 0;
     right: 0;
     height: var(--footer-height);
-    background: var(--bg-secondary);
-    border-top: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
     z-index: 1000;
 }
 
-.footer-party-bar {
+/* 펼쳐지는 풋터 패널 — 풋터 바 위에 슬라이드 */
+#footer-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    z-index: 1001;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+}
+
+#footer-panel.open {
+    transform: translateY(0);
+}
+
+.footer-panel-close {
     display: flex;
-    height: 4px;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    border-bottom: 1px solid var(--border-color);
+    user-select: none;
 }
 
-.footer-party-segment {
-    transition: width 0.5s ease;
+.footer-panel-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
 }
 
-.footer-info {
+.footer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--footer-height);
+    cursor: pointer;
+    gap: 8px;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    user-select: none;
+    padding: 0 20px;
+}
+
+.footer-toggle:hover {
+    color: var(--text-secondary);
+}
+
+.footer-toggle svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+#main-footer.expanded .footer-toggle svg {
+    transform: rotate(180deg);
+}
+
+/* 상단: 브랜드 + 링크 그리드 */
+.footer-top {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 28px 40px 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-brand {}
+
+.footer-logo {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.footer-description {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: var(--bg-elevated);
+    color: var(--text-muted);
+    transition: all 0.2s ease;
+}
+
+.footer-social a:hover {
+    color: var(--text-primary);
+    background: var(--bg-input);
+    transform: translateY(-2px);
+}
+
+/* 링크 컬럼 */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.footer-col h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.footer-col a {
+    display: block;
+    font-size: 0.73rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    padding: 3px 0;
+    transition: color 0.15s ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-primary);
+}
+
+/* 하단 저작권 바 */
+.footer-bottom {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--text-muted);
-    padding: 0 20px;
-    height: 40px;
+    padding: 12px 20px 14px;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-divider {
     color: var(--border-color);
 }
 
-.footer-info a {
+.footer-bottom a {
     color: var(--text-muted);
     text-decoration: none;
 }
 
-.footer-info a:hover {
+.footer-bottom a:hover {
     color: var(--text-secondary);
+}
+
+/* 모바일 풋터 */
+@media (max-width: 768px) {
+    .footer-top {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px 24px 16px;
+    }
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+    #main-footer.expanded {
+        max-height: 520px;
+    }
 }
 
 /* ============================================

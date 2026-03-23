@@ -359,17 +359,76 @@
         </aside>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer bar (고정) -->
     <footer id="main-footer">
-        <div class="footer-info">
+        <div class="footer-toggle" id="footer-toggle-btn">
             <span>알선거 · 아는 만큼 보이는 선거</span>
-            <span class="footer-divider">|</span>
-            <span>데이터: 중앙선거관리위원회 · 중앙선거여론조사심의위원회</span>
-            <span class="footer-divider">|</span>
-            <a href="https://www.nec.go.kr" target="_blank" rel="noopener">선관위 공식 정보</a>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
             <span id="data-last-updated" style="margin-left:8px;color:var(--text-muted);font-size:var(--text-micro);"></span>
         </div>
     </footer>
+
+    <!-- Footer panel (슬라이드업) -->
+    <div id="footer-panel">
+        <div class="footer-panel-close" id="footer-panel-close">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 9 12 15 6 9"/></svg>
+            <span>닫기</span>
+        </div>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo">알선거</div>
+                <p class="footer-tagline">아는 만큼 보이는 선거</p>
+                <p class="footer-description">2026 제9회 전국동시지방선거 정보를 한눈에.<br>후보자, 여론조사, 공약, 역대 선거 데이터를 지도 위에서 확인하세요.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    </a>
+                    <a href="mailto:contact@korea-local-election.pages.dev" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>데이터 출처</h4>
+                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">중앙선거관리위원회</a>
+                    <a href="https://nesdc.go.kr" target="_blank" rel="noopener">선거여론조사심의위원회</a>
+                    <a href="https://info.nec.go.kr" target="_blank" rel="noopener">선거통계시스템</a>
+                    <a href="https://policy.nec.go.kr" target="_blank" rel="noopener">정책·공약 알리미</a>
+                </div>
+                <div class="footer-col">
+                    <h4>선거 안내</h4>
+                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">투표 방법</a>
+                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">선거일정</a>
+                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">사전투표 안내</a>
+                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">재외국민 투표</a>
+                </div>
+                <div class="footer-col">
+                    <h4>프로젝트</h4>
+                    <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener">GitHub 소스코드</a>
+                    <a href="https://github.com/ksca1010-sys/korea-local-election/issues" target="_blank" rel="noopener">버그 신고 · 건의</a>
+                    <a href="https://github.com/ksca1010-sys/korea-local-election/releases" target="_blank" rel="noopener">업데이트 내역</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>&copy; 2026 알선거. 비영리 선거 정보 프로젝트.</span>
+            <span class="footer-divider">|</span>
+            <span>시뮬레이션 데이터가 포함될 수 있습니다</span>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const btn = document.getElementById('footer-toggle-btn');
+        const panel = document.getElementById('footer-panel');
+        const closeBtn = document.getElementById('footer-panel-close');
+        btn.addEventListener('click', () => panel.classList.add('open'));
+        closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+    })();
+    </script>
 
     <!-- 1. 데이터 로더 -->
     <script src="js/data-loader.js?v=1774192751"></script>
