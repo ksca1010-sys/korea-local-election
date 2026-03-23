@@ -115,6 +115,7 @@ const App = (() => {
         try { await ElectionData.loadMayorStatus?.(); } catch(e) { console.warn('loadMayorStatus error:', e); }
         // Load mayor candidates (기초단체장 후보 팩트체크 데이터)
         try { await ElectionData.loadMayorCandidates?.(); } catch(e) { console.warn('loadMayorCandidates error:', e); }
+        try { await ElectionData.loadCouncilSeats?.(); } catch(e) { console.warn('loadCouncilSeats error:', e); }
         // Load mayor history (기초단체장 역대 선거 결과)
         try { await ElectionData.loadMayorHistory?.(); } catch(e) { console.warn('loadMayorHistory error:', e); }
         // Load council members data (광역의원 현직 정보)
@@ -3563,7 +3564,7 @@ function renderCouncilProvinceView(regionKey, region) {
                     <div class="district-detail-value">${summary.unknown ? summary.mayor.status : (summary.mayor.name ? `${summary.mayor.name} (${ElectionData.getPartyName(summary.mayor.party)})` : ElectionData.getPartyName(summary.mayor.party))}</div>
                 </div>
                 <div class="district-detail-card">
-                    <div class="district-detail-label">기초의원 의석(추정)</div>
+                    <div class="district-detail-label">기초의원 의석</div>
                     <div class="district-detail-value">${seatsValue}</div>
                 </div>
                 <div class="district-detail-card">

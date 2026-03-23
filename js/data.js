@@ -1706,9 +1706,15 @@ const ElectionData = (() => {
                 };
             }
             const population = district.population || 0;
-            const estimatedSeats = Math.max(7, Math.round(population / 50000));
             const leadParty = district.leadParty || 'independent';
             const mayorData = district.mayor || {};
+
+            // 기초의원 의석수: council_seats.json 실데이터 사용 (추정 제거)
+            const seatsKey = `${regionKey}_${district.name}`;
+            const seatsData = ElectionData._councilSeatsCache?.localCouncil?.[seatsKey];
+            const actualSeats = seatsData?.seats || null;
+            const councilMajority = seatsData?.majorityParty || leadParty;
+
             return {
                 name: district.name,
                 population,
@@ -1722,8 +1728,8 @@ const ElectionData = (() => {
                     actingReason: mayorData.actingReason || null
                 },
                 council: {
-                    seats: estimatedSeats,
-                    majorityParty: leadParty
+                    seats: actualSeats,
+                    majorityParty: councilMajority
                 }
             };
         },
@@ -1744,6 +1750,15 @@ const ElectionData = (() => {
             return match?.stance || null;
         },
         superintendentStanceColors,
+        // ── 기초의원 의석수 실데이터 (council_seats.json) ──
+        _councilSeatsCache: null,
+        loadCouncilSeats() {
+            if (this._councilSeatsCache) return Promise.resolve(this._councilSeatsCache);
+            return fetch('data/static/council_seats.json')
+                .then(r => r.ok ? r.json() : null)
+                .then(data => { this._councilSeatsCache = data; return data; })
+                .catch(() => null);
+        },
         // ── 기초단체장 후보 데이터 (mayor_candidates.json) ──
         _mayorCandidatesCache: null,
         loadMayorCandidates() {

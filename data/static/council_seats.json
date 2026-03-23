@@ -1,0 +1,2160 @@
+{
+  "_meta": {
+    "source": "선관위 당선인 API — 제8회 지선(2022) 기준 실데이터",
+    "lastUpdated": "2026-03-23",
+    "note": "의석수 = 해당 선거구 당선인 수 (지역구만, 비례 제외)"
+  },
+  "localCouncil": {
+    "busan_강서구": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "independent": 1,
+        "ppp": 3,
+        "democratic": 2
+      }
+    },
+    "busan_금정구": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 6
+      }
+    },
+    "busan_기장군": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 5
+      }
+    },
+    "busan_남구": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 5
+      }
+    },
+    "busan_동구": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "busan_동래구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 5
+      }
+    },
+    "busan_부산진구": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 8
+      }
+    },
+    "busan_북구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 6
+      }
+    },
+    "busan_사상구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 4
+      }
+    },
+    "busan_사하구": {
+      "seats": 14,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "democratic": 5
+      }
+    },
+    "busan_서구": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "busan_수영구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 4
+      }
+    },
+    "busan_연제구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 4
+      }
+    },
+    "busan_영도구": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 3
+      }
+    },
+    "busan_중구": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 3
+      }
+    },
+    "busan_해운대구": {
+      "seats": 18,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 10
+      }
+    },
+    "chungbuk_괴산군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 4,
+        "independent": 1
+      }
+    },
+    "chungbuk_단양군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "chungbuk_보은군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 2
+      }
+    },
+    "chungbuk_영동군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 4
+      }
+    },
+    "chungbuk_옥천군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2,
+        "progressive": 1
+      }
+    },
+    "chungbuk_음성군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3
+      }
+    },
+    "chungbuk_제천시": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 4
+      }
+    },
+    "chungbuk_증평군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "chungbuk_진천군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3
+      }
+    },
+    "chungbuk_청주시상당구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 4
+      }
+    },
+    "chungbuk_청주시서원구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "chungbuk_청주시청원구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "chungbuk_청주시흥덕구": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 5
+      }
+    },
+    "chungbuk_충주시": {
+      "seats": 17,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 10,
+        "democratic": 7
+      }
+    },
+    "chungnam_계룡시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "chungnam_공주시": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 5
+      }
+    },
+    "chungnam_금산군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "chungnam_논산시": {
+      "seats": 11,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 6
+      }
+    },
+    "chungnam_당진시": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 6,
+        "ppp": 6
+      }
+    },
+    "chungnam_보령시": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 3
+      }
+    },
+    "chungnam_부여군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 4
+      }
+    },
+    "chungnam_서산시": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 6
+      }
+    },
+    "chungnam_서천군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 3,
+        "independent": 1
+      }
+    },
+    "chungnam_아산시": {
+      "seats": 15,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 8
+      }
+    },
+    "chungnam_예산군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 2
+      }
+    },
+    "chungnam_천안시동남구": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 5
+      }
+    },
+    "chungnam_천안시서북구": {
+      "seats": 14,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 7
+      }
+    },
+    "chungnam_청양군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 2
+      }
+    },
+    "chungnam_태안군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "independent": 1,
+        "ppp": 1
+      }
+    },
+    "chungnam_홍성군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 3
+      }
+    },
+    "daegu_남구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 2
+      }
+    },
+    "daegu_달서구": {
+      "seats": 21,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 15,
+        "democratic": 5,
+        "independent": 1
+      }
+    },
+    "daegu_달성군": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 2
+      }
+    },
+    "daegu_동구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 13,
+        "democratic": 2
+      }
+    },
+    "daegu_북구": {
+      "seats": 18,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 13,
+        "democratic": 5
+      }
+    },
+    "daegu_서구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 1
+      }
+    },
+    "daegu_수성구": {
+      "seats": 19,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 14
+      }
+    },
+    "daegu_중구": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "daejeon_대덕구": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 4
+      }
+    },
+    "daejeon_동구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 4
+      }
+    },
+    "daejeon_서구": {
+      "seats": 18,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 10
+      }
+    },
+    "daejeon_유성구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 7
+      }
+    },
+    "daejeon_중구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 5
+      }
+    },
+    "gangwon_강릉시": {
+      "seats": 17,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 9
+      }
+    },
+    "gangwon_고성군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 2,
+        "independent": 1
+      }
+    },
+    "gangwon_동해시": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 4
+      }
+    },
+    "gangwon_삼척시": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 2
+      }
+    },
+    "gangwon_속초시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "gangwon_양구군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 3,
+        "independent": 1
+      }
+    },
+    "gangwon_양양군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 1,
+        "ppp": 3,
+        "independent": 2
+      }
+    },
+    "gangwon_영월군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "gangwon_원주시": {
+      "seats": 21,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 10,
+        "ppp": 11
+      }
+    },
+    "gangwon_인제군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 2,
+        "independent": 1
+      }
+    },
+    "gangwon_정선군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 2,
+        "democratic": 4
+      }
+    },
+    "gangwon_철원군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 4
+      }
+    },
+    "gangwon_춘천시": {
+      "seats": 20,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 11,
+        "democratic": 8,
+        "justice": 1
+      }
+    },
+    "gangwon_태백시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 2,
+        "independent": 1
+      }
+    },
+    "gangwon_평창군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "gangwon_홍천군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 4
+      }
+    },
+    "gangwon_화천군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "gangwon_횡성군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "gwangju_광산구": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "progressive": 3,
+        "democratic": 12,
+        "justice": 1
+      }
+    },
+    "gwangju_남구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "independent": 1
+      }
+    },
+    "gwangju_동구": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "progressive": 1,
+        "democratic": 4,
+        "independent": 1
+      }
+    },
+    "gwangju_북구": {
+      "seats": 18,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 15,
+        "independent": 2,
+        "progressive": 1
+      }
+    },
+    "gwangju_서구": {
+      "seats": 11,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9,
+        "progressive": 1,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_경산시": {
+      "seats": 13,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 10,
+        "independent": 1,
+        "democratic": 2
+      }
+    },
+    "gyeongbuk_경주시": {
+      "seats": 18,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 16,
+        "independent": 2
+      }
+    },
+    "gyeongbuk_고령군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_구미시": {
+      "seats": 22,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 18,
+        "democratic": 4
+      }
+    },
+    "gyeongbuk_군위군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "independent": 2
+      }
+    },
+    "gyeongbuk_김천시": {
+      "seats": 16,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 13,
+        "independent": 2,
+        "democratic": 1
+      }
+    },
+    "gyeongbuk_문경시": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_봉화군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_상주시": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 11,
+        "independent": 3,
+        "democratic": 1
+      }
+    },
+    "gyeongbuk_성주군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_안동시": {
+      "seats": 16,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "democratic": 3,
+        "independent": 4
+      }
+    },
+    "gyeongbuk_영덕군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_영양군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 1
+      }
+    },
+    "gyeongbuk_영주시": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "independent": 3
+      }
+    },
+    "gyeongbuk_영천시": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "independent": 2
+      }
+    },
+    "gyeongbuk_예천군": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "independent": 1,
+        "ppp": 6,
+        "democratic": 1
+      }
+    },
+    "gyeongbuk_울릉군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "independent": 3
+      }
+    },
+    "gyeongbuk_울진군": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "independent": 3,
+        "ppp": 4
+      }
+    },
+    "gyeongbuk_의성군": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "independent": 2
+      }
+    },
+    "gyeongbuk_청도군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "independent": 1
+      }
+    },
+    "gyeongbuk_청송군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6
+      }
+    },
+    "gyeongbuk_칠곡군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 2
+      }
+    },
+    "gyeongbuk_포항시남구": {
+      "seats": 14,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "independent": 2,
+        "democratic": 3
+      }
+    },
+    "gyeongbuk_포항시북구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 10,
+        "independent": 2,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_가평군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_고양시덕양구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 8
+      }
+    },
+    "gyeonggi_고양시일산동구": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 3
+      }
+    },
+    "gyeonggi_고양시일산서구": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 4
+      }
+    },
+    "gyeonggi_과천시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_광명시": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "gyeonggi_광주시": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "gyeonggi_구리시": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 2
+      }
+    },
+    "gyeonggi_군포시": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 5
+      }
+    },
+    "gyeonggi_김포시": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 6,
+        "ppp": 6
+      }
+    },
+    "gyeonggi_남양주시": {
+      "seats": 19,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 10,
+        "democratic": 9
+      }
+    },
+    "gyeonggi_동두천시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_부천시": {
+      "seats": 24,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 13,
+        "ppp": 11
+      }
+    },
+    "gyeonggi_성남시분당구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 7
+      }
+    },
+    "gyeonggi_성남시수정구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_성남시중원구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_수원시권선구": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 5,
+        "progressive": 1
+      }
+    },
+    "gyeonggi_수원시영통구": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 4
+      }
+    },
+    "gyeonggi_수원시장안구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_수원시팔달구": {
+      "seats": 5,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 2
+      }
+    },
+    "gyeonggi_시흥시": {
+      "seats": 14,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 6
+      }
+    },
+    "gyeonggi_안산시단원구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "gyeonggi_안산시상록구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_안성시": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_안양시동안구": {
+      "seats": 10,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 6
+      }
+    },
+    "gyeonggi_안양시만안구": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 4
+      }
+    },
+    "gyeonggi_양주시": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 4
+      }
+    },
+    "gyeonggi_양평군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_여주시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_연천군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "gyeonggi_오산시": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 2,
+        "democratic": 4
+      }
+    },
+    "gyeonggi_용인시기흥구": {
+      "seats": 14,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 6
+      }
+    },
+    "gyeonggi_용인시수지구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_용인시처인구": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 3
+      }
+    },
+    "gyeonggi_의왕시": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_의정부시": {
+      "seats": 11,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_이천시": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_파주시": {
+      "seats": 13,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 6
+      }
+    },
+    "gyeonggi_평택시": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9,
+        "ppp": 7
+      }
+    },
+    "gyeonggi_포천시": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 2,
+        "independent": 1,
+        "democratic": 3
+      }
+    },
+    "gyeonggi_하남시": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 4
+      }
+    },
+    "gyeonggi_화성시": {
+      "seats": 22,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 11,
+        "ppp": 11
+      }
+    },
+    "gyeongnam_거제시": {
+      "seats": 14,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 7
+      }
+    },
+    "gyeongnam_거창군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 1,
+        "independent": 2
+      }
+    },
+    "gyeongnam_고성군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 2,
+        "independent": 1
+      }
+    },
+    "gyeongnam_김해시": {
+      "seats": 22,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 12,
+        "democratic": 10
+      }
+    },
+    "gyeongnam_남해군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 2
+      }
+    },
+    "gyeongnam_밀양시": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 9,
+        "democratic": 2
+      }
+    },
+    "gyeongnam_사천시": {
+      "seats": 10,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 2
+      }
+    },
+    "gyeongnam_산청군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 1,
+        "independent": 1
+      }
+    },
+    "gyeongnam_양산시": {
+      "seats": 17,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 10,
+        "democratic": 7
+      }
+    },
+    "gyeongnam_의령군": {
+      "seats": 9,
+      "majorityParty": "independent",
+      "partyBreakdown": {
+        "independent": 5,
+        "ppp": 4
+      }
+    },
+    "gyeongnam_진주시": {
+      "seats": 19,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 6,
+        "ppp": 13
+      }
+    },
+    "gyeongnam_창녕군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "independent": 1
+      }
+    },
+    "gyeongnam_창원시마산합포구": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 2
+      }
+    },
+    "gyeongnam_창원시마산회원구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3
+      }
+    },
+    "gyeongnam_창원시성산구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 5
+      }
+    },
+    "gyeongnam_창원시의창구": {
+      "seats": 8,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 3
+      }
+    },
+    "gyeongnam_창원시진해구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 4
+      }
+    },
+    "gyeongnam_통영시": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 3,
+        "independent": 1
+      }
+    },
+    "gyeongnam_하동군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 3,
+        "independent": 2
+      }
+    },
+    "gyeongnam_함안군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 2,
+        "independent": 1
+      }
+    },
+    "gyeongnam_함양군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "independent": 2,
+        "democratic": 1
+      }
+    },
+    "gyeongnam_합천군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "independent": 2,
+        "democratic": 2,
+        "ppp": 5
+      }
+    },
+    "incheon_강화군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 2
+      }
+    },
+    "incheon_계양구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 4
+      }
+    },
+    "incheon_남동구": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 9
+      }
+    },
+    "incheon_동구": {
+      "seats": 7,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 2,
+        "ppp": 4,
+        "justice": 1
+      }
+    },
+    "incheon_미추홀구": {
+      "seats": 13,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 6
+      }
+    },
+    "incheon_부평구": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9,
+        "ppp": 7
+      }
+    },
+    "incheon_서구": {
+      "seats": 18,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 11
+      }
+    },
+    "incheon_연수구": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 5
+      }
+    },
+    "incheon_옹진군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 2,
+        "independent": 1
+      }
+    },
+    "incheon_중구": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "ppp": 3
+      }
+    },
+    "jeonbuk_고창군": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "independent": 1
+      }
+    },
+    "jeonbuk_군산시": {
+      "seats": 19,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 19
+      }
+    },
+    "jeonbuk_김제시": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 10,
+        "independent": 2
+      }
+    },
+    "jeonbuk_남원시": {
+      "seats": 14,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 14
+      }
+    },
+    "jeonbuk_무주군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "independent": 2
+      }
+    },
+    "jeonbuk_부안군": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9
+      }
+    },
+    "jeonbuk_순창군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7
+      }
+    },
+    "jeonbuk_완주군": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9
+      }
+    },
+    "jeonbuk_익산시": {
+      "seats": 22,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 18,
+        "independent": 3,
+        "progressive": 1
+      }
+    },
+    "jeonbuk_임실군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "independent": 3
+      }
+    },
+    "jeonbuk_장수군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "independent": 1
+      }
+    },
+    "jeonbuk_전주시덕진구": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 11,
+        "independent": 1
+      }
+    },
+    "jeonbuk_전주시완산구": {
+      "seats": 19,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 15,
+        "independent": 3,
+        "justice": 1
+      }
+    },
+    "jeonbuk_정읍시": {
+      "seats": 15,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 10,
+        "independent": 5
+      }
+    },
+    "jeonbuk_진안군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "independent": 3
+      }
+    },
+    "jeonnam_강진군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "independent": 1,
+        "democratic": 6
+      }
+    },
+    "jeonnam_고흥군": {
+      "seats": 10,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "independent": 2
+      }
+    },
+    "jeonnam_곡성군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "independent": 2,
+        "democratic": 4
+      }
+    },
+    "jeonnam_광양시": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9,
+        "independent": 2,
+        "progressive": 1
+      }
+    },
+    "jeonnam_구례군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 3,
+        "independent": 3
+      }
+    },
+    "jeonnam_나주시": {
+      "seats": 14,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 11,
+        "progressive": 1,
+        "independent": 2
+      }
+    },
+    "jeonnam_담양군": {
+      "seats": 8,
+      "majorityParty": "independent",
+      "partyBreakdown": {
+        "independent": 4,
+        "democratic": 4
+      }
+    },
+    "jeonnam_목포시": {
+      "seats": 19,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 15,
+        "independent": 2,
+        "justice": 2
+      }
+    },
+    "jeonnam_무안군": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 6,
+        "independent": 2
+      }
+    },
+    "jeonnam_보성군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "independent": 2,
+        "democratic": 5
+      }
+    },
+    "jeonnam_순천시": {
+      "seats": 22,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 18,
+        "progressive": 2,
+        "independent": 2
+      }
+    },
+    "jeonnam_신안군": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "independent": 1
+      }
+    },
+    "jeonnam_여수시": {
+      "seats": 23,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 19,
+        "independent": 4
+      }
+    },
+    "jeonnam_영광군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "independent": 2,
+        "democratic": 5
+      }
+    },
+    "jeonnam_영암군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "independent": 2
+      }
+    },
+    "jeonnam_완도군": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "independent": 4
+      }
+    },
+    "jeonnam_장성군": {
+      "seats": 7,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "independent": 2
+      }
+    },
+    "jeonnam_장흥군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 6
+      }
+    },
+    "jeonnam_진도군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 5,
+        "independent": 1
+      }
+    },
+    "jeonnam_함평군": {
+      "seats": 6,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "independent": 1,
+        "democratic": 5
+      }
+    },
+    "jeonnam_해남군": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "independent": 2
+      }
+    },
+    "jeonnam_화순군": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "progressive": 1,
+        "democratic": 6,
+        "independent": 2
+      }
+    },
+    "seoul_강남구": {
+      "seats": 20,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 12
+      }
+    },
+    "seoul_강동구": {
+      "seats": 16,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 8
+      }
+    },
+    "seoul_강북구": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 4
+      }
+    },
+    "seoul_강서구": {
+      "seats": 20,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 11,
+        "ppp": 9
+      }
+    },
+    "seoul_관악구": {
+      "seats": 19,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 11
+      }
+    },
+    "seoul_광진구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "independent": 1,
+        "ppp": 6,
+        "democratic": 5
+      }
+    },
+    "seoul_구로구": {
+      "seats": 14,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 6,
+        "ppp": 8
+      }
+    },
+    "seoul_금천구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "seoul_노원구": {
+      "seats": 18,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 10,
+        "ppp": 7,
+        "progressive": 1
+      }
+    },
+    "seoul_도봉구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 7,
+        "democratic": 5
+      }
+    },
+    "seoul_동대문구": {
+      "seats": 17,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 9,
+        "ppp": 8
+      }
+    },
+    "seoul_동작구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 8
+      }
+    },
+    "seoul_마포구": {
+      "seats": 17,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 9
+      }
+    },
+    "seoul_서대문구": {
+      "seats": 13,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 7,
+        "ppp": 6
+      }
+    },
+    "seoul_서초구": {
+      "seats": 14,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 10
+      }
+    },
+    "seoul_성동구": {
+      "seats": 12,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 8
+      }
+    },
+    "seoul_성북구": {
+      "seats": 19,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 11,
+        "ppp": 8
+      }
+    },
+    "seoul_송파구": {
+      "seats": 23,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 13,
+        "democratic": 10
+      }
+    },
+    "seoul_양천구": {
+      "seats": 16,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 8
+      }
+    },
+    "seoul_영등포구": {
+      "seats": 15,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 8,
+        "ppp": 7
+      }
+    },
+    "seoul_용산구": {
+      "seats": 11,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 5,
+        "ppp": 6
+      }
+    },
+    "seoul_은평구": {
+      "seats": 17,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 9
+      }
+    },
+    "seoul_종로구": {
+      "seats": 9,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 4,
+        "democratic": 5
+      }
+    },
+    "seoul_중구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 4
+      }
+    },
+    "seoul_중랑구": {
+      "seats": 15,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 8,
+        "democratic": 7
+      }
+    },
+    "ulsan_남구": {
+      "seats": 12,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "democratic": 4,
+        "ppp": 8
+      }
+    },
+    "ulsan_동구": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "progressive": 1,
+        "ppp": 3,
+        "democratic": 2
+      }
+    },
+    "ulsan_북구": {
+      "seats": 8,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 3,
+        "democratic": 4,
+        "progressive": 1
+      }
+    },
+    "ulsan_울주군": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 3
+      }
+    },
+    "ulsan_중구": {
+      "seats": 9,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 5,
+        "democratic": 4
+      }
+    }
+  },
+  "council": {
+    "busan": {
+      "seats": 42,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 42
+      }
+    },
+    "chungbuk": {
+      "seats": 31,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 26,
+        "democratic": 5
+      }
+    },
+    "chungnam": {
+      "seats": 43,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 33,
+        "democratic": 10
+      }
+    },
+    "daegu": {
+      "seats": 29,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 29
+      }
+    },
+    "daejeon": {
+      "seats": 19,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 16,
+        "democratic": 3
+      }
+    },
+    "gangwon": {
+      "seats": 44,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 40,
+        "democratic": 4
+      }
+    },
+    "gwangju": {
+      "seats": 20,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 20
+      }
+    },
+    "gyeongbuk": {
+      "seats": 55,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 52,
+        "independent": 3
+      }
+    },
+    "gyeonggi": {
+      "seats": 141,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 70,
+        "democratic": 71
+      }
+    },
+    "gyeongnam": {
+      "seats": 58,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 56,
+        "democratic": 2
+      }
+    },
+    "incheon": {
+      "seats": 36,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 24,
+        "democratic": 12
+      }
+    },
+    "jeju": {
+      "seats": 32,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 23,
+        "ppp": 8,
+        "independent": 1
+      }
+    },
+    "jeonbuk": {
+      "seats": 36,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 35,
+        "progressive": 1
+      }
+    },
+    "jeonnam": {
+      "seats": 55,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "democratic": 52,
+        "progressive": 2,
+        "independent": 1
+      }
+    },
+    "sejong": {
+      "seats": 18,
+      "majorityParty": "democratic",
+      "partyBreakdown": {
+        "ppp": 6,
+        "democratic": 12
+      }
+    },
+    "seoul": {
+      "seats": 101,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 70,
+        "democratic": 31
+      }
+    },
+    "ulsan": {
+      "seats": 19,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 19
+      }
+    }
+  }
+}
