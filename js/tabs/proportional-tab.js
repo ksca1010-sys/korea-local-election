@@ -424,7 +424,6 @@ const ProportionalTab = (() => {
                     <div style="margin-bottom:16px;border:1px solid var(--border-color);border-radius:8px;overflow:hidden;">
                         <div style="padding:8px 12px;background:var(--bg-secondary);border-bottom:1px solid var(--border-color);display:flex;justify-content:space-between;align-items:center;">
                             <span style="font-weight:600;font-size:0.85rem;color:var(--text-primary);">제${el.electionNumber}회 (${el.year})</span>
-                            ${el._voteShareEstimated ? '<span style="font-size:0.65rem;color:var(--text-muted);background:var(--bg-tertiary);padding:1px 6px;border-radius:3px;">의석비율 추정</span>' : ''}
                         </div>
                         <div style="padding:12px;">
                 `;

@@ -5040,7 +5040,7 @@ function renderCouncilProvinceView(regionKey, region) {
             summaryCard.innerHTML = `
                 <div class="poll-consensus-hero">
                     <div class="poll-consensus-leader" style="border-left-color:${leaderColor};">
-                        <div class="poll-consensus-leader-meta">통합 추정 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건</div>
+                        <div class="poll-consensus-leader-meta">여론조사 종합 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 집계</div>
                         <div class="poll-consensus-leader-name">${leaderName}</div>
                         <div class="poll-consensus-leader-party" style="color:${leaderColor};">${leaderParty}</div>
                         <div class="poll-consensus-leader-pct" style="color:${leaderColor};">${leaderPct.toFixed(1)}%</div>
@@ -5051,7 +5051,7 @@ function renderCouncilProvinceView(regionKey, region) {
                         ${restBars}
                     </div>` : ''}
                 </div>
-                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:0 4px;">최신성·표본크기 기반 가중평균 추정치</div>
+                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:0 4px;">등록 여론조사 기반 가중 집계 (참고용, 예측 아님)</div>
             `;
             trendsSection.appendChild(summaryCard);
         }
