@@ -1,18 +1,21 @@
 {
   "source": "한국갤럽",
-  "surveyDate": "2026년 3월 2주",
-  "publishDate": "2026-03-12",
-  "sampleSize": 1002,
-  "method": "",
+  "surveyDate": "2026년 3월 3주",
+  "publishDate": "2026-03-20",
+  "sampleSize": 1004,
+  "method": "전화면접 (CATI)",
   "confidence": "95%",
   "margin": 3.1,
   "responseRate": "",
-  "reportNo": "데일리 오피니언 제655호",
-  "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1625",
+  "reportNo": "데일리 오피니언 제656호",
+  "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1627",
   "data": {
-    "democratic": 47,
+    "democratic": 46,
     "ppp": 20,
-    "reform": 2,
-    "independent": 28
+    "reform": 3,
+    "newReform": 2,
+    "progressive": 1,
+    "otherParty": 1,
+    "independent": 27
   }
 }
