@@ -59,7 +59,7 @@
 
     /* 레이아웃 */
     --header-height: 56px;
-    --footer-height: 44px;
+    --footer-height: 56px;
     --sidebar-width: 320px;
     --panel-width: 560px;
 
@@ -2881,6 +2881,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 /* ============================================
    Footer
    ============================================ */
+/* ─── Fixed Footer Bar ─── */
 #main-footer {
     position: fixed;
     bottom: 0;
@@ -2892,20 +2893,62 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     z-index: 1000;
 }
 
-/* 펼쳐지는 풋터 패널 — 풋터 바 위에 슬라이드 */
+.footer-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--footer-height);
+    cursor: pointer;
+    gap: 10px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--text-secondary);
+    user-select: none;
+    padding: 0 24px;
+    transition: all 0.2s ease;
+    border-top: 1px solid transparent;
+}
+
+.footer-toggle:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+    border-top-color: var(--accent-primary);
+}
+
+.footer-toggle-icon {
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+.footer-toggle:hover .footer-toggle-icon {
+    opacity: 1;
+}
+
+.footer-toggle svg {
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+    opacity: 0.5;
+}
+
+.footer-toggle:hover svg {
+    opacity: 1;
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* 알선거 Footer Panel — Civic Beacon Design System       */
+/* ═══════════════════════════════════════════════════════ */
 #footer-panel {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--bg-card);
-    border-top: 1px solid var(--border-color);
     z-index: 1001;
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    max-height: 80vh;
+    max-height: 85vh;
     overflow-y: auto;
-    box-shadow: 0 -8px 32px rgba(0,0,0,0.2);
+    box-shadow: 0 -8px 32px rgba(0,0,0,0.25);
 }
 
 #footer-panel.open {
@@ -2919,169 +2962,372 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 6px;
     padding: 10px;
     cursor: pointer;
-    color: var(--text-muted);
+    color: #8b919f;
     font-size: 0.75rem;
-    border-bottom: 1px solid var(--border-color);
     user-select: none;
+    background: #101415;
+    border-bottom: 1px solid rgba(65, 71, 84, 0.15);
 }
 
 .footer-panel-close:hover {
-    color: var(--text-primary);
-    background: var(--bg-elevated);
+    color: #e0e3e5;
+    background: #191c1e;
 }
 
-.footer-toggle {
+.al-footer {
+    width: 100%;
+    background: #101415;
+    font-family: 'Inter', 'Noto Sans KR', sans-serif;
+}
+
+/* ─── Top Section ─── */
+.al-footer .footer-main {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    display: flex;
+    gap: 96px;
+}
+
+/* Brand Column */
+.al-footer .footer-brand {
+    flex: 0 0 280px;
+    max-width: 320px;
+}
+
+.al-footer .footer-logo {
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: var(--footer-height);
-    cursor: pointer;
     gap: 8px;
-    font-size: 0.7rem;
-    color: var(--text-muted);
-    user-select: none;
-    padding: 0 20px;
+    margin-bottom: 12px;
 }
 
-.footer-toggle:hover {
-    color: var(--text-secondary);
+.al-footer .footer-logo-icon {
+    color: #a9c7ff;
+    font-size: 28px;
 }
 
-.footer-toggle svg {
-    transition: transform 0.3s ease;
-    flex-shrink: 0;
+.al-footer .footer-logo-text {
+    font-size: 24px;
+    font-weight: 900;
+    color: #e0e3e5;
+    letter-spacing: -0.02em;
 }
 
-#main-footer.expanded .footer-toggle svg {
-    transform: rotate(180deg);
-}
-
-/* 상단: 브랜드 + 링크 그리드 */
-.footer-top {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 40px;
-    padding: 28px 40px 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.footer-brand {}
-
-.footer-logo {
-    font-size: 1.4rem;
-    font-weight: 800;
-    color: var(--text-primary);
-    margin-bottom: 6px;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.footer-tagline {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    margin-bottom: 10px;
+.al-footer .footer-tagline {
+    font-size: 14px;
     font-weight: 500;
-}
-
-.footer-description {
-    font-size: 0.75rem;
-    color: var(--text-muted);
+    color: #c1c6d6;
     line-height: 1.6;
-    margin-bottom: 14px;
+    margin-bottom: 4px;
 }
 
-.footer-social {
+.al-footer .footer-sub {
+    font-size: 12px;
+    color: #8b919f;
+    margin-bottom: 24px;
+}
+
+.al-footer .footer-election-info {
+    margin-bottom: 24px;
+}
+
+.al-footer .footer-election-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #c1c6d6;
+    margin-bottom: 2px;
+}
+
+.al-footer .footer-election-date {
+    font-size: 12px;
+    color: #8b919f;
+}
+
+.al-footer .footer-sources {
+    padding-top: 20px;
+    border-top: 1px solid rgba(65, 71, 84, 0.15);
+}
+
+.al-footer .footer-sources-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e0e3e5;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+}
+
+.al-footer .footer-sources-list {
+    font-size: 12px;
+    color: #8b919f;
+    line-height: 1.7;
+}
+
+/* 4-Column Navigation */
+.al-footer .footer-nav-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+.al-footer .footer-col-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #e0e3e5;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+}
+
+.al-footer .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
+    flex-direction: column;
     gap: 12px;
 }
 
-.footer-social a {
+.al-footer .footer-links a {
+    font-size: 14px;
+    font-weight: 500;
+    color: #c1c6d6;
+    text-decoration: none;
+    transition: color 200ms ease-in-out;
+}
+
+.al-footer .footer-links a:hover {
+    color: #a9c7ff;
+}
+
+.al-footer .footer-meta {
+    font-size: 13px;
+    color: #8b919f;
+}
+
+/* ─── Bottom Section ─── */
+.al-footer .footer-bottom {
+    background: #191c1e;
+    padding: 24px 0 20px;
+}
+
+.al-footer .footer-bottom-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-    background: var(--bg-elevated);
-    color: var(--text-muted);
-    transition: all 0.2s ease;
+    justify-content: space-between;
 }
 
-.footer-social a:hover {
-    color: var(--text-primary);
-    background: var(--bg-input);
-    transform: translateY(-2px);
-}
-
-/* 링크 컬럼 */
-.footer-links {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.al-footer .footer-legal-left {
+    display: flex;
+    align-items: center;
     gap: 24px;
 }
 
-.footer-col h4 {
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
+.al-footer .footer-copyright {
+    font-size: 12px;
+    font-weight: 500;
+    color: #c1c6d6;
+    letter-spacing: 0.02em;
 }
 
-.footer-col a {
-    display: block;
-    font-size: 0.73rem;
-    color: var(--text-muted);
+.al-footer .footer-legal-links {
+    display: flex;
+    gap: 16px;
+}
+
+.al-footer .footer-legal-links a {
+    font-size: 12px;
+    font-weight: 500;
+    color: #c1c6d6;
     text-decoration: none;
-    padding: 3px 0;
-    transition: color 0.15s ease;
+    transition: color 200ms ease-in-out;
 }
 
-.footer-col a:hover {
-    color: var(--accent-primary);
+.al-footer .footer-legal-links a:hover {
+    color: #a9c7ff;
 }
 
-/* 하단 저작권 바 */
-.footer-bottom {
+.al-footer .footer-social-link {
+    color: #c1c6d6;
+    transition: color 200ms ease-in-out;
     display: flex;
     align-items: center;
+}
+
+.al-footer .footer-social-link:hover {
+    color: #a9c7ff;
+}
+
+.al-footer .footer-disclaimer {
+    max-width: 1280px;
+    margin: 12px auto 0;
+    padding: 0 32px;
+    font-size: 11px;
+    color: #8b919f;
+    letter-spacing: 0.02em;
+}
+
+/* ─── Footer Responsive ─── */
+@media (max-width: 1024px) {
+    .al-footer .footer-main {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 24px;
+    }
+    .al-footer .footer-brand {
+        flex: none;
+        max-width: 100%;
+    }
+    .al-footer .footer-nav-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .al-footer .footer-main {
+        padding: 32px 16px;
+    }
+    .al-footer .footer-nav-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+    }
+    .al-footer .footer-bottom-inner {
+        flex-direction: column;
+        gap: 12px;
+        padding: 0 16px;
+    }
+    .al-footer .footer-legal-left {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .al-footer .footer-disclaimer {
+        text-align: center;
+        padding: 0 16px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════ */
+/* Info Modals (서비스 소개 · 개인정보처리방침)              */
+/* ═══════════════════════════════════════════════════════ */
+.info-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
     justify-content: center;
-    gap: 8px;
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    padding: 12px 20px 14px;
-    border-top: 1px solid var(--border-color);
+    padding: 24px;
 }
 
-.footer-divider {
-    color: var(--border-color);
+.info-modal-overlay.open {
+    display: flex;
 }
 
-.footer-bottom a {
+.info-modal {
+    background: var(--bg-card);
+    border-radius: 16px;
+    max-width: 680px;
+    width: 100%;
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+}
+
+.info-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
     color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.info-modal-close:hover {
+    color: var(--text-primary);
+    background: var(--bg-elevated);
+}
+
+.info-modal h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 24px;
+    padding-right: 32px;
+}
+
+.info-modal h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+.info-modal p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.info-modal ul {
+    padding-left: 20px;
+    margin-bottom: 8px;
+}
+
+.info-modal li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 4px;
+}
+
+.info-modal a {
+    color: var(--accent-primary);
     text-decoration: none;
 }
 
-.footer-bottom a:hover {
-    color: var(--text-secondary);
+.info-modal a:hover {
+    text-decoration: underline;
 }
 
-/* 모바일 풋터 */
-@media (max-width: 768px) {
-    .footer-top {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 20px 24px 16px;
+.info-modal section {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.info-modal section:last-child {
+    border-bottom: none;
+}
+
+.info-modal-updated {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+@media (max-width: 640px) {
+    .info-modal {
+        padding: 24px 20px;
+        max-height: 85vh;
+        border-radius: 12px;
     }
-    .footer-links {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px;
-    }
-    #main-footer.expanded {
-        max-height: 520px;
+    .info-modal h2 {
+        font-size: 1.2rem;
     }
 }
 
@@ -3237,7 +3483,7 @@ canvas {
 @media (max-width: 768px) {
     :root {
         --header-height: 50px;
-        --footer-height: 36px;
+        --footer-height: 48px;
     }
 
     .header-left .logo-text {

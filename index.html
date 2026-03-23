@@ -24,6 +24,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet">
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
@@ -359,65 +360,106 @@
         </aside>
     </main>
 
-    <!-- Footer bar (고정) -->
+    <!-- Footer bar (고정 — 클릭으로 풋터 패널 토글) -->
     <footer id="main-footer">
         <div class="footer-toggle" id="footer-toggle-btn">
-            <span>알선거 · 아는 만큼 보이는 선거</span>
+            <span class="footer-toggle-icon">🗳️</span>
+            <span>알선거 — 아는 만큼 보이는 선거</span>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
-            <span id="data-last-updated" style="margin-left:8px;color:var(--text-muted);font-size:var(--text-micro);"></span>
         </div>
     </footer>
 
-    <!-- Footer panel (슬라이드업) -->
-    <div id="footer-panel">
-        <div class="footer-panel-close" id="footer-panel-close">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 9 12 15 6 9"/></svg>
-            <span>닫기</span>
-        </div>
-        <div class="footer-top">
-            <div class="footer-brand">
-                <div class="footer-logo">알선거</div>
-                <p class="footer-tagline">아는 만큼 보이는 선거</p>
-                <p class="footer-description">2026 제9회 전국동시지방선거 정보를 한눈에.<br>후보자, 여론조사, 공약, 역대 선거 데이터를 지도 위에서 확인하세요.</p>
-                <div class="footer-social">
-                    <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </a>
-                    <a href="mailto:contact@korea-local-election.pages.dev" aria-label="Email">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                    </a>
-                </div>
-            </div>
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <!-- 알선거 Footer Panel — Civic Beacon Design System        -->
+    <!-- ═══════════════════════════════════════════════════════ -->
+    <div id="footer-panel" class="al-footer">
+      <div class="footer-panel-close" id="footer-panel-close">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 9 12 15 6 9"/></svg>
+        <span>닫기</span>
+      </div>
 
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>데이터 출처</h4>
-                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">중앙선거관리위원회</a>
-                    <a href="https://nesdc.go.kr" target="_blank" rel="noopener">선거여론조사심의위원회</a>
-                    <a href="https://info.nec.go.kr" target="_blank" rel="noopener">선거통계시스템</a>
-                    <a href="https://policy.nec.go.kr" target="_blank" rel="noopener">정책·공약 알리미</a>
-                </div>
-                <div class="footer-col">
-                    <h4>선거 안내</h4>
-                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">투표 방법</a>
-                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">선거일정</a>
-                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">사전투표 안내</a>
-                    <a href="https://www.nec.go.kr" target="_blank" rel="noopener">재외국민 투표</a>
-                </div>
-                <div class="footer-col">
-                    <h4>프로젝트</h4>
-                    <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener">GitHub 소스코드</a>
-                    <a href="https://github.com/ksca1010-sys/korea-local-election/issues" target="_blank" rel="noopener">버그 신고 · 건의</a>
-                    <a href="https://github.com/ksca1010-sys/korea-local-election/releases" target="_blank" rel="noopener">업데이트 내역</a>
-                </div>
-            </div>
+      <div class="footer-main">
+        <!-- Left: Brand -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="material-symbols-outlined footer-logo-icon">how_to_vote</span>
+            <span class="footer-logo-text">알선거</span>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <span>&copy; 2026 알선거. 비영리 선거 정보 프로젝트.</span>
-            <span class="footer-divider">|</span>
-            <span>시뮬레이션 데이터가 포함될 수 있습니다</span>
+        <!-- Right: 4-Column Navigation -->
+        <div class="footer-nav-grid">
+          <div class="footer-col">
+            <h5 class="footer-col-title">선거 정보</h5>
+            <ul class="footer-links">
+              <li><a href="#" onclick="App.resetToHome(); return false;">선거지도</a></li>
+              <li><a href="#" onclick="App.setElectionType('governor'); return false;">광역단체장</a></li>
+              <li><a href="#" onclick="App.setElectionType('mayor'); return false;">기초단체장</a></li>
+              <li><a href="#" onclick="App.setElectionType('superintendent'); return false;">교육감</a></li>
+              <li><a href="#" onclick="App.setElectionType('council'); return false;">광역의원</a></li>
+              <li><a href="#" onclick="App.setElectionType('localCouncil'); return false;">기초의원</a></li>
+              <li><a href="#" onclick="App.setElectionType('councilProportional'); return false;">비례대표</a></li>
+              <li><a href="#" onclick="App.setElectionType('byElection'); return false;">재보궐</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">탐색</h5>
+            <ul class="footer-links">
+              <li><a href="#" onclick="App.switchTab('overview'); return false;">지역 개요</a></li>
+              <li><a href="#" onclick="App.switchTab('polls'); return false;">여론조사</a></li>
+              <li><a href="#" onclick="App.switchTab('candidates'); return false;">후보자 현황</a></li>
+              <li><a href="#" onclick="App.switchTab('news'); return false;">지역 뉴스</a></li>
+              <li><a href="#" onclick="App.switchTab('history'); return false;">역대 비교</a></li>
+              <li><a href="#" onclick="App.showScheduleModal?.(); return false;">선거 일정</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">공식 기관</h5>
+            <ul class="footer-links">
+              <li><a href="https://www.nec.go.kr" target="_blank" rel="noopener">중앙선거관리위원회</a></li>
+              <li><a href="https://www.nesdc.go.kr" target="_blank" rel="noopener">선거여론조사심의위원회</a></li>
+              <li><a href="https://info.nec.go.kr" target="_blank" rel="noopener">선거통계시스템</a></li>
+              <li><a href="https://www.data.go.kr" target="_blank" rel="noopener">공공데이터포털</a></li>
+              <li><a href="http://data.nec.go.kr" target="_blank" rel="noopener">선거정보 개방포털</a></li>
+              <li><a href="https://law.go.kr" target="_blank" rel="noopener">국가법령정보센터</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h5 class="footer-col-title">프로젝트</h5>
+            <ul class="footer-links">
+              <li><a href="#" onclick="App.showAboutModal?.(); return false;">서비스 소개</a></li>
+              <li><a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener">GitHub</a></li>
+              <li><a href="mailto:contact@votemap.kr">문의</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
+
+      <!-- Bottom Section: Legal -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <div class="footer-legal-left">
+            <span class="footer-copyright">&copy; 2026 알선거 (VoteMap) · votemap.kr</span>
+            <div class="footer-legal-links">
+              <a href="#" onclick="App.showPrivacyModal(); return false;">개인정보처리방침</a>
+              <a href="#" onclick="App.showAboutModal?.(); return false;">서비스 소개</a>
+            </div>
+          </div>
+          <div class="footer-legal-right">
+            <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <p class="footer-disclaimer">
+          본 서비스는 특정 정당이나 후보를 지지·추천하지 않습니다.
+        </p>
+      </div>
     </div>
 
     <script>
@@ -425,10 +467,117 @@
         const btn = document.getElementById('footer-toggle-btn');
         const panel = document.getElementById('footer-panel');
         const closeBtn = document.getElementById('footer-panel-close');
-        btn.addEventListener('click', () => panel.classList.add('open'));
+        btn.addEventListener('click', () => panel.classList.toggle('open'));
         closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+        // App stub functions
+        if (typeof App === 'undefined') window.App = {};
+        if (!App.showScheduleModal) App.showScheduleModal = function() {};
+        App.showAboutModal = function() { document.getElementById('about-modal').classList.add('open'); };
+        App.showPrivacyModal = function() { document.getElementById('privacy-modal').classList.add('open'); };
     })();
     </script>
+
+    <!-- ═══ About Modal ═══ -->
+    <div class="info-modal-overlay" id="about-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>알선거 — 아는 만큼 보이는 선거</h2>
+
+        <section>
+          <h3>서비스 소개</h3>
+          <p><strong>알선거</strong>는 대한민국 지방선거 정보를 지도 위에서 한눈에 확인할 수 있는 비영리 선거 정보 플랫폼입니다.</p>
+          <p>유권자가 자신의 지역 후보자, 여론조사, 공약, 역대 선거 결과를 쉽고 정확하게 비교할 수 있도록 만들었습니다.</p>
+        </section>
+
+        <section>
+          <h3>제공 정보</h3>
+          <ul>
+            <li><strong>후보자 현황</strong> — 광역단체장·기초단체장·교육감·광역의원·기초의원·비례대표·재보궐 후보 정보</li>
+            <li><strong>여론조사</strong> — 선거여론조사심의위원회 등록 여론조사 원문 기반</li>
+            <li><strong>역대 비교</strong> — 제1회~제8회 전국동시지방선거 투표율·당선인 실데이터</li>
+            <li><strong>지역 뉴스</strong> — 지역 언론 중심의 선거 관련 뉴스 자동 수집</li>
+            <li><strong>인터랙티브 지도</strong> — 17개 광역·226개 기초 자치단체 선거구 시각화</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>데이터 출처</h3>
+          <ul>
+            <li>중앙선거관리위원회 (<a href="https://www.nec.go.kr" target="_blank">nec.go.kr</a>)</li>
+            <li>선거여론조사심의위원회 (<a href="https://www.nesdc.go.kr" target="_blank">nesdc.go.kr</a>)</li>
+            <li>공공데이터포털 선관위 오픈API (<a href="https://www.data.go.kr" target="_blank">data.go.kr</a>)</li>
+            <li>선거정보 개방포털 (<a href="http://data.nec.go.kr" target="_blank">data.nec.go.kr</a>)</li>
+            <li>한국언론진흥재단 뉴스 데이터</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>운영 원칙</h3>
+          <ul>
+            <li>본 서비스는 특정 정당이나 후보를 지지·추천하지 않습니다.</li>
+            <li>모든 데이터는 공공기관 공식 발표 및 등록 자료를 기반으로 합니다.</li>
+            <li>여론조사 공표금지 기간(선거일 전 6일~선거일 투표마감)에는 관련 법규를 준수합니다.</li>
+            <li>오류나 개선 사항은 <a href="https://github.com/ksca1010-sys/korea-local-election/issues" target="_blank">GitHub</a>에서 제보할 수 있습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>오픈소스</h3>
+          <p>알선거는 오픈소스 프로젝트입니다. 소스코드는 <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank">GitHub</a>에서 확인할 수 있습니다.</p>
+          <p>바닐라 HTML·CSS·JavaScript로 구축되었으며, Cloudflare Pages에서 운영됩니다.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ═══ Privacy Modal ═══ -->
+    <div class="info-modal-overlay" id="privacy-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>개인정보처리방침</h2>
+
+        <p class="info-modal-updated">시행일: 2026년 3월 1일</p>
+
+        <section>
+          <h3>1. 개인정보의 수집 및 이용</h3>
+          <p><strong>알선거</strong>(이하 "서비스")는 별도의 회원가입 없이 이용할 수 있으며, 이용자의 개인정보를 수집하지 않습니다.</p>
+          <ul>
+            <li>서비스는 로그인, 회원가입, 결제 기능을 제공하지 않습니다.</li>
+            <li>이용자의 이름, 이메일, 전화번호 등 개인 식별 정보를 수집하지 않습니다.</li>
+            <li>이용자가 자발적으로 이메일 문의를 보낸 경우, 해당 이메일 주소는 답변 목적으로만 사용되며 별도 저장하지 않습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>2. 자동 수집 정보</h3>
+          <p>서비스 운영을 위해 다음 정보가 자동으로 처리될 수 있습니다:</p>
+          <ul>
+            <li><strong>Cloudflare Pages</strong> — 서비스 호스팅 제공자로서 웹 요청 로그(IP 주소, 접속 시간, 브라우저 정보)가 Cloudflare 인프라에서 일시적으로 처리됩니다. 이는 서비스 운영자가 직접 접근하거나 저장하지 않습니다.</li>
+            <li><strong>쿠키</strong> — 서비스는 자체 쿠키를 사용하지 않습니다. 다만 Cloudflare가 보안 목적으로 기술적 쿠키를 설정할 수 있습니다.</li>
+            <li><strong>분석 도구</strong> — Google Analytics 등 별도의 이용자 추적·분석 도구를 사용하지 않습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>3. 제3자 제공</h3>
+          <p>서비스는 이용자 정보를 제3자에게 제공하지 않습니다. 서비스에 포함된 외부 링크(선관위, 공공데이터포털 등)를 통해 다른 사이트로 이동하는 경우, 해당 사이트의 개인정보처리방침이 적용됩니다.</p>
+        </section>
+
+        <section>
+          <h3>4. 데이터 보안</h3>
+          <p>서비스는 HTTPS 암호화 통신을 통해 제공되며, Cloudflare의 보안 인프라를 활용합니다. 서비스에 표시되는 모든 선거 데이터는 공공기관이 공개한 정보이며, 이용자의 개인정보와 무관합니다.</p>
+        </section>
+
+        <section>
+          <h3>5. 이용자의 권리</h3>
+          <p>서비스는 개인정보를 수집하지 않으므로 별도의 열람·정정·삭제 청구 대상이 없습니다. 서비스 이용에 관한 문의는 <a href="mailto:contact@votemap.kr">contact@votemap.kr</a>로 연락 주시기 바랍니다.</p>
+        </section>
+
+        <section>
+          <h3>6. 방침 변경</h3>
+          <p>본 방침은 법령 변경이나 서비스 변경에 따라 수정될 수 있으며, 변경 시 서비스 내 공지합니다.</p>
+        </section>
+      </div>
+    </div>
 
     <!-- 1. 데이터 로더 -->
     <script src="js/data-loader.js?v=1774192751"></script>

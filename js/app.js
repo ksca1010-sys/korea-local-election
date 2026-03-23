@@ -214,29 +214,7 @@ const App = (() => {
         setupMobilePanelSwipe();
         setupHomeLink();
 
-        // Populate "last data update" footer indicator
-        try {
-            const dates = [
-                ElectionData._mayorCandidatesCache?._meta?.lastUpdated,
-                ElectionData._superintendentCandidatesCache?._meta?.lastUpdated,
-                ElectionData._byElectionCache?._meta?.lastUpdated,
-                ElectionData._pollsCache?._meta?.lastUpdated,
-                ElectionData._overviewCache?._meta?.lastUpdated,
-                ElectionData._mayorHistoryCache?._meta?.lastUpdated,
-            ].filter(Boolean);
-            // Also try fetching _meta from key JSON files whose loaders don't cache raw data
-            const metaFiles = ['data/election_stats.json', 'data/candidates/governor.json', 'data/candidates/governor_status.json', 'data/candidates/mayor_status.json'];
-            const metaResults = await Promise.all(metaFiles.map(f =>
-                fetch(f).then(r => r.ok ? r.json() : null).then(d => d?._meta?.lastUpdated).catch(() => null)
-            ));
-            metaResults.filter(Boolean).forEach(d => dates.push(d));
-            if (dates.length) {
-                dates.sort();
-                const latest = dates[dates.length - 1];
-                const updateEl = document.getElementById('data-last-updated');
-                if (updateEl) updateEl.textContent = `데이터 기준: ${latest}`;
-            }
-        } catch(e) { console.warn('[LastUpdated] error:', e); }
+        // (data-last-updated 제거됨 — 풋터에서 날짜 표시 삭제)
 
         // Load election terms for tooltips (정보 패널에만 적용, 사이드바 필터에는 기존 툴팁 사용)
         try {
