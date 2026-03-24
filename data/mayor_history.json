@@ -2224,6 +2224,20 @@
     ],
     "busan/중구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "independent",
+        "winnerName": "이인준",
+        "winnerParty": "무소속",
+        "rate": 51.83,
+        "regionKey": "busan",
+        "district": "중구(부산)",
+        "runnerName": "안영근",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 44.09
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "independent",
@@ -2297,6 +2311,16 @@
     ],
     "busan/서구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "김영오",
+        "winnerParty": "한나라당",
+        "rate": 100.0,
+        "regionKey": "busan",
+        "district": "서구(부산)"
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -2365,6 +2389,16 @@
       }
     ],
     "busan/동구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "정현옥",
+        "winnerParty": "한나라당",
+        "rate": 100.0,
+        "regionKey": "busan",
+        "district": "동구(부산)"
+      },
       {
         "election": 4,
         "year": 2006,
@@ -2696,6 +2730,20 @@
     ],
     "busan/남구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "전상수",
+        "winnerParty": "한나라당",
+        "rate": 50.98,
+        "regionKey": "busan",
+        "district": "남구(부산)",
+        "runnerName": "이영근",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 29.63
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -2764,6 +2812,20 @@
       }
     ],
     "busan/북구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "배상도",
+        "winnerParty": "한나라당",
+        "rate": 66.65,
+        "regionKey": "busan",
+        "district": "북구(부산)",
+        "runnerName": "강인옥",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 17.76
+      },
       {
         "election": 4,
         "year": 2006,
@@ -3182,6 +3244,20 @@
     ],
     "busan/강서구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "안병해",
+        "winnerParty": "한나라당",
+        "rate": 55.42,
+        "regionKey": "busan",
+        "district": "강서구(부산)",
+        "runnerName": "배응기",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 35.48
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -3508,6 +3584,20 @@
     ],
     "daegu/중구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "정재원",
+        "winnerParty": "한나라당",
+        "rate": 54.36,
+        "regionKey": "daegu",
+        "district": "중구(대구)",
+        "runnerName": "김주환",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 29.0
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -3575,6 +3665,20 @@
       }
     ],
     "daegu/동구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "임대윤",
+        "winnerParty": "한나라당",
+        "rate": 71.82,
+        "regionKey": "daegu",
+        "district": "동구(대구)",
+        "runnerName": "최규태",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 19.33
+      },
       {
         "election": 4,
         "year": 2006,
@@ -3649,6 +3753,20 @@
     ],
     "daegu/서구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "윤진",
+        "winnerParty": "한나라당",
+        "rate": 43.13,
+        "regionKey": "daegu",
+        "district": "서구(대구)",
+        "runnerName": "서중현",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 38.64
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -3722,6 +3840,20 @@
     ],
     "daegu/남구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "이신학",
+        "winnerParty": "한나라당",
+        "rate": 61.4,
+        "regionKey": "daegu",
+        "district": "남구(대구)",
+        "runnerName": "박순종",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 16.35
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -3790,6 +3922,20 @@
       }
     ],
     "daegu/북구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "이명규",
+        "winnerParty": "한나라당",
+        "rate": 77.2,
+        "regionKey": "daegu",
+        "district": "북구(대구)",
+        "runnerName": "박인숙",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 13.82
+      },
       {
         "election": 4,
         "year": 2006,
@@ -4112,6 +4258,20 @@
     ],
     "incheon/중구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "democratic",
+        "winnerName": "김홍섭",
+        "winnerParty": "새천년민주당",
+        "rate": 50.06,
+        "regionKey": "incheon",
+        "district": "중구(인천)",
+        "runnerName": "한영환",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 49.93
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -4185,6 +4345,20 @@
     ],
     "incheon/동구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "이화용",
+        "winnerParty": "한나라당",
+        "rate": 51.63,
+        "regionKey": "incheon",
+        "district": "동구(인천)",
+        "runnerName": "김창수",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 48.36
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -4257,6 +4431,76 @@
       }
     ],
     "incheon/미추홀구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "박우섭",
+        "winnerParty": "한나라당",
+        "rate": 50.8,
+        "regionKey": "incheon",
+        "district": "남구(인천)",
+        "runnerName": "이영환",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 29.88
+      },
+      {
+        "election": 4,
+        "year": 2006,
+        "winner": "ppp",
+        "winnerName": "이영수",
+        "winnerParty": "한나라당",
+        "rate": 54.59,
+        "regionKey": "incheon",
+        "district": "남구",
+        "runnerName": "박우섭",
+        "runnerParty": "열린우리당",
+        "runner": "democratic",
+        "runnerRate": 31.61
+      },
+      {
+        "election": 5,
+        "year": 2010,
+        "winner": "democratic",
+        "winnerName": "박우섭",
+        "winnerParty": "민주당",
+        "rate": 53.32,
+        "regionKey": "incheon",
+        "district": "남구",
+        "runnerName": "이영수",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 39.87
+      },
+      {
+        "election": 6,
+        "year": 2014,
+        "winner": "democratic",
+        "winnerName": "박우섭",
+        "winnerParty": "새정치민주연합",
+        "rate": 50.2,
+        "regionKey": "incheon",
+        "district": "남구",
+        "runnerName": "최백규",
+        "runnerParty": "새누리당",
+        "runner": "ppp",
+        "runnerRate": 49.8
+      },
+      {
+        "election": 7,
+        "year": 2018,
+        "winner": "democratic",
+        "winnerName": "김정식",
+        "winnerParty": "더불어민주당",
+        "rate": 52.28,
+        "regionKey": "incheon",
+        "district": "남구",
+        "runnerName": "이영훈",
+        "runnerParty": "자유한국당",
+        "runner": "ppp",
+        "runnerRate": 30.52
+      },
       {
         "election": 8,
         "year": 2022,
@@ -4623,6 +4867,20 @@
     ],
     "incheon/서구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "이학재",
+        "winnerParty": "한나라당",
+        "rate": 43.9,
+        "regionKey": "incheon",
+        "district": "서구(인천)",
+        "runnerName": "민우홍",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 29.21
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -4866,6 +5124,20 @@
     ],
     "gwangju/동구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "democratic",
+        "winnerName": "유태명",
+        "winnerParty": "새천년민주당",
+        "rate": 57.45,
+        "regionKey": "gwangju",
+        "district": "동구(광주)",
+        "runnerName": "전영복",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 42.54
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "democratic",
@@ -4938,6 +5210,20 @@
       }
     ],
     "gwangju/서구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "democratic",
+        "winnerName": "김종식",
+        "winnerParty": "새천년민주당",
+        "rate": 67.49,
+        "regionKey": "gwangju",
+        "district": "서구(광주)",
+        "runnerName": "김상집",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 16.71
+      },
       {
         "election": 4,
         "year": 2006,
@@ -5012,6 +5298,20 @@
     ],
     "gwangju/남구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "democratic",
+        "winnerName": "황일봉",
+        "winnerParty": "새천년민주당",
+        "rate": 46.94,
+        "regionKey": "gwangju",
+        "district": "남구(광주)",
+        "runnerName": "강도석",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 21.97
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "democratic",
@@ -5084,6 +5384,20 @@
       }
     ],
     "gwangju/북구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "independent",
+        "winnerName": "김재균",
+        "winnerParty": "무소속",
+        "rate": 56.54,
+        "regionKey": "gwangju",
+        "district": "북구(광주)",
+        "runnerName": "오주",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 43.46
+      },
       {
         "election": 4,
         "year": 2006,
@@ -5236,6 +5550,20 @@
     ],
     "daejeon/동구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "임영호",
+        "winnerParty": "자민련",
+        "rate": 56.71,
+        "regionKey": "daejeon",
+        "district": "동구(대전)",
+        "runnerName": "김범수",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 30.69
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -5309,6 +5637,20 @@
     ],
     "daejeon/중구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "김성기",
+        "winnerParty": "자민련",
+        "rate": 49.51,
+        "regionKey": "daejeon",
+        "district": "중구(대전)",
+        "runnerName": "김동근",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 38.62
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -5381,6 +5723,20 @@
       }
     ],
     "daejeon/서구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "가기산",
+        "winnerParty": "자민련",
+        "rate": 44.93,
+        "regionKey": "daejeon",
+        "district": "서구(대전)",
+        "runnerName": "김영진",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 41.68
+      },
       {
         "election": 4,
         "year": 2006,
@@ -5629,6 +5985,20 @@
     ],
     "ulsan/중구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "조용수",
+        "winnerParty": "한나라당",
+        "rate": 59.83,
+        "regionKey": "ulsan",
+        "district": "중구(울산)",
+        "runnerName": "전나명",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 40.16
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "ppp",
@@ -5701,6 +6071,20 @@
       }
     ],
     "ulsan/남구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "이채익",
+        "winnerParty": "한나라당",
+        "rate": 65.92,
+        "regionKey": "ulsan",
+        "district": "남구(울산)",
+        "runnerName": "김진석",
+        "runnerParty": "민주노동당",
+        "runner": "progressive",
+        "runnerRate": 24.86
+      },
       {
         "election": 4,
         "year": 2006,
@@ -5775,6 +6159,20 @@
     ],
     "ulsan/동구": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "이갑용",
+        "winnerParty": "민주노동당",
+        "rate": 34.68,
+        "regionKey": "ulsan",
+        "district": "동구(울산)",
+        "runnerName": "정천석",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 25.9
+      },
+      {
         "election": 4,
         "year": 2006,
         "winner": "independent",
@@ -5847,6 +6245,20 @@
       }
     ],
     "ulsan/북구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "이상범",
+        "winnerParty": "민주노동당",
+        "rate": 51.77,
+        "regionKey": "ulsan",
+        "district": "북구(울산)",
+        "runnerName": "김수헌",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 48.23
+      },
       {
         "election": 4,
         "year": 2006,
@@ -6616,6 +7028,20 @@
       }
     ],
     "gyeonggi/양주시": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "임충빈",
+        "winnerParty": "한나라당",
+        "rate": 51.56,
+        "regionKey": "gyeonggi",
+        "district": "양주군",
+        "runnerName": "윤명노",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 48.44
+      },
       {
         "election": 4,
         "year": 2006,
@@ -7821,6 +8247,48 @@
     ],
     "gyeonggi/여주시": [
       {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "임창선",
+        "winnerParty": "한나라당",
+        "rate": 58.61,
+        "regionKey": "gyeonggi",
+        "district": "여주군",
+        "runnerName": "박용국",
+        "runnerParty": "새천년민주당",
+        "runner": "democratic",
+        "runnerRate": 35.07
+      },
+      {
+        "election": 4,
+        "year": 2006,
+        "winner": "ppp",
+        "winnerName": "이기수",
+        "winnerParty": "한나라당",
+        "rate": 51.58,
+        "regionKey": "gyeonggi",
+        "district": "여주군",
+        "runnerName": "권재국",
+        "runnerParty": "열린우리당",
+        "runner": "democratic",
+        "runnerRate": 22.16
+      },
+      {
+        "election": 5,
+        "year": 2010,
+        "winner": "ppp",
+        "winnerName": "김춘석",
+        "winnerParty": "한나라당",
+        "rate": 39.14,
+        "regionKey": "gyeonggi",
+        "district": "여주군",
+        "runnerName": "원경희",
+        "runnerParty": "미래연합",
+        "runner": "other",
+        "runnerRate": 33.54
+      },
+      {
         "election": 6,
         "year": 2014,
         "winner": "ppp",
@@ -8300,6 +8768,20 @@
       }
     ],
     "gyeonggi/포천시": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "박윤국",
+        "winnerParty": "한나라당",
+        "rate": 24.16,
+        "regionKey": "gyeonggi",
+        "district": "포천군",
+        "runnerName": "박준수",
+        "runnerParty": "자민련",
+        "runner": "other",
+        "runnerRate": 15.85
+      },
       {
         "election": 4,
         "year": 2006,
@@ -9326,6 +9808,20 @@
       }
     ],
     "gangwon/고성군": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "함형구",
+        "winnerParty": "한나라당",
+        "rate": 43.66,
+        "regionKey": "gangwon",
+        "district": "고성군(강원)",
+        "runnerName": "황종국",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 38.63
+      },
       {
         "election": 4,
         "year": 2006,
@@ -12230,6 +12726,48 @@
       }
     ],
     "chungnam/당진시": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "other",
+        "winnerName": "김낙성",
+        "winnerParty": "자민련",
+        "rate": 30.99,
+        "regionKey": "chungnam",
+        "district": "당진군",
+        "runnerName": "황규호",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 23.88
+      },
+      {
+        "election": 4,
+        "year": 2006,
+        "winner": "democratic",
+        "winnerName": "민종기",
+        "winnerParty": "열린우리당",
+        "rate": 41.66,
+        "regionKey": "chungnam",
+        "district": "당진군",
+        "runnerName": "이철환",
+        "runnerParty": "국민중심당",
+        "runner": "other",
+        "runnerRate": 33.01
+      },
+      {
+        "election": 5,
+        "year": 2010,
+        "winner": "other",
+        "winnerName": "이철환",
+        "winnerParty": "자유선진당",
+        "rate": 48.75,
+        "regionKey": "chungnam",
+        "district": "당진군",
+        "runnerName": "김건",
+        "runnerParty": "민주당",
+        "runner": "democratic",
+        "runnerRate": 23.34
+      },
       {
         "election": 6,
         "year": 2014,
@@ -19017,638 +19555,6 @@
         "turnout": 47.1
       }
     ],
-    "busan/중구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "independent",
-        "winnerName": "이인준",
-        "winnerParty": "무소속",
-        "rate": 51.83,
-        "regionKey": "busan",
-        "district": "중구(부산)",
-        "runnerName": "안영근",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 44.09
-      }
-    ],
-    "busan/서구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "김영오",
-        "winnerParty": "한나라당",
-        "rate": 100.0,
-        "regionKey": "busan",
-        "district": "서구(부산)"
-      }
-    ],
-    "busan/동구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "정현옥",
-        "winnerParty": "한나라당",
-        "rate": 100.0,
-        "regionKey": "busan",
-        "district": "동구(부산)"
-      }
-    ],
-    "busan/남구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "전상수",
-        "winnerParty": "한나라당",
-        "rate": 50.98,
-        "regionKey": "busan",
-        "district": "남구(부산)",
-        "runnerName": "이영근",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 29.63
-      }
-    ],
-    "busan/북구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "배상도",
-        "winnerParty": "한나라당",
-        "rate": 66.65,
-        "regionKey": "busan",
-        "district": "북구(부산)",
-        "runnerName": "강인옥",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 17.76
-      }
-    ],
-    "busan/강서구(부산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "안병해",
-        "winnerParty": "한나라당",
-        "rate": 55.42,
-        "regionKey": "busan",
-        "district": "강서구(부산)",
-        "runnerName": "배응기",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 35.48
-      }
-    ],
-    "daegu/중구(대구)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "정재원",
-        "winnerParty": "한나라당",
-        "rate": 54.36,
-        "regionKey": "daegu",
-        "district": "중구(대구)",
-        "runnerName": "김주환",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 29.0
-      }
-    ],
-    "daegu/동구(대구)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "임대윤",
-        "winnerParty": "한나라당",
-        "rate": 71.82,
-        "regionKey": "daegu",
-        "district": "동구(대구)",
-        "runnerName": "최규태",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 19.33
-      }
-    ],
-    "daegu/서구(대구)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "윤진",
-        "winnerParty": "한나라당",
-        "rate": 43.13,
-        "regionKey": "daegu",
-        "district": "서구(대구)",
-        "runnerName": "서중현",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 38.64
-      }
-    ],
-    "daegu/남구(대구)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이신학",
-        "winnerParty": "한나라당",
-        "rate": 61.4,
-        "regionKey": "daegu",
-        "district": "남구(대구)",
-        "runnerName": "박순종",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 16.35
-      }
-    ],
-    "daegu/북구(대구)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이명규",
-        "winnerParty": "한나라당",
-        "rate": 77.2,
-        "regionKey": "daegu",
-        "district": "북구(대구)",
-        "runnerName": "박인숙",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 13.82
-      }
-    ],
-    "incheon/중구(인천)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "democratic",
-        "winnerName": "김홍섭",
-        "winnerParty": "새천년민주당",
-        "rate": 50.06,
-        "regionKey": "incheon",
-        "district": "중구(인천)",
-        "runnerName": "한영환",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 49.93
-      }
-    ],
-    "incheon/동구(인천)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이화용",
-        "winnerParty": "한나라당",
-        "rate": 51.63,
-        "regionKey": "incheon",
-        "district": "동구(인천)",
-        "runnerName": "김창수",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 48.36
-      }
-    ],
-    "incheon/남구(인천)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "박우섭",
-        "winnerParty": "한나라당",
-        "rate": 50.8,
-        "regionKey": "incheon",
-        "district": "남구(인천)",
-        "runnerName": "이영환",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 29.88
-      }
-    ],
-    "incheon/서구(인천)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이학재",
-        "winnerParty": "한나라당",
-        "rate": 43.9,
-        "regionKey": "incheon",
-        "district": "서구(인천)",
-        "runnerName": "민우홍",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 29.21
-      }
-    ],
-    "gwangju/동구(광주)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "democratic",
-        "winnerName": "유태명",
-        "winnerParty": "새천년민주당",
-        "rate": 57.45,
-        "regionKey": "gwangju",
-        "district": "동구(광주)",
-        "runnerName": "전영복",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 42.54
-      }
-    ],
-    "gwangju/서구(광주)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "democratic",
-        "winnerName": "김종식",
-        "winnerParty": "새천년민주당",
-        "rate": 67.49,
-        "regionKey": "gwangju",
-        "district": "서구(광주)",
-        "runnerName": "김상집",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 16.71
-      }
-    ],
-    "gwangju/남구(광주)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "democratic",
-        "winnerName": "황일봉",
-        "winnerParty": "새천년민주당",
-        "rate": 46.94,
-        "regionKey": "gwangju",
-        "district": "남구(광주)",
-        "runnerName": "강도석",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 21.97
-      }
-    ],
-    "gwangju/북구(광주)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "independent",
-        "winnerName": "김재균",
-        "winnerParty": "무소속",
-        "rate": 56.54,
-        "regionKey": "gwangju",
-        "district": "북구(광주)",
-        "runnerName": "오주",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 43.46
-      }
-    ],
-    "daejeon/동구(대전)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "임영호",
-        "winnerParty": "자민련",
-        "rate": 56.71,
-        "regionKey": "daejeon",
-        "district": "동구(대전)",
-        "runnerName": "김범수",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 30.69
-      }
-    ],
-    "daejeon/중구(대전)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "김성기",
-        "winnerParty": "자민련",
-        "rate": 49.51,
-        "regionKey": "daejeon",
-        "district": "중구(대전)",
-        "runnerName": "김동근",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 38.62
-      }
-    ],
-    "daejeon/서구(대전)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "가기산",
-        "winnerParty": "자민련",
-        "rate": 44.93,
-        "regionKey": "daejeon",
-        "district": "서구(대전)",
-        "runnerName": "김영진",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 41.68
-      }
-    ],
-    "ulsan/중구(울산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "조용수",
-        "winnerParty": "한나라당",
-        "rate": 59.83,
-        "regionKey": "ulsan",
-        "district": "중구(울산)",
-        "runnerName": "전나명",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 40.16
-      }
-    ],
-    "ulsan/남구(울산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이채익",
-        "winnerParty": "한나라당",
-        "rate": 65.92,
-        "regionKey": "ulsan",
-        "district": "남구(울산)",
-        "runnerName": "김진석",
-        "runnerParty": "민주노동당",
-        "runner": "progressive",
-        "runnerRate": 24.86
-      }
-    ],
-    "ulsan/동구(울산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "이갑용",
-        "winnerParty": "민주노동당",
-        "rate": 34.68,
-        "regionKey": "ulsan",
-        "district": "동구(울산)",
-        "runnerName": "정천석",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 25.9
-      }
-    ],
-    "ulsan/북구(울산)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "이상범",
-        "winnerParty": "민주노동당",
-        "rate": 51.77,
-        "regionKey": "ulsan",
-        "district": "북구(울산)",
-        "runnerName": "김수헌",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 48.23
-      }
-    ],
-    "gyeonggi/양주군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "임충빈",
-        "winnerParty": "한나라당",
-        "rate": 51.56,
-        "regionKey": "gyeonggi",
-        "district": "양주군",
-        "runnerName": "윤명노",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 48.44
-      }
-    ],
-    "gyeonggi/여주군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "임창선",
-        "winnerParty": "한나라당",
-        "rate": 58.61,
-        "regionKey": "gyeonggi",
-        "district": "여주군",
-        "runnerName": "박용국",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 35.07
-      },
-      {
-        "election": 4,
-        "year": 2006,
-        "winner": "ppp",
-        "winnerName": "이기수",
-        "winnerParty": "한나라당",
-        "rate": 51.58,
-        "regionKey": "gyeonggi",
-        "district": "여주군",
-        "runnerName": "권재국",
-        "runnerParty": "열린우리당",
-        "runner": "democratic",
-        "runnerRate": 22.16
-      },
-      {
-        "election": 5,
-        "year": 2010,
-        "winner": "ppp",
-        "winnerName": "김춘석",
-        "winnerParty": "한나라당",
-        "rate": 39.14,
-        "regionKey": "gyeonggi",
-        "district": "여주군",
-        "runnerName": "원경희",
-        "runnerParty": "미래연합",
-        "runner": "other",
-        "runnerRate": 33.54
-      }
-    ],
-    "gyeonggi/포천군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "박윤국",
-        "winnerParty": "한나라당",
-        "rate": 24.16,
-        "regionKey": "gyeonggi",
-        "district": "포천군",
-        "runnerName": "박준수",
-        "runnerParty": "자민련",
-        "runner": "other",
-        "runnerRate": 15.85
-      }
-    ],
-    "gangwon/고성군(강원)": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "함형구",
-        "winnerParty": "한나라당",
-        "rate": 43.66,
-        "regionKey": "gangwon",
-        "district": "고성군(강원)",
-        "runnerName": "황종국",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 38.63
-      }
-    ],
-    "chungbuk/청원군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "오효진",
-        "winnerParty": "자민련",
-        "rate": 42.13,
-        "regionKey": "chungbuk",
-        "district": "청원군",
-        "runnerName": "차주영",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 29.71
-      },
-      {
-        "election": 4,
-        "year": 2006,
-        "winner": "ppp",
-        "winnerName": "김재욱",
-        "winnerParty": "한나라당",
-        "rate": 36.94,
-        "regionKey": "chungbuk",
-        "district": "청원군",
-        "runnerName": "변장섭",
-        "runnerParty": "열린우리당",
-        "runner": "democratic",
-        "runnerRate": 32.36
-      },
-      {
-        "election": 5,
-        "year": 2010,
-        "winner": "democratic",
-        "winnerName": "이종윤",
-        "winnerParty": "민주당",
-        "rate": 57.76,
-        "regionKey": "chungbuk",
-        "district": "청원군",
-        "runnerName": "김병국",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 33.01
-      }
-    ],
-    "chungnam/연기군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "이기봉",
-        "winnerParty": "한나라당",
-        "rate": 49.32,
-        "regionKey": "chungnam",
-        "district": "연기군",
-        "runnerName": "최준섭",
-        "runnerParty": "자민련",
-        "runner": "other",
-        "runnerRate": 43.62
-      },
-      {
-        "election": 4,
-        "year": 2006,
-        "winner": "other",
-        "winnerName": "이기봉",
-        "winnerParty": "국민중심당",
-        "rate": 40.46,
-        "regionKey": "chungnam",
-        "district": "연기군",
-        "runnerName": "최준섭",
-        "runnerParty": "열린우리당",
-        "runner": "democratic",
-        "runnerRate": 40.44
-      },
-      {
-        "election": 5,
-        "year": 2010,
-        "winner": "other",
-        "winnerName": "유한식",
-        "winnerParty": "자유선진당",
-        "rate": 52.96,
-        "regionKey": "chungnam",
-        "district": "연기군",
-        "runnerName": "홍영섭",
-        "runnerParty": "민주당",
-        "runner": "democratic",
-        "runnerRate": 30.02
-      }
-    ],
-    "chungnam/당진군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "other",
-        "winnerName": "김낙성",
-        "winnerParty": "자민련",
-        "rate": 30.99,
-        "regionKey": "chungnam",
-        "district": "당진군",
-        "runnerName": "황규호",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 23.88
-      },
-      {
-        "election": 4,
-        "year": 2006,
-        "winner": "democratic",
-        "winnerName": "민종기",
-        "winnerParty": "열린우리당",
-        "rate": 41.66,
-        "regionKey": "chungnam",
-        "district": "당진군",
-        "runnerName": "이철환",
-        "runnerParty": "국민중심당",
-        "runner": "other",
-        "runnerRate": 33.01
-      },
-      {
-        "election": 5,
-        "year": 2010,
-        "winner": "other",
-        "winnerName": "이철환",
-        "winnerParty": "자유선진당",
-        "rate": 48.75,
-        "regionKey": "chungnam",
-        "district": "당진군",
-        "runnerName": "김건",
-        "runnerParty": "민주당",
-        "runner": "democratic",
-        "runnerRate": 23.34
-      }
-    ],
     "gyeongnam/마산시": [
       {
         "election": 3,
@@ -19721,22 +19627,6 @@
         "district": "제주시"
       }
     ],
-    "jeju/북제주군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "신철주",
-        "winnerParty": "한나라당",
-        "rate": 60.27,
-        "regionKey": "jeju",
-        "district": "북제주군",
-        "runnerName": "문창래",
-        "runnerParty": "새천년민주당",
-        "runner": "democratic",
-        "runnerRate": 39.72
-      }
-    ],
     "jeju/서귀포시": [
       {
         "election": 3,
@@ -19753,74 +19643,48 @@
         "runnerRate": 47.98
       }
     ],
-    "jeju/남제주군": [
+    "sejong/세종시": [
       {
         "election": 3,
         "year": 2002,
-        "winner": "democratic",
-        "winnerName": "강기권",
-        "winnerParty": "새천년민주당",
-        "rate": 100.0,
-        "regionKey": "jeju",
-        "district": "남제주군"
-      }
-    ],
-    "incheon/남구": [
+        "winner": "ppp",
+        "winnerName": "이기봉",
+        "winnerParty": "한나라당",
+        "rate": 49.32,
+        "regionKey": "chungnam",
+        "district": "연기군",
+        "runnerName": "최준섭",
+        "runnerParty": "자민련",
+        "runner": "other",
+        "runnerRate": 43.62
+      },
       {
         "election": 4,
         "year": 2006,
-        "winner": "ppp",
-        "winnerName": "이영수",
-        "winnerParty": "한나라당",
-        "rate": 54.59,
-        "regionKey": "incheon",
-        "district": "남구",
-        "runnerName": "박우섭",
+        "winner": "other",
+        "winnerName": "이기봉",
+        "winnerParty": "국민중심당",
+        "rate": 40.46,
+        "regionKey": "chungnam",
+        "district": "연기군",
+        "runnerName": "최준섭",
         "runnerParty": "열린우리당",
         "runner": "democratic",
-        "runnerRate": 31.61
+        "runnerRate": 40.44
       },
       {
         "election": 5,
         "year": 2010,
-        "winner": "democratic",
-        "winnerName": "박우섭",
-        "winnerParty": "민주당",
-        "rate": 53.32,
-        "regionKey": "incheon",
-        "district": "남구",
-        "runnerName": "이영수",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 39.87
-      },
-      {
-        "election": 6,
-        "year": 2014,
-        "winner": "democratic",
-        "winnerName": "박우섭",
-        "winnerParty": "새정치민주연합",
-        "rate": 50.2,
-        "regionKey": "incheon",
-        "district": "남구",
-        "runnerName": "최백규",
-        "runnerParty": "새누리당",
-        "runner": "ppp",
-        "runnerRate": 49.8
-      },
-      {
-        "election": 7,
-        "year": 2018,
-        "winner": "democratic",
-        "winnerName": "김정식",
-        "winnerParty": "더불어민주당",
-        "rate": 52.28,
-        "regionKey": "incheon",
-        "district": "남구",
-        "runnerName": "이영훈",
-        "runnerParty": "자유한국당",
-        "runner": "ppp",
-        "runnerRate": 30.52
+        "winner": "other",
+        "winnerName": "유한식",
+        "winnerParty": "자유선진당",
+        "rate": 52.96,
+        "regionKey": "chungnam",
+        "district": "연기군",
+        "runnerName": "홍영섭",
+        "runnerParty": "민주당",
+        "runner": "democratic",
+        "runnerRate": 30.02
       }
     ]
   }
