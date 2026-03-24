@@ -103,6 +103,215 @@ const PollTab = (() => {
         return { outlierIds };
     }
 
+    // ── 조사 0건 — 선거유형별 빈 화면 ──
+
+    function _buildEmptyPollView(regionKey, electionType, districtName) {
+        const region = ElectionData.getRegion(regionKey);
+        const regionName = region?.name || '';
+        const dday = typeof ElectionCalendar !== 'undefined' ? ElectionCalendar.getDday() : null;
+        const ddayText = dday != null && dday > 0 ? `D-${dday}` : '';
+
+        // 기초단체장: 직전 선거 결과 + 현재 후보 현황을 보여줌
+        if (electionType === 'mayor' && districtName) {
+            const prevHtml = _buildPrevElectionCard(regionKey, districtName);
+            const candidateHtml = _buildCandidateStatusCard(regionKey, districtName);
+            return `
+                <div class="poll-empty-rich">
+                    <div class="poll-empty-header">
+                        <i class="fas fa-chart-bar" style="font-size:1.5rem;color:var(--accent-blue);"></i>
+                        <div>
+                            <div style="font-weight:700;font-size:0.95rem;">등록된 여론조사가 아직 없습니다</div>
+                            <div style="color:var(--text-muted);font-size:0.8rem;margin-top:2px;">
+                                ${ddayText ? `선거 ${ddayText} · ` : ''}조사가 등록되면 자동으로 표시됩니다
+                            </div>
+                        </div>
+                    </div>
+                    ${prevHtml}
+                    ${candidateHtml}
+                    <div style="margin-top:12px;font-size:0.75rem;color:var(--text-disabled);text-align:center;">
+                        <a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue);">여심위에서 직접 확인</a>
+                    </div>
+                </div>`;
+        }
+
+        // 재보궐
+        if (electionType === 'byElection') {
+            return `<div class="district-no-data">
+                <p>이 선거구의 여론조사가 아직 등록되지 않았습니다.</p>
+                <p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;"><i class="fas fa-info-circle"></i> 재보궐 여론조사는 지방선거 여론조사와 별개로 등록됩니다.</p>
+                <p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p>
+            </div>`;
+        }
+
+        // 교육감
+        if (electionType === 'superintendent') {
+            return `<div class="district-no-data">
+                <p>이 지역의 교육감 여론조사가 아직 등록되지 않았습니다.</p>
+                <p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p>
+            </div>`;
+        }
+
+        // 광역단체장 등 기본
+        return `<div class="district-no-data">
+            <p>이 지역에 등록된 여론조사가 아직 없습니다.</p>
+            <p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p>
+        </div>`;
+    }
+
+    function _buildPrevElectionCard(regionKey, districtName) {
+        const history = ElectionData.getMayorHistoricalData
+            ? ElectionData.getMayorHistoricalData(regionKey, districtName) : [];
+        if (!history.length) return '';
+        const last = history[history.length - 1];
+        if (!last) return '';
+
+        const winColor = ElectionData.getPartyColor(last.winner || 'independent');
+        const runColor = ElectionData.getPartyColor(last.runner || 'independent');
+        const winName = ElectionData.getPartyName(last.winner || 'independent');
+        const runName = ElectionData.getPartyName(last.runner || 'independent');
+        const maxRate = Math.max(last.rate || 0, last.runnerRate || 0, 1);
+
+        return `
+            <div class="poll-empty-card">
+                <div class="poll-empty-card-title"><i class="fas fa-history"></i> ${last.year || '직전'}년 선거 결과</div>
+                <div class="poll-card-result" style="margin-top:8px;">
+                    <div class="poll-card-result-info">
+                        <span class="poll-card-candidate">${last.winnerName || '당선자'} <span style="font-size:0.7rem;color:${winColor};">${winName}</span></span>
+                        <span class="poll-card-support" style="font-weight:700;">${last.rate ? last.rate.toFixed(1) + '%' : ''}</span>
+                    </div>
+                    <div class="poll-card-bar-bg"><div class="poll-card-bar" style="width:${(last.rate||0)/maxRate*100}%;background:${winColor};"></div></div>
+                </div>
+                ${last.runnerName ? `<div class="poll-card-result">
+                    <div class="poll-card-result-info">
+                        <span class="poll-card-candidate">${last.runnerName} <span style="font-size:0.7rem;color:${runColor};">${runName}</span></span>
+                        <span class="poll-card-support">${last.runnerRate ? last.runnerRate.toFixed(1) + '%' : ''}</span>
+                    </div>
+                    <div class="poll-card-bar-bg"><div class="poll-card-bar" style="width:${(last.runnerRate||0)/maxRate*100}%;background:${runColor};"></div></div>
+                </div>` : ''}
+                ${last.turnout ? `<div style="font-size:0.75rem;color:var(--text-muted);margin-top:6px;">투표율 ${last.turnout.toFixed(1)}%</div>` : ''}
+            </div>`;
+    }
+
+    function _buildCandidateStatusCard(regionKey, districtName) {
+        const mayorData = ElectionData.getMayorData ? ElectionData.getMayorData(regionKey, districtName) : null;
+        const candidates = mayorData?.candidates || [];
+        if (!candidates.length) return '';
+
+        const statusMap = {};
+        candidates.forEach(c => {
+            const s = c.status || 'UNKNOWN';
+            if (!statusMap[s]) statusMap[s] = [];
+            statusMap[s].push(c);
+        });
+
+        const statusLabels = { NOMINATED: '공천확정', DECLARED: '출마선언', EXPECTED: '출마예상', RUMORED: '거론' };
+        const items = Object.entries(statusMap).map(([status, cands]) => {
+            const label = statusLabels[status] || status;
+            const names = cands.slice(0, 3).map(c => {
+                const color = ElectionData.getPartyColor(c.party || 'independent');
+                return `<span style="color:${color};font-weight:600;">${c.name}</span>`;
+            }).join(', ');
+            const more = cands.length > 3 ? ` 외 ${cands.length - 3}명` : '';
+            return `<div style="margin-top:4px;font-size:0.82rem;">
+                <span style="font-size:0.7rem;padding:1px 6px;border-radius:3px;background:var(--bg-elevated);color:var(--text-muted);margin-right:4px;">${label}</span>
+                ${names}${more}
+            </div>`;
+        });
+
+        return `
+            <div class="poll-empty-card">
+                <div class="poll-empty-card-title"><i class="fas fa-users"></i> 현재 후보 현황 (${candidates.length}명)</div>
+                ${items.join('')}
+            </div>`;
+    }
+
+    // ── 조사 1건 — 스냅샷 카드 (방법론 상세 기본 펼침) ──
+
+    function _renderSnapshotCard(poll, container, regionKey, districtName) {
+        const method = poll.method || {};
+        const surveyStart = poll.surveyDate?.start || '';
+        const surveyEnd = poll.surveyDate?.end || '';
+        const publishDate = poll.publishDate || '';
+        const dateText = surveyStart && surveyEnd
+            ? `${surveyStart}~${surveyEnd} 조사`
+            : (publishDate ? `${publishDate} 공표` : '');
+        const methodType = method.type || method.raw || '';
+        const methodLabel = methodType === 'ARS' ? 'ARS 자동응답'
+            : methodType === 'interview' ? '전화 면접' : methodType || '';
+        const sampleSize = method.sampleSize || '';
+        const margin = method.marginOfError;
+        const marginText = margin ? `±${Number(margin).toFixed(1)}%p` : '';
+        const responseRate = method.responseRate;
+        const clientOrg = poll.clientOrg || '';
+        const regId = poll.registrationId || '';
+
+        // 조사~공표 간격 계산
+        const pubGapDays = (() => {
+            if (!surveyEnd || !publishDate) return null;
+            const d1 = new Date(surveyEnd), d2 = new Date(publishDate);
+            if (isNaN(d1) || isNaN(d2)) return null;
+            return Math.round((d2 - d1) / 86400000);
+        })();
+        const pubGapWarn = pubGapDays !== null && pubGapDays > 7;
+
+        // 결과 바 차트
+        const validResults = (poll.results || []).filter(r => r.candidateName && r.support > 0)
+            .sort((a, b) => b.support - a.support);
+        const maxSupport = validResults.length > 0 ? validResults[0].support : 1;
+
+        const barsHtml = validResults.map(r => {
+            const party = r.party || 'independent';
+            const color = ElectionData.getPartyColor(party);
+            const barW = (r.support / maxSupport * 100);
+            // 오차범위 에러바
+            const errorBar = margin ? `<div style="position:absolute;top:50%;transform:translateY(-50%);left:${Math.max(0,barW - margin/maxSupport*100)}%;width:${margin/maxSupport*200}%;height:3px;background:rgba(255,255,255,0.3);border-radius:2px;"></div>` : '';
+            return `<div class="poll-card-result">
+                <div class="poll-card-result-info">
+                    <span class="poll-card-candidate">${r.candidateName}</span>
+                    <span class="poll-card-support" style="font-weight:700;">${r.support.toFixed(1)}%</span>
+                </div>
+                <div class="poll-card-bar-bg" style="position:relative;">
+                    <div class="poll-card-bar" style="width:${barW}%;background:${color};"></div>
+                    ${errorBar}
+                </div>
+            </div>`;
+        }).join('');
+
+        container.innerHTML = `
+            <div class="panel-card" style="padding:16px;">
+                <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+                    <span style="font-size:0.7rem;padding:2px 8px;border-radius:4px;background:var(--accent-blue);color:white;font-weight:700;">스냅샷</span>
+                    <span style="font-size:0.85rem;font-weight:700;">${poll.pollOrg || '기관 미상'}</span>
+                    <span style="font-size:0.78rem;color:var(--text-muted);">${dateText}</span>
+                </div>
+
+                <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+                    ${methodLabel ? `<span class="poll-method-badge">${methodLabel}</span>` : ''}
+                    ${sampleSize ? `<span class="poll-method-badge">표본 ${sampleSize}명</span>` : ''}
+                    ${marginText ? `<span class="poll-method-badge">오차 ${marginText}</span>` : ''}
+                    ${pubGapWarn ? `<span class="poll-method-badge" style="background:rgba(245,158,11,0.15);color:#D97706;">지연 공표 (${pubGapDays}일)</span>` : ''}
+                </div>
+
+                ${barsHtml || '<div style="color:var(--text-muted);font-size:0.8rem;">결과 상세는 여심위 원본에서 확인하세요</div>'}
+
+                <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border-light);">
+                    <div style="font-size:0.75rem;font-weight:600;color:var(--text-muted);margin-bottom:6px;"><i class="fas fa-microscope"></i> 조사 방법론</div>
+                    <div style="font-size:0.78rem;color:var(--text-secondary);line-height:1.6;">
+                        ${clientOrg ? `<div>의뢰: ${clientOrg}</div>` : ''}
+                        ${method.raw ? `<div>방법: ${method.raw}</div>` : ''}
+                        ${method.samplingFrame ? `<div>표본틀: ${method.samplingFrame}</div>` : ''}
+                        ${responseRate ? `<div>응답률: ${(responseRate * 100).toFixed(1)}%${responseRate < 0.05 ? ' <span style="color:#D97706;">⚠ 저응답률</span>' : ''}</div>` : ''}
+                        ${method.weightingMethod ? `<div>가중: ${method.weightingMethod}</div>` : ''}
+                        ${regId ? `<div>등록: <a href="https://www.nesdc.go.kr/poll/pollDetailView.do?nttId=${regId}" target="_blank" rel="noopener" style="color:var(--accent-blue);">${regId}</a></div>` : ''}
+                    </div>
+                </div>
+
+                <div style="margin-top:10px;font-size:0.72rem;color:var(--text-disabled);text-align:center;">
+                    <i class="fas fa-info-circle"></i> 단일 조사 결과입니다. 추세 판단은 추가 조사가 필요합니다.
+                </div>
+            </div>`;
+    }
+
     function _getPollHeaderTitle(regionKey, electionType, districtName) {
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
@@ -285,19 +494,13 @@ const PollTab = (() => {
         }
 
         if (!polls.length) {
-            let emptyMsg = '';
-            if (electionType === 'byElection') {
-                emptyMsg = '<p>이 선거구의 여론조사가 아직 등록되지 않았습니다.</p><p style="margin-top:8px;color:var(--text-muted);font-size:0.8rem;"><i class="fas fa-info-circle"></i> 재보궐 여론조사는 지방선거 여론조사와 별개입니다.</p>';
-            } else if (electionType === 'superintendent') {
-                emptyMsg = '<p>이 지역의 교육감 여론조사가 아직 등록되지 않았습니다.</p>';
-            } else if (electionType === 'mayor' && districtName) {
-                const region = ElectionData.getRegion(regionKey);
-                const regionName = region?.name || '';
-                emptyMsg = `<p>이 지역의 기초단체장 여론조사가 아직 없습니다.</p><p style="margin-top:4px;color:var(--text-muted);font-size:0.8rem;">${regionName} 전체 여론조사를 확인해보세요.</p>`;
-            } else {
-                emptyMsg = '<p>이 지역에 등록된 여론조사가 아직 없습니다.</p>';
-            }
-            cardsSection.innerHTML = `<div class="district-no-data">${emptyMsg}<p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p></div>`;
+            cardsSection.innerHTML = _buildEmptyPollView(regionKey, electionType, districtName);
+            return;
+        }
+
+        // ── 기초단체장 조사 1건: 스냅샷 카드로 표시 ──
+        if (electionType === 'mayor' && districtName && polls.length === 1) {
+            _renderSnapshotCard(polls[0], cardsSection, regionKey, districtName);
             return;
         }
 
@@ -376,9 +579,7 @@ const PollTab = (() => {
             visibleGroups.forEach((group, i) => {
                 const card = document.createElement('div');
                 card.className = 'panel-card poll-trend-card';
-                const trendTitle = group._merged
-                    ? `<i class="fas fa-chart-line"></i> 지지율 추이 (${group.polls.length}건, 기관 통합)`
-                    : `<i class="fas fa-chart-line"></i> ${group.pollOrg} 추이 (${group.polls.length}회 조사)`;
+                const trendTitle = `<i class="fas fa-chart-line"></i> ${group.pollOrg} 추이 (${group.polls.length}회 조사)`;
                 card.innerHTML = `
                     <h4>${trendTitle}</h4>
                     <canvas id="poll-trend-dynamic-${i}"></canvas>

@@ -127,6 +127,9 @@ const App = (() => {
         // Load polls data (여론조사)
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
+        // 모든 데이터 로드 완료 → 검색 인덱스 무효화 (재보궐 등 동적 데이터 반영)
+        invalidateSearchIndex();
+
         // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
         try {
             const [poolResp, regResp, issuesResp] = await Promise.all([
@@ -865,14 +868,15 @@ const App = (() => {
         partyData.forEach(([party, value]) => {
             const pct = (value / totalPct * 100).toFixed(1);
             const color = ElectionData.getPartyColor(party);
-            barHtml += `<div class="party-bar-segment" style="width:${pct}%;background:${color}" title="${ElectionData.getPartyName(party)}: ${value}%"></div>`;
+            const segName = party === 'independent' ? '무당층' : ElectionData.getPartyName(party);
+            barHtml += `<div class="party-bar-segment" style="width:${pct}%;background:${color}" title="${segName}: ${value}%"></div>`;
         });
         barHtml += '</div>';
 
         barHtml += '<div class="party-bar-labels">';
         partyData.forEach(([party, value]) => {
             const color = ElectionData.getPartyColor(party);
-            const name = ElectionData.parties[party]?.shortName || party;
+            const name = party === 'independent' ? '무당층' : (ElectionData.parties[party]?.shortName || party);
             barHtml += `<span class="party-bar-label"><span class="party-bar-label-dot" style="background:${color}"></span>${name} ${value}%</span>`;
         });
         barHtml += '</div>';
@@ -929,9 +933,35 @@ const App = (() => {
     // Smart Search
     // ============================================
 
-    // 초성 매핑 테이블
     /** 검색 인덱스 (최초 1회 빌드) — 지역 × 선거유형 조합 */
     let _searchIndex = null;
+    function invalidateSearchIndex() { _searchIndex = null; }
+
+    // 이름에서 검색 별칭 생성 (접미사 제거, 구분자 분리)
+    function _buildAliases(name) {
+        const aliases = new Set();
+        if (!name) return aliases;
+        aliases.add(name);
+        // "서울특별시" → "서울", "경기도" → "경기", "군산시" → "군산"
+        const stripped = name
+            .replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '')
+            .replace(/(시|군|구)$/, '');
+        if (stripped && stripped !== name) aliases.add(stripped);
+        // "전북 군산·김제·부안갑" → ["전북", "군산", "김제", "부안", "군산·김제·부안갑"]
+        name.split(/[\s·,]+/).forEach(part => {
+            if (part.length >= 2) {
+                aliases.add(part);
+                // "군산시김제시부안군갑" 같은 붙어있는 형태도 분리
+                const subParts = part.replace(/(시|군|구)/g, '$1 ').trim().split(/\s+/);
+                subParts.forEach(sp => {
+                    const clean = sp.replace(/(시|군|구|갑|을|병|정)$/, '');
+                    if (clean.length >= 2) aliases.add(clean);
+                });
+            }
+        });
+        return aliases;
+    }
+
     function buildSearchIndex() {
         if (_searchIndex) return _searchIndex;
         const index = [];
@@ -956,14 +986,15 @@ const App = (() => {
 
         // 1) 시도 (17개) × 선거유형
         Object.entries(ElectionData.regions).forEach(([key, region]) => {
+            const aliases = _buildAliases(region.name);
             provinceTypes.forEach(pt => {
                 index.push({
                     regionKey: key,
                     name: region.name,
                     nameEng: region.nameEng || '',
+                    aliases: [...aliases, pt.label],
                     electionType: pt.electionType,
                     typeLabel: pt.label,
-                    displayName: `${pt.label} ${region.name}`,
                     level: 'province',
                 });
             });
@@ -974,19 +1005,48 @@ const App = (() => {
             Object.entries(ElectionData.subRegionData).forEach(([parentKey, districts]) => {
                 const parent = ElectionData.getRegion(parentKey);
                 if (!parent) return;
+                const parentShort = parent.name.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '');
                 districts.forEach(d => {
+                    const aliases = _buildAliases(d.name);
+                    aliases.add(parentShort); // "경기" 검색으로 경기도 시군구도 찾기
                     districtTypes.forEach(dt => {
+                        aliases.add(dt.label);
                         index.push({
                             regionKey: parentKey,
                             subDistrict: d.name,
                             name: d.name,
                             parentName: parent.name,
+                            aliases: [...aliases],
                             electionType: dt.electionType,
                             typeLabel: dt.label,
-                            displayName: `${dt.label} ${d.name}`,
                             level: 'district',
                         });
                     });
+                });
+            });
+        }
+
+        // 3) 재보궐 선거구 — 이름을 토큰화하여 개별 지역명으로도 검색 가능
+        if (ElectionData._byElectionCache?.districts) {
+            Object.entries(ElectionData._byElectionCache.districts).forEach(([key, d]) => {
+                const parent = ElectionData.getRegion(d.region);
+                const aliases = _buildAliases(d.district || key);
+                aliases.add('재보궐');
+                aliases.add('보궐');
+                if (parent) {
+                    const parentShort = parent.name.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '');
+                    aliases.add(parentShort);
+                }
+                index.push({
+                    regionKey: d.region || key.split('-')[0],
+                    subDistrict: key,
+                    name: d.district || key,
+                    parentName: parent?.name || '',
+                    aliases: [...aliases],
+                    electionType: 'byElection',
+                    typeLabel: '재보궐',
+                    level: 'district',
+                    _byElectionKey: key,
                 });
             });
         }
@@ -1014,16 +1074,22 @@ const App = (() => {
             const matches = [];
 
             for (const item of index) {
-                const texts = [item.name, item.nameEng, item.parentName].filter(Boolean);
-                const matched = texts.some(t => t.includes(query) || t.toLowerCase().includes(q));
-                if (!matched) continue;
+                // 별칭 + 원본 이름 + 영문 이름에서 매칭
+                const allTexts = [...(item.aliases || []), item.nameEng].filter(Boolean);
+                let bestMatch = 0; // 0=no match, 1=partial, 2=startsWith, 3=exact
 
-                let score = 0;
-                if (item.name.startsWith(query)) score += 100;
-                else if (item.name.includes(query)) score += 50;
-                if (item.level === 'province') score += 20;
+                for (const t of allTexts) {
+                    if (t === query) { bestMatch = 3; break; }
+                    if (t.startsWith(query)) { bestMatch = Math.max(bestMatch, 2); }
+                    else if (t.includes(query) || t.toLowerCase().includes(q)) { bestMatch = Math.max(bestMatch, 1); }
+                }
+                if (bestMatch === 0) continue;
+
+                let score = bestMatch * 40; // exact=120, starts=80, partial=40
+                if (item.name.startsWith(query)) score += 30; // 원본 이름 직접 매칭 보너스
+                if (item.level === 'province') score += 15;
                 // 주요 선거유형 우선
-                const typePriority = { governor: 7, superintendent: 6, mayor: 5, council: 4, localCouncil: 3, councilProportional: 2, localCouncilProportional: 1 };
+                const typePriority = { governor: 7, superintendent: 6, mayor: 5, council: 4, localCouncil: 3, councilProportional: 2, localCouncilProportional: 1, byElection: 3 };
                 score += (typePriority[item.electionType] || 0);
                 matches.push({ ...item, score });
             }
@@ -1032,25 +1098,41 @@ const App = (() => {
             const limited = matches.slice(0, 20);
             activeIdx = -1;
 
+            const typeIcons = {
+                governor: 'fa-landmark', superintendent: 'fa-graduation-cap',
+                mayor: 'fa-building', council: 'fa-users', localCouncil: 'fa-user-friends',
+                councilProportional: 'fa-chart-pie', localCouncilProportional: 'fa-chart-pie',
+                byElection: 'fa-bolt'
+            };
+            const typeBadgeColors = {
+                governor: '#3b82f6', superintendent: '#8b5cf6',
+                mayor: '#059669', council: '#0891b2', localCouncil: '#0891b2',
+                councilProportional: '#d97706', localCouncilProportional: '#d97706',
+                byElection: '#f59e0b'
+            };
+
             if (!limited.length) {
                 results.innerHTML = `
                     <div class="search-result-item no-hover">
                         <div class="result-text">
                             <div class="result-name" style="color:var(--text-muted)">검색 결과가 없습니다</div>
-                            <div class="result-desc">시도 또는 시군구 이름으로 검색하세요</div>
+                            <div class="result-desc">시도, 시군구, 선거구 이름으로 검색하세요</div>
                         </div>
                     </div>`;
             } else {
                 results.innerHTML = limited.map((m, i) => {
                     const highlighted = highlightMatch(m.name, query);
                     const parentInfo = m.parentName ? `${m.parentName} > ` : '';
+                    const icon = typeIcons[m.electionType] || 'fa-vote-yea';
+                    const badgeColor = typeBadgeColors[m.electionType] || '#6b7280';
                     return `
                         <div class="search-result-item" data-region="${m.regionKey}" ${m.subDistrict ? `data-subdistrict="${m.subDistrict}"` : ''} data-election-type="${m.electionType}" data-idx="${i}">
+                            <i class="fas ${icon}" style="color:${badgeColor};font-size:0.85rem;flex-shrink:0;width:18px;text-align:center;"></i>
                             <div class="result-text">
-                                <div class="result-name">${m.typeLabel} ${highlighted}</div>
+                                <div class="result-name">${highlighted}</div>
                                 <div class="result-desc">${parentInfo}${m.typeLabel}</div>
                             </div>
-                            <span class="result-type-badge">${m.level === 'province' ? '시도' : '시군구'}</span>
+                            <span class="result-type-badge" style="background:${badgeColor}18;color:${badgeColor};border:1px solid ${badgeColor}30;">${m.typeLabel}</span>
                         </div>`;
                 }).join('');
             }
@@ -1121,6 +1203,10 @@ const App = (() => {
                         MapModule.switchToProportionalSigunguDetail(regionKey, subDistrict);
                     }, 600);
 
+                } else if (electionType === 'byElection') {
+                    // 재보궐: 직접 onByElectionSelected 호출
+                    onByElectionSelected(subDistrict);
+
                 } else {
                     // 기초단체장(mayor) 등: 시군구 지도 → 해당 시군구 선택
                     const p = MapModule.switchToDistrictMap(regionKey);
@@ -1145,14 +1231,22 @@ const App = (() => {
             debounceTimer = setTimeout(() => doSearch(e.target.value.trim()), 80);
         });
 
+        // 포커스 — 이미 텍스트가 있으면 드롭다운 다시 표시
+        input.addEventListener('focus', () => {
+            const q = input.value.trim();
+            if (q) doSearch(q);
+        });
+
         // 클릭
-        results.addEventListener('click', (e) => {
+        results.addEventListener('mousedown', (e) => {
+            // mousedown + preventDefault로 input blur 방지
+            e.preventDefault();
             e.stopPropagation();
             selectItem(e.target.closest('.search-result-item'));
         });
 
-        // 외부 클릭
-        document.addEventListener('click', (e) => {
+        // 외부 클릭 — search-box 바깥 클릭 시에만 닫기
+        document.addEventListener('mousedown', (e) => {
             if (!e.target.closest('.search-box')) {
                 results.classList.remove('active');
             }

@@ -626,10 +626,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     font-size: 0.65rem;
     color: var(--text-muted);
     background: var(--bg-input);
-    padding: 2px 6px;
+    padding: 2px 8px;
     border-radius: 4px;
     flex-shrink: 0;
-    border: none;
+    font-weight: 600;
+    white-space: nowrap;
 }
 
 .search-results {
@@ -1449,11 +1450,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 #korea-map .region-label {
     fill: var(--map-label-fill);
     font-size: 10px;
-    font-weight: 600;
+    font-weight: 700;
     text-anchor: middle;
     pointer-events: none;
     stroke: var(--map-label-stroke);
-    stroke-width: 2.5px;
+    stroke-width: 3px;
     paint-order: stroke;
 }
 
@@ -2358,6 +2359,39 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     color: var(--color-info);
 }
 
+/* ── 여론조사 빈 화면 + 스냅샷 ── */
+.poll-empty-rich {
+    padding: 16px;
+}
+.poll-empty-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+.poll-empty-card {
+    background: var(--bg-elevated);
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 10px;
+}
+.poll-empty-card-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+.poll-method-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--bg-elevated);
+    color: var(--text-secondary);
+}
+
 /* ── 추이 차트 ── */
 .poll-trend-card {
     margin-bottom: var(--space-12);
@@ -2971,21 +3005,21 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     gap: 6px;
     padding: 10px;
     cursor: pointer;
-    color: #8b919f;
+    color: var(--text-muted);
     font-size: 0.75rem;
     user-select: none;
-    background: #101415;
-    border-bottom: 1px solid rgba(65, 71, 84, 0.15);
+    background: var(--bg-tertiary);
+    border-bottom: 1px solid var(--border-light);
 }
 
 .footer-panel-close:hover {
-    color: #e0e3e5;
-    background: #191c1e;
+    color: var(--text-primary);
+    background: var(--bg-elevated);
 }
 
 .al-footer {
     width: 100%;
-    background: #101415;
+    background: var(--bg-secondary);
     font-family: 'Inter', 'Noto Sans KR', sans-serif;
 }
 
@@ -3024,7 +3058,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-logo-text {
     font-size: 24px;
     font-weight: 900;
-    color: #e0e3e5;
+    color: var(--text-primary);
     letter-spacing: -0.02em;
     line-height: 1;
 }
@@ -3040,7 +3074,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-logo-slogan {
     font-size: 12px;
     font-weight: 400;
-    color: #8b90a0;
+    color: var(--text-muted);
     letter-spacing: 0.04em;
     line-height: 1;
 }
@@ -3048,14 +3082,14 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-tagline {
     font-size: 14px;
     font-weight: 500;
-    color: #c1c6d6;
+    color: var(--text-secondary);
     line-height: 1.6;
     margin-bottom: 4px;
 }
 
 .al-footer .footer-sub {
     font-size: 12px;
-    color: #8b919f;
+    color: var(--text-muted);
     margin-bottom: 24px;
 }
 
@@ -3066,31 +3100,31 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-election-title {
     font-size: 13px;
     font-weight: 600;
-    color: #c1c6d6;
+    color: var(--text-secondary);
     margin-bottom: 2px;
 }
 
 .al-footer .footer-election-date {
     font-size: 12px;
-    color: #8b919f;
+    color: var(--text-muted);
 }
 
 .al-footer .footer-sources {
     padding-top: 20px;
-    border-top: 1px solid rgba(65, 71, 84, 0.15);
+    border-top: 1px solid var(--border-light);
 }
 
 .al-footer .footer-sources-title {
     font-size: 13px;
     font-weight: 700;
-    color: #e0e3e5;
+    color: var(--text-primary);
     margin-bottom: 8px;
     letter-spacing: 0.02em;
 }
 
 .al-footer .footer-sources-list {
     font-size: 12px;
-    color: #8b919f;
+    color: var(--text-muted);
     line-height: 1.7;
 }
 
@@ -3105,7 +3139,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-col-title {
     font-size: 13px;
     font-weight: 700;
-    color: #e0e3e5;
+    color: var(--text-primary);
     text-transform: uppercase;
     letter-spacing: 0.06em;
     margin-bottom: 16px;
@@ -3123,23 +3157,23 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-links a {
     font-size: 14px;
     font-weight: 500;
-    color: #c1c6d6;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 200ms ease-in-out;
 }
 
 .al-footer .footer-links a:hover {
-    color: #a9c7ff;
+    color: var(--accent-blue);
 }
 
 .al-footer .footer-meta {
     font-size: 13px;
-    color: #8b919f;
+    color: var(--text-muted);
 }
 
 /* ─── Bottom Section ─── */
 .al-footer .footer-bottom {
-    background: #191c1e;
+    background: var(--bg-tertiary);
     padding: 24px 0 20px;
 }
 
@@ -3161,13 +3195,13 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-copyright {
     font-size: 12px;
     font-weight: 500;
-    color: #c1c6d6;
+    color: var(--text-secondary);
     letter-spacing: 0.02em;
 }
 
 .al-footer .footer-data-source {
     font-size: 11px;
-    color: #8b90a0;
+    color: var(--text-muted);
     letter-spacing: 0.01em;
 }
 
@@ -3179,24 +3213,24 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-legal-links a {
     font-size: 12px;
     font-weight: 500;
-    color: #c1c6d6;
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 200ms ease-in-out;
 }
 
 .al-footer .footer-legal-links a:hover {
-    color: #a9c7ff;
+    color: var(--accent-blue);
 }
 
 .al-footer .footer-social-link {
-    color: #c1c6d6;
+    color: var(--text-secondary);
     transition: color 200ms ease-in-out;
     display: flex;
     align-items: center;
 }
 
 .al-footer .footer-social-link:hover {
-    color: #a9c7ff;
+    color: var(--accent-blue);
 }
 
 .al-footer .footer-disclaimer {
@@ -3204,7 +3238,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     margin: 12px auto 0;
     padding: 0 32px;
     font-size: 11px;
-    color: #8b919f;
+    color: var(--text-muted);
     letter-spacing: 0.02em;
 }
 
@@ -4235,10 +4269,11 @@ body.banner-hidden #main-content {
     align-items: center;
     gap: 4px;
     padding: 4px 10px;
-    background: rgba(10, 14, 23, 0.85);
-    backdrop-filter: blur(8px);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
     border-radius: 6px;
-    border: none;
     font-size: 0.8rem;
 }
 
