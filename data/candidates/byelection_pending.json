@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-03-22T01:22:48.380685",
-    "totalDetections": 25,
-    "pendingCount": 25,
+    "lastRun": "2026-03-24T03:17:16.965292",
+    "totalDetections": 33,
+    "pendingCount": 33,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -314,6 +314,16 @@
           "title": "'대출 사기' 양문석 의원, 당선무효형 확정..안산갑 재선거",
           "link": "http://www.breaknews.com/1191275",
           "date": "2026-03-12"
+        },
+        {
+          "title": "양문석 전 의원, ‘재판소원’ 포기… 6·3 안산갑 보선 확정",
+          "link": "https://www.dt.co.kr/article/12052343?ref=naver",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "‘의원직 상실’ 양문석 “재판소원 안 할 것”",
+          "link": "https://www.ichannela.com/news/main/news_detailPage.do?publishId=000000519563",
+          "date": "2026-03-18"
         }
       ],
       "necValidated": false,
@@ -403,6 +413,31 @@
           "title": "민주 '울산시장 후보' 빠르면 주말에 확정",
           "link": "http://www.ujeil.com/news/articleView.html?idxno=382567",
           "date": "2026-03-15"
+        },
+        {
+          "title": "김상욱 띄운 민주…울산서 진보당과 단일화 '꿈틀'",
+          "link": "https://www.hankyung.com/article/202603242129i",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "더불어민주당 울산시당 &quot;울산 남구갑 보선 중앙당 주도 진행&quot;",
+          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1052070",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "김상욱, 與 울산시장 후보 확정…&quot;결선 없이 본경선 과반 득표&quot;",
+          "link": "https://www.mt.co.kr/politics/2026/03/20/2026032019155578666",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "민주당, 울산시장 후보에 김상욱 확정…경선 과반 득표",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8514214&ref=A",
+          "date": "2026-03-20"
+        },
+        {
+          "title": "울산시장 선거 대진표 확정…김상욱-김두겸-김종훈 3자 구도",
+          "link": "https://www.getnews.co.kr/news/articleView.html?idxno=865555",
+          "date": "2026-03-24"
         }
       ],
       "necValidated": false,
@@ -665,6 +700,250 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-03-17T23:02:45.537414"
+    },
+    {
+      "key": "busan-남구갑",
+      "region": "busan",
+      "district": "남구갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 70,
+      "sources": [
+        {
+          "title": "울산 남구갑 보선 '판' 커진다",
+          "link": "https://www.iusm.co.kr/news/articleView.html?idxno=1060870",
+          "date": "2026-03-23"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965193"
+    },
+    {
+      "key": "daegu-대구시",
+      "region": "daegu",
+      "district": "대구시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[6·3 지방선거] 국힘, '주호영 컷오프' 쇼크 '반윤' 집단반발 폭발···...",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=726286",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "요동치는 보수의 심장...'김부겸 어게인' 외치는 민주당",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003217465&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "[6·3 지방선거] 국힘, 대구시장 공천 '중진 탈락설' 현실화···주호영...",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=726195",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "주호영 &quot;1, 2위 컷오프…국힘 사실상 대구시장 선거 포기&quot;",
+          "link": "http://www.hidomin.com/news/articleView.html?idxno=613411",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "주호영·이진숙 충격 컷오프…대구시장 공천 내홍 ‘일촉즉발’",
+          "link": "https://www.bntnews.co.kr/article/view/bnt202603230012",
+          "date": "2026-03-23"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965238"
+    },
+    {
+      "key": "daegu-대구",
+      "region": "daegu",
+      "district": "대구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[맞수다] 대구가 우습나?‥&quot;주호영 컷오프, 윤어게인 영향력&quot; &quot;이진숙은...",
+          "link": "https://imnews.imbc.com/replay/2026/nw1400/article/6809594_36974.html",
+          "date": "2026-03-23"
+        },
+        {
+          "title": "컷오프 주호영 &quot;이정현 정상 아냐, 대구 선거 포기하겠단 선언&quot;",
+          "link": "https://www.joongang.co.kr/article/25413803",
+          "date": "2026-03-22"
+        },
+        {
+          "title": "김부겸, 이번주 내 출마 선언할 듯… 민주당은 대구·경북 지원책 가능...",
+          "link": "https://www.khan.co.kr/article/202603222020005",
+          "date": "2026-03-22"
+        },
+        {
+          "title": "'대구 컷오프' 내홍 지속하는 국힘…경기 등 험지 논의는 제자리",
+          "link": "https://www.yna.co.kr/view/AKR20260324069000001?input=1195m",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "국힘 TK 컷오프 후폭풍…주호영-한동훈 연대설 '솔솔'",
+          "link": "https://news.jtbc.co.kr/article/NB12291016?influxDiv=NAVER",
+          "date": "2026-03-24"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965246"
+    },
+    {
+      "key": "jeonbuk-전국동시",
+      "region": "jeonbuk",
+      "district": "전국동시",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "6.3 군산 국회의원 재선거, 조국 대표 직접 등판하나?",
+          "link": "http://sjbnews.com/news/news.php?number=874120",
+          "date": "2026-03-19"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965260"
+    },
+    {
+      "key": "gyeonggi-청구",
+      "region": "gyeonggi",
+      "district": "청구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "혐의로",
+        "party": "democratic"
+      },
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "‘의원직 상실’ 양문석 “재판 소원 안 할 것”",
+          "link": "https://www.kukinews.com/article/view/kuk202603180180",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "'의원직 상실' 양문석 &quot;재판소원 않겠다&quot;",
+          "link": "https://www.pressian.com/pages/articles/2026031817201721989?utm_source=naver&utm_medium=search",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "양문석 &quot;재판소원 안 해&quot;…안산갑 보궐 확정",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1517717",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "의원직 상실 양문석, 재판소원 안 한다",
+          "link": "https://www.lawtimes.co.kr/news/articleView.html?idxno=217974",
+          "date": "2026-03-18"
+        },
+        {
+          "title": "양문석 &quot;재판소원 안 한다&quot;…안산갑 보궐선거 사실상 확정",
+          "link": "https://www.dailian.co.kr/news/view/1622327/?sc=Naver",
+          "date": "2026-03-18"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965264"
+    },
+    {
+      "key": "gyeonggi-원직에서도",
+      "region": "gyeonggi",
+      "district": "원직에서도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "상실하고",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'의원직 상실' 양문석, 재판소원 결국 포기… 안산갑 보궐선거 '예정대...",
+          "link": "http://www.hidomin.com/news/articleView.html?idxno=612787",
+          "date": "2026-03-18"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965275"
+    },
+    {
+      "key": "seoul-전격시",
+      "region": "seoul",
+      "district": "전격시",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국민의힘",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "[전격시사] 박수민 국민의힘 의원 - ‘서울시장 출사표’ “오세훈 10년...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8515361&ref=A",
+          "date": "2026-03-23"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965285"
+    },
+    {
+      "key": "incheon-계양구을",
+      "region": "incheon",
+      "district": "계양구을",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[6.3 재보궐선거] 계양을, 송영길 복귀 변수 부상 …여론 우세 속 '정치...",
+          "link": "http://www.incheonnews.com/news/articleView.html?idxno=434817",
+          "date": "2026-03-18"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-24T03:17:16.965290"
     }
   ]
 }

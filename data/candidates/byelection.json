@@ -3,8 +3,8 @@
     "lastUpdated": "2026-03-24",
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
-    "lastDetection": "2026-03-22",
-    "lastFactCheck": "2026-03-22T09:06:53.109352"
+    "lastDetection": "2026-03-24",
+    "lastFactCheck": "2026-03-24T04:14:08.112816"
   },
   "districts": {
     "incheon-yeonsu": {
@@ -64,7 +64,7 @@
           "party": "democratic",
           "partyKey": "independent",
           "career": "연수구청장",
-          "status": "RUMORED",
+          "status": "EXPECTED",
           "dataSource": "news_factcheck",
           "pledges": [],
           "sourceUrl": "not_provided",
@@ -708,7 +708,7 @@
           "name": "김석훈",
           "career": "전 안산시의회 의장",
           "pledges": [],
-          "status": "DECLARED",
+          "status": "EXPECTED",
           "dataSource": "news",
           "partyKey": "ppp",
           "partyName": "국민의힘",
