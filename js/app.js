@@ -350,11 +350,17 @@ const App = (() => {
 
         // 공유 컨테이너 초기화
         const ids = ['overview-summary', 'overview-key-issues', 'overview-risk-factor',
-                      'current-governor', 'key-issues', 'candidates-list'];
+                      'current-governor', 'key-issues', 'candidates-list',
+                      'prev-election-result'];
         ids.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.innerHTML = '';
         });
+
+        // 역대비교 차트 정리 (메모리 누수 방지)
+        if (typeof HistoryTab !== 'undefined' && HistoryTab.destroyChart) {
+            HistoryTab.destroyChart();
+        }
     }
 
     function toggleByelectionNote(show) {
@@ -1566,7 +1572,7 @@ const App = (() => {
                 // 기초비례는 시군구 선택 전에는 패널 안 열림 (welcome 유지)
                 break;
             case 'byElection':
-                renderGovernorView(regionKey, region);
+                renderByElectionProvinceView(regionKey, region);
                 break;
             default:
                 renderGovernorView(regionKey, region);
@@ -1636,6 +1642,50 @@ const App = (() => {
             renderOverviewTab(regionKey);
         }
         // 뉴스탭은 lazy 로딩 — 탭 전환 시 renderNewsTab 호출 (API 쿼터 절약)
+        _newsTabPendingRegion = regionKey;
+    }
+
+    // ============================================
+    // ByElection Province View (재보궐 — 시도 선택 시)
+    // ============================================
+    function renderByElectionProvinceView(regionKey, region) {
+        const byeDistricts = ElectionData.getByElectionDistrictsForRegion
+            ? ElectionData.getByElectionDistrictsForRegion(regionKey)
+            : [];
+        const count = byeDistricts.length;
+
+        document.getElementById('panel-region-name').textContent = region.name;
+        document.getElementById('panel-region-info').textContent =
+            count > 0
+                ? `재보궐선거 ${count}개 선거구 | 지도에서 선거구를 선택하세요`
+                : `이 지역에 예정된 재보궐선거가 없습니다`;
+
+        configurePanelTabs(['overview', 'candidates', 'news']);
+
+        const govContainer = document.getElementById('current-governor');
+        if (govContainer) {
+            if (count === 0) {
+                govContainer.innerHTML = `<div class="empty-message"><i class="fas fa-info-circle"></i> 이 광역에 예정된 재보궐선거가 없습니다.</div>`;
+            } else {
+                govContainer.innerHTML = byeDistricts.map(d => `
+                    <div class="bye-district-card" data-bye-key="${d.key}" style="padding:12px;border-radius:8px;background:var(--bg-elevated);border:1px solid var(--border-primary);margin-bottom:8px;cursor:pointer;">
+                        <strong>${d.district}</strong>
+                        <span style="color:var(--text-muted);font-size:0.8rem;margin-left:8px;">${d.type || ''} · 후보 ${d.candidates?.length || 0}명</span>
+                    </div>
+                `).join('');
+                govContainer.querySelectorAll('.bye-district-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const key = card.dataset.byeKey;
+                        if (key) onByElectionSelected(key);
+                    });
+                });
+            }
+        }
+
+        if (typeof OverviewTab !== 'undefined') {
+            try { OverviewTab.render(regionKey, currentElectionType, currentDistrictName); }
+            catch (e) { console.warn('[OverviewTab] byElection error:', e); }
+        }
         _newsTabPendingRegion = regionKey;
     }
 
@@ -2201,6 +2251,9 @@ function renderCouncilProvinceView(regionKey, region) {
         } else {
             renderOverviewTab(regionKey);
         }
+
+        // 뉴스탭 lazy 로딩용
+        _newsTabPendingRegion = regionKey;
 
         switchTabForRegion();
         openPanel();
@@ -2998,6 +3051,8 @@ function renderCouncilProvinceView(regionKey, region) {
     }
 
     function renderHistoryTab(regionKey) {
+        // HistoryTab 모듈의 차트가 있으면 먼저 정리 (이중 인스턴스 방지)
+        if (typeof HistoryTab !== 'undefined' && HistoryTab.destroyChart) HistoryTab.destroyChart();
         const flowEl = document.getElementById('history-party-flow');
         const resultsEl = document.getElementById('history-results');
         const canvas = document.getElementById('history-turnout-chart');

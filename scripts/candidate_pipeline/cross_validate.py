@@ -223,6 +223,30 @@ def check_missing_sources():
                     "dataSource": c.get("dataSource"),
                 })
 
+    # 기초단체장도 확인
+    mayor = json.loads(MAYOR_CANDIDATES.read_text(encoding="utf-8"))
+    for region, districts in mayor.get("candidates", {}).items():
+        if not isinstance(districts, dict):
+            continue
+        for district, cands in districts.items():
+            if not isinstance(cands, list):
+                continue
+            for c in cands:
+                if c.get("status") not in ("DECLARED", "NOMINATED"):
+                    continue
+                if c.get("dataSource") in TRUSTED_SOURCES:
+                    continue
+                if c.get("sourceUrl") or c.get("sourceLabel"):
+                    continue
+                issues.append({
+                    "type": "missing_source",
+                    "file": "mayor",
+                    "region": f"{region}/{district}",
+                    "name": c["name"],
+                    "status": c.get("status"),
+                    "dataSource": c.get("dataSource"),
+                })
+
     # 재보궐도 확인
     bye = json.loads(BYELECTION_CANDIDATES.read_text(encoding="utf-8"))
     for key, district in bye.get("districts", {}).items():

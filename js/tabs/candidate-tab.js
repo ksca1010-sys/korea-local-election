@@ -132,7 +132,7 @@ const CandidateTab = (() => {
                 : pollCandidates.map((candidate, index) => ({
                     id: `${regionKey}-${canonicalDistrict}-${index}`,
                     name: candidate.name,
-                    party: candidate.party || districtSummary?.leadParty || 'independent',
+                    party: candidate.party || 'independent', // leadParty 폴백 제거 — 야당 후보에 여당 정당 표시 방지
                     age: null,
                     career: '',
                     pledges: []
@@ -257,8 +257,8 @@ const CandidateTab = (() => {
         } else {
             const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3, WITHDRAWN: 4 };
             model.candidates.sort((a, b) => {
-                const sa = statusOrder[a.status] ?? 1;
-                const sb = statusOrder[b.status] ?? 1;
+                const sa = statusOrder[a.status] ?? 2.5; // 상태 없으면 EXPECTED와 RUMORED 사이
+                const sb = statusOrder[b.status] ?? 2.5;
                 return sa - sb;
             });
         }

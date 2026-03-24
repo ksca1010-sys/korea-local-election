@@ -5,6 +5,9 @@
 
 const NewsTab = (() => {
 
+    // 세대 카운터: 지역/선거유형 전환 시 이전 fetch 결과 무시
+    let _renderGeneration = 0;
+
     // ── 상수 ──
     const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
     const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'https://election-news-proxy.ksca1010.workers.dev';
@@ -54,6 +57,7 @@ const NewsTab = (() => {
 
     // ── 뉴스 캐시 (sessionStorage) ──
     const _newsCachePrefix = 'news_cache_';
+    let _currentElectionType = '';
 
     // ── 카테고리 빌더 함수들 ──
 
@@ -203,6 +207,8 @@ const NewsTab = (() => {
     function buildMayorNewsCategories(regionKey, regionName, districtName) {
         const title = districtName.endsWith('구') ? '구청장' : districtName.endsWith('군') ? '군수' : '시장';
         const bundle = getDebugRegionMediaBundle(regionKey, districtName);
+        // 동명 지역 혼입 방지: 광역 약칭 추출 (예: "부산광역시" → "부산")
+        const regionShort = (regionName || '').replace(/(특별시|광역시|특별자치시|특별자치도|도)$/, '');
         const localHosts = bundle.primaryHosts || [];
 
         // 후보자 이름 쿼리 — 해당 시군구 후보자 이름으로 직접 검색
@@ -238,10 +244,15 @@ const NewsTab = (() => {
             } catch(e) { return []; }
         })();
 
+        // 동명 시군구 판별 — 구/동/남/북/서/중구 등 여러 광역에 존재하는 이름
+        const ambiguousNames = ['강서구','동구','남구','북구','서구','중구','달서구','수영구','사하구','연수구','부평구','계양구'];
+        const needsRegionFilter = ambiguousNames.includes(districtName);
+        const strictMustAny = needsRegionFilter ? [districtName, regionShort] : [districtName];
+
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
-                query: `${districtName}${title} 선거 후보`,
+                query: `${regionShort} ${districtName}${title} 선거 후보`,
                 maxAgeDays: 60,
                 altQueries: [
                     `${districtName}${title} 출마 예비후보`,
@@ -249,24 +260,24 @@ const NewsTab = (() => {
                 ].filter(Boolean),
                 focusKeywords: [districtName, title, '선거', '후보', '출마', '예비후보', '출판기념회'],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: [title, '선거', '후보', '출마', '예비후보', '공천', '출판기념회'], excludeAny: ['도지사', '교육감', '국회의원'] },
+                strict: { mustAny: strictMustAny, targetAny: [title, '선거', '후보', '출마', '예비후보', '공천', '출판기념회'], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [districtName], targetAny: [title, '선거'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
-                query: `${districtName}${title} 여론조사`,
+                query: `${regionShort} ${districtName}${title} 여론조사`,
                 maxAgeDays: 60,
                 altQueries: [
                     `${districtName}${title} 지지율 가상대결`
                 ],
                 focusKeywords: ['여론조사', '지지율', '적합도', '가상대결', districtName],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['여론조사', '지지율', '적합도', '가상대결'], excludeAny: ['도지사', '교육감'] },
+                strict: { mustAny: strictMustAny, targetAny: ['여론조사', '지지율', '적합도', '가상대결'], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['여론조사', '지지율'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
-                query: `${districtName}${title} 후보 출마`,
+                query: `${regionShort} ${districtName}${title} 후보 출마`,
                 maxAgeDays: 60,
                 altQueries: [
                     `${districtName}${title} 공천 경선 예비후보`,
@@ -274,19 +285,19 @@ const NewsTab = (() => {
                 ].filter(Boolean),
                 focusKeywords: [districtName, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선', ...districtCandidates],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title, ...districtCandidates], excludeAny: ['도지사', '교육감', '국회의원'] },
+                strict: { mustAny: strictMustAny, targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title, ...districtCandidates], excludeAny: ['도지사', '교육감', '국회의원'] },
                 relaxed: { mustAny: [districtName], targetAny: [title, '후보', '출마'], excludeAny: ['도지사', '교육감'] }
             },
             {
                 label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
-                query: `${districtName}${title} 공약 정책`,
+                query: `${regionShort} ${districtName}${title} 공약 정책`,
                 maxAgeDays: 60,
                 altQueries: [
                     `${districtName}${title} 공약 현안 비전`
                 ],
                 focusKeywords: [districtName, '공약', '정책', '현안', '비전', ...issueKeywords.slice(0, 3)],
                 boostHosts: localHosts,
-                strict: { mustAny: [districtName], targetAny: ['공약', '정책', '현안', '비전', title, ...issueKeywords.slice(0, 3)], excludeAny: ['도지사', '교육감'] },
+                strict: { mustAny: strictMustAny, targetAny: ['공약', '정책', '현안', '비전', title, ...issueKeywords.slice(0, 3)], excludeAny: ['도지사', '교육감'] },
                 relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: ['도지사', '교육감'] }
             },
         ].map(cat => ({
@@ -702,13 +713,13 @@ const NewsTab = (() => {
             }
         }
 
-        if (category?.categoryId === 'poll' && !hasPercentPattern) {
+        if (category?.categoryId === 'polls' && !hasPercentPattern) {
             return { ok: false, score: 0 };
         }
-        if (category?.categoryId === 'poll' && hasNonElectionSurveyContext) {
+        if (category?.categoryId === 'polls' && hasNonElectionSurveyContext) {
             return { ok: false, score: 0 };
         }
-        if (category?.categoryId === 'poll') {
+        if (category?.categoryId === 'polls') {
             if (!hasPollCoreKeyword) return { ok: false, score: 0 };
             if (!hasAny(['후보', '후보별', '가상대결', '양자대결', '다자대결', '지지율', '지지도', '찬반'])) {
                 return { ok: false, score: 0 };
@@ -746,7 +757,7 @@ const NewsTab = (() => {
 
     // ── 캐시 ──
 
-    function _newsCacheKey(regionKey, catId) { return `${_newsCachePrefix}${regionKey}_${catId || 'all'}`; }
+    function _newsCacheKey(regionKey, catId) { return `${_newsCachePrefix}${_currentElectionType}_${regionKey}_${catId || 'all'}`; }
 
     function _saveNewsCache(regionKey, catId, items) {
         try {
@@ -791,6 +802,9 @@ const NewsTab = (() => {
     async function fetchLatestNews(category, regionKey) {
         const list = document.getElementById('news-live-list');
         if (!list) return;
+
+        // 비동기 완료 시 세대가 바뀌었으면 DOM 업데이트 건너뜀
+        const fetchGen = _renderGeneration;
 
         // 더보기 버튼 초기화 — 이전 카테고리 핸들러 제거
         const loadMoreBtnInit = document.getElementById('news-load-more-btn');
@@ -865,6 +879,9 @@ const NewsTab = (() => {
                     });
                 }
             }
+            // 세대 바뀌었으면 결과 폐기 (race condition 방지)
+            if (fetchGen !== _renderGeneration) return;
+
             // 성공 시 캐시 저장
             if (fetchedItems.length > 0) {
                 _saveNewsCache(regionKey, catId, fetchedItems);
@@ -1170,10 +1187,10 @@ const NewsTab = (() => {
                 };
             }
 
-            // 정렬 토글
+            // 정렬 토글 (onclick으로 교체하여 리스너 누적 방지)
             const sortToggle = document.getElementById('news-sort-toggle');
             if (sortToggle) {
-                sortToggle.addEventListener('click', (e) => {
+                sortToggle.onclick = (e) => {
                     const btn = e.target.closest('.news-sort-btn');
                     if (!btn) return;
                     sortToggle.querySelectorAll('.news-sort-btn').forEach(b => b.classList.remove('active'));
@@ -1181,7 +1198,7 @@ const NewsTab = (() => {
                     currentSort = btn.dataset.sort;
                     showCount = 6;
                     refreshList();
-                });
+                };
             }
         } catch (err) {
             // 캐시 fallback — API 실패 시 최근 캐시 사용 (30분까지 허용)
@@ -1288,6 +1305,10 @@ const NewsTab = (() => {
         const container = document.getElementById('news-feed');
         if (!container) { console.warn('[뉴스] news-feed 컨테이너 없음'); return; }
 
+        // 세대 카운터 증가 — 이전 비동기 fetch 결과 무시용
+        const gen = ++_renderGeneration;
+        _currentElectionType = electionType || '';
+
         const region = ElectionData.getRegion(regionKey);
         if (!region && electionType !== 'byElection') return;
 
@@ -1304,7 +1325,7 @@ const NewsTab = (() => {
             const distName = byeData?.district || districtName;
             const exactDist = `"${distName}"`;
             // 총선·대선·전당대회 관련 기사 혼입 방지 (지역구명이 총선 기사에도 등장하므로)
-            const byeExclude = ['국회의원', '총선', '대선', '대통령', '전당대회', '당대표', '원내대표', '당권'];
+            const byeExclude = ['총선', '대선', '대통령', '전당대회', '당대표', '원내대표', '당권'];
             categories = [
                 {
                     label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',

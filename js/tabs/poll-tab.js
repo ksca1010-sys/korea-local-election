@@ -27,7 +27,10 @@ const PollTab = (() => {
     // ── 통합 추세 계산 (가중 이동평균) ──
 
     function _calcConsensusTrend(polls, windowDays = 21) {
-        const cutoff = Date.now() - windowDays * 86400000;
+        // KST 기준 cutoff 계산 (CLAUDE.md: 모든 날짜 비교는 getKST 사용)
+        const kstNow = (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.getKST)
+            ? ElectionCalendar.getKST().getTime() : Date.now();
+        const cutoff = kstNow - windowDays * 86400000;
         const recent = polls.filter(p => {
             const d = p.surveyDate?.end || p.publishDate || '';
             return d && Date.parse(d) >= cutoff && p.results?.some(r => r.support > 0);
@@ -84,8 +87,10 @@ const PollTab = (() => {
             return { nttId: p.nttId, gap: sorted.length >= 2 ? sorted[0].support - sorted[1].support : 0 };
         });
 
-        const avgGap = gaps.reduce((s, g) => s + g.gap, 0) / gaps.length;
-        const sdGap = Math.sqrt(gaps.reduce((s, g) => s + Math.pow(g.gap - avgGap, 2), 0) / gaps.length);
+        const n = gaps.length;
+        if (n < 3) return { outlierIds: new Set() }; // 표본 3건 미만이면 돌출 감지 불가
+        const avgGap = gaps.reduce((s, g) => s + g.gap, 0) / n;
+        const sdGap = Math.sqrt(gaps.reduce((s, g) => s + Math.pow(g.gap - avgGap, 2), 0) / (n - 1)); // 표본 표준편차
 
         const outlierIds = new Set();
         if (sdGap > 0) {

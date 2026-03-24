@@ -124,7 +124,7 @@ def format_candidates_text(candidates, election_type="governor"):
     """후보자 목록을 텍스트로 포맷"""
     party_map = {
         "democratic": "더불어민주당", "ppp": "국민의힘",
-        "reform": "조국혁신당", "newReform": "새로운미래",
+        "reform": "조국혁신당", "newReform": "개혁신당", "newFuture": "새로운미래",
         "progressive": "진보당", "independent": "무소속"
     }
     lines = []

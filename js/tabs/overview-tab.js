@@ -5,6 +5,9 @@
 
 const OverviewTab = (() => {
 
+    // 세대 카운터: 지역/선거유형 전환 시 이전 비동기 결과를 무시
+    let _renderGeneration = 0;
+
     function _renderRegionIssuesHtml(regionKey) {
         const issues = ElectionData.getRegionIssues(regionKey);
         const signals = ElectionData.getDerivedIssueSignals ? ElectionData.getDerivedIssueSignals(regionKey) : {};
@@ -37,10 +40,15 @@ const OverviewTab = (() => {
         const region = ElectionData.getRegion(regionKey);
         if (!region && electionType !== 'byElection') return;
 
+        // 세대 카운터 증가 — 이전 비동기 결과 무시용
+        const gen = ++_renderGeneration;
+
         // Election overview card (선거 쟁점 개요)
         const overviewCard = document.getElementById('election-overview-card');
         if (overviewCard && ElectionData.loadElectionOverview) {
             ElectionData.loadElectionOverview().then(() => {
+                // 비동기 완료 시점에 세대가 바뀌었으면 무시 (race condition 방지)
+                if (gen !== _renderGeneration) return;
                 const ov = ElectionData.getElectionOverview(regionKey, electionType, districtName);
                 if (ov) {
                     overviewCard.style.display = '';

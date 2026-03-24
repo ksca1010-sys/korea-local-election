@@ -311,6 +311,12 @@ const HistoryTab = (() => {
         emptyEl.style.display = 'none';
 
         const allVals = chartDatasets.flatMap(ds => ds.data).filter(v => v !== null);
+        if (allVals.length === 0) {
+            canvas.style.display = 'none';
+            emptyEl.style.display = '';
+            emptyEl.innerHTML = '<div style="padding:16px;color:var(--text-muted);text-align:center;"><i class="fas fa-chart-line"></i> 차트 데이터가 없습니다</div>';
+            return;
+        }
         const yMin = Math.max(0, Math.floor((Math.min(...allVals) - 5) / 10) * 10);
         const yMax = Math.min(100, Math.ceil((Math.max(...allVals) + 5) / 10) * 10);
 

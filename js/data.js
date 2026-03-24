@@ -1834,6 +1834,18 @@ const ElectionData = (() => {
         getAllByElections: () => {
             return ElectionData.getByElectionData();
         },
+        getByElectionDistrictsForRegion: (regionKey) => {
+            const ext = ElectionData._byElectionCache;
+            if (!ext?.districts) return [];
+            return Object.entries(ext.districts)
+                .filter(([key, d]) => d.region === regionKey || key.startsWith(regionKey + '-'))
+                .map(([key, d]) => ({
+                    key,
+                    district: d.district || key,
+                    type: d.type || '',
+                    candidates: (d.candidates || []).filter(c => c.status !== 'WITHDRAWN')
+                }));
+        },
         // ── 지역 이슈 API ──
         getRegionIssues: (regionKey) => {
             const derived = window.DerivedIssuesData;
@@ -2340,10 +2352,11 @@ const ElectionData = (() => {
 
         // ── 후보자 외부 JSON 로드 API ──
         _candidatesPromise: null,
+        _candidatesLoaded: false,
         loadCandidatesData() {
             if (this._candidatesPromise) return this._candidatesPromise;
             this._candidatesPromise = fetch('data/candidates/governor.json')
-                .then(r => r.ok ? r.json() : null)
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
                 .then(data => {
                     if (!data?.candidates) return;
                     // 외부 JSON 후보를 regions에 주입 (기존 하드코딩 대체)
@@ -2352,11 +2365,17 @@ const ElectionData = (() => {
                             regions[key].candidates = candidates;
                         }
                     });
+                    this._candidatesLoaded = true;
                     console.log(`[CandidateData] Loaded: ${Object.keys(data.candidates).length} regions, updated ${data._meta?.lastUpdated || 'unknown'}`);
                 })
                 .catch(err => {
                     this._candidatesPromise = null;
-                    console.warn('[CandidateData] Failed to load external candidates, using embedded data:', err);
+                    this._candidatesLoaded = false;
+                    // 로드 실패 시 하드코딩 구버전 candidates를 비워서 팩트 오류 방지
+                    Object.keys(regions).forEach(key => {
+                        if (regions[key]?.candidates) regions[key].candidates = [];
+                    });
+                    console.error('[CandidateData] Failed to load governor.json — embedded candidates cleared:', err);
                 });
         },
 
@@ -2591,7 +2610,7 @@ const ElectionData = (() => {
                     if (/\x00/.test(name) || /\x00/.test(party)) return false;  // null 문자
                     if (/cid:\d+/.test(name) || /cid:\d+/.test(party)) return false;  // CID 폰트 참조
                     // 지지율이 비현실적 (100% 또는 95% 등은 메타데이터)
-                    if (r.support >= 90) return false;
+                    if (r.support > 100) return false; // 물리적으로 불가능한 값만 차단
                     return true;
                 });
                 return { ...p, results: cleanResults };

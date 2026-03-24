@@ -439,7 +439,7 @@ def extract_facts(candidates, polls, election_type="governor"):
     """
     PARTY_MAP = {
         "democratic": "더불어민주당", "ppp": "국민의힘",
-        "reform": "조국혁신당", "newReform": "새로운미래",
+        "reform": "조국혁신당", "newReform": "개혁신당", "newFuture": "새로운미래",
         "progressive": "진보당", "independent": "무소속",
         "justice": "정의당",
     }

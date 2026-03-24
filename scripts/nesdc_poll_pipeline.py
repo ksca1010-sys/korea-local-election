@@ -348,6 +348,21 @@ def extract_labels(soup: BeautifulSoup) -> Dict[str, str]:
     return labels
 
 
+def _normalize_date(raw: Optional[str]) -> Optional[str]:
+    """'2026. 02. 28', '2026.2.28' 등을 'YYYY-MM-DD'로 정규화"""
+    if not raw:
+        return raw
+    # 이미 YYYY-MM-DD 형태면 그대로
+    m = re.match(r'(\d{4})-(\d{2})-(\d{2})', raw.strip())
+    if m:
+        return raw.strip()[:10]
+    # 2026. 02. 28 또는 2026.02.28 패턴
+    m = re.match(r'(\d{4})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})', raw.strip())
+    if m:
+        return f"{m.group(1)}-{int(m.group(2)):02d}-{int(m.group(3)):02d}"
+    return raw
+
+
 def find_label(labels: Dict[str, str], keywords: List[str]) -> Optional[str]:
     """Find value by matching keywords in label keys."""
     for key, val in labels.items():
@@ -626,7 +641,7 @@ def parse_detail_page(html: str, ntt_id: int) -> Dict[str, Any]:
             "weightingMethod": weighting,
         },
         "surveyDate": dates,
-        "publishDate": publish_text,
+        "publishDate": _normalize_date(publish_text),
         "attachments": pdf_links,
         # 후보별 지지율: PDF 파싱 후 채움
         "results": [],
