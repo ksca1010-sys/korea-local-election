@@ -44,5 +44,9 @@ jobs:
   trigger-overview:
     needs: update
     if: needs.update.outputs.changed == 'true'
-    uses: ./.github/workflows/update-overview.yml
-    secrets: inherit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger overview update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run update-overview.yml --repo ${{ github.repository }}

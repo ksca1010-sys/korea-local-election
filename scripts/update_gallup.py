@@ -35,7 +35,7 @@ PARTY_KEY_MAP = {
     '개혁신당': 'newReform',
     '진보당': 'progressive',
     '기본소득당': 'basicIncome',
-    '새로운미래': 'newReform',
+    '새로운미래': 'newFuture',
 }
 
 
