@@ -15155,11 +15155,6 @@
             "candidateName": "기타인물",
             "party": "",
             "support": 14
-          },
-          {
-            "candidateName": "인물이",
-            "party": "",
-            "support": 2.1
           }
         ],
         "regionKey": "jeonnam",
@@ -15167,7 +15162,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 고흥군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17567&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
-        "registrationDate": "2026-03-04"
+        "registrationDate": "2026-03-04",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'인물이'}"
       },
       {
         "nttId": 17561,
@@ -15190,34 +15187,15 @@
           "end": "2026-03-02"
         },
         "publishDate": "2026-03-04 07시 00분",
-        "results": [
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 4.1
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 3.9
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.7
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "장성군",
         "electionType": "district_mayor",
         "title": "전라남도 장성군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17561&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-03"
+        "registrationDate": "2026-03-03",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17560,
@@ -15391,63 +15369,15 @@
           "end": "2026-02-28"
         },
         "publishDate": "2026-03-03 13시 00분",
-        "results": [
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 4.5
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "보성군",
         "electionType": "district_mayor",
         "title": "전라남도 보성군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17548&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
-        "registrationDate": "2026-03-01"
-      },
-      {
-        "nttId": 17535,
-        "registrationId": "15515",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 908,
-          "marginOfError": 3.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17535&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-05"
+        "registrationDate": "2026-03-01",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17521,
@@ -15490,11 +15420,6 @@
             "candidateName": "정인화",
             "party": "",
             "support": 39
-          },
-          {
-            "candidateName": "인물이",
-            "party": "",
-            "support": 1.6
           }
         ],
         "regionKey": "jeonnam",
@@ -15502,7 +15427,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 광양시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17521&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
-        "registrationDate": "2026-02-27"
+        "registrationDate": "2026-02-27",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'인물이'}"
       },
       {
         "nttId": 17514,
@@ -15525,44 +15452,15 @@
           "end": "2026-02-25"
         },
         "publishDate": "2026-02-26 14시 00분",
-        "results": [
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 3.3
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 0.8
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "영암군",
         "electionType": "district_mayor",
         "title": "전라남도 영암군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17514&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=10",
-        "registrationDate": "2026-02-26"
+        "registrationDate": "2026-02-26",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17492,
@@ -17322,11 +17220,6 @@
             "candidateName": "유성수",
             "party": "",
             "support": 22.2
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 1.2
           }
         ],
         "regionKey": "jeonnam",
@@ -17334,7 +17227,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 장성군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17258&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=31",
-        "registrationDate": "2026-02-06"
+        "registrationDate": "2026-02-06",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17256,
@@ -17357,44 +17252,15 @@
           "end": "2026-02-03"
         },
         "publishDate": "2026-02-09 11시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 79
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 4.7
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 4.6
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 7
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.8
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "영광군",
         "electionType": "district_mayor",
         "title": "전라남도 영광군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17256&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=31",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17255,
@@ -17560,11 +17426,6 @@
             "candidateName": "역량",
             "party": "",
             "support": 8
-          },
-          {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 3.7
           }
         ],
         "regionKey": "jeonnam",
@@ -17572,7 +17433,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 완도군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17248&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=32",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'도덕성'}"
       },
       {
         "nttId": 17247,
@@ -17672,16 +17535,6 @@
             "support": 23.3
           },
           {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 13.4
-          },
-          {
-            "candidateName": "청렴성",
-            "party": "",
-            "support": 7.2
-          },
-          {
             "candidateName": "해결",
             "party": "",
             "support": 3.8
@@ -17692,7 +17545,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 화순군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17246&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=32",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'청렴성', '도덕성'}"
       },
       {
         "nttId": 17245,
@@ -17740,11 +17595,6 @@
             "candidateName": "실현가능성",
             "party": "",
             "support": 9
-          },
-          {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 4
           }
         ],
         "regionKey": "jeonnam",
@@ -17752,7 +17602,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 담양군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17245&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=32",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'도덕성'}"
       },
       {
         "nttId": 17244,
@@ -17800,11 +17652,6 @@
             "candidateName": "실현가능성",
             "party": "",
             "support": 6.7
-          },
-          {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 3.7
           }
         ],
         "regionKey": "jeonnam",
@@ -17812,7 +17659,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 순천시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17244&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=32",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'도덕성'}"
       },
       {
         "nttId": 17243,
@@ -17907,16 +17756,6 @@
             "support": 19.6
           },
           {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 16
-          },
-          {
-            "candidateName": "청렴성",
-            "party": "",
-            "support": 15.6
-          },
-          {
             "candidateName": "정책",
             "party": "",
             "support": 8.1
@@ -17932,7 +17771,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 목포시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17242&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=33",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'청렴성', '도덕성'}"
       },
       {
         "nttId": 17225,
@@ -17999,34 +17840,15 @@
           "end": "2026-02-03"
         },
         "publishDate": "2026-02-05 09시 00분",
-        "results": [
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 4.1
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "장성군",
         "electionType": "district_mayor",
         "title": "전라남도 장성군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17223&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=34",
-        "registrationDate": "2026-02-04"
+        "registrationDate": "2026-02-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17214,
@@ -18243,39 +18065,9 @@
         "publishDate": "2026-02-02 08시 00분",
         "results": [
           {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 73.9
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 5.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 5.8
-          },
-          {
             "candidateName": "조국혁",
             "party": "",
             "support": 1.5
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 6.7
           },
           {
             "candidateName": "지지",
@@ -18288,7 +18080,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 여수시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17187&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=38",
-        "registrationDate": "2026-02-01"
+        "registrationDate": "2026-02-01",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'진보당', '민주당', '더불어', '신당', '국민의힘', '개혁신당'}"
       },
       {
         "nttId": 17156,
@@ -18607,16 +18401,6 @@
         "publishDate": "2026-01-19 16시 00분",
         "results": [
           {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 76.1
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 13.2
-          },
-          {
             "candidateName": "잘못하고",
             "party": "",
             "support": 8.7
@@ -18632,7 +18416,9 @@
         "electionType": "mayor",
         "title": "전라남도 전체    광역단체장선거 정당지지도 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17109&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
-        "registrationDate": "2026-01-19"
+        "registrationDate": "2026-01-19",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '있다'}"
       },
       {
         "nttId": 17108,
@@ -18852,11 +18638,6 @@
         "publishDate": "2026-01-19 15시 00분",
         "results": [
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 13.7
-          },
-          {
             "candidateName": "반대한다",
             "party": "",
             "support": 13.8
@@ -18882,7 +18663,9 @@
         "electionType": "mayor",
         "title": "전라남도 전체 광역단체장선거교육감선거대통령선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17098&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19"
+        "registrationDate": "2026-01-19",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'매우'}"
       },
       {
         "nttId": 17088,
@@ -19683,49 +19466,15 @@
           "end": "2025-12-27"
         },
         "publishDate": "2025-12-31 04시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 75.3
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 3.1
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 8.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 4.7
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 5.4
-          },
-          {
-            "candidateName": "지지",
-            "party": "",
-            "support": 1.5
-          }
-        ],
+        "results": [],
         "regionKey": "jeonnam",
         "municipality": "영광군",
         "electionType": "district_mayor",
         "title": "전라남도 영광군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16898&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=61",
-        "registrationDate": "2025-12-29"
+        "registrationDate": "2025-12-29",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16893,
@@ -20293,19 +20042,9 @@
             "support": 10.8
           },
           {
-            "candidateName": "적합한",
-            "party": "",
-            "support": 5.4
-          },
-          {
             "candidateName": "후보",
             "party": "",
             "support": 4.8
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 6.6
           }
         ],
         "regionKey": "jeonnam",
@@ -20313,7 +20052,9 @@
         "electionType": "district_mayor",
         "title": "전라남도 강진군    기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16806&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
-        "registrationDate": "2025-12-05"
+        "registrationDate": "2025-12-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'적합한', '모르겠다'}"
       },
       {
         "nttId": 16805,
@@ -20467,11 +20208,6 @@
         "publishDate": "2025-11-10 05시 00분",
         "results": [
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 52.7
-          },
-          {
             "candidateName": "찬성함",
             "party": "",
             "support": 21
@@ -20497,7 +20233,9 @@
         "electionType": "mayor",
         "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16736&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
-        "registrationDate": "2025-11-09"
+        "registrationDate": "2025-11-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'매우'}"
       },
       {
         "nttId": 16730,
@@ -21372,13 +21110,46 @@
           "end": "2026-03-19"
         },
         "publishDate": "2026-03-20 15시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김부겸",
+            "support": 32.8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이진숙",
+            "support": 28.2,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "추경호",
+            "support": 9.5,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "주호영",
+            "support": 9.0,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "윤재옥",
+            "support": 4.7,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "유영하",
+            "support": 3.0,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "mayor",
         "title": "대구광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17788&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-20"
+        "registrationDate": "2026-03-20",
+        "_corrected": true,
+        "_correctionSource": "문화일보 2026-03-20 (다자대결)"
       },
       {
         "nttId": 17760,
@@ -21401,54 +21172,15 @@
           "end": "2026-03-17"
         },
         "publishDate": "2026-03-18 18시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 32.0
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 48.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.0
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.3
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 10.8
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 1.2
-          }
-        ],
+        "results": [],
         "regionKey": "daegu",
         "municipality": "수성구",
         "electionType": "district_mayor",
         "title": "대구광역시 수성구    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17760&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17705,
@@ -21471,54 +21203,15 @@
           "end": "2026-03-15"
         },
         "publishDate": "2026-03-16 18시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 29.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 44.5
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 4.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 13.7
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 1.8
-          }
-        ],
+        "results": [],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "district_mayor",
         "title": "대구광역시 북구    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17705&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-16"
+        "registrationDate": "2026-03-16",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17643,
@@ -21640,35 +21333,6 @@
         "resultsUpdatedAt": "2026-03-16T23:37:55"
       },
       {
-        "nttId": 17524,
-        "registrationId": "15504",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 1020,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "daegu",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "대구광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17524&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-05"
-      },
-      {
         "nttId": 17467,
         "registrationId": "15403",
         "pollName": "선거구분",
@@ -21745,49 +21409,15 @@
           "end": "2026-02-14"
         },
         "publishDate": "2026-02-20 21시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 28.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 52.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 10.2
-          },
-          {
-            "candidateName": "모르겠음",
-            "party": "",
-            "support": 0.9
-          }
-        ],
+        "results": [],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "mayor",
         "title": "대구광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17464&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=15",
-        "registrationDate": "2026-02-19"
+        "registrationDate": "2026-02-19",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17367,
@@ -21991,44 +21621,15 @@
           "end": "2026-02-06"
         },
         "publishDate": "2026-02-06 18시 00분",
-        "results": [
-          {
-            "candidateName": "더불",
-            "party": "",
-            "support": 28.3
-          },
-          {
-            "candidateName": "어민",
-            "party": "",
-            "support": 54.3
-          },
-          {
-            "candidateName": "주당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "혁신",
-            "party": "",
-            "support": 11
-          }
-        ],
+        "results": [],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "mayor",
         "title": "대구광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17260&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=31",
-        "registrationDate": "2026-02-06"
+        "registrationDate": "2026-02-06",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16985,
@@ -22462,38 +22063,15 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-18 19시 30분",
-        "results": [
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 2.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 2.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 1.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 3.0,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "순창군",
         "electionType": "district_mayor",
         "title": "전북특별자치도 순창군    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17756&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17754,
@@ -22516,32 +22094,15 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-18 19시 30분",
-        "results": [
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 1.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 3.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 1.0,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "임실군",
         "electionType": "district_mayor",
         "title": "전북특별자치도 임실군    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17754&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17752,
@@ -22564,26 +22125,15 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-18 19시 30분",
-        "results": [
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 2.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 7.0,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "장수군",
         "electionType": "district_mayor",
         "title": "전북특별자치도 장수군    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17752&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17751,
@@ -22606,26 +22156,15 @@
           "end": "2026-03-16"
         },
         "publishDate": "2026-03-18 19시 30분",
-        "results": [
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 4.0,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 3.0,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "무주군",
         "electionType": "district_mayor",
         "title": "전북특별자치도 무주군    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17751&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17712,
@@ -22648,32 +22187,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-16 20시 15분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 79,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 3,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 7,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "익산시",
         "electionType": "district_mayor",
         "title": "전북특별자치도 익산시    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17712&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-16"
+        "registrationDate": "2026-03-16",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17711,
@@ -22696,44 +22218,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-16 20시 15분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 79,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 5,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 6,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 1,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 1,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "군산시",
         "electionType": "district_mayor",
         "title": "전북특별자치도 군산시    기초단체장선거 정당지지도 국회의원선거 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17711&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-16"
+        "registrationDate": "2026-03-16",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17710,
@@ -22756,44 +22249,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-16 20시 15분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 69,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 7,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 6,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 2,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 1,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": "전주시",
         "electionType": "district_mayor",
         "title": "전북특별자치도 전주시    기초단체장선거 정당지지도 지역 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17710&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-16"
+        "registrationDate": "2026-03-16",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17709,
@@ -22816,44 +22280,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-16 20시 15분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 75,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 4,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 6,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 2,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 2,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeonbuk",
         "municipality": null,
         "electionType": "mayor",
         "title": "전북특별자치도 전체    광역단체장선거 교육감선거 정당지지도, 지역 현안, 국정 현안 등",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17709&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-16"
+        "registrationDate": "2026-03-16",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17542,
@@ -22894,35 +22329,6 @@
         "title": "전북특별자치도 임실군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17542&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
         "registrationDate": "2026-02-28"
-      },
-      {
-        "nttId": 17534,
-        "registrationId": "15514",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 908,
-          "marginOfError": 3.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "jeonbuk",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전북특별자치도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17534&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05"
       },
       {
         "nttId": 17512,
@@ -24249,11 +23655,6 @@
             "candidateName": "이돈승",
             "party": "",
             "support": 25.7
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 5.3
           }
         ],
         "regionKey": "jeonbuk",
@@ -24261,7 +23662,9 @@
         "electionType": "district_mayor",
         "title": "전북특별자치도 완주군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17137&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
-        "registrationDate": "2026-01-24"
+        "registrationDate": "2026-01-24",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       },
       {
         "nttId": 17115,
@@ -26199,49 +25602,15 @@
           "end": "2026-03-07"
         },
         "publishDate": "2026-03-10 06시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 43
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 38.9
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.5
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.3
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 9.9
-          },
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 1.5
-          }
-        ],
+        "results": [],
         "regionKey": "chungbuk",
         "municipality": "영동군",
         "electionType": "district_mayor",
         "title": "충청북도 영동군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17629&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-09"
+        "registrationDate": "2026-03-09",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17593,
@@ -26392,62 +25761,6 @@
         "resultsUpdatedAt": "2026-03-16T23:39:07"
       },
       {
-        "nttId": 17532,
-        "registrationId": "15512",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 900,
-          "marginOfError": 3.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "party": null,
-            "partyRaw": "",
-            "support": 47.5
-          },
-          {
-            "candidateName": "김문수",
-            "party": null,
-            "partyRaw": "",
-            "support": 23.2
-          },
-          {
-            "candidateName": "이준석",
-            "party": null,
-            "partyRaw": "",
-            "support": 5.4
-          },
-          {
-            "candidateName": "권영국",
-            "party": null,
-            "partyRaw": "",
-            "support": 0.6
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "충청북도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17532&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:44:00"
-      },
-      {
         "nttId": 17455,
         "registrationId": "15392",
         "pollName": "선거구분",
@@ -26528,11 +25841,6 @@
             "candidateName": "반대한다",
             "party": "",
             "support": 23.3
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 42.9
           }
         ],
         "regionKey": "chungbuk",
@@ -26540,7 +25848,9 @@
         "electionType": "mayor",
         "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17400&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
-        "registrationDate": "2026-02-12"
+        "registrationDate": "2026-02-12",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17303,
@@ -26748,13 +26058,71 @@
           "end": "2026-01-14"
         },
         "publishDate": "2026-01-20 19시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김영환",
+            "support": 10,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "신용한",
+            "support": 9,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "노영민",
+            "support": 8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "송기섭",
+            "support": 8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "임호선",
+            "support": 7,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "조길형",
+            "support": 5,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "이종배",
+            "support": 4,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "윤갑근",
+            "support": 3,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "한범덕",
+            "support": 3,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "윤희근",
+            "support": 2,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "박경국",
+            "support": 1,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "chungbuk",
         "municipality": "청주시",
         "electionType": "mayor",
         "title": "충청북도 청주시 전체    광역단체장선거 교육감선거 기초단체장선거 정당 지지도, 기타 지역 현안 등",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17095&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
-        "registrationDate": "2026-01-16"
+        "registrationDate": "2026-01-16",
+        "_corrected": true,
+        "_correctionSource": "KBS청주 2026-01-19 (적합도)"
       },
       {
         "nttId": 17094,
@@ -27029,11 +26397,6 @@
             "candidateName": "임호선",
             "party": "",
             "support": 5
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 7
           }
         ],
         "regionKey": "chungbuk",
@@ -27041,7 +26404,9 @@
         "electionType": "mayor",
         "title": "충청북도 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16686&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-29"
+        "registrationDate": "2025-10-29",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       }
     ],
     "gyeongbuk": [
@@ -27095,38 +26460,15 @@
           "end": "2026-03-17"
         },
         "publishDate": "2026-03-19 16시 00분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 23.8,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 4.5,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 16.9,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 42.7,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "경주시",
         "electionType": "district_mayor",
         "title": "경상북도 경주시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17761&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17719,
@@ -27194,54 +26536,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-15 18시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 25.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 59.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 6.6
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "안동시",
         "electionType": "district_mayor",
         "title": "경상북도 안동시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17689&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-15"
+        "registrationDate": "2026-03-15",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17684,
@@ -27264,49 +26567,15 @@
           "end": "2026-03-14"
         },
         "publishDate": "2026-03-15 16시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 21.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 66.7
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 0.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.1
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 7.5
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "안동시",
         "electionType": "district_mayor",
         "title": "경상북도 안동시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17684&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-15"
+        "registrationDate": "2026-03-15",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17683,
@@ -27369,49 +26638,15 @@
           "end": "2026-03-10"
         },
         "publishDate": "2026-03-11 18시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 20.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 61.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 7.2
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 1.9
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "district_mayor",
         "title": "경상북도 포항시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17658&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-11"
+        "registrationDate": "2026-03-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17657,
@@ -27499,49 +26734,15 @@
           "end": "2026-03-07"
         },
         "publishDate": "2026-03-10 21시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 14.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 60
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 6.5
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 13.8
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영천시",
         "electionType": "district_mayor",
         "title": "경상북도 영천시    기초단체장선거 정당지지도 경상북도 영천시 선거 여론조사",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17638&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-11"
+        "registrationDate": "2026-03-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17620,
@@ -27599,11 +26800,6 @@
             "candidateName": "지지",
             "party": "",
             "support": 11
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 3.7
           }
         ],
         "regionKey": "gyeongbuk",
@@ -27611,7 +26807,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 경주시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17620&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-09"
+        "registrationDate": "2026-03-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17612,
@@ -27698,11 +26896,6 @@
             "candidateName": "후보나",
             "party": "",
             "support": 7.7
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 7.8
           }
         ],
         "regionKey": "gyeongbuk",
@@ -27710,7 +26903,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 문경시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17598&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-03-07"
+        "registrationDate": "2026-03-07",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17579,
@@ -27733,39 +26928,15 @@
           "end": "2026-03-04"
         },
         "publishDate": "2026-03-06 10시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 10
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 83.3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 3.8
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.1
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영덕군",
         "electionType": "district_mayor",
         "title": "경상북도 영덕군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17579&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=6",
-        "registrationDate": "2026-03-04"
+        "registrationDate": "2026-03-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17572,
@@ -27788,44 +26959,15 @@
           "end": "2026-03-03"
         },
         "publishDate": "2026-03-05 17시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 23.6
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 62.1
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 7.4
-          },
-          {
-            "candidateName": "지지",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "district_mayor",
         "title": "경상북도 포항시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17572&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=6",
-        "registrationDate": "2026-03-04"
+        "registrationDate": "2026-03-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17566,
@@ -27972,118 +27114,15 @@
           "end": "2026-02-28"
         },
         "publishDate": "2026-03-03 12시 00분",
-        "results": [
-          {
-            "candidateName": "더불",
-            "party": "",
-            "support": 11.5
-          },
-          {
-            "candidateName": "어민",
-            "party": "",
-            "support": 79.6
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "혁신",
-            "party": "",
-            "support": 4.3
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 2.4
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영덕군",
         "electionType": "district_mayor",
         "title": "경상북도 영덕군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17550&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-03"
-      },
-      {
-        "nttId": 17536,
-        "registrationId": "15516",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 914,
-          "marginOfError": 3.2,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이철우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 54.8
-          },
-          {
-            "candidateName": "권오을",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 20.1
-          },
-          {
-            "candidateName": "오중기",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 10
-          },
-          {
-            "candidateName": "임미애",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 1.3
-          },
-          {
-            "candidateName": "김재원",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 1.2
-          },
-          {
-            "candidateName": "이강덕",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 1.2
-          },
-          {
-            "candidateName": "최경환",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 1.2
-          }
-        ],
-        "regionKey": "gyeongbuk",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "경상북도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17536&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:09:43"
+        "registrationDate": "2026-03-03",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17493,
@@ -28126,11 +27165,6 @@
             "candidateName": "지지",
             "party": "",
             "support": 21
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 9.3
           }
         ],
         "regionKey": "gyeongbuk",
@@ -28138,7 +27172,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 청송군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17493&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=12",
-        "registrationDate": "2026-02-24"
+        "registrationDate": "2026-02-24",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17479,
@@ -28161,49 +27197,15 @@
           "end": "2026-02-21"
         },
         "publishDate": "2026-02-22 16시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 16.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 64.8
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 0.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 3.9
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 10.7
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 2.3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영천시",
         "electionType": "district_mayor",
         "title": "경상북도 영천시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17479&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
-        "registrationDate": "2026-02-21"
+        "registrationDate": "2026-02-21",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17461,
@@ -28772,49 +27774,15 @@
           "end": "2026-02-07"
         },
         "publishDate": "2026-02-11 17시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 10.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 80.4
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.4
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 4
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.1
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영덕군",
         "electionType": "district_mayor",
         "title": "경상북도 영덕군    기초단체장선거 정당지지도 광역의원선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17345&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
-        "registrationDate": "2026-02-10"
+        "registrationDate": "2026-02-10",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17344,
@@ -28984,11 +27952,6 @@
         "publishDate": "2026-02-10 21시 00분",
         "results": [
           {
-            "candidateName": "적합한",
-            "party": "",
-            "support": 10.9
-          },
-          {
             "candidateName": "경북교육감",
             "party": "",
             "support": 29
@@ -29014,7 +27977,9 @@
         "electionType": "superintendent",
         "title": "경상북도 전체    교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17314&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09"
+        "registrationDate": "2026-02-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'적합한'}"
       },
       {
         "nttId": 17308,
@@ -29037,24 +28002,15 @@
           "end": "2026-02-01"
         },
         "publishDate": "2026-02-21 00시 00분",
-        "results": [
-          {
-            "candidateName": "잘함",
-            "party": "",
-            "support": 59.4
-          },
-          {
-            "candidateName": "잘못함",
-            "party": "",
-            "support": 31.8
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "예천군",
         "electionType": "district_mayor",
         "title": "경상북도 예천군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17308&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=14",
-        "registrationDate": "2026-02-20"
+        "registrationDate": "2026-02-20",
+        "_corrected": true,
+        "_correctionSource": "만족도/선택기준 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17296,
@@ -29122,24 +28078,15 @@
           "end": "2026-02-06"
         },
         "publishDate": "2026-02-10 18시 00분",
-        "results": [
-          {
-            "candidateName": "조건부찬성",
-            "party": "",
-            "support": 52.7
-          },
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 27.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "의성군",
         "electionType": "district_mayor",
         "title": "경상북도 의성군 기초단체장선거정당지지도 경북 의성군수 선거 여론조사",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17287&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
-        "registrationDate": "2026-02-09"
+        "registrationDate": "2026-02-09",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17280,
@@ -29232,54 +28179,15 @@
           "end": "2026-02-07"
         },
         "publishDate": "2026-02-09 14시 00분",
-        "results": [
-          {
-            "candidateName": "더불",
-            "party": "",
-            "support": 14
-          },
-          {
-            "candidateName": "어민",
-            "party": "",
-            "support": 73.4
-          },
-          {
-            "candidateName": "주당",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "국민",
-            "party": "",
-            "support": 0.6
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "혁신",
-            "party": "",
-            "support": 7.8
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 1.3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "예천군",
         "electionType": "district_mayor",
         "title": "경상북도 예천군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17273&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=29",
-        "registrationDate": "2026-02-09"
+        "registrationDate": "2026-02-09",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17266,
@@ -29302,54 +28210,15 @@
           "end": "2026-02-06"
         },
         "publishDate": "2026-02-08 16시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 18.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 66.3
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 8.4
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "안동시",
         "electionType": "district_mayor",
         "title": "경상북도 안동시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17266&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=30",
-        "registrationDate": "2026-02-07"
+        "registrationDate": "2026-02-07",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17233,
@@ -29451,11 +28320,6 @@
             "candidateName": "지지",
             "party": "",
             "support": 1.5
-          },
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 19.5
           }
         ],
         "regionKey": "gyeongbuk",
@@ -29463,7 +28327,9 @@
         "electionType": "mayor",
         "title": "경상북도 전체    광역단체장선거 후보지지도, 가상대결, 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17229&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=33",
-        "registrationDate": "2026-02-05"
+        "registrationDate": "2026-02-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'가중값적용'}"
       },
       {
         "nttId": 17215,
@@ -29606,16 +28472,6 @@
         "publishDate": "2026-02-11 05시 00분",
         "results": [
           {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 9.5
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 6.6
-          },
-          {
             "candidateName": "배대윤",
             "party": "",
             "support": 16.1
@@ -29624,11 +28480,6 @@
             "candidateName": "임기진",
             "party": "",
             "support": 45.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 14.9
           },
           {
             "candidateName": "우병윤",
@@ -29651,7 +28502,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 청송군    기초단체장선거 광역의원선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17208&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어', '국민의힘', '민주당'}"
       },
       {
         "nttId": 17205,
@@ -29674,54 +28527,15 @@
           "end": "2026-01-31"
         },
         "publishDate": "2026-02-04 09시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 23.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 58
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.1
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 10.3
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "경산시",
         "electionType": "district_mayor",
         "title": "경상북도 경산시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17205&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17203,
@@ -29794,49 +28608,15 @@
           "end": "2026-01-26"
         },
         "publishDate": "2026-01-28 06시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 10.9
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 80
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 3.5
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영덕군",
         "electionType": "district_mayor",
         "title": "경상북도 영덕군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17168&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
-        "registrationDate": "2026-01-27"
+        "registrationDate": "2026-01-27",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17147,
@@ -29921,39 +28701,15 @@
           "end": "2026-01-25"
         },
         "publishDate": "2026-01-26 14시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 61.5
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 4.2
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 2.9
-          },
-          {
-            "candidateName": "무소속",
-            "party": "",
-            "support": 5.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "mayor",
         "title": "경상북도 포항시    기초단체장선거 광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17144&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
-        "registrationDate": "2026-01-26"
+        "registrationDate": "2026-01-26",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17141,
@@ -29976,39 +28732,15 @@
           "end": "2026-01-25"
         },
         "publishDate": "2026-01-26 15시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 18
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 60.1
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 4.4
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 4.5
-          },
-          {
-            "candidateName": "무소속",
-            "party": "",
-            "support": 6.1
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "김천시",
         "electionType": "district_mayor",
         "title": "경상북도 김천시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17141&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
-        "registrationDate": "2026-01-26"
+        "registrationDate": "2026-01-26",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17136,
@@ -30043,19 +28775,9 @@
             "support": 11.1
           },
           {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 51
-          },
-          {
             "candidateName": "가능성",
             "party": "",
             "support": 8.9
-          },
-          {
-            "candidateName": "소속",
-            "party": "",
-            "support": 4.7
           },
           {
             "candidateName": "당선",
@@ -30068,7 +28790,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 예천군    기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17136&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
-        "registrationDate": "2026-01-24"
+        "registrationDate": "2026-01-24",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'소속', '도덕성'}"
       },
       {
         "nttId": 17135,
@@ -30103,19 +28827,9 @@
             "support": 11.2
           },
           {
-            "candidateName": "도덕성",
-            "party": "",
-            "support": 47.7
-          },
-          {
             "candidateName": "가능성",
             "party": "",
             "support": 10.4
-          },
-          {
-            "candidateName": "소속",
-            "party": "",
-            "support": 4.3
           },
           {
             "candidateName": "당선",
@@ -30128,7 +28842,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 안동시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17135&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
-        "registrationDate": "2026-01-24"
+        "registrationDate": "2026-01-24",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'소속', '도덕성'}"
       },
       {
         "nttId": 17117,
@@ -30365,38 +29081,15 @@
           "end": "2025-12-29"
         },
         "publishDate": "2026-01-02 14시 00분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 20.5,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 65.9,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 0.7,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 3,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "안동시",
         "electionType": "district_mayor",
         "title": "경상북도 안동시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16977&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16952,
@@ -30538,49 +29231,15 @@
           "end": "2025-12-27"
         },
         "publishDate": "2026-01-05 05시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 19.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 65.3
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 8.3
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.3
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "mayor",
         "title": "경상북도 포항시    광역단체장선거 기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16911&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=61",
-        "registrationDate": "2025-12-29"
+        "registrationDate": "2025-12-29",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16910,
@@ -30603,49 +29262,15 @@
           "end": "2025-12-27"
         },
         "publishDate": "2026-01-04 17시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 22.3
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 59.5
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.5
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.9
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 10.1
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.4
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": null,
         "electionType": "mayor",
         "title": "경상북도 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16910&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=61",
-        "registrationDate": "2025-12-29"
+        "registrationDate": "2025-12-29",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16907,
@@ -30816,34 +29441,9 @@
         "publishDate": "2025-12-18 07시 00분",
         "results": [
           {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 17.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 66.5
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.5
-          },
-          {
             "candidateName": "조국혁",
             "party": "",
             "support": 1.4
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 3.6
           },
           {
             "candidateName": "개혁신",
@@ -30861,7 +29461,9 @@
         "electionType": "district_mayor",
         "title": "경상북도 영천시 기초단체장선거정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16865&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
-        "registrationDate": "2025-12-16"
+        "registrationDate": "2025-12-16",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'진보당', '민주당', '국민의', '더불어', '신당'}"
       },
       {
         "nttId": 16864,
@@ -31102,44 +29704,15 @@
           "end": "2025-12-13"
         },
         "publishDate": "2025-12-16 07시 00분",
-        "results": [
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 26.6
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 11.5
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 9
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 8.8
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 6.9
-          },
-          {
-            "candidateName": "의힘",
-            "party": "",
-            "support": 6.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영천시",
         "electionType": "district_mayor",
         "title": "경상북도 영천시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16840&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
-        "registrationDate": "2025-12-15"
+        "registrationDate": "2025-12-15",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16813,
@@ -31212,26 +29785,15 @@
           "end": "2025-12-02"
         },
         "publishDate": "2025-12-12 14시 00분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 20.8,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 1.2,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "영주시",
         "electionType": "district_mayor",
         "title": "경상북도 영주시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16804&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
-        "registrationDate": "2025-12-03"
+        "registrationDate": "2025-12-03",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16795,
@@ -31254,49 +29816,15 @@
           "end": "2025-11-28"
         },
         "publishDate": "2025-12-03 09시 30분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 22.7
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 60.9
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 9.5
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.9
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": null,
         "electionType": "mayor",
         "title": "경상북도 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16795&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
-        "registrationDate": "2025-12-01"
+        "registrationDate": "2025-12-01",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16778,
@@ -31319,54 +29847,15 @@
           "end": "2025-11-23"
         },
         "publishDate": "2025-11-28 00시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 21.6
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 61.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.4
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 9
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 1.2
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "district_mayor",
         "title": "경상북도 포항시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16778&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
-        "registrationDate": "2025-11-25"
+        "registrationDate": "2025-11-25",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16773,
@@ -31389,49 +29878,15 @@
           "end": "2025-11-23"
         },
         "publishDate": "2025-11-25 07시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 15.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 71.6
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 7
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 2
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "안동시",
         "electionType": "district_mayor",
         "title": "경상북도 안동시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16773&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
-        "registrationDate": "2025-11-24"
+        "registrationDate": "2025-11-24",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16772,
@@ -31454,49 +29909,15 @@
           "end": "2025-11-23"
         },
         "publishDate": "2025-11-24 23시 50분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 18.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 70.9
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 6.1
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 0.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "district_mayor",
         "title": "경상북도 포항시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16772&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=73",
-        "registrationDate": "2025-11-24"
+        "registrationDate": "2025-11-24",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16708,
@@ -31565,13 +29986,36 @@
           "end": "2026-03-17"
         },
         "publishDate": "2026-03-19 06시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "전재수",
+            "support": 47.4,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이재성",
+            "support": 18.6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박형준",
+            "support": 17.6,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "주진우",
+            "support": 15.4,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
         "title": "부산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17759&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-18"
+        "registrationDate": "2026-03-18",
+        "_corrected": true,
+        "_correctionSource": "겸손은힘들다 뉴스공장 2026-03-19 (적합도)"
       },
       {
         "nttId": 17613,
@@ -31670,12 +30114,6 @@
             "support": 13.7
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 5
-          },
-          {
             "candidateName": "전재수",
             "party": "democratic",
             "partyRaw": "더불어민주당",
@@ -31695,51 +30133,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17570&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
         "registrationDate": "2026-03-05",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:40:00"
-      },
-      {
-        "nttId": 17523,
-        "registrationId": "15503",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 1017,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "전재수",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 42.3
-          },
-          {
-            "candidateName": "박형준",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 22.3
-          }
-        ],
-        "regionKey": "busan",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "부산광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17523&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:16:39"
+        "resultsUpdatedAt": "2026-03-16T23:40:00",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 17472,
@@ -31762,49 +30158,15 @@
           "end": "2026-02-21"
         },
         "publishDate": "2026-02-23 19시 30분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 37.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 39.5
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.3
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.1
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 13.1
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
         "title": "부산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17472&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
-        "registrationDate": "2026-02-21"
+        "registrationDate": "2026-02-21",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17371,
@@ -31877,49 +30239,15 @@
           "end": "2026-02-10"
         },
         "publishDate": "2026-02-11 13시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 43.3
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 34.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 14.2
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": "강서구",
         "electionType": "mayor",
         "title": "부산광역시 강서구    광역단체장선거 기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17349&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
-        "registrationDate": "2026-02-11"
+        "registrationDate": "2026-02-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17348,
@@ -31942,49 +30270,15 @@
           "end": "2026-02-10"
         },
         "publishDate": "2026-02-11 13시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 41.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 34.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.7
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 13.6
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": "사상구",
         "electionType": "mayor",
         "title": "부산광역시 사상구    광역단체장선거 기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17348&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
-        "registrationDate": "2026-02-11"
+        "registrationDate": "2026-02-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17263,
@@ -32077,12 +30371,6 @@
             "support": 48.6
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 40.7
-          },
-          {
             "candidateName": "박형준",
             "party": "ppp",
             "partyRaw": "국민의힘",
@@ -32108,7 +30396,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17167&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
         "registrationDate": "2026-01-27",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:35:56"
+        "resultsUpdatedAt": "2026-03-17T00:35:56",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 17023,
@@ -32131,49 +30421,15 @@
           "end": "2026-01-03"
         },
         "publishDate": "2026-01-04 19시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 39.6
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 39.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.9
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 11.2
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
         "title": "부산광역시 전체 광역단체장선거정당지지도교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17023&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-04"
+        "registrationDate": "2026-01-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16996,
@@ -32196,20 +30452,7 @@
           "end": "2025-12-29"
         },
         "publishDate": "2026-01-01 04시 00분",
-        "results": [
-          {
-            "candidateName": "박형준",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 23
-          },
-          {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 17
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
@@ -32217,7 +30460,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16996&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=53",
         "registrationDate": "2025-12-31",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:57:45"
+        "resultsUpdatedAt": "2026-03-17T00:57:45",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16960,
@@ -32254,12 +30499,6 @@
             "support": 20
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 11
-          },
-          {
             "candidateName": "이재성",
             "party": "democratic",
             "partyRaw": "더불어민주당",
@@ -32273,7 +30512,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16960&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=57",
         "registrationDate": "2025-12-30",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:27:17"
+        "resultsUpdatedAt": "2026-03-17T17:27:17",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16921,
@@ -32318,11 +30559,6 @@
             "support": 7.9
           },
           {
-            "candidateName": "조국",
-            "party": "",
-            "support": 7.3
-          },
-          {
             "candidateName": "이재성",
             "party": "",
             "support": 6.2
@@ -32343,7 +30579,9 @@
         "electionType": "mayor",
         "title": "부산광역시 전체    정당지지도 광역단체장선거 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16921&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16867,
@@ -32380,12 +30618,6 @@
             "support": 14.9
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 11.9
-          },
-          {
             "candidateName": "이재성",
             "party": "democratic",
             "partyRaw": "더불어민주당",
@@ -32399,7 +30631,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16867&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
         "registrationDate": "2025-12-17",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:15:58"
+        "resultsUpdatedAt": "2026-03-17T01:15:58",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16860,
@@ -32436,12 +30670,6 @@
             "support": 40.8
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 37.3
-          },
-          {
             "candidateName": "이재성",
             "party": "democratic",
             "partyRaw": "더불어민주당",
@@ -32461,7 +30689,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16860&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=65",
         "registrationDate": "2025-12-16",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:17:11"
+        "resultsUpdatedAt": "2026-03-17T01:17:11",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16836,
@@ -32484,49 +30714,15 @@
           "end": "2025-12-14"
         },
         "publishDate": "2025-12-16 20시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 37
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 41.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.1
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.5
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 2.3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 13.1
-          }
-        ],
+        "results": [],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
         "title": "부산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16836&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
-        "registrationDate": "2025-12-15"
+        "registrationDate": "2025-12-15",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16780,
@@ -32563,12 +30759,6 @@
             "support": 27
           },
           {
-            "candidateName": "조국",
-            "party": "reform",
-            "partyRaw": "조국혁신당",
-            "support": 14
-          },
-          {
             "candidateName": "정이한",
             "party": "reform",
             "partyRaw": "개혁신당",
@@ -32582,7 +30772,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16780&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
         "registrationDate": "2025-11-25",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:22:11"
+        "resultsUpdatedAt": "2026-03-17T01:22:11",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       }
     ],
     "gyeongnam": [
@@ -32820,35 +31012,6 @@
         "resultsUpdatedAt": "2026-03-16T23:40:52"
       },
       {
-        "nttId": 17537,
-        "registrationId": "15518",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "gyeongnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "경상남도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17537&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-05"
-      },
-      {
         "nttId": 17465,
         "registrationId": "15404",
         "pollName": "선거구분",
@@ -32871,24 +31034,9 @@
         "publishDate": "2026-02-24 00시 00분",
         "results": [
           {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 15.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 28.4
-          },
-          {
             "candidateName": "최호림",
             "party": "",
             "support": 25.6
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 19.5
           },
           {
             "candidateName": "박우식",
@@ -32916,7 +31064,9 @@
         "electionType": "district_mayor",
         "title": "경상남도 산청군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17465&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=14",
-        "registrationDate": "2026-02-20"
+        "registrationDate": "2026-02-20",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어', '국민의힘', '민주당'}"
       },
       {
         "nttId": 17373,
@@ -33181,49 +31331,15 @@
           "end": "2026-02-03"
         },
         "publishDate": "2026-02-04 13시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 42
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 31.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.1
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 19
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": "김해시",
         "electionType": "district_mayor",
         "title": "경상남도 김해시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17211&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=35",
-        "registrationDate": "2026-02-03"
+        "registrationDate": "2026-02-03",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17197,
@@ -33246,49 +31362,15 @@
           "end": "2026-02-01"
         },
         "publishDate": "2026-02-09 22시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 17.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 68.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.4
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 7.2
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 1.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": "하동군",
         "electionType": "district_mayor",
         "title": "경상남도 하동군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17197&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=37",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17192,
@@ -33331,11 +31413,6 @@
             "candidateName": "이재욱",
             "party": "",
             "support": 9.2
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 7.2
           }
         ],
         "regionKey": "gyeongnam",
@@ -33343,7 +31420,9 @@
         "electionType": "district_mayor",
         "title": "경상남도 합천군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17192&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=37",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17180,
@@ -33462,49 +31541,15 @@
           "end": "2026-01-27"
         },
         "publishDate": "2026-01-28 10시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 17.1
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 70.6
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 5.7
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": "합천군",
         "electionType": "district_mayor",
         "title": "경상남도 합천군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17164&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
-        "registrationDate": "2026-01-27"
+        "registrationDate": "2026-01-27",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17162,
@@ -33688,49 +31733,15 @@
           "end": "2026-01-03"
         },
         "publishDate": "2026-01-05 19시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 33.6
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 42.3
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.6
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.4
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 11.8
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": null,
         "electionType": "mayor",
         "title": "경상남도 전체    광역단체장선거 정당지지도 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17025&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-04"
+        "registrationDate": "2026-01-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16900,
@@ -33973,49 +31984,15 @@
           "end": "2025-12-02"
         },
         "publishDate": "2025-12-05 10시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 44.5
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 34.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 10.5
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": "김해시",
         "electionType": "district_mayor",
         "title": "경상남도 김해시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16799&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
-        "registrationDate": "2025-12-04"
+        "registrationDate": "2025-12-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16761,
@@ -34100,49 +32077,15 @@
           "end": "2025-11-17"
         },
         "publishDate": "2025-11-19 20시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 40.3
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 44.7
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1.7
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.5
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 8
-          }
-        ],
+        "results": [],
         "regionKey": "gyeongnam",
         "municipality": null,
         "electionType": "mayor",
         "title": "경상남도 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16756&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=74",
-        "registrationDate": "2025-11-18"
+        "registrationDate": "2025-11-18",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       }
     ],
     "gangwon": [
@@ -34241,62 +32184,6 @@
         "resultsUpdatedAt": "2026-03-16T23:37:34"
       },
       {
-        "nttId": 17531,
-        "registrationId": "15511",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 901,
-          "marginOfError": 3.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 47.5
-          },
-          {
-            "candidateName": "김문수",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 22.3
-          },
-          {
-            "candidateName": "이준석",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 6.5
-          },
-          {
-            "candidateName": "권영국",
-            "party": null,
-            "partyRaw": "정의당",
-            "support": 1.1
-          }
-        ],
-        "regionKey": "gangwon",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "강원특별자치도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17531&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:44:26"
-      },
-      {
         "nttId": 17506,
         "registrationId": "15442",
         "pollName": "선거구분",
@@ -34332,11 +32219,6 @@
             "candidateName": "후보나",
             "party": "",
             "support": 9.9
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 9.8
           }
         ],
         "regionKey": "gangwon",
@@ -34344,7 +32226,9 @@
         "electionType": "mayor",
         "title": "강원특별자치도 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17506&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
-        "registrationDate": "2026-02-25"
+        "registrationDate": "2026-02-25",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17489,
@@ -34780,49 +32664,15 @@
           "end": "2026-01-27"
         },
         "publishDate": "2026-01-29 10시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 45.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 37.3
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 10.5
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 0.9
-          }
-        ],
+        "results": [],
         "regionKey": "gangwon",
         "municipality": null,
         "electionType": "mayor",
         "title": "강원특별자치도 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17172&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
-        "registrationDate": "2026-01-28"
+        "registrationDate": "2026-01-28",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17134,
@@ -35079,11 +32929,6 @@
         "publishDate": "2026-01-08 18시 00분",
         "results": [
           {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 23.2
-          },
-          {
             "candidateName": "김중남",
             "party": "",
             "support": 18.7
@@ -35092,11 +32937,6 @@
             "candidateName": "김한근",
             "party": "",
             "support": 15.6
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 13.4
           },
           {
             "candidateName": "권혁열",
@@ -35129,7 +32969,9 @@
         "electionType": "district_mayor",
         "title": "강원특별자치도 강릉시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17043&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
-        "registrationDate": "2026-01-05"
+        "registrationDate": "2026-01-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'국민의힘', '민주당'}"
       },
       {
         "nttId": 17041,
@@ -35154,19 +32996,9 @@
         "publishDate": "2026-01-07 18시 00분",
         "results": [
           {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 35.5
-          },
-          {
             "candidateName": "원강수",
             "party": "",
             "support": 33.4
-          },
-          {
-            "candidateName": "더불어민주",
-            "party": "",
-            "support": 11.7
           },
           {
             "candidateName": "구자열",
@@ -35189,7 +33021,9 @@
         "electionType": "district_mayor",
         "title": "강원특별자치도 원주시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17041&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
-        "registrationDate": "2026-01-05"
+        "registrationDate": "2026-01-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어민주', '국민의힘'}"
       },
       {
         "nttId": 17040,
@@ -35213,11 +33047,6 @@
         },
         "publishDate": "2026-01-06 18시 00분",
         "results": [
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 32.4
-          },
           {
             "candidateName": "육동한",
             "party": "",
@@ -35264,7 +33093,9 @@
         "electionType": "district_mayor",
         "title": "강원특별자치도 춘천시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17040&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
-        "registrationDate": "2026-01-05"
+        "registrationDate": "2026-01-05",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'민주당'}"
       },
       {
         "nttId": 17032,
@@ -35289,19 +33120,9 @@
         "publishDate": "2026-01-05 18시 00분",
         "results": [
           {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 35.7
-          },
-          {
             "candidateName": "김진태",
             "party": "",
             "support": 27.7
-          },
-          {
-            "candidateName": "더불어민주",
-            "party": "",
-            "support": 22.7
           },
           {
             "candidateName": "이광재",
@@ -35319,7 +33140,9 @@
         "electionType": "mayor",
         "title": "강원특별자치도 전체    정당지지도 광역단체장선거 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17032&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-04"
+        "registrationDate": "2026-01-04",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어민주', '국민의힘'}"
       },
       {
         "nttId": 16946,
@@ -35692,62 +33515,6 @@
         "resultsUpdatedAt": "2026-03-16T23:41:28"
       },
       {
-        "nttId": 17520,
-        "registrationId": "15502",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 1443,
-          "marginOfError": 2.6,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 47.5
-          },
-          {
-            "candidateName": "김문수",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 22.3
-          },
-          {
-            "candidateName": "이준석",
-            "party": "reform",
-            "partyRaw": "개혁신당",
-            "support": 6.5
-          },
-          {
-            "candidateName": "권영국",
-            "party": "progressive",
-            "partyRaw": "진보당",
-            "support": 1.1
-          }
-        ],
-        "regionKey": "seoul",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "서울특별시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17520&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:50:15"
-      },
-      {
         "nttId": 17515,
         "registrationId": "15450",
         "pollName": "선거구분",
@@ -35924,11 +33691,6 @@
             "candidateName": "장혜영",
             "party": "",
             "support": 10.1
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 11.4
           }
         ],
         "regionKey": "seoul",
@@ -35936,7 +33698,9 @@
         "electionType": "district_mayor",
         "title": "서울특별시 마포구    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17491&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=12",
-        "registrationDate": "2026-02-23"
+        "registrationDate": "2026-02-23",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 17448,
@@ -36133,49 +33897,15 @@
           "end": "2026-02-10"
         },
         "publishDate": "2026-02-12 05시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 44
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 32.3
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.6
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 3.4
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 12.9
-          }
-        ],
+        "results": [],
         "regionKey": "seoul",
         "municipality": null,
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17347&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
-        "registrationDate": "2026-02-11"
+        "registrationDate": "2026-02-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17295,
@@ -36374,19 +34104,9 @@
         "publishDate": "2026-02-04 09시 00분",
         "results": [
           {
-            "candidateName": "더불어민주",
-            "party": "",
-            "support": 37.4
-          },
-          {
             "candidateName": "박운기",
             "party": "",
             "support": 46
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 5.7
           },
           {
             "candidateName": "이성헌",
@@ -36404,7 +34124,9 @@
         "electionType": "district_mayor",
         "title": "서울특별시 서대문구    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17206&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어민주', '국민의힘'}"
       },
       {
         "nttId": 17171,
@@ -36464,11 +34186,6 @@
             "support": 2.1
           },
           {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 6.1
-          },
-          {
             "candidateName": "모르",
             "party": "",
             "support": 31.6
@@ -36479,7 +34196,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17171&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=39",
-        "registrationDate": "2026-01-27"
+        "registrationDate": "2026-01-27",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       },
       {
         "nttId": 17150,
@@ -36688,44 +34407,15 @@
           "end": "2026-01-19"
         },
         "publishDate": "2026-01-20 17시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 41.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 40.9
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 4.2
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 3.1
-          },
-          {
-            "candidateName": "개혁신",
-            "party": "",
-            "support": 6.9
-          }
-        ],
+        "results": [],
         "regionKey": "seoul",
         "municipality": null,
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17116&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=43",
-        "registrationDate": "2026-01-20"
+        "registrationDate": "2026-01-20",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17104,
@@ -36804,44 +34494,15 @@
           "end": "2026-01-12"
         },
         "publishDate": "2026-01-13 17시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 43.8
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 39.9
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 3.8
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "개혁신",
-            "party": "",
-            "support": 8.1
-          }
-        ],
+        "results": [],
         "regionKey": "seoul",
         "municipality": null,
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17082&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
-        "registrationDate": "2026-01-13"
+        "registrationDate": "2026-01-13",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17051,
@@ -36876,29 +34537,9 @@
             "support": 44.9
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 4.5
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 36.6
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 14
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 10.5
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 34.5
           }
         ],
         "regionKey": "seoul",
@@ -36906,7 +34547,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17051&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=49",
-        "registrationDate": "2026-01-06"
+        "registrationDate": "2026-01-06",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 17013,
@@ -37247,29 +34890,9 @@
             "support": 47.9
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 3
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 37.7
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 11.4
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 9
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 38.8
           }
         ],
         "regionKey": "seoul",
@@ -37277,7 +34900,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16934&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=59",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 16926,
@@ -37459,11 +35084,6 @@
             "support": 25.8
           },
           {
-            "candidateName": "조국",
-            "party": "",
-            "support": 9.2
-          },
-          {
             "candidateName": "후보",
             "party": "",
             "support": 2.3
@@ -37474,7 +35094,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체 광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16884&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=63",
-        "registrationDate": "2025-12-23"
+        "registrationDate": "2025-12-23",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16858,
@@ -37524,11 +35146,6 @@
             "support": 23
           },
           {
-            "candidateName": "조국",
-            "party": "",
-            "support": 9.5
-          },
-          {
             "candidateName": "후보",
             "party": "",
             "support": 2.7
@@ -37539,7 +35156,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16858&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=66",
-        "registrationDate": "2025-12-16"
+        "registrationDate": "2025-12-16",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'조국'}"
       },
       {
         "nttId": 16838,
@@ -37629,29 +35248,9 @@
             "support": 44.4
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 4.7
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 37.6
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 13.4
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 10
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 34.3
           }
         ],
         "regionKey": "seoul",
@@ -37659,7 +35258,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16819&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
-        "registrationDate": "2025-12-09"
+        "registrationDate": "2025-12-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 16800,
@@ -37694,29 +35295,9 @@
             "support": 45.5
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 3.6
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 38.8
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 12.1
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 7.3
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 38.2
           }
         ],
         "regionKey": "seoul",
@@ -37724,7 +35305,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체 광역단체장선거정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16800&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
-        "registrationDate": "2025-12-02"
+        "registrationDate": "2025-12-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 16785,
@@ -37871,29 +35454,9 @@
             "support": 47
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 4.5
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 37.7
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 10.8
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 9.2
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 37.8
           }
         ],
         "regionKey": "seoul",
@@ -37901,7 +35464,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16777&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=72",
-        "registrationDate": "2025-11-25"
+        "registrationDate": "2025-11-25",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 16749,
@@ -37936,29 +35501,9 @@
             "support": 46.4
           },
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 4.6
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 38.7
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 10.3
-          },
-          {
             "candidateName": "잘하",
             "party": "",
             "support": 7.8
-          },
-          {
-            "candidateName": "편이다",
-            "party": "",
-            "support": 38.6
           }
         ],
         "regionKey": "seoul",
@@ -37966,7 +35511,9 @@
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16749&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
-        "registrationDate": "2025-11-12"
+        "registrationDate": "2025-11-12",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'잘하고', '편이다', '있다', '매우'}"
       },
       {
         "nttId": 16711,
@@ -38045,54 +35592,15 @@
           "end": "2025-10-29"
         },
         "publishDate": "2025-10-31 06시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 40
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 36.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.4
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 4.7
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.5
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 12.5
-          },
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 0.7
-          }
-        ],
+        "results": [],
         "regionKey": "seoul",
         "municipality": null,
         "electionType": "mayor",
         "title": "서울특별시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16689&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-30"
+        "registrationDate": "2025-10-30",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       }
     ],
     "incheon": [
@@ -38702,35 +36210,6 @@
         "resultsUpdatedAt": "2026-03-16T23:37:18"
       },
       {
-        "nttId": 17538,
-        "registrationId": "15519",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 805,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "jeju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "제주특별자치도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17538&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-05"
-      },
-      {
         "nttId": 17411,
         "registrationId": "15339",
         "pollName": "선거구분",
@@ -38995,44 +36474,15 @@
           "end": "2026-02-06"
         },
         "publishDate": "2026-02-13 08시 00분",
-        "results": [
-          {
-            "candidateName": "더불어민주당",
-            "party": "democratic",
-            "support": 61.9,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "ppp",
-            "support": 21.2,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "조국혁신당",
-            "party": "reform",
-            "support": 2.3,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "진보당",
-            "party": "progressive",
-            "support": 1.2,
-            "type": "party_support"
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "newReform",
-            "support": 2.9,
-            "type": "party_support"
-          }
-        ],
+        "results": [],
         "regionKey": "jeju",
         "municipality": null,
         "electionType": "mayor",
         "title": "제주특별자치도 전체    정당지지도 광역단체장선거 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17328&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
-        "registrationDate": "2026-02-10"
+        "registrationDate": "2026-02-10",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17277,
@@ -39336,11 +36786,6 @@
             "candidateName": "정준영",
             "party": "",
             "support": 32.6
-          },
-          {
-            "candidateName": "인물이",
-            "party": "",
-            "support": 3.2
           }
         ],
         "regionKey": "chungnam",
@@ -39348,36 +36793,9 @@
         "electionType": "district_mayor",
         "title": "충청남도 계룡시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17546&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-02"
-      },
-      {
-        "nttId": 17533,
-        "registrationId": "15513",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "충청남도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17533&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05"
+        "registrationDate": "2026-03-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'인물이'}"
       },
       {
         "nttId": 17501,
@@ -39641,54 +37059,15 @@
           "end": "2026-02-10"
         },
         "publishDate": "2026-02-12 09시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 44.9
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 39.1
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.5
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 6.6
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 1.6
-          }
-        ],
+        "results": [],
         "regionKey": "chungnam",
         "municipality": null,
         "electionType": "superintendent",
         "title": "충청남도 전체 교육감선거정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17362&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=22",
-        "registrationDate": "2026-02-11"
+        "registrationDate": "2026-02-11",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17352,
@@ -39817,39 +37196,15 @@
           "end": "2026-02-09"
         },
         "publishDate": "2026-02-12 15시 00분",
-        "results": [
-          {
-            "candidateName": "매우",
-            "party": "",
-            "support": 28.4
-          },
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 26.7
-          },
-          {
-            "candidateName": "대체로",
-            "party": "",
-            "support": 19.3
-          },
-          {
-            "candidateName": "못하고",
-            "party": "",
-            "support": 5.8
-          }
-        ],
+        "results": [],
         "regionKey": "chungnam",
         "municipality": "태안군",
         "electionType": "district_mayor",
         "title": "충청남도 태안군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17335&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
-        "registrationDate": "2026-02-10"
+        "registrationDate": "2026-02-10",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17307,
@@ -39874,19 +37229,9 @@
         "publishDate": "2026-02-11 10시 00분",
         "results": [
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 38
-          },
-          {
             "candidateName": "알고",
             "party": "",
             "support": 38.2
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 20.1
           },
           {
             "candidateName": "어느",
@@ -39899,7 +37244,9 @@
         "electionType": "mayor",
         "title": "충청남도 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17307&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09"
+        "registrationDate": "2026-02-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'있다', '매우'}"
       },
       {
         "nttId": 17302,
@@ -40207,39 +37554,15 @@
           "end": "2026-01-25"
         },
         "publishDate": "2026-01-26 14시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 39
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 42
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 3.3
-          },
-          {
-            "candidateName": "기타정당",
-            "party": "",
-            "support": 2.8
-          },
-          {
-            "candidateName": "무소속",
-            "party": "",
-            "support": 5
-          }
-        ],
+        "results": [],
         "regionKey": "chungnam",
         "municipality": "당진시",
         "electionType": "mayor",
         "title": "충청남도 당진시    기초단체장선거 광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17143&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
-        "registrationDate": "2026-01-26"
+        "registrationDate": "2026-01-26",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17132,
@@ -40362,54 +37685,15 @@
           "end": "2026-01-10"
         },
         "publishDate": "2026-01-13 15시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 45.9
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 40.5
-          },
-          {
-            "candidateName": "국민의",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.8
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 2.6
-          },
-          {
-            "candidateName": "개혁",
-            "party": "",
-            "support": 7.6
-          },
-          {
-            "candidateName": "신당",
-            "party": "",
-            "support": 0.7
-          }
-        ],
+        "results": [],
         "regionKey": "chungnam",
         "municipality": "계룡시",
         "electionType": "district_mayor",
         "title": "충청남도 계룡시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17072&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
-        "registrationDate": "2026-01-12"
+        "registrationDate": "2026-01-12",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17038,
@@ -40618,13 +37902,46 @@
           "end": "2025-12-26"
         },
         "publishDate": "2026-01-01 21시 30분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "support": 21,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "강훈식",
+            "support": 17,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "양승조",
+            "support": 12,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박수현",
+            "support": 4,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "복기왕",
+            "support": 3,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박정현",
+            "support": 1,
+            "party": null
+          }
+        ],
         "regionKey": "chungnam",
         "municipality": null,
         "electionType": "mayor",
         "title": "충청남도 전체    광역단체장선거 정치 현안 등",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16992&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "KBS대전 2026-01-05 (적합도)"
       },
       {
         "nttId": 16984,
@@ -40647,44 +37964,15 @@
           "end": "2025-12-29"
         },
         "publishDate": "2025-12-30 23시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 21.4
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 66
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 0.6
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 0.7
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 7.4
-          }
-        ],
+        "results": [],
         "regionKey": "chungnam",
         "municipality": "태안군",
         "electionType": "district_mayor",
         "title": "충청남도 태안군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16984&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 16843,
@@ -40761,16 +38049,6 @@
             "candidateName": "후보",
             "party": "",
             "support": 27.1
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 20.5
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 18.8
           }
         ],
         "regionKey": "chungnam",
@@ -40778,7 +38056,9 @@
         "electionType": "district_mayor",
         "title": "충청남도 공주시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16832&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13"
+        "registrationDate": "2025-12-13",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다', '후보가'}"
       },
       {
         "nttId": 16831,
@@ -40821,11 +38101,6 @@
             "candidateName": "김형도",
             "party": "",
             "support": 6.7
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 11.4
           }
         ],
         "regionKey": "chungnam",
@@ -40833,7 +38108,9 @@
         "electionType": "district_mayor",
         "title": "충청남도 논산시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16831&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13"
+        "registrationDate": "2025-12-13",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       },
       {
         "nttId": 16830,
@@ -40871,11 +38148,6 @@
             "candidateName": "박상무",
             "party": "",
             "support": 10.2
-          },
-          {
-            "candidateName": "모르겠다",
-            "party": "",
-            "support": 10.8
           }
         ],
         "regionKey": "chungnam",
@@ -40883,7 +38155,9 @@
         "electionType": "district_mayor",
         "title": "충청남도 서산시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16830&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13"
+        "registrationDate": "2025-12-13",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'모르겠다'}"
       },
       {
         "nttId": 16743,
@@ -40932,35 +38206,6 @@
     ],
     "sejong": [
       {
-        "nttId": 17529,
-        "registrationId": "15509",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 814,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "sejong",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "세종특별자치시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17529&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05"
-      },
-      {
         "nttId": 17502,
         "registrationId": "15439",
         "pollName": "선거구분",
@@ -40981,49 +38226,15 @@
           "end": "2026-02-24"
         },
         "publishDate": "2026-02-26 09시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 52.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 26.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 4.1
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.9
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 11.4
-          }
-        ],
+        "results": [],
         "regionKey": "sejong",
         "municipality": null,
         "electionType": "mayor",
         "title": "세종특별자치시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17502&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
-        "registrationDate": "2026-02-25"
+        "registrationDate": "2026-02-25",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17176,
@@ -41190,13 +38401,51 @@
           "end": "2025-12-23"
         },
         "publishDate": "2026-01-01 21시 30분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "최민호",
+            "support": 15,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "조상호",
+            "support": 14,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김수현",
+            "support": 7,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이춘희",
+            "support": 6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이준배",
+            "support": 5,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "황운하",
+            "support": 5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "고준일",
+            "support": 1,
+            "party": null
+          }
+        ],
         "regionKey": "sejong",
         "municipality": null,
         "electionType": "mayor",
         "title": "세종특별자치시 전체    광역단체장선거 정치 현안 등",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16989&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "KBS대전 2026-01-05 (적합도)"
       },
       {
         "nttId": 16899,
@@ -41244,11 +38493,6 @@
             "candidateName": "김수현",
             "party": "",
             "support": 7.7
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 6.1
           }
         ],
         "regionKey": "sejong",
@@ -41256,66 +38500,12 @@
         "electionType": "mayor",
         "title": "세종특별자치시 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16899&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=62",
-        "registrationDate": "2025-12-27"
+        "registrationDate": "2025-12-27",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       }
     ],
     "ulsan": [
-      {
-        "nttId": 17528,
-        "registrationId": "15508",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 931,
-          "marginOfError": 3.2,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "party": null,
-            "partyRaw": "",
-            "support": 47.5
-          },
-          {
-            "candidateName": "김문수",
-            "party": null,
-            "partyRaw": "",
-            "support": 22.3
-          },
-          {
-            "candidateName": "이준석",
-            "party": null,
-            "partyRaw": "",
-            "support": 6.5
-          },
-          {
-            "candidateName": "권영국",
-            "party": null,
-            "partyRaw": "",
-            "support": 1.1
-          }
-        ],
-        "regionKey": "ulsan",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "울산광역시 전체 광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17528&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:12:07"
-      },
       {
         "nttId": 17278,
         "registrationId": "15245",
@@ -41407,24 +38597,9 @@
         "publishDate": "2026-02-04 01시 00분",
         "results": [
           {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 46.2
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 35.3
-          },
-          {
             "candidateName": "김상욱",
             "party": "",
             "support": 7.8
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 6.4
           },
           {
             "candidateName": "김두겸",
@@ -41437,7 +38612,9 @@
         "electionType": "mayor",
         "title": "울산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17204&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02"
+        "registrationDate": "2026-02-02",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'더불어', '국민의힘', '민주당'}"
       },
       {
         "nttId": 17177,
@@ -41553,11 +38730,6 @@
             "candidateName": "성인수",
             "party": "",
             "support": 2.5
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 8.4
           }
         ],
         "regionKey": "ulsan",
@@ -41565,7 +38737,9 @@
         "electionType": "mayor",
         "title": "울산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17122&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=43",
-        "registrationDate": "2026-01-20"
+        "registrationDate": "2026-01-20",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'후보가'}"
       },
       {
         "nttId": 17110,
@@ -41588,54 +38762,15 @@
           "end": "2026-01-17"
         },
         "publishDate": "2026-01-20 06시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 35
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 37.6
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 4
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 8.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 2.5
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 10.8
-          },
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 0.8
-          }
-        ],
+        "results": [],
         "regionKey": "ulsan",
         "municipality": null,
         "electionType": "mayor",
         "title": "울산광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17110&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19"
+        "registrationDate": "2026-01-19",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       },
       {
         "nttId": 17024,
@@ -41658,81 +38793,18 @@
           "end": "2026-01-03"
         },
         "publishDate": "2026-01-05 19시 00분",
-        "results": [
-          {
-            "candidateName": "더불어",
-            "party": "",
-            "support": 34.5
-          },
-          {
-            "candidateName": "민주당",
-            "party": "",
-            "support": 39.9
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 2.2
-          },
-          {
-            "candidateName": "조국",
-            "party": "",
-            "support": 6.1
-          },
-          {
-            "candidateName": "혁신당",
-            "party": "",
-            "support": 3
-          },
-          {
-            "candidateName": "진보당",
-            "party": "",
-            "support": 1.8
-          },
-          {
-            "candidateName": "개혁신당",
-            "party": "",
-            "support": 11.8
-          }
-        ],
+        "results": [],
         "regionKey": "ulsan",
         "municipality": null,
         "electionType": "mayor",
         "title": "울산광역시 전체    광역단체장선거 정당지지도 교육감선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17024&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-04"
+        "registrationDate": "2026-01-04",
+        "_corrected": true,
+        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
       }
     ],
     "daejeon": [
-      {
-        "nttId": 17527,
-        "registrationId": "15507",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 927,
-          "marginOfError": 3.2,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "대전광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17527&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05"
-      },
       {
         "nttId": 17499,
         "registrationId": "15435",
@@ -41942,19 +39014,9 @@
         "publishDate": "2026-02-11 10시 00분",
         "results": [
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 41.8
-          },
-          {
             "candidateName": "알고",
             "party": "",
             "support": 40.1
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 16.7
           },
           {
             "candidateName": "어느",
@@ -41967,7 +39029,9 @@
         "electionType": "mayor",
         "title": "대전광역시 전체    광역단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17306&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09"
+        "registrationDate": "2026-02-09",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'있다', '매우'}"
       },
       {
         "nttId": 17202,
@@ -42117,13 +39181,56 @@
           "end": "2025-12-27"
         },
         "publishDate": "2026-01-01 21시 30분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "이장우",
+            "support": 17,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "허태정",
+            "support": 14,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박범계",
+            "support": 13,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "장철민",
+            "support": 5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박성효",
+            "support": 3,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "장종태",
+            "support": 3,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김제선",
+            "support": 2,
+            "party": null
+          },
+          {
+            "candidateName": "정용기",
+            "support": 2,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "daejeon",
         "municipality": null,
         "electionType": "mayor",
         "title": "대전광역시 전체 광역단체장선거교육감선거정당지지도 정치 현안 등",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16986&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30"
+        "registrationDate": "2025-12-30",
+        "_corrected": true,
+        "_correctionSource": "KBS대전 2026-01-05 (적합도)"
       },
       {
         "nttId": 16916,
@@ -42173,35 +39280,6 @@
     ],
     "gwangju": [
       {
-        "nttId": 17526,
-        "registrationId": "15506",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 943,
-          "marginOfError": 3.2,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17526&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05"
-      },
-      {
         "nttId": 17522,
         "registrationId": "15454",
         "pollName": "선거구분",
@@ -42227,11 +39305,6 @@
             "candidateName": "김순옥",
             "party": "",
             "support": 3.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 13.4
           },
           {
             "candidateName": "광주시당",
@@ -42289,7 +39362,9 @@
         "electionType": "district_mayor",
         "title": "광주광역시 북구    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17522&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
-        "registrationDate": "2026-02-27"
+        "registrationDate": "2026-02-27",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'국민의힘'}"
       },
       {
         "nttId": 17388,
@@ -42409,7 +39484,7 @@
       {
         "nttId": 17339,
         "registrationId": "15297",
-        "pollName": "선거구분",
+        "pollName": "광주-전남 통합단체장 적합도",
         "pollOrg": "한국갤럽조사연구소",
         "clientOrg": "방송사 : KBS광주방송총국",
         "method": {
@@ -42427,13 +39502,56 @@
           "end": "2026-02-09"
         },
         "publishDate": "2026-02-12 17시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "민형배",
+            "support": 21,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김영록",
+            "support": 19,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "강기정",
+            "support": 9,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "신정훈",
+            "support": 8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "주철현",
+            "support": 6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이개호",
+            "support": 4,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이병훈",
+            "support": 4,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "정준호",
+            "support": 2,
+            "party": "democratic"
+          }
+        ],
         "regionKey": "gwangju",
         "municipality": null,
         "electionType": "mayor",
         "title": "광주광역시 전체 광역단체장선거정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17339&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
-        "registrationDate": "2026-02-10"
+        "registrationDate": "2026-02-10",
+        "_corrected": true,
+        "_correctionSource": "KBS광주 2026-02-11 (통합단체장 적합도)"
       },
       {
         "nttId": 17337,
@@ -42853,11 +39971,6 @@
         "publishDate": "2026-01-19 15시 00분",
         "results": [
           {
-            "candidateName": "매우",
-            "party": "",
-            "support": 18.2
-          },
-          {
             "candidateName": "반대한다",
             "party": "",
             "support": 12.2
@@ -42883,7 +39996,9 @@
         "electionType": "mayor",
         "title": "광주광역시 전체 광역단체장선거교육감선거대통령선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17097&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19"
+        "registrationDate": "2026-01-19",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'매우'}"
       },
       {
         "nttId": 17086,
@@ -42918,11 +40033,6 @@
             "support": 41.2
           },
           {
-            "candidateName": "있다",
-            "party": "",
-            "support": 38.1
-          },
-          {
             "candidateName": "대략적인",
             "party": "",
             "support": 10.5
@@ -42933,7 +40043,9 @@
         "electionType": "party_support",
         "title": "전국   정당지지도 광주전남 행정통합 찬반, 찬반이유, 통합단체장 선출시점",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17086&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
-        "registrationDate": "2026-01-14"
+        "registrationDate": "2026-01-14",
+        "_corrected": true,
+        "_correctionSource": "파싱 쓰레기 개별 제거: {'있다'}"
       },
       {
         "nttId": 17048,
