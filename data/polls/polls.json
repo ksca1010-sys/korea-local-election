@@ -40699,13 +40699,46 @@
           "end": "2025-12-28"
         },
         "publishDate": "2026-01-05 18시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "민형배",
+            "support": 33,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "강기정",
+            "support": 14,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "정준호",
+            "support": 6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "문인",
+            "support": 5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이병훈",
+            "support": 3,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "안태욱",
+            "support": 2,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "gwangju",
         "municipality": null,
         "electionType": "mayor",
         "title": "광주광역시 전체 교육감선거광역단체장선거 지역 현안 조사",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17035&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-05"
+        "registrationDate": "2026-01-05",
+        "_corrected": true,
+        "_correctionSource": "광주MBC 2026-01-05 (광주시장 적합도)"
       },
       {
         "nttId": 17010,
@@ -40891,7 +40924,7 @@
       {
         "nttId": 16725,
         "registrationId": "14763",
-        "pollName": "선거구분",
+        "pollName": "광주시장 적합도",
         "pollOrg": "한국갤럽조사연구소",
         "clientOrg": "방송사 : KBS광주방송총국",
         "method": {
@@ -40909,13 +40942,36 @@
           "end": "2025-10-29"
         },
         "publishDate": "2025-11-06 17시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "민형배",
+            "support": 30,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "강기정",
+            "support": 17,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "문인",
+            "support": 7,
+            "party": null
+          },
+          {
+            "candidateName": "이병훈",
+            "support": 6,
+            "party": "democratic"
+          }
+        ],
         "regionKey": "gwangju",
         "municipality": "광산구",
         "electionType": "mayor",
         "title": "광주광역시 광산구    광역단체장선거 기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16725&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=77",
-        "registrationDate": "2025-11-05"
+        "registrationDate": "2025-11-05",
+        "_corrected": true,
+        "_correctionSource": "KBS광주/갤럽 2025-11-03 (광주시장)"
       },
       {
         "nttId": 16724,
