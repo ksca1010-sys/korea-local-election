@@ -21936,7 +21936,23 @@
           "end": "2026-02-06"
         },
         "publishDate": "2026-02-06 18시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "이진숙",
+            "support": 22.6,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "추경호",
+            "support": 14.4,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "주호영",
+            "support": 12.7,
+            "party": "ppp"
+          }
+        ],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "mayor",
@@ -21944,7 +21960,7 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17260&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=31",
         "registrationDate": "2026-02-06",
         "_corrected": true,
-        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
+        "_correctionSource": "뉴데일리 2026-02-06 (국힘 적합도)"
       },
       {
         "nttId": 16985,
@@ -30739,7 +30755,38 @@
           "end": "2026-02-21"
         },
         "publishDate": "2026-02-23 19시 30분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "전재수",
+            "support": 32.6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박형준",
+            "support": 16.2,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "주진우",
+            "support": 15.8,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "조경태",
+            "support": 8.6,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "이재성",
+            "support": 6.6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "조국",
+            "support": 5.5,
+            "party": "reform"
+          }
+        ],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
@@ -30747,7 +30794,7 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17472&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
         "registrationDate": "2026-02-21",
         "_corrected": true,
-        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
+        "_correctionSource": "부산MBC 2026-02-20 (다자대결)"
       },
       {
         "nttId": 17371,
@@ -31002,7 +31049,48 @@
           "end": "2026-01-03"
         },
         "publishDate": "2026-01-04 19시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "전재수",
+            "support": 26.8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "박형준",
+            "support": 19.1,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "김도읍",
+            "support": 10.6,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "조경태",
+            "support": 10.1,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "조국",
+            "support": 6.7,
+            "party": "reform"
+          },
+          {
+            "candidateName": "박재호",
+            "support": 6.4,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "이재성",
+            "support": 5.8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "윤택근",
+            "support": 2.4,
+            "party": "progressive"
+          }
+        ],
         "regionKey": "busan",
         "municipality": null,
         "electionType": "mayor",
@@ -31010,7 +31098,7 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17023&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
         "registrationDate": "2026-01-04",
         "_corrected": true,
-        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
+        "_correctionSource": "부산일보 2026-01-04 (다자대결)"
       },
       {
         "nttId": 16996,
@@ -39343,7 +39431,33 @@
           "end": "2026-01-17"
         },
         "publishDate": "2026-01-20 06시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김두겸",
+            "support": 38.9,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "김상욱",
+            "support": 20.5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김종훈",
+            "support": 11.7,
+            "party": "progressive"
+          },
+          {
+            "candidateName": "이선호",
+            "support": 10.5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "송철호",
+            "support": 6.8,
+            "party": "democratic"
+          }
+        ],
         "regionKey": "ulsan",
         "municipality": null,
         "electionType": "mayor",
@@ -39351,7 +39465,7 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17110&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
         "registrationDate": "2026-01-19",
         "_corrected": true,
-        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
+        "_correctionSource": "뉴스토마토 2026-01-16 (다자대결)"
       },
       {
         "nttId": 17024,
