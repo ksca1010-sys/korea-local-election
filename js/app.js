@@ -342,9 +342,9 @@ const App = (() => {
         // 교육감 요약
         toggleSuperintendentSummary(false);
 
-        // 개요 스크립트 영역
-        const overviewCard = document.querySelector('.election-overview-card');
-        if (overviewCard) overviewCard.style.display = '';
+        // 개요 스크립트 영역 — 기본 숨김 (OverviewTab.render가 데이터 있을 때만 표시)
+        const overviewCard = document.getElementById('election-overview-card');
+        if (overviewCard) overviewCard.style.display = 'none';
         const districtDetail = document.getElementById('district-detail');
         if (districtDetail) districtDetail.style.display = '';
 
@@ -1790,9 +1790,7 @@ const App = (() => {
         configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
-        // 개요 스크립트 영역 숨기기 (비례대표에서는 불필요)
-        const overviewCard = document.querySelector('.election-overview-card');
-        if (overviewCard) { overviewCard.style.display = 'none'; }
+        // district-detail 숨기기 (비례대표에서는 불필요)
         const districtDetail = document.getElementById('district-detail');
         if (districtDetail) districtDetail.style.display = 'none';
         const ovSummary = document.getElementById('overview-summary');
