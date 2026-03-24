@@ -210,24 +210,35 @@ def update_data_js(poll_data):
         }}
     }};"""
 
-    # 기존 블록 교체
-    pattern = re.compile(
-        r'(    // 한국갤럽 전국 정당 지지율 데이터.*?\n'
-        r'    // 데일리 오피니언.*?\n)?'
-        r'    const gallupNationalPoll\s*=\s*\{.*?\};',
-        re.DOTALL
-    )
-
-    # 주석 포함한 새 블록
+    # 기존 블록 교체 — 주석(있으면) + const gallupNationalPoll = { ... };
+    # 중첩 {}를 처리하기 위해 라인 기반으로 블록 끝(    };)을 찾음
     report_no = poll_data['report_no']
     week_info = survey_date_text if survey_date_text else ''
     comment = f"    // 한국갤럽 전국 정당 지지율 데이터 (#4)\n    // {report_no} ({week_info})\n"
 
-    new_content = pattern.sub(comment + new_block, content)
+    lines = content.split('\n')
+    start_idx = None
+    end_idx = None
+    comment_start = None
 
-    if new_content == content:
+    for i, line in enumerate(lines):
+        if '// 한국갤럽 전국 정당 지지율' in line and comment_start is None:
+            comment_start = i
+        if 'const gallupNationalPoll' in line and '=' in line:
+            start_idx = comment_start if comment_start is not None else i
+        if start_idx is not None and end_idx is None:
+            stripped = line.strip()
+            if stripped == '};':
+                end_idx = i
+                break
+
+    if start_idx is None or end_idx is None:
         print('[오류] data.js에서 gallupNationalPoll 블록을 찾지 못했습니다.')
+        print(f'  start_idx={start_idx}, end_idx={end_idx}')
         return False
+
+    new_lines = lines[:start_idx] + (comment + new_block).split('\n') + lines[end_idx + 1:]
+    new_content = '\n'.join(new_lines)
 
     with open(DATA_JS_PATH, 'w', encoding='utf-8') as f:
         f.write(new_content)
