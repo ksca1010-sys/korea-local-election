@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-23",
+    "lastUpdated": "2026-03-24",
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
     "lastDetection": "2026-03-22",
@@ -39,38 +39,41 @@
           "name": "박남춘",
           "status": "RUMORED",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": "前 인천광역시장 · 3선 국회의원",
           "dataSource": "news",
           "sourceLabel": "경인일보",
           "sourceUrl": "https://v.daum.net/v/20260304172834185",
-          "sourcePublishedAt": "2026-03-04"
+          "sourcePublishedAt": "2026-03-04",
+          "partyName": "democratic"
         },
         {
           "name": "정승연",
           "status": "RUMORED",
           "party": "ppp",
-          "partyKey": "ppp",
+          "partyKey": "independent",
           "career": "국민의힘 연수구갑 당협위원장",
           "dataSource": "news",
           "sourceLabel": "경인일보",
           "sourceUrl": "https://v.daum.net/v/20260304172834185",
-          "sourcePublishedAt": "2026-03-04"
+          "sourcePublishedAt": "2026-03-04",
+          "partyName": "ppp"
         },
         {
           "name": "정지열",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": "연수구청장",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
           "sourceUrl": "not_provided",
           "sourceLabel": "언론보도",
-          "sourcePublishedAt": "2026-03-22"
+          "sourcePublishedAt": "2026-03-22",
+          "partyName": "democratic"
         }
       ],
-      "statusNote": "최신 뉴스에 업데이트된 정보가 없습니다.",
+      "statusNote": "2026년 6월 3일 선거예정. 현재 수집된 최신 뉴스가 없어 기존 정보만 유지 중입니다.",
       "history": [
         {
           "election": 17,
@@ -217,7 +220,7 @@
           "sourcePublishedAt": "2026-02-19"
         }
       ],
-      "statusNote": "인천 계양구을 지역구는 공천이 장기화되고 있으며, '대통령 배출지'로서 민주당 올드보이들의 출마 가능성이 거론되고 있으나, 특정 후보의 출마 선언이나 공천 소식은 아직 확인되지 않았습니다.",
+      "statusNote": "최신 뉴스 정보가 제공되지 않았습니다. 기존 수집된 후보자 정보로만 구성되었습니다.",
       "history": [
         {
           "election": 17,
@@ -331,14 +334,15 @@
         {
           "name": "김용",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
-          "pledges": []
+          "pledges": [],
+          "partyName": "democratic"
         }
       ],
-      "statusNote": "최신 뉴스 업데이트가 없어 현재 동향을 파악하기 어렵습니다.",
+      "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -434,10 +438,9 @@
       "status": "확정",
       "voters": 129000,
       "keyIssues": [
-        "여당 인물난",
-        "야당 틈새 공략",
-        "노동 중심 정책",
-        "민생 혁신"
+        "노동 정책",
+        "산업단지 발전",
+        "민생 경제"
       ],
       "prevElection": {
         "winner": "democratic",
@@ -464,7 +467,7 @@
           "party": "democratic"
         }
       ],
-      "statusNote": "최신 뉴스에 따르면, 현재까지 충남 아산시을 국회의원 보궐선거와 관련하여 새로운 후보자 정보나 선거 동향은 확인되지 않았습니다.",
+      "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",
       "history": [
         {
           "election": 17,
@@ -577,29 +580,29 @@
       "candidates": [
         {
           "name": "김의겸",
-          "career": "",
+          "career": "미상",
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
-          "partyKey": "reform",
-          "partyName": "",
+          "partyKey": "independent",
+          "partyName": "미상",
           "party": "reform"
         },
         {
           "name": "조국",
-          "career": "",
+          "career": "미상",
           "pledges": [],
           "status": "RUMORED",
           "dataSource": "news",
-          "partyKey": "reform",
-          "partyName": "",
+          "partyKey": "independent",
+          "partyName": "미상",
           "party": "reform",
           "sourceLabel": "시사저널",
           "sourceUrl": "https://www.sisajournal.com/news/articleView.html?idxno=366296",
           "sourcePublishedAt": "2026-03-21"
         }
       ],
-      "statusNote": "최신 뉴스 정보가 없습니다.",
+      "statusNote": "최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거일까지 추가 후보 공식 선언/공천 발표 대기 중.",
       "history": [
         {
           "election": 17,
@@ -707,7 +710,7 @@
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
-          "partyKey": "democratic",
+          "partyKey": "ppp",
           "partyName": "국민의힘",
           "party": "democratic"
         },
@@ -721,12 +724,13 @@
           "pledges": [],
           "sourceUrl": "",
           "sourceLabel": "언론사 미상",
-          "sourcePublishedAt": "2026-03-22"
+          "sourcePublishedAt": "2026-03-22",
+          "partyName": "민주당"
         }
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "양문석 의원직 상실로 공석이 된 안산시갑은 6·3 재보궐 선거의 주요 격전지 중 하나로, 여당 내 친명계의 각축전이 초읽기에 들어갔습니다.",
+      "statusNote": "경기 안산시갑 국회의원 보궐선거는 6월 3일 예정되어 있으며, 현재 국민의힘 김석훈 전 의장과 민주당 염정우 시의원이 주요 후보로 거론되고 있습니다. 추가 뉴스 정보가 없어 기존 수집 정보로 유지합니다.",
       "history": [
         {
           "election": 17,
@@ -840,7 +844,8 @@
           "rate": 86.73,
           "sggName": "군산시김제시부안군갑"
         }
-      ]
+      ],
+      "statusNote": "현재 제공된 최신 뉴스가 없어 후보자 정보를 확인할 수 없습니다. 추가 뉴스 소스 필요."
     }
   }
 }
