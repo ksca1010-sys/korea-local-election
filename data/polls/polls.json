@@ -9520,7 +9520,17 @@
         "electionType": "district_mayor",
         "title": "경기도 고양시    정당지지도 기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17815&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-22"
+        "registrationDate": "2026-03-22",
+        "classification": {
+          "electionTypes": [
+            "mayor"
+          ],
+          "region": "gyeonggi",
+          "district": "고양시",
+          "level": "district"
+        },
+        "_corrected": true,
+        "_correctionSource": "고양시장+정당지지도 조사 (경기도지사 아님). 수치 확인 불가"
       },
       {
         "nttId": 17771,
@@ -9636,7 +9646,33 @@
           "end": "2026-03-17"
         },
         "publishDate": "2026-03-19 13시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김동연",
+            "support": 33.8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "추미애",
+            "support": 22.5,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "한준호",
+            "support": 9.0,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "권칠승",
+            "support": 1.6,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "양기대",
+            "support": 1.4,
+            "party": "democratic"
+          }
+        ],
         "regionKey": "gyeonggi",
         "municipality": null,
         "electionType": "mayor",
@@ -9644,7 +9680,7 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17757&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
         "registrationDate": "2026-03-18",
         "_corrected": true,
-        "_correctionSource": "정당지지율 파싱 쓰레기 자동 제거"
+        "_correctionSource": "문화일보 2026-03-19 (CBS/넥스트리서치 민주당 적합도)"
       },
       {
         "nttId": 17716,
@@ -11338,13 +11374,51 @@
           "end": "2026-02-20"
         },
         "publishDate": "2026-02-23 15시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "추미애",
+            "support": 20,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김동연",
+            "support": 15,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "김은혜",
+            "support": 11,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "한준호",
+            "support": 8,
+            "party": "democratic"
+          },
+          {
+            "candidateName": "안철수",
+            "support": 7,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "이준석",
+            "support": 5,
+            "party": "newReform"
+          },
+          {
+            "candidateName": "김병주",
+            "support": 4,
+            "party": "democratic"
+          }
+        ],
         "regionKey": "gyeonggi",
         "municipality": null,
         "electionType": "mayor",
         "title": "경기도 전체    광역단체장선거 교육감선거 정당지지도 기타 현안",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17477&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=13",
-        "registrationDate": "2026-02-21"
+        "registrationDate": "2026-02-21",
+        "_corrected": true,
+        "_correctionSource": "경인일보 2026-02-23 (여야 포괄 지지도)"
       },
       {
         "nttId": 17476,
