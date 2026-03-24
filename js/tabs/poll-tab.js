@@ -650,6 +650,12 @@ const PollTab = (() => {
                 resultsHtml = '<div class="poll-card-no-result">결과 상세는 여심위 원본에서 확인하세요</div>';
             }
 
+            // 합계 초과 경고 (적합도/양자대결 합산 가능성)
+            const totalSupport = (poll.results || []).reduce((s, r) => s + (r.support || 0), 0);
+            if (totalSupport > 105 && poll.results?.length >= 2) {
+                resultsHtml += `<div style="font-size:0.7rem;color:var(--text-disabled);margin-top:6px;"><i class="fas fa-info-circle"></i> 적합도(복수응답) 또는 양자대결 합산 조사</div>`;
+            }
+
             const sourceUrl = poll.sourceUrl || `https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=${poll.nttId}&menuNo=200467`;
 
             const isOutlier = outlierInfo.outlierIds?.has(poll.nttId);

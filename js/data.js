@@ -213,8 +213,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '오세훈', rate: 59.0, runner: 'democratic', runnerName: '송영길', runnerRate: 39.2, turnout: null },
             keyIssues: ['주거 안정', '교통 인프라', '도시 재생', '미세먼지 대책'],
             subRegions: 25,
-            candidates: [
-                { id: 'seoul-1', name: '정원오', party: 'democratic', age: 57, career: '3선 성동구청장 / 前 임종석 의원 보좌관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['시민 중심 행정 혁신', '세금 아깝지 않은 서울', '성동 모델 서울 확장'] },
+            candidates: [] },
                 { id: 'seoul-2', name: '박주민', party: 'democratic', age: 52, career: '3선 국회의원 (은평갑) / 변호사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['기회특별시 서울', '서울투자공사 설립', '강북 바이오 클러스터'] },
                 { id: 'seoul-3', name: '김영배', party: 'democratic', age: 58, career: '재선 국회의원 (성북갑) / 前 성북구청장 3선 / 前 청와대 민정비서관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['시간평등특별시', '10분 역세권 서울', '마을버스 완전 공영화'] },
                 { id: 'seoul-4', name: '전현희', party: 'democratic', age: 61, career: '3선 국회의원 / 前 국민권익위원장 / 치과의사·변호사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['DDP 철거 후 서울 돔 건설', 'AI 서울 신문고', '서울형 돌봄 기본소득'] },
@@ -234,8 +233,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '박형준', rate: 66.4, runner: 'democratic', runnerName: '변성완', runnerRate: 32.2, turnout: null },
             keyIssues: ['가덕도 신공항', '도심 쇠퇴 대응', '청년 인구 유출', '해양 관광'],
             subRegions: 16,
-            candidates: [
-                { id: 'busan-1', name: '전재수', party: 'democratic', age: null, career: '現 국회의원 (북구갑) / 前 해양수산부 장관', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['해수부 공공기관 부산 이전', '동남투자공사 설립', '해사전문법원 신설'] },
+            candidates: [] },
                 { id: 'busan-2', name: '박형준', party: 'ppp', age: 66, career: '現 부산시장 (3선 도전) / 前 국회의원·청와대 정무수석', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['글로벌 도시 부산 완성'] },
                 { id: 'busan-3', name: '주진우', party: 'ppp', age: null, career: '現 국회의원 (해운대갑)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['글로벌 해양수도', 'AI 메카 조성'] },
                 { id: 'busan-4', name: '이재성', party: 'democratic', age: null, career: '前 민주당 부산시당위원장 / 이재명 인재영입 2호', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['다대포 테마파크 유치', '북항 해수부 신청사'] },
@@ -252,8 +250,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: null },
             keyIssues: ['대구경북통합신공항', '산업 구조 전환', '인구 감소', '의료 인프라'],
             subRegions: 8,
-            candidates: [
-                { id: 'daegu-1', name: '이진숙', party: 'ppp', age: null, career: '前 방송통신위원장 / 前 대전MBC 사장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구 살리기'] },
+            candidates: [] },
                 { id: 'daegu-2', name: '추경호', party: 'ppp', age: null, career: '3선 국회의원 (달성) / 前 경제부총리', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구 경제 재건'] },
                 { id: 'daegu-3', name: '주호영', party: 'ppp', age: null, career: '6선 국회의원 (수성갑) / 現 국회 부의장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구 재도약'] },
                 { id: 'daegu-4', name: '윤재옥', party: 'ppp', age: null, career: '4선 국회의원 (달서을) / 前 원내대표', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['야전사령관형 리더십'] },
@@ -272,8 +269,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '유정복', rate: 52.1, runner: 'democratic', runnerName: '박남춘', runnerRate: 44.5, turnout: null },
             keyIssues: ['인천공항 연계 발전', '수도권 교통', '영종도 개발', '제조업 활성화'],
             subRegions: 10,
-            candidates: [
-                { id: 'incheon-1', name: '박찬대', party: 'democratic', age: 60, career: '4선 국회의원 (연수갑) / 前 원내대표·대표권한대행 / 공인회계사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['기업가적 인천 대전환', '공익·민간 이익 공유'] },
+            candidates: [] },
                 { id: 'incheon-2', name: '유정복', party: 'ppp', age: 68, career: '現 인천시장 (3선 도전) / 前 행안부·농림부 장관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['천원주택 확대', '인천 제2의료원', 'F1 그랑프리 유치'] },
                 { id: 'incheon-3', name: '박남춘', party: 'democratic', age: null, career: '前 인천시장 / 前 국회의원', photo: null, status: 'RUMORED', dataSource: 'poll', pledges: [] },
                 { id: 'incheon-4', name: '김교흥', party: 'democratic', age: null, career: '現 국회의원 (서구갑) / 前 인천시 정무부시장', photo: null, status: 'RUMORED', dataSource: 'poll', pledges: [] },
@@ -289,8 +285,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '강기정', rate: 74.9, runner: 'ppp', runnerName: '주기환', runnerRate: 15.9, turnout: null },
             keyIssues: ['광주-전남 행정통합', 'AI 산업 육성', '광주형 일자리', '문화수도'],
             subRegions: 5,
-            candidates: [
-                { id: 'gwangju-1', name: '민형배', party: 'democratic', age: 58, career: '재선 국회의원 (광산을) / 前 광산구청장(재선)', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
+            candidates: [] },
                 { id: 'gwangju-2', name: '강기정', party: 'democratic', age: 62, career: '現 광주시장 (재선 도전) / 前 청와대 정무수석 / 3선 국회의원', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['AI 산업 수도 광주', '광주형 일자리 2.0'] },
                 { id: 'gwangju-3', name: '정준호', party: 'democratic', age: null, career: '초선 국회의원 (북구갑)', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] },
                 { id: 'gwangju-4', name: '문인', party: 'democratic', age: null, career: '現 광주 북구청장 / 前 광주시 행정부시장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
@@ -309,8 +304,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '이장우', rate: 51.2, runner: 'democratic', runnerName: '허태정', runnerRate: 48.8, turnout: null },
             keyIssues: ['대전-충남 행정통합', '과학기술 클러스터', '도심 교통', '세종시 연계'],
             subRegions: 5,
-            candidates: [
-                { id: 'daejeon-1', name: '이장우', party: 'ppp', age: 61, career: '現 대전시장 (재선 도전) / 前 3선 국회의원 (동구)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['2048 대전 그랜드 플랜', '스마트시티'] },
+            candidates: [] },
                 { id: 'daejeon-2', name: '이상민', party: 'ppp', age: null, career: '前 국회의원 / 現 국민의힘 대전시당위원장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
                 { id: 'daejeon-3', name: '허태정', party: 'democratic', age: 60, career: '前 대전시장 (민선7기) / 前 국회의원 (유성을)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['한국 제2경제수도', '대전충남 행정통합'] },
                 { id: 'daejeon-4', name: '박범계', party: 'democratic', age: null, career: '現 국회의원 (서구을) / 前 법무부장관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['실리콘밸리형 이노베이션 허브'] },
@@ -327,8 +321,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '김두겸', rate: 59.8, runner: 'democratic', runnerName: '송철호', runnerRate: 40.2, turnout: null },
             keyIssues: ['자동차 산업 전환', '수소 경제', '울산 혁신도시', '환경 문제'],
             subRegions: 5,
-            candidates: [
-                { id: 'ulsan-1', name: '김두겸', party: 'ppp', age: 68, career: '現 울산시장 (재선 도전) / 前 남구청장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['34조원 투자 유치 지속', '분산에너지 특화지역'] },
+            candidates: [] },
                 { id: 'ulsan-2', name: '박맹우', party: 'ppp', age: null, career: '前 울산시장(2선) / 前 국회의원', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'ulsan-3', name: '김상욱', party: 'democratic', age: null, career: '現 국회의원 (남구갑)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['민주도시·AX 선도도시'] },
                 { id: 'ulsan-4', name: '김종훈', party: 'progressive', age: null, career: '現 울산 동구청장 / 前 국회의원 / 현대중공업 노조 출신', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['범진보 후보 단일화'] },
@@ -345,8 +338,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '최민호', rate: 52.8, runner: 'democratic', runnerName: '이춘희', runnerRate: 47.2, turnout: null },
             keyIssues: ['행정수도 완성', '세종-대전 연계', '신도시 인프라', '교육 환경'],
             subRegions: 1,
-            candidates: [
-                { id: 'sejong-1', name: '최민호', party: 'ppp', age: 70, career: '現 세종시장 / 前 국무총리 비서실장 / 31년 관료', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대한민국에서 가장 살기 좋은 도시', '글로벌 행정수도 완성'] },
+            candidates: [] },
                 { id: 'sejong-2', name: '조상호', party: 'democratic', age: null, career: '前 국정기획위원 / 前 세종시 경제부시장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['삼수도론', '경제 중심 행정수도'] },
                 { id: 'sejong-3', name: '이춘희', party: 'democratic', age: null, career: '前 세종시장 2·3대 / 前 행정도시건설청장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['행정수도 완성 마지막 기회'] },
                 { id: 'sejong-4', name: '김수현', party: 'democratic', age: null, career: '더민주세종혁신회의 상임대표', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
@@ -364,8 +356,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '김동연', rate: 49.1, runner: 'ppp', runnerName: '김은혜', runnerRate: 48.9, turnout: null },
             keyIssues: ['GTX 완성', '신도시 교통', '반도체 클러스터', '수도권 균형발전'],
             subRegions: 31,
-            candidates: [
-                { id: 'gyeonggi-1', name: '김동연', party: 'democratic', age: 69, career: '現 경기도지사 / 前 경제부총리 겸 기재부 장관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['경기국제공항 추진', '경기북도 신설', '피지컬 AI 비전'] },
+            candidates: [] },
                 { id: 'gyeonggi-2', name: '양향자', party: 'ppp', age: null, career: '삼성전자 상무 출신 / 국민의힘 최고위원', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['반도체 산업 육성', '첨단산업 기반 경기도'] },
                 { id: 'gyeonggi-3', name: '추미애', party: 'democratic', age: 67, career: '6선 국회의원 / 前 민주당 대표 / 前 법무부 장관', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['경기 혁신 주도'] },
                 { id: 'gyeonggi-4', name: '한준호', party: 'democratic', age: null, career: '재선 국회의원 (고양을) / 前 대통령 수행실장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['이재명 정부 실용주의 경기도 완성'] },
@@ -384,8 +375,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '김진태', rate: 54.1, runner: 'democratic', runnerName: '이광재', runnerRate: 45.9, turnout: null },
             keyIssues: ['관광 산업 활성화', '인구 소멸 대응', '특별자치도 자치권', '동해안 개발'],
             subRegions: 18,
-            candidates: [
-                { id: 'gangwon-1', name: '우상호', party: 'democratic', age: 63, career: '前 대통령비서실 정무수석 / 4선 국회의원 (서대문갑) / 前 원내대표', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['이해관계 조율·관리형 리더십', '강원 발전 예산 확보'] },
+            candidates: [] },
                 { id: 'gangwon-2', name: '김진태', party: 'ppp', age: 62, career: '現 강원도지사 / 前 3선 국회의원 / 검사 출신', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['미래산업 글로벌도시', 'AI·첨단산업 120개 사업'] },
                 { id: 'gangwon-3', name: '염동열', party: 'ppp', age: 65, career: '前 재선 국회의원 (태백·영월·평창·정선)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
             ],
@@ -399,8 +389,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '김영환', rate: 58.2, runner: 'democratic', runnerName: '노영민', runnerRate: 41.8, turnout: null },
             keyIssues: ['오송 참사 후속대책', '바이오 산업', '충북선 고속화', '균형발전'],
             subRegions: 11,
-            candidates: [
-                { id: 'chungbuk-1', name: '김영환', party: 'ppp', age: 63, career: '現 충북도지사 (재선 도전) / 前 3선 국회의원', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['오송 바이오클러스터', '충북 반도체 단지', 'KTX 충북선 연장'] },
+            candidates: [] },
                 { id: 'chungbuk-2', name: '신용한', party: 'democratic', age: null, career: '現 지방시대위 부위원장 / 前 교수', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['새로운 충북 개척', '젊은 충북'] },
                 { id: 'chungbuk-3', name: '노영민', party: 'democratic', age: null, career: '前 대통령 비서실장 / 前 주중 대사 / 3선 국회의원 (흥덕)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['국정 노하우 활용 지역 발전'] },
                 { id: 'chungbuk-4', name: '송기섭', party: 'democratic', age: null, career: '前 진천군수 (3선)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['충북특별중심도 건설'] },
@@ -419,8 +408,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '김태흠', rate: 53.9, runner: 'democratic', runnerName: '양승조', runnerRate: 46.1, turnout: null },
             keyIssues: ['대전-충남 행정통합', '서해안 산업벨트', '농업 혁신', '천안-아산 메가시티'],
             subRegions: 15,
-            candidates: [
-                { id: 'chungnam-1', name: '김태흠', party: 'ppp', age: 58, career: '現 충남도지사 / 前 3선 국회의원 (보령·서천)', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['AI 대전환', '당진항 복합물류단지', '대전·충남 행정통합'] },
+            candidates: [] },
                 { id: 'chungnam-2', name: '박수현', party: 'democratic', age: null, career: '現 국회의원 (공주·부여·청양) / 前 청와대 대변인·국민소통수석', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['충남대전 AI 기본사회', '대전충남 통합 완성'] },
                 { id: 'chungnam-3', name: '양승조', party: 'democratic', age: null, career: '前 충남도지사 / 4선 국회의원 (천안갑)', photo: null, status: 'WITHDRAWN', dataSource: 'news', pledges: ['대전충남 통합특별시'] },
                 { id: 'chungnam-4', name: '복기왕', party: 'democratic', age: null, career: '現 국회의원 (아산갑) / 前 아산시장(재선)', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
@@ -436,8 +424,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '김관영', rate: 82.1, runner: 'ppp', runnerName: '조배숙', runnerRate: 17.9, turnout: null },
             keyIssues: ['특별자치도 자치권', '새만금 개발', '탄소중립', '농생명 산업'],
             subRegions: 14,
-            candidates: [
-                { id: 'jeonbuk-1', name: '김관영', party: 'democratic', age: 58, career: '現 전북도지사 (재선 도전) / 前 3선 국회의원 (군산)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['전북특별자치도 특례 확대', '새만금 활성화'] },
+            candidates: [] },
                 { id: 'jeonbuk-2', name: '안호영', party: 'democratic', age: null, career: '3선 국회의원 (완주·진안·무주·장수) / 現 환경노동위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'jeonbuk-3', name: '이원택', party: 'democratic', age: null, career: '재선 국회의원 (전주갑) / 前 전북도 정무부지사', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'jeonbuk-4', name: '정헌율', party: 'democratic', age: null, career: '現 익산시장 (3선, 연임제한)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
@@ -452,8 +439,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: null },
             keyIssues: ['광주-전남 행정통합', '에너지 전환', '농어촌 활성화', '인구 소멸'],
             subRegions: 22,
-            candidates: [
-                { id: 'jeonnam-1', name: '김영록', party: 'democratic', age: 68, career: '現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['전남 해상풍력 허브', '광주-전남 메가시티'] },
+            candidates: [] },
                 { id: 'jeonnam-2', name: '주철현', party: 'democratic', age: null, career: '現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
                 { id: 'jeonnam-3', name: '신정훈', party: 'democratic', age: null, career: '現 국회의원 (나주·화순) / 現 행안위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
                 { id: 'jeonnam-4', name: '이개호', party: 'democratic', age: null, career: '4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
@@ -470,8 +456,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: null },
             keyIssues: ['포항 지진 복구', '경북 북부 발전', '울릉도 개발', '반도체 산업'],
             subRegions: 23,
-            candidates: [
-                { id: 'gyeongbuk-1', name: '이철우', party: 'ppp', age: 71, career: '現 경북도지사 (3선 도전) / 前 5선 국회의원 (김천)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구경북신공항 완수', '국가산업단지 조성'] },
+            candidates: [] },
                 { id: 'gyeongbuk-2', name: '권오을', party: 'democratic', age: null, career: '現 국가보훈부 장관 / 前 3선 국회의원 (안동)', photo: null, status: 'WITHDRAWN', dataSource: 'news', pledges: [] },
                 { id: 'gyeongbuk-3', name: '오중기', party: 'democratic', age: null, career: '民 포항북 지역위원장 / 前 청와대 균형발전비서관실', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['대기업 상생 생태계', '청년창업 메카'] },
                 { id: 'gyeongbuk-4', name: '임미애', party: 'democratic', age: null, career: '現 비례대표 국회의원 / 前 경북도의원', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] }
@@ -486,8 +471,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'ppp', winnerName: '박완수', rate: 65.7, runner: 'democratic', runnerName: '양문석', runnerRate: 29.4, turnout: null },
             keyIssues: ['조선 산업 부활', '진주 혁신도시', '김해 가덕도 연계', '농촌 활성화'],
             subRegions: 18,
-            candidates: [
-                { id: 'gyeongnam-1', name: '김경수', party: 'democratic', age: null, career: '現 지방시대위원장 / 前 경남도지사 (민선7기)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
+            candidates: [] },
                 { id: 'gyeongnam-2', name: '박완수', party: 'ppp', age: 71, career: '現 경남도지사 / 前 3선 창원시장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['산업 경쟁력 강화', '도정 연속성'] },
                 { id: 'gyeongnam-3', name: '조해진', party: 'ppp', age: null, career: '前 3선 국회의원 (밀양·의령·함안·창녕)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['남부권 제2 수도권', '부울경 통합 지자체'] },
                 { id: 'gyeongnam-4', name: '전희영', party: 'progressive', age: null, career: '前 전교조 위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
@@ -502,8 +486,7 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '오영훈', rate: 55.1, runner: 'ppp', runnerName: '허향진', runnerRate: 39.5, turnout: null },
             keyIssues: ['제주 제2공항', '관광 산업 혁신', '환경 보전', '이주민 정책'],
             subRegions: 2,
-            candidates: [
-                { id: 'jeju-1', name: '문대림', party: 'democratic', age: 61, career: '現 국회의원 (제주시을) / 前 제주도의회 의장(최연소)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['5천억 민생회복 추경', '20조원 투자 유치'] },
+            candidates: [] },
                 { id: 'jeju-2', name: '오영훈', party: 'democratic', age: 57, career: '現 제주도지사 (재선 도전) / 前 국회의원', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['AI·에너지·우주산업 중심 미래 제주', '재생에너지 연금'] },
                 { id: 'jeju-3', name: '위성곤', party: 'democratic', age: 58, career: '3선 국회의원 (서귀포) / 現 기후위기특별위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['제주사회 대전환 6대 비전'] },
                 { id: 'jeju-4', name: '문성유', party: 'ppp', age: null, career: '前 기재부 기획조정실장 / 前 KAMCO 사장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['1차 산업 인력통합관리센터'] },
@@ -1532,23 +1515,23 @@ const ElectionData = (() => {
 
     // 현직 교육감 데이터 (2026.3 기준, 2022 제8회 지방선거 + 2024.10 서울 보궐 반영)
     const superintendents = {
-        'seoul':    { region: '서울',  currentSuperintendent: { name: '정근식', stance: '진보', since: 2024, career: '현 교육감 (보궐)', note: '보궐선거(2024.10) 당선, 조희연 후임' },    candidates: [{ name: '정근식', stance: '진보', support: 38.5, career: '현 교육감 (보궐)' }, { name: '이재광', stance: '보수', support: 35.2, career: '前 서울시교육청 부교육감' }] },
-        'busan':    { region: '부산',  currentSuperintendent: { name: '하윤수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 부산교대 총장 출신' },                  candidates: [{ name: '하윤수', stance: '보수', support: 40.5, career: '현 교육감' }, { name: '김성호', stance: '진보', support: 42.1, career: '前 교육청 부교육감' }] },
-        'daegu':    { region: '대구',  currentSuperintendent: { name: '강은희', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선, 유일 여성 보수 교육감' },               candidates: [{ name: '강은희', stance: '보수', support: 44.2, career: '현 교육감' }, { name: '박성혁', stance: '진보', support: 32.1, career: '前 교육시민단체 대표' }] },
-        'incheon':  { region: '인천',  currentSuperintendent: { name: '도성훈', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 경력' },                         candidates: [{ name: '도성훈', stance: '진보', support: 41.3, career: '현 교육감' }, { name: '김현기', stance: '보수', support: 38.7, career: '前 인천교육청 국장' }] },
-        'gwangju':  { region: '광주',  currentSuperintendent: { name: '이정선', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 광주교대 총장 출신' },                  candidates: [{ name: '이정선', stance: '진보', support: 17.6, career: '현 교육감' }, { name: '김용태', stance: '중도', support: 23.4, career: '교육계 인사' }, { name: '정성홍', stance: '진보', support: 20.8, career: '교육계 인사' }, { name: '오경미', stance: '진보', support: 15.1, career: '교육계 인사' }] },
-        'daejeon':  { region: '대전',  currentSuperintendent: { name: '설동호', stance: '중도', since: 2014, career: '현 교육감', note: '2022 3선, 언론사별 성향 분류 상이' },               candidates: [{ name: '설동호', stance: '중도', support: 45.8, career: '현 교육감' }, { name: '김동건', stance: '진보', support: 31.2, career: '前 교육청 부교육감' }] },
-        'ulsan':    { region: '울산',  currentSuperintendent: { name: '노옥희', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 울산지부장 출신' },               candidates: [{ name: '노옥희', stance: '진보', support: 43.6, career: '현 교육감' }, { name: '이상봉', stance: '보수', support: 37.9, career: '前 학교장' }] },
-        'sejong':   { region: '세종',  currentSuperintendent: { name: '최교진', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선' },                                       candidates: [{ name: '최교진', stance: '진보', support: 48.2, career: '현 교육감' }, { name: '강태중', stance: '보수', support: 33.1, career: '前 교육정책연구원장' }] },
-        'gyeonggi': { region: '경기',  currentSuperintendent: { name: '임태희', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 13년만 보수 교육감' },                   candidates: [{ name: '임태희', stance: '보수', support: 41.8, career: '현 교육감' }, { name: '신현석', stance: '진보', support: 39.5, career: '前 교육청 부교육감' }] },
-        'gangwon':  { region: '강원',  currentSuperintendent: { name: '신경호', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '신경호', stance: '보수', support: 40.3, career: '현 교육감' }, { name: '민병희', stance: '진보', support: 38.8, career: '前 교육감' }] },
-        'chungbuk': { region: '충북',  currentSuperintendent: { name: '윤건영', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 청주교대 총장 출신' },                   candidates: [{ name: '윤건영', stance: '보수', support: 42.5, career: '현 교육감' }, { name: '심의보', stance: '진보', support: 35.6, career: '前 교육청 장학관' }] },
-        'chungnam': { region: '충남',  currentSuperintendent: { name: '김지철', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '김지철', stance: '진보', support: 44.7, career: '현 교육감' }, { name: '오연호', stance: '보수', support: 36.2, career: '前 교육위원' }] },
-        'jeonbuk':  { region: '전북',  currentSuperintendent: { name: '서거석', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전북대 총장 출신' },                     candidates: [{ name: '서거석', stance: '진보', support: 46.3, career: '현 교육감' }, { name: '이창식', stance: '보수', support: 29.8, career: '前 교육청 부교육감' }] },
-        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [{ name: '김대중', stance: '진보', support: 50.1, career: '현 교육감' }, { name: '박정일', stance: '보수', support: 27.3, career: '前 학교장' }] },
-        'gyeongbuk': { region: '경북', currentSuperintendent: { name: '임종식', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선' },                                       candidates: [{ name: '임종식', stance: '보수', support: 23.9, career: '현 교육감' }, { name: '임준희', stance: '중도', support: 1.2, career: '교육계 인사' }] },
-        'gyeongnam': { region: '경남', currentSuperintendent: { name: '박종훈', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '박종훈', stance: '진보', support: 43.9, career: '현 교육감' }, { name: '김태진', stance: '보수', support: 37.4, career: '前 교육청 부교육감' }] },
-        'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '김광수', stance: '보수', support: 41.2, career: '현 교육감' }, { name: '이석문', stance: '진보', support: 38.6, career: '前 교육감' }] }
+        'seoul':    { region: '서울',  currentSuperintendent: { name: '정근식', stance: '진보', since: 2024, career: '현 교육감 (보궐)', note: '보궐선거(2024.10) 당선, 조희연 후임' },    candidates: [] },
+        'busan':    { region: '부산',  currentSuperintendent: { name: '하윤수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 부산교대 총장 출신' },                  candidates: [] },
+        'daegu':    { region: '대구',  currentSuperintendent: { name: '강은희', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선, 유일 여성 보수 교육감' },               candidates: [] },
+        'incheon':  { region: '인천',  currentSuperintendent: { name: '도성훈', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 경력' },                         candidates: [] },
+        'gwangju':  { region: '광주',  currentSuperintendent: { name: '이정선', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 광주교대 총장 출신' },                  candidates: [] },
+        'daejeon':  { region: '대전',  currentSuperintendent: { name: '설동호', stance: '중도', since: 2014, career: '현 교육감', note: '2022 3선, 언론사별 성향 분류 상이' },               candidates: [] },
+        'ulsan':    { region: '울산',  currentSuperintendent: { name: '노옥희', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 울산지부장 출신' },               candidates: [] },
+        'sejong':   { region: '세종',  currentSuperintendent: { name: '최교진', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선' },                                       candidates: [] },
+        'gyeonggi': { region: '경기',  currentSuperintendent: { name: '임태희', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 13년만 보수 교육감' },                   candidates: [] },
+        'gangwon':  { region: '강원',  currentSuperintendent: { name: '신경호', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [] },
+        'chungbuk': { region: '충북',  currentSuperintendent: { name: '윤건영', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 청주교대 총장 출신' },                   candidates: [] },
+        'chungnam': { region: '충남',  currentSuperintendent: { name: '김지철', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [] },
+        'jeonbuk':  { region: '전북',  currentSuperintendent: { name: '서거석', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전북대 총장 출신' },                     candidates: [] },
+        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [] },
+        'gyeongbuk': { region: '경북', currentSuperintendent: { name: '임종식', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선' },                                       candidates: [] },
+        'gyeongnam': { region: '경남', currentSuperintendent: { name: '박종훈', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [] },
+        'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [] }
     };
 
     // 교육감 역대 선거 결과 (직선제: 2007~2022, winner/runner는 성향)

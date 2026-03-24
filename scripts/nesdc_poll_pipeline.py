@@ -908,21 +908,17 @@ def _extract_party_support_inline(text: str) -> List[Dict[str, Any]]:
                     if len(results) >= 2:
                         return results
 
-    # ── 포맷 A: 소수점 인라인 매칭 ──
+    # ── 포맷 A: 정당지지율 — 후보 results와 별도 저장 (빈 배열 반환) ──
+    # 정당지지율은 후보 지지율이 아니므로 results에 넣지 않음
+    # (프론트엔드에서 정당명이 후보명으로 표시되는 버그 방지)
     for line in lines:
         matches = re.findall(
             r'(국민의힘|더불어민주당|민주당|조국혁신당|개혁신당|진보당)\s+(\d{1,2}\.\d)',
             line
         )
         if len(matches) >= 2:
-            for party_name, pct in matches:
-                results.append({
-                    "candidateName": party_name,
-                    "party": PARTY_MAP.get(party_name, "other"),
-                    "support": float(pct),
-                    "type": "party_support",
-                })
-            return results
+            # 정당지지율 감지 → 후보 results로 반환하지 않음
+            return []
 
     return results
 
@@ -935,7 +931,27 @@ _INVALID_NAMES = {
     "찬성", "반대", "모름", "기타", "없음", "없다",
     "다른", "인물", "모르겠", "잘", "배율", "보수", "중도", "진보",
     "후보", "기타후보", "잘모르겠다", "적합한", "경북교육감",
+    # 정당명 토큰 (정당지지율 파싱 방지)
+    "더불어", "민주당", "국민의", "국민의힘", "혁신당", "개혁", "신당",
+    "더불", "어민", "주당", "의힘", "혁신", "국민", "조국",
+    "정의당", "진보당", "개혁신당", "조국혁신당", "새로운미래", "기본소득당",
+    "더불어민주당", "더불어민주",
+    # 만족도/선택기준 파싱 방지
+    "편이다", "매우", "잘함", "못함", "잘하고", "잘못하", "대체로", "보통이다",
+    "있다", "지지", "모르겠다", "인물이", "후보가",
+    "지역현안", "해결능력", "소속", "도덕성", "청렴성", "정책추진", "경험",
+    "가능성", "전문성", "대통령국정", "운영의안정", "현정권견제",
+    "지방선거후", "보선택시가", "장중요한기", "도덕성과", "정책추진능",
+    # 정당 약칭/지지 관련
+    "지지하는정", "더불어민주", "기타정당", "지지정당없", "지지정당",
+    "가중값적용",
 }
+
+# 정당명 패턴 (후보명이 아닌 정당명인지 판별)
+_PARTY_NAME_PATTERN = re.compile(
+    r'^(더불어민주당|국민의힘|조국혁신당|개혁신당|진보당|정의당|새로운미래|기본소득당|'
+    r'더불어|민주당|국민의|혁신당|개혁|신당|더불|어민|주당|의힘|국민|조국)$'
+)
 
 
 def _extract_table_results(pdf) -> List[Dict[str, Any]]:
@@ -1024,11 +1040,29 @@ def _parse_pdf_table(table: List[List[Optional[str]]], fallback_header_names: Op
     results = []
     for name, pct in zip(header_names, percentages):
         if 0.5 <= pct <= 85:
+            # 정당명이 후보로 들어오면 차단
+            if _PARTY_NAME_PATTERN.match(name):
+                continue
+            # 무효 이름 재확인
+            if name in _INVALID_NAMES:
+                continue
             results.append({
                 "candidateName": name,
                 "party": _normalize_party(""),
                 "support": pct,
             })
+
+    # 결과 검증: 합계가 105%를 넘으면 양자대결 합산 가능성 → 결과 폐기
+    total = sum(r["support"] for r in results)
+    if total > 105 and len(results) >= 2:
+        # 상위 2명만 남기고 나머지 폐기 (가장 높은 양자대결 하나만 유지)
+        results.sort(key=lambda r: -r["support"])
+        top2 = results[:2]
+        if sum(r["support"] for r in top2) <= 105:
+            results = top2
+        # 그래도 105% 넘으면 폐기
+        elif total > 150:
+            return []
 
     return results if len(results) >= 2 else []
 
