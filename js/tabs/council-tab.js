@@ -566,9 +566,9 @@ const CouncilTab = (() => {
                             html += `
                                 <div style="margin-bottom:var(--space-12);">
                                     <div style="display:flex;align-items:baseline;gap:var(--space-6);margin-bottom:var(--space-4);">
-                                        <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name || pn}</span>
+                                        <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name?.trim() || '이름 미상'}</span>
                                         <span style="font-size:var(--text-caption);color:${pc};">${pn}</span>
-                                        <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || w.votes.toLocaleString()}</span>
+                                        <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || (w.votes != null ? w.votes.toLocaleString() : '-')}</span>
                                     </div>
                                     <div style="height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
                                         <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>
@@ -683,9 +683,9 @@ const CouncilTab = (() => {
                         lcHtml += `
                             <div style="margin-bottom:var(--space-12);">
                                 <div style="display:flex;align-items:baseline;gap:var(--space-6);margin-bottom:var(--space-4);">
-                                    <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name || pn}</span>
+                                    <span style="font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${w.name?.trim() || '이름 미상'}</span>
                                     <span style="font-size:var(--text-caption);color:${pc};">${pn}</span>
-                                    <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || w.votes.toLocaleString()}</span>
+                                    <span style="margin-left:auto;font-size:var(--text-title);font-weight:var(--font-bold);color:var(--text-primary);">${rateText || (w.votes != null ? w.votes.toLocaleString() : '-')}</span>
                                 </div>
                                 <div style="height:8px;background:rgba(255,255,255,0.04);border-radius:4px;overflow:hidden;">
                                     <div style="width:${barW}%;height:100%;background:${pc};border-radius:4px;transition:width 0.6s cubic-bezier(0.4,0,0.2,1);"></div>

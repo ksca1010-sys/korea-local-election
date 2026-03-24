@@ -119,11 +119,11 @@ const App = (() => {
         // Load mayor history (기초단체장 역대 선거 결과)
         try { await ElectionData.loadMayorHistory?.(); } catch(e) { console.warn('loadMayorHistory error:', e); }
         // Load council members data (광역의원 현직 정보)
-        try { ElectionData.loadCouncilMembersData(); } catch(e) { console.warn('loadCouncilMembersData error:', e); }
+        try { await ElectionData.loadCouncilMembersData?.(); } catch(e) { console.warn('loadCouncilMembersData error:', e); }
         // Load candidates data
-        try { ElectionData.loadCandidatesData?.(); } catch(e) { console.warn('loadCandidatesData error:', e); }
+        try { await ElectionData.loadCandidatesData?.(); } catch(e) { console.warn('loadCandidatesData error:', e); }
         // Load by-election data
-        try { ElectionData.loadByElectionData?.(); } catch(e) { console.warn('loadByElectionData error:', e); }
+        try { await ElectionData.loadByElectionData?.(); } catch(e) { console.warn('loadByElectionData error:', e); }
         // Load polls data (여론조사)
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
@@ -1276,24 +1276,36 @@ const App = (() => {
         // 기존 로직 (governor, mayor, superintendent, byElection)
         // Render poll tab
         if (tabName === 'polls' && currentRegionKey) {
-            renderPollTab(currentRegionKey, currentElectionType, currentDistrictName);
+            if (typeof PollTab !== 'undefined') {
+                try { PollTab.render(currentRegionKey, currentElectionType, currentDistrictName); }
+                catch (e) { console.warn('[PollTab] error, fallback:', e); renderPollTab(currentRegionKey, currentElectionType, currentDistrictName); }
+            } else {
+                renderPollTab(currentRegionKey, currentElectionType, currentDistrictName);
+            }
         }
 
         if (tabName === 'candidates' && currentRegionKey) {
             // 의원급은 CouncilTab에서 처리 (위에서 return됨). 여기 도달하면 광역단체장/기초단체장/교육감만
             const councilTypes = ['council', 'localCouncil', 'councilProportional', 'localCouncilProportional'];
             if (!councilTypes.includes(currentElectionType)) {
-                renderCandidatesTab(currentRegionKey);
+                if (typeof CandidateTab !== 'undefined') {
+                    try { CandidateTab.render(currentRegionKey, currentElectionType, currentDistrictName); }
+                    catch (e) { console.warn('[CandidateTab] error, fallback:', e); renderCandidatesTab(currentRegionKey); }
+                } else {
+                    renderCandidatesTab(currentRegionKey);
+                }
             }
         }
 
         // Render news if news tab (lazy 로딩: 뉴스탭 전환 시에만 렌더)
         if (tabName === 'news' && currentRegionKey) {
-            if (_newsTabPendingRegion) {
-                renderNewsTab(_newsTabPendingRegion);
-                _newsTabPendingRegion = null;
+            const newsRegion = _newsTabPendingRegion || currentRegionKey;
+            _newsTabPendingRegion = null;
+            if (typeof NewsTab !== 'undefined') {
+                try { NewsTab.render(newsRegion, currentElectionType, currentDistrictName); }
+                catch (e) { console.warn('[NewsTab] error, fallback:', e); renderNewsTab(newsRegion); }
             } else {
-                renderNewsTab(currentRegionKey);
+                renderNewsTab(newsRegion);
             }
         }
 
@@ -1617,7 +1629,12 @@ const App = (() => {
         configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         toggleSuperintendentSummary(false);
 
-        renderOverviewTab(regionKey);
+        if (typeof OverviewTab !== 'undefined') {
+            try { OverviewTab.render(regionKey, currentElectionType, currentDistrictName); }
+            catch (e) { console.warn('[OverviewTab] error, fallback:', e); renderOverviewTab(regionKey); }
+        } else {
+            renderOverviewTab(regionKey);
+        }
         // 뉴스탭은 lazy 로딩 — 탭 전환 시 renderNewsTab 호출 (API 쿼터 절약)
         _newsTabPendingRegion = regionKey;
     }
@@ -1637,7 +1654,12 @@ const App = (() => {
 
         // Render superintendent overview
         renderSuperintendentOverview(regionKey, region, data);
-        renderOverviewTab(regionKey);
+        if (typeof OverviewTab !== 'undefined') {
+            try { OverviewTab.render(regionKey, currentElectionType, currentDistrictName); }
+            catch (e) { console.warn('[OverviewTab] error, fallback:', e); renderOverviewTab(regionKey); }
+        } else {
+            renderOverviewTab(regionKey);
+        }
         // 뉴스탭은 lazy 로딩 — 탭 전환 시 renderNewsTab 호출 (API 쿼터 절약)
         _newsTabPendingRegion = regionKey;
     }
@@ -2092,7 +2114,12 @@ function renderCouncilProvinceView(regionKey, region) {
         // 개요 카드 렌더링 (narrative)
         const regionKey = data.region || key.split('-')[0];
         currentRegionKey = regionKey;
-        renderOverviewTab(regionKey);
+        if (typeof OverviewTab !== 'undefined') {
+            try { OverviewTab.render(regionKey, currentElectionType, currentDistrictName); }
+            catch (e) { console.warn('[OverviewTab] error, fallback:', e); renderOverviewTab(regionKey); }
+        } else {
+            renderOverviewTab(regionKey);
+        }
 
         switchTabForRegion();
         openPanel();
@@ -2170,7 +2197,12 @@ function renderCouncilProvinceView(regionKey, region) {
         }
 
         // 현직 정보 + 개요 카드 렌더링
-        renderOverviewTab(regionKey);
+        if (typeof OverviewTab !== 'undefined') {
+            try { OverviewTab.render(regionKey, currentElectionType, currentDistrictName); }
+            catch (e) { console.warn('[OverviewTab] error, fallback:', e); renderOverviewTab(regionKey); }
+        } else {
+            renderOverviewTab(regionKey);
+        }
 
         switchTabForRegion();
         openPanel();
@@ -5877,9 +5909,9 @@ function renderCouncilProvinceView(regionKey, region) {
         getElectionType: () => currentElectionType,
         applyTermTooltips,
         __debug: {
-            evaluateNewsCase,
+            evaluateNewsCase: typeof NewsTab !== 'undefined' && NewsTab.evaluateNewsCase ? NewsTab.evaluateNewsCase : evaluateNewsCase,
             buildNewsQueryPlan,
-            buildPollSelection
+            buildPollSelection: typeof PollTab !== 'undefined' ? PollTab.buildSelection : buildPollSelection
         }
     };
 

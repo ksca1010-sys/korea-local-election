@@ -54,8 +54,11 @@ const ChartsModule = (() => {
 
         const canvas = typeof canvasId === 'string' ? document.getElementById(canvasId) : canvasId;
         if (!canvas) return null;
+        // 기존 차트 인스턴스 파괴 (메모리 누수 방지)
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) existingChart.destroy();
         if (pollBarChart && typeof canvasId === 'string' && canvasId === 'poll-bar-chart') {
-            pollBarChart.destroy();
+            pollBarChart = null;
         }
 
         const results = poll.results
@@ -159,8 +162,11 @@ const ChartsModule = (() => {
 
         const canvas = typeof canvasId === 'string' ? document.getElementById(canvasId) : canvasId;
         if (!canvas) return null;
+        // 기존 차트 인스턴스 파괴 (메모리 누수 방지)
+        const existingChart = Chart.getChart(canvas);
+        if (existingChart) existingChart.destroy();
         if (pollTrendChart && typeof canvasId === 'string' && canvasId === 'poll-trend-chart') {
-            pollTrendChart.destroy();
+            pollTrendChart = null;
         }
 
         // 시간순 정렬 (오래된 것부터)

@@ -718,7 +718,7 @@ const ElectionData = (() => {
         const hotspots = [];
         Object.entries(regions).forEach(([key, region]) => {
             const latestPoll = region.polls[region.polls.length - 1];
-            if (!latestPoll) return;
+            if (!latestPoll?.data) return;
             const pollValues = Object.values(latestPoll.data);
             pollValues.sort((a, b) => b - a);
             const gap = pollValues.length >= 2 ? pollValues[0] - pollValues[1] : 100;
@@ -748,7 +748,7 @@ const ElectionData = (() => {
         const dominance = {};
         Object.values(regions).forEach(region => {
             const latestPoll = region.polls[region.polls.length - 1];
-            if (!latestPoll) return;
+            if (!latestPoll?.data) return;
             const leadingCandidate = Object.entries(latestPoll.data).sort((a, b) => b[1] - a[1])[0];
             const candidate = region.candidates.find(c => c.id === leadingCandidate[0]);
             if (candidate) {
@@ -1930,8 +1930,9 @@ const ElectionData = (() => {
 
         // ── 기초의원 시군구 데이터 조회 ──
         getLocalCouncilData(regionKey, districtName) {
-            const members = this.getLocalCouncilMembers(regionKey, districtName);
-            if (!members?.length) {
+            const entry = this.getLocalCouncilMembers(regionKey, districtName);
+            const members = entry?.members;
+            if (!Array.isArray(members) || !members.length) {
                 return null;
             }
             // 현직 의원 데이터를 선거구별로 그룹핑
@@ -2076,27 +2077,32 @@ const ElectionData = (() => {
 
         // ── 재보궐 외부 JSON 로드 API ──
         _byElectionCache: null,
+        _byElectionPromise: null,
         loadByElectionData() {
             if (this._byElectionCache) return Promise.resolve(this._byElectionCache);
-            return fetch('data/candidates/byelection.json?v=' + Date.now())
-                .then(r => r.ok ? r.json() : null)
+            if (this._byElectionPromise) return this._byElectionPromise;
+            this._byElectionPromise = fetch('data/candidates/byelection.json?v=' + Date.now())
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
                 .then(data => {
                     this._byElectionCache = data;
+                    this._byElectionPromise = null;
                     const count = data?.districts ? Object.keys(data.districts).length : 0;
                     console.log(`[ByElectionData] Loaded: ${count} districts, updated ${data?._meta?.lastUpdated || 'unknown'}`);
                     return data;
                 })
                 .catch(err => {
+                    this._byElectionPromise = null;
                     console.warn('[ByElectionData] Failed to load:', err);
                     return null;
                 });
+            return this._byElectionPromise;
         },
 
         // ── 선거 통계 외부 JSON 로드 API ──
-        _electionStatsLoaded: false,
+        _electionStatsPromise: null,
         loadElectionStats() {
-            if (this._electionStatsLoaded) return Promise.resolve();
-            return fetch('data/election_stats.json?v=' + Date.now())
+            if (this._electionStatsPromise) return this._electionStatsPromise;
+            this._electionStatsPromise = fetch('data/election_stats.json?v=' + Date.now())
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.electionTypes) return;
@@ -2122,11 +2128,11 @@ const ElectionData = (() => {
                         nationalSummary.byElection.count = data.electionTypes.byElection.count;
                         nationalSummary.byElection.districts = data.electionTypes.byElection.districts;
                     }
-                    this._electionStatsLoaded = true;
                     const meta = data._meta || {};
                     console.log(`[ElectionStats] Loaded: ${meta.lastUpdated || 'unknown'}, finalized=${data.redistrictingStatus?.finalized || false}`);
                 })
                 .catch(err => {
+                    this._electionStatsPromise = null; // allow retry
                     console.warn('[ElectionStats] Failed to load, using embedded data:', err);
                 });
         },
@@ -2172,10 +2178,10 @@ const ElectionData = (() => {
         },
 
         // ── 교육감 현황 외부 JSON 로드 API ──
-        _superintendentStatusLoaded: false,
+        _superintendentStatusPromise: null,
         loadSuperintendentStatus() {
-            if (this._superintendentStatusLoaded) return Promise.resolve();
-            return fetch('data/candidates/superintendent_status.json')
+            if (this._superintendentStatusPromise) return this._superintendentStatusPromise;
+            this._superintendentStatusPromise = fetch('data/candidates/superintendent_status.json')
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.superintendents) return;
@@ -2192,10 +2198,10 @@ const ElectionData = (() => {
                             }
                         }
                     });
-                    this._superintendentStatusLoaded = true;
                     console.log(`[SuperintendentStatus] Loaded: ${data._meta?.totalCount || '?'}명, updated ${data._meta?.lastUpdated || 'unknown'}`);
                 })
                 .catch(err => {
+                    this._superintendentStatusPromise = null;
                     console.warn('[SuperintendentStatus] Failed to load:', err);
                 });
         },
@@ -2236,10 +2242,10 @@ const ElectionData = (() => {
         },
 
         // ── 광역단체장 현황 외부 JSON 로드 API ──
-        _governorStatusLoaded: false,
+        _governorStatusPromise: null,
         loadGovernorStatus() {
-            if (this._governorStatusLoaded) return Promise.resolve();
-            return fetch('data/candidates/governor_status.json')
+            if (this._governorStatusPromise) return this._governorStatusPromise;
+            this._governorStatusPromise = fetch('data/candidates/governor_status.json')
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.governors) return;
@@ -2275,20 +2281,20 @@ const ElectionData = (() => {
                             };
                         }
                     });
-                    this._governorStatusLoaded = true;
                     const meta = data._meta || {};
                     console.log(`[GovernorStatus] Loaded: ${meta.totalCount || '?'}명, 권한대행 ${meta.actingCount || '?'}명, updated ${meta.lastUpdated || 'unknown'}`);
                 })
                 .catch(err => {
+                    this._governorStatusPromise = null;
                     console.warn('[GovernorStatus] Failed to load:', err);
                 });
         },
 
         // ── 기초단체장 현황 외부 JSON 로드 API ──
-        _mayorStatusLoaded: false,
+        _mayorStatusPromise: null,
         loadMayorStatus() {
-            if (this._mayorStatusLoaded) return Promise.resolve();
-            return fetch('data/candidates/mayor_status.json')
+            if (this._mayorStatusPromise) return this._mayorStatusPromise;
+            this._mayorStatusPromise = fetch('data/candidates/mayor_status.json')
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.mayors) return;
@@ -2323,20 +2329,20 @@ const ElectionData = (() => {
                             target.leadParty = m.party;
                         }
                     });
-                    this._mayorStatusLoaded = true;
                     const meta = data._meta || {};
                     console.log(`[MayorStatus] Loaded: ${meta.totalCount || '?'}명, 권한대행 ${meta.actingCount || '?'}명, updated ${meta.lastUpdated || 'unknown'}`);
                 })
                 .catch(err => {
+                    this._mayorStatusPromise = null;
                     console.warn('[MayorStatus] Failed to load:', err);
                 });
         },
 
         // ── 후보자 외부 JSON 로드 API ──
-        _candidatesLoaded: false,
+        _candidatesPromise: null,
         loadCandidatesData() {
-            if (this._candidatesLoaded) return Promise.resolve();
-            return fetch('data/candidates/governor.json')
+            if (this._candidatesPromise) return this._candidatesPromise;
+            this._candidatesPromise = fetch('data/candidates/governor.json')
                 .then(r => r.ok ? r.json() : null)
                 .then(data => {
                     if (!data?.candidates) return;
@@ -2346,22 +2352,25 @@ const ElectionData = (() => {
                             regions[key].candidates = candidates;
                         }
                     });
-                    this._candidatesLoaded = true;
                     console.log(`[CandidateData] Loaded: ${Object.keys(data.candidates).length} regions, updated ${data._meta?.lastUpdated || 'unknown'}`);
                 })
                 .catch(err => {
+                    this._candidatesPromise = null;
                     console.warn('[CandidateData] Failed to load external candidates, using embedded data:', err);
                 });
         },
 
         // ── 선관위 여론조사 실데이터 API ──
         _pollsCache: null,
+        _pollsPromise: null,
         loadPollsData() {
             if (this._pollsCache) return Promise.resolve(this._pollsCache);
-            return fetch('data/polls/polls.json')
-                .then(r => r.ok ? r.json() : null)
-                .then(data => { this._pollsCache = data; return data; })
-                .catch(() => null);
+            if (this._pollsPromise) return this._pollsPromise;
+            this._pollsPromise = fetch('data/polls/polls.json')
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+                .then(data => { this._pollsCache = data; this._pollsPromise = null; return data; })
+                .catch(err => { this._pollsPromise = null; console.warn('[PollsData] Failed:', err); return null; });
+            return this._pollsPromise;
         },
         getPollsForSelection(regionKey, electionType, districtName = null) {
             const polls = this._pollsCache?.regions?.[regionKey];
@@ -2836,12 +2845,15 @@ const ElectionData = (() => {
 
         // ── 선거 쟁점 개요 ──
         _overviewCache: null,
+        _overviewPromise: null,
         loadElectionOverview() {
             if (this._overviewCache) return Promise.resolve(this._overviewCache);
-            return fetch('data/election_overview.json?v=' + Date.now())
-                .then(r => r.ok ? r.json() : null)
-                .then(data => { this._overviewCache = data; return data; })
-                .catch(() => null);
+            if (this._overviewPromise) return this._overviewPromise;
+            this._overviewPromise = fetch('data/election_overview.json?v=' + Date.now())
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+                .then(data => { this._overviewCache = data; this._overviewPromise = null; return data; })
+                .catch(err => { this._overviewPromise = null; console.warn('[Overview] Failed:', err); return null; });
+            return this._overviewPromise;
         },
         getElectionOverview(regionKey, electionType, districtName) {
             const cache = this._overviewCache;
@@ -2862,12 +2874,15 @@ const ElectionData = (() => {
 
         // ── 기초단체장 역대 선거 데이터 ──
         _mayorHistoryCache: null,
+        _mayorHistoryPromise: null,
         loadMayorHistory() {
             if (this._mayorHistoryCache) return Promise.resolve(this._mayorHistoryCache);
-            return fetch('data/mayor_history.json')
-                .then(r => r.ok ? r.json() : null)
-                .then(data => { this._mayorHistoryCache = data; return data; })
-                .catch(() => null);
+            if (this._mayorHistoryPromise) return this._mayorHistoryPromise;
+            this._mayorHistoryPromise = fetch('data/mayor_history.json')
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+                .then(data => { this._mayorHistoryCache = data; this._mayorHistoryPromise = null; return data; })
+                .catch(err => { this._mayorHistoryPromise = null; console.warn('[MayorHistory] Failed:', err); return null; });
+            return this._mayorHistoryPromise;
         },
         getMayorHistoricalData(regionKey, districtName) {
             const cache = this._mayorHistoryCache;

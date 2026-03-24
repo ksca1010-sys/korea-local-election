@@ -1,0 +1,290 @@
+// ============================================
+// Overview Tab — 개요 탭 렌더링
+// app.js에서 분리됨
+// ============================================
+
+const OverviewTab = (() => {
+
+    function _renderRegionIssuesHtml(regionKey) {
+        const issues = ElectionData.getRegionIssues(regionKey);
+        const signals = ElectionData.getDerivedIssueSignals ? ElectionData.getDerivedIssueSignals(regionKey) : {};
+        const meta = ElectionData.getDerivedIssuesMeta ? ElectionData.getDerivedIssuesMeta(regionKey) : null;
+        if (!Array.isArray(issues) || issues.length === 0) {
+            return `<div class="issues-list"><span class="issue-tag">출처 집계 중인 핵심이슈가 아직 없습니다</span></div>`;
+        }
+        const tagsHtml = `<div class="issues-list">${issues.map(issue => `<span class="issue-tag">${issue}</span>`).join('')}</div>`;
+        if (!meta?.updatedAt || !meta?.methodology) {
+            return tagsHtml;
+        }
+
+        let updatedText = meta.updatedAt;
+        try {
+            updatedText = new Date(meta.updatedAt).toLocaleString('ko-KR', { hour12: false });
+        } catch (err) {
+            updatedText = meta.updatedAt;
+        }
+
+        return `
+            ${tagsHtml}
+            <div class="issues-meta">
+                산출 시각: ${updatedText}
+            </div>
+        `;
+    }
+
+    function render(regionKey, electionType, districtName) {
+        if (typeof ElectionData === 'undefined') return;
+        const region = ElectionData.getRegion(regionKey);
+        if (!region && electionType !== 'byElection') return;
+
+        // Election overview card (선거 쟁점 개요)
+        const overviewCard = document.getElementById('election-overview-card');
+        if (overviewCard && ElectionData.loadElectionOverview) {
+            ElectionData.loadElectionOverview().then(() => {
+                const ov = ElectionData.getElectionOverview(regionKey, electionType, districtName);
+                if (ov) {
+                    overviewCard.style.display = '';
+                    const trendBadge = document.getElementById('overview-trend-badge');
+                    const updatedDate = document.getElementById('overview-updated-date');
+                    const headline = document.getElementById('overview-headline');
+                    const narrative = document.getElementById('overview-narrative');
+                    const summary = document.getElementById('overview-summary');
+                    const issues = document.getElementById('overview-key-issues');
+                    const risk = document.getElementById('overview-risk-factor');
+                    if (trendBadge) trendBadge.textContent = ov.trend || '';
+                    if (updatedDate) {
+                        const updated = ElectionData._overviewCache?.meta?.lastUpdated || '';
+                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--text-muted);margin-left:var(--space-4);">AI 분석</span>`;
+                    }
+                    if (headline) headline.textContent = ov.headline || '';
+
+                    // narrative 모드: narrative가 있으면 summary 대신 표시
+                    if (narrative && ov.narrative) {
+                        narrative.textContent = ov.narrative;
+                        narrative.style.display = '';
+                        if (summary) summary.style.display = 'none';
+                    } else {
+                        if (narrative) narrative.style.display = 'none';
+                        if (summary) {
+                            summary.textContent = ov.summary || '';
+                            summary.style.display = '';
+                        }
+                    }
+
+                    if (issues && Array.isArray(ov.keyIssues)) {
+                        issues.innerHTML = ov.keyIssues.map(i =>
+                            `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${i}</span>`
+                        ).join('');
+                    }
+                    if (risk && ov.riskFactor) {
+                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${ov.riskFactor}
+                            <div style="font-size:var(--text-micro);color:var(--text-disabled);margin-top:var(--space-4);">
+                                <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
+                            </div>`;
+                    }
+
+                    // facts 섹션 — LLM 없이 구조화된 데이터에서 추출한 검증 가능 팩트
+                    const factsEl = document.getElementById('overview-facts');
+                    if (factsEl && ov.facts) {
+                        const f = ov.facts;
+                        const pollBanned = typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned();
+                        const pollHtml = !pollBanned && f.latestPoll && f.latestPoll.results && f.latestPoll.results.length
+                            ? `<div style="margin-top:var(--space-8);">
+                                <span style="font-size:var(--text-micro);color:var(--text-muted);">최신 여론조사 (${f.latestPoll.org || ''} · ${f.latestPoll.date || ''})</span>
+                                <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-4);">
+                                ${f.latestPoll.results.map(r =>
+                                    `<span style="font-size:var(--text-caption);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:4px;">${r.name} ${r.support}%</span>`
+                                ).join('')}
+                                </div>
+                               </div>`
+                            : '';
+                        factsEl.innerHTML = `
+                            <div style="font-size:var(--text-micro);color:var(--color-success);margin-bottom:var(--space-8);">
+                                <i class="fas fa-database"></i> 데이터 출처 확인 가능 — 후보자 ${f.candidateCount || 0}명${pollBanned ? '' : ` · 여론조사 ${f.pollCount || 0}건`}
+                            </div>
+                            ${pollHtml}`;
+                        factsEl.style.display = '';
+                    } else if (factsEl) {
+                        factsEl.style.display = 'none';
+                    }
+                } else {
+                    overviewCard.style.display = 'none';
+                }
+            });
+        }
+
+        // Previous election result (선거유형별 분기)
+        // 재보궐: onByElectionSelected에서 이미 렌더링했으므로 건드리지 않음
+        const prevContainer = document.getElementById('prev-election-result');
+        if (prevContainer && electionType !== 'byElection') {
+            if (electionType === 'superintendent') {
+                const history = ElectionData.getSuperintendentHistoricalData(regionKey);
+                const lastElection = history.length ? history[history.length - 1] : null;
+                if (lastElection) {
+                    const winColor = ElectionData.getSuperintendentColor(lastElection.winner);
+                    const runColor = ElectionData.getSuperintendentColor(lastElection.runner);
+                    prevContainer.innerHTML = `
+                        <div class="prev-result">
+                            <div class="prev-winner">
+                                <div class="name">${lastElection.winnerName}</div>
+                                <span class="party-badge" style="background:${winColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.winner}</span>
+                                <div class="rate" style="color:${winColor}">${lastElection.rate}%</div>
+                            </div>
+                            <div class="prev-vs">VS</div>
+                            <div class="prev-winner">
+                                <div class="name">${lastElection.runnerName}</div>
+                                <span class="party-badge" style="background:${runColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.runner}</span>
+                                <div class="rate" style="color:${runColor}">${lastElection.runnerRate}%</div>
+                            </div>
+                        </div>
+                        <div class="prev-turnout"><i class="fas fa-person-booth"></i> ${lastElection.year}년 투표율: ${lastElection.turnout}%</div>
+                    `;
+                } else {
+                    prevContainer.innerHTML = '';
+                }
+            } else if (electionType === 'mayor' && districtName) {
+                const mayorHist = ElectionData.getMayorHistoricalData(regionKey, districtName);
+                if (mayorHist.length > 0) {
+                    const last = mayorHist[mayorHist.length - 1];
+                    const winColor = ElectionData.getPartyColor(last.winner);
+                    const winParty = last.winnerParty || ElectionData.getHistoricalPartyName(last.winner, last.election);
+                    const hasRunner = last.runnerName && last.runner;
+                    const runColor = hasRunner ? ElectionData.getPartyColor(last.runner) : '#666';
+                    const runParty = hasRunner ? (last.runnerParty || ElectionData.getHistoricalPartyName(last.runner, last.election)) : '';
+                    const turnoutHtml = last.turnout ? `<div class="prev-turnout"><i class="fas fa-person-booth"></i> ${last.year}년 투표율: ${last.turnout}%</div>` : '';
+
+                    prevContainer.innerHTML = `
+                        <h5 style="color:var(--text-secondary);margin-bottom:8px;"><i class="fas fa-clock-rotate-left"></i> 지난 선거 결과 (제${last.election}회)</h5>
+                        <div class="prev-result">
+                            <div class="prev-winner">
+                                <div class="name">${last.winnerName}</div>
+                                <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(last.winner)}</span>
+                                <div class="rate" style="color:${winColor}">${last.rate ? last.rate.toFixed(1) + '%' : '당선'}</div>
+                            </div>
+                            ${hasRunner ? `
+                            <div class="prev-vs">VS</div>
+                            <div class="prev-winner">
+                                <div class="name">${last.runnerName}</div>
+                                <span class="party-badge" style="background:${runColor}">${ElectionData.getPartyName(last.runner)}</span>
+                                <div class="rate" style="color:${runColor}">${last.runnerRate ? last.runnerRate.toFixed(1) + '%' : ''}</div>
+                            </div>
+                            ` : ''}
+                        </div>
+                        ${turnoutHtml}
+                    `;
+                } else {
+                    prevContainer.innerHTML = '';
+                }
+            } else if (region.prevElection) {
+                const prev = region.prevElection;
+                const winColor = ElectionData.getPartyColor(prev.winner);
+                const runColor = ElectionData.getPartyColor(prev.runner);
+                prevContainer.innerHTML = `
+                    <div class="prev-result">
+                        <div class="prev-winner">
+                            <div class="name">${prev.winnerName}</div>
+                            <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(prev.winner)}</span>
+                            <div class="rate" style="color:${winColor}">${prev.rate}%</div>
+                        </div>
+                        <div class="prev-vs">VS</div>
+                        <div class="prev-winner">
+                            <div class="name">${prev.runnerName}</div>
+                            <span class="party-badge" style="background:${runColor}">${ElectionData.getPartyName(prev.runner)}</span>
+                            <div class="rate" style="color:${runColor}">${prev.runnerRate}%</div>
+                        </div>
+                    </div>
+                    <div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${prev.turnout}%</div>
+                `;
+            } else {
+                prevContainer.innerHTML = '';
+            }
+        }
+
+        // Current officeholder (선거유형별 분기)
+        // 재보궐: onByElectionSelected에서 후보 카드로 이미 렌더링
+        const govContainer = document.getElementById('current-governor');
+        if (govContainer && electionType !== 'byElection') {
+            let gov = null;
+            let govColor = '';
+
+            if (electionType === 'superintendent') {
+                const supt = ElectionData.getSuperintendentData(regionKey);
+                if (supt?.currentSuperintendent) {
+                    const s = supt.currentSuperintendent;
+                    govColor = ElectionData.getSuperintendentColor(s.stance);
+                    const sinceText = s.since ? ` ${s.since}년~` : '';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${govColor}">${s.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${s.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${govColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${s.stance}</span>
+                                    ${sinceText} 현직 교육감
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    govContainer.innerHTML = '';
+                }
+            } else if (electionType === 'mayor' && districtName) {
+                const distSummary = ElectionData.getDistrictSummary(regionKey, districtName);
+                const mayorInfo = distSummary?.mayor;
+                if (mayorInfo?.name) {
+                    const mColor = ElectionData.getPartyColor(mayorInfo.party);
+                    const statusText = mayorInfo.acting ? ' 권한대행' : ' 현직';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${mColor}">${mayorInfo.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${mayorInfo.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${mColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(mayorInfo.party)}</span>
+                                    ${statusText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else if (mayorInfo?.acting) {
+                    govContainer.innerHTML = `
+                        <div style="padding:8px;color:var(--text-muted);font-size:0.85rem">
+                            <i class="fas fa-user-clock"></i> 권한대행 중
+                        </div>
+                    `;
+                } else {
+                    govContainer.innerHTML = '';
+                }
+            } else {
+                gov = (ElectionData.getCurrentOfficeholder && ElectionData.getCurrentOfficeholder(regionKey, 'governor')) || region.currentGovernor;
+                if (!gov) {
+                    govContainer.innerHTML = '';
+                } else {
+                    govColor = ElectionData.getPartyColor(gov.party);
+                    const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
+                    const statusText = gov.acting ? ' 권한대행' : ' 재임중';
+                    govContainer.innerHTML = `
+                        <div class="governor-info">
+                            <div class="governor-avatar" style="background:${govColor}">${gov.name.charAt(0)}</div>
+                            <div class="governor-details">
+                                <div class="name">${gov.name}</div>
+                                <div class="meta">
+                                    <span class="party-badge" style="background:${govColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(gov.party)}</span>
+                                    ${sinceText}${statusText}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // Key issues
+        const issuesContainer = document.getElementById('key-issues');
+        if (issuesContainer) {
+            issuesContainer.innerHTML = _renderRegionIssuesHtml(regionKey);
+        }
+    }
+
+    return { render };
+})();

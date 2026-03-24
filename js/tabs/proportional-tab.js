@@ -258,7 +258,7 @@ const ProportionalTab = (() => {
 
     function _generatePartySupportInsight(polls) {
         const latest = polls.filter(p => p.results?.some(r => r.support > 0))
-            .sort((a, b) => Date.parse(b.publishDate || 0) - Date.parse(a.publishDate || 0))[0];
+            .sort((a, b) => Date.parse(b.publishDate || '1970-01-01') - Date.parse(a.publishDate || '1970-01-01'))[0];
         if (!latest?.results) return null;
 
         const sorted = latest.results

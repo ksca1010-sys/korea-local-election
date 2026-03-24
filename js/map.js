@@ -9,6 +9,8 @@ const MapModule = (() => {
     let mapData = null;
     let districtGeoCache = null;
     let districtGeoPromise = null;
+    const subdistrictGeoCache = {};
+    const subdistrictGeoPromise = {};
     let currentMapMode = 'province'; // 'province' | 'district' | 'subdistrict'
     let currentProvinceKey = null;
     let currentElectionType = null;
@@ -389,6 +391,7 @@ const MapModule = (() => {
     async function init() {
         _mapTooltip = document.getElementById('map-tooltip');
         const container = document.getElementById('map-container');
+        if (!container) { console.error('MapModule: #map-container not found'); return; }
         const width = container.clientWidth;
         const height = container.clientHeight;
 
@@ -2522,7 +2525,7 @@ const MapModule = (() => {
     function showDistrictTooltip(event, regionKey, districtName) {
         const summary = ElectionData.getDistrictSummary(regionKey, districtName);
         const tooltip = _mapTooltip;
-        if (!tooltip) return;
+        if (!tooltip || !summary) return;
 
         // ── 광역의원 모드: 시군구 내 선거구 정보 ──
         if (currentElectionType === 'council') {

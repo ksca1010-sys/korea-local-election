@@ -468,7 +468,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     font-size: 1.3rem;
     font-weight: var(--font-bold);
     color: var(--text-primary);
@@ -479,6 +479,10 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     cursor: pointer;
     font-family: inherit;
     appearance: none;
+}
+
+.logo-egg {
+    flex-shrink: 0;
 }
 
 .logo i {
@@ -1686,6 +1690,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     margin: 0 auto 16px;
     font-size: 1.5rem;
     color: var(--accent-blue);
+}
+
+.welcome-egg {
+    display: block;
+    margin: 0 auto 12px;
 }
 
 .panel-welcome h3 {
@@ -2998,13 +3007,18 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .al-footer .footer-logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 14px;
     margin-bottom: 12px;
 }
 
 .al-footer .footer-logo-icon {
-    color: #a9c7ff;
-    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.al-footer .footer-logo-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .al-footer .footer-logo-text {
@@ -3012,6 +3026,23 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     font-weight: 900;
     color: #e0e3e5;
     letter-spacing: -0.02em;
+    line-height: 1;
+}
+
+.al-footer .footer-logo-divider {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #6faaff, transparent);
+    border-radius: 1px;
+}
+
+.al-footer .footer-logo-slogan {
+    font-size: 12px;
+    font-weight: 400;
+    color: #8b90a0;
+    letter-spacing: 0.04em;
+    line-height: 1;
 }
 
 .al-footer .footer-tagline {
@@ -3132,6 +3163,12 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     font-weight: 500;
     color: #c1c6d6;
     letter-spacing: 0.02em;
+}
+
+.al-footer .footer-data-source {
+    font-size: 11px;
+    color: #8b90a0;
+    letter-spacing: 0.01em;
 }
 
 .al-footer .footer-legal-links {
