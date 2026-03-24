@@ -146,10 +146,10 @@ def check_duplicate_names():
     return issues
 
 
-def check_byelection_duplicates():
+def check_byelection_duplicates(fix=False):
     """5. 재보궐: 같은 인물이 여러 선거구에 등록 (불가능한 케이스 — 하드 오류)"""
     bye = json.loads(BYELECTION_CANDIDATES.read_text(encoding="utf-8"))
-    name_districts = {}
+    name_districts = {}  # name -> [(district_key, candidate_dict)]
     for key, district in bye.get("districts", {}).items():
         for c in district.get("candidates", []):
             if c.get("status") == "WITHDRAWN":
@@ -157,12 +157,44 @@ def check_byelection_duplicates():
             name = c["name"]
             if name not in name_districts:
                 name_districts[name] = []
-            name_districts[name].append(key)
+            name_districts[name].append((key, c))
     issues = []
-    for name, keys in name_districts.items():
-        if len(keys) > 1:
-            issues.append({"type": "byelection_duplicate", "name": name, "districts": keys})
+    for name, entries in name_districts.items():
+        if len(entries) > 1:
+            issues.append({"type": "byelection_duplicate", "name": name,
+                           "districts": [e[0] for e in entries]})
+            if fix:
+                _auto_fix_byelection_duplicate(bye, name, entries)
+    if fix and issues:
+        BYELECTION_CANDIDATES.write_text(
+            json.dumps(bye, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     return issues
+
+
+# 상태 우선순위: 높을수록 신뢰도 높음
+_STATUS_PRIORITY = {"REGISTERED": 5, "NOMINATED": 4, "DECLARED": 3, "RUMORED": 1}
+
+
+def _auto_fix_byelection_duplicate(bye, name, entries):
+    """중복 인물 자동 정리: 신뢰도 낮은 쪽을 제거"""
+    # 가장 신뢰도 높은 항목을 남기고 나머지 제거
+    def score(entry):
+        _key, c = entry
+        s = _STATUS_PRIORITY.get(c.get("status", ""), 0)
+        # 출처가 있으면 +1
+        if c.get("sourceUrl") and c["sourceUrl"] != "미상":
+            s += 1
+        return s
+
+    entries_sorted = sorted(entries, key=score, reverse=True)
+    keep = entries_sorted[0]
+    remove = entries_sorted[1:]
+    for dist_key, _c in remove:
+        candidates = bye["districts"][dist_key]["candidates"]
+        bye["districts"][dist_key]["candidates"] = [
+            c for c in candidates if c["name"] != name
+        ]
+        print(f"  🔧 자동 수정: {name}을(를) {dist_key}에서 제거 (남은 곳: {keep[0]})")
 
 
 def check_missing_sources():
@@ -246,8 +278,8 @@ def main():
     for i in issues4:
         print(f"  ⚠️  {i['name']}: {', '.join(i['locations'])}")
 
-    # 5. 재보궐 인물 중복 (하드 오류)
-    issues5 = check_byelection_duplicates()
+    # 5. 재보궐 인물 중복 (--fix 시 자동 수정)
+    issues5 = check_byelection_duplicates(fix=args.fix)
     print(f"\n[5] 재보궐 동일 인물 중복 선거구: {len(issues5)}건")
     for i in issues5:
         print(f"  🚨 {i['name']}: {', '.join(i['districts'])}")
@@ -263,9 +295,9 @@ def main():
     if args.fix:
         print("(자동 수정 적용됨)")
 
-    # 하드 오류: 재보궐 중복은 CI 실패 처리
-    if issues5:
-        print("\n[오류] 재보궐 중복 인물이 있습니다. 데이터를 수정 후 다시 실행하세요.")
+    # 하드 오류: --fix 없이 재보궐 중복이 있으면 CI 실패
+    if issues5 and not args.fix:
+        print("\n[오류] 재보궐 중복 인물이 있습니다. --fix 플래그로 자동 수정하거나 수동으로 수정하세요.")
         sys.exit(1)
 
 

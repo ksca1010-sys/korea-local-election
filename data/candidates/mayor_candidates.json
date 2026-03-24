@@ -9,7 +9,8 @@
     "lastPledgeCollection": "2026-03-19T13:20:26.947705",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-03-22"
+    "lastByelectionSync": "2026-03-22",
+    "lastCrossValidation": "2026-03-24"
   },
   "candidates": {
     "seoul": {
@@ -3570,7 +3571,7 @@
           "name": "김종훈",
           "party": "progressive",
           "career": "현 동구청장",
-          "status": "출마선언",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "김종훈 울산시장 출마 사퇴 (2026.1)",
@@ -7743,10 +7744,10 @@
           "name": "박홍률",
           "party": "independent",
           "career": "前 목포시 시장 (박홍률 시장 당선무효 (2025.3))",
-          "status": "DECLARED",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [],
-          "_note": "박홍률 시장 당선무효 (2025.3)",
+          "_note": "박홍률 시장 배우자 선거법 위반 대법원 확정 → 당선무효 (2025.3.27)",
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -8745,7 +8746,7 @@
           "name": "이강덕",
           "party": "independent",
           "career": "현 포항시 시장",
-          "status": "출마선언",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [],
           "_note": "이강덕 경북도지사 출마 사퇴 (2026.2)",

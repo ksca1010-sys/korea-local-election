@@ -232,7 +232,9 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
         if change_type == "new_candidate":
             if existing:
                 continue
+            from candidate_guard import check_party
             party = PARTY_MAP.get(change.get("party", ""), "independent")
+            party = check_party(name, party)
             new_candidate = {
                 "name": name,
                 "party": party,

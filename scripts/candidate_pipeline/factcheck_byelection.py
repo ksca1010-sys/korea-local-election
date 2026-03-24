@@ -146,11 +146,16 @@ def parse_changes(text):
         return []
 
 
-def apply_changes(dist, changes, dry_run=False):
+def apply_changes(dist, changes, dry_run=False, bye_data=None, district_key=""):
     from verify_changes import verify_changes_against_news
+    from candidate_guard import check_party, check_duplicate, build_known_party_map, build_byelection_name_index
     applied = 0
     candidates = dist.get("candidates", [])
     existing_names = {c["name"] for c in candidates}
+
+    # 사전 검증용 인덱스
+    known_parties = build_known_party_map()
+    name_index = build_byelection_name_index(bye_data) if bye_data else None
 
     for change in changes:
         name = change.get("name", "")
@@ -159,8 +164,14 @@ def apply_changes(dist, changes, dry_run=False):
         party_raw = change.get("party", "")
         party_key = PARTY_MAP.get(party_raw, "independent")
 
+        # 정당 교차검증
+        party_key = check_party(name, party_key, known_parties)
+
         if change_type == "new_candidate":
             if name in existing_names:
+                continue
+            # 전역 중복 체크
+            if check_duplicate(name, district_key, name_index=name_index):
                 continue
             label = f"[신규] {name} ({party_raw}, {new_status}) — {change.get('detail', '')[:50]}"
             if dry_run:
@@ -254,7 +265,7 @@ def main():
             changes = verify_changes_against_news(changes, news)
             print(f"    → {len(changes)}건 검증 통과")
 
-            applied = apply_changes(dist, changes, dry_run)
+            applied = apply_changes(dist, changes, dry_run, bye_data=bye, district_key=key)
             total_applied += applied
 
         except Exception as e:

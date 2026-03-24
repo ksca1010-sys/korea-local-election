@@ -286,7 +286,9 @@ def apply_changes(data, changes, dry_run=False):
             if existing:
                 print(f"  [건너뜀] {region_name}: {name} 이미 존재")
                 continue
+            from candidate_guard import check_party
             party = PARTY_MAP.get(change.get("party", ""), "independent")
+            party = check_party(name, party)
             new_id = f"{region}-{len(region_list)+1}"
             new_candidate = {
                 "id": new_id,
