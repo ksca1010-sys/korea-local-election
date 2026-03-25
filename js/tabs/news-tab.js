@@ -317,7 +317,9 @@ const NewsTab = (() => {
         const shortAlias = aliasTerms.find((name) => /^[가-힣]{2,3}$/.test(name)) || aliasTerms[0] || regionName;
         if (regionName.includes('세종')) return '세종시장';
         if (regionName.endsWith('도') || regionName.includes('특별자치도')) {
-            if (shortAlias === '제주') return '제주도지사';
+            if (shortAlias === '제주') return '제주지사';
+            // 강원특별자치도/전북특별자치도 → "강원지사"/"전북지사" (2023년~ 명칭 변경)
+            if (regionName.includes('특별자치도')) return `${shortAlias}지사`;
             return `${shortAlias}도지사`;
         }
         return `${shortAlias}시장`;

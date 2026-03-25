@@ -341,6 +341,26 @@ window.NewsFilterConfig = {
 
   // ── 경기도 region override (기존 유지) ──
   regionOverrides: {
+    gangwon: {
+      all: {
+        altQueries: ['강원특별자치도지사 선거 후보 -교육감', '강원지사 후보 출마 공천 -교육감'],
+        strict: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사'] },
+        relaxed: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사', '강원'] }
+      },
+      poll: {
+        altQueries: ['강원지사 여론조사 지지율', '강원특별자치도 여론조사']
+      }
+    },
+    jeonbuk: {
+      all: {
+        altQueries: ['전북특별자치도지사 선거 후보 -교육감', '전북지사 후보 출마 공천 -교육감'],
+        strict: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사'] },
+        relaxed: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사', '전북'] }
+      },
+      poll: {
+        altQueries: ['전북지사 여론조사 지지율', '전북특별자치도 여론조사']
+      }
+    },
     gyeonggi: {
       all: {
         query: '{{GOVERNOR_QUERY_BASE}} 지방선거 후보 공약 여론조사 -교육감 -하남시장 -구리시장 -고양시장',
