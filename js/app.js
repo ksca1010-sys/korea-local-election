@@ -5993,7 +5993,18 @@ function renderCouncilProvinceView(regionKey, region) {
                 // For constituency-based types with a districtName, route via onConstituencySelected or onDistrictSelected
                 if (state.districtName) {
                     const councilTypes = ['council', 'localCouncil'];
-                    if (councilTypes.includes(state.electionType)) {
+                    if (state.electionType === 'byElection') {
+                        // 재보궐: onByElectionSelected로 직접 이동
+                        onByElectionSelected(state.districtName);
+                        setTimeout(() => {
+                            _hashUpdateSuppressed = true;
+                            if (state.tabName && state.tabName !== 'overview') {
+                                switchTab(state.tabName);
+                            }
+                            _hashUpdateSuppressed = false;
+                            updateHash();
+                        }, 300);
+                    } else if (councilTypes.includes(state.electionType)) {
                         // Need to select the region first, then the constituency
                         onRegionSelected(state.regionKey);
                         setTimeout(() => {

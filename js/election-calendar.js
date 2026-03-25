@@ -67,7 +67,7 @@ const ElectionCalendar = (() => {
 
     const isPublicationBanned = () => {
         const now = getKST();
-        return now >= DATES.PUBLICATION_BAN_START && now <= DATES.VOTE_END;
+        return now >= DATES.PUBLICATION_BAN_START && now < DATES.VOTE_END;
     };
 
     // 여론조사 데이터 접근 시 반드시 이 함수를 거침
@@ -107,7 +107,7 @@ const ElectionCalendar = (() => {
         if (now < DATES.EARLY_VOTE_START)      return 'CAMPAIGN';
         if (now <= DATES.EARLY_VOTE_END)       return 'EARLY_VOTING';
         if (now < DATES.ELECTION_DAY_START)    return 'PRE_ELECTION_DAY';
-        if (now <= DATES.VOTE_END)             return 'ELECTION_DAY';
+        if (now < DATES.VOTE_END)              return 'ELECTION_DAY';
         if (now < DATES.INAUGURATION)          return 'POST_ELECTION';
         return 'INAUGURATED';
     };
@@ -186,24 +186,25 @@ const ElectionCalendar = (() => {
                 };
 
             case 'ELECTION_DAY':
-                if (now <= DATES.VOTE_END) {
-                    return {
-                        show: true,
-                        text: '오늘은 투표일입니다 | 06:00~18:00',
-                        type: 'vote',
-                        icon: 'fas fa-check-to-slot',
-                        link: { label: '투표소 찾기', url: 'https://www.nec.go.kr' }
-                    };
-                }
                 return {
                     show: true,
-                    text: '투표가 마감되었습니다. 개표가 진행 중입니다.',
-                    type: 'result',
-                    icon: 'fas fa-chart-pie',
-                    link: { label: '개표 현황', url: 'https://www.nec.go.kr' }
+                    text: '오늘은 투표일입니다 | 06:00~18:00',
+                    type: 'vote',
+                    icon: 'fas fa-check-to-slot',
+                    link: { label: '투표소 찾기', url: 'https://www.nec.go.kr' }
                 };
 
             case 'POST_ELECTION':
+                // 선거 당일 18:00 이후 ~ 취임 전: 개표→결과 순서
+                if (now < new Date('2026-06-04T06:00:00+09:00')) {
+                    return {
+                        show: true,
+                        text: '투표가 마감되었습니다. 개표가 진행 중입니다.',
+                        type: 'result',
+                        icon: 'fas fa-chart-pie',
+                        link: { label: '개표 현황', url: 'https://www.nec.go.kr' }
+                    };
+                }
                 return {
                     show: true,
                     text: '제9회 전국동시지방선거가 종료되었습니다',
