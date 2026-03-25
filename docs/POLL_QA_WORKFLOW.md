@@ -51,11 +51,11 @@ npm run check:all
 
 기대값은 TSV에 넣는다.
 
-- 위치: `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/poll_observations/queue`
-- 공용 큐: `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/poll_observation_queue.tsv`
-- 예시 템플릿: `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/poll_observations/queue/_template.tsv`
-- 복붙용 예시: `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/poll_observation_queue.example.tsv`
-- 추천 지역 스타터: `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/poll_observations/starter/recommended.tsv`
+- 위치: `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/poll_observations/queue`
+- 공용 큐: `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/poll_observation_queue.tsv`
+- 예시 템플릿: `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/poll_observations/queue/_template.tsv`
+- 복붙용 예시: `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/poll_observation_queue.example.tsv`
+- 추천 지역 스타터: `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/poll_observations/starter/recommended.tsv`
 
 추천 스타터 파일은 active queue에 바로 import하지 않는다. 필요한 행만 지역 queue 파일로 복사해서 사용한다.
 

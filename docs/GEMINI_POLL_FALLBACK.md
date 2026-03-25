@@ -1,6 +1,6 @@
 # Gemini PDF Fallback
 
-`/Users/isawufo/Desktop/AI-project/korea-local-eletion/scripts/gemini_parse_polls.py`는
+`/Users/isawufo/Desktop/AI-cording-project/korea-local-election/scripts/gemini_parse_polls.py`는
 로컬 PDF 파서가 실패한 여심위 PDF를 Gemini로 2차 추출하는 스크립트입니다.
 
 ## 목적
@@ -13,7 +13,7 @@
 
 - `.env` 또는 환경변수에 `GEMINI_API_KEY` 필요
 - 기본 모델: `gemini-2.5-flash`
-- PDF 원문은 `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/polls/pdfs` 아래에 이미 있어야 함
+- PDF 원문은 `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/polls/pdfs` 아래에 이미 있어야 함
 
 ## 기본 명령
 
@@ -54,10 +54,10 @@
 ## 결과물
 
 - 반영 데이터:
-  - `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/polls/state.json`
-  - `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/polls/polls.json`
+  - `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/polls/state.json`
+  - `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/polls/polls.json`
 - 보고서:
-  - `/Users/isawufo/Desktop/AI-project/korea-local-eletion/data/polls/gemini_fallback_report.jsonl`
+  - `/Users/isawufo/Desktop/AI-cording-project/korea-local-election/data/polls/gemini_fallback_report.jsonl`
 
 ## 해석 기준
 
