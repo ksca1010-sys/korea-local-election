@@ -127,7 +127,9 @@ const App = (() => {
         // Load polls data (여론조사)
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
-        // 모든 데이터 로드 완료 → 검색 인덱스 무효화 (재보궐 등 동적 데이터 반영)
+        // 모든 데이터 로드 완료 → 필터 카운트 재갱신 (재보궐 등 동적 데이터 반영)
+        updateFilterCounts();
+        // 검색 인덱스 무효화
         invalidateSearchIndex();
 
         // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
@@ -554,20 +556,18 @@ const App = (() => {
         const info = ElectionData.electionTypeInfo;
         if (!info) return;
 
-        const typeMap = {
-            governor: 'governor',
-            superintendent: 'superintendent',
-            mayor: 'mayor',
-            council: 'council',
-            localCouncil: 'localCouncil',
-            councilProportional: 'councilProportional',
-            localCouncilProportional: 'localCouncilProportional',
-            byElection: 'byElection'
-        };
+        // 재보궐: byelection.json의 실제 선거구 수와 자동 연동
+        const byeData = ElectionData._byElectionCache;
+        if (byeData && byeData.districts && info.byElection) {
+            const realCount = Object.keys(byeData.districts).length;
+            if (info.byElection.count !== realCount) {
+                info.byElection.count = realCount;
+            }
+        }
 
         document.querySelectorAll('.filter-btn[data-type]').forEach(btn => {
             const type = btn.dataset.type;
-            const typeInfo = info[typeMap[type] || type];
+            const typeInfo = info[type];
             if (!typeInfo) return;
 
             const countEl = btn.querySelector('.filter-count');
@@ -862,13 +862,26 @@ const App = (() => {
             return;
         }
 
+        // 정당지지율 표시 이름 고정 (외부 데이터에 의해 변경되지 않도록)
+        const POLL_PARTY_NAMES = {
+            democratic: '더불어민주당',
+            ppp: '국민의힘',
+            reform: '조국혁신당',
+            newReform: '개혁신당',
+            progressive: '진보당',
+            justice: '정의당',
+            newFuture: '새로운미래',
+            independent: '무당층',
+            other: '기타정당',
+        };
+
         const totalPct = partyData.reduce((s, [, v]) => s + v, 0);
 
         let barHtml = '<div class="party-bar-chart">';
         partyData.forEach(([party, value]) => {
             const pct = (value / totalPct * 100).toFixed(1);
             const color = ElectionData.getPartyColor(party);
-            const segName = party === 'independent' ? '무당층' : ElectionData.getPartyName(party);
+            const segName = POLL_PARTY_NAMES[party] || party;
             barHtml += `<div class="party-bar-segment" style="width:${pct}%;background:${color}" title="${segName}: ${value}%"></div>`;
         });
         barHtml += '</div>';
@@ -876,7 +889,7 @@ const App = (() => {
         barHtml += '<div class="party-bar-labels">';
         partyData.forEach(([party, value]) => {
             const color = ElectionData.getPartyColor(party);
-            const name = party === 'independent' ? '무당층' : (ElectionData.parties[party]?.shortName || party);
+            const name = POLL_PARTY_NAMES[party] || party;
             barHtml += `<span class="party-bar-label"><span class="party-bar-label-dot" style="background:${color}"></span>${name} ${value}%</span>`;
         });
         barHtml += '</div>';

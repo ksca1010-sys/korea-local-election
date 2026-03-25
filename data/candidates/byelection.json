@@ -218,6 +218,30 @@
           "sourceLabel": "헤럴드경제",
           "sourceUrl": "https://biz.heraldcorp.com/article/10679239",
           "sourcePublishedAt": "2026-02-19"
+        },
+        {
+          "name": "심왕섭",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(현) 재단법인 환경조경발전재단 이사장",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-06"
+        },
+        {
+          "name": "박상군",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(전)현대 울산 종합금융(현대중공업 계열) 근무",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-13"
         }
       ],
       "statusNote": "최신 뉴스 정보가 제공되지 않았습니다. 기존 수집된 후보자 정보로만 구성되었습니다.",
@@ -386,12 +410,36 @@
           "partyKey": "ppp",
           "partyName": "국민의힘",
           "career": "전 3선 국회의원 (평택시을)",
-          "status": "RUMORED",
+          "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
           "sourceLabel": "일간경기",
           "sourceUrl": "https://www.1gan.co.kr/news/articleView.html?idxno=327458",
           "sourcePublishedAt": "2026-02-28"
+        },
+        {
+          "name": "이재영",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(전)제19대 평택시을 국회의원",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-12"
+        },
+        {
+          "name": "이병배",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(현)국민의힘 경기도당 부위원장",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-03-13"
         }
       ],
       "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
@@ -517,6 +565,42 @@
           "partyKey": "independent",
           "partyName": "무소속",
           "party": "independent"
+        },
+        {
+          "name": "이윤석",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(전)아산시 정책보좌관",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-12"
+        },
+        {
+          "name": "김민경",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(전)제 21대 대통령선거 국민의힘 대통령후보 직속 국민통합위원회 홍보위원",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-13"
+        },
+        {
+          "name": "신수정",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "(전)충남외국어고등학교 학부모회총회장",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-26"
         }
       ],
       "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",

@@ -397,11 +397,8 @@
         <div class="footer-brand">
           <div class="footer-logo">
             <svg class="footer-logo-icon" width="36" height="40" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <!-- 알(egg) 형태 -->
               <ellipse cx="18" cy="22" rx="14" ry="17" stroke="#a9c7ff" stroke-width="2" fill="none"/>
-              <!-- 알 안의 하이라이트 -->
               <ellipse cx="12" cy="16" rx="4" ry="6" fill="#a9c7ff" opacity="0.12" transform="rotate(-15 12 16)"/>
-              <!-- 체크마크 (알고 있다는 의미) -->
               <path d="M12 24l3.5 3.5 8-8" stroke="#6faaff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
             <div class="footer-logo-group">
@@ -410,35 +407,11 @@
               <span class="footer-logo-slogan">아는 만큼 보이는 선거</span>
             </div>
           </div>
+          <p class="footer-desc">제9회 전국동시지방선거 정보를 지도 위에서 한눈에. 여론조사, 후보자, 선거구 정보를 투명하게 제공하는 비영리 오픈소스 프로젝트입니다.</p>
         </div>
 
-        <!-- Right: 4-Column Navigation -->
+        <!-- Right: 2-Column Navigation -->
         <div class="footer-nav-grid">
-          <div class="footer-col">
-            <h5 class="footer-col-title">선거 정보</h5>
-            <ul class="footer-links">
-              <li><a href="#" onclick="App.resetToHome(); return false;">선거지도</a></li>
-              <li><a href="#" onclick="App.setElectionType('governor'); return false;">광역단체장</a></li>
-              <li><a href="#" onclick="App.setElectionType('mayor'); return false;">기초단체장</a></li>
-              <li><a href="#" onclick="App.setElectionType('superintendent'); return false;">교육감</a></li>
-              <li><a href="#" onclick="App.setElectionType('council'); return false;">광역의원</a></li>
-              <li><a href="#" onclick="App.setElectionType('localCouncil'); return false;">기초의원</a></li>
-              <li><a href="#" onclick="App.setElectionType('councilProportional'); return false;">비례대표</a></li>
-              <li><a href="#" onclick="App.setElectionType('byElection'); return false;">재보궐</a></li>
-            </ul>
-          </div>
-
-          <div class="footer-col">
-            <h5 class="footer-col-title">탐색</h5>
-            <ul class="footer-links">
-              <li><a href="#" onclick="App.switchTab('overview'); return false;">지역 개요</a></li>
-              <li><a href="#" onclick="App.switchTab('polls'); return false;">여론조사</a></li>
-              <li><a href="#" onclick="App.switchTab('candidates'); return false;">후보자 현황</a></li>
-              <li><a href="#" onclick="App.switchTab('news'); return false;">지역 뉴스</a></li>
-              <li><a href="#" onclick="App.switchTab('history'); return false;">역대 비교</a></li>
-            </ul>
-          </div>
-
           <div class="footer-col">
             <h5 class="footer-col-title">데이터 출처</h5>
             <ul class="footer-links">
@@ -446,6 +419,7 @@
               <li><a href="https://www.nesdc.go.kr" target="_blank" rel="noopener">선거여론조사심의위원회</a></li>
               <li><a href="https://info.nec.go.kr" target="_blank" rel="noopener">선거통계시스템</a></li>
               <li><a href="http://data.nec.go.kr" target="_blank" rel="noopener">선거정보 개방포털</a></li>
+              <li><a href="https://www.data.go.kr" target="_blank" rel="noopener">공공데이터포털</a></li>
             </ul>
           </div>
 
@@ -453,7 +427,9 @@
             <h5 class="footer-col-title">프로젝트</h5>
             <ul class="footer-links">
               <li><a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener">GitHub (오픈소스)</a></li>
-              <li><a href="mailto:groveimpactlab@naver.com">문의</a></li>
+              <li><a href="mailto:groveimpactlab@naver.com">문의하기</a></li>
+              <li><a href="#" onclick="document.getElementById('about-modal')?.showModal(); return false;">알선거 소개</a></li>
+              <li><a href="#" onclick="document.getElementById('legal-modal')?.showModal(); return false;">이용약관</a></li>
             </ul>
           </div>
         </div>
@@ -622,6 +598,6 @@
     <script src="js/tabs/news-tab.js?v=1774192751"></script>
 
     <!-- 5. 메인 앱 (최후 로드) -->
-    <script src="js/app.js?v=1774192751"></script>
+    <script src="js/app.js?v=1774192753"></script>
 </body>
 </html>

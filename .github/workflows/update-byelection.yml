@@ -26,6 +26,7 @@ jobs:
       - name: Run byelection update
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/fetch_byelection.py
 
       - name: Check for changes

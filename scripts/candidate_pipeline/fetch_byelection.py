@@ -22,6 +22,12 @@ BYELECTION_PATH = BASE_DIR / "data" / "candidates" / "byelection.json"
 ENV_FILE = BASE_DIR / ".env"
 API_KEY_ENV = "ANTHROPIC_API_KEY"
 
+# 선관위 예비후보 API
+NEC_API_BASE = "http://apis.data.go.kr/9760000"
+NEC_PRE_CAND_SERVICE = f"{NEC_API_BASE}/PofelcddInfoInqireService/getPoelpcddRegistSttusInfoInqire"
+SG_ID = "20260603"
+SG_TYPECODE = "2"  # 국회의원
+
 PARTY_MAP = {
     "더불어민주당": "democratic", "민주당": "democratic",
     "국민의힘": "ppp",
@@ -30,8 +36,130 @@ PARTY_MAP = {
     "진보당": "progressive",
     "정의당": "justice",
     "새로운미래": "newFuture",
+    "자유와혁신": "other",
     "무소속": "independent",
 }
+
+
+def fetch_nec_precandidates():
+    """선관위 예비후보 등록현황 API 조회 → 선거구별 공식 예비후보 목록 반환."""
+    import urllib.request
+    import urllib.parse
+
+    load_env()
+    nec_key = os.environ.get("NEC_API_KEY", "")
+    if not nec_key:
+        print("  [NEC] NEC_API_KEY 미설정 — 예비후보 검증 건너뜀")
+        return {}
+
+    params = urllib.parse.urlencode({
+        "serviceKey": nec_key,
+        "pageNo": "1",
+        "numOfRows": "100",
+        "sgId": SG_ID,
+        "sgTypecode": SG_TYPECODE,
+        "resultType": "json",
+    })
+    url = f"{NEC_PRE_CAND_SERVICE}?{params}"
+
+    try:
+        req = urllib.request.Request(url)
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except Exception as e:
+        print(f"  [NEC] API 호출 실패: {e}")
+        return {}
+
+    header = data.get("response", {}).get("header", {})
+    if header.get("resultCode") != "INFO-00":
+        print(f"  [NEC] API 오류: {header.get('resultMsg')}")
+        return {}
+
+    items = data["response"]["body"]["items"].get("item", [])
+    if isinstance(items, dict):
+        items = [items]
+
+    # 선거구별로 그룹핑
+    by_sgg = {}
+    for item in items:
+        sgg = item.get("sggName", "")
+        if not sgg:
+            continue
+        if sgg not in by_sgg:
+            by_sgg[sgg] = []
+        by_sgg[sgg].append({
+            "name": item.get("name", ""),
+            "party": item.get("jdName", ""),
+            "partyKey": normalize_party_key(item.get("jdName", "")),
+            "career": item.get("career1", ""),
+            "regdate": item.get("regdate", ""),
+            "status": "DECLARED",  # 예비후보 등록 = DECLARED
+        })
+
+    print(f"  [NEC] 예비후보 {len(items)}명 조회 ({len(by_sgg)}개 선거구)")
+    return by_sgg
+
+
+def sync_nec_precandidates(districts, nec_data):
+    """선관위 예비후보 데이터를 byelection.json에 동기화.
+
+    - 선관위에 등록된 후보가 byelection.json에 없으면 추가
+    - 당적이 다르면 선관위 기준으로 교정 (공식 데이터 우선)
+    - status가 RUMORED인데 예비후보 등록되어있으면 DECLARED로 승격
+    """
+    # 선거구명 → byelection key 매핑
+    sgg_to_key = {}
+    for key, dist in districts.items():
+        district_name = dist.get("district", "")
+        # "경기 평택시을" → "평택시을"
+        short = district_name.split(" ", 1)[-1] if " " in district_name else district_name
+        sgg_to_key[short] = key
+
+    fixes = []
+    for sgg_name, nec_candidates in nec_data.items():
+        key = sgg_to_key.get(sgg_name)
+        if not key:
+            continue
+
+        dist = districts[key]
+        existing = {c["name"]: c for c in dist.get("candidates", [])}
+
+        for nc in nec_candidates:
+            name = nc["name"]
+
+            if name in existing:
+                old = existing[name]
+                # 당적 교정 (선관위 공식 > 뉴스 추정)
+                if old.get("party") != nc["partyKey"]:
+                    old_party = old.get("partyName", old.get("party", "?"))
+                    fixes.append(f"{dist['district']} {name}: 당적 '{old_party}'→'{nc['party']}' (선관위)")
+                    old["party"] = nc["partyKey"]
+                    old["partyKey"] = nc["partyKey"]
+                    old["partyName"] = nc["party"]
+                # status 승격
+                if old.get("status") == "RUMORED":
+                    fixes.append(f"{dist['district']} {name}: RUMORED→DECLARED (예비후보 등록 {nc['regdate']})")
+                    old["status"] = "DECLARED"
+                # career 보강
+                if nc.get("career") and (not old.get("career") or old["career"] == "미상"):
+                    old["career"] = nc["career"]
+            else:
+                # 신규 추가
+                dist.setdefault("candidates", []).append({
+                    "name": name,
+                    "party": nc["partyKey"],
+                    "partyKey": nc["partyKey"],
+                    "partyName": nc["party"],
+                    "career": nc.get("career", ""),
+                    "status": "DECLARED",
+                    "dataSource": "nec_precand",
+                    "pledges": [],
+                    "sourceLabel": "선관위 예비후보",
+                    "sourcePublishedAt": f"{nc['regdate'][:4]}-{nc['regdate'][4:6]}-{nc['regdate'][6:8]}" if len(nc.get("regdate", "")) == 8 else "",
+                })
+                fixes.append(f"{dist['district']} {name}: 신규 추가 ({nc['party']}, 등록일 {nc['regdate']})")
+
+    return fixes
 
 
 def load_env():
@@ -350,6 +478,22 @@ def main():
     errors = []
     updated_count = 0
 
+    # ── ① 선관위 예비후보 API 동기화 (공식 데이터 우선) ──
+    print("\n[1단계] 선관위 예비후보 등록현황 조회...")
+    nec_data = fetch_nec_precandidates()
+    if nec_data:
+        nec_fixes = sync_nec_precandidates(districts, nec_data)
+        if nec_fixes:
+            print(f"  {len(nec_fixes)}건 동기화:")
+            for nf in nec_fixes:
+                print(f"    • {nf}")
+            updated_count += 1
+        else:
+            print("  변경 없음 (모두 일치)")
+    print()
+
+    # ── ② 뉴스 기반 후보 업데이트 (Claude 분석) ──
+    print("[2단계] 뉴스 기반 후보 업데이트...")
     for key, dist in districts.items():
         print(f"\n[{key}] {dist['district']} 처리 중...")
 

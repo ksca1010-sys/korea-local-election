@@ -3128,12 +3128,20 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     line-height: 1.7;
 }
 
-/* 4-Column Navigation */
+/* Footer description */
+.al-footer .footer-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-top: 16px;
+}
+
+/* 2-Column Navigation */
 .al-footer .footer-nav-grid {
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
 }
 
 .al-footer .footer-col-title {
