@@ -578,6 +578,90 @@
       </div>
     </div>
 
+    <!-- ═══ 여론조사 읽는 법 Modal ═══ -->
+    <div class="info-modal-overlay" id="poll-literacy-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>여론조사 읽는 법</h2>
+        <section>
+          <h3>오차범위란?</h3>
+          <p>모든 여론조사에는 표본 오차가 있습니다. 예를 들어 "A 후보 45%, B 후보 42%, 오차범위 ±3.1%p"이면, A 후보의 실제 지지율은 41.9%~48.1%, B 후보는 38.9%~45.1% 범위에 있을 수 있습니다.</p>
+          <p><strong>두 후보의 격차가 오차범위 이내이면 "통계적 유의차 없음"</strong>입니다. 즉, 누가 앞서는지 알 수 없습니다.</p>
+        </section>
+        <section>
+          <h3>표본수와 신뢰도</h3>
+          <p>표본이 클수록 오차범위가 줄어듭니다. 보통 1,000명 표본이면 ±3.1%p, 500명이면 ±4.4%p입니다. 95% 신뢰수준이란 "같은 조사를 100번 하면 95번은 이 오차범위 안에 들어온다"는 뜻입니다.</p>
+        </section>
+        <section>
+          <h3>ARS vs 전화면접</h3>
+          <p><strong>ARS(자동응답)</strong>: 녹음된 질문에 번호를 누르는 방식. 비용이 저렴하여 표본이 크지만, 응답률이 낮고 특정 연령층에 편향될 수 있습니다.</p>
+          <p><strong>전화면접(CATI)</strong>: 면접원이 직접 전화하여 질문. 응답 품질이 높지만 비용이 많이 들어 표본이 작을 수 있습니다.</p>
+        </section>
+        <section>
+          <h3>지지율 1위 = 당선?</h3>
+          <p><strong>아닙니다.</strong> 여론조사는 특정 시점의 여론을 측정한 것이지, 선거 결과를 예측하는 것이 아닙니다. 투표율, 캠페인 효과, 부동층 이동 등에 따라 결과는 크게 달라질 수 있습니다.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ═══ 첫 투표 가이드 Modal ═══ -->
+    <div class="info-modal-overlay" id="first-vote-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>첫 투표 가이드</h2>
+        <section>
+          <h3>나는 무엇을 투표하나?</h3>
+          <p>6월 3일 지방선거에서는 <strong>최대 7장의 투표용지</strong>를 받습니다:</p>
+          <ol>
+            <li>시·도지사 (광역단체장)</li>
+            <li>시장·군수·구청장 (기초단체장)</li>
+            <li>교육감</li>
+            <li>시·도의회 의원 (광역의원 지역구)</li>
+            <li>시·도의회 비례대표 (정당 투표)</li>
+            <li>시·군·구의회 의원 (기초의원 지역구)</li>
+            <li>시·군·구의회 비례대표 (정당 투표)</li>
+          </ol>
+        </section>
+        <section>
+          <h3>어디서 투표하나?</h3>
+          <p><strong>사전투표</strong>: 5월 29일(금)~30일(토), 오전 6시~오후 6시. 전국 어디서나 신분증만 있으면 투표 가능.</p>
+          <p><strong>선거일 투표</strong>: 6월 3일(수), 오전 6시~오후 6시. 주소지 관할 투표소에서만 가능.</p>
+          <p>투표소 위치는 <a href="https://www.nec.go.kr" target="_blank">선관위 홈페이지</a>에서 확인하세요.</p>
+        </section>
+        <section>
+          <h3>뭘 가져가야 하나?</h3>
+          <p><strong>신분증 하나만</strong> 있으면 됩니다: 주민등록증, 운전면허증, 여권, 학생증(사진 있는 것), 관공서 발행 신분증 등.</p>
+        </section>
+        <section>
+          <h3>어떻게 후보를 비교하나?</h3>
+          <p>이 사이트(알선거)에서 지도를 클릭하면 여론조사, 후보자 정보, 공약, 역대 선거 결과를 한눈에 비교할 수 있습니다.</p>
+        </section>
+      </div>
+    </div>
+
+    <!-- ═══ 재외투표 안내 Modal ═══ -->
+    <div class="info-modal-overlay" id="overseas-vote-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>재외투표 안내</h2>
+        <section>
+          <h3>재외선거인 등록</h3>
+          <p>해외에 거주하는 대한민국 국민은 재외선거인으로 등록하면 투표할 수 있습니다.</p>
+          <p>등록 기간과 방법은 <a href="https://ova.nec.go.kr" target="_blank">재외선거 홈페이지(ova.nec.go.kr)</a>에서 확인하세요.</p>
+        </section>
+        <section>
+          <h3>재외투표 일정</h3>
+          <p>재외투표는 선거일 전 14일부터 9일까지 6일간 실시됩니다.</p>
+          <p>가까운 재외공관(대사관·영사관)에서 투표합니다.</p>
+        </section>
+        <section>
+          <h3>참고사항</h3>
+          <p>지방선거의 경우, 재외투표가 실시되지 않을 수 있습니다. 정확한 정보는 선관위에서 확인하세요.</p>
+          <p><a href="https://www.nec.go.kr" target="_blank">중앙선거관리위원회</a> | <a href="https://ova.nec.go.kr" target="_blank">재외선거 홈페이지</a></p>
+        </section>
+      </div>
+    </div>
+
     <!-- 1. 데이터 로더 -->
     <script src="js/data-loader.js?v=1774192751"></script>
     <script src="js/data.js?v=1774192751"></script>

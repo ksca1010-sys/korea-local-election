@@ -259,12 +259,16 @@ const PollTab = (() => {
             .sort((a, b) => b.support - a.support);
         const maxSupport = validResults.length > 0 ? validResults[0].support : 1;
 
+        // 1위·2위 오차범위 겹침 여부 (통계적 유의차 판정)
+        const noSigDiff = margin && validResults.length >= 2
+            && (validResults[0].support - validResults[1].support) < margin * 2;
+
         const barsHtml = validResults.map(r => {
             const party = r.party || 'independent';
             const color = ElectionData.getPartyColor(party);
             const barW = (r.support / maxSupport * 100);
             // 오차범위 에러바
-            const errorBar = margin ? `<div style="position:absolute;top:50%;transform:translateY(-50%);left:${Math.max(0,barW - margin/maxSupport*100)}%;width:${margin/maxSupport*200}%;height:3px;background:rgba(255,255,255,0.3);border-radius:2px;"></div>` : '';
+            const errorBar = margin ? `<div style="position:absolute;top:50%;transform:translateY(-50%);left:${Math.max(0,barW - margin/maxSupport*100)}%;width:${margin/maxSupport*200}%;height:3px;background:rgba(255,255,255,0.3);border-radius:2px;" aria-label="오차범위 ±${margin}%p"></div>` : '';
             return `<div class="poll-card-result">
                 <div class="poll-card-result-info">
                     <span class="poll-card-candidate">${r.candidateName}</span>
@@ -276,6 +280,10 @@ const PollTab = (() => {
                 </div>
             </div>`;
         }).join('');
+
+        const sigDiffHtml = noSigDiff
+            ? `<div style="text-align:center;padding:6px;margin-top:4px;border-radius:4px;background:rgba(245,158,11,0.1);font-size:0.75rem;color:#D97706;"><i class="fas fa-exclamation-triangle" style="margin-right:4px;"></i>1·2위 격차가 오차범위 이내 — 통계적 유의차 없음</div>`
+            : '';
 
         container.innerHTML = `
             <div class="panel-card" style="padding:16px;">
@@ -293,6 +301,7 @@ const PollTab = (() => {
                 </div>
 
                 ${barsHtml || '<div style="color:var(--text-muted);font-size:0.8rem;">결과 상세는 여심위 원본에서 확인하세요</div>'}
+                ${sigDiffHtml}
 
                 <div style="margin-top:14px;padding-top:12px;border-top:1px solid var(--border-light);">
                     <div style="font-size:0.75rem;font-weight:600;color:var(--text-muted);margin-bottom:6px;"><i class="fas fa-microscope"></i> 조사 방법론</div>
@@ -623,12 +632,17 @@ const PollTab = (() => {
 
             let resultsHtml = '';
             if (poll.results && poll.results.length > 0) {
-                const validResults = poll.results.filter(r => r.candidateName && r.support > 0);
+                const validResults = poll.results.filter(r => r.candidateName && r.support > 0)
+                    .sort((a, b) => b.support - a.support);
                 if (validResults.length > 0) {
                     const maxSupport = Math.max(...validResults.map(r => r.support));
-                    resultsHtml = validResults
-                        .sort((a, b) => b.support - a.support)
-                        .map(r => {
+                    const FOLD_LIMIT = 4;
+                    const showAll = validResults.length <= FOLD_LIMIT;
+                    const visible = showAll ? validResults : validResults.slice(0, FOLD_LIMIT);
+                    const hidden = showAll ? [] : validResults.slice(FOLD_LIMIT);
+                    const foldId = `poll-fold-${poll.nttId || Math.random().toString(36).slice(2)}`;
+
+                    resultsHtml = visible.map(r => {
                             const pc = r._stanceColor || ElectionData.getPartyColor(r.party || 'independent');
                             const pn = r._stanceLabel || ElectionData.getPartyName(r.party || 'independent');
                             const barWidth = maxSupport > 0 ? (r.support / maxSupport * 100) : 0;
@@ -643,6 +657,26 @@ const PollTab = (() => {
                                 </div>
                             </div>`;
                         }).join('');
+
+                    if (hidden.length > 0) {
+                        const hiddenHtml = hidden.map(r => {
+                            const pc = r._stanceColor || ElectionData.getPartyColor(r.party || 'independent');
+                            const pn = r._stanceLabel || ElectionData.getPartyName(r.party || 'independent');
+                            const barWidth = maxSupport > 0 ? (r.support / maxSupport * 100) : 0;
+                            return `<div class="poll-card-result">
+                                <div class="poll-card-result-info">
+                                    <span class="poll-card-candidate">${r.candidateName}</span>
+                                    <span class="poll-card-party" style="color:${pc}">${pn}</span>
+                                    <span class="poll-card-support">${r.support}%</span>
+                                </div>
+                                <div class="poll-card-bar-bg">
+                                    <div class="poll-card-bar" style="width:${barWidth}%;background:${pc}"></div>
+                                </div>
+                            </div>`;
+                        }).join('');
+                        resultsHtml += `<div id="${foldId}" style="display:none;">${hiddenHtml}</div>`;
+                        resultsHtml += `<button onclick="var el=document.getElementById('${foldId}');if(el.style.display==='none'){el.style.display='';this.innerHTML='접기 ▲'}else{el.style.display='none';this.innerHTML='그 외 ${hidden.length}명 ▼'}" style="width:100%;padding:6px;margin-top:4px;border:1px solid var(--border-light);border-radius:4px;background:transparent;color:var(--text-muted);font-size:0.75rem;cursor:pointer;">그 외 ${hidden.length}명 ▼</button>`;
+                    }
                 }
             }
 
@@ -706,6 +740,7 @@ const PollTab = (() => {
         cardsSection.innerHTML = `
             <div class="poll-cards-header">
                 <h4><i class="fas fa-list"></i> 전체 여론조사 ${polls.length}건</h4>
+                <a href="#" onclick="document.getElementById('poll-literacy-modal')?.classList.add('open'); return false;" style="font-size:0.75rem;color:var(--accent-blue);text-decoration:none;"><i class="fas fa-book-open" style="margin-right:3px;"></i>여론조사 읽는 법</a>
             </div>
             <div class="poll-cards-list">${cardListHtml}</div>
         `;
