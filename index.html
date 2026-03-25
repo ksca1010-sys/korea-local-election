@@ -578,6 +578,43 @@
       </div>
     </div>
 
+    <!-- ═══ 뉴스 스코어링 상세 Modal ═══ -->
+    <div class="info-modal-overlay" id="news-scoring-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>뉴스 정렬 알고리즘</h2>
+        <section>
+          <h3>5차원 복합 점수</h3>
+          <p>각 뉴스는 아래 5개 기준으로 점수를 매기고, 종합 점수 순으로 정렬됩니다.</p>
+          <table style="width:100%;border-collapse:collapse;font-size:0.85rem;margin:12px 0;">
+            <tr style="border-bottom:2px solid var(--border-color);">
+              <th style="text-align:left;padding:8px;">기준</th>
+              <th style="text-align:right;padding:8px;">가중치</th>
+              <th style="text-align:left;padding:8px;">설명</th>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-light);"><td style="padding:6px;">시의성</td><td style="text-align:right;padding:6px;">25%</td><td style="padding:6px;">최신 기사일수록 높은 점수</td></tr>
+            <tr style="border-bottom:1px solid var(--border-light);"><td style="padding:6px;">관련성</td><td style="text-align:right;padding:6px;">20%</td><td style="padding:6px;">제목에 선거·후보·지역명이 포함된 정도</td></tr>
+            <tr style="border-bottom:1px solid var(--border-light);"><td style="padding:6px;">신뢰도</td><td style="text-align:right;padding:6px;">10%</td><td style="padding:6px;">통신사·주요 일간지 등 매체 등급</td></tr>
+            <tr style="border-bottom:1px solid var(--border-light);"><td style="padding:6px;font-weight:700;color:var(--accent-blue);">지역성</td><td style="text-align:right;padding:6px;font-weight:700;">35%</td><td style="padding:6px;">지역 언론사 기사에 높은 가산점</td></tr>
+            <tr><td style="padding:6px;">인기도</td><td style="text-align:right;padding:6px;">10%</td><td style="padding:6px;">네이버 뉴스 정렬 순위 반영</td></tr>
+          </table>
+        </section>
+        <section>
+          <h3>지역 언론 우선 정책</h3>
+          <p>전국 언론보다 <strong>지역 밀착 언론</strong>이 선거 정보를 더 풍부하게 다루기 때문에, 지역성 가중치를 35%로 가장 높게 설정했습니다.</p>
+          <p>지역 언론사는 자동 수집(local_media_pool)과 수동 큐레이팅(local_media_registry)으로 관리됩니다. 기사 옆에 <span style="background:rgba(16,185,129,0.12);color:#10b981;padding:1px 6px;border-radius:3px;font-size:0.8rem;">지역</span> 뱃지로 구분합니다.</p>
+        </section>
+        <section>
+          <h3>카테고리 필터링</h3>
+          <p>각 카테고리(전체/여론조사/후보·인물/공약·정책)마다 검색 쿼리와 필터 규칙이 다릅니다. 교육감 뉴스가 광역단체장 탭에 혼입되지 않도록, 선거종류별로 제외 키워드를 적용합니다.</p>
+        </section>
+        <section>
+          <h3>면책</h3>
+          <p>이 점수는 <strong>기사의 품질이나 정확성이 아니라 관련성</strong>을 측정합니다. 알선거는 기사 내용을 검증하지 않으며, 원문 확인을 권장합니다.</p>
+        </section>
+      </div>
+    </div>
+
     <!-- ═══ 여론조사 읽는 법 Modal ═══ -->
     <div class="info-modal-overlay" id="poll-literacy-modal" onclick="if(event.target===this)this.classList.remove('open')">
       <div class="info-modal">

@@ -1386,7 +1386,7 @@ const NewsTab = (() => {
         let html = `
             <div class="news-live">
                 <div class="news-info-bar" style="padding:8px 12px;margin-bottom:8px;border-radius:6px;background:var(--bg-tertiary);font-size:0.75rem;line-height:1.6;color:var(--text-muted);">
-                    <div style="margin-bottom:4px;color:var(--text-secondary);"><i class="fas fa-filter" style="margin-right:4px;"></i>지역 밀착 뉴스를 우선 제공합니다 — 시의성·관련성·신뢰도·지역성·인기도 복합 점수 정렬</div>
+                    <div style="margin-bottom:4px;color:var(--text-secondary);"><i class="fas fa-filter" style="margin-right:4px;"></i>지역 밀착 뉴스를 우선 제공합니다 — 복합 점수 정렬 <a href="#" onclick="document.getElementById('news-scoring-modal')?.classList.add('open'); return false;" style="color:var(--accent-blue);text-decoration:none;font-weight:600;">더 알아보기</a></div>
                     <div><i class="fas fa-info-circle" style="margin-right:4px;"></i>아래 뉴스는 네이버 뉴스 검색 결과이며, 알선거는 기사 내용의 정확성을 보장하지 않습니다.</div>
                 </div>
                 <div class="news-live-header">

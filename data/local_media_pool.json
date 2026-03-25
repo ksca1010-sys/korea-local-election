@@ -959,7 +959,10 @@
       "hosts": [
         "ibknews.com",
         "geumjeong.kpnnews.org",
-        "pointe.co.kr"
+        "pointe.co.kr",
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
       ],
       "names": [
         "금정신문",
@@ -1008,7 +1011,10 @@
     "기장군": {
       "hosts": [
         "gijang.kpnnews.org",
-        "newsbrite.net"
+        "newsbrite.net",
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
       ],
       "names": [
         "기장공보뉴스",
@@ -1191,7 +1197,9 @@
     "부산진구": {
       "hosts": [
         "knn.co.kr",
-        "wsobi.com"
+        "wsobi.com",
+        "busan.com",
+        "kookje.co.kr"
       ],
       "names": [
         "부산일보",
@@ -1283,7 +1291,10 @@
     "사상구": {
       "hosts": [
         "sasangnews.com",
-        "paxetv.com"
+        "paxetv.com",
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
       ],
       "names": [
         "사상신문",
@@ -1474,7 +1485,9 @@
     "수영구": {
       "hosts": [
         "knn.co.kr",
-        "dt.co.kr"
+        "dt.co.kr",
+        "busan.com",
+        "kookje.co.kr"
       ],
       "names": [
         "부산일보",
@@ -1557,7 +1570,9 @@
       "hosts": [
         "knn.co.kr",
         "jejunews.com",
-        "facttv.kr"
+        "facttv.kr",
+        "busan.com",
+        "kookje.co.kr"
       ],
       "names": [
         "부산일보",
@@ -1671,7 +1686,10 @@
     "해운대구": {
       "hosts": [
         "ctnews.co.kr",
-        "civicnews.com"
+        "civicnews.com",
+        "busan.com",
+        "kookje.co.kr",
+        "knn.co.kr"
       ],
       "names": [
         "해운대신문",
@@ -1703,7 +1721,9 @@
       "hosts": [
         "cbilbo.com",
         "news.mbccb.co.kr",
-        "cjb.co.kr"
+        "cjb.co.kr",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "충북일보",
@@ -1743,7 +1763,10 @@
     "단양군": {
       "hosts": [
         "dyitnews.com",
-        "news.mbccb.co.kr"
+        "news.mbccb.co.kr",
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "단양뉴스",
@@ -1770,7 +1793,9 @@
     "보은군": {
       "hosts": [
         "cbilbo.com",
-        "mbccb.co.kr"
+        "mbccb.co.kr",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "충북일보",
@@ -1804,7 +1829,9 @@
       "hosts": [
         "cbilbo.com",
         "cjb.co.kr",
-        "news.mbccb.co.kr"
+        "news.mbccb.co.kr",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "충북일보",
@@ -2167,7 +2194,10 @@
     "진천군": {
       "hosts": [
         "jc.newsk.com",
-        "news.mbccb.co.kr"
+        "news.mbccb.co.kr",
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "진천신문",
@@ -2228,7 +2258,10 @@
       "hosts": [
         "cjwn.com",
         "cbnews.kr",
-        "news.mbccb.co.kr"
+        "news.mbccb.co.kr",
+        "cbilbo.com",
+        "ccdailynews.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "충주신문",
@@ -2303,7 +2336,10 @@
     "공주시": {
       "hosts": [
         "e-gongju.com",
-        "gongjuilbo.kr"
+        "gongjuilbo.kr",
+        "cctoday.co.kr",
+        "cnnews.co.kr",
+        "daejonilbo.com"
       ],
       "names": [
         "공주신문",
@@ -2553,7 +2589,10 @@
     "부여군": {
       "hosts": [
         "21cbuyeo.co.kr",
-        "bgnews.kr"
+        "bgnews.kr",
+        "cctoday.co.kr",
+        "cnnews.co.kr",
+        "daejonilbo.com"
       ],
       "names": [
         "e부여신문",
@@ -2634,7 +2673,10 @@
       "hosts": [
         "seocheon.newsk.com",
         "seocheonilbo.kr",
-        "seocheonmedia.co.kr"
+        "seocheonmedia.co.kr",
+        "cctoday.co.kr",
+        "cnnews.co.kr",
+        "daejonilbo.com"
       ],
       "names": [
         "서천신문",
@@ -3114,7 +3156,9 @@
       "hosts": [
         "dgmbc.co.kr",
         "tbc.co.kr",
-        "dgmbc.com"
+        "dgmbc.com",
+        "imaeil.com",
+        "idaegu.co.kr"
       ],
       "names": [
         "매일신문",
@@ -3351,7 +3395,9 @@
     "대덕구": {
       "hosts": [
         "tjmbc.co.kr",
-        "gocj.net"
+        "gocj.net",
+        "daejonilbo.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "대전일보",
@@ -3385,7 +3431,8 @@
       "hosts": [
         "tjmbc.co.kr",
         "gocj.net",
-        "daejonilbo.com"
+        "daejonilbo.com",
+        "cctoday.co.kr"
       ],
       "names": [
         "대전일보",
@@ -3525,7 +3572,10 @@
     "동해시": {
       "hosts": [
         "sdnews.co.kr",
-        "news.mtn.co.kr"
+        "news.mtn.co.kr",
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
       ],
       "names": [
         "동해신문",
@@ -3564,7 +3614,10 @@
     "삼척시": {
       "hosts": [
         "sdnews.co.kr",
-        "mbceg.co.kr"
+        "mbceg.co.kr",
+        "kwnews.co.kr",
+        "kado.net",
+        "chmbc.co.kr"
       ],
       "names": [
         "삼척신문",
@@ -3646,7 +3699,9 @@
     "양구군": {
       "hosts": [
         "chmbc.co.kr",
-        "mbceg.co.kr"
+        "mbceg.co.kr",
+        "kwnews.co.kr",
+        "kado.net"
       ],
       "names": [
         "강원일보",
@@ -3686,7 +3741,9 @@
       "hosts": [
         "chmbc.co.kr",
         "mbceg.co.kr",
-        "kpanews.co.kr"
+        "kpanews.co.kr",
+        "kwnews.co.kr",
+        "kado.net"
       ],
       "names": [
         "강원일보",
@@ -3868,7 +3925,9 @@
       "hosts": [
         "chmbc.co.kr",
         "mbcnewsgangwon.co.kr",
-        "mstoday.co.kr"
+        "mstoday.co.kr",
+        "kwnews.co.kr",
+        "kado.net"
       ],
       "names": [
         "강원일보",
@@ -4529,7 +4588,9 @@
       "hosts": [
         "chmbc.co.kr",
         "chukkyung.co.kr",
-        "mbceg.co.kr"
+        "mbceg.co.kr",
+        "kwnews.co.kr",
+        "kado.net"
       ],
       "names": [
         "강원일보",
@@ -4582,7 +4643,9 @@
       "hosts": [
         "gjdream.com",
         "kjdaily.com",
-        "hapt.co.kr"
+        "hapt.co.kr",
+        "kwangju.co.kr",
+        "mdilbo.com"
       ],
       "names": [
         "광주일보",
@@ -4736,7 +4799,9 @@
     "고령군": {
       "hosts": [
         "gbnews.com",
-        "dgmbc.co.kr"
+        "dgmbc.co.kr",
+        "imaeil.com",
+        "kyongbuk.co.kr"
       ],
       "names": [
         "매일신문",
@@ -4799,7 +4864,9 @@
     "군위군": {
       "hosts": [
         "gbnews.com",
-        "dgmbc.co.kr"
+        "dgmbc.co.kr",
+        "imaeil.com",
+        "kyongbuk.co.kr"
       ],
       "names": [
         "매일신문",
@@ -4929,7 +4996,9 @@
     "봉화군": {
       "hosts": [
         "gbnews.com",
-        "dgmbc.co.kr"
+        "dgmbc.co.kr",
+        "imaeil.com",
+        "kyongbuk.co.kr"
       ],
       "names": [
         "매일신문",
@@ -5019,7 +5088,8 @@
       "hosts": [
         "gbnews.com",
         "dgmbc.co.kr",
-        "facten.co.kr"
+        "facten.co.kr",
+        "imaeil.com"
       ],
       "names": [
         "매일신문",
@@ -5113,7 +5183,8 @@
       "hosts": [
         "gbnews.com",
         "dgmbc.co.kr",
-        "ydinews.co.kr"
+        "ydinews.co.kr",
+        "imaeil.com"
       ],
       "names": [
         "매일신문",
@@ -5153,7 +5224,9 @@
     "영양군": {
       "hosts": [
         "gbnews.com",
-        "dgmbc.co.kr"
+        "dgmbc.co.kr",
+        "imaeil.com",
+        "kyongbuk.co.kr"
       ],
       "names": [
         "매일신문",
@@ -5181,7 +5254,10 @@
       "hosts": [
         "yjinews.com",
         "yeongjunews.co.kr",
-        "andongmbc.co.kr"
+        "andongmbc.co.kr",
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
       ],
       "names": [
         "영주시민신문",
@@ -5341,7 +5417,8 @@
       "hosts": [
         "gbnews.com",
         "dgmbc.co.kr",
-        "pointe.co.kr"
+        "pointe.co.kr",
+        "imaeil.com"
       ],
       "names": [
         "매일신문",
@@ -5447,7 +5524,10 @@
     "의성군": {
       "hosts": [
         "andongmbc.co.kr",
-        "dailysmart.co.kr"
+        "dailysmart.co.kr",
+        "imaeil.com",
+        "gbnews.com",
+        "dgmbc.co.kr"
       ],
       "names": [
         "의성신문",
@@ -5786,7 +5866,10 @@
       "hosts": [
         "gwachonnews.co.kr",
         "gwacheon.kpnnews.org",
-        "ddaily.co.kr"
+        "ddaily.co.kr",
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr"
       ],
       "names": [
         "과천시대신문",
@@ -5994,7 +6077,10 @@
       "hosts": [
         "gunponews.net",
         "mediagunpo.co.kr",
-        "vision21.kr"
+        "vision21.kr",
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr"
       ],
       "names": [
         "군포신문",
@@ -6189,7 +6275,10 @@
       "hosts": [
         "ycgmnews.com",
         "y-ddc.com",
-        "mygoyang.com"
+        "mygoyang.com",
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr"
       ],
       "names": [
         "동두천연천신문",
@@ -6718,7 +6807,10 @@
     "양평군": {
       "hosts": [
         "ypnews.kr",
-        "yangpyeong.kpnnews.org"
+        "yangpyeong.kpnnews.org",
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr"
       ],
       "names": [
         "양평백운신문",
@@ -6811,7 +6903,10 @@
       "hosts": [
         "yc-news.com",
         "yeoncheonnews.com",
-        "enter.etoday.co.kr"
+        "enter.etoday.co.kr",
+        "kyeonggi.com",
+        "kyeongin.com",
+        "suwonilbo.co.kr"
       ],
       "names": [
         "연천신문",
@@ -7670,7 +7765,10 @@
     "밀양시": {
       "hosts": [
         "miryang.newsk.com",
-        "ksilbo.co.kr"
+        "ksilbo.co.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "밀양신문",
@@ -7701,7 +7799,10 @@
       "hosts": [
         "e4000news.com",
         "news4000.com",
-        "mbcgn.kr"
+        "mbcgn.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "사천신문",
@@ -7799,7 +7900,10 @@
     "양산시": {
       "hosts": [
         "ysnews.co.kr",
-        "ksilbo.co.kr"
+        "ksilbo.co.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "양산신문",
@@ -7830,7 +7934,10 @@
       "hosts": [
         "urnews.co.kr",
         "urgmnews.com",
-        "xn--vg1bk3iw4jsze.kr"
+        "xn--vg1bk3iw4jsze.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "의령신문",
@@ -7974,7 +8081,10 @@
       "hosts": [
         "changwonilbo.com",
         "m.changwonilbo.com",
-        "mbcgn.kr"
+        "mbcgn.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "창원일보",
@@ -8131,7 +8241,10 @@
       "hosts": [
         "hanews.co.kr",
         "hamannews.kr",
-        "hamanna.kr"
+        "hamanna.kr",
+        "knnews.co.kr",
+        "gndomin.com",
+        "chmbc.co.kr"
       ],
       "names": [
         "함안인터넷신문",
@@ -8343,7 +8456,10 @@
       "hosts": [
         "gy1365.kr",
         "gyeyang.kpnnews.org",
-        "news.jtbc.joins.com"
+        "news.jtbc.joins.com",
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
       ],
       "names": [
         "계양V-뉴스(웹진)",
@@ -8374,7 +8490,10 @@
     "남동구": {
       "hosts": [
         "namdongnews.co.kr",
-        "mediaic.co.kr"
+        "mediaic.co.kr",
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
       ],
       "names": [
         "남동뉴스",
@@ -8397,7 +8516,9 @@
     "미추홀구": {
       "hosts": [
         "incheontimes.com",
-        "livesnews.com"
+        "livesnews.com",
+        "incheonilbo.com",
+        "kihoilbo.co.kr"
       ],
       "names": [
         "경인일보",
@@ -8431,7 +8552,10 @@
       "hosts": [
         "bupyeongpost.com",
         "mediaic.co.kr",
-        "irobotnews.com"
+        "irobotnews.com",
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
       ],
       "names": [
         "부평신문",
@@ -8578,7 +8702,10 @@
       "hosts": [
         "ongjinilbo.co.kr",
         "ifm.kr",
-        "suhyupnews.co.kr"
+        "suhyupnews.co.kr",
+        "incheonilbo.com",
+        "kihoilbo.co.kr",
+        "incheontimes.com"
       ],
       "names": [
         "옹진일보",
@@ -8736,7 +8863,10 @@
       "hosts": [
         "kimje.newsk.com",
         "jeonmin.co.kr",
-        "ibuan.com"
+        "ibuan.com",
+        "jjan.kr",
+        "jbdomin.co.kr",
+        "sjbnews.com"
       ],
       "names": [
         "김제신문",
@@ -9040,7 +9170,10 @@
       "hosts": [
         "wj1news.com",
         "wanjumediacenter.kr",
-        "wjgm.co.kr"
+        "wjgm.co.kr",
+        "jjan.kr",
+        "jbdomin.co.kr",
+        "sjbnews.com"
       ],
       "names": [
         "완주신문",
@@ -9125,7 +9258,10 @@
     "임실군": {
       "hosts": [
         "imsil.tv",
-        "jeonmin.co.kr"
+        "jeonmin.co.kr",
+        "jjan.kr",
+        "jbdomin.co.kr",
+        "sjbnews.com"
       ],
       "names": [
         "임순남뉴스",
@@ -9425,7 +9561,10 @@
     "고흥군": {
       "hosts": [
         "newgh.kr",
-        "goheungnews.kr"
+        "goheungnews.kr",
+        "jnilbo.com",
+        "honam.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "고흥신문",
@@ -9468,7 +9607,10 @@
       "hosts": [
         "gsilbo.co.kr",
         "injournal.net",
-        "jeonmae.co.kr"
+        "jeonmae.co.kr",
+        "jnilbo.com",
+        "honam.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "곡성일보",
@@ -9586,7 +9728,10 @@
       "hosts": [
         "guryenews.com",
         "guryeilbo.com",
-        "newsgurye.com"
+        "newsgurye.com",
+        "jnilbo.com",
+        "honam.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "구례신문",
@@ -9910,7 +10055,10 @@
       "hosts": [
         "boseongnews.co.kr",
         "boseong-senior.com",
-        "news.mtn.co.kr"
+        "news.mtn.co.kr",
+        "jnilbo.com",
+        "honam.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "보성신문",
@@ -10883,7 +11031,10 @@
       "hosts": [
         "igangbuk.com",
         "kpenews.com",
-        "arunews.com"
+        "arunews.com",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "서울강북신문",
@@ -10933,7 +11084,10 @@
       "hosts": [
         "gtimes.co.kr",
         "ganews.co.kr",
-        "lkp.news"
+        "lkp.news",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "관악신문",
@@ -11099,7 +11253,10 @@
       "hosts": [
         "gc-tv.kr",
         "gcnews.tv",
-        "industrynews.co.kr"
+        "industrynews.co.kr",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "금천신문",
@@ -11235,7 +11392,10 @@
     "도봉구": {
       "hosts": [
         "ftoday.co.kr",
-        "tbs.seoul.kr"
+        "tbs.seoul.kr",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "한겨레 신문",
@@ -11325,7 +11485,10 @@
     "동작구": {
       "hosts": [
         "thedjnews.com",
-        "dongjaknews.com"
+        "dongjaknews.com",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "동작신문",
@@ -11552,7 +11715,10 @@
       "hosts": [
         "sgilbo.kr",
         "seongdongnews.com",
-        "bntnews.co.kr"
+        "bntnews.co.kr",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "성동신문",
@@ -11945,7 +12111,10 @@
       "hosts": [
         "ieps.co.kr",
         "eptimes.co.kr",
-        "energydaily.co.kr"
+        "energydaily.co.kr",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "은평구의 중심! 은평신문",
@@ -12046,7 +12215,10 @@
     "중랑구": {
       "hosts": [
         "jungnangnews.kr",
-        "arunews.com"
+        "arunews.com",
+        "seoulilbo.com",
+        "senews.co.kr",
+        "namdonews.com"
       ],
       "names": [
         "중랑신문",
