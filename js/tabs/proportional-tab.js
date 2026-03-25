@@ -17,7 +17,7 @@ const ProportionalTab = (() => {
 
     function loadHistory() {
         if (_historyCache) return Promise.resolve(_historyCache);
-        return fetch('data/proportional_history.json')
+        return fetch('data/proportional_history.json?v=' + (typeof DataLoader !== 'undefined' ? DataLoader._version : Date.now()))
             .then(r => r.ok ? r.json() : null)
             .then(d => { _historyCache = d; return d; })
             .catch(() => null);
