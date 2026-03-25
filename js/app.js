@@ -127,7 +127,8 @@ const App = (() => {
         // Load polls data (여론조사)
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
-        // 모든 데이터 로드 완료 → 필터 카운트 재갱신 (재보궐 등 동적 데이터 반영)
+        // 모든 데이터 로드 완료 → 실제 데이터 기반 카운트 동기화
+        syncCountsFromData();
         updateFilterCounts();
         // 검색 인덱스 무효화
         invalidateSearchIndex();
@@ -549,21 +550,79 @@ const App = (() => {
         if (statSigungu) statSigungu.textContent = stats.sigungu || '226';
     }
 
+    /**
+     * 실제 데이터에서 선거구 수를 동적으로 계산하여 필터 카운트 + 전국개황 갱신.
+     * 모든 데이터 로드 완료 후 호출된다.
+     */
+    function syncCountsFromData() {
+        const info = ElectionData.electionTypeInfo;
+        if (!info) return;
+
+        const counts = {};
+
+        // 광역단체장: regions 키 수 (세종 포함 17개)
+        const regions = ElectionData.regions;
+        if (regions) counts.governor = Object.keys(regions).length;
+
+        // 교육감: regions 키 수 (= 광역 수)
+        if (regions) counts.superintendent = Object.keys(regions).length;
+
+        // 기초단체장: sub_regions의 전체 시군구 수
+        const subRegions = ElectionData.subRegions;
+        if (subRegions) {
+            let total = 0;
+            for (const rk in subRegions) {
+                const list = subRegions[rk];
+                if (Array.isArray(list)) total += list.length;
+                else if (typeof list === 'object') total += Object.keys(list).length;
+            }
+            counts.mayor = total;
+        }
+
+        // 광역의원/기초의원: election_stats.json 값 유지 (선거구 획정 데이터는 별도 소스)
+        // council, localCouncil, councilProportional, localCouncilProportional은
+        // 선거구 획정이 확정되면 election_stats.json이 선관위 API로 자동 갱신됨
+
+        // 재보궐: byelection.json 선거구 수
+        const byeData = ElectionData._byElectionCache;
+        if (byeData?.districts) {
+            counts.byElection = Object.keys(byeData.districts).length;
+        }
+
+        // 적용
+        let updated = 0;
+        for (const [type, count] of Object.entries(counts)) {
+            if (info[type] && info[type].count !== count) {
+                info[type].count = count;
+                updated++;
+            }
+        }
+
+        // 전국개황 시군구 수도 동기화
+        if (counts.mayor && ElectionData.nationalSummary?.officialStats) {
+            ElectionData.nationalSummary.officialStats.sigungu = counts.mayor;
+            const el = document.getElementById('stat-sigungu');
+            if (el) el.textContent = counts.mayor;
+        }
+
+        // 시도 수
+        if (counts.governor && ElectionData.nationalSummary?.officialStats) {
+            ElectionData.nationalSummary.officialStats.regions = counts.governor;
+            const el = document.getElementById('stat-regions');
+            if (el) el.textContent = counts.governor;
+        }
+
+        if (updated > 0) {
+            console.log(`[syncCounts] ${updated}개 선거유형 카운트 동기화`);
+        }
+    }
+
     // ============================================
     // Filter Count 동적 갱신 (election_stats.json 로드 후)
     // ============================================
     function updateFilterCounts() {
         const info = ElectionData.electionTypeInfo;
         if (!info) return;
-
-        // 재보궐: byelection.json의 실제 선거구 수와 자동 연동
-        const byeData = ElectionData._byElectionCache;
-        if (byeData && byeData.districts && info.byElection) {
-            const realCount = Object.keys(byeData.districts).length;
-            if (info.byElection.count !== realCount) {
-                info.byElection.count = realCount;
-            }
-        }
 
         document.querySelectorAll('.filter-btn[data-type]').forEach(btn => {
             const type = btn.dataset.type;
