@@ -128,8 +128,8 @@ const App = (() => {
         try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
 
         // 모든 데이터 로드 완료 → 실제 데이터 기반 카운트 동기화
-        syncCountsFromData();
-        updateFilterCounts();
+        try { syncCountsFromData(); } catch(e) { console.warn('[syncCounts] error:', e); }
+        try { updateFilterCounts(); } catch(e) { console.warn('[filterCounts] error:', e); }
         // 검색 인덱스 무효화
         invalidateSearchIndex();
 
@@ -568,7 +568,7 @@ const App = (() => {
         if (regions) counts.superintendent = Object.keys(regions).length;
 
         // 기초단체장: sub_regions의 전체 시군구 수
-        const subRegions = ElectionData.subRegions;
+        const subRegions = ElectionData.subRegionData;
         if (subRegions) {
             let total = 0;
             for (const rk in subRegions) {
