@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-03-24T03:17:16.965292",
-    "totalDetections": 33,
-    "pendingCount": 33,
+    "lastRun": "2026-03-25T01:21:46.520836",
+    "totalDetections": 34,
+    "pendingCount": 34,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -324,6 +324,11 @@
           "title": "‘의원직 상실’ 양문석 “재판소원 안 할 것”",
           "link": "https://www.ichannela.com/news/main/news_detailPage.do?publishId=000000519563",
           "date": "2026-03-18"
+        },
+        {
+          "title": "현재까지 재보궐 7곳 확정적…전부 민주당 지역구",
+          "link": "https://www.mk.co.kr/article/11996758",
+          "date": "2026-03-24"
         }
       ],
       "necValidated": false,
@@ -504,6 +509,11 @@
           "title": "[이슈] '대출사기' 양문석 당선무효형 확정…재보궐 6곳 확정 '미니총선...",
           "link": "https://www.polinews.co.kr/news/articleView.html?idxno=725297",
           "date": "2026-03-12"
+        },
+        {
+          "title": "‘판’ 커졌지만…與, 평택을 ‘히든카드’ 오리무중 [6·3 재보궐]",
+          "link": "https://www.kukinews.com/article/view/kuk202603240145",
+          "date": "2026-03-24"
         }
       ],
       "necValidated": true,
@@ -761,6 +771,31 @@
           "title": "주호영·이진숙 충격 컷오프…대구시장 공천 내홍 ‘일촉즉발’",
           "link": "https://www.bntnews.co.kr/article/view/bnt202603230012",
           "date": "2026-03-23"
+        },
+        {
+          "title": "[기획] 국민의힘 대구시장 공천 파동, 후폭풍 어디까지?",
+          "link": "http://www.sisafocus.co.kr/news/articleView.html?idxno=357665",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "한동훈 &quot;조작기소 국정조사?...감옥, 내가 가나 이재명이 가나 보자&quot;...정...",
+          "link": "https://www.ikbc.co.kr/article/view/kbc202603250022",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "'TK후보 재배치' 시나리오 급부상",
+          "link": "https://www.sidae.com/article/2026032509140269536",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "지방선거 공천 잡음에 인물난까지 국힘 '내우외환'",
+          "link": "https://www.ulsanpress.net/news/articleView.html?idxno=571720",
+          "date": "2026-03-24"
+        },
+        {
+          "title": "주호영, 컷오프 후 ‘기로’···탈당·무소속 출마 등 모든 가능성 열...",
+          "link": "https://www.kbmaeil.com/article/20260324500715",
+          "date": "2026-03-24"
         }
       ],
       "necValidated": false,
@@ -944,6 +979,29 @@
       "necValidated": true,
       "status": "pending",
       "detectedAt": "2026-03-24T03:17:16.965290"
+    },
+    {
+      "key": "gyeongnam-전국동시",
+      "region": "gyeongnam",
+      "district": "전국동시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[경남신문-도선관위 6·3 지방선거 Q&amp;A] (2) 제9회 전국동시지방선거 개...",
+          "link": "http://www.knnews.co.kr/news/articleView.php?idxno=1484902",
+          "date": "2026-03-24"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-25T01:21:46.520798"
     }
   ]
 }

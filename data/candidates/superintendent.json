@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-24",
+    "lastUpdated": "2026-03-25",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-24T03:20:22.685950",
+    "lastFactCheck": "2026-03-25T01:24:39.277296",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
@@ -451,12 +451,21 @@
         "name": "김주홍",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-25",
+          "type": "status_change",
+          "detail": "김주홍 교육감 예비후보 등록.. 진보는?",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "미상",
+          "sourcePublishedAt": "2026-03-25"
+        }
       },
       {
         "id": "ulsan-5",
@@ -551,17 +560,17 @@
         "name": "신경호",
         "stance": "보수",
         "career": "현 강원특별자치도 교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "incumbent",
         "pledges": [],
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-03-25",
           "type": "status_change",
-          "detail": "신경호 현직 예비후보등록 예고, 강원도교육감 선거판 요동",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-03-24"
+          "detail": "신경호 '현직' 예비후보등록 예고",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-03-25"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -572,17 +581,17 @@
         "name": "강삼영",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-03-25",
           "type": "status_change",
-          "detail": "강삼영 교육감 예비후보 강원인재성장협의회 신설, 강원교육 희망우체통 운영, 출판기념회 개최",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-03-24"
+          "detail": "강삼영 강원도교육감 예비후보 관련 다수 뉴스 보도 - '강원인재성장협의회 신설', '30분 내 무상통학 시대 연다', '강원교육 희망우체통' 운영, 출판기념회 개최",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-03-25"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -614,17 +623,17 @@
         "name": "유대균",
         "stance": "중도",
         "career": "",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [],
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-03-25",
           "type": "status_change",
-          "detail": "유대균 강원교육감 선거 예비후보 선거사무소 개소, 미래교육 5대 과제 발표",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-03-24"
+          "detail": "유대균 강원교육감 선거 예비후보 선거사무소 개소, '미래교육 5대 과제 발표'",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-03-25"
         },
         "sourceUrl": null,
         "sourceLabel": null,

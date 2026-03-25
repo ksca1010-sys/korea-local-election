@@ -1,16 +1,16 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-24",
+    "lastUpdated": "2026-03-25",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-03-24T04:13:32.269930",
-    "lastSyncFromOverview": "2026-03-24",
+    "lastFactCheck": "2026-03-25T02:11:54.795759",
+    "lastSyncFromOverview": "2026-03-25",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-03-24T04:30:17.252282",
+    "lastPledgeCollection": "2026-03-25T02:20:34.403646",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-03-24",
-    "lastCrossValidation": "2026-03-24"
+    "lastByelectionSync": "2026-03-25",
+    "lastCrossValidation": "2026-03-25"
   },
   "candidates": {
     "seoul": {
@@ -218,7 +218,10 @@
           "career": "전 서울시 도시재생실 관계자",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "지역 사업 내실화",
+            "미래 먹거리 발굴"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -517,7 +520,10 @@
           "career": "전 은평구의원 / 민주평통 은평구협의회장 / 국민의힘 중앙연수원 부원장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "지역 정체 극복",
+            "민주당 20년 정책 전환"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -655,7 +661,9 @@
           "career": "전 서울시부의장, 현 서울시의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "지하철 시대 개막"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -826,7 +834,9 @@
           "career": "전 청와대 홍보비서관",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "창녕런(CN-learn) 공약"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -837,7 +847,9 @@
           "career": "금천구 국민의힘 당협위원장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "사법·검찰 개혁"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -951,7 +963,9 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "재개발 추진 속도"
+          ]
         }
       ],
       "관악구": [
@@ -1133,7 +1147,9 @@
           "career": "변호사 / 국민의힘 예비후보",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "재건축·재개발 추진"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -1179,7 +1195,9 @@
           "career": "전 서울교통공사 상임감사 / 전 서울시의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "재건축 규제 완화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -1265,7 +1283,10 @@
           "career": "전 송파 부구청장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "잠실 도시공간 대개조",
+            "송파를 국내 대표 지역으로"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -1364,7 +1385,9 @@
           "career": "중구의회 부의장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "산복도로 고도제한 완화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -1440,7 +1463,9 @@
           "career": "부산시의원",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "원도심 재생"
+          ],
           "sourceUrl": "https://news.busan.co.kr/",
           "sourceLabel": "부산일보",
           "sourcePublishedAt": "2026-03-24"
@@ -1476,7 +1501,9 @@
           "career": "현 부산시의원 (동구1) / 부산시의회 운영위원장",
           "status": "EXPECTED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "원도심 공동화 해결"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -1904,7 +1931,9 @@
           "career": "전 부산시 경제부시장",
           "status": "출마선언",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "지방교부세 법정율 인상"
+          ],
           "sourceUrl": "https://news.naver.com",
           "sourceLabel": "뉴스",
           "sourcePublishedAt": "2026-03-22"
@@ -2031,7 +2060,9 @@
           "career": "부산시의원 (연제구1)",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "일할 줄 아는 구청장"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2094,7 +2125,7 @@
           "name": "조병길",
           "party": "independent",
           "career": "현 사상구 구청장",
-          "status": "WITHDRAWN",
+          "status": "사퇴",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
@@ -2103,13 +2134,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-03-24",
-            "type": "status_change",
-            "detail": "국민의힘, '부동산 투기 의혹' 조병길 제명…'친한계' 김종혁은 '주의'",
-            "previous": "[사퇴]",
-            "sourceUrl": "https://news.busan.co.kr/",
-            "sourceLabel": "부산일보",
-            "sourcePublishedAt": "2026-03-24"
+            "date": "2026-03-25",
+            "type": "withdrawn",
+            "detail": "국민의힘, 조병길 사상구청장 제명 확정 / 부동산 투기 의혹으로 제명",
+            "previous": "WITHDRAWN",
+            "sourceUrl": null,
+            "sourceLabel": "한국일보",
+            "sourcePublishedAt": "2025-10-15"
           }
         },
         {
@@ -2135,7 +2166,9 @@
           "career": "부산시의원",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "월내어린이공원 자연친화 조성"
+          ],
           "sourceUrl": "https://news.busan.co.kr/",
           "sourceLabel": "부산일보",
           "sourcePublishedAt": "2026-03-24"
@@ -2343,7 +2376,10 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "서구 명칭 개편",
+            "행정혁신"
+          ]
         }
       ],
       "북구": [
@@ -2421,7 +2457,9 @@
           "career": "현 수성구청장 / 3선 도전",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "현장 중심 소통"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2469,7 +2507,10 @@
           "career": "대구시의원",
           "status": "출마선언",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "구정 혁신",
+            "경영하는 책임자로서의 역할"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -2702,7 +2743,9 @@
           "career": "전 미추홀구청장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "약자와 함께하는 도시"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2713,7 +2756,9 @@
           "career": "민주당 동구미추홀구을 사무국장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "생활 중심 행정"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2825,7 +2870,13 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "시간 쪼개기 주차 시스템",
+            "단속 대신 구조 개선으로 주차 문제 해결",
+            "원도심 재생",
+            "산단 혁신",
+            "복지 확대"
+          ]
         }
       ],
       "부평구": [
@@ -2835,7 +2886,9 @@
           "career": "현 부평구 구청장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "일하는 구청장"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -3140,7 +3193,9 @@
           "career": "현 동구청장",
           "status": "EXPECTED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "해사법원 유치"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -3168,7 +3223,9 @@
           "career": "민주당 정책위원회 부의장",
           "status": "[출마선언]",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "검단구 장애인 일자리 확대"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -3304,7 +3361,10 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "서울 5호선 김포·검단 연장",
+            "국공립어린이집 보육환경 개선"
+          ]
         },
         {
           "name": "서희철",
@@ -3312,7 +3372,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "서구 명칭 개편"
+          ]
         }
       ]
     },
@@ -3601,7 +3663,9 @@
           "career": "경력 미상",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "통합특별시 신성장 1번지 광산구 조성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -3677,7 +3741,38 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "경강선 셔틀·심야버스",
+            "생활문화 공간 조성",
+            "걷고 머무는 라이프스타일 공간"
+          ]
+        },
+        {
+          "name": "강은미",
+          "party": "justice",
+          "career": "정의당 광주시당 위원장",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://www.gwangju.go.kr",
+          "sourceLabel": "광주 언론",
+          "sourcePublishedAt": "2026-03-25"
+        },
+        {
+          "name": "박해광",
+          "party": "ppp",
+          "career": "광주시장 예비후보",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [
+            "폭설에도 멈추지 않는 교통체계",
+            "숙원사업 해결 속도 개선",
+            "상설 마라톤 코스 조성",
+            "맞벌이 부모 저녁·주말 돌봄"
+          ],
+          "sourceUrl": "https://www.gwangju.go.kr",
+          "sourceLabel": "광주 언론",
+          "sourcePublishedAt": "2026-03-25"
         }
       ]
     },
@@ -3732,7 +3827,11 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "생활체육도시 조성",
+            "판암·산내 생활체육·교통 연계",
+            "대전역 K-콘텐츠 수도화"
+          ]
         }
       ],
       "중구": [
@@ -3850,7 +3949,24 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "서구 명칭 개편 추진",
+            "행정혁신"
+          ]
+        },
+        {
+          "name": "전명자",
+          "party": "democratic",
+          "career": "전 대전 서구의회 의장",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [
+            "흔들린 행정 바로 세우기",
+            "사람 중심 구정 실현"
+          ],
+          "sourceUrl": "https://news.naver.com/",
+          "sourceLabel": "대전뉴스",
+          "sourcePublishedAt": "2026-03-24"
         }
       ],
       "유성구": [
@@ -3953,7 +4069,10 @@
           "career": "미상",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "시민이 주도하는 정치 실현",
+            "양당 독점 체제 개혁"
+          ],
           "sourceUrl": "https://example.com",
           "sourceLabel": "지역 언론",
           "sourcePublishedAt": "2026-03-22"
@@ -3986,6 +4105,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "박태완",
+          "party": "democratic",
+          "career": "중구청장 예비후보",
+          "status": "공천확정",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "",
+          "sourceLabel": "",
+          "sourcePublishedAt": "2026-03-25"
         }
       ],
       "남구": [
@@ -4037,7 +4167,10 @@
           "career": "울산시의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "AI 확대",
+            "정주여건 개선"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -4061,7 +4194,9 @@
           "career": "울산 남구의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "남구 대전환"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -4085,19 +4220,22 @@
           "career": "현 동구청장",
           "status": "WITHDRAWN",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "AI 확대",
+            "정주여건 개선"
+          ],
           "_note": "김종훈 울산시장 출마 사퇴 (2026.1)",
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-03-22",
+            "date": "2026-03-25",
             "type": "status_change",
-            "detail": "[김종훈 울산 동구청장] '진보당 울산시장' 당선되려 출마",
+            "detail": "김종훈 동구청장 진보당 울산시장 예비후보로 방향 전환 - '울산의료원 건립' 공약",
             "previous": "WITHDRAWN",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "울산지역 언론",
-            "sourcePublishedAt": "2026-03-15"
+            "sourceUrl": "",
+            "sourceLabel": "",
+            "sourcePublishedAt": "2026-03-25"
           }
         },
         {
@@ -4207,12 +4345,21 @@
           "name": "이동권",
           "party": "democratic",
           "career": "전 북구청장",
-          "status": "EXPECTED",
+          "status": "공천확정",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-03-25",
+            "type": "status_change",
+            "detail": "더불어민주당 북구청장 2인 경선 확정 - 백운찬·이동권 경선",
+            "previous": "EXPECTED",
+            "sourceUrl": "",
+            "sourceLabel": "",
+            "sourcePublishedAt": "2026-03-25"
+          }
         },
         {
           "name": "이은영",
@@ -4255,6 +4402,35 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "윤덕권",
+          "party": "reform",
+          "career": "울주군수 예비후보",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [
+            "복지 신청주의 폐기, 위기가정 직권지원",
+            "적극행정 면책 조례 제정",
+            "대학 등록금 전액 지원",
+            "무상버스 도입"
+          ],
+          "sourceUrl": "",
+          "sourceLabel": "",
+          "sourcePublishedAt": "2026-03-25"
+        },
+        {
+          "name": "김시욱",
+          "party": "ppp",
+          "career": "울주군의원",
+          "status": "출마선언",
+          "dataSource": "claude",
+          "pledges": [
+            "K컬쳐밸리 조성"
+          ],
+          "sourceUrl": "",
+          "sourceLabel": "",
+          "sourcePublishedAt": "2026-03-25"
         }
       ],
       "울산시장": []
@@ -6196,7 +6372,10 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "8대 정책 발표",
+            "책임지는 정치"
+          ]
         }
       ],
       "태백시": [
@@ -6748,7 +6927,9 @@
           "career": "현 강원도의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "강원도·철원군 'One Team'으로 지역발전"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -6770,7 +6951,9 @@
           "career": "전 강원도의장",
           "status": "EXPECTED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "지방분권 대선공약 제안"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -6904,6 +7087,14 @@
             "무상 공공임대",
             "공공기관 주 4.5일제 도입"
           ]
+        },
+        {
+          "name": "권에서는",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "충주시": [
@@ -7032,7 +7223,9 @@
           "career": "현 영동군 군수",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "영동을 다시 설계"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -7111,7 +7304,12 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "옥천역 중심 서남부권 신시가지 개발",
+            "옥천읍 권역별 개발",
+            "역세권·구읍 개발",
+            "서남부·구읍 더블코어 성장벨트"
+          ]
         }
       ],
       "음성군": [
@@ -7274,7 +7472,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "생활특별시 조성"
+          ]
         }
       ]
     },
@@ -7464,7 +7664,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "태안 세일즈 - 1호 영업사원"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -7694,7 +7896,10 @@
           "career": "현 홍성군 군수",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "준비된 변화로 홍성 재도약",
+            "불합리 바로 잡기"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -8118,7 +8323,12 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "문화비 0원",
+            "버스요금 0원",
+            "이동시장실 운영",
+            "보조금 투입 문화예술 행사 자부담 폐지"
+          ]
         }
       ],
       "남원시": [
@@ -8218,7 +8428,10 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "자립도시 실현",
+            "행정주권 회복"
+          ]
         }
       ],
       "진안군": [
@@ -8342,7 +8555,9 @@
           "career": "전 장수군수 (민선 7기) / 조국혁신당 입당",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "장수형 기본사회 완성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9039,7 +9254,10 @@
           "career": "행정학 박사 / 전 진도군 부군수, 35년 공직",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "지역 소멸 극복",
+            "농업 정책 변화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9112,7 +9330,10 @@
           "career": "전 도의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "스마트 팜 시티",
+            "기본소득"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9152,7 +9373,9 @@
           "career": "현 강진군의원 (전국 최연소 의장, 1989년생)",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "강진 제1호 영업사원"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9301,7 +9524,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "군민 삶 더 풍요로운 진도"
+          ]
         }
       ],
       "영암군": [
@@ -9362,7 +9587,10 @@
           "career": "현 무안군수 (2024 민주당 복당)",
           "status": "DECLARED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "군공항 이전",
+            "행정통합"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9546,7 +9774,9 @@
           "career": "전 함평군수",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "미래산업 육성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9573,7 +9803,9 @@
           "career": "조국혁신당 신안군 지역위원장",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "재생에너지 수익 배분"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9726,7 +9958,12 @@
           "career": "경력 미상",
           "status": "출마선언",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "재난안전 강화",
+            "국제 하늘길 개설",
+            "AI 산업 전략",
+            "도시 브랜드 개발"
+          ],
           "sourceUrl": "https://www.newsis.com",
           "sourceLabel": "뉴시스",
           "sourcePublishedAt": "2026-03-22"
@@ -9975,7 +10212,9 @@
           "career": "경력 미상",
           "status": "EXPECTED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "네거티브 없는 선거"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -9986,7 +10225,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "기업이 다시 뛰는 구미 조성"
+          ]
         }
       ],
       "영주시": [
@@ -10061,7 +10302,10 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "예산 1조 5000억 시대 달성",
+            "인구 12만 시대 개척"
+          ]
         }
       ],
       "영천시": [
@@ -10531,7 +10775,10 @@
           "career": "전 영양군수 (3선)",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "영양 재건",
+            "영양 주권 회복"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -10597,7 +10844,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "주거·일자리·관계 패키지 정책"
+          ]
         }
       ],
       "봉화군": [
@@ -10645,7 +10894,9 @@
           "career": "국민의힘 경북도당 부위원장",
           "status": "EXPECTED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "행정·농업·안정·세대교체·청렴·변화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -10688,7 +10939,9 @@
           "career": "현 진주시 시장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "불통·위법 시정 개선"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -10811,7 +11064,9 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "고성 경제자유구역 포함 먹거리 확보"
+          ]
         }
       ],
       "사천시": [
@@ -10887,7 +11142,12 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "중1 학생 200만원 지원",
+            "청소년 드림 펀드 도입",
+            "자금 형성 지원",
+            "지역 소멸 극복"
+          ]
         }
       ],
       "김해시": [
@@ -11010,7 +11270,10 @@
           "career": "현 거제시 단체장 (2025.4 재보궐 당선)",
           "status": "NOMINATED",
           "dataSource": "nec_byelection",
-          "pledges": [],
+          "pledges": [
+            "조선업 고도화",
+            "미래 신산업 육성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -11055,7 +11318,9 @@
           "career": "전 동해지방해양경찰청장",
           "status": "EXPECTED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "부자 농촌 만들기"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -11093,7 +11358,9 @@
           "career": "전 경남도의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "실행으로 답하겠다"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -11104,7 +11371,9 @@
           "career": "現 함안군의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "군민 주권시대 백지에서 새출발"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -11197,7 +11466,11 @@
           "career": "창녕농협 조합장",
           "status": "RUMORED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "AI 농업 혁신",
+            "미래산업 육성",
+            "AI 선도 도시 구현"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
