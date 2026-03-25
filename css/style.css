@@ -183,26 +183,26 @@
 }
 
 .light-mode {
-    --bg-primary: #F5F1EB;
-    --bg-secondary: #FAF8F5;
-    --bg-tertiary: #EDE8E0;
-    --bg-card: #FAF8F5;
-    --bg-card-hover: #EDE8E0;
-    --bg-input: #E8E3DB;
-    --bg-surface: #FAF8F5;
-    --bg-elevated: #EDE8E0;
+    --bg-primary: #F0EBE3;
+    --bg-secondary: #F7F3ED;
+    --bg-tertiary: #E6E0D6;
+    --bg-card: #F7F3ED;
+    --bg-card-hover: #E6E0D6;
+    --bg-input: #DDD7CC;
+    --bg-surface: #F7F3ED;
+    --bg-elevated: #E6E0D6;
 
-    --border-color: rgba(0, 0, 0, 0.10);
-    --border-light: rgba(0, 0, 0, 0.06);
-    --border-subtle: rgba(0, 0, 0, 0.06);
-    --border-default: rgba(0, 0, 0, 0.10);
-    --border-strong: rgba(0, 0, 0, 0.15);
+    --border-color: rgba(120, 100, 70, 0.14);
+    --border-light: rgba(120, 100, 70, 0.08);
+    --border-subtle: rgba(120, 100, 70, 0.06);
+    --border-default: rgba(120, 100, 70, 0.14);
+    --border-strong: rgba(120, 100, 70, 0.22);
 
-    --text-primary: #1A1D2E;
-    --text-secondary: #4A5068;
-    --text-muted: #6B7280;
+    --text-primary: #2C2418;
+    --text-secondary: #5C5040;
+    --text-muted: #8A7E6E;
     --text-accent: #2563EB;
-    --text-disabled: #9CA3AF;
+    --text-disabled: #A89E8E;
 
     --accent-blue: #2563EB;
     --accent-primary: #2563EB;
@@ -217,21 +217,21 @@
     --color-danger: #DC2626;
 
     --primary-gradient: linear-gradient(135deg, #60A5FA, #2563EB);
-    --primary-glow: 0 0 20px rgba(37, 99, 235, 0.12);
+    --primary-glow: 0 0 20px rgba(37, 99, 235, 0.10);
 
-    --shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 4px 32px rgba(0, 0, 0, 0.12);
-    --glass-bg: rgba(255, 255, 255, 0.85);
+    --shadow: 0 2px 16px rgba(80, 60, 30, 0.08);
+    --shadow-lg: 0 4px 32px rgba(80, 60, 30, 0.12);
+    --glass-bg: rgba(247, 243, 237, 0.90);
     --glass-blur: blur(16px);
-    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-border: rgba(120, 100, 70, 0.10);
 
-    --chart-text: #4A5068;
-    --chart-grid: rgba(0, 0, 0, 0.08);
-    --chart-tick: #6B7280;
-    --chart-legend: #4A5068;
-    --chart-grid-line: rgba(0, 0, 0, 0.06);
-    --tooltip-bg: rgba(255, 255, 255, 0.95);
-    --tooltip-border: rgba(37, 99, 235, 0.25);
+    --chart-text: #5C5040;
+    --chart-grid: rgba(120, 100, 70, 0.08);
+    --chart-tick: #8A7E6E;
+    --chart-legend: #5C5040;
+    --chart-grid-line: rgba(120, 100, 70, 0.06);
+    --tooltip-bg: rgba(247, 243, 237, 0.96);
+    --tooltip-border: rgba(37, 99, 235, 0.20);
     --map-hover-fill: #c8ced8;
     --map-bg: #d0d6e0;
     --map-region-stroke: #b8bfcc;

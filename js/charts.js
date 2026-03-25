@@ -303,6 +303,7 @@ const ChartsModule = (() => {
                         borderWidth: 1,
                         padding: 10,
                         cornerRadius: 8,
+                        itemSort: (a, b) => (b.raw || 0) - (a.raw || 0),
                         callbacks: {
                             title: (items) => {
                                 if (!items.length) return '';
