@@ -482,11 +482,11 @@ const CouncilTab = (() => {
     const _historyCache = {};
 
     function loadCouncilHistory() {
-        if (_historyCache.data) return Promise.resolve(_historyCache.data);
-        return fetch('data/council_history.json')
+        if ('data' in _historyCache) return Promise.resolve(_historyCache.data);
+        return fetch('data/council_history.json?v=' + DataLoader._version)
             .then(r => r.ok ? r.json() : null)
             .then(data => { _historyCache.data = data; return data; })
-            .catch(() => null);
+            .catch(() => { _historyCache.data = null; return null; });
     }
 
     function renderHistory(regionKey, districtName, electionType) {

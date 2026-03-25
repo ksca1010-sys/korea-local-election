@@ -9,7 +9,7 @@ const DataLoader = (() => {
     const v = Date.now(); // 캐시 버스팅
 
     async function loadJSON(filename) {
-        if (cache[filename]) return cache[filename];
+        if (filename in cache) return cache[filename];
         try {
             const resp = await fetch(`${BASE}/${filename}?v=${v}`);
             if (!resp.ok) throw new Error(`${resp.status}`);
@@ -118,5 +118,6 @@ const DataLoader = (() => {
         loadAll,
         applyToElectionData,
         getCache: () => cache,
+        _version: v,
     };
 })();

@@ -19704,6 +19704,63 @@
         "runner": "democratic",
         "runnerRate": 30.02
       }
+    ],
+    "incheon/남구": [
+      {
+        "election": 3,
+        "year": 2002,
+        "name": "박우섭",
+        "party": "ppp",
+        "partyName": "한나라당",
+        "votes": 62454,
+        "rate": 50.8,
+        "winnerName": "박우섭",
+        "winner": "ppp"
+      },
+      {
+        "election": 4,
+        "year": 2006,
+        "name": "이영수",
+        "party": "ppp",
+        "partyName": "한나라당",
+        "votes": 75681,
+        "rate": 54.59,
+        "winnerName": "이영수",
+        "winner": "ppp"
+      },
+      {
+        "election": 5,
+        "year": 2010,
+        "name": "박우섭",
+        "party": "democratic",
+        "partyName": "민주당",
+        "votes": 86996,
+        "rate": 53.32,
+        "winnerName": "박우섭",
+        "winner": "democratic"
+      },
+      {
+        "election": 6,
+        "year": 2014,
+        "name": "박우섭",
+        "party": "democratic",
+        "partyName": "새정치민주연합",
+        "votes": 86214,
+        "rate": 50.2,
+        "winnerName": "박우섭",
+        "winner": "democratic"
+      },
+      {
+        "election": 7,
+        "year": 2018,
+        "name": "김정식",
+        "party": "democratic",
+        "partyName": "더불어민주당",
+        "votes": 94068,
+        "rate": 52.28,
+        "winnerName": "김정식",
+        "winner": "democratic"
+      }
     ]
   }
 }

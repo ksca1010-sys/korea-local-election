@@ -1550,6 +1550,7 @@ const App = (() => {
         toggleSuperintendentSummary(false);
         currentRegionKey = null;
         currentDistrictName = null;
+        currentElectionType = null;
 
         const panel = document.getElementById('detail-panel');
         if (panel) panel.classList.remove('collapsed');
@@ -1574,23 +1575,21 @@ const App = (() => {
             currentTab = 'overview';
         }
 
+        // 선거유형 필터 초기화
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        updateElectionTypeLabel(null);
+
         const searchInput = document.getElementById('region-search');
         if (searchInput) searchInput.value = '';
         const searchResults = document.getElementById('search-results');
         if (searchResults) searchResults.style.display = 'none';
 
-        const mapContainer = document.querySelector('#korea-map');
-        if (mapContainer) {
-            mapContainer.querySelectorAll('.region').forEach(r => r.classList.remove('selected'));
-            mapContainer.querySelectorAll('.district').forEach(d => d.classList.remove('selected'));
-        }
-
-        if (MapModule && MapModule.switchToProvinceMap) {
-            MapModule.switchToProvinceMap();
+        // 지도를 완전 초기 상태로 (선거유형 없음 → 무채색)
+        if (MapModule) {
+            if (MapModule.setElectionType) MapModule.setElectionType(null);
+            else if (MapModule.switchToProvinceMap) MapModule.switchToProvinceMap();
         }
         toggleByelectionNote(false);
-
-        document.getElementById('zoom-reset')?.click();
 
         // Clear the URL hash
         if (window.location.hash) {
@@ -2635,7 +2634,8 @@ function renderCouncilProvinceView(regionKey, region) {
                     const last = mayorHist[mayorHist.length - 1];
                     const winColor = ElectionData.getPartyColor(last.winner);
                     const winParty = last.winnerParty || ElectionData.getHistoricalPartyName(last.winner, last.election);
-                    const hasRunner = last.runnerName && last.runner;
+                    const isUncontested = !!last.isUncontested || (!last.runnerName && !last.rate);
+                    const hasRunner = !isUncontested && last.runnerName && last.runner;
                     const runColor = hasRunner ? ElectionData.getPartyColor(last.runner) : '#666';
                     const runParty = hasRunner ? (last.runnerParty || ElectionData.getHistoricalPartyName(last.runner, last.election)) : '';
                     const turnoutHtml = last.turnout ? `<div class="prev-turnout"><i class="fas fa-person-booth"></i> ${last.year}년 투표율: ${last.turnout}%</div>` : '';
@@ -2646,7 +2646,7 @@ function renderCouncilProvinceView(regionKey, region) {
                             <div class="prev-winner">
                                 <div class="name">${last.winnerName}</div>
                                 <span class="party-badge" style="background:${winColor}">${ElectionData.getPartyName(last.winner)}</span>
-                                <div class="rate" style="color:${winColor}">${last.rate ? last.rate.toFixed(1) + '%' : '당선'}</div>
+                                <div class="rate" style="color:${winColor}">${isUncontested ? '무투표 당선' : (last.rate ? last.rate.toFixed(1) + '%' : '당선')}</div>
                             </div>
                             ${hasRunner ? `
                             <div class="prev-vs">VS</div>

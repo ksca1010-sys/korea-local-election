@@ -31,3 +31,7 @@ logs/
 
 # Backup files
 *.bak.py
+
+# Mock/test data (not used in production)
+data/candidates/candidates_governor_mock.json
+data/mock-region-data.json

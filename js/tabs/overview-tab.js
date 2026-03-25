@@ -118,6 +118,9 @@ const OverviewTab = (() => {
                 } else {
                     overviewCard.style.display = 'none';
                 }
+            }).catch(err => {
+                console.warn('[OverviewTab] overview load failed:', err);
+                if (overviewCard) overviewCard.style.display = 'none';
             });
         }
 

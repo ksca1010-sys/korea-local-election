@@ -269,7 +269,7 @@ const HistoryTab = (() => {
             const runnerBloc = getBlocKey(entry.runner || 'independent');
             const winnerPct = Number(entry.rate) || 0;
             const runnerPct = Number(entry.runnerRate) || 0;
-            const isUncontested = winnerPct === 0 && !entry.runnerName;
+            const isUncontested = !!entry.isUncontested || (winnerPct === 0 && !entry.runnerName);
             const turnout = Number(entry.turnout);
             return `
                 <div class="ht-row">

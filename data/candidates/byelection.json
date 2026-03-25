@@ -4,7 +4,7 @@
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
     "lastDetection": "2026-03-25",
-    "lastFactCheck": "2026-03-24T04:14:08.112816"
+    "lastFactCheck": "2026-03-25T21:00:00"
   },
   "districts": {
     "incheon-yeonsu": {
@@ -12,14 +12,14 @@
       "district": "인천 연수구갑",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "박찬대 의원 인천시장 출마 사퇴 예정",
+      "reason": "박찬대 의원 인천시장 단수공천 확정(3/4) — 의원직 사퇴 예정(기한 4/30)",
       "previousMember": {
         "name": "박찬대",
         "party": "democratic",
         "term": "3선"
       },
-      "status": "확정예정",
-      "voters": 148000,
+      "status": "확정",
+      "voters": 166126,
       "keyIssues": [
         "미니총선",
         "재보궐 공천 경쟁",
@@ -32,7 +32,7 @@
         "runner": "ppp",
         "runnerName": "정승연",
         "runnerRate": 46.08,
-        "turnout": 67.2
+        "turnout": 67.96
       },
       "candidates": [
         {
@@ -73,7 +73,7 @@
           "partyName": "democratic"
         }
       ],
-      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 정보 유지. 박찬대 의원의 인천시장 출마에 따른 보궐선거 진행 예정.",
+      "statusNote": "2026년 6월 3일 선거예정. 현재 수집된 최신 뉴스가 없어 기존 정보만 유지 중입니다.",
       "history": [
         {
           "election": 17,
@@ -124,7 +124,7 @@
           "sggName": "연수구갑",
           "runnerName": "정승연",
           "runnerParty": "새누리당",
-          "runnerRate": 39.69,
+          "runnerRate": 40.28,
           "runner": "ppp"
         },
         {
@@ -133,11 +133,11 @@
           "winner": "democratic",
           "winnerName": "박찬대",
           "winnerParty": "더불어민주당",
-          "rate": 56.87,
+          "rate": 56.88,
           "sggName": "연수구갑",
-          "runnerName": "민경욱",
+          "runnerName": "정승연",
           "runnerParty": "미래통합당",
-          "runnerRate": 42.59,
+          "runnerRate": 42.08,
           "runner": "ppp"
         },
         {
@@ -167,7 +167,7 @@
         "term": ""
       },
       "status": "확정",
-      "voters": 152000,
+      "voters": 127351,
       "keyIssues": [
         "미니 총선급 재보궐 선거",
         "인천 계양을 공천 장기화",
@@ -180,7 +180,7 @@
         "runner": "ppp",
         "runnerName": "원희룡",
         "runnerRate": 45.46,
-        "turnout": 52.8
+        "turnout": 71.34
       },
       "candidates": [
         {
@@ -191,17 +191,17 @@
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "무소속"
+          "partyName": "independent"
         },
         {
           "name": "송영길",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "더불어민주당",
+          "partyName": "democratic",
           "sourceLabel": "데일리안·디지털타임스",
           "sourceUrl": "https://www.dailian.co.kr/news/view/1612102",
           "sourcePublishedAt": "2026-02-23"
@@ -209,18 +209,18 @@
         {
           "name": "김남준",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "더불어민주당",
+          "partyName": "democratic",
           "sourceLabel": "헤럴드경제",
           "sourceUrl": "https://biz.heraldcorp.com/article/10679239",
           "sourcePublishedAt": "2026-02-19"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 수집 정보 유지. 2026년 6월 3일 선거까지 추가 정보 모니터링 필요.",
+      "statusNote": "최신 뉴스 정보가 제공되지 않았습니다. 기존 수집된 후보자 정보로만 구성되었습니다.",
       "history": [
         {
           "election": 17,
@@ -229,7 +229,7 @@
           "winnerName": "신학용",
           "winnerParty": "열린우리당",
           "rate": 51.11,
-          "sggName": "계양구갑",
+          "sggName": "계양구",
           "runnerName": "김해수",
           "runnerParty": "한나라당",
           "runner": "ppp",
@@ -242,7 +242,7 @@
           "winnerName": "신학용",
           "winnerParty": "통합민주당",
           "rate": 44.57,
-          "sggName": "계양구갑",
+          "sggName": "계양구",
           "runnerName": "조갑진",
           "runnerParty": "한나라당",
           "runner": "ppp",
@@ -255,7 +255,7 @@
           "winnerName": "신학용",
           "winnerParty": "민주통합당",
           "rate": 61.5,
-          "sggName": "계양구갑",
+          "sggName": "계양구",
           "runnerName": "조갑진",
           "runnerParty": "새누리당",
           "runner": "ppp",
@@ -265,36 +265,36 @@
           "election": 20,
           "year": 2016,
           "winner": "democratic",
-          "winnerName": "유동수",
+          "winnerName": "송영길",
           "winnerParty": "더불어민주당",
-          "rate": 43.48,
-          "sggName": "계양구갑",
-          "runnerName": "오성규",
+          "rate": 43.29,
+          "sggName": "계양구을",
+          "runnerName": "윤형선",
           "runnerParty": "새누리당",
           "runner": "ppp",
-          "runnerRate": 38.91
+          "runnerRate": 31.27
         },
         {
           "election": 21,
           "year": 2020,
           "winner": "democratic",
-          "winnerName": "유동수",
+          "winnerName": "송영길",
           "winnerParty": "더불어민주당",
-          "rate": 60.48,
-          "sggName": "계양구갑",
-          "runnerName": "이중재",
+          "rate": 58.67,
+          "sggName": "계양구을",
+          "runnerName": "윤형선",
           "runnerParty": "미래통합당",
           "runner": "ppp",
-          "runnerRate": 38.15
+          "runnerRate": 38.75
         },
         {
           "election": 22,
           "year": 2024,
           "winner": "democratic",
-          "winnerName": "유동수",
+          "winnerName": "이재명",
           "winnerParty": "더불어민주당",
-          "rate": 58.29,
-          "sggName": "계양구갑",
+          "rate": 54.13,
+          "sggName": "계양구을",
           "runnerName": "원희룡",
           "runnerParty": "국민의힘",
           "runner": "ppp",
@@ -307,14 +307,14 @@
       "district": "경기 평택시을",
       "type": "국회의원 보궐",
       "subType": "재선거",
-      "reason": "이병진 의원 선거법 위반 유죄 확정 (벌금 700만원)",
+      "reason": "이병진 의원 공직선거법 위반(재산신고 누락) 유죄 확정 (벌금 700만원)",
       "previousMember": {
         "name": "이병진",
         "party": "democratic",
         "term": ""
       },
       "status": "확정",
-      "voters": 165000,
+      "voters": 159378,
       "keyIssues": [
         "평택 반도체 클러스터",
         "국제도시 개발",
@@ -328,95 +328,95 @@
         "runner": "ppp",
         "runnerName": "정우성",
         "runnerRate": 45.77,
-        "turnout": 50.3
+        "turnout": 58.61
       },
       "candidates": [
         {
           "name": "김용",
           "party": "democratic",
-          "partyKey": "democratic",
+          "partyKey": "independent",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "민주당"
+          "partyName": "democratic"
         }
       ],
-      "statusNote": "현재까지 공식 후보 선언이나 당 공천 발표가 없는 상태입니다. 최신 뉴스 정보가 없어 기존 정보 범위 내에서만 업데이트되었습니다.",
+      "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
       "history": [
         {
           "election": 17,
           "year": 2004,
           "winner": "democratic",
-          "winnerName": "우제항",
+          "winnerName": "정장선",
           "winnerParty": "열린우리당",
-          "rate": 48.62,
-          "sggName": "평택시갑",
-          "runnerName": "원유철",
+          "rate": 49.32,
+          "sggName": "평택시을",
+          "runnerName": "김홍규",
           "runnerParty": "한나라당",
           "runner": "ppp",
-          "runnerRate": 46.98
+          "runnerRate": 32.4
         },
         {
           "election": 18,
           "year": 2008,
-          "winner": "ppp",
-          "winnerName": "원유철",
-          "winnerParty": "한나라당",
-          "rate": 50.76,
-          "sggName": "평택시갑",
-          "runnerName": "우제항",
-          "runnerParty": "통합민주당",
-          "runner": "democratic",
-          "runnerRate": 45.09
+          "winner": "democratic",
+          "winnerName": "정장선",
+          "winnerParty": "통합민주당",
+          "rate": 48.14,
+          "sggName": "평택시을",
+          "runnerName": "박상길",
+          "runnerParty": "한나라당",
+          "runner": "ppp",
+          "runnerRate": 42.05
         },
         {
           "election": 19,
           "year": 2012,
           "winner": "ppp",
-          "winnerName": "원유철",
+          "winnerName": "이재영",
           "winnerParty": "새누리당",
-          "rate": 60.25,
-          "sggName": "평택시갑",
-          "runnerName": "이근홍",
+          "rate": 44.94,
+          "sggName": "평택시을",
+          "runnerName": "오세호",
           "runnerParty": "민주통합당",
           "runner": "democratic",
-          "runnerRate": 37.29
+          "runnerRate": 42.65
         },
         {
           "election": 20,
           "year": 2016,
           "winner": "ppp",
-          "winnerName": "원유철",
+          "winnerName": "유의동",
           "winnerParty": "새누리당",
-          "rate": 55.48,
-          "sggName": "평택시갑",
-          "runnerName": "홍기원",
+          "rate": 40.54,
+          "sggName": "평택시을",
+          "runnerName": "김선기",
           "runnerParty": "더불어민주당",
           "runner": "democratic",
-          "runnerRate": 39.02
+          "runnerRate": 33.51
         },
         {
           "election": 21,
           "year": 2020,
-          "winner": "democratic",
-          "winnerName": "홍기원",
-          "winnerParty": "더불어민주당",
-          "rate": 50.22,
-          "sggName": "평택시갑",
-          "runnerName": "공재광",
-          "runnerParty": "미래통합당",
-          "runner": "ppp",
-          "runnerRate": 47.69
+          "winner": "ppp",
+          "winnerName": "유의동",
+          "winnerParty": "미래통합당",
+          "rate": 47.67,
+          "sggName": "평택시을",
+          "runnerName": "김현정",
+          "runnerParty": "더불어민주당",
+          "runner": "democratic",
+          "runnerRate": 46.11
         },
         {
           "election": 22,
           "year": 2024,
           "winner": "democratic",
-          "winnerName": "홍기원",
+          "winnerName": "이병진",
           "winnerParty": "더불어민주당",
-          "rate": 57.41,
-          "sggName": "평택시갑",
+          "rate": 54.23,
+          "sggName": "평택시을",
           "runnerName": "정우성",
           "runnerParty": "국민의힘",
           "runner": "ppp",
@@ -436,7 +436,7 @@
         "term": ""
       },
       "status": "확정",
-      "voters": 129000,
+      "voters": 160464,
       "keyIssues": [
         "노동 정책",
         "산업단지 발전",
@@ -449,7 +449,7 @@
         "runner": "ppp",
         "runnerName": "전만권",
         "runnerRate": 39.65,
-        "turnout": 51.5
+        "turnout": 61.59
       },
       "candidates": [
         {
@@ -467,7 +467,7 @@
           "party": "democratic"
         }
       ],
-      "statusNote": "현재까지 맹인섭 무소속 후보의 출마만 확인되었습니다. 추가 후보자 동향이 파악될 때까지 모니터링이 필요합니다.",
+      "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",
       "history": [
         {
           "election": 17,
@@ -501,7 +501,7 @@
           "winner": "other",
           "winnerName": "이명수",
           "winnerParty": "자유선진당",
-          "rate": 40.88,
+          "rate": 40.89,
           "sggName": "아산시",
           "runnerName": "강훈식",
           "runnerParty": "민주통합당",
@@ -511,37 +511,37 @@
         {
           "election": 20,
           "year": 2016,
-          "winner": "ppp",
-          "winnerName": "이명수",
-          "winnerParty": "새누리당",
-          "rate": 55.09,
-          "sggName": "아산시갑",
-          "runnerName": "이위종",
-          "runnerParty": "더불어민주당",
-          "runner": "democratic",
-          "runnerRate": 39.99
+          "winner": "democratic",
+          "winnerName": "강훈식",
+          "winnerParty": "더불어민주당",
+          "rate": 47.62,
+          "sggName": "아산시을",
+          "runnerName": "이건영",
+          "runnerParty": "새누리당",
+          "runner": "ppp",
+          "runnerRate": 33.84
         },
         {
           "election": 21,
           "year": 2020,
-          "winner": "ppp",
-          "winnerName": "이명수",
-          "winnerParty": "미래통합당",
-          "rate": 49.82,
-          "sggName": "아산시갑",
-          "runnerName": "복기왕",
-          "runnerParty": "더불어민주당",
-          "runner": "democratic",
-          "runnerRate": 48.99
+          "winner": "democratic",
+          "winnerName": "강훈식",
+          "winnerParty": "더불어민주당",
+          "rate": 59.72,
+          "sggName": "아산시을",
+          "runnerName": "박경귀",
+          "runnerParty": "미래통합당",
+          "runner": "ppp",
+          "runnerRate": 40.28
         },
         {
           "election": 22,
           "year": 2024,
           "winner": "democratic",
-          "winnerName": "복기왕",
+          "winnerName": "강훈식",
           "winnerParty": "더불어민주당",
-          "rate": 53.79,
-          "sggName": "아산시갑",
+          "rate": 60.35,
+          "sggName": "아산시을",
           "runnerName": "전만권",
           "runnerParty": "국민의힘",
           "runner": "ppp",
@@ -554,14 +554,14 @@
       "district": "전북 군산·김제·부안갑",
       "type": "국회의원 보궐",
       "subType": "재선거",
-      "reason": "신영대 의원 선거사무장 경선조작 유죄 확정",
+      "reason": "신영대 의원 선거사무장 경선 여론조사 조작 유죄 확정 — 당선무효",
       "previousMember": {
         "name": "신영대",
         "party": "democratic",
         "term": ""
       },
       "status": "확정",
-      "voters": 170000,
+      "voters": 214985,
       "keyIssues": [
         "6·3 재보궐선거 미니총선급 규모 확대",
         "정부 중간 평가",
@@ -575,7 +575,7 @@
         "runner": "ppp",
         "runnerName": "오지성",
         "runnerRate": 13.27,
-        "turnout": 48.9
+        "turnout": 63.33
       },
       "candidates": [
         {
@@ -602,20 +602,20 @@
           "sourcePublishedAt": "2026-03-21"
         }
       ],
-      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 수집 정보만 유지됩니다. 추가 후보자 동향 파악을 위해 최신 뉴스 정보가 필요합니다.",
+      "statusNote": "최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거일까지 추가 후보 공식 선언/공천 발표 대기 중.",
       "history": [
         {
           "election": 17,
           "year": 2004,
           "winner": "democratic",
           "winnerName": "강봉균",
-          "winnerParty": "새천년민주당",
-          "rate": 50.0,
+          "winnerParty": "열린우리당",
+          "rate": 78.29,
           "sggName": "군산시",
-          "runnerName": "채정룡",
-          "runnerParty": "열린우리당",
+          "runnerName": "엄대우",
+          "runnerParty": "새천년민주당",
           "runner": "democratic",
-          "runnerRate": 40.0
+          "runnerRate": 12.7
         },
         {
           "election": 18,
@@ -623,12 +623,12 @@
           "winner": "democratic",
           "winnerName": "강봉균",
           "winnerParty": "통합민주당",
-          "rate": 66.0,
+          "rate": 52.79,
           "sggName": "군산시",
-          "runnerName": "함운경",
-          "runnerParty": "한나라당",
-          "runner": "ppp",
-          "runnerRate": 16.0
+          "runnerName": "강현욱",
+          "runnerParty": "무소속",
+          "runner": "independent",
+          "runnerRate": 40.67
         },
         {
           "election": 19,
@@ -636,25 +636,25 @@
           "winner": "democratic",
           "winnerName": "김관영",
           "winnerParty": "민주통합당",
-          "rate": 60.0,
+          "rate": 60.05,
           "sggName": "군산시",
-          "runnerName": "채정룡",
-          "runnerParty": "새누리당",
-          "runner": "ppp",
-          "runnerRate": 20.0
+          "runnerName": "신영대",
+          "runnerParty": "무소속",
+          "runner": "independent",
+          "runnerRate": 16.76
         },
         {
           "election": 20,
           "year": 2016,
-          "winner": "other",
+          "winner": "reform",
           "winnerName": "김관영",
           "winnerParty": "국민의당",
-          "rate": 43.0,
+          "rate": 47.12,
           "sggName": "군산시",
-          "runnerName": "문동신",
+          "runnerName": "김윤태",
           "runnerParty": "더불어민주당",
           "runner": "democratic",
-          "runnerRate": 38.0
+          "runnerRate": 34.75
         },
         {
           "election": 21,
@@ -662,12 +662,12 @@
           "winner": "democratic",
           "winnerName": "신영대",
           "winnerParty": "더불어민주당",
-          "rate": 79.0,
+          "rate": 59.25,
           "sggName": "군산시",
-          "runnerName": "이근열",
-          "runnerParty": "미래통합당",
-          "runner": "ppp",
-          "runnerRate": 10.0
+          "runnerName": "김관영",
+          "runnerParty": "무소속",
+          "runner": "independent",
+          "runnerRate": 36.73
         },
         {
           "election": 22,
@@ -689,7 +689,7 @@
       "region": "gyeonggi",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "양문석 의원 당선무효 (선거법 위반)",
+      "reason": "양문석 의원 특경법(사기) 유죄 확정 — 피선거권 상실로 의원직 상실",
       "previousMember": {
         "name": "양문석",
         "party": "democratic"
@@ -701,7 +701,7 @@
         "runner": "ppp",
         "runnerName": "장성민",
         "runnerRate": 44.38,
-        "turnout": 65.8
+        "turnout": 61.55
       },
       "candidates": [
         {
@@ -730,7 +730,7 @@
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "현재 공식 뉴스가 없어 기존 정보 유지 중입니다. 2026년 6월 3일 선거일까지 공식 후보 등록 및 당 공천 발표를 대기 중입니다.",
+      "statusNote": "경기 안산시갑 국회의원 보궐선거는 6월 3일 예정되어 있으며, 현재 국민의힘 김석훈 전 의장과 민주당 염정우 시의원이 주요 후보로 거론되고 있습니다. 추가 뉴스 정보가 없어 기존 수집 정보로 유지합니다.",
       "history": [
         {
           "election": 17,
@@ -738,7 +738,7 @@
           "winner": "democratic",
           "winnerName": "장경수",
           "winnerParty": "열린우리당",
-          "rate": 44.31,
+          "rate": 44.32,
           "sggName": "안산시상록구갑",
           "runnerName": "송진섭",
           "runnerParty": "한나라당",
@@ -764,7 +764,7 @@
           "winner": "democratic",
           "winnerName": "전해철",
           "winnerParty": "민주통합당",
-          "rate": 60.76,
+          "rate": 60.77,
           "sggName": "안산시상록구갑",
           "runnerName": "이화수",
           "runnerParty": "새누리당",
@@ -777,7 +777,7 @@
           "winner": "democratic",
           "winnerName": "전해철",
           "winnerParty": "더불어민주당",
-          "rate": 38.8,
+          "rate": 38.81,
           "sggName": "안산시상록구갑",
           "runnerName": "이성포",
           "runnerParty": "국민의당",
@@ -790,7 +790,7 @@
           "winner": "democratic",
           "winnerName": "전해철",
           "winnerParty": "더불어민주당",
-          "rate": 58.55,
+          "rate": 58.56,
           "sggName": "안산시상록구갑",
           "runnerName": "박선호",
           "runnerParty": "미래통합당",
@@ -810,42 +810,8 @@
           "runner": "ppp",
           "runnerRate": 44.38
         }
-      ]
-    },
-    "jeonbuk-산김제부안": {
-      "district": "전북 군산시김제시부안군갑",
-      "region": "jeonbuk",
-      "type": "국회의원 보궐",
-      "subType": "보궐선거",
-      "reason": "(사유 확인 필요)",
-      "previousMember": {
-        "name": "신영대",
-        "party": "democratic"
-      },
-      "prevElection": {
-        "winner": "democratic",
-        "winnerName": "신영대",
-        "rate": 86.73,
-        "runner": "independent",
-        "runnerName": "(확인 필요)",
-        "runnerRate": 0,
-        "turnout": 0
-      },
-      "candidates": [],
-      "keyIssues": [],
-      "status": "확정",
-      "history": [
-        {
-          "election": 22,
-          "year": 2024,
-          "winner": "democratic",
-          "winnerName": "신영대",
-          "winnerParty": "더불어민주당",
-          "rate": 86.73,
-          "sggName": "군산시김제시부안군갑"
-        }
       ],
-      "statusNote": "현재 제공된 최신 뉴스가 없어 후보자 정보를 수집할 수 없습니다. 추가 뉴스 정보가 필요합니다."
+      "voters": 170398
     }
   }
 }

@@ -44,7 +44,7 @@ const PollTab = (() => {
 
         recent.forEach(p => {
             const surveyEnd = Date.parse(p.surveyDate?.end || p.publishDate || '');
-            const recency = Math.max(0.1, 1 - (Date.now() - surveyEnd) / (windowDays * 86400000));
+            const recency = Math.max(0.1, 1 - (kstNow - surveyEnd) / (windowDays * 86400000));
             const sampleWeight = Math.sqrt((p.method?.sampleSize || 500) / 1000);
             const weight = recency * sampleWeight;
             totalWeight += weight;
