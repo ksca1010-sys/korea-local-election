@@ -35,6 +35,14 @@ const OverviewTab = (() => {
         `;
     }
 
+    // 행정구역 변경 안내 (2026년 예정)
+    const ADMIN_CHANGE_NOTICES = {
+        incheon: {
+            label: '인천광역시 행정구역 개편',
+            detail: '2026년 7월 서구가 서해구로 변경되며, 검단구·영종구·제물포구가 신설됩니다. 6월 3일 선거는 현행 행정구역 기준으로 실시됩니다.',
+        },
+    };
+
     function render(regionKey, electionType, districtName) {
         if (typeof ElectionData === 'undefined') return;
         const region = ElectionData.getRegion(regionKey);
@@ -42,6 +50,18 @@ const OverviewTab = (() => {
 
         // 세대 카운터 증가 — 이전 비동기 결과 무시용
         const gen = ++_renderGeneration;
+
+        // 행정구역 변경 안내
+        const adminNoticeEl = document.getElementById('admin-change-notice');
+        const notice = ADMIN_CHANGE_NOTICES[regionKey];
+        if (adminNoticeEl) {
+            if (notice) {
+                adminNoticeEl.innerHTML = `<div style="padding:10px 14px;border-radius:8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);margin-bottom:12px;font-size:0.8rem;line-height:1.6;"><i class="fas fa-info-circle" style="color:var(--accent-blue);margin-right:6px;"></i><strong>${notice.label}</strong><br>${notice.detail}</div>`;
+                adminNoticeEl.style.display = '';
+            } else {
+                adminNoticeEl.style.display = 'none';
+            }
+        }
 
         // Election overview card (선거 쟁점 개요)
         const overviewCard = document.getElementById('election-overview-card');

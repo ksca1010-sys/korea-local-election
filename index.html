@@ -62,6 +62,9 @@
             </div>
         </div>
         <div class="header-right">
+            <button id="font-size-toggle" class="theme-toggle-btn" aria-label="글씨 크기 변경" title="글씨 크기 변경">
+                <i class="fas fa-text-height"></i>
+            </button>
             <button id="theme-toggle" class="theme-toggle-btn" aria-label="테마 전환" title="다크/라이트 모드 전환">
                 <i class="fas fa-sun" id="theme-icon"></i>
             </button>
@@ -264,6 +267,8 @@
 
                 <!-- Overview Tab (#9 출마예정후보 제거, 시군구 개요 추가) -->
                 <div id="tab-overview" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-overview" style="display:none;">
+                    <!-- 행정구역 변경 안내 -->
+                    <div id="admin-change-notice" style="display:none;"></div>
                     <!-- 선거 쟁점 개요 카드 -->
                     <div id="election-overview-card" class="election-overview-card" style="display:none;">
                         <div id="integration-alert-banner" class="integration-alert-banner" style="display:none;"></div>

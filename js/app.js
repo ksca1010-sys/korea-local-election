@@ -81,6 +81,23 @@ const App = (() => {
             });
         }
 
+        // ── Font size toggle (A- / A / A+) ──
+        const FONT_SIZES = [14, 16, 18];
+        const FONT_LABELS = ['A-', 'A', 'A+'];
+        const fontBtn = document.getElementById('font-size-toggle');
+        const savedFontIdx = FONT_SIZES.indexOf(Number(localStorage.getItem('fontSize')));
+        let fontIdx = savedFontIdx >= 0 ? savedFontIdx : 1; // default 16px
+        document.documentElement.style.fontSize = FONT_SIZES[fontIdx] + 'px';
+        if (fontBtn) {
+            fontBtn.textContent = FONT_LABELS[fontIdx];
+            fontBtn.addEventListener('click', () => {
+                fontIdx = (fontIdx + 1) % FONT_SIZES.length;
+                document.documentElement.style.fontSize = FONT_SIZES[fontIdx] + 'px';
+                localStorage.setItem('fontSize', FONT_SIZES[fontIdx]);
+                fontBtn.textContent = FONT_LABELS[fontIdx];
+            });
+        }
+
         // DataLoader: JSON 파일에서 최신 데이터 로드 → ElectionData에 hot-swap
         if (typeof DataLoader !== 'undefined') {
             try { await DataLoader.applyToElectionData(ElectionData); }
