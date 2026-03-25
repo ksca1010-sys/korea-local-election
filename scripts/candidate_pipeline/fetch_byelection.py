@@ -167,9 +167,12 @@ def merge_candidates(existing, new_candidates):
         if not name:
             continue
 
-        # partyKey 정규화
-        nc["partyKey"] = normalize_party_key(nc.get("party", ""))
-        nc["partyName"] = nc.pop("party", "")
+        # 당적 정규화: party(내부키), partyKey, partyName 3개 필드 일관성 보장
+        raw_party = nc.get("party", "")
+        party_key = normalize_party_key(raw_party)
+        nc["party"] = party_key
+        nc["partyKey"] = party_key
+        nc["partyName"] = raw_party  # 원본 정당명 보존
         nc.setdefault("dataSource", "news")
         nc.setdefault("pledges", [])
         nc.setdefault("status", "DECLARED")
@@ -186,12 +189,66 @@ def merge_candidates(existing, new_candidates):
                 old["career"] = nc["career"]
             if nc.get("pledges") and len(nc["pledges"]) > len(old.get("pledges", [])):
                 old["pledges"] = nc["pledges"]
+            # 당적 3개 필드 동기화
+            old["party"] = nc["party"]
             old["partyKey"] = nc["partyKey"]
             old["partyName"] = nc["partyName"]
         else:
             by_name[name] = nc
 
     return list(by_name.values())
+
+
+def verify_party_consistency(districts):
+    """모든 후보의 party/partyKey/partyName 일관성 검증 + 자동 교정.
+
+    규칙:
+    1. party와 partyKey는 항상 동일한 내부키여야 함 (democratic, ppp, etc.)
+    2. partyName이 PARTY_MAP에 있으면 party/partyKey는 매핑값과 일치해야 함
+    3. partyName이 내부키 형태(democratic 등)면 실제 정당명으로 교체
+    """
+    PARTY_DISPLAY = {
+        "democratic": "더불어민주당", "ppp": "국민의힘",
+        "reform": "조국혁신당", "progressive": "진보당",
+        "justice": "정의당", "independent": "무소속",
+        "newReform": "개혁신당", "newFuture": "새로운미래",
+    }
+    fixes = []
+
+    for key, dist in districts.items():
+        for c in dist.get("candidates", []):
+            name = c.get("name", "?")
+            party = c.get("party", "")
+            partyKey = c.get("partyKey", "")
+            partyName = c.get("partyName", "")
+            changed = False
+
+            # partyName → 내부키 역매핑
+            expected_key = normalize_party_key(partyName) if partyName else None
+
+            # 규칙1: partyName에서 정규화한 키가 party와 다르면 교정
+            if expected_key and expected_key != "independent" and party != expected_key:
+                fixes.append(f"{dist['district']} {name}: party '{party}'→'{expected_key}' (partyName='{partyName}')")
+                c["party"] = expected_key
+                c["partyKey"] = expected_key
+                changed = True
+
+            # 규칙2: party와 partyKey 불일치 → party 기준으로 통일
+            if not changed and party and partyKey != party:
+                fixes.append(f"{dist['district']} {name}: partyKey '{partyKey}'→'{party}'")
+                c["partyKey"] = party
+                changed = True
+
+            # 규칙3: partyName이 내부키 형태면 표시명으로 교체
+            if partyName in PARTY_DISPLAY:
+                display = PARTY_DISPLAY[partyName]
+                fixes.append(f"{dist['district']} {name}: partyName '{partyName}'→'{display}'")
+                c["partyName"] = display
+            elif not partyName and party in PARTY_DISPLAY:
+                c["partyName"] = PARTY_DISPLAY[party]
+                fixes.append(f"{dist['district']} {name}: partyName 빈값→'{c['partyName']}'")
+
+    return fixes
 
 
 def main():
@@ -255,6 +312,13 @@ def main():
 
         time.sleep(1)
 
+    # ── 당적 일관성 검증 + 자동 교정 ──
+    party_fixes = verify_party_consistency(districts)
+    if party_fixes:
+        print(f"\n[당적 검증] {len(party_fixes)}건 자동 교정:")
+        for pf in party_fixes:
+            print(f"  • {pf}")
+
     # 저장
     current["_meta"]["lastUpdated"] = date.today().isoformat()
     current["_meta"]["source"] = "뉴스 기반 수집 (Claude)"
@@ -267,6 +331,8 @@ def main():
 
     print("\n" + "=" * 55)
     print(f"완료! {updated_count}/{len(districts)}개 지역구 업데이트")
+    if party_fixes:
+        print(f"당적 교정: {len(party_fixes)}건")
     if errors:
         print(f"오류 발생 지역 ({len(errors)}): {', '.join(errors)}")
     print(f"저장: {BYELECTION_PATH}")

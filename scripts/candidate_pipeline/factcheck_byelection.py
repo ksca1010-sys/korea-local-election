@@ -222,6 +222,53 @@ def apply_changes(dist, changes, dry_run=False, bye_data=None, district_key=""):
     return applied
 
 
+PARTY_DISPLAY = {
+    "democratic": "더불어민주당", "ppp": "국민의힘",
+    "reform": "조국혁신당", "progressive": "진보당",
+    "justice": "정의당", "independent": "무소속",
+    "newReform": "개혁신당", "newFuture": "새로운미래",
+}
+
+
+def _normalize_party_key(name):
+    if not name:
+        return "independent"
+    for k, v in PARTY_MAP.items():
+        if k in name:
+            return v
+    return "independent"
+
+
+def _verify_party_consistency(districts):
+    """party/partyKey/partyName 3개 필드 일관성 검증 + 자동 교정."""
+    fixes = []
+    for key, dist in districts.items():
+        for c in dist.get("candidates", []):
+            cname = c.get("name", "?")
+            party = c.get("party", "")
+            partyKey = c.get("partyKey", "")
+            partyName = c.get("partyName", "")
+
+            # partyName → 내부키 역매핑
+            expected = _normalize_party_key(partyName) if partyName else None
+            if expected and expected != "independent" and party != expected:
+                fixes.append(f"{dist['district']} {cname}: party '{party}'→'{expected}'")
+                c["party"] = expected
+                c["partyKey"] = expected
+
+            if party and partyKey != party:
+                fixes.append(f"{dist['district']} {cname}: partyKey '{partyKey}'→'{party}'")
+                c["partyKey"] = c["party"]
+
+            if partyName in PARTY_DISPLAY:
+                display = PARTY_DISPLAY[partyName]
+                fixes.append(f"{dist['district']} {cname}: partyName '{partyName}'→'{display}'")
+                c["partyName"] = display
+            elif not partyName and party in PARTY_DISPLAY:
+                c["partyName"] = PARTY_DISPLAY[party]
+    return fixes
+
+
 def main():
     load_env()
     llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
@@ -272,6 +319,14 @@ def main():
             print(f"    [오류] {e}")
 
         time.sleep(1)
+
+    # ── 당적 일관성 검증 + 자동 교정 (매 실행마다) ──
+    party_fixes = _verify_party_consistency(bye.get("districts", {}))
+    if party_fixes:
+        print(f"\n[당적 검증] {len(party_fixes)}건 자동 교정:")
+        for pf in party_fixes:
+            print(f"  • {pf}")
+        total_applied += len(party_fixes)
 
     print(f"\n총 {total_applied}건 적용")
 
