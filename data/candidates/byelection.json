@@ -39,30 +39,30 @@
           "name": "박남춘",
           "status": "RUMORED",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": "前 인천광역시장 · 3선 국회의원",
           "dataSource": "news",
           "sourceLabel": "경인일보",
           "sourceUrl": "https://v.daum.net/v/20260304172834185",
           "sourcePublishedAt": "2026-03-04",
-          "partyName": "democratic"
+          "partyName": "민주당"
         },
         {
           "name": "정승연",
           "status": "RUMORED",
           "party": "ppp",
-          "partyKey": "independent",
+          "partyKey": "ppp",
           "career": "국민의힘 연수구갑 당협위원장",
           "dataSource": "news",
           "sourceLabel": "경인일보",
           "sourceUrl": "https://v.daum.net/v/20260304172834185",
           "sourcePublishedAt": "2026-03-04",
-          "partyName": "ppp"
+          "partyName": "국민의힘"
         },
         {
           "name": "정지열",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": "연수구청장",
           "status": "EXPECTED",
           "dataSource": "news_factcheck",
@@ -70,10 +70,10 @@
           "sourceUrl": "not_provided",
           "sourceLabel": "언론보도",
           "sourcePublishedAt": "2026-03-22",
-          "partyName": "democratic"
+          "partyName": "민주당"
         }
       ],
-      "statusNote": "2026년 6월 3일 선거예정. 현재 수집된 최신 뉴스가 없어 기존 정보만 유지 중입니다.",
+      "statusNote": "현재 확인된 최신 뉴스가 없습니다. 기존 수집 정보 기준으로 3명의 후보가 거론 중이며, 공식 공천 발표 대기 중입니다.",
       "history": [
         {
           "election": 17,
@@ -187,21 +187,21 @@
           "name": "윤대기",
           "party": "independent",
           "partyKey": "independent",
-          "career": "변호사 · 민변 전 인천지부장 · 6.3대선 계양을 선대위원장",
+          "career": "변호사·민변 전 인천지부장·6.3대선 계양을 선대위원장",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "independent"
+          "partyName": "무소속"
         },
         {
           "name": "송영길",
           "party": "democratic",
           "partyKey": "democratic",
-          "career": "전 민주당 대표 · 5선 국회의원 (2/27 복당)",
+          "career": "전 민주당 대표·5선 국회의원",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic",
+          "partyName": "민주당",
           "sourceLabel": "데일리안·디지털타임스",
           "sourceUrl": "https://www.dailian.co.kr/news/view/1612102",
           "sourcePublishedAt": "2026-02-23"
@@ -209,12 +209,12 @@
         {
           "name": "김남준",
           "party": "democratic",
-          "partyKey": "independent",
-          "career": "전 대통령 대변인 (2/20 사임)",
+          "partyKey": "democratic",
+          "career": "전 대통령 대변인",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic",
+          "partyName": "민주당",
           "sourceLabel": "헤럴드경제",
           "sourceUrl": "https://biz.heraldcorp.com/article/10679239",
           "sourcePublishedAt": "2026-02-19"
@@ -224,7 +224,7 @@
           "party": "ppp",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "career": "(현) 재단법인 환경조경발전재단 이사장",
+          "career": "재단법인 환경조경발전재단 이사장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": [],
@@ -236,7 +236,7 @@
           "party": "ppp",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "career": "(전)현대 울산 종합금융(현대중공업 계열) 근무",
+          "career": "전현대 울산 종합금융(현대중공업 계열) 근무",
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": [],
@@ -244,7 +244,7 @@
           "sourcePublishedAt": "2026-02-13"
         }
       ],
-      "statusNote": "최신 뉴스 정보가 제공되지 않았습니다. 기존 수집된 후보자 정보로만 구성되었습니다.",
+      "statusNote": "최신 뉴스가 제공되지 않아 기존 수집 정보 유지. 2026년 6월 3일 선거 예정.",
       "history": [
         {
           "election": 17,
@@ -358,12 +358,12 @@
         {
           "name": "김용",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": "전 민주연구원 부원장",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic"
+          "partyName": "더불어민주당"
         },
         {
           "name": "오세호",
@@ -422,7 +422,7 @@
           "party": "ppp",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "career": "(전)제19대 평택시을 국회의원",
+          "career": "전 제19대 평택시을 국회의원",
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": [],
@@ -434,7 +434,7 @@
           "party": "ppp",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "career": "(현)국민의힘 경기도당 부위원장",
+          "career": "국민의힘 경기도당 부위원장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": [],
@@ -442,7 +442,7 @@
           "sourcePublishedAt": "2026-03-13"
         }
       ],
-      "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
+      "statusNote": "최신 뉴스가 없어 기존 후보 정보를 유지합니다. 민주당과 국민의힘 양진영에서 다수의 후보가 출마 선언 상태입니다.",
       "history": [
         {
           "election": 17,
@@ -554,7 +554,7 @@
       "candidates": [
         {
           "name": "맹인섭",
-          "career": "언론인 · 노조·시민사회 기반",
+          "career": "언론인",
           "pledges": [
             "노동 중심 정책 비전 제시",
             "노동·민생 혁신 기치",
@@ -603,7 +603,7 @@
           "sourcePublishedAt": "2026-02-26"
         }
       ],
-      "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",
+      "statusNote": "제공된 최신 뉴스가 없어 기존 수집 데이터 유지. 선거일 2026-06-03까지 후보 동향 계속 모니터링 필요.",
       "history": [
         {
           "election": 17,
@@ -699,10 +699,9 @@
       "status": "확정",
       "voters": 214985,
       "keyIssues": [
-        "6·3 재보궐선거 미니총선급 규모 확대",
-        "정부 중간 평가",
-        "차기 대선 전초전",
-        "국민의힘 인물난 및 위기"
+        "신영대 의원 당선무효로 인한 재선거",
+        "새만금 개발 정책",
+        "검찰 개혁"
       ],
       "prevElection": {
         "winner": "democratic",
@@ -716,7 +715,7 @@
       "candidates": [
         {
           "name": "김의겸",
-          "career": "전 새만금개발청장 · 전 청와대 대변인",
+          "career": "전 새만금개발청장, 전 청와대 대변인",
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
@@ -726,7 +725,7 @@
         },
         {
           "name": "조국",
-          "career": "전 조국혁신당 대표 · 전 법무부 장관",
+          "career": "전 조국혁신당 대표, 전 법무부 장관",
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
@@ -738,7 +737,7 @@
           "sourcePublishedAt": "2026-03-21"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거일까지 추가 후보 공식 선언/공천 발표 대기 중.",
+      "statusNote": "현재 김의겸(더불어민주당)과 조국(무소속)이 출마 선언한 상태입니다. 6월 3일 선거일까지 추가 후보 출마 선언이 예상됩니다.",
       "history": [
         {
           "election": 17,
@@ -866,7 +865,7 @@
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "경기 안산시갑 국회의원 보궐선거는 6월 3일 예정되어 있으며, 현재 국민의힘 김석훈 전 의장과 민주당 염정우 시의원이 주요 후보로 거론되고 있습니다. 추가 뉴스 정보가 없어 기존 수집 정보로 유지합니다.",
+      "statusNote": "2026년 6월 3일 선거 예정. 현재 수집된 뉴스가 없어 기존 후보 정보를 유지합니다.",
       "history": [
         {
           "election": 17,
