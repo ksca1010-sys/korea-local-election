@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-23",
+    "lastUpdated": "2026-03-25",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 226,
     "actingCount": 8,
     "note": "electedParty/electedName = 당선 시점 공식 데이터, name/party = 현재 상태",
-    "lastFactCheck": "2026-03-23T14:55:01.021262"
+    "lastFactCheck": "2026-03-25T04:14:35.979330"
   },
   "mayors": {
     "seoul_종로구": {
@@ -176,12 +176,11 @@
     "seoul_구로구": {
       "region": "seoul",
       "district": "구로구",
-      "name": "장인홍",
-      "party": "democratic",
+      "name": "문헌일",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "문헌일",
-      "_source": "NEC_API",
-      "acting": false
+      "_source": "NEC_API"
     },
     "seoul_금천구": {
       "region": "seoul",
@@ -1299,12 +1298,11 @@
     "chungnam_아산시": {
       "region": "chungnam",
       "district": "아산시",
-      "name": "오세현",
-      "party": "democratic",
+      "name": "박경귀",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "박경귀",
-      "_source": "NEC_API",
-      "acting": false
+      "_source": "NEC_API"
     },
     "chungnam_서산시": {
       "region": "chungnam",
@@ -1601,12 +1599,11 @@
     "jeonnam_담양군": {
       "region": "jeonnam",
       "district": "담양군",
-      "name": "정철원",
-      "party": "reform",
+      "name": "이병노",
+      "party": "democratic",
       "electedParty": "democratic",
       "electedName": "이병노",
-      "_source": "NEC_API",
-      "acting": false
+      "_source": "NEC_API"
     },
     "jeonnam_장성군": {
       "region": "jeonnam",
@@ -1793,12 +1790,11 @@
     "gyeongbuk_김천시": {
       "region": "gyeongbuk",
       "district": "김천시",
-      "name": "배낙호",
+      "name": "김충섭",
       "party": "ppp",
       "electedParty": "ppp",
       "electedName": "김충섭",
-      "_source": "NEC_API",
-      "acting": false
+      "_source": "NEC_API"
     },
     "gyeongbuk_안동시": {
       "region": "gyeongbuk",
@@ -2048,12 +2044,11 @@
     "gyeongnam_거제시": {
       "region": "gyeongnam",
       "district": "거제시",
-      "name": "변광용",
-      "party": "democratic",
+      "name": "박종우",
+      "party": "ppp",
       "electedParty": "ppp",
       "electedName": "박종우",
-      "_source": "NEC_API",
-      "acting": false
+      "_source": "NEC_API"
     },
     "gyeongnam_의령군": {
       "region": "gyeongnam",
