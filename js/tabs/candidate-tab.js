@@ -100,6 +100,7 @@ const CandidateTab = (() => {
             const incumbentName = data?.currentSuperintendent?.name || '';
             return {
                 title: `${region.name} 교육감 후보`,
+                isSuperintendent: true,
                 candidates: (data?.candidates || []).map((candidate) => ({
                     name: candidate.name,
                     badgeLabel: candidate.stance || '교육계',
@@ -107,7 +108,10 @@ const CandidateTab = (() => {
                     age: candidate.age,
                     career: candidate.career,
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
+                    pledgeCategories: Array.isArray(candidate.pledgeCategories) ? candidate.pledgeCategories : [],
                     supportLabel: (Number.isFinite(Number(candidate.support)) && Number(candidate.support) > 0) ? `최근 조사 ${Number(candidate.support).toFixed(1)}%` : '',
+                    status: candidate.status,
+                    statusMeta: getStatusMeta(candidate.status),
                     incumbent: incumbentName === candidate.name
                 })),
                 emptyMessage: '등록된 교육감 후보 데이터가 없습니다.'
@@ -310,6 +314,33 @@ const CandidateTab = (() => {
                 </div>
             `;}).join('')}
         `;
+
+        // 교육감: 카테고리별 공약 비교 테이블
+        if (model.isSuperintendent && model.candidates.some(c => c.pledgeCategories?.length)) {
+            const categories = ['무상급식', '자사고/특목고', '교권보호', '디지털교육', '돌봄', '기타'];
+            const activeCands = model.candidates.filter(c => c.status !== 'WITHDRAWN' && c.pledgeCategories?.length);
+            if (activeCands.length >= 2) {
+                let tableHtml = `<div style="margin-top:16px;"><h4 style="font-size:0.85rem;color:var(--text-secondary);margin-bottom:10px;"><i class="fas fa-th-list" style="margin-right:6px;"></i>카테고리별 공약 비교</h4>`;
+                tableHtml += `<div style="overflow-x:auto;"><table style="width:100%;border-collapse:collapse;font-size:0.78rem;">`;
+                tableHtml += `<thead><tr><th style="text-align:left;padding:8px 6px;border-bottom:2px solid var(--border-color);color:var(--text-muted);font-weight:600;">분야</th>`;
+                activeCands.forEach(c => {
+                    tableHtml += `<th style="text-align:left;padding:8px 6px;border-bottom:2px solid var(--border-color);color:${c.badgeColor};font-weight:600;">${c.name}</th>`;
+                });
+                tableHtml += `</tr></thead><tbody>`;
+                categories.forEach(cat => {
+                    const hasAny = activeCands.some(c => c.pledgeCategories.some(p => p.category === cat));
+                    if (!hasAny) return;
+                    tableHtml += `<tr><td style="padding:6px;border-bottom:1px solid var(--border-light);color:var(--text-secondary);font-weight:600;white-space:nowrap;">${cat}</td>`;
+                    activeCands.forEach(c => {
+                        const pledges = c.pledgeCategories.filter(p => p.category === cat).map(p => p.text);
+                        tableHtml += `<td style="padding:6px;border-bottom:1px solid var(--border-light);color:var(--text-primary);">${pledges.length ? pledges.join(', ') : '<span style="color:var(--text-disabled);">-</span>'}</td>`;
+                    });
+                    tableHtml += `</tr>`;
+                });
+                tableHtml += `</tbody></table></div></div>`;
+                listEl.innerHTML += tableHtml;
+            }
+        }
 
         const compareHtml = buildCompareTable(model.candidates);
         compareEl.innerHTML = compareHtml;

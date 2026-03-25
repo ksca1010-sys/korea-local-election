@@ -4,7 +4,8 @@
     "source": "auto-init from superintendent_status.json",
     "lastFactCheck": "2026-03-25T01:24:39.277296",
     "sourceUrlCoverage": "0%",
-    "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
+    "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
+    "lastPledgeCollection": "2026-03-25T19:57:21.769546"
   },
   "candidates": {
     "seoul": [
@@ -15,7 +16,9 @@
         "career": "현 서울특별시 교육감",
         "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "대학 무상교육"
+        ],
         "_lastChange": {
           "date": "2026-03-16",
           "type": "status_change",
@@ -24,7 +27,13 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "대학 무상교육",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "seoul-2",
@@ -57,10 +66,18 @@
         "career": "현장 31년",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "대학 무상교육 추진"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "대학 무상교육 추진",
+            "category": "무상급식"
+          }
+        ]
       },
       {
         "id": "seoul-5",
@@ -81,10 +98,18 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교실 수업 회복"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교실 수업 회복",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "seoul-7",
@@ -93,10 +118,23 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "행정 업무 없는 학교",
+          "혐오·차별 없는 학교"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "행정 업무 없는 학교",
+            "category": "교권보호"
+          },
+          {
+            "text": "혐오·차별 없는 학교",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "seoul-8",
@@ -105,10 +143,23 @@
         "career": "교육운동가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "공립형 문화예술고 설립",
+          "부모자산 격차 해소"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "공립형 문화예술고 설립",
+            "category": "기타"
+          },
+          {
+            "text": "부모자산 격차 해소",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "busan": [
@@ -137,7 +188,9 @@
         "career": "전 부산부교육감",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "체형 맞춤 인체공학 책걸상 단계적 보급"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -149,7 +202,13 @@
           "sourceUrl": "",
           "sourceLabel": "부산교육감 관련 뉴스",
           "sourcePublishedAt": "2026-03"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "체형 맞춤 인체공학 책걸상 단계적 보급",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "busan-3",
@@ -158,7 +217,9 @@
         "career": "전 부산광역시 교육감",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "영유아 교육·보육 질 향상 50억 원 투입"
+        ],
         "_lastChange": {
           "date": "2026-03-19",
           "type": "status_change",
@@ -167,7 +228,13 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "영유아 교육·보육 질 향상 50억 원 투입",
+            "category": "돌봄"
+          }
+        ]
       }
     ],
     "daegu": [
@@ -178,7 +245,9 @@
         "career": "현 대구광역시 교육감",
         "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "교원 업무 경감"
+        ],
         "_lastChange": {
           "date": "2026-03-17",
           "type": "status_change",
@@ -187,7 +256,13 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교원 업무 경감",
+            "category": "교권보호"
+          }
+        ]
       },
       {
         "id": "daegu-2",
@@ -216,7 +291,9 @@
         "career": "현 인천광역시 교육감",
         "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "인천 AI교육 공동선언 발표"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -228,7 +305,13 @@
           "sourceUrl": "https://news.search.naver.com/",
           "sourceLabel": "경인일보",
           "sourcePublishedAt": "2026-03-22"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "인천 AI교육 공동선언 발표",
+            "category": "디지털교육"
+          }
+        ]
       },
       {
         "id": "incheon-2",
@@ -249,10 +332,18 @@
         "career": "상임대표",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "청소년 3대 기본권 선포"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "청소년 3대 기본권 선포",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "incheon-4",
@@ -261,10 +352,18 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "만18~19세 학생 운전면허 취득비용 지원"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "만18~19세 학생 운전면허 취득비용 지원",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "incheon-5",
@@ -273,10 +372,18 @@
         "career": "인천시 교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "claude",
-        "pledges": [],
+        "pledges": [
+          "인천을 대한민국 최초 '헌법교육특구'로 지정"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "인천을 대한민국 최초 '헌법교육특구'로 지정",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "gwangju": [
@@ -287,10 +394,28 @@
         "career": "현 광주광역시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "AI 위기 감지 시스템 도입",
+          "스마트기기 보급 및 관리체계 구축",
+          "특성화고 글로벌 취·창업 역량 강화"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "AI 위기 감지 시스템 도입",
+            "category": "디지털교육"
+          },
+          {
+            "text": "스마트기기 보급 및 관리체계 구축",
+            "category": "디지털교육"
+          },
+          {
+            "text": "특성화고 글로벌 취·창업 역량 강화",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gwangju-2",
@@ -299,10 +424,18 @@
         "career": "전 전교조 광주지부장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "인성·실력 교육 전환"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "인성·실력 교육 전환",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gwangju-3",
@@ -311,10 +444,18 @@
         "career": "목포대 교수",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "경제학 기반 교육 개혁"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "경제학 기반 교육 개혁",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gwangju-4",
@@ -323,10 +464,18 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "통합교육감 제왕적 권한 분산"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "통합교육감 제왕적 권한 분산",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gwangju-5",
@@ -335,10 +484,23 @@
         "career": "교육행정 전문가",
         "status": "RUMORED",
         "dataSource": "claude",
-        "pledges": [],
+        "pledges": [
+          "교육행정 혁신부 신설로 교사 행정업무 감소",
+          "고교 미래 성장 주식통장 프로젝트"
+        ],
         "sourceUrl": "",
         "sourceLabel": "미상",
-        "sourcePublishedAt": "2026-03-24"
+        "sourcePublishedAt": "2026-03-24",
+        "pledgeCategories": [
+          {
+            "text": "교육행정 혁신부 신설로 교사 행정업무 감소",
+            "category": "교권보호"
+          },
+          {
+            "text": "고교 미래 성장 주식통장 프로젝트",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "daejeon": [
@@ -361,10 +523,23 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교원 민원·법률 통합 대응 시스템 고도화",
+          "AI로 행정 업무 자동화"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교원 민원·법률 통합 대응 시스템 고도화",
+            "category": "교권보호"
+          },
+          {
+            "text": "AI로 행정 업무 자동화",
+            "category": "디지털교육"
+          }
+        ]
       },
       {
         "id": "daejeon-3",
@@ -373,10 +548,23 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "생명·안전 교육 강화 및 현장실습 안전관리 확대",
+          "대전형 맞춤 특수교육 체계 구축"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "생명·안전 교육 강화 및 현장실습 안전관리 확대",
+            "category": "기타"
+          },
+          {
+            "text": "대전형 맞춤 특수교육 체계 구축",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "daejeon-4",
@@ -385,10 +573,23 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교육행정 혁신부 신설로 교사 행정업무 감소",
+          "고교 학생 주식통장 프로젝트 추진"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교육행정 혁신부 신설로 교사 행정업무 감소",
+            "category": "교권보호"
+          },
+          {
+            "text": "고교 학생 주식통장 프로젝트 추진",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "daejeon-5",
@@ -397,10 +598,23 @@
         "career": null,
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "학교시설 개방 확대 및 지역사회 공유",
+          "정책·사업 숙려제 도입"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "학교시설 개방 확대 및 지역사회 공유",
+            "category": "기타"
+          },
+          {
+            "text": "정책·사업 숙려제 도입",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "ulsan": [
@@ -429,10 +643,28 @@
         "career": "노옥희재단 이사장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "초등 저학년 기초학력 100% 보장",
+          "AI 위기 감지 시스템 도입",
+          "폐교를 교육청 사무실로 활용"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "초등 저학년 기초학력 100% 보장",
+            "category": "기타"
+          },
+          {
+            "text": "AI 위기 감지 시스템 도입",
+            "category": "디지털교육"
+          },
+          {
+            "text": "폐교를 교육청 사무실로 활용",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "ulsan-3",
@@ -453,7 +685,9 @@
         "career": null,
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "AI시대 대응 미래진로교육원 설립"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -465,7 +699,13 @@
           "sourceUrl": "",
           "sourceLabel": "미상",
           "sourcePublishedAt": "2026-03-25"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "AI시대 대응 미래진로교육원 설립",
+            "category": "디지털교육"
+          }
+        ]
       },
       {
         "id": "ulsan-5",
@@ -506,10 +746,28 @@
         "career": "전 교육부 장관, 전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "특수학교 확대 및 병설 특수학교 도입",
+          "특수교육 학급당 학생 수 감소",
+          "민주시민교육위원회 설치"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "특수학교 확대 및 병설 특수학교 도입",
+            "category": "기타"
+          },
+          {
+            "text": "특수교육 학급당 학생 수 감소",
+            "category": "기타"
+          },
+          {
+            "text": "민주시민교육위원회 설치",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gyeonggi-3",
@@ -518,10 +776,23 @@
         "career": "뉴스에 언급된 경력 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "학폭법 개편으로 처벌 중심에서 회복 중심으로 전환",
+          "학교공동체 회복을 통한 학폭·아동학대 체계 개편"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "학폭법 개편으로 처벌 중심에서 회복 중심으로 전환",
+            "category": "기타"
+          },
+          {
+            "text": "학교공동체 회복을 통한 학폭·아동학대 체계 개편",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gyeonggi-4",
@@ -530,10 +801,23 @@
         "career": "전 국회의원",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교직수당 25만원에서 40만원으로 인상",
+          "교원 대상 7대 정책 발표"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교직수당 25만원에서 40만원으로 인상",
+            "category": "교권보호"
+          },
+          {
+            "text": "교원 대상 7대 정책 발표",
+            "category": "교권보호"
+          }
+        ]
       },
       {
         "id": "gyeonggi-5",
@@ -542,7 +826,9 @@
         "career": "경기도교육감 예비후보",
         "status": "RUMORED",
         "dataSource": "claude",
-        "pledges": [],
+        "pledges": [
+          "교사 행정업무 폭탄 개선으로 관계와 신뢰의 교실 구현"
+        ],
         "_lastChange": {
           "date": "2026-03-19",
           "type": "status_change",
@@ -551,7 +837,13 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교사 행정업무 폭탄 개선으로 관계와 신뢰의 교실 구현",
+            "category": "교권보호"
+          }
+        ]
       }
     ],
     "gangwon": [
@@ -583,7 +875,10 @@
         "career": null,
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "30분 이내 무상통학 버스 운영",
+          "무상급식·교복·통학 확대"
+        ],
         "_lastChange": {
           "date": "2026-03-25",
           "type": "status_change",
@@ -595,7 +890,17 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "30분 이내 무상통학 버스 운영",
+            "category": "기타"
+          },
+          {
+            "text": "무상급식·교복·통학 확대",
+            "category": "무상급식"
+          }
+        ]
       },
       {
         "id": "gangwon-3",
@@ -604,7 +909,10 @@
         "career": null,
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "강원골프고 설립",
+          "춘천 아시아 교육허브 조성"
+        ],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
@@ -616,7 +924,17 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "강원골프고 설립",
+            "category": "자사고/특목고"
+          },
+          {
+            "text": "춘천 아시아 교육허브 조성",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gangwon-4",
@@ -625,7 +943,10 @@
         "career": "",
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "AI 디지털 미래교육 인프라 구축",
+          "AI학습 앱 무상지원"
+        ],
         "_lastChange": {
           "date": "2026-03-25",
           "type": "status_change",
@@ -637,7 +958,17 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "AI 디지털 미래교육 인프라 구축",
+            "category": "디지털교육"
+          },
+          {
+            "text": "AI학습 앱 무상지원",
+            "category": "디지털교육"
+          }
+        ]
       },
       {
         "id": "gangwon-5",
@@ -687,10 +1018,23 @@
         "career": "33년 행정 경력·교육 전문가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "초등 10만원, 중·고등 100만원 교육펀드 도입",
+          "교육격차 제로화 목표 사교육 척결"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "초등 10만원, 중·고등 100만원 교육펀드 도입",
+            "category": "기타"
+          },
+          {
+            "text": "교육격차 제로화 목표 사교육 척결",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "chungbuk-3",
@@ -699,10 +1043,23 @@
         "career": "전 교수",
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "폐교를 교육감 2차 집무실로 활용",
+          "장애인 공무원 채용 확대"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "폐교를 교육감 2차 집무실로 활용",
+            "category": "기타"
+          },
+          {
+            "text": "장애인 공무원 채용 확대",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "chungbuk-4",
@@ -711,7 +1068,10 @@
         "career": "경력 정보 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "충북책임교육원 신설",
+          "느린학습자·위기학생 지원"
+        ],
         "_lastChange": {
           "date": "2026-03-19",
           "type": "status_change",
@@ -720,7 +1080,17 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "충북책임교육원 신설",
+            "category": "기타"
+          },
+          {
+            "text": "느린학습자·위기학생 지원",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "chungnam": [
@@ -731,10 +1101,28 @@
         "career": "현 충청남도 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "음봉고 신설 추진",
+          "어린이 특화 꿀벌도서관 개관",
+          "충남도청과 풀케어 돌봄 정책 협력"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "음봉고 신설 추진",
+            "category": "기타"
+          },
+          {
+            "text": "어린이 특화 꿀벌도서관 개관",
+            "category": "기타"
+          },
+          {
+            "text": "충남도청과 풀케어 돌봄 정책 협력",
+            "category": "돌봄"
+          }
+        ]
       },
       {
         "id": "chungnam-2",
@@ -755,10 +1143,28 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "기초학력 안심지원망 구축",
+          "밀착 학습지원 확대",
+          "충남 역사·문화 자산 활용 인성교육"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "기초학력 안심지원망 구축",
+            "category": "기타"
+          },
+          {
+            "text": "밀착 학습지원 확대",
+            "category": "기타"
+          },
+          {
+            "text": "충남 역사·문화 자산 활용 인성교육",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "chungnam-4",
@@ -797,10 +1203,18 @@
         "career": "미상",
         "status": "EXPECTED",
         "dataSource": "claude",
-        "pledges": [],
+        "pledges": [
+          "계룡 교육지원청 신설"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "계룡 교육지원청 신설",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "jeonbuk": [
@@ -823,10 +1237,28 @@
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "영유아 단계 학력·지역격차 원천 차단",
+          "전북형 생애출발 책임교육",
+          "교육비 제로화"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "영유아 단계 학력·지역격차 원천 차단",
+            "category": "기타"
+          },
+          {
+            "text": "전북형 생애출발 책임교육",
+            "category": "기타"
+          },
+          {
+            "text": "교육비 제로화",
+            "category": "무상급식"
+          }
+        ]
       },
       {
         "id": "jeonbuk-3",
@@ -835,10 +1267,23 @@
         "career": "전북교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "일반고 전성시대 개설",
+          "진로·진학 중심 교육"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "일반고 전성시대 개설",
+            "category": "자사고/특목고"
+          },
+          {
+            "text": "진로·진학 중심 교육",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "jeonbuk-4",
@@ -859,10 +1304,23 @@
         "career": "전북교육감 예비후보",
         "status": "EXPECTED",
         "dataSource": "claude",
-        "pledges": [],
+        "pledges": [
+          "공공형 국제학교 설립",
+          "공공형 대안학교 리더스 국제학교 설립"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "공공형 국제학교 설립",
+            "category": "기타"
+          },
+          {
+            "text": "공공형 대안학교 리더스 국제학교 설립",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "jeonnam": [
@@ -873,7 +1331,10 @@
         "career": "현 전라남도 교육감",
         "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "AI 위기 감지 시스템 도입",
+          "폐교를 교육청 사무실로 활용"
+        ],
         "_lastChange": {
           "date": "2026-03-16",
           "type": "status_change",
@@ -882,7 +1343,17 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "AI 위기 감지 시스템 도입",
+            "category": "디지털교육"
+          },
+          {
+            "text": "폐교를 교육청 사무실로 활용",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "jeonnam-2",
@@ -902,10 +1373,18 @@
         "career": "전남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news",
-        "pledges": [],
+        "pledges": [
+          "인성·실력 교육으로 전환"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "인성·실력 교육으로 전환",
+            "category": "기타"
+          }
+        ]
       },
       {
         "name": "김해룡",
@@ -939,7 +1418,11 @@
         "career": "전 경북대 총장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "AI 기반 경북형 통합 상담제",
+          "AI 기반 아이-맞춤 성장 멘토링",
+          "경북교육과정 평가원 설립"
+        ],
         "_lastChange": {
           "date": "2026-03-24",
           "type": "status_change",
@@ -951,7 +1434,21 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "AI 기반 경북형 통합 상담제",
+            "category": "디지털교육"
+          },
+          {
+            "text": "AI 기반 아이-맞춤 성장 멘토링",
+            "category": "디지털교육"
+          },
+          {
+            "text": "경북교육과정 평가원 설립",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gyeongbuk-3",
@@ -960,10 +1457,28 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교복 폐지",
+          "학생 선택권 보장",
+          "학교 기후위기 교육"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교복 폐지",
+            "category": "기타"
+          },
+          {
+            "text": "학생 선택권 보장",
+            "category": "기타"
+          },
+          {
+            "text": "학교 기후위기 교육",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "gyeongnam": [
@@ -986,7 +1501,11 @@
         "career": null,
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "경남형 마을교육공동체 운영",
+          "중·고교 자율형 교복 도입",
+          "학생 안전·돌봄을 국가의 의무로 보장"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -998,7 +1517,21 @@
           "sourceUrl": "https://example.com/news",
           "sourceLabel": "종합",
           "sourcePublishedAt": "2026-03-24"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "경남형 마을교육공동체 운영",
+            "category": "기타"
+          },
+          {
+            "text": "중·고교 자율형 교복 도입",
+            "category": "기타"
+          },
+          {
+            "text": "학생 안전·돌봄을 국가의 의무로 보장",
+            "category": "돌봄"
+          }
+        ]
       },
       {
         "id": "gyeongnam-3",
@@ -1007,7 +1540,10 @@
         "career": null,
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "마산해양신도시 AI 교육캠퍼스 조성",
+          "경남 미래교육 캠퍼스 구축"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -1019,7 +1555,17 @@
           "sourceUrl": "https://example.com/news",
           "sourceLabel": "종합",
           "sourcePublishedAt": "2026-03-24"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "마산해양신도시 AI 교육캠퍼스 조성",
+            "category": "디지털교육"
+          },
+          {
+            "text": "경남 미래교육 캠퍼스 구축",
+            "category": "디지털교육"
+          }
+        ]
       },
       {
         "id": "gyeongnam-4",
@@ -1028,10 +1574,23 @@
         "career": "전 전교조 경남지부장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "학교폭력 예방 관계중심교육",
+          "노동 존중·차별 없는 교육현장 구현"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "학교폭력 예방 관계중심교육",
+            "category": "기타"
+          },
+          {
+            "text": "노동 존중·차별 없는 교육현장 구현",
+            "category": "교권보호"
+          }
+        ]
       },
       {
         "name": "전창현",
@@ -1039,10 +1598,18 @@
         "career": "경남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "overview_narrative",
-        "pledges": [],
+        "pledges": [
+          "노동이 존중받는 교육 현장 구현"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "노동이 존중받는 교육 현장 구현",
+            "category": "교권보호"
+          }
+        ]
       },
       {
         "id": "gyeongnam-6",
@@ -1051,10 +1618,18 @@
         "career": "한국승강기대학교 총장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "학교의 정치적 중립성 보장"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "학교의 정치적 중립성 보장",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "gyeongnam-7",
@@ -1063,10 +1638,28 @@
         "career": "경남교육감 예비후보",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "교육지원청 웅상센터 설립",
+          "위기 학생 집중 지원",
+          "예술 교육 확대"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "교육지원청 웅상센터 설립",
+            "category": "기타"
+          },
+          {
+            "text": "위기 학생 집중 지원",
+            "category": "기타"
+          },
+          {
+            "text": "예술 교육 확대",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "jeju": [
@@ -1077,7 +1670,10 @@
         "career": "현 제주특별자치도 교육감",
         "status": "DECLARED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "1인 1노트북 정책 폐지",
+          "초중고 입학금 지원"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -1089,7 +1685,17 @@
           "sourceUrl": "",
           "sourceLabel": "제민일보 등 언론4사 여론조사",
           "sourcePublishedAt": "2026-09-13"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "1인 1노트북 정책 폐지",
+            "category": "디지털교육"
+          },
+          {
+            "text": "초중고 입학금 지원",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "jeju-2",
@@ -1098,7 +1704,13 @@
         "career": "전 교육의원",
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "1인 1노트북 대신 입학 준비금 지급",
+          "사람 중심 AI 교육 추진",
+          "교육자치 시민의회 구성",
+          "4.3교육과 신설 및 교과서 개발",
+          "4.3인권교육상 신설"
+        ],
         "_lastChange": {
           "date": "2026-03-22",
           "type": "status_change",
@@ -1110,7 +1722,29 @@
         },
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "1인 1노트북 대신 입학 준비금 지급",
+            "category": "기타"
+          },
+          {
+            "text": "사람 중심 AI 교육 추진",
+            "category": "디지털교육"
+          },
+          {
+            "text": "교육자치 시민의회 구성",
+            "category": "기타"
+          },
+          {
+            "text": "4.3교육과 신설 및 교과서 개발",
+            "category": "기타"
+          },
+          {
+            "text": "4.3인권교육상 신설",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "jeju-3",
@@ -1119,7 +1753,9 @@
         "career": "정보 없음",
         "status": "EXPECTED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "제주형 책임교육 모델 구축"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
@@ -1131,7 +1767,13 @@
           "sourceUrl": "제주언론 보도",
           "sourceLabel": "제민일보 등",
           "sourcePublishedAt": "2026-03-22"
-        }
+        },
+        "pledgeCategories": [
+          {
+            "text": "제주형 책임교육 모델 구축",
+            "category": "기타"
+          }
+        ]
       }
     ],
     "sejong": [
@@ -1142,10 +1784,23 @@
         "career": "현 세종특별자치시 교육감",
         "status": "EXPECTED",
         "dataSource": "incumbent",
-        "pledges": [],
+        "pledges": [
+          "서산초 그린스마트 미래학교 조성",
+          "서산 중앙도서관 건립 재추진"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "서산초 그린스마트 미래학교 조성",
+            "category": "기타"
+          },
+          {
+            "text": "서산 중앙도서관 건립 재추진",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "sejong-2",
@@ -1154,10 +1809,18 @@
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "하향 평준화된 세종교육 개혁"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "하향 평준화된 세종교육 개혁",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "sejong-3",
@@ -1166,10 +1829,23 @@
         "career": "현장 전문가",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "세종을 대한민국 교육의 표준으로",
+          "이재명 정부 교육 개혁과 발맞춘 혁신"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "세종을 대한민국 교육의 표준으로",
+            "category": "기타"
+          },
+          {
+            "text": "이재명 정부 교육 개혁과 발맞춘 혁신",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "sejong-4",
@@ -1178,10 +1854,23 @@
         "career": "평교사 출신 첫 공모교장",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "세종 체육중·고등학교 설립",
+          "체육 인재 유출 방지"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "세종 체육중·고등학교 설립",
+            "category": "기타"
+          },
+          {
+            "text": "체육 인재 유출 방지",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "sejong-5",
@@ -1190,10 +1879,33 @@
         "career": "뉴스에 언급 없음",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "세종724 안심 돌봄 정책",
+          "세종형 영유아교육과정 도입",
+          "유아교육 공공성 강화",
+          "특성화교육 확대"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "세종724 안심 돌봄 정책",
+            "category": "돌봄"
+          },
+          {
+            "text": "세종형 영유아교육과정 도입",
+            "category": "돌봄"
+          },
+          {
+            "text": "유아교육 공공성 강화",
+            "category": "돌봄"
+          },
+          {
+            "text": "특성화교육 확대",
+            "category": "기타"
+          }
+        ]
       },
       {
         "id": "sejong-6",
@@ -1202,10 +1914,23 @@
         "career": "",
         "status": "DECLARED",
         "dataSource": "news_verified",
-        "pledges": [],
+        "pledges": [
+          "입시에 강한 세종교육 정책",
+          "학력 신장 4대 정책"
+        ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "입시에 강한 세종교육 정책",
+            "category": "기타"
+          },
+          {
+            "text": "학력 신장 4대 정책",
+            "category": "기타"
+          }
+        ]
       }
     ]
   }
