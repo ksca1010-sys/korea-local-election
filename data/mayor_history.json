@@ -2342,7 +2342,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "busan",
-        "district": "서구"
+        "district": "서구",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -2765,7 +2766,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "busan",
-        "district": "남구"
+        "district": "남구",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -3661,7 +3663,8 @@
         "winnerParty": "국민의힘",
         "rate": 0.0,
         "regionKey": "daegu",
-        "district": "중구"
+        "district": "중구",
+        "isUncontested": true
       }
     ],
     "daegu/동구": [
@@ -3889,7 +3892,8 @@
         "winnerParty": "새누리당",
         "rate": 0.0,
         "regionKey": "daegu",
-        "district": "남구"
+        "district": "남구",
+        "isUncontested": true
       },
       {
         "election": 7,
@@ -4170,7 +4174,8 @@
         "winnerParty": "국민의힘",
         "rate": 0.0,
         "regionKey": "daegu",
-        "district": "달서구"
+        "district": "달서구",
+        "isUncontested": true
       }
     ],
     "daegu/달성군": [
@@ -4224,7 +4229,8 @@
         "winnerParty": "새누리당",
         "rate": 0.0,
         "regionKey": "daegu",
-        "district": "달성군"
+        "district": "달성군",
+        "isUncontested": true
       },
       {
         "election": 7,
@@ -5076,7 +5082,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "incheon",
-        "district": "옹진군"
+        "district": "옹진군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -5545,7 +5552,8 @@
         "winnerParty": "더불어민주당",
         "rate": 0.0,
         "regionKey": "gwangju",
-        "district": "광산구"
+        "district": "광산구",
+        "isUncontested": true
       }
     ],
     "daejeon/동구": [
@@ -10279,7 +10287,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "gangwon",
-        "district": "영월군"
+        "district": "영월군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -10536,7 +10545,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "gangwon",
-        "district": "양구군"
+        "district": "양구군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -15066,7 +15076,8 @@
         "winnerParty": "더불어민주당",
         "rate": 0.0,
         "regionKey": "jeonnam",
-        "district": "보성군"
+        "district": "보성군",
+        "isUncontested": true
       }
     ],
     "jeonnam/화순군": [
@@ -15496,7 +15507,8 @@
         "winnerParty": "더불어민주당",
         "rate": 0.0,
         "regionKey": "jeonnam",
-        "district": "해남군"
+        "district": "해남군",
+        "isUncontested": true
       }
     ],
     "jeonnam/진도군": [
@@ -15623,7 +15635,8 @@
         "winnerParty": "민주당",
         "rate": 0.0,
         "regionKey": "jeonnam",
-        "district": "영암군"
+        "district": "영암군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -16966,7 +16979,8 @@
         "winnerParty": "국민의힘",
         "rate": 0.0,
         "regionKey": "gyeongbuk",
-        "district": "예천군"
+        "district": "예천군",
+        "isUncontested": true
       }
     ],
     "gyeongbuk/경산시": [
@@ -17194,7 +17208,8 @@
         "winnerParty": "새누리당",
         "rate": 0.0,
         "regionKey": "gyeongbuk",
-        "district": "고령군"
+        "district": "고령군",
+        "isUncontested": true
       },
       {
         "election": 7,
@@ -17520,7 +17535,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "gyeongbuk",
-        "district": "의성군"
+        "district": "의성군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -17603,7 +17619,8 @@
         "winnerParty": "한나라당",
         "rate": 0.0,
         "regionKey": "gyeongbuk",
-        "district": "청송군"
+        "district": "청송군",
+        "isUncontested": true
       },
       {
         "election": 6,
@@ -17874,7 +17891,8 @@
         "winnerParty": "새누리당",
         "rate": 0.0,
         "regionKey": "gyeongbuk",
-        "district": "봉화군"
+        "district": "봉화군",
+        "isUncontested": true
       },
       {
         "election": 7,
