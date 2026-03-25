@@ -941,7 +941,7 @@ const App = (() => {
             const pct = (value / totalPct * 100).toFixed(1);
             const color = ElectionData.getPartyColor(party);
             const segName = POLL_PARTY_NAMES[party] || party;
-            barHtml += `<div class="party-bar-segment" style="width:${pct}%;background:${color}" title="${segName}: ${value}%"></div>`;
+            barHtml += `<div class="party-bar-segment" style="width:${pct}%;background:${color}" title="${segName}: ${value}%" role="img" aria-label="${segName}, ${value}%"></div>`;
         });
         barHtml += '</div>';
 
