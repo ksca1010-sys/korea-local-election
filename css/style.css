@@ -1143,6 +1143,20 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     filter: brightness(1.2);
 }
 
+/* 색각 이상 대응: 짝수 세그먼트에 미세 사선 패턴 */
+.party-bar-segment:nth-child(even) {
+    background-image: repeating-linear-gradient(
+        45deg, transparent, transparent 3px,
+        rgba(255,255,255,0.08) 3px, rgba(255,255,255,0.08) 6px
+    );
+}
+.party-bar-segment:nth-child(3n) {
+    background-image: repeating-linear-gradient(
+        -45deg, transparent, transparent 3px,
+        rgba(255,255,255,0.08) 3px, rgba(255,255,255,0.08) 6px
+    );
+}
+
 .party-bar-labels {
     display: flex;
     flex-wrap: wrap;
@@ -3428,6 +3442,16 @@ canvas {
 @keyframes slideInRight {
     from { opacity: 0; transform: translateX(20px); }
     to { opacity: 1; transform: translateX(0); }
+}
+
+[id^="tab-"][style*="display: block"],
+[id^="tab-"]:not([style*="display: none"]):not([style*="display:none"]) {
+    animation: tabFadeIn 150ms ease;
+}
+
+@keyframes tabFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .animate-in {
