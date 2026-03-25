@@ -132,15 +132,17 @@ const NewsTab = (() => {
 
     function buildProportionalNewsCategories(regionKey, regionName, electionType) {
         const typeLabel = electionType === 'councilProportional' ? '광역비례' : '기초비례';
+        // 국회의원 재보궐 뉴스 혼입 방지
+        const excludeNational = ['국회', '총선', '보궐', '재보궐', '재선거', '국회의원'];
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
                 query: `"${regionName}" 비례대표 지방선거 정당`,
                 maxAgeDays: 60,
-                altQueries: [`${regionName} 비례대표 공천 정당`],
-                focusKeywords: ['비례대표', '정당', '명부', '공천'],
-                strict: { mustAny: ['비례대표', '비례'], targetAny: [regionName, '지방선거'], excludeAny: ['국회', '총선'] },
-                relaxed: { mustAny: ['비례대표', '비례'], targetAny: ['지방선거'], excludeAny: ['국회', '총선'] }
+                altQueries: [`${regionName} 비례대표 공천 정당 지방의회`],
+                focusKeywords: ['비례대표', '정당', '명부', '공천', '지방의회'],
+                strict: { mustAny: ['비례대표', '비례'], targetAny: [regionName, '지방선거', '지방의회'], excludeAny: excludeNational },
+                relaxed: { mustAny: ['비례대표', '비례'], targetAny: ['지방선거', '지방의회'], excludeAny: excludeNational }
             },
             {
                 label: '정당 지지율', icon: 'fas fa-chart-pie', categoryId: 'partySupport',
@@ -148,8 +150,8 @@ const NewsTab = (() => {
                 maxAgeDays: 60,
                 altQueries: [`${regionName} 정당 지지율 지방선거`],
                 focusKeywords: ['정당지지율', '정당지지도', '정당'],
-                strict: { mustAny: ['정당지지율', '정당지지도', '정당 지지'], targetAny: [regionName], excludeAny: ['국회', '총선', '대선'] },
-                relaxed: { mustAny: ['정당', '지지율'], targetAny: [regionName], excludeAny: ['국회', '총선', '대선'] }
+                strict: { mustAny: ['정당지지율', '정당지지도', '정당 지지'], targetAny: [regionName], excludeAny: excludeNational.concat(['대선']) },
+                relaxed: { mustAny: ['정당', '지지율'], targetAny: [regionName], excludeAny: excludeNational.concat(['대선']) }
             }
         ];
     }
