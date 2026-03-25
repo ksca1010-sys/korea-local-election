@@ -196,8 +196,8 @@
         {
           "name": "송영길",
           "party": "democratic",
-          "partyKey": "independent",
-          "career": null,
+          "partyKey": "democratic",
+          "career": "전 민주당 대표 · 5선 국회의원 (2/27 복당)",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -335,11 +335,63 @@
           "name": "김용",
           "party": "democratic",
           "partyKey": "independent",
-          "career": null,
+          "career": "전 민주연구원 부원장",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
           "partyName": "democratic"
+        },
+        {
+          "name": "오세호",
+          "party": "democratic",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당",
+          "career": "전 경기도의원",
+          "status": "DECLARED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceLabel": "중부일보",
+          "sourceUrl": "https://www.joongboo.com/news/articleView.html?idxno=363718541",
+          "sourcePublishedAt": "2026-02-28"
+        },
+        {
+          "name": "김재연",
+          "party": "progressive",
+          "partyKey": "progressive",
+          "partyName": "진보당",
+          "career": "진보당 상임대표 · 전 국회의원",
+          "status": "DECLARED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceLabel": "경향신문",
+          "sourceUrl": "https://www.khan.co.kr/article/202601191536011",
+          "sourcePublishedAt": "2026-01-19"
+        },
+        {
+          "name": "황교안",
+          "party": "other",
+          "partyKey": "other",
+          "partyName": "자유와혁신",
+          "career": "전 국무총리 · 자유와혁신 대표",
+          "status": "DECLARED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceLabel": "경기뉴스통신",
+          "sourceUrl": "https://www.kgnews.co.kr/news/article.html?no=885599",
+          "sourcePublishedAt": "2026-02-28"
+        },
+        {
+          "name": "유의동",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "전 3선 국회의원 (평택시을)",
+          "status": "RUMORED",
+          "dataSource": "news_factcheck",
+          "pledges": [],
+          "sourceLabel": "일간경기",
+          "sourceUrl": "https://www.1gan.co.kr/news/articleView.html?idxno=327458",
+          "sourcePublishedAt": "2026-02-28"
         }
       ],
       "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
@@ -454,7 +506,7 @@
       "candidates": [
         {
           "name": "맹인섭",
-          "career": "언론인",
+          "career": "언론인 · 노조·시민사회 기반",
           "pledges": [
             "노동 중심 정책 비전 제시",
             "노동·민생 혁신 기치",
@@ -464,7 +516,7 @@
           "dataSource": "news",
           "partyKey": "independent",
           "partyName": "무소속",
-          "party": "democratic"
+          "party": "independent"
         }
       ],
       "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",
@@ -580,22 +632,22 @@
       "candidates": [
         {
           "name": "김의겸",
-          "career": "미상",
+          "career": "전 새만금개발청장 · 전 청와대 대변인",
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
-          "partyKey": "independent",
-          "partyName": "미상",
-          "party": "reform"
+          "partyKey": "democratic",
+          "partyName": "더불어민주당",
+          "party": "democratic"
         },
         {
           "name": "조국",
-          "career": "미상",
+          "career": "조국혁신당 대표",
           "pledges": [],
           "status": "RUMORED",
           "dataSource": "news",
           "partyKey": "independent",
-          "partyName": "미상",
+          "partyName": "조국혁신당",
           "party": "reform",
           "sourceLabel": "시사저널",
           "sourceUrl": "https://www.sisajournal.com/news/articleView.html?idxno=366296",
@@ -706,13 +758,13 @@
       "candidates": [
         {
           "name": "김석훈",
-          "career": "전 안산시의회 의장",
+          "career": "전 국민의힘 안산시갑 당협위원장 · 전 안산시의회 의장",
           "pledges": [],
-          "status": "EXPECTED",
+          "status": "DECLARED",
           "dataSource": "news",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "party": "democratic"
+          "party": "ppp"
         },
         {
           "name": "염정우",
