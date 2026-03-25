@@ -132,7 +132,13 @@ def build_prompt(key, dist, news=None):
 - DECLARED: 본인 공식 출마 선언/예비후보 등록만
 - RUMORED: "~확실시", "~거론", "~유력"은 모두 RUMORED
 - NOMINATED: 당 공식 공천 발표만
-- WITHDRAWN: 본인 직접 사퇴/불출마 선언만"""
+- WITHDRAWN: 본인 직접 사퇴/불출마 선언만
+
+## ⚠️ 정당(party) 판정 규칙
+- 반드시 뉴스에서 확인된 정당만 기재
+- 탈당/복당/제명이 뉴스에 나오면 반드시 최신 정당으로 기재
+- 무소속 출마 선언은 "무소속"으로 기재 (이전 소속 정당 아님)
+- 정당을 확인할 수 없으면 "미확인"으로 기재 (추측 금지)"""
 
 
 
@@ -197,6 +203,82 @@ def merge_candidates(existing, new_candidates):
             by_name[name] = nc
 
     return list(by_name.values())
+
+
+def cross_check_party_via_news(districts):
+    """뉴스 검색으로 각 후보의 당적을 교차검증.
+
+    후보 이름 + 선거구로 검색하여 뉴스 제목에서 정당명을 추출,
+    현재 데이터와 불일치하면 경고를 출력한다.
+    """
+    try:
+        import sys as _sys
+        _sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+        from local_news_search import search_naver_news
+    except ImportError:
+        print("  [당적검증] local_news_search 미사용 — 건너뜀")
+        return []
+
+    PARTY_KEYWORDS = {
+        "더불어민주당": "democratic", "민주당": "democratic",
+        "국민의힘": "ppp", "조국혁신당": "reform",
+        "진보당": "progressive", "정의당": "justice",
+        "개혁신당": "newReform", "무소속": "independent",
+        "자유와혁신": "other", "새로운미래": "newFuture",
+    }
+
+    warnings = []
+    for key, dist in districts.items():
+        district_name = dist.get("district", "")
+        for c in dist.get("candidates", []):
+            name = c.get("name", "")
+            current_party = c.get("party", "")
+            if not name or c.get("status") == "WITHDRAWN":
+                continue
+
+            # 뉴스 검색: "후보이름" "선거구" 정당
+            query = f'"{name}" "{district_name.split(" ")[-1]}"'
+            try:
+                results = search_naver_news(query, display=5)
+            except Exception:
+                continue
+
+            # 뉴스 제목에서 정당 키워드 추출
+            found_parties = {}
+            for item in results:
+                title = item.get("title", "")
+                if name not in title.replace("<b>", "").replace("</b>", ""):
+                    continue
+                for kw, pk in PARTY_KEYWORDS.items():
+                    if kw in title:
+                        found_parties[pk] = found_parties.get(pk, 0) + 1
+
+            if not found_parties:
+                continue
+
+            # 가장 많이 언급된 정당
+            top_party = max(found_parties, key=found_parties.get)
+            top_count = found_parties[top_party]
+
+            if top_party != current_party and top_count >= 2:
+                # 2건 이상 일치하면 불일치 경고
+                display = {v: k for k, v in PARTY_KEYWORDS.items()}.get(top_party, top_party)
+                current_display = {v: k for k, v in PARTY_KEYWORDS.items()}.get(current_party, current_party)
+                msg = f"{district_name} {name}: 현재='{current_display}' vs 뉴스='{display}'({top_count}건)"
+                warnings.append(msg)
+
+                # 자동 교정 (3건 이상 일치 시)
+                if top_count >= 3:
+                    c["party"] = top_party
+                    c["partyKey"] = top_party
+                    party_name = {v: k for k, v in PARTY_KEYWORDS.items()}.get(top_party, top_party)
+                    c["partyName"] = party_name
+                    msg += " → 자동 교정"
+                    warnings[-1] = msg
+
+            time.sleep(0.3)  # API rate limit
+
+    return warnings
 
 
 def verify_party_consistency(districts):
@@ -312,10 +394,20 @@ def main():
 
         time.sleep(1)
 
+    # ── 당적 뉴스 교차검증 ──
+    print("\n[당적 교차검증] 뉴스 기반 당적 확인 중...")
+    party_warnings = cross_check_party_via_news(districts)
+    if party_warnings:
+        print(f"  {len(party_warnings)}건 감지:")
+        for pw in party_warnings:
+            print(f"  ⚠ {pw}")
+    else:
+        print("  불일치 없음")
+
     # ── 당적 일관성 검증 + 자동 교정 ──
     party_fixes = verify_party_consistency(districts)
     if party_fixes:
-        print(f"\n[당적 검증] {len(party_fixes)}건 자동 교정:")
+        print(f"\n[당적 일관성] {len(party_fixes)}건 자동 교정:")
         for pf in party_fixes:
             print(f"  • {pf}")
 
