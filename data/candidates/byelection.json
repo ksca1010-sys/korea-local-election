@@ -73,7 +73,7 @@
           "partyName": "democratic"
         }
       ],
-      "statusNote": "2026년 6월 3일 선거예정. 현재 수집된 최신 뉴스가 없어 기존 정보만 유지 중입니다.",
+      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 정보 유지. 박찬대 의원의 인천시장 출마에 따른 보궐선거 진행 예정.",
       "history": [
         {
           "election": 17,
@@ -191,17 +191,17 @@
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "independent"
+          "partyName": "무소속"
         },
         {
           "name": "송영길",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic",
+          "partyName": "더불어민주당",
           "sourceLabel": "데일리안·디지털타임스",
           "sourceUrl": "https://www.dailian.co.kr/news/view/1612102",
           "sourcePublishedAt": "2026-02-23"
@@ -209,18 +209,18 @@
         {
           "name": "김남준",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": null,
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic",
+          "partyName": "더불어민주당",
           "sourceLabel": "헤럴드경제",
           "sourceUrl": "https://biz.heraldcorp.com/article/10679239",
           "sourcePublishedAt": "2026-02-19"
         }
       ],
-      "statusNote": "최신 뉴스 정보가 제공되지 않았습니다. 기존 수집된 후보자 정보로만 구성되었습니다.",
+      "statusNote": "최신 뉴스가 없어 기존 수집 정보 유지. 2026년 6월 3일 선거까지 추가 정보 모니터링 필요.",
       "history": [
         {
           "election": 17,
@@ -334,15 +334,15 @@
         {
           "name": "김용",
           "party": "democratic",
-          "partyKey": "independent",
+          "partyKey": "democratic",
           "career": null,
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
-          "partyName": "democratic"
+          "partyName": "민주당"
         }
       ],
-      "statusNote": "현재 확인된 뉴스가 없습니다. 김용 후보는 RUMORED 상태로 유지되며, 추가 후보 정보는 공식 뉴스를 통해 수집 필요합니다.",
+      "statusNote": "현재까지 공식 후보 선언이나 당 공천 발표가 없는 상태입니다. 최신 뉴스 정보가 없어 기존 정보 범위 내에서만 업데이트되었습니다.",
       "history": [
         {
           "election": 17,
@@ -467,7 +467,7 @@
           "party": "democratic"
         }
       ],
-      "statusNote": "현재까지 무소속 맹인섭 후보만 출마를 선언한 상태입니다. 여야 주요 정당의 공천 발표 및 추가 후보 등장이 예상됩니다.",
+      "statusNote": "현재까지 맹인섭 무소속 후보의 출마만 확인되었습니다. 추가 후보자 동향이 파악될 때까지 모니터링이 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -602,7 +602,7 @@
           "sourcePublishedAt": "2026-03-21"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거일까지 추가 후보 공식 선언/공천 발표 대기 중.",
+      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 수집 정보만 유지됩니다. 추가 후보자 동향 파악을 위해 최신 뉴스 정보가 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -730,7 +730,7 @@
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "경기 안산시갑 국회의원 보궐선거는 6월 3일 예정되어 있으며, 현재 국민의힘 김석훈 전 의장과 민주당 염정우 시의원이 주요 후보로 거론되고 있습니다. 추가 뉴스 정보가 없어 기존 수집 정보로 유지합니다.",
+      "statusNote": "현재 공식 뉴스가 없어 기존 정보 유지 중입니다. 2026년 6월 3일 선거일까지 공식 후보 등록 및 당 공천 발표를 대기 중입니다.",
       "history": [
         {
           "election": 17,
@@ -844,7 +844,8 @@
           "rate": 86.73,
           "sggName": "군산시김제시부안군갑"
         }
-      ]
+      ],
+      "statusNote": "현재 제공된 최신 뉴스가 없어 후보자 정보를 수집할 수 없습니다. 추가 뉴스 정보가 필요합니다."
     }
   }
 }
