@@ -345,6 +345,28 @@ def main():
     data = load_candidates()
     candidates = data.get("candidates", {})
 
+    # ── ① 선관위 예비후보 API 동기화 (기초단체장) ──
+    try:
+        from nec_precand_sync import fetch_precandidates, sync_mayor
+        print("\n[1단계] 선관위 예비후보(구시군장) 조회...")
+        nec_items = fetch_precandidates("4")
+        if nec_items:
+            nec_fixes = sync_mayor(data, nec_items)
+            if nec_fixes:
+                print(f"  {len(nec_fixes)}건 동기화:")
+                for nf in nec_fixes[:30]:
+                    print(f"    • {nf}")
+                if len(nec_fixes) > 30:
+                    print(f"    ... 외 {len(nec_fixes) - 30}건")
+            else:
+                print("  변경 없음")
+    except ImportError:
+        print("\n[NEC] nec_precand_sync 모듈 없음 — 건너뜀")
+    except Exception as e:
+        print(f"\n[NEC] 오류: {e}")
+
+    # ── ② 뉴스 기반 팩트체크 ──
+    print("\n[2단계] 뉴스 기반 팩트체크...")
     regions_to_process = [target_region] if target_region else sorted(candidates.keys())
     total_applied = 0
 

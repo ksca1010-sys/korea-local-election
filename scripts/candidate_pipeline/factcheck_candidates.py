@@ -376,7 +376,28 @@ def main():
     total = sum(len(v) for v in data.get("candidates", {}).values())
     print(f"\n현재 후보: {total}명 ({len(data.get('candidates', {}))}개 시도)")
 
-    print("\n뉴스 수집 중...")
+    # ── ① 선관위 예비후보 API 동기화 ──
+    try:
+        from nec_precand_sync import fetch_precandidates, sync_governor
+        print("\n[1단계] 선관위 예비후보(시도지사) 조회...")
+        nec_items = fetch_precandidates("3")
+        if nec_items:
+            nec_fixes = sync_governor(data, nec_items)
+            if nec_fixes:
+                print(f"  {len(nec_fixes)}건 동기화:")
+                for nf in nec_fixes[:20]:
+                    print(f"    • {nf}")
+                if len(nec_fixes) > 20:
+                    print(f"    ... 외 {len(nec_fixes) - 20}건")
+            else:
+                print("  변경 없음")
+    except ImportError:
+        print("\n[NEC] nec_precand_sync 모듈 없음 — 건너뜀")
+    except Exception as e:
+        print(f"\n[NEC] 오류: {e}")
+
+    # ── ② 뉴스 기반 팩트체크 ──
+    print("\n[2단계] 뉴스 수집 중...")
     news = fetch_governor_news()
     print(f"  → {len(news)}건 수집")
 
