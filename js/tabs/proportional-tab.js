@@ -139,7 +139,8 @@ const ProportionalTab = (() => {
                 // ── 8회 선거 결과 (득표율 바차트) ──
                 const election = histData?.elections?.find(e => e.electionNumber === 8);
                 if (election) {
-                    const voteShare = (election.voteShare || []).filter(v => v.percent > 0);
+                    const seatedP = new Set((election.seatDistribution || []).map(s => s.party));
+                    const voteShare = (election.voteShare || []).filter(v => v.percent > 0 && seatedP.has(v.party));
                     if (voteShare.length > 0) {
                         const sorted = [...voteShare].sort((a, b) => b.percent - a.percent);
                         const maxPct = sorted[0].percent;
@@ -428,8 +429,9 @@ const ProportionalTab = (() => {
                         <div style="padding:12px;">
                 `;
 
-                // 득표율 바차트
-                const voteShare = (el.voteShare || []).filter(v => v.percent > 0);
+                // 득표율 바차트 — 의석을 얻은 정당만 표시
+                const seatedParties = new Set((el.seatDistribution || []).map(s => s.party));
+                const voteShare = (el.voteShare || []).filter(v => v.percent > 0 && seatedParties.has(v.party));
                 if (voteShare.length > 0) {
                     const sorted = [...voteShare].sort((a, b) => b.percent - a.percent);
                     const maxPct = sorted[0].percent;
