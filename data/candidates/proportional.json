@@ -4009,7 +4009,7 @@
       }
     },
     "daegu": {
-      "totalSeats": 16,
+      "totalSeats": 17,
       "sigungus": {
         "중구": {
           "totalSeats": 2,
@@ -4123,6 +4123,16 @@
               "party": "democratic",
               "seats": 1,
               "voteShare": 28.0
+            }
+          ]
+        },
+        "군위군": {
+          "totalSeats": 1,
+          "parties": [
+            {
+              "party": "ppp",
+              "seats": 1,
+              "voteShare": 71.0
             }
           ]
         }
@@ -5878,7 +5888,7 @@
       }
     },
     "gyeongbuk": {
-      "totalSeats": 34,
+      "totalSeats": 33,
       "sigungus": {
         "포항시": {
           "totalSeats": 3,
@@ -6147,16 +6157,6 @@
               "party": "ppp",
               "seats": 1,
               "voteShare": 65.5
-            }
-          ]
-        },
-        "군위군": {
-          "totalSeats": 1,
-          "parties": [
-            {
-              "party": "ppp",
-              "seats": 1,
-              "voteShare": 71.0
             }
           ]
         }

@@ -1,7 +1,7 @@
 {
   "_meta": {
     "source": "8회 지선 당선인(선관위 API) + 현직 상태(뉴스/공식발표)",
-    "lastUpdated": "2026-03-23T14:55:24",
+    "lastUpdated": "2026-03-27T08:51:18",
     "description": "현직자 정보 — 당선 시 정당, 현재 정당, 사퇴/대행 여부"
   },
   "governor": {
@@ -3518,8 +3518,8 @@
       "electionYear": 2022,
       "position": "기초단체장"
     },
-    "gyeongbuk_군위군": {
-      "region": "gyeongbuk",
+    "daegu_군위군": {
+      "region": "daegu",
       "district": "군위군",
       "electedName": "김진열",
       "electedParty": "국민의힘",
