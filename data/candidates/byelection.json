@@ -73,7 +73,7 @@
           "partyName": "민주당"
         }
       ],
-      "statusNote": "현재 확인된 최신 뉴스가 없습니다. 기존 수집 정보 기준으로 3명의 후보가 거론 중이며, 공식 공천 발표 대기 중입니다.",
+      "statusNote": "현재(2026-03-26) 제공된 최신 뉴스가 없어 기존 수집 정보만 유지. 박찬대 의원의 의원직 사퇴 기한이 4월 30일이며, 보궐선거는 6월 3일 예정.",
       "history": [
         {
           "election": 17,
@@ -244,7 +244,7 @@
           "sourcePublishedAt": "2026-02-13"
         }
       ],
-      "statusNote": "최신 뉴스가 제공되지 않아 기존 수집 정보 유지. 2026년 6월 3일 선거 예정.",
+      "statusNote": "최신 뉴스가 없어 기존 수집 정보로 유지. 선거일까지 100일 이상 남아있으며 추가 후보 출마 및 당 공천 발표 예상.",
       "history": [
         {
           "election": 17,
@@ -383,7 +383,7 @@
           "party": "progressive",
           "partyKey": "progressive",
           "partyName": "진보당",
-          "career": "진보당 상임대표 · 전 국회의원",
+          "career": "진보당 상임대표·전 국회의원",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -396,7 +396,7 @@
           "party": "other",
           "partyKey": "other",
           "partyName": "자유와혁신",
-          "career": "전 국무총리 · 자유와혁신 대표",
+          "career": "전 국무총리·자유와혁신 대표",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -409,7 +409,7 @@
           "party": "ppp",
           "partyKey": "ppp",
           "partyName": "국민의힘",
-          "career": "전 3선 국회의원 (평택시을)",
+          "career": "전 3선 국회의원(평택시을)",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -442,7 +442,7 @@
           "sourcePublishedAt": "2026-03-13"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 후보 정보를 유지합니다. 민주당과 국민의힘 양진영에서 다수의 후보가 출마 선언 상태입니다.",
+      "statusNote": "제공된 최신 뉰스가 없어 기존 수집 정보를 유지합니다. 선거일까지 2개월 이상 남아있으며 추가 후보자 공식 선언이나 당 공천 발표 등 새로운 뉴스를 주시할 필요가 있습니다.",
       "history": [
         {
           "election": 17,
@@ -603,7 +603,7 @@
           "sourcePublishedAt": "2026-02-26"
         }
       ],
-      "statusNote": "제공된 최신 뉴스가 없어 기존 수집 데이터 유지. 선거일 2026-06-03까지 후보 동향 계속 모니터링 필요.",
+      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 정보 유지. 선거일 2026-06-03을 향해 국민의힘 3명, 무소속 1명 총 4명이 출마 선언 상태.",
       "history": [
         {
           "election": 17,
@@ -737,7 +737,7 @@
           "sourcePublishedAt": "2026-03-21"
         }
       ],
-      "statusNote": "현재 김의겸(더불어민주당)과 조국(무소속)이 출마 선언한 상태입니다. 6월 3일 선거일까지 추가 후보 출마 선언이 예상됩니다.",
+      "statusNote": "현재 확인되는 최신 뉴스가 없어 기존 수집 정보를 유지합니다. 향후 추가 후보 선언 및 당 공천 발표 시 업데이트 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -865,7 +865,7 @@
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "2026년 6월 3일 선거 예정. 현재 수집된 뉴스가 없어 기존 후보 정보를 유지합니다.",
+      "statusNote": "현재 공식적인 후보 등록이나 당 공천 발표 뉴스가 없는 상태입니다. 기존 수집된 두 명의 후보자 정보는 확정되지 않은 상태(RUMORED)입니다.",
       "history": [
         {
           "election": 17,
@@ -967,7 +967,20 @@
         "runnerRate": 0,
         "turnout": 0
       },
-      "candidates": [],
+      "candidates": [
+        {
+          "name": "오지성",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "국민의힘 군산시김제시부안군갑 당협위원장",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-09"
+        }
+      ],
       "keyIssues": [],
       "status": "확정",
       "history": [
@@ -980,7 +993,8 @@
           "rate": 86.73,
           "sggName": "군산시김제시부안군갑"
         }
-      ]
+      ],
+      "statusNote": "현재 확인된 뉴스가 없습니다. 오지성 후보의 공약 및 경쟁 후보 정보는 추가 뉴스 확인 필요."
     }
   }
 }
