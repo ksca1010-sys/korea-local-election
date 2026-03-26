@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-03-25T01:21:46.520836",
-    "totalDetections": 34,
-    "pendingCount": 34,
+    "lastRun": "2026-03-26T01:26:57.733410",
+    "totalDetections": 38,
+    "pendingCount": 38,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -329,6 +329,16 @@
           "title": "현재까지 재보궐 7곳 확정적…전부 민주당 지역구",
           "link": "https://www.mk.co.kr/article/11996758",
           "date": "2026-03-24"
+        },
+        {
+          "title": "[손병관의 뉴스프레소] 외부활동 크게 준 장동혁...국힘, '대표 없는 지...",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003218341&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-03-26"
+        },
+        {
+          "title": "與 경기지사 후보들 '김용 앓이'…그럴수록 당 고심 깊어진다, 왜",
+          "link": "https://www.joongang.co.kr/article/25414771",
+          "date": "2026-03-25"
         }
       ],
       "necValidated": false,
@@ -486,6 +496,11 @@
           "title": "양문석 당선무효형…안산시의회 국힘 &quot;민주당 사과하라&quot;",
           "link": "https://www.newsis.com/view/NISX20260313_0003547137",
           "date": "2026-03-13"
+        },
+        {
+          "title": "의원직 상실 양문석, '보석 석방' 김용에 안산갑 출마 요청",
+          "link": "https://news.jtbc.co.kr/article/NB12291248?influxDiv=NAVER",
+          "date": "2026-03-25"
         }
       ],
       "necValidated": true,
@@ -796,6 +811,31 @@
           "title": "주호영, 컷오프 후 ‘기로’···탈당·무소속 출마 등 모든 가능성 열...",
           "link": "https://www.kbmaeil.com/article/20260324500715",
           "date": "2026-03-24"
+        },
+        {
+          "title": "김부겸 대구시장 출마 초읽기…여론조사 모두 우위",
+          "link": "http://www.yonhapnewstv.co.kr/MYH20260325211615ZM3",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "김부겸, 대구시장 출마 기운듯 鄭과 회동… 주호영은 무소속 거론",
+          "link": "https://www.donga.com/news/Politics/article/all/20260326/133610561/2",
+          "date": "2026-03-26"
+        },
+        {
+          "title": "장동혁, 이진숙 ‘보궐선거 재배치’ 가능성 시사",
+          "link": "https://www.kbmaeil.com/article/20260325500730",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "한동훈 “2개만 지키면 이긴 걸로 치겠다? 다른 곳은 그냥 지는거냐”",
+          "link": "https://weekly.khan.co.kr/article/202603251427011",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "한동훈 “보수 재건 ‘주호영’과 이미 연대…상식적 정치인 뜻 모아야...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8517852&ref=A",
+          "date": "2026-03-25"
         }
       ],
       "necValidated": false,
@@ -1002,6 +1042,123 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-03-25T01:21:46.520798"
+    },
+    {
+      "key": "ulsan-유시",
+      "region": "ulsan",
+      "district": "유시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "안산에서",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "한준호 &quot;유시민, 왜 계속 논란 야기하는지 이해 안가...'김용 몫'? 판단...",
+          "link": "https://radio.ytn.co.kr/program/?f=2&id=108004&s_mcd=0263&s_hcd=01",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "한준호 &quot;유시민, 왜 계속 논란 야기하는지 이해 안가..'김용 몫'? 판단 ...",
+          "link": "https://www.ytn.co.kr/_ln/0101_202603251754034083",
+          "date": "2026-03-25"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-26T01:26:57.733358"
+    },
+    {
+      "key": "gyeonggi-관심도",
+      "region": "gyeonggi",
+      "district": "관심도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "[공감 2026] 양문석 &quot;김용, 안산갑으로&quot;…한동훈은 연수갑?",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1518546",
+          "date": "2026-03-25"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-26T01:26:57.733368"
+    },
+    {
+      "key": "gyeonggi-민주연구",
+      "region": "gyeonggi",
+      "district": "민주연구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "판결로",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "양문석, ‘보석 석방’ 김용에 출마 요청…경기 안산갑 ‘사법 리스크 ...",
+          "link": "https://www.segye.com/newsView/20260325517013?OutUrl=naver",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "“도움 될지 두렵지만”…양문석, 김용에 “안산갑 맡아주길”",
+          "link": "https://www.segye.com/newsView/20260325508245?OutUrl=naver",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "양문석, 김용에 안산갑 보선 출마 요청…김남국 &quot;적임자 논의보다 시민...",
+          "link": "https://www.cbci.co.kr/news/articleView.html?idxno=563288",
+          "date": "2026-03-26"
+        },
+        {
+          "title": "양문석 &quot;안산갑 와달라&quot;…김용에 국회의원 보선 출마 요청(종합)",
+          "link": "https://www.yna.co.kr/view/AKR20260325053451001?input=1195m",
+          "date": "2026-03-25"
+        },
+        {
+          "title": "양문석, 김용에 공개 요청…&quot;경기 안산갑 와달라&quot;",
+          "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1518475",
+          "date": "2026-03-25"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-26T01:26:57.733375"
+    },
+    {
+      "key": "incheon-안산시갑",
+      "region": "incheon",
+      "district": "안산시갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "재보선 국면…상반된 행보",
+          "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1319541",
+          "date": "2026-03-25"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-03-26T01:26:57.733395"
     }
   ]
 }
