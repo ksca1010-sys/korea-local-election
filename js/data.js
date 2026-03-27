@@ -1992,30 +1992,8 @@ const ElectionData = (() => {
                     }
                 }
             }
-            // 폴백: 현직 의원 데이터에서 조회
-            if (electionType === 'council') {
-                const members = this.getCouncilMembers(regionKey, districtName);
-                return members.map(m => ({
-                    name: m.name, party: m.party || 'independent',
-                    career: m.career || '', isIncumbent: false, status: 'EXPECTED'
-                }));
-            }
-            // 기초의원: 현직 데이터에서 선거구 키로 직접 조회
-            if (electionType === 'localCouncil') {
-                const lcData = this._localCouncilMembersCache;
-                if (lcData?.sigungus) {
-                    const normalizedDist = districtName.replace(/\s+/g, '');
-                    const key = `${regionKey}_${normalizedDist}`;
-                    const entry = lcData.sigungus[key]
-                        || lcData.sigungus[`${regionKey}_${districtName}`];
-                    if (entry?.members?.length) {
-                        return entry.members.map(mem => ({
-                            name: mem.name, party: mem.party || 'independent',
-                            career: mem.career || '', isIncumbent: false, status: 'EXPECTED'
-                        }));
-                    }
-                }
-            }
+            // 광역의원/기초의원: 후보자 API 데이터가 없으면 빈 배열
+            // (본후보 등록 5/14~15 이후 수집 예정, 현직 데이터를 후보자로 표시하지 않음)
             return [];
         },
 
