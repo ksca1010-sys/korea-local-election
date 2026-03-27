@@ -1,6 +1,64 @@
 {
-  "last_id": 17915,
+  "last_id": 17931,
   "polls": [
+    {
+      "nttId": 17925,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한국갤럽조사연구소",
+      "clientOrg": "조사기관 자체 : 한국갤럽 자체 조사",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-24",
+        "end": "2026-03-25"
+      },
+      "publishDate": "2026-03-27",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17925&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-03-27"
+    },
+    {
+      "nttId": 17918,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "리서치웰",
+      "clientOrg": "인터넷언론 : 뉴데일리",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1003,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-25",
+        "end": "2026-03-26"
+      },
+      "publishDate": "2026-03-27",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "title": "전국   정당지지도 정기(정례)조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17918&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-03-26"
+    },
     {
       "nttId": 17915,
       "registrationId": null,
@@ -42639,14 +42697,14 @@
     "lastPipelineRun": "2026-03-27",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 741,
-    "withRegistrationDate": 738,
+    "pollCount": 743,
+    "withRegistrationDate": 740,
     "withRegistrationId": 670,
     "withResults": 707,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
+      "party_support": 98,
       "mayor": 239,
-      "party_support": 96,
       "district_mayor": 389,
       "superintendent": 17
     }
