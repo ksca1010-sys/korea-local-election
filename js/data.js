@@ -767,23 +767,23 @@ const ElectionData = (() => {
     }
 
     // 한국갤럽 전국 정당 지지율 데이터 (#4)
-    // 데일리 오피니언 제656호 (2026년 3월 3주)
+    // 데일리 오피니언 제657호 (2026년 3월 4주)
     const gallupNationalPoll = {
         source: '한국갤럽',
-        surveyDate: '2026년 3월 3주',
-        publishDate: '2026-03-19',
-        sampleSize: 1004,
+        surveyDate: '2026년 3월 4주',
+        publishDate: '2026-03-26',
+        sampleSize: 1000,
         method: '',
         confidence: '95%',
         margin: 3.1,
         responseRate: '',
-        reportNo: '데일리 오피니언 제656호',
-        url: 'https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1627',
+        reportNo: '데일리 오피니언 제657호',
+        url: 'https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1629',
         data: {
             democratic: 46,
-            ppp: 20,
-            reform: 3,
-            newReform: 2,
+            ppp: 19,
+            reform: 2,
+            newReform: 3,
             independent: 27
         }
     };
