@@ -1,7 +1,7 @@
 {
   "sido": "대구광역시",
   "sido_code": "27",
-  "total_seats": 29,
+  "total_seats": 30,
   "districts": [
     {
       "name": "중구 제1선거구",
@@ -317,6 +317,13 @@
       "dongs": [
         "다사읍",
         "하빈면"
+      ]
+    },
+    {
+      "name": "군위군 선거구",
+      "sigungu": "군위군",
+      "dongs": [
+        "군위군 일원"
       ]
     }
   ]

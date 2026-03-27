@@ -64,7 +64,8 @@
         "북구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 63.5 }, { "party": "democratic", "seats": 1, "voteShare": 26.8 }] },
         "수성구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 2, "voteShare": 70.1 }] },
         "달서구": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 64.8 }, { "party": "democratic", "seats": 1, "voteShare": 25.5 }] },
-        "달성군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 62.3 }, { "party": "democratic", "seats": 1, "voteShare": 28.0 }] }
+        "달성군": { "totalSeats": 2, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 62.3 }, { "party": "democratic", "seats": 1, "voteShare": 28.0 }] },
+        "군위군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 71.0 }] }
       }
     },
     "incheon": {
@@ -282,8 +283,7 @@
         "예천군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 69.5 }] },
         "봉화군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 68.8 }] },
         "울진군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 67.2 }] },
-        "울릉군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.5 }] },
-        "군위군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 71.0 }] }
+        "울릉군": { "totalSeats": 1, "parties": [{ "party": "ppp", "seats": 1, "voteShare": 65.5 }] }
       }
     },
     "gyeongnam": {

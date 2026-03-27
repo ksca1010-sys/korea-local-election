@@ -9,6 +9,7 @@ const MapModule = (() => {
     let mapData = null;
     let districtGeoCache = null;
     let districtGeoPromise = null;
+    let _muniTopoCache = null; // raw TopoJSON (topojson.merge용)
     const subdistrictGeoCache = {};
     const subdistrictGeoPromise = {};
     let currentMapMode = 'province'; // 'province' | 'district' | 'subdistrict'
@@ -29,6 +30,11 @@ const MapModule = (() => {
     };
     const councilGeoCache = {};  // 광역의원 선거구 GeoJSON 캐시
     const councilTopoCache = {}; // 광역의원 선거구 raw TopoJSON 캐시
+
+    // 시군구 TopoJSON URL (전체 지도 합성 + 시군구 drilldown 공용)
+    const LOCAL_DISTRICT_TOPO = 'data/skorea-municipalities-2018-topo-changwon.json?v=3';
+    const REMOTE_DISTRICT_TOPO =
+        'https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2018/json/skorea-municipalities-2018-topo.json';
 
     // Province code to region key mapping (KOSTAT 코드 기준 - GeoJSON과 동일)
     const codeMapping = {
@@ -83,9 +89,15 @@ const MapModule = (() => {
 
     function getRegionKey(feature) {
         const props = feature.properties;
+        // Priority 0: code 기반 매핑 (시군구 merge로 합성된 광역 경계 지원)
+        const code = props.code;
+        if (code && codeMapping[String(code)]) return codeMapping[String(code)];
         // Priority 1: Try name-based mapping (most reliable)
         const name = props.name || props.NAME || props.CTP_KOR_NM || props.KOR_NM;
         if (name && nameMapping[name]) return nameMapping[name];
+        // Priority 1.5: regionKey가 직접 설정된 경우 (합성 features)
+        if (name && codeMapping[name]) return codeMapping[name];
+        if (name && Object.values(codeMapping).includes(name)) return name;
         // Priority 2: Try English name mapping
         const nameEng = props.name_eng;
         if (nameEng) {
@@ -247,6 +259,7 @@ const MapModule = (() => {
     }
 
     // 단일 기초단체장 도시의 구들을 런타임에 하나의 폴리곤으로 합산 (11개 시 전체)
+    // topojson.merge를 사용해 내부 경계선을 제거한 깨끗한 외곽선만 남김
     function mergeSingleMayorCityFeatures(regionKey, features) {
         if (currentElectionType !== 'mayor' && currentElectionType !== 'localCouncil') return features;
 
@@ -268,15 +281,39 @@ const MapModule = (() => {
 
         const mergedFeatures = [];
         cityGroups.forEach(({ cfg, feats }) => {
-            const coords = feats.flatMap(extractPolygonCoordinates);
-            if (!coords.length) { others.push(...feats); return; }
+            let mergedGeometry = null;
+
+            // topojson.merge 시도 — 내부 경계 제거된 깨끗한 외곽선
+            if (_muniTopoCache) {
+                try {
+                    const objKey = Object.keys(_muniTopoCache.objects)[0];
+                    const codeBase = cfg.mergedCode.substring(0, 4); // e.g. '3304' for 청주시
+                    const geoms = _muniTopoCache.objects[objKey].geometries.filter(g => {
+                        const name = g.properties?.name || '';
+                        return cfg.guMatchFn(name) || cfg.aliasPattern.test(name);
+                    });
+                    if (geoms.length > 0) {
+                        mergedGeometry = topojson.merge(_muniTopoCache, geoms);
+                    }
+                } catch (e) {
+                    // fallback to coordinate concat
+                }
+            }
+
+            // fallback: 좌표 단순 결합
+            if (!mergedGeometry) {
+                const coords = feats.flatMap(extractPolygonCoordinates);
+                if (!coords.length) { others.push(...feats); return; }
+                mergedGeometry = { type: 'MultiPolygon', coordinates: coords };
+            }
+
             mergedFeatures.push({
                 type: 'Feature',
                 properties: {
                     SIG_KOR_NM: cfg.cityName, SIG_NM: cfg.cityName,
                     NAME: cfg.cityName, name: cfg.cityName,
                 },
-                geometry: { type: 'MultiPolygon', coordinates: coords },
+                geometry: mergedGeometry,
                 mergedCity: cfg.cityName,
             });
         });
@@ -432,18 +469,47 @@ const MapModule = (() => {
         projection = d3.geoMercator();
         path = d3.geoPath().projection(projection);
 
-        // Load TopoJSON data
+        // Load TopoJSON data — 시군구 TopoJSON에서 광역 경계를 합성
+        // (2023.7.1 군위군 대구 편입 등 행정구역 변경이 시군구 코드에 반영되어 있으므로
+        //  시군구를 merge하면 최신 광역 경계가 자동으로 생성됨)
         try {
-            const topoUrl = 'data/skorea-provinces-2018-topo.json';
-            const response = await fetch(topoUrl);
-            if (!response.ok) throw new Error('Failed to fetch');
-            const topoData = await response.json();
+            const muniRes = await fetch(LOCAL_DISTRICT_TOPO);
+            if (!muniRes.ok) throw new Error('Failed to fetch municipalities topo');
+            const muniTopo = await muniRes.json();
+            const muniObjKey = Object.keys(muniTopo.objects)[0];
 
-            // Extract features
-            const objectKey = Object.keys(topoData.objects)[0];
-            mapData = topojson.feature(topoData, topoData.objects[objectKey]);
+            // 시군구 GeoJSON을 districtGeoCache에 미리 저장 (drilldown 시 재사용)
+            _muniTopoCache = muniTopo; // topojson.merge용 원본 보관
+            districtGeoCache = topojson.feature(muniTopo, muniTopo.objects[muniObjKey]);
 
-            // Fit projection to container with padding
+            // 시군구 code 앞 2자리로 그룹핑 → topojson.merge로 광역 경계 합성
+            const geometries = muniTopo.objects[muniObjKey].geometries;
+            const byProvince = {};
+            geometries.forEach(geom => {
+                const code = geom.properties && geom.properties.code;
+                if (!code) return;
+                const prefix = String(code).substring(0, 2);
+                if (!byProvince[prefix]) byProvince[prefix] = [];
+                byProvince[prefix].push(geom);
+            });
+
+            const mergedFeatures = [];
+            for (const [prefix, geoms] of Object.entries(byProvince)) {
+                try {
+                    const merged = topojson.merge(muniTopo, geoms);
+                    const regionKey = codeMapping[prefix] || prefix;
+                    mergedFeatures.push({
+                        type: 'Feature',
+                        properties: { code: prefix, name: regionKey },
+                        geometry: merged
+                    });
+                } catch (mergeErr) {
+                    console.warn(`Province merge failed for prefix ${prefix}:`, mergeErr);
+                }
+            }
+
+            mapData = { type: 'FeatureCollection', features: mergedFeatures };
+
             const padX = 20;
             const padY = 10;
             projection.fitExtent(
@@ -454,8 +520,21 @@ const MapModule = (() => {
 
             renderMap();
         } catch (error) {
-            console.warn('TopoJSON fetch failed, using fallback:', error);
-            renderFallbackMap();
+            console.warn('Province merge from municipalities failed, falling back to province topo:', error);
+            try {
+                const provRes = await fetch('data/skorea-provinces-2018-topo.json');
+                if (!provRes.ok) throw new Error('Province topo fetch failed');
+                const provTopo = await provRes.json();
+                const provObjKey = Object.keys(provTopo.objects)[0];
+                mapData = topojson.feature(provTopo, provTopo.objects[provObjKey]);
+                const padX = 20, padY = 10;
+                projection.fitExtent([[padX, padY], [width - padX, height - padY]], mapData);
+                path = d3.geoPath().projection(projection);
+                renderMap();
+            } catch (fallbackErr) {
+                console.warn('All map loads failed, using fallback:', fallbackErr);
+                renderFallbackMap();
+            }
         }
 
         // Setup zoom controls
@@ -732,11 +811,11 @@ const MapModule = (() => {
                 </div>
                 <div class="tooltip-row">
                     <span class="label">유권자 수</span>
-                    <span class="value">${(region.voters / 10000).toFixed(0)}만명</span>
+                    <span class="value">${region.voters ? (region.voters / 10000).toFixed(0) + '만명' : '정보 없음'}</span>
                 </div>
                 <div class="tooltip-row">
                     <span class="label">지난 투표율</span>
-                    <span class="value">${region.prevElection.turnout}%</span>
+                    <span class="value">${region.prevElection?.turnout != null ? region.prevElection.turnout + '%' : '정보 없음'}</span>
                 </div>
             `;
 
@@ -882,11 +961,11 @@ const MapModule = (() => {
                     ${partyRows}
                     <div class="tooltip-row">
                         <span class="label">유권자 수</span>
-                        <span class="value">${(region.voters / 10000).toFixed(0)}만명</span>
+                        <span class="value">${region.voters ? (region.voters / 10000).toFixed(0) + '만명' : '정보 없음'}</span>
                     </div>
                     <div class="tooltip-row">
                         <span class="label">지난 투표율</span>
-                        <span class="value">${region.prevElection.turnout}%</span>
+                        <span class="value">${region.prevElection?.turnout != null ? region.prevElection.turnout + '%' : '정보 없음'}</span>
                     </div>
                     <div class="tooltip-row" style="color:#888;font-size:11px">클릭하여 선거구 보기</div>
                 `;
@@ -928,6 +1007,9 @@ const MapModule = (() => {
                 </div>`;
             }
 
+            const govVoterText = region.voters ? `${(region.voters / 10000).toFixed(0)}만명` : '정보 없음';
+            const govTurnoutText = region.prevElection?.turnout != null ? `${region.prevElection.turnout}%` : '정보 없음';
+
             tooltipHtml = `
                 <div class="tooltip-title">
                     <span class="tooltip-party-dot" style="background:${gov?.acting ? '#f59e0b' : partyColor}"></span>
@@ -936,11 +1018,11 @@ const MapModule = (() => {
                 ${govRow}
                 <div class="tooltip-row">
                     <span class="label">유권자 수</span>
-                    <span class="value">${(region.voters / 10000).toFixed(0)}만명</span>
+                    <span class="value">${govVoterText}</span>
                 </div>
                 <div class="tooltip-row">
                     <span class="label">지난 투표율</span>
-                    <span class="value">${region.prevElection.turnout}%</span>
+                    <span class="value">${govTurnoutText}</span>
                 </div>
             `;
         }
@@ -964,21 +1046,38 @@ const MapModule = (() => {
         _mapTooltip.style.top = y + 'px';
     }
 
+    let _tooltipPinned = false;
+
     function handleMouseOut() {
         if (!_mapTooltip) return;
+        if (_tooltipPinned) return; // 클릭으로 고정된 상태면 유지
         _mapTooltip.classList.remove('active');
         _mapTooltip.style.display = '';
+    }
+
+    function _pinTooltip(durationMs) {
+        _tooltipPinned = true;
+        setTimeout(() => {
+            _tooltipPinned = false;
+            if (_mapTooltip) {
+                _mapTooltip.classList.remove('active');
+                _mapTooltip.style.display = '';
+            }
+        }, durationMs);
     }
 
     function handleClick(event, d) {
         const key = getRegionKey(d);
         if (!key) return;
         if (!handleRegionSelection(key)) return;
+        // 클릭 시 툴팁을 2초간 고정
+        _pinTooltip(2000);
         selectRegion(key);
     }
 
     function handleClickFallback(event, key) {
         if (!key || !handleRegionSelection(key)) return;
+        _pinTooltip(2000);
         selectRegion(key);
     }
 
@@ -1011,18 +1110,6 @@ const MapModule = (() => {
                 renderTemporaryTooltip(`${region.name}에는 재보궐선거가 없습니다.`);
                 return false;
             }
-        }
-
-        const badgeParts = [];
-        if (region.actingHead) {
-            badgeParts.push(`권한대행 ${region.actingHead.name}`);
-        }
-        if (region.specialNotes?.length) {
-            badgeParts.push(region.specialNotes.join(' · '));
-        }
-
-        if (badgeParts.length) {
-            renderTemporaryTooltip(badgeParts.join(' · '));
         }
 
         return true;
@@ -1293,9 +1380,7 @@ const MapModule = (() => {
         }
     }
 
-    const LOCAL_DISTRICT_TOPO = 'data/skorea-municipalities-2018-topo-changwon.json?v=2';
-    const REMOTE_DISTRICT_TOPO =
-        'https://raw.githubusercontent.com/southkorea/southkorea-maps/master/kostat/2018/json/skorea-municipalities-2018-topo.json';
+    // LOCAL_DISTRICT_TOPO, REMOTE_DISTRICT_TOPO: 파일 상단에 선언됨
 
     function loadDistrictGeo() {
         if (districtGeoCache) return Promise.resolve(districtGeoCache);
@@ -2562,18 +2647,20 @@ const MapModule = (() => {
         // ── 기초의원 모드: 시군구 내 기초의회 정보 ──
         if (currentElectionType === 'localCouncil') {
             const councilInfo = summary.council;
-            const seats = councilInfo?.seats || '자료 없음';
+            let seats = councilInfo?.seats;
 
-            // 현직 의원 데이터 연동
-            const lcData = ElectionData.getLocalCouncilMembers?.(regionKey, districtName);
+            // council_seats.json에서 직접 조회 (fallback)
+            const seatsKey = `${regionKey}_${districtName}`;
+            const seatsRaw = ElectionData._councilSeatsCache?.localCouncil?.[seatsKey];
+            if (!seats && seatsRaw) seats = seatsRaw.seats;
+            const seatsDisplay = typeof seats === 'number' ? seats + '석' : '자료 없음';
+
+            // 정당별 의석 (council_seats.json partyBreakdown 활용)
             let partyRows = '';
             let memberCount = '';
-            if (lcData) {
-                memberCount = `<div class="tooltip-row">
-                    <span class="label">현직 의원</span>
-                    <span class="value">${lcData.members.length}명</span>
-                </div>`;
-                const sorted = Object.entries(lcData.parties || {}).sort((a, b) => b[1] - a[1]);
+            const breakdown = seatsRaw?.partyBreakdown || councilInfo?.partyBreakdown;
+            if (breakdown) {
+                const sorted = Object.entries(breakdown).sort((a, b) => b[1] - a[1]);
                 partyRows = sorted.map(([p, count]) => {
                     const pc = ElectionData.getPartyColor(p);
                     return `<div class="tooltip-row">
@@ -2581,13 +2668,30 @@ const MapModule = (() => {
                         <span class="value">${count}석</span>
                     </div>`;
                 }).join('');
+            } else {
+                // local_council_members.json fallback
+                const lcData = ElectionData.getLocalCouncilMembers?.(regionKey, districtName);
+                if (lcData) {
+                    memberCount = `<div class="tooltip-row">
+                        <span class="label">현직 의원</span>
+                        <span class="value">${lcData.members.length}명</span>
+                    </div>`;
+                    const sorted = Object.entries(lcData.parties || {}).sort((a, b) => b[1] - a[1]);
+                    partyRows = sorted.map(([p, count]) => {
+                        const pc = ElectionData.getPartyColor(p);
+                        return `<div class="tooltip-row">
+                            <span class="label"><span style="display:inline-block;width:10px;height:10px;border-radius:2px;background:${pc};margin-right:4px;vertical-align:middle;"></span>${ElectionData.getPartyName(p)}</span>
+                            <span class="value">${count}석</span>
+                        </div>`;
+                    }).join('');
+                }
             }
 
             tooltip.innerHTML = `
                 <div class="tooltip-title">${summary.name} 기초의회</div>
                 <div class="tooltip-row">
                     <span class="label">의석수</span>
-                    <span class="value">${typeof seats === 'number' ? seats + '석' : seats}</span>
+                    <span class="value">${seatsDisplay}</span>
                 </div>
                 ${memberCount}
                 ${partyRows}
@@ -3277,7 +3381,7 @@ const MapModule = (() => {
             </div>
             <div class="tooltip-row">
                 <span class="label">전 투표율</span>
-                <span class="value">${prev.turnout}%</span>
+                <span class="value">${prev.turnout != null ? prev.turnout + '%' : '정보 없음'}</span>
             </div>` : ''}
         `;
         tooltip.classList.add('active');

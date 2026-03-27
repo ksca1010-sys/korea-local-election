@@ -1,13 +1,14 @@
 {
   "sido": "대구광역시",
   "sido_code": "27",
-  "total_districts": 40,
-  "total_sigungus": 8,
-  "total_seats": 105,
+  "total_districts": 42,
+  "total_sigungus": 9,
+  "total_seats": 111,
   "sigungus": [
     "남구",
     "달서구",
     "달성군",
+    "군위군",
     "동구",
     "북구",
     "서구",
@@ -435,6 +436,28 @@
       "dongs": [
         "다사읍",
         "하빈면"
+      ]
+    },
+    {
+      "sigungu": "군위군",
+      "name": "군위군 가선거구",
+      "seats": 3,
+      "dongs": [
+        "군위읍",
+        "소보면",
+        "효령면"
+      ]
+    },
+    {
+      "sigungu": "군위군",
+      "name": "군위군 나선거구",
+      "seats": 3,
+      "dongs": [
+        "부계면",
+        "우보면",
+        "의흥면",
+        "산성면",
+        "삼국유사면"
       ]
     }
   ]

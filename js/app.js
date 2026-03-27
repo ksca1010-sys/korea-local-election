@@ -1178,6 +1178,7 @@ const App = (() => {
                 results.classList.remove('active');
                 results.innerHTML = '';
                 activeIdx = -1;
+                input.setAttribute('aria-expanded', 'false');
                 return;
             }
 
@@ -1329,6 +1330,7 @@ const App = (() => {
             }
             results.classList.add('active');
             results.scrollTop = 0;
+            input.setAttribute('aria-expanded', 'true');
         }
 
         function highlightMatch(text, query) {

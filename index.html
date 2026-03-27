@@ -64,15 +64,15 @@
             <span class="header-subtitle">제9회 전국동시지방선거 | 2026.06.03</span>
         </div>
         <div class="header-center">
-            <div class="search-box">
+            <div class="search-box" role="search">
                 <div class="search-inner">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" id="region-search" placeholder="지역·읍면동으로 선거구 검색" autocomplete="off">
+                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
+                    <input type="text" id="region-search" placeholder="지역·읍면동으로 선거구 검색" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="search-results" aria-label="지역 검색" aria-autocomplete="list">
                 </div>
                 <button class="search-btn" type="button" aria-label="검색">
-                    <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </button>
-                <div id="search-results" class="search-results" aria-live="polite"></div>
+                <div id="search-results" class="search-results" role="listbox" aria-live="polite" aria-label="검색 결과"></div>
             </div>
         </div>
         <div class="header-right">

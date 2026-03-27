@@ -443,6 +443,14 @@
         "democratic": 2
       }
     },
+    "daegu_군위군": {
+      "seats": 6,
+      "majorityParty": "ppp",
+      "partyBreakdown": {
+        "ppp": 4,
+        "independent": 2
+      }
+    },
     "daejeon_대덕구": {
       "seats": 7,
       "majorityParty": "democratic",
@@ -708,14 +716,6 @@
       "partyBreakdown": {
         "ppp": 18,
         "democratic": 4
-      }
-    },
-    "gyeongbuk_군위군": {
-      "seats": 6,
-      "majorityParty": "ppp",
-      "partyBreakdown": {
-        "ppp": 4,
-        "independent": 2
       }
     },
     "gyeongbuk_김천시": {

@@ -750,34 +750,6 @@
             "tier2": []
           }
         },
-        "군위군": {
-          "outlets": [
-            {
-              "name": "경북매일신문",
-              "count": 0,
-              "types": [
-                "newspaper"
-              ]
-            },
-            {
-              "name": "경상매일신문",
-              "count": 0,
-              "types": [
-                "newspaper"
-              ]
-            }
-          ],
-          "priorityNames": [
-            "경북매일신문",
-            "경상매일신문"
-          ],
-          "hosts": {
-            "tier1": [
-              "kbmaeil.com"
-            ],
-            "tier2": []
-          }
-        },
         "의성군": {
           "outlets": [
             {
@@ -3310,6 +3282,34 @@
           "hosts": {
             "tier1": [
               "imaeil.com"
+            ],
+            "tier2": []
+          }
+        },
+        "군위군": {
+          "outlets": [
+            {
+              "name": "경북매일신문",
+              "count": 0,
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경상매일신문",
+              "count": 0,
+              "types": [
+                "newspaper"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "경북매일신문",
+            "경상매일신문"
+          ],
+          "hosts": {
+            "tier1": [
+              "kbmaeil.com"
             ],
             "tier2": []
           }

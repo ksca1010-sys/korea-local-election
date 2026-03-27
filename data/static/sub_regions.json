@@ -659,6 +659,20 @@
       "prevElection": {
         "turnout": 42.6
       }
+    },
+    {
+      "name": "군위군",
+      "population": 22000,
+      "leadParty": "ppp",
+      "mayor": {
+        "name": "김진열",
+        "party": "ppp"
+      },
+      "keyIssue": "대구 편입 후 발전",
+      "voters": 22054,
+      "prevElection": {
+        "turnout": 80.9
+      }
     }
   ],
   "incheon": [
@@ -2434,20 +2448,6 @@
       "voters": 8339,
       "prevElection": {
         "turnout": 81.5
-      }
-    },
-    {
-      "name": "군위군",
-      "population": 22000,
-      "leadParty": "ppp",
-      "mayor": {
-        "name": "김진열",
-        "party": "ppp"
-      },
-      "keyIssue": "대구 편입 후 발전",
-      "voters": 22054,
-      "prevElection": {
-        "turnout": 80.9
       }
     }
   ],

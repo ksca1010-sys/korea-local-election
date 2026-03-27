@@ -148,13 +148,18 @@ async function handleGoogleNews(url, env, request) {
     });
   }
 
-  // Google News RSS fetch
+  // Google News RSS fetch (재시도 포함)
   const gnewsUrl = `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
 
   try {
-    const resp = await fetch(gnewsUrl, {
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ElectionNewsBot/1.0)' },
-    });
+    let resp;
+    for (let attempt = 0; attempt < 3; attempt++) {
+      resp = await fetch(gnewsUrl, {
+        headers: { 'User-Agent': 'Mozilla/5.0 (compatible; ElectionNewsBot/1.0)' },
+      });
+      if (resp.ok || resp.status < 500) break;
+      if (attempt < 2) await new Promise(r => setTimeout(r, 500 * (attempt + 1)));
+    }
 
     if (!resp.ok) {
       return jsonResponse({ error: 'Google News fetch failed', status: resp.status }, 502);

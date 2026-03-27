@@ -783,6 +783,8 @@ RAW_DATA = {
         {"name": "배한철", "party": "국민의힘", "district": "경산시 제2선거구"},
         {"name": "박채아", "party": "국민의힘", "district": "경산시 제3선거구"},
         {"name": "이철식", "party": "국민의힘", "district": "경산시 제4선거구"},
+        # NOTE: 군위군은 2023.7.1 대구 편입. 8회 지선(2022)은 경북 소속이었으나,
+        # 9회 지선(2026)부터는 대구 소속. council_members.json에서는 daegu로 이동 완료.
         {"name": "박창석", "party": "국민의힘", "district": "군위군 선거구"},
         {"name": "최태림", "party": "국민의힘", "district": "의성군 제1선거구"},
         {"name": "이충원", "party": "국민의힘", "district": "의성군 제2선거구"},

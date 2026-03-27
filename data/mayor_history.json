@@ -4262,6 +4262,89 @@
         "turnout": 42.6
       }
     ],
+    "daegu/군위군": [
+      {
+        "election": 3,
+        "year": 2002,
+        "winner": "ppp",
+        "winnerName": "박영언",
+        "winnerParty": "한나라당",
+        "rate": 100.0,
+        "regionKey": "daegu",
+        "district": "군위군"
+      },
+      {
+        "election": 4,
+        "year": 2006,
+        "winner": "independent",
+        "winnerName": "박영언",
+        "winnerParty": "무소속",
+        "rate": 40.46,
+        "regionKey": "daegu",
+        "district": "군위군",
+        "runnerName": "장욱",
+        "runnerParty": "한나라당",
+        "runner": "ppp",
+        "runnerRate": 38.52
+      },
+      {
+        "election": 5,
+        "year": 2010,
+        "winner": "ppp",
+        "winnerName": "장욱",
+        "winnerParty": "한나라당",
+        "rate": 45.98,
+        "regionKey": "daegu",
+        "district": "군위군",
+        "runnerName": "김영만",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 44.14
+      },
+      {
+        "election": 6,
+        "year": 2014,
+        "winner": "independent",
+        "winnerName": "김영만",
+        "winnerParty": "무소속",
+        "rate": 52.57,
+        "regionKey": "daegu",
+        "district": "군위군",
+        "runnerName": "장욱",
+        "runnerParty": "새누리당",
+        "runner": "ppp",
+        "runnerRate": 47.42
+      },
+      {
+        "election": 7,
+        "year": 2018,
+        "winner": "ppp",
+        "winnerName": "김영만",
+        "winnerParty": "자유한국당",
+        "rate": 48.2,
+        "regionKey": "daegu",
+        "district": "군위군",
+        "runnerName": "장욱",
+        "runnerParty": "무소속",
+        "runner": "independent",
+        "runnerRate": 37.25
+      },
+      {
+        "election": 8,
+        "year": 2022,
+        "winner": "ppp",
+        "winnerName": "김진열",
+        "winnerParty": "국민의힘",
+        "rate": 50.31,
+        "regionKey": "daegu",
+        "district": "군위군",
+        "runner": "independent",
+        "runnerName": "김영만",
+        "runnerParty": "무소속",
+        "runnerRate": 49.69,
+        "turnout": 80.9
+      }
+    ],
     "incheon/중구": [
       {
         "election": 3,
@@ -17413,89 +17496,6 @@
         "runnerParty": "더불어민주당",
         "runnerRate": 24.38,
         "turnout": 43.7
-      }
-    ],
-    "gyeongbuk/군위군": [
-      {
-        "election": 3,
-        "year": 2002,
-        "winner": "ppp",
-        "winnerName": "박영언",
-        "winnerParty": "한나라당",
-        "rate": 100.0,
-        "regionKey": "gyeongbuk",
-        "district": "군위군"
-      },
-      {
-        "election": 4,
-        "year": 2006,
-        "winner": "independent",
-        "winnerName": "박영언",
-        "winnerParty": "무소속",
-        "rate": 40.46,
-        "regionKey": "gyeongbuk",
-        "district": "군위군",
-        "runnerName": "장욱",
-        "runnerParty": "한나라당",
-        "runner": "ppp",
-        "runnerRate": 38.52
-      },
-      {
-        "election": 5,
-        "year": 2010,
-        "winner": "ppp",
-        "winnerName": "장욱",
-        "winnerParty": "한나라당",
-        "rate": 45.98,
-        "regionKey": "gyeongbuk",
-        "district": "군위군",
-        "runnerName": "김영만",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 44.14
-      },
-      {
-        "election": 6,
-        "year": 2014,
-        "winner": "independent",
-        "winnerName": "김영만",
-        "winnerParty": "무소속",
-        "rate": 52.57,
-        "regionKey": "gyeongbuk",
-        "district": "군위군",
-        "runnerName": "장욱",
-        "runnerParty": "새누리당",
-        "runner": "ppp",
-        "runnerRate": 47.42
-      },
-      {
-        "election": 7,
-        "year": 2018,
-        "winner": "ppp",
-        "winnerName": "김영만",
-        "winnerParty": "자유한국당",
-        "rate": 48.2,
-        "regionKey": "gyeongbuk",
-        "district": "군위군",
-        "runnerName": "장욱",
-        "runnerParty": "무소속",
-        "runner": "independent",
-        "runnerRate": 37.25
-      },
-      {
-        "election": 8,
-        "year": 2022,
-        "winner": "ppp",
-        "winnerName": "김진열",
-        "winnerParty": "국민의힘",
-        "rate": 50.31,
-        "regionKey": "gyeongbuk",
-        "district": "군위군",
-        "runner": "independent",
-        "runnerName": "김영만",
-        "runnerParty": "무소속",
-        "runnerRate": 49.69,
-        "turnout": 80.9
       }
     ],
     "gyeongbuk/의성군": [

@@ -453,7 +453,7 @@ MUNICIPAL_MEDIA = {
     "봉화군": {"metro": "경상북도", "media": []},
     "울진군": {"metro": "경상북도", "media": [{"name": "울진신문", "src": "p"}]},
     "울릉군": {"metro": "경상북도", "media": []},
-    "군위군": {"metro": "경상북도", "media": []},
+    "군위군": {"metro": "대구광역시", "media": []},
 
     # ── 경남 (18시군) ──
     "창원시": {"metro": "경상남도", "media": [{"name": "MBC경남", "src": "p"}, {"name": "KBS창원", "src": "p"}]},

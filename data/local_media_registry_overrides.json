@@ -2453,6 +2453,29 @@
               ]
             }
           ]
+        },
+        "군위군": {
+          "promoteNames": [
+            "경북매일신문",
+            "경상매일신문"
+          ],
+          "tier1Hosts": [
+            "kbmaeil.com"
+          ],
+          "seedOutlets": [
+            {
+              "name": "경북매일신문",
+              "types": [
+                "newspaper"
+              ]
+            },
+            {
+              "name": "경상매일신문",
+              "types": [
+                "newspaper"
+              ]
+            }
+          ]
         }
       }
     },
@@ -5655,29 +5678,6 @@
           ]
         },
         "칠곡군": {
-          "promoteNames": [
-            "경북매일신문",
-            "경상매일신문"
-          ],
-          "tier1Hosts": [
-            "kbmaeil.com"
-          ],
-          "seedOutlets": [
-            {
-              "name": "경북매일신문",
-              "types": [
-                "newspaper"
-              ]
-            },
-            {
-              "name": "경상매일신문",
-              "types": [
-                "newspaper"
-              ]
-            }
-          ]
-        },
-        "군위군": {
           "promoteNames": [
             "경북매일신문",
             "경상매일신문"

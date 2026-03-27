@@ -1227,10 +1227,17 @@
             "party": "ppp",
             "partyName": "국민의힘"
           }
+        ],
+        "군위군 선거구": [
+          {
+            "name": "박창석",
+            "party": "ppp",
+            "partyName": "국민의힘"
+          }
         ]
       },
-      "totalMembers": 29,
-      "totalDistricts": 29
+      "totalMembers": 30,
+      "totalDistricts": 30
     },
     "incheon": {
       "districtMembers": {
@@ -4793,13 +4800,6 @@
             "partyName": "국민의힘"
           }
         ],
-        "군위군 선거구": [
-          {
-            "name": "박창석",
-            "party": "ppp",
-            "partyName": "국민의힘"
-          }
-        ],
         "의성군 제1선거구": [
           {
             "name": "최태림",
@@ -4906,8 +4906,8 @@
           }
         ]
       },
-      "totalMembers": 55,
-      "totalDistricts": 55
+      "totalMembers": 54,
+      "totalDistricts": 54
     },
     "gyeongnam": {
       "districtMembers": {

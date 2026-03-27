@@ -10138,6 +10138,98 @@
             }
           ]
         }
+      },
+      "군위군": {
+        "totalSeats": 1,
+        "elections": [
+          {
+            "electionNumber": 8,
+            "year": 2022,
+            "voteShare": [
+              {
+                "party": "국민의힘",
+                "percent": 57.06
+              },
+              {
+                "party": "무소속",
+                "percent": 42.94
+              }
+            ],
+            "seatDistribution": [
+              {
+                "party": "국민의힘",
+                "seats": 1
+              }
+            ]
+          },
+          {
+            "electionNumber": 5,
+            "year": 2010,
+            "seatDistribution": [
+              {
+                "party": "한나라당",
+                "seats": 1
+              }
+            ],
+            "voteShare": [
+              {
+                "party": "한나라당",
+                "percent": 55.68
+              },
+              {
+                "party": "무소속",
+                "percent": 44.32
+              }
+            ]
+          },
+          {
+            "electionNumber": 6,
+            "year": 2014,
+            "seatDistribution": [
+              {
+                "party": "새누리당",
+                "seats": 1
+              }
+            ],
+            "voteShare": [
+              {
+                "party": "새누리당",
+                "percent": 63.48
+              },
+              {
+                "party": "무소속",
+                "percent": 36.52
+              }
+            ]
+          },
+          {
+            "electionNumber": 7,
+            "year": 2018,
+            "seatDistribution": [
+              {
+                "party": "자유한국당",
+                "seats": 1
+              }
+            ],
+            "voteShare": [
+              {
+                "party": "자유한국당",
+                "percent": 61.64
+              },
+              {
+                "party": "무소속",
+                "percent": 38.36
+              }
+            ]
+          }
+        ],
+        "incumbents": {
+          "국민의힘": [
+            {
+              "name": "김영숙"
+            }
+          ]
+        }
       }
     },
     "incheon": {
@@ -29479,98 +29571,6 @@
           "국민의힘": [
             {
               "name": "한종인"
-            }
-          ]
-        }
-      },
-      "군위군": {
-        "totalSeats": 1,
-        "elections": [
-          {
-            "electionNumber": 8,
-            "year": 2022,
-            "voteShare": [
-              {
-                "party": "국민의힘",
-                "percent": 57.06
-              },
-              {
-                "party": "무소속",
-                "percent": 42.94
-              }
-            ],
-            "seatDistribution": [
-              {
-                "party": "국민의힘",
-                "seats": 1
-              }
-            ]
-          },
-          {
-            "electionNumber": 5,
-            "year": 2010,
-            "seatDistribution": [
-              {
-                "party": "한나라당",
-                "seats": 1
-              }
-            ],
-            "voteShare": [
-              {
-                "party": "한나라당",
-                "percent": 55.68
-              },
-              {
-                "party": "무소속",
-                "percent": 44.32
-              }
-            ]
-          },
-          {
-            "electionNumber": 6,
-            "year": 2014,
-            "seatDistribution": [
-              {
-                "party": "새누리당",
-                "seats": 1
-              }
-            ],
-            "voteShare": [
-              {
-                "party": "새누리당",
-                "percent": 63.48
-              },
-              {
-                "party": "무소속",
-                "percent": 36.52
-              }
-            ]
-          },
-          {
-            "electionNumber": 7,
-            "year": 2018,
-            "seatDistribution": [
-              {
-                "party": "자유한국당",
-                "seats": 1
-              }
-            ],
-            "voteShare": [
-              {
-                "party": "자유한국당",
-                "percent": 61.64
-              },
-              {
-                "party": "무소속",
-                "percent": 38.36
-              }
-            ]
-          }
-        ],
-        "incumbents": {
-          "국민의힘": [
-            {
-              "name": "김영숙"
             }
           ]
         }

@@ -2,5 +2,9 @@ name = "election-news-proxy"
 main = "index.js"
 compatibility_date = "2024-01-01"
 
+[[kv_namespaces]]
+binding = "ANALYTICS"
+id = "9b31e01259d849009422757c8ebaae27"
+
 [vars]
 # Secrets are set via `wrangler secret put`
