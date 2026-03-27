@@ -20115,15 +20115,33 @@
         "results": [
           {
             "candidateName": "박찬우",
-            "party": null,
-            "partyRaw": "",
-            "support": 12.3
+            "support": 12.3,
+            "party": null
+          },
+          {
+            "candidateName": "한태선",
+            "support": 9.3,
+            "party": null
           },
           {
             "candidateName": "장기수",
-            "party": null,
-            "partyRaw": "",
-            "support": 6.5
+            "support": 6.5,
+            "party": null
+          },
+          {
+            "candidateName": "도병수",
+            "support": 5.0,
+            "party": null
+          },
+          {
+            "candidateName": "이규희",
+            "support": 4.9,
+            "party": null
+          },
+          {
+            "candidateName": "정도희",
+            "support": 4.2,
+            "party": null
           }
         ],
         "regionKey": "chungnam",
@@ -20133,7 +20151,9 @@
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16843&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
         "registrationDate": "2025-12-15",
         "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:19:00"
+        "resultsUpdatedAt": "2026-03-17T01:19:00",
+        "_corrected": true,
+        "_correctionSource": "PDF 원본 재검증 (16843.pdf p.10)"
       },
       {
         "nttId": 16832,
