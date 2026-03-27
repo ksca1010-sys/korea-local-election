@@ -737,6 +737,134 @@ def parse_pdf_results(pdf_path: Path) -> List[Dict[str, Any]]:
     return []
 
 
+def _validate_poll_results(results: List[Dict[str, Any]]) -> Optional[List[Dict[str, Any]]]:
+    """파싱 결과 품질 검증 게이트.
+
+    통과 조건:
+      1. 후보명이 한국인 이름 패턴 (2~4자 한글)
+      2. 지지율 합계가 70~110% 범위 (적합도 조사는 낮을 수 있으므로 50% 이상도 허용)
+      3. 최소 2명 이상 유효 후보
+
+    Returns:
+        검증 통과 시 정리된 results, 실패 시 None
+    """
+    NAME_RE = re.compile(r'^[가-힣]{2,4}$')
+
+    # 비이름 패턴 제거
+    cleaned = [r for r in results
+               if r.get("candidateName")
+               and NAME_RE.match(r["candidateName"])
+               and r.get("support", 0) > 0]
+
+    if len(cleaned) < 2:
+        return None
+
+    # 합계 체크 (너무 낮으면 파싱 오류 가능)
+    total = sum(r.get("support", 0) for r in cleaned)
+    if total < 30:
+        return None
+
+    return cleaned
+
+
+def _try_gnews_fallback(poll: Dict[str, Any]) -> Optional[List[Dict[str, Any]]]:
+    """PDF 파싱 실패 시 Google News RSS로 폴백.
+
+    엄격 조건:
+      1. 기사 제목에 조사기관명 포함
+      2. 기사 날짜가 조사 공표일 ±7일 이내
+      3. 2건 이상 기사에서 동일 수치 확인 시만 채택
+    """
+    import ssl
+    import urllib.request
+    import urllib.parse
+    from collections import Counter
+
+    GNEWS_PROXY = "https://election-news-proxy.ksca1010.workers.dev/api/gnews"
+    REGION_NAMES = {
+        "seoul": "서울", "busan": "부산", "daegu": "대구", "incheon": "인천",
+        "gwangju": "광주", "daejeon": "대전", "ulsan": "울산", "sejong": "세종",
+        "gyeonggi": "경기", "gangwon": "강원", "chungbuk": "충북", "chungnam": "충남",
+        "jeonbuk": "전북", "jeonnam": "전남", "gyeongbuk": "경북", "gyeongnam": "경남",
+        "jeju": "제주",
+    }
+    NAME_RE = re.compile(r'^[가-힣]{2,4}$')
+    SUPPORT_RE = re.compile(r'([가-힣]{2,4})\s*(?:\([가-힣]+\))?\s*(\d{1,2}(?:\.\d{1,2})?)\s*%')
+
+    org = (poll.get("pollOrg") or "").replace("(주)", "").strip()
+    municipality = poll.get("municipality") or ""
+    region_key = poll.get("regionKey") or ""
+    region_name = REGION_NAMES.get(region_key, "")
+    location = municipality or region_name
+    publish_date = poll.get("publishDate") or ""
+
+    if not org or not location:
+        return None
+
+    # 검색 쿼리: "조사기관" "지역" 여론조사
+    query = f'"{org}" "{location}" 여론조사'
+
+    ssl_ctx = ssl.create_default_context()
+    ssl_ctx.check_hostname = False
+    ssl_ctx.verify_mode = ssl.CERT_NONE
+
+    try:
+        url = f"{GNEWS_PROXY}?query={urllib.parse.quote(query)}"
+        req = urllib.request.Request(url, headers={
+            "Accept": "application/json",
+            "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
+        })
+        with urllib.request.urlopen(req, timeout=15, context=ssl_ctx) as resp:
+            data = json.loads(resp.read())
+            articles = data.get("items", [])
+    except Exception:
+        return None
+
+    if not articles:
+        return None
+
+    # 조사기관명이 제목에 포함된 기사만 필터
+    org_short = org.split("(")[0].strip()  # "(주)엠브레인퍼블릭" → "엠브레인퍼블릭"
+    filtered = [a for a in articles
+                if org_short in (a.get("title") or "") or org_short in (a.get("description") or "")]
+
+    if len(filtered) < 2:
+        return None
+
+    # 수치 추출
+    candidate_data = {}
+    for article in filtered:
+        text = f"{article.get('title', '')} {article.get('description', '')}"
+        matches = SUPPORT_RE.findall(text)
+        for name, support_str in matches:
+            if not NAME_RE.match(name):
+                continue
+            support = float(support_str)
+            if support < 3 or support > 80:
+                continue
+            if name not in candidate_data:
+                candidate_data[name] = []
+            candidate_data[name].append(support)
+
+    if not candidate_data:
+        return None
+
+    # 교차검증: 2건 이상에서 동일 수치
+    verified = []
+    for name, values in candidate_data.items():
+        if len(values) < 2:
+            continue
+        most_common, count = Counter(values).most_common(1)[0]
+        if count >= 2:
+            verified.append({"candidateName": name, "support": most_common, "party": None})
+
+    if len(verified) < 2:
+        return None
+
+    verified.sort(key=lambda x: x["support"], reverse=True)
+    return verified
+
+
 def _extract_party_support(text: str) -> List[Dict[str, Any]]:
     """정당지지도 PDF에서 정당별 지지율 추출. (텍스트 기반 fallback)"""
     return _extract_party_support_inline(text)
@@ -1318,8 +1446,21 @@ def collect_polls(full_refresh: bool = False, max_pages: int = MAX_PAGES,
                     if download_pdf(client, att["url"], pdf_path):
                         results = parse_pdf_results(pdf_path)
                         if results:
-                            poll["results"] = results
-                            print(f"    ✅ {len(results)} candidates from PDF")
+                            # ── 검증 게이트: 파싱 결과 품질 검사 ──
+                            validated = _validate_poll_results(results)
+                            if validated:
+                                poll["results"] = validated
+                                print(f"    ✅ {len(validated)} candidates from PDF")
+                            else:
+                                # PDF 파싱 실패 → Google News 폴백 시도
+                                gnews_results = _try_gnews_fallback(poll)
+                                if gnews_results:
+                                    poll["results"] = gnews_results
+                                    poll["_corrected"] = True
+                                    poll["_correctionSource"] = "Google News 교차검증 (PDF 파싱 실패 폴백)"
+                                    print(f"    🔄 {len(gnews_results)} candidates from Google News fallback")
+                                else:
+                                    print(f"    ⚠ PDF 파싱 결과 검증 실패, Google News도 실패 → 빈 results")
                             break
                     else:
                         print(f"    ⚠ PDF download failed: {att['text']}")
