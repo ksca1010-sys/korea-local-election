@@ -112,3 +112,11 @@ else
 fi
 
 log "===== 완료 (오류: ${ERRORS}건) ====="
+
+# 6. 데이터 헬스체크
+log ">>> [헬스체크] 데이터 무결성 검사..."
+if python3 scripts/health_check.py >> "$LOGFILE" 2>&1; then
+    log "    통과"
+else
+    log "    [경고] 헬스체크 이상 발견 — 로그 확인 필요"
+fi
