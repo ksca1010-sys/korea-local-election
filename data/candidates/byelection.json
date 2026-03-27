@@ -735,6 +735,18 @@
           "sourceLabel": "시사저널",
           "sourceUrl": "https://www.sisajournal.com/news/articleView.html?idxno=366296",
           "sourcePublishedAt": "2026-03-21"
+        },
+        {
+          "name": "오지성",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "국민의힘 군산시김제시부안군갑 당협위원장",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-02-09"
         }
       ],
       "statusNote": "현재 제공된 최신 뉴스가 없어 기존 정보 유지. 선거일까지 약 2개월 남음.",
@@ -947,54 +959,6 @@
         }
       ],
       "voters": 170398
-    },
-    "jeonbuk-산김제부안": {
-      "district": "전북 군산시김제시부안군갑",
-      "region": "jeonbuk",
-      "type": "국회의원 보궐",
-      "subType": "보궐선거",
-      "reason": "(사유 확인 필요)",
-      "previousMember": {
-        "name": "신영대",
-        "party": "democratic"
-      },
-      "prevElection": {
-        "winner": "democratic",
-        "winnerName": "신영대",
-        "rate": 86.73,
-        "runner": "independent",
-        "runnerName": "(확인 필요)",
-        "runnerRate": 0,
-        "turnout": 0
-      },
-      "candidates": [
-        {
-          "name": "오지성",
-          "party": "ppp",
-          "partyKey": "ppp",
-          "partyName": "국민의힘",
-          "career": "국민의힘 군산시김제시부안군갑 당협위원장",
-          "status": "DECLARED",
-          "dataSource": "nec_precand",
-          "pledges": [],
-          "sourceLabel": "선관위 예비후보",
-          "sourcePublishedAt": "2026-02-09"
-        }
-      ],
-      "keyIssues": [],
-      "status": "확정",
-      "history": [
-        {
-          "election": 22,
-          "year": 2024,
-          "winner": "democratic",
-          "winnerName": "신영대",
-          "winnerParty": "더불어민주당",
-          "rate": 86.73,
-          "sggName": "군산시김제시부안군갑"
-        }
-      ],
-      "statusNote": "현재까지 제공된 최신 뉴스가 없어 기존 수집 정보만 유지 중입니다. 추가 후보 등록 및 동향 파악을 위해 지속적인 뉴스 모니터링이 필요합니다."
     }
   }
 }
