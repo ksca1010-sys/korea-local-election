@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-26",
+    "lastUpdated": "2026-03-27",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-26T01:30:13.351024",
+    "lastFactCheck": "2026-03-27T01:29:44.810040",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546"
@@ -299,12 +299,21 @@
         "name": "임성무",
         "stance": "중도",
         "career": "전 전교조 대구지부장",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": "",
         "sourceLabel": "뉴스",
-        "sourcePublishedAt": "2026-03-26"
+        "sourcePublishedAt": "2026-03-26",
+        "_lastChange": {
+          "date": "2026-03-27",
+          "type": "status_change",
+          "detail": "임성무 전 전교조 대구지부장 대구시교육감 출마 도전",
+          "previous": "EXPECTED",
+          "sourceUrl": "없음",
+          "sourceLabel": "뉴스 제목",
+          "sourcePublishedAt": "2026-03-27"
+        }
       }
     ],
     "incheon": [
@@ -416,7 +425,7 @@
         "name": "이정선",
         "stance": "진보",
         "career": "현 광주광역시 교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "AI 위기 감지 시스템 도입",
@@ -439,7 +448,16 @@
             "text": "특성화고 글로벌 취·창업 역량 강화",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-03-27",
+          "type": "status_change",
+          "detail": "이정선 광주교육감, 통합교육감 선거 예비후보 등록 / 이정선 교육감, 전남·광주 통합특별시교육감 예비후보 등록",
+          "previous": "EXPECTED",
+          "sourceUrl": "",
+          "sourceLabel": "언론보도",
+          "sourcePublishedAt": "2026-03-27"
+        }
       },
       {
         "id": "gwangju-2",
@@ -707,7 +725,7 @@
         "name": "김주홍",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "AI시대 대응 미래진로교육원 설립"
@@ -716,13 +734,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-25",
+          "date": "2026-03-27",
           "type": "status_change",
-          "detail": "김주홍 교육감 예비후보 등록.. 진보는?",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "미상",
-          "sourcePublishedAt": "2026-03-25"
+          "detail": "김주홍 울산교육감 후보 \"AI시대 대응 '미래진로교육원' 설립\"",
+          "previous": "EXPECTED",
+          "sourceUrl": "불명확",
+          "sourceLabel": "울산 지역언론",
+          "sourcePublishedAt": "2026-03-27"
         },
         "pledgeCategories": [
           {
@@ -931,20 +949,20 @@
         "name": "최광익",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "WITHDRAWN",
         "dataSource": "news_verified",
         "pledges": [
           "강원골프고 설립",
           "춘천 아시아 교육허브 조성"
         ],
         "_lastChange": {
-          "date": "2026-03-22",
+          "date": "2026-03-27",
           "type": "status_change",
-          "detail": "최광익 도교육감 예비후보 '선거에 유령후보 개입' 주장 보도",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "강원도교육감 선거",
-          "sourcePublishedAt": "2026-03-22"
+          "detail": "최광익 '불출마 권고' 관련 뉴스에서 신경호와의 신경전 언급",
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-03-27"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1440,7 +1458,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1448,13 +1466,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-03-26",
+          "date": "2026-03-27",
           "type": "status_change",
-          "detail": "예비후보 등록 완료 - '[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록'",
-          "previous": "DECLARED",
-          "sourceUrl": "https://news.example.com",
-          "sourceLabel": "경북매일",
-          "sourcePublishedAt": "2026-03-26"
+          "detail": "[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록",
+          "previous": "EXPECTED",
+          "sourceUrl": "기사 링크 필요",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-03-27"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1523,7 +1541,7 @@
         "name": "권순기",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "경남형 마을교육공동체 운영",
@@ -1534,13 +1552,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-03-27",
           "type": "status_change",
-          "detail": "경남원로회 지지선언, 자율형 교복 도입 정책 발표 등으로 예비후보 지위 확인",
-          "previous": "RUMORED",
-          "sourceUrl": "https://example.com/news",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-03-24"
+          "detail": "권순기 경남교육감 예비후보 '경남 학교 자율형 교복 도입' - 정책토론 참여 확인",
+          "previous": "EXPECTED",
+          "sourceUrl": "not_available",
+          "sourceLabel": "경남신문",
+          "sourcePublishedAt": "2026-03-27"
         },
         "pledgeCategories": [
           {

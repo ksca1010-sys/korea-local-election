@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-03-25",
+    "lastUpdated": "2026-03-27",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-03-25T01:22:13.328544",
+    "lastFactCheck": "2026-03-27T01:27:06.110421",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
