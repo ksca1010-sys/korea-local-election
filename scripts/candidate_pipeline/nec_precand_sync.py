@@ -258,3 +258,67 @@ def sync_mayor(mayor_data, nec_items):
                 fixes.append(f"[기초] {wiw} {name}: 신규 ({party_name})")
 
     return fixes
+
+
+if __name__ == "__main__":
+    """독립 실행: 선관위 API로 광역+기초+교육감 예비후보 동기화 (Claude 불필요)"""
+    from datetime import datetime
+    import argparse
+    parser = argparse.ArgumentParser(description="선관위 예비후보 동기화")
+    parser.add_argument("--dry-run", action="store_true", help="변경 사항 출력만 (파일 저장 안 함)")
+    args = parser.parse_args()
+
+    BASE = Path(__file__).resolve().parent.parent.parent / "data" / "candidates"
+    all_fixes = []
+
+    # 1) 광역단체장 (sgTypecode=3)
+    gov_path = BASE / "governor.json"
+    if gov_path.exists():
+        print("[광역단체장] 예비후보 조회...")
+        gov_data = json.loads(gov_path.read_text(encoding="utf-8"))
+        nec_gov = fetch_precandidates("3")
+        fixes = sync_governor(gov_data, nec_gov)
+        all_fixes.extend(fixes)
+        if fixes and not args.dry_run:
+            gov_data.setdefault("meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
+            gov_path.write_text(json.dumps(gov_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"  governor.json 저장 ({len(fixes)}건 변경)")
+    else:
+        print("[광역단체장] governor.json 없음 — 건너뜀")
+
+    # 2) 기초단체장 (sgTypecode=4)
+    mayor_path = BASE / "mayor_candidates.json"
+    if mayor_path.exists():
+        print("[기초단체장] 예비후보 조회...")
+        mayor_data = json.loads(mayor_path.read_text(encoding="utf-8"))
+        nec_mayor = fetch_precandidates("4")
+        fixes = sync_mayor(mayor_data, nec_mayor)
+        all_fixes.extend(fixes)
+        if fixes and not args.dry_run:
+            mayor_data.setdefault("meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
+            mayor_path.write_text(json.dumps(mayor_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"  mayor_candidates.json 저장 ({len(fixes)}건 변경)")
+    else:
+        print("[기초단체장] mayor_candidates.json 없음 — 건너뜀")
+
+    # 3) 교육감 (sgTypecode=10)
+    supt_path = BASE / "superintendent.json"
+    if supt_path.exists():
+        print("[교육감] 예비후보 조회...")
+        supt_data = json.loads(supt_path.read_text(encoding="utf-8"))
+        nec_supt = fetch_precandidates("10")
+        fixes = sync_governor(supt_data, nec_supt)
+        all_fixes.extend(fixes)
+        if fixes and not args.dry_run:
+            supt_data.setdefault("meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
+            supt_path.write_text(json.dumps(supt_data, ensure_ascii=False, indent=2), encoding="utf-8")
+            print(f"  superintendent.json 저장 ({len(fixes)}건 변경)")
+    else:
+        print("[교육감] superintendent.json 없음 — 건너뜀")
+
+    if all_fixes:
+        print(f"\n총 {len(all_fixes)}건 변경:")
+        for f in all_fixes:
+            print(f"  {f}")
+    else:
+        print("\n변경 없음")

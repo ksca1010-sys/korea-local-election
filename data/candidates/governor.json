@@ -122,7 +122,7 @@
       {
         "id": "seoul-7",
         "name": "이상규",
-        "party": "ppp",
+        "party": "progressive",
         "age": 60,
         "career": "국민의힘 성북을 당협위원장 / 경영인",
         "photo": null,
@@ -133,7 +133,9 @@
         ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "partyKey": "progressive",
+        "partyName": "진보당"
       },
       {
         "id": "seoul-8",
@@ -165,6 +167,16 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "이승현",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)한국외국기업협회 회장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "busan": [
@@ -425,6 +437,36 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "이재만",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)제25대, 제26대 대구광역시 동구청장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "김한구",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전) 현대자동차(주) 노동조합 대의원",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "이수찬",
+        "party": "newReform",
+        "partyKey": "newReform",
+        "partyName": "개혁신당",
+        "career": "(현)개혁신당 대구광역시당 위원장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "incheon": [
@@ -506,7 +548,7 @@
         "age": 62,
         "career": "現 광주시장 (재선 도전) / 前 청와대 정무수석 / 3선 국회의원",
         "photo": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [
           "AI 산업 수도 광주",
@@ -551,7 +593,7 @@
         "age": null,
         "career": "前 국회의원 (동구남구을)",
         "photo": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [],
         "sourceUrl": null,
@@ -585,6 +627,26 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "김영록",
+        "party": "democratic",
+        "partyKey": "democratic",
+        "partyName": "더불어민주당",
+        "career": "(전)농림축산식품부 장관",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "강은미",
+        "party": "justice",
+        "partyKey": "justice",
+        "partyName": "정의당",
+        "career": "(현) 정의당 광주광역시당 위원장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "daejeon": [
@@ -685,6 +747,36 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "고낙정",
+        "party": "democratic",
+        "partyKey": "democratic",
+        "partyName": "더불어민주당",
+        "career": "(전) 2006년 대전광역시장 후보자",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "송광영",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전) 대전대학교 시간강사",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "강희린",
+        "party": "newReform",
+        "partyKey": "newReform",
+        "partyName": "개혁신당",
+        "career": "(전) 한국과학기술원(KAIST) 물리학과 석사과정 연구원",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "ulsan": [
@@ -795,6 +887,26 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "송철호",
+        "party": "democratic",
+        "partyKey": "democratic",
+        "partyName": "더불어민주당",
+        "career": "(전)제7대 울산광역시장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "이철수",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "무소속",
+        "career": "(전)울산공단건설감독(건축특급감리원)",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "sejong": [
@@ -911,6 +1023,26 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "홍순식",
+        "party": "democratic",
+        "partyKey": "democratic",
+        "partyName": "더불어민주당",
+        "career": "(전) 국회의원 보좌관",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "하헌휘",
+        "party": "newReform",
+        "partyKey": "newReform",
+        "partyName": "개혁신당",
+        "career": "(현) 법률사무소 하은 대표변호사",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "gyeonggi": [
@@ -1042,6 +1174,26 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "김현욱",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "국민연합",
+        "career": "(현)국민연합 당대표",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "정국진",
+        "party": "democratic",
+        "partyKey": "democratic",
+        "partyName": "새미래민주당",
+        "career": "(전)새미래민주당 경기도당위원장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "gangwon": [
@@ -1098,6 +1250,16 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "안재윤",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)1991년도 강원도의원선거후보(26세 최연소)",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "chungbuk": [
@@ -1229,6 +1391,16 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "김수민",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)충청북도 정무부지사",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "chungnam": [
@@ -1306,16 +1478,18 @@
       {
         "id": "chungnam-5",
         "name": "나소열",
-        "party": "ppp",
+        "party": "democratic",
         "age": null,
         "career": "現 국회의원 (천안갑) / 前 천안시장",
         "photo": null,
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "partyKey": "democratic",
+        "partyName": "더불어민주당"
       }
     ],
     "jeonbuk": [
@@ -1377,6 +1551,26 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "김성수",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "무소속",
+        "career": "(현)세무사 김성수사무소 대표",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "김형찬",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "무소속",
+        "career": "(현)목사",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "jeonnam": [
@@ -1542,6 +1736,46 @@
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null
+      },
+      {
+        "name": "김재원",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(현)국민의힘 최고위원",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "최경환",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)경제부총리 겸 기획재정부장관",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "이강덕",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)제7, 8, 9대 포항시장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
+      },
+      {
+        "name": "백승주",
+        "party": "ppp",
+        "partyKey": "ppp",
+        "partyName": "국민의힘",
+        "career": "(전)국회의원",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ],
     "gyeongnam": [
@@ -1684,7 +1918,7 @@
       {
         "id": "jeju-5",
         "name": "양윤녕",
-        "party": "democratic",
+        "party": "independent",
         "age": null,
         "career": "前 소나무당 → 민주당 복당 / 前 제주도의원",
         "photo": null,
@@ -1693,8 +1927,23 @@
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "partyKey": "independent",
+        "partyName": "무소속"
+      },
+      {
+        "name": "김명호",
+        "party": "progressive",
+        "partyKey": "progressive",
+        "partyName": "진보당",
+        "career": "(전) 전국서비스산업노동조합연맹 제주지역본부 본부장",
+        "status": "DECLARED",
+        "dataSource": "nec_precand",
+        "pledges": []
       }
     ]
+  },
+  "meta": {
+    "lastUpdated": "2026-03-27"
   }
 }

@@ -290,7 +290,6 @@ const HistoryTab = (() => {
                                 : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem;">${entry.winnerParty || ElectionData.getPartyName(entry.winner)}</span>`
                             }
                         </div>
-                        ${turnout > 0 ? `<div class="ht-turnout">투표율 ${turnout.toFixed(1)}%</div>` : ''}
                     </div>
                 </div>
             `;

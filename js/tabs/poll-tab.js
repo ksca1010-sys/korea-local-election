@@ -502,6 +502,28 @@ const PollTab = (() => {
             });
         }
 
+        // party 누락 보강: 후보자 DB에서 이름 → 정당 매칭
+        const region = ElectionData.getRegion(regionKey);
+        const candidatePartyMap = {};
+        // 광역 후보
+        (region?.candidates || []).forEach(c => { if (c.name && c.party) candidatePartyMap[c.name] = c.party; });
+        // 기초 후보
+        if (districtName) {
+            try {
+                const mayorCands = ElectionData.getMayorCandidates?.(regionKey) || {};
+                (mayorCands[districtName] || []).forEach(c => { if (c.name && c.party) candidatePartyMap[c.name] = c.party; });
+            } catch (_) {}
+        }
+        if (Object.keys(candidatePartyMap).length > 0) {
+            polls.forEach(p => {
+                (p.results || []).forEach(r => {
+                    if ((!r.party || r.party === 'independent') && r.candidateName && candidatePartyMap[r.candidateName]) {
+                        r.party = candidatePartyMap[r.candidateName];
+                    }
+                });
+            });
+        }
+
         if (!polls.length) {
             cardsSection.innerHTML = _buildEmptyPollView(regionKey, electionType, districtName);
             return;
@@ -714,6 +736,7 @@ const PollTab = (() => {
                     ${methodBadge}
                     ${method.sampleSize ? `<span class="poll-card-sample">n=${method.sampleSize.toLocaleString()}</span>` : ''}
                 </div>
+                ${poll.title && poll.title !== '선거구분' ? `<div class="poll-card-title" style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);margin-top:3px;line-height:1.3;">${poll.title}</div>` : ''}
                 ${poll.clientOrg ? `<div class="poll-card-client" style="color:var(--text-muted);font-size:0.75rem;margin-top:2px;">의뢰: ${poll.clientOrg}</div>` : ''}
                 <div class="poll-card-date">${dateText}${publishDate ? ` / ${publishDate} 공표` : ''}</div>
                 ${method.marginOfError ? `<div class="poll-card-margin${method.marginOfError >= 5 ? ' poll-card-margin-warn' : ''}">오차범위 ±${method.marginOfError}%p (95% 신뢰수준)${method.sampleSize && method.sampleSize < 500 ? ' · 소규모 표본' : ''}</div>` : ''}

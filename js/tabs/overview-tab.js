@@ -79,33 +79,33 @@ const OverviewTab = (() => {
                     const summary = document.getElementById('overview-summary');
                     const issues = document.getElementById('overview-key-issues');
                     const risk = document.getElementById('overview-risk-factor');
-                    if (trendBadge) trendBadge.textContent = ov.trend || '';
+                    if (trendBadge) trendBadge.textContent = _normalizeTrend(ov.trend);
                     if (updatedDate) {
                         const updated = ElectionData._overviewCache?.meta?.lastUpdated || '';
                         updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--text-muted);margin-left:var(--space-4);">AI 분석</span>`;
                     }
-                    if (headline) headline.textContent = ov.headline || '';
+                    if (headline) headline.textContent = _normalizeTrend(ov.headline);
 
                     // narrative 모드: narrative가 있으면 summary 대신 표시
                     if (narrative && ov.narrative) {
-                        narrative.textContent = ov.narrative;
+                        narrative.textContent = _normalizeTrend(ov.narrative);
                         narrative.style.display = '';
                         if (summary) summary.style.display = 'none';
                     } else {
                         if (narrative) narrative.style.display = 'none';
                         if (summary) {
-                            summary.textContent = ov.summary || '';
+                            summary.textContent = _normalizeTrend(ov.summary);
                             summary.style.display = '';
                         }
                     }
 
                     if (issues && Array.isArray(ov.keyIssues)) {
                         issues.innerHTML = ov.keyIssues.map(i =>
-                            `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${i}</span>`
+                            `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${_normalizeTrend(i)}</span>`
                         ).join('');
                     }
                     if (risk && ov.riskFactor) {
-                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${ov.riskFactor}
+                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${_normalizeTrend(ov.riskFactor)}
                             <div style="font-size:var(--text-micro);color:var(--text-disabled);margin-top:var(--space-4);">
                                 <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
                             </div>`;

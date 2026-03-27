@@ -174,12 +174,13 @@ window.NewsFilterConfig = {
     {
       label: '전체',
       icon: 'fas fa-newspaper',
-      query: '{{GOVERNOR_QUERY_BASE}} 지방선거 후보 공약 여론조사 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
+      query: '{{GOVERNOR_QUERY_BASE}} 선거 후보 -교육감',
       categoryId: 'all',
       maxAgeDays: 60,
       preferPopularity: true,
       altQueries: [
-        '{{REGION_NAME}} 도지사 선거 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 공약 여론조사',
+        '{{REGION_NAME}} 지사 선거 후보'
       ],
       focusKeywords: ['선거', '지사', '시장', '후보', '공약', '여론조사'],
       strict: {
@@ -204,11 +205,13 @@ window.NewsFilterConfig = {
     {
       label: '여론조사',
       icon: 'fas fa-poll',
-      query: '{{GOVERNOR_QUERY_BASE}} 여론조사 지지율 가상대결 오차범위 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
-      categoryId: 'poll',
+      query: '{{GOVERNOR_QUERY_BASE}} 여론조사 지지율',
+      categoryId: 'polls',
       maxAgeDays: 45,
+      preferPopularity: true,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 지지율 가상대결 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 가상대결 지지율',
+        '{{REGION_NAME}} 지사 여론조사'
       ],
       focusKeywords: ['여론조사', '지지율', '지지도', '후보별', '가상대결', '다자대결', '양자대결', '이슈 여론조사', '찬반조사', '정당지지율', '표본오차', '응답률', '리얼미터', '한국갤럽', 'nbs'],
       strict: {
@@ -231,11 +234,13 @@ window.NewsFilterConfig = {
     {
       label: '후보·인물',
       icon: 'fas fa-user-tie',
-      query: '{{GOVERNOR_QUERY_BASE}} 후보 출마 공천 경선 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
+      query: '{{GOVERNOR_QUERY_BASE}} 후보 출마 공천',
       categoryId: 'candidate',
       maxAgeDays: 60,
+      preferPopularity: true,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 출마 공천 경선 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 경선 출마선언',
+        '{{REGION_NAME}} 지사 후보 출마'
       ],
       focusKeywords: ['후보', '출마', '공천', '경선', '단일화', '사퇴', '입후보', '유세', '방문', '간담회', '회동', '지지선언', '캠프', '선대위', '토론회'],
       strict: {
@@ -258,11 +263,13 @@ window.NewsFilterConfig = {
     {
       label: '공약·정책',
       icon: 'fas fa-bullhorn',
-      query: '{{GOVERNOR_QUERY_BASE}} 공약 정책 발표 핵심공약 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
+      query: '{{GOVERNOR_QUERY_BASE}} 공약 정책',
       categoryId: 'policy',
       maxAgeDays: 60,
+      preferPopularity: true,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 핵심공약 정책발표 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 핵심공약 정책발표',
+        '{{REGION_NAME}} 지사 공약 정책'
       ],
       focusKeywords: ['공약', '정책', '발표', '비전', '정책공약', '핵심공약', '이행', '로드맵', '공약집', '이행계획', '매니페스토', '공약검증'],
       strict: {
@@ -283,41 +290,14 @@ window.NewsFilterConfig = {
       }
     },
     {
-      label: '선거판세',
-      icon: 'fas fa-chess',
-      query: '{{GOVERNOR_QUERY_BASE}} 판세 전망 분석 격전지 경합 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
-      categoryId: 'analysis',
-      maxAgeDays: 60,
-      preferPopularity: true,
-      altQueries: [
-        '{{REGION_NAME}} 지방선거 판세 격전지 -교육감 -구청장 -군수'
-      ],
-      focusKeywords: ['판세', '전망', '분석', '격전지', '경합', '우세', '열세', '접전', '캐스팅보트', '정치지형'],
-      strict: {
-        mustAny: ['판세', '전망', '분석', '격전지', '경합', '접전', '정치지형', '우세', '열세'],
-        targetAny: ['지사', '도지사', '{{GOVERNOR_QUERY_BASE}}', '{{REGION_NAME}}', '지방선거'],
-        requiredGovernorAny: true,
-        requiredGovernorRoleAny: false,
-        boostAny: ['격전지', '경합', '접전', '정치지형', '판세분석', '세대별', '지역별', '[분석]', '[칼럼]', '[인터뷰]'],
-        excludeAny: ['교육감', '교육청', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']
-      },
-      relaxed: {
-        mustAny: ['판세', '전망', '분석', '격전지', '경합', '접전', '선거', '정치'],
-        targetAny: ['지사', '도지사', '{{GOVERNOR_QUERY_BASE}}', '{{REGION_NAME}}'],
-        requiredGovernorAny: false,
-        requiredGovernorRoleAny: false,
-        boostAny: ['격전지', '접전', '캐스팅보트', '판세분석'],
-        excludeAny: ['교육감', '교육청', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']
-      }
-    },
-    {
       label: '선거운동',
       icon: 'fas fa-bullhorn',
-      query: '{{GOVERNOR_QUERY_BASE}} 유세 토론회 선거운동 선거법 -교육감 -구청장 -군수 -기초단체장 -정당대표 -당대표 -원내대표',
+      query: '{{GOVERNOR_QUERY_BASE}} 유세 토론회 선거운동',
       categoryId: 'campaign',
       maxAgeDays: 45,
       altQueries: [
-        '{{GOVERNOR_QUERY_BASE}} 토론회 유세 선거법 -교육감 -구청장 -군수'
+        '{{GOVERNOR_QUERY_BASE}} 토론회 선거법',
+        '{{REGION_NAME}} 지사 유세 선거운동'
       ],
       focusKeywords: ['유세', '토론', '토론회', '선거운동', '거리유세', '선거법', '선거비용', '네거티브', '흑색선전', '사전선거운동'],
       strict: {
@@ -343,41 +323,122 @@ window.NewsFilterConfig = {
   regionOverrides: {
     gangwon: {
       all: {
-        altQueries: ['강원특별자치도지사 선거 후보 -교육감', '강원지사 후보 출마 공천 -교육감'],
-        strict: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사'] },
-        relaxed: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사', '강원'] }
+        altQueries: ['강원특별자치도지사 선거 후보 -교육감', '강원지사 후보 출마 공천 -교육감', '강원도지사 선거 -교육감'],
+        strict: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사', '강원 지사'] },
+        relaxed: { targetAny: ['강원지사', '강원특별자치도지사', '강원도지사', '강원 지사', '강원'] }
       },
-      poll: {
-        altQueries: ['강원지사 여론조사 지지율', '강원특별자치도 여론조사']
+      polls: {
+        altQueries: ['강원지사 여론조사 지지율', '강원특별자치도 여론조사', '강원도지사 여론조사'],
+        strict: { targetAny: ['강원지사', '강원도지사', '강원특별자치도', '강원 지사'] },
+        relaxed: { targetAny: ['강원지사', '강원도지사', '강원', '강원 지사'] }
+      },
+      candidate: {
+        altQueries: ['강원도지사 후보 출마', '강원특별자치도지사 공천 경선'],
+        strict: { targetAny: ['강원지사', '강원도지사', '강원특별자치도지사', '강원 지사'] },
+        relaxed: { targetAny: ['강원지사', '강원도지사', '강원', '강원 지사'] }
+      },
+      policy: {
+        altQueries: ['강원도지사 공약 정책', '강원특별자치도 정책 공약'],
+        strict: { targetAny: ['강원지사', '강원도지사', '강원특별자치도', '강원 지사'] },
+        relaxed: { targetAny: ['강원지사', '강원도지사', '강원', '강원 지사'] }
       }
     },
     jeonbuk: {
       all: {
-        altQueries: ['전북특별자치도지사 선거 후보 -교육감', '전북지사 후보 출마 공천 -교육감'],
-        strict: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사'] },
-        relaxed: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사', '전북'] }
+        altQueries: ['전북특별자치도지사 선거 후보 -교육감', '전북지사 후보 출마 공천 -교육감', '전북도지사 선거 -교육감'],
+        strict: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사', '전북 지사'] },
+        relaxed: { targetAny: ['전북지사', '전북특별자치도지사', '전북도지사', '전북 지사', '전북'] }
       },
-      poll: {
-        altQueries: ['전북지사 여론조사 지지율', '전북특별자치도 여론조사']
+      polls: {
+        altQueries: ['전북지사 여론조사 지지율', '전북특별자치도 여론조사', '전북도지사 여론조사'],
+        strict: { targetAny: ['전북지사', '전북도지사', '전북특별자치도지사', '전북 지사'] },
+        relaxed: { targetAny: ['전북지사', '전북도지사', '전북'] }
+      },
+      candidate: {
+        altQueries: ['전북도지사 후보 출마', '전북특별자치도지사 공천 경선'],
+        strict: { targetAny: ['전북지사', '전북도지사', '전북특별자치도지사', '전북 지사'] },
+        relaxed: { targetAny: ['전북지사', '전북도지사', '전북'] }
+      },
+      policy: {
+        altQueries: ['전북도지사 공약 정책', '전북특별자치도 정책 공약'],
+        strict: { targetAny: ['전북지사', '전북도지사', '전북특별자치도', '전북 지사'] },
+        relaxed: { targetAny: ['전북지사', '전북도지사', '전북'] }
+      }
+    },
+    sejong: {
+      all: {
+        altQueries: ['세종시장 선거 후보 -교육감', '세종특별자치시장 선거 후보'],
+        strict: { targetAny: ['세종시장', '세종특별자치시장', '세종 시장'] },
+        relaxed: { targetAny: ['세종시장', '세종특별자치시장', '세종 시장', '세종'] }
+      },
+      polls: {
+        altQueries: ['세종시장 여론조사 지지율', '세종특별자치시 여론조사'],
+        strict: { targetAny: ['세종시장', '세종특별자치시장', '세종 시장'] },
+        relaxed: { targetAny: ['세종시장', '세종'] }
+      }
+    },
+    jeju: {
+      all: {
+        altQueries: ['제주지사 선거 후보 -교육감', '제주특별자치도지사 선거 후보'],
+        strict: { targetAny: ['제주지사', '제주특별자치도지사', '제주도지사'] },
+        relaxed: { targetAny: ['제주지사', '제주도지사', '제주'] }
+      },
+      polls: {
+        altQueries: ['제주지사 여론조사 지지율', '제주특별자치도 여론조사'],
+        strict: { targetAny: ['제주지사', '제주도지사', '제주특별자치도'] },
+        relaxed: { targetAny: ['제주지사', '제주'] }
       }
     },
     gyeonggi: {
       all: {
-        query: '{{GOVERNOR_QUERY_BASE}} 지방선거 후보 공약 여론조사 -교육감 -하남시장 -구리시장 -고양시장',
+        query: '경기도지사 선거 후보',
         altQueries: [
-          '경기도지사 선거 -교육감 -구청장 -군수'
+          '경기도지사 공약 여론조사',
+          '경기 지사 선거 후보 출마'
         ],
         strict: {
+          targetAny: ['경기도지사', '경기 도지사', '경기지사'],
           excludeAny: ['교육감', '교육청', '학교장', '하남시장', '구리시장', '고양시장', '수원시장', '성남시장', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']
         },
         relaxed: {
+          targetAny: ['경기도지사', '경기 도지사', '경기지사', '경기도'],
           excludeAny: ['교육감', '교육청', '하남시장', '구리시장', '고양시장', '수원시장', '성남시장', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']
         }
       },
-      poll: {
-        query: '경기도지사 여론조사 지지율 가상대결 오차범위 -교육감',
+      polls: {
+        query: '경기도지사 여론조사 지지율',
+        altQueries: ['경기 도지사 여론조사', '경기도지사 가상대결'],
         strict: {
+          targetAny: ['경기도지사', '경기 도지사', '경기지사'],
           excludeAny: ['교육감', '교육청', '하남시장', '구리시장', '고양시장', '기초단체장', '구청장', '군수', '정당대표', '당대표', '원내대표']
+        },
+        relaxed: {
+          targetAny: ['경기도지사', '경기 도지사', '경기도'],
+          excludeAny: ['교육감', '교육청', '기초단체장', '구청장', '군수']
+        }
+      },
+      candidate: {
+        query: '경기도지사 후보 출마 공천',
+        altQueries: ['경기 도지사 후보 경선', '경기도지사 출마선언'],
+        strict: {
+          targetAny: ['경기도지사', '경기 도지사', '경기지사'],
+          excludeAny: ['교육감', '교육청', '하남시장', '구리시장', '고양시장', '수원시장', '성남시장', '기초단체장', '구청장', '군수']
+        },
+        relaxed: {
+          targetAny: ['경기도지사', '경기 도지사', '경기도'],
+          excludeAny: ['교육감', '교육청', '기초단체장', '구청장', '군수']
+        }
+      },
+      policy: {
+        query: '경기도지사 공약 정책',
+        altQueries: ['경기 도지사 정책 발표', '경기도 지사 공약'],
+        strict: {
+          targetAny: ['경기도지사', '경기 도지사', '경기지사'],
+          excludeAny: ['교육감', '교육청', '기초단체장', '구청장', '군수']
+        },
+        relaxed: {
+          targetAny: ['경기도지사', '경기 도지사', '경기도'],
+          excludeAny: ['교육감', '교육청']
         }
       }
     }

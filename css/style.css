@@ -58,7 +58,7 @@
     --party-other: #9370DB;
 
     /* 레이아웃 */
-    --header-height: 56px;
+    --header-height: 72px;
     --footer-height: 56px;
     --sidebar-width: 320px;
     --panel-width: 560px;
@@ -454,7 +454,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 24px;
     z-index: 1000;
 }
 
@@ -468,13 +468,13 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 1.3rem;
-    font-weight: var(--font-bold);
+    gap: 10px;
+    font-size: 1.65rem;
+    font-weight: 800;
     color: var(--text-primary);
     background: none;
     border: none;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.04em;
     padding: 0;
     cursor: pointer;
     font-family: inherit;
@@ -498,36 +498,59 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 
 .header-subtitle {
     color: var(--text-muted);
-    font-size: var(--text-caption);
+    font-size: 0.82rem;
     padding-left: var(--space-12);
-    border-left: none;
+    border-left: 1px solid var(--border-default);
+    line-height: 1.2;
 }
 
 .header-center {
     flex: 1;
-    max-width: 480px;
-    margin: 0 24px;
+    max-width: 580px;
+    margin: 0 28px;
 }
 
-/* 검색 — Civic Beacon recessed input */
+/* ── 검색 — Prominent search bar ── */
 .search-box {
     position: relative;
     display: flex;
-    align-items: center;
-    background: var(--bg-input);
-    border: none;
-    border-radius: 20px;
-    padding: 0 var(--space-16);
-    transition: box-shadow 0.15s;
+    align-items: stretch;
+    background: rgba(255,255,255,0.07);
+    border: 2px solid rgba(169, 199, 255, 0.20);
+    border-radius: 26px;
+    overflow: visible;
+    transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    box-shadow: 0 2px 12px rgba(46, 139, 255, 0.06);
+}
+
+.search-box:hover {
+    border-color: rgba(169, 199, 255, 0.30);
+    box-shadow: 0 4px 20px rgba(46, 139, 255, 0.10);
+    transform: translateY(-1px);
 }
 
 .search-box:focus-within {
-    box-shadow: 0 0 0 2px rgba(46, 139, 255, 0.3);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(46, 139, 255, 0.12), 0 4px 24px rgba(46, 139, 255, 0.14);
 }
 
-.search-box i {
+.search-inner {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 16px;
+    min-width: 0;
+}
+
+.search-icon {
     color: var(--text-muted);
-    font-size: var(--text-body);
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: color 0.2s;
+}
+
+.search-box:focus-within .search-icon {
+    color: var(--accent-blue);
 }
 
 .search-box input {
@@ -536,14 +559,75 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     border: none;
     outline: none;
     color: var(--text-primary);
-    font-size: var(--text-body);
-    padding: var(--space-8) var(--space-12);
+    font-size: 1rem;
+    padding: 14px 12px;
     font-family: var(--font-family);
+    min-width: 0;
 }
 
 .search-box input::placeholder {
     color: var(--text-disabled);
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
 }
+
+
+.search-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    background: var(--accent-blue);
+    border: none;
+    border-radius: 0 24px 24px 0;
+    cursor: pointer;
+    color: #fff;
+    font-size: 0.85rem;
+    transition: background 0.2s, opacity 0.2s;
+    flex-shrink: 0;
+    margin: -2px -2px -2px 0;
+    padding: 0;
+    opacity: 0.85;
+}
+
+.search-btn:hover {
+    opacity: 1;
+    background: var(--accent-blue);
+}
+
+.search-btn:active {
+    opacity: 0.95;
+}
+
+/* ── Light mode search ── */
+.light-mode .search-box {
+    background: #ffffff;
+    border-color: rgba(120, 100, 70, 0.18);
+    box-shadow: 0 2px 12px rgba(37, 99, 235, 0.05);
+}
+
+.light-mode .search-box:hover {
+    border-color: rgba(120, 100, 70, 0.28);
+    box-shadow: 0 4px 20px rgba(37, 99, 235, 0.08);
+}
+
+.light-mode .search-box:focus-within {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.10), 0 4px 24px rgba(37, 99, 235, 0.10);
+}
+
+.light-mode .search-box input {
+    color: #2C2418;
+}
+
+.light-mode .search-box input::placeholder {
+    color: #A89E8E;
+}
+
+.light-mode .search-icon {
+    color: #A89E8E;
+}
+
 
 .search-results {
     position: absolute;
@@ -551,13 +635,19 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     left: 0;
     right: 0;
     background: var(--bg-card);
-    border: none;
-    border-radius: 0 0 8px 8px;
-    max-height: 300px;
+    border: 1px solid var(--border-default);
+    border-top: none;
+    border-radius: 0 0 16px 16px;
+    max-height: 360px;
     overflow-y: auto;
     display: none;
     z-index: 100;
-    box-shadow: var(--shadow);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    margin-top: 2px;
+}
+
+.light-mode .search-results {
+    box-shadow: 0 12px 40px rgba(80, 60, 30, 0.12);
 }
 
 .search-results.active {
@@ -649,36 +739,37 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(59, 130, 246, 0.08);
-    border: none;
-    border-radius: 8px;
-    padding: var(--space-4) var(--space-16);
+    background: rgba(46, 139, 255, 0.10);
+    border: 1px solid rgba(46, 139, 255, 0.12);
+    border-radius: 12px;
+    padding: 6px 20px;
 }
 
 .dday-label {
-    font-size: var(--text-micro);
+    font-size: 0.68rem;
     color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
 .dday-number {
-    font-size: var(--text-headline);
-    font-weight: var(--font-bold);
+    font-size: 1.45rem;
+    font-weight: 800;
     color: var(--color-info);
     line-height: var(--leading-tight);
+    letter-spacing: -0.02em;
 }
 
 .pre-vote-info {
     display: flex;
     align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
+    gap: 7px;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     background: var(--bg-card);
-    padding: 6px 12px;
-    border-radius: 8px;
-    border: none;
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--border-default);
 }
 
 .pre-vote-info i {
@@ -3585,7 +3676,7 @@ canvas {
 
 @media (max-width: 768px) {
     :root {
-        --header-height: 50px;
+        --header-height: 56px;
         --footer-height: 48px;
     }
 
@@ -3595,7 +3686,20 @@ canvas {
 
     .header-center {
         max-width: 200px;
-        margin: 0 12px;
+        margin: 0 8px;
+    }
+
+    .search-btn {
+        width: 36px;
+    }
+
+    .search-inner {
+        padding: 0 10px;
+    }
+
+    .search-box input {
+        font-size: 0.82rem;
+        padding: 9px 8px;
     }
 
     .dday-counter {
@@ -5065,15 +5169,15 @@ body.banner-hidden #main-content {
     background: none;
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: var(--transition);
-    font-size: 16px;
+    font-size: 17px;
     flex-shrink: 0;
 }
 .theme-toggle-btn:hover {

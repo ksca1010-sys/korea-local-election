@@ -20,6 +20,15 @@
     <meta name="twitter:description" content="제9회 전국동시지방선거 여론조사, 후보자, 선거구 정보를 한눈에.">
     <meta name="twitter:image" content="og-image.png">
 
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "vxpaked5fs");
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -28,7 +37,7 @@
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <script src="https://d3js.org/topojson.v3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=1774192751">
+    <link rel="stylesheet" href="css/style.css?v=1774570879">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -45,7 +54,7 @@
     <header id="main-header">
         <div class="header-left">
             <button id="home-link" class="logo" type="button" aria-label="초기 화면으로 이동">
-                <svg class="logo-egg" width="24" height="28" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="logo-egg" width="32" height="36" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <ellipse cx="18" cy="22" rx="14" ry="17" stroke="#a9c7ff" stroke-width="2" fill="none"/>
                   <ellipse cx="12" cy="16" rx="4" ry="6" fill="#a9c7ff" opacity="0.12" transform="rotate(-15 12 16)"/>
                   <path d="M12 24l3.5 3.5 8-8" stroke="#6faaff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -56,15 +65,17 @@
         </div>
         <div class="header-center">
             <div class="search-box">
-                <i class="fas fa-search"></i>
-                <input type="text" id="region-search" placeholder="지역 검색" autocomplete="off">
+                <div class="search-inner">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" id="region-search" placeholder="지역·읍면동으로 선거구 검색" autocomplete="off">
+                </div>
+                <button class="search-btn" type="button" aria-label="검색">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
                 <div id="search-results" class="search-results" aria-live="polite"></div>
             </div>
         </div>
         <div class="header-right">
-            <button id="font-size-toggle" class="theme-toggle-btn" aria-label="글씨 크기 변경" title="글씨 크기 변경">
-                <i class="fas fa-text-height"></i>
-            </button>
             <button id="theme-toggle" class="theme-toggle-btn" aria-label="테마 전환" title="다크/라이트 모드 전환">
                 <i class="fas fa-sun" id="theme-icon"></i>
             </button>
@@ -412,7 +423,12 @@
               <span class="footer-logo-slogan">아는 만큼 보이는 선거</span>
             </div>
           </div>
-          <p class="footer-desc">제9회 전국동시지방선거 정보를 지도 위에서 한눈에. 여론조사, 후보자, 선거구 정보를 투명하게 제공하는 비영리 오픈소스 프로젝트입니다.</p>
+          <p class="footer-desc">제9회 전국동시지방선거 정보를 지도 위에서 한눈에. 여론조사, 후보자, 선거구 정보를 투명하게 제공하는 비영리 프로젝트입니다.</p>
+          <div class="footer-desc" style="margin-top:16px;font-size:0.78rem;opacity:0.7;line-height:1.7;">
+            기획·개발: 그로브임팩트랩 하준호<br>
+            문의: <a href="mailto:groveimpactlab@naver.com" style="color:inherit;text-decoration:underline;">groveimpactlab@naver.com</a>
+          </div>
+          <p class="footer-desc" style="margin-top:12px;font-size:0.75rem;opacity:0.5;">본 서비스는 특정 정파나 기관의 지원을 받지 않고 독립적으로 운영됩니다.</p>
         </div>
 
         <!-- Right: 2-Column Navigation -->
@@ -425,17 +441,22 @@
               <li><a href="https://info.nec.go.kr" target="_blank" rel="noopener">선거통계시스템</a></li>
               <li><a href="http://data.nec.go.kr" target="_blank" rel="noopener">선거정보 개방포털</a></li>
               <li><a href="https://www.data.go.kr" target="_blank" rel="noopener">공공데이터포털</a></li>
+              <li><a href="https://www.bigkinds.or.kr" target="_blank" rel="noopener">빅카인즈 (한국언론진흥재단)</a></li>
             </ul>
           </div>
 
           <div class="footer-col">
             <h5 class="footer-col-title">프로젝트</h5>
             <ul class="footer-links">
-              <li><a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener">GitHub (오픈소스)</a></li>
-              <li><a href="mailto:groveimpactlab@naver.com">문의하기</a></li>
-              <li><a href="#" onclick="document.getElementById('about-modal')?.showModal(); return false;">알선거 소개</a></li>
-              <li><a href="#" onclick="document.getElementById('legal-modal')?.showModal(); return false;">이용약관</a></li>
+              <li><a href="#" onclick="document.getElementById('about-modal')?.classList.add('open'); return false;">알선거 소개</a></li>
+              <li><a href="#" onclick="document.getElementById('legal-modal')?.classList.add('open'); return false;">이용약관</a></li>
             </ul>
+            <div style="display:flex;gap:12px;margin-top:12px;align-items:center;">
+              <a href="mailto:groveimpactlab@naver.com" title="이메일" style="color:var(--text-muted);font-size:1.15rem;transition:color 0.2s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fas fa-envelope"></i></a>
+              <a href="https://www.instagram.com/hello____strangers/" target="_blank" rel="noopener" title="Instagram" style="color:var(--text-muted);font-size:1.15rem;transition:color 0.2s;" onmouseover="this.style.color='#E4405F'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.threads.com/@hello____strangers" target="_blank" rel="noopener" title="Threads" style="color:var(--text-muted);font-size:1.15rem;transition:color 0.2s;" onmouseover="this.style.color='var(--accent-primary)'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-threads"></i></a>
+              <a href="https://www.linkedin.com/in/ffe-ha-95a489169" target="_blank" rel="noopener" title="LinkedIn" style="color:var(--text-muted);font-size:1.15rem;transition:color 0.2s;" onmouseover="this.style.color='#0A66C2'" onmouseout="this.style.color='var(--text-muted)'"><i class="fab fa-linkedin"></i></a>
+            </div>
           </div>
         </div>
       </div>
@@ -444,19 +465,14 @@
       <div class="footer-bottom">
         <div class="footer-bottom-inner">
           <div class="footer-legal-left">
-            <span class="footer-copyright">&copy; 2026 알선거</span>
+            <span class="footer-copyright">&copy; 2025-2026 그로브임팩트랩 · 알선거(VoteMap)</span>
             <span class="footer-data-source">여론조사: NESDC 등록 조사 기반 · 선거 데이터: 중앙선관위 API</span>
           </div>
           <div class="footer-legal-right">
-            <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank" rel="noopener" class="footer-social-link" aria-label="GitHub">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-            </a>
           </div>
         </div>
         <p class="footer-disclaimer">
-          본 서비스는 특정 정당이나 후보를 지지·추천하지 않습니다. 일부 데이터는 추정치를 포함할 수 있습니다.
+          본 서비스는 특정 정당이나 후보를 지지·추천하지 않습니다. 제공되는 정보는 참고용이며, 정확성·완전성을 보증하지 않습니다. 여론조사 관련 자세한 사항은 <a href="https://www.nesdc.go.kr" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">중앙선거여론조사심의위원회</a> 홈페이지를 참조하십시오.
         </p>
       </div>
     </div>
@@ -484,46 +500,61 @@
 
         <section>
           <h3>서비스 소개</h3>
-          <p><strong>알선거</strong>는 대한민국 지방선거 정보를 지도 위에서 한눈에 확인할 수 있는 비영리 선거 정보 플랫폼입니다.</p>
-          <p>유권자가 자신의 지역 후보자, 여론조사, 공약, 역대 선거 결과를 쉽고 정확하게 비교할 수 있도록 만들었습니다.</p>
+          <p><strong>알선거</strong>는 2026년 6월 3일 제9회 전국동시지방선거를 앞두고, 유권자가 자신의 지역 선거 정보를 쉽고 정확하게 확인할 수 있도록 만든 비영리 선거 정보 플랫폼입니다.</p>
+          <p>인터랙티브 지도 위에서 17개 광역시도, 226개 시군구의 후보자·여론조사·역대 선거 결과·지역 뉴스를 한눈에 비교할 수 있습니다.</p>
+        </section>
+
+        <section>
+          <h3>왜 만들었나</h3>
+          <p>지방선거는 대선·총선에 비해 정보 접근성이 낮습니다. 내 지역 기초의원이 누구인지, 어떤 후보가 출마했는지 알기 어렵습니다. 알선거는 이 간극을 메우기 위해 시작되었습니다.</p>
+          <p>선거 정보를 투명하게 제공하되, 어떤 정당이나 후보도 지지하거나 반대하지 않습니다.</p>
         </section>
 
         <section>
           <h3>제공 정보</h3>
           <ul>
-            <li><strong>후보자 현황</strong> — 광역단체장·기초단체장·교육감·광역의원·기초의원·비례대표·재보궐 후보 정보</li>
-            <li><strong>여론조사</strong> — 선거여론조사심의위원회 등록 여론조사 원문 기반</li>
-            <li><strong>역대 비교</strong> — 제1회~제8회 전국동시지방선거 투표율·당선인 실데이터</li>
-            <li><strong>지역 뉴스</strong> — 지역 언론 중심의 선거 관련 뉴스 자동 수집</li>
-            <li><strong>인터랙티브 지도</strong> — 17개 광역·226개 기초 자치단체 선거구 시각화</li>
+            <li><strong>7종 선거</strong> — 광역단체장·기초단체장·교육감·광역의원·기초의원·비례대표·재보궐</li>
+            <li><strong>후보자 현황</strong> — 예비후보 등록부터 본후보 확정까지 실시간 반영</li>
+            <li><strong>여론조사</strong> — 중앙선거여론조사심의위원회 등록 조사만 사용 (등록번호 명시)</li>
+            <li><strong>역대 비교</strong> — 제1회(1995)~제8회(2022) 지방선거 투표율·당선인 실데이터</li>
+            <li><strong>지역 뉴스</strong> — 지역 언론 중심의 선거 관련 뉴스 자동 수집·분석</li>
+            <li><strong>인터랙티브 지도</strong> — 광역→시군구→읍면동 3단계 드릴다운 지도</li>
           </ul>
         </section>
 
         <section>
           <h3>데이터 출처</h3>
+          <p>알선거의 모든 데이터는 공공기관 공식 발표 및 등록 자료를 기반으로 합니다.</p>
           <ul>
-            <li>중앙선거관리위원회 (<a href="https://www.nec.go.kr" target="_blank">nec.go.kr</a>)</li>
-            <li>선거여론조사심의위원회 (<a href="https://www.nesdc.go.kr" target="_blank">nesdc.go.kr</a>)</li>
-            <li>공공데이터포털 선관위 오픈API (<a href="https://www.data.go.kr" target="_blank">data.go.kr</a>)</li>
-            <li>선거정보 개방포털 (<a href="http://data.nec.go.kr" target="_blank">data.nec.go.kr</a>)</li>
-            <li>한국언론진흥재단 뉴스 데이터</li>
+            <li>중앙선거관리위원회 (<a href="https://www.nec.go.kr" target="_blank" rel="noopener">nec.go.kr</a>)</li>
+            <li>중앙선거여론조사심의위원회 (<a href="https://www.nesdc.go.kr" target="_blank" rel="noopener">nesdc.go.kr</a>)</li>
+            <li>공공데이터포털 선관위 오픈API (<a href="https://www.data.go.kr" target="_blank" rel="noopener">data.go.kr</a>)</li>
+            <li>선거통계시스템 (<a href="https://info.nec.go.kr" target="_blank" rel="noopener">info.nec.go.kr</a>)</li>
+            <li>한국언론진흥재단 빅카인즈 (<a href="https://www.bigkinds.or.kr" target="_blank" rel="noopener">bigkinds.or.kr</a>)</li>
           </ul>
+          <p style="font-size:0.85rem;opacity:0.7;margin-top:8px;">여론조사 관련 자세한 사항은 <a href="https://www.nesdc.go.kr" target="_blank" rel="noopener">중앙선거여론조사심의위원회</a> 홈페이지를 참조하십시오.</p>
         </section>
 
         <section>
           <h3>운영 원칙</h3>
           <ul>
-            <li>본 서비스는 특정 정당이나 후보를 지지·추천하지 않습니다.</li>
-            <li>모든 데이터는 공공기관 공식 발표 및 등록 자료를 기반으로 합니다.</li>
-            <li>여론조사 공표금지 기간(선거일 전 6일~선거일 투표마감)에는 관련 법규를 준수합니다.</li>
-            <li>오류나 개선 사항은 <a href="https://github.com/ksca1010-sys/korea-local-election/issues" target="_blank">GitHub</a>에서 제보할 수 있습니다.</li>
+            <li><strong>비당파성</strong> — 특정 정당이나 후보를 지지·추천하지 않습니다.</li>
+            <li><strong>독립성</strong> — 특정 정파나 기관의 지원을 받지 않고 독립적으로 운영됩니다.</li>
+            <li><strong>투명성</strong> — 데이터 출처를 명시하고, 추정치가 포함된 경우 이를 표기합니다.</li>
+            <li><strong>법규 준수</strong> — 여론조사 공표금지 기간(선거일 전 6일~선거일 투표마감)에는 공직선거법을 준수합니다.</li>
           </ul>
         </section>
 
         <section>
-          <h3>오픈소스</h3>
-          <p>알선거는 오픈소스 프로젝트입니다. 소스코드는 <a href="https://github.com/ksca1010-sys/korea-local-election" target="_blank">GitHub</a>에서 확인할 수 있습니다.</p>
-          <p>바닐라 HTML·CSS·JavaScript로 구축되었으며, Cloudflare Pages에서 운영됩니다.</p>
+          <h3>기획·개발</h3>
+          <p><strong>그로브임팩트랩</strong> 하준호</p>
+          <p>문의: <a href="mailto:groveimpactlab@naver.com">groveimpactlab@naver.com</a></p>
+          <p style="font-size:0.85rem;opacity:0.7;margin-top:4px;">오류 제보나 개선 의견을 환영합니다.</p>
+        </section>
+
+        <section>
+          <h3>기술 스택</h3>
+          <p style="font-size:0.85rem;opacity:0.7;">바닐라 HTML·CSS·JavaScript · D3.js · Chart.js · Cloudflare Pages</p>
         </section>
       </div>
     </div>
@@ -578,6 +609,90 @@
       </div>
     </div>
 
+    <!-- ═══ Legal / Terms Modal ═══ -->
+    <div class="info-modal-overlay" id="legal-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <h2>이용약관</h2>
+
+        <p class="info-modal-updated">시행일: 2026년 3월 26일</p>
+
+        <section>
+          <h3>제1조 (목적)</h3>
+          <p>본 약관은 그로브임팩트랩(이하 "운영자")이 제공하는 알선거(VoteMap) 서비스(이하 "서비스")의 이용 조건 및 절차에 관한 사항을 규정함을 목적으로 합니다.</p>
+        </section>
+
+        <section>
+          <h3>제2조 (서비스의 내용)</h3>
+          <p>서비스는 대한민국 지방선거에 관한 후보자 정보, 여론조사, 역대 선거 결과, 지역 뉴스 등을 지도 기반으로 제공하는 비영리 선거 정보 플랫폼입니다.</p>
+          <ul>
+            <li>서비스는 별도의 회원가입이나 로그인 없이 무료로 이용할 수 있습니다.</li>
+            <li>서비스는 특정 정당이나 후보를 지지·추천하지 않으며, 비당파적 입장을 유지합니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제3조 (데이터의 출처와 정확성)</h3>
+          <ul>
+            <li>서비스에서 제공하는 선거 관련 데이터는 중앙선거관리위원회, 중앙선거여론조사심의위원회 등 공공기관의 공식 발표 자료를 기반으로 합니다.</li>
+            <li>여론조사 데이터는 중앙선거여론조사심의위원회에 등록된 조사만 사용하며, 등록번호를 함께 표기합니다.</li>
+            <li>뉴스 데이터는 자동 수집·분석된 것으로, 개별 뉴스의 정확성은 해당 언론사에 귀속됩니다.</li>
+            <li>서비스의 정보는 참고용이며, 운영자는 정보의 정확성·완전성·최신성을 보증하지 않습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제4조 (여론조사 공표 관련)</h3>
+          <ul>
+            <li>서비스는 공직선거법 제108조(여론조사의 결과공표금지)를 준수합니다.</li>
+            <li>선거일 전 6일부터 선거일 투표마감 시각까지 여론조사 결과를 공표하지 않습니다.</li>
+            <li>공표금지 기간에는 여론조사 탭이 비활성화되며, 관련 데이터가 표시되지 않습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제5조 (이용자의 의무)</h3>
+          <ul>
+            <li>이용자는 서비스를 통해 얻은 정보를 공직선거법 등 관련 법령에 위반되지 않는 범위에서 이용해야 합니다.</li>
+            <li>서비스의 데이터를 왜곡하거나 허위 정보와 결합하여 유포하는 행위를 금지합니다.</li>
+            <li>서비스에 대한 무단 크롤링, 스크래핑 등 비정상적인 접근을 금지합니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제6조 (지적재산권)</h3>
+          <ul>
+            <li>서비스의 디자인, 코드, 콘텐츠 구성에 대한 권리는 운영자에게 있습니다.</li>
+            <li>서비스에 표시되는 공공 데이터(선관위 자료 등)의 저작권은 해당 기관에 귀속됩니다.</li>
+            <li>서비스의 콘텐츠를 인용할 경우 "알선거(VoteMap)"를 출처로 명시해주시기 바랍니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제7조 (면책)</h3>
+          <ul>
+            <li>운영자는 서비스에서 제공하는 정보의 이용으로 발생한 손해에 대해 책임을 지지 않습니다.</li>
+            <li>서비스는 천재지변, 시스템 장애 등 불가항력으로 인해 일시 중단될 수 있습니다.</li>
+            <li>서비스에 포함된 외부 링크의 내용은 운영자의 책임 범위에 포함되지 않습니다.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>제8조 (약관의 변경)</h3>
+          <p>본 약관은 서비스 변경이나 법령 개정에 따라 수정될 수 있으며, 변경 시 서비스 내 공지합니다. 변경된 약관은 공지 후 서비스를 계속 이용하는 경우 동의한 것으로 간주합니다.</p>
+        </section>
+
+        <section>
+          <h3>제9조 (문의)</h3>
+          <p>본 약관 및 서비스 이용에 관한 문의는 아래로 연락 주시기 바랍니다.</p>
+          <ul>
+            <li>운영자: 그로브임팩트랩 하준호</li>
+            <li>이메일: <a href="mailto:groveimpactlab@naver.com">groveimpactlab@naver.com</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
     <!-- ═══ 뉴스 스코어링 상세 Modal ═══ -->
     <div class="info-modal-overlay" id="news-scoring-modal" onclick="if(event.target===this)this.classList.remove('open')">
       <div class="info-modal">
@@ -612,6 +727,14 @@
           <h3>면책</h3>
           <p>이 점수는 <strong>기사의 품질이나 정확성이 아니라 관련성</strong>을 측정합니다. 알선거는 기사 내용을 검증하지 않으며, 원문 확인을 권장합니다.</p>
         </section>
+      </div>
+    </div>
+
+    <!-- ═══ 읍면동 검색 모달 ═══ -->
+    <div class="info-modal-overlay" id="dong-search-modal" onclick="if(event.target===this)this.classList.remove('open')">
+      <div class="info-modal" style="max-width:420px;padding:28px 32px;">
+        <button class="info-modal-close" onclick="this.closest('.info-modal-overlay').classList.remove('open')">&times;</button>
+        <div id="dong-search-modal-content"></div>
       </div>
     </div>
 
@@ -700,30 +823,34 @@
     </div>
 
     <!-- 1. 데이터 로더 -->
-    <script src="js/data-loader.js?v=1774192751"></script>
-    <script src="js/data.js?v=1774192751"></script>
+    <script src="js/data-loader.js?v=1774570879"></script>
+    <script src="js/data.js?v=1774570879"></script>
 
     <!-- 2. 독립 모듈 -->
-    <script src="js/news_filters.js?v=1774192751"></script>
-    <script src="js/derived_issues.js?v=1774192751"></script>
-    <script src="js/issue_engine.js?v=1774192751"></script>
-    <script src="js/nec.js?v=1774192751"></script>
-    <script src="js/map.js?v=1774192751"></script>
-    <script src="js/charts.js?v=1774192751"></script>
+    <script src="js/news_filters.js?v=1774570879"></script>
+    <script src="js/derived_issues.js?v=1774570879"></script>
+    <script src="js/issue_engine.js?v=1774570879"></script>
+    <script src="js/nec.js?v=1774570879"></script>
+    <script src="js/map.js?v=1774570879"></script>
+    <script src="js/charts.js?v=1774570879"></script>
 
     <!-- 3. 선거 캘린더 (법적 필수 + 편의 로직) -->
-    <script src="js/election-calendar.js?v=1774192751"></script>
+    <script src="js/election-calendar.js?v=1774570879"></script>
 
     <!-- 4. 탭 모듈 -->
-    <script src="js/tabs/history-tab.js?v=1774192751"></script>
-    <script src="js/tabs/council-tab.js?v=1774192752"></script>
-    <script src="js/tabs/proportional-tab.js?v=1774192754"></script>
-    <script src="js/tabs/candidate-tab.js?v=1774192751"></script>
-    <script src="js/tabs/poll-tab.js?v=1774192751"></script>
-    <script src="js/tabs/overview-tab.js?v=1774192751"></script>
-    <script src="js/tabs/news-tab.js?v=1774192751"></script>
+    <script src="js/tabs/history-tab.js?v=1774570879"></script>
+    <script src="js/tabs/council-tab.js?v=1774570879"></script>
+    <script src="js/tabs/proportional-tab.js?v=1774570879"></script>
+    <script src="js/tabs/candidate-tab.js?v=1774570879"></script>
+    <script src="js/tabs/poll-tab.js?v=1774570879"></script>
+    <script src="js/tabs/overview-tab.js?v=1774570879"></script>
+    <script src="js/tabs/news-tab.js?v=1774570879"></script>
 
     <!-- 5. 메인 앱 (최후 로드) -->
-    <script src="js/app.js?v=1774192753"></script>
+    <script src="js/app.js?v=1774570879"></script>
+
+    <!-- Cloudflare 웹 분석 -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6cb7b0e87bf1475799a9d177f9d54315"}'></script>
+    <!-- Cloudflare 웹 분석 종료 -->
 </body>
 </html>

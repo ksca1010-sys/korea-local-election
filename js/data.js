@@ -247,11 +247,11 @@ const ElectionData = (() => {
         },
         'daegu': {
             code: '27', name: '대구광역시', nameEng: 'Daegu',
-            population: 2351000, voters: 2052000,
+            population: 2373000, voters: 2074000,
             currentGovernor: { name: '김정기', party: '-', since: 2025, acting: true, actingReason: '홍준표 대선 출마 사퇴' },
             prevElection: { winner: 'ppp', winnerName: '홍준표', rate: 78.8, runner: 'democratic', runnerName: '서재헌', runnerRate: 18.0, turnout: null },
             keyIssues: ['대구경북통합신공항', '산업 구조 전환', '인구 감소', '의료 인프라'],
-            subRegions: 8,
+            subRegions: 9,
             candidates: [
                 { id: 'daegu-1', name: '이진숙', party: 'ppp', age: null, career: '前 방송통신위원장 / 前 대전MBC 사장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구 살리기'] },
                 { id: 'daegu-2', name: '추경호', party: 'ppp', age: null, career: '3선 국회의원 (달성) / 前 경제부총리', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구 경제 재건'] },
@@ -465,11 +465,11 @@ const ElectionData = (() => {
         },
         'gyeongbuk': {
             code: '47', name: '경상북도', nameEng: 'Gyeongbuk',
-            population: 2500000, voters: 2224000,
+            population: 2478000, voters: 2202000,
             currentGovernor: { name: '이철우', party: 'ppp', since: 2018 },
             prevElection: { winner: 'ppp', winnerName: '이철우', rate: 78.0, runner: 'democratic', runnerName: '임미애', runnerRate: 22.0, turnout: null },
             keyIssues: ['포항 지진 복구', '경북 북부 발전', '울릉도 개발', '반도체 산업'],
-            subRegions: 23,
+            subRegions: 22,
             candidates: [
                 { id: 'gyeongbuk-1', name: '이철우', party: 'ppp', age: 71, career: '現 경북도지사 (3선 도전) / 前 5선 국회의원 (김천)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: ['대구경북신공항 완수', '국가산업단지 조성'] },
                 { id: 'gyeongbuk-2', name: '권오을', party: 'democratic', age: null, career: '現 국가보훈부 장관 / 前 3선 국회의원 (안동)', photo: null, status: 'WITHDRAWN', dataSource: 'news', pledges: [] },
@@ -995,6 +995,9 @@ const ElectionData = (() => {
             { name: '달서구', population: 551000, leadParty: 'ppp', mayor: { name: '이태훈', party: 'ppp' }, keyIssue: '성서산단 전환' },
             { name: '달성군', population: 270000, leadParty: 'ppp', mayor: { name: '최재훈', party: 'ppp' }, keyIssue: '테크노폴리스' ,
             voters: 214580,
+            prevElection: { turnout: null } },
+            { name: '군위군', population: 22000, leadParty: 'ppp', mayor: { name: '김진열', party: 'ppp' }, keyIssue: '대구 편입 후 발전' ,
+            voters: 22054,
             prevElection: { turnout: null } }
         ],
         'incheon': [
@@ -1367,9 +1370,6 @@ const ElectionData = (() => {
             prevElection: { turnout: null } },
             { name: '울릉군', population: 9000, leadParty: 'independent', mayor: { name: '남한권', party: 'independent' }, keyIssue: '독도 영토 관리' ,
             voters: 8339,
-            prevElection: { turnout: null } },
-            { name: '군위군', population: 22000, leadParty: 'ppp', mayor: { name: '김진열', party: 'ppp' }, keyIssue: '대구 편입 후 발전' ,
-            voters: 22054,
             prevElection: { turnout: null } }
         ],
         'gyeongnam': [
@@ -1754,7 +1754,7 @@ const ElectionData = (() => {
         _councilSeatsCache: null,
         loadCouncilSeats() {
             if (this._councilSeatsCache) return Promise.resolve(this._councilSeatsCache);
-            return fetch('data/static/council_seats.json')
+            return fetch('data/static/council_seats.json?v=' + Date.now())
                 .then(r => r.ok ? r.json() : null)
                 .then(data => { this._councilSeatsCache = data; return data; })
                 .catch(() => null);
@@ -1954,7 +1954,7 @@ const ElectionData = (() => {
                 if (!districtMap[dName]) districtMap[dName] = { name: dName, seats: 1, candidates: [], leadParty: 'independent' };
                 districtMap[dName].candidates.push({
                     name: m.name, party: m.party || 'independent',
-                    career: m.career || '', isIncumbent: true, status: 'DECLARED'
+                    career: m.career || '', isIncumbent: false, status: 'EXPECTED'
                 });
                 districtMap[dName].leadParty = m.party || districtMap[dName].leadParty;
             });
@@ -1997,7 +1997,7 @@ const ElectionData = (() => {
                 const members = this.getCouncilMembers(regionKey, districtName);
                 return members.map(m => ({
                     name: m.name, party: m.party || 'independent',
-                    career: m.career || '', isIncumbent: true, status: 'EXPECTED'
+                    career: m.career || '', isIncumbent: false, status: 'EXPECTED'
                 }));
             }
             // 기초의원: 현직 데이터에서 선거구 키로 직접 조회
@@ -2011,7 +2011,7 @@ const ElectionData = (() => {
                     if (entry?.members?.length) {
                         return entry.members.map(mem => ({
                             name: mem.name, party: mem.party || 'independent',
-                            career: mem.career || '', isIncumbent: true, status: 'EXPECTED'
+                            career: mem.career || '', isIncumbent: false, status: 'EXPECTED'
                         }));
                     }
                 }
@@ -2640,13 +2640,27 @@ const ElectionData = (() => {
                 return true;
             });
 
-            // 6단계: 정당 매칭 (3중 소스: poll 원본 → 후보 DB → 정치인 사전)
+            // 6단계: 정당 매칭 (4중 소스: poll 원본 → 광역 후보 → 기초 후보 → 정치인 사전)
             const candidatePartyMap = {};
+            // 광역 후보
             if (region && region.candidates) {
                 region.candidates.forEach(c => {
                     if (c.name && c.party) candidatePartyMap[c.name] = c.party;
                 });
             }
+            // 기초단체장 후보 — 해당 시도의 전체 시군구 후보
+            try {
+                const mayorRegion = this._mayorCandidatesCache?.candidates?.[regionKey];
+                if (mayorRegion && typeof mayorRegion === 'object') {
+                    // districtName 지정 시 해당 시군구만, 아니면 전체
+                    const targets = canonicalDistrict ? [mayorRegion[canonicalDistrict]] : Object.values(mayorRegion);
+                    targets.forEach(cands => {
+                        if (Array.isArray(cands)) {
+                            cands.forEach(c => { if (c.name && c.party) candidatePartyMap[c.name] = c.party; });
+                        }
+                    });
+                }
+            } catch (_) {}
             filtered = filtered.map(p => ({
                 ...p,
                 results: (p.results || []).map(r => {
@@ -2808,7 +2822,37 @@ const ElectionData = (() => {
                     return true;
                 });
 
-                // 정당 매핑 + 정렬
+                // 정당 매핑 (4중 소스: poll 원본 → 광역 후보 → 기초 후보 → 정치인 사전)
+                const region = this.getRegion(regionKey);
+                const _partyMap = {};
+                if (region?.candidates) region.candidates.forEach(c => { if (c.name && c.party) _partyMap[c.name] = c.party; });
+                try {
+                    const mayorRegion = this._mayorCandidatesCache?.candidates?.[regionKey];
+                    if (mayorRegion) {
+                        const targets = canonicalDistrict ? [mayorRegion[canonicalDistrict]] : Object.values(mayorRegion);
+                        targets.forEach(cands => {
+                            if (Array.isArray(cands)) cands.forEach(c => { if (c.name && c.party) _partyMap[c.name] = c.party; });
+                        });
+                    }
+                } catch (_) {}
+                const _knownParty = {
+                    '오세훈': 'ppp', '나경원': 'ppp', '김동연': 'democratic', '김은혜': 'ppp',
+                    '박형준': 'ppp', '강기정': 'democratic', '이장우': 'ppp', '김두겸': 'ppp',
+                    '최민호': 'ppp', '김진태': 'ppp', '이광재': 'democratic', '조길형': 'ppp',
+                    '김태흠': 'ppp', '김관영': 'democratic', '김영록': 'democratic',
+                    '이철우': 'ppp', '박완수': 'ppp', '오영훈': 'democratic',
+                    '박찬대': 'democratic', '유정복': 'ppp',
+                };
+                filtered = filtered.map(p => ({
+                    ...p,
+                    results: (p.results || []).map(r => {
+                        if (r.party) return r;
+                        const matched = _partyMap[r.candidateName] || _knownParty[r.candidateName] || null;
+                        return matched ? { ...r, party: matched } : r;
+                    })
+                }));
+
+                // 정렬
                 const getPollDate = (p) => {
                     const d = p.publishDate || p.surveyDate?.end || '';
                     return d ? new Date(d).getTime() : 0;
