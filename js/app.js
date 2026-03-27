@@ -161,7 +161,7 @@ const App = (() => {
         // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
         try {
             const [poolResp, regResp, issuesResp] = await Promise.all([
-                fetch('data/local_media_pool.json?v=' + Date.now()),
+                fetch('data/local_media_pool.json'),
                 fetch('data/local_media_registry.json'),
                 fetch('data/regional_issues.json'),
             ]);
@@ -705,21 +705,20 @@ const App = (() => {
             const wrap = tooltip.closest('.filter-btn-wrap');
             if (!wrap) return;
 
-            wrap.addEventListener('mouseenter', () => {
+            // onmouseenter/leave로 교체하여 중복 리스너 방지
+            wrap.onmouseenter = () => {
                 const rect = wrap.getBoundingClientRect();
                 tooltip.style.left = (rect.right + 8) + 'px';
                 tooltip.style.top = rect.top + 'px';
-                // Keep tooltip within viewport
                 const tipHeight = tooltip.offsetHeight || 150;
                 if (rect.top + tipHeight > window.innerHeight) {
                     tooltip.style.top = Math.max(10, window.innerHeight - tipHeight - 10) + 'px';
                 }
                 tooltip.style.display = 'block';
-            });
-
-            wrap.addEventListener('mouseleave', () => {
+            };
+            wrap.onmouseleave = () => {
                 tooltip.style.display = 'none';
-            });
+            };
         });
     }
 

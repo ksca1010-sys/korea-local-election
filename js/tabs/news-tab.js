@@ -986,7 +986,7 @@ const NewsTab = (() => {
         // ── 캐시 우선: 유효한 캐시가 있으면 API 호출 생략 (10분 TTL) ──
         const cachedFirst = _loadNewsCache(regionKey, catId, 10 * 60 * 1000);
         if (cachedFirst && cachedFirst.length > 0) {
-            console.log(`[뉴스] 캐시 히트 (${regionKey}/${catId}), API 호출 생략`);
+            if (fetchGen !== _renderGeneration) return; // race condition 방지
             _renderNewsCacheInline(list, cachedFirst, selectedCategory, regionKey, maxAgeDays, catId, category);
             return;
         }
@@ -1346,7 +1346,7 @@ const NewsTab = (() => {
             }
 
             function renderNewsItem(item) {
-                const press = item.host || '출처 미상';
+                const press = sanitizeHtml(item.host || '출처 미상');
                 const isMajor = isMajorOutlet(item.host);
                 const ageDays = Math.floor((Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24));
                 const freshBadge = ageDays <= 1 ? '<span class="news-badge news-badge-fresh">NEW</span>' : '';
