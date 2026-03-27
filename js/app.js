@@ -1999,6 +1999,9 @@ const App = (() => {
 
     /** 패널이 이미 지역 데이터를 보여주는 상태면 현재 탭 유지, 아니면 overview로 */
     function switchTabForRegion() {
+        // 뉴스탭 갱신 보장: 어떤 경로든 switchTabForRegion을 거치면 뉴스 pending 세팅
+        _newsTabPendingRegion = currentRegionKey;
+
         if (regionSelected) {
             // 현재 탭 유지하되 새 지역 데이터로 갱신
             switchTab(currentTab);
@@ -3437,6 +3440,9 @@ function renderCouncilProvinceView(regionKey, region) {
         if (typeof CouncilTab !== 'undefined') {
             CouncilTab.render('overview', regionKey, constituencyName, currentElectionType);
         }
+
+        // 뉴스탭 lazy 로딩용
+        _newsTabPendingRegion = regionKey;
 
         switchTabForRegion();
         openPanel();
