@@ -210,7 +210,7 @@ const OverviewTab = (() => {
                 const prev = region.prevElection;
                 const winColor = ElectionData.getPartyColor(prev.winner);
                 const runColor = ElectionData.getPartyColor(prev.runner);
-                prevContainer.innerHTML = `
+                let prevHtml = `
                     <div class="prev-result">
                         <div class="prev-winner">
                             <div class="name">${prev.winnerName}</div>
@@ -226,6 +226,37 @@ const OverviewTab = (() => {
                     </div>
                     <div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${prev.turnout}%</div>
                 `;
+                // 전남광주통합특별시: 전남 이전선거 결과도 표시
+                if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    const jeonnamRegion = ElectionData.getRegion('jeonnam');
+                    const jnPrev = jeonnamRegion?.prevElection;
+                    if (jnPrev) {
+                        const jnWinColor = ElectionData.getPartyColor(jnPrev.winner);
+                        const jnRunColor = ElectionData.getPartyColor(jnPrev.runner);
+                        prevHtml += `
+                            <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(148,163,184,0.15);">
+                                <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;">
+                                    <i class="fas fa-code-merge"></i> 통합 이전 전라남도
+                                </div>
+                                <div class="prev-result">
+                                    <div class="prev-winner">
+                                        <div class="name">${jnPrev.winnerName}</div>
+                                        <span class="party-badge" style="background:${jnWinColor}">${ElectionData.getPartyName(jnPrev.winner)}</span>
+                                        <div class="rate" style="color:${jnWinColor}">${jnPrev.rate}%</div>
+                                    </div>
+                                    <div class="prev-vs">VS</div>
+                                    <div class="prev-winner">
+                                        <div class="name">${jnPrev.runnerName}</div>
+                                        <span class="party-badge" style="background:${jnRunColor}">${ElectionData.getPartyName(jnPrev.runner)}</span>
+                                        <div class="rate" style="color:${jnRunColor}">${jnPrev.runnerRate}%</div>
+                                    </div>
+                                </div>
+                                ${jnPrev.turnout ? `<div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${jnPrev.turnout}%</div>` : ''}
+                            </div>
+                        `;
+                    }
+                }
+                prevContainer.innerHTML = prevHtml;
             } else {
                 prevContainer.innerHTML = '';
             }

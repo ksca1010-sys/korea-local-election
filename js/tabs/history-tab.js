@@ -315,6 +315,69 @@ const HistoryTab = (() => {
 
         // 전남광주통합특별시: 토글 버튼으로 광주/전남 전환
         if (jeonnamHistory && jeonnamHistory.length > 0) {
+            // 전남 통계 산출
+            const jnChangeCount = jeonnamHistory.reduce((count, entry, index) => {
+                if (index === 0) return count;
+                return count + (jeonnamHistory[index - 1].winner !== entry.winner ? 1 : 0);
+            }, 0);
+            const jnTurnoutEntries = jeonnamHistory.filter(e => Number(e.turnout) > 0);
+            const jnAvgTurnout = jnTurnoutEntries.length
+                ? (jnTurnoutEntries.reduce((s, e) => s + Number(e.turnout), 0) / jnTurnoutEntries.length).toFixed(1)
+                : null;
+            const jnWinnerCounts = jeonnamHistory.reduce((counts, entry) => {
+                const bk = getBlocKey(entry.winner);
+                counts.set(bk, (counts.get(bk) || 0) + 1);
+                return counts;
+            }, new Map());
+            const jnDominantParty = [...jnWinnerCounts.entries()].sort((a, b) => b[1] - a[1])[0] || ['other', 0];
+            const jnDominantPartyLabel = getBlocLabel(jnDominantParty[0], electionType);
+
+            // 전남 흐름 HTML
+            const jnFlowHtml = `
+                <div class="hpf-timeline-wrap">
+                    <div class="hpf-timeline">
+                        ${jeonnamHistory.map((entry, index) => {
+                            const winnerPartyLabel = electionType === 'superintendent'
+                                ? (entry.winner || entry.winnerParty || '?')
+                                : truncatePartyLabel(entry.winnerPartyLabel || entry.winnerParty || ElectionData.getHistoricalPartyName(entry.winner, entry.election));
+                            const color = electionType === 'superintendent'
+                                ? (ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner))
+                                : ElectionData.getPartyColor(entry.winner);
+                            const blocKey = getBlocKey(entry.winner);
+                            const changed = index > 0 && jeonnamHistory[index - 1].winner !== entry.winner;
+                            const rate = Number(entry.rate);
+                            return `
+                                <div class="hpf-node">
+                                    ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
+                                    <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
+                                    <div class="hpf-label">'${String(entry.year).slice(-2)}</div>
+                                    <div class="hpf-party" style="color:${color}">${winnerPartyLabel}</div>
+                                    ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
+                                </div>
+                                ${index < jeonnamHistory.length - 1 ? `<div class="hpf-line" style="background:${color}"></div>` : ''}
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+                <div class="hpf-summary">
+                    <div class="hpf-stat">
+                        <span class="hpf-stat-val">${jnDominantPartyLabel} ${jnDominantParty[1]}회</span>
+                        <span class="hpf-stat-lbl">최다 승리</span>
+                    </div>
+                    <div class="hpf-stat">
+                        <span class="hpf-stat-val">${jnChangeCount}회</span>
+                        <span class="hpf-stat-lbl">정권 교체</span>
+                    </div>
+                    ${jnAvgTurnout !== null ? `
+                    <div class="hpf-stat">
+                        <span class="hpf-stat-val">${jnAvgTurnout}%</span>
+                        <span class="hpf-stat-lbl">평균 투표율</span>
+                    </div>` : ''}
+                </div>
+            `;
+
+            const gwangjuFlowHtml = flowEl.innerHTML; // already rendered above
+
             const jeonnamRowsHtml = _renderHistoryRows(jeonnamHistory);
             resultsEl.innerHTML = `
                 <div class="hpf-region-toggle" style="display:flex;gap:8px;margin-bottom:16px;">
@@ -325,7 +388,7 @@ const HistoryTab = (() => {
                 <div data-history-content="jeonnam" style="display:none;">${jeonnamRowsHtml}</div>
             `;
 
-            // Toggle click handlers
+            // Toggle click handlers — 흐름+차트+결과표 모두 전환
             resultsEl.querySelectorAll('.hpf-toggle-btn').forEach(btn => {
                 btn.addEventListener('click', () => {
                     const region = btn.dataset.historyRegion;
@@ -339,7 +402,9 @@ const HistoryTab = (() => {
                     resultsEl.querySelectorAll('[data-history-content]').forEach(el => {
                         el.style.display = el.dataset.historyContent === region ? '' : 'none';
                     });
-                    // Hide chart when jeonnam is selected (chart only has gwangju data)
+                    // 정권변화흐름 전환
+                    flowEl.innerHTML = region === 'jeonnam' ? jnFlowHtml : gwangjuFlowHtml;
+                    // 차트: 광주만 표시
                     if (chartCard) {
                         chartCard.style.display = region === 'jeonnam' ? 'none' : '';
                     }
