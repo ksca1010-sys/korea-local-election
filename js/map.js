@@ -1264,20 +1264,56 @@ const MapModule = (() => {
             }
         });
 
-        // 전남광주통합: 내부 경계선 숨기기 + 전남 라벨 숨기기
+        // 전남광주통합: topojson.merge로 진짜 하나의 path로 합침 (SVG seam 완전 제거)
         if (_isMergedJeonnam()) {
-            const gwangjuFill = getRegionColor('gwangju');
-            g.select('.region[data-region="gwangju"]')
-                .attr('stroke', gwangjuFill).classed('region-merged', true);
-            g.select('.region[data-region="jeonnam"]')
-                .attr('stroke', gwangjuFill).classed('region-merged', true);
+            // 이미 머지 path가 있으면 색상만 갱신
+            const existing = g.select('.region-gj-merged');
+            if (existing.size()) {
+                existing.transition().duration(400).attr('fill', getRegionColor('gwangju'));
+            } else if (_muniTopoCache) {
+                // topojson.merge: 광주(24) + 전남(36) 시군구를 하나의 geometry로
+                try {
+                    const objKey = Object.keys(_muniTopoCache.objects)[0];
+                    const geoms = _muniTopoCache.objects[objKey].geometries.filter(geom => {
+                        const code = String(geom.properties?.code || '');
+                        return code.startsWith('24') || code.startsWith('36');
+                    });
+                    if (geoms.length > 0) {
+                        const mergedGeo = topojson.merge(_muniTopoCache, geoms);
+                        const mergedFeature = { type: 'Feature', properties: { code: '24', name: 'gwangju' }, geometry: mergedGeo };
+                        g.insert('path', '.region-label')
+                            .datum(mergedFeature)
+                            .attr('class', 'region region-gj-merged')
+                            .attr('data-region', 'gwangju')
+                            .attr('d', path)
+                            .attr('fill', getRegionColor('gwangju'))
+                            .attr('stroke', 'rgba(255,255,255,0.2)')
+                            .attr('stroke-width', 1.2)
+                            .attr('cursor', 'pointer')
+                            .on('mouseover', function(event) { handleMouseOver(event, mergedFeature); })
+                            .on('mouseout', function(event) { handleMouseOut(event, mergedFeature); })
+                            .on('click', function(event) { handleClick(event, mergedFeature); });
+                    }
+                } catch (e) {
+                    console.warn('gwangju-jeonnam topojson.merge failed:', e);
+                }
+            }
+            // 원본 path 숨기기
+            g.select('.region[data-region="gwangju"]:not(.region-gj-merged)').attr('display', 'none');
+            g.select('.region[data-region="jeonnam"]:not(.region-gj-merged)').attr('display', 'none');
             g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
+            // 광주 라벨 위치를 머지 영역 중앙으로 이동
+            const mergedPath = g.select('.region-gj-merged');
+            if (mergedPath.size()) {
+                const centroid = path.centroid(mergedPath.datum());
+                g.select('.region-label[data-region-label="gwangju"]')
+                    .attr('x', centroid[0]).attr('y', centroid[1]);
+            }
         } else {
-            // 통합 해제 시 원래 stroke 복원
-            g.select('.region[data-region="gwangju"]')
-                .attr('stroke', null).classed('region-merged', false);
-            g.select('.region[data-region="jeonnam"]')
-                .attr('stroke', null).classed('region-merged', false);
+            // 통합 해제: 머지 path 제거, 원본 복원
+            g.select('.region-gj-merged').remove();
+            g.select('.region[data-region="gwangju"]').attr('display', null);
+            g.select('.region[data-region="jeonnam"]').attr('display', null);
             g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 1);
         }
     }
