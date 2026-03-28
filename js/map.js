@@ -1302,12 +1302,13 @@ const MapModule = (() => {
             g.select('.region[data-region="gwangju"]:not(.region-gj-merged)').attr('display', 'none');
             g.select('.region[data-region="jeonnam"]:not(.region-gj-merged)').attr('display', 'none');
             g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
-            // 광주 라벨 위치를 머지 영역 중앙으로 이동
+            // 광주 라벨: "전남광주"로 변경 + 머지 영역 중앙으로 이동
             const mergedPath = g.select('.region-gj-merged');
             if (mergedPath.size()) {
                 const centroid = path.centroid(mergedPath.datum());
                 g.select('.region-label[data-region-label="gwangju"]')
-                    .attr('x', centroid[0]).attr('y', centroid[1]);
+                    .attr('x', centroid[0]).attr('y', centroid[1])
+                    .text('전남광주');
             }
         } else {
             // 통합 해제: 머지 path 제거, 원본 복원
@@ -1315,6 +1316,7 @@ const MapModule = (() => {
             g.select('.region[data-region="gwangju"]').attr('display', null);
             g.select('.region[data-region="jeonnam"]').attr('display', null);
             g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 1);
+            g.select('.region-label[data-region-label="gwangju"]').text(shortNames['gwangju']);
         }
     }
 
