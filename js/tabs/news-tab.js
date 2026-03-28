@@ -419,6 +419,7 @@ const NewsTab = (() => {
 
     function getGovernorQueryBase(regionName) {
         if (!regionName) return '';
+        if (regionName === '전남광주통합특별시' || regionName.includes('전남광주')) return '전남광주특별시장';
         const aliasTerms = getRegionAliasTerms(regionName);
         const shortAlias = aliasTerms.find((name) => /^[가-힣]{2,3}$/.test(name)) || aliasTerms[0] || regionName;
         if (regionName.includes('세종')) return '세종시장';
@@ -449,6 +450,7 @@ const NewsTab = (() => {
             '충청남도': '충남',
             '전북특별자치도': '전북',
             '전라남도': '전남',
+            '전남광주통합특별시': '전남광주',
             '경상북도': '경북',
             '경상남도': '경남',
             '제주특별자치도': '제주'
@@ -462,6 +464,10 @@ const NewsTab = (() => {
             .replace(/도$/, '')
             .trim();
         if (short && short !== regionName) aliases.push(short);
+        // 전남광주통합특별시: 추가 별칭
+        if (regionName === '전남광주통합특별시' || regionName.includes('전남광주')) {
+            aliases.push('전남광주', '광주', '전남', '전라남도', '광주광역시', '전남광주특별시', '통합특별시');
+        }
         return [...new Set(aliases.filter(Boolean))];
     }
 
@@ -1544,6 +1550,10 @@ const NewsTab = (() => {
         if (!region && electionType !== 'byElection') return;
 
         let regionName = region?.name || '';
+        // 전남광주통합특별시: 뉴스 쿼리에 통합 지역명 사용
+        if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+            regionName = '전남광주통합특별시';
+        }
         if (electionType === 'byElection' && districtName) {
             const byeData = ElectionData.getByElectionData(districtName);
             regionName = byeData?.district || districtName;

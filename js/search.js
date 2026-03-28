@@ -105,7 +105,8 @@ const SearchModule = (() => {
                 if (key === 'jeonnam' && (pt.electionType === 'governor' || pt.electionType === 'superintendent')) return;
 
                 const entryAliases = new Set(aliases);
-                if (key === 'gwangju' && (pt.electionType === 'governor' || pt.electionType === 'superintendent')) {
+                const isMerged = key === 'gwangju' && (pt.electionType === 'governor' || pt.electionType === 'superintendent');
+                if (isMerged) {
                     entryAliases.add('전남광주통합특별시');
                     entryAliases.add('전남광주');
                     entryAliases.add('통합특별시');
@@ -115,7 +116,7 @@ const SearchModule = (() => {
 
                 index.push({
                     regionKey: key,
-                    name: region.name,
+                    name: isMerged ? '전남광주통합특별시' : region.name,
                     nameEng: region.nameEng || '',
                     aliases: [...entryAliases, pt.label],
                     electionType: pt.electionType,

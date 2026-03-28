@@ -452,14 +452,8 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: null },
             keyIssues: ['광주-전남 행정통합', '에너지 전환', '농어촌 활성화', '인구 소멸'],
             subRegions: 22,
-            candidates: [
-                { id: 'jeonnam-1', name: '김영록', party: 'democratic', age: 68, career: '現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['전남 해상풍력 허브', '광주-전남 메가시티'] },
-                { id: 'jeonnam-2', name: '주철현', party: 'democratic', age: null, career: '現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
-                { id: 'jeonnam-3', name: '신정훈', party: 'democratic', age: null, career: '現 국회의원 (나주·화순) / 現 행안위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
-                { id: 'jeonnam-4', name: '이개호', party: 'democratic', age: null, career: '4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
-                { id: 'jeonnam-5', name: '서삼석', party: 'democratic', age: null, career: '3선 국회의원 (영암·무안·신안) / 前 무안군수', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] },
-                { id: 'jeonnam-6', name: '김화진', party: 'ppp', age: null, career: '現 국민의힘 전남도당위원장 (4연임)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
-            ],
+            // 광역단체장 후보는 전남광주통합특별시 통합으로 gwangju로 이동 (data/candidates/governor.json 참조)
+            candidates: [],
             polls: [],
             hotspot: false
         },
@@ -1545,7 +1539,8 @@ const ElectionData = (() => {
         'chungbuk': { region: '충북',  currentSuperintendent: { name: '윤건영', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 청주교대 총장 출신' },                   candidates: [{ name: '윤건영', stance: '보수', support: 42.5, career: '현 교육감' }, { name: '심의보', stance: '진보', support: 35.6, career: '前 교육청 장학관' }] },
         'chungnam': { region: '충남',  currentSuperintendent: { name: '김지철', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '김지철', stance: '진보', support: 44.7, career: '현 교육감' }, { name: '오연호', stance: '보수', support: 36.2, career: '前 교육위원' }] },
         'jeonbuk':  { region: '전북',  currentSuperintendent: { name: '서거석', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전북대 총장 출신' },                     candidates: [{ name: '서거석', stance: '진보', support: 46.3, career: '현 교육감' }, { name: '이창식', stance: '보수', support: 29.8, career: '前 교육청 부교육감' }] },
-        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [{ name: '김대중', stance: '진보', support: 50.1, career: '현 교육감' }, { name: '박정일', stance: '보수', support: 27.3, career: '前 학교장' }] },
+        // 전남 교육감은 전남광주통합특별시 통합으로 gwangju로 이동 (data/candidates/superintendent.json 참조)
+        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [] },
         'gyeongbuk': { region: '경북', currentSuperintendent: { name: '임종식', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선' },                                       candidates: [{ name: '임종식', stance: '보수', support: 23.9, career: '현 교육감' }, { name: '임준희', stance: '중도', support: 1.2, career: '교육계 인사' }] },
         'gyeongnam': { region: '경남', currentSuperintendent: { name: '박종훈', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '박종훈', stance: '진보', support: 43.9, career: '현 교육감' }, { name: '김태진', stance: '보수', support: 37.4, career: '前 교육청 부교육감' }] },
         'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '김광수', stance: '보수', support: 41.2, career: '현 교육감' }, { name: '이석문', stance: '진보', support: 38.6, career: '前 교육감' }] }

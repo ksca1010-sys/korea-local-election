@@ -429,10 +429,20 @@ const PollTab = (() => {
         const electionType = testCase.electionType || 'governor';
         const districtName = testCase.districtName || null;
         let polls = ElectionData.getPollsForSelection(regionKey, electionType, districtName);
-        // 전남광주통합특별시: include jeonnam polls
+        // 전남광주통합특별시: include jeonnam polls + 통합 조사 우선 정렬
         if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
-            const jnPolls = ElectionData.getPollsForSelection?.('jeonnam', electionType) || [];
+            const jnPolls = (ElectionData.getPollsForSelection?.('jeonnam', electionType) || [])
+                .map(p => ({ ...p, _originalRegion: 'jeonnam' }));
             if (jnPolls.length) polls = [...polls, ...jnPolls];
+            polls.sort((a, b) => {
+                const aUnified = (a.title || '').includes('통합') || (a.title || '').includes('전남광주') ? 1 : 0;
+                const bUnified = (b.title || '').includes('통합') || (b.title || '').includes('전남광주') ? 1 : 0;
+                if (aUnified !== bUnified) return bUnified - aUnified;
+                const aJeonnam = a._originalRegion === 'jeonnam' ? 1 : 0;
+                const bJeonnam = b._originalRegion === 'jeonnam' ? 1 : 0;
+                if (aJeonnam !== bJeonnam) return aJeonnam - bJeonnam;
+                return new Date(b.surveyEndDate || b.publishDate || 0) - new Date(a.surveyEndDate || a.publishDate || 0);
+            });
         }
         const firstPoll = polls[0] || null;
         const municipalities = [...new Set(polls.map(poll => _normalizeKeyword(poll.municipality)).filter(Boolean))];
@@ -488,7 +498,23 @@ const PollTab = (() => {
             return;
         }
 
-        const polls = ElectionData.getLatestPollsForDisplay(regionKey, electionType, districtName);
+        let polls = ElectionData.getLatestPollsForDisplay(regionKey, electionType, districtName);
+
+        // 전남광주통합특별시: include jeonnam polls + 통합 조사 우선 정렬
+        if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+            const jnPolls = (ElectionData.getLatestPollsForDisplay?.('jeonnam', electionType) || [])
+                .map(p => ({ ...p, _originalRegion: 'jeonnam' }));
+            if (jnPolls.length) polls = [...polls, ...jnPolls];
+            polls.sort((a, b) => {
+                const aUnified = (a.title || '').includes('통합') || (a.title || '').includes('전남광주') ? 1 : 0;
+                const bUnified = (b.title || '').includes('통합') || (b.title || '').includes('전남광주') ? 1 : 0;
+                if (aUnified !== bUnified) return bUnified - aUnified; // unified first
+                const aJeonnam = a._originalRegion === 'jeonnam' ? 1 : 0;
+                const bJeonnam = b._originalRegion === 'jeonnam' ? 1 : 0;
+                if (aJeonnam !== bJeonnam) return aJeonnam - bJeonnam; // gwangju before jeonnam
+                return new Date(b.surveyEndDate || b.publishDate || 0) - new Date(a.surveyEndDate || a.publishDate || 0); // then by date
+            });
+        }
 
         // 초기화
         latestSection.style.display = 'none';
@@ -723,6 +749,12 @@ const PollTab = (() => {
             const sourceUrl = poll.sourceUrl || `https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=${poll.nttId}&menuNo=200467`;
 
             const isOutlier = outlierInfo.outlierIds?.has(poll.nttId);
+            // 전남광주통합특별시: 조사 출처 배지
+            const regionBadge = poll._originalRegion === 'jeonnam'
+                ? '<span style="font-size:0.7rem;padding:1px 6px;border-radius:3px;background:#8b5cf618;color:#8b5cf6;border:1px solid #8b5cf630;margin-left:6px;">전남 조사</span>'
+                : (poll.title || '').match(/통합|전남광주/)
+                ? '<span style="font-size:0.7rem;padding:1px 6px;border-radius:3px;background:#05966918;color:#059669;border:1px solid #05966930;margin-left:6px;">통합 조사</span>'
+                : '';
             const methodBadge = method.type === 'ARS'
                 ? '<span class="poll-card-method" style="background:rgba(99,102,241,0.12);color:#818cf8;">ARS</span>'
                 : method.type === '전화면접'
@@ -741,7 +773,7 @@ const PollTab = (() => {
                 ${isOutlier ? '<div style="padding:var(--space-4) var(--space-8);font-size:var(--text-micro);color:var(--color-warning);margin-bottom:var(--space-8);"><i class="fas fa-exclamation-triangle" style="margin-right:var(--space-4);"></i>돌출 조사 — 다른 조사 평균과 크게 다릅니다</div>' : ''}
                 <div class="poll-card-header">
                     <span class="poll-card-org">${poll.pollOrg || '조사기관 미상'}</span>
-                    ${methodBadge}
+                    ${methodBadge}${regionBadge}
                     ${method.sampleSize ? `<span class="poll-card-sample">n=${method.sampleSize.toLocaleString()}</span>` : ''}
                 </div>
                 ${poll.title && poll.title !== '선거구분' ? `<div class="poll-card-title" style="font-size:0.8rem;font-weight:600;color:var(--text-secondary);margin-top:3px;line-height:1.3;">${poll.title}</div>` : ''}

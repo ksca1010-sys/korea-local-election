@@ -268,56 +268,9 @@ const HistoryTab = (() => {
             </div>
         `;
 
-        // Fix #9: 연도 강조 + Fix #6: 투표율 행 추가 + Fix #3: bar 높이(CSS에서)
-        resultsEl.innerHTML = history.map((entry) => {
-            const winnerColor = electionType === 'superintendent'
-                ? ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner)
-                : ElectionData.getPartyColor(entry.winner);
-            const runnerColor = electionType === 'superintendent'
-                ? ElectionData.getSuperintendentColor(entry.runner) || ElectionData.getPartyColor(entry.runner || 'independent')
-                : ElectionData.getPartyColor(entry.runner || 'independent');
-            const winnerBloc = getBlocKey(entry.winner);
-            const runnerBloc = getBlocKey(entry.runner || 'independent');
-            const winnerPct = Number(entry.rate) || 0;
-            const runnerPct = Number(entry.runnerRate) || 0;
-            const isUncontested = !!entry.isUncontested || (winnerPct === 0 && !entry.runnerName);
-            const turnout = Number(entry.turnout);
-            return `
-                <div class="ht-row">
-                    <div class="ht-left">
-                        <span class="ht-year">${entry.year}</span>
-                    </div>
-                    <div class="ht-center">
-                        ${isUncontested
-                            ? `<div class="ht-uncontested">무투표 당선</div>`
-                            : `<div class="ht-bar-track">
-                                <div class="ht-bar-fill" style="width:${winnerPct}%;background:${winnerColor}"></div>
-                            </div>`
-                        }
-                        <div class="ht-names">
-                            <span><span class="ht-dot ${smallDotShapeClass(winnerBloc)}" style="background:${winnerColor}"></span>${entry.winnerName}${isUncontested ? '' : ` <b>${winnerPct.toFixed(1)}%</b>`}</span>
-                            ${entry.runnerName
-                                ? `<span class="ht-sub"><span class="ht-dot ${smallDotShapeClass(runnerBloc)}" style="background:${runnerColor}"></span>${entry.runnerName} ${runnerPct.toFixed(1)}%</span>`
-                                : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem;">${entry.winnerParty || ElectionData.getPartyName(entry.winner)}</span>`
-                            }
-                        </div>
-                    </div>
-                </div>
-            `;
-        }).reverse().join('');
-
-        // 전남광주통합특별시: 전남 역대선거 데이터 추가 표시
-        if (jeonnamHistory && jeonnamHistory.length > 0) {
-            resultsEl.innerHTML += `
-                <div style="margin:20px 0 12px;padding:10px 14px;border-radius:8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);">
-                    <div style="font-size:0.85rem;font-weight:600;color:var(--accent-blue);">
-                        <i class="fas fa-code-merge"></i> 전라남도 역대 선거 (통합 이전)
-                    </div>
-                    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">
-                        2026년 전남광주통합특별시 출범 이전 전라남도 역대 선거 결과입니다.
-                    </div>
-                </div>
-            ` + jeonnamHistory.map((entry) => {
+        // Helper: render history entries as ht-row HTML
+        function _renderHistoryRows(entries) {
+            return entries.map((entry) => {
                 const winnerColor = electionType === 'superintendent'
                     ? ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner)
                     : ElectionData.getPartyColor(entry.winner);
@@ -354,9 +307,50 @@ const HistoryTab = (() => {
             }).reverse().join('');
         }
 
+        // Fix #9: 연도 강조 + Fix #6: 투표율 행 추가 + Fix #3: bar 높이(CSS에서)
+        const gwangjuRowsHtml = _renderHistoryRows(history);
+
+        // Chart card reference (used by toggle and chart rendering)
+        const chartCard = document.getElementById('history-chart-card');
+
+        // 전남광주통합특별시: 토글 버튼으로 광주/전남 전환
+        if (jeonnamHistory && jeonnamHistory.length > 0) {
+            const jeonnamRowsHtml = _renderHistoryRows(jeonnamHistory);
+            resultsEl.innerHTML = `
+                <div class="hpf-region-toggle" style="display:flex;gap:8px;margin-bottom:16px;">
+                    <button class="hpf-toggle-btn active" data-history-region="gwangju" style="padding:6px 16px;border-radius:6px;border:1px solid var(--accent-primary);background:var(--accent-primary);color:white;cursor:pointer;font-size:0.85rem;font-weight:600;">광주</button>
+                    <button class="hpf-toggle-btn" data-history-region="jeonnam" style="padding:6px 16px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;font-size:0.85rem;">전남</button>
+                </div>
+                <div data-history-content="gwangju">${gwangjuRowsHtml}</div>
+                <div data-history-content="jeonnam" style="display:none;">${jeonnamRowsHtml}</div>
+            `;
+
+            // Toggle click handlers
+            resultsEl.querySelectorAll('.hpf-toggle-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const region = btn.dataset.historyRegion;
+                    resultsEl.querySelectorAll('.hpf-toggle-btn').forEach(b => {
+                        b.classList.toggle('active', b.dataset.historyRegion === region);
+                        b.style.background = b.dataset.historyRegion === region ? 'var(--accent-primary)' : 'var(--bg-secondary)';
+                        b.style.color = b.dataset.historyRegion === region ? 'white' : 'var(--text-secondary)';
+                        b.style.borderColor = b.dataset.historyRegion === region ? 'var(--accent-primary)' : 'var(--border)';
+                        b.style.fontWeight = b.dataset.historyRegion === region ? '600' : '';
+                    });
+                    resultsEl.querySelectorAll('[data-history-content]').forEach(el => {
+                        el.style.display = el.dataset.historyContent === region ? '' : 'none';
+                    });
+                    // Hide chart when jeonnam is selected (chart only has gwangju data)
+                    if (chartCard) {
+                        chartCard.style.display = region === 'jeonnam' ? 'none' : '';
+                    }
+                });
+            });
+        } else {
+            resultsEl.innerHTML = gwangjuRowsHtml;
+        }
+
         // Fix #7: 차트 부드럽게 + Fix #11: 차트 범례 설명 각주
         destroyChart();
-        const chartCard = document.getElementById('history-chart-card');
         if (chartCard) {
             chartCard.style.display = '';
             chartCard.querySelector('h4')?.remove();
