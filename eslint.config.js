@@ -27,9 +27,12 @@ export default [
                 HistoryTab: "writable",
                 CouncilTab: "writable",
                 ProportionalTab: "writable",
-                // utils.js 전역 함수
+                // utils.js 전역 함수 + 상수
                 escapeHtml: "writable",
                 showToast: "writable",
+                NEWS_PROXY_BASE: "writable",
+                NEWS_FILTER_CONFIG: "writable",
+                MAJOR_NEWS_HOSTS: "writable",
                 // window.* 런타임 데이터
                 IssueEngine: "writable",
                 DerivedIssuesData: "writable",
@@ -42,7 +45,7 @@ export default [
             },
         },
         rules: {
-            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend)$" }],
+            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|NEWS_PROXY_BASE|NEWS_FILTER_CONFIG|MAJOR_NEWS_HOSTS|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend)$" }],
             "no-redeclare": "off",
             "no-console": "off",
             "no-undef": "error",

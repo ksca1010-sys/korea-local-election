@@ -392,7 +392,9 @@ const ProportionalTab = (() => {
     // ══════════════════════════════════════
 
     function renderNews(regionKey, electionType) {
-        if (typeof renderNewsTab === 'function') renderNewsTab(regionKey);
+        if (typeof NewsTab !== 'undefined') {
+            NewsTab.render(regionKey, electionType);
+        }
     }
 
     // ══════════════════════════════════════

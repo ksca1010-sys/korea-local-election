@@ -1,6 +1,22 @@
 // ============================================
-// 공유 유틸리티 함수
+// 공유 유틸리티 함수 + 상수
 // ============================================
+
+// ── 뉴스 프록시 ──
+const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'https://election-news-proxy.ksca1010.workers.dev';
+
+// ── 주요 언론사 호스트 ──
+const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
+const MAJOR_NEWS_HOSTS = Array.isArray(NEWS_FILTER_CONFIG.majorNewsHosts) && NEWS_FILTER_CONFIG.majorNewsHosts.length
+    ? NEWS_FILTER_CONFIG.majorNewsHosts
+    : [
+    'yna.co.kr', 'newsis.com', 'news1.kr', 'yonhapnewstv.co.kr',
+    'kbs.co.kr', 'imnews.imbc.com', 'mbc.co.kr', 'sbs.co.kr',
+    'jtbc.co.kr', 'chosun.com', 'joongang.co.kr', 'donga.com',
+    'hani.co.kr', 'khan.co.kr', 'seoul.co.kr', 'mk.co.kr',
+    'hankyung.com', 'edaily.co.kr', 'fnnews.com', 'mt.co.kr',
+    'sisajournal.com', 'ohmynews.com', 'nocutnews.co.kr'
+];
 
 function escapeHtml(value) {
     return String(value)

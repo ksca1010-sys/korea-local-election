@@ -35,17 +35,7 @@ const App = (() => {
             }).catch(() => {});
         } catch (_) {}
     }
-    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'https://election-news-proxy.ksca1010.workers.dev';
-    const MAJOR_NEWS_HOSTS = Array.isArray(NEWS_FILTER_CONFIG.majorNewsHosts) && NEWS_FILTER_CONFIG.majorNewsHosts.length
-        ? NEWS_FILTER_CONFIG.majorNewsHosts
-        : [
-        'yna.co.kr', 'newsis.com', 'news1.kr', 'yonhapnewstv.co.kr',
-        'kbs.co.kr', 'imnews.imbc.com', 'mbc.co.kr', 'sbs.co.kr',
-        'jtbc.co.kr', 'chosun.com', 'joongang.co.kr', 'donga.com',
-        'hani.co.kr', 'khan.co.kr', 'seoul.co.kr', 'mk.co.kr',
-        'hankyung.com', 'edaily.co.kr', 'fnnews.com', 'mt.co.kr',
-        'sisajournal.com', 'ohmynews.com', 'nocutnews.co.kr'
-    ];
+    // NEWS_PROXY_BASE, MAJOR_NEWS_HOSTS → js/utils.js로 이관 (전역 상수)
     const calendarDayFormatter = new Intl.DateTimeFormat('ko-KR', {
         timeZone: 'Asia/Seoul',
         month: 'numeric',

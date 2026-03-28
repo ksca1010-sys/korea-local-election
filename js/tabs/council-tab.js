@@ -471,9 +471,8 @@ const CouncilTab = (() => {
     // ── 뉴스탭 ──
 
     function renderNews(regionKey, districtName, electionType) {
-        // app.js의 renderNewsTab()을 호출 (이미 buildCouncilNewsCategories 지원)
-        if (typeof renderNewsTab === 'function') {
-            renderNewsTab(regionKey);
+        if (typeof NewsTab !== 'undefined') {
+            NewsTab.render(regionKey, electionType, districtName);
         }
     }
 

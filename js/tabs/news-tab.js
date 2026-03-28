@@ -8,19 +8,7 @@ const NewsTab = (() => {
     // 세대 카운터: 지역/선거유형 전환 시 이전 fetch 결과 무시
     let _renderGeneration = 0;
 
-    // ── 상수 ──
-    const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
-    const NEWS_PROXY_BASE = window.NEWS_PROXY_BASE || 'https://election-news-proxy.ksca1010.workers.dev';
-    const MAJOR_NEWS_HOSTS = Array.isArray(NEWS_FILTER_CONFIG.majorNewsHosts) && NEWS_FILTER_CONFIG.majorNewsHosts.length
-        ? NEWS_FILTER_CONFIG.majorNewsHosts
-        : [
-        'yna.co.kr', 'newsis.com', 'news1.kr', 'yonhapnewstv.co.kr',
-        'kbs.co.kr', 'imnews.imbc.com', 'mbc.co.kr', 'sbs.co.kr',
-        'jtbc.co.kr', 'chosun.com', 'joongang.co.kr', 'donga.com',
-        'hani.co.kr', 'khan.co.kr', 'seoul.co.kr', 'mk.co.kr',
-        'hankyung.com', 'edaily.co.kr', 'fnnews.com', 'mt.co.kr',
-        'sisajournal.com', 'ohmynews.com', 'nocutnews.co.kr'
-    ];
+    // NEWS_PROXY_BASE, MAJOR_NEWS_HOSTS → js/utils.js 전역 상수 사용
 
     // 교육 전문 언론사
     const EDUCATION_MEDIA_HOSTS = [
