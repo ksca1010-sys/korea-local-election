@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-27",
+    "lastUpdated": "2026-03-28",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-27T01:29:44.810040",
+    "lastFactCheck": "2026-03-28T01:23:00.430685",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546"
@@ -866,16 +866,19 @@
         "name": "성기선",
         "stance": "보수",
         "career": "경기도교육감 예비후보",
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "claude",
         "pledges": [
           "교사 행정업무 폭탄 개선으로 관계와 신뢰의 교실 구현"
         ],
         "_lastChange": {
-          "date": "2026-03-19",
+          "date": "2026-03-28",
           "type": "status_change",
-          "detail": "성기선 경기교감 예비후보 \"단일화 과정서 정책 검증 필요\"…경선 일... - 예비후보 상태 재확인, 단일화 참여 의지 표현",
-          "previous": "EXPECTED"
+          "detail": "민주‧진보 경기도교육감 단일화 경선 본격 돌입…박효진‧성기선‧안 기사에서 단일화 경선 참여 후보로 확인",
+          "previous": "RUMORED",
+          "sourceUrl": "뉴스 보도",
+          "sourceLabel": "언론사",
+          "sourcePublishedAt": "2026-03-28"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1344,7 +1347,7 @@
         "name": "황호진",
         "stance": "중도",
         "career": "전북교육감 예비후보",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "claude",
         "pledges": [
           "공공형 국제학교 설립",
@@ -1362,7 +1365,16 @@
             "text": "공공형 대안학교 리더스 국제학교 설립",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-03-28",
+          "type": "status_change",
+          "detail": "황호진 전북교육감 예비후보의 출판기념회 개최 및 정책 제시로 활동 강화. '공공형 국제교육' 구상 제시 등 본격적인 선거활동 전개",
+          "previous": "EXPECTED",
+          "sourceUrl": "황호진 \"공공형 국제교육\" 구상 제시 제목의 기사",
+          "sourceLabel": "지역언론",
+          "sourcePublishedAt": "2026-03-28"
+        }
       }
     ],
     "jeonnam": [
@@ -1458,7 +1470,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1466,13 +1478,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-03-27",
+          "date": "2026-03-28",
           "type": "status_change",
-          "detail": "[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "기사 링크 필요",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-03-27"
+          "detail": "예비후보 등록 완료 - '[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록'",
+          "previous": "DECLARED",
+          "sourceUrl": "미제공",
+          "sourceLabel": "미제공",
+          "sourcePublishedAt": "2026-03-28"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1580,7 +1592,7 @@
         "name": "김영곤",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "마산해양신도시 AI 교육캠퍼스 조성",
@@ -1590,13 +1602,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-03-28",
           "type": "status_change",
-          "detail": "경남형 초등 기초학력 책임진단·지원제 정책 발표로 예비후보 지위 확인",
-          "previous": "RUMORED",
-          "sourceUrl": "https://example.com/news",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-03-24"
+          "detail": "김영곤 경남교육감 예비후보 '경남형 초등 기초학력 책임진단·지원제' - 정책 제안을 통해 출마선언 의사 명확히 함",
+          "previous": "EXPECTED",
+          "sourceUrl": "언론사 미지정",
+          "sourceLabel": "경남 교육감 관련 기사",
+          "sourcePublishedAt": "2026-03-28"
         },
         "pledgeCategories": [
           {

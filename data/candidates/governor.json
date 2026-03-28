@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-03-27",
+    "lastUpdated": "2026-03-28",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-03-27T01:27:06.110421",
+    "lastFactCheck": "2026-03-28T01:20:55.741780",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집."
   },
@@ -349,14 +349,23 @@
         "age": null,
         "career": "6선 국회의원 (수성갑) / 現 국회 부의장",
         "photo": null,
-        "status": "DECLARED",
+        "status": "RUMORED",
         "dataSource": "news",
         "pledges": [
           "대구 재도약"
         ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-28",
+          "type": "status_change",
+          "detail": "'무소속 출마' 준비하는 주호영? 사실상 당내 고립된 장동혁…윤희석 - 무소속 전환 검토 중",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "종로",
+          "sourcePublishedAt": "2026-03-28"
+        }
       },
       {
         "id": "daegu-4",
@@ -1382,7 +1391,7 @@
         "age": null,
         "career": "前 경찰청장 (23대) / 국민의힘 입당",
         "photo": null,
-        "status": "DECLARED",
+        "status": "WITHDRAWN",
         "dataSource": "news",
         "pledges": [
           "결과로 증명하는 도지사",
@@ -1390,7 +1399,16 @@
         ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-03-28",
+          "type": "withdrawn",
+          "detail": "윤희근 사퇴·이범석 컷오프... 국힘 경선 '혼돈' - 경선 과정에서 사퇴",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "연합뉴스",
+          "sourcePublishedAt": "2026-03-28"
+        }
       },
       {
         "name": "김수민",

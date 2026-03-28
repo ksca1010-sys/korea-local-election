@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-03-27T01:26:43.025649",
-    "totalDetections": 38,
-    "pendingCount": 38,
+    "lastRun": "2026-03-28T01:20:28.192156",
+    "totalDetections": 39,
+    "pendingCount": 39,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -349,6 +349,11 @@
           "title": "‘친문 부활이냐, 친명 수성이냐’ 6·3 안산갑 보궐 격전지 떠오른 까...",
           "link": "https://ilyo.co.kr/?ac=article_view&entry_id=510060",
           "date": "2026-03-26"
+        },
+        {
+          "title": "민주당 ‘집안 싸움’ 안산…“김용 나와 달라” VS “대법 판결 이후여...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8520142&ref=A",
+          "date": "2026-03-27"
         }
       ],
       "necValidated": false,
@@ -1169,6 +1174,29 @@
       "necValidated": true,
       "status": "pending",
       "detectedAt": "2026-03-26T01:26:57.733395"
+    },
+    {
+      "key": "sejong-행정수도",
+      "region": "sejong",
+      "district": "행정수도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "세종 민심공략 나선 與 &quot;행정수도특별법 속도낼것&quot;",
+          "link": "https://www.mk.co.kr/article/12000630",
+          "date": "2026-03-27"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-03-28T01:20:28.192124"
     }
   ]
 }

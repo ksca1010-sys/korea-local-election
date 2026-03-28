@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-27",
+    "lastUpdated": "2026-03-28",
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
-    "lastDetection": "2026-03-27",
+    "lastDetection": "2026-03-28",
     "lastFactCheck": "2026-03-26T02:23:35.764698"
   },
   "districts": {
@@ -959,6 +959,40 @@
         }
       ],
       "voters": 170398
+    },
+    "jeonbuk-산김제부안": {
+      "district": "전북 군산시김제시부안군갑",
+      "region": "jeonbuk",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "(사유 확인 필요)",
+      "previousMember": {
+        "name": "신영대",
+        "party": "democratic"
+      },
+      "prevElection": {
+        "winner": "democratic",
+        "winnerName": "신영대",
+        "rate": 86.73,
+        "runner": "independent",
+        "runnerName": "(확인 필요)",
+        "runnerRate": 0,
+        "turnout": 0
+      },
+      "candidates": [],
+      "keyIssues": [],
+      "status": "확정",
+      "history": [
+        {
+          "election": 22,
+          "year": 2024,
+          "winner": "democratic",
+          "winnerName": "신영대",
+          "winnerParty": "더불어민주당",
+          "rate": 86.73,
+          "sggName": "군산시김제시부안군갑"
+        }
+      ]
     }
   }
 }
