@@ -2366,7 +2366,7 @@ const ElectionData = (() => {
             this._pollsPromise = fetch('data/polls/polls.json')
                 .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
                 .then(data => { this._pollsCache = data; this._pollsPromise = null; return data; })
-                .catch(err => { this._pollsPromise = null; console.warn('[PollsData] Failed:', err); return null; });
+                .catch(err => { this._pollsPromise = null; console.error('[PollsData] 로드 실패:', err); return null; });
             return this._pollsPromise;
         },
         getPollsForSelection(regionKey, electionType, districtName = null) {
@@ -2922,7 +2922,7 @@ const ElectionData = (() => {
             this._mayorHistoryPromise = fetch('data/mayor_history.json')
                 .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
                 .then(data => { this._mayorHistoryCache = data; this._mayorHistoryPromise = null; return data; })
-                .catch(err => { this._mayorHistoryPromise = null; console.warn('[MayorHistory] Failed:', err); return null; });
+                .catch(err => { this._mayorHistoryPromise = null; console.error('[MayorHistory] 로드 실패:', err); return null; });
             return this._mayorHistoryPromise;
         },
         getMayorHistoricalData(regionKey, districtName) {

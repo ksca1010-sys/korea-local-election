@@ -25,9 +25,10 @@ import xml.etree.ElementTree as ET
 from datetime import date
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-OUTPUT_PATH = BASE_DIR / "data" / "mayor_history.json"
-ENV_FILE = BASE_DIR / ".env"
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from shared import BASE_DIR, DATA_DIR, REGION_MAP, load_env, load_json, save_json  # noqa: E402
+
+OUTPUT_PATH = DATA_DIR / "mayor_history.json"
 
 NEC_API_BASE = "http://apis.data.go.kr/9760000"
 WINNER_SERVICE = f"{NEC_API_BASE}/WinnerInfoInqireService2"
@@ -45,16 +46,7 @@ ELECTIONS = {
     8: {"sgId": "20220601", "year": 2022, "label": "제8회 (2022)"},
 }
 
-REGION_MAP = {
-    "서울특별시": "seoul", "부산광역시": "busan", "대구광역시": "daegu",
-    "인천광역시": "incheon", "광주광역시": "gwangju", "대전광역시": "daejeon",
-    "울산광역시": "ulsan", "세종특별자치시": "sejong", "경기도": "gyeonggi",
-    "강원특별자치도": "gangwon", "강원도": "gangwon",
-    "충청북도": "chungbuk", "충청남도": "chungnam",
-    "전북특별자치도": "jeonbuk", "전라북도": "jeonbuk",
-    "전라남도": "jeonnam", "경상북도": "gyeongbuk",
-    "경상남도": "gyeongnam", "제주특별자치도": "jeju", "제주도": "jeju",
-}
+    # REGION_MAP → shared.py에서 import
 
 # 정당 정규화
 PARTY_NORMALIZE = {
@@ -78,15 +70,6 @@ def normalize_party(party_name):
         if k in party_name:
             return v
     return "other"
-
-
-def load_env():
-    if ENV_FILE.exists():
-        for line in ENV_FILE.read_text().splitlines():
-            line = line.strip()
-            if line and not line.startswith("#") and "=" in line:
-                key, _, val = line.partition("=")
-                os.environ.setdefault(key.strip(), val.strip().strip("'\""))
 
 
 def fetch_winners_for_election(sg_id, api_key):

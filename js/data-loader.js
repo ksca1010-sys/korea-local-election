@@ -17,7 +17,7 @@ const DataLoader = (() => {
             cache[filename] = data;
             return data;
         } catch (e) {
-            console.warn(`[DataLoader] ${filename} 로드 실패:`, e);
+            console.error(`[DataLoader] ${filename} 로드 실패:`, e);
             return null;
         }
     }

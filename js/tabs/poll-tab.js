@@ -454,9 +454,12 @@ const PollTab = (() => {
 
     // ── 메인 렌더 ──
 
-    function render(regionKey, electionType, districtName) {
+    async function render(regionKey, electionType, districtName) {
         if (typeof ElectionData === 'undefined' || typeof ChartsModule === 'undefined') return;
         ChartsModule.destroyCharts();
+
+        // polls.json lazy 로딩 (1.2MB — 탭 진입 시 최초 1회만 fetch)
+        await ElectionData.loadPollsData?.();
 
         const latestSection = document.getElementById('poll-latest-section');
         const trendsSection = document.getElementById('poll-trends-section');

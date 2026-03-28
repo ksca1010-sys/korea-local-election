@@ -122,40 +122,46 @@ const App = (() => {
         setupFilterTooltips();
         setupFilterButtons();
         setupMobileFilterSheet();
+        setupMobileElectionChips();
+        setupMiniCard();
         toggleByelectionNote(false);
         setupBannerClose();
 
-        // Load election stats (선거구 수 외부 데이터 → 필터 카운트 동적 반영)
+        // Load election stats first (선거구 수 → 필터 카운트 의존)
         try {
             await ElectionData.loadElectionStats?.();
             updateFilterCounts();
         } catch(e) { console.warn('loadElectionStats error:', e); }
-        // Load superintendent status (교육감 현황 팩트체크 데이터)
-        try { await ElectionData.loadSuperintendentStatus?.(); } catch(e) { console.warn('loadSuperintendentStatus error:', e); }
-        // Load superintendent candidates (교육감 후보 팩트체크 데이터)
-        try { await ElectionData.loadSuperintendentCandidates?.(); } catch(e) { console.warn('loadSuperintendentCandidates error:', e); }
-        // Load governor status (광역단체장 현황 팩트체크 데이터)
-        try { await ElectionData.loadGovernorStatus?.(); } catch(e) { console.warn('loadGovernorStatus error:', e); }
-        // Load mayor status (기초단체장 현황 팩트체크 데이터)
-        try { await ElectionData.loadMayorStatus?.(); } catch(e) { console.warn('loadMayorStatus error:', e); }
-        // Load mayor candidates (기초단체장 후보 팩트체크 데이터)
-        try { await ElectionData.loadMayorCandidates?.(); } catch(e) { console.warn('loadMayorCandidates error:', e); }
-        try { await ElectionData.loadCouncilSeats?.(); } catch(e) { console.warn('loadCouncilSeats error:', e); }
-        // Load mayor history (기초단체장 역대 선거 결과)
-        try { await ElectionData.loadMayorHistory?.(); } catch(e) { console.warn('loadMayorHistory error:', e); }
-        // Load council members data (광역의원 현직 정보)
-        try { await ElectionData.loadCouncilMembersData?.(); } catch(e) { console.warn('loadCouncilMembersData error:', e); }
-        // Load candidates data
-        try { await ElectionData.loadCandidatesData?.(); } catch(e) { console.warn('loadCandidatesData error:', e); }
-        // Load by-election data
-        try { await ElectionData.loadByElectionData?.(); } catch(e) { console.warn('loadByElectionData error:', e); }
-        // Load polls data (여론조사)
-        try { await ElectionData.loadPollsData?.(); } catch(e) { console.warn('loadPollsData error:', e); }
+
+        // 나머지 데이터 병렬 로딩 (모두 독립적)
+        const dataLoads = [
+            ['loadSuperintendentStatus', ElectionData.loadSuperintendentStatus?.()],
+            ['loadSuperintendentCandidates', ElectionData.loadSuperintendentCandidates?.()],
+            ['loadGovernorStatus', ElectionData.loadGovernorStatus?.()],
+            ['loadMayorStatus', ElectionData.loadMayorStatus?.()],
+            ['loadMayorCandidates', ElectionData.loadMayorCandidates?.()],
+            ['loadCouncilSeats', ElectionData.loadCouncilSeats?.()],
+            ['loadMayorHistory', ElectionData.loadMayorHistory?.()],
+            ['loadCouncilMembersData', ElectionData.loadCouncilMembersData?.()],
+            ['loadCandidatesData', ElectionData.loadCandidatesData?.()],
+            ['loadByElectionData', ElectionData.loadByElectionData?.()],
+            // loadPollsData (1.2MB) → poll-tab 진입 시 lazy 로딩으로 이관
+        ];
+        const results = await Promise.allSettled(dataLoads.map(([, p]) => p));
+        const failures = [];
+        results.forEach((r, i) => {
+            if (r.status === 'rejected') {
+                console.error(`[init] ${dataLoads[i][0]} 실패:`, r.reason);
+                failures.push(dataLoads[i][0]);
+            }
+        });
+        if (failures.length > 0) {
+            showToast(`데이터 ${failures.length}건 로딩 실패 — 일부 정보가 표시되지 않을 수 있습니다`, 'warn', 5000);
+        }
 
         // 모든 데이터 로드 완료 → 실제 데이터 기반 카운트 동기화
         try { syncCountsFromData(); } catch(e) { console.warn('[syncCounts] error:', e); }
         try { updateFilterCounts(); } catch(e) { console.warn('[filterCounts] error:', e); }
-        // 검색 인덱스 무효화
         invalidateSearchIndex();
 
         // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
@@ -269,12 +275,21 @@ const App = (() => {
         // 선거 캘린더 배너 초기 렌더링
         renderElectionBanner();
 
-        // Update D-day + 배너 every hour (자정 phase 전환 대비)
+        // Update D-day + 배너 every hour (자정 phase 전환 대비) — 탭 비활성 시 건너뜀
         setInterval(() => {
-            renderDday();
-            renderElectionCalendar();
-            renderElectionBanner();
+            if (!document.hidden) {
+                renderDday();
+                renderElectionCalendar();
+                renderElectionBanner();
+            }
         }, 60 * 60 * 1000);
+        // 탭이 다시 보일 때 즉시 갱신
+        document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+                renderDday();
+                renderElectionBanner();
+            }
+        });
 
         // 선거 용어 툴팁은 정보 패널에만 적용 (사이드바 필터는 기존 툴팁 사용)
 
@@ -299,12 +314,15 @@ const App = (() => {
     // ============================================
     // Banner Close (#10)
     // ============================================
+    let _mobileFilterSheetReady = false;
     function setupMobileFilterSheet() {
+        if (_mobileFilterSheetReady) return;
         const toggle = document.getElementById('mobile-filter-toggle');
         const sheet = document.getElementById('mobile-filter-sheet');
         const grid = document.getElementById('mobile-filter-grid');
         const backdrop = sheet?.querySelector('.mobile-filter-sheet-backdrop');
         if (!toggle || !sheet || !grid) return;
+        _mobileFilterSheetReady = true;
 
         // 사이드바의 필터 버튼을 복제해서 모바일 그리드에 넣기
         const sidebarBtns = document.querySelectorAll('.sidebar .filter-btn');
@@ -341,6 +359,66 @@ const App = (() => {
                 b.classList.toggle('active', b.dataset.type === activeType);
             });
         });
+        sidebarBtns.forEach(btn => {
+            observer.observe(btn, { attributes: true, attributeFilter: ['class'] });
+        });
+    }
+
+    // ── 모바일 선거유형 플로팅 칩 ──
+    let _mobileChipsReady = false;
+    function setupMobileElectionChips() {
+        if (_mobileChipsReady) return;
+        const container = document.getElementById('mobile-election-chips');
+        if (!container) return;
+        _mobileChipsReady = true;
+
+        const chipData = [
+            { type: 'governor', icon: 'fa-landmark', label: '광역단체장' },
+            { type: 'superintendent', icon: 'fa-graduation-cap', label: '교육감' },
+            { type: 'mayor', icon: 'fa-building', label: '기초단체장' },
+            { type: 'council', icon: 'fa-users', label: '광역의원' },
+            { type: 'localCouncil', icon: 'fa-people-group', label: '기초의원' },
+            { type: 'councilProportional', icon: 'fa-layer-group', label: '광역비례' },
+            { type: 'localCouncilProportional', icon: 'fa-network-wired', label: '기초비례' },
+            { type: 'byElection', icon: 'fa-calendar-check', label: '재보궐' },
+        ];
+
+        chipData.forEach(c => {
+            const chip = document.createElement('button');
+            chip.className = 'mobile-election-chip';
+            chip.dataset.type = c.type;
+            chip.innerHTML = `<i class="fas ${c.icon} chip-icon"></i><span>${c.label}</span>`;
+            chip.addEventListener('click', () => {
+                // 사이드바 원본 버튼 클릭
+                const sidebarBtn = document.querySelector(`.sidebar .filter-btn[data-type="${c.type}"]`);
+                if (sidebarBtn) sidebarBtn.click();
+            });
+            container.appendChild(chip);
+        });
+
+        // 사이드바 필터 활성 상태 → 칩 동기화 (디바운스)
+        let _chipSyncTimer;
+        function syncChips() {
+            clearTimeout(_chipSyncTimer);
+            _chipSyncTimer = setTimeout(() => {
+                const activeType = document.querySelector('.sidebar .filter-btn.active')?.dataset?.type;
+                container.querySelectorAll('.mobile-election-chip').forEach(chip => {
+                    chip.classList.toggle('active', chip.dataset.type === activeType);
+                });
+                // 활성 칩이 보이도록 스크롤
+                const activeChip = container.querySelector('.mobile-election-chip.active');
+                if (activeChip) {
+                    activeChip.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                }
+            }, 50);
+        }
+
+        // 초기 동기화
+        syncChips();
+
+        // MutationObserver로 사이드바 변경 감시
+        const sidebarBtns = document.querySelectorAll('.sidebar .filter-btn');
+        const observer = new MutationObserver(syncChips);
         sidebarBtns.forEach(btn => {
             observer.observe(btn, { attributes: true, attributeFilter: ['class'] });
         });
@@ -549,14 +627,7 @@ const App = (() => {
         return date.toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
     }
 
-    function escapeHtml(value) {
-        return String(value)
-            .replace(/&/g, '&amp;')
-            .replace(/</g, '&lt;')
-            .replace(/>/g, '&gt;')
-            .replace(/"/g, '&quot;')
-            .replace(/'/g, '&#39;');
-    }
+    // escapeHtml → js/utils.js로 이관 (전역 함수)
 
     // ============================================
     // Stats
@@ -827,9 +898,15 @@ const App = (() => {
         currentRegionKey = null;
         currentDistrictName = null;
         regionSelected = false;
+        hideMiniCard();
 
         const panel = document.getElementById('detail-panel');
-        if (panel) panel.classList.remove('collapsed');
+        if (window.innerWidth <= 768) {
+            // 모바일: 패널 닫기
+            if (panel) setPanelStage('collapsed', false);
+        } else {
+            if (panel) panel.classList.remove('collapsed');
+        }
 
         // 헤더와 탭 숨기기 (선거+지역 선택 전)
         const panelHeader = document.querySelector('.panel-header');
@@ -1770,6 +1847,75 @@ const App = (() => {
                 if (input.value.trim()) handleEnterSelect();
             });
         }
+
+        // ── 모바일 전체화면 검색 오버레이 ──
+        const mobileOverlay = document.getElementById('mobile-search-overlay');
+        const mobileInput = document.getElementById('mobile-search-input');
+        const mobileResults = document.getElementById('mobile-search-results');
+        const mobileSearchToggle = document.getElementById('mobile-search-toggle');
+        const mobileSearchClose = document.getElementById('mobile-search-close');
+
+        if (mobileOverlay && mobileInput && mobileResults) {
+            function openMobileSearch() {
+                mobileOverlay.classList.add('active');
+                mobileInput.value = '';
+                mobileResults.innerHTML = '';
+                requestAnimationFrame(() => mobileInput.focus());
+            }
+            function closeMobileSearch() {
+                mobileOverlay.classList.remove('active');
+                mobileInput.blur();
+                mobileResults.innerHTML = '';
+            }
+
+            if (mobileSearchToggle) mobileSearchToggle.addEventListener('click', openMobileSearch);
+            if (mobileSearchClose) mobileSearchClose.addEventListener('click', closeMobileSearch);
+
+            // 뒤로가기(popstate) / Escape 시 모바일 검색 닫기
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) {
+                    closeMobileSearch();
+                }
+            });
+
+            // 모바일 입력 → 데스크톱 검색 엔진 사용 → 결과 복제
+            let mobileDebounce = null;
+            mobileInput.addEventListener('input', () => {
+                clearTimeout(mobileDebounce);
+                mobileDebounce = setTimeout(() => {
+                    const q = mobileInput.value.trim();
+                    // 데스크톱 input에 값 설정하고 doSearch 호출
+                    input.value = q;
+                    doSearch(q);
+                    // 결과를 모바일 오버레이로 복제
+                    mobileResults.innerHTML = results.innerHTML;
+                    // 데스크톱 드롭다운은 숨김
+                    results.classList.remove('active');
+                }, 80);
+            });
+
+            // 모바일 결과 항목 클릭
+            mobileResults.addEventListener('click', (e) => {
+                const item = e.target.closest('.search-result-item');
+                if (!item) return;
+                // 데스크톱 input 값 동기화 (dong modal 등에서 필요)
+                input.value = mobileInput.value.trim();
+                selectItem(item);
+                closeMobileSearch();
+            });
+
+            // 모바일 Enter 키
+            mobileInput.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' && !e.isComposing) {
+                    e.preventDefault();
+                    clearTimeout(mobileDebounce);
+                    input.value = mobileInput.value.trim();
+                    doSearch(input.value);
+                    handleEnterSelect();
+                    closeMobileSearch();
+                }
+            });
+        }
     }
 
     // ============================================
@@ -1949,50 +2095,187 @@ const App = (() => {
         document.addEventListener('touchend', endResize);
     }
 
-    // ── 모바일 패널 스와이프 닫기 (아래로 스와이프) ──
+    // ── 모바일 패널 3단 드래그 (peek / half / full) ──
+    const PANEL_STAGES = ['collapsed', 'panel-peek', 'panel-half', 'panel-full'];
+    // 각 단계의 보이는 높이 (vh 단위)
+    const STAGE_HEIGHTS = { 'collapsed': 0, 'panel-peek': 30, 'panel-half': 50, 'panel-full': 85 };
+    let _currentPanelStage = 'collapsed';
+
+    function getPanelStage() { return _currentPanelStage; }
+
+    function setPanelStage(stage, animate) {
+        const panel = document.getElementById('detail-panel');
+        if (!panel) return;
+
+        if (animate !== false) {
+            // 이전 transition 정리 후 새로 시작
+            panel.classList.remove('panel-animating');
+            void panel.offsetWidth; // reflow로 클래스 제거 즉시 적용
+            panel.classList.add('panel-animating');
+            panel.addEventListener('transitionend', () => {
+                panel.classList.remove('panel-animating');
+            }, { once: true });
+        }
+
+        // 모든 단계 클래스 제거
+        PANEL_STAGES.forEach(s => panel.classList.remove(s));
+        panel.style.transform = '';
+        panel.classList.add(stage);
+        _currentPanelStage = stage;
+
+        // 모바일 패널 열림 시 배경 스크롤 잠금
+        if (window.innerWidth <= 768) {
+            const mapSection = document.getElementById('map-section');
+            if (stage === 'panel-half' || stage === 'panel-full') {
+                if (mapSection) mapSection.style.pointerEvents = 'none';
+            } else {
+                if (mapSection) mapSection.style.pointerEvents = '';
+            }
+        }
+    }
+
     function setupMobilePanelSwipe() {
         const panel = document.getElementById('detail-panel');
         const header = panel?.querySelector('.panel-header');
         if (!panel || !header) return;
 
-        let swipeStartY = 0;
-        let swiping = false;
+        let startY = 0;
+        let startTranslateY = 0;
+        let dragging = false;
+        let dragStartStage = 'collapsed';
+        let startTime = 0;
+
+        function getPanelTotalH() {
+            // 가로모드 시 80vh, 세로모드 85vh (CSS와 동기화)
+            return (window.innerWidth > window.innerHeight) ? 80 : 85;
+        }
+
+        function getCurrentTranslateY() {
+            const h = STAGE_HEIGHTS[_currentPanelStage] || 0;
+            return (getPanelTotalH() - h) / 100 * window.innerHeight;
+        }
 
         header.addEventListener('touchstart', (e) => {
-            if (window.innerWidth > 768) return;
-            swipeStartY = e.touches[0].clientY;
-            swiping = true;
+            if (window.innerWidth > 768 || _currentPanelStage === 'collapsed') return;
+            startY = e.touches[0].clientY;
+            startTranslateY = getCurrentTranslateY();
+            dragStartStage = _currentPanelStage;
+            startTime = Date.now();
+            dragging = true;
+            panel.classList.remove('panel-animating');
         }, { passive: true });
 
         header.addEventListener('touchmove', (e) => {
-            if (!swiping || window.innerWidth > 768) return;
-            const dy = e.touches[0].clientY - swipeStartY;
-            if (dy > 10) {
-                // 아래로 스와이프 → 닫기 미리보기
-                panel.style.transform = `translateY(${Math.min(dy, 200)}px)`;
+            if (!dragging || window.innerWidth > 768) return;
+            e.preventDefault(); // 패널 드래그 중 배경 스크롤 방지
+            const dy = e.touches[0].clientY - startY;
+            const newTY = Math.max(0, startTranslateY + dy);
+            panel.style.transform = `translateY(${newTY}px)`;
+            // 드래그 중에는 단계 클래스 제거 (transform으로 직접 제어)
+            PANEL_STAGES.forEach(s => panel.classList.remove(s));
+        }, { passive: false });
+
+        function finishDrag(endY) {
+            dragging = false;
+            const dy = endY - startY;
+            const elapsed = Date.now() - startTime;
+            const speed = Math.abs(dy) / Math.max(elapsed, 1) * 1000; // px/s
+
+            // 현재 보이는 높이 (vh) 계산
+            const currentTY = Math.max(0, startTranslateY + dy);
+            const visibleVh = getPanelTotalH() - (currentTY / window.innerHeight * 100);
+
+            let nextStage;
+            if (speed > 400 && dy > 30) {
+                // 빠르게 아래로 → 한 단계 내림
+                const idx = PANEL_STAGES.indexOf(dragStartStage);
+                nextStage = PANEL_STAGES[Math.max(0, idx - 1)] || 'collapsed';
+            } else if (speed > 400 && dy < -30) {
+                // 빠르게 위로 → 한 단계 올림
+                const idx = PANEL_STAGES.indexOf(dragStartStage);
+                nextStage = PANEL_STAGES[Math.min(3, idx + 1)] || 'panel-full';
+            } else {
+                // 느리게 → 가장 가까운 snap point
+                if (visibleVh < 15) nextStage = 'collapsed';
+                else if (visibleVh < 40) nextStage = 'panel-peek';
+                else if (visibleVh < 67) nextStage = 'panel-half';
+                else nextStage = 'panel-full';
             }
-        }, { passive: true });
+
+            panel.style.transform = '';
+            if (nextStage === 'collapsed') {
+                closePanel();
+            } else {
+                setPanelStage(nextStage);
+            }
+        }
 
         header.addEventListener('touchend', (e) => {
-            if (!swiping || window.innerWidth > 768) return;
-            swiping = false;
-            const dy = (e.changedTouches[0]?.clientY || 0) - swipeStartY;
-            if (dy > 80) {
-                // 충분히 아래로 스와이프 → 닫기
-                panel.classList.add('collapsed');
-                panel.style.transform = '';
-            } else {
-                panel.style.transform = '';
-            }
+            if (!dragging || window.innerWidth > 768) return;
+            const endY = e.changedTouches[0]?.clientY || startY;
+            finishDrag(endY);
+        }, { passive: true });
+
+        // touchcancel 시 원위치 복원
+        header.addEventListener('touchcancel', () => {
+            if (!dragging) return;
+            dragging = false;
+            panel.style.transform = '';
+            setPanelStage(dragStartStage);
         }, { passive: true });
     }
+
+    // ── resize 시 모바일 ↔ 데스크톱 패널 상태 정리 ──
+    let _prevIsMobile = window.innerWidth <= 768;
+    window.addEventListener('resize', (() => {
+        let timer;
+        return () => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile === _prevIsMobile) return;
+                _prevIsMobile = isMobile;
+
+                const panel = document.getElementById('detail-panel');
+                if (!panel) return;
+
+                // 모바일 stage 클래스 모두 제거
+                PANEL_STAGES.forEach(s => panel.classList.remove(s));
+                panel.classList.remove('panel-animating');
+                panel.style.transform = '';
+
+                if (isMobile) {
+                    // 데스크톱 → 모바일: 패널이 열려있으면 half, 아니면 collapsed
+                    if (regionSelected) {
+                        setPanelStage('panel-half', false);
+                    } else {
+                        setPanelStage('collapsed', false);
+                    }
+                } else {
+                    // 모바일 → 데스크톱: collapsed 또는 열림 상태 복원
+                    hideMiniCard();
+                    _currentPanelStage = 'collapsed';
+                    if (regionSelected) {
+                        panel.classList.remove('collapsed');
+                    } else {
+                        panel.classList.add('collapsed');
+                    }
+                }
+            }, 150);
+        };
+    })());
 
     /** 지역이 선택되어 패널에 데이터가 표시된 상태인지 */
     let regionSelected = false;
 
     function openPanel() {
         const panel = document.getElementById('detail-panel');
-        if (panel) {
+        if (!panel) return;
+        hideMiniCard();
+        if (window.innerWidth <= 768) {
+            // 모바일: half 단계로 열기
+            setPanelStage('panel-half');
+        } else {
             panel.classList.remove('collapsed');
             panel.style.transform = '';
         }
@@ -2014,10 +2297,16 @@ const App = (() => {
 
     function closePanel() {
         const panel = document.getElementById('detail-panel');
-        if (panel) panel.classList.add('collapsed');
+        if (!panel) return;
+        if (window.innerWidth <= 768) {
+            setPanelStage('collapsed');
+        } else {
+            panel.classList.add('collapsed');
+        }
         currentRegionKey = null;
         currentDistrictName = null;
         regionSelected = false;
+        hideMiniCard();
 
         // Deselect map region
         const mapContainer = document.querySelector('#korea-map');
@@ -2025,6 +2314,40 @@ const App = (() => {
             mapContainer.querySelectorAll('.region').forEach(r => r.classList.remove('selected'));
             mapContainer.querySelectorAll('.district').forEach(d => d.classList.remove('selected'));
         }
+    }
+
+    // ── 모바일 미니 카드 (지도 하단) ──
+    function showMiniCard(regionKey, region) {
+        const card = document.getElementById('map-mini-card');
+        const nameEl = document.getElementById('mini-card-region');
+        const detailEl = document.getElementById('mini-card-detail');
+        if (!card || !nameEl || !detailEl) return;
+
+        const electionTypeNames = {
+            governor: '광역단체장', superintendent: '교육감', mayor: '기초단체장',
+            council: '광역의원', localCouncil: '기초의원',
+            councilProportional: '광역비례', localCouncilProportional: '기초비례',
+            byElection: '재보궐'
+        };
+        nameEl.textContent = region.name;
+        detailEl.textContent = electionTypeNames[currentElectionType] || '';
+
+        card.style.display = 'block';
+    }
+
+    function hideMiniCard() {
+        const card = document.getElementById('map-mini-card');
+        if (card) card.style.display = 'none';
+    }
+
+    // 미니 카드 클릭 → 패널 열기
+    function setupMiniCard() {
+        const card = document.getElementById('map-mini-card');
+        if (!card) return;
+        card.addEventListener('click', () => {
+            hideMiniCard();
+            openPanel();
+        });
     }
 
     // ============================================
@@ -2035,9 +2358,14 @@ const App = (() => {
         currentRegionKey = null;
         currentDistrictName = null;
         currentElectionType = null;
+        hideMiniCard();
 
         const panel = document.getElementById('detail-panel');
-        if (panel) panel.classList.remove('collapsed');
+        if (window.innerWidth <= 768) {
+            if (panel) setPanelStage('collapsed', false);
+        } else {
+            if (panel) panel.classList.remove('collapsed');
+        }
 
         // 헤더와 탭 숨기기
         const panelHeader = document.querySelector('.panel-header');
@@ -2059,8 +2387,9 @@ const App = (() => {
             currentTab = 'overview';
         }
 
-        // 선거유형 필터 초기화
+        // 선거유형 필터 초기화 (사이드바 + 모바일 칩)
         document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.mobile-election-chip').forEach(c => c.classList.remove('active'));
         updateElectionTypeLabel(null);
 
         const searchInput = document.getElementById('region-search');
@@ -2164,7 +2493,14 @@ const App = (() => {
 
         // Switch to overview and show it
         switchTabForRegion();
-        openPanel();
+
+        // 모바일: 미니 카드 먼저 표시 (hash 복원 시엔 패널 바로 열기), 데스크톱: 패널 바로 열기
+        if (window.innerWidth <= 768 && !_restoringFromHash) {
+            showMiniCard(regionKey, region);
+        } else {
+            openPanel();
+        }
+        _restoringFromHash = false;
         updateRegionBadge(region);
 
         // Highlight on map (only in province mode)
@@ -3490,11 +3826,13 @@ function renderCouncilProvinceView(regionKey, region) {
         };
     }
 
+    let _restoringFromHash = false;
     function restoreFromHash() {
         const state = parseHash();
         if (!state || !state.electionType) return;
 
         _hashUpdateSuppressed = true;
+        _restoringFromHash = true;
 
         // Set election type
         const filterBtn = document.querySelector(`.filter-btn[data-type="${state.electionType}"]`);
@@ -3502,6 +3840,8 @@ function renderCouncilProvinceView(regionKey, region) {
 
         // Select region (after a small delay for map to update)
         if (state.regionKey) {
+            // 안전망: 모든 분기가 끝난 후 _restoringFromHash를 확실히 리셋
+            setTimeout(() => { _restoringFromHash = false; }, 1200);
             setTimeout(() => {
                 _hashUpdateSuppressed = true;
 
@@ -3575,12 +3915,16 @@ function renderCouncilProvinceView(regionKey, region) {
             }, 300);
         } else {
             _hashUpdateSuppressed = false;
+            _restoringFromHash = false;
             updateHash();
         }
     }
 
+    let _popstateTimer = null;
     window.addEventListener('popstate', () => {
-        restoreFromHash();
+        // 디바운스: 모바일에서 빠른 뒤로가기 연타 시 레이스컨디션 방지
+        clearTimeout(_popstateTimer);
+        _popstateTimer = setTimeout(() => restoreFromHash(), 120);
     });
 
     // ── Analytics: 이벤트 위임 (clickPoll, clickNews, shareClick) ──
