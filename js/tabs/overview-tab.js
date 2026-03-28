@@ -244,7 +244,7 @@ const OverviewTab = (() => {
                     const s = supt.currentSuperintendent;
                     govColor = ElectionData.getSuperintendentColor(s.stance);
                     const sinceText = s.since ? ` ${s.since}년~` : '';
-                    govContainer.innerHTML = `
+                    let suptHtml = `
                         <div class="governor-info">
                             <div class="governor-avatar" style="background:${govColor}">${s.name.charAt(0)}</div>
                             <div class="governor-details">
@@ -256,6 +256,34 @@ const OverviewTab = (() => {
                             </div>
                         </div>
                     `;
+
+                    // 전남광주통합특별시: 전남 교육감도 함께 표시
+                    if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                        const prevJn = supt.previousJeonnamSuperintendent;
+                        if (prevJn) {
+                            const jnColor = ElectionData.getSuperintendentColor(prevJn.stance);
+                            const jnSince = prevJn.since ? ` ${prevJn.since}년~` : '';
+                            suptHtml += `
+                                <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.15);">
+                                    <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;">
+                                        <i class="fas fa-code-merge"></i> 통합 이전 전라남도
+                                    </div>
+                                    <div class="governor-info">
+                                        <div class="governor-avatar" style="background:${jnColor}">${prevJn.name.charAt(0)}</div>
+                                        <div class="governor-details">
+                                            <div class="name">${prevJn.name}</div>
+                                            <div class="meta">
+                                                <span class="party-badge" style="background:${jnColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${prevJn.stance}</span>
+                                                ${jnSince} 전남 교육감
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+
+                    govContainer.innerHTML = suptHtml;
                 } else {
                     govContainer.innerHTML = '';
                 }
@@ -294,7 +322,7 @@ const OverviewTab = (() => {
                     govColor = ElectionData.getPartyColor(gov.party);
                     const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
                     const statusText = gov.acting ? ' 권한대행' : ' 재임중';
-                    govContainer.innerHTML = `
+                    let govHtml = `
                         <div class="governor-info">
                             <div class="governor-avatar" style="background:${govColor}">${gov.name.charAt(0)}</div>
                             <div class="governor-details">
@@ -306,6 +334,35 @@ const OverviewTab = (() => {
                             </div>
                         </div>
                     `;
+
+                    // 전남광주통합특별시: 전남 도지사도 함께 표시
+                    if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                        const jeonnamRegion = ElectionData.getRegion('jeonnam');
+                        const jeonnamGov = jeonnamRegion?.currentGovernor;
+                        if (jeonnamGov) {
+                            const jnColor = ElectionData.getPartyColor(jeonnamGov.party);
+                            const jnSince = Number.isFinite(Number(jeonnamGov.since)) ? ` ${jeonnamGov.since}년~` : '';
+                            govHtml += `
+                                <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.15);">
+                                    <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;">
+                                        <i class="fas fa-code-merge"></i> 통합 이전 전라남도
+                                    </div>
+                                    <div class="governor-info">
+                                        <div class="governor-avatar" style="background:${jnColor}">${jeonnamGov.name.charAt(0)}</div>
+                                        <div class="governor-details">
+                                            <div class="name">${jeonnamGov.name}</div>
+                                            <div class="meta">
+                                                <span class="party-badge" style="background:${jnColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(jeonnamGov.party)}</span>
+                                                ${jnSince} 전남도지사
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `;
+                        }
+                    }
+
+                    govContainer.innerHTML = govHtml;
                 }
             }
         }

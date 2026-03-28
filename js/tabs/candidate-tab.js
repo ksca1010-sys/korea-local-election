@@ -106,12 +106,20 @@ const CandidateTab = (() => {
 
         if (electionType === 'superintendent') {
             const data = ElectionData.getSuperintendentData(regionKey);
+            let suCandidates = data?.candidates || [];
+            // 전남광주통합특별시: merge jeonnam superintendent candidates
+            if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                const jnData = ElectionData.getSuperintendentData('jeonnam');
+                if (jnData?.candidates?.length) {
+                    suCandidates = [...suCandidates, ...jnData.candidates.filter(c => !c._merged)];
+                }
+            }
             const incumbentName = data?.currentSuperintendent?.name || '';
             const displayNameSuper = (typeof getMergedDisplayName === 'function' && getMergedDisplayName(regionKey, electionType)) || region.name;
             return {
                 title: `${displayNameSuper} 교육감 후보`,
                 isSuperintendent: true,
-                candidates: (data?.candidates || []).map((candidate) => ({
+                candidates: suCandidates.map((candidate) => ({
                     name: candidate.name,
                     badgeLabel: candidate.stance || '교육계',
                     badgeColor: ElectionData.getSuperintendentColor(candidate.stance),

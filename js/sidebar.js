@@ -400,11 +400,14 @@ const Sidebar = (() => {
         const counts = {};
 
         // 광역단체장: regions 키 수 (세종 포함 17개)
+        // 전남광주통합특별시: governor/superintendent는 jeonnam이 gwangju로 병합되어 16개
         const regions = ElectionData.regions;
-        if (regions) counts.governor = Object.keys(regions).length;
+        const regionCount = regions ? Object.keys(regions).length : 0;
+        const mergedCount = (regions && regions['jeonnam']) ? regionCount - 1 : regionCount;
+        if (regions) counts.governor = mergedCount;
 
-        // 교육감: regions 키 수 (= 광역 수)
-        if (regions) counts.superintendent = Object.keys(regions).length;
+        // 교육감: regions 키 수 (= 광역 수, 병합 반영)
+        if (regions) counts.superintendent = mergedCount;
 
         // 기초단체장: sub_regions의 전체 시군구 수
         const subRegions = ElectionData.subRegionData;

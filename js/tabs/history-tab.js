@@ -132,6 +132,17 @@ const HistoryTab = (() => {
             ? (ElectionData.getMayorHistoricalData(regionKey, districtName) || [])
             : [];
 
+        // 전남광주통합특별시: 역대선거에 전남 데이터도 포함
+        let jeonnamHistory = null;
+        if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+            if (electionType === 'governor') {
+                jeonnamHistory = ElectionData.getHistoricalData('jeonnam') || [];
+            } else if (electionType === 'superintendent') {
+                jeonnamHistory = ElectionData.getSuperintendentHistoricalData('jeonnam') || [];
+            }
+            if (jeonnamHistory && jeonnamHistory.length === 0) jeonnamHistory = null;
+        }
+
         if (!history.length) {
             destroyChart();
             canvas.style.display = 'none';
@@ -294,6 +305,54 @@ const HistoryTab = (() => {
                 </div>
             `;
         }).reverse().join('');
+
+        // 전남광주통합특별시: 전남 역대선거 데이터 추가 표시
+        if (jeonnamHistory && jeonnamHistory.length > 0) {
+            resultsEl.innerHTML += `
+                <div style="margin:20px 0 12px;padding:10px 14px;border-radius:8px;background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.2);">
+                    <div style="font-size:0.85rem;font-weight:600;color:var(--accent-blue);">
+                        <i class="fas fa-code-merge"></i> 전라남도 역대 선거 (통합 이전)
+                    </div>
+                    <div style="font-size:0.75rem;color:var(--text-muted);margin-top:4px;">
+                        2026년 전남광주통합특별시 출범 이전 전라남도 역대 선거 결과입니다.
+                    </div>
+                </div>
+            ` + jeonnamHistory.map((entry) => {
+                const winnerColor = electionType === 'superintendent'
+                    ? ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner)
+                    : ElectionData.getPartyColor(entry.winner);
+                const runnerColor = electionType === 'superintendent'
+                    ? ElectionData.getSuperintendentColor(entry.runner) || ElectionData.getPartyColor(entry.runner || 'independent')
+                    : ElectionData.getPartyColor(entry.runner || 'independent');
+                const winnerBloc = getBlocKey(entry.winner);
+                const runnerBloc = getBlocKey(entry.runner || 'independent');
+                const winnerPct = Number(entry.rate) || 0;
+                const runnerPct = Number(entry.runnerRate) || 0;
+                const isUncontested = !!entry.isUncontested || (winnerPct === 0 && !entry.runnerName);
+                return `
+                    <div class="ht-row">
+                        <div class="ht-left">
+                            <span class="ht-year">${entry.year}</span>
+                        </div>
+                        <div class="ht-center">
+                            ${isUncontested
+                                ? `<div class="ht-uncontested">무투표 당선</div>`
+                                : `<div class="ht-bar-track">
+                                    <div class="ht-bar-fill" style="width:${winnerPct}%;background:${winnerColor}"></div>
+                                </div>`
+                            }
+                            <div class="ht-names">
+                                <span><span class="ht-dot ${smallDotShapeClass(winnerBloc)}" style="background:${winnerColor}"></span>${entry.winnerName}${isUncontested ? '' : ` <b>${winnerPct.toFixed(1)}%</b>`}</span>
+                                ${entry.runnerName
+                                    ? `<span class="ht-sub"><span class="ht-dot ${smallDotShapeClass(runnerBloc)}" style="background:${runnerColor}"></span>${entry.runnerName} ${runnerPct.toFixed(1)}%</span>`
+                                    : `<span class="ht-sub" style="color:var(--text-muted);font-size:0.75rem;">${entry.winnerParty || ElectionData.getPartyName(entry.winner)}</span>`
+                                }
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).reverse().join('');
+        }
 
         // Fix #7: 차트 부드럽게 + Fix #11: 차트 범례 설명 각주
         destroyChart();
