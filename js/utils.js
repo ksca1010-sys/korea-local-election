@@ -46,3 +46,22 @@ function showToast(message, type = 'info', duration = 4000) {
         setTimeout(() => toast.remove(), 500); // fallback
     }, duration);
 }
+
+// ── 전남광주통합특별시 병합 헬퍼 ──
+function getMergedRegionKey(regionKey, electionType) {
+    if (regionKey === 'jeonnam' && (electionType === 'governor' || electionType === 'superintendent')) {
+        return 'gwangju';
+    }
+    return regionKey;
+}
+
+function isMergedGwangjuJeonnam(electionType) {
+    return electionType === 'governor' || electionType === 'superintendent';
+}
+
+function getMergedDisplayName(regionKey, electionType) {
+    if (regionKey === 'gwangju' && isMergedGwangjuJeonnam(electionType)) {
+        return '전남광주통합특별시';
+    }
+    return null; // use default region.name
+}

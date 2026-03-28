@@ -13,7 +13,11 @@
   },
   "governor/gwangju": {
     "contentHash": "bef18413bf744f87ae75e52af6a65f3f",
-    "lastUpdated": "2026-03-27T22:21:41.996918"
+    "lastUpdated": "2026-03-27T22:21:41.996918",
+    "merged_jeonnam": {
+      "contentHash": "3298a65d611b2dd8179f88b99085d61d",
+      "lastUpdated": "2026-03-27T22:24:07.036067"
+    }
   },
   "governor/daejeon": {
     "contentHash": "cedb79977e667974757478a937f9bcad",
@@ -48,8 +52,7 @@
     "lastUpdated": "2026-03-27T22:23:52.415037"
   },
   "governor/jeonnam": {
-    "contentHash": "3298a65d611b2dd8179f88b99085d61d",
-    "lastUpdated": "2026-03-27T22:24:07.036067"
+    "_merged": "gwangju"
   },
   "governor/gyeongbuk": {
     "contentHash": "0458c85c58478e54df01aaca4a9e744b",

@@ -346,6 +346,12 @@ const MapModule = (() => {
             const key = el.attr('data-region') || el.attr('data-key');
             if (key) el.attr('fill', getRegionColor(key));
         });
+        // 전남광주통합: stroke도 갱신
+        if (_isMergedJeonnam()) {
+            const gwangjuFill = getRegionColor('gwangju');
+            d3.select('.region[data-region="gwangju"]').attr('stroke', gwangjuFill);
+            d3.select('.region[data-region="jeonnam"]').attr('stroke', gwangjuFill);
+        }
         // 의원류: .council-bg-fill, .basic-bg-fill
         d3.selectAll('.council-bg-fill, .basic-bg-fill').each(function() {
             const el = d3.select(this);
@@ -373,9 +379,19 @@ const MapModule = (() => {
         return _isLightMode() ? '#c0c8d4' : '#252535';
     }
 
+    // 전남광주통합: governor/superintendent 모드에서 전남→광주로 취급
+    function _isMergedJeonnam() {
+        return currentElectionType === 'governor' || currentElectionType === 'superintendent';
+    }
+
     function getRegionColor(regionKey) {
         if (!colorModeActive) {
             return _neutralFill();
+        }
+
+        // 전남광주통합: 전남은 광주 색상을 사용
+        if (regionKey === 'jeonnam' && _isMergedJeonnam()) {
+            return getRegionColor('gwangju');
         }
 
         if (currentElectionType === 'superintendent') {
@@ -714,7 +730,13 @@ const MapModule = (() => {
     }
 
     function handleMouseOver(event, d) {
-        const key = getRegionKey(d);
+        let key = getRegionKey(d);
+        // 전남광주통합: 전남 hover → 광주 tooltip + 양쪽 하이라이트
+        if (_isMergedJeonnam() && (key === 'jeonnam' || key === 'gwangju')) {
+            _highlightMergedGwangjuJeonnam(true);
+            showTooltip(event, 'gwangju');
+            return;
+        }
         showTooltip(event, key);
     }
 
@@ -1032,27 +1054,65 @@ const MapModule = (() => {
         _mapTooltip.classList.add('active');
     }
 
+    let _tooltipRafPending = false;
     function handleMouseMove(event) {
         if (!_mapTooltip) return;
-        const pad = 16;
-        let x = event.clientX + pad;
-        let y = event.clientY - 10;
-        const tw = _mapTooltip.offsetWidth;
-        const th = _mapTooltip.offsetHeight;
-        if (x + tw > window.innerWidth - pad) x = event.clientX - tw - pad;
-        if (y + th > window.innerHeight - pad) y = window.innerHeight - th - pad;
-        if (y < pad) y = pad;
-        _mapTooltip.style.left = x + 'px';
-        _mapTooltip.style.top = y + 'px';
+        if (_tooltipRafPending) return;
+        _tooltipRafPending = true;
+        const cx = event.clientX, cy = event.clientY;
+        requestAnimationFrame(() => {
+            _tooltipRafPending = false;
+            if (!_mapTooltip) return;
+            const pad = 12;
+            const vw = window.innerWidth;
+            const vh = window.innerHeight;
+            const tw = _mapTooltip.offsetWidth;
+            const th = _mapTooltip.offsetHeight;
+            let x = cx + pad;
+            let y = cy - 10;
+            // 우측 넘침 → 왼쪽으로
+            if (x + tw > vw - pad) x = cx - tw - pad;
+            // 좌측 넘침 방지
+            if (x < pad) x = pad;
+            // 하단 넘침
+            if (y + th > vh - pad) y = vh - th - pad;
+            // 상단 넘침
+            if (y < pad) y = pad;
+            _mapTooltip.style.left = x + 'px';
+            _mapTooltip.style.top = y + 'px';
+        });
     }
 
     let _tooltipPinned = false;
 
-    function handleMouseOut() {
+    // 전남광주통합: 양쪽 하이라이트 (hover 시각 효과)
+    function _highlightMergedGwangjuJeonnam(on) {
+        const gwEl = g.select('.region[data-region="gwangju"]');
+        const jnEl = g.select('.region[data-region="jeonnam"]');
+        if (on) {
+            const hoverStroke = 'rgba(255, 255, 255, 0.45)';
+            // 외곽만 하이라이트, 내부 경계는 여전히 숨김
+            gwEl.attr('stroke', hoverStroke).attr('stroke-width', 1.8);
+            jnEl.attr('stroke', hoverStroke).attr('stroke-width', 1.8);
+        } else {
+            const fill = getRegionColor('gwangju');
+            gwEl.attr('stroke', fill).attr('stroke-width', null);
+            jnEl.attr('stroke', fill).attr('stroke-width', null);
+        }
+    }
+
+    function handleMouseOut(event, d) {
         if (!_mapTooltip) return;
         if (_tooltipPinned) return; // 클릭으로 고정된 상태면 유지
         _mapTooltip.classList.remove('active');
         _mapTooltip.style.display = '';
+        // 전남광주통합: hover 해제 시 양쪽 하이라이트 제거
+        if (_isMergedJeonnam() && d) {
+            const key = getRegionKey(d);
+            if (key === 'gwangju' || key === 'jeonnam') {
+                _highlightMergedGwangjuJeonnam(false);
+            }
+        }
     }
 
     function _pinTooltip(durationMs) {
@@ -1067,8 +1127,10 @@ const MapModule = (() => {
     }
 
     function handleClick(event, d) {
-        const key = getRegionKey(d);
+        let key = getRegionKey(d);
         if (!key) return;
+        // 전남광주통합: 전남 클릭 → 광주로 리다이렉트
+        if (key === 'jeonnam' && _isMergedJeonnam()) key = 'gwangju';
         if (!handleRegionSelection(key)) return;
         // 클릭 시 툴팁을 2초간 고정
         _pinTooltip(2000);
@@ -1076,6 +1138,8 @@ const MapModule = (() => {
     }
 
     function handleClickFallback(event, key) {
+        // 전남광주통합: 전남 클릭 → 광주로 리다이렉트
+        if (key === 'jeonnam' && _isMergedJeonnam()) key = 'gwangju';
         if (!key || !handleRegionSelection(key)) return;
         _pinTooltip(2000);
         selectRegion(key);
@@ -1127,6 +1191,10 @@ const MapModule = (() => {
         // Update visual selection
         g.selectAll('.region').classed('selected', false);
         g.selectAll(`.region[data-region="${key}"]`).classed('selected', true);
+        // 전남광주통합: 광주 선택 시 전남도 함께 selected 표시
+        if (key === 'gwangju' && _isMergedJeonnam()) {
+            g.selectAll('.region[data-region="jeonnam"]').classed('selected', true);
+        }
         selectedRegion = key;
 
         // For drill-down types, switch to district map first
@@ -1195,6 +1263,23 @@ const MapModule = (() => {
                 }
             }
         });
+
+        // 전남광주통합: 내부 경계선 숨기기 + 전남 라벨 숨기기
+        if (_isMergedJeonnam()) {
+            const gwangjuFill = getRegionColor('gwangju');
+            g.select('.region[data-region="gwangju"]')
+                .attr('stroke', gwangjuFill).classed('region-merged', true);
+            g.select('.region[data-region="jeonnam"]')
+                .attr('stroke', gwangjuFill).classed('region-merged', true);
+            g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
+        } else {
+            // 통합 해제 시 원래 stroke 복원
+            g.select('.region[data-region="gwangju"]')
+                .attr('stroke', null).classed('region-merged', false);
+            g.select('.region[data-region="jeonnam"]')
+                .attr('stroke', null).classed('region-merged', false);
+            g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 1);
+        }
     }
 
     function updateLabels() {
@@ -1351,6 +1436,8 @@ const MapModule = (() => {
         currentProvinceKey = null;
         currentSubdistrictName = null;
         subdistrictContext = { regionKey: null, districtName: null };
+        _tooltipPinned = false;
+        if (_mapTooltip) _mapTooltip.classList.remove('active');
         setMapModeLabel('');
         toggleBackButton(false);
 

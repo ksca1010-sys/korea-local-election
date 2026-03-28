@@ -103,6 +103,10 @@ jobs:
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: python scripts/candidate_pipeline/collect_mayor_pledges.py
 
+      # 4.9단계: 전남광주통합특별시 병합 보정
+      - name: Merge gwangju-jeonnam (통합특별시)
+        run: python scripts/candidate_pipeline/merge_gwangju_jeonnam.py
+
       # 5단계: 개요 narrative에서 발견된 후보 동기화
       - name: Sync candidates from overview narratives
         run: python scripts/sync_overview_candidates.py --apply

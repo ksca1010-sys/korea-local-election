@@ -1516,6 +1516,11 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
     stroke-width: 1.8;
     filter: brightness(1.15);
 }
+/* 전남광주통합: 개별 hover stroke 비활성 (JS가 양쪽 동시 하이라이트 처리) */
+#korea-map .region.region-merged:hover {
+    stroke: inherit;
+    stroke-width: inherit;
+}
 
 #korea-map .region.selected {
     stroke: rgba(255, 255, 255, 0.6);

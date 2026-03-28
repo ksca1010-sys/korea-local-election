@@ -78,9 +78,18 @@ const CandidateTab = (() => {
 
         if (electionType === 'governor') {
             const incumbentName = region.currentGovernor?.name || '';
+            let govCandidates = region.candidates || [];
+            // 전남광주통합특별시: merge jeonnam governor candidates
+            if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                const jnRegion = ElectionData.getRegion('jeonnam');
+                if (jnRegion?.candidates?.length) {
+                    govCandidates = [...govCandidates, ...jnRegion.candidates];
+                }
+            }
+            const displayName = (typeof getMergedDisplayName === 'function' && getMergedDisplayName(regionKey, electionType)) || region.name;
             return {
-                title: `${region.name} 광역단체장 후보`,
-                candidates: (region.candidates || []).map((candidate) => ({
+                title: `${displayName} 광역단체장 후보`,
+                candidates: govCandidates.map((candidate) => ({
                     name: candidate.name,
                     badgeLabel: ElectionData.getPartyName(candidate.party),
                     badgeColor: ElectionData.getPartyColor(candidate.party),
@@ -98,8 +107,9 @@ const CandidateTab = (() => {
         if (electionType === 'superintendent') {
             const data = ElectionData.getSuperintendentData(regionKey);
             const incumbentName = data?.currentSuperintendent?.name || '';
+            const displayNameSuper = (typeof getMergedDisplayName === 'function' && getMergedDisplayName(regionKey, electionType)) || region.name;
             return {
-                title: `${region.name} 교육감 후보`,
+                title: `${displayNameSuper} 교육감 후보`,
                 isSuperintendent: true,
                 candidates: (data?.candidates || []).map((candidate) => ({
                     name: candidate.name,

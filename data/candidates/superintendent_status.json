@@ -43,11 +43,19 @@
     },
     "gwangju": {
       "region": "gwangju",
+      "regionDisplay": "전남광주통합특별시",
       "name": "이정선",
       "electedName": "이정선",
       "electedYear": 2022,
       "_source": "NEC_API_20220601",
-      "stance": "진보"
+      "stance": "진보",
+      "_note": "2026 전남+광주 통합, 교육감도 통합선거구",
+      "previousJeonnamSuperintendent": {
+        "name": "김대중",
+        "electedYear": 2022,
+        "stance": "진보",
+        "_source": "NEC_API_20220601"
+      }
     },
     "daejeon": {
       "region": "daejeon",
@@ -107,6 +115,8 @@
     },
     "jeonnam": {
       "region": "jeonnam",
+      "_merged": "gwangju",
+      "_note": "전남광주통합특별시 교육감 — gwangju 키 참조",
       "name": "김대중",
       "electedName": "김대중",
       "electedYear": 2022,

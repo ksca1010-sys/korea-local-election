@@ -1554,6 +1554,15 @@ const NewsTab = (() => {
             categories = buildByElectionNewsCategories(regionKey, districtName);
         } else if (electionType === 'superintendent') {
             categories = buildSuperintendentNewsCategories(regionKey, regionName);
+            // 전남광주통합특별시: 전남 교육감 검색어 추가
+            if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                categories.forEach(cat => {
+                    if (!cat.altQueries) cat.altQueries = [];
+                    cat.altQueries.push('전남광주통합특별시 교육감', '전라남도 교육감');
+                    if (cat.strict?.targetAny) cat.strict.targetAny.push('전남', '전라남도');
+                    if (cat.relaxed?.targetAny) cat.relaxed.targetAny.push('전남', '전라남도');
+                });
+            }
         } else if (electionType === 'mayor' && districtName) {
             categories = buildMayorNewsCategories(regionKey, regionName, districtName);
         } else if (electionType === 'council' || electionType === 'localCouncil') {
@@ -1565,6 +1574,15 @@ const NewsTab = (() => {
             const governorFocusTerms = getGovernorFocusTerms(regionName, governorQueryBase);
             const governorRoleTerms = getGovernorRoleTerms(regionName, governorQueryBase);
             categories = buildNewsCategories(regionKey, regionName, governorQueryBase, governorFocusTerms, governorRoleTerms);
+            // 전남광주통합특별시: 전남 광역단체장 검색어 추가
+            if (regionKey === 'gwangju' && electionType === 'governor' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                categories.forEach(cat => {
+                    if (!cat.altQueries) cat.altQueries = [];
+                    cat.altQueries.push('전남광주통합특별시장', '전라남도 도지사');
+                    if (cat.strict?.targetAny) cat.strict.targetAny.push('전남', '전라남도');
+                    if (cat.relaxed?.targetAny) cat.relaxed.targetAny.push('전남', '전라남도');
+                });
+            }
         }
 
         let html = `

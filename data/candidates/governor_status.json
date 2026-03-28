@@ -57,7 +57,15 @@
       "party": "democratic",
       "electedParty": "democratic",
       "electedName": "강기정",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "merged_jeonnam": {
+        "region": "jeonnam",
+        "name": "김영록",
+        "party": "democratic",
+        "electedParty": "democratic",
+        "electedName": "김영록",
+        "_source": "NEC_API"
+      }
     },
     "daejeon": {
       "region": "daejeon",
@@ -116,12 +124,7 @@
       "_source": "NEC_API"
     },
     "jeonnam": {
-      "region": "jeonnam",
-      "name": "김영록",
-      "party": "democratic",
-      "electedParty": "democratic",
-      "electedName": "김영록",
-      "_source": "NEC_API"
+      "_merged": "gwangju"
     },
     "gyeongbuk": {
       "region": "gyeongbuk",

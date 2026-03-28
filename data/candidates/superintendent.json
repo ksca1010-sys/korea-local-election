@@ -543,6 +543,72 @@
             "category": "기타"
           }
         ]
+      },
+      {
+        "id": "gwangju-6",
+        "name": "김대중",
+        "stance": "진보",
+        "career": "현 전라남도 교육감",
+        "status": "DECLARED",
+        "dataSource": "incumbent",
+        "pledges": [
+          "AI 위기 감지 시스템 도입",
+          "폐교를 교육청 사무실로 활용"
+        ],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "광주·전남 통합교육감 선거 본격화…김대중 26.1%·이정선 12.7%",
+          "previous": "EXPECTED"
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "AI 위기 감지 시스템 도입",
+            "category": "디지털교육"
+          },
+          {
+            "text": "폐교를 교육청 사무실로 활용",
+            "category": "기타"
+          }
+        ],
+        "_mergedFrom": "jeonnam"
+      },
+      {
+        "name": "장관호",
+        "stance": "중도",
+        "career": "전남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "인성·실력 교육으로 전환"
+        ],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null,
+        "pledgeCategories": [
+          {
+            "text": "인성·실력 교육으로 전환",
+            "category": "기타"
+          }
+        ],
+        "id": "gwangju-7",
+        "_mergedFrom": "jeonnam"
+      },
+      {
+        "name": "김해룡",
+        "stance": "중도",
+        "career": "전남교육감 예비후보",
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null,
+        "id": "gwangju-8",
+        "_mergedFrom": "jeonnam"
       }
     ],
     "daejeon": [
@@ -1379,77 +1445,8 @@
     ],
     "jeonnam": [
       {
-        "id": "jeonnam-1",
-        "name": "김대중",
-        "stance": "진보",
-        "career": "현 전라남도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
-        "pledges": [
-          "AI 위기 감지 시스템 도입",
-          "폐교를 교육청 사무실로 활용"
-        ],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "광주·전남 통합교육감 선거 본격화…김대중 26.1%·이정선 12.7%",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "AI 위기 감지 시스템 도입",
-            "category": "디지털교육"
-          },
-          {
-            "text": "폐교를 교육청 사무실로 활용",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "jeonnam-2",
-        "name": "이정선",
-        "stance": "중도",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "name": "장관호",
-        "stance": "중도",
-        "career": "전남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [
-          "인성·실력 교육으로 전환"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "인성·실력 교육으로 전환",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "name": "김해룡",
-        "stance": "중도",
-        "career": "전남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "_merged": "gwangju",
+        "_note": "전남광주통합특별시 교육감 선거 — gwangju 키 참조"
       }
     ],
     "gyeongbuk": [

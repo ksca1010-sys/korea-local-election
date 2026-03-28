@@ -638,16 +638,6 @@
         "sourcePublishedAt": null
       },
       {
-        "name": "김영록",
-        "party": "democratic",
-        "partyKey": "democratic",
-        "partyName": "더불어민주당",
-        "career": "(전)농림축산식품부 장관",
-        "status": "DECLARED",
-        "dataSource": "nec_precand",
-        "pledges": []
-      },
-      {
         "name": "강은미",
         "party": "justice",
         "partyKey": "justice",
@@ -656,6 +646,99 @@
         "status": "DECLARED",
         "dataSource": "nec_precand",
         "pledges": []
+      },
+      {
+        "id": "jeonnam-1",
+        "name": "김영록",
+        "party": "democratic",
+        "age": 68,
+        "career": "現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [
+          "전남 해상풍력 허브",
+          "광주-전남 메가시티"
+        ],
+        "_lastChange": {
+          "date": "2026-03-16",
+          "type": "status_change",
+          "detail": "2026.03.11 전남도지사 출마 선언",
+          "previous": "EXPECTED"
+        },
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
+      },
+      {
+        "id": "jeonnam-2",
+        "name": "주철현",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
+      },
+      {
+        "id": "jeonnam-3",
+        "name": "신정훈",
+        "party": "democratic",
+        "age": null,
+        "career": "現 국회의원 (나주·화순) / 現 행안위원장",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
+      },
+      {
+        "id": "jeonnam-4",
+        "name": "이개호",
+        "party": "democratic",
+        "age": null,
+        "career": "4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관",
+        "photo": null,
+        "status": "EXPECTED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
+      },
+      {
+        "id": "jeonnam-5",
+        "name": "서삼석",
+        "party": "democratic",
+        "age": null,
+        "career": "3선 국회의원 (영암·무안·신안) / 前 무안군수",
+        "photo": null,
+        "status": "RUMORED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
+      },
+      {
+        "id": "jeonnam-6",
+        "name": "김화진",
+        "party": "ppp",
+        "age": null,
+        "career": "現 국민의힘 전남도당위원장 (4연임)",
+        "photo": null,
+        "status": "DECLARED",
+        "dataSource": "news",
+        "pledges": [],
+        "sourceUrl": null,
+        "sourceLabel": null,
+        "sourcePublishedAt": null
       }
     ],
     "daejeon": [
@@ -1593,97 +1676,8 @@
     ],
     "jeonnam": [
       {
-        "id": "jeonnam-1",
-        "name": "김영록",
-        "party": "democratic",
-        "age": 68,
-        "career": "現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원",
-        "photo": null,
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [
-          "전남 해상풍력 허브",
-          "광주-전남 메가시티"
-        ],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "2026.03.11 전남도지사 출마 선언",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonnam-2",
-        "name": "주철현",
-        "party": "democratic",
-        "age": null,
-        "career": "現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장",
-        "photo": null,
-        "status": "EXPECTED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonnam-3",
-        "name": "신정훈",
-        "party": "democratic",
-        "age": null,
-        "career": "現 국회의원 (나주·화순) / 現 행안위원장",
-        "photo": null,
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonnam-4",
-        "name": "이개호",
-        "party": "democratic",
-        "age": null,
-        "career": "4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관",
-        "photo": null,
-        "status": "EXPECTED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonnam-5",
-        "name": "서삼석",
-        "party": "democratic",
-        "age": null,
-        "career": "3선 국회의원 (영암·무안·신안) / 前 무안군수",
-        "photo": null,
-        "status": "RUMORED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonnam-6",
-        "name": "김화진",
-        "party": "ppp",
-        "age": null,
-        "career": "現 국민의힘 전남도당위원장 (4연임)",
-        "photo": null,
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "_merged": "gwangju",
+        "_note": "전남광주통합특별시장 선거 — gwangju 키 참조"
       }
     ],
     "gyeongbuk": [

@@ -818,6 +818,9 @@
   "gwangju": {
     "code": "29",
     "name": "광주광역시",
+    "mergedName": "전남광주통합특별시",
+    "mergedWith": "jeonnam",
+    "mergedElectionTypes": ["governor", "superintendent"],
     "nameEng": "Gwangju",
     "population": 1389000,
     "voters": 1200000,

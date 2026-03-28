@@ -78,7 +78,9 @@
       "acting": false,
       "actingReason": null,
       "electionYear": 2022,
-      "position": "광역단체장"
+      "position": "광역단체장",
+      "_regionDisplay": "전남광주통합특별시",
+      "_note": "2026 전남+광주 통합"
     },
     "daejeon": {
       "electedName": "이장우",
@@ -198,7 +200,9 @@
       "acting": false,
       "actingReason": null,
       "electionYear": 2022,
-      "position": "광역단체장"
+      "position": "광역단체장",
+      "_merged": "gwangju",
+      "_note": "전남광주통합특별시 광역단체장 — gwangju 키 참조"
     },
     "gyeongbuk": {
       "electedName": "이철우",
@@ -3979,7 +3983,13 @@
       "currentName": "이정선",
       "isIncumbent": true,
       "electionYear": 2022,
-      "position": "교육감"
+      "position": "교육감",
+      "_regionDisplay": "전남광주통합특별시",
+      "_note": "2026 전남+광주 통합, 교육감도 통합선거구",
+      "previousJeonnamSuperintendent": {
+        "name": "김대중",
+        "electedYear": 2022
+      }
     },
     "daejeon": {
       "electedName": "설동호",
@@ -4051,7 +4061,9 @@
       "currentName": "김대중",
       "isIncumbent": true,
       "electionYear": 2022,
-      "position": "교육감"
+      "position": "교육감",
+      "_merged": "gwangju",
+      "_note": "전남광주통합특별시 교육감 — gwangju 키 참조"
     },
     "gyeongbuk": {
       "electedName": "임종식",

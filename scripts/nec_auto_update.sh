@@ -100,6 +100,15 @@ else
     ERRORS=$((ERRORS + 1))
 fi
 
+# 5.5. 전남광주통합특별시 병합 보정
+log ">>> [병합보정] 전남광주통합특별시 gwangju-jeonnam..."
+if python3 scripts/candidate_pipeline/merge_gwangju_jeonnam.py >> "$LOGFILE" 2>&1; then
+    log "    완료"
+else
+    log "    [오류] merge_gwangju_jeonnam 실패"
+    ERRORS=$((ERRORS + 1))
+fi
+
 # git 커밋 (변경이 있으면)
 CHANGED=$(git diff --name-only data/candidates/ data/static/incumbents.json 2>/dev/null | wc -l | tr -d ' ')
 if [ "$CHANGED" -gt 0 ]; then

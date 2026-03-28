@@ -428,7 +428,12 @@ const PollTab = (() => {
         const regionKey = testCase.regionKey;
         const electionType = testCase.electionType || 'governor';
         const districtName = testCase.districtName || null;
-        const polls = ElectionData.getPollsForSelection(regionKey, electionType, districtName);
+        let polls = ElectionData.getPollsForSelection(regionKey, electionType, districtName);
+        // 전남광주통합특별시: include jeonnam polls
+        if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+            const jnPolls = ElectionData.getPollsForSelection?.('jeonnam', electionType) || [];
+            if (jnPolls.length) polls = [...polls, ...jnPolls];
+        }
         const firstPoll = polls[0] || null;
         const municipalities = [...new Set(polls.map(poll => _normalizeKeyword(poll.municipality)).filter(Boolean))];
         const headerTitle = _getPollHeaderTitle(regionKey, electionType, districtName);

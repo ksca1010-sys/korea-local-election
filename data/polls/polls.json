@@ -6797,35 +6797,6 @@
   "regions": {
     "jeonnam": [
       {
-        "nttId": 17915,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 서울경제TV",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1004,
-          "marginOfError": 3.1,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-26",
-        "results": [],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17915&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-26"
-      },
-      {
         "nttId": 17890,
         "registrationId": null,
         "pollName": "선거구분",
@@ -7016,93 +6987,6 @@
         "title": "전라남도 목포시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17861&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
         "registrationDate": "2026-03-24"
-      },
-      {
-        "nttId": 17856,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 801,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-26",
-        "results": [],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17856&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17854,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 801,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-25",
-        "results": [],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17854&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17850,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 801,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-24",
-        "results": [],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17850&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-23"
       },
       {
         "nttId": 17823,
@@ -7320,56 +7204,6 @@
         "registrationDate": "2026-03-08",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-16T23:35:11"
-      },
-      {
-        "nttId": 17595,
-        "registrationId": "15523",
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "구·시·군단위 신문 : 장성투데이",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 505,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-06",
-          "end": "2026-03-06"
-        },
-        "publishDate": "2026-03-09 00시 00분",
-        "results": [
-          {
-            "candidateName": "김한종",
-            "party": "",
-            "support": 29.9
-          },
-          {
-            "candidateName": "박노원",
-            "party": "",
-            "support": 25.7
-          },
-          {
-            "candidateName": "소영호",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "유성수",
-            "party": "",
-            "support": 22.3
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "장성군",
-        "electionType": "mayor",
-        "title": "전라남도 장성군    기초단체장선거 광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17595&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-06"
       },
       {
         "nttId": 17577,
@@ -7605,117 +7439,6 @@
         "title": "전라남도 영광군    기초단체장선거 정당지지도 전남 영광군수 당내 후보적합도 및 현역군수 재출마지지도, 정당지지도 조사",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17560&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
         "registrationDate": "2026-03-03"
-      },
-      {
-        "nttId": 17556,
-        "registrationId": "15476",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-28",
-          "end": "2026-03-01"
-        },
-        "publishDate": "2026-03-04 05시 00분",
-        "results": [
-          {
-            "candidateName": "정인화",
-            "party": null,
-            "partyRaw": "",
-            "support": 38.6
-          },
-          {
-            "candidateName": "박성현",
-            "party": null,
-            "partyRaw": "",
-            "support": 35.4
-          },
-          {
-            "candidateName": "김태균",
-            "party": null,
-            "partyRaw": "",
-            "support": 9
-          },
-          {
-            "candidateName": "이충재",
-            "party": null,
-            "partyRaw": "",
-            "support": 8.2
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "광양시",
-        "electionType": "mayor",
-        "title": "전라남도 광양시    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17556&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
-        "registrationDate": "2026-03-03",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:41:07"
-      },
-      {
-        "nttId": 17554,
-        "registrationId": "15466",
-        "pollName": "선거구분",
-        "pollOrg": "(주)에스티아이",
-        "clientOrg": "시·도단위 신문 : 광주타임즈",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-27",
-          "end": "2026-02-28"
-        },
-        "publishDate": "2026-03-03 14시 00분",
-        "results": [
-          {
-            "candidateName": "곽행호",
-            "party": "",
-            "support": 1.7
-          },
-          {
-            "candidateName": "문행주",
-            "party": "",
-            "support": 30.7
-          },
-          {
-            "candidateName": "윤영민",
-            "party": "",
-            "support": 26
-          },
-          {
-            "candidateName": "임지락",
-            "party": "",
-            "support": 35.4
-          },
-          {
-            "candidateName": "김회수",
-            "party": "",
-            "support": 1.9
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "화순군",
-        "electionType": "mayor",
-        "title": "전라남도 화순군    기초단체장선거 광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17554&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-02"
       },
       {
         "nttId": 17548,
@@ -8495,71 +8218,6 @@
         "resultsUpdatedAt": "2026-03-17T00:04:10"
       },
       {
-        "nttId": 17390,
-        "registrationId": "15329",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 전남매거진",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1002,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-10",
-          "end": "2026-02-11"
-        },
-        "publishDate": "2026-02-13 12시 01분",
-        "results": [
-          {
-            "candidateName": "김대중",
-            "party": "",
-            "support": 34.1
-          },
-          {
-            "candidateName": "김용태",
-            "party": "",
-            "support": 6.2
-          },
-          {
-            "candidateName": "김해룡",
-            "party": "",
-            "support": 13.7
-          },
-          {
-            "candidateName": "오경미",
-            "party": "",
-            "support": 5.3
-          },
-          {
-            "candidateName": "이정선",
-            "party": "",
-            "support": 6.4
-          },
-          {
-            "candidateName": "장관호",
-            "party": "",
-            "support": 7.9
-          },
-          {
-            "candidateName": "정성홍",
-            "party": "",
-            "support": 7.8
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17390&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
-        "registrationDate": "2026-02-12"
-      },
-      {
         "nttId": 17382,
         "registrationId": "15350",
         "pollName": "선거구분",
@@ -8804,62 +8462,6 @@
         "registrationDate": "2026-02-11"
       },
       {
-        "nttId": 17316,
-        "registrationId": "15277",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 807,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-08",
-          "end": "2026-02-09"
-        },
-        "publishDate": "2026-02-10 17시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 19
-          },
-          {
-            "candidateName": "주철현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 8
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 6
-          },
-          {
-            "candidateName": "이개호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17316&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
-        "registrationDate": "2026-02-09",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:13:03"
-      },
-      {
         "nttId": 17293,
         "registrationId": "15261",
         "pollName": "선거구분",
@@ -8898,136 +8500,6 @@
         "title": "전라남도 진도군    기초단체장선거 광역의원선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17293&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
         "registrationDate": "2026-02-09"
-      },
-      {
-        "nttId": 17291,
-        "registrationId": "15265",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-10 05시 00분",
-        "results": [
-          {
-            "candidateName": "정인화",
-            "party": null,
-            "partyRaw": "",
-            "support": 43.4
-          },
-          {
-            "candidateName": "박성현",
-            "party": null,
-            "partyRaw": "",
-            "support": 32.7
-          },
-          {
-            "candidateName": "김태균",
-            "party": null,
-            "partyRaw": "",
-            "support": 10
-          },
-          {
-            "candidateName": "이충재",
-            "party": null,
-            "partyRaw": "",
-            "support": 8.6
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "광양시",
-        "electionType": "mayor",
-        "title": "전라남도 광양시 광역단체장선거교육감선거기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17291&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:15:49"
-      },
-      {
-        "nttId": 17289,
-        "registrationId": "15264",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-10 05시 00분",
-        "results": [
-          {
-            "candidateName": "주철현",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 28.9
-          },
-          {
-            "candidateName": "김대중",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 25.6
-          },
-          {
-            "candidateName": "김해중",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 19.2
-          },
-          {
-            "candidateName": "김영규",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 18.1
-          },
-          {
-            "candidateName": "명창환",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 17.5
-          },
-          {
-            "candidateName": "김영록",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 16.1
-          },
-          {
-            "candidateName": "민형배",
-            "party": null,
-            "partyRaw": "없음",
-            "support": 15.8
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "여수시",
-        "electionType": "mayor",
-        "title": "전라남도 여수시    광역단체장선거 교육감선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17289&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
-        "registrationDate": "2026-02-09",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:20:51"
       },
       {
         "nttId": 17288,
@@ -10290,130 +9762,6 @@
         "registrationDate": "2026-02-01"
       },
       {
-        "nttId": 17156,
-        "registrationId": "15137",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 505,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-24",
-          "end": "2026-01-25"
-        },
-        "publishDate": "2026-01-27 12시 00분",
-        "results": [
-          {
-            "candidateName": "오하근",
-            "party": null,
-            "partyRaw": "",
-            "support": 37.8
-          },
-          {
-            "candidateName": "손훈모",
-            "party": null,
-            "partyRaw": "",
-            "support": 37.4
-          },
-          {
-            "candidateName": "노관규",
-            "party": null,
-            "partyRaw": "",
-            "support": 34.9
-          },
-          {
-            "candidateName": "김대중",
-            "party": null,
-            "partyRaw": "",
-            "support": 24.9
-          },
-          {
-            "candidateName": "김영록",
-            "party": null,
-            "partyRaw": "",
-            "support": 21.3
-          },
-          {
-            "candidateName": "주철현",
-            "party": null,
-            "partyRaw": "",
-            "support": 19.6
-          },
-          {
-            "candidateName": "문승태",
-            "party": null,
-            "partyRaw": "",
-            "support": 17.5
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "순천시",
-        "electionType": "mayor",
-        "title": "전라남도 순천시    정당지지도 광역단체장선거 교육감선거 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17156&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=40",
-        "registrationDate": "2026-01-26",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:39:19"
-      },
-      {
-        "nttId": 17155,
-        "registrationId": "15136",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 506,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-24",
-          "end": "2026-01-25"
-        },
-        "publishDate": "2026-01-27 12시 00분",
-        "results": [
-          {
-            "candidateName": "정인화",
-            "party": null,
-            "partyRaw": "",
-            "support": 36.7
-          },
-          {
-            "candidateName": "박성현",
-            "party": null,
-            "partyRaw": "",
-            "support": 26.8
-          },
-          {
-            "candidateName": "김태균",
-            "party": null,
-            "partyRaw": "",
-            "support": 5.5
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "광양시",
-        "electionType": "mayor",
-        "title": "전라남도 광양시    정당지지도 광역단체장선거 교육감선거 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17155&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=40",
-        "registrationDate": "2026-01-26",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:39:39"
-      },
-      {
         "nttId": 17129,
         "registrationId": "15114",
         "pollName": "선거구분",
@@ -10582,56 +9930,6 @@
         "title": "전라남도 장성군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17119&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=43",
         "registrationDate": "2026-01-21"
-      },
-      {
-        "nttId": 17109,
-        "registrationId": "15092",
-        "pollName": "선거구분",
-        "pollOrg": "한길리서치",
-        "clientOrg": "시·도단위 신문 : 폴리뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1008,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-17",
-          "end": "2026-01-18"
-        },
-        "publishDate": "2026-01-19 16시 00분",
-        "results": [
-          {
-            "candidateName": "잘하고",
-            "party": "",
-            "support": 76.1
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 13.2
-          },
-          {
-            "candidateName": "잘못하고",
-            "party": "",
-            "support": 8.7
-          },
-          {
-            "candidateName": "잘모름",
-            "party": "",
-            "support": 3.1
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 정당지지도 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17109&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
-        "registrationDate": "2026-01-19"
       },
       {
         "nttId": 17108,
@@ -10827,61 +10125,6 @@
         "title": "전라남도 화순군    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17101&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
         "registrationDate": "2026-01-18"
-      },
-      {
-        "nttId": 17098,
-        "registrationId": "15093",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "인터넷언론 : 오마이뉴스 광주전라본부",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-16",
-          "end": "2026-01-17"
-        },
-        "publishDate": "2026-01-19 15시 00분",
-        "results": [
-          {
-            "candidateName": "매우",
-            "party": "",
-            "support": 13.7
-          },
-          {
-            "candidateName": "반대한다",
-            "party": "",
-            "support": 13.8
-          },
-          {
-            "candidateName": "어느",
-            "party": "",
-            "support": 31.2
-          },
-          {
-            "candidateName": "정도",
-            "party": "",
-            "support": 32.3
-          },
-          {
-            "candidateName": "찬성한다",
-            "party": "",
-            "support": 9
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체 광역단체장선거교육감선거대통령선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17098&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19"
       },
       {
         "nttId": 17088,
@@ -11212,130 +10455,6 @@
         "title": "전라남도 나주시    기초단체장선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17027&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
         "registrationDate": "2026-01-04"
-      },
-      {
-        "nttId": 17011,
-        "registrationId": "15013",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-27",
-          "end": "2025-12-28"
-        },
-        "publishDate": "2026-01-01 18시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 24
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14
-          },
-          {
-            "candidateName": "주철현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14
-          },
-          {
-            "candidateName": "이개호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 6
-          },
-          {
-            "candidateName": "김화진",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 2
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도 정치 현안 조사",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17011&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
-        "registrationDate": "2026-01-01",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:55:08"
-      },
-      {
-        "nttId": 16978,
-        "registrationId": "14985",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "통신사 : 뉴스1",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1003,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-29",
-          "end": "2025-12-30"
-        },
-        "publishDate": "2026-01-05 05시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 33
-          },
-          {
-            "candidateName": "주철현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 11
-          },
-          {
-            "candidateName": "이개호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 7
-          },
-          {
-            "candidateName": "김화진",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 2
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16978&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:01:18"
       },
       {
         "nttId": 16950,
@@ -12011,61 +11130,6 @@
         "registrationDate": "2025-12-21"
       },
       {
-        "nttId": 16873,
-        "registrationId": "14896",
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "인터넷언론 : 전남포커스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 700,
-          "marginOfError": 3.7,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-19",
-          "end": "2025-12-20"
-        },
-        "publishDate": "2025-12-22 13시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "",
-            "support": 53.6
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "",
-            "support": 9.8
-          },
-          {
-            "candidateName": "이개호",
-            "party": "",
-            "support": 5.6
-          },
-          {
-            "candidateName": "주철현",
-            "party": "",
-            "support": 9.4
-          },
-          {
-            "candidateName": "지지",
-            "party": "",
-            "support": 8.3
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "완도군",
-        "electionType": "mayor",
-        "title": "전라남도 완도군    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16873&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
-        "registrationDate": "2025-12-20"
-      },
-      {
         "nttId": 16848,
         "registrationId": "14875",
         "pollName": "선거구분",
@@ -12286,80 +11350,6 @@
         "registrationDate": "2025-12-05"
       },
       {
-        "nttId": 16805,
-        "registrationId": "14836",
-        "pollName": "선거구분",
-        "pollOrg": "(주)이너텍시스템즈",
-        "clientOrg": "구·시·군단위 신문 : 영광 YT신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 837,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-01",
-          "end": "2025-12-02"
-        },
-        "publishDate": "2025-12-04 00시 00분",
-        "results": [
-          {
-            "candidateName": "장세일",
-            "party": null,
-            "partyRaw": "",
-            "support": 34.9
-          },
-          {
-            "candidateName": "김영록",
-            "party": null,
-            "partyRaw": "",
-            "support": 30.9
-          },
-          {
-            "candidateName": "이개호",
-            "party": null,
-            "partyRaw": "",
-            "support": 21.3
-          },
-          {
-            "candidateName": "이석하",
-            "party": null,
-            "partyRaw": "",
-            "support": 13.9
-          },
-          {
-            "candidateName": "김혜영",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 12
-          },
-          {
-            "candidateName": "이동권",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 11.8
-          },
-          {
-            "candidateName": "김한균",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 10.6
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": "영광군",
-        "electionType": "mayor",
-        "title": "전라남도 영광군    기초의원선거 기초단체장선거 광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16805&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
-        "registrationDate": "2025-12-03",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:20:21"
-      },
-      {
         "nttId": 16788,
         "registrationId": "14821",
         "pollName": "선거구분",
@@ -12413,61 +11403,6 @@
         "title": "전라남도 장성군    기초단체장선거",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16788&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=71",
         "registrationDate": "2025-11-29"
-      },
-      {
-        "nttId": 16736,
-        "registrationId": "14774",
-        "pollName": "선거구분",
-        "pollOrg": "(주)시그널앤펄스",
-        "clientOrg": "인터넷언론 : 프레시안 광주전남취재본부",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-11-07",
-          "end": "2025-11-08"
-        },
-        "publishDate": "2025-11-10 05시 00분",
-        "results": [
-          {
-            "candidateName": "매우",
-            "party": "",
-            "support": 52.7
-          },
-          {
-            "candidateName": "찬성함",
-            "party": "",
-            "support": 21
-          },
-          {
-            "candidateName": "반대함",
-            "party": "",
-            "support": 7.2
-          },
-          {
-            "candidateName": "잘모름",
-            "party": "",
-            "support": 7
-          },
-          {
-            "candidateName": "빈도",
-            "party": "",
-            "support": 12.1
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16736&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
-        "registrationDate": "2025-11-09"
       },
       {
         "nttId": 16720,
@@ -12790,81 +11725,6 @@
         "registrationDate": "2025-11-05"
       },
       {
-        "nttId": 16714,
-        "registrationId": "14752",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "방송사 : KBC광주방송",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-11-02",
-          "end": "2025-11-03"
-        },
-        "publishDate": "2025-11-05 14시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "",
-            "support": 22.7
-          },
-          {
-            "candidateName": "주철현",
-            "party": "",
-            "support": 16.2
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "",
-            "support": 12.8
-          },
-          {
-            "candidateName": "서삼석",
-            "party": "",
-            "support": 10.3
-          },
-          {
-            "candidateName": "이개호",
-            "party": "",
-            "support": 9.3
-          },
-          {
-            "candidateName": "김화진",
-            "party": "",
-            "support": 6.3
-          },
-          {
-            "candidateName": "박필순",
-            "party": "",
-            "support": 3.3
-          },
-          {
-            "candidateName": "김선동",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "김회재",
-            "party": "",
-            "support": 1.8
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 정당지지도 광역의원비례대표선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16714&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=78",
-        "registrationDate": "2025-11-05"
-      },
-      {
         "nttId": 16707,
         "registrationId": "14746",
         "pollName": "선거구분",
@@ -13105,74 +11965,6 @@
         "registrationDate": "2025-11-03",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-17T01:29:17"
-      },
-      {
-        "nttId": 16703,
-        "registrationId": "14742",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-29",
-          "end": "2025-10-30"
-        },
-        "publishDate": "2025-11-04 17시 00분",
-        "results": [
-          {
-            "candidateName": "김영록",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 28
-          },
-          {
-            "candidateName": "주철현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14
-          },
-          {
-            "candidateName": "신정훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9
-          },
-          {
-            "candidateName": "이개호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 7
-          },
-          {
-            "candidateName": "서삼석",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 5
-          },
-          {
-            "candidateName": "김화진",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 3
-          }
-        ],
-        "regionKey": "jeonnam",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16703&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
-        "registrationDate": "2025-11-03",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:29:42"
       }
     ],
     "gwangju": [
@@ -14663,6 +13455,1236 @@
         "registrationDate": "2025-10-31",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-17T01:32:23"
+      },
+      {
+        "nttId": 17915,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 서울경제TV",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1004,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-26",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17915&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-26",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17856,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 801,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-26",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17856&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
+        "registrationDate": "2026-03-23",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17854,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 801,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-25",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17854&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
+        "registrationDate": "2026-03-23",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17850,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 801,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-24",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17850&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
+        "registrationDate": "2026-03-23",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17595,
+        "registrationId": "15523",
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "구·시·군단위 신문 : 장성투데이",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 505,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-06",
+          "end": "2026-03-06"
+        },
+        "publishDate": "2026-03-09 00시 00분",
+        "results": [
+          {
+            "candidateName": "김한종",
+            "party": "",
+            "support": 29.9
+          },
+          {
+            "candidateName": "박노원",
+            "party": "",
+            "support": 25.7
+          },
+          {
+            "candidateName": "소영호",
+            "party": "",
+            "support": 19.7
+          },
+          {
+            "candidateName": "유성수",
+            "party": "",
+            "support": 22.3
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "장성군",
+        "electionType": "mayor",
+        "title": "전라남도 장성군    기초단체장선거 광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17595&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
+        "registrationDate": "2026-03-06",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17556,
+        "registrationId": "15476",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-28",
+          "end": "2026-03-01"
+        },
+        "publishDate": "2026-03-04 05시 00분",
+        "results": [
+          {
+            "candidateName": "정인화",
+            "party": null,
+            "partyRaw": "",
+            "support": 38.6
+          },
+          {
+            "candidateName": "박성현",
+            "party": null,
+            "partyRaw": "",
+            "support": 35.4
+          },
+          {
+            "candidateName": "김태균",
+            "party": null,
+            "partyRaw": "",
+            "support": 9
+          },
+          {
+            "candidateName": "이충재",
+            "party": null,
+            "partyRaw": "",
+            "support": 8.2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "광양시",
+        "electionType": "mayor",
+        "title": "전라남도 광양시    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17556&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=7",
+        "registrationDate": "2026-03-03",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:41:07",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17554,
+        "registrationId": "15466",
+        "pollName": "선거구분",
+        "pollOrg": "(주)에스티아이",
+        "clientOrg": "시·도단위 신문 : 광주타임즈",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-27",
+          "end": "2026-02-28"
+        },
+        "publishDate": "2026-03-03 14시 00분",
+        "results": [
+          {
+            "candidateName": "곽행호",
+            "party": "",
+            "support": 1.7
+          },
+          {
+            "candidateName": "문행주",
+            "party": "",
+            "support": 30.7
+          },
+          {
+            "candidateName": "윤영민",
+            "party": "",
+            "support": 26
+          },
+          {
+            "candidateName": "임지락",
+            "party": "",
+            "support": 35.4
+          },
+          {
+            "candidateName": "김회수",
+            "party": "",
+            "support": 1.9
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "화순군",
+        "electionType": "mayor",
+        "title": "전라남도 화순군    기초단체장선거 광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17554&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
+        "registrationDate": "2026-03-02",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17390,
+        "registrationId": "15329",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 전남매거진",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1002,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-10",
+          "end": "2026-02-11"
+        },
+        "publishDate": "2026-02-13 12시 01분",
+        "results": [
+          {
+            "candidateName": "김대중",
+            "party": "",
+            "support": 34.1
+          },
+          {
+            "candidateName": "김용태",
+            "party": "",
+            "support": 6.2
+          },
+          {
+            "candidateName": "김해룡",
+            "party": "",
+            "support": 13.7
+          },
+          {
+            "candidateName": "오경미",
+            "party": "",
+            "support": 5.3
+          },
+          {
+            "candidateName": "이정선",
+            "party": "",
+            "support": 6.4
+          },
+          {
+            "candidateName": "장관호",
+            "party": "",
+            "support": 7.9
+          },
+          {
+            "candidateName": "정성홍",
+            "party": "",
+            "support": 7.8
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17390&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
+        "registrationDate": "2026-02-12",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17316,
+        "registrationId": "15277",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 807,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-08",
+          "end": "2026-02-09"
+        },
+        "publishDate": "2026-02-10 17시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 19
+          },
+          {
+            "candidateName": "주철현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 8
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 6
+          },
+          {
+            "candidateName": "이개호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17316&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
+        "registrationDate": "2026-02-09",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:13:03",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17291,
+        "registrationId": "15265",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-10 05시 00분",
+        "results": [
+          {
+            "candidateName": "정인화",
+            "party": null,
+            "partyRaw": "",
+            "support": 43.4
+          },
+          {
+            "candidateName": "박성현",
+            "party": null,
+            "partyRaw": "",
+            "support": 32.7
+          },
+          {
+            "candidateName": "김태균",
+            "party": null,
+            "partyRaw": "",
+            "support": 10
+          },
+          {
+            "candidateName": "이충재",
+            "party": null,
+            "partyRaw": "",
+            "support": 8.6
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "광양시",
+        "electionType": "mayor",
+        "title": "전라남도 광양시 광역단체장선거교육감선거기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17291&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:15:49",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17289,
+        "registrationId": "15264",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-10 05시 00분",
+        "results": [
+          {
+            "candidateName": "주철현",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 28.9
+          },
+          {
+            "candidateName": "김대중",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 25.6
+          },
+          {
+            "candidateName": "김해중",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 19.2
+          },
+          {
+            "candidateName": "김영규",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 18.1
+          },
+          {
+            "candidateName": "명창환",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 17.5
+          },
+          {
+            "candidateName": "김영록",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 16.1
+          },
+          {
+            "candidateName": "민형배",
+            "party": null,
+            "partyRaw": "없음",
+            "support": 15.8
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "여수시",
+        "electionType": "mayor",
+        "title": "전라남도 여수시    광역단체장선거 교육감선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17289&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
+        "registrationDate": "2026-02-09",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T17:20:51",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17156,
+        "registrationId": "15137",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 505,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-24",
+          "end": "2026-01-25"
+        },
+        "publishDate": "2026-01-27 12시 00분",
+        "results": [
+          {
+            "candidateName": "오하근",
+            "party": null,
+            "partyRaw": "",
+            "support": 37.8
+          },
+          {
+            "candidateName": "손훈모",
+            "party": null,
+            "partyRaw": "",
+            "support": 37.4
+          },
+          {
+            "candidateName": "노관규",
+            "party": null,
+            "partyRaw": "",
+            "support": 34.9
+          },
+          {
+            "candidateName": "김대중",
+            "party": null,
+            "partyRaw": "",
+            "support": 24.9
+          },
+          {
+            "candidateName": "김영록",
+            "party": null,
+            "partyRaw": "",
+            "support": 21.3
+          },
+          {
+            "candidateName": "주철현",
+            "party": null,
+            "partyRaw": "",
+            "support": 19.6
+          },
+          {
+            "candidateName": "문승태",
+            "party": null,
+            "partyRaw": "",
+            "support": 17.5
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "순천시",
+        "electionType": "mayor",
+        "title": "전라남도 순천시    정당지지도 광역단체장선거 교육감선거 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17156&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=40",
+        "registrationDate": "2026-01-26",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:39:19",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17155,
+        "registrationId": "15136",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 506,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-24",
+          "end": "2026-01-25"
+        },
+        "publishDate": "2026-01-27 12시 00분",
+        "results": [
+          {
+            "candidateName": "정인화",
+            "party": null,
+            "partyRaw": "",
+            "support": 36.7
+          },
+          {
+            "candidateName": "박성현",
+            "party": null,
+            "partyRaw": "",
+            "support": 26.8
+          },
+          {
+            "candidateName": "김태균",
+            "party": null,
+            "partyRaw": "",
+            "support": 5.5
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "광양시",
+        "electionType": "mayor",
+        "title": "전라남도 광양시    정당지지도 광역단체장선거 교육감선거 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17155&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=40",
+        "registrationDate": "2026-01-26",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:39:39",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17109,
+        "registrationId": "15092",
+        "pollName": "선거구분",
+        "pollOrg": "한길리서치",
+        "clientOrg": "시·도단위 신문 : 폴리뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1008,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-17",
+          "end": "2026-01-18"
+        },
+        "publishDate": "2026-01-19 16시 00분",
+        "results": [
+          {
+            "candidateName": "잘하고",
+            "party": "",
+            "support": 76.1
+          },
+          {
+            "candidateName": "있다",
+            "party": "",
+            "support": 13.2
+          },
+          {
+            "candidateName": "잘못하고",
+            "party": "",
+            "support": 8.7
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 3.1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 정당지지도 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17109&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
+        "registrationDate": "2026-01-19",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17098,
+        "registrationId": "15093",
+        "pollName": "선거구분",
+        "pollOrg": "메타보이스(주)",
+        "clientOrg": "인터넷언론 : 오마이뉴스 광주전라본부",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1001,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-16",
+          "end": "2026-01-17"
+        },
+        "publishDate": "2026-01-19 15시 00분",
+        "results": [
+          {
+            "candidateName": "매우",
+            "party": "",
+            "support": 13.7
+          },
+          {
+            "candidateName": "반대한다",
+            "party": "",
+            "support": 13.8
+          },
+          {
+            "candidateName": "어느",
+            "party": "",
+            "support": 31.2
+          },
+          {
+            "candidateName": "정도",
+            "party": "",
+            "support": 32.3
+          },
+          {
+            "candidateName": "찬성한다",
+            "party": "",
+            "support": 9
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체 광역단체장선거교육감선거대통령선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17098&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
+        "registrationDate": "2026-01-19",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 17011,
+        "registrationId": "15013",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-27",
+          "end": "2025-12-28"
+        },
+        "publishDate": "2026-01-01 18시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 24
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14
+          },
+          {
+            "candidateName": "주철현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14
+          },
+          {
+            "candidateName": "이개호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 6
+          },
+          {
+            "candidateName": "김화진",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도 정치 현안 조사",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17011&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
+        "registrationDate": "2026-01-01",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:55:08",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16978,
+        "registrationId": "14985",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "통신사 : 뉴스1",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1003,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-29",
+          "end": "2025-12-30"
+        },
+        "publishDate": "2026-01-05 05시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 33
+          },
+          {
+            "candidateName": "주철현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 11
+          },
+          {
+            "candidateName": "이개호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 7
+          },
+          {
+            "candidateName": "김화진",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16978&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
+        "registrationDate": "2025-12-30",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:01:18",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16873,
+        "registrationId": "14896",
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "인터넷언론 : 전남포커스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 700,
+          "marginOfError": 3.7,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-19",
+          "end": "2025-12-20"
+        },
+        "publishDate": "2025-12-22 13시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "",
+            "support": 53.6
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "",
+            "support": 9.8
+          },
+          {
+            "candidateName": "이개호",
+            "party": "",
+            "support": 5.6
+          },
+          {
+            "candidateName": "주철현",
+            "party": "",
+            "support": 9.4
+          },
+          {
+            "candidateName": "지지",
+            "party": "",
+            "support": 8.3
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "완도군",
+        "electionType": "mayor",
+        "title": "전라남도 완도군    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16873&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=64",
+        "registrationDate": "2025-12-20",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16805,
+        "registrationId": "14836",
+        "pollName": "선거구분",
+        "pollOrg": "(주)이너텍시스템즈",
+        "clientOrg": "구·시·군단위 신문 : 영광 YT신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 837,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-01",
+          "end": "2025-12-02"
+        },
+        "publishDate": "2025-12-04 00시 00분",
+        "results": [
+          {
+            "candidateName": "장세일",
+            "party": null,
+            "partyRaw": "",
+            "support": 34.9
+          },
+          {
+            "candidateName": "김영록",
+            "party": null,
+            "partyRaw": "",
+            "support": 30.9
+          },
+          {
+            "candidateName": "이개호",
+            "party": null,
+            "partyRaw": "",
+            "support": 21.3
+          },
+          {
+            "candidateName": "이석하",
+            "party": null,
+            "partyRaw": "",
+            "support": 13.9
+          },
+          {
+            "candidateName": "김혜영",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 12
+          },
+          {
+            "candidateName": "이동권",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 11.8
+          },
+          {
+            "candidateName": "김한균",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 10.6
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "영광군",
+        "electionType": "mayor",
+        "title": "전라남도 영광군    기초의원선거 기초단체장선거 광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16805&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=70",
+        "registrationDate": "2025-12-03",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:20:21",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16736,
+        "registrationId": "14774",
+        "pollName": "선거구분",
+        "pollOrg": "(주)시그널앤펄스",
+        "clientOrg": "인터넷언론 : 프레시안 광주전남취재본부",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1001,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-11-07",
+          "end": "2025-11-08"
+        },
+        "publishDate": "2025-11-10 05시 00분",
+        "results": [
+          {
+            "candidateName": "매우",
+            "party": "",
+            "support": 52.7
+          },
+          {
+            "candidateName": "찬성함",
+            "party": "",
+            "support": 21
+          },
+          {
+            "candidateName": "반대함",
+            "party": "",
+            "support": 7.2
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 7
+          },
+          {
+            "candidateName": "빈도",
+            "party": "",
+            "support": 12.1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16736&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
+        "registrationDate": "2025-11-09",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16714,
+        "registrationId": "14752",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "방송사 : KBC광주방송",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-11-02",
+          "end": "2025-11-03"
+        },
+        "publishDate": "2025-11-05 14시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "",
+            "support": 22.7
+          },
+          {
+            "candidateName": "주철현",
+            "party": "",
+            "support": 16.2
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "",
+            "support": 12.8
+          },
+          {
+            "candidateName": "서삼석",
+            "party": "",
+            "support": 10.3
+          },
+          {
+            "candidateName": "이개호",
+            "party": "",
+            "support": 9.3
+          },
+          {
+            "candidateName": "김화진",
+            "party": "",
+            "support": 6.3
+          },
+          {
+            "candidateName": "박필순",
+            "party": "",
+            "support": 3.3
+          },
+          {
+            "candidateName": "김선동",
+            "party": "",
+            "support": 2.7
+          },
+          {
+            "candidateName": "김회재",
+            "party": "",
+            "support": 1.8
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 정당지지도 광역의원비례대표선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16714&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=78",
+        "registrationDate": "2025-11-05",
+        "_originalRegion": "jeonnam"
+      },
+      {
+        "nttId": 16703,
+        "registrationId": "14742",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-29",
+          "end": "2025-10-30"
+        },
+        "publishDate": "2025-11-04 17시 00분",
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 28
+          },
+          {
+            "candidateName": "주철현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9
+          },
+          {
+            "candidateName": "이개호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 7
+          },
+          {
+            "candidateName": "서삼석",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 5
+          },
+          {
+            "candidateName": "김화진",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 3
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "전라남도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16703&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
+        "registrationDate": "2025-11-03",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:29:42",
+        "_originalRegion": "jeonnam"
       }
     ],
     "gyeongbuk": [

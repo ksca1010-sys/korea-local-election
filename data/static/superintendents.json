@@ -102,13 +102,21 @@
       ]
     },
     "gwangju": {
-      "region": "광주",
+      "region": "전남광주통합특별시",
+      "_note": "2026 전남+광주 통합, 교육감도 통합선거구",
       "currentSuperintendent": {
         "name": "이정선",
         "stance": "진보",
         "since": 2022,
-        "career": "현 교육감",
+        "career": "현 광주 교육감",
         "note": "2022 당선, 광주교대 총장 출신"
+      },
+      "previousJeonnamSuperintendent": {
+        "name": "김대중",
+        "stance": "진보",
+        "since": 2022,
+        "career": "현 전남 교육감",
+        "note": "2022 당선, 전교조 경력. 통합 전 전남 교육감"
       },
       "candidates": [
         {
@@ -331,27 +339,16 @@
     },
     "jeonnam": {
       "region": "전남",
+      "_merged": "gwangju",
+      "_note": "전남광주통합특별시 교육감 — gwangju 키 참조",
       "currentSuperintendent": {
         "name": "김대중",
         "stance": "진보",
         "since": 2022,
         "career": "현 교육감",
-        "note": "2022 당선, 전교조 경력"
+        "note": "2022 당선, 전교조 경력. 통합 후 gwangju로 이관"
       },
-      "candidates": [
-        {
-          "name": "김대중",
-          "stance": "진보",
-          "support": 50.1,
-          "career": "현 교육감"
-        },
-        {
-          "name": "박정일",
-          "stance": "보수",
-          "support": 27.3,
-          "career": "前 학교장"
-        }
-      ]
+      "candidates": []
     },
     "gyeongbuk": {
       "region": "경북",
