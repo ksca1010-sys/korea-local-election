@@ -57,6 +57,34 @@ const DataLoader = (() => {
     }
 
     /**
+     * 지연 로딩 — 탭 최초 진입 시 호출 (loadAll 배열에 포함하지 않음)
+     * 캐시 키는 path 그대로 사용하므로 중복 호출 시 한 번만 fetch
+     * @param {string} filename - data/static/ 하위 파일명 (예: 'historical_elections_full.json')
+     *                            또는 data/ 루트 경로 접두사 포함 (예: 'council_history.json')
+     * Note: council_history.json 등 data/ 루트 파일은 fullPath=true 처리
+     * @returns {Promise<object|null>}
+     */
+    async function loadLazy(filename) {
+        const cacheKey = filename;
+        if (cacheKey in cache) return cache[cacheKey];
+        // council_history.json 등 data/ 루트 파일: BASE 없이 직접 경로
+        const ROOT_FILES = ['council_history.json'];
+        const url = ROOT_FILES.includes(filename)
+            ? `data/${filename}?v=${v}`
+            : `${BASE}/${filename}?v=${v}`;
+        try {
+            const resp = await fetch(url);
+            if (!resp.ok) throw new Error(`${resp.status}`);
+            const data = await resp.json();
+            cache[cacheKey] = data;
+            return data;
+        } catch (e) {
+            console.error(`[DataLoader] loadLazy ${filename} 로드 실패:`, e);
+            return null;
+        }
+    }
+
+    /**
      * ElectionData에 JSON 데이터를 hot-swap (덮어쓰기)
      * 기존 하드코딩 데이터를 외부 JSON으로 갱신
      * 실패해도 기존 데이터가 fallback으로 유지됨
@@ -172,6 +200,7 @@ const DataLoader = (() => {
 
     return {
         loadJSON,
+        loadLazy,
         loadAll,
         applyToElectionData,
         getCache: () => cache,

@@ -2915,6 +2915,9 @@ const ElectionData = (() => {
             return cache?.regions?.[regionKey] || null;
         },
 
+        // ── 역대비교 전체 데이터 (지연 로딩) ──
+        historicalElectionsFull: null,
+
         // ── 기초단체장 역대 선거 데이터 ──
         _mayorHistoryCache: null,
         _mayorHistoryPromise: null,

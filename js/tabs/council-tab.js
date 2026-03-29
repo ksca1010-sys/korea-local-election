@@ -478,14 +478,8 @@ const CouncilTab = (() => {
 
     // ── 역대비교탭 ──
 
-    const _historyCache = {};
-
     function loadCouncilHistory() {
-        if ('data' in _historyCache) return Promise.resolve(_historyCache.data);
-        return fetch('data/council_history.json?v=' + DataLoader._version)
-            .then(r => r.ok ? r.json() : null)
-            .then(data => { _historyCache.data = data; return data; })
-            .catch(() => { _historyCache.data = null; return null; });
+        return DataLoader.loadLazy('council_history.json');
     }
 
     function renderHistory(regionKey, districtName, electionType) {

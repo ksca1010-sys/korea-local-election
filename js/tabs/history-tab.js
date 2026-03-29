@@ -98,7 +98,15 @@ const HistoryTab = (() => {
     /**
      * 역대비교 탭 렌더링
      */
-    function render(regionKey, electionType, districtName) {
+    async function render(regionKey, electionType, districtName) {
+        // 역대 전체 데이터 지연 로딩 (초기 앱 로드에서 제외)
+        if (!ElectionData.historicalElectionsFull) {
+            const fullData = await DataLoader.loadLazy('historical_elections_full.json');
+            if (fullData) {
+                ElectionData.historicalElectionsFull = fullData;
+            }
+        }
+
         const flowEl = document.getElementById('history-party-flow');
         const resultsEl = document.getElementById('history-results');
         const canvas = document.getElementById('history-turnout-chart');
