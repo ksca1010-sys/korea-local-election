@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-28",
+    "lastUpdated": "2026-03-29",
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
     "lastDetection": "2026-03-28",
@@ -73,7 +73,7 @@
           "partyName": "민주당"
         }
       ],
-      "statusNote": "현재까지 공식 뉴스 자료가 없어 기존 수집 정보만 유지 중입니다. 모든 후보자는 RUMORED 상태이며, 6월 3일 선거까지 추가 동향 모니터링 필요합니다.",
+      "statusNote": "최신 뉴스 정보 없음. 현재까지 수집된 후보자들은 RUMORED 또는 EXPECTED 상태로, 공식 출마 선언 또는 당 공천 발표 대기 중.",
       "history": [
         {
           "election": 17,
@@ -187,7 +187,7 @@
           "name": "윤대기",
           "party": "independent",
           "partyKey": "independent",
-          "career": "변호사·민변 전 인천지부장·6.3대선 계양을 선대위원장",
+          "career": "변호사, 민변 전 인천지부장, 6.3대선 계양을 선대위원장",
           "status": "DECLARED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -197,7 +197,7 @@
           "name": "송영길",
           "party": "democratic",
           "partyKey": "democratic",
-          "career": "전 민주당 대표·5선 국회의원",
+          "career": "전 민주당 대표, 5선 국회의원",
           "status": "RUMORED",
           "dataSource": "news_factcheck",
           "pledges": [],
@@ -244,7 +244,7 @@
           "sourcePublishedAt": "2026-02-13"
         }
       ],
-      "statusNote": "최신 뉴스 없음. 기존 수집 후보 5명의 상태 유지.",
+      "statusNote": "최신 뉴스가 없어 기존 정보 유지. 2026년 6월 3일 선거까지 약 2개월 남음.",
       "history": [
         {
           "election": 17,
@@ -442,7 +442,7 @@
           "sourcePublishedAt": "2026-03-13"
         }
       ],
-      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 정보 유지 중입니다. 새로운 후보 등록, 정당 공천, 또는 후보 사퇴 등의 동향 업데이트를 기다리고 있습니다.",
+      "statusNote": "제공된 최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거일까지 추가 공천 및 후보 변동 가능성 있음.",
       "history": [
         {
           "election": 17,
@@ -603,7 +603,7 @@
           "sourcePublishedAt": "2026-02-26"
         }
       ],
-      "statusNote": "최신 뉴스가 제공되지 않아 기존 정보 기반 출력. 선거일까지 약 2개월 남은 상황에서 국민의힘 후보 3명과 무소속 1명이 출마 선언 상태.",
+      "statusNote": "현재까지 추가 뉴스 없음. 기존 수집된 4명의 후보자 정보 유지.",
       "history": [
         {
           "election": 17,
@@ -749,7 +749,7 @@
           "sourcePublishedAt": "2026-02-09"
         }
       ],
-      "statusNote": "현재까지 확인된 뉴스가 없어 기존 후보 정보를 유지합니다. 3명 모두 출마를 선언한 상태입니다.",
+      "statusNote": "제공된 최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거까지 약 2개월 남은 상황에서 3명의 후보가 출마 선언한 상태입니다.",
       "history": [
         {
           "election": 17,
@@ -877,7 +877,7 @@
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "현재(2026-03-28) 확인된 뉴스가 없어 기존 후보 정보만 유지. 두 후보 모두 RUMORED 상태로, 공식 출마 선언이나 당 공천이 이루어지지 않았습니다.",
+      "statusNote": "현재 수집된 최신 뉴스가 없습니다. 기존 수집 후보자는 RUMORED 상태이며, 공식 출마 선언 및 당 공천 발표를 기다리는 중입니다.",
       "history": [
         {
           "election": 17,
@@ -1006,7 +1006,7 @@
           "sggName": "군산시김제시부안군갑"
         }
       ],
-      "statusNote": "현재까지 공식 뉴스 소스가 없어 기존 정보만 유지된 상태입니다. 추가 후보 동향 및 공약 정보 수집 필요합니다."
+      "statusNote": "현재 국민의힘 오지성 당협위원장의 출마 선언만 확인됨. 야당 후보 및 추가 정보는 최신 뉴스 부재로 확인 불가."
     }
   }
 }
