@@ -7,5 +7,5 @@ crons = [ "* * * * *" ]
 
 [[kv_namespaces]]
 binding = "ELECTION_RESULTS"
-id = "<KV_NAMESPACE_ID>"
-preview_id = "<DEV_KV_NAMESPACE_ID>"
+id = "db737acc9d624075bab261c60628f95c"
+preview_id = "db737acc9d624075bab261c60628f95c"
