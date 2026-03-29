@@ -32,9 +32,12 @@ def main():
         print("No existing data.")
         return
 
-    # results가 비어있는 조사 찾기
-    empty = [p for p in polls if not p.get("results")]
-    print(f"전체 {len(polls)}건 중 results 미파싱: {len(empty)}건")
+    # results가 비어있는 조사 찾기 (party_support 제외)
+    skipped = sum(1 for p in polls if not p.get("results") and p.get("electionType") == "party_support")
+    empty = [p for p in polls if not p.get("results") and p.get("electionType") != "party_support"]
+    print(f"전체 {len(polls)}건 중 results 미파싱: {len(empty) + skipped}건")
+    print(f"Skipped {skipped} party_support polls")
+    print(f"처리 대상(지역조사): {len(empty)}건")
 
     if args.dry_run:
         return
