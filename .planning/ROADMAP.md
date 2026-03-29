@@ -24,7 +24,7 @@
   4. 신규 방문자에게 Clarity 동의 배너가 표시되고, 동의 전에는 Clarity 세션 레코딩이 시작되지 않는다
   5. 유령 파일 4개(`app-state 2.js` 등)가 레포에서 삭제되고 `git status`에 나타나지 않는다
   6. `index.html`의 CSS와 JS 버전 타임스탬프가 동일한 값으로 통일된다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 01-01: `data.js` LLM 수치 제거 + `overview-tab.js`·`poll-tab.js` 방어 처리 + 유령 파일·스테일 주석 정리
