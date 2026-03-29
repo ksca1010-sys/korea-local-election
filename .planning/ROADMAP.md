@@ -8,7 +8,7 @@
 
 - [ ] **Phase 1: 긴급 버그·보안 수정** - LLM 생성 수치 제거, 보안 헤더 추가, PIPA 동의 게이트 — 다음 배포 전 필수
 - [x] **Phase 2: 데이터 파이프라인 자동화** - 70+ 여론조사 PDF 일괄 처리, 수치 검증 자동화, 버그 관리 체계 수립 (completed 2026-03-29)
-- [ ] **Phase 3: 성능 최적화 + 기능 추가** - 지연 로딩, esbuild 번들, 여론조사 트렌드 차트, URL 공유, 모바일 UX
+- [x] **Phase 3: 성능 최적화 + 기능 추가** - 지연 로딩, esbuild 번들, 여론조사 트렌드 차트, URL 공유, 모바일 UX (completed 2026-03-29)
 - [ ] **Phase 4: 선거일 실시간 개표** - Cloudflare Worker 폴링으로 실시간 개표 결과 지도 반영
 
 ## Phase Details
@@ -61,7 +61,7 @@ Plans:
 Plans:
 - [x] 03-01: `historical_elections_full.json`·`council_history.json` 지연 로딩 + esbuild 번들 빌드 단계 추가 + ESLint 오류 0건 달성
 - [x] 03-02: 여론조사 트렌드 차트 (Chart.js time scale) + URL 공유 버튼 + .ics 캘린더 내보내기
-- [ ] 03-03: 탭 스켈레톤 스크린 + 모바일 패널 스와이프 닫기
+- [x] 03-03: 탭 스켈레톤 스크린 + 모바일 패널 스와이프 닫기
 **UI hint**: yes
 
 ### Phase 4: 선거일 실시간 개표
@@ -87,5 +87,5 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 |-------|----------------|--------|-----------|
 | 1. 긴급 버그·보안 수정 | 1/2 | In Progress|  |
 | 2. 데이터 파이프라인 자동화 | 2/2 | Complete   | 2026-03-29 |
-| 3. 성능 최적화 + 기능 추가 | 2/3 | In Progress|  |
+| 3. 성능 최적화 + 기능 추가 | 3/3 | Complete   | 2026-03-29 |
 | 4. 선거일 실시간 개표 | 0/2 | Not started | - |
