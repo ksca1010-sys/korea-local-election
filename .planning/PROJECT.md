@@ -39,6 +39,16 @@
 - 선거 예측/AI 분석 수치 — 허위 데이터 방지 원칙 (헌법 제2조)
 - React/Vue/Svelte 등 프레임워크 도입 — 스택 변경 불필요
 
+## Current Milestone: v1.1 선거일 대비 (Election Readiness)
+
+**Goal:** 6.3 선거일까지 후보/여론조사 데이터를 정확하게 유지하고, 개표 시스템을 검증하여 선거 당일 무중단 운영 보장
+
+**Target features:**
+- 여론조사 파이프라인 강화 — 지속 수집·검증, 누락 15건 처리
+- 본후보 등록 대응 (5/14~15) — 예비→공식 전환, 기호 배정 자동화
+- 개표 시스템 최종 완성 (5/26) — NEC URL 캡처, Worker 테스트, 브라우저 UAT 완료
+- 선거일 당일 운영 준비 — 배포 체크리스트, 캐시 전략, 폴백 시나리오
+
 ## Current State
 
 **v1.0 출시** — 2026-03-29
@@ -71,4 +81,22 @@
 | NEC_URL stub (2026-05-26 확정) | 개표 URL은 선거일 직전 캡처 필요, 미리 빈 값으로 유지 | — Pending |
 
 ---
-*Last updated: 2026-03-29 after v1.0 milestone*
+## Evolution
+
+This document evolves at phase transitions and milestone boundaries.
+
+**After each phase transition** (via `/gsd:transition`):
+1. Requirements invalidated? → Move to Out of Scope with reason
+2. Requirements validated? → Move to Validated with phase reference
+3. New requirements emerged? → Add to Active
+4. Decisions to log? → Add to Key Decisions
+5. "What This Is" still accurate? → Update if drifted
+
+**After each milestone** (via `/gsd:complete-milestone`):
+1. Full review of all sections
+2. Core Value check — still the right priority?
+3. Audit Out of Scope — reasons still valid?
+4. Update Context with current state
+
+---
+*Last updated: 2026-03-29 — Milestone v1.1 started*

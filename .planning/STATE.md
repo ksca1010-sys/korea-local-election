@@ -1,16 +1,16 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.0
-milestone_name: milestone
-status: verifying
-stopped_at: Completed 04-02-PLAN.md (3/3 tasks)
-last_updated: "2026-03-29T10:02:49.424Z"
+milestone: v1.1
+milestone_name: 선거일 대비
+status: planning
+stopped_at: Milestone v1.1 started — defining requirements
+last_updated: "2026-03-29T00:00:00.000Z"
 last_activity: 2026-03-29
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 9
-  completed_plans: 9
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
   percent: 0
 ---
 
@@ -21,14 +21,14 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** 허위 데이터 없이, 모든 선거구의 후보·여론조사·역대 결과를 한 화면에서 빠르게 탐색
-**Current focus:** Phase 04 — election-night
+**Current focus:** Milestone v1.1 — 선거일 대비 (요구사항 정의 중)
 
 ## Current Position
 
-Phase: 04
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-03-29
+Phase: Not started (defining requirements)
+Plan: —
+Status: Defining requirements
+Last activity: 2026-03-29 — Milestone v1.1 started
 
 Progress: [░░░░░░░░░░] 0%
 
@@ -40,60 +40,29 @@ Progress: [░░░░░░░░░░] 0%
 - Average duration: -
 - Total execution time: 0 hours
 
-**By Phase:**
-
-| Phase | Plans | Total | Avg/Plan |
-|-------|-------|-------|----------|
-| - | - | - | - |
-
-**Recent Trend:**
-
-- Last 5 plans: none yet
-- Trend: -
-
-*Updated after each plan completion*
-| Phase 01 P02 | 2 | 3 tasks | 3 files |
-| Phase 02 P02-02 | 2 | 2 tasks | 3 files |
-| Phase 02 P01 | 40 | 2 tasks | 5 files |
-| Phase 03 P03-02 | 20 | 2 tasks | 5 files |
-| Phase 03 P01 | 7 | 2 tasks | 8 files |
-| Phase 03 P03-03 | 15 | 2 tasks | 3 files |
-| Phase 04 P01 | 3 | 2 tasks | 6 files |
-| Phase 04-election-night P01 | 25 | 3 tasks | 6 files |
-| Phase 04-election-night P02 | 5 | 3 tasks | 3 files |
-
 ## Accumulated Context
 
 ### Decisions
 
 Decisions are logged in PROJECT.md Key Decisions table.
-Recent decisions affecting current work:
+Carried over from v1.0:
 
-- GSD v1.0 시작: 버그 수정 + 파이프라인 자동화 + 품질 개선 동시 목표 (Pending)
-- [Phase 01]: Cloudflare Pages _headers for HTTP security headers; IIFE ClarityConsent module with localStorage PIPA gate; all asset versions unified to v=1774711234
-- [Phase 02]: validateCandidates IIFE 내부 함수 유지, _validateCandidates 디버깅 노출
-- [Phase 02]: BUG-P1-WATCH-001 high severity: LLM 수치 재발 자동 파이프라인 감시 필요
-- [Phase 02]: audit_numeric_fields.py uses nttId OR sourceUrl as pollSource criterion; deploy.sh pre-flight gate blocks deployment on unverified float support values
-- [Phase 03]: chart.js dataset uses {x,y} point objects with ISO date strings for time scale compatibility
-- [Phase 03]: DataLoader.loadLazy ROOT_FILES list routes council_history.json to data/ root vs data/static/
-- [Phase 03]: eslint.config.mjs (not .js) to avoid MODULE_TYPELESS warning; build.js uses outbase='.' to preserve js/ paths
-- [Phase 03]: showSkeleton targets tab-specific container; _initSwipeClose complements setupMobilePanelSwipe
-- [Phase 04]: election_night phase covers 2026-06-03 18:00 ~ 06-04 00:00 KST; workers/election-night/ directory structure adopted (not single-file); test-parser.cjs .cjs extension for CJS+ESM coexistence
-- [Phase 04-election-night]: Worker URL https://election-night.ksca1010.workers.dev 확정; KV id db737acc9d624075bab261c60628f95c; NEC URL stub — 2026-05-26 Chrome DevTools 캡처 마감
-- [Phase 04-election-night]: Worker URL https://election-night.ksca1010.workers.dev; r.declared===true 비교만 — 개표율 기반 당선 추정 없음 (D-11); 수동 폴백 UI detail-panel 하단 배치
+- [Phase 04-election-night]: Worker URL https://election-night.ksca1010.workers.dev; KV id db737acc9d624075bab261c60628f95c; NEC URL stub — 2026-05-26 Chrome DevTools 캡처 마감
+- [Phase 04-election-night]: r.declared===true 비교만 — 개표율 기반 당선 추정 없음 (D-11); 수동 폴백 UI detail-panel 하단 배치
+- audit_numeric_fields.py uses nttId OR sourceUrl as pollSource criterion; deploy.sh pre-flight gate blocks deployment on unverified float support values
 
 ### Pending Todos
 
-None yet.
+- NEC 개표 API URL 확정 (2026-05-26 이후 Chrome DevTools 캡처)
+- 브라우저 UAT 3건 완료 (04-HUMAN-UAT.md)
 
 ### Blockers/Concerns
 
-- [Phase 1] `data.js:1529-1545` LLM 생성 support 값 — 헌법 제2조 위반, 즉시 제거 필요
-- [Phase 1] Clarity PIPA 동의 게이트 없음 — 선거 트래픽 급증 전 처리 필수
-- [Phase 4] Worker 테스트 마감: 2026-05-26 (선거일 1주 전) — 지연 시 수동 JSON 폴백으로 전환
+- Worker 테스트 마감: 2026-05-26 (선거일 1주 전) — 지연 시 수동 JSON 폴백으로 전환
+- 여론조사 빈값 15건: NESDC PDF 직접 확인 필요
 
 ## Session Continuity
 
-Last session: 2026-03-29T09:48:47.266Z
-Stopped at: Completed 04-02-PLAN.md (3/3 tasks)
+Last session: 2026-03-29
+Stopped at: Milestone v1.1 started
 Resume file: None
