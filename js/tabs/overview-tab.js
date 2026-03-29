@@ -121,7 +121,9 @@ const OverviewTab = (() => {
                                 <span style="font-size:var(--text-micro);color:var(--text-muted);">최신 여론조사 (${f.latestPoll.org || ''} · ${f.latestPoll.date || ''})</span>
                                 <div style="margin-top:var(--space-4);display:flex;flex-wrap:wrap;gap:var(--space-4);">
                                 ${f.latestPoll.results.map(r =>
-                                    `<span style="font-size:var(--text-caption);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:4px;">${r.name} ${r.support}%</span>`
+                                    r.support != null
+                                        ? `<span style="font-size:var(--text-caption);background:rgba(255,255,255,0.06);padding:2px 8px;border-radius:4px;">${r.name} ${r.support}%</span>`
+                                        : `<span style="font-size:var(--text-caption);color:var(--text-muted);padding:2px 8px;">${r.name} — 여론조사 데이터 없음</span>`
                                 ).join('')}
                                 </div>
                                </div>`
