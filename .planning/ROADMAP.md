@@ -72,7 +72,7 @@ Plans:
   5. 개표 진행 배너가 선거일 당일 노출된다
 **Plans:** 3 plans
 Plans:
-- [ ] 07-01-PLAN.md — parseNECResponse() 파서 skeleton + CAPTURE-GUIDE.md
+- [x] 07-01-PLAN.md — parseNECResponse() 파서 skeleton + CAPTURE-GUIDE.md
 - [ ] 07-02-PLAN.md — Worker 통합 테스트 + 개표 배너 활성화
 - [ ] 07-03-PLAN.md — 브라우저 UAT 3건 (checkpoint)
 **UI hint**: yes
