@@ -7,7 +7,7 @@
 ## Phases
 
 - [ ] **Phase 1: 긴급 버그·보안 수정** - LLM 생성 수치 제거, 보안 헤더 추가, PIPA 동의 게이트 — 다음 배포 전 필수
-- [ ] **Phase 2: 데이터 파이프라인 자동화** - 70+ 여론조사 PDF 일괄 처리, 수치 검증 자동화, 버그 관리 체계 수립
+- [x] **Phase 2: 데이터 파이프라인 자동화** - 70+ 여론조사 PDF 일괄 처리, 수치 검증 자동화, 버그 관리 체계 수립 (completed 2026-03-29)
 - [ ] **Phase 3: 성능 최적화 + 기능 추가** - 지연 로딩, esbuild 번들, 여론조사 트렌드 차트, URL 공유, 모바일 UX
 - [ ] **Phase 4: 선거일 실시간 개표** - Cloudflare Worker 폴링으로 실시간 개표 결과 지도 반영
 
@@ -42,8 +42,8 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 02-01: `poll_audit_pdf.py --batch` 실행 및 `audit_report.json` 생성 + `audit_numeric_fields.py` 작성 + pre-deploy 훅 연동
-- [ ] 02-02: `data-loader.js` `validateCandidates()` 가드 추가 + `.planning/bugs/OPEN.md` 버그 레지스터 생성
+- [x] 02-01: `poll_audit_pdf.py --batch` 실행 및 `audit_report.json` 생성 + `audit_numeric_fields.py` 작성 + pre-deploy 훅 연동
+- [x] 02-02: `data-loader.js` `validateCandidates()` 가드 추가 + `.planning/bugs/OPEN.md` 버그 레지스터 생성
 
 ### Phase 3: 성능 최적화 + 기능 추가
 **Goal**: 대용량 JSON 지연 로딩과 esbuild 번들로 초기 로드를 개선하고, 여론조사 트렌드 차트·URL 공유·.ics 내보내기·스켈레톤 스크린·모바일 스와이프를 추가하여 선거일 전 UX를 완성한다.
@@ -86,6 +86,6 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. 긴급 버그·보안 수정 | 1/2 | In Progress|  |
-| 2. 데이터 파이프라인 자동화 | 0/2 | Not started | - |
+| 2. 데이터 파이프라인 자동화 | 2/2 | Complete   | 2026-03-29 |
 | 3. 성능 최적화 + 기능 추가 | 0/3 | Not started | - |
 | 4. 선거일 실시간 개표 | 0/2 | Not started | - |

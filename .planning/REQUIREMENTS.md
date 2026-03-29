@@ -17,9 +17,9 @@
 
 ### DATA — 데이터 파이프라인 자동화
 
-- [ ] **DATA-01**: `data/polls/pdfs/` 70+ PDF 일괄 처리 — `poll_audit_pdf.py --batch` 실행 및 `audit_report.json` 생성
-- [ ] **DATA-02**: `audit_numeric_fields.py` 추가 — `pollSource` 없는 부동소수점 퍼센트 값 감지
-- [ ] **DATA-03**: `data_health_check.py` pre-deploy 훅에 수치 검증 단계 추가
+- [x] **DATA-01**: `data/polls/pdfs/` 70+ PDF 일괄 처리 — `poll_audit_pdf.py --batch` 실행 및 `audit_report.json` 생성
+- [x] **DATA-02**: `audit_numeric_fields.py` 추가 — `pollSource` 없는 부동소수점 퍼센트 값 감지
+- [x] **DATA-03**: `data_health_check.py` pre-deploy 훅에 수치 검증 단계 추가
 - [x] **DATA-04**: `pollSource` sibling 규칙 — `data-loader.js`에 개발환경 `validateCandidates()` 가드 추가
 - [x] **DATA-05**: 버그 레지스터 `.planning/bugs/OPEN.md` 생성 및 버그 관리 프로세스 수립
 
@@ -78,9 +78,9 @@
 | BUG-05 | Phase 1 | Pending |
 | QUAL-01 | Phase 1 | Pending |
 | QUAL-02 | Phase 1 | Pending |
-| DATA-01 | Phase 2 | Pending |
-| DATA-02 | Phase 2 | Pending |
-| DATA-03 | Phase 2 | Pending |
+| DATA-01 | Phase 2 | Complete |
+| DATA-02 | Phase 2 | Complete |
+| DATA-03 | Phase 2 | Complete |
 | DATA-04 | Phase 2 | Complete |
 | DATA-05 | Phase 2 | Complete |
 | QUAL-03 | Phase 3 | Pending |
