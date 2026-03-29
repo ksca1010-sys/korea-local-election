@@ -33,6 +33,17 @@ export default [
                 NEWS_PROXY_BASE: "writable",
                 NEWS_FILTER_CONFIG: "writable",
                 MAJOR_NEWS_HOSTS: "writable",
+                isMergedGwangjuJeonnam: "writable",
+                getMergedDisplayName: "writable",
+                // app-state.js
+                AppState: "writable",
+                // views
+                ElectionViews: "writable",
+                DistrictMapView: "writable",
+                // nav + routing
+                Sidebar: "writable",
+                SearchModule: "writable",
+                Router: "writable",
                 // window.* 런타임 데이터
                 IssueEngine: "writable",
                 DerivedIssuesData: "writable",
@@ -45,7 +56,7 @@ export default [
             },
         },
         rules: {
-            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|NEWS_PROXY_BASE|NEWS_FILTER_CONFIG|MAJOR_NEWS_HOSTS|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend)$" }],
+            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|NEWS_PROXY_BASE|NEWS_FILTER_CONFIG|MAJOR_NEWS_HOSTS|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend|AppState|ElectionViews|DistrictMapView|Sidebar|SearchModule|Router|isMergedGwangjuJeonnam|getMergedDisplayName)$" }],
             "no-redeclare": "off",
             "no-console": "off",
             "no-undef": "error",

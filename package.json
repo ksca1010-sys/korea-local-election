@@ -16,6 +16,7 @@
     "import:news": "node scripts/import_news_observations.js",
     "polls:backfill-registration": "python3 scripts/nesdc_poll_pipeline.py --backfill-registration-meta",
     "report:health": "node scripts/report_data_health.js",
+    "build": "node build.js",
     "deploy": "bash deploy.sh",
     "deploy:preview": "npx wrangler pages deploy . --project-name korea-local-eletion --commit-dirty=true",
     "lint": "eslint js/",
@@ -24,10 +25,11 @@
     "format:check": "prettier --check 'js/**/*.js' 'css/**/*.css'"
   },
   "devDependencies": {
-    "topojson-client": "^3.1.0",
-    "eslint": "^9.0.0",
     "@eslint/js": "^9.0.0",
+    "esbuild": "^0.27.4",
+    "eslint": "^9.0.0",
     "globals": "^15.0.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "topojson-client": "^3.1.0"
   }
 }

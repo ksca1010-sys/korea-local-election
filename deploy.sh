@@ -27,6 +27,9 @@ rsync -a --exclude=".deploy_dist" \
   --exclude="deploy.sh" \
   . "$DIST_DIR/"
 
+echo "Minifying JS..."
+DEPLOY_DIST="$DIST_DIR" node build.js || { echo "esbuild minify 실패 — 배포 중단"; exit 1; }
+
 echo "Deploying from $DIST_DIR..."
 npx wrangler pages deploy "$DIST_DIR" --project-name korea-local-eletion --branch main --commit-dirty=true
 

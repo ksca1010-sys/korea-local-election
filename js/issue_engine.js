@@ -395,7 +395,7 @@ window.IssueEngine = (function () {
 
             // 어절 분리 → 조사 제거
             const tokens = text
-                .replace(/[^\w가-힣\s·\-]/g, ' ')  // 특수문자 제거 (·과 -는 유지)
+                .replace(/[^\w가-힣\s·-]/g, ' ')  // 특수문자 제거 (·과 -는 유지)
                 .split(/\s+/)
                 .map(t => stripParticles(t.trim()))
                 .filter(t => isValidTerm(t, regionStops));
@@ -570,8 +570,8 @@ window.IssueEngine = (function () {
         for (const c of candidates) {
             const isDup = result.some(r => {
                 if (r.term.includes(c.term) || c.term.includes(r.term)) return true;
-                const rWords = new Set(r.term.replace(/[·\-]/g, ' ').split(/\s+/));
-                const cWords = new Set(c.term.replace(/[·\-]/g, ' ').split(/\s+/));
+                const rWords = new Set(r.term.replace(/[·-]/g, ' ').split(/\s+/));
+                const cWords = new Set(c.term.replace(/[·-]/g, ' ').split(/\s+/));
                 let overlap = 0;
                 for (const w of cWords) { if (rWords.has(w)) overlap++; }
                 return overlap > 0 && overlap >= Math.min(rWords.size, cWords.size);
@@ -629,7 +629,7 @@ window.IssueEngine = (function () {
             const emptyStops = new Set();
             for (const article of allItems) {
                 const tokens = (article.title || '')
-                    .replace(/[^\w가-힣\s·\-]/g, ' ')
+                    .replace(/[^\w가-힣\s·-]/g, ' ')
                     .split(/\s+/)
                     .map(t => stripParticles(t.trim()))
                     .filter(t => isValidTerm(t, emptyStops));

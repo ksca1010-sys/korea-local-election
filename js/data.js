@@ -2587,6 +2587,7 @@ const ElectionData = (() => {
                     if (!isValidResultName(name)) return false;
                     if (r.support <= 0) return false;
                     // PDF 파싱 쓰레기 패턴 제거
+                    // eslint-disable-next-line no-control-regex
                     if (/\x00/.test(name) || /\x00/.test(party)) return false;  // null 문자
                     if (/cid:\d+/.test(name) || /cid:\d+/.test(party)) return false;  // CID 폰트 참조
                     // 지지율이 비현실적 (100% 또는 95% 등은 메타데이터)
