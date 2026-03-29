@@ -3,6 +3,9 @@
 
 DIST_DIR=".deploy_dist"
 
+echo "Running pre-deploy quality checks..."
+python3 scripts/audit_numeric_fields.py || { echo "audit_numeric_fields 검증 실패 — 배포 중단"; exit 1; }
+
 echo "Preparing deployment directory..."
 rm -rf "$DIST_DIR"
 rsync -a --exclude=".deploy_dist" \

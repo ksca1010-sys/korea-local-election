@@ -6,6 +6,7 @@
     "check:local-media": "node scripts/check_local_media_registry.js",
     "check:news": "node scripts/run_news_regression.js",
     "check:all": "node scripts/run_quality_gate.js",
+    "check:polls:source": "python3 scripts/audit_numeric_fields.py",
     "check:polls": "node scripts/run_poll_regression.js",
     "check:poll-observations": "node scripts/check_poll_observations.js",
     "check:observations": "node scripts/check_news_observations.js",
