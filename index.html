@@ -31,6 +31,7 @@
     <script defer src="https://d3js.org/d3.v7.min.js"></script>
     <script defer src="https://d3js.org/topojson.v3.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css?v=1774711234">
 </head>
 <body>
@@ -269,7 +270,10 @@
                     <h2 id="panel-region-name">지역을 선택하세요</h2>
                     <span id="panel-region-info" class="panel-subtitle"></span>
                 </div>
-                <button id="panel-close" class="panel-close"><i class="fas fa-times"></i></button>
+                <div class="panel-header-actions">
+                    <button class="share-btn" onclick="App.copyShareLink()" title="링크 복사"><i class="fas fa-link"></i> 링크 복사</button>
+                    <button id="panel-close" class="panel-close"><i class="fas fa-times"></i></button>
+                </div>
             </div>
 
             <div class="panel-tabs" role="tablist" aria-label="지역 정보 탭">
@@ -297,6 +301,11 @@
                     <div class="welcome-tip">
                         <i class="fas fa-lightbulb"></i>
                         <span>검색창에서 지역명을 입력하여 빠르게 찾을 수 있습니다.</span>
+                    </div>
+                    <div class="welcome-actions">
+                        <button class="ics-export-btn" onclick="ElectionCalendar.exportICS()" title="캘린더에 추가">
+                            <i class="fas fa-calendar-plus"></i> 선거 일정 내보내기
+                        </button>
                     </div>
                 </div>
 

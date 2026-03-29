@@ -176,11 +176,10 @@ const ChartsModule = (() => {
             return aDate.localeCompare(bDate);
         });
 
-        // X축 라벨: 조사종료일
+        // X축 라벨: 조사종료일 (time scale용 ISO 날짜)
         const labels = polls.map(p => {
             const dateStr = p.surveyDate?.end || p.publishDate || '';
-            const d = new Date(dateStr);
-            return isNaN(d) ? dateStr : `${d.getMonth() + 1}/${d.getDate()}`;
+            return dateStr || null;
         });
 
         // 모든 후보명 수집 (전체 조사에 등장한 후보 union)
@@ -233,10 +232,11 @@ const ChartsModule = (() => {
 
             datasets.push({
                 label: name,
-                data: polls.map(p => {
+                data: polls.map((p, i) => {
                     const r = (p.results || []).find(r => r.candidateName === name);
-                    return r ? r.support : null;
-                }),
+                    const dateStr = p.surveyDate?.end || p.publishDate || null;
+                    return r && dateStr ? { x: dateStr, y: r.support } : null;
+                }).filter(Boolean),
                 borderColor: color,
                 backgroundColor: color + '20',
                 pointBackgroundColor: color,
@@ -260,7 +260,7 @@ const ChartsModule = (() => {
             const margin = polls[0].method.marginOfError;
             datasets.push({
                 label: '오차범위 (1위)',
-                data: leadData.map(v => v != null ? v + margin : null),
+                data: leadData.map(pt => pt != null ? { x: pt.x, y: pt.y + margin } : null).filter(Boolean),
                 borderColor: 'transparent',
                 backgroundColor: 'rgba(59, 130, 246, 0.08)',
                 pointRadius: 0,
@@ -269,7 +269,7 @@ const ChartsModule = (() => {
             });
             datasets.push({
                 label: '',
-                data: leadData.map(v => v != null ? v - margin : null),
+                data: leadData.map(pt => pt != null ? { x: pt.x, y: pt.y - margin } : null).filter(Boolean),
                 borderColor: 'transparent',
                 backgroundColor: 'transparent',
                 pointRadius: 0,
@@ -279,7 +279,7 @@ const ChartsModule = (() => {
 
         const chart = new Chart(canvas, {
             type: 'line',
-            data: { labels, datasets },
+            data: { datasets },
             options: {
                 responsive: true,
                 maintainAspectRatio: true,
@@ -303,28 +303,36 @@ const ChartsModule = (() => {
                         borderWidth: 1,
                         padding: 10,
                         cornerRadius: 8,
-                        itemSort: (a, b) => (b.raw || 0) - (a.raw || 0),
+                        itemSort: (a, b) => ((b.raw?.y ?? b.raw) || 0) - ((a.raw?.y ?? a.raw) || 0),
                         callbacks: {
                             title: (items) => {
                                 if (!items.length) return '';
-                                const idx = items[0].dataIndex;
-                                const poll = polls[idx];
                                 const base = items[0].label || '';
-                                // 통합 추이: 기관명 표시
-                                if (trendGroup._merged && poll?.pollOrg) {
-                                    return `${base} (${poll.pollOrg})`;
+                                // 통합 추이: 기관명 표시 (x값으로 poll 찾기)
+                                if (trendGroup._merged) {
+                                    const xVal = items[0].raw?.x;
+                                    const poll = polls.find(p => (p.surveyDate?.end || p.publishDate) === xVal);
+                                    if (poll?.pollOrg) return `${base} (${poll.pollOrg})`;
                                 }
                                 return base;
                             },
                             label: (ctx) => {
                                 if (ctx.raw === null || ctx.dataset.label === '' || ctx.dataset.label.includes('오차범위')) return null;
-                                return `${ctx.dataset.label}: ${ctx.raw}%`;
+                                const val = ctx.raw?.y ?? ctx.raw;
+                                return `${ctx.dataset.label}: ${val}%`;
                             }
                         }
                     }
                 },
                 scales: {
                     x: {
+                        type: 'time',
+                        time: {
+                            unit: 'day',
+                            displayFormats: { day: 'M/d' },
+                            tooltipFormat: 'yyyy-MM-dd',
+                        },
+                        title: { display: true, text: '조사일' },
                         grid: { color: 'rgba(42, 53, 83, 0.3)' }
                     },
                     y: {
