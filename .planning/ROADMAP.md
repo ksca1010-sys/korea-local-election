@@ -21,7 +21,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 ### v1.1 선거일 대비
 
-- [ ] **Phase 5: 여론조사 보완** — 누락 15건 채우기 + 지속 수집 파이프라인 안정화
+- [x] **Phase 5: 여론조사 보완** — 누락 15건 채우기 + 지속 수집 파이프라인 안정화 (completed 2026-03-29)
 - [ ] **Phase 6: 본후보 등록 대응** — 5/14~15 등록에 맞춰 후보 데이터 공식 전환
 - [ ] **Phase 7: 개표 시스템 완성** — NEC URL 캡처 + Worker 테스트 + 브라우저 UAT
 - [ ] **Phase 8: 선거일 운영 준비** — 배포 체크리스트 + 공표금지 검증 + 폴백 절차 확인
@@ -37,10 +37,10 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   1. 사용자가 여론조사 탭을 열면 이전에 지지율이 비어있던 15건에 수치가 표시된다
   2. 신규 여론조사가 등록되면 파이프라인 재실행만으로 탭에 반영된다
   3. 5/28 00:00 KST 이후 여론조사 탭이 자동으로 빈 상태를 보여준다 (공표금지)
-**Plans:** 1/2 plans executed
+**Plans:** 2/2 plans complete
 Plans:
 - [x] 05-01-PLAN.md — 여론조사 빈값 32건 채우기 (reparse + 수동 확인)
-- [ ] 05-02-PLAN.md — GitHub Actions D-05 규격 업그레이드 + 공표금지 브라우저 검증
+- [x] 05-02-PLAN.md — GitHub Actions D-05 규격 업그레이드 + 공표금지 브라우저 검증
 
 ### Phase 6: 본후보 등록 대응
 **Goal**: 5/15 18:00 이후 공식 후보 목록과 기호순 정렬이 정확하게 작동한다
@@ -52,7 +52,10 @@ Plans:
   2. 5/15 18:00 이후 후보 탭의 정렬 기준이 기호순으로 전환된다
   3. 등록 취소 또는 무효 처리된 후보가 목록에서 제거되어 표시되지 않는다
   4. 후보 수가 변경된 선거구를 지도에서 클릭하면 최신 후보 수가 반영된다
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 (fetch_nec_candidates.py 교체 + Actions)
+- [ ] 06-02-PLAN.md — 후보 탭 NOMINATED 필터 + 기호순 UI 전환
 **UI hint**: yes
 
 ### Phase 7: 개표 시스템 완성
@@ -88,7 +91,7 @@ Plans:
 | 2. 데이터 파이프라인 자동화 | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 3. 성능 최적화 + 기능 추가 | v1.0 | 3/3 | Complete | 2026-03-29 |
 | 4. 선거일 실시간 개표 | v1.0 | 2/2 | Complete | 2026-03-29 |
-| 5. 여론조사 보완 | v1.1 | 1/2 | In Progress|  |
-| 6. 본후보 등록 대응 | v1.1 | 0/? | Not started | - |
+| 5. 여론조사 보완 | v1.1 | 2/2 | Complete   | 2026-03-29 |
+| 6. 본후보 등록 대응 | v1.1 | 0/2 | Planned | - |
 | 7. 개표 시스템 완성 | v1.1 | 0/? | Not started | - |
 | 8. 선거일 운영 준비 | v1.1 | 0/? | Not started | - |
