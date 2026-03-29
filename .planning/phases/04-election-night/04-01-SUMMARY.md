@@ -26,17 +26,19 @@ decisions:
   - fetchAndParseNEC is a stub until NEC AJAX URL confirmed via 2022 archive (deadline 2026-05-26)
   - declared field may only be set from official NEC flag, never mathematical estimation (D-11, 헌법 제2조)
 metrics:
-  duration: "~3 minutes"
+  duration: "~25 minutes"
   completed: "2026-03-29"
-  tasks_completed: 2
+  tasks_completed: 3
   tasks_total: 3
   files_created: 5
-  files_modified: 1
+  files_modified: 2
+worker_url: "https://election-night.ksca1010.workers.dev"
+kv_namespace_id: "db737acc9d624075bab261c60628f95c"
 ---
 
-# Phase 04 Plan 01: Worker 골격 + election_night 페이즈 Summary
+# Phase 04 Plan 01: Worker 인프라 구축 Summary
 
-**One-liner:** Cloudflare Worker skeleton (scheduled Cron + /results + /health) with ESM structure, election_night phase in election-calendar.js (18:00~24:00 KST), and 2022 archive fixture-based parser unit tests (8/8 passing).
+**One-liner:** Cloudflare Worker(election-night) 배포 완료 — KV 기반 60초 폴링 스케줄러 + /results+/health 엔드포인트, election_night 페이즈 감지(18:00~24:00 KST), 2022 fixture 파서 테스트 8/8 통과. Worker URL: https://election-night.ksca1010.workers.dev
 
 ---
 
@@ -46,7 +48,7 @@ metrics:
 |------|------|--------|-------|
 | 1 | election_night 페이즈 추가 + Worker 디렉토리 골격 생성 | 8225107 | js/election-calendar.js, workers/election-night/index.js, workers/election-night/wrangler.toml |
 | 2 | 2022 아카이브 fixture 생성 + 파서 단위 테스트 작성 | 6fdd38d | workers/election-night/fixtures/2022-sample.json, workers/election-night/test-parser.cjs, workers/election-night/package.json |
-| 3 | Worker 배포 + URL 확정 | PENDING | workers/election-night/wrangler.toml (KV id 기입 필요) |
+| 3 | Worker 배포 + URL 확정 | 1a152b3 | workers/election-night/wrangler.toml (KV id 확정, Worker 배포 완료) |
 
 ---
 
@@ -122,38 +124,20 @@ metrics:
 
 ---
 
-## Task 3: Worker 배포 대기 중 (checkpoint:human-action)
+## Task 3: Worker 배포 완료
 
-Worker 배포를 위해 다음 단계가 필요합니다:
+Worker가 Cloudflare에 배포되었습니다:
 
-### 1. KV Namespace 생성
-```bash
-cd workers/election-night
-npx wrangler kv:namespace create ELECTION_RESULTS
+- **Worker URL:** `https://election-night.ksca1010.workers.dev`
+- **KV namespace id:** `db737acc9d624075bab261c60628f95c`
+- **Health check:** `curl https://election-night.ksca1010.workers.dev/health` → `{"status":"ok"}` (200)
+- **Commit:** `1a152b3`
+
+### 04-02에서 사용할 Worker URL
+
+```javascript
+const ELECTION_NIGHT_WORKER = 'https://election-night.ksca1010.workers.dev';
 ```
-출력 예시:
-```
-{ binding: 'ELECTION_RESULTS', id: 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' }
-```
-
-### 2. wrangler.toml에 id 기입
-`workers/election-night/wrangler.toml`에서 `<KV_NAMESPACE_ID>`를 실제 id로 교체.
-(preview_id도 마찬가지)
-
-### 3. Worker 배포
-```bash
-cd workers/election-night
-npx wrangler deploy
-```
-
-### 4. URL 확인 + /health 테스트
-```bash
-curl https://election-night.<CF_SUBDOMAIN>.workers.dev/health
-# 예상 응답: {"status":"ok"}
-```
-
-### 5. Worker URL 전달
-04-02 Task 1a의 `ELECTION_NIGHT_WORKER` 상수에 배포된 URL을 기입해 주세요.
 
 ---
 
@@ -162,13 +146,15 @@ curl https://election-night.<CF_SUBDOMAIN>.workers.dev/health
 Files verified:
 - js/election-calendar.js: FOUND ✓ (ELECTION_NIGHT_END, election_night, getBannerConfig)
 - workers/election-night/index.js: FOUND ✓
-- workers/election-night/wrangler.toml: FOUND ✓
+- workers/election-night/wrangler.toml: FOUND ✓ (KV id: db737acc9d624075bab261c60628f95c)
 - workers/election-night/fixtures/2022-sample.json: FOUND ✓
 - workers/election-night/test-parser.cjs: FOUND ✓
 - workers/election-night/package.json: FOUND ✓
 
 Tests: 8/8 PASS ✓
+Worker health: https://election-night.ksca1010.workers.dev/health → 200 {"status":"ok"} ✓
 
 Commits verified:
 - 8225107: feat(04-01): election_night 페이즈 추가 + Worker 골격 생성 ✓
 - 6fdd38d: feat(04-01): 2022 아카이브 fixture + 파서 단위 테스트 작성 ✓
+- 1a152b3: chore(04-01): Worker 배포 완료 + KV namespace id 확정 ✓
