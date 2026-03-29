@@ -39,7 +39,7 @@ Plans:
   2. `npm run check:polls` (또는 pre-deploy 훅)가 `pollSource` 없는 부동소수점 퍼센트 값을 감지하면 0이 아닌 종료 코드를 반환한다
   3. `data-loader.js` 개발 환경에서 `validateCandidates()`가 실행되고, `pollSource` 없는 `support` 값이 있으면 콘솔에 경고를 출력한다
   4. `.planning/bugs/OPEN.md`가 존재하고 현재 알려진 버그가 항목으로 등재되어 있다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
 - [ ] 02-01: `poll_audit_pdf.py --batch` 실행 및 `audit_report.json` 생성 + `audit_numeric_fields.py` 작성 + pre-deploy 훅 연동
