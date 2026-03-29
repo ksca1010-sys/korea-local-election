@@ -51,16 +51,16 @@
 
 ## Traceability
 
-| REQ-ID | Phase | Plan |
-|--------|-------|------|
-| POLL-01 | — | — |
-| POLL-02 | — | — |
-| CAND-01 | — | — |
-| CAND-02 | — | — |
-| CAND-03 | — | — |
-| ELEC-01 | — | — |
-| ELEC-02 | — | — |
-| ELEC-03 | — | — |
-| OPS-01 | — | — |
-| OPS-02 | — | — |
-| OPS-03 | — | — |
+| REQ-ID | Phase | Plan | Status |
+|--------|-------|------|--------|
+| POLL-01 | Phase 5 | — | Pending |
+| POLL-02 | Phase 5 | — | Pending |
+| CAND-01 | Phase 6 | — | Pending |
+| CAND-02 | Phase 6 | — | Pending |
+| CAND-03 | Phase 6 | — | Pending |
+| ELEC-01 | Phase 7 | — | Pending |
+| ELEC-02 | Phase 7 | — | Pending |
+| ELEC-03 | Phase 7 | — | Pending |
+| OPS-01 | Phase 8 | — | Pending |
+| OPS-02 | Phase 8 | — | Pending |
+| OPS-03 | Phase 8 | — | Pending |
