@@ -56,7 +56,7 @@ Plans:
   4. 여론조사 탭에서 후보별 지지율 시계열 차트가 실제 날짜 축(time scale)으로 렌더링된다
   5. 정보 패널 상단의 "링크 복사" 버튼을 클릭하면 현재 지역·탭 상태를 담은 URL이 클립보드에 복사된다
   6. 모바일 브라우저에서 사이드 패널을 아래로 스와이프하면 패널이 닫힌다
-**Plans**: TBD
+**Plans**: 3 plans
 
 Plans:
 - [ ] 03-01: `historical_elections_full.json`·`council_history.json` 지연 로딩 + esbuild 번들 빌드 단계 추가 + ESLint 오류 0건 달성
