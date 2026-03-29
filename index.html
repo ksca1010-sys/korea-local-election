@@ -417,6 +417,21 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Election Night 수동 폴백 UI (기본 숨김 — Worker 장애 시 자동 표시) -->
+            <div id="manual-fallback-container" style="display:none; padding:12px; background:#1a1a2e; border-top:2px solid #e74c3c;">
+                <div style="color:#e74c3c; font-weight:bold; margin-bottom:8px;">
+                    <i class="fas fa-exclamation-triangle"></i> 수동 업데이트 모드
+                </div>
+                <p style="color:#ccc; font-size:12px; margin-bottom:8px;">
+                    실시간 서버 연결이 끊어졌습니다. 개표 데이터 JSON을 직접 입력하세요.
+                </p>
+                <textarea id="manual-fallback-input" rows="6" style="width:100%; background:#0d0d1a; color:#eee; border:1px solid #333; border-radius:4px; padding:8px; font-family:monospace; font-size:11px;" placeholder='{"regions":{"seoul":{"countRate":72.5,...}}}'></textarea>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px;">
+                    <button id="manual-fallback-apply" style="background:#e74c3c; color:#fff; border:none; padding:6px 16px; border-radius:4px; cursor:pointer; font-size:12px;">적용</button>
+                    <span id="manual-fallback-status" style="color:#888; font-size:11px;"></span>
+                </div>
+            </div>
         </aside>
     </main>
 

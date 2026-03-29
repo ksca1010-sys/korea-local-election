@@ -238,6 +238,19 @@ const App = (() => {
         // Initialize router (popstate listener) & restore from URL hash
         Router.init();
         Router.restoreFromHash();
+
+        // Election Night 페이즈 체크 및 폴링 시작
+        _checkElectionNightPhase();
+        setInterval(_checkElectionNightPhase, 300_000);  // 5분마다 페이즈 재확인
+
+        // 수동 폴백 버튼 이벤트 리스너
+        const fallbackBtn = document.getElementById('manual-fallback-apply');
+        if (fallbackBtn) {
+            fallbackBtn.addEventListener('click', () => {
+                const textarea = document.getElementById('manual-fallback-input');
+                if (textarea?.value) _handleManualJsonInput(textarea.value);
+            });
+        }
     }
 
     // ============================================
@@ -980,6 +993,82 @@ const App = (() => {
         });
     }
 
+    // ── Election Night 실시간 개표 폴링 ──
+    // Worker URL: 04-01에서 배포한 Worker
+    const ELECTION_NIGHT_WORKER = 'https://election-night.ksca1010.workers.dev';
+    let _electionNightPoller = null;
+    let _manualFallbackMode = false;
+
+    function _checkElectionNightPhase() {
+        const phase = typeof ElectionCalendar !== 'undefined'
+            ? ElectionCalendar.getCurrentPhase()
+            : null;
+        if (phase === 'election_night' && !_electionNightPoller) {
+            _startElectionNightPolling();
+        } else if (phase !== 'election_night' && _electionNightPoller) {
+            _stopElectionNightPolling();
+        }
+    }
+
+    function _startElectionNightPolling() {
+        if (_electionNightPoller) return;
+        console.log('[election_night] 개표 폴링 시작');
+        _pollElectionResults();  // 즉시 1회
+        _electionNightPoller = setInterval(_pollElectionResults, 60_000);
+    }
+
+    function _stopElectionNightPolling() {
+        if (_electionNightPoller) {
+            clearInterval(_electionNightPoller);
+            _electionNightPoller = null;
+            console.log('[election_night] 개표 폴링 중지');
+        }
+    }
+
+    async function _pollElectionResults() {
+        try {
+            const resp = await fetch(`${ELECTION_NIGHT_WORKER}/results`, {
+                signal: AbortSignal.timeout(10_000)
+            });
+            if (!resp.ok) throw new Error(`Worker ${resp.status}`);
+            const data = await resp.json();
+            if (data.error) throw new Error(data.error);
+            if (typeof MapModule !== 'undefined' && MapModule.applyElectionNightLayer) {
+                MapModule.applyElectionNightLayer(data);
+            }
+            _setManualFallbackMode(false);
+        } catch (err) {
+            console.warn('[election_night] Worker 응답 실패, 수동 모드 전환', err);
+            _setManualFallbackMode(true);
+        }
+    }
+
+    function _setManualFallbackMode(active) {
+        _manualFallbackMode = active;
+        const container = document.getElementById('manual-fallback-container');
+        if (!container) return;
+        container.style.display = active ? 'block' : 'none';
+    }
+
+    function _handleManualJsonInput(jsonString) {
+        try {
+            const data = JSON.parse(jsonString);
+            if (!data.regions || typeof data.regions !== 'object') {
+                throw new Error('regions 필드 없음');
+            }
+            if (typeof MapModule !== 'undefined' && MapModule.applyElectionNightLayer) {
+                MapModule.applyElectionNightLayer(data);
+            }
+            console.log('[election_night] 수동 JSON 적용 완료');
+            const status = document.getElementById('manual-fallback-status');
+            if (status) status.textContent = '적용 완료 (' + new Date().toLocaleTimeString('ko-KR') + ')';
+        } catch (err) {
+            console.error('[election_night] 수동 JSON 파싱 실패', err);
+            const status = document.getElementById('manual-fallback-status');
+            if (status) status.textContent = '오류: ' + err.message;
+        }
+    }
+
     // ── 스켈레톤 스크린 (FEAT-04) ──
     function showSkeleton(tabName) {
         const container = document.getElementById(`tab-${tabName}`);
@@ -1001,6 +1090,11 @@ const App = (() => {
     return {
         onRegionSelected,
         onDistrictSelected,
+        // election_night 수동 폴백 (디버그용)
+        _startElectionNightPolling,
+        _stopElectionNightPolling,
+        _setManualFallbackMode,
+        _handleManualJsonInput,
         onSubdistrictSelected: ElectionViews.onSubdistrictSelected,
         onByElectionSelected: ElectionViews.onByElectionSelected,
         onConstituencySelected,
