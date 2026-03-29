@@ -218,6 +218,59 @@ const ElectionCalendar = (() => {
         }
     };
 
+    // ─── Layer 2B: .ics 캘린더 내보내기 ───
+    function exportICS() {
+        // 선거 주요 일정 (RFC 5545 종일 이벤트)
+        const schedule = [
+            { id: 'pre-reg-governor',   startDate: '2026-02-03', endDate: '2026-02-03', title: '예비후보 등록 시작 (광역단체장·교육감)', description: '광역단체장·교육감 예비후보 등록 시작일' },
+            { id: 'pre-reg-council',    startDate: '2026-02-20', endDate: '2026-02-20', title: '예비후보 등록 시작 (광역의원)', description: '광역의원 예비후보 등록 시작일' },
+            { id: 'pre-reg-gun',        startDate: '2026-03-22', endDate: '2026-03-22', title: '예비후보 등록 시작 (기초)', description: '기초단체장·기초의원 예비후보 등록 시작일' },
+            { id: 'voter-list',         startDate: '2026-05-12', endDate: '2026-05-16', title: '선거인명부 열람 기간', description: '선거인명부 열람 및 이의신청 기간 (5/12~16)' },
+            { id: 'candidate-reg',      startDate: '2026-05-14', endDate: '2026-05-15', title: '후보자 등록 기간', description: '본선거 후보자 등록 기간 (5/14~15)' },
+            { id: 'campaign',           startDate: '2026-05-21', endDate: '2026-06-02', title: '공식 선거운동 기간', description: '공식 선거운동 기간 (5/21~6/2)' },
+            { id: 'pub-ban',            startDate: '2026-05-28', endDate: '2026-06-03', title: '여론조사 공표금지 기간', description: '공직선거법 제108조 — 여론조사 공표금지 (5/28~6/3 18:00)' },
+            { id: 'early-vote',         startDate: '2026-05-29', endDate: '2026-05-30', title: '사전투표 (06:00~18:00)', description: '전국 어디서나 사전투표 가능 (5/29~30, 06:00~18:00)' },
+            { id: 'election-day',       startDate: '2026-06-03', endDate: '2026-06-03', title: '제9회 전국동시지방선거', description: '선거일 — 투표시간 06:00~18:00' },
+            { id: 'inauguration',       startDate: '2026-07-01', endDate: '2026-07-01', title: '당선자 취임일', description: '제9회 전국동시지방선거 당선자 취임일' },
+        ];
+
+        const events = (typeof ElectionData !== 'undefined' && ElectionData.electionCalendar?.length)
+            ? ElectionData.electionCalendar
+            : schedule;
+
+        let ics = 'BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//AlSeonGeo//Election//KO\r\nCALSCALE:GREGORIAN\r\nX-WR-CALNAME:2026 전국동시지방선거\r\nX-WR-TIMEZONE:Asia/Seoul\r\n';
+        events.forEach(ev => {
+            const dtStart = (ev.startDate || '').replace(/-/g, '');
+            const rawEnd = ev.endDate ? ev.endDate.replace(/-/g, '') : dtStart;
+            // RFC 5545: DTEND for DATE is exclusive — add 1 day
+            const dtEndExclusive = (() => {
+                if (!rawEnd) return dtStart;
+                const d = new Date(ev.endDate || ev.startDate);
+                d.setDate(d.getDate() + 1);
+                return d.toISOString().slice(0, 10).replace(/-/g, '');
+            })();
+            if (!dtStart) return;
+            const sanitize = s => (s || '').replace(/[\\;,]/g, ' ').replace(/\r?\n/g, '\\n');
+            ics += 'BEGIN:VEVENT\r\n';
+            ics += `DTSTART;VALUE=DATE:${dtStart}\r\n`;
+            ics += `DTEND;VALUE=DATE:${dtEndExclusive}\r\n`;
+            ics += `SUMMARY:${sanitize(ev.title)}\r\n`;
+            ics += `DESCRIPTION:${sanitize(ev.description)}\r\n`;
+            ics += `UID:${ev.id || dtStart}@alseonger\r\n`;
+            ics += 'END:VEVENT\r\n';
+        });
+        ics += 'END:VCALENDAR\r\n';
+
+        const blob = new Blob([ics], { type: 'text/calendar;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'election-schedule-2026.ics';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(a.href);
+    }
+
     // ─── Public API ───
     return {
         getKST,
@@ -234,5 +287,6 @@ const ElectionCalendar = (() => {
         getCandidateSortMode,
         getDefaultNewsSubTab,
         getBannerConfig,
+        exportICS,
     };
 })();
