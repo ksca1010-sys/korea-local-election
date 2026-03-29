@@ -196,6 +196,7 @@ const App = (() => {
         setupPanelClose();
         setupPanelResize();
         setupMobilePanelSwipe();
+        _initSwipeClose();
         setupHomeLink();
 
         // Load election terms for tooltips
@@ -300,6 +301,9 @@ const App = (() => {
 
         const panelContent = document.querySelector('.panel-content');
         if (panelContent) panelContent.scrollTop = 0;
+
+        // 탭 전환 시 스켈레톤 스크린 표시 (FEAT-04)
+        showSkeleton(tabName);
 
         // 탭 전환 시 로딩 표시
         const asyncTabs = ['polls', 'news', 'history'];
@@ -942,6 +946,57 @@ const App = (() => {
         setTimeout(() => toast.remove(), 2000);
     }
 
+    // ── 스와이프 닫기 (FEAT-05) ──
+    function _initSwipeClose() {
+        const panel = document.getElementById('detail-panel')
+            || document.querySelector('.detail-panel');
+        if (!panel) return;
+        let startY = 0, currentY = 0, isDragging = false;
+        const THRESHOLD = 100; // px
+
+        panel.addEventListener('touchstart', (e) => {
+            // 패널 상단 80px 영역의 drag-handle에서만 스와이프 시작
+            const rect = panel.getBoundingClientRect();
+            const touchY = e.touches[0].clientY - rect.top;
+            if (touchY > 80) return;
+            if (_currentPanelStage === 'collapsed') return;
+            startY = e.touches[0].clientY;
+            isDragging = true;
+        }, { passive: true });
+
+        panel.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY;
+        }, { passive: true });
+
+        panel.addEventListener('touchend', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            const diff = currentY - startY;
+            if (diff > THRESHOLD) {
+                closePanel();
+            }
+            startY = 0; currentY = 0;
+        });
+    }
+
+    // ── 스켈레톤 스크린 (FEAT-04) ──
+    function showSkeleton(tabName) {
+        const container = document.getElementById(`tab-${tabName}`);
+        if (!container) return;
+        let html = '<div class="skeleton-container">';
+        html += '<div class="skeleton-line title"></div>';
+        if (tabName === 'polls' || tabName === 'history') {
+            html += '<div class="skeleton-chart"></div>';
+        }
+        for (let i = 0; i < 5; i++) {
+            const w = ['short', 'medium', 'long'][i % 3];
+            html += `<div class="skeleton-line ${w}"></div>`;
+        }
+        html += '</div>';
+        container.innerHTML = html;
+    }
+
     // Public API
     return {
         onRegionSelected,
@@ -958,6 +1013,7 @@ const App = (() => {
         showMiniCard,
         setPanelStage,
         trackEvent,
+        showSkeleton,
         copyShareLink,
         trackShareClick: (type) => trackEvent('shareClick', { type, regionKey: AppState.currentRegionKey }),
         getElectionType: () => AppState.currentElectionType,
