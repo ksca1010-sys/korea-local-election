@@ -28,7 +28,7 @@
 
 Plans:
 - [ ] 01-01: `data.js` LLM 수치 제거 + `overview-tab.js`·`poll-tab.js` 방어 처리 + 유령 파일·스테일 주석 정리
-- [ ] 01-02: `_headers` 보안 헤더 파일 추가 + Microsoft Clarity PIPA 동의 게이트 구현 + CSS/JS 버전 통일
+- [x] 01-02: `_headers` 보안 헤더 파일 추가 + Microsoft Clarity PIPA 동의 게이트 구현 + CSS/JS 버전 통일
 
 ### Phase 2: 데이터 파이프라인 자동화
 **Goal**: 70+ 미처리 여론조사 PDF를 일괄 처리하고, `pollSource` 없는 수치가 UI까지 도달하지 못하도록 검증 자동화를 파이프라인에 내재화하며 버그 관리 프로세스를 수립한다.
@@ -85,7 +85,7 @@ Phases execute in numeric order: 1 → 2 → 3 → 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. 긴급 버그·보안 수정 | 0/2 | Not started | - |
+| 1. 긴급 버그·보안 수정 | 1/2 | In Progress|  |
 | 2. 데이터 파이프라인 자동화 | 0/2 | Not started | - |
 | 3. 성능 최적화 + 기능 추가 | 0/3 | Not started | - |
 | 4. 선거일 실시간 개표 | 0/2 | Not started | - |

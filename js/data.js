@@ -2241,6 +2241,8 @@ const ElectionData = (() => {
                     if (!data?.governors) return;
                     Object.entries(data.governors).forEach(([regionKey, g]) => {
                         if (!regions[regionKey]) return;
+                        // _merged 표시된 지역은 다른 지역에 통합됨 → currentGovernor 덮어쓰기 건너뜀
+                        if (g._merged && !g.name) return;
                         const existing = regions[regionKey].currentGovernor || {};
                         // acting 필드가 외부 JSON에 명시적으로 있을 때만 갱신, 없으면 기존 data.js 상태 보존
                         if ('acting' in g) {

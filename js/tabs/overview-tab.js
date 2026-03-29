@@ -372,7 +372,7 @@ const OverviewTab = (() => {
                     if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
                         const jeonnamRegion = ElectionData.getRegion('jeonnam');
                         const jeonnamGov = jeonnamRegion?.currentGovernor;
-                        if (jeonnamGov) {
+                        if (jeonnamGov && jeonnamGov.name) {
                             const jnColor = ElectionData.getPartyColor(jeonnamGov.party);
                             const jnSince = Number.isFinite(Number(jeonnamGov.since)) ? ` ${jeonnamGov.since}년~` : '';
                             govHtml += `

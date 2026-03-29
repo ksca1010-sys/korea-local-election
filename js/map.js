@@ -1054,33 +1054,20 @@ const MapModule = (() => {
         _mapTooltip.classList.add('active');
     }
 
-    let _tooltipRafPending = false;
     function handleMouseMove(event) {
         if (!_mapTooltip) return;
-        if (_tooltipRafPending) return;
-        _tooltipRafPending = true;
+        const pad = 8;
         const cx = event.clientX, cy = event.clientY;
-        requestAnimationFrame(() => {
-            _tooltipRafPending = false;
-            if (!_mapTooltip) return;
-            const pad = 12;
-            const vw = window.innerWidth;
-            const vh = window.innerHeight;
-            const tw = _mapTooltip.offsetWidth;
-            const th = _mapTooltip.offsetHeight;
-            let x = cx + pad;
-            let y = cy - 10;
-            // 우측 넘침 → 왼쪽으로
-            if (x + tw > vw - pad) x = cx - tw - pad;
-            // 좌측 넘침 방지
-            if (x < pad) x = pad;
-            // 하단 넘침
-            if (y + th > vh - pad) y = vh - th - pad;
-            // 상단 넘침
-            if (y < pad) y = pad;
-            _mapTooltip.style.left = x + 'px';
-            _mapTooltip.style.top = y + 'px';
-        });
+        const tw = _mapTooltip.offsetWidth;
+        const th = _mapTooltip.offsetHeight;
+        let x = cx + pad;
+        let y = cy + pad;
+        if (x + tw > window.innerWidth - pad) x = cx - tw - pad;
+        if (x < pad) x = pad;
+        if (y + th > window.innerHeight - pad) y = cy - th - pad;
+        if (y < pad) y = pad;
+        _mapTooltip.style.left = x + 'px';
+        _mapTooltip.style.top = y + 'px';
     }
 
     let _tooltipPinned = false;
@@ -1249,8 +1236,8 @@ const MapModule = (() => {
                         if (!tooltip) return;
                         tooltip.innerHTML = '기초의회가 없는 지역입니다';
                         tooltip.classList.add('active');
-                        tooltip.style.left = event.pageX + 'px';
-                        tooltip.style.top = (event.pageY - 30) + 'px';
+                        tooltip.style.left = (event.clientX + 12) + 'px';
+                        tooltip.style.top = (event.clientY - 10) + 'px';
                     }).on('mouseout.disabled', function() {
                         const tooltip = _mapTooltip;
                         if (tooltip) tooltip.classList.remove('active');
@@ -1298,12 +1285,14 @@ const MapModule = (() => {
                     console.warn('gwangju-jeonnam topojson.merge failed:', e);
                 }
             }
-            // 원본 path 숨기기
-            g.select('.region[data-region="gwangju"]:not(.region-gj-merged)').attr('display', 'none');
-            g.select('.region[data-region="jeonnam"]:not(.region-gj-merged)').attr('display', 'none');
-            g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
-            // 광주 라벨: "전남광주"로 변경 + 머지 영역 중앙으로 이동
+            // 원본 path 숨기기 (머지 path가 실제로 존재할 때만)
             const mergedPath = g.select('.region-gj-merged');
+            if (mergedPath.size()) {
+                g.select('.region[data-region="gwangju"]:not(.region-gj-merged)').attr('display', 'none');
+                g.select('.region[data-region="jeonnam"]:not(.region-gj-merged)').attr('display', 'none');
+                g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
+            }
+            // 광주 라벨: "전남광주"로 변경 + 머지 영역 중앙으로 이동
             if (mergedPath.size()) {
                 const centroid = path.centroid(mergedPath.datum());
                 g.select('.region-label[data-region-label="gwangju"]')
@@ -3447,8 +3436,8 @@ const MapModule = (() => {
                         <div style="margin-top:8px;color:#888;font-size:11px">클릭하여 선거구 보기 →</div>
                     `;
                     tooltip.style.display = 'block';
-                    tooltip.style.left = (event.pageX + 10) + 'px';
-                    tooltip.style.top = (event.pageY - 10) + 'px';
+                    tooltip.style.left = (event.clientX + 12) + 'px';
+                    tooltip.style.top = (event.clientY - 10) + 'px';
                 })
                 .on('mousemove', handleMouseMove)
                 .on('mouseout', handleMouseOut)
