@@ -909,6 +909,39 @@ const App = (() => {
         }
     });
 
+    // ─── URL 공유 ───
+    function copyShareLink() {
+        const url = window.location.href;
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(url).then(() => {
+                _showCopyToast('링크가 복사되었습니다');
+            }).catch(() => _fallbackCopy(url));
+        } else {
+            _fallbackCopy(url);
+        }
+        trackEvent('shareClick', { type: 'copyLink', regionKey: AppState.currentRegionKey });
+    }
+    function _fallbackCopy(text) {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        _showCopyToast('링크가 복사되었습니다');
+    }
+    function _showCopyToast(msg) {
+        const existing = document.querySelector('.copy-toast');
+        if (existing) existing.remove();
+        const toast = document.createElement('div');
+        toast.className = 'copy-toast';
+        toast.textContent = msg;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 2000);
+    }
+
     // Public API
     return {
         onRegionSelected,
@@ -925,6 +958,7 @@ const App = (() => {
         showMiniCard,
         setPanelStage,
         trackEvent,
+        copyShareLink,
         trackShareClick: (type) => trackEvent('shareClick', { type, regionKey: AppState.currentRegionKey }),
         getElectionType: () => AppState.currentElectionType,
         applyTermTooltips: Sidebar.applyTermTooltips,
