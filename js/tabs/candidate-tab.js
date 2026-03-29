@@ -98,7 +98,8 @@ const CandidateTab = (() => {
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
-                    incumbent: incumbentName === candidate.name
+                    incumbent: incumbentName === candidate.name,
+                    ballotNumber: candidate.ballotNumber || null
                 })),
                 emptyMessage: '등록된 광역단체장 후보 데이터가 없습니다.'
             };
@@ -130,7 +131,8 @@ const CandidateTab = (() => {
                     supportLabel: (Number.isFinite(Number(candidate.support)) && Number(candidate.support) > 0) ? `최근 조사 ${Number(candidate.support).toFixed(1)}%` : '',
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
-                    incumbent: incumbentName === candidate.name
+                    incumbent: incumbentName === candidate.name,
+                    ballotNumber: candidate.ballotNumber || null
                 })),
                 emptyMessage: '등록된 교육감 후보 데이터가 없습니다.'
             };
@@ -169,6 +171,9 @@ const CandidateTab = (() => {
                     age: candidate.age,
                     career: candidate.career,
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
+                    status: candidate.status,
+                    statusMeta: getStatusMeta(candidate.status),
+                    ballotNumber: candidate.ballotNumber || null,
                     incumbent: districtSummary?.mayor?.name === candidate.name
                 })),
                 emptyMessage: `${canonicalDistrict} 기초단체장 후보 데이터가 아직 연결되지 않았습니다.`
@@ -275,14 +280,22 @@ const CandidateTab = (() => {
             : 'status_priority';
 
         if (sortMode === 'ballot_number') {
+            // D-07: 본후보 등록 마감 후 NOMINATED만 표시
+            model.candidates = model.candidates.filter(c => c.status === 'NOMINATED');
+            // D-10: ballotNumber 없는 NOMINATED 후보는 999 폴백
             model.candidates.sort((a, b) => (a.ballotNumber || 999) - (b.ballotNumber || 999));
         } else {
-            const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3, WITHDRAWN: 4 };
+            // CAND-03: status_priority 모드에서도 WITHDRAWN 제거
+            model.candidates = model.candidates.filter(c => c.status !== 'WITHDRAWN');
+            const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3 };
             model.candidates.sort((a, b) => {
-                const sa = statusOrder[a.status] ?? 2.5; // 상태 없으면 EXPECTED와 RUMORED 사이
+                const sa = statusOrder[a.status] ?? 2.5;
                 const sb = statusOrder[b.status] ?? 2.5;
                 return sa - sb;
             });
+        }
+        if (!model.candidates.length && sortMode === 'ballot_number' && electionType === 'mayor') {
+            model.emptyMessage = '공식 후보 등록 마감 후 선거구 확정 중입니다';
         }
         if (!model.candidates.length) {
             listEl.innerHTML = buildEmptyMessage(model.emptyMessage, 'fa-user-tie');
