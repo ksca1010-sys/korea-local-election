@@ -39,7 +39,7 @@
 - [x] **FEAT-03**: 선거 일정 .ics 내보내기 — 주요 일정 구글/애플 캘린더 추가 (RFC 5545, vanilla JS)
 - [x] **FEAT-04**: 탭 스켈레톤 스크린 — 데이터 로딩 중 shimmer 효과
 - [x] **FEAT-05**: 모바일 패널 스와이프 닫기 — 터치 이벤트 핸들러 + 드래그 핸들 CSS
-- [ ] **FEAT-06**: 실시간 개표 결과 — Cloudflare Worker가 `info.nec.go.kr` 60초 폴링, 지도에 결과 반영 (선거일 6.3)
+- [x] **FEAT-06**: 실시간 개표 결과 — Cloudflare Worker가 `info.nec.go.kr` 60초 폴링, 지도에 결과 반영 (선거일 6.3)
 
 ---
 
@@ -92,7 +92,7 @@
 | FEAT-03 | Phase 3 | Complete |
 | FEAT-04 | Phase 3 | Complete |
 | FEAT-05 | Phase 3 | Complete |
-| FEAT-06 | Phase 4 | Pending |
+| FEAT-06 | Phase 4 | Complete |
 
 **Coverage:**
 - v1 requirements: 22 total

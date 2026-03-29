@@ -75,7 +75,7 @@ Plans:
 **Plans**: 2 plans
 
 Plans:
-- [ ] 04-01-PLAN.md -- Cloudflare Worker 골격 + election_night 페이즈 추가 + 2022 아카이브 파서 테스트
+- [x] 04-01-PLAN.md -- Cloudflare Worker 골격 + election_night 페이즈 추가 + 2022 아카이브 파서 테스트
 - [ ] 04-02-PLAN.md -- 브라우저 폴링 클라이언트 + 수동 폴백 경로 + 지도 개표 결과 시각화
 
 ## Progress
