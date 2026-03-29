@@ -37,7 +37,10 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
   1. 사용자가 여론조사 탭을 열면 이전에 지지율이 비어있던 15건에 수치가 표시된다
   2. 신규 여론조사가 등록되면 파이프라인 재실행만으로 탭에 반영된다
   3. 5/28 00:00 KST 이후 여론조사 탭이 자동으로 빈 상태를 보여준다 (공표금지)
-**Plans**: TBD
+**Plans:** 2 plans
+Plans:
+- [ ] 05-01-PLAN.md — 여론조사 빈값 32건 채우기 (reparse + 수동 확인)
+- [ ] 05-02-PLAN.md — GitHub Actions D-05 규격 업그레이드 + 공표금지 브라우저 검증
 
 ### Phase 6: 본후보 등록 대응
 **Goal**: 5/15 18:00 이후 공식 후보 목록과 기호순 정렬이 정확하게 작동한다
@@ -85,7 +88,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 | 2. 데이터 파이프라인 자동화 | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 3. 성능 최적화 + 기능 추가 | v1.0 | 3/3 | Complete | 2026-03-29 |
 | 4. 선거일 실시간 개표 | v1.0 | 2/2 | Complete | 2026-03-29 |
-| 5. 여론조사 보완 | v1.1 | 0/? | Not started | - |
+| 5. 여론조사 보완 | v1.1 | 0/2 | Planned | - |
 | 6. 본후보 등록 대응 | v1.1 | 0/? | Not started | - |
 | 7. 개표 시스템 완성 | v1.1 | 0/? | Not started | - |
 | 8. 선거일 운영 준비 | v1.1 | 0/? | Not started | - |
