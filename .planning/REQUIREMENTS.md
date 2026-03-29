@@ -15,8 +15,8 @@
 ### 본후보 등록 대응 (CAND)
 
 - [ ] **CAND-01**: 본후보 등록 후 candidates 데이터가 공식 후보(NOMINATED)로 자동 전환된다
-- [ ] **CAND-02**: 후보 기호가 배정되면 기호순 정렬이 올바르게 적용된다 (5/15 18:00 이후)
-- [ ] **CAND-03**: 등록 취소·무효 후보가 목록에서 제거된다
+- [x] **CAND-02**: 후보 기호가 배정되면 기호순 정렬이 올바르게 적용된다 (5/15 18:00 이후)
+- [x] **CAND-03**: 등록 취소·무효 후보가 목록에서 제거된다
 
 ### 개표 시스템 완성 (ELEC)
 
@@ -56,8 +56,8 @@
 | POLL-01 | Phase 5 | — | Pending |
 | POLL-02 | Phase 5 | — | Pending |
 | CAND-01 | Phase 6 | 06-01 | Pipeline Ready (5/14 실행 대기) |
-| CAND-02 | Phase 6 | — | Pending |
-| CAND-03 | Phase 6 | — | Pending |
+| CAND-02 | Phase 6 | 06-02 | Complete (UAT 승인 2026-03-30) |
+| CAND-03 | Phase 6 | 06-02 | Complete (UAT 승인 2026-03-30) |
 | ELEC-01 | Phase 7 | — | Pending |
 | ELEC-02 | Phase 7 | — | Pending |
 | ELEC-03 | Phase 7 | — | Pending |

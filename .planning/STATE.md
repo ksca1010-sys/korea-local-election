@@ -3,8 +3,8 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
 status: executing
-stopped_at: Completed 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 완료
-last_updated: "2026-03-30T00:00:00.000Z"
+stopped_at: Completed 06-02-PLAN.md — NOMINATED 필터 + 기호순 정렬 전환 + UAT 승인
+last_updated: "2026-03-30T01:00:00.000Z"
 last_activity: 2026-03-30
 progress:
   total_phases: 4
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 ## Current Position
 
 Phase: 6
-Plan: 01 완료
+Plan: 02 완료
 Status: Executing Phase 06
 Last activity: 2026-03-30
 
@@ -65,6 +65,7 @@ Carried over from v1.0:
 - [Phase 05]: party_support 4건은 설계상 results=[] 정상 — reparse_pdfs.py 필터 추가
 - [Phase 05-02]: update-polls.yml 파일명 유지 — rename 시 GitHub 이전 workflow 잔존 방지; 공표금지 로직 workflow 미포함 — 5/27 수동 disable (D-08); getKST() mock 패턴 날짜 검증 표준으로 확립
 - [Phase 06-01]: nec_precand_sync.fetch_precandidates() 재사용 — 새 HTTP 클라이언트 금지 (Don't Hand-Roll); 날짜 게이팅 Python 내 처리 — GitHub Actions if: 타임존 문제 방지; ballotNumber 4개 필드 시도 순서 확정
+- [Phase 06-02]: NOMINATED/WITHDRAWN 필터를 render() 단일 지점에서 처리 — Anti-Pattern 회피; ballot_number 모드에서 NOMINATED만 표시, status_priority 모드에서 WITHDRAWN만 제거; UAT 승인 2026-03-30
 
 ### Pending Todos
 
@@ -80,7 +81,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-30T00:00:00.000Z
-Stopped at: Completed 06-01-PLAN.md (NEC 본후보 API 파이프라인)
+Last session: 2026-03-30T01:00:00.000Z
+Stopped at: Completed 06-02-PLAN.md (NOMINATED 필터 + UAT 승인)
 Resume file: None
-Next action: Phase 06-02 (NOMINATED 후보 UI 필터 표시)
+Next action: Phase 06 완료 — 다음 Phase 계획 수립
