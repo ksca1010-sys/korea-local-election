@@ -4106,6 +4106,86 @@ const MapModule = (() => {
         }
     }
 
+    // ── Election Night 개표 결과 레이어 ──
+    let _electionNightData = null;
+
+    function applyElectionNightLayer(data) {
+        _electionNightData = data;
+        const regions = data?.regions || {};
+
+        // 각 광역 지역 폴리곤 색상 갱신
+        d3.selectAll('.region').each(function() {
+            const el = d3.select(this);
+            const key = el.attr('data-region');
+            if (!key || !regions[key]) {
+                el.attr('fill', _neutralFill());
+                el.attr('stroke', null).attr('stroke-width', null);
+                return;
+            }
+            const r = regions[key];
+            // D-09: 색상 = 1위 정당색 x 개표율 채도
+            const partyColor = ElectionData.getPartyColor(r.leadingParty);
+            const alpha = Math.max((r.countRate / 100) * 0.85, 0.12);  // 최소 채도 0.12
+            el.attr('fill', hexToRgba(partyColor, alpha));
+
+            // D-12: 당선 확정 = 선관위 공식 플래그 -> 굵은 stroke
+            if (r.declared === true) {
+                el.attr('stroke', '#ffffff').attr('stroke-width', 3);
+            } else {
+                el.attr('stroke', null).attr('stroke-width', null);
+            }
+        });
+
+        // D-10: 1위 후보 득표율(%) 오버레이 텍스트
+        _updateVoteRateOverlay(regions);
+    }
+
+    function _updateVoteRateOverlay(regions) {
+        // 기존 오버레이 제거
+        d3.selectAll('.election-night-overlay').remove();
+
+        const svgEl = d3.select('#map-container svg');
+        if (!svgEl.size()) return;
+
+        const overlayGroup = svgEl.append('g').attr('class', 'election-night-overlay');
+
+        Object.entries(regions).forEach(([key, r]) => {
+            if (!r.leadingVoteRate) return;
+            const regionEl = d3.select(`.region[data-region="${key}"]`);
+            if (!regionEl.size()) return;
+
+            // 폴리곤 바운딩 박스 중앙 계산
+            const bbox = regionEl.node().getBBox();
+            const cx = bbox.x + bbox.width / 2;
+            const cy = bbox.y + bbox.height / 2;
+
+            overlayGroup.append('text')
+                .attr('x', cx)
+                .attr('y', cy)
+                .attr('text-anchor', 'middle')
+                .attr('dominant-baseline', 'central')
+                .attr('font-size', '11px')
+                .attr('font-weight', 'bold')
+                .attr('fill', '#fff')
+                .attr('stroke', '#000')
+                .attr('stroke-width', 0.5)
+                .attr('pointer-events', 'none')
+                .text(`${r.leadingVoteRate.toFixed(1)}%`);
+        });
+    }
+
+    function clearElectionNightLayer() {
+        _electionNightData = null;
+        d3.selectAll('.election-night-overlay').remove();
+        // 기존 색상으로 복원
+        d3.selectAll('.region').each(function() {
+            const el = d3.select(this);
+            const key = el.attr('data-region');
+            if (key) el.attr('fill', getRegionColor(key));
+            el.attr('stroke', null).attr('stroke-width', null);
+        });
+    }
+
     return {
         init,
         selectRegion,
@@ -4126,6 +4206,8 @@ const MapModule = (() => {
         switchToCouncilSubdistrictMap,
         switchToProportionalDistrictMap,
         switchToProportionalSigunguDetail,
+        applyElectionNightLayer,
+        clearElectionNightLayer,
         refreshColors() {
             if (!svg) return;
             const labelFill = mapColor('--map-label-fill', '#fff');
