@@ -55,7 +55,7 @@
 |--------|-------|------|--------|
 | POLL-01 | Phase 5 | — | Pending |
 | POLL-02 | Phase 5 | — | Pending |
-| CAND-01 | Phase 6 | — | Pending |
+| CAND-01 | Phase 6 | 06-01 | Pipeline Ready (5/14 실행 대기) |
 | CAND-02 | Phase 6 | — | Pending |
 | CAND-03 | Phase 6 | — | Pending |
 | ELEC-01 | Phase 7 | — | Pending |

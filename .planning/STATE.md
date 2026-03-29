@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
 status: executing
-stopped_at: 06-02 Task 1 완료, Task 2 수동 UAT 대기 중
-last_updated: "2026-03-29T22:16:21.966Z"
-last_activity: 2026-03-29
+stopped_at: Completed 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 완료
+last_updated: "2026-03-30T00:00:00.000Z"
+last_activity: 2026-03-30
 progress:
   total_phases: 4
   completed_phases: 1
   total_plans: 4
-  completed_plans: 3
-  percent: 25
+  completed_plans: 4
+  percent: 50
 ---
 
 # Project State
@@ -26,11 +26,11 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 ## Current Position
 
 Phase: 6
-Plan: Not started
-Status: Executing Phase 05
-Last activity: 2026-03-29
+Plan: 01 완료
+Status: Executing Phase 06
+Last activity: 2026-03-30
 
-Progress: [██░░░░░░░░] 25%
+Progress: [█████░░░░░] 50%
 
 ## Timeline Constraints
 
@@ -64,6 +64,7 @@ Carried over from v1.0:
 - [Phase 05]: 8건 polls results 빈값 유지: 제주 현안조사 2건, KBS/갤럽 전남광주통합특별시 현안조사 6건 — 후보 적합도 데이터 없음 확인
 - [Phase 05]: party_support 4건은 설계상 results=[] 정상 — reparse_pdfs.py 필터 추가
 - [Phase 05-02]: update-polls.yml 파일명 유지 — rename 시 GitHub 이전 workflow 잔존 방지; 공표금지 로직 workflow 미포함 — 5/27 수동 disable (D-08); getKST() mock 패턴 날짜 검증 표준으로 확립
+- [Phase 06-01]: nec_precand_sync.fetch_precandidates() 재사용 — 새 HTTP 클라이언트 금지 (Don't Hand-Roll); 날짜 게이팅 Python 내 처리 — GitHub Actions if: 타임존 문제 방지; ballotNumber 4개 필드 시도 순서 확정
 
 ### Pending Todos
 
@@ -79,7 +80,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-29T22:16:21.955Z
-Stopped at: 06-02 Task 1 완료, Task 2 수동 UAT 대기 중
+Last session: 2026-03-30T00:00:00.000Z
+Stopped at: Completed 06-01-PLAN.md (NEC 본후보 API 파이프라인)
 Resume file: None
-Next action: Phase 06 준비 (5/14~15 본후보 등록 대응)
+Next action: Phase 06-02 (NOMINATED 후보 UI 필터 표시)
