@@ -27,10 +27,10 @@
 
 - [ ] **QUAL-01**: `_headers` 파일 추가 — `X-Frame-Options`, `X-Content-Type-Options`, `Content-Security-Policy`, `Referrer-Policy`
 - [ ] **QUAL-02**: Microsoft Clarity PIPA 동의 게이트 — `localStorage` + Clarity ConsentV2 API로 명시적 동의 후 로드
-- [ ] **QUAL-03**: `historical_elections_full.json` (9.7MB) 지연 로딩 — 역대비교 탭 열 때만 fetch
-- [ ] **QUAL-04**: `council_history.json` (5.4MB) 지연 로딩 — 의원지역구 탭 열 때만 fetch
-- [ ] **QUAL-05**: esbuild 번들+미니파이 — `deploy.sh`에 빌드 단계 추가, ~1.1MB → ~150KB 목표
-- [ ] **QUAL-06**: ESLint 오류 0건 달성 (`npm run lint` 클린 통과)
+- [x] **QUAL-03**: `historical_elections_full.json` (9.7MB) 지연 로딩 — 역대비교 탭 열 때만 fetch
+- [x] **QUAL-04**: `council_history.json` (5.4MB) 지연 로딩 — 의원지역구 탭 열 때만 fetch
+- [x] **QUAL-05**: esbuild 번들+미니파이 — `deploy.sh`에 빌드 단계 추가, ~1.1MB → ~150KB 목표
+- [x] **QUAL-06**: ESLint 오류 0건 달성 (`npm run lint` 클린 통과)
 
 ### FEAT — 기능 추가/개선
 
@@ -83,10 +83,10 @@
 | DATA-03 | Phase 2 | Complete |
 | DATA-04 | Phase 2 | Complete |
 | DATA-05 | Phase 2 | Complete |
-| QUAL-03 | Phase 3 | Pending |
-| QUAL-04 | Phase 3 | Pending |
-| QUAL-05 | Phase 3 | Pending |
-| QUAL-06 | Phase 3 | Pending |
+| QUAL-03 | Phase 3 | Complete |
+| QUAL-04 | Phase 3 | Complete |
+| QUAL-05 | Phase 3 | Complete |
+| QUAL-06 | Phase 3 | Complete |
 | FEAT-01 | Phase 3 | Complete |
 | FEAT-02 | Phase 3 | Complete |
 | FEAT-03 | Phase 3 | Complete |
