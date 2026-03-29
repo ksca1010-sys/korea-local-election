@@ -1071,6 +1071,9 @@ const App = (() => {
 
     // ── 스켈레톤 스크린 (FEAT-04) ──
     function showSkeleton(tabName) {
+        // 지역이 선택된 상태에서는 탭 렌더러가 직접 콘텐츠를 채우므로 스켈레톤 불필요.
+        // 전체 innerHTML 교체 시 render 함수가 필요한 DOM 요소를 찾지 못해 조기 return됨.
+        if (AppState.currentRegionKey) return;
         const container = document.getElementById(`tab-${tabName}`);
         if (!container) return;
         let html = '<div class="skeleton-container">';
