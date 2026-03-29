@@ -109,8 +109,65 @@ const DataLoader = (() => {
             updated++;
         }
 
+        // 개발환경: pollSource 없는 support 값 경고
+        validateCandidates(ED);
+
         console.log(`[DataLoader] ElectionData에 ${updated}개 데이터 셋 갱신 완료`);
         return updated;
+    }
+
+    /**
+     * [개발환경 전용] candidates 데이터에서 pollSource 없는 support 값 경고
+     * 헌법 제2조: LLM 생성 수치 불신 원칙 방어
+     */
+    function validateCandidates(ED) {
+        // 프로덕션에서는 실행하지 않음 (localhost / 127.0.0.1 만)
+        const isDev = location.hostname === 'localhost'
+            || location.hostname === '127.0.0.1'
+            || location.hostname === '';
+        if (!isDev) return;
+
+        const warnings = [];
+
+        // ED.superintendents 검사 (교육감 후보)
+        if (ED && ED.superintendents) {
+            for (const [region, data] of Object.entries(ED.superintendents)) {
+                const candidates = Array.isArray(data) ? data
+                    : (data && data.candidates ? data.candidates : []);
+                for (const c of candidates) {
+                    if (c.support != null && !c.pollSource) {
+                        warnings.push(
+                            `[validateCandidates] ${region} 교육감 ${c.name || '?'}: support=${c.support} but no pollSource`
+                        );
+                    }
+                }
+            }
+        }
+
+        // ED.governors 검사 (광역단체장 후보) - candidates 배열 내 support 검사
+        if (ED && ED.governors) {
+            for (const [region, data] of Object.entries(ED.governors)) {
+                const candidates = Array.isArray(data) ? data
+                    : (data && data.candidates ? data.candidates : []);
+                for (const c of candidates) {
+                    if (c.support != null && !c.pollSource) {
+                        warnings.push(
+                            `[validateCandidates] ${region} 광역단체장 ${c.name || '?'}: support=${c.support} but no pollSource`
+                        );
+                    }
+                }
+            }
+        }
+
+        if (warnings.length > 0) {
+            console.warn(
+                `%c[DataLoader] pollSource 없는 support 값 ${warnings.length}건 발견`,
+                'color: #e74c3c; font-weight: bold'
+            );
+            warnings.forEach(w => console.warn(w));
+        } else {
+            console.log('[DataLoader] validateCandidates: OK — pollSource 없는 support 없음');
+        }
     }
 
     return {
@@ -119,5 +176,6 @@ const DataLoader = (() => {
         applyToElectionData,
         getCache: () => cache,
         _version: v,
+        _validateCandidates: validateCandidates,
     };
 })();
