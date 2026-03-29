@@ -48,6 +48,9 @@ const ElectionCalendar = (() => {
         ELECTION_DAY_START:   new Date('2026-06-03T06:00:00+09:00'),
         VOTE_END:             new Date('2026-06-03T18:00:00+09:00'),
 
+        // 개표 (투표 마감 ~ 자정)
+        ELECTION_NIGHT_END:   new Date('2026-06-04T00:00:00+09:00'),
+
         // 선거 후
         INAUGURATION:         new Date('2026-07-01T00:00:00+09:00'),
     };
@@ -108,6 +111,7 @@ const ElectionCalendar = (() => {
         if (now <= DATES.EARLY_VOTE_END)       return 'EARLY_VOTING';
         if (now < DATES.ELECTION_DAY_START)    return 'PRE_ELECTION_DAY';
         if (now < DATES.VOTE_END)              return 'ELECTION_DAY';
+        if (now < DATES.ELECTION_NIGHT_END)    return 'election_night';
         if (now < DATES.INAUGURATION)          return 'POST_ELECTION';
         return 'INAUGURATED';
     };
@@ -194,17 +198,17 @@ const ElectionCalendar = (() => {
                     link: { label: '투표소 찾기', url: 'https://www.nec.go.kr' }
                 };
 
+            case 'election_night':
+                return {
+                    show: true,
+                    text: '개표가 진행 중입니다. 실시간 결과를 지도에서 확인하세요.',
+                    type: 'result',
+                    icon: 'fas fa-chart-pie',
+                    link: null
+                };
+
             case 'POST_ELECTION':
-                // 선거 당일 18:00 이후 ~ 취임 전: 개표→결과 순서
-                if (now < new Date('2026-06-04T06:00:00+09:00')) {
-                    return {
-                        show: true,
-                        text: '투표가 마감되었습니다. 개표가 진행 중입니다.',
-                        type: 'result',
-                        icon: 'fas fa-chart-pie',
-                        link: { label: '개표 현황', url: 'https://www.nec.go.kr' }
-                    };
-                }
+                // 선거 당일 자정 이후 ~ 취임 전: 결과 순서
                 return {
                     show: true,
                     text: '제9회 전국동시지방선거가 종료되었습니다',
