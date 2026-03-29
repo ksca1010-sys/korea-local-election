@@ -3,15 +3,15 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
 status: executing
-stopped_at: Completed 05-01-PLAN.md — poll results filled for 18 of 26 empty surveys
-last_updated: "2026-03-29T13:04:31.155Z"
+stopped_at: Completed 05-02-PLAN.md — poll-sync D-05 upgrade + 공표금지 경계값 3개 검증 완료
+last_updated: "2026-03-29T14:30:00.000Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 4
-  completed_phases: 0
+  completed_phases: 1
   total_plans: 2
-  completed_plans: 1
-  percent: 0
+  completed_plans: 2
+  percent: 25
 ---
 
 # Project State
@@ -25,12 +25,12 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 
 ## Current Position
 
-Phase: 05 (poll-supplement) — EXECUTING
-Plan: 2 of 2
-Status: Ready to execute
+Phase: 05 (poll-supplement) — COMPLETE
+Plan: 2 of 2 (완료)
+Status: Phase 05 complete
 Last activity: 2026-03-29
 
-Progress: [░░░░░░░░░░] 0%
+Progress: [██░░░░░░░░] 25%
 
 ## Timeline Constraints
 
@@ -63,6 +63,7 @@ Carried over from v1.0:
 - audit_numeric_fields.py uses nttId OR sourceUrl as pollSource criterion; deploy.sh pre-flight gate blocks deployment on unverified float support values
 - [Phase 05]: 8건 polls results 빈값 유지: 제주 현안조사 2건, KBS/갤럽 전남광주통합특별시 현안조사 6건 — 후보 적합도 데이터 없음 확인
 - [Phase 05]: party_support 4건은 설계상 results=[] 정상 — reparse_pdfs.py 필터 추가
+- [Phase 05-02]: update-polls.yml 파일명 유지 — rename 시 GitHub 이전 workflow 잔존 방지; 공표금지 로직 workflow 미포함 — 5/27 수동 disable (D-08); getKST() mock 패턴 날짜 검증 표준으로 확립
 
 ### Pending Todos
 
@@ -78,7 +79,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-29T13:04:31.152Z
-Stopped at: Completed 05-01-PLAN.md — poll results filled for 18 of 26 empty surveys
+Last session: 2026-03-29T14:30:00.000Z
+Stopped at: Completed 05-02-PLAN.md — poll-sync D-05 upgrade + 공표금지 경계값 3개 검증 완료
 Resume file: None
-Next action: `/gsd:plan-phase 5`
+Next action: Phase 06 준비 (5/14~15 본후보 등록 대응)
