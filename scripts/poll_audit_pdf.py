@@ -16,6 +16,7 @@ polls.json의 수치와 비교하여 불일치를 감지합니다.
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -136,7 +137,12 @@ def main():
     parser.add_argument("--region", help="특정 지역만")
     parser.add_argument("--fix", action="store_true", help="불일치 자동 교정")
     parser.add_argument("--limit", type=int, default=0, help="최대 검증 건수")
+    parser.add_argument("--batch", action="store_true", help="전체 PDF 일괄 처리, audit_report.json 생성")
     args = parser.parse_args()
+
+    # --batch 모드에서는 limit 무시 (전체 처리)
+    if args.batch:
+        args.limit = 0
 
     polls_data = json.loads(POLLS_PATH.read_text(encoding="utf-8"))
 
@@ -208,6 +214,19 @@ def main():
         if fixed > 0:
             POLLS_PATH.write_text(json.dumps(polls_data, ensure_ascii=False, indent=2), encoding="utf-8")
             print("polls.json 저장 완료")
+
+    # --batch 모드: audit_report.json 생성
+    if args.batch:
+        report = {
+            "generated": datetime.now().isoformat(),
+            "checked": checked,
+            "no_pdf": no_pdf,
+            "mismatched": mismatched,
+            "mismatches": all_issues,
+        }
+        report_path = BASE / "data" / "polls" / "audit_report.json"
+        report_path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+        print(f"audit_report.json 저장: {report_path}")
 
 
 if __name__ == "__main__":

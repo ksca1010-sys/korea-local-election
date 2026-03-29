@@ -1,0 +1,38 @@
+{
+  "generated": "2026-03-29T12:34:54.836156",
+  "checked": 42,
+  "no_pdf": 0,
+  "mismatched": 1,
+  "mismatches": [
+    {
+      "nttId": 17347,
+      "region": "seoul",
+      "mismatches": [
+        {
+          "candidate": "국민의힘",
+          "pdf": 32.3,
+          "json": 2.2,
+          "diff": 30.099999999999998
+        },
+        {
+          "candidate": "조국",
+          "pdf": 2.2,
+          "json": 1.6,
+          "diff": 0.6000000000000001
+        },
+        {
+          "candidate": "진보당",
+          "pdf": 1.6,
+          "json": 3.4,
+          "diff": 1.7999999999999998
+        },
+        {
+          "candidate": "개혁신당",
+          "pdf": 2.8,
+          "json": 12.9,
+          "diff": 10.100000000000001
+        }
+      ]
+    }
+  ]
+}
