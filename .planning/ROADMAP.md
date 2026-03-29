@@ -27,7 +27,7 @@
 **Plans**: 2 plans
 
 Plans:
-- [ ] 01-01: `data.js` LLM 수치 제거 + `overview-tab.js`·`poll-tab.js` 방어 처리 + 유령 파일·스테일 주석 정리
+- [x] 01-01: `data.js` LLM 수치 제거 + `overview-tab.js`·`poll-tab.js` 방어 처리 + 유령 파일·스테일 주석 정리
 - [x] 01-02: `_headers` 보안 헤더 파일 추가 + Microsoft Clarity PIPA 동의 게이트 구현 + CSS/JS 버전 통일
 
 ### Phase 2: 데이터 파이프라인 자동화
