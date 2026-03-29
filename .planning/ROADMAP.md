@@ -72,16 +72,16 @@ Plans:
   1. `ElectionCalendar.getCurrentPhase() === 'election_night'` 상태에서 브라우저가 60초마다 Worker 엔드포인트를 폴링하고 지도에 개표율이 반영된다
   2. Worker가 응답하지 않을 때 UI에 "수동 업데이트 모드" 메시지가 표시되고 수동 JSON 입력 경로가 작동한다
   3. 2022년 아카이브 데이터로 Worker를 테스트했을 때 개표 진행률이 지도에 올바르게 시각화된다
-**Plans**: TBD
+**Plans**: 2 plans
 
 Plans:
-- [ ] 04-01: Cloudflare Worker 구축 (60초 폴링, 개표 데이터 파싱, CORS 응답) + 2022 아카이브 데이터로 통합 테스트
-- [ ] 04-02: 브라우저 폴링 클라이언트 (`election_night` 페이즈 감지) + 수동 폴백 경로 + 지도 결과 시각화
+- [ ] 04-01-PLAN.md -- Cloudflare Worker 골격 + election_night 페이즈 추가 + 2022 아카이브 파서 테스트
+- [ ] 04-02-PLAN.md -- 브라우저 폴링 클라이언트 + 수동 폴백 경로 + 지도 개표 결과 시각화
 
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 → 2 → 3 → 4
+Phases execute in numeric order: 1 -> 2 -> 3 -> 4
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
