@@ -22,7 +22,7 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 ### v1.1 선거일 대비
 
 - [x] **Phase 5: 여론조사 보완** — 누락 15건 채우기 + 지속 수집 파이프라인 안정화 (completed 2026-03-29)
-- [ ] **Phase 6: 본후보 등록 대응** — 5/14~15 등록에 맞춰 후보 데이터 공식 전환
+- [x] **Phase 6: 본후보 등록 대응** — 5/14~15 등록에 맞춰 후보 데이터 공식 전환 (completed 2026-03-30)
 - [ ] **Phase 7: 개표 시스템 완성** — NEC URL 캡처 + Worker 테스트 + 브라우저 UAT
 - [ ] **Phase 8: 선거일 운영 준비** — 배포 체크리스트 + 공표금지 검증 + 폴백 절차 확인
 
@@ -52,11 +52,12 @@ Plans:
   2. 5/15 18:00 이후 후보 탭의 정렬 기준이 기호순으로 전환된다
   3. 등록 취소 또는 무효 처리된 후보가 목록에서 제거되어 표시되지 않는다
   4. 후보 수가 변경된 선거구를 지도에서 클릭하면 최신 후보 수가 반영된다
-**Plans:** 2 plans
+**Plans:** 2/2 plans complete
 Plans:
-- [ ] 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 (fetch_nec_candidates.py 교체 + Actions)
-- [ ] 06-02-PLAN.md — 후보 탭 NOMINATED 필터 + 기호순 UI 전환
+- [x] 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 (fetch_nec_candidates.py 교체 + Actions)
+- [x] 06-02-PLAN.md — 후보 탭 NOMINATED 필터 + 기호순 UI 전환
 **UI hint**: yes
+**Completed**: 2026-03-30
 
 ### Phase 7: 개표 시스템 완성
 **Goal**: 선거 당일 NEC API에서 개표 데이터를 받아 지도에 실시간 표시할 준비가 완료된다
@@ -69,7 +70,11 @@ Plans:
   3. 브라우저에서 지도 위에 개표 결과 레이어가 올바르게 렌더링된다
   4. Worker 응답 없을 때 UI가 폴백 메시지를 보여준다
   5. 개표 진행 배너가 선거일 당일 노출된다
-**Plans**: TBD
+**Plans:** 3 plans
+Plans:
+- [ ] 07-01-PLAN.md — parseNECResponse() 파서 skeleton + CAPTURE-GUIDE.md
+- [ ] 07-02-PLAN.md — Worker 통합 테스트 + 개표 배너 활성화
+- [ ] 07-03-PLAN.md — 브라우저 UAT 3건 (checkpoint)
 **UI hint**: yes
 
 ### Phase 8: 선거일 운영 준비
@@ -91,7 +96,7 @@ Plans:
 | 2. 데이터 파이프라인 자동화 | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 3. 성능 최적화 + 기능 추가 | v1.0 | 3/3 | Complete | 2026-03-29 |
 | 4. 선거일 실시간 개표 | v1.0 | 2/2 | Complete | 2026-03-29 |
-| 5. 여론조사 보완 | v1.1 | 2/2 | Complete   | 2026-03-29 |
-| 6. 본후보 등록 대응 | v1.1 | 0/2 | Planned | - |
-| 7. 개표 시스템 완성 | v1.1 | 0/? | Not started | - |
+| 5. 여론조사 보완 | v1.1 | 2/2 | Complete | 2026-03-29 |
+| 6. 본후보 등록 대응 | v1.1 | 2/2 | Complete | 2026-03-30 |
+| 7. 개표 시스템 완성 | v1.1 | 0/3 | Planned | - |
 | 8. 선거일 운영 준비 | v1.1 | 0/? | Not started | - |
