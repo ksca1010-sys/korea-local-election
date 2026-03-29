@@ -521,6 +521,23 @@ const PollTab = (() => {
         trendsSection.innerHTML = '';
         cardsSection.innerHTML = '';
 
+        // BUG-02: 교육감 — support 데이터 있는 후보 0명이면 탭 전체 숨김 (per D-02)
+        if (electionType === 'superintendent') {
+            const hasAnySupport = polls.some(p =>
+                (p.results || []).some(r => r.support > 0)
+            );
+            if (!hasAnySupport) {
+                latestSection.style.display = 'none';
+                trendsSection.innerHTML = '';
+                cardsSection.innerHTML = `
+                    <div class="district-no-data">
+                        <p style="color:var(--text-muted);font-size:var(--text-body);">여론조사 데이터 없음</p>
+                        <p style="margin-top:6px"><a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" style="color:var(--accent-blue)">여심위에서 직접 확인하기</a></p>
+                    </div>`;
+                return;
+            }
+        }
+
         // 교육감: 성향(진보/보수/중도) 기반 컬러 매핑
         if (electionType === 'superintendent') {
             polls.forEach(p => {

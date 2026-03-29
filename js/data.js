@@ -452,8 +452,14 @@ const ElectionData = (() => {
             prevElection: { winner: 'democratic', winnerName: '김영록', rate: 75.7, runner: 'ppp', runnerName: '이정현', runnerRate: 18.8, turnout: null },
             keyIssues: ['광주-전남 행정통합', '에너지 전환', '농어촌 활성화', '인구 소멸'],
             subRegions: 22,
-            // 광역단체장 후보는 전남광주통합특별시 통합으로 gwangju로 이동 (data/candidates/governor.json 참조)
-            candidates: [],
+            candidates: [
+                { id: 'jeonnam-1', name: '김영록', party: 'democratic', age: 68, career: '現 전남도지사 (3선 도전) / 前 농림부 장관 / 3선 국회의원', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: ['전남 해상풍력 허브', '광주-전남 메가시티'] },
+                { id: 'jeonnam-2', name: '주철현', party: 'democratic', age: null, career: '現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
+                { id: 'jeonnam-3', name: '신정훈', party: 'democratic', age: null, career: '現 국회의원 (나주·화순) / 現 행안위원장', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] },
+                { id: 'jeonnam-4', name: '이개호', party: 'democratic', age: null, career: '4선 국회의원 (담양·함평·영광·장성) / 前 농림부 장관', photo: null, status: 'EXPECTED', dataSource: 'news', pledges: [] },
+                { id: 'jeonnam-5', name: '서삼석', party: 'democratic', age: null, career: '3선 국회의원 (영암·무안·신안) / 前 무안군수', photo: null, status: 'RUMORED', dataSource: 'news', pledges: [] },
+                { id: 'jeonnam-6', name: '김화진', party: 'ppp', age: null, career: '現 국민의힘 전남도당위원장 (4연임)', photo: null, status: 'DECLARED', dataSource: 'news', pledges: [] }
+            ],
             polls: [],
             hotspot: false
         },
@@ -1526,24 +1532,23 @@ const ElectionData = (() => {
 
     // 현직 교육감 데이터 (2026.3 기준, 2022 제8회 지방선거 + 2024.10 서울 보궐 반영)
     const superintendents = {
-        'seoul':    { region: '서울',  currentSuperintendent: { name: '정근식', stance: '진보', since: 2024, career: '현 교육감 (보궐)', note: '보궐선거(2024.10) 당선, 조희연 후임' },    candidates: [{ name: '정근식', stance: '진보', support: 38.5, career: '현 교육감 (보궐)' }, { name: '이재광', stance: '보수', support: 35.2, career: '前 서울시교육청 부교육감' }] },
-        'busan':    { region: '부산',  currentSuperintendent: { name: '하윤수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 부산교대 총장 출신' },                  candidates: [{ name: '하윤수', stance: '보수', support: 40.5, career: '현 교육감' }, { name: '김성호', stance: '진보', support: 42.1, career: '前 교육청 부교육감' }] },
-        'daegu':    { region: '대구',  currentSuperintendent: { name: '강은희', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선, 유일 여성 보수 교육감' },               candidates: [{ name: '강은희', stance: '보수', support: 44.2, career: '현 교육감' }, { name: '박성혁', stance: '진보', support: 32.1, career: '前 교육시민단체 대표' }] },
-        'incheon':  { region: '인천',  currentSuperintendent: { name: '도성훈', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 경력' },                         candidates: [{ name: '도성훈', stance: '진보', support: 41.3, career: '현 교육감' }, { name: '김현기', stance: '보수', support: 38.7, career: '前 인천교육청 국장' }] },
-        'gwangju':  { region: '광주',  currentSuperintendent: { name: '이정선', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 광주교대 총장 출신' },                  candidates: [{ name: '이정선', stance: '진보', support: 17.6, career: '현 교육감' }, { name: '김용태', stance: '중도', support: 23.4, career: '교육계 인사' }, { name: '정성홍', stance: '진보', support: 20.8, career: '교육계 인사' }, { name: '오경미', stance: '진보', support: 15.1, career: '교육계 인사' }] },
-        'daejeon':  { region: '대전',  currentSuperintendent: { name: '설동호', stance: '중도', since: 2014, career: '현 교육감', note: '2022 3선, 언론사별 성향 분류 상이' },               candidates: [{ name: '설동호', stance: '중도', support: 45.8, career: '현 교육감' }, { name: '김동건', stance: '진보', support: 31.2, career: '前 교육청 부교육감' }] },
-        'ulsan':    { region: '울산',  currentSuperintendent: { name: '노옥희', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 울산지부장 출신' },               candidates: [{ name: '노옥희', stance: '진보', support: 43.6, career: '현 교육감' }, { name: '이상봉', stance: '보수', support: 37.9, career: '前 학교장' }] },
-        'sejong':   { region: '세종',  currentSuperintendent: { name: '최교진', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선' },                                       candidates: [{ name: '최교진', stance: '진보', support: 48.2, career: '현 교육감' }, { name: '강태중', stance: '보수', support: 33.1, career: '前 교육정책연구원장' }] },
-        'gyeonggi': { region: '경기',  currentSuperintendent: { name: '임태희', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 13년만 보수 교육감' },                   candidates: [{ name: '임태희', stance: '보수', support: 41.8, career: '현 교육감' }, { name: '신현석', stance: '진보', support: 39.5, career: '前 교육청 부교육감' }] },
-        'gangwon':  { region: '강원',  currentSuperintendent: { name: '신경호', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '신경호', stance: '보수', support: 40.3, career: '현 교육감' }, { name: '민병희', stance: '진보', support: 38.8, career: '前 교육감' }] },
-        'chungbuk': { region: '충북',  currentSuperintendent: { name: '윤건영', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 청주교대 총장 출신' },                   candidates: [{ name: '윤건영', stance: '보수', support: 42.5, career: '현 교육감' }, { name: '심의보', stance: '진보', support: 35.6, career: '前 교육청 장학관' }] },
-        'chungnam': { region: '충남',  currentSuperintendent: { name: '김지철', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '김지철', stance: '진보', support: 44.7, career: '현 교육감' }, { name: '오연호', stance: '보수', support: 36.2, career: '前 교육위원' }] },
-        'jeonbuk':  { region: '전북',  currentSuperintendent: { name: '서거석', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전북대 총장 출신' },                     candidates: [{ name: '서거석', stance: '진보', support: 46.3, career: '현 교육감' }, { name: '이창식', stance: '보수', support: 29.8, career: '前 교육청 부교육감' }] },
-        // 전남 교육감은 전남광주통합특별시 통합으로 gwangju로 이동 (data/candidates/superintendent.json 참조)
-        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [] },
-        'gyeongbuk': { region: '경북', currentSuperintendent: { name: '임종식', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선' },                                       candidates: [{ name: '임종식', stance: '보수', support: 23.9, career: '현 교육감' }, { name: '임준희', stance: '중도', support: 1.2, career: '교육계 인사' }] },
-        'gyeongnam': { region: '경남', currentSuperintendent: { name: '박종훈', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '박종훈', stance: '진보', support: 43.9, career: '현 교육감' }, { name: '김태진', stance: '보수', support: 37.4, career: '前 교육청 부교육감' }] },
-        'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '김광수', stance: '보수', support: 41.2, career: '현 교육감' }, { name: '이석문', stance: '진보', support: 38.6, career: '前 교육감' }] }
+        'seoul':    { region: '서울',  currentSuperintendent: { name: '정근식', stance: '진보', since: 2024, career: '현 교육감 (보궐)', note: '보궐선거(2024.10) 당선, 조희연 후임' },    candidates: [{ name: '정근식', stance: '진보', career: '현 교육감 (보궐)' }, { name: '이재광', stance: '보수', career: '前 서울시교육청 부교육감' }] },
+        'busan':    { region: '부산',  currentSuperintendent: { name: '하윤수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 부산교대 총장 출신' },                  candidates: [{ name: '하윤수', stance: '보수', career: '현 교육감' }, { name: '김성호', stance: '진보', career: '前 교육청 부교육감' }] },
+        'daegu':    { region: '대구',  currentSuperintendent: { name: '강은희', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선, 유일 여성 보수 교육감' },               candidates: [{ name: '강은희', stance: '보수', career: '현 교육감' }, { name: '박성혁', stance: '진보', career: '前 교육시민단체 대표' }] },
+        'incheon':  { region: '인천',  currentSuperintendent: { name: '도성훈', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 경력' },                         candidates: [{ name: '도성훈', stance: '진보', career: '현 교육감' }, { name: '김현기', stance: '보수', career: '前 인천교육청 국장' }] },
+        'gwangju':  { region: '광주',  currentSuperintendent: { name: '이정선', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 광주교대 총장 출신' },                  candidates: [{ name: '이정선', stance: '진보', career: '현 교육감' }, { name: '김용태', stance: '중도', career: '교육계 인사' }, { name: '정성홍', stance: '진보', career: '교육계 인사' }, { name: '오경미', stance: '진보', career: '교육계 인사' }] },
+        'daejeon':  { region: '대전',  currentSuperintendent: { name: '설동호', stance: '중도', since: 2014, career: '현 교육감', note: '2022 3선, 언론사별 성향 분류 상이' },               candidates: [{ name: '설동호', stance: '중도', career: '현 교육감' }, { name: '김동건', stance: '진보', career: '前 교육청 부교육감' }] },
+        'ulsan':    { region: '울산',  currentSuperintendent: { name: '노옥희', stance: '진보', since: 2018, career: '현 교육감', note: '2022 재선, 전교조 울산지부장 출신' },               candidates: [{ name: '노옥희', stance: '진보', career: '현 교육감' }, { name: '이상봉', stance: '보수', career: '前 학교장' }] },
+        'sejong':   { region: '세종',  currentSuperintendent: { name: '최교진', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선' },                                       candidates: [{ name: '최교진', stance: '진보', career: '현 교육감' }, { name: '강태중', stance: '보수', career: '前 교육정책연구원장' }] },
+        'gyeonggi': { region: '경기',  currentSuperintendent: { name: '임태희', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 13년만 보수 교육감' },                   candidates: [{ name: '임태희', stance: '보수', career: '현 교육감' }, { name: '신현석', stance: '진보', career: '前 교육청 부교육감' }] },
+        'gangwon':  { region: '강원',  currentSuperintendent: { name: '신경호', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '신경호', stance: '보수', career: '현 교육감' }, { name: '민병희', stance: '진보', career: '前 교육감' }] },
+        'chungbuk': { region: '충북',  currentSuperintendent: { name: '윤건영', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선, 청주교대 총장 출신' },                   candidates: [{ name: '윤건영', stance: '보수', career: '현 교육감' }, { name: '심의보', stance: '진보', career: '前 교육청 장학관' }] },
+        'chungnam': { region: '충남',  currentSuperintendent: { name: '김지철', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '김지철', stance: '진보', career: '현 교육감' }, { name: '오연호', stance: '보수', career: '前 교육위원' }] },
+        'jeonbuk':  { region: '전북',  currentSuperintendent: { name: '서거석', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전북대 총장 출신' },                     candidates: [{ name: '서거석', stance: '진보', career: '현 교육감' }, { name: '이창식', stance: '보수', career: '前 교육청 부교육감' }] },
+        'jeonnam':  { region: '전남',  currentSuperintendent: { name: '김대중', stance: '진보', since: 2022, career: '현 교육감', note: '2022 당선, 전교조 경력' },                          candidates: [{ name: '김대중', stance: '진보', career: '현 교육감' }, { name: '박정일', stance: '보수', career: '前 학교장' }] },
+        'gyeongbuk': { region: '경북', currentSuperintendent: { name: '임종식', stance: '보수', since: 2018, career: '현 교육감', note: '2022 재선' },                                       candidates: [{ name: '임종식', stance: '보수', career: '현 교육감' }, { name: '임준희', stance: '중도', career: '교육계 인사' }] },
+        'gyeongnam': { region: '경남', currentSuperintendent: { name: '박종훈', stance: '진보', since: 2014, career: '현 교육감', note: '2022 3선, 전교조 경력' },                           candidates: [{ name: '박종훈', stance: '진보', career: '현 교육감' }, { name: '김태진', stance: '보수', career: '前 교육청 부교육감' }] },
+        'jeju':     { region: '제주',  currentSuperintendent: { name: '김광수', stance: '보수', since: 2022, career: '현 교육감', note: '2022 당선' },                                       candidates: [{ name: '김광수', stance: '보수', career: '현 교육감' }, { name: '이석문', stance: '진보', career: '前 교육감' }] }
     };
 
     // 교육감 역대 선거 결과 (직선제: 2007~2022, winner/runner는 성향)
@@ -1787,7 +1792,7 @@ const ElectionData = (() => {
             return null;
         },
         getByElectionData: (key) => {
-            // 외부 JSON 로드 데이터 우선, 없으면 mock fallback
+            // 외부 JSON 로드 데이터 우선, 없으면 null 반환
             const ext = ElectionData._byElectionCache;
             if (ext) {
                 if (key) {
