@@ -1,6 +1,64 @@
 {
-  "last_id": 17931,
+  "last_id": 17944,
   "polls": [
+    {
+      "nttId": 17944,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리서치뷰",
+      "clientOrg": "구·시·군단위 신문 : 영암군민일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-27",
+        "end": "2026-02-28"
+      },
+      "publishDate": "2026-03-29",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "영암군",
+      "electionType": "district_mayor",
+      "title": "전라남도 영암군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17944&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-03-29"
+    },
+    {
+      "nttId": 17935,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)에이스리서치",
+      "clientOrg": "시·도단위 신문 : 경상투데이",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 802,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-27",
+        "end": "2026-03-28"
+      },
+      "publishDate": "2026-03-29",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "경주시",
+      "electionType": "district_mayor",
+      "title": "경상북도 경주시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17935&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-03-28"
+    },
     {
       "nttId": 17925,
       "registrationId": null,
@@ -42697,15 +42755,15 @@
     "lastPipelineRun": "2026-03-29",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 743,
-    "withRegistrationDate": 740,
+    "pollCount": 745,
+    "withRegistrationDate": 742,
     "withRegistrationId": 670,
     "withResults": 707,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
+      "district_mayor": 391,
       "party_support": 98,
       "mayor": 239,
-      "district_mayor": 389,
       "superintendent": 17
     }
   }

@@ -1,6 +1,6 @@
 {
-  "generated": "2026-03-29T02:33:46",
-  "totalCount": 743,
+  "generated": "2026-03-29T09:51:22",
+  "totalCount": 745,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
     {
@@ -6797,6 +6797,35 @@
   "regions": {
     "jeonnam": [
       {
+        "nttId": 17944,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 영암군민일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-27",
+          "end": "2026-02-28"
+        },
+        "publishDate": "2026-03-29",
+        "results": [],
+        "regionKey": "jeonnam",
+        "municipality": "영암군",
+        "electionType": "district_mayor",
+        "title": "전라남도 영암군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17944&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-29"
+      },
+      {
         "nttId": 17915,
         "registrationId": null,
         "pollName": "선거구분",
@@ -13175,1497 +13204,36 @@
         "resultsUpdatedAt": "2026-03-17T01:29:42"
       }
     ],
-    "gwangju": [
-      {
-        "nttId": 17914,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 서울경제TV",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 804,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-26",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17914&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-26"
-      },
-      {
-        "nttId": 17893,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "시·도단위 신문 : 광남일보",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 504,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-20",
-          "end": "2026-03-21"
-        },
-        "publishDate": "2026-03-25",
-        "results": [
-          {
-            "candidateName": "정책공약",
-            "party": "",
-            "support": 45.6
-          },
-          {
-            "candidateName": "실현",
-            "party": "",
-            "support": 16.6
-          },
-          {
-            "candidateName": "행정",
-            "party": "",
-            "support": 16.8
-          },
-          {
-            "candidateName": "리더십",
-            "party": "",
-            "support": 14.0
-          },
-          {
-            "candidateName": "역량",
-            "party": "",
-            "support": 3.6
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 북구    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17893&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-03-25"
-      },
-      {
-        "nttId": 17877,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-25",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 북구    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17877&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-24"
-      },
-      {
-        "nttId": 17855,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-26",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17855&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17853,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-25",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17853&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17848,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-22",
-          "end": "2026-03-23"
-        },
-        "publishDate": "2026-03-24",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체 광역단체장선거교육감선거정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17848&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17847,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 502,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-21",
-          "end": "2026-03-22"
-        },
-        "publishDate": "2026-03-26",
-        "results": [],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 남구    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17847&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
-        "registrationDate": "2026-03-23"
-      },
-      {
-        "nttId": 17522,
-        "registrationId": "15454",
-        "pollName": "선거구분",
-        "pollOrg": "(주)알앤써치",
-        "clientOrg": "방송사/인터넷언론/인터넷언론 : BBS 광주불교방송/프레시안 광주전남취재본부/대로미디어",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 537,
-          "marginOfError": 4.2,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-25",
-          "end": "2026-02-26"
-        },
-        "publishDate": "2026-03-02 07시 00분",
-        "results": [
-          {
-            "candidateName": "김순옥",
-            "party": "",
-            "support": 3.2
-          },
-          {
-            "candidateName": "국민의힘",
-            "party": "",
-            "support": 13.4
-          },
-          {
-            "candidateName": "광주시당",
-            "party": "",
-            "support": 7.1
-          },
-          {
-            "candidateName": "대변인",
-            "party": "",
-            "support": 5.2
-          },
-          {
-            "candidateName": "신수정",
-            "party": "",
-            "support": 24
-          },
-          {
-            "candidateName": "광주시의",
-            "party": "",
-            "support": 11.7
-          },
-          {
-            "candidateName": "의장",
-            "party": "",
-            "support": 1.3
-          },
-          {
-            "candidateName": "오주섭",
-            "party": "",
-            "support": 8.7
-          },
-          {
-            "candidateName": "광주은행",
-            "party": "",
-            "support": 7.9
-          },
-          {
-            "candidateName": "신협",
-            "party": "",
-            "support": 5.3
-          },
-          {
-            "candidateName": "이사장",
-            "party": "",
-            "support": 2.7
-          },
-          {
-            "candidateName": "이없",
-            "party": "",
-            "support": 6.4
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 북구    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17522&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
-        "registrationDate": "2026-02-27"
-      },
-      {
-        "nttId": 17388,
-        "registrationId": "15328",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 전남매거진",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-10",
-          "end": "2026-02-11"
-        },
-        "publishDate": "2026-02-13 12시 01분",
-        "results": [
-          {
-            "candidateName": "김대중",
-            "party": "",
-            "support": 11
-          },
-          {
-            "candidateName": "김용태",
-            "party": "",
-            "support": 10.7
-          },
-          {
-            "candidateName": "김해룡",
-            "party": "",
-            "support": 8.9
-          },
-          {
-            "candidateName": "오경미",
-            "party": "",
-            "support": 10.8
-          },
-          {
-            "candidateName": "이정선",
-            "party": "",
-            "support": 19.5
-          },
-          {
-            "candidateName": "장관호",
-            "party": "",
-            "support": 5.1
-          },
-          {
-            "candidateName": "정성홍",
-            "party": "",
-            "support": 8.1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17388&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
-        "registrationDate": "2026-02-12"
-      },
-      {
-        "nttId": 17343,
-        "registrationId": "15301",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 케이저널",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-30",
-          "end": "2026-01-31"
-        },
-        "publishDate": "2026-02-18 09시 00분",
-        "results": [
-          {
-            "candidateName": "김용태",
-            "party": "",
-            "support": 13.6
-          },
-          {
-            "candidateName": "오경미",
-            "party": "",
-            "support": 10.9
-          },
-          {
-            "candidateName": "이정선",
-            "party": "",
-            "support": 19.4
-          },
-          {
-            "candidateName": "정성홍",
-            "party": "",
-            "support": 14.9
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17343&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
-        "registrationDate": "2026-02-10"
-      },
-      {
-        "nttId": 17329,
-        "registrationId": "15285",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "기타 : 광주시민공천위",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-11 11시 00분",
-        "results": [
-          {
-            "candidateName": "김용태",
-            "party": null,
-            "partyRaw": "민주진보시민",
-            "support": 24.2
-          },
-          {
-            "candidateName": "정성홍",
-            "party": null,
-            "partyRaw": "민주진보시민",
-            "support": 15.4
-          },
-          {
-            "candidateName": "오경미",
-            "party": null,
-            "partyRaw": "민주진보시민",
-            "support": 10.2
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17329&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
-        "registrationDate": "2026-02-10",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:12:16"
-      },
-      {
-        "nttId": 17322,
-        "registrationId": "15292",
-        "pollName": "선거구분",
-        "pollOrg": "(주)시그널앤펄스",
-        "clientOrg": "기타 : 광주민주진보시민교육감후보 시민공천위원회",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1002,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-11 11시 00분",
-        "results": [
-          {
-            "candidateName": "지지의향",
-            "party": "",
-            "support": 59
-          },
-          {
-            "candidateName": "있음",
-            "party": "",
-            "support": 19.4
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17322&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
-        "registrationDate": "2026-02-10"
-      },
-      {
-        "nttId": 17315,
-        "registrationId": "15276",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-08",
-          "end": "2026-02-09"
-        },
-        "publishDate": "2026-02-10 17시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 21
-          },
-          {
-            "candidateName": "강기정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9
-          },
-          {
-            "candidateName": "이병훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 6
-          },
-          {
-            "candidateName": "정준호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 2
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체 광역단체장선거정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17315&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
-        "registrationDate": "2026-02-09",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:13:22"
-      },
-      {
-        "nttId": 17312,
-        "registrationId": "15273",
-        "pollName": "선거구분",
-        "pollOrg": "(주)우리리서치",
-        "clientOrg": "기타 : 광주시민공천위원회",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-08",
-          "end": "2026-02-09"
-        },
-        "publishDate": "2026-02-11 11시 00분",
-        "results": [
-          {
-            "candidateName": "지지한다",
-            "party": "",
-            "support": 59.9
-          },
-          {
-            "candidateName": "지지하지",
-            "party": "",
-            "support": 15.7
-          },
-          {
-            "candidateName": "않는다",
-            "party": "",
-            "support": 24.4
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17312&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09"
-      },
-      {
-        "nttId": 17241,
-        "registrationId": "15212",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "방송사/전국단위 신문 : KBC광주방송/광남일보",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-02-05 18시 00분",
-        "results": [
-          {
-            "candidateName": "해결",
-            "party": "",
-            "support": 33.4
-          },
-          {
-            "candidateName": "능력",
-            "party": "",
-            "support": 24.4
-          },
-          {
-            "candidateName": "정책",
-            "party": "",
-            "support": 18
-          },
-          {
-            "candidateName": "공약",
-            "party": "",
-            "support": 14.4
-          },
-          {
-            "candidateName": "실현가능성",
-            "party": "",
-            "support": 5.9
-          },
-          {
-            "candidateName": "행정",
-            "party": "",
-            "support": 3.9
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 북구    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17241&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=33",
-        "registrationDate": "2026-02-05"
-      },
-      {
-        "nttId": 17224,
-        "registrationId": "15198",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "방송사/전국단위 신문 : KBC광주방송/광남일보",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-02-04 18시 00분",
-        "results": [
-          {
-            "candidateName": "지역경제에",
-            "party": "",
-            "support": 35.9
-          },
-          {
-            "candidateName": "도움",
-            "party": "",
-            "support": 20
-          },
-          {
-            "candidateName": "재원",
-            "party": "",
-            "support": 16.3
-          },
-          {
-            "candidateName": "측면",
-            "party": "",
-            "support": 15.5
-          },
-          {
-            "candidateName": "이점",
-            "party": "",
-            "support": 10.2
-          },
-          {
-            "candidateName": "행정",
-            "party": "",
-            "support": 2.2
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체 전라남도 전체 광역단체장선거정당지지도 광주·전남 통합단체장선거 후보적합도, 정당지지도 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17224&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=34",
-        "registrationDate": "2026-02-04"
-      },
-      {
-        "nttId": 17107,
-        "registrationId": "15091",
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "인터넷언론 : 뉴스핌광주전남취재본부",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-17",
-          "end": "2026-01-18"
-        },
-        "publishDate": "2026-01-19 15시 30분",
-        "results": [
-          {
-            "candidateName": "김용태",
-            "party": "",
-            "support": 23.4
-          },
-          {
-            "candidateName": "정성홍",
-            "party": "",
-            "support": 10.5
-          },
-          {
-            "candidateName": "오경미",
-            "party": "",
-            "support": 9.7
-          },
-          {
-            "candidateName": "이정선",
-            "party": "",
-            "support": 17.6
-          },
-          {
-            "candidateName": "지지",
-            "party": "",
-            "support": 5.5
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17107&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
-        "registrationDate": "2026-01-19"
-      },
-      {
-        "nttId": 17097,
-        "registrationId": "15094",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "인터넷언론 : 오마이뉴스 광주전라본부",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 801,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-16",
-          "end": "2026-01-17"
-        },
-        "publishDate": "2026-01-19 15시 00분",
-        "results": [
-          {
-            "candidateName": "매우",
-            "party": "",
-            "support": 18.2
-          },
-          {
-            "candidateName": "반대한다",
-            "party": "",
-            "support": 12.2
-          },
-          {
-            "candidateName": "어느",
-            "party": "",
-            "support": 26.4
-          },
-          {
-            "candidateName": "정도",
-            "party": "",
-            "support": 34.6
-          },
-          {
-            "candidateName": "찬성한다",
-            "party": "",
-            "support": 8.7
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체 광역단체장선거교육감선거대통령선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17097&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19"
-      },
-      {
-        "nttId": 17086,
-        "registrationId": "15077",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "방송사 : KBC광주방송",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-12",
-          "end": "2026-01-13"
-        },
-        "publishDate": "2026-01-14 15시 00분",
-        "results": [
-          {
-            "candidateName": "자세히",
-            "party": "",
-            "support": 10.3
-          },
-          {
-            "candidateName": "알고",
-            "party": "",
-            "support": 41.2
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 38.1
-          },
-          {
-            "candidateName": "대략적인",
-            "party": "",
-            "support": 10.5
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "party_support",
-        "title": "전국   정당지지도 광주전남 행정통합 찬반, 찬반이유, 통합단체장 선출시점",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17086&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
-        "registrationDate": "2026-01-14"
-      },
-      {
-        "nttId": 17048,
-        "registrationId": "15041",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-02",
-          "end": "2026-01-03"
-        },
-        "publishDate": "2026-01-06 18시 00분",
-        "results": [
-          {
-            "candidateName": "신수정",
-            "party": null,
-            "partyRaw": "",
-            "support": 12
-          },
-          {
-            "candidateName": "김순옥",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 2
-          },
-          {
-            "candidateName": "오주섭",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "district_mayor",
-        "title": "광주광역시 북구    기초단체장선거 정당지지도 정치 및 지역 현안 조사",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17048&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
-        "registrationDate": "2026-01-06",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:51:02"
-      },
-      {
-        "nttId": 17010,
-        "registrationId": "15012",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-27",
-          "end": "2025-12-28"
-        },
-        "publishDate": "2026-01-01 18시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4.1
-          },
-          {
-            "candidateName": "강기정",
-            "party": null,
-            "partyRaw": "광주 시장",
-            "support": 1.8
-          },
-          {
-            "candidateName": "정준호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 0.8
-          },
-          {
-            "candidateName": "문인",
-            "party": null,
-            "partyRaw": "북구 청장",
-            "support": 0.6
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도 정치 현안 조사",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17010&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
-        "registrationDate": "2026-01-01",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:55:34"
-      },
-      {
-        "nttId": 16839,
-        "registrationId": "14866",
-        "pollName": "선거구분",
-        "pollOrg": "한국정책연구원",
-        "clientOrg": "인터넷언론 : 오피니언뷰",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-14",
-          "end": "2025-12-14"
-        },
-        "publishDate": "2025-12-15 15시 00분",
-        "results": [
-          {
-            "candidateName": "김용태",
-            "party": "",
-            "support": 12.1
-          },
-          {
-            "candidateName": "오경미",
-            "party": "",
-            "support": 10.5
-          },
-          {
-            "candidateName": "이정선",
-            "party": "",
-            "support": 19.1
-          },
-          {
-            "candidateName": "정성홍",
-            "party": "",
-            "support": 18.4
-          },
-          {
-            "candidateName": "기타후보",
-            "party": "",
-            "support": 5.5
-          },
-          {
-            "candidateName": "지지후보",
-            "party": "",
-            "support": 17.6
-          },
-          {
-            "candidateName": "잘모름",
-            "party": "",
-            "support": 16.8
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "광주광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16839&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
-        "registrationDate": "2025-12-15"
-      },
-      {
-        "nttId": 16737,
-        "registrationId": "14775",
-        "pollName": "선거구분",
-        "pollOrg": "(주)시그널앤펄스",
-        "clientOrg": "인터넷언론 : 프레시안 광주전남취재본부",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1008,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-11-07",
-          "end": "2025-11-08"
-        },
-        "publishDate": "2025-11-10 05시 00분",
-        "results": [
-          {
-            "candidateName": "광주군공항",
-            "party": "",
-            "support": 14.2
-          },
-          {
-            "candidateName": "전남이전",
-            "party": "",
-            "support": 40
-          },
-          {
-            "candidateName": "복합쇼핑몰",
-            "party": "",
-            "support": 11.4
-          },
-          {
-            "candidateName": "개점",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "선도도시",
-            "party": "",
-            "support": 9.4
-          },
-          {
-            "candidateName": "건설",
-            "party": "",
-            "support": 5.3
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16737&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
-        "registrationDate": "2025-11-09"
-      },
-      {
-        "nttId": 16698,
-        "registrationId": "14737",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 503,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-28",
-          "end": "2025-10-29"
-        },
-        "publishDate": "2025-11-03 17시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 41
-          },
-          {
-            "candidateName": "박병규",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 32
-          },
-          {
-            "candidateName": "강기정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14
-          },
-          {
-            "candidateName": "박수기",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9
-          },
-          {
-            "candidateName": "차승세",
-            "party": "independent",
-            "partyRaw": "무소속",
-            "support": 8
-          },
-          {
-            "candidateName": "문인",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4
-          },
-          {
-            "candidateName": "박광식",
-            "party": "independent",
-            "partyRaw": "무소속",
-            "support": 4
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": "광산구",
-        "electionType": "mayor",
-        "title": "광주광역시 광산구    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16698&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
-        "registrationDate": "2025-10-31",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:30:15"
-      },
-      {
-        "nttId": 16697,
-        "registrationId": "14736",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-28",
-          "end": "2025-10-29"
-        },
-        "publishDate": "2025-11-03 17시 00분",
-        "results": [
-          {
-            "candidateName": "안태욱",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 2
-          },
-          {
-            "candidateName": "이종욱",
-            "party": null,
-            "partyRaw": "민주노총",
-            "support": 2
-          },
-          {
-            "candidateName": "김정현",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 1
-          },
-          {
-            "candidateName": "최현수",
-            "party": "reform",
-            "partyRaw": "개혁신당",
-            "support": 1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 북구    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16697&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-31",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:30:41"
-      },
-      {
-        "nttId": 16696,
-        "registrationId": "14735",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 503,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-28",
-          "end": "2025-10-29"
-        },
-        "publishDate": "2025-11-03 17시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 26
-          },
-          {
-            "candidateName": "강기정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 20
-          },
-          {
-            "candidateName": "이병훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9
-          },
-          {
-            "candidateName": "문인",
-            "party": null,
-            "partyRaw": "",
-            "support": 7
-          },
-          {
-            "candidateName": "이종욱",
-            "party": null,
-            "partyRaw": "",
-            "support": 1
-          },
-          {
-            "candidateName": "이형석",
-            "party": null,
-            "partyRaw": "",
-            "support": 1
-          },
-          {
-            "candidateName": "정준호",
-            "party": null,
-            "partyRaw": "",
-            "support": 1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 남구    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16696&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-31",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:31:19"
-      },
-      {
-        "nttId": 16695,
-        "registrationId": "14734",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-28",
-          "end": "2025-10-29"
-        },
-        "publishDate": "2025-11-03 17시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 28
-          },
-          {
-            "candidateName": "강기정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 19
-          },
-          {
-            "candidateName": "이병훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 8
-          },
-          {
-            "candidateName": "문인",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 7
-          },
-          {
-            "candidateName": "이종욱",
-            "party": null,
-            "partyRaw": "민주노총",
-            "support": 1
-          },
-          {
-            "candidateName": "이형석",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 1
-          },
-          {
-            "candidateName": "정준호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 서구    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16695&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-31",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:31:47"
-      },
-      {
-        "nttId": 16694,
-        "registrationId": "14733",
-        "pollName": "선거구분",
-        "pollOrg": "한국갤럽조사연구소",
-        "clientOrg": "방송사 : KBS광주방송총국",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-28",
-          "end": "2025-10-29"
-        },
-        "publishDate": "2025-11-03 17시 00분",
-        "results": [
-          {
-            "candidateName": "민형배",
-            "party": null,
-            "partyRaw": "",
-            "support": 23
-          },
-          {
-            "candidateName": "강기정",
-            "party": null,
-            "partyRaw": "",
-            "support": 17
-          },
-          {
-            "candidateName": "이병훈",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 11
-          },
-          {
-            "candidateName": "문인",
-            "party": null,
-            "partyRaw": "",
-            "support": 8
-          },
-          {
-            "candidateName": "정준호",
-            "party": null,
-            "partyRaw": "",
-            "support": 3
-          },
-          {
-            "candidateName": "이종욱",
-            "party": null,
-            "partyRaw": "민주노총",
-            "support": 1
-          },
-          {
-            "candidateName": "이형석",
-            "party": null,
-            "partyRaw": "",
-            "support": 1
-          }
-        ],
-        "regionKey": "gwangju",
-        "municipality": null,
-        "electionType": "mayor",
-        "title": "광주광역시 동구    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16694&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-31",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:32:23"
-      }
-    ],
     "gyeongbuk": [
+      {
+        "nttId": 17935,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)에이스리서치",
+        "clientOrg": "시·도단위 신문 : 경상투데이",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-27",
+          "end": "2026-03-28"
+        },
+        "publishDate": "2026-03-29",
+        "results": [],
+        "regionKey": "gyeongbuk",
+        "municipality": "경주시",
+        "electionType": "district_mayor",
+        "title": "경상북도 경주시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17935&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-28"
+      },
       {
         "nttId": 17911,
         "registrationId": null,
@@ -19471,6 +18039,1496 @@
         "registrationDate": "2025-11-03",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-17T01:27:54"
+      }
+    ],
+    "gwangju": [
+      {
+        "nttId": 17914,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 서울경제TV",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 804,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-26",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17914&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-26"
+      },
+      {
+        "nttId": 17893,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "시·도단위 신문 : 광남일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 504,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-20",
+          "end": "2026-03-21"
+        },
+        "publishDate": "2026-03-25",
+        "results": [
+          {
+            "candidateName": "정책공약",
+            "party": "",
+            "support": 45.6
+          },
+          {
+            "candidateName": "실현",
+            "party": "",
+            "support": 16.6
+          },
+          {
+            "candidateName": "행정",
+            "party": "",
+            "support": 16.8
+          },
+          {
+            "candidateName": "리더십",
+            "party": "",
+            "support": 14.0
+          },
+          {
+            "candidateName": "역량",
+            "party": "",
+            "support": 3.6
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 북구    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17893&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-03-25"
+      },
+      {
+        "nttId": 17877,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-25",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 북구    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17877&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
+        "registrationDate": "2026-03-24"
+      },
+      {
+        "nttId": 17855,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-26",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17855&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
+        "registrationDate": "2026-03-23"
+      },
+      {
+        "nttId": 17853,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-25",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17853&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
+        "registrationDate": "2026-03-23"
+      },
+      {
+        "nttId": 17848,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-22",
+          "end": "2026-03-23"
+        },
+        "publishDate": "2026-03-24",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체 광역단체장선거교육감선거정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17848&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
+        "registrationDate": "2026-03-23"
+      },
+      {
+        "nttId": 17847,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-21",
+          "end": "2026-03-22"
+        },
+        "publishDate": "2026-03-26",
+        "results": [],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 남구    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17847&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=5",
+        "registrationDate": "2026-03-23"
+      },
+      {
+        "nttId": 17522,
+        "registrationId": "15454",
+        "pollName": "선거구분",
+        "pollOrg": "(주)알앤써치",
+        "clientOrg": "방송사/인터넷언론/인터넷언론 : BBS 광주불교방송/프레시안 광주전남취재본부/대로미디어",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 537,
+          "marginOfError": 4.2,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-25",
+          "end": "2026-02-26"
+        },
+        "publishDate": "2026-03-02 07시 00분",
+        "results": [
+          {
+            "candidateName": "김순옥",
+            "party": "",
+            "support": 3.2
+          },
+          {
+            "candidateName": "국민의힘",
+            "party": "",
+            "support": 13.4
+          },
+          {
+            "candidateName": "광주시당",
+            "party": "",
+            "support": 7.1
+          },
+          {
+            "candidateName": "대변인",
+            "party": "",
+            "support": 5.2
+          },
+          {
+            "candidateName": "신수정",
+            "party": "",
+            "support": 24
+          },
+          {
+            "candidateName": "광주시의",
+            "party": "",
+            "support": 11.7
+          },
+          {
+            "candidateName": "의장",
+            "party": "",
+            "support": 1.3
+          },
+          {
+            "candidateName": "오주섭",
+            "party": "",
+            "support": 8.7
+          },
+          {
+            "candidateName": "광주은행",
+            "party": "",
+            "support": 7.9
+          },
+          {
+            "candidateName": "신협",
+            "party": "",
+            "support": 5.3
+          },
+          {
+            "candidateName": "이사장",
+            "party": "",
+            "support": 2.7
+          },
+          {
+            "candidateName": "이없",
+            "party": "",
+            "support": 6.4
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 북구    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17522&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=9",
+        "registrationDate": "2026-02-27"
+      },
+      {
+        "nttId": 17388,
+        "registrationId": "15328",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 전남매거진",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-10",
+          "end": "2026-02-11"
+        },
+        "publishDate": "2026-02-13 12시 01분",
+        "results": [
+          {
+            "candidateName": "김대중",
+            "party": "",
+            "support": 11
+          },
+          {
+            "candidateName": "김용태",
+            "party": "",
+            "support": 10.7
+          },
+          {
+            "candidateName": "김해룡",
+            "party": "",
+            "support": 8.9
+          },
+          {
+            "candidateName": "오경미",
+            "party": "",
+            "support": 10.8
+          },
+          {
+            "candidateName": "이정선",
+            "party": "",
+            "support": 19.5
+          },
+          {
+            "candidateName": "장관호",
+            "party": "",
+            "support": 5.1
+          },
+          {
+            "candidateName": "정성홍",
+            "party": "",
+            "support": 8.1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17388&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
+        "registrationDate": "2026-02-12"
+      },
+      {
+        "nttId": 17343,
+        "registrationId": "15301",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 케이저널",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-30",
+          "end": "2026-01-31"
+        },
+        "publishDate": "2026-02-18 09시 00분",
+        "results": [
+          {
+            "candidateName": "김용태",
+            "party": "",
+            "support": 13.6
+          },
+          {
+            "candidateName": "오경미",
+            "party": "",
+            "support": 10.9
+          },
+          {
+            "candidateName": "이정선",
+            "party": "",
+            "support": 19.4
+          },
+          {
+            "candidateName": "정성홍",
+            "party": "",
+            "support": 14.9
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17343&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=24",
+        "registrationDate": "2026-02-10"
+      },
+      {
+        "nttId": 17329,
+        "registrationId": "15285",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "기타 : 광주시민공천위",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1001,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-11 11시 00분",
+        "results": [
+          {
+            "candidateName": "김용태",
+            "party": null,
+            "partyRaw": "민주진보시민",
+            "support": 24.2
+          },
+          {
+            "candidateName": "정성홍",
+            "party": null,
+            "partyRaw": "민주진보시민",
+            "support": 15.4
+          },
+          {
+            "candidateName": "오경미",
+            "party": null,
+            "partyRaw": "민주진보시민",
+            "support": 10.2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17329&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
+        "registrationDate": "2026-02-10",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:12:16"
+      },
+      {
+        "nttId": 17322,
+        "registrationId": "15292",
+        "pollName": "선거구분",
+        "pollOrg": "(주)시그널앤펄스",
+        "clientOrg": "기타 : 광주민주진보시민교육감후보 시민공천위원회",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1002,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-11 11시 00분",
+        "results": [
+          {
+            "candidateName": "지지의향",
+            "party": "",
+            "support": 59
+          },
+          {
+            "candidateName": "있음",
+            "party": "",
+            "support": 19.4
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17322&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
+        "registrationDate": "2026-02-10"
+      },
+      {
+        "nttId": 17315,
+        "registrationId": "15276",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-08",
+          "end": "2026-02-09"
+        },
+        "publishDate": "2026-02-10 17시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 21
+          },
+          {
+            "candidateName": "강기정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9
+          },
+          {
+            "candidateName": "이병훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 6
+          },
+          {
+            "candidateName": "정준호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체 광역단체장선거정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17315&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=26",
+        "registrationDate": "2026-02-09",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:13:22"
+      },
+      {
+        "nttId": 17312,
+        "registrationId": "15273",
+        "pollName": "선거구분",
+        "pollOrg": "(주)우리리서치",
+        "clientOrg": "기타 : 광주시민공천위원회",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-08",
+          "end": "2026-02-09"
+        },
+        "publishDate": "2026-02-11 11시 00분",
+        "results": [
+          {
+            "candidateName": "지지한다",
+            "party": "",
+            "support": 59.9
+          },
+          {
+            "candidateName": "지지하지",
+            "party": "",
+            "support": 15.7
+          },
+          {
+            "candidateName": "않는다",
+            "party": "",
+            "support": 24.4
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17312&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09"
+      },
+      {
+        "nttId": 17241,
+        "registrationId": "15212",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "방송사/전국단위 신문 : KBC광주방송/광남일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-02",
+          "end": "2026-02-03"
+        },
+        "publishDate": "2026-02-05 18시 00분",
+        "results": [
+          {
+            "candidateName": "해결",
+            "party": "",
+            "support": 33.4
+          },
+          {
+            "candidateName": "능력",
+            "party": "",
+            "support": 24.4
+          },
+          {
+            "candidateName": "정책",
+            "party": "",
+            "support": 18
+          },
+          {
+            "candidateName": "공약",
+            "party": "",
+            "support": 14.4
+          },
+          {
+            "candidateName": "실현가능성",
+            "party": "",
+            "support": 5.9
+          },
+          {
+            "candidateName": "행정",
+            "party": "",
+            "support": 3.9
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 북구    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17241&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=33",
+        "registrationDate": "2026-02-05"
+      },
+      {
+        "nttId": 17224,
+        "registrationId": "15198",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "방송사/전국단위 신문 : KBC광주방송/광남일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-02",
+          "end": "2026-02-03"
+        },
+        "publishDate": "2026-02-04 18시 00분",
+        "results": [
+          {
+            "candidateName": "지역경제에",
+            "party": "",
+            "support": 35.9
+          },
+          {
+            "candidateName": "도움",
+            "party": "",
+            "support": 20
+          },
+          {
+            "candidateName": "재원",
+            "party": "",
+            "support": 16.3
+          },
+          {
+            "candidateName": "측면",
+            "party": "",
+            "support": 15.5
+          },
+          {
+            "candidateName": "이점",
+            "party": "",
+            "support": 10.2
+          },
+          {
+            "candidateName": "행정",
+            "party": "",
+            "support": 2.2
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체 전라남도 전체 광역단체장선거정당지지도 광주·전남 통합단체장선거 후보적합도, 정당지지도 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17224&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=34",
+        "registrationDate": "2026-02-04"
+      },
+      {
+        "nttId": 17107,
+        "registrationId": "15091",
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "인터넷언론 : 뉴스핌광주전남취재본부",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-17",
+          "end": "2026-01-18"
+        },
+        "publishDate": "2026-01-19 15시 30분",
+        "results": [
+          {
+            "candidateName": "김용태",
+            "party": "",
+            "support": 23.4
+          },
+          {
+            "candidateName": "정성홍",
+            "party": "",
+            "support": 10.5
+          },
+          {
+            "candidateName": "오경미",
+            "party": "",
+            "support": 9.7
+          },
+          {
+            "candidateName": "이정선",
+            "party": "",
+            "support": 17.6
+          },
+          {
+            "candidateName": "지지",
+            "party": "",
+            "support": 5.5
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17107&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=45",
+        "registrationDate": "2026-01-19"
+      },
+      {
+        "nttId": 17097,
+        "registrationId": "15094",
+        "pollName": "선거구분",
+        "pollOrg": "메타보이스(주)",
+        "clientOrg": "인터넷언론 : 오마이뉴스 광주전라본부",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 801,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-16",
+          "end": "2026-01-17"
+        },
+        "publishDate": "2026-01-19 15시 00분",
+        "results": [
+          {
+            "candidateName": "매우",
+            "party": "",
+            "support": 18.2
+          },
+          {
+            "candidateName": "반대한다",
+            "party": "",
+            "support": 12.2
+          },
+          {
+            "candidateName": "어느",
+            "party": "",
+            "support": 26.4
+          },
+          {
+            "candidateName": "정도",
+            "party": "",
+            "support": 34.6
+          },
+          {
+            "candidateName": "찬성한다",
+            "party": "",
+            "support": 8.7
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체 광역단체장선거교육감선거대통령선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17097&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
+        "registrationDate": "2026-01-19"
+      },
+      {
+        "nttId": 17086,
+        "registrationId": "15077",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "방송사 : KBC광주방송",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-12",
+          "end": "2026-01-13"
+        },
+        "publishDate": "2026-01-14 15시 00분",
+        "results": [
+          {
+            "candidateName": "자세히",
+            "party": "",
+            "support": 10.3
+          },
+          {
+            "candidateName": "알고",
+            "party": "",
+            "support": 41.2
+          },
+          {
+            "candidateName": "있다",
+            "party": "",
+            "support": 38.1
+          },
+          {
+            "candidateName": "대략적인",
+            "party": "",
+            "support": 10.5
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "party_support",
+        "title": "전국   정당지지도 광주전남 행정통합 찬반, 찬반이유, 통합단체장 선출시점",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17086&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
+        "registrationDate": "2026-01-14"
+      },
+      {
+        "nttId": 17048,
+        "registrationId": "15041",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-02",
+          "end": "2026-01-03"
+        },
+        "publishDate": "2026-01-06 18시 00분",
+        "results": [
+          {
+            "candidateName": "신수정",
+            "party": null,
+            "partyRaw": "",
+            "support": 12
+          },
+          {
+            "candidateName": "김순옥",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 2
+          },
+          {
+            "candidateName": "오주섭",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "district_mayor",
+        "title": "광주광역시 북구    기초단체장선거 정당지지도 정치 및 지역 현안 조사",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17048&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
+        "registrationDate": "2026-01-06",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:51:02"
+      },
+      {
+        "nttId": 17010,
+        "registrationId": "15012",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "통신사/방송사/시·도단위 신문 : 뉴시스광주전남취재본부/광주MBC/무등일보",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-27",
+          "end": "2025-12-28"
+        },
+        "publishDate": "2026-01-01 18시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4.1
+          },
+          {
+            "candidateName": "강기정",
+            "party": null,
+            "partyRaw": "광주 시장",
+            "support": 1.8
+          },
+          {
+            "candidateName": "정준호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 0.8
+          },
+          {
+            "candidateName": "문인",
+            "party": null,
+            "partyRaw": "북구 청장",
+            "support": 0.6
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도 정치 현안 조사",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17010&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=52",
+        "registrationDate": "2026-01-01",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:55:34"
+      },
+      {
+        "nttId": 16839,
+        "registrationId": "14866",
+        "pollName": "선거구분",
+        "pollOrg": "한국정책연구원",
+        "clientOrg": "인터넷언론 : 오피니언뷰",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-14",
+          "end": "2025-12-14"
+        },
+        "publishDate": "2025-12-15 15시 00분",
+        "results": [
+          {
+            "candidateName": "김용태",
+            "party": "",
+            "support": 12.1
+          },
+          {
+            "candidateName": "오경미",
+            "party": "",
+            "support": 10.5
+          },
+          {
+            "candidateName": "이정선",
+            "party": "",
+            "support": 19.1
+          },
+          {
+            "candidateName": "정성홍",
+            "party": "",
+            "support": 18.4
+          },
+          {
+            "candidateName": "기타후보",
+            "party": "",
+            "support": 5.5
+          },
+          {
+            "candidateName": "지지후보",
+            "party": "",
+            "support": 17.6
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 16.8
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "광주광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16839&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
+        "registrationDate": "2025-12-15"
+      },
+      {
+        "nttId": 16737,
+        "registrationId": "14775",
+        "pollName": "선거구분",
+        "pollOrg": "(주)시그널앤펄스",
+        "clientOrg": "인터넷언론 : 프레시안 광주전남취재본부",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1008,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-11-07",
+          "end": "2025-11-08"
+        },
+        "publishDate": "2025-11-10 05시 00분",
+        "results": [
+          {
+            "candidateName": "광주군공항",
+            "party": "",
+            "support": 14.2
+          },
+          {
+            "candidateName": "전남이전",
+            "party": "",
+            "support": 40
+          },
+          {
+            "candidateName": "복합쇼핑몰",
+            "party": "",
+            "support": 11.4
+          },
+          {
+            "candidateName": "개점",
+            "party": "",
+            "support": 19.7
+          },
+          {
+            "candidateName": "선도도시",
+            "party": "",
+            "support": 9.4
+          },
+          {
+            "candidateName": "건설",
+            "party": "",
+            "support": 5.3
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16737&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=76",
+        "registrationDate": "2025-11-09"
+      },
+      {
+        "nttId": 16698,
+        "registrationId": "14737",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 503,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-28",
+          "end": "2025-10-29"
+        },
+        "publishDate": "2025-11-03 17시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 41
+          },
+          {
+            "candidateName": "박병규",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 32
+          },
+          {
+            "candidateName": "강기정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14
+          },
+          {
+            "candidateName": "박수기",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9
+          },
+          {
+            "candidateName": "차승세",
+            "party": "independent",
+            "partyRaw": "무소속",
+            "support": 8
+          },
+          {
+            "candidateName": "문인",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4
+          },
+          {
+            "candidateName": "박광식",
+            "party": "independent",
+            "partyRaw": "무소속",
+            "support": 4
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": "광산구",
+        "electionType": "mayor",
+        "title": "광주광역시 광산구    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16698&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=79",
+        "registrationDate": "2025-10-31",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:30:15"
+      },
+      {
+        "nttId": 16697,
+        "registrationId": "14736",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-28",
+          "end": "2025-10-29"
+        },
+        "publishDate": "2025-11-03 17시 00분",
+        "results": [
+          {
+            "candidateName": "안태욱",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 2
+          },
+          {
+            "candidateName": "이종욱",
+            "party": null,
+            "partyRaw": "민주노총",
+            "support": 2
+          },
+          {
+            "candidateName": "김정현",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 1
+          },
+          {
+            "candidateName": "최현수",
+            "party": "reform",
+            "partyRaw": "개혁신당",
+            "support": 1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 북구    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16697&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
+        "registrationDate": "2025-10-31",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:30:41"
+      },
+      {
+        "nttId": 16696,
+        "registrationId": "14735",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 503,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-28",
+          "end": "2025-10-29"
+        },
+        "publishDate": "2025-11-03 17시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 26
+          },
+          {
+            "candidateName": "강기정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 20
+          },
+          {
+            "candidateName": "이병훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9
+          },
+          {
+            "candidateName": "문인",
+            "party": null,
+            "partyRaw": "",
+            "support": 7
+          },
+          {
+            "candidateName": "이종욱",
+            "party": null,
+            "partyRaw": "",
+            "support": 1
+          },
+          {
+            "candidateName": "이형석",
+            "party": null,
+            "partyRaw": "",
+            "support": 1
+          },
+          {
+            "candidateName": "정준호",
+            "party": null,
+            "partyRaw": "",
+            "support": 1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 남구    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16696&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
+        "registrationDate": "2025-10-31",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:31:19"
+      },
+      {
+        "nttId": 16695,
+        "registrationId": "14734",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-28",
+          "end": "2025-10-29"
+        },
+        "publishDate": "2025-11-03 17시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 28
+          },
+          {
+            "candidateName": "강기정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 19
+          },
+          {
+            "candidateName": "이병훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 8
+          },
+          {
+            "candidateName": "문인",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 7
+          },
+          {
+            "candidateName": "이종욱",
+            "party": null,
+            "partyRaw": "민주노총",
+            "support": 1
+          },
+          {
+            "candidateName": "이형석",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 1
+          },
+          {
+            "candidateName": "정준호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 서구    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16695&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
+        "registrationDate": "2025-10-31",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:31:47"
+      },
+      {
+        "nttId": 16694,
+        "registrationId": "14733",
+        "pollName": "선거구분",
+        "pollOrg": "한국갤럽조사연구소",
+        "clientOrg": "방송사 : KBS광주방송총국",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-28",
+          "end": "2025-10-29"
+        },
+        "publishDate": "2025-11-03 17시 00분",
+        "results": [
+          {
+            "candidateName": "민형배",
+            "party": null,
+            "partyRaw": "",
+            "support": 23
+          },
+          {
+            "candidateName": "강기정",
+            "party": null,
+            "partyRaw": "",
+            "support": 17
+          },
+          {
+            "candidateName": "이병훈",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 11
+          },
+          {
+            "candidateName": "문인",
+            "party": null,
+            "partyRaw": "",
+            "support": 8
+          },
+          {
+            "candidateName": "정준호",
+            "party": null,
+            "partyRaw": "",
+            "support": 3
+          },
+          {
+            "candidateName": "이종욱",
+            "party": null,
+            "partyRaw": "민주노총",
+            "support": 1
+          },
+          {
+            "candidateName": "이형석",
+            "party": null,
+            "partyRaw": "",
+            "support": 1
+          }
+        ],
+        "regionKey": "gwangju",
+        "municipality": null,
+        "electionType": "mayor",
+        "title": "광주광역시 동구    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16694&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
+        "registrationDate": "2025-10-31",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:32:23"
       }
     ],
     "chungbuk": [
