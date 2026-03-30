@@ -1036,6 +1036,7 @@ const App = (() => {
             if (typeof MapModule !== 'undefined' && MapModule.applyElectionNightLayer) {
                 MapModule.applyElectionNightLayer(data);
             }
+            _updateElectionBanner(data);
             _setManualFallbackMode(false);
         } catch (err) {
             console.warn('[election_night] Worker 응답 실패, 수동 모드 전환', err);
@@ -1048,6 +1049,21 @@ const App = (() => {
         const container = document.getElementById('manual-fallback-container');
         if (!container) return;
         container.style.display = active ? 'block' : 'none';
+    }
+
+    function _updateElectionBanner(data) {
+        const banner = document.getElementById('election-banner');
+        if (!banner) return;
+        const regions = data?.regions || {};
+        const rates = Object.values(regions).map(r => r.countRate).filter(v => typeof v === 'number');
+        if (!rates.length) return;
+        const avgRate = (rates.reduce((a, b) => a + b, 0) / rates.length).toFixed(1);
+        const fetchedAt = data?.fetchedAt ? new Date(data.fetchedAt) : new Date();
+        const hhmm = fetchedAt.toLocaleTimeString('ko-KR', { hour: '2-digit', minute: '2-digit', hour12: false });
+        const textEl = banner.querySelector('.banner-text');
+        if (textEl) {
+            textEl.textContent = `개표 진행 중 — 전체 ${avgRate}% (${hhmm} 기준)`;
+        }
     }
 
     function _handleManualJsonInput(jsonString) {
@@ -1097,6 +1113,7 @@ const App = (() => {
         _startElectionNightPolling,
         _stopElectionNightPolling,
         _setManualFallbackMode,
+        _updateElectionBanner,
         _handleManualJsonInput,
         onSubdistrictSelected: ElectionViews.onSubdistrictSelected,
         onByElectionSelected: ElectionViews.onByElectionSelected,

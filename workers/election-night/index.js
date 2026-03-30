@@ -136,13 +136,156 @@ async function fetchAndParseNEC(env) {
  *    수학적 추정으로 declared를 true로 설정하는 코드 절대 금지 (헌법 제2조, D-11).
  */
 function parseNECResponse(html) {
-  // TODO: 2022 아카이브 응답 포맷 확인 후 구현
-  // 반환 스키마 (per RESEARCH.md Pattern 6):
+  // 빈 입력 방어 (per D-01): falsy이거나 100자 미만이면 stub 반환
+  if (!html || html.length < 100) {
+    return {
+      fetchedAt: new Date().toISOString(),
+      electionId: NEC_CONFIG.ELECTION_ID_2026,
+      sgTypecode: '11',
+      regions: {},
+      _source: 'stub',
+      _parserVersion: '0.0',
+    };
+  }
+
+  // 17개 광역지자체 한글명 → 영문 키 매핑
+  // TODO(5/26): 실제 NEC HTML에서 지역명 표기 확인 (약칭/전체명 혼용 가능)
+  const REGION_MAP = {
+    '서울': 'seoul',
+    '부산': 'busan',
+    '대구': 'daegu',
+    '인천': 'incheon',
+    '광주': 'gwangju',
+    '대전': 'daejeon',
+    '울산': 'ulsan',
+    '세종': 'sejong',
+    '경기': 'gyeonggi',
+    '강원': 'gangwon',
+    '충북': 'chungbuk',
+    '충남': 'chungnam',
+    '전북': 'jeonbuk',
+    '전남': 'jeonnam',
+    '경북': 'gyeongbuk',
+    '경남': 'gyeongnam',
+    '제주': 'jeju',
+  };
+
+  // TODO(5/26): 정당 매핑 — 실제 정당 컬럼/텍스트 확인
+  // NEC HTML에서 정당명이 어떻게 표기되는지 확인 후 조정
+  const PARTY_MAP = {
+    '국민의힘': 'ppp',
+    '더불어민주당': 'democratic',
+    '민주당': 'democratic',
+    '개혁신당': 'reform',
+    '조국혁신당': 'innovation',
+    '진보당': 'progressive',
+    '무소속': 'independent',
+  };
+
+  /**
+   * HTML 태그 및 특수 엔티티 제거 헬퍼
+   */
+  function stripTags(str) {
+    return str.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').trim();
+  }
+
+  const regions = {};
+
+  try {
+    // TODO(5/26): 실제 NEC HTML 구조 확인 후 조정 — 테이블 구조 또는 JSON 응답 확인
+    // 현재: <tr>/<td> 기반 테이블 파싱 skeleton
+
+    // <tr> 행 추출
+    // TODO(5/26): 실제 NEC HTML에서 테이블 ID/class 확인 (예: id="table1", class="tbl_data" 등)
+    const rowPattern = /<tr[^>]*>([\s\S]*?)<\/tr>/gi;
+    let rowMatch;
+
+    while ((rowMatch = rowPattern.exec(html)) !== null) {
+      const rowHtml = rowMatch[1];
+
+      // <td> 셀 추출
+      // TODO(5/26): th/td 구분 확인 — 헤더 행 스킵 로직 필요할 수 있음
+      const cellPattern = /<td[^>]*>([\s\S]*?)<\/td>/gi;
+      const cells = [];
+      let cellMatch;
+
+      while ((cellMatch = cellPattern.exec(rowHtml)) !== null) {
+        cells.push(stripTags(cellMatch[1]));
+      }
+
+      // 최소 셀 수 확인 (지역명, 개표율, 후보명, 득표율 포함 예상)
+      // TODO(5/26): 실제 컬럼 순서 확인 — 아래 인덱스는 추정값
+      if (cells.length < 4) continue;
+
+      // TODO(5/26): 실제 컬럼 순서 확인
+      const regionName = cells[0];   // 컬럼 0: 지역명 (추정)
+      const countRateStr = cells[1]; // 컬럼 1: 개표율 (추정, 예: "85.3%")
+      const candidateName = cells[2]; // 컬럼 2: 후보명 (추정)
+      const voteRateStr = cells[3];  // 컬럼 3: 득표율 (추정, 예: "54.1%")
+      // TODO(5/26): 정당 컬럼 인덱스 확인 — cells[4] 또는 별도 파싱 필요
+      const partyName = cells.length > 4 ? cells[4] : '';
+      // TODO(5/26): 당선 컬럼 인덱스 확인 — cells[5] 또는 별도 속성/텍스트
+      const declaredCell = cells.length > 5 ? cells[5] : '';
+
+      // 지역명 매핑 확인
+      const regionKey = REGION_MAP[regionName];
+      if (!regionKey) continue; // 헤더 행 또는 인식 불가 행 스킵
+
+      // 개표율 파싱 (예: "85.3%" → 85.3)
+      // TODO(5/26): 실제 NEC HTML 구조 확인 후 조정
+      const countRate = parseFloat(countRateStr.replace('%', '').trim());
+      if (isNaN(countRate) || countRate < 0 || countRate > 100) {
+        console.warn(`[parseNECResponse] Invalid countRate for ${regionKey}: "${countRateStr}"`);
+        continue;
+      }
+
+      // 득표율 파싱 (예: "54.1%" → 54.1)
+      // TODO(5/26): 실제 NEC HTML 구조 확인 후 조정
+      const leadingVoteRate = parseFloat(voteRateStr.replace('%', '').trim());
+      if (isNaN(leadingVoteRate) || leadingVoteRate < 0 || leadingVoteRate > 100) {
+        console.warn(`[parseNECResponse] Invalid leadingVoteRate for ${regionKey}: "${voteRateStr}"`);
+        continue;
+      }
+
+      // 정당 키 매핑
+      // TODO(5/26): 실제 정당 컬럼/텍스트 확인
+      const leadingParty = PARTY_MAP[partyName] || 'unknown';
+
+      // 헌법 제2조: declared는 선관위 공식 플래그만 — HTML 셀에 "당선" 텍스트 존재 시에만 true
+      // 수학적 추정(득표율 50% 초과 등)으로 declared를 판정하는 것은 절대 금지 (D-11)
+      // TODO(5/26): 실제 NEC HTML에서 "당선" 표기 방식 확인 (텍스트, 이미지, 클래스 등)
+      const declared = declaredCell.includes('당선'); // 헌법 제2조: declared는 선관위 공식 플래그만
+
+      regions[regionKey] = {
+        countRate,
+        leadingCandidate: candidateName,
+        leadingParty,
+        leadingVoteRate,
+        declared,
+      };
+    }
+  } catch (err) {
+    console.warn('[parseNECResponse] Parsing error:', err.message);
+    // 파싱 실패 시 빈 regions 반환
+    return {
+      fetchedAt: new Date().toISOString(),
+      electionId: NEC_CONFIG.ELECTION_ID_2026,
+      sgTypecode: '11',
+      regions: {},
+      _source: 'info.nec.go.kr',
+      _parserVersion: '1.0',
+    };
+  }
+
+  if (Object.keys(regions).length === 0) {
+    console.warn('[parseNECResponse] No regions parsed from HTML — check HTML structure and TODO(5/26) markers');
+  }
+
   return {
     fetchedAt: new Date().toISOString(),
     electionId: NEC_CONFIG.ELECTION_ID_2026,
     sgTypecode: '11',
-    regions: {},
+    regions,
     _source: 'info.nec.go.kr',
     _parserVersion: '1.0',
   };
