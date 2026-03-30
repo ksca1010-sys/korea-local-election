@@ -86,9 +86,9 @@ Plans:
   1. 배포 체크리스트 문서를 보고 단계별로 최종 배포를 실행할 수 있다
   2. 5/28 00:00 ~ 6/3 18:00 사이에 여론조사 탭이 자동으로 데이터를 숨기는 것이 검증된다
   3. Worker가 응답하지 않을 때 수동으로 JSON 폴백으로 전환하는 절차를 따라 5분 내 복구된다
-**Plans:** 3 plans
+**Plans:** 1/3 plans executed
 Plans:
-- [ ] 08-01-PLAN.md — 공표금지 경계값 코드 검증 (OPS-02)
+- [x] 08-01-PLAN.md — 공표금지 경계값 코드 검증 (OPS-02)
 - [ ] 08-02-PLAN.md — FALLBACK-GUIDE.md 작성 + 폴백 코드 검증 (OPS-03)
 - [ ] 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + 완결성 검증 (OPS-01)
 
@@ -103,4 +103,4 @@ Plans:
 | 5. 여론조사 보완 | v1.1 | 2/2 | Complete | 2026-03-29 |
 | 6. 본후보 등록 대응 | v1.1 | 2/2 | Complete | 2026-03-30 |
 | 7. 개표 시스템 완성 | v1.1 | 2/3 | In Progress|  |
-| 8. 선거일 운영 준비 | v1.1 | 0/3 | Not started | - |
+| 8. 선거일 운영 준비 | v1.1 | 1/3 | In Progress|  |

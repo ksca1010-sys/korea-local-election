@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
 status: executing
-stopped_at: Completed 07-02-PLAN.md — Worker 통합 테스트 + _updateElectionBanner() 구현
-last_updated: "2026-03-30T02:26:13.579Z"
+stopped_at: Completed 08-01-PLAN.md — 공표금지 경계값 검증 OPS-02 PASS
+last_updated: "2026-03-30T04:39:26.119Z"
 last_activity: 2026-03-30
 progress:
   total_phases: 4
   completed_phases: 3
-  total_plans: 7
-  completed_plans: 7
+  total_plans: 10
+  completed_plans: 8
   percent: 50
 ---
 
@@ -21,12 +21,12 @@ progress:
 See: .planning/PROJECT.md (updated 2026-03-29)
 
 **Core value:** 허위 데이터 없이, 모든 선거구의 후보·여론조사·역대 결과를 한 화면에서 빠르게 탐색
-**Current focus:** Phase 07 — 개표-시스템-완성
+**Current focus:** Phase 08 — 선거일-운영-준비
 
 ## Current Position
 
-Phase: 8
-Plan: Not started
+Phase: 08 (선거일-운영-준비) — EXECUTING
+Plan: 2 of 3
 Status: Ready to execute
 Last activity: 2026-03-30
 
@@ -69,6 +69,7 @@ Carried over from v1.0:
 - [Phase 07-01]: parseNECResponse() skeleton: regex/텍스트 파싱만 사용 (Worker 런타임 DOMParser 없음), declared는 HTML '당선' 텍스트만 허용 (헌법 제2조, D-11)
 - [Phase 07]: KV fixture 직접 주입으로 scheduled() 시간 범위 조건 우회 — wrangler --preview false 필수
 - [Phase 07]: _updateElectionBanner는 .banner-text textContent만 업데이트 — display 제어는 sidebar.js renderElectionBanner() 담당
+- [Phase 08]: isPublicationBanned() >= DATES.PUBLICATION_BAN_START && < DATES.VOTE_END — 5/28 00:00 포함, 6/3 18:00 정각 미포함 (허용) 동작 OPS-02 검증 완료
 
 ### Pending Todos
 
@@ -87,7 +88,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-30T00:00:16.351Z
-Stopped at: Completed 07-02-PLAN.md — Worker 통합 테스트 + _updateElectionBanner() 구현
+Last session: 2026-03-30T04:39:26.109Z
+Stopped at: Completed 08-01-PLAN.md — 공표금지 경계값 검증 OPS-02 PASS
 Resume file: None
 Next action: Phase 07 계획 수립 (5/26 이후 NEC URL 캡처 이후 착수)
