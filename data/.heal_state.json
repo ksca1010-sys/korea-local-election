@@ -1,6 +1,7 @@
 {
-  "workflow_retry:update-candidates.yml": "2026-03-29",
-  "freshness:update-election-stats.yml": "2026-03-25",
-  "integrity:byelection_dup": "2026-03-29",
-  "workflow_retry:update-overview.yml": "2026-03-29"
+  "workflow_retry:update-candidates.yml": "2026-03-30",
+  "freshness:update-election-stats.yml": "2026-03-30",
+  "integrity:byelection_dup": "2026-03-30",
+  "workflow_retry:update-overview.yml": "2026-03-29",
+  "freshness:update-overview.yml": "2026-03-30"
 }
