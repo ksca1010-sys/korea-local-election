@@ -22,7 +22,7 @@
 
 - [x] **ELEC-01**: NEC 개표 API URL을 캡처하여 Worker에 기입하는 절차가 문서화된다
 - [x] **ELEC-02**: Worker 통합 테스트가 완료되어 실제 응답을 검증한다
-- [ ] **ELEC-03**: 브라우저 UAT 3건(지도 시각화·폴백 UI·개표 배너)이 완료된다
+- [x] **ELEC-03**: 브라우저 UAT 3건(지도 시각화·폴백 UI·개표 배너)이 완료된다
 
 ### 선거일 운영 준비 (OPS)
 
@@ -58,9 +58,9 @@
 | CAND-01 | Phase 6 | 06-01 | Pipeline Ready (5/14 실행 대기) |
 | CAND-02 | Phase 6 | 06-02 | Complete (UAT 승인 2026-03-30) |
 | CAND-03 | Phase 6 | 06-02 | Complete (UAT 승인 2026-03-30) |
-| ELEC-01 | Phase 7 | — | Pending |
-| ELEC-02 | Phase 7 | — | Pending |
-| ELEC-03 | Phase 7 | — | Pending |
+| ELEC-01 | Phase 7 | 07-01 | Complete (2026-03-30) |
+| ELEC-02 | Phase 7 | 07-02 | Complete (2026-03-30) |
+| ELEC-03 | Phase 7 | 07-03 | Complete (UAT 승인 2026-03-30) |
 | OPS-01 | Phase 8 | — | Pending |
 | OPS-02 | Phase 8 | — | Pending |
 | OPS-03 | Phase 8 | — | Pending |
