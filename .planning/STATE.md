@@ -2,15 +2,15 @@
 gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
-status: executing
-stopped_at: Completed 08-02-PLAN.md — FALLBACK-GUIDE.md 작성 + 폴백 코드 경로 검증
-last_updated: "2026-03-30T04:40:37.873Z"
+status: verifying
+stopped_at: Completed 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + OPS-01 8/8 검증 완료
+last_updated: "2026-03-30T04:45:20.423Z"
 last_activity: 2026-03-30
 progress:
   total_phases: 4
-  completed_phases: 3
+  completed_phases: 4
   total_plans: 10
-  completed_plans: 9
+  completed_plans: 10
   percent: 50
 ---
 
@@ -27,7 +27,7 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 
 Phase: 08 (선거일-운영-준비) — EXECUTING
 Plan: 3 of 3
-Status: Ready to execute
+Status: Phase complete — ready for verification
 Last activity: 2026-03-30
 
 Progress: [██████░░░░] 50% (v1.1 기준: Phase 5~8 중 2개 완료)
@@ -72,6 +72,7 @@ Carried over from v1.0:
 - [Phase 08]: isPublicationBanned() >= DATES.PUBLICATION_BAN_START && < DATES.VOTE_END — 5/28 00:00 포함, 6/3 18:00 정각 미포함 (허용) 동작 OPS-02 검증 완료
 - [Phase 08-02]: FALLBACK-GUIDE.md를 workers/ 디렉터리에 CAPTURE-GUIDE.md와 함께 배치 — 선거 당일 운영 문서 집중 관리
 - [Phase 08-02]: declared:true 조건을 주의사항 섹션에 명시 — 헌법 제2조(LLM 추정 당선 금지) 운영자 교육
+- [Phase 08-03]: DEPLOY-CHECKLIST.md를 workers/ 디렉터리에 5-Part 27항목 체크리스트로 작성 — NEC_URL 기입부터 스모크 테스트까지 전 흐름 문서화 (OPS-01 완료)
 
 ### Pending Todos
 
@@ -90,7 +91,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-30T04:40:37.870Z
-Stopped at: Completed 08-02-PLAN.md — FALLBACK-GUIDE.md 작성 + 폴백 코드 경로 검증
+Last session: 2026-03-30T04:45:20.420Z
+Stopped at: Completed 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + OPS-01 8/8 검증 완료
 Resume file: None
 Next action: Phase 07 계획 수립 (5/26 이후 NEC URL 캡처 이후 착수)
