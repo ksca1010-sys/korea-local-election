@@ -3,14 +3,14 @@ gsd_state_version: 1.0
 milestone: v1.1
 milestone_name: 선거일 대비
 status: executing
-stopped_at: Completed 07-01-PLAN.md — parseNECResponse() skeleton + CAPTURE-GUIDE.md
-last_updated: "2026-03-29T23:54:34.929Z"
+stopped_at: Completed 07-02-PLAN.md — Worker 통합 테스트 + _updateElectionBanner() 구현
+last_updated: "2026-03-30T00:00:16.359Z"
 last_activity: 2026-03-29
 progress:
   total_phases: 4
   completed_phases: 2
   total_plans: 7
-  completed_plans: 5
+  completed_plans: 6
   percent: 50
 ---
 
@@ -26,7 +26,7 @@ See: .planning/PROJECT.md (updated 2026-03-29)
 ## Current Position
 
 Phase: 07 (개표-시스템-완성) — EXECUTING
-Plan: 2 of 3
+Plan: 3 of 3
 Status: Ready to execute
 Last activity: 2026-03-29
 
@@ -67,6 +67,8 @@ Carried over from v1.0:
 - [Phase 06-01]: nec_precand_sync.fetch_precandidates() 재사용 — 새 HTTP 클라이언트 금지 (Don't Hand-Roll); 날짜 게이팅 Python 내 처리 — GitHub Actions if: 타임존 문제 방지; ballotNumber 4개 필드 시도 순서 확정
 - [Phase 06-02]: NOMINATED/WITHDRAWN 필터를 render() 단일 지점에서 처리 — Anti-Pattern 회피; ballot_number 모드에서 NOMINATED만 표시, status_priority 모드에서 WITHDRAWN만 제거; UAT 승인 2026-03-30
 - [Phase 07-01]: parseNECResponse() skeleton: regex/텍스트 파싱만 사용 (Worker 런타임 DOMParser 없음), declared는 HTML '당선' 텍스트만 허용 (헌법 제2조, D-11)
+- [Phase 07]: KV fixture 직접 주입으로 scheduled() 시간 범위 조건 우회 — wrangler --preview false 필수
+- [Phase 07]: _updateElectionBanner는 .banner-text textContent만 업데이트 — display 제어는 sidebar.js renderElectionBanner() 담당
 
 ### Pending Todos
 
@@ -85,7 +87,7 @@ Carried over from v1.0:
 
 ## Session Continuity
 
-Last session: 2026-03-29T23:54:34.905Z
-Stopped at: Completed 07-01-PLAN.md — parseNECResponse() skeleton + CAPTURE-GUIDE.md
+Last session: 2026-03-30T00:00:16.351Z
+Stopped at: Completed 07-02-PLAN.md — Worker 통합 테스트 + _updateElectionBanner() 구현
 Resume file: None
 Next action: Phase 07 계획 수립 (5/26 이후 NEC URL 캡처 이후 착수)

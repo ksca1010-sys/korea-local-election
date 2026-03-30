@@ -70,10 +70,10 @@ Plans:
   3. 브라우저에서 지도 위에 개표 결과 레이어가 올바르게 렌더링된다
   4. Worker 응답 없을 때 UI가 폴백 메시지를 보여준다
   5. 개표 진행 배너가 선거일 당일 노출된다
-**Plans:** 3 plans
+**Plans:** 2/3 plans executed
 Plans:
 - [x] 07-01-PLAN.md — parseNECResponse() 파서 skeleton + CAPTURE-GUIDE.md
-- [ ] 07-02-PLAN.md — Worker 통합 테스트 + 개표 배너 활성화
+- [x] 07-02-PLAN.md — Worker 통합 테스트 + 개표 배너 활성화
 - [ ] 07-03-PLAN.md — 브라우저 UAT 3건 (checkpoint)
 **UI hint**: yes
 
@@ -98,5 +98,5 @@ Plans:
 | 4. 선거일 실시간 개표 | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 5. 여론조사 보완 | v1.1 | 2/2 | Complete | 2026-03-29 |
 | 6. 본후보 등록 대응 | v1.1 | 2/2 | Complete | 2026-03-30 |
-| 7. 개표 시스템 완성 | v1.1 | 0/3 | Planned | - |
+| 7. 개표 시스템 완성 | v1.1 | 2/3 | In Progress|  |
 | 8. 선거일 운영 준비 | v1.1 | 0/? | Not started | - |
