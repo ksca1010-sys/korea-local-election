@@ -1,6 +1,35 @@
 {
-  "last_id": 17963,
+  "last_id": 17978,
   "polls": [
+    {
+      "nttId": 17978,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "조원씨앤아이",
+      "clientOrg": "인터넷언론 : 프레스뉴스통신",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 503,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-28",
+        "end": "2026-03-29"
+      },
+      "publishDate": "2026-03-30",
+      "results": [],
+      "regionKey": "gyeonggi",
+      "municipality": "안산시",
+      "electionType": "district_mayor",
+      "title": "경기도 안산시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17978&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-03-30"
+    },
     {
       "nttId": 17963,
       "registrationId": null,
@@ -43074,13 +43103,13 @@
     "lastPipelineRun": "2026-03-30",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 756,
-    "withRegistrationDate": 753,
+    "pollCount": 757,
+    "withRegistrationDate": 754,
     "withRegistrationId": 670,
     "withResults": 707,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
-      "district_mayor": 394,
+      "district_mayor": 395,
       "superintendent": 20,
       "mayor": 243,
       "party_support": 99
