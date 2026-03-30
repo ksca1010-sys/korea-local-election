@@ -443,6 +443,7 @@ const MapModule = (() => {
 
     async function init() {
         _mapTooltip = document.getElementById('map-tooltip');
+        if (_mapTooltip) document.body.appendChild(_mapTooltip); // will-change:transform 조상으로부터 분리
         const container = document.getElementById('map-container');
         if (!container) { console.error('MapModule: #map-container not found'); return; }
         const width = container.clientWidth;
