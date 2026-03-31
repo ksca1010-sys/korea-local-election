@@ -94,3 +94,9 @@ completed: 2026-03-30
 ---
 *Phase: 08-선거일-운영-준비*
 *Completed: 2026-03-30*
+
+## Self-Check: PASSED
+
+- SUMMARY.md: FOUND at `.planning/phases/08-선거일-운영-준비/08-01-SUMMARY.md`
+- Final commit: FOUND `6f8149a`
+- election-calendar.js: not modified (git diff clean)

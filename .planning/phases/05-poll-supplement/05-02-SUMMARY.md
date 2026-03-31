@@ -113,5 +113,13 @@ None - no external service configuration required.
 - 주의사항: 5/27 이후 `update-polls.yml` workflow 수동 disable 필요 (D-08)
 
 ---
+## Self-Check: PASSED
+
+- FOUND: `.planning/phases/05-poll-supplement/05-02-SUMMARY.md`
+- FOUND: commit `52ebb83` (feat: update-polls.yml D-05 upgrade)
+- FOUND: commit `40070e8` (fix: showSkeleton DOM bug)
+- `git diff js/election-calendar.js` = 0줄 (원복 확인)
+
+---
 *Phase: 05-poll-supplement*
 *Completed: 2026-03-29*
