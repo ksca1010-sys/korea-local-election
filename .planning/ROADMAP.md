@@ -49,7 +49,10 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
   2. 수집된 본후보 데이터가 기존 예비후보 데이터와 병합되어 `data/candidates/` JSON이 업데이트된다
   3. 후보자 탭에서 본후보 기호순 정렬이 올바르게 표시된다 (NOMINATED → 기호 정렬 전환)
   4. 병합 검증 리포트에 불일치 항목이 없거나, 불일치 항목이 수동 검토·해결된다
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 09-01-PLAN.md -- NEC 본후보 API 수집 실행 (환경 준비, dry-run, 본 실행, 결과 확인, 커밋)
+- [ ] 09-02-PLAN.md -- 수집 결과 검증 및 서비스 반영 (불일치 처리 SOP, 프론트엔드 확인, 배포)
 
 ### Phase 10: NEC 개표 API 확정
 **Goal**: 선거일 직전 실제 NEC 개표 API URL을 캡처하고 Worker parseNECResponse()를 실 응답 구조에 맞게 완성하여 통합 테스트를 통과한다
@@ -85,6 +88,6 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 | 6. 본후보 등록 대응 | v1.1 | 2/2 | Complete | 2026-03-30 |
 | 7. 개표 시스템 완성 | v1.1 | 3/3 | Complete | 2026-03-30 |
 | 8. 선거일 운영 준비 | v1.1 | 3/3 | Complete | 2026-03-30 |
-| 9. 본후보 실수집 | v1.2 | 0/? | Not started | - |
+| 9. 본후보 실수집 | v1.2 | 0/2 | Planned | - |
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
