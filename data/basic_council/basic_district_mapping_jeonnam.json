@@ -1,9 +1,9 @@
 {
   "sido": "전라남도",
   "sido_code": "46",
-  "total_districts": 79,
+  "total_districts": 81,
   "total_sigungus": 22,
-  "total_seats": 186,
+  "total_seats": 189,
   "sigungus": [
     "강진군",
     "고흥군",
@@ -265,6 +265,14 @@
     },
     {
       "sigungu": "순천시",
+      "name": "순천시 아선거구",
+      "seats": 2,
+      "dongs": [
+        "해룡면(신대리)"
+      ]
+    },
+    {
+      "sigungu": "순천시",
       "name": "순천시 자선거구",
       "seats": 2,
       "dongs": [
@@ -362,6 +370,14 @@
         "진월면",
         "다압면",
         "광영동"
+      ]
+    },
+    {
+      "sigungu": "광양시",
+      "name": "광양시 다선거구",
+      "seats": 3,
+      "dongs": [
+        "중마동(중동)"
       ]
     },
     {

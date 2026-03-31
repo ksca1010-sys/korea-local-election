@@ -1,9 +1,9 @@
 {
   "sido": "경상북도",
   "sido_code": "47",
-  "total_districts": 103,
+  "total_districts": 104,
   "total_sigungus": 22,
-  "total_seats": 243,
+  "total_seats": 245,
   "sigungus": [
     "경산시",
     "경주시",
@@ -77,6 +77,14 @@
         "두호동",
         "장량동(양덕동)",
         "환여동"
+      ]
+    },
+    {
+      "sigungu": "포항시",
+      "name": "포항시 바선거구",
+      "seats": 2,
+      "dongs": [
+        "장량동(장성동)"
       ]
     },
     {

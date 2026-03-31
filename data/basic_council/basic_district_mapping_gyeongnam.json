@@ -1,9 +1,9 @@
 {
   "sido": "경상남도",
   "sido_code": "48",
-  "total_districts": 94,
+  "total_districts": 95,
   "total_sigungus": 18,
-  "total_seats": 232,
+  "total_seats": 234,
   "sigungus": [
     "거제시",
     "거창군",
@@ -554,6 +554,14 @@
         "장평동",
         "고현동",
         "수양동"
+      ]
+    },
+    {
+      "sigungu": "양산시",
+      "name": "양산시 가선거구",
+      "seats": 2,
+      "dongs": [
+        "물금읍(범어리)"
       ]
     },
     {
