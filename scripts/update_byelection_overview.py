@@ -123,6 +123,8 @@ def main():
         for c in dist.get("candidates", []):
             if c.get("status") == "WITHDRAWN":
                 continue
+            if not c.get("name"):
+                continue
             party = c.get("partyKey", c.get("party", "independent"))
             cand_lines.append(f"- {c['name']} ({party}, {c.get('status','?')}): {c.get('career','')}")
         cand_text = "\n".join(cand_lines) if cand_lines else "(후보 미정)"

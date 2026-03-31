@@ -131,6 +131,8 @@ def format_candidates_text(candidates, election_type="governor"):
     for c in candidates:
         if c.get("status") == "WITHDRAWN":
             continue
+        if not c.get("name"):
+            continue
         if election_type == "superintendent":
             lines.append(f"- {c['name']} (성향:{c.get('stance', '?')}, {c.get('status', '?')}): {c.get('career', '')}")
         else:

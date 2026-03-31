@@ -158,6 +158,8 @@ def build_prompt_v2(region_key, region_name, district, candidates, current_overv
     for c in candidates:
         if c.get("status") == "WITHDRAWN":
             continue
+        if not c.get("name"):
+            continue
         party = party_map.get(c.get("party", ""), c.get("party", ""))
         pledges = ", ".join(c.get("pledges", [])[:3])
         career = c.get("career", "")
