@@ -114,6 +114,7 @@ def filter_sigungu(gdf_sido, sigungu):
 def find_matching_dongs(gdf_sido, district_dongs, sigungu):
     matched = []
     unmatched = []
+    processed_count = 0  # 처리된(실제) 동 수 (raw 항목 수와 다를 수 있음)
     gdf_all = load_all_hangjeongdong()
     gdf_sgg = filter_sigungu(gdf_sido, sigungu)
     if len(gdf_sgg) == 0:
@@ -140,6 +141,8 @@ def find_matching_dongs(gdf_sido, district_dongs, sigungu):
             continue
         processed_dongs.append(dong)
         i += 1
+
+    processed_count = len(processed_dongs)
 
     # DONG_EXPAND_MAP 적용: 통합 행정동을 구 행정동 목록으로 확장
     expanded_dongs = []
@@ -189,9 +192,10 @@ def find_matching_dongs(gdf_sido, district_dongs, sigungu):
             if norm_nodot == target_nodot:
                 return True
             # 번호 제거 fallback: "복산1동" → "복산동" == "복산동"
+            # 단, geojson 쪽(norm)에도 번호가 있으면 적용 금지 (목2동 ≠ 목3동)
             target_nonum = re.sub(r"\d+동$", "동", target)
             norm_nonum = re.sub(r"\d+동$", "동", norm)
-            if target_nonum == norm_nonum and target_nonum != target:
+            if target_nonum == norm_nonum and target_nonum != target and norm == norm_nonum:
                 return True
             return False
 
@@ -251,7 +255,10 @@ def find_matching_dongs(gdf_sido, district_dongs, sigungu):
         result = pd.concat(matched).drop_duplicates(subset=["adm_cd2"])
     else:
         result = gpd.GeoDataFrame()
-    return result, unmatched
+    # processed_count: 실제 고유 매칭 행 수 (크로스 선거구 dedup 이전)
+    # 여러 매핑 동이 같은 hangjeongdong에 매칭되어도 1개로 카운트
+    unique_matched = len(result) if not result.empty else 0
+    return result, unmatched, unique_matched
 
 # === 기초의원 전용 로직 ===
 
@@ -310,7 +317,7 @@ def process_sido(sido_key):
             dong_list = district["dongs"]
             seats = district.get("seats", 2)
 
-            gdf_matched, unmatched = find_matching_dongs(gdf_sido, dong_list, sigungu)
+            gdf_matched, unmatched, proc_count = find_matching_dongs(gdf_sido, dong_list, sigungu)
 
             if unmatched:
                 warnings.append(f"    ⚠ {dist_name}: 미매칭 {unmatched}")
@@ -318,6 +325,7 @@ def process_sido(sido_key):
             matched_results.append({
                 "name": dist_name, "sigungu": sigungu, "seats": seats,
                 "dong_list": dong_list, "gdf_matched": gdf_matched,
+                "processed_count": proc_count,
             })
 
         # 2단계: 중복 매칭된 행정동 제거 (겹침 방지)
@@ -361,7 +369,7 @@ def process_sido(sido_key):
                     "district_name": mr["name"],
                     "sigungu": mr["sigungu"],
                     "seats": mr["seats"],
-                    "dong_count": len(mr["dong_list"]),
+                    "dong_count": mr["processed_count"],
                     "matched_count": len(mr["gdf_matched"]),
                 },
                 "geometry": json.loads(gpd.GeoSeries([geom]).to_json())["features"][0]["geometry"]
