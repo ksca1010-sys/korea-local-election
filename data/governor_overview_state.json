@@ -1,27 +1,23 @@
 {
   "governor/busan": {
-    "contentHash": "9289480acfab66dcd257bb77b95bc224",
-    "lastUpdated": "2026-03-26T22:17:32.170821"
+    "contentHash": "b58d4328d4512bfaef2f2b14ea06c80c",
+    "lastUpdated": "2026-03-31T11:21:18.694706"
   },
   "governor/daegu": {
-    "contentHash": "7d02936715dfa624140d527da69a9e30",
-    "lastUpdated": "2026-03-27T22:21:22.631252"
+    "contentHash": "157875cc0866e66527bf48bfde9aca19",
+    "lastUpdated": "2026-03-31T11:21:35.358889"
   },
   "governor/incheon": {
-    "contentHash": "de07c02f315ab815cc7987b8d1fbec19",
-    "lastUpdated": "2026-03-26T22:18:00.568736"
+    "contentHash": "678ab75f08ecfef72b6d355e045e86be",
+    "lastUpdated": "2026-03-31T11:21:49.683036"
   },
   "governor/gwangju": {
-    "contentHash": "bef18413bf744f87ae75e52af6a65f3f",
-    "lastUpdated": "2026-03-27T22:21:41.996918",
-    "merged_jeonnam": {
-      "contentHash": "3298a65d611b2dd8179f88b99085d61d",
-      "lastUpdated": "2026-03-27T22:24:07.036067"
-    }
+    "contentHash": "72ac0865fdab342eae086a1cb0618b45",
+    "lastUpdated": "2026-03-31T11:22:05.055676"
   },
   "governor/daejeon": {
-    "contentHash": "cedb79977e667974757478a937f9bcad",
-    "lastUpdated": "2026-03-27T22:21:58.687745"
+    "contentHash": "e1b543f28d9ab10679e9ed9d3acb4ad2",
+    "lastUpdated": "2026-03-31T11:22:19.731316"
   },
   "governor/ulsan": {
     "contentHash": "c5740d6699835ab9abbebc212985aa35",
@@ -36,91 +32,92 @@
     "lastUpdated": "2026-03-27T22:22:47.590459"
   },
   "governor/gangwon": {
-    "contentHash": "ecc3f060e02bcb03cf4733eba306c733",
-    "lastUpdated": "2026-03-27T22:23:04.638326"
+    "contentHash": "4336ffb9a14205105d91a6aea245228e",
+    "lastUpdated": "2026-03-31T11:23:16.064174"
   },
   "governor/chungbuk": {
-    "contentHash": "fc13556229dd807a838c4b8d5aad248b",
-    "lastUpdated": "2026-03-26T22:19:07.165326"
+    "contentHash": "36204f2b43b938727fcbaf7a969f60b2",
+    "lastUpdated": "2026-03-31T11:23:32.479847"
   },
   "governor/chungnam": {
     "contentHash": "f6e6b954ce6348c09c7d0bd877e76c31",
     "lastUpdated": "2026-03-27T22:23:38.309494"
   },
   "governor/jeonbuk": {
-    "contentHash": "c0034fa4516cd30973a7905f031c1bbc",
-    "lastUpdated": "2026-03-27T22:23:52.415037"
+    "contentHash": "a80ef2488ccfe612d9a8001d0e437a00",
+    "lastUpdated": "2026-03-31T11:23:50.017401"
   },
   "governor/jeonnam": {
-    "_merged": "gwangju"
+    "contentHash": "0091cb37cd36ee855295966fab1f0293",
+    "lastUpdated": "2026-03-31T11:24:02.633015"
   },
   "governor/gyeongbuk": {
-    "contentHash": "0458c85c58478e54df01aaca4a9e744b",
-    "lastUpdated": "2026-03-27T22:24:21.839048"
+    "contentHash": "b6c13103981dfcfb2206843d6929a6a0",
+    "lastUpdated": "2026-03-31T11:24:18.650371"
   },
   "governor/gyeongnam": {
-    "contentHash": "47d0adf3284029d1078ceb34174d1e63",
-    "lastUpdated": "2026-03-25T22:28:18.201458"
+    "contentHash": "8c0ccd9f790712a8d1c3a98c96aa5886",
+    "lastUpdated": "2026-03-31T11:24:34.097459"
   },
   "superintendent/seoul": {
-    "contentHash": "390ce946a95cda3cdbd61468ccf56823",
-    "lastUpdated": "2026-03-27T22:25:00.868075"
+    "contentHash": "0d765176d52159dfcbffc524ab30297c",
+    "lastUpdated": "2026-03-31T11:25:07.587193"
   },
   "superintendent/busan": {
-    "contentHash": "1fbaff4f4c35ef256dc4e4d35876b84f",
-    "lastUpdated": "2026-03-27T22:25:15.318235"
+    "contentHash": "9d24273ca2d79d476494f60b00cb4626",
+    "lastUpdated": "2026-03-31T11:25:22.600960"
   },
   "superintendent/daegu": {
-    "contentHash": "4716c5cdca078c5653528310c8cfc298",
-    "lastUpdated": "2026-03-27T22:25:29.113800"
+    "contentHash": "8d2b222b4c8568434a8a1eac82df6634",
+    "lastUpdated": "2026-03-31T11:25:37.208647"
   },
   "superintendent/incheon": {
-    "contentHash": "6b8c37248c2bf8187e6a8c806ddab36a",
-    "lastUpdated": "2026-03-27T22:25:42.524042"
+    "contentHash": "f50f8313e0001a4e8759a59d3f0efc14",
+    "lastUpdated": "2026-03-31T11:25:49.398731"
   },
   "superintendent/gwangju": {
-    "contentHash": "3f92d29361ed11b4ba5d34e539c00394",
-    "lastUpdated": "2026-03-27T22:25:56.945530"
+    "contentHash": "032433d4237b5eff9ad8ecaebeea8747",
+    "lastUpdated": "2026-03-31T11:26:05.311444"
   },
   "superintendent/daejeon": {
-    "contentHash": "fb24ab59456c86d0096712ba9242842f",
-    "lastUpdated": "2026-03-25T22:29:57.654451"
+    "contentHash": "843bb0175b2d89895293641a7a2a1951",
+    "lastUpdated": "2026-03-31T11:26:20.362029"
   },
   "superintendent/ulsan": {
-    "contentHash": "f350a743dae47dced850cac7bcb6f3e6",
-    "lastUpdated": "2026-03-27T22:26:14.259138"
+    "contentHash": "9ef840f78ec07531c44b72afb42e5287",
+    "lastUpdated": "2026-03-31T11:26:35.280635"
   },
   "superintendent/gyeonggi": {
-    "contentHash": "02ea41f133b8b03c2cd5454f8232a0c7",
-    "lastUpdated": "2026-03-27T22:26:46.222516"
+    "contentHash": "0b937ce5cd7726c3e5ed8e88043c12ed",
+    "lastUpdated": "2026-03-31T11:27:06.302169"
   },
   "superintendent/gangwon": {
     "contentHash": "e8f0ee8c30be9745cd2540590822b81d",
     "lastUpdated": "2026-03-27T22:27:01.546368"
   },
   "superintendent/chungbuk": {
-    "contentHash": "2bdd65a65099b44ca956286fdb3e653f",
-    "lastUpdated": "2026-03-25T22:31:16.606271"
+    "contentHash": "16b90887033b03879b8d70d5e8e65b00",
+    "lastUpdated": "2026-03-31T11:27:38.224667"
   },
   "superintendent/chungnam": {
-    "contentHash": "8308300f069fcd4d7a77191aaddf331b",
-    "lastUpdated": "2026-03-27T22:27:19.586983"
+    "contentHash": "03d981d8abb1d54522a46a966badd3a2",
+    "lastUpdated": "2026-03-31T11:27:53.887825"
   },
   "superintendent/jeonbuk": {
-    "contentHash": "05e9a6fda9b2890eea79dbce55334575",
-    "lastUpdated": "2026-03-27T22:27:35.149256"
+    "contentHash": "36994bfcc01ae16212fc54e99128026e",
+    "lastUpdated": "2026-03-31T11:28:10.623364"
   },
   "superintendent/jeonnam": {
-    "contentHash": "da965753907ddef5ff18d2bdf4ccf534",
-    "lastUpdated": "2026-03-27T22:27:49.245279"
+    "contentHash": "bb289d458e3119a53a3d7070477b2318",
+    "lastUpdated": "2026-03-31T11:28:21.515725"
   },
   "superintendent/gyeongbuk": {
     "contentHash": "d18ed243c82e181773b8d20d49ead630",
     "lastUpdated": "2026-03-27T22:28:04.880165"
   },
   "superintendent/jeju": {
-    "contentHash": "bfbb3fbafcd49c1213b91e37167b2c5d",
-    "lastUpdated": "2026-03-27T22:28:33.020858"
+    "contentHash": "3799a28070902838aaa951aa4188083d",
+    "lastUpdated": "2026-03-31T11:29:08.861071"
   },
   "superintendent/sejong": {
     "contentHash": "ee2e6b3aa601acf97ff3d34197291401",
@@ -131,8 +128,8 @@
     "lastUpdated": "2026-03-27T22:20:49.593113"
   },
   "superintendent/gyeongnam": {
-    "contentHash": "4317dbf0cec5a5eb6ef1ac86d38b719b",
-    "lastUpdated": "2026-03-27T22:28:20.380245"
+    "contentHash": "61c1bcbe87f19384d07b72a101b446a7",
+    "lastUpdated": "2026-03-31T11:28:55.359103"
   },
   "governor/jeju": {
     "contentHash": "5f4e9f0645926360ceeb3af9afab81a2",
