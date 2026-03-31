@@ -26,10 +26,12 @@
 - ✓ 탭 스켈레톤 스크린 + 모바일 스와이프 (FEAT-04~05) — v1.0
 - ✓ Cloudflare Worker 실시간 개표 폴링 + 지도 시각화 (FEAT-06) — v1.0
 
-### Active
+### Active (v1.2)
 
-- [ ] **NEC 개표 API URL 확정** — 2026-05-26 이후 Chrome DevTools로 실제 URL 캡처 후 `workers/election-night/index.js`에 기입
-- [ ] **브라우저 UAT 3건** — 지도 시각화·폴백 UI·개표 배너 브라우저 확인 (`04-HUMAN-UAT.md`)
+- [ ] **CAND-01 본후보 실수집** — 2026-05-14: `python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw` 실행
+- [ ] **NEC 개표 API URL 확정** — 2026-05-26 이후 Chrome DevTools로 실제 URL 캡처 후 `workers/election-night/index.js`에 기입 + parseNECResponse() TODO 14곳 업데이트
+- [ ] **선거일 최종 배포** — 2026-06-01~02: `workers/DEPLOY-CHECKLIST.md` 27항목 순서대로 실행
+- [ ] **선거 결과 아카이브** — 6/3 개표 완료 후 결과 데이터 영구 보존
 
 ### Out of Scope
 
@@ -39,25 +41,28 @@
 - 선거 예측/AI 분석 수치 — 허위 데이터 방지 원칙 (헌법 제2조)
 - React/Vue/Svelte 등 프레임워크 도입 — 스택 변경 불필요
 
-## Current Milestone: v1.1 선거일 대비 (Election Readiness)
+## Current Milestone: v1.2 선거 실행
 
-**Goal:** 6.3 선거일까지 후보/여론조사 데이터를 정확하게 유지하고, 개표 시스템을 검증하여 선거 당일 무중단 운영 보장
+**Goal:** 5/14 본후보 실수집 → 5/26 NEC URL 확정 → 6/1~2 최종 배포 → 6/3 선거 당일 무중단 운영 실행
 
 **Target features:**
-- 여론조사 파이프라인 강화 — 지속 수집·검증, 누락 15건 처리
-- 본후보 등록 대응 (5/14~15) — 예비→공식 전환, 기호 배정 자동화
-- 개표 시스템 최종 완성 (5/26) — NEC URL 캡처, Worker 테스트, 브라우저 UAT 완료
-- 선거일 당일 운영 준비 — 배포 체크리스트, 캐시 전략, 폴백 시나리오
+- 2026-05-14: 본후보 실수집 (CAND-01) — fetch_nec_candidates.py 실행
+- 2026-05-26: NEC 개표 API URL 캡처 + parseNECResponse() TODO 14곳 업데이트
+- 2026-05-27: GitHub Actions update-polls.yml 수동 disable (D-08)
+- 2026-06-01~02: DEPLOY-CHECKLIST.md 27항목 최종 배포 실행
+- 2026-06-03: 선거 당일 모니터링 + 개표 실시간 시각화
+- 2026-06-04 이후: 선거 결과 아카이브 보존
 
 ## Current State
 
-**v1.0 출시** — 2026-03-29
+**v1.1 출시** — 2026-03-31
 
 - 배포: `https://korea-local-eletion.pages.dev`
-- JS: 20,460줄 (esbuild 미니파이 번들 `.deploy_dist/`에 별도 산출)
-- Cloudflare Worker: `https://election-night.ksca1010.workers.dev` (KV 캐시 60초 폴링)
-- 데이터: 광역단체장 100명, 교육감 81명, 기초단체장 851명, 여론조사 208건
-- 일정: 본후보 등록 5/14~15, 공표금지 5/28~6/3, 선거일 6.3
+- JS: ~21,000줄 (v1.1에서 app.js +_updateElectionBanner 등 추가)
+- Cloudflare Worker: `https://election-night.ksca1010.workers.dev` (parseNECResponse() skeleton, TODO(5/26) 마커 14개)
+- 데이터: 여론조사 743건 (NESDC PDF 18건 수동 채우기 완료)
+- 운영 문서: workers/CAPTURE-GUIDE.md + FALLBACK-GUIDE.md + DEPLOY-CHECKLIST.md(27항목)
+- 일정: 본후보 실수집 5/14, 공표금지 5/28~6/3, NEC URL 캡처 5/26 이후, 선거일 6.3
 
 ## Constraints
 
@@ -78,7 +83,11 @@
 | GSD 마일스톤 v1.0 | 버그 수정 + 파이프라인 자동화 + 품질 개선 동시 목표 | ✓ Good — 4 phases 9 plans in 1 day |
 | esbuild 번들 | deploy.sh에 빌드 단계 추가, JS 47% 감소 | ✓ Good |
 | Cloudflare Worker KV 캐시 | 브라우저 직접 NEC 폴링 대신 Worker 프록시 | ✓ Good — CORS 문제 우회, 서버 부하 분산 |
-| NEC_URL stub (2026-05-26 확정) | 개표 URL은 선거일 직전 캡처 필요, 미리 빈 값으로 유지 | — Pending |
+| NEC_URL stub (2026-05-26 확정) | 개표 URL은 선거일 직전 캡처 필요, 미리 빈 값으로 유지 | — Pending (5/26 이후) |
+| 본후보 파이프라인 날짜 게이팅 | GitHub Actions if: 타임존 문제 방지 위해 Python 내 처리 | ✓ Good |
+| render() 단일 지점 NOMINATED 필터 | Anti-Pattern(buildModel 각 분기 중복 필터) 회피 | ✓ Good |
+| KV fixture 직접 주입 통합 테스트 | wrangler --preview false 필수, scheduled() 시간 조건 우회 | ✓ Good |
+| 운영 문서 workers/ 집중 배치 | CAPTURE/FALLBACK/DEPLOY 3종 한 곳에서 관리 | ✓ Good |
 
 ---
 ## Evolution
@@ -99,4 +108,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-29 — Milestone v1.1 started*
+*Last updated: 2026-03-31 — Milestone v1.1 complete*

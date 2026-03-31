@@ -3,7 +3,8 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-03-29)
-- 🔄 **v1.1 선거일 대비** — Phases 5-8 (in progress)
+- ✅ **v1.1 선거일 대비** — Phases 5-8 (shipped 2026-03-31)
+- 📋 **v1.2 선거 실행** — 미정 (planned)
 
 ## Phases
 
@@ -19,78 +20,24 @@ Full details: `.planning/milestones/v1.0-ROADMAP.md`
 
 </details>
 
-### v1.1 선거일 대비
+<details>
+<summary>✅ v1.1 선거일 대비 (Phases 5-8) — SHIPPED 2026-03-31</summary>
 
-- [x] **Phase 5: 여론조사 보완** — 누락 15건 채우기 + 지속 수집 파이프라인 안정화 (completed 2026-03-29)
-- [x] **Phase 6: 본후보 등록 대응** — 5/14~15 등록에 맞춰 후보 데이터 공식 전환 (completed 2026-03-30)
-- [ ] **Phase 7: 개표 시스템 완성** — NEC URL 캡처 + Worker 테스트 + 브라우저 UAT
-- [x] **Phase 8: 선거일 운영 준비** — 배포 체크리스트 + 공표금지 검증 + 폴백 절차 확인 (completed 2026-03-30)
+- [x] Phase 5: 여론조사 보완 (2/2 plans) — completed 2026-03-29
+- [x] Phase 6: 본후보 등록 대응 (2/2 plans) — completed 2026-03-30
+- [x] Phase 7: 개표 시스템 완성 (3/3 plans) — completed 2026-03-30
+- [x] Phase 8: 선거일 운영 준비 (3/3 plans) — completed 2026-03-30
 
-## Phase Details
+Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
-### Phase 5: 여론조사 보완
-**Goal**: 여론조사 데이터 공백 없이 5/28 공표금지 전까지 유지된다
-**Depends on**: Nothing (즉시 시작 가능)
-**Timeline**: 즉시 ~ 5/27
-**Requirements**: POLL-01, POLL-02
-**Success Criteria** (what must be TRUE):
-  1. 사용자가 여론조사 탭을 열면 이전에 지지율이 비어있던 15건에 수치가 표시된다
-  2. 신규 여론조사가 등록되면 파이프라인 재실행만으로 탭에 반영된다
-  3. 5/28 00:00 KST 이후 여론조사 탭이 자동으로 빈 상태를 보여준다 (공표금지)
-**Plans:** 2/2 plans complete
-Plans:
-- [x] 05-01-PLAN.md — 여론조사 빈값 32건 채우기 (reparse + 수동 확인)
-- [x] 05-02-PLAN.md — GitHub Actions D-05 규격 업그레이드 + 공표금지 브라우저 검증
+</details>
 
-### Phase 6: 본후보 등록 대응
-**Goal**: 5/15 18:00 이후 공식 후보 목록과 기호순 정렬이 정확하게 작동한다
-**Depends on**: Phase 5 (여론조사와 독립적이나 CAND 파이프라인이 안정된 상태 필요)
-**Timeline**: 준비 5/13 전 완료 → 실행 5/14~15 등록 기간
-**Requirements**: CAND-01, CAND-02, CAND-03
-**Success Criteria** (what must be TRUE):
-  1. 후보 탭에서 예비후보(DECLARED/EXPECTED)가 사라지고 공식 후보(NOMINATED)만 표시된다
-  2. 5/15 18:00 이후 후보 탭의 정렬 기준이 기호순으로 전환된다
-  3. 등록 취소 또는 무효 처리된 후보가 목록에서 제거되어 표시되지 않는다
-  4. 후보 수가 변경된 선거구를 지도에서 클릭하면 최신 후보 수가 반영된다
-**Plans:** 2/2 plans complete
-Plans:
-- [x] 06-01-PLAN.md — NEC 본후보 API 파이프라인 구현 (fetch_nec_candidates.py 교체 + Actions)
-- [x] 06-02-PLAN.md — 후보 탭 NOMINATED 필터 + 기호순 UI 전환
-**UI hint**: yes
-**Completed**: 2026-03-30
+### 📋 v1.2 선거 실행 (Planned)
 
-### Phase 7: 개표 시스템 완성
-**Goal**: 선거 당일 NEC API에서 개표 데이터를 받아 지도에 실시간 표시할 준비가 완료된다
-**Depends on**: Phase 4 (v1.0 Worker 구현체 위에 완성)
-**Timeline**: 5/26 이후 NEC URL 캡처 → 5/30 전 완료
-**Requirements**: ELEC-01, ELEC-02, ELEC-03
-**Success Criteria** (what must be TRUE):
-  1. Worker 코드에 실제 NEC 개표 API URL이 기입되어 있고 URL 확정 절차가 문서화된다
-  2. Worker 통합 테스트 실행 결과 실제 NEC 응답을 파싱하여 KV에 저장하는 것이 확인된다
-  3. 브라우저에서 지도 위에 개표 결과 레이어가 올바르게 렌더링된다
-  4. Worker 응답 없을 때 UI가 폴백 메시지를 보여준다
-  5. 개표 진행 배너가 선거일 당일 노출된다
-**Plans:** 2/3 plans executed
-Plans:
-- [x] 07-01-PLAN.md — parseNECResponse() 파서 skeleton + CAPTURE-GUIDE.md
-- [x] 07-02-PLAN.md — Worker 통합 테스트 + 개표 배너 활성화
-- [ ] 07-03-PLAN.md — 브라우저 UAT 3건 (checkpoint)
-**UI hint**: yes
-
-### Phase 8: 선거일 운영 준비
-**Goal**: 6/3 선거 당일 무중단 서비스를 위한 모든 점검이 완료된다
-**Depends on**: Phase 7
-**Timeline**: 6/1~2
-**Requirements**: OPS-01, OPS-02, OPS-03
-**Success Criteria** (what must be TRUE):
-  1. 배포 체크리스트 문서를 보고 단계별로 최종 배포를 실행할 수 있다
-  2. 5/28 00:00 ~ 6/3 18:00 사이에 여론조사 탭이 자동으로 데이터를 숨기는 것이 검증된다
-  3. Worker가 응답하지 않을 때 수동으로 JSON 폴백으로 전환하는 절차를 따라 5분 내 복구된다
-**Plans:** 3/3 plans complete
-Plans:
-- [x] 08-01-PLAN.md — 공표금지 경계값 코드 검증 (OPS-02)
-- [x] 08-02-PLAN.md — FALLBACK-GUIDE.md 작성 + 폴백 코드 검증 (OPS-03)
-- [x] 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + 완결성 검증 (OPS-01)
+To be defined via `/gsd:new-milestone` — 주요 후보 항목:
+- 2026-05-14: Phase 6 CAND-01 본후보 실수집 실행
+- 2026-05-26: NEC URL 캡처 + parseNECResponse() TODO 14곳 업데이트
+- 2026-06-01~02: DEPLOY-CHECKLIST.md 따라 최종 배포
 
 ## Progress
 
@@ -102,5 +49,5 @@ Plans:
 | 4. 선거일 실시간 개표 | v1.0 | 2/2 | Complete | 2026-03-29 |
 | 5. 여론조사 보완 | v1.1 | 2/2 | Complete | 2026-03-29 |
 | 6. 본후보 등록 대응 | v1.1 | 2/2 | Complete | 2026-03-30 |
-| 7. 개표 시스템 완성 | v1.1 | 2/3 | In Progress|  |
-| 8. 선거일 운영 준비 | v1.1 | 3/3 | Complete   | 2026-03-30 |
+| 7. 개표 시스템 완성 | v1.1 | 3/3 | Complete | 2026-03-30 |
+| 8. 선거일 운영 준비 | v1.1 | 3/3 | Complete | 2026-03-30 |

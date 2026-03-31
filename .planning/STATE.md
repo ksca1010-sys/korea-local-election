@@ -1,97 +1,54 @@
 ---
 gsd_state_version: 1.0
-milestone: v1.1
-milestone_name: 선거일 대비
-status: verifying
-stopped_at: Completed 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + OPS-01 8/8 검증 완료
-last_updated: "2026-03-30T04:49:09.247Z"
-last_activity: 2026-03-30
+milestone: v1.2
+milestone_name: 선거 실행
+status: planning
+stopped_at: v1.1 milestone archived — ready for v1.2 planning
+last_updated: "2026-03-31T00:00:00.000Z"
+last_activity: 2026-03-31
 progress:
-  total_phases: 4
-  completed_phases: 4
-  total_plans: 10
-  completed_plans: 10
-  percent: 50
+  total_phases: 0
+  completed_phases: 0
+  total_plans: 0
+  completed_plans: 0
+  percent: 0
 ---
 
 # Project State
 
 ## Project Reference
 
-See: .planning/PROJECT.md (updated 2026-03-29)
+See: .planning/PROJECT.md (updated 2026-03-31)
 
 **Core value:** 허위 데이터 없이, 모든 선거구의 후보·여론조사·역대 결과를 한 화면에서 빠르게 탐색
-**Current focus:** Phase 08 — 선거일-운영-준비
+**Current focus:** v1.2 선거 실행 — /gsd:new-milestone으로 시작
 
-## Current Position
+## Archived
 
-Phase: 08
-Plan: Not started
-Status: Phase complete — ready for verification
-Last activity: 2026-03-30
-
-Progress: [██████░░░░] 50% (v1.1 기준: Phase 5~8 중 2개 완료)
+- v1.0 MVP: `.planning/milestones/v1.0-ROADMAP.md`
+- v1.1 선거일 대비: `.planning/milestones/v1.1-ROADMAP.md`
 
 ## Timeline Constraints
 
-| Phase | Deadline | Constraint |
-|-------|----------|-----------|
-| Phase 5 | 5/27 | 5/28 공표금지 전 여론조사 정리 완료 — 완료 |
-| Phase 6 | 5/13 준비 / 5/14~15 실행 | 본후보 등록 기간 대응 — 파이프라인 완료, 5/14 실행 대기 |
-| Phase 7 | 5/26 이후 ~ 5/30 전 | NEC URL 캡처 후 Worker 완성 |
-| Phase 8 | 6/1~2 | 선거일 전날 최종 점검 |
+| 항목 | 날짜 | 내용 |
+|------|------|------|
+| 본후보 실수집 | 2026-05-14 | fetch_nec_candidates.py --log-raw 실행 (CAND-01) |
+| NEC URL 캡처 | 2026-05-26 이후 | Chrome DevTools → workers/CAPTURE-GUIDE.md |
+| 공표금지 대비 | 2026-05-27 | update-polls.yml 수동 disable (D-08) |
+| 공표금지 시작 | 2026-05-28 00:00 KST | 여론조사 탭 자동 숨김 (검증 완료) |
+| 최종 배포 | 2026-06-01~02 | DEPLOY-CHECKLIST.md 27항목 |
+| 선거일 | 2026-06-03 | 실시간 개표 + 투표 종료 18:00 |
 
-## Performance Metrics
+## Pending Todos
 
-**Velocity:**
-
-- Total plans completed: 4 (Phase 5: 2, Phase 6: 2)
-- Average duration: Phase 6: 207s (Plan 01) + 1440s (Plan 02)
-- Total execution time: ~3h (v1.1 누적)
-
-(v1.0 reference: 9 plans, 4 phases, 1 day)
-
-## Accumulated Context
-
-### Decisions
-
-Decisions are logged in PROJECT.md Key Decisions table.
-Carried over from v1.0:
-
-- [Phase 04-election-night]: Worker URL https://election-night.ksca1010.workers.dev; KV id db737acc9d624075bab261c60628f95c; NEC URL stub — 2026-05-26 Chrome DevTools 캡처 마감
-- [Phase 04-election-night]: r.declared===true 비교만 — 개표율 기반 당선 추정 없음 (D-11); 수동 폴백 UI detail-panel 하단 배치
-- audit_numeric_fields.py uses nttId OR sourceUrl as pollSource criterion; deploy.sh pre-flight gate blocks deployment on unverified float support values
-- [Phase 05]: 8건 polls results 빈값 유지: 제주 현안조사 2건, KBS/갤럽 전남광주통합특별시 현안조사 6건 — 후보 적합도 데이터 없음 확인
-- [Phase 05]: party_support 4건은 설계상 results=[] 정상 — reparse_pdfs.py 필터 추가
-- [Phase 05-02]: update-polls.yml 파일명 유지 — rename 시 GitHub 이전 workflow 잔존 방지; 공표금지 로직 workflow 미포함 — 5/27 수동 disable (D-08); getKST() mock 패턴 날짜 검증 표준으로 확립
-- [Phase 06-01]: nec_precand_sync.fetch_precandidates() 재사용 — 새 HTTP 클라이언트 금지 (Don't Hand-Roll); 날짜 게이팅 Python 내 처리 — GitHub Actions if: 타임존 문제 방지; ballotNumber 4개 필드 시도 순서 확정
-- [Phase 06-02]: NOMINATED/WITHDRAWN 필터를 render() 단일 지점에서 처리 — Anti-Pattern 회피; ballot_number 모드에서 NOMINATED만 표시, status_priority 모드에서 WITHDRAWN만 제거; UAT 승인 2026-03-30
-- [Phase 07-01]: parseNECResponse() skeleton: regex/텍스트 파싱만 사용 (Worker 런타임 DOMParser 없음), declared는 HTML '당선' 텍스트만 허용 (헌법 제2조, D-11)
-- [Phase 07]: KV fixture 직접 주입으로 scheduled() 시간 범위 조건 우회 — wrangler --preview false 필수
-- [Phase 07]: _updateElectionBanner는 .banner-text textContent만 업데이트 — display 제어는 sidebar.js renderElectionBanner() 담당
-- [Phase 08]: isPublicationBanned() >= DATES.PUBLICATION_BAN_START && < DATES.VOTE_END — 5/28 00:00 포함, 6/3 18:00 정각 미포함 (허용) 동작 OPS-02 검증 완료
-- [Phase 08-02]: FALLBACK-GUIDE.md를 workers/ 디렉터리에 CAPTURE-GUIDE.md와 함께 배치 — 선거 당일 운영 문서 집중 관리
-- [Phase 08-02]: declared:true 조건을 주의사항 섹션에 명시 — 헌법 제2조(LLM 추정 당선 금지) 운영자 교육
-- [Phase 08-03]: DEPLOY-CHECKLIST.md를 workers/ 디렉터리에 5-Part 27항목 체크리스트로 작성 — NEC_URL 기입부터 스모크 테스트까지 전 흐름 문서화 (OPS-01 완료)
-
-### Pending Todos
-
-- **[Phase 06 실행]** 2026-05-14: `python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw` 실행 — NEC 본후보 API 첫 수집 (CAND-01 완성)
-- **[Phase 06 실행]** 2026-05-14~15: GitHub Actions update-candidates.yml 수동 dispatch 또는 cron 확인
-- NEC 개표 API URL 확정 (2026-05-26 이후 Chrome DevTools 캡처) → Phase 7
-- 브라우저 UAT 3건 완료 (04-HUMAN-UAT.md) → Phase 7
-- 여론조사 빈값 15건 NESDC PDF 직접 확인 → Phase 5 (지속)
-
-### Blockers/Concerns
-
-- Worker 테스트 마감: 2026-05-26 (선거일 1주 전) — 지연 시 수동 JSON 폴백으로 전환
-- 여론조사 빈값 15건: NESDC PDF 직접 확인 필요
-- Phase 6는 5/14 당일 선관위 API 응답에 의존 — 등록 직후 즉시 실행 필요
-- Phase 7은 NEC URL 캡처 전까지 착수 불가 (5/26 이후)
+- **[CAND-01]** 2026-05-14: `python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw` 실행 — NEC 본후보 API 첫 수집
+- **[NEC URL]** 2026-05-26 이후: Chrome DevTools 캡처 → workers/election-night/index.js NEC_URL 기입 + TODO 14곳 업데이트
+- **[D-08]** 2026-05-27: GitHub Actions update-polls.yml 수동 disable
+- **[DEPLOY]** 2026-06-01~02: workers/DEPLOY-CHECKLIST.md 순서대로 최종 배포 실행
 
 ## Session Continuity
 
-Last session: 2026-03-30T04:45:20.420Z
-Stopped at: Completed 08-03-PLAN.md — DEPLOY-CHECKLIST.md 작성 + OPS-01 8/8 검증 완료
+Last session: 2026-03-31
+Stopped at: v1.1 milestone complete — MILESTONES.md, ROADMAP.md, PROJECT.md, STATE.md updated
 Resume file: None
-Next action: Phase 07 계획 수립 (5/26 이후 NEC URL 캡처 이후 착수)
+Next action: `/gsd:new-milestone` — v1.2 선거 실행 마일스톤 시작 (`/clear` 후 fresh context)
