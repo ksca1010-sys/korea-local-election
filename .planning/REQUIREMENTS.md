@@ -47,8 +47,14 @@
 
 ## Traceability
 
-| REQ-ID | Phase | Plan |
-|--------|-------|------|
-| DATA-01, DATA-02 | Phase 9 | TBD |
-| ELEC-01, ELEC-02, ELEC-03 | Phase 10 | TBD |
-| OPS-01, OPS-02, OPS-03, OPS-04 | Phase 11 | TBD |
+| REQ-ID | Phase | Plan | Status |
+|--------|-------|------|--------|
+| DATA-01 | Phase 9 | TBD | Pending |
+| DATA-02 | Phase 9 | TBD | Pending |
+| ELEC-01 | Phase 10 | TBD | Pending |
+| ELEC-02 | Phase 10 | TBD | Pending |
+| ELEC-03 | Phase 10 | TBD | Pending |
+| OPS-01 | Phase 11 | TBD | Pending |
+| OPS-02 | Phase 11 | TBD | Pending |
+| OPS-03 | Phase 11 | TBD | Pending |
+| OPS-04 | Phase 11 | TBD | Pending |
