@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-24",
+    "lastUpdated": "2026-03-31",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 17,
     "actingCount": 1,
-    "lastFactCheck": "2026-03-24T03:57:52.936233"
+    "lastFactCheck": "2026-03-31T04:16:09.932076"
   },
   "governors": {
     "seoul": {
@@ -57,15 +57,7 @@
       "party": "democratic",
       "electedParty": "democratic",
       "electedName": "강기정",
-      "_source": "NEC_API",
-      "merged_jeonnam": {
-        "region": "jeonnam",
-        "name": "김영록",
-        "party": "democratic",
-        "electedParty": "democratic",
-        "electedName": "김영록",
-        "_source": "NEC_API"
-      }
+      "_source": "NEC_API"
     },
     "daejeon": {
       "region": "daejeon",
@@ -124,7 +116,12 @@
       "_source": "NEC_API"
     },
     "jeonnam": {
-      "_merged": "gwangju"
+      "region": "jeonnam",
+      "name": "김영록",
+      "party": "democratic",
+      "electedParty": "democratic",
+      "electedName": "김영록",
+      "_source": "NEC_API"
     },
     "gyeongbuk": {
       "region": "gyeongbuk",
