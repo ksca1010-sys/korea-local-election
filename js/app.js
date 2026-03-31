@@ -196,8 +196,14 @@ const App = (() => {
         setupPanelClose();
         setupPanelResize();
         setupMobilePanelSwipe();
+        // 백드롭 클릭 → 패널 닫기
+        const bsBackdrop = document.getElementById('bs-backdrop');
+        if (bsBackdrop) {
+            bsBackdrop.addEventListener('click', closePanel);
+        }
         _initSwipeClose();
         setupHomeLink();
+        _setupLegendToggle();
 
         // Load election terms for tooltips
         try {
@@ -234,6 +240,11 @@ const App = (() => {
                 Sidebar.renderElectionBanner();
             }
         });
+
+        // 모바일: 초기 진입 시 패널 숨김 → 지도가 먼저 보임 (카카오맵/네이버지도 패턴)
+        if (window.innerWidth <= 768) {
+            setPanelStage('collapsed', false);
+        }
 
         // Initialize router (popstate listener) & restore from URL hash
         Router.init();
@@ -450,10 +461,13 @@ const App = (() => {
 
         if (window.innerWidth <= 768) {
             const mapSection = document.getElementById('map-section');
+            const backdrop = document.getElementById('bs-backdrop');
             if (stage === 'panel-half' || stage === 'panel-full') {
                 if (mapSection) mapSection.style.pointerEvents = 'none';
+                if (backdrop) backdrop.classList.add('active');
             } else {
                 if (mapSection) mapSection.style.pointerEvents = '';
+                if (backdrop) backdrop.classList.remove('active');
             }
         }
     }
@@ -461,7 +475,10 @@ const App = (() => {
     function setupMobilePanelSwipe() {
         const panel = document.getElementById('detail-panel');
         const header = panel?.querySelector('.panel-header');
+        const dragHandle = panel?.querySelector('.drag-handle');
         if (!panel || !header) return;
+        // 드래그 핸들 + 헤더 모두 탭/스와이프 대상
+        const dragTargets = [header, dragHandle].filter(Boolean);
 
         let startY = 0;
         let startTranslateY = 0;
@@ -478,24 +495,45 @@ const App = (() => {
             return (getPanelTotalH() - h) / 100 * window.innerHeight;
         }
 
-        header.addEventListener('touchstart', (e) => {
-            if (window.innerWidth > 768 || _currentPanelStage === 'collapsed') return;
-            startY = e.touches[0].clientY;
-            startTranslateY = getCurrentTranslateY();
-            dragStartStage = _currentPanelStage;
-            startTime = Date.now();
-            dragging = true;
-            panel.classList.remove('panel-animating');
-        }, { passive: true });
+        // PEEK 상태에서 탭 → HALF 확장 (헤더 + 드래그 핸들)
+        dragTargets.forEach(el => {
+            el.addEventListener('click', () => {
+                if (window.innerWidth > 768) return;
+                if (_currentPanelStage === 'panel-peek') setPanelStage('panel-half');
+            });
 
-        header.addEventListener('touchmove', (e) => {
-            if (!dragging || window.innerWidth > 768) return;
-            e.preventDefault();
-            const dy = e.touches[0].clientY - startY;
-            const newTY = Math.max(0, startTranslateY + dy);
-            panel.style.transform = `translateY(${newTY}px)`;
-            PANEL_STAGES.forEach(s => panel.classList.remove(s));
-        }, { passive: false });
+            el.addEventListener('touchstart', (e) => {
+                if (window.innerWidth > 768 || _currentPanelStage === 'collapsed') return;
+                startY = e.touches[0].clientY;
+                startTranslateY = getCurrentTranslateY();
+                dragStartStage = _currentPanelStage;
+                startTime = Date.now();
+                dragging = true;
+                panel.classList.remove('panel-animating');
+            }, { passive: true });
+
+            el.addEventListener('touchmove', (e) => {
+                if (!dragging || window.innerWidth > 768) return;
+                e.preventDefault();
+                const dy = e.touches[0].clientY - startY;
+                const newTY = Math.max(0, startTranslateY + dy);
+                panel.style.transform = `translateY(${newTY}px)`;
+                PANEL_STAGES.forEach(s => panel.classList.remove(s));
+            }, { passive: false });
+
+            el.addEventListener('touchend', (e) => {
+                if (!dragging || window.innerWidth > 768) return;
+                const endY = e.changedTouches[0]?.clientY || startY;
+                finishDrag(endY);
+            }, { passive: true });
+
+            el.addEventListener('touchcancel', () => {
+                if (!dragging) return;
+                dragging = false;
+                panel.style.transform = '';
+                setPanelStage(dragStartStage);
+            }, { passive: true });
+        });
 
         function finishDrag(endY) {
             dragging = false;
@@ -527,23 +565,12 @@ const App = (() => {
                 setPanelStage(nextStage);
             }
         }
-
-        header.addEventListener('touchend', (e) => {
-            if (!dragging || window.innerWidth > 768) return;
-            const endY = e.changedTouches[0]?.clientY || startY;
-            finishDrag(endY);
-        }, { passive: true });
-
-        header.addEventListener('touchcancel', () => {
-            if (!dragging) return;
-            dragging = false;
-            panel.style.transform = '';
-            setPanelStage(dragStartStage);
-        }, { passive: true });
     }
 
     // ── resize 시 모바일 ↔ 데스크톱 패널 상태 정리 ──
     let _prevIsMobile = window.innerWidth <= 768;
+    // 초기 body 클래스 설정
+    document.body.classList.toggle('mobile-layout', _prevIsMobile);
     window.addEventListener('resize', (() => {
         let timer;
         return () => {
@@ -552,6 +579,7 @@ const App = (() => {
                 const isMobile = window.innerWidth <= 768;
                 if (isMobile === _prevIsMobile) return;
                 _prevIsMobile = isMobile;
+                document.body.classList.toggle('mobile-layout', isMobile);
 
                 const panel = document.getElementById('detail-panel');
                 if (!panel) return;
@@ -644,6 +672,55 @@ const App = (() => {
         if (card) card.style.display = 'none';
     }
 
+    // ── 모바일 PEEK 선거유형 칩 ──
+    const PEEK_CHIP_DEFS = {
+        province: [
+            { type: 'governor',            icon: 'fa-landmark',     label: '광역단체장' },
+            { type: 'superintendent',       icon: 'fa-graduation-cap', label: '교육감' },
+            { type: 'council',             icon: 'fa-users',        label: '광역의원' },
+            { type: 'councilProportional', icon: 'fa-layer-group',  label: '광역비례' },
+        ],
+        district: [
+            { type: 'mayor',                      icon: 'fa-building',      label: '기초단체장' },
+            { type: 'localCouncil',               icon: 'fa-people-group',  label: '기초의원' },
+            { type: 'localCouncilProportional',   icon: 'fa-network-wired', label: '기초비례' },
+        ],
+    };
+
+    function _buildPeekChips(regionKey) {
+        const container = document.getElementById('peek-election-chips');
+        if (!container) return;
+        container.innerHTML = '';
+
+        const mapMode = MapModule.getMapMode ? MapModule.getMapMode() : 'province';
+        const level = (mapMode === 'province') ? 'province' : 'district';
+        const defs = [...(PEEK_CHIP_DEFS[level] || [])];
+
+        // 재보궐: 해당 regionKey 또는 하위 지역구에 재보궐 있을 때만 추가
+        const byelectionKeys = Object.keys(ElectionData._byElectionCache?.districts || {});
+        const hasByelection = byelectionKeys.some(k =>
+            k === regionKey || k.startsWith(regionKey + '-')
+        );
+        if (hasByelection) {
+            defs.push({ type: 'byElection', icon: 'fa-calendar-check', label: '재보궐' });
+        }
+
+        defs.forEach(def => {
+            const btn = document.createElement('button');
+            btn.className = 'peek-chip' + (AppState.currentElectionType === def.type ? ' active' : '');
+            btn.innerHTML = `<i class="fas ${def.icon}"></i>${def.label}`;
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                // 사이드바 원본 필터 버튼 클릭으로 선거유형 전환
+                const sidebarBtn = document.querySelector(`.sidebar .filter-btn[data-type="${def.type}"]`);
+                if (sidebarBtn) sidebarBtn.click();
+                // HALF 확장
+                setPanelStage('panel-half');
+            });
+            container.appendChild(btn);
+        });
+    }
+
     function setupMiniCard() {
         const card = document.getElementById('map-mini-card');
         if (!card) return;
@@ -713,6 +790,32 @@ const App = (() => {
         const homeBtn = document.getElementById('home-link');
         if (!homeBtn) return;
         homeBtn.addEventListener('click', resetToHome);
+    }
+
+    // ============================================
+    // 범례 토글 (모바일 전용)
+    // ============================================
+    function _setupLegendToggle() {
+        const btn = document.getElementById('legend-toggle-btn');
+        const legend = document.getElementById('map-legend');
+        if (!btn || !legend) return;
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const visible = legend.classList.toggle('legend-visible');
+            btn.classList.toggle('active', visible);
+            btn.setAttribute('aria-pressed', String(visible));
+        });
+        // 지도 클릭 시 범례 닫기
+        const mapContainer = document.getElementById('map-container');
+        if (mapContainer) {
+            mapContainer.addEventListener('click', () => {
+                if (legend.classList.contains('legend-visible')) {
+                    legend.classList.remove('legend-visible');
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-pressed', 'false');
+                }
+            }, { passive: true });
+        }
     }
 
     // ============================================
@@ -789,7 +892,8 @@ const App = (() => {
         switchTabForRegion();
 
         if (window.innerWidth <= 768 && !AppState._restoringFromHash) {
-            showMiniCard(regionKey, region);
+            _buildPeekChips(regionKey);
+            setPanelStage('panel-peek');
         } else {
             openPanel();
         }

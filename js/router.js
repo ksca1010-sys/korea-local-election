@@ -63,7 +63,13 @@ const Router = (() => {
                 if (state.districtName) {
                     const councilTypes = ['council', 'localCouncil'];
                     if (state.electionType === 'byElection') {
-                        // 재보궐: onByElectionSelected로 직접 이동
+                        // 재보궐: onByElectionSelected로 직접 이동 (존재하지 않는 키면 byElection 목록으로 폴백)
+                        if (!ElectionData.getByElectionData(state.districtName)) {
+                            const filterBtn = document.querySelector('.filter-btn[data-type="byElection"]');
+                            if (filterBtn) filterBtn.click();
+                            _hashUpdateSuppressed = false;
+                            return;
+                        }
                         App.onByElectionSelected(state.districtName);
                         setTimeout(() => {
                             _hashUpdateSuppressed = true;

@@ -107,7 +107,23 @@ const CouncilTab = (() => {
         function doRender() {
             const candidates = ElectionData.getCouncilCandidates?.(regionKey, districtName, electionType) || [];
             const activeCandidates = candidates.filter(c => c.status !== 'WITHDRAWN');
-            const incumbents = activeCandidates.filter(c => c.isIncumbent);
+            let incumbents = activeCandidates.filter(c => c.isIncumbent);
+
+            // 광역의원: 후보자 파일에 현직자가 없으면 council_members.json에서 조회
+            if (incumbents.length === 0 && electionType === 'council') {
+                const members = ElectionData.getCouncilMembers?.(regionKey, districtName) || [];
+                incumbents = members.map(m => ({ name: m.name, party: m.party, career: m.career || '', isIncumbent: true }));
+            }
+            // 기초의원: 후보자 파일에 현직자가 없으면 local_council_members.json에서 조회
+            // district_name에 공백이 있을 수 있으므로 공백 제거 후 조회 (예: "성동구 가선거구" → "성동구가선거구")
+            if (incumbents.length === 0 && electionType === 'localCouncil') {
+                const normalizedName = districtName.replace(/\s+/g, '');
+                const entry = ElectionData.getLocalCouncilMembers?.(regionKey, normalizedName);
+                if (entry?.members) {
+                    incumbents = entry.members.map(m => ({ name: m.name, party: m.party, career: m.career || '', isIncumbent: true }));
+                }
+            }
+
             _renderOverviewHTML(regionKey, districtName, electionType, label, seats, activeCandidates, incumbents);
         }
 
@@ -118,6 +134,9 @@ const CouncilTab = (() => {
         const promises = [loadDistrictMapping(regionKey, electionType)];
         if (ElectionData.loadCouncilCandidates) {
             promises.push(ElectionData.loadCouncilCandidates(regionKey, electionType));
+        }
+        if (electionType === 'council' && ElectionData.loadCouncilMembersData) {
+            promises.push(ElectionData.loadCouncilMembersData());
         }
         if (electionType === 'localCouncil' && ElectionData.loadLocalCouncilMembersData) {
             promises.push(ElectionData.loadLocalCouncilMembersData());

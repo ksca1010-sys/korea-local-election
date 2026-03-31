@@ -459,9 +459,9 @@ const MapModule = (() => {
         zoom = d3.zoom()
             .scaleExtent([0.5, 8])
             .filter(event => {
-                // 터치 이벤트: 핀치(멀티터치)만 줌 허용, 단일 터치는 클릭으로 처리
-                if (event.type === 'touchstart') return event.touches.length >= 2;
-                if (event.type === 'touchmove') return event.touches.length >= 2;
+                // 터치: 단일 터치 = pan 허용, 멀티 터치 = 핀치 줌 허용
+                if (event.type === 'touchstart') return true;
+                if (event.type === 'touchmove') return true;
                 // 마우스 휠 + 마우스 드래그는 허용
                 return !event.ctrlKey || event.type !== 'wheel';
             })
@@ -471,16 +471,8 @@ const MapModule = (() => {
 
         svg.call(zoom);
 
-        // 단일 터치 스크롤 시 페이지 스크롤 허용 (pinch zoom 중에는 막음)
-        svg.node().addEventListener('touchstart', (e) => {
-            if (e.touches.length === 1) {
-                // 단일 터치: 지도 클릭 처리 (D3가 처리), 브라우저 스크롤 허용
-                svg.node().style.touchAction = 'pan-y';
-            } else {
-                // 멀티터치: 핀치 줌 처리
-                svg.node().style.touchAction = 'none';
-            }
-        }, { passive: true });
+        // 터치 액션: D3가 pan/zoom 모두 처리 (단일=pan, 멀티=pinch zoom)
+        svg.node().style.touchAction = 'none';
 
         // Initial projection (will be fitted after data loads)
         projection = d3.geoMercator();
@@ -569,6 +561,7 @@ const MapModule = (() => {
         window.addEventListener('resize', debounce(() => {
             const w = container.clientWidth;
             const h = container.clientHeight;
+            if (!w || !h) return;
             svg.attr('width', w).attr('height', h);
             if (mapData) {
                 const padding = 30;
@@ -1120,7 +1113,10 @@ const MapModule = (() => {
         // 전남광주통합: 전남 클릭 → 광주로 리다이렉트
         if (key === 'jeonnam' && _isMergedJeonnam()) key = 'gwangju';
         if (!handleRegionSelection(key)) return;
-        // 클릭 시 툴팁을 2초간 고정
+        // 모바일: mouseover 없이 클릭/탭으로 진입하므로 툴팁을 직접 표시
+        if (event && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+            showTooltip(event, key);
+        }
         _pinTooltip(2000);
         selectRegion(key);
     }
@@ -1129,6 +1125,10 @@ const MapModule = (() => {
         // 전남광주통합: 전남 클릭 → 광주로 리다이렉트
         if (key === 'jeonnam' && _isMergedJeonnam()) key = 'gwangju';
         if (!key || !handleRegionSelection(key)) return;
+        // 모바일: mouseover 없이 클릭/탭으로 진입하므로 툴팁을 직접 표시
+        if (event && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+            showTooltip(event, key);
+        }
         _pinTooltip(2000);
         selectRegion(key);
     }
@@ -1909,7 +1909,7 @@ const MapModule = (() => {
     // ============================================
     function loadCouncilGeo(regionKey) {
         if (councilGeoCache[regionKey]) return Promise.resolve(councilGeoCache[regionKey]);
-        const url = `data/council/council_districts_${regionKey}_topo.json?v=11`;
+        const url = `data/council/council_districts_${regionKey}_topo.json?v=12`;
         return fetch(url)
             .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(topo => {
@@ -2439,7 +2439,7 @@ const MapModule = (() => {
 
         // 시군구별 TopoJSON 로드
         const sggKey = districtName.replace(/\s+/g, '');
-        const url = `data/basic_council/${regionKey}/basic_${sggKey}_topo.json?v=3`;
+        const url = `data/basic_council/${regionKey}/basic_${sggKey}_topo.json?v=5`;
         return fetch(url)
             .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
             .then(topo => {
@@ -3520,6 +3520,12 @@ const MapModule = (() => {
         if (province) { province.style.display = 'none'; province.classList.remove('active'); }
         if (sep2) sep2.style.display = 'none';
         if (district) { district.style.display = 'none'; district.classList.remove('active'); }
+
+        // 모바일 브레드크럼: 전국 수준에선 숨기고 하위 수준에서만 표시
+        const breadcrumbEl = document.getElementById('map-breadcrumb');
+        if (breadcrumbEl) {
+            breadcrumbEl.classList.toggle('breadcrumb-in-province', level !== 'national');
+        }
 
         if (level === 'national') return;
 

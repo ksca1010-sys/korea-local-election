@@ -101,11 +101,11 @@ const OverviewTab = (() => {
 
                     if (issues && Array.isArray(ov.keyIssues)) {
                         issues.innerHTML = ov.keyIssues.map(i =>
-                            `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${_normalizeTrend(i)}</span>`
+                            `<span class="issue-tag"><i class="fas fa-hashtag"></i> ${escapeHtml(_normalizeTrend(i))}</span>`
                         ).join('');
                     }
                     if (risk && ov.riskFactor) {
-                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${_normalizeTrend(ov.riskFactor)}
+                        risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${escapeHtml(_normalizeTrend(ov.riskFactor))}
                             <div style="font-size:var(--text-micro);color:var(--text-disabled);margin-top:var(--space-4);">
                                 <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
                             </div>`;

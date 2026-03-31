@@ -68,7 +68,7 @@ const DataLoader = (() => {
         const cacheKey = filename;
         if (cacheKey in cache) return cache[cacheKey];
         // council_history.json 등 data/ 루트 파일: BASE 없이 직접 경로
-        const ROOT_FILES = ['council_history.json'];
+        const ROOT_FILES = ['council_history.json', 'candidates/disclosures.json'];
         const url = ROOT_FILES.includes(filename)
             ? `data/${filename}?v=${v}`
             : `${BASE}/${filename}?v=${v}`;

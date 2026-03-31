@@ -1,0 +1,67 @@
+name: 공보물 데이터 수집 (선관위 API)
+
+on:
+  schedule:
+    # 5/16 06:00 KST — 본후보 등록 마감 직후 첫 수집 (UTC 5/15 21:00)
+    - cron: '0 21 15 5 *'
+    # 5/17~5/27 02:00 KST — 매일 갱신, 등록 수정 반영 (UTC 5/16~26 17:00)
+    - cron: '0 17 16-26 5 *'
+  workflow_dispatch:
+    inputs:
+      log_raw:
+        description: 'API 응답 필드명 출력 (--log-raw, 스키마 검증용)'
+        type: boolean
+        default: false
+      election_type:
+        description: '특정 선거 유형만 수집 (비워두면 전체)'
+        type: choice
+        options: ['', 'governor', 'mayor', 'superintendent']
+        default: ''
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 공보물 수집
+        env:
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          ARGS=""
+          if [ "${{ inputs.log_raw }}" = "true" ]; then ARGS="$ARGS --log-raw"; fi
+          if [ -n "${{ inputs.election_type }}" ]; then ARGS="$ARGS --type ${{ inputs.election_type }}"; fi
+          python scripts/fetch_candidate_disclosures.py $ARGS
+
+      - name: 변경사항 확인
+        id: diff
+        run: |
+          git diff --quiet data/candidates/disclosures.json || echo "changed=true" >> $GITHUB_OUTPUT
+
+      - name: 커밋 & 푸시
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          COUNT=$(python -c "
+          import json, sys
+          try:
+            d = json.load(open('data/candidates/disclosures.json'))
+            total = sum(len(v) for t in d['disclosures'].values() for v in (t.values() if isinstance(t, dict) else []))
+            print(total)
+          except: print('?')
+          ")
+          git add data/candidates/disclosures.json
+          git commit -m "data(disclosures): 공보물 갱신 — ${COUNT}건 [선관위 API]"
+          git pull --rebase origin main && git push

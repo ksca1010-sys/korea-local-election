@@ -2967,6 +2967,36 @@ const ElectionData = (() => {
                 partyAllocation: [],
                 keyIssues: ['시군구별 정당투표', '소수정당 진입장벽', '지역구 연동']
             };
+        },
+
+        // ── 공보물 (지연 로딩) ──
+        _disclosureCache: null,
+        _disclosurePromise: null,
+        loadDisclosures() {
+            if (this._disclosureCache) return Promise.resolve(this._disclosureCache);
+            if (this._disclosurePromise) return this._disclosurePromise;
+            this._disclosurePromise = fetch('data/candidates/disclosures.json?v=' + Date.now())
+                .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
+                .then(data => { this._disclosureCache = data; this._disclosurePromise = null; return data; })
+                .catch(err => { this._disclosurePromise = null; console.warn('[Disclosures] 로드 실패:', err); return null; });
+            return this._disclosurePromise;
+        },
+        getDisclosure(electionType, regionKey, candidateName, districtName) {
+            const cache = this._disclosureCache;
+            if (!cache?.disclosures) return null;
+            const typeMap = { governor: 'governor', superintendent: 'superintendent', mayor: 'mayor' };
+            const typeKey = typeMap[electionType];
+            if (!typeKey) return null;
+            const typeData = cache.disclosures[typeKey];
+            if (!typeData) return null;
+            if (typeKey === 'mayor') {
+                const districtData = typeData[regionKey]?.[districtName];
+                if (!Array.isArray(districtData)) return null;
+                return districtData.find(d => d.name === candidateName) || null;
+            }
+            const regionArr = typeData[regionKey];
+            if (!Array.isArray(regionArr)) return null;
+            return regionArr.find(d => d.name === candidateName) || null;
         }
     };
 })();

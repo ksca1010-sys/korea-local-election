@@ -28,11 +28,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" media="print" onload="this.media='all'">
-    <script defer src="https://d3js.org/d3.v7.min.js"></script>
-    <script defer src="https://d3js.org/topojson.v3.min.js"></script>
+    <script defer src="https://d3js.org/d3.v7.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+    <script defer src="https://d3js.org/topojson.v3.min.js" integrity="sha384-9dCJK6nh7skY14HrcvlLYlFga9/MehJjL9ONWRflmiXNRuf8p2jiF4Y5PR881PTq" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=1774711235">
+    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css?v=1774925043">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 <body>
     <!-- Loading Screen -->
@@ -260,7 +261,14 @@
                 <h4>범례</h4>
                 <div class="legend-items" id="legend-items"></div>
             </div>
+            <!-- 모바일 범례 토글 버튼 -->
+            <button class="legend-toggle-btn" id="legend-toggle-btn" aria-label="범례 표시/숨기기" aria-pressed="false" title="범례">
+                <i class="fas fa-swatchbook"></i>
+            </button>
         </section>
+
+        <!-- 모바일 바텀시트 백드롭 -->
+        <div id="bs-backdrop"></div>
 
         <!-- Right Panel -->
         <aside id="detail-panel" class="detail-panel">
@@ -276,6 +284,9 @@
                     <button id="panel-close" class="panel-close"><i class="fas fa-times"></i></button>
                 </div>
             </div>
+
+            <!-- 모바일 PEEK 상태: 선거유형 선택 칩 -->
+            <div id="peek-election-chips" class="peek-election-chips" aria-label="선거 종류 선택"></div>
 
             <div class="panel-tabs" role="tablist" aria-label="지역 정보 탭">
                 <button class="panel-tab active" data-tab="overview" role="tab" id="tab-btn-overview" aria-selected="true" aria-controls="tab-overview"><i class="fas fa-info-circle"></i> 개요</button>
@@ -886,43 +897,43 @@
     </div>
 
     <!-- 0. 공유 유틸리티 + 상태 -->
-    <script defer src="js/news_filters.js?v=1774711235"></script>
-    <script defer src="js/utils.js?v=1774711235"></script>
-    <script defer src="js/app-state.js?v=1774711235"></script>
+    <script defer src="js/news_filters.js?v=1774925043"></script>
+    <script defer src="js/utils.js?v=1774925043"></script>
+    <script defer src="js/app-state.js?v=1774925043"></script>
 
     <!-- 1. 데이터 로더 -->
-    <script defer src="js/data-loader.js?v=1774711235"></script>
-    <script defer src="js/data.js?v=1774711235"></script>
+    <script defer src="js/data-loader.js?v=1774925043"></script>
+    <script defer src="js/data.js?v=1774925043"></script>
 
     <!-- 2. 독립 모듈 -->
-    <script defer src="js/derived_issues.js?v=1774711235"></script>
-    <script defer src="js/issue_engine.js?v=1774711235"></script>
-    <script defer src="js/nec.js?v=1774711235"></script>
-    <script defer src="js/map.js?v=1774711235"></script>
-    <script defer src="js/charts.js?v=1774711235"></script>
+    <script defer src="js/derived_issues.js?v=1774925043"></script>
+    <script defer src="js/issue_engine.js?v=1774925043"></script>
+    <script defer src="js/nec.js?v=1774925043"></script>
+    <script defer src="js/map.js?v=1774925043"></script>
+    <script defer src="js/charts.js?v=1774925043"></script>
 
     <!-- 3. 선거 캘린더 (법적 필수 + 편의 로직) -->
-    <script defer src="js/election-calendar.js?v=1774711235"></script>
+    <script defer src="js/election-calendar.js?v=1774925043"></script>
 
     <!-- 4. 탭 모듈 -->
-    <script defer src="js/tabs/history-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/council-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/proportional-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/candidate-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/poll-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/overview-tab.js?v=1774711235"></script>
-    <script defer src="js/tabs/news-tab.js?v=1774711235"></script>
+    <script defer src="js/tabs/history-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/council-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/proportional-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/candidate-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/poll-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/overview-tab.js?v=1774925043"></script>
+    <script defer src="js/tabs/news-tab.js?v=1774925043"></script>
 
     <!-- 5. app.js에서 분리된 모듈 -->
-    <script defer src="js/sidebar.js?v=1774711235"></script>
-    <script defer src="js/search.js?v=1774711235"></script>
-    <script defer src="js/views/election-views.js?v=1774711235"></script>
-    <script defer src="js/views/district-map.js?v=1774711235"></script>
-    <script defer src="js/router.js?v=1774711235"></script>
+    <script defer src="js/sidebar.js?v=1774925043"></script>
+    <script defer src="js/search.js?v=1774925043"></script>
+    <script defer src="js/views/election-views.js?v=1774925043"></script>
+    <script defer src="js/views/district-map.js?v=1774925043"></script>
+    <script defer src="js/router.js?v=1774925043"></script>
 
     <!-- 6. 메인 앱 (최후 로드 — 오케스트레이터) -->
-    <script defer src="js/clarity-consent.js?v=1774711235"></script>
-    <script defer src="js/app.js?v=1774711235"></script>
+    <script defer src="js/clarity-consent.js?v=1774925043"></script>
+    <script defer src="js/app.js?v=1774925043"></script>
 
     <!-- Cloudflare 웹 분석 -->
     <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6cb7b0e87bf1475799a9d177f9d54315"}'></script>

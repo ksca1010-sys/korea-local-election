@@ -231,7 +231,7 @@
 
     --text-primary: #2C2418;
     --text-secondary: #5C5040;
-    --text-muted: #8A7E6E;
+    --text-muted: #655A4B;   /* 대비 5.6:1 (bg-secondary) / 4.7:1 (bg-tertiary) — WCAG AA */
     --text-accent: #2563EB;
     --text-disabled: #A89E8E;
 
@@ -444,8 +444,21 @@ body {
     color: #a5b4fc;
 }
 
-body:not(.banner-hidden) .election-banner ~ #main-content {
+/* transparency-banner 표시 중 election-banner: 헤더 아래 + 배너 높이만큼 추가 */
+body:not(.banner-hidden) .election-banner {
     top: calc(var(--header-height) + 36px);
+}
+/* 두 배너 동시: main-content는 두 배너 합산 높이만큼 내려야 함 */
+body:not(.banner-hidden) .election-banner ~ #main-content {
+    top: calc(var(--header-height) + 36px + 36px);
+}
+@media (max-width: 768px) {
+    body:not(.banner-hidden) .election-banner {
+        top: calc(var(--header-height) + 30px);
+    }
+    body:not(.banner-hidden) .election-banner ~ #main-content {
+        top: calc(var(--header-height) + 30px + 30px);
+    }
 }
 
 /* 여론조사 공표금지 안내 */
@@ -1812,6 +1825,7 @@ body:not(.banner-hidden) .election-banner ~ #main-content {
 .panel-tab {
     flex: 1;
     padding: var(--space-12) var(--space-16);
+    min-height: 44px;
     background: none;
     border: none;
     border-bottom: 2px solid transparent;
@@ -4046,13 +4060,62 @@ canvas {
         display: none;
     }
 
-    /* 모바일: 브레드크럼 칩과 겹침 방지 (칩 아래로) */
+    /* 모바일: 브레드크럼 — 전국 수준에선 숨기고 시도/구군 진입 시만 표시 */
     .map-breadcrumb {
+        display: none;
         top: auto;
         bottom: 60px;
         left: 8px;
         font-size: 0.72rem;
         padding: 3px 8px;
+    }
+    .map-breadcrumb.breadcrumb-in-province {
+        display: flex;
+    }
+
+    /* 모바일: 범례 기본 숨김 — 토글 버튼으로 표시 */
+    .map-legend {
+        display: none;
+        position: absolute;
+        bottom: 128px;
+        right: 8px;
+        left: auto;
+        max-width: 160px;
+    }
+    .map-legend.legend-visible {
+        display: block;
+    }
+
+    /* 모바일: 범례 토글 버튼 */
+    .legend-toggle-btn {
+        display: flex;
+        position: absolute;
+        bottom: 84px;
+        right: 12px;
+        z-index: 25;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--bg-card);
+        border: 1.5px solid var(--border-default);
+        color: var(--text-secondary);
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.22);
+        font-size: 0.8rem;
+        padding: 0;
+        transition: background 0.2s, color 0.2s;
+        -webkit-tap-highlight-color: transparent;
+    }
+    .legend-toggle-btn:active {
+        transform: scale(0.94);
+    }
+    .legend-toggle-btn.active {
+        background: var(--accent-blue);
+        border-color: var(--accent-blue);
+        color: #fff;
+        box-shadow: 0 2px 12px rgba(46,139,255,0.35);
     }
 
     .dday-counter {
@@ -6045,6 +6108,115 @@ body.banner-hidden #main-content {
   cursor: grab;
 }
 @media (min-width: 769px) { .drag-handle { display: none; } }
+@media (min-width: 769px) { .legend-toggle-btn { display: none; } }
 @media (max-width: 768px) {
   .detail-panel, #detail-panel { will-change: transform; }
+}
+
+/* ── Disclosure Section — 공보물 주요 내용 ── */
+.disclosure-section {
+    margin: 10px 0 4px;
+    padding: 10px 12px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+.disclosure-header {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+.disclosure-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 4px 0;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    flex-wrap: wrap;
+}
+.disclosure-row:last-of-type {
+    border-bottom: none;
+}
+.disclosure-row > i {
+    margin-top: 2px;
+    width: 14px;
+    text-align: center;
+    opacity: 0.55;
+    flex-shrink: 0;
+}
+.disclosure-label {
+    color: var(--text-muted);
+    min-width: 32px;
+    font-size: 0.75rem;
+    flex-shrink: 0;
+}
+.disclosure-value {
+    color: var(--text-primary);
+    flex: 1;
+}
+.disclosure-row.criminal-warning > i,
+.disclosure-row.criminal-warning .disclosure-label,
+.disclosure-row.criminal-warning .disclosure-value {
+    color: #f97316;
+    opacity: 1;
+}
+.disclosure-row.criminal-warning .disclosure-value {
+    font-weight: 600;
+}
+.disclosure-row.criminal-clear > i {
+    color: #4ade80;
+    opacity: 1;
+}
+.disclosure-row.criminal-clear .disclosure-value {
+    color: #4ade80;
+}
+.disclosure-row.tax-warning .disclosure-value {
+    color: #f97316;
+    font-weight: 600;
+}
+.criminal-details {
+    width: 100%;
+    margin-top: 3px;
+}
+.criminal-details summary {
+    cursor: pointer;
+    font-size: 0.73rem;
+    color: var(--text-muted);
+    padding: 2px 0;
+    list-style: none;
+    user-select: none;
+}
+.criminal-details summary::-webkit-details-marker { display: none; }
+.criminal-details summary::before { content: '▶ '; font-size: 0.62rem; }
+.criminal-details[open] summary::before { content: '▼ '; }
+.criminal-list {
+    list-style: none;
+    padding: 5px 0 2px 4px;
+    margin: 0;
+}
+.criminal-list li {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    padding: 3px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+.criminal-list li:last-child { border-bottom: none; }
+.crime-name {
+    color: #f97316;
+    font-weight: 500;
+}
+.disclosure-source {
+    font-size: 0.67rem;
+    color: var(--text-disabled, #4a5568);
+    margin-top: 7px;
+    text-align: right;
+    opacity: 0.7;
 }

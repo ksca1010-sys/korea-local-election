@@ -24,6 +24,10 @@ rsync -a --exclude=".deploy_dist" \
   --exclude="node_modules/" \
   --exclude=".wrangler/" \
   --exclude=".git/" \
+  --exclude=".claude/" \
+  --exclude=".omc/" \
+  --exclude=".vscode/" \
+  --exclude=".planning/" \
   --exclude="deploy.sh" \
   . "$DIST_DIR/"
 

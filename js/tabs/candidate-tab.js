@@ -241,6 +241,73 @@ const CandidateTab = (() => {
         };
     }
 
+    function buildDisclosureSection(disclosure) {
+        if (!disclosure) return '';
+
+        const crimHtml = disclosure.criminal?.hasRecord
+            ? `<div class="disclosure-row criminal-warning">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span class="disclosure-label">전과</span>
+                <span class="disclosure-value">${disclosure.criminal.count}건</span>
+                <details class="criminal-details">
+                    <summary>내역 보기</summary>
+                    <ul class="criminal-list">
+                        ${(disclosure.criminal.records || []).map(r =>
+                            `<li><span class="crime-name">${r.crime}</span> — ${r.sentence} (${r.confirmedAt} 확정)</li>`
+                        ).join('')}
+                    </ul>
+                </details>
+               </div>`
+            : `<div class="disclosure-row criminal-clear">
+                <i class="fas fa-check-circle"></i>
+                <span class="disclosure-label">전과</span>
+                <span class="disclosure-value">없음</span>
+               </div>`;
+
+        const propertyHtml = disclosure.property
+            ? `<div class="disclosure-row">
+                <i class="fas fa-coins"></i>
+                <span class="disclosure-label">재산</span>
+                <span class="disclosure-value">${disclosure.property.rawText || '-'}</span>
+               </div>` : '';
+
+        const militaryHtml = disclosure.military
+            ? `<div class="disclosure-row">
+                <i class="fas fa-shield-alt"></i>
+                <span class="disclosure-label">병역</span>
+                <span class="disclosure-value">${disclosure.military.status || '-'}</span>
+               </div>` : '';
+
+        const taxHtml = disclosure.tax
+            ? `<div class="disclosure-row${disclosure.tax.hasArrears ? ' tax-warning' : ''}">
+                <i class="fas fa-receipt"></i>
+                <span class="disclosure-label">납세</span>
+                <span class="disclosure-value">${disclosure.tax.hasArrears ? `체납 ${disclosure.tax.arrearsManWon}만원` : '정상'}</span>
+               </div>` : '';
+
+        const eduHtml = disclosure.education
+            ? `<div class="disclosure-row">
+                <i class="fas fa-graduation-cap"></i>
+                <span class="disclosure-label">학력</span>
+                <span class="disclosure-value">${disclosure.education.finalDegree || '-'}</span>
+               </div>` : '';
+
+        return `
+            <div class="disclosure-section">
+                <div class="disclosure-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span>공보물 주요 내용</span>
+                </div>
+                ${crimHtml}
+                ${propertyHtml}
+                ${militaryHtml}
+                ${taxHtml}
+                ${eduHtml}
+                <div class="disclosure-source">출처: 선관위 공보물</div>
+            </div>
+        `;
+    }
+
     function buildCompareTable(candidates) {
         const compareTargets = candidates.filter((candidate) => candidate.pledges?.length);
         if (compareTargets.length < 2) return '';
@@ -272,6 +339,11 @@ const CandidateTab = (() => {
         const compareCardEl = document.getElementById('candidate-compare-card');
         const compareEl = document.getElementById('candidate-compare');
         if (!listEl || !compareCardEl || !compareEl) return;
+
+        // 공보물 지연 로딩 (fire-and-forget — 캐시 누적 후 다음 렌더에서 표시)
+        if (typeof ElectionData !== 'undefined' && !ElectionData._disclosureCache) {
+            ElectionData.loadDisclosures();
+        }
 
         const model = buildModel(regionKey, electionType, districtName);
         // Layer 2B: 정렬 모드 판정
@@ -338,6 +410,11 @@ const CandidateTab = (() => {
                             `).join('')}
                         </div>
                     ` : ''}
+                    ${sortMode === 'ballot_number' ? buildDisclosureSection(
+                        typeof ElectionData !== 'undefined'
+                            ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, districtName)
+                            : null
+                    ) : ''}
                     <div class="cand-card-footer">
                         ${candidate.incumbent ? `<span class="cand-incumbent-badge"><i class="fas fa-star"></i>현직</span>` : ''}
                         ${candidate.statusMeta ? `<span class="cand-status-badge" style="${candidate.statusMeta.style}">${candidate.statusMeta.label}</span>` : ''}

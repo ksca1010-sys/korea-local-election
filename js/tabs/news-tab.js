@@ -759,6 +759,14 @@ const NewsTab = (() => {
         }
     }
 
+    function safeHref(url) {
+        if (!url) return '#';
+        try {
+            const parsed = new URL(url);
+            return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? url : '#';
+        } catch (e) { return '#'; }
+    }
+
     function isMajorOutlet(host) {
         if (!host) return false;
         return MAJOR_NEWS_HOSTS.some(major => host === major || host.endsWith(`.${major}`));
@@ -944,7 +952,7 @@ const NewsTab = (() => {
                         ? '<span class="news-badge news-badge-local">지역</span>'
                         : '';
                 const title = (item.title || '').replace(/<[^>]+>/g, '');
-                return `<a class="news-live-item" href="${item.link || '#'}" target="_blank" rel="noopener">
+                return `<a class="news-live-item" href="${safeHref(item.link)}" target="_blank" rel="noopener">
                     <div class="news-live-item-badges">${freshBadge}${localBadge}<span class="news-badge" style="background:${catBadge.color}22;color:${catBadge.color};border-color:${catBadge.color}44">${catBadge.label}</span></div>
                     <div class="news-live-item-title">${title}</div>
                     <div class="news-live-item-meta"><span class="news-press">${press}</span>${timeText ? `<span class="news-time">${timeText}</span>` : ''}</div>
@@ -1352,7 +1360,7 @@ const NewsTab = (() => {
                         : '';
                 const timeText = ageDays === 0 ? '오늘' : ageDays === 1 ? '어제' : `${ageDays}일 전`;
                 return `
-                    <a class="news-live-item" href="${item.link}" target="_blank" rel="noopener">
+                    <a class="news-live-item" href="${safeHref(item.link)}" target="_blank" rel="noopener">
                         <div class="news-live-item-badges">${freshBadge}${majorBadge}${localBadge}<span class="news-badge" style="background:${catBadge.color}22;color:${catBadge.color};border-color:${catBadge.color}44">${catBadge.label}</span></div>
                         <div class="news-live-item-title">${highlightTitle(item.title)}</div>
                         <div class="news-live-item-meta">
@@ -1449,7 +1457,7 @@ const NewsTab = (() => {
                     const link = item.originallink || item.link || '#';
                     const press = (() => { try { return new URL(link).hostname.replace(/^www\./, ''); } catch(e) { return ''; } })();
                     const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleString('ko-KR') : '';
-                    return `<a class="news-live-item" href="${link}" target="_blank" rel="noopener">
+                    return `<a class="news-live-item" href="${safeHref(link)}" target="_blank" rel="noopener">
                         <div class="news-live-item-title">${title}</div>
                         <div class="news-live-item-meta"><span class="news-press">${press}</span><span class="news-time">${pubDate}</span></div>
                     </a>`;
