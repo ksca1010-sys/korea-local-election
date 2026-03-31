@@ -78,6 +78,8 @@ DONG_EXPAND_MAP = {
     "중부동": ["황오동"],
     # 성주군 (금수면 → 금수강산면 개명)
     "금수면": ["금수강산면"],
+    # 부천시 (심곡동 → 심곡1~3동 분동, 심곡본동 계열 제외)
+    "심곡동": ["심곡1동", "심곡2동", "심곡3동"],
     # 안양시 만안구 (석수3동 → 충훈동 명칭변경)
     "석수3동": ["충훈동"],
     # 양주시 (회천4동 → 옥정1동+옥정2동 분동+명칭변경)
@@ -190,24 +192,37 @@ def find_matching_dongs(gdf_sido, district_dongs, sigungu):
 
         actual_dong_nodot = actual_dong.replace("·", "").replace(",", "")
 
-        def match_dong(geojson_name, target, target_nodot):
+        def match_dong_exact(geojson_name, target, target_nodot):
             norm = normalize_dong_name(geojson_name.split(" ")[-1])
             if norm == target:
                 return True
             norm_nodot = norm.replace("·", "").replace(",", "")
             if norm_nodot == target_nodot:
                 return True
-            # 번호 제거 fallback: "복산1동" → "복산동" == "복산동"
+            return False
+
+        def match_dong(geojson_name, target, target_nodot):
+            if match_dong_exact(geojson_name, target, target_nodot):
+                return True
+            # 번호 제거 fallback: "복산1동"(매핑) → "복산동"(hangjeongdong) 매칭
             # 단, geojson 쪽(norm)에도 번호가 있으면 적용 금지 (목2동 ≠ 목3동)
+            norm = normalize_dong_name(geojson_name.split(" ")[-1])
             target_nonum = re.sub(r"\d+동$", "동", target)
             norm_nonum = re.sub(r"\d+동$", "동", norm)
             if target_nonum == norm_nonum and target_nonum != target and norm == norm_nonum:
                 return True
             return False
 
-        found = gdf_target[gdf_target["adm_nm"].apply(
-            lambda x: match_dong(x, actual_dong, actual_dong_nodot)
+        # exact match가 있으면 fallback 결과 제외 (중1동→중동 오매칭 방지)
+        found_exact = gdf_target[gdf_target["adm_nm"].apply(
+            lambda x: match_dong_exact(x, actual_dong, actual_dong_nodot)
         )]
+        if not found_exact.empty:
+            found = found_exact
+        else:
+            found = gdf_target[gdf_target["adm_nm"].apply(
+                lambda x: match_dong(x, actual_dong, actual_dong_nodot)
+            )]
 
         # 읍/면 교차 매칭
         if len(found) == 0 and (actual_dong.endswith("면") or actual_dong.endswith("읍")):
