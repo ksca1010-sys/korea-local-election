@@ -1,11 +1,11 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-26",
+    "lastUpdated": "2026-04-02",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) + 보궐선거 반영",
     "totalCount": 17,
     "note": "교육감은 무소속 (정당 추천 없음), stance=성향",
-    "lastFactCheck": "2026-03-26T04:07:44.256383"
+    "lastFactCheck": "2026-04-02T04:03:55.444379"
   },
   "superintendents": {
     "seoul": {
@@ -43,19 +43,11 @@
     },
     "gwangju": {
       "region": "gwangju",
-      "regionDisplay": "전남광주통합특별시",
       "name": "이정선",
       "electedName": "이정선",
       "electedYear": 2022,
       "_source": "NEC_API_20220601",
-      "stance": "진보",
-      "_note": "2026 전남+광주 통합, 교육감도 통합선거구",
-      "previousJeonnamSuperintendent": {
-        "name": "김대중",
-        "electedYear": 2022,
-        "stance": "진보",
-        "_source": "NEC_API_20220601"
-      }
+      "stance": "진보"
     },
     "daejeon": {
       "region": "daejeon",
@@ -115,8 +107,6 @@
     },
     "jeonnam": {
       "region": "jeonnam",
-      "_merged": "gwangju",
-      "_note": "전남광주통합특별시 교육감 — gwangju 키 참조",
       "name": "김대중",
       "electedName": "김대중",
       "electedYear": 2022,
