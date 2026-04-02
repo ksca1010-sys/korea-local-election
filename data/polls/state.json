@@ -1,6 +1,383 @@
 {
-  "last_id": 18006,
+  "last_id": 18044,
   "polls": [
+    {
+      "nttId": 18044,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리서치뷰",
+      "clientOrg": "조사기관 자체 : 리서치뷰",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-30",
+        "end": "2026-03-31"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18044&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-02"
+    },
+    {
+      "nttId": 18042,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "방송사 : 전남CBS",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 700,
+        "marginOfError": 3.7,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-31",
+        "end": "2026-04-01"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "광양시",
+      "electionType": "mayor",
+      "title": "전라남도 광양시    기초단체장선거 광역단체장선거 교육감선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18042&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-02"
+    },
+    {
+      "nttId": 18041,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "방송사 : 전남CBS",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 704,
+        "marginOfError": 3.7,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-31",
+        "end": "2026-04-01"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "순천시",
+      "electionType": "mayor",
+      "title": "전라남도 순천시    기초단체장선거 광역단체장선거 교육감선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18041&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-02"
+    },
+    {
+      "nttId": 18040,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "방송사 : 전남CBS",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 711,
+        "marginOfError": 3.7,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-31",
+        "end": "2026-04-01"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "여수시",
+      "electionType": "mayor",
+      "title": "전라남도 여수시    기초단체장선거 광역단체장선거 교육감선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18040&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-02"
+    },
+    {
+      "nttId": 18016,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "전국단위 신문 : 천지일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1005,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-30",
+        "end": "2026-03-31"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "title": "전국   대통령선거 정당지지도 국정현안 등",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18016&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18014,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "인터넷언론 : 케이저널",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 506,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-31",
+        "end": "2026-03-31"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "영암군",
+      "electionType": "district_mayor",
+      "title": "전라남도 영암군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18014&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18013,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "미디어토마토",
+      "clientOrg": "시·도단위 신문 : 뉴스토마토",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 503,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-30",
+        "end": "2026-03-31"
+      },
+      "publishDate": "2026-04-02",
+      "results": [],
+      "regionKey": "gyeonggi",
+      "municipality": "부천시",
+      "electionType": "mayor",
+      "title": "경기도 부천시    기초단체장선거 광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18013&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18012,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아리서치인터내셔널",
+      "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-28",
+        "end": "2026-03-29"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonbuk",
+      "municipality": "무주군",
+      "electionType": "mayor",
+      "title": "전북특별자치도 무주군    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 지역 현안 조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18012&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18011,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아리서치인터내셔널",
+      "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 500,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-28",
+        "end": "2026-03-29"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonbuk",
+      "municipality": "진안군",
+      "electionType": "mayor",
+      "title": "전북특별자치도 진안군    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 지역 현안 조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18011&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18010,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아리서치인터내셔널",
+      "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-28",
+        "end": "2026-03-29"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonbuk",
+      "municipality": "장수군",
+      "electionType": "mayor",
+      "title": "전북특별자치도 장수군    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 지역 현안 조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18010&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18009,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아리서치인터내셔널",
+      "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 511,
+        "marginOfError": 4.3,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-28",
+        "end": "2026-03-29"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonbuk",
+      "municipality": "남원시",
+      "electionType": "mayor",
+      "title": "전북특별자치도 남원시    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 지역 현안 조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18009&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18008,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아리서치인터내셔널",
+      "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 501,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-27",
+        "end": "2026-03-28"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "jeonbuk",
+      "municipality": "순창군",
+      "electionType": "mayor",
+      "title": "전북특별자치도 순창군    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 지역 현안 조사",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18008&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+      "registrationDate": "2026-04-01"
+    },
+    {
+      "nttId": 18007,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)비전코리아",
+      "clientOrg": "방송사 : TBC",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 554,
+        "marginOfError": 4.2,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-03-30",
+        "end": "2026-03-31"
+      },
+      "publishDate": "2026-04-01",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "경주시",
+      "electionType": "district_mayor",
+      "title": "경상북도 경주시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18007&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+      "registrationDate": "2026-04-01"
+    },
     {
       "nttId": 18006,
       "registrationId": null,
@@ -573,7 +950,18 @@
         "end": "2026-03-30"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "긍정평가",
+          "party": "",
+          "support": 56.7
+        },
+        {
+          "candidateName": "잘못하고",
+          "party": "",
+          "support": 39.9
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "mayor",
@@ -602,7 +990,38 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김왕근",
+          "party": "",
+          "support": 1.8
+        },
+        {
+          "candidateName": "김한종",
+          "party": "",
+          "support": 26.6
+        },
+        {
+          "candidateName": "박노원",
+          "party": "",
+          "support": 26.2
+        },
+        {
+          "candidateName": "소영호",
+          "party": "",
+          "support": 20.8
+        },
+        {
+          "candidateName": "유성수",
+          "party": "",
+          "support": 22.8
+        },
+        {
+          "candidateName": "기타인",
+          "party": "",
+          "support": 0.8
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "장성군",
       "electionType": "district_mayor",
@@ -631,7 +1050,23 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "호감이",
+          "party": "",
+          "support": 32.0
+        },
+        {
+          "candidateName": "간다",
+          "party": "",
+          "support": 30.5
+        },
+        {
+          "candidateName": "호감가지",
+          "party": "",
+          "support": 37.5
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": null,
       "electionType": "mayor",
@@ -44113,20 +44548,20 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-01",
-    "lastPipelineRun": "2026-04-01",
+    "lastUpdated": "2026-04-02",
+    "lastPipelineRun": "2026-04-02",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 779,
-    "withRegistrationDate": 776,
+    "pollCount": 792,
+    "withRegistrationDate": 789,
     "withRegistrationId": 670,
-    "withResults": 726,
+    "withResults": 729,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
-      "mayor": 261,
-      "district_mayor": 399,
-      "superintendent": 20,
-      "party_support": 99
+      "party_support": 101,
+      "mayor": 270,
+      "district_mayor": 401,
+      "superintendent": 20
     }
   }
 }
