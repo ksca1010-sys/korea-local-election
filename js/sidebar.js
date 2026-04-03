@@ -523,7 +523,9 @@ const Sidebar = (() => {
             if (!wrap) return;
 
             // onmouseenter/leave로 교체하여 중복 리스너 방지
+            // 모바일(터치) 환경에서는 툴팁 비활성
             wrap.onmouseenter = () => {
+                if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
                 const rect = wrap.getBoundingClientRect();
                 tooltip.style.left = (rect.right + 8) + 'px';
                 tooltip.style.top = rect.top + 'px';
