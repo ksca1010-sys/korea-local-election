@@ -116,6 +116,8 @@ def build_prompt_for_region(region_key, region_candidates, news=None):
     info_gaps = []
     for district, candidates in sorted(region_candidates.items()):
         for c in candidates:
+            if "_merged" in c:  # 전남광주통합 플레이스홀더 스킵
+                continue
             party = PARTY_NAMES.get(c.get("party", ""), c.get("party", ""))
             career = (c.get("career") or "").strip()
             status_map = {"DECLARED": "출마선언", "EXPECTED": "출마거론", "RUMORED": "하마평", "WITHDRAWN": "사퇴", "NOMINATED": "공천확정"}

@@ -78,6 +78,8 @@ def check_governor_overlap(fix=False):
     gov_names = set()
     for rk, candidates in gov.get("candidates", {}).items():
         for c in candidates:
+            if "_merged" in c:
+                continue
             if c.get("status") not in ("WITHDRAWN",):
                 gov_names.add(c["name"])
 
@@ -106,6 +108,8 @@ def check_superintendent_overlap():
     supt_names = set()
     for rk, candidates in supt.get("candidates", {}).items():
         for c in candidates:
+            if "_merged" in c:
+                continue
             if c.get("status") not in ("WITHDRAWN",):
                 supt_names.add(c["name"])
 

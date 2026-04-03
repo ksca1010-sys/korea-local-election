@@ -105,6 +105,8 @@ def build_prompt(candidates_data, news=None):
         region_name = REGION_NAMES.get(rk, rk)
         candidates = regions[rk]
         for c in candidates:
+            if "_merged" in c:  # 전남광주통합 플레이스홀더 스킵
+                continue
             party = PARTY_NAMES.get(c.get("party", ""), c.get("party", ""))
             status = c.get("status", "UNKNOWN")
             status_map = {

@@ -73,6 +73,8 @@ def build_prompt(dist, news):
 
     cand_lines = []
     for c in candidates:
+        if "_merged" in c:  # 전남광주통합 플레이스홀더 스킵
+            continue
         party = PARTY_NAMES.get(c.get("party", ""), c.get("party", c.get("partyKey", "?")))
         status_map = {"DECLARED": "출마선언", "EXPECTED": "출마거론", "RUMORED": "하마평", "WITHDRAWN": "사퇴", "NOMINATED": "공천확정"}
         status = status_map.get(c.get("status", ""), c.get("status", "?"))
