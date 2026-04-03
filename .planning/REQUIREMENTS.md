@@ -16,8 +16,8 @@
 
 ### 크래시 방어 (CRASH)
 
-- [ ] **CRASH-01**: API 응답에 필수 필드(name 등)가 없을 때 KeyError로 크래시하지 않고 경고 로그 후 해당 레코드를 스킵한다
-- [ ] **CRASH-02**: 빈 name 또는 필수 필드가 누락된 레코드가 data/ JSON 파일에 저장되지 않는다
+- [x] **CRASH-01**: API 응답에 필수 필드(name 등)가 없을 때 KeyError로 크래시하지 않고 경고 로그 후 해당 레코드를 스킵한다
+- [x] **CRASH-02**: 빈 name 또는 필수 필드가 누락된 레코드가 data/ JSON 파일에 저장되지 않는다
 
 ### 단계 독립성 (INDEP)
 
@@ -81,9 +81,9 @@
 | REQ-ID | Phase | Plan | Status |
 |--------|-------|------|--------|
 | DIAG-01 | Phase 12 | 12-01 | Done |
-| CRASH-01 | Phase 12 | TBD | Pending |
-| CRASH-02 | Phase 12 | TBD | Pending |
-| PERM-01 | Phase 12 | TBD | Pending |
+| CRASH-01 | Phase 12 | 12-02 | Done |
+| CRASH-02 | Phase 12 | 12-02 | Done |
+| PERM-01 | Phase 12 | 12-03 | Done |
 | INDEP-01 | Phase 13 | TBD | Pending |
 | INDEP-02 | Phase 13 | TBD | Pending |
 | GIT-01 | Phase 13 | TBD | Pending |
