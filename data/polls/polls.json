@@ -1,5 +1,5 @@
 {
-  "generated": "2026-04-02T03:30:08",
+  "generated": "2026-04-03T03:40:53",
   "totalCount": 792,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
@@ -6904,7 +6904,28 @@
           "end": "2026-04-01"
         },
         "publishDate": "2026-04-02",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "",
+            "support": 28.2
+          },
+          {
+            "candidateName": "민형배",
+            "party": "",
+            "support": 20.6
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "",
+            "support": 19.1
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 9.2
+          }
+        ],
         "regionKey": "jeonnam",
         "municipality": "광양시",
         "electionType": "mayor",
@@ -6933,7 +6954,28 @@
           "end": "2026-04-01"
         },
         "publishDate": "2026-04-02",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "",
+            "support": 21.3
+          },
+          {
+            "candidateName": "민형배",
+            "party": "",
+            "support": 24.6
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "",
+            "support": 21.8
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 7.8
+          }
+        ],
         "regionKey": "jeonnam",
         "municipality": "순천시",
         "electionType": "mayor",
@@ -6962,7 +7004,28 @@
           "end": "2026-04-01"
         },
         "publishDate": "2026-04-02",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김영록",
+            "party": "",
+            "support": 16.2
+          },
+          {
+            "candidateName": "민형배",
+            "party": "",
+            "support": 22.7
+          },
+          {
+            "candidateName": "신정훈",
+            "party": "",
+            "support": 8.2
+          },
+          {
+            "candidateName": "잘모름",
+            "party": "",
+            "support": 5.1
+          }
+        ],
         "regionKey": "jeonnam",
         "municipality": "여수시",
         "electionType": "mayor",
@@ -6991,7 +7054,23 @@
           "end": "2026-03-31"
         },
         "publishDate": "2026-04-01",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "우승희",
+            "party": "",
+            "support": 47.5
+          },
+          {
+            "candidateName": "전동평",
+            "party": "",
+            "support": 46.6
+          },
+          {
+            "candidateName": "최영열",
+            "party": "",
+            "support": 4.4
+          }
+        ],
         "regionKey": "jeonnam",
         "municipality": "영암군",
         "electionType": "district_mayor",
@@ -24829,7 +24908,18 @@
           "end": "2026-03-30"
         },
         "publishDate": "2026-04-01",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "남구",
+            "party": "",
+            "support": 19.6
+          },
+          {
+            "candidateName": "북구",
+            "party": "",
+            "support": 61.3
+          }
+        ],
         "regionKey": "gyeongbuk",
         "municipality": "포항시",
         "electionType": "district_mayor",
