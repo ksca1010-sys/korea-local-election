@@ -263,6 +263,12 @@ def check_workflow_failures(heal_state):
         "update-candidates.yml",
         "update-overview.yml",
         "update-election-stats.yml",
+        "update-gallup.yml",
+        "update-polls.yml",
+        "update-governor-status.yml",
+        "update-mayor-status.yml",
+        "update-superintendent-status.yml",
+        "update-byelection.yml",
     ]
     retried = 0
 
