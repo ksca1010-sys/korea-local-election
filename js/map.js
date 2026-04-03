@@ -754,27 +754,49 @@ const MapModule = (() => {
 
         if (currentElectionType === 'superintendent') {
             // ── 교육감 선거 ──────────────────────────────
+            const isMergedSupt = key === 'gwangju' && _isMergedJeonnam();
             const supData = ElectionData.getSuperintendentData(key);
             const cur = supData?.currentSuperintendent;
             const stanceColor = cur ? ElectionData.getSuperintendentColor(cur.stance) : '#888';
-            const incumbentText = cur ? `${cur.name} (${cur.stance})` : '정보 없음';
-            const sinceText = cur?.since ? `${cur.since}년~` : '';
             const voterText = region?.voters ? `${(region.voters / 10000).toFixed(0)}만명` : '정보 없음';
             const turnoutText = region?.prevElection?.turnout ? `${region.prevElection.turnout}%` : '정보 없음';
-            const noteText = cur?.note || '';
+            const titleName = isMergedSupt ? '전남광주통합특별시' : region.name;
+
+            function _suptSection(superintendent, sectionLabel) {
+                if (!superintendent) return '';
+                const sc = ElectionData.getSuperintendentColor(superintendent.stance);
+                const since = superintendent.since ? `<div class="tooltip-row" style="padding-left:12px"><span class="label">취임</span><span class="value">${superintendent.since}년~</span></div>` : '';
+                const note = superintendent.note ? `<div class="tooltip-row" style="padding-left:12px"><span class="label">비고</span><span class="value" style="font-size:11px">${superintendent.note}</span></div>` : '';
+                return `
+                    <div style="font-size:11px;color:#94a3b8;margin-top:6px;padding-top:6px;border-top:1px solid #333;">
+                        <i class="fas fa-code-merge" style="margin-right:4px;opacity:0.7"></i>${sectionLabel}
+                    </div>
+                    <div class="tooltip-row" style="padding-left:12px">
+                        <span class="label">현직 교육감</span>
+                        <span class="value"><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${sc};margin-right:4px;vertical-align:middle"></span>${superintendent.name} (${superintendent.stance})</span>
+                    </div>
+                    ${since}${note}`;
+            }
+
+            let suptBody = '';
+            if (isMergedSupt) {
+                const jnSupData = ElectionData.getSuperintendentData('jeonnam');
+                suptBody = _suptSection(cur, '통합 이전 광주광역시') + _suptSection(jnSupData?.currentSuperintendent, '통합 이전 전라남도');
+            } else {
+                const since = cur?.since ? `<div class="tooltip-row"><span class="label">취임</span><span class="value">${cur.since}년~</span></div>` : '';
+                const note = cur?.note ? `<div class="tooltip-row"><span class="label">비고</span><span class="value" style="font-size:11px">${cur.note}</span></div>` : '';
+                suptBody = cur
+                    ? `<div class="tooltip-row"><span class="label">현직 교육감</span><span class="value">${cur.name} (${cur.stance})</span></div>${since}${note}`
+                    : `<div class="tooltip-row"><span class="label">현직 교육감</span><span class="value">정보 없음</span></div>`;
+            }
 
             tooltipHtml = `
                 <div class="tooltip-title">
                     <span class="tooltip-party-dot" style="background:${stanceColor}"></span>
-                    ${region.name} 교육감
+                    ${titleName} 교육감
                 </div>
-                <div class="tooltip-row">
-                    <span class="label">현직 교육감</span>
-                    <span class="value">${incumbentText}</span>
-                </div>
-                ${sinceText ? `<div class="tooltip-row"><span class="label">취임</span><span class="value">${sinceText}</span></div>` : ''}
-                ${noteText ? `<div class="tooltip-row"><span class="label">비고</span><span class="value" style="font-size:11px">${noteText}</span></div>` : ''}
-                <div class="tooltip-row">
+                ${suptBody}
+                <div class="tooltip-row" style="border-top:1px solid #333;margin-top:6px;padding-top:6px">
                     <span class="label">유권자 수</span>
                     <span class="value">${voterText}</span>
                 </div>
@@ -989,50 +1011,61 @@ const MapModule = (() => {
 
         } else {
             // ── 광역단체장 (기본) ────────────────────────
+            const isMergedGov = key === 'gwangju' && _isMergedJeonnam();
             const gov = region.currentGovernor;
             const govPartyKey = gov?.party || ElectionData.getLeadingParty(key);
             const partyColor = ElectionData.getPartyColor(govPartyKey);
-            const partyName  = ElectionData.getPartyName(govPartyKey);
-
-            let govRow = '';
-            if (gov && gov.acting) {
-                govRow = `
-                <div class="tooltip-row">
-                    <span class="label">현직 단체장</span>
-                    <span class="value" style="color:#f59e0b;font-weight:600">권한대행 체제</span>
-                </div>
-                <div class="tooltip-row">
-                    <span class="label">사유</span>
-                    <span class="value" style="font-size:11px">${gov.actingReason || '단체장 공석'}</span>
-                </div>`;
-            } else if (gov) {
-                govRow = `
-                <div class="tooltip-row">
-                    <span class="label">현직 단체장</span>
-                    <span class="value">${gov.name}${gov.since ? ` (${gov.since}~)` : ''}</span>
-                </div>
-                <div class="tooltip-row">
-                    <span class="label">소속 정당</span>
-                    <span class="value" style="color:${partyColor};font-weight:600">${partyName}</span>
-                </div>`;
-            } else {
-                govRow = `
-                <div class="tooltip-row">
-                    <span class="label">우세 정당</span>
-                    <span class="value">${partyName}</span>
-                </div>`;
-            }
-
             const govVoterText = region.voters ? `${(region.voters / 10000).toFixed(0)}만명` : '정보 없음';
             const govTurnoutText = region.prevElection?.turnout != null ? `${region.prevElection.turnout}%` : '정보 없음';
+            const titleName = isMergedGov ? '전남광주통합특별시' : region.name;
+
+            function _govSection(governor, regionLabel, sectionLabel) {
+                const pk = governor?.party || ElectionData.getLeadingParty(regionLabel);
+                const pc = ElectionData.getPartyColor(pk);
+                const pn = ElectionData.getPartyName(pk);
+                if (!governor) return `
+                    <div style="font-size:11px;color:#94a3b8;margin-top:6px;padding-top:6px;border-top:1px solid #333;">
+                        <i class="fas fa-code-merge" style="margin-right:4px;opacity:0.7"></i>${sectionLabel}
+                    </div>
+                    <div class="tooltip-row" style="padding-left:12px"><span class="label">우세 정당</span><span class="value" style="color:${pc};font-weight:600">${pn}</span></div>`;
+                if (governor.acting) return `
+                    <div style="font-size:11px;color:#94a3b8;margin-top:6px;padding-top:6px;border-top:1px solid #333;">
+                        <i class="fas fa-code-merge" style="margin-right:4px;opacity:0.7"></i>${sectionLabel}
+                    </div>
+                    <div class="tooltip-row" style="padding-left:12px"><span class="label">현직 단체장</span><span class="value" style="color:#f59e0b;font-weight:600">권한대행 체제</span></div>
+                    <div class="tooltip-row" style="padding-left:12px"><span class="label">사유</span><span class="value" style="font-size:11px">${governor.actingReason || '단체장 공석'}</span></div>`;
+                return `
+                    <div style="font-size:11px;color:#94a3b8;margin-top:6px;padding-top:6px;border-top:1px solid #333;">
+                        <i class="fas fa-code-merge" style="margin-right:4px;opacity:0.7"></i>${sectionLabel}
+                    </div>
+                    <div class="tooltip-row" style="padding-left:12px"><span class="label">현직 단체장</span><span class="value">${governor.name}${governor.since ? ` (${governor.since}~)` : ''}</span></div>
+                    <div class="tooltip-row" style="padding-left:12px"><span class="label">소속 정당</span><span class="value" style="color:${pc};font-weight:600">${pn}</span></div>`;
+            }
+
+            let govBody = '';
+            if (isMergedGov) {
+                const jnGov = ElectionData.getRegion('jeonnam')?.currentGovernor;
+                govBody = _govSection(gov, 'gwangju', '통합 이전 광주광역시') + _govSection(jnGov, 'jeonnam', '통합 이전 전라남도');
+            } else {
+                const partyName = ElectionData.getPartyName(govPartyKey);
+                if (gov && gov.acting) {
+                    govBody = `<div class="tooltip-row"><span class="label">현직 단체장</span><span class="value" style="color:#f59e0b;font-weight:600">권한대행 체제</span></div>
+                    <div class="tooltip-row"><span class="label">사유</span><span class="value" style="font-size:11px">${gov.actingReason || '단체장 공석'}</span></div>`;
+                } else if (gov) {
+                    govBody = `<div class="tooltip-row"><span class="label">현직 단체장</span><span class="value">${gov.name}${gov.since ? ` (${gov.since}~)` : ''}</span></div>
+                    <div class="tooltip-row"><span class="label">소속 정당</span><span class="value" style="color:${partyColor};font-weight:600">${partyName}</span></div>`;
+                } else {
+                    govBody = `<div class="tooltip-row"><span class="label">우세 정당</span><span class="value">${partyName}</span></div>`;
+                }
+            }
 
             tooltipHtml = `
                 <div class="tooltip-title">
                     <span class="tooltip-party-dot" style="background:${gov?.acting ? '#f59e0b' : partyColor}"></span>
-                    ${region.name}
+                    ${titleName}
                 </div>
-                ${govRow}
-                <div class="tooltip-row">
+                ${govBody}
+                <div class="tooltip-row" style="border-top:1px solid #333;margin-top:6px;padding-top:6px">
                     <span class="label">유권자 수</span>
                     <span class="value">${govVoterText}</span>
                 </div>
@@ -1286,19 +1319,17 @@ const MapModule = (() => {
                     console.warn('gwangju-jeonnam topojson.merge failed:', e);
                 }
             }
-            // 원본 path 숨기기 (머지 path가 실제로 존재할 때만)
+            // 라벨은 머지 path 여부와 무관하게 항상 업데이트
+            g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
+            g.select('.region-label[data-region-label="gwangju"]').text('전남광주');
+            // 원본 path 숨기기 + 머지 path 중앙으로 라벨 이동 (머지 path가 실제로 존재할 때만)
             const mergedPath = g.select('.region-gj-merged');
             if (mergedPath.size()) {
                 g.select('.region[data-region="gwangju"]:not(.region-gj-merged)').attr('display', 'none');
                 g.select('.region[data-region="jeonnam"]:not(.region-gj-merged)').attr('display', 'none');
-                g.select('.region-label[data-region-label="jeonnam"]').attr('opacity', 0);
-            }
-            // 광주 라벨: "전남광주"로 변경 + 머지 영역 중앙으로 이동
-            if (mergedPath.size()) {
                 const centroid = path.centroid(mergedPath.datum());
                 g.select('.region-label[data-region-label="gwangju"]')
-                    .attr('x', centroid[0]).attr('y', centroid[1])
-                    .text('전남광주');
+                    .attr('transform', `translate(${centroid[0]}, ${centroid[1]})`);
             }
         } else {
             // 통합 해제: 머지 path 제거, 원본 복원
@@ -1313,8 +1344,10 @@ const MapModule = (() => {
     function updateLabels() {
         if (!mapData) return;
         g.selectAll('.region-label').each(function(d) {
-            const centroid = path.centroid(d);
             const key = getRegionKey(d);
+            // 전남광주통합: gwangju 라벨 위치는 updateMapColors에서 머지 centroid로 설정
+            if (_isMergedJeonnam() && key === 'gwangju') return;
+            const centroid = path.centroid(d);
             const offset = labelOffsets[key] || { dx: 0, dy: 0 };
             d3.select(this).attr('transform',
                 `translate(${centroid[0] + offset.dx}, ${centroid[1] + offset.dy})`
@@ -3164,7 +3197,12 @@ const MapModule = (() => {
         updateMapColors();
         updateLabels();
         // 지역명 라벨 복원 (비례대표에서 숨겼을 수 있으므로)
-        g.selectAll('.region-label').attr('opacity', 1);
+        // 전남광주통합 모드면 jeonnam 라벨은 숨김 유지
+        g.selectAll('.region-label').each(function() {
+            const el = d3.select(this);
+            if (_isMergedJeonnam() && el.attr('data-region-label') === 'jeonnam') return;
+            el.attr('opacity', 1);
+        });
         updateLegend();
         updateBreadcrumb('national');
     }

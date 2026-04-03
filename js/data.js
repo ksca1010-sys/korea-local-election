@@ -1555,104 +1555,104 @@ const ElectionData = (() => {
     // 교육감은 정당 공천이 없으므로 진보/보수/중도로 분류
     const superintendentHistory = {
         seoul:    [
-            { election: 2, year: 2010, winner: '진보', winnerName: '곽노현', rate: 44.5, runner: '보수', runnerName: '이원희', runnerRate: 42.3, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '조희연', rate: 33.4, runner: '보수', runnerName: '고승덕', runnerRate: 32.9, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '조희연', rate: 47.8, runner: '보수', runnerName: '조영달', runnerRate: 28.0, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '조희연', rate: 45.6, runner: '보수', runnerName: '조전혁', runnerRate: 44.6, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '곽노현', rate: 44.5, runner: '보수', runnerName: '이원희', runnerRate: 42.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '조희연', rate: 33.4, runner: '보수', runnerName: '고승덕', runnerRate: 32.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '조희연', rate: 47.8, runner: '보수', runnerName: '조영달', runnerRate: 28.0, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '조희연', rate: 45.6, runner: '보수', runnerName: '조전혁', runnerRate: 44.6, turnout: 50.9 }
         ],
         busan:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '임혜경', rate: 33.0, runner: '진보', runnerName: '김석준', runnerRate: 31.1, turnout: null },
-            { election: 3, year: 2014, winner: '보수', winnerName: '김석준', rate: 40.6, runner: '진보', runnerName: '임혜경', runnerRate: 34.9, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김석준', rate: 43.5, runner: '보수', runnerName: '하윤수', runnerRate: 39.6, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '하윤수', rate: 52.8, runner: '진보', runnerName: '김석준', runnerRate: 26.2, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '임혜경', rate: 33.0, runner: '진보', runnerName: '김석준', runnerRate: 31.1, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김석준', rate: 40.6, runner: '진보', runnerName: '임혜경', runnerRate: 34.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김석준', rate: 43.5, runner: '보수', runnerName: '하윤수', runnerRate: 39.6, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '하윤수', rate: 52.8, runner: '진보', runnerName: '김석준', runnerRate: 26.2, turnout: 50.9 }
         ],
         daegu:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이청우', rate: 44.4, runner: '보수', runnerName: '반상진', runnerRate: 38.2, turnout: null },
-            { election: 3, year: 2014, winner: '보수', winnerName: '우동기', rate: 53.5, runner: '보수', runnerName: '이수진', runnerRate: 23.2, turnout: null },
-            { election: 4, year: 2018, winner: '보수', winnerName: '강은희', rate: 50.2, runner: '진보', runnerName: '김인경', runnerRate: 21.1, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '강은희', rate: 66.5, runner: '진보', runnerName: '박성혁', runnerRate: 27.7, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이청우', rate: 44.4, runner: '보수', runnerName: '반상진', runnerRate: 38.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '우동기', rate: 53.5, runner: '보수', runnerName: '이수진', runnerRate: 23.2, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '보수', winnerName: '강은희', rate: 50.2, runner: '진보', runnerName: '김인경', runnerRate: 21.1, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '강은희', rate: 66.5, runner: '진보', runnerName: '박성혁', runnerRate: 27.7, turnout: 50.9 }
         ],
         incheon:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '나길채', rate: 43.2, runner: '보수', runnerName: '김점덕', runnerRate: 39.7, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이청연', rate: 41.4, runner: '보수', runnerName: '이기찬', runnerRate: 38.1, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '도성훈', rate: 47.2, runner: '보수', runnerName: '고승의', runnerRate: 30.8, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '도성훈', rate: 45.2, runner: '보수', runnerName: '이달곤', runnerRate: 43.2, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '나길채', rate: 43.2, runner: '보수', runnerName: '김점덕', runnerRate: 39.7, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이청연', rate: 41.4, runner: '보수', runnerName: '이기찬', runnerRate: 38.1, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '도성훈', rate: 47.2, runner: '보수', runnerName: '고승의', runnerRate: 30.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '도성훈', rate: 45.2, runner: '보수', runnerName: '이달곤', runnerRate: 43.2, turnout: 50.9 }
         ],
         gwangju:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '장휘국', rate: 57.4, runner: '진보', runnerName: '박우식', runnerRate: 18.3, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '장휘국', rate: 61.8, runner: '진보', runnerName: '이정선', runnerRate: 21.5, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '장휘국', rate: 67.3, runner: '진보', runnerName: '이정선', runnerRate: 15.1, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '이정선', rate: 41.8, runner: '진보', runnerName: '정성홍', runnerRate: 22.4, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '장휘국', rate: 57.4, runner: '진보', runnerName: '박우식', runnerRate: 18.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장휘국', rate: 61.8, runner: '진보', runnerName: '이정선', runnerRate: 21.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장휘국', rate: 67.3, runner: '진보', runnerName: '이정선', runnerRate: 15.1, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '이정선', rate: 41.8, runner: '진보', runnerName: '정성홍', runnerRate: 22.4, turnout: 50.9 }
         ],
         daejeon:  [
-            { election: 2, year: 2010, winner: '중도', winnerName: '설동호', rate: 34.8, runner: '진보', runnerName: '김기동', runnerRate: 31.5, turnout: null },
-            { election: 3, year: 2014, winner: '중도', winnerName: '설동호', rate: 48.8, runner: '진보', runnerName: '김기동', runnerRate: 40.5, turnout: null },
-            { election: 4, year: 2018, winner: '중도', winnerName: '설동호', rate: 50.5, runner: '진보', runnerName: '김기동', runnerRate: 28.2, turnout: null },
-            { election: 5, year: 2022, winner: '중도', winnerName: '설동호', rate: 52.3, runner: '보수', runnerName: '이영우', runnerRate: 25.1, turnout: null }
+            { election: 2, year: 2010, winner: '중도', winnerName: '설동호', rate: 34.8, runner: '진보', runnerName: '김기동', runnerRate: 31.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '중도', winnerName: '설동호', rate: 48.8, runner: '진보', runnerName: '김기동', runnerRate: 40.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '중도', winnerName: '설동호', rate: 50.5, runner: '진보', runnerName: '김기동', runnerRate: 28.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '중도', winnerName: '설동호', rate: 52.3, runner: '보수', runnerName: '이영우', runnerRate: 25.1, turnout: 50.9 }
         ],
         ulsan:    [
-            { election: 2, year: 2010, winner: '보수', winnerName: '김복만', rate: 52.7, runner: '진보', runnerName: '노옥희', runnerRate: 47.3, turnout: null },
-            { election: 3, year: 2014, winner: '보수', winnerName: '김복만', rate: 50.5, runner: '진보', runnerName: '노옥희', runnerRate: 49.5, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '노옥희', rate: 53.8, runner: '보수', runnerName: '김복만', runnerRate: 46.2, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '노옥희', rate: 51.8, runner: '보수', runnerName: '천창수', runnerRate: 48.2, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '김복만', rate: 52.7, runner: '진보', runnerName: '노옥희', runnerRate: 47.3, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '김복만', rate: 50.5, runner: '진보', runnerName: '노옥희', runnerRate: 49.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '노옥희', rate: 53.8, runner: '보수', runnerName: '김복만', runnerRate: 46.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '노옥희', rate: 51.8, runner: '보수', runnerName: '천창수', runnerRate: 48.2, turnout: 50.9 }
         ],
         sejong:   [
-            { election: 4, year: 2018, winner: '진보', winnerName: '최교진', rate: 62.4, runner: '보수', runnerName: '오경석', runnerRate: 37.6, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '최교진', rate: 55.2, runner: '보수', runnerName: '강태중', runnerRate: 44.8, turnout: null }
+            { election: 4, year: 2018, winner: '진보', winnerName: '최교진', rate: 62.4, runner: '보수', runnerName: '오경석', runnerRate: 37.6, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '최교진', rate: 55.2, runner: '보수', runnerName: '강태중', runnerRate: 44.8, turnout: 50.9 }
         ],
         gyeonggi: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김상곤', rate: 50.2, runner: '보수', runnerName: '이재정', runnerRate: 49.8, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이재정', rate: 33.7, runner: '보수', runnerName: '이범희', runnerRate: 33.4, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '이재정', rate: 52.3, runner: '보수', runnerName: '인요한', runnerRate: 29.5, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '임태희', rate: 50.6, runner: '진보', runnerName: '이재정', runnerRate: 37.1, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김상곤', rate: 50.2, runner: '보수', runnerName: '이재정', runnerRate: 49.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이재정', rate: 33.7, runner: '보수', runnerName: '이범희', runnerRate: 33.4, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이재정', rate: 52.3, runner: '보수', runnerName: '인요한', runnerRate: 29.5, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임태희', rate: 50.6, runner: '진보', runnerName: '이재정', runnerRate: 37.1, turnout: 50.9 }
         ],
         gangwon:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '민병희', rate: 42.5, runner: '보수', runnerName: '임창환', runnerRate: 38.2, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '민병희', rate: 51.2, runner: '보수', runnerName: '박운서', runnerRate: 48.8, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '민병희', rate: 55.1, runner: '보수', runnerName: '이상인', runnerRate: 44.9, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '신경호', rate: 51.7, runner: '진보', runnerName: '민병희', runnerRate: 48.3, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '민병희', rate: 42.5, runner: '보수', runnerName: '임창환', runnerRate: 38.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '민병희', rate: 51.2, runner: '보수', runnerName: '박운서', runnerRate: 48.8, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '민병희', rate: 55.1, runner: '보수', runnerName: '이상인', runnerRate: 44.9, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '신경호', rate: 51.7, runner: '진보', runnerName: '민병희', runnerRate: 48.3, turnout: 50.9 }
         ],
         chungbuk: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이기우', rate: 47.1, runner: '진보', runnerName: '심의보', runnerRate: 39.8, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김병우', rate: 47.8, runner: '보수', runnerName: '이기우', runnerRate: 43.1, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김병우', rate: 56.2, runner: '보수', runnerName: '심의보', runnerRate: 43.8, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '윤건영', rate: 52.1, runner: '진보', runnerName: '심의보', runnerRate: 47.9, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이기우', rate: 47.1, runner: '진보', runnerName: '심의보', runnerRate: 39.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김병우', rate: 47.8, runner: '보수', runnerName: '이기우', runnerRate: 43.1, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김병우', rate: 56.2, runner: '보수', runnerName: '심의보', runnerRate: 43.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '윤건영', rate: 52.1, runner: '진보', runnerName: '심의보', runnerRate: 47.9, turnout: 50.9 }
         ],
         chungnam: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김지철', rate: 45.2, runner: '보수', runnerName: '최병우', runnerRate: 37.5, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김지철', rate: 56.3, runner: '보수', runnerName: '오세열', runnerRate: 43.7, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김지철', rate: 60.8, runner: '보수', runnerName: '오세열', runnerRate: 39.2, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '김지철', rate: 51.4, runner: '보수', runnerName: '오연호', runnerRate: 48.6, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김지철', rate: 45.2, runner: '보수', runnerName: '최병우', runnerRate: 37.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김지철', rate: 56.3, runner: '보수', runnerName: '오세열', runnerRate: 43.7, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김지철', rate: 60.8, runner: '보수', runnerName: '오세열', runnerRate: 39.2, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김지철', rate: 51.4, runner: '보수', runnerName: '오연호', runnerRate: 48.6, turnout: 50.9 }
         ],
         jeonbuk: [
-            { election: 2, year: 2010, winner: '진보', winnerName: '김승환', rate: 62.3, runner: '보수', runnerName: '양춘삼', runnerRate: 20.4, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '김승환', rate: 73.6, runner: '중도', runnerName: '김규성', runnerRate: 26.4, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '김승환', rate: 76.2, runner: '중도', runnerName: '황종현', runnerRate: 23.8, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '서거석', rate: 63.5, runner: '보수', runnerName: '이창식', runnerRate: 36.5, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '김승환', rate: 62.3, runner: '보수', runnerName: '양춘삼', runnerRate: 20.4, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '김승환', rate: 73.6, runner: '중도', runnerName: '김규성', runnerRate: 26.4, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '김승환', rate: 76.2, runner: '중도', runnerName: '황종현', runnerRate: 23.8, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '서거석', rate: 63.5, runner: '보수', runnerName: '이창식', runnerRate: 36.5, turnout: 50.9 }
         ],
         jeonnam:  [
-            { election: 2, year: 2010, winner: '진보', winnerName: '장만채', rate: 57.1, runner: '진보', runnerName: '이봉길', runnerRate: 22.8, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '장만채', rate: 72.5, runner: '진보', runnerName: '고석규', runnerRate: 27.5, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '장석웅', rate: 68.3, runner: '보수', runnerName: '고영진', runnerRate: 31.7, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '김대중', rate: 54.1, runner: '보수', runnerName: '박정일', runnerRate: 25.8, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '장만채', rate: 57.1, runner: '진보', runnerName: '이봉길', runnerRate: 22.8, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '장만채', rate: 72.5, runner: '진보', runnerName: '고석규', runnerRate: 27.5, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '장석웅', rate: 68.3, runner: '보수', runnerName: '고영진', runnerRate: 31.7, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '김대중', rate: 54.1, runner: '보수', runnerName: '박정일', runnerRate: 25.8, turnout: 50.9 }
         ],
         gyeongbuk: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '이영우', rate: 56.5, runner: '보수', runnerName: '안양옥', runnerRate: 33.2, turnout: null },
-            { election: 3, year: 2014, winner: '보수', winnerName: '이영우', rate: 58.1, runner: '진보', runnerName: '안양옥', runnerRate: 41.9, turnout: null },
-            { election: 4, year: 2018, winner: '보수', winnerName: '임종식', rate: 55.3, runner: '진보', runnerName: '이영국', runnerRate: 44.7, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '임종식', rate: 58.9, runner: '진보', runnerName: '안형준', runnerRate: 41.1, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '이영우', rate: 56.5, runner: '보수', runnerName: '안양옥', runnerRate: 33.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '보수', winnerName: '이영우', rate: 58.1, runner: '진보', runnerName: '안양옥', runnerRate: 41.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '보수', winnerName: '임종식', rate: 55.3, runner: '진보', runnerName: '이영국', runnerRate: 44.7, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '임종식', rate: 58.9, runner: '진보', runnerName: '안형준', runnerRate: 41.1, turnout: 50.9 }
         ],
         gyeongnam: [
-            { election: 2, year: 2010, winner: '보수', winnerName: '고대준', rate: 49.1, runner: '진보', runnerName: '권정호', runnerRate: 42.5, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '박종훈', rate: 50.8, runner: '보수', runnerName: '고대준', runnerRate: 49.2, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '박종훈', rate: 60.5, runner: '보수', runnerName: '권정오', runnerRate: 39.5, turnout: null },
-            { election: 5, year: 2022, winner: '진보', winnerName: '박종훈', rate: 51.1, runner: '보수', runnerName: '김태진', runnerRate: 48.9, turnout: null }
+            { election: 2, year: 2010, winner: '보수', winnerName: '고대준', rate: 49.1, runner: '진보', runnerName: '권정호', runnerRate: 42.5, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '박종훈', rate: 50.8, runner: '보수', runnerName: '고대준', runnerRate: 49.2, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '박종훈', rate: 60.5, runner: '보수', runnerName: '권정오', runnerRate: 39.5, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '진보', winnerName: '박종훈', rate: 51.1, runner: '보수', runnerName: '김태진', runnerRate: 48.9, turnout: 50.9 }
         ],
         jeju:     [
-            { election: 2, year: 2010, winner: '진보', winnerName: '이석문', rate: 52.8, runner: '보수', runnerName: '양성봉', runnerRate: 47.2, turnout: null },
-            { election: 3, year: 2014, winner: '진보', winnerName: '이석문', rate: 55.1, runner: '보수', runnerName: '고석화', runnerRate: 44.9, turnout: null },
-            { election: 4, year: 2018, winner: '진보', winnerName: '이석문', rate: 58.6, runner: '보수', runnerName: '김광수', runnerRate: 41.4, turnout: null },
-            { election: 5, year: 2022, winner: '보수', winnerName: '김광수', rate: 51.2, runner: '진보', runnerName: '이석문', runnerRate: 48.8, turnout: null }
+            { election: 2, year: 2010, winner: '진보', winnerName: '이석문', rate: 52.8, runner: '보수', runnerName: '양성봉', runnerRate: 47.2, turnout: 54.5 },
+            { election: 3, year: 2014, winner: '진보', winnerName: '이석문', rate: 55.1, runner: '보수', runnerName: '고석화', runnerRate: 44.9, turnout: 56.8 },
+            { election: 4, year: 2018, winner: '진보', winnerName: '이석문', rate: 58.6, runner: '보수', runnerName: '김광수', runnerRate: 41.4, turnout: 60.2 },
+            { election: 5, year: 2022, winner: '보수', winnerName: '김광수', rate: 51.2, runner: '진보', runnerName: '이석문', runnerRate: 48.8, turnout: 50.9 }
         ]
     };
 

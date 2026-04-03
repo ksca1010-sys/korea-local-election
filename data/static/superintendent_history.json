@@ -323,7 +323,15 @@
   ],
   "sejong": [
     {
-      "election": 4,
+      "election": 1,
+      "year": 2014,
+      "winner": "교육계",
+      "winnerName": "최교진",
+      "rate": 38.17,
+      "turnout": 56.8
+    },
+    {
+      "election": 2,
       "year": 2018,
       "winner": "진보",
       "winnerName": "최교진",
@@ -334,7 +342,7 @@
       "turnout": 60.2
     },
     {
-      "election": 5,
+      "election": 3,
       "year": 2022,
       "winner": "진보",
       "winnerName": "최교진",
@@ -343,15 +351,6 @@
       "runnerName": "강태중",
       "runnerRate": 44.8,
       "turnout": 50.9
-    },
-    {
-      "election": 6,
-      "year": 2014,
-      "name": "최교진",
-      "party": "independent",
-      "partyName": "",
-      "votes": 23482,
-      "rate": 38.17
     }
   ],
   "gyeonggi": [

@@ -83,13 +83,16 @@ const CandidateTab = (() => {
             if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
                 const jnRegion = ElectionData.getRegion('jeonnam');
                 if (jnRegion?.candidates?.length) {
-                    govCandidates = [...govCandidates, ...jnRegion.candidates];
+                    if (govCandidates.length) govCandidates[0] = { ...govCandidates[0], _sectionLabel: '통합 이전 광주광역시' };
+                    const jnCands = jnRegion.candidates.map((c, i) => i === 0 ? { ...c, _sectionLabel: '통합 이전 전라남도' } : c);
+                    govCandidates = [...govCandidates, ...jnCands];
                 }
             }
             const displayName = (typeof getMergedDisplayName === 'function' && getMergedDisplayName(regionKey, electionType)) || region.name;
             return {
                 title: `${displayName} 광역단체장 후보`,
                 candidates: govCandidates.map((candidate) => ({
+                    _sectionLabel: candidate._sectionLabel || null,
                     name: candidate.name,
                     badgeLabel: ElectionData.getPartyName(candidate.party),
                     badgeColor: ElectionData.getPartyColor(candidate.party),
@@ -112,7 +115,9 @@ const CandidateTab = (() => {
             if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
                 const jnData = ElectionData.getSuperintendentData('jeonnam');
                 if (jnData?.candidates?.length) {
-                    suCandidates = [...suCandidates, ...jnData.candidates.filter(c => !c._merged)];
+                    if (suCandidates.length) suCandidates[0] = { ...suCandidates[0], _sectionLabel: '통합 이전 광주광역시' };
+                    const jnCands = jnData.candidates.filter(c => !c._merged).map((c, i) => i === 0 ? { ...c, _sectionLabel: '통합 이전 전라남도' } : c);
+                    suCandidates = [...suCandidates, ...jnCands];
                 }
             }
             const incumbentName = data?.currentSuperintendent?.name || '';
@@ -121,6 +126,7 @@ const CandidateTab = (() => {
                 title: `${displayNameSuper} 교육감 후보`,
                 isSuperintendent: true,
                 candidates: suCandidates.map((candidate) => ({
+                    _sectionLabel: candidate._sectionLabel || null,
                     name: candidate.name,
                     badgeLabel: candidate.stance || '교육계',
                     badgeColor: ElectionData.getSuperintendentColor(candidate.stance),
@@ -383,8 +389,11 @@ const CandidateTab = (() => {
             ${model.candidates.map((candidate) => {
                 const statusClass = candidate.status === 'NOMINATED' ? 'status-nominated'
                     : candidate.status === 'DECLARED' ? 'status-declared' : '';
+                const sectionHeader = candidate._sectionLabel
+                    ? `<div style="font-size:0.75rem;color:var(--text-muted);padding:8px 0 4px;display:flex;align-items:center;gap:6px;"><i class="fas fa-code-merge"></i>${candidate._sectionLabel}</div>`
+                    : '';
                 return `
-                <div class="candidate-card-full ${statusClass}">
+                ${sectionHeader}<div class="candidate-card-full ${statusClass}">
                     <div class="candidate-header">
                         <div class="candidate-avatar" style="background:${candidate.badgeColor}">
                             ${candidate.name?.charAt(0) || '?'}

@@ -4024,7 +4024,7 @@ canvas {
     }
 
     .header-left .logo-text {
-        display: none;
+        font-size: 1.3rem;
     }
 
     /* 모바일: 헤더 패딩 축소 */

@@ -155,23 +155,61 @@ const OverviewTab = (() => {
                 const lastElection = history.length ? history[history.length - 1] : null;
                 if (lastElection) {
                     const winColor = ElectionData.getSuperintendentColor(lastElection.winner);
-                    const runColor = ElectionData.getSuperintendentColor(lastElection.runner);
-                    prevContainer.innerHTML = `
+                    const hasRunner = lastElection.runnerName && lastElection.runner;
+                    const runColor = hasRunner ? ElectionData.getSuperintendentColor(lastElection.runner) : '#666';
+                    // 전남광주통합특별시: 광주 라벨 prepend
+                    const isMergedSupt = regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType);
+                    let suptPrevHtml = `
+                        ${isMergedSupt ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` : ''}
                         <div class="prev-result">
                             <div class="prev-winner">
                                 <div class="name">${lastElection.winnerName}</div>
-                                <span class="party-badge" style="background:${winColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.winner}</span>
+                                <span class="party-badge" style="background:${winColor}">${lastElection.winner}</span>
                                 <div class="rate" style="color:${winColor}">${lastElection.rate}%</div>
                             </div>
+                            ${hasRunner ? `
                             <div class="prev-vs">VS</div>
                             <div class="prev-winner">
                                 <div class="name">${lastElection.runnerName}</div>
-                                <span class="party-badge" style="background:${runColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${lastElection.runner}</span>
+                                <span class="party-badge" style="background:${runColor}">${lastElection.runner}</span>
                                 <div class="rate" style="color:${runColor}">${lastElection.runnerRate}%</div>
-                            </div>
+                            </div>` : ''}
                         </div>
-                        <div class="prev-turnout"><i class="fas fa-person-booth"></i> ${lastElection.year}년 투표율: ${lastElection.turnout}%</div>
+                        <div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${lastElection.turnout}%</div>
                     `;
+                    // 전남광주통합특별시: 전남 교육감 이전선거 결과도 표시
+                    if (isMergedSupt) {
+                        const jnHistory = ElectionData.getSuperintendentHistoricalData('jeonnam');
+                        const jnLast = jnHistory.length ? jnHistory[jnHistory.length - 1] : null;
+                        if (jnLast) {
+                            const jnWinColor = ElectionData.getSuperintendentColor(jnLast.winner);
+                            const jnHasRunner = jnLast.runnerName && jnLast.runner;
+                            const jnRunColor = jnHasRunner ? ElectionData.getSuperintendentColor(jnLast.runner) : '#666';
+                            suptPrevHtml += `
+                                <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(148,163,184,0.15);">
+                                    <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;">
+                                        <i class="fas fa-code-merge"></i> 통합 이전 전라남도
+                                    </div>
+                                    <div class="prev-result">
+                                        <div class="prev-winner">
+                                            <div class="name">${jnLast.winnerName}</div>
+                                            <span class="party-badge" style="background:${jnWinColor}">${jnLast.winner}</span>
+                                            <div class="rate" style="color:${jnWinColor}">${jnLast.rate}%</div>
+                                        </div>
+                                        ${jnHasRunner ? `
+                                        <div class="prev-vs">VS</div>
+                                        <div class="prev-winner">
+                                            <div class="name">${jnLast.runnerName}</div>
+                                            <span class="party-badge" style="background:${jnRunColor}">${jnLast.runner}</span>
+                                            <div class="rate" style="color:${jnRunColor}">${jnLast.runnerRate}%</div>
+                                        </div>` : ''}
+                                    </div>
+                                    <div class="prev-turnout"><i class="fas fa-person-booth"></i> 투표율: ${jnLast.turnout}%</div>
+                                </div>
+                            `;
+                        }
+                    }
+                    prevContainer.innerHTML = suptPrevHtml;
                 } else {
                     prevContainer.innerHTML = '';
                 }
@@ -230,6 +268,7 @@ const OverviewTab = (() => {
                 `;
                 // 전남광주통합특별시: 전남 이전선거 결과도 표시
                 if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    prevHtml = `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:6px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` + prevHtml;
                     const jeonnamRegion = ElectionData.getRegion('jeonnam');
                     const jnPrev = jeonnamRegion?.prevElection;
                     if (jnPrev) {
@@ -277,7 +316,9 @@ const OverviewTab = (() => {
                     const s = supt.currentSuperintendent;
                     govColor = ElectionData.getSuperintendentColor(s.stance);
                     const sinceText = s.since ? ` ${s.since}년~` : '';
+                    const isMergedSupt = regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType);
                     let suptHtml = `
+                        ${isMergedSupt ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` : ''}
                         <div class="governor-info">
                             <div class="governor-avatar" style="background:${govColor}">${s.name.charAt(0)}</div>
                             <div class="governor-details">
@@ -291,7 +332,7 @@ const OverviewTab = (() => {
                     `;
 
                     // 전남광주통합특별시: 전남 교육감도 함께 표시
-                    if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    if (isMergedSupt) {
                         const prevJn = supt.previousJeonnamSuperintendent;
                         if (prevJn) {
                             const jnColor = ElectionData.getSuperintendentColor(prevJn.stance);
@@ -307,7 +348,7 @@ const OverviewTab = (() => {
                                             <div class="name">${prevJn.name}</div>
                                             <div class="meta">
                                                 <span class="party-badge" style="background:${jnColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${prevJn.stance}</span>
-                                                ${jnSince} 전남 교육감
+                                                ${jnSince} 현직 교육감
                                             </div>
                                         </div>
                                     </div>
@@ -355,7 +396,9 @@ const OverviewTab = (() => {
                     govColor = ElectionData.getPartyColor(gov.party);
                     const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
                     const statusText = gov.acting ? ' 권한대행' : ' 재임중';
+                    const isMerged = regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType);
                     let govHtml = `
+                        ${isMerged ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` : ''}
                         <div class="governor-info">
                             <div class="governor-avatar" style="background:${govColor}">${gov.name.charAt(0)}</div>
                             <div class="governor-details">
@@ -369,12 +412,13 @@ const OverviewTab = (() => {
                     `;
 
                     // 전남광주통합특별시: 전남 도지사도 함께 표시
-                    if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    if (isMerged) {
                         const jeonnamRegion = ElectionData.getRegion('jeonnam');
                         const jeonnamGov = jeonnamRegion?.currentGovernor;
                         if (jeonnamGov && jeonnamGov.name) {
                             const jnColor = ElectionData.getPartyColor(jeonnamGov.party);
                             const jnSince = Number.isFinite(Number(jeonnamGov.since)) ? ` ${jeonnamGov.since}년~` : '';
+                            const jnStatus = jeonnamGov.acting ? ' 권한대행' : ' 재임중';
                             govHtml += `
                                 <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,0.15);">
                                     <div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;">
@@ -386,7 +430,7 @@ const OverviewTab = (() => {
                                             <div class="name">${jeonnamGov.name}</div>
                                             <div class="meta">
                                                 <span class="party-badge" style="background:${jnColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.7rem;color:white;">${ElectionData.getPartyName(jeonnamGov.party)}</span>
-                                                ${jnSince} 전남도지사
+                                                ${jnSince}${jnStatus}
                                             </div>
                                         </div>
                                     </div>
