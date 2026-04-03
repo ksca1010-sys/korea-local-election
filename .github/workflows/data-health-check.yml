@@ -10,8 +10,8 @@ jobs:
   health-check:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
-      actions: write   # 워크플로우 재실행 권한
+      contents: write  # git push — heal_state 결과 data/.heal_state.json 커밋
+      actions: write   # gh workflow run — 실패 워크플로우 자동 재실행 (trigger_workflow)
 
     steps:
       - uses: actions/checkout@v4

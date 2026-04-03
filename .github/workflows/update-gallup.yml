@@ -46,7 +46,7 @@ jobs:
     if: needs.update.outputs.changed == 'true'
     runs-on: ubuntu-latest
     permissions:
-      actions: write
+      actions: write   # gh workflow run — update-overview.yml 연쇄 트리거
     steps:
       - name: Trigger overview update
         env:
