@@ -106,7 +106,10 @@ Plans:
   1. byelection 포함 모든 워크플로우의 각 단계에 `continue-on-error: true`가 적용되어, 앞 단계 실패 시에도 커밋·푸시 단계까지 도달한다
   2. validate_pipeline.py(또는 동급 검증 스크립트)가 후보 파이프라인 외 여론조사·재보궐 등 주요 파이프라인 워크플로우에 연결되어 실행된다
   3. 두 개 이상의 워크플로우가 동시 트리거될 때 git push 충돌(non-fast-forward 오류)이 발생하지 않는다 — 재시도 로직 또는 concurrency 그룹으로 해결된다
-**Plans**: TBD
+**Plans**: 2 plans
+Plans:
+- [ ] 13-01-PLAN.md — concurrency 블록 일괄 추가 + continue-on-error 적용 (GIT-01, INDEP-01)
+- [ ] 13-02-PLAN.md — validate_pipeline.py / 인라인 검증 연결 (INDEP-02)
 
 ### Phase 14: 모니터링 시스템 완성
 **Goal**: 15개 전체 워크플로우의 실패가 monitor_failures.py에 의해 감지·기록되고, 연속 실패 시 GitHub Issue가 자동 생성되며, 복구 시 자동으로 닫히는 완전한 실패 감지·복구 루프를 구축한다
@@ -135,5 +138,5 @@ Plans:
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
 | 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 3/3 | Complete    | 2026-04-03 |
-| 13. 워크플로우 아키텍처 안정화 | v1.3 | 0/? | Not started | - |
+| 13. 워크플로우 아키텍처 안정화 | v1.3 | 0/2 | Planned | - |
 | 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |
