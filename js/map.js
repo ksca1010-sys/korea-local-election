@@ -742,6 +742,8 @@ const MapModule = (() => {
 
     function showTooltip(event, key) {
         if (!key) return;
+        // 모바일에서는 툴팁 비활성화 (터치 환경)
+        if (window.innerWidth <= 768) return;
         // 선거 종류 미선택 시 툴팁 비활성
         if (!currentElectionType) return;
         // 재보궐 모드에서는 광역 영역 툴팁을 비활성화하고 (전남 포함 모든 지역)
