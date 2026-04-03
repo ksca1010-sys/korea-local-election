@@ -28,6 +28,10 @@ async function scheduled(controller, env, ctx) {
   }
 
   try {
+    if (!env.ELECTION_RESULTS) {
+      console.warn('[election-night] KV binding not found, skipping.');
+      return;
+    }
     const data = await fetchAndParseNEC(env);
     // KV put: TTL 120초 (2회 Cron 주기 내 브라우저에 항상 최신 제공)
     await env.ELECTION_RESULTS.put('latest', JSON.stringify(data), { expirationTtl: 120 });
@@ -73,6 +77,12 @@ async function handleResults(env) {
   }
 
   try {
+    if (!env.ELECTION_RESULTS) {
+      return new Response(JSON.stringify({ error: 'KV not configured', regions: {} }), {
+        status: 200,
+        headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+      });
+    }
     const raw = await env.ELECTION_RESULTS.get('latest');
     if (!raw) {
       return new Response(JSON.stringify({ error: 'No data yet', regions: {} }), {
