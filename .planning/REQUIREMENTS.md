@@ -12,7 +12,7 @@
 
 ### 진단 (DIAG)
 
-- [ ] **DIAG-01**: 운영자가 전체 15개 GitHub Actions 워크플로우를 체계적으로 분석하여 미처리 실패 패턴을 목록화한 감사 리포트를 생성할 수 있다
+- [x] **DIAG-01**: 운영자가 전체 15개 GitHub Actions 워크플로우를 체계적으로 분석하여 미처리 실패 패턴을 목록화한 감사 리포트를 생성할 수 있다
 
 ### 크래시 방어 (CRASH)
 
@@ -80,7 +80,7 @@
 
 | REQ-ID | Phase | Plan | Status |
 |--------|-------|------|--------|
-| DIAG-01 | Phase 12 | TBD | Pending |
+| DIAG-01 | Phase 12 | 12-01 | Done |
 | CRASH-01 | Phase 12 | TBD | Pending |
 | CRASH-02 | Phase 12 | TBD | Pending |
 | PERM-01 | Phase 12 | TBD | Pending |

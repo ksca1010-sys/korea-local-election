@@ -41,7 +41,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 ### 📋 v1.3 자동화 파이프라인 반복 안정화 (Phases 12-14)
 
-- [ ] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정
+- [ ] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정 (1/3 plans complete)
 - [ ] **Phase 13: 워크플로우 아키텍처 안정화** — 단계 독립성 + git 경쟁 상태 제거
 - [ ] **Phase 14: 모니터링 시스템 완성** — 15개 전체 커버리지 + GitHub Issue 자동화
 
