@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-03-28T01:20:28.192156",
-    "totalDetections": 39,
-    "pendingCount": 39,
+    "lastRun": "2026-04-03T05:11:44.443847",
+    "totalDetections": 49,
+    "pendingCount": 49,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -354,6 +354,11 @@
           "title": "민주당 ‘집안 싸움’ 안산…“김용 나와 달라” VS “대법 판결 이후여...",
           "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8520142&ref=A",
           "date": "2026-03-27"
+        },
+        {
+          "title": "‘李대통령의 남자’ 김용, 경기 안산 공천 초미 관심",
+          "link": "https://www.dt.co.kr/article/12054430?ref=naver",
+          "date": "2026-03-29"
         }
       ],
       "necValidated": false,
@@ -894,6 +899,31 @@
           "title": "국힘 TK 컷오프 후폭풍…주호영-한동훈 연대설 '솔솔'",
           "link": "https://news.jtbc.co.kr/article/NB12291016?influxDiv=NAVER",
           "date": "2026-03-24"
+        },
+        {
+          "title": "국민의힘, 새 공관위원장에 ‘4선’ 박덕흠 선임⋯대구·포항 등 공천 마...",
+          "link": "https://www.kbmaeil.com/article/20260401500202",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "국힘, 대구·충북 공천 대혼란에 공관위 공백까지…주호영 가처분 결과...",
+          "link": "https://www.newsis.com/view/NISX20260331_0003572280",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "김용판, 국민의힘 대구 달서구청장 후보 최종 확정",
+          "link": "http://www.hidomin.com/news/articleView.html?idxno=614640",
+          "date": "2026-03-31"
+        },
+        {
+          "title": "홍석준 &quot;대구, 지금은 주호영도 김부겸 못이겨...8인 경선? 또 다른 문제...",
+          "link": "https://radio.ytn.co.kr/program/?f=2&id=108094&s_mcd=0263&s_hcd=01",
+          "date": "2026-03-31"
+        },
+        {
+          "title": "홍석준 &quot;대구, 지금은 주호영도 김부겸 못이겨...8인 경선? 또 다른 문제...",
+          "link": "https://www.ytn.co.kr/_ln/0101_202603312005453458",
+          "date": "2026-03-31"
         }
       ],
       "necValidated": false,
@@ -1197,6 +1227,266 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-03-28T01:20:28.192124"
+    },
+    {
+      "key": "busan-부산시",
+      "region": "busan",
+      "district": "부산시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "하정우·조국·한동훈 다 모이나…부산 북갑 보선 막판까지 눈치 작전",
+          "link": "https://www.busan.com/view/busan/view.php?code=2026040216303796342",
+          "date": "2026-04-02"
+        },
+        {
+          "title": "하정우 AI수석 부산 보궐 출마설 부상…“세상사 예측 안 해”",
+          "link": "https://www.hani.co.kr/arti/politics/bluehouse/1252505.html",
+          "date": "2026-04-03"
+        },
+        {
+          "title": "한동훈 &quot;호남 20조는 재정투자, 부산 특별법은 포퓰리즘? 이 대통령은 자...",
+          "link": "https://www.busan.com/view/busan/view.php?code=2026040310383723722",
+          "date": "2026-04-03"
+        },
+        {
+          "title": "부산 보선 염두?…한동훈, 이재명 대통령 향해 강공",
+          "link": "https://www.kizmom.com/news/articleView.html?idxno=108958",
+          "date": "2026-04-03"
+        },
+        {
+          "title": "한동훈 부산 보선 몸 푸나…부산발전법 두고 李대통령 비판",
+          "link": "https://www.yna.co.kr/view/AKR20260403052600051?input=1195m",
+          "date": "2026-04-03"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443773"
+    },
+    {
+      "key": "ulsan-남구갑",
+      "region": "ulsan",
+      "district": "남구갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "김상욱",
+        "party": "independent"
+      },
+      "confidence": 70,
+      "sources": [
+        {
+          "title": "국힘 공관위 새판짜기…'미니 총선' 승부수",
+          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1052847",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "울산 남구갑 국회의원 보궐선거 오리무중",
+          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1052798",
+          "date": "2026-04-01"
+        },
+        {
+          "title": "국민의힘 울산 남구갑당협 &quot;김상욱 의원, 국회의원 빨리 사퇴해야&quot;",
+          "link": "http://www.ujeil.com/news/articleView.html?idxno=383644",
+          "date": "2026-04-02"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443800"
+    },
+    {
+      "key": "gwangju-광주통합시",
+      "region": "gwangju",
+      "district": "광주통합시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "이정현, 공관위원장직 사퇴…장동혁 &quot;전남광주통합시장 선거 출마 결단...",
+          "link": "https://www.newspim.com/news/view/20260331000705",
+          "date": "2026-03-31"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443804"
+    },
+    {
+      "key": "gyeonggi-점쳐지기도",
+      "region": "gyeonggi",
+      "district": "점쳐지기도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "확정돼",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "경기지역 판 깔리는 재보선… 안산갑 '친명 충돌'·평택을 '다자 혈투'",
+          "link": "https://www.joongboo.com/news/articleView.html?idxno=363721325",
+          "date": "2026-03-30"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443810"
+    },
+    {
+      "key": "incheon-안산갑도",
+      "region": "incheon",
+      "district": "안산갑도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "민주당",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "민주당 지방선거 공천 순항 정청래, '당내 갈등' 우려에 인천 계양을·경...",
+          "link": "https://www.huffingtonpost.kr/article/256238",
+          "date": "2026-03-30"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443812"
+    },
+    {
+      "key": "gyeonggi-자리에서도",
+      "region": "gyeonggi",
+      "district": "자리에서도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "혐의로",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "[뉴스룸에서] 한국 정치의 또 다른 세습",
+          "link": "https://www.kmib.co.kr/article/view.asp?arcid=1774762312&code=11171222&cp=nv",
+          "date": "2026-03-30"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443814"
+    },
+    {
+      "key": "gyeonggi-동시",
+      "region": "gyeonggi",
+      "district": "동시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "조국·김남국·김용·전해철까지…여권 인사 대거 거론되는 안산갑 보궐...",
+          "link": "https://www.newsis.com/view/NISX20260327_0003567415",
+          "date": "2026-03-29"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443823"
+    },
+    {
+      "key": "busan-여의도연구",
+      "region": "busan",
+      "district": "여의도연구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "장예찬 피선거권 5년간 박탈.... 선거법위반 벌금형 확정 | 22대 총선 당...",
+          "link": "http://monthly.chosun.com/client/mdaily/daily_view.asp?idx=24090&Newsnumb=20260424090",
+          "date": "2026-04-03"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443826"
+    },
+    {
+      "key": "ulsan-지역구",
+      "region": "ulsan",
+      "district": "지역구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "김상욱",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "김태규 &quot;김상욱 의원 거취 빨리 결정해야&quot;",
+          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1053053",
+          "date": "2026-04-03"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443831"
+    },
+    {
+      "key": "busan-미실시",
+      "region": "busan",
+      "district": "미실시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "만약",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "무주공산 된 '부산 북갑', 조국-한동훈 'PK 빅매치' 초읽기?",
+          "link": "https://www.sisajournal.com/news/articleView.html?idxno=368059",
+          "date": "2026-04-02"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-03T05:11:44.443835"
     }
   ]
 }

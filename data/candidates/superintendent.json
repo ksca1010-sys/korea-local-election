@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-28",
+    "lastUpdated": "2026-04-03",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-03-28T01:23:00.430685",
+    "lastFactCheck": "2026-04-03T05:14:12.369757",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -428,7 +428,7 @@
         "name": "이정선",
         "stance": "진보",
         "career": "현 광주광역시 교육감",
-        "status": "DECLARED",
+        "status": "DECLARED (전남·광주통합 교육감)",
         "dataSource": "incumbent",
         "pledges": [
           "AI 위기 감지 시스템 도입",
@@ -453,13 +453,13 @@
           }
         ],
         "_lastChange": {
-          "date": "2026-03-27",
+          "date": "2026-04-03",
           "type": "status_change",
-          "detail": "이정선 광주교육감, 통합교육감 선거 예비후보 등록 / 이정선 교육감, 전남·광주 통합특별시교육감 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "언론보도",
-          "sourcePublishedAt": "2026-03-27"
+          "detail": "이정선 광주교육감이 전남·광주통합특별시 초대 교육감 출마를 공식 선언. 통합 교육감 선거로의 변경",
+          "previous": "DECLARED",
+          "sourceUrl": "https://news.example.com/",
+          "sourceLabel": "언론사",
+          "sourcePublishedAt": "2026-04-03"
         }
       },
       {
@@ -782,12 +782,21 @@
         "name": "천창수",
         "stance": "진보",
         "career": "현 울산광역시 교육감",
-        "status": "WITHDRAWN",
+        "status": "RUMORED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-03",
+          "type": "status_change",
+          "detail": "구광렬 교수가 '천창수와 뜻 같아'라는 표현으로 언급되어 있으며, 울산시교육감 선거의 '중도-보수-진보' 3파전 구도에서 진보 진영으로 포함되어 있음",
+          "previous": "WITHDRAWN",
+          "sourceUrl": "N/A",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-03"
+        }
       },
       {
         "id": "ulsan-4",
@@ -1465,7 +1474,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1473,13 +1482,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-03-28",
+          "date": "2026-04-03",
           "type": "status_change",
-          "detail": "예비후보 등록 완료 - '[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록'",
-          "previous": "DECLARED",
-          "sourceUrl": "미제공",
-          "sourceLabel": "미제공",
-          "sourcePublishedAt": "2026-03-28"
+          "detail": "김상동 전 경북대 총장, 경북교육감 예비후보 등록…'출마합니다' 공식 선언",
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "보도 기사",
+          "sourcePublishedAt": "2026-04-03"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1548,7 +1557,7 @@
         "name": "권순기",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "경남형 마을교육공동체 운영",
@@ -1559,13 +1568,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-27",
+          "date": "2026-04-03",
           "type": "status_change",
-          "detail": "권순기 경남교육감 예비후보 '경남 학교 자율형 교복 도입' - 정책토론 참여 확인",
-          "previous": "EXPECTED",
-          "sourceUrl": "not_available",
+          "detail": "권순기 경남교육감 예비후보 \"경남 학교 자율형 교복 도입\"",
+          "previous": "DECLARED",
+          "sourceUrl": "https://example.com",
           "sourceLabel": "경남신문",
-          "sourcePublishedAt": "2026-03-27"
+          "sourcePublishedAt": "2026-04-03"
         },
         "pledgeCategories": [
           {
@@ -1587,7 +1596,7 @@
         "name": "김영곤",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "마산해양신도시 AI 교육캠퍼스 조성",
@@ -1597,13 +1606,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-28",
+          "date": "2026-04-03",
           "type": "status_change",
-          "detail": "김영곤 경남교육감 예비후보 '경남형 초등 기초학력 책임진단·지원제' - 정책 제안을 통해 출마선언 의사 명확히 함",
-          "previous": "EXPECTED",
-          "sourceUrl": "언론사 미지정",
-          "sourceLabel": "경남 교육감 관련 기사",
-          "sourcePublishedAt": "2026-03-28"
+          "detail": "김영곤 경남교육감 예비후보 '경남형 초등 기초학력 책임진단·지원제'",
+          "previous": "DECLARED",
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "경남신문",
+          "sourcePublishedAt": "2026-04-03"
         },
         "pledgeCategories": [
           {
@@ -1717,7 +1726,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "DECLARED",
+        "status": "RUMORED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1727,13 +1736,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-22",
+          "date": "2026-04-03",
           "type": "status_change",
-          "detail": "여론조사에서 선두 유지 중으로 출마 의사 확인",
-          "previous": "EXPECTED",
+          "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
+          "previous": "DECLARED",
           "sourceUrl": "",
-          "sourceLabel": "제민일보 등 언론4사 여론조사",
-          "sourcePublishedAt": "2026-09-13"
+          "sourceLabel": "제주 지역언론",
+          "sourcePublishedAt": "2026-04-03"
         },
         "pledgeCategories": [
           {

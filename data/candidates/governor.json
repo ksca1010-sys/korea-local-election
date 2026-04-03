@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-03-28",
+    "lastUpdated": "2026-04-03",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-03-28T01:20:55.741780",
+    "lastFactCheck": "2026-04-03T05:12:03.901197",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -1365,7 +1365,7 @@
         "age": 63,
         "career": "現 충북도지사 (재선 도전) / 前 3선 국회의원",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "오송 바이오클러스터",
@@ -1375,7 +1375,16 @@
         "_note": "국민의힘 공관위 컷오프 대상. 본인 수용 여부 미확인.",
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-03",
+          "type": "status_change",
+          "detail": "가처분 인용 결정으로 공천 배제 상황에서 법원 판단을 받음. '기사회생' 김영환 지사로 보도되며 당 공천 복권 관련 보도",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-03"
+        }
       },
       {
         "id": "chungbuk-2",
