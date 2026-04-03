@@ -67,10 +67,26 @@ const NewsTab = (() => {
             ...(localRegistry?.province?.hosts?.tier1 || []),
             ...(localRegistry?.province?.hosts?.tier2 || [])
         ];
+        // 전남광주통합특별시: superintendent 선거에 한해 전남 언론사도 부스트에 포함
+        const isMergedForSupt = regionKey === 'gwangju'
+            && typeof isMergedGwangjuJeonnam === 'function'
+            && isMergedGwangjuJeonnam('superintendent');
+        if (isMergedForSupt) {
+            const jnRegistry = window.LocalMediaRegistry?.regions?.['jeonnam'];
+            (jnRegistry?.province?.hosts?.tier1 || []).forEach(h => { if (!localHosts.includes(h)) localHosts.push(h); });
+            (jnRegistry?.province?.hosts?.tier2 || []).forEach(h => { if (!localHosts.includes(h)) localHosts.push(h); });
+        }
         const allBoostHosts = [...EDUCATION_MEDIA_HOSTS, ...REGIONAL_BROADCAST_HOSTS, ...localHosts];
 
         // 지역신문명으로 직접 검색하는 쿼리 생성
         const localMediaNames = localRegistry?.province?.priorityNames?.slice(0, 2) || [];
+        // 통합 시 전남 신문명도 추가
+        if (isMergedForSupt) {
+            const jnRegistry = window.LocalMediaRegistry?.regions?.['jeonnam'];
+            (jnRegistry?.province?.priorityNames?.slice(0, 2) || []).forEach(n => {
+                if (!localMediaNames.includes(n)) localMediaNames.push(n);
+            });
+        }
         const localSearchQueries = localMediaNames.map(name => `${name} 교육감`);
 
         return [

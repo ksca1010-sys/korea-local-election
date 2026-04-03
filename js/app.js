@@ -146,21 +146,8 @@ const App = (() => {
                     (metroEntry.hosts || []).forEach(h => hostSet.add(h));
                     prov.hosts.tier2 = [...hostSet];
                 }
-                // 전남광주 통합: governor/superintendent 선거에서 jeonnam 언론사를 gwangju에 병합
-                if (reg.regions['gwangju'] && reg.regions['jeonnam']) {
-                    const gjProv = reg.regions['gwangju'].province || (reg.regions['gwangju'].province = {});
-                    const jnProv = reg.regions['jeonnam'].province || {};
-                    if (!gjProv.hosts) gjProv.hosts = { tier1: [], tier2: [] };
-                    const t1Set = new Set(gjProv.hosts.tier1 || []);
-                    (jnProv.hosts?.tier1 || []).forEach(h => t1Set.add(h));
-                    gjProv.hosts.tier1 = [...t1Set];
-                    const t2Set = new Set(gjProv.hosts.tier2 || []);
-                    (jnProv.hosts?.tier2 || []).forEach(h => t2Set.add(h));
-                    gjProv.hosts.tier2 = [...t2Set];
-                    const nameSet = new Set(gjProv.priorityNames || []);
-                    (jnProv.priorityNames || []).forEach(n => nameSet.add(n));
-                    gjProv.priorityNames = [...nameSet];
-                }
+                // 전남광주 통합 뉴스 병합은 news-tab.js buildSuperintendentNewsCategories에서
+                // 선거 유형(superintendent) 조건부로 처리 (다른 선거 유형 오염 방지)
                 const municipal = pool.municipal || {};
                 for (const [muniName, muniData] of Object.entries(municipal)) {
                     const poolHosts = muniData.hosts || [];
