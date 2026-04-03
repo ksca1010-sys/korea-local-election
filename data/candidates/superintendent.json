@@ -5,7 +5,10 @@
     "lastFactCheck": "2026-03-28T01:23:00.430685",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastPledgeCollection": "2026-03-25T19:57:21.769546"
+    "lastPledgeCollection": "2026-03-25T19:57:21.769546",
+    "mergedRegions": {
+      "jeonnam": "gwangju"
+    }
   },
   "candidates": {
     "seoul": [
@@ -1443,12 +1446,7 @@
         }
       }
     ],
-    "jeonnam": [
-      {
-        "_merged": "gwangju",
-        "_note": "전남광주통합특별시 교육감 선거 — gwangju 키 참조"
-      }
-    ],
+    "jeonnam": [],
     "gyeongbuk": [
       {
         "id": "gyeongbuk-1",

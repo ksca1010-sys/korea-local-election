@@ -21,12 +21,8 @@ from pathlib import Path
 BASE = Path(__file__).resolve().parent.parent.parent
 DATA = BASE / "data" / "candidates"
 
-JEONNAM_REDIRECT_GOVERNOR = [
-    {"_merged": "gwangju", "_note": "전남광주통합특별시장 선거 — gwangju 키 참조"}
-]
-JEONNAM_REDIRECT_SUPERINTENDENT = [
-    {"_merged": "gwangju", "_note": "전남광주통합특별시 교육감 선거 — gwangju 키 참조"}
-]
+JEONNAM_REDIRECT_GOVERNOR = []
+JEONNAM_REDIRECT_SUPERINTENDENT = []
 
 
 def load_json(path: Path) -> dict:
@@ -41,11 +37,11 @@ def save_json(path: Path, data: dict) -> None:
 
 
 def is_redirect(entries: list) -> bool:
-    """jeonnam 값이 이미 _merged 리다이렉트인지 확인."""
+    """jeonnam이 이미 병합 완료 상태인지 확인 (빈 배열 또는 구 _merged 플레이스홀더)."""
     if not entries:
-        return False
+        return True  # 빈 배열 = 이미 병합 완료
     if len(entries) == 1 and "_merged" in entries[0]:
-        return True
+        return True  # 구 플레이스홀더 형식 (하위 호환)
     return False
 
 
