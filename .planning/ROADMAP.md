@@ -42,7 +42,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 ### 📋 v1.3 자동화 파이프라인 반복 안정화 (Phases 12-14)
 
 - [x] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정 (1/3 plans complete) (completed 2026-04-03)
-- [ ] **Phase 13: 워크플로우 아키텍처 안정화** — 단계 독립성 + git 경쟁 상태 제거
+- [x] **Phase 13: 워크플로우 아키텍처 안정화** — 단계 독립성 + git 경쟁 상태 제거 (completed 2026-04-03)
 - [ ] **Phase 14: 모니터링 시스템 완성** — 15개 전체 커버리지 + GitHub Issue 자동화
 
 ## Phase Details
@@ -109,7 +109,7 @@ Plans:
 **Plans**: 2 plans
 Plans:
 - [x] 13-01-PLAN.md — concurrency 블록 일괄 추가 + continue-on-error 적용 (GIT-01, INDEP-01)
-- [ ] 13-02-PLAN.md — validate_pipeline.py / 인라인 검증 연결 (INDEP-02)
+- [x] 13-02-PLAN.md — validate_pipeline.py / 인라인 검증 연결 (INDEP-02)
 
 ### Phase 14: 모니터링 시스템 완성
 **Goal**: 15개 전체 워크플로우의 실패가 monitor_failures.py에 의해 감지·기록되고, 연속 실패 시 GitHub Issue가 자동 생성되며, 복구 시 자동으로 닫히는 완전한 실패 감지·복구 루프를 구축한다
@@ -138,5 +138,5 @@ Plans:
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
 | 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 3/3 | Complete    | 2026-04-03 |
-| 13. 워크플로우 아키텍처 안정화 | v1.3 | 1/2 | In Progress|  |
+| 13. 워크플로우 아키텍처 안정화 | v1.3 | 2/2 | Complete   | 2026-04-03 |
 | 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |
