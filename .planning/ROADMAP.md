@@ -120,7 +120,9 @@ Plans:
   2. 감시 대상 워크플로우 중 하나가 연속 N회 실패할 때 GitHub Issue가 자동 생성되고, 제목과 본문에 실패 워크플로우명·실패 횟수·로그 링크가 포함된다
   3. Issue가 열린 워크플로우가 이후 성공적으로 완료되면 해당 Issue가 자동으로 닫힌다
   4. 모니터링 워크플로우(monitor-failures.yml)가 모든 주요 파이프라인 워크플로우 완료 후 또는 스케줄로 자동 실행된다
-**Plans**: TBD
+**Plans**: 1 plan
+Plans:
+- [ ] 14-01-PLAN.md — monitor-failures.yml 트리거 목록 확장 (MON-01, MON-02)
 
 ## Progress
 
@@ -139,4 +141,4 @@ Plans:
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
 | 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 3/3 | Complete    | 2026-04-03 |
 | 13. 워크플로우 아키텍처 안정화 | v1.3 | 2/2 | Complete    | 2026-04-03 |
-| 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |
+| 14. 모니터링 시스템 완성 | v1.3 | 0/1 | Not started | - |
