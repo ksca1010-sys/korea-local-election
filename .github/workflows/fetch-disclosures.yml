@@ -18,6 +18,10 @@ on:
         options: ['', 'governor', 'mayor', 'superintendent']
         default: ''
 
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
 jobs:
   fetch:
     runs-on: ubuntu-latest
