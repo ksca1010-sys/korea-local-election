@@ -263,15 +263,15 @@
     --chart-grid-line: rgba(120, 100, 70, 0.06);
     --tooltip-bg: rgba(247, 243, 237, 0.96);
     --tooltip-border: rgba(37, 99, 235, 0.20);
-    --map-hover-fill: #c8ced8;
-    --map-bg: #d0d6e0;
-    --map-region-stroke: #b8bfcc;
-    --map-label-fill: #2a2f3e;
-    --map-label-stroke: rgba(255,255,255,0.6);
-    --map-district-stroke: #a8b0be;
-    --map-legend-text: #2a2f3e;
-    --map-legend-bg: rgba(255,255,255,0.85);
-    --map-container-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    --map-hover-fill: #b0b8c8;
+    --map-bg: #b8c2d4;
+    --map-region-stroke: #8a96aa;
+    --map-label-fill: #1a1f2e;
+    --map-label-stroke: rgba(255,255,255,0.7);
+    --map-district-stroke: #8890a0;
+    --map-legend-text: #1a1f2e;
+    --map-legend-bg: rgba(255,255,255,0.90);
+    --map-container-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
 
 /* Reset */
