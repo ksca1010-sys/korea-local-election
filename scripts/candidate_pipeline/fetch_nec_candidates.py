@@ -254,8 +254,14 @@ def merge_governor_candidates(existing, new_candidates):
             continue
 
         existing_list = merged["candidates"][region_key]
-        existing_by_name = {c["name"]: c for c in existing_list}
-        new_by_name = {c["name"]: c for c in by_region.get(region_key, [])}
+        existing_by_name = {
+            c["name"]: c for c in existing_list
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
+        new_by_name = {
+            c["name"]: c for c in by_region.get(region_key, [])
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
 
         result = []
 
@@ -322,8 +328,14 @@ def merge_superintendent_candidates(existing, new_candidates):
         if not isinstance(region_list, list):
             continue
 
-        existing_by_name = {c["name"]: c for c in region_list}
-        new_by_name = {c["name"]: c for c in by_region.get(region_key, [])}
+        existing_by_name = {
+            c["name"]: c for c in region_list
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
+        new_by_name = {
+            c["name"]: c for c in by_region.get(region_key, [])
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
 
         result = []
 
@@ -430,8 +442,14 @@ def merge_mayor_candidates(existing, new_candidates, unmatched_list):
         if not isinstance(existing_list, list):
             existing_list = []
 
-        existing_by_name = {c["name"]: c for c in existing_list}
-        new_by_name = {c["name"]: c for c in items}
+        existing_by_name = {
+            c["name"]: c for c in existing_list
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
+        new_by_name = {
+            c["name"]: c for c in items
+            if isinstance(c, dict) and c.get("name", "").strip()
+        }
 
         result = []
 
