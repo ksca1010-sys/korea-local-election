@@ -80,12 +80,12 @@
 
 | REQ-ID | Phase | Plan | Status |
 |--------|-------|------|--------|
-| DIAG-01 | TBD | TBD | Pending |
-| CRASH-01 | TBD | TBD | Pending |
-| CRASH-02 | TBD | TBD | Pending |
-| INDEP-01 | TBD | TBD | Pending |
-| INDEP-02 | TBD | TBD | Pending |
-| GIT-01 | TBD | TBD | Pending |
-| MON-01 | TBD | TBD | Pending |
-| MON-02 | TBD | TBD | Pending |
-| PERM-01 | TBD | TBD | Pending |
+| DIAG-01 | Phase 12 | TBD | Pending |
+| CRASH-01 | Phase 12 | TBD | Pending |
+| CRASH-02 | Phase 12 | TBD | Pending |
+| PERM-01 | Phase 12 | TBD | Pending |
+| INDEP-01 | Phase 13 | TBD | Pending |
+| INDEP-02 | Phase 13 | TBD | Pending |
+| GIT-01 | Phase 13 | TBD | Pending |
+| MON-01 | Phase 14 | TBD | Pending |
+| MON-02 | Phase 14 | TBD | Pending |

@@ -4,7 +4,8 @@
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-03-29)
 - ✅ **v1.1 선거일 대비** — Phases 5-8 (shipped 2026-03-31)
-- 📋 **v1.2 선거 실행** — Phases 9-11 (planned)
+- 📋 **v1.2 선거 실행** — Phases 9-11 (planned, 날짜 잠금)
+- 📋 **v1.3 자동화 파이프라인 반복 안정화** — Phases 12-14 (in progress)
 
 ## Phases
 
@@ -37,6 +38,12 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 - [ ] **Phase 9: 본후보 실수집** — 2026-05-14 실행
 - [ ] **Phase 10: NEC 개표 API 확정** — 2026-05-26 이후 실행
 - [ ] **Phase 11: 선거일 최종 실행** — 2026-05-27~06/04+ 실행
+
+### 📋 v1.3 자동화 파이프라인 반복 안정화 (Phases 12-14)
+
+- [ ] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정
+- [ ] **Phase 13: 워크플로우 아키텍처 안정화** — 단계 독립성 + git 경쟁 상태 제거
+- [ ] **Phase 14: 모니터링 시스템 완성** — 15개 전체 커버리지 + GitHub Issue 자동화
 
 ## Phase Details
 
@@ -76,6 +83,38 @@ Plans:
   4. 2026-06-04 이후 최종 선거 결과 JSON이 `data/` 디렉토리에 커밋되어 영구 보존된다
 **Plans**: TBD
 
+### Phase 12: 전수 진단 + 긴급 방어 수정
+**Goal**: 15개 워크플로우 전체를 체계적으로 감사하고, 즉시 적용 가능한 방어 코드(KeyError 방어, 빈 필드 차단, permissions 정규화)를 전 파이프라인에 일괄 적용하여 잔존 크래시 원인을 제거한다
+**Depends on**: Nothing (v1.3 시작 — 4/3 수정 사항 위에서 진행)
+**Requirements**: DIAG-01, CRASH-01, CRASH-02, PERM-01
+**Success Criteria** (what must be TRUE):
+  1. 15개 워크플로우 전체에 대한 감사 리포트가 존재하며, 미처리 실패 패턴이 항목별로 목록화된다
+  2. 모든 Python 파이프라인 스크립트가 API 응답 필드 누락 시 KeyError 대신 경고 로그를 출력하고 해당 레코드를 스킵한다
+  3. `data/` JSON 파일에 빈 name 또는 필수 필드 누락 레코드가 저장되지 않으며, 파이프라인 실행 후 검증으로 확인된다
+  4. 모든 워크플로우의 `permissions` 블록이 최소 권한(contents: write, actions: write 등 필요한 것만)으로 명시적으로 선언되어 HTTP 403 오류가 발생하지 않는다
+**Plans**: TBD
+
+### Phase 13: 워크플로우 아키텍처 안정화
+**Goal**: 각 워크플로우의 단계가 앞 단계 실패에 무관하게 독립적으로 실행되고, 주요 파이프라인에 스키마 검증이 연결되며, 동시 실행 시 git push 경쟁 상태가 발생하지 않는 구조를 완성한다
+**Depends on**: Phase 12 (감사 리포트 — 잔존 문제 목록 확보)
+**Requirements**: INDEP-01, INDEP-02, GIT-01
+**Success Criteria** (what must be TRUE):
+  1. byelection 포함 모든 워크플로우의 각 단계에 `continue-on-error: true`가 적용되어, 앞 단계 실패 시에도 커밋·푸시 단계까지 도달한다
+  2. validate_pipeline.py(또는 동급 검증 스크립트)가 후보 파이프라인 외 여론조사·재보궐 등 주요 파이프라인 워크플로우에 연결되어 실행된다
+  3. 두 개 이상의 워크플로우가 동시 트리거될 때 git push 충돌(non-fast-forward 오류)이 발생하지 않는다 — 재시도 로직 또는 concurrency 그룹으로 해결된다
+**Plans**: TBD
+
+### Phase 14: 모니터링 시스템 완성
+**Goal**: 15개 전체 워크플로우의 실패가 monitor_failures.py에 의해 감지·기록되고, 연속 실패 시 GitHub Issue가 자동 생성되며, 복구 시 자동으로 닫히는 완전한 실패 감지·복구 루프를 구축한다
+**Depends on**: Phase 12 (permissions 정규화 — Issue 생성 권한 확보), Phase 13 (워크플로우 안정화 — 노이즈 감소)
+**Requirements**: MON-01, MON-02
+**Success Criteria** (what must be TRUE):
+  1. monitor_failures.py가 15개 전체 워크플로우를 감시 대상으로 포함하며, 각 워크플로우의 최근 실행 결과를 수집·기록한다
+  2. 감시 대상 워크플로우 중 하나가 연속 N회 실패할 때 GitHub Issue가 자동 생성되고, 제목과 본문에 실패 워크플로우명·실패 횟수·로그 링크가 포함된다
+  3. Issue가 열린 워크플로우가 이후 성공적으로 완료되면 해당 Issue가 자동으로 닫힌다
+  4. 모니터링 워크플로우(monitor-failures.yml)가 모든 주요 파이프라인 워크플로우 완료 후 또는 스케줄로 자동 실행된다
+**Plans**: TBD
+
 ## Progress
 
 | Phase | Milestone | Plans Complete | Status | Completed |
@@ -91,3 +130,6 @@ Plans:
 | 9. 본후보 실수집 | v1.2 | 0/2 | Planned | - |
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
+| 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 0/? | Not started | - |
+| 13. 워크플로우 아키텍처 안정화 | v1.3 | 0/? | Not started | - |
+| 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |

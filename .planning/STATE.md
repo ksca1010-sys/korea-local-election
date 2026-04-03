@@ -3,12 +3,12 @@ gsd_state_version: 1.0
 milestone: v1.3
 milestone_name: 자동화 파이프라인 반복 안정화
 status: planning
-stopped_at: v1.3 milestone started — defining requirements
+stopped_at: v1.3 roadmap created — Phase 12-14 defined
 last_updated: "2026-04-04T00:00:00.000Z"
 last_activity: 2026-04-04
 progress:
-  total_phases: 0
-  completed_phases: 0
+  total_phases: 14
+  completed_phases: 8
   total_plans: 0
   completed_plans: 0
   percent: 0
@@ -44,7 +44,7 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 
 ## Current Phase
 
-**Phase 정의 중** — 요구사항 및 로드맵 작성 단계
+**Phase 12 대기 중** — 로드맵 작성 완료, 플랜 정의 단계
 
 ## Known Issues (오늘 4/3 진단)
 
@@ -54,14 +54,22 @@ See: .planning/PROJECT.md (updated 2026-04-04)
 | update-gallup.yml permissions.actions:write 누락 | ✅ 수정됨 |
 | update-candidates.yml continue-on-error 부재 | ✅ 수정됨 |
 | nec_precand_sync.py 빈 name 레코드 혼입 | ✅ 수정됨 |
-| update-byelection.yml continue-on-error 부재 | ❌ 미처리 |
-| 동시 git push 경쟁 상태 | ❌ 미처리 |
-| 기타 파이프라인 방어 코드 부재 여부 | ❌ 미점검 |
-| monitor_failures.py 커버리지 15개 미만 | ❌ 미처리 |
+| update-byelection.yml continue-on-error 부재 | ❌ 미처리 (Phase 13) |
+| 동시 git push 경쟁 상태 | ❌ 미처리 (Phase 13) |
+| 기타 파이프라인 방어 코드 부재 여부 | ❌ 미점검 (Phase 12) |
+| monitor_failures.py 커버리지 15개 미만 | ❌ 미처리 (Phase 14) |
+
+## v1.3 Phase 구조
+
+| Phase | 목표 | 요구사항 | 상태 |
+|-------|------|----------|------|
+| 12 | 전수 진단 + 긴급 방어 수정 | DIAG-01, CRASH-01, CRASH-02, PERM-01 | Not started |
+| 13 | 워크플로우 아키텍처 안정화 | INDEP-01, INDEP-02, GIT-01 | Not started |
+| 14 | 모니터링 시스템 완성 | MON-01, MON-02 | Not started |
 
 ## Session Continuity
 
 Last session: 2026-04-04
-Stopped at: v1.3 milestone started — PROJECT.md + STATE.md 업데이트, 요구사항 정의 진행 중
+Stopped at: v1.3 roadmap created — ROADMAP.md Phase 12-14 추가, REQUIREMENTS.md traceability 업데이트
 Resume file: None
-Next action: REQUIREMENTS.md 작성 → ROADMAP.md 생성
+Next action: `/gsd:plan-phase 12` — Phase 12 플랜 정의
