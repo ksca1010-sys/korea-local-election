@@ -63,6 +63,15 @@ async function fetch(request, env) {
 }
 
 async function handleResults(env) {
+  // 선거 당일 개표 시간대 외엔 KV 읽기 없이 즉시 반환
+  const now = Date.now();
+  if (now < NEC_CONFIG.ELECTION_NIGHT_START || now >= NEC_CONFIG.ELECTION_NIGHT_END) {
+    return new Response(JSON.stringify({ error: 'Not election night', regions: {} }), {
+      status: 200,
+      headers: { ...CORS_HEADERS, 'Content-Type': 'application/json' },
+    });
+  }
+
   try {
     const raw = await env.ELECTION_RESULTS.get('latest');
     if (!raw) {
