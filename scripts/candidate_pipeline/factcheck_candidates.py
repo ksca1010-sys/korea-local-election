@@ -107,6 +107,9 @@ def build_prompt(candidates_data, news=None):
         for c in candidates:
             if "_merged" in c:  # 전남광주통합 플레이스홀더 스킵
                 continue
+            if not c.get("name"):  # name 없는 불완전 레코드 스킵
+                print(f"  [경고] name 없는 레코드 스킵 ({region_name}): {list(c.keys())}")
+                continue
             party = PARTY_NAMES.get(c.get("party", ""), c.get("party", ""))
             status = c.get("status", "UNKNOWN")
             status_map = {

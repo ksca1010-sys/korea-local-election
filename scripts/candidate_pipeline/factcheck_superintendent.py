@@ -93,6 +93,9 @@ def build_prompt_for_region(region_key, region_name, candidates, news):
     for c in candidates:
         if "_merged" in c:  # 전남광주통합 플레이스홀더 스킵
             continue
+        if not c.get("name"):  # name 없는 불완전 레코드 스킵
+            print(f"  [경고] name 없는 레코드 스킵 (superintendent): {list(c.keys())}")
+            continue
         stance = c.get("stance", "미분류")
         status_map = {"DECLARED": "출마선언", "EXPECTED": "출마거론", "RUMORED": "하마평", "WITHDRAWN": "사퇴"}
         status_label = status_map.get(c.get("status", ""), c.get("status", ""))

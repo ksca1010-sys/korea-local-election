@@ -45,6 +45,8 @@ jobs:
     needs: update
     if: needs.update.outputs.changed == 'true'
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
     steps:
       - name: Trigger overview update
         env:

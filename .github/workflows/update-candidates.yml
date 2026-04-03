@@ -70,6 +70,11 @@ jobs:
           KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw
 
+      # 0.9단계: 데이터 스키마 검증 (name 누락 등 조기 감지)
+      - name: Validate pipeline data
+        continue-on-error: true
+        run: python scripts/candidate_pipeline/validate_pipeline.py
+
       # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
       - name: Factcheck governor candidates
         env:
