@@ -128,27 +128,17 @@ body.mobile-layout .map-zoom-controls {
 /* ── 6. 범례 토글 버튼 & 범례 패널 (Layer 3) ── */
 
 body.mobile-layout .legend-toggle-btn {
-    display: flex !important;
-    position: fixed !important;
-    right: 12px !important;
-    bottom: 100px !important;
-    z-index: 30 !important;
-    width: 36px !important;
-    height: 36px !important;
+    display: none !important;
 }
 
 body.mobile-layout #map-legend {
     position: fixed !important;
     bottom: 100px !important;
-    right: 56px !important;
+    right: 12px !important;
     left: auto !important;
     top: auto !important;
     max-width: 162px !important;
     z-index: 29 !important;
-    display: none !important;
-}
-
-body.mobile-layout #map-legend.legend-visible {
     display: block !important;
 }
 
