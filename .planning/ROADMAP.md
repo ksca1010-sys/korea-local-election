@@ -108,7 +108,7 @@ Plans:
   3. 두 개 이상의 워크플로우가 동시 트리거될 때 git push 충돌(non-fast-forward 오류)이 발생하지 않는다 — 재시도 로직 또는 concurrency 그룹으로 해결된다
 **Plans**: 2 plans
 Plans:
-- [ ] 13-01-PLAN.md — concurrency 블록 일괄 추가 + continue-on-error 적용 (GIT-01, INDEP-01)
+- [x] 13-01-PLAN.md — concurrency 블록 일괄 추가 + continue-on-error 적용 (GIT-01, INDEP-01)
 - [ ] 13-02-PLAN.md — validate_pipeline.py / 인라인 검증 연결 (INDEP-02)
 
 ### Phase 14: 모니터링 시스템 완성
@@ -138,5 +138,5 @@ Plans:
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
 | 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 3/3 | Complete    | 2026-04-03 |
-| 13. 워크플로우 아키텍처 안정화 | v1.3 | 0/2 | Planned | - |
+| 13. 워크플로우 아키텍처 안정화 | v1.3 | 1/2 | In Progress|  |
 | 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |
