@@ -77,6 +77,7 @@ jobs:
 
       # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
       - name: Factcheck governor candidates
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -86,6 +87,7 @@ jobs:
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck superintendent candidates
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -95,6 +97,7 @@ jobs:
 
       # 3단계: 기초단체장 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck mayor candidates
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -104,6 +107,7 @@ jobs:
 
       # 4단계: 재보궐 후보 팩트체크 (뉴스 기반 + 교차검증)
       - name: Factcheck byelection candidates
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -113,6 +117,7 @@ jobs:
 
       # 4.5단계: 기초단체장 공약 수집 (공약 없는 후보만)
       - name: Collect mayor pledges
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -122,14 +127,17 @@ jobs:
 
       # 4.9단계: 전남광주통합특별시 병합 보정
       - name: Merge gwangju-jeonnam (통합특별시)
+        continue-on-error: true
         run: python scripts/candidate_pipeline/merge_gwangju_jeonnam.py
 
       # 5단계: 개요 narrative에서 발견된 후보 동기화
       - name: Sync candidates from overview narratives
+        continue-on-error: true
         run: python scripts/sync_overview_candidates.py --apply
 
       # 6단계: 다중 교차 검증 (권한대행/중복/광역 겸직 등)
       - name: Cross-validate candidates
+        continue-on-error: true
         run: python scripts/candidate_pipeline/cross_validate.py --fix
 
       - name: Check for changes

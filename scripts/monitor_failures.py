@@ -199,11 +199,27 @@ def handle_failure(workflow_name: str, run_id: str, run_url: str, counts: dict):
             rec["issue_created"] = True
 
 
+def close_issue(issue_number: str, workflow_name: str):
+    """Issue를 성공 복구 댓글과 함께 닫기"""
+    today_str = date.today().isoformat()
+    body = f"✅ **{today_str} — 워크플로우 성공적으로 복구됨**\n\n`{workflow_name}` 실행이 정상 완료되었습니다. Issue를 자동으로 닫습니다."
+    gh("issue", "comment", issue_number, "--body", body)
+    rc, _, err = gh("issue", "close", issue_number)
+    if rc == 0:
+        print(f"  Issue #{issue_number} 자동 닫힘")
+    else:
+        print(f"  Issue #{issue_number} 닫기 실패: {err}")
+
+
 def handle_success(workflow_name: str, counts: dict):
     rec = counts.get(workflow_name, {})
     prev = rec.get("consecutive", 0)
     if prev > 0:
         print(f"  {workflow_name} — 성공, 연속 실패 카운트 초기화 ({prev}회 → 0)")
+        # 열린 Issue가 있으면 자동으로 닫기
+        existing = find_open_issue(workflow_name)
+        if existing:
+            close_issue(existing, workflow_name)
     counts[workflow_name] = {
         "consecutive": 0,
         "first_failed_at": None,

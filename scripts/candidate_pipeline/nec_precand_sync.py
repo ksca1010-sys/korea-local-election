@@ -133,7 +133,10 @@ def sync_governor(governor_data, nec_items):
         existing = {c["name"]: c for c in candidates[rk]}
 
         for item in items:
-            name = item.get("name", "")
+            name = item.get("name", "").strip()
+            if not name:  # API 응답에 name 없으면 저장 자체를 막음
+                print(f"  [경고] name 없는 NEC 응답 스킵 (광역/{rk}): {item}")
+                continue
             party_name = item.get("jdName", "")
             party_key = _normalize_party(party_name)
             career = item.get("career1", "")
@@ -225,7 +228,10 @@ def sync_mayor(mayor_data, nec_items):
         existing = {c["name"]: c for c in existing_list}
 
         for item in items:
-            name = item.get("name", "")
+            name = item.get("name", "").strip()
+            if not name:  # API 응답에 name 없으면 저장 자체를 막음
+                print(f"  [경고] name 없는 NEC 응답 스킵 (기초/{wiw}): {item}")
+                continue
             party_name = item.get("jdName", "")
             party_key = _normalize_party(party_name)
             career = item.get("career1", "")
