@@ -4605,6 +4605,8 @@ body.banner-hidden #main-content {
     box-shadow: var(--shadow-lg);
     animation: fadeIn 0.2s ease;
     pointer-events: none;
+    word-break: keep-all;
+    overflow-wrap: break-word;
 }
 
 .filter-tooltip .ft-title {
@@ -4624,13 +4626,14 @@ body.banner-hidden #main-content {
 .filter-tooltip .ft-meta {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 5px;
 }
 
 .filter-tooltip .ft-meta-row {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     font-size: 0.78rem;
+    gap: 1px;
 }
 
 .filter-tooltip .ft-meta-row .label {
