@@ -41,7 +41,7 @@ Full details: `.planning/milestones/v1.1-ROADMAP.md`
 
 ### 📋 v1.3 자동화 파이프라인 반복 안정화 (Phases 12-14)
 
-- [ ] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정 (1/3 plans complete)
+- [x] **Phase 12: 전수 진단 + 긴급 방어 수정** — 잔존 실패 패턴 파악 및 즉시 적용 가능한 수정 (1/3 plans complete) (completed 2026-04-03)
 - [ ] **Phase 13: 워크플로우 아키텍처 안정화** — 단계 독립성 + git 경쟁 상태 제거
 - [ ] **Phase 14: 모니터링 시스템 완성** — 15개 전체 커버리지 + GitHub Issue 자동화
 
@@ -94,9 +94,9 @@ Plans:
   4. 모든 워크플로우의 `permissions` 블록이 최소 권한(contents: write, actions: write 등 필요한 것만)으로 명시적으로 선언되어 HTTP 403 오류가 발생하지 않는다
 **Plans**: 3 plans
 Plans:
-- [ ] 12-01-PLAN.md — 전수 감사 리포트 생성 + fetch-disclosures 2.yml 정리
-- [ ] 12-02-PLAN.md — Python 파이프라인 방어 코드 적용 (KeyError + 빈 name)
-- [ ] 12-03-PLAN.md — permissions 정규화 + 최종 검증
+- [x] 12-01-PLAN.md — 전수 감사 리포트 생성 + fetch-disclosures 2.yml 정리
+- [x] 12-02-PLAN.md — Python 파이프라인 방어 코드 적용 (KeyError + 빈 name)
+- [x] 12-03-PLAN.md — permissions 정규화 + 최종 검증
 
 ### Phase 13: 워크플로우 아키텍처 안정화
 **Goal**: 각 워크플로우의 단계가 앞 단계 실패에 무관하게 독립적으로 실행되고, 주요 파이프라인에 스키마 검증이 연결되며, 동시 실행 시 git push 경쟁 상태가 발생하지 않는 구조를 완성한다
@@ -134,6 +134,6 @@ Plans:
 | 9. 본후보 실수집 | v1.2 | 0/2 | Planned | - |
 | 10. NEC 개표 API 확정 | v1.2 | 0/? | Not started | - |
 | 11. 선거일 최종 실행 | v1.2 | 0/? | Not started | - |
-| 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 0/3 | Planned | - |
+| 12. 전수 진단 + 긴급 방어 수정 | v1.3 | 3/3 | Complete   | 2026-04-03 |
 | 13. 워크플로우 아키텍처 안정화 | v1.3 | 0/? | Not started | - |
 | 14. 모니터링 시스템 완성 | v1.3 | 0/? | Not started | - |
