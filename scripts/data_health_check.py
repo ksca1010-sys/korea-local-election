@@ -174,7 +174,10 @@ def check_integrity(heal_state):
             for c in dist.get("candidates", []):
                 if c.get("status") == "WITHDRAWN":
                     continue
-                name = c["name"]
+                name = c.get("name", "")
+                if not name:
+                    print(f"[WARN] name 키 누락 레코드 스킵: {list(c.keys())[:5]}")
+                    continue
                 name_map.setdefault(name, []).append(key)
 
         dupes = {n: keys for n, keys in name_map.items() if len(keys) > 1}
@@ -213,7 +216,9 @@ def check_integrity(heal_state):
                 if c.get("status") != "WITHDRAWN":
                     pk = c.get("partyKey", c.get("party", ""))
                     if pk:
-                        known[c["name"]] = pk
+                        cname = c.get("name", "")
+                        if cname:
+                            known[cname] = pk
 
         # 재보궐에서 정당 불일치 찾기
         dirty = False
@@ -221,7 +226,10 @@ def check_integrity(heal_state):
             for c in dist.get("candidates", []):
                 if c.get("status") == "WITHDRAWN":
                     continue
-                name = c["name"]
+                name = c.get("name", "")
+                if not name:
+                    print(f"[WARN] name 키 누락 레코드 스킵: {list(c.keys())[:5]}")
+                    continue
                 pk = c.get("partyKey", c.get("party", ""))
                 if name in known and pk != known[name]:
                     print(f"  ✗ 정당 불일치: {name} — 재보궐({pk}) vs 광역({known[name]})")

@@ -90,7 +90,11 @@ def fetch_precandidates(sg_typecode, nec_key=None):
             print(f"  [NEC] API 오류: {header.get('resultMsg')}")
             break
 
-        body = data["response"]["body"]
+        body = data.get("response", {}).get("body")
+        if body is None:
+            print(f"  [WARN] NEC API 응답에 'body' 키 없음 — 스킵 (typecode={sg_typecode})")
+            print(f"  [DEBUG] 실제 응답 키: {list(data.keys())}")
+            break
         items = body.get("items", {}).get("item", [])
         if isinstance(items, dict):
             items = [items]

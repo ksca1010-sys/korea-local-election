@@ -203,7 +203,14 @@ def fetch_disclosures_for_type(api_key, sg_id, election_type, region_key=None, l
         items = tree.findall(".//item")
         print(f"{len(items)}건")
 
-        result[rkey] = [item_to_disclosure(it) for it in items]
+        raw_records = [item_to_disclosure(it) for it in items]
+        valid_records = []
+        for rec in raw_records:
+            if not rec.get("name", "").strip():
+                print(f"[WARN] 빈 name 공보물 레코드 스킵 ({election_type}/{rkey})")
+                continue
+            valid_records.append(rec)
+        result[rkey] = valid_records
         time.sleep(0.3)
 
     return result
