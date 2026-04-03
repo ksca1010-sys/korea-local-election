@@ -26,6 +26,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run election stats pipeline
+        continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}

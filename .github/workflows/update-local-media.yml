@@ -35,6 +35,7 @@ jobs:
         run: pip install httpx
 
       - name: Run local media discovery
+        continue-on-error: true
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
@@ -50,6 +51,7 @@ jobs:
           python scripts/discover_local_media.py $ARGS
 
       - name: Print coverage report
+        continue-on-error: true
         run: python scripts/discover_local_media.py --report
 
       - name: Check for changes

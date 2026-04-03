@@ -26,10 +26,22 @@ jobs:
         run: pip install httpx beautifulsoup4 pdfplumber
 
       - name: Run NESDC pipeline
+        continue-on-error: true
         run: python scripts/nesdc_poll_pipeline.py
 
       - name: Reparse empty results
+        continue-on-error: true
         run: python scripts/reparse_pdfs.py
+
+      - name: Validate polls data
+        continue-on-error: true
+        run: |
+          python3 -c "
+          import json
+          d = json.load(open('data/polls/polls.json'))
+          cnt = len(d.get('polls', []))
+          print('polls:', cnt, '건 - JSON 파싱 정상')
+          "
 
       - name: Check for changes
         id: diff

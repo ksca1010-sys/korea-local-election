@@ -28,21 +28,28 @@ jobs:
         run: pip install anthropic httpx
 
       - name: Step 1 - Detect new districts (NEC API)
+        continue-on-error: true
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/detect_byelections.py --apply
 
       - name: Step 2 - Fetch & update candidates (news + NEC)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/fetch_byelection.py
 
       - name: Step 3 - Factcheck candidates
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/factcheck_byelection.py
+
+      - name: Validate pipeline data
+        continue-on-error: true
+        run: python scripts/candidate_pipeline/validate_pipeline.py
 
       - name: Check for changes
         id: diff

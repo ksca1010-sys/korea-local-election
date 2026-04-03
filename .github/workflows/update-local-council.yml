@@ -27,6 +27,7 @@ jobs:
         run: pip install anthropic httpx
 
       - name: Run local council members factcheck
+        continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}

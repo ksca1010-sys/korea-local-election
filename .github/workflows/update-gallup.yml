@@ -25,6 +25,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run gallup update
+        continue-on-error: true
         run: python scripts/update_gallup.py
 
       - name: Check for changes

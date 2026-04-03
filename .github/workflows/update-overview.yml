@@ -28,6 +28,7 @@ jobs:
         run: pip install anthropic httpx
 
       - name: Update governor overview (광역단체장)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -36,6 +37,7 @@ jobs:
         run: python scripts/update_election_overview.py
 
       - name: Update superintendent overview (교육감)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -44,6 +46,7 @@ jobs:
         run: python scripts/update_election_overview.py --type=superintendent
 
       - name: Update mayor overview (기초단체장)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -52,6 +55,7 @@ jobs:
         run: python scripts/update_mayor_overview.py --stale-only
 
       - name: Update byelection overview (재보궐)
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}

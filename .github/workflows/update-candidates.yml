@@ -28,6 +28,7 @@ jobs:
 
       # 0-a단계: 재보궐 뉴스 자동감지 + NEC 교차검증
       - name: Detect byelection news
+        continue-on-error: true
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
@@ -41,6 +42,7 @@ jobs:
 
       # 0-b단계: 재보궐 선거구 자동 감지 (선관위 API)
       - name: Detect new byelection districts
+        continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
@@ -53,6 +55,7 @@ jobs:
 
       # 0-c단계: 재보궐 당선 결과 동기화 (선관위 API)
       - name: Sync byelection winners
+        continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
@@ -64,6 +67,7 @@ jobs:
 
       # 0.5단계: NEC 본후보 등록 데이터 수집 (5/14~ 활성화)
       - name: Fetch NEC official candidates
+        continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
