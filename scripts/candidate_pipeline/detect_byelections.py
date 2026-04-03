@@ -101,15 +101,26 @@ def fetch_nec_byelection_districts(api_key):
 
 
 def generate_key(region_key, sgg_name):
-    """선거구명으로 고유 key 생성"""
-    # "계양구을" → "gyeyang"
+    """선거구명으로 고유 key 생성
+
+    단순 시군구명:    "계양구을"    → "incheon-계양"  (끝 접미사만 strip)
+                    "군산시갑"    → "jeonbuk-군산"  (끝 '시' strip, '군' 비파괴)
+    복합 선거구명:    "군산김제부안갑" → "jeonbuk-군산김제" (접미사 없으면 앞 4글자)
+
+    이전 버그: re.match + str.replace('군','') → "군산" 의 '군'도 제거 → "산"
+    수정: 끝 접미사만 re.sub으로 strip.
+    """
+    # 1. 갑/을/병/정 접미사 제거
     clean = re.sub(r'[갑을병정]$', '', sgg_name)
-    # 시군구 이름만 추출
-    m = re.match(r'([가-힣]+[시군구])', clean)
-    if m:
-        name = m.group(1)
-        return f"{region_key}-{name.replace('시','').replace('구','').replace('군','')}"
-    return f"{region_key}-{clean[:3]}"
+    # 2. 끝의 시/군/구 접미사 하나만 제거 (예: "군산시" → "군산", "계양구" → "계양")
+    stripped = re.sub(r'[시군구]$', '', clean)
+    if stripped and stripped != clean:
+        # 단순 시군구: 접미사가 제거되었음
+        return f"{region_key}-{stripped}"
+    # 3. 접미사가 없거나 제거 후 빈 문자열: 복합 선거구명 또는 기타
+    #    앞 4글자를 그대로 slug로 사용
+    slug = clean[:4] if clean else sgg_name[:3]
+    return f"{region_key}-{slug}"
 
 
 ELECTIONS = {
@@ -268,6 +279,10 @@ def main():
         print(f"\n신규 발견: {len(new_districts)}개")
         for d in new_districts:
             key = generate_key(d["regionKey"], d["sggName"])
+            # 키 충돌 방지: 생성된 key가 이미 current_districts에 존재하면 스킵
+            if key in current_districts:
+                print(f"  [스킵] {key}: 이미 등록된 키 (sggName={d['sggName']})")
+                continue
             print(f"  + {key}: {d['district']}")
 
             if args.apply:
