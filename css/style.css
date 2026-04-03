@@ -214,14 +214,14 @@
 }
 
 .light-mode {
-    --bg-primary: #F2EEE8;
-    --bg-secondary: #F8F5F0;
-    --bg-tertiary: #EAE5DC;
-    --bg-card: #F8F5F0;
-    --bg-card-hover: #EAE5DC;
-    --bg-input: #E2DDD4;
-    --bg-surface: #F8F5F0;
-    --bg-elevated: #EAE5DC;
+    --bg-primary: #E0D9D0;
+    --bg-secondary: #E8E2D8;
+    --bg-tertiary: #D6CFC4;
+    --bg-card: #E8E2D8;
+    --bg-card-hover: #D6CFC4;
+    --bg-input: #CEC7BC;
+    --bg-surface: #E8E2D8;
+    --bg-elevated: #D6CFC4;
 
     --border-color: rgba(120, 100, 70, 0.12);
     --border-light: rgba(120, 100, 70, 0.07);
@@ -252,7 +252,7 @@
 
     --shadow: 0 2px 16px rgba(80, 60, 30, 0.07);
     --shadow-lg: 0 4px 32px rgba(80, 60, 30, 0.10);
-    --glass-bg: rgba(248, 245, 240, 0.92);
+    --glass-bg: rgba(232, 226, 216, 0.92);
     --glass-blur: blur(16px);
     --glass-border: rgba(120, 100, 70, 0.09);
 
