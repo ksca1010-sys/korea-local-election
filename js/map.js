@@ -519,8 +519,9 @@ const MapModule = (() => {
 
             mapData = { type: 'FeatureCollection', features: mergedFeatures };
 
-            const padX = 20;
-            const padY = 10;
+            const _mob = window.innerWidth <= 768;
+            const padX = _mob ? 4 : 20;
+            const padY = _mob ? 4 : 10;
             projection.fitExtent(
                 [[padX, padY], [width - padX, height - padY]],
                 mapData
@@ -536,7 +537,8 @@ const MapModule = (() => {
                 const provTopo = await provRes.json();
                 const provObjKey = Object.keys(provTopo.objects)[0];
                 mapData = topojson.feature(provTopo, provTopo.objects[provObjKey]);
-                const padX = 20, padY = 10;
+                const _mob2 = window.innerWidth <= 768;
+                const padX = _mob2 ? 4 : 20, padY = _mob2 ? 4 : 10;
                 projection.fitExtent([[padX, padY], [width - padX, height - padY]], mapData);
                 path = d3.geoPath().projection(projection);
                 renderMap();
