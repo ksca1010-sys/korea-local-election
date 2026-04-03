@@ -26,7 +26,16 @@
 - ✓ 탭 스켈레톤 스크린 + 모바일 스와이프 (FEAT-04~05) — v1.0
 - ✓ Cloudflare Worker 실시간 개표 폴링 + 지도 시각화 (FEAT-06) — v1.0
 
-### Active (v1.2)
+### Active (v1.3)
+
+- [ ] **DIAG-01** 전체 15개 워크플로우 실패 패턴 전수 분석 + 잔존 문제 목록화
+- [ ] **CRASH-01** API 응답 방어 코드 미적용 파이프라인 일괄 수정
+- [ ] **INDEP-01** continue-on-error 미적용 워크플로우 (byelection 외) 정비
+- [ ] **GIT-01** 동시 push 경쟁 상태 제거 (재시도/직렬화 패턴 적용)
+- [ ] **MON-01** monitor_failures.py 커버리지 15개 전체로 확장
+- [ ] **PERM-01** 전 워크플로우 permissions 정규화
+
+### Active (v1.2 — 날짜 잠금)
 
 - [ ] **CAND-01 본후보 실수집** — 2026-05-14: `python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw` 실행
 - [ ] **NEC 개표 API URL 확정** — 2026-05-26 이후 Chrome DevTools로 실제 URL 캡처 후 `workers/election-night/index.js`에 기입 + parseNECResponse() TODO 14곳 업데이트
@@ -41,7 +50,19 @@
 - 선거 예측/AI 분석 수치 — 허위 데이터 방지 원칙 (헌법 제2조)
 - React/Vue/Svelte 등 프레임워크 도입 — 스택 변경 불필요
 
-## Current Milestone: v1.2 선거 실행
+## Current Milestone: v1.3 자동화 파이프라인 반복 안정화
+
+**Goal:** 전체 파이프라인 실패 패턴을 전수 진단·제거하고 실패 감지·복구 시스템을 완성하여 5/14 본후보 수집 전 무인 안정 운영을 달성한다
+
+**Target features:**
+- [DIAG] 15개 워크플로우 전수 분석 — 잔존 실패 패턴 목록화
+- [CRASH] API 응답 필드 누락 → KeyError 전 파이프라인 방어 코드 일괄 적용
+- [INDEP] continue-on-error 미적용 워크플로우 정비 (byelection, polls 등)
+- [GIT] 동시 git push 경쟁 상태 제거
+- [MON] monitor_failures.py 커버리지 15개 전체 워크플로우로 확장
+- [PERM] permissions 전 워크플로우 일관화
+
+## Previous Milestone: v1.2 선거 실행 (병행 진행 — 날짜 잠금)
 
 **Goal:** 5/14 본후보 실수집 → 5/26 NEC URL 확정 → 6/1~2 최종 배포 → 6/3 선거 당일 무중단 운영 실행
 
