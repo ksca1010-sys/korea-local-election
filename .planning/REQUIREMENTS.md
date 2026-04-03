@@ -30,8 +30,8 @@
 
 ### 모니터링 (MON)
 
-- [ ] **MON-01**: 15개 전체 워크플로우의 실패가 monitor_failures.py에 의해 감지·기록된다
-- [ ] **MON-02**: 연속 실패 시 GitHub Issue 자동 생성, 복구 시 자동 닫기가 모든 감시 대상 워크플로우에 적용된다
+- [x] **MON-01**: 15개 전체 워크플로우의 실패가 monitor_failures.py에 의해 감지·기록된다
+- [x] **MON-02**: 연속 실패 시 GitHub Issue 자동 생성, 복구 시 자동 닫기가 모든 감시 대상 워크플로우에 적용된다
 
 ### 권한 정규화 (PERM)
 
@@ -87,5 +87,5 @@
 | INDEP-01 | Phase 13 | TBD | Pending |
 | INDEP-02 | Phase 13 | TBD | Pending |
 | GIT-01 | Phase 13 | TBD | Pending |
-| MON-01 | Phase 14 | TBD | Pending |
-| MON-02 | Phase 14 | TBD | Pending |
+| MON-01 | Phase 14 | 14-01 | Done |
+| MON-02 | Phase 14 | 14-01 | Done |
