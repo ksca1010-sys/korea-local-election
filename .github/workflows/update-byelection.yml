@@ -2,17 +2,32 @@ name: Update By-Election Data
 
 on:
   schedule:
-    # 매일 한국시간 11:00 (UTC 02:00) 실행 — candidates(09:00) 완료 후 실행
+    # 매일 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
     - cron: '0 2 * * *'
   workflow_dispatch:
-    # 수동 실행 가능
 
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   update:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -48,8 +63,20 @@ jobs:
         run: python scripts/candidate_pipeline/factcheck_byelection.py
 
       - name: Validate pipeline data
-        continue-on-error: true
         run: python scripts/candidate_pipeline/validate_pipeline.py
+
+      - name: Assert byelection data not empty
+        run: |
+          python3 -c "
+          import json, sys
+          d = json.load(open('data/candidates/byelection.json'))
+          districts = d.get('districts', {})
+          total = sum(len(v.get('candidates', [])) for v in districts.values() if isinstance(v, dict))
+          if len(districts) < 1:
+              print(f'FATAL: byelection.json에 선거구 없음 — 파이프라인 실패 의심')
+              sys.exit(1)
+          print(f'OK: byelection — {len(districts)}개 선거구, {total}명 후보')
+          "
 
       - name: Check for changes
         id: diff
@@ -63,4 +90,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/byelection.json
           git commit -m "chore: auto-update byelection data $(date +%Y-%m-%d)"
-          git pull --rebase origin main && git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done

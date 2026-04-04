@@ -2,15 +2,28 @@ name: Poll Sync (NESDC)
 
 on:
   schedule:
-    - cron: '0 0 * * *'
+    # 매일 한국시간 09:30 (UTC 00:30) — update-candidates(09:00) 이후 충돌 방지
+    - cron: '30 0 * * *'
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   sync:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -26,21 +39,22 @@ jobs:
         run: pip install httpx beautifulsoup4 pdfplumber
 
       - name: Run NESDC pipeline
-        continue-on-error: true
         run: python scripts/nesdc_poll_pipeline.py
 
       - name: Reparse empty results
         continue-on-error: true
         run: python scripts/reparse_pdfs.py
 
-      - name: Validate polls data
-        continue-on-error: true
+      - name: Assert polls data not empty
         run: |
           python3 -c "
-          import json
+          import json, sys
           d = json.load(open('data/polls/polls.json'))
-          cnt = len(d.get('polls', []))
-          print('polls:', cnt, '건 - JSON 파싱 정상')
+          total = d.get('totalCount', 0)
+          if total < 100:
+              print(f'FATAL: totalCount={total} — NESDC 파이프라인 실패 의심')
+              sys.exit(1)
+          print(f'OK: {total} polls')
           "
 
       - name: Check for changes
@@ -55,4 +69,8 @@ jobs:
           git add data/polls/
           NEW=$(git diff --cached data/polls/polls.json | grep '^\+' | grep '"nttId"' | wc -l | tr -d ' ')
           git commit -m "data: poll sync $(date +%Y-%m-%d) -- 신규 ${NEW}건"
-          git pull --rebase origin main && git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done

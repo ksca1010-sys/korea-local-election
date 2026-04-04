@@ -1,0 +1,370 @@
+{
+  "version": "1.0.0",
+  "lastScanned": 1774739435026,
+  "projectRoot": "/Users/isawufo/Desktop/AI-cording-project/korea-local-election",
+  "techStack": {
+    "languages": [
+      {
+        "name": "JavaScript/TypeScript",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "package.json"
+        ]
+      },
+      {
+        "name": "Python",
+        "version": null,
+        "confidence": "high",
+        "markers": [
+          "requirements.txt"
+        ]
+      }
+    ],
+    "frameworks": [],
+    "packageManager": "npm",
+    "runtime": null
+  },
+  "build": {
+    "buildCommand": null,
+    "testCommand": null,
+    "lintCommand": "npm run lint",
+    "devCommand": null,
+    "scripts": {
+      "build:local-media": "node scripts/build_local_media_registry.js",
+      "check:local-media": "node scripts/check_local_media_registry.js",
+      "check:news": "node scripts/run_news_regression.js",
+      "check:all": "node scripts/run_quality_gate.js",
+      "check:polls": "node scripts/run_poll_regression.js",
+      "check:poll-observations": "node scripts/check_poll_observations.js",
+      "check:observations": "node scripts/check_news_observations.js",
+      "gemini:polls": "python3 scripts/gemini_parse_polls.py",
+      "gemini:polls:dry": "python3 scripts/gemini_parse_polls.py --dry-run",
+      "import:polls": "node scripts/import_poll_observations.js",
+      "import:news": "node scripts/import_news_observations.js",
+      "polls:backfill-registration": "python3 scripts/nesdc_poll_pipeline.py --backfill-registration-meta",
+      "report:health": "node scripts/report_data_health.js",
+      "deploy": "bash deploy.sh",
+      "deploy:preview": "npx wrangler pages deploy . --project-name korea-local-eletion --commit-dirty=true",
+      "lint": "eslint js/",
+      "lint:fix": "eslint js/ --fix",
+      "format": "prettier --write 'js/**/*.js' 'css/**/*.css'",
+      "format:check": "prettier --check 'js/**/*.js' 'css/**/*.css'"
+    }
+  },
+  "conventions": {
+    "namingStyle": null,
+    "importStyle": null,
+    "testPattern": null,
+    "fileOrganization": null
+  },
+  "structure": {
+    "isMonorepo": false,
+    "workspaces": [],
+    "mainDirectories": [
+      "docs",
+      "scripts",
+      "src"
+    ],
+    "gitBranches": {
+      "defaultBranch": "main",
+      "branchingStrategy": null
+    }
+  },
+  "customNotes": [],
+  "directoryMap": {
+    "busan_byulpyo": {
+      "path": "busan_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739434998,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "chungbuk_byulpyo": {
+      "path": "chungbuk_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739434998,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "chungnam_byulpyo": {
+      "path": "chungnam_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435005,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "css": {
+      "path": "css",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1774739435005,
+      "keyFiles": [
+        "style.css"
+      ]
+    },
+    "daegu_byulpyo": {
+      "path": "daegu_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435005,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "daejeon_byulpyo": {
+      "path": "daejeon_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435005,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "data": {
+      "path": "data",
+      "purpose": "Data files",
+      "fileCount": 66,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "10_도봉구.geojson",
+        "11_노원구.geojson",
+        "12_은평구.geojson",
+        "13_서대문구.geojson",
+        "14_마포구.geojson"
+      ]
+    },
+    "docs": {
+      "path": "docs",
+      "purpose": "Documentation",
+      "fileCount": 20,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "40인_통합_실행계획.md",
+        "GEMINI_POLL_FALLBACK.md",
+        "MAP_ARCHITECTURE.md",
+        "NEWS_QA_WORKFLOW.md",
+        "POLL_QA_WORKFLOW.md"
+      ]
+    },
+    "gangwon_byulpyo": {
+      "path": "gangwon_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "gwangju_byulpyo": {
+      "path": "gwangju_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "gyeongbuk_byulpyo": {
+      "path": "gyeongbuk_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "gyeonggi_byulpyo": {
+      "path": "gyeonggi_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "incheon_byulpyo": {
+      "path": "incheon_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "jeonbuk_byulpyo": {
+      "path": "jeonbuk_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435006,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "jeonnam_byulpyo": {
+      "path": "jeonnam_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "js": {
+      "path": "js",
+      "purpose": null,
+      "fileCount": 19,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "app-state 2.js",
+        "app-state.js",
+        "app.js",
+        "charts.js",
+        "data-loader.js"
+      ]
+    },
+    "logs": {
+      "path": "logs",
+      "purpose": null,
+      "fileCount": 5,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "nec_update_20260327_085103.log",
+        "nec_update_20260327_145607.log",
+        "overnight_factcheck_20260322_023246.log",
+        "overnight_factcheck_20260322_084449.log",
+        "overnight_factcheck_20260322_084520.log"
+      ]
+    },
+    "prd": {
+      "path": "prd",
+      "purpose": null,
+      "fileCount": 11,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "algorithm_catalog.md",
+        "광역의원_지도_구현_계획서.docx",
+        "교육감_광역지도_구현_계획서.docx",
+        "기초의원_지도_구현_계획서.docx",
+        "뉴스탭 알고리즘 설계 게획서.pdf"
+      ]
+    },
+    "reports": {
+      "path": "reports",
+      "purpose": null,
+      "fileCount": 15,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "mayor_dual_verify_20260305_100228.json",
+        "mayor_dual_verify_20260305_100228.md",
+        "mayor_dual_verify_20260305_100422.json",
+        "mayor_dual_verify_20260305_100422.md",
+        "mayor_dual_verify_20260305_100619.json"
+      ]
+    },
+    "scripts": {
+      "path": "scripts",
+      "purpose": "Build/utility scripts",
+      "fileCount": 60,
+      "lastAccessed": 1774739435007,
+      "keyFiles": [
+        "build_council_members.py",
+        "build_local_media_registry.js",
+        "cache_bust.sh",
+        "check_candidates.py",
+        "check_local_media_registry.js"
+      ]
+    },
+    "seoul_byulpyo": {
+      "path": "seoul_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435008,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "src": {
+      "path": "src",
+      "purpose": "Source code",
+      "fileCount": 1,
+      "lastAccessed": 1774739435008,
+      "keyFiles": []
+    },
+    "test-results": {
+      "path": "test-results",
+      "purpose": null,
+      "fileCount": 1,
+      "lastAccessed": 1774739435008,
+      "keyFiles": []
+    },
+    "ulsan_byulpyo": {
+      "path": "ulsan_byulpyo",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435008,
+      "keyFiles": [
+        "index.xhtml",
+        "styles.css"
+      ]
+    },
+    "worker": {
+      "path": "worker",
+      "purpose": null,
+      "fileCount": 2,
+      "lastAccessed": 1774739435008,
+      "keyFiles": [
+        "index.js",
+        "wrangler.toml"
+      ]
+    },
+    "src/services": {
+      "path": "src/services",
+      "purpose": "Business logic services",
+      "fileCount": 1,
+      "lastAccessed": 1774739435011,
+      "keyFiles": [
+        "regionRepository.ts"
+      ]
+    },
+    "src/types": {
+      "path": "src/types",
+      "purpose": "Type definitions",
+      "fileCount": 1,
+      "lastAccessed": 1774739435012,
+      "keyFiles": [
+        "RegionData.ts"
+      ]
+    },
+    "src/utils": {
+      "path": "src/utils",
+      "purpose": "Utility functions",
+      "fileCount": 1,
+      "lastAccessed": 1774739435012,
+      "keyFiles": [
+        "regionClick.ts"
+      ]
+    }
+  },
+  "hotPaths": [],
+  "userDirectives": []
+}

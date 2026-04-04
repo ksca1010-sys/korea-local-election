@@ -318,10 +318,88 @@ const HistoryTab = (() => {
         // Fix #9: 연도 강조 + Fix #6: 투표율 행 추가 + Fix #3: bar 높이(CSS에서)
         const gwangjuRowsHtml = _renderHistoryRows(history);
 
-        // Chart card reference (used by toggle and chart rendering)
+        // Chart card reference
         const chartCard = document.getElementById('history-chart-card');
+        const historyToggleEl = document.getElementById('history-region-toggle');
 
-        // 전남광주통합특별시: 토글 버튼으로 광주/전남 전환
+        // ── 차트 렌더링 헬퍼 (광주/전남 전환 시 재호출) ──
+        function drawChart(histData, dsData) {
+            destroyChart();
+            if (chartCard) {
+                chartCard.style.display = '';
+                chartCard.querySelector('h4')?.remove();
+                chartCard.querySelector('.history-chart-footnote')?.remove();
+                const h4 = document.createElement('h4');
+                h4.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
+                chartCard.insertBefore(h4, canvas);
+            }
+            canvas.style.display = '';
+            emptyEl.style.display = 'none';
+
+            const allVals = dsData.flatMap(ds => ds.data).filter(v => v !== null);
+            if (allVals.length === 0) {
+                canvas.style.display = 'none';
+                emptyEl.style.display = '';
+                emptyEl.innerHTML = '<div style="padding:16px;color:var(--text-muted);text-align:center;"><i class="fas fa-chart-line"></i> 차트 데이터가 없습니다</div>';
+                return;
+            }
+            const yMin = Math.max(0, Math.floor((Math.min(...allVals) - 5) / 10) * 10);
+            const yMax = Math.min(100, Math.ceil((Math.max(...allVals) + 5) / 10) * 10);
+            const isMobile = window.innerWidth <= 768;
+
+            historyComparisonChart = new Chart(canvas, {
+                type: 'line',
+                data: {
+                    labels: histData.map(e => `${e.year}`),
+                    datasets: dsData
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    aspectRatio: isMobile ? 1.3 : 2,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: {
+                        legend: { labels: { color: '#cbd5e1', usePointStyle: true, boxWidth: 10 } },
+                        tooltip: {
+                            backgroundColor: 'rgba(26, 34, 54, 0.95)',
+                            borderColor: 'rgba(59, 130, 246, 0.3)',
+                            borderWidth: 1, padding: 10, cornerRadius: 8,
+                            callbacks: { label: (ctx) => ctx.raw === null ? null : `${ctx.dataset.label}: ${ctx.raw}%` }
+                        }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(148,163,184,0.08)' } },
+                        y: {
+                            min: yMin, max: yMax,
+                            ticks: { color: '#94a3b8', callback: (v) => `${v}%`, stepSize: 10 },
+                            grid: { color: 'rgba(148,163,184,0.08)' }
+                        }
+                    }
+                }
+            });
+
+            _insertSrTable(canvas,
+                `<caption>정당 계열 득표율 변화</caption>` +
+                `<tr><th>연도</th>${dsData.map(ds => `<th>${ds.label}</th>`).join('')}</tr>` +
+                histData.map((entry, i) =>
+                    `<tr><td>${entry.year}</td>${dsData.map(ds => {
+                        const v = ds.data[i];
+                        return `<td>${v !== null ? v + '%' : '-'}</td>`;
+                    }).join('')}</tr>`
+                ).join('')
+            );
+
+            if (chartCard) {
+                const footnote = document.createElement('div');
+                footnote.className = 'history-chart-footnote';
+                footnote.textContent = electionType === 'superintendent'
+                    ? '진보·보수는 교육감 후보 성향 분류 기준입니다.'
+                    : '민주계·보수계는 정당 계열 기준이며, 동일 선거 1·2위 득표율을 표시합니다.';
+                chartCard.appendChild(footnote);
+            }
+        }
+
+        // ── 전남광주통합특별시: 광주/전남 토글 ──
         if (jeonnamHistory && jeonnamHistory.length > 0) {
             // 전남 통계 산출
             const jnChangeCount = jeonnamHistory.reduce((count, entry, index) => {
@@ -340,6 +418,36 @@ const HistoryTab = (() => {
             const jnDominantParty = [...jnWinnerCounts.entries()].sort((a, b) => b[1] - a[1])[0] || ['other', 0];
             const jnDominantPartyLabel = getBlocLabel(jnDominantParty[0], electionType);
 
+            // 전남 chart datasets 산출
+            const jnBlocAppearances = jeonnamHistory.reduce((counts, entry) => {
+                const winnerBloc = getBlocKey(entry.winner);
+                counts.set(winnerBloc, (counts.get(winnerBloc) || 0) + 1);
+                if (entry.runner) {
+                    const runnerBloc = getBlocKey(entry.runner);
+                    counts.set(runnerBloc, (counts.get(runnerBloc) || 0) + 1);
+                }
+                return counts;
+            }, new Map());
+            const jnChartDatasets = [...jnBlocAppearances.entries()]
+                .filter(([, count]) => count > 0)
+                .sort((a, b) => b[1] - a[1])
+                .map(([bk]) => ({
+                    label: getBlocLabel(bk, electionType),
+                    data: jeonnamHistory.map(entry => {
+                        let best = null;
+                        if (getBlocKey(entry.winner) === bk) best = Number(entry.rate) || 0;
+                        if (entry.runner && getBlocKey(entry.runner) === bk) {
+                            const rv = Number(entry.runnerRate) || 0;
+                            best = best !== null ? Math.max(best, rv) : rv;
+                        }
+                        return best !== null ? Number(best.toFixed(1)) : null;
+                    }),
+                    borderColor: blocPalette[bk],
+                    backgroundColor: `${blocPalette[bk]}22`,
+                    tension: 0.28, fill: false, spanGaps: true,
+                    pointRadius: 4, pointHoverRadius: 6, borderWidth: 2.5
+                }));
+
             // 전남 흐름 HTML
             const jnFlowHtml = `
                 <div class="hpf-timeline-wrap">
@@ -351,13 +459,13 @@ const HistoryTab = (() => {
                             const color = electionType === 'superintendent'
                                 ? (ElectionData.getSuperintendentColor(entry.winner) || ElectionData.getPartyColor(entry.winner))
                                 : ElectionData.getPartyColor(entry.winner);
-                            const blocKey = getBlocKey(entry.winner);
+                            const bk = getBlocKey(entry.winner);
                             const changed = index > 0 && jeonnamHistory[index - 1].winner !== entry.winner;
                             const rate = Number(entry.rate);
                             return `
                                 <div class="hpf-node">
                                     ${changed ? '<span class="hpf-change-mark">교체</span>' : ''}
-                                    <div class="hpf-dot ${dotShapeClass(blocKey)}" style="background:${color}"></div>
+                                    <div class="hpf-dot ${dotShapeClass(bk)}" style="background:${color}"></div>
                                     <div class="hpf-label">'${String(entry.year).slice(-2)}</div>
                                     <div class="hpf-party" style="color:${color}">${winnerPartyLabel}</div>
                                     ${rate > 0 ? `<div class="hpf-rate">${rate.toFixed(1)}%</div>` : ''}
@@ -384,125 +492,62 @@ const HistoryTab = (() => {
                 </div>
             `;
 
-            const gwangjuFlowHtml = flowEl.innerHTML; // already rendered above
-
+            const gwangjuFlowHtml = flowEl.innerHTML;
             const jeonnamRowsHtml = _renderHistoryRows(jeonnamHistory);
+
+            // 토글 버튼을 상단 컨테이너에 배치
+            if (historyToggleEl) {
+                historyToggleEl.style.display = '';
+                historyToggleEl.innerHTML = `
+                    <div style="display:flex;gap:8px;padding:4px 0 12px;">
+                        <button class="hpf-toggle-btn active" data-history-region="gwangju"
+                            style="padding:7px 20px;border-radius:8px;border:1px solid var(--accent-primary);background:var(--accent-primary);color:white;cursor:pointer;font-size:0.875rem;font-weight:600;transition:all 0.15s;">광주</button>
+                        <button class="hpf-toggle-btn" data-history-region="jeonnam"
+                            style="padding:7px 20px;border-radius:8px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;font-size:0.875rem;transition:all 0.15s;">전남</button>
+                    </div>
+                `;
+            }
+
+            // 역대선거결과: 콘텐츠만 (버튼 없음)
             resultsEl.innerHTML = `
-                <div class="hpf-region-toggle" style="display:flex;gap:8px;margin-bottom:16px;">
-                    <button class="hpf-toggle-btn active" data-history-region="gwangju" style="padding:6px 16px;border-radius:6px;border:1px solid var(--accent-primary);background:var(--accent-primary);color:white;cursor:pointer;font-size:0.85rem;font-weight:600;">광주</button>
-                    <button class="hpf-toggle-btn" data-history-region="jeonnam" style="padding:6px 16px;border-radius:6px;border:1px solid var(--border);background:var(--bg-secondary);color:var(--text-secondary);cursor:pointer;font-size:0.85rem;">전남</button>
-                </div>
                 <div data-history-content="gwangju">${gwangjuRowsHtml}</div>
                 <div data-history-content="jeonnam" style="display:none;">${jeonnamRowsHtml}</div>
             `;
 
-            // Toggle click handlers — 흐름+차트+결과표 모두 전환
-            resultsEl.querySelectorAll('.hpf-toggle-btn').forEach(btn => {
+            // 토글 이벤트 — 3개 섹션(흐름+차트+결과) 동시 전환
+            const toggleBtns = historyToggleEl ? historyToggleEl.querySelectorAll('.hpf-toggle-btn') : [];
+            toggleBtns.forEach(btn => {
                 btn.addEventListener('click', () => {
                     const region = btn.dataset.historyRegion;
-                    resultsEl.querySelectorAll('.hpf-toggle-btn').forEach(b => {
-                        b.classList.toggle('active', b.dataset.historyRegion === region);
-                        b.style.background = b.dataset.historyRegion === region ? 'var(--accent-primary)' : 'var(--bg-secondary)';
-                        b.style.color = b.dataset.historyRegion === region ? 'white' : 'var(--text-secondary)';
-                        b.style.borderColor = b.dataset.historyRegion === region ? 'var(--accent-primary)' : 'var(--border)';
-                        b.style.fontWeight = b.dataset.historyRegion === region ? '600' : '';
+                    toggleBtns.forEach(b => {
+                        const isActive = b.dataset.historyRegion === region;
+                        b.classList.toggle('active', isActive);
+                        b.style.background = isActive ? 'var(--accent-primary)' : 'var(--bg-secondary)';
+                        b.style.color = isActive ? 'white' : 'var(--text-secondary)';
+                        b.style.borderColor = isActive ? 'var(--accent-primary)' : 'var(--border)';
+                        b.style.fontWeight = isActive ? '600' : '';
                     });
+                    // 정권변화흐름
+                    flowEl.innerHTML = region === 'jeonnam' ? jnFlowHtml : gwangjuFlowHtml;
+                    // 역대선거결과
                     resultsEl.querySelectorAll('[data-history-content]').forEach(el => {
                         el.style.display = el.dataset.historyContent === region ? '' : 'none';
                     });
-                    // 정권변화흐름 전환
-                    flowEl.innerHTML = region === 'jeonnam' ? jnFlowHtml : gwangjuFlowHtml;
-                    // 차트: 광주만 표시
-                    if (chartCard) {
-                        chartCard.style.display = region === 'jeonnam' ? 'none' : '';
-                    }
+                    // 정당계열득표율변화 차트
+                    drawChart(
+                        region === 'jeonnam' ? jeonnamHistory : history,
+                        region === 'jeonnam' ? jnChartDatasets : chartDatasets
+                    );
                 });
             });
+
+            // 초기: 광주 차트 렌더링
+            drawChart(history, chartDatasets);
         } else {
+            // 단일 지역: 토글 숨김
+            if (historyToggleEl) historyToggleEl.style.display = 'none';
             resultsEl.innerHTML = gwangjuRowsHtml;
-        }
-
-        // Fix #7: 차트 부드럽게 + Fix #11: 차트 범례 설명 각주
-        destroyChart();
-        if (chartCard) {
-            chartCard.style.display = '';
-            chartCard.querySelector('h4')?.remove();
-            chartCard.querySelector('.history-chart-footnote')?.remove();
-            const h4 = document.createElement('h4');
-            h4.innerHTML = '<i class="fas fa-chart-area"></i> 정당 계열 득표율 변화';
-            chartCard.insertBefore(h4, canvas);
-        }
-        canvas.style.display = '';
-        emptyEl.style.display = 'none';
-
-        const allVals = chartDatasets.flatMap(ds => ds.data).filter(v => v !== null);
-        if (allVals.length === 0) {
-            canvas.style.display = 'none';
-            emptyEl.style.display = '';
-            emptyEl.innerHTML = '<div style="padding:16px;color:var(--text-muted);text-align:center;"><i class="fas fa-chart-line"></i> 차트 데이터가 없습니다</div>';
-            return;
-        }
-        const yMin = Math.max(0, Math.floor((Math.min(...allVals) - 5) / 10) * 10);
-        const yMax = Math.min(100, Math.ceil((Math.max(...allVals) + 5) / 10) * 10);
-
-        const isMobile = window.innerWidth <= 768;
-        historyComparisonChart = new Chart(canvas, {
-            type: 'line',
-            data: {
-                labels: history.map((entry) => `${entry.year}`),
-                datasets: chartDatasets
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: true,
-                aspectRatio: isMobile ? 1.3 : 2,
-                interaction: { mode: 'index', intersect: false },
-                plugins: {
-                    legend: {
-                        labels: { color: '#cbd5e1', usePointStyle: true, boxWidth: 10 }
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(26, 34, 54, 0.95)',
-                        borderColor: 'rgba(59, 130, 246, 0.3)',
-                        borderWidth: 1,
-                        padding: 10,
-                        cornerRadius: 8,
-                        callbacks: {
-                            label: (ctx) => ctx.raw === null ? null : `${ctx.dataset.label}: ${ctx.raw}%`
-                        }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: '#94a3b8' }, grid: { color: 'rgba(148,163,184,0.08)' } },
-                    y: {
-                        min: yMin, max: yMax,
-                        ticks: { color: '#94a3b8', callback: (v) => `${v}%`, stepSize: 10 },
-                        grid: { color: 'rgba(148,163,184,0.08)' }
-                    }
-                }
-            }
-        });
-
-        // Accessible sr-only table for screen readers
-        _insertSrTable(canvas,
-            `<caption>정당 계열 득표율 변화</caption>` +
-            `<tr><th>연도</th>${chartDatasets.map(ds => `<th>${ds.label}</th>`).join('')}</tr>` +
-            history.map((entry, i) => {
-                return `<tr><td>${entry.year}</td>${chartDatasets.map(ds => {
-                    const v = ds.data[i];
-                    return `<td>${v !== null ? v + '%' : '-'}</td>`;
-                }).join('')}</tr>`;
-            }).join('')
-        );
-
-        // Fix #11: 범례 설명 각주
-        if (chartCard) {
-            const footnote = document.createElement('div');
-            footnote.className = 'history-chart-footnote';
-            footnote.textContent = electionType === 'superintendent'
-                ? '진보·보수는 교육감 후보 성향 분류 기준입니다.'
-                : '민주계·보수계는 정당 계열 기준이며, 동일 선거 1·2위 득표율을 표시합니다.';
-            chartCard.appendChild(footnote);
+            drawChart(history, chartDatasets);
         }
     }
 

@@ -70,10 +70,13 @@ PARTY_MAP = {
     "무소속": "independent",
 }
 
-# 선거 유형 매핑
+# 선거 유형 매핑 (프론트엔드 타입과 일치)
+# governor   = 광역단체장 (시도지사)
+# mayor      = 기초단체장 (시장/군수/구청장)
+# superintendent = 교육감
 ELECTION_TYPE_MAP = {
-    "광역단체장": "mayor",  # 시도지사
-    "기초단체장": "district_mayor",  # 시군구장
+    "광역단체장": "governor",
+    "기초단체장": "mayor",
     "교육감": "superintendent",
 }
 
@@ -372,28 +375,36 @@ def find_label(labels: Dict[str, str], keywords: List[str]) -> Optional[str]:
     return None
 
 
-def parse_region_from_title(title: str) -> Dict[str, Optional[str]]:
-    """Extract region and municipality from poll title."""
-    title = title.strip()
+def parse_region_from_title(title: str) -> Dict[str, Any]:
+    """Extract region, municipality, and election type(s) from poll title.
 
-    # Pattern: "서울특별시 마포구 기초단체장선거..."
-    # Pattern: "경기도 전체 광역단체장선거..."
-    # Pattern: "전국 정기(정례)조사..."
+    반환:
+        regionKey   : 광역시도 키 (예: "gyeonggi")
+        municipality: 시군구명 (예: "수원시") 또는 None
+        electionType: 주 선거 유형 (단일 문자열)
+        electionTypes: 이 조사에서 다루는 모든 선거 유형 (리스트)
+
+    주 선거 유형 판별 규칙:
+        - 시군구(municipality)가 있으면: mayor 우선 (기초단체장 조사)
+          → "광역단체장" 키워드가 있어도 주 유형은 mayor
+        - 시도 전체(municipality 없음)이면: governor 우선
+          → "광역단체장" 포함 시 governor
+        - 재보궐 키워드가 있으면: byelection 우선 (단, 광역단체장 재보궐 있음)
+    """
+    title = title.strip()
 
     region_key = None
     municipality = None
-    election_type = None
 
-    # Check for region names
+    # 지역 추출 (긴 지명 우선 매칭)
     for region_name, key in sorted(REGION_MAP.items(), key=lambda x: -len(x[0])):
         if region_name in title:
             region_key = key
-            # Extract municipality (시군구) after region name
             after = title.split(region_name, 1)[1].strip()
-            # Remove "전체" marker
+            # "전체" 마커 제거
             if after.startswith("전체"):
                 after = after[2:].strip()
-            # Extract municipality name (before election type keyword)
+            # 시군구 추출 (선거 유형 키워드 이전에 오는 2~8자 한글 + 시/군/구)
             muni_match = re.match(r"^([가-힣]{2,8}(?:시|군|구))\s", after)
             if muni_match:
                 municipality = muni_match.group(1)
@@ -405,18 +416,53 @@ def parse_region_from_title(title: str) -> Dict[str, Optional[str]]:
             "regionKey": None,
             "municipality": None,
             "electionType": "party_support",
+            "electionTypes": ["party_support"],
         }
 
-    # Check election type
-    for type_name, type_key in ELECTION_TYPE_MAP.items():
-        if type_name in title:
-            election_type = type_key
-            break
+    # 모든 선거 유형 추출 (복수 유형 지원)
+    election_types: List[str] = []
+    if "재보궐" in title or "재선거" in title:
+        election_types.append("byelection")
+    if "광역단체장" in title:
+        election_types.append("governor")
+    if "기초단체장" in title:
+        election_types.append("mayor")
+    if "교육감" in title:
+        election_types.append("superintendent")
+    if "정당지지도" in title:
+        election_types.append("party_support")
+
+    # 주 선거 유형 결정
+    # 시군구 지정 여론조사: mayor 우선 (시도지사 포함이어도 기초단체장이 주 대상)
+    if municipality:
+        if "byelection" in election_types:
+            primary = "byelection"
+        elif "mayor" in election_types:
+            primary = "mayor"
+        elif election_types:
+            primary = election_types[0]
+        else:
+            primary = None
+    else:
+        # 시도 전체 여론조사: governor 우선
+        if "byelection" in election_types:
+            primary = "byelection"
+        elif "governor" in election_types:
+            primary = "governor"
+        elif "superintendent" in election_types:
+            primary = "superintendent"
+        elif "party_support" in election_types:
+            primary = "party_support"
+        elif election_types:
+            primary = election_types[0]
+        else:
+            primary = None
 
     return {
         "regionKey": region_key,
         "municipality": municipality,
-        "electionType": election_type,
+        "electionType": primary,
+        "electionTypes": election_types,
     }
 
 
@@ -737,23 +783,129 @@ def parse_pdf_results(pdf_path: Path) -> List[Dict[str, Any]]:
     return []
 
 
+def _build_known_candidates_index() -> Dict[str, Dict[str, str]]:
+    """후보 데이터 파일에서 알려진 후보명 + 정당 인덱스 구축.
+
+    반환: {lookup_key: {name: party_key}}
+    lookup_key = "{regionKey}:{electionType}:{municipality or ''}"
+    party_key = "democratic" | "ppp" | "independent" 등 candidates 파일 형식 그대로
+    """
+    index: Dict[str, Dict[str, str]] = {}
+    cand_dir = BASE_DIR / "data" / "candidates"
+
+    def _add(key: str, cands: List[Dict]):
+        entry = index.setdefault(key, {})
+        for c in cands:
+            name = c.get("name")
+            if name:
+                entry[name] = c.get("party") or "independent"
+
+    # governor: candidates[regionKey] = [{name, party, ...}]
+    try:
+        g = json.loads((cand_dir / "governor.json").read_text(encoding="utf-8"))
+        for rk, cands in g.get("candidates", {}).items():
+            _add(f"{rk}:governor:", cands)
+    except Exception:
+        pass
+
+    # superintendent: candidates[regionKey] = [{name, party, ...}]
+    try:
+        s = json.loads((cand_dir / "superintendent.json").read_text(encoding="utf-8"))
+        for rk, cands in s.get("candidates", {}).items():
+            _add(f"{rk}:superintendent:", cands)
+    except Exception:
+        pass
+
+    # mayor: candidates[regionKey][municipality] = [{name, party, ...}]
+    try:
+        m = json.loads((cand_dir / "mayor_candidates.json").read_text(encoding="utf-8"))
+        for rk, muni_dict in m.get("candidates", {}).items():
+            for muni, cands in muni_dict.items():
+                _add(f"{rk}:mayor:{muni}", cands)
+    except Exception:
+        pass
+
+    # byelection: districts[*].candidates = [{name, party, ...}]
+    try:
+        b = json.loads((cand_dir / "byelection.json").read_text(encoding="utf-8"))
+        for dist in b.get("districts", {}).values():
+            rk = dist.get("region", "")
+            muni = dist.get("sggName") or dist.get("district", "")
+            _add(f"{rk}:byelection:{muni}", dist.get("candidates", []))
+    except Exception:
+        pass
+
+    total_names = sum(len(v) for v in index.values())
+    print(f"  [후보 인덱스] {len(index)}개 선거구, {total_names}명 로드")
+    return index
+
+
+def _cross_validate_with_candidates(
+    poll: Dict[str, Any],
+    results: List[Dict[str, Any]],
+    known_index: Dict[str, Dict[str, str]],
+) -> List[Dict[str, Any]]:
+    """파싱된 후보명을 알려진 후보 목록과 교차검증 + 정당 자동 보강.
+
+    - 해당 선거구 후보 목록이 있을 때만 적용
+    - 목록에 없는 이름 제거 (직함·기관명 파싱 오류 방지)
+    - party가 비어있거나 'independent'이면 후보 목록의 정당으로 채움
+    - 교차검증 후 후보 0명이면 원본 반환 (후보 목록 자체가 오래됐을 수 있음)
+    """
+    region_key = poll.get("regionKey", "")
+    election_type = poll.get("electionType", "")
+    municipality = poll.get("municipality") or ""
+
+    key = f"{region_key}:{election_type}:{municipality}"
+    known = known_index.get(key, {})  # {name: party_key}
+
+    # 후보 목록 없으면 스킵 (새 지역 or 미수집 상태)
+    if not known:
+        return results
+
+    kept = []
+    removed = []
+    for r in results:
+        name = r.get("candidateName")
+        if name not in known:
+            removed.append(name)
+            continue
+        # 정당 보강: 비어있거나 'independent'이면 후보 목록 값 사용
+        if not r.get("party") or r["party"] in ("independent", "무소속", ""):
+            r["party"] = known[name]
+        kept.append(r)
+
+    if removed:
+        print(f"    ⚠ 후보 목록 불일치 제거: {removed} (알려진 후보: {sorted(known)})")
+
+    # 교차검증 후 후보 0명 → 후보 목록이 오래됐거나 새 후보 → 원본 유지
+    if len(kept) == 0 and len(results) > 0:
+        print(f"    ⚠ 교차검증 결과 0명 → 원본 유지 (후보 목록 최신화 필요)")
+        return results
+
+    return kept
+
+
 def _validate_poll_results(results: List[Dict[str, Any]]) -> Optional[List[Dict[str, Any]]]:
     """파싱 결과 품질 검증 게이트.
 
     통과 조건:
       1. 후보명이 한국인 이름 패턴 (2~4자 한글)
-      2. 지지율 합계가 70~110% 범위 (적합도 조사는 낮을 수 있으므로 50% 이상도 허용)
-      3. 최소 2명 이상 유효 후보
+      2. 교차분석표 라벨·직함·기관명이 아닐 것
+      3. 지지율 > 0
+      4. 최소 2명 이상 유효 후보
+      5. 지지율 합계 30% 이상
 
     Returns:
         검증 통과 시 정리된 results, 실패 시 None
     """
     NAME_RE = re.compile(r'^[가-힣]{2,4}$')
 
-    # 비이름 패턴 제거
+    # 비이름 패턴 제거 (형식 + 교차분석표 라벨 + 직함/기관명)
     cleaned = [r for r in results
                if r.get("candidateName")
                and NAME_RE.match(r["candidateName"])
+               and not _is_invalid_candidate_name(r["candidateName"])
                and r.get("support", 0) > 0]
 
     if len(cleaned) < 2:
@@ -1073,7 +1225,29 @@ _INVALID_NAMES = {
     # 정당 약칭/지지 관련
     "지지하는정", "더불어민주", "기타정당", "지지정당없", "지지정당",
     "가중값적용",
+    # 직함/기관명 (PDF 표에서 후보명 옆 설명 텍스트가 잘못 파싱된 경우)
+    "전남도청", "경북도청", "경남도청", "충남도청", "충북도청", "전북도청",
+    "강원도청", "경기도청", "제주도청",
 }
+
+# 직함 suffix — 이것으로 끝나는 문자열은 후보명이 아님 (ex: "영암군수", "서울시장")
+_INVALID_SUFFIXES = {
+    "군수", "시장", "구청장", "도지사", "교육감", "도청",
+    "의원", "의장", "위원장", "총장", "교육장",
+}
+
+
+def _is_invalid_candidate_name(name: str) -> bool:
+    """후보명이 아닌 텍스트 판별 (직함·기관명·라벨)"""
+    if name in _INVALID_NAMES:
+        return True
+    # 직함 suffix 체크 (예: "영암군수", "전남도지사")
+    # 앞에 2글자 이상이 붙어 있을 때만 — "이시장" 같은 실제 이름 오탐 방지
+    for suffix in _INVALID_SUFFIXES:
+        if name.endswith(suffix) and len(name) >= len(suffix) + 2:
+            return True
+    return False
+
 
 # 정당명 패턴 (후보명이 아닌 정당명인지 판별)
 _PARTY_NAME_PATTERN = re.compile(
@@ -1382,6 +1556,9 @@ def collect_polls(full_refresh: bool = False, max_pages: int = MAX_PAGES,
     existing_polls = [] if full_refresh else state.get("polls", [])
     existing_ntt_ids = {p["nttId"] for p in existing_polls}
 
+    # 후보 교차검증 인덱스 — 파이프라인 시작 시 1회 로드
+    known_index = _build_known_candidates_index()
+
     client = httpx.Client(headers={"User-Agent": USER_AGENT})
     new_polls = []
     max_ntt_id = last_ntt_id
@@ -1430,6 +1607,7 @@ def collect_polls(full_refresh: bool = False, max_pages: int = MAX_PAGES,
             poll["regionKey"] = region_info["regionKey"]
             poll["municipality"] = region_info["municipality"]
             poll["electionType"] = region_info["electionType"]
+            poll["electionTypes"] = region_info.get("electionTypes", [])
             poll["title"] = title
             poll["sourceUrl"] = item["url"]
             poll["registrationDate"] = item.get("reg_date") or poll.get("registrationDate") or None
@@ -1449,6 +1627,8 @@ def collect_polls(full_refresh: bool = False, max_pages: int = MAX_PAGES,
                             # ── 검증 게이트: 파싱 결과 품질 검사 ──
                             validated = _validate_poll_results(results)
                             if validated:
+                                # ── 후보 목록 교차검증 ──
+                                validated = _cross_validate_with_candidates(poll, validated, known_index)
                                 poll["results"] = validated
                                 print(f"    ✅ {len(validated)} candidates from PDF")
                             else:
@@ -1529,6 +1709,78 @@ def backfill_registration_metadata(max_pages: int = MAX_PAGES,
     return stats
 
 
+def migrate_types() -> None:
+    """state.json 타입명 마이그레이션 (1회성 교정).
+
+    변경 규칙:
+      - "mayor" (광역단체장 조사, municipality 없음) → "governor"
+      - "district_mayor" (기초단체장 조사)           → "mayor"
+      - "mayor" (municipality 있음)                  → 유지 ("mayor"로 이미 맞음)
+      - electionTypes 필드 없는 poll에 자동 생성
+
+    실행:
+      python3 scripts/nesdc_poll_pipeline.py --migrate-types
+    """
+    state = load_state()
+    polls = state.get("polls", [])
+    if not polls:
+        print("state.json에 데이터가 없습니다.")
+        return
+
+    governor_migrated = 0
+    mayor_migrated = 0
+    types_added = 0
+
+    for poll in polls:
+        old_type = poll.get("electionType") or ""
+        title = poll.get("title", "")
+        municipality = poll.get("municipality")
+
+        # ── 타입명 교정 ──
+
+        # 광역단체장 (province-wide) → governor
+        # 조건: 구 파이프라인이 "mayor"로 기록한 poll 중
+        #       title에 "광역단체장"이 있고 시군구가 없는 것
+        if old_type == "mayor" and "광역단체장" in title and not municipality:
+            poll["electionType"] = "governor"
+            governor_migrated += 1
+
+        # 기초단체장 → mayor (district_mayor 제거)
+        elif old_type == "district_mayor":
+            poll["electionType"] = "mayor"
+            mayor_migrated += 1
+
+        # ── electionTypes 보강 (없는 경우만) ──
+        if "electionTypes" not in poll:
+            types: List[str] = []
+            if "재보궐" in title or "재선거" in title:
+                types.append("byelection")
+            if "광역단체장" in title:
+                types.append("governor")
+            if "기초단체장" in title:
+                types.append("mayor")
+            if "교육감" in title:
+                types.append("superintendent")
+            if "정당지지도" in title:
+                types.append("party_support")
+            if types:
+                poll["electionTypes"] = types
+                types_added += 1
+
+    save_state({"last_id": state.get("last_id", 0), "polls": polls})
+    export_frontend_json(polls)
+
+    from collections import Counter
+    type_dist = Counter(p.get("electionType") for p in polls)
+    print(f"\n✅ 마이그레이션 완료:")
+    print(f"   governor로 교정: {governor_migrated}건 (구 'mayor'→'governor')")
+    print(f"   mayor로 교정:    {mayor_migrated}건 (구 'district_mayor'→'mayor')")
+    print(f"   electionTypes 추가: {types_added}건")
+    print(f"\n타입 분포:")
+    for t, cnt in sorted(type_dist.items(), key=lambda x: -x[1]):
+        print(f"   {t or '(없음)'}: {cnt}건")
+
+
 def export_frontend_json(polls: List[Dict[str, Any]]) -> None:
     """Export polls as JSON for frontend consumption."""
     OUTPUT_JSON.parent.mkdir(parents=True, exist_ok=True)
@@ -1577,6 +1829,11 @@ def main():
         help="기존 state.json에 등록번호/등록일만 백필",
     )
     parser.add_argument(
+        "--migrate-types",
+        action="store_true",
+        help="state.json 타입명 마이그레이션: 구 'mayor'→'governor', 'district_mayor'→'mayor'",
+    )
+    parser.add_argument(
         "--list-html-dir",
         type=Path,
         help="NESDC 목록 HTML 캐시 디렉터리 (page-1.html 형식)",
@@ -1597,6 +1854,10 @@ def main():
             max_pages=args.pages,
             list_html_dir=args.list_html_dir,
         )
+        return
+
+    if args.migrate_types:
+        migrate_types()
         return
 
     collect_polls(

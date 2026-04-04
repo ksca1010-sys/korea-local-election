@@ -28,6 +28,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 FAILURE_COUNTS_PATH = BASE_DIR / "data" / ".failure_counts.json"
 
 ALERT_THRESHOLD = 2   # 연속 N회 실패 시 Issue 생성
+AUTO_RETRY_THRESHOLD = 1  # 연속 N회 실패 시 워크플로우 자동 재시도
+
+# 자동 재시도 제외 워크플로우 (재시도해도 의미 없는 것)
+NO_AUTO_RETRY = {
+    "Monitor Automation Failures",
+    "Data Health Check",
+}
 
 
 def load_counts() -> dict:
@@ -159,6 +166,34 @@ def add_comment(issue_number: str, workflow_name: str, run_url: str,
     gh("issue", "comment", issue_number, "--body", body)
 
 
+def trigger_retry(workflow_name: str):
+    """워크플로우를 자동 재시도로 트리거"""
+    # gh workflow run 은 workflow file name이 필요 — name으로 매핑
+    WORKFLOW_FILE_MAP = {
+        "Update Candidate Data": "update-candidates.yml",
+        "Update Gallup National Poll": "update-gallup.yml",
+        "Poll Sync (NESDC)": "update-polls.yml",
+        "Update Election Overview": "update-overview.yml",
+        "Update Election Stats": "update-election-stats.yml",
+        "Update Governor Status": "update-governor-status.yml",
+        "Update Mayor Status": "update-mayor-status.yml",
+        "Update Superintendent Status": "update-superintendent-status.yml",
+        "Update By-Election Data": "update-byelection.yml",
+        "공보물 데이터 수집 (선관위 API)": "fetch-disclosures.yml",
+        "Update Local Council Members": "update-local-council.yml",
+        "Update Local Media Pool": "update-local-media.yml",
+    }
+    wf_file = WORKFLOW_FILE_MAP.get(workflow_name)
+    if not wf_file:
+        print(f"  자동 재시도: 워크플로우 파일명 매핑 없음 — 건너뜀")
+        return
+    rc, out, err = gh("workflow", "run", wf_file)
+    if rc == 0:
+        print(f"  자동 재시도 트리거됨: {wf_file}")
+    else:
+        print(f"  자동 재시도 실패: {err}")
+
+
 def handle_failure(workflow_name: str, run_id: str, run_url: str, counts: dict):
     rec = counts.setdefault(workflow_name, {
         "consecutive": 0,
@@ -174,6 +209,11 @@ def handle_failure(workflow_name: str, run_id: str, run_url: str, counts: dict):
 
     consecutive = rec["consecutive"]
     print(f"  연속 실패 {consecutive}회 ({workflow_name})")
+
+    # 첫 번째 실패: 자동 재시도 시도 (Issue 생성 전)
+    if consecutive == AUTO_RETRY_THRESHOLD and workflow_name not in NO_AUTO_RETRY:
+        print(f"  첫 실패 감지 — 자동 재시도 트리거")
+        trigger_retry(workflow_name)
 
     if consecutive < ALERT_THRESHOLD:
         print(f"  임계치({ALERT_THRESHOLD}회) 미달 — Issue 생성 보류")

@@ -3577,7 +3577,8 @@ const MapModule = (() => {
             if (sep1) sep1.style.display = '';
             if (province) {
                 province.style.display = '';
-                province.textContent = region ? region.name : regionKey;
+                const isMergedRegion = _isMergedJeonnam() && (regionKey === 'gwangju' || regionKey === 'jeonnam');
+                province.textContent = isMergedRegion ? '전남광주통합특별시' : (region ? region.name : regionKey);
                 province.dataset.region = regionKey;
                 province.classList.add('active');
             }

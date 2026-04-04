@@ -2,7 +2,8 @@
 """
 한국갤럽 정당지지율 자동 업데이트 스크립트
 - 갤럽 보고서 목록에서 최신 '데일리 오피니언' 호를 찾고
-- js/data.js (사이드바 차트) 업데이트
+- data/static/gallup_national_poll.json 업데이트 (런타임 primary source)
+- js/data.js (사이드바 차트 fallback) 업데이트
 - data/polls/state.json (NESDC 여론조사 히스토리) 동기화
 """
 
@@ -15,14 +16,17 @@ import urllib.request
 import urllib.parse
 from datetime import datetime
 
-# macOS Python SSL 인증서 문제 우회
-SSL_CTX = ssl.create_default_context()
-SSL_CTX.check_hostname = False
-SSL_CTX.verify_mode = ssl.CERT_NONE
+# certifi 설치 시 사용, 없으면 시스템 기본 인증서 사용 (GitHub Actions Ubuntu는 기본값으로 충분)
+try:
+    import certifi
+    SSL_CTX = ssl.create_default_context(cafile=certifi.where())
+except ImportError:
+    SSL_CTX = ssl.create_default_context()
 
 # 프로젝트 루트 경로
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA_JS_PATH = os.path.join(PROJECT_ROOT, 'js', 'data.js')
+GALLUP_JSON_PATH = os.path.join(PROJECT_ROOT, 'data', 'static', 'gallup_national_poll.json')
 
 GALLUP_LIST_URL = 'https://www.gallup.co.kr/gallupdb/report.asp'
 GALLUP_CONTENT_URL = 'https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo={}'
@@ -36,6 +40,8 @@ PARTY_KEY_MAP = {
     '진보당': 'progressive',
     '기본소득당': 'basicIncome',
     '새로운미래': 'newFuture',
+    '기타정당': 'other',
+    '기타': 'other',
 }
 
 
@@ -136,6 +142,13 @@ def extract_party_support(seq_no):
     method_match = re.search(r'(전국\s*만\s*18세\s*이상[^<\n]*(?:전화면접|CATI|RDD)[^<\n]*)', html)
     if method_match:
         result['method'] = re.sub(r'\s+', ' ', method_match.group(1)).strip()
+    if not result['method']:
+        # 간략한 조사방법이라도 추출 시도
+        short_match = re.search(r'(전화면접[^<\n]*(?:CATI|RDD)[^<\n]*)', html)
+        if short_match:
+            result['method'] = re.sub(r'\s+', ' ', short_match.group(1)).strip()
+        else:
+            result['method'] = '전화면접 (CATI)'  # 갤럽 데일리 오피니언 기본값
 
     # 오차범위 추출
     margin_match = re.search(r'[±]\s*([\d.]+)\s*%', html)
@@ -352,6 +365,27 @@ def sync_state_json(poll_data):
     return True
 
 
+def update_gallup_json(poll_data):
+    """data/static/gallup_national_poll.json 업데이트 (런타임 primary source)"""
+    output = {
+        'source': '한국갤럽',
+        'surveyDate': poll_data.get('survey_date', ''),
+        'publishDate': poll_data.get('publish_date', ''),
+        'sampleSize': poll_data.get('sample_size', 1001),
+        'method': poll_data.get('method', '전화면접 (CATI)'),
+        'confidence': '95%',
+        'margin': poll_data.get('margin', 3.1),
+        'responseRate': poll_data.get('response_rate', ''),
+        'reportNo': poll_data.get('report_no', ''),
+        'url': poll_data.get('url', ''),
+        'data': poll_data['data'],
+    }
+    with open(GALLUP_JSON_PATH, 'w', encoding='utf-8') as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+        f.write('\n')
+    return True
+
+
 def main():
     print('=' * 50)
     print('한국갤럽 정당지지율 자동 업데이트')
@@ -381,8 +415,16 @@ def main():
     for key, value in poll_data['data'].items():
         print(f'     {key}: {value}%')
 
-    # 3단계: data.js 업데이트 (사이드바 차트)
-    print('\n[3/3] js/data.js 업데이트 중...')
+    # 3단계: gallup_national_poll.json 업데이트 (런타임 primary source)
+    print('\n[3/4] data/static/gallup_national_poll.json 업데이트 중...')
+    if update_gallup_json(poll_data):
+        print('  → 업데이트 완료!')
+    else:
+        print('  → 업데이트 실패')
+        sys.exit(1)
+
+    # 4단계: data.js 업데이트 (fallback)
+    print('\n[4/5] js/data.js 업데이트 중...')
     success = update_data_js(poll_data)
 
     if success:
@@ -393,8 +435,8 @@ def main():
         print('  → 업데이트 실패')
         sys.exit(1)
 
-    # 4단계: data/polls/state.json 동기화
-    print('\n[4/4] data/polls/state.json 동기화 중...')
+    # 5단계: data/polls/state.json 동기화
+    print('\n[5/5] data/polls/state.json 동기화 중...')
     sync_state_json(poll_data)
 
     print('\n' + '=' * 50)

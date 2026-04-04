@@ -2,17 +2,29 @@ name: Update Election Overview
 
 on:
   schedule:
-    # 매일 한국시간 07:00 (UTC 22:00 전날) 실행
-    - cron: '0 22 * * *'
+    # 매일 한국시간 11:30 (UTC 02:30) — candidates(09:00)+byelection(11:00) 이후
+    - cron: '30 2 * * *'
   workflow_dispatch:
   workflow_call:
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   update:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -75,4 +87,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/election_overview.json data/mayor_overview_state.json data/governor_overview_state.json data/byelection_overview_state.json
           git commit -m "chore: auto-update election overview $(date +%Y-%m-%d)"
-          git pull --rebase origin main && git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done

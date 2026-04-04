@@ -5,14 +5,29 @@ on:
     # 매주 금요일 한국시간 18:00 (UTC 09:00) - 갤럽 발표 후
     - cron: '0 9 * * 5'
   workflow_dispatch:
-    # 수동 실행 가능
 
 concurrency:
   group: ${{ github.workflow }}
   cancel-in-progress: false
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   update:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -24,6 +39,9 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install dependencies
+        run: pip install certifi
+
       - name: Run gallup update
         continue-on-error: true
         run: python scripts/update_gallup.py
@@ -31,14 +49,14 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          git diff --quiet js/data.js data/polls/state.json data/polls/polls.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet js/data.js data/static/gallup_national_poll.json data/polls/state.json data/polls/polls.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add js/data.js data/polls/state.json data/polls/polls.json
+          git add js/data.js data/static/gallup_national_poll.json data/polls/state.json data/polls/polls.json
           git commit -m "chore: auto-update gallup national poll $(date +%Y-%m-%d)"
           git pull --rebase origin main && git push
 
@@ -47,8 +65,8 @@ jobs:
 
   # 갤럽 데이터가 실제 변경된 경우에만 개황 연쇄 업데이트
   trigger-overview:
-    needs: update
-    if: needs.update.outputs.changed == 'true'
+    needs: [gate, update]
+    if: needs.gate.outputs.active == 'true' && needs.update.outputs.changed == 'true'
     runs-on: ubuntu-latest
     permissions:
       actions: write   # gh workflow run — update-overview.yml 연쇄 트리거

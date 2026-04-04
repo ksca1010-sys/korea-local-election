@@ -19,7 +19,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   discover:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write

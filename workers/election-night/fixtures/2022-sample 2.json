@@ -1,0 +1,28 @@
+{
+  "_description": "2022년 8회 지방선거 광역단체장 확정 결과 (파서 출력 기대값). 출처: info.nec.go.kr 개표 결과",
+  "_notice": "선관위 확정값 아님, 스키마 검증 전용 mock. 수치는 근사값이며 정밀 소수점은 NEC 원본 캡처 후 보정 예정. 이 fixture를 실제 선거 데이터로 사용하지 말 것 (헌법 제1조).",
+  "fetchedAt": "2022-06-01T22:00:00+09:00",
+  "electionId": "0020220601",
+  "sgTypecode": "11",
+  "regions": {
+    "seoul":    { "countRate": 100, "leadingCandidate": "오세훈",  "leadingParty": "ppp",        "leadingVoteRate": 59.0, "declared": true },
+    "busan":    { "countRate": 100, "leadingCandidate": "박형준",  "leadingParty": "ppp",        "leadingVoteRate": 66.5, "declared": true },
+    "daegu":    { "countRate": 100, "leadingCandidate": "홍준표",  "leadingParty": "ppp",        "leadingVoteRate": 74.3, "declared": true },
+    "incheon":  { "countRate": 100, "leadingCandidate": "유정복",  "leadingParty": "ppp",        "leadingVoteRate": 54.1, "declared": true },
+    "gwangju":  { "countRate": 100, "leadingCandidate": "강기정",  "leadingParty": "democratic", "leadingVoteRate": 65.7, "declared": true },
+    "daejeon":  { "countRate": 100, "leadingCandidate": "이장우",  "leadingParty": "ppp",        "leadingVoteRate": 50.0, "declared": true },
+    "ulsan":    { "countRate": 100, "leadingCandidate": "김두겸",  "leadingParty": "ppp",        "leadingVoteRate": 55.0, "declared": true },
+    "sejong":   { "countRate": 100, "leadingCandidate": "최민호",  "leadingParty": "ppp",        "leadingVoteRate": 51.3, "declared": true },
+    "gyeonggi": { "countRate": 100, "leadingCandidate": "김동연",  "leadingParty": "democratic", "leadingVoteRate": 51.5, "declared": true },
+    "gangwon":  { "countRate": 100, "leadingCandidate": "김진태",  "leadingParty": "ppp",        "leadingVoteRate": 54.0, "declared": true },
+    "chungbuk": { "countRate": 100, "leadingCandidate": "김영환",  "leadingParty": "ppp",        "leadingVoteRate": 51.7, "declared": true },
+    "chungnam": { "countRate": 100, "leadingCandidate": "김태흠",  "leadingParty": "ppp",        "leadingVoteRate": 52.6, "declared": true },
+    "jeonbuk":  { "countRate": 100, "leadingCandidate": "김관영",  "leadingParty": "democratic", "leadingVoteRate": 68.3, "declared": true },
+    "jeonnam":  { "countRate": 100, "leadingCandidate": "김영록",  "leadingParty": "democratic", "leadingVoteRate": 84.0, "declared": true },
+    "gyeongbuk":{ "countRate": 100, "leadingCandidate": "이철우",  "leadingParty": "ppp",        "leadingVoteRate": 72.3, "declared": true },
+    "gyeongnam":{ "countRate": 100, "leadingCandidate": "박완수",  "leadingParty": "ppp",        "leadingVoteRate": 56.9, "declared": true },
+    "jeju":     { "countRate": 100, "leadingCandidate": "오영훈",  "leadingParty": "democratic", "leadingVoteRate": 56.3, "declared": true }
+  },
+  "_source": "info.nec.go.kr",
+  "_parserVersion": "1.0"
+}

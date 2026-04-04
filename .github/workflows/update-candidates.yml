@@ -6,12 +6,24 @@ on:
     - cron: '0 0 * * *'
   workflow_dispatch:
 
-concurrency:
-  group: ${{ github.workflow }}
-  cancel-in-progress: false
-
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    outputs:
+      active: ${{ steps.check.outputs.active }}
+    steps:
+      - id: check
+        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        run: |
+          python3 -c "
+          from datetime import date
+          active = date.today() <= date(2026, 6, 10)
+          print('active=' + ('true' if active else 'false'))
+          " >> $GITHUB_OUTPUT
+
   update:
+    needs: gate
+    if: needs.gate.outputs.active == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -78,9 +90,8 @@ jobs:
           KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw
 
-      # 0.9단계: 데이터 스키마 검증 (name 누락 등 조기 감지)
+      # 0.9단계: 데이터 스키마 검증 (name 누락 등 조기 감지) — 실패 시 중단
       - name: Validate pipeline data
-        continue-on-error: true
         run: python scripts/candidate_pipeline/validate_pipeline.py
 
       # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
@@ -113,15 +124,7 @@ jobs:
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: python scripts/candidate_pipeline/factcheck_mayor.py
 
-      # 4단계: 재보궐 후보 팩트체크 (뉴스 기반 + 교차검증)
-      - name: Factcheck byelection candidates
-        continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
-          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
-          PYTHONPATH: scripts:scripts/candidate_pipeline
-        run: python scripts/candidate_pipeline/factcheck_byelection.py
+      # 4단계: 재보궐 팩트체크 → update-byelection.yml로 이관 (Claude API 중복 절감)
 
       # 4.5단계: 기초단체장 공약 수집 (공약 없는 후보만)
       - name: Collect mayor pledges
@@ -148,6 +151,24 @@ jobs:
         continue-on-error: true
         run: python scripts/candidate_pipeline/cross_validate.py --fix
 
+      - name: Assert candidate data not empty
+        run: |
+          python3 -c "
+          import json, sys
+          checks = [
+              ('data/candidates/governor.json', 'candidates', 10),
+              ('data/candidates/superintendent.json', 'candidates', 10),
+              ('data/candidates/mayor_candidates.json', 'candidates', 50),
+          ]
+          for path, key, min_count in checks:
+              d = json.load(open(path))
+              cnt = len(d.get(key, []))
+              if cnt < min_count:
+                  print(f'FATAL: {path} has {cnt} entries (< {min_count})')
+                  sys.exit(1)
+              print(f'OK: {path} — {cnt} entries')
+          "
+
       - name: Check for changes
         id: diff
         run: |
@@ -160,4 +181,8 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/
           git commit -m "chore: auto-update candidate data $(date +%Y-%m-%d)"
-          git pull --rebase origin main && git push
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done
