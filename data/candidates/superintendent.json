@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-03",
+    "lastUpdated": "2026-04-04",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-03T05:14:12.369757",
+    "lastFactCheck": "2026-04-04T01:25:01.918553",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -201,7 +201,7 @@
         "name": "최윤홍",
         "stance": "중도",
         "career": "전 부산부교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "체형 맞춤 인체공학 책걸상 단계적 보급"
@@ -210,13 +210,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-03-24",
+          "date": "2026-04-04",
           "type": "status_change",
-          "detail": "최윤홍 전 부산부교육감, 부산교육감 예비후보 1호 등록 / 부산교육감 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "부산교육감 관련 뉴스",
-          "sourcePublishedAt": "2026-03"
+          "detail": "최윤홍 부산교육감 예비후보로 표기되어 출마선언에서 예비후보 상태로 변경",
+          "previous": "DECLARED",
+          "sourceUrl": "최윤홍, 부산시장 여론조사서 박형준 시장과 '오차범위 내 경합'",
+          "sourceLabel": "부산일보",
+          "sourcePublishedAt": "2026-04-04"
         },
         "pledgeCategories": [
           {
@@ -1474,7 +1474,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1482,13 +1482,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-04-03",
+          "date": "2026-04-04",
           "type": "status_change",
-          "detail": "김상동 전 경북대 총장, 경북교육감 예비후보 등록…'출마합니다' 공식 선언",
-          "previous": "EXPECTED",
+          "detail": "뉴스에서 '예비후보 등록'으로 표현되어 출마선언에서 예비후보 단계로 진행",
+          "previous": "DECLARED",
           "sourceUrl": "N/A",
-          "sourceLabel": "보도 기사",
-          "sourcePublishedAt": "2026-04-03"
+          "sourceLabel": "경북지역 언론",
+          "sourcePublishedAt": "2026-04-04"
         },
         "sourceUrl": null,
         "sourceLabel": null,

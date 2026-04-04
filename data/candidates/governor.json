@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-03",
+    "lastUpdated": "2026-04-04",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-03T05:12:03.901197",
+    "lastFactCheck": "2026-04-04T01:22:21.770873",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -1367,7 +1367,7 @@
         "age": 63,
         "career": "現 충북도지사 (재선 도전) / 前 3선 국회의원",
         "photo": null,
-        "status": "NOMINATED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [
           "오송 바이오클러스터",
@@ -1379,13 +1379,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-03",
+          "date": "2026-04-04",
           "type": "status_change",
-          "detail": "가처분 인용 결정으로 공천 배제 상황에서 법원 판단을 받음. '기사회생' 김영환 지사로 보도되며 당 공천 복권 관련 보도",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-03"
+          "detail": "가처분 신청 기각 후 출마 의지 재확인 - '죽음의 터널서 생환…실력으로 답하겠다'",
+          "previous": "NOMINATED",
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "뉴스1",
+          "sourcePublishedAt": "2026-04-04"
         }
       },
       {
