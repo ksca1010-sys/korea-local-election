@@ -1,6 +1,93 @@
 {
-  "last_id": 18044,
+  "last_id": 18057,
   "polls": [
+    {
+      "nttId": 18057,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)이너텍시스템즈",
+      "clientOrg": "인터넷언론 : 아이뉴스이십사",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1005,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-02",
+        "end": "2026-04-03"
+      },
+      "publishDate": "2026-04-04",
+      "results": [],
+      "regionKey": "busan",
+      "municipality": null,
+      "electionType": "mayor",
+      "title": "부산광역시 전체    광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18057&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-03"
+    },
+    {
+      "nttId": 18055,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)비전코리아",
+      "clientOrg": "방송사 : TBC",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 508,
+        "marginOfError": 4.3,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-01",
+        "end": "2026-04-01"
+      },
+      "publishDate": "2026-04-03",
+      "results": [],
+      "regionKey": "daegu",
+      "municipality": "수성구",
+      "electionType": "district_mayor",
+      "title": "대구광역시 수성구    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18055&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-03"
+    },
+    {
+      "nttId": 18054,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "여론조사공정(주)",
+      "clientOrg": "인터넷언론 : 미디어디펜스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-02",
+        "end": "2026-04-02"
+      },
+      "publishDate": "2026-04-04",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "영천시",
+      "electionType": "district_mayor",
+      "title": "경상북도 영천시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18054&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-03"
+    },
     {
       "nttId": 18044,
       "registrationId": null,
@@ -275,7 +362,28 @@
         "end": "2026-03-31"
       },
       "publishDate": "2026-04-02",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "조용익",
+          "party": "",
+          "support": 29.6
+        },
+        {
+          "candidateName": "서진웅",
+          "party": "",
+          "support": 16.9
+        },
+        {
+          "candidateName": "한병환",
+          "party": "",
+          "support": 10.5
+        },
+        {
+          "candidateName": "김광민",
+          "party": "",
+          "support": 6.0
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": "부천시",
       "electionType": "mayor",
@@ -768,7 +876,33 @@
         "end": "2026-03-30"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "잘하는",
+          "party": "",
+          "support": 38.7
+        },
+        {
+          "candidateName": "못하는",
+          "party": "",
+          "support": 27.3
+        },
+        {
+          "candidateName": "잘못하고",
+          "party": "",
+          "support": 10.5
+        },
+        {
+          "candidateName": "긍정",
+          "party": "",
+          "support": 15.2
+        },
+        {
+          "candidateName": "부정",
+          "party": "",
+          "support": 8.3
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "mayor",
@@ -826,7 +960,33 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "잘하는",
+          "party": "",
+          "support": 34.2
+        },
+        {
+          "candidateName": "못하는",
+          "party": "",
+          "support": 30.1
+        },
+        {
+          "candidateName": "잘못하고",
+          "party": "",
+          "support": 11.2
+        },
+        {
+          "candidateName": "긍정",
+          "party": "",
+          "support": 15.0
+        },
+        {
+          "candidateName": "부정",
+          "party": "",
+          "support": 9.5
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "mayor",
@@ -44638,19 +44798,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-03",
-    "lastPipelineRun": "2026-04-03",
+    "lastUpdated": "2026-04-04",
+    "lastPipelineRun": "2026-04-04",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 792,
-    "withRegistrationDate": 789,
+    "pollCount": 795,
+    "withRegistrationDate": 792,
     "withRegistrationId": 670,
-    "withResults": 734,
+    "withResults": 737,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
+      "mayor": 271,
+      "district_mayor": 403,
       "party_support": 101,
-      "mayor": 270,
-      "district_mayor": 401,
       "superintendent": 20
     }
   }
