@@ -546,7 +546,7 @@
         "age": 58,
         "career": "재선 국회의원 (광산을) / 前 광산구청장(재선)",
         "photo": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [],
         "sourceUrl": null,
@@ -649,7 +649,9 @@
         "status": "DECLARED",
         "dataSource": "nec_precand",
         "pledges": []
-      },
+      }
+    ],
+    "jeonnam": [
       {
         "id": "jeonnam-1",
         "name": "김영록",
@@ -680,7 +682,7 @@
         "age": null,
         "career": "現 국회의원 (여수갑) / 現 전남도당위원장 / 前 여수시장",
         "photo": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [],
         "sourceUrl": null,
@@ -1686,7 +1688,6 @@
         "pledges": []
       }
     ],
-    "jeonnam": [],
     "gyeongbuk": [
       {
         "id": "gyeongbuk-1",

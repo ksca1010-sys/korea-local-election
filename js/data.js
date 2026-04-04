@@ -2485,8 +2485,9 @@ const ElectionData = (() => {
                 // 충남
                 '김태흠': 'ppp', '양승조': 'democratic', '복기왕': 'democratic',
                 '나소열': 'democratic', '소병훈': 'democratic',
-                // 전북
+                // 전북 (재보궐 포함)
                 '김관영': 'democratic', '이춘석': 'democratic', '한정애': 'democratic',
+                '김의겸': 'democratic', '오지성': 'ppp',
                 // 전남
                 '김영록': 'democratic', '노관규': 'ppp',
                 // 경북
@@ -2798,7 +2799,9 @@ const ElectionData = (() => {
                         return region.municipality === canonicalDistrict || region.level === 'metro';
                     }
                     if (targetType === 'byelection') {
-                        return true; // 재보궐은 regionKey로 이미 필터됨
+                        // districtName(byElectionKey)이 있으면 해당 선거구 poll만 반환
+                        if (districtName) return cls.district === districtName;
+                        return true;
                     }
                     return true;
                 });

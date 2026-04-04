@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "generatedAt": "2026-03-31T00:00:00+09:00",
+    "source": "선관위 CandSrchInfoInqireService2",
+    "mode": "mock",
+    "note": "5/16 이후 실데이터로 교체 예정. 현재 UI 개발용 mock 데이터."
+  },
+  "disclosures": {
+    "governor": {
+      "seoul": [
+        {
+          "name": "홍길동",
+          "giho": 1,
+          "criminal": {
+            "hasRecord": true,
+            "count": 1,
+            "records": [
+              { "crime": "업무방해", "sentence": "벌금 200만원", "confirmedAt": "2019-03-15" }
+            ],
+            "rawText": "업무방해(2019.03.15 확정, 벌금 200만원)"
+          },
+          "property": { "totalAmountManWon": 85000, "rawText": "총 8억 5천만원" },
+          "military": { "status": "현역 복무 완료", "rawText": "육군 만기전역" },
+          "tax": { "arrearsManWon": 0, "hasArrears": false, "rawText": "없음" },
+          "education": { "finalDegree": "대학원 졸업", "rawText": "서울대학교 대학원 행정학 석사" }
+        },
+        {
+          "name": "김민준",
+          "giho": 2,
+          "criminal": {
+            "hasRecord": false,
+            "count": 0,
+            "records": [],
+            "rawText": "없음"
+          },
+          "property": { "totalAmountManWon": 42000, "rawText": "총 4억 2천만원" },
+          "military": { "status": "공중보건의", "rawText": "공중보건의사 복무 완료" },
+          "tax": { "arrearsManWon": 0, "hasArrears": false, "rawText": "없음" },
+          "education": { "finalDegree": "대학교 졸업", "rawText": "연세대학교 법학과 졸업" }
+        }
+      ],
+      "busan": [],
+      "daegu": [],
+      "incheon": [],
+      "gwangju": [],
+      "daejeon": [],
+      "ulsan": [],
+      "sejong": [],
+      "gyeonggi": [],
+      "gangwon": [],
+      "chungbuk": [],
+      "chungnam": [],
+      "jeonbuk": [],
+      "jeonnam": [],
+      "gyeongbuk": [],
+      "gyeongnam": [],
+      "jeju": []
+    },
+    "superintendent": {
+      "seoul": [],
+      "busan": [],
+      "daegu": [],
+      "incheon": [],
+      "gwangju": [],
+      "daejeon": [],
+      "ulsan": [],
+      "sejong": [],
+      "gyeonggi": [],
+      "gangwon": [],
+      "chungbuk": [],
+      "chungnam": [],
+      "jeonbuk": [],
+      "jeonnam": [],
+      "gyeongbuk": [],
+      "gyeongnam": [],
+      "jeju": []
+    },
+    "mayor": {}
+  }
+}

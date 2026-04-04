@@ -598,12 +598,7 @@ const PollTab = (() => {
             const maxEst = sorted.length > 0 ? sorted[0][1] : 1;
             const avgMargin = consensusSummary.avgMargin || 3;
 
-            const [leaderName, leaderPct] = sorted[0] || ['', 0];
-            const leaderCand = _findCandidateParty(polls, leaderName);
-            const leaderColor = leaderCand ? ElectionData.getPartyColor(leaderCand) : 'var(--text-muted)';
-            const leaderParty = leaderCand ? ElectionData.getPartyName(leaderCand) : '';
-
-            const restBars = sorted.slice(1).map(([name, support]) => {
+            const allBars = sorted.map(([name, support]) => {
                 const cand = _findCandidateParty(polls, name);
                 const pc = cand ? ElectionData.getPartyColor(cand) : 'var(--text-muted)';
                 const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
@@ -618,33 +613,10 @@ const PollTab = (() => {
                 </div>`;
             }).join('');
 
-            let gapBadge = '';
-            if (sorted.length >= 2) {
-                const gap = sorted[0][1] - sorted[1][1];
-                if (gap <= avgMargin * 2) {
-                    gapBadge = `<span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:2px 8px;border-radius:4px;background:rgba(245,158,11,0.15);color:#F59E0B;">접전</span>
-                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${gap.toFixed(1)}%p · ±${avgMargin.toFixed(1)}%p 내</span>`;
-                } else {
-                    gapBadge = `<span style="font-size:var(--text-micro);font-weight:var(--font-bold);padding:2px 8px;border-radius:4px;background:rgba(34,197,94,0.15);color:#22C55E;">우세</span>
-                        <span style="font-size:var(--text-caption);color:var(--text-muted);">격차 ${(sorted[0][1]-sorted[1][1]).toFixed(1)}%p</span>`;
-                }
-            }
-
             summaryCard.innerHTML = `
-                <div class="poll-consensus-hero">
-                    <div class="poll-consensus-leader" style="border-left-color:${leaderColor};">
-                        <div class="poll-consensus-leader-meta">여론조사 종합 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 집계</div>
-                        <div class="poll-consensus-leader-name">${leaderName}</div>
-                        <div class="poll-consensus-leader-party" style="color:${leaderColor};">${leaderParty}</div>
-                        <div class="poll-consensus-leader-pct" style="color:${leaderColor};">${leaderPct.toFixed(1)}%</div>
-                        ${gapBadge ? `<div style="margin-top:var(--space-8);display:flex;align-items:center;gap:var(--space-6);">${gapBadge}</div>` : ''}
-                    </div>
-                    ${restBars ? `<div class="poll-consensus-bar-section">
-                        <div class="poll-consensus-bar-label">다른 후보</div>
-                        ${restBars}
-                    </div>` : ''}
-                </div>
-                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:0 4px;">등록 여론조사 기반 가중 집계 (참고용, 예측 아님)</div>
+                <div style="font-size:var(--text-caption);color:var(--text-muted);margin-bottom:var(--space-10);">여론조사 종합 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 집계</div>
+                ${allBars}
+                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:4px 0 0;">등록 여론조사 기반 가중 집계 (참고용, 예측 아님)</div>
             `;
             trendsSection.appendChild(summaryCard);
         }

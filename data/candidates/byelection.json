@@ -153,7 +153,8 @@
           "runnerRate": 46.08,
           "runner": "ppp"
         }
-      ]
+      ],
+      "sggName": "연수구갑"
     },
     "incheon-gyeyang": {
       "region": "incheon",
@@ -324,7 +325,8 @@
           "runner": "ppp",
           "runnerRate": 45.46
         }
-      ]
+      ],
+      "sggName": "계양구을"
     },
     "gyeonggi-pyeongtaek": {
       "region": "gyeonggi",
@@ -534,7 +536,8 @@
           "runner": "ppp",
           "runnerRate": 45.77
         }
-      ]
+      ],
+      "sggName": "평택시을"
     },
     "chungnam-asan": {
       "region": "chungnam",
@@ -695,7 +698,8 @@
           "runner": "ppp",
           "runnerRate": 39.65
         }
-      ]
+      ],
+      "sggName": "아산시을"
     },
     "jeonbuk-gunsan": {
       "region": "jeonbuk",
@@ -741,9 +745,9 @@
           "pledges": [],
           "status": "DECLARED",
           "dataSource": "news",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "party": "independent",
+          "partyKey": "reform",
+          "partyName": "조국혁신당",
+          "party": "reform",
           "sourceLabel": "시사저널",
           "sourceUrl": "https://www.sisajournal.com/news/articleView.html?idxno=366296",
           "sourcePublishedAt": "2026-03-21"
@@ -759,6 +763,26 @@
           "pledges": [],
           "sourceLabel": "선관위 예비후보",
           "sourcePublishedAt": "2026-02-09"
+        },
+        {
+          "name": "문승우",
+          "career": "민주당 전북도당 의장",
+          "pledges": [],
+          "status": "DECLARED",
+          "dataSource": "news",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당",
+          "party": "democratic"
+        },
+        {
+          "name": "전수미",
+          "career": "민주당 대변인",
+          "pledges": [],
+          "status": "DECLARED",
+          "dataSource": "news",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당",
+          "party": "democratic"
         }
       ],
       "statusNote": "최신 뉴스가 제공되지 않아 기존 후보 정보만 유지됩니다. 2026년 6월 3일 선거일까지 새로운 후보 등록 및 동향 업데이트가 필요합니다.",
@@ -841,7 +865,8 @@
           "runnerRate": 13.27,
           "runner": "ppp"
         }
-      ]
+      ],
+      "sggName": "군산시김제시부안군갑"
     },
     "gyeonggi-ansan": {
       "district": "경기 안산시갑",
@@ -982,42 +1007,8 @@
           "runnerRate": 44.38
         }
       ],
-      "voters": 170398
-    },
-    "jeonbuk-산김제부안": {
-      "district": "전북 군산시김제시부안군갑",
-      "region": "jeonbuk",
-      "type": "국회의원 보궐",
-      "subType": "보궐선거",
-      "reason": "(사유 확인 필요)",
-      "previousMember": {
-        "name": "신영대",
-        "party": "democratic"
-      },
-      "prevElection": {
-        "winner": "democratic",
-        "winnerName": "신영대",
-        "rate": 86.73,
-        "runner": "independent",
-        "runnerName": "(확인 필요)",
-        "runnerRate": 0,
-        "turnout": 0
-      },
-      "candidates": [],
-      "keyIssues": [],
-      "status": "확정",
-      "history": [
-        {
-          "election": 22,
-          "year": 2024,
-          "winner": "democratic",
-          "winnerName": "신영대",
-          "winnerParty": "더불어민주당",
-          "rate": 86.73,
-          "sggName": "군산시김제시부안군갑"
-        }
-      ],
-      "statusNote": "현재 국민의힘 오지성 당협위원장만 확인됨. 추가 후보자 정보 없음."
+      "voters": 170398,
+      "sggName": "안산시갑"
     }
   }
 }

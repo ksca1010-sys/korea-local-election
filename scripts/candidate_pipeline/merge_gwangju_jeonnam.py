@@ -2,13 +2,14 @@
 """
 merge_gwangju_jeonnam.py — 전남광주통합특별시 후보 데이터 병합 보정
 
-2024년 전남·광주 통합으로 전남광주통합특별시가 출범했다.
-광역단체장(governor)과 교육감(superintendent) 선거는 gwangju 키에 통합되며,
-jeonnam 키는 gwangju로의 리다이렉트(_merged)만 보유해야 한다.
+전남광주통합특별시에서 선거 유형별 병합 정책이 다르다:
+
+- 교육감(superintendent): 광주+전남 통합 단일 교육감 선거 → jeonnam을 gwangju로 병합
+- 광역단체장(governor): 광주시장·전남도지사가 별도 선거 → 병합하지 않음 (jeonnam 독립 유지)
 
 자동 업데이트 파이프라인(factcheck, nec_precand_sync 등)이 jeonnam 키에
 새 후보를 삽입할 수 있으므로, 이 스크립트를 파이프라인 후반부에 실행하여
-jeonnam → gwangju 병합 상태를 복원한다.
+superintendent의 jeonnam → gwangju 병합 상태를 복원한다.
 
 멱등성: 이미 병합 완료 상태이면 아무것도 변경하지 않는다.
 종료코드: 항상 0 (파이프라인 중단 방지).
@@ -164,13 +165,7 @@ def main():
     if result:
         summary.append(f"superintendent: {result}")
 
-    # 2. governor.json
-    result = merge_candidate_file(
-        DATA / "governor.json",
-        JEONNAM_REDIRECT_GOVERNOR,
-    )
-    if result:
-        summary.append(f"governor: {result}")
+    # 2. governor.json — 광주시장·전남도지사는 별도 선거이므로 병합하지 않음
 
     # 3. superintendent_status.json
     result = merge_status_file(DATA / "superintendent_status.json")

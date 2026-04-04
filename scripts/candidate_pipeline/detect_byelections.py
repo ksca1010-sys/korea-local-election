@@ -77,17 +77,10 @@ def fetch_nec_byelection_districts(api_key):
             if not region_key or not sgg:
                 continue
 
-            # key 생성: region-district (예: incheon-gyeyang)
-            # 선거구명에서 구/시/군 추출
-            short = re.sub(r'[갑을병정]$', '', sgg)
-            slug = short.replace("시", "").replace("구", "").replace("군", "")[:4]
-            key = f"{region_key}-{slug.lower()}" if slug else f"{region_key}-{sgg[:3]}"
-
             # 좀 더 읽기 좋은 district 이름
             district_name = f"{sd.replace('특별시','').replace('광역시','').replace('특별자치도','').replace('도','')} {sgg}"
 
             districts.append({
-                "key": key,
                 "district": district_name,
                 "sggName": sgg,
                 "sdName": sd,
@@ -98,6 +91,17 @@ def fetch_nec_byelection_districts(api_key):
     except Exception as e:
         print(f"[오류] API 호출 실패: {e}")
         return []
+
+
+def normalize_sgg(name: str) -> str:
+    """비교용: 시/군/구/갑/을/병/정 제거해 핵심 지역명만 추출.
+    예: "군산시김제시부안군갑" → "군산김제부안"
+        "전북 군산김제부안갑" → "군산김제부안"
+    """
+    s = name.split(" ", 1)[-1] if " " in name else name  # 도/시 접두사 제거
+    s = re.sub(r'[갑을병정]$', '', s)
+    s = re.sub(r'[시군구]', '', s)
+    return s
 
 
 def generate_key(region_key, sgg_name):
@@ -264,10 +268,18 @@ def main():
 
     new_districts = []
     for d in api_districts:
-        # 기존 등록 여부 확인 (선거구명으로 매칭)
+        # 기존 등록 여부 확인 (정규화된 선거구명으로 매칭)
+        # sggName이 다른 형식으로 저장될 수 있으므로 시/군/구/갑을 제거 후 비교
+        api_core = normalize_sgg(d["sggName"])
         found = False
         for existing in current_districts.values():
-            if d["sggName"] in existing.get("district", "") or d["district"] in existing.get("district", ""):
+            # 1순위: sggName 필드 직접 비교 (exact match)
+            if existing.get("sggName") and existing["sggName"] == d["sggName"]:
+                found = True
+                break
+            # 2순위: 정규화된 핵심명 비교
+            existing_core = normalize_sgg(existing.get("district", ""))
+            if api_core and existing_core and api_core == existing_core:
                 found = True
                 break
         if not found:
@@ -311,6 +323,7 @@ def main():
 
                 current_districts[key] = {
                     "district": d["district"],
+                    "sggName": d["sggName"],
                     "region": d["regionKey"],
                     "type": "국회의원 보궐",
                     "subType": "보궐선거",
@@ -331,8 +344,12 @@ def main():
     removed = []
     for k, d in current_districts.items():
         found = False
+        existing_core = normalize_sgg(d.get("district", ""))
         for api_d in api_districts:
-            if api_d["sggName"] in d.get("district", "") or api_d["district"] in d.get("district", ""):
+            if d.get("sggName") and d["sggName"] == api_d["sggName"]:
+                found = True
+                break
+            if existing_core and normalize_sgg(api_d["sggName"]) == existing_core:
                 found = True
                 break
         if not found:

@@ -1,6 +1,6 @@
 {
   "generated": "2026-04-03T03:40:53",
-  "totalCount": 792,
+  "totalCount": 793,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
     {
@@ -20512,6 +20512,71 @@
       }
     ],
     "jeonbuk": [
+      {
+        "nttId": 18047,
+        "registrationId": null,
+        "pollName": "군산김제부안갑 국회의원 재보궐선거 후보 지지도",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "방송사/시·도단위 신문/전국단위 신문 : 전주MBC/전북도민일보/(주)프레시안 전북취재본부",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 22.5,
+          "contactRate": 23.7,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-27",
+          "end": "2026-03-29"
+        },
+        "publishDate": "2026-04-02",
+        "results": [
+          {
+            "candidateName": "김의겸",
+            "party": "democratic",
+            "support": 43.0
+          },
+          {
+            "candidateName": "조국",
+            "party": "reform",
+            "support": 18.0
+          },
+          {
+            "candidateName": "문승우",
+            "party": "democratic",
+            "support": 6.0
+          },
+          {
+            "candidateName": "전수미",
+            "party": "democratic",
+            "support": 6.0
+          },
+          {
+            "candidateName": "오지성",
+            "party": "ppp",
+            "support": 2.0
+          }
+        ],
+        "regionKey": "jeonbuk",
+        "municipality": null,
+        "electionType": "byelection",
+        "byElectionKey": "jeonbuk-gunsan",
+        "classification": {
+          "electionTypes": [
+            "byelection"
+          ],
+          "district": "jeonbuk-gunsan",
+          "region": {
+            "level": "byelection"
+          }
+        },
+        "title": "전북특별자치도 군산시김제시부안군갑 국회의원 재보궐선거 후보 지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18047&menuNo=200467",
+        "registrationDate": "2026-04-02"
+      },
       {
         "nttId": 18012,
         "registrationId": null,

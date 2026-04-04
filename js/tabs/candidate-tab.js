@@ -36,6 +36,11 @@ const CandidateTab = (() => {
                     label: '공천확정',
                     style: 'background:rgba(20,184,166,0.14);color:#5eead4;border:1px solid rgba(20,184,166,0.24);'
                 };
+            case 'PRIMARY':
+                return {
+                    label: '경선 참여',
+                    style: 'background:rgba(234,88,12,0.14);color:#fb923c;border:1px solid rgba(234,88,12,0.24);'
+                };
             case 'WITHDRAWN':
                 return {
                     label: '사퇴',
@@ -101,6 +106,7 @@ const CandidateTab = (() => {
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
+                    primaryNote: candidate._primaryNote || null,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -137,6 +143,7 @@ const CandidateTab = (() => {
                     supportLabel: (Number.isFinite(Number(candidate.support)) && Number(candidate.support) > 0) ? `최근 조사 ${Number(candidate.support).toFixed(1)}%` : '',
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
+                    primaryNote: candidate._primaryNote || null,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -179,6 +186,7 @@ const CandidateTab = (() => {
                     pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
+                    primaryNote: candidate._primaryNote || null,
                     ballotNumber: candidate.ballotNumber || null,
                     incumbent: districtSummary?.mayor?.name === candidate.name
                 })),
@@ -365,7 +373,7 @@ const CandidateTab = (() => {
         } else {
             // CAND-03: status_priority 모드에서도 WITHDRAWN 제거
             model.candidates = model.candidates.filter(c => c.status !== 'WITHDRAWN');
-            const statusOrder = { NOMINATED: 0, DECLARED: 1, EXPECTED: 2, RUMORED: 3 };
+            const statusOrder = { NOMINATED: 0, PRIMARY: 1, DECLARED: 2, EXPECTED: 3, RUMORED: 4 };
             model.candidates.sort((a, b) => {
                 const sa = statusOrder[a.status] ?? 2.5;
                 const sb = statusOrder[b.status] ?? 2.5;
@@ -424,6 +432,7 @@ const CandidateTab = (() => {
                             ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, districtName)
                             : null
                     ) : ''}
+                    ${candidate.primaryNote ? `<div style="font-size:0.74rem;color:#fb923c;padding:4px 0 0;display:flex;align-items:center;gap:5px;"><i class="fas fa-code-branch" style="font-size:0.7rem;"></i>${candidate.primaryNote}</div>` : ''}
                     <div class="cand-card-footer">
                         ${candidate.incumbent ? `<span class="cand-incumbent-badge"><i class="fas fa-star"></i>현직</span>` : ''}
                         ${candidate.statusMeta ? `<span class="cand-status-badge" style="${candidate.statusMeta.style}">${candidate.statusMeta.label}</span>` : ''}
