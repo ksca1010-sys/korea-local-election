@@ -37444,7 +37444,38 @@
           "end": "2025-11-17"
         },
         "publishDate": "2025-11-19 20시 00분",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "김경수",
+            "party": "democratic",
+            "support": 25.4
+          },
+          {
+            "candidateName": "김태호",
+            "party": "ppp",
+            "support": 16.2
+          },
+          {
+            "candidateName": "박완수",
+            "party": "ppp",
+            "support": 15.4
+          },
+          {
+            "candidateName": "윤한홍",
+            "party": "ppp",
+            "support": 5.8
+          },
+          {
+            "candidateName": "김두관",
+            "party": "democratic",
+            "support": 5.6
+          },
+          {
+            "candidateName": "민홍철",
+            "party": "democratic",
+            "support": 2.9
+          }
+        ],
         "regionKey": "gyeongnam",
         "municipality": null,
         "electionType": "governor",
@@ -41582,7 +41613,33 @@
           "end": "2026-03-24"
         },
         "publishDate": "2026-03-27",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "정영철",
+            "party": "ppp",
+            "support": 33.0
+          },
+          {
+            "candidateName": "정일택",
+            "party": "democratic",
+            "support": 24.0
+          },
+          {
+            "candidateName": "윤석진",
+            "party": "ppp",
+            "support": 19.0
+          },
+          {
+            "candidateName": "이수동",
+            "party": "democratic",
+            "support": 15.0
+          },
+          {
+            "candidateName": "김국기",
+            "party": "ppp",
+            "support": 3.0
+          }
+        ],
         "regionKey": "chungbuk",
         "municipality": "영동군",
         "electionType": "mayor",
