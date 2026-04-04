@@ -12649,7 +12649,183 @@
         }
       ]
     },
-    "_deepScanDone": true
+    "_deepScanDone": true,
+    "대구시장": {
+      "hosts": [
+        "idaegu.com",
+        "imaeil.com",
+        "gpkorea.com",
+        "eroun.net",
+        "mbn.co.kr",
+        "seoulwire.com",
+        "mhns.co.kr",
+        "tbc.co.kr",
+        "artin.or.kr"
+      ],
+      "names": [
+        "idaegu.com",
+        "imaeil.com",
+        "gpkorea.com",
+        "eroun.net",
+        "mbn.co.kr",
+        "seoulwire.com",
+        "mhns.co.kr",
+        "tbc.co.kr",
+        "artin.or.kr"
+      ],
+      "media": [
+        {
+          "host": "idaegu.com",
+          "name": "idaegu.com",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "imaeil.com",
+          "name": "imaeil.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "gpkorea.com",
+          "name": "gpkorea.com",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "eroun.net",
+          "name": "eroun.net",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "mbn.co.kr",
+          "name": "mbn.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "seoulwire.com",
+          "name": "seoulwire.com",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "mhns.co.kr",
+          "name": "mhns.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "tbc.co.kr",
+          "name": "tbc.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "artin.or.kr",
+          "name": "artin.or.kr",
+          "src": "kakao",
+          "count": 2
+        }
+      ]
+    },
+    "울산시장": {
+      "hosts": [
+        "ksilbo.co.kr",
+        "iusm.co.kr",
+        "ujeil.com",
+        "usmbc.co.kr",
+        "ulsanpress.net",
+        "web.ubc.co.kr",
+        "kor.theasian.asia",
+        "koit.co.kr",
+        "gametoc.co.kr",
+        "kidd.co.kr",
+        "tfmedia.co.kr"
+      ],
+      "names": [
+        "ksilbo.co.kr",
+        "iusm.co.kr",
+        "ujeil.com",
+        "usmbc.co.kr",
+        "ulsanpress.net",
+        "web.ubc.co.kr",
+        "kor.theasian.asia",
+        "koit.co.kr",
+        "gametoc.co.kr",
+        "kidd.co.kr",
+        "tfmedia.co.kr"
+      ],
+      "media": [
+        {
+          "host": "ksilbo.co.kr",
+          "name": "ksilbo.co.kr",
+          "src": "naver",
+          "count": 24
+        },
+        {
+          "host": "iusm.co.kr",
+          "name": "iusm.co.kr",
+          "src": "naver",
+          "count": 14
+        },
+        {
+          "host": "ujeil.com",
+          "name": "ujeil.com",
+          "src": "naver",
+          "count": 12
+        },
+        {
+          "host": "usmbc.co.kr",
+          "name": "usmbc.co.kr",
+          "src": "naver",
+          "count": 8
+        },
+        {
+          "host": "ulsanpress.net",
+          "name": "ulsanpress.net",
+          "src": "naver",
+          "count": 6
+        },
+        {
+          "host": "web.ubc.co.kr",
+          "name": "web.ubc.co.kr",
+          "src": "naver",
+          "count": 4
+        },
+        {
+          "host": "kor.theasian.asia",
+          "name": "kor.theasian.asia",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "koit.co.kr",
+          "name": "koit.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "gametoc.co.kr",
+          "name": "gametoc.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "kidd.co.kr",
+          "name": "kidd.co.kr",
+          "src": "naver",
+          "count": 2
+        },
+        {
+          "host": "tfmedia.co.kr",
+          "name": "tfmedia.co.kr",
+          "src": "naver",
+          "count": 2
+        }
+      ]
+    }
   },
   "bigkinds": [
     "EBN",
