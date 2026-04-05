@@ -768,13 +768,12 @@ const ElectionData = (() => {
 
     // 한국갤럽 전국 정당 지지율 데이터 (#4)
     // 데일리 오피니언 제658호 (2026년 4월 1주)
-    // ※ data-loader.js가 data/static/gallup_national_poll.json으로 덮어씀 (fallback용 하드코딩)
     const gallupNationalPoll = {
         source: '한국갤럽',
         surveyDate: '2026년 4월 1주',
         publishDate: '2026-04-02',
         sampleSize: 1001,
-        method: '',
+        method: '전화면접 (CATI)',
         confidence: '95%',
         margin: 3.1,
         responseRate: '',
