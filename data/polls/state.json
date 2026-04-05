@@ -1,6 +1,72 @@
 {
-  "last_id": 18065,
+  "last_id": 18077,
   "polls": [
+    {
+      "nttId": 18077,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)에스티아이",
+      "clientOrg": "인터넷언론 : 오마이뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-03",
+        "end": "2026-04-04"
+      },
+      "publishDate": "2026-04-05",
+      "results": [],
+      "regionKey": "gyeonggi",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "party_support"
+      ],
+      "title": "경기도 전체    광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18077&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-05"
+    },
+    {
+      "nttId": 18066,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리얼미터",
+      "clientOrg": "전국단위 신문 : 에너지경제신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 503,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-02",
+        "end": "2026-04-03"
+      },
+      "publishDate": "2026-04-05",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "무안군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 무안군    정당지지도 기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18066&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-04"
+    },
     {
       "nttId": 18065,
       "registrationId": null,
@@ -56,7 +122,33 @@
         "end": "2026-04-02"
       },
       "publishDate": "2026-04-04",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "투표하는",
+          "party": "",
+          "support": 11.3
+        },
+        {
+          "candidateName": "가봐야",
+          "party": "",
+          "support": 29.0
+        },
+        {
+          "candidateName": "알겠다",
+          "party": "",
+          "support": 56.0
+        },
+        {
+          "candidateName": "가능하면",
+          "party": "",
+          "support": 2.0
+        },
+        {
+          "candidateName": "투표하겠다",
+          "party": "",
+          "support": 1.3
+        }
+      ],
       "regionKey": "seoul",
       "municipality": "금천구",
       "electionType": "mayor",
@@ -123,7 +215,28 @@
         "end": "2026-04-03"
       },
       "publishDate": "2026-04-04",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "강병덕",
+          "party": "",
+          "support": 14.1
+        },
+        {
+          "candidateName": "서정완",
+          "party": "",
+          "support": 25.6
+        },
+        {
+          "candidateName": "오후석",
+          "party": "",
+          "support": 7.2
+        },
+        {
+          "candidateName": "빈도",
+          "party": "",
+          "support": 9.6
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": "하남시",
       "electionType": "mayor",
@@ -222,7 +335,18 @@
         "end": "2026-04-02"
       },
       "publishDate": "2026-04-04",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "조국혁",
+          "party": "",
+          "support": 19.2
+        },
+        {
+          "candidateName": "개혁신",
+          "party": "",
+          "support": 59.6
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "영천시",
       "electionType": "mayor",
@@ -4633,7 +4757,26 @@
         "end": "2026-03-22"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 50.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 0.6,
+          "type": "party_support"
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "governor",
@@ -6933,7 +7076,32 @@
         "end": "2026-03-17"
       },
       "publishDate": "2026-03-19 13시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 53.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 21.8,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 0.5,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": null,
       "electionType": "governor",
@@ -34347,7 +34515,33 @@
         "end": "2025-12-18"
       },
       "publishDate": "2026-01-01 05시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "무응답",
+          "party": "",
+          "support": 51.5
+        },
+        {
+          "candidateName": "투표하지",
+          "party": "",
+          "support": 30.4
+        },
+        {
+          "candidateName": "않을",
+          "party": "",
+          "support": 7.1
+        },
+        {
+          "candidateName": "같음",
+          "party": "",
+          "support": 4.4
+        },
+        {
+          "candidateName": "모르겠음",
+          "party": "",
+          "support": 6.5
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "governor",
@@ -35001,7 +35195,28 @@
         "end": "2025-12-30"
       },
       "publishDate": "2026-01-02 10시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "잘하는",
+          "party": "",
+          "support": 48.6
+        },
+        {
+          "candidateName": "잘못하는",
+          "party": "",
+          "support": 12.1
+        },
+        {
+          "candidateName": "잘못함",
+          "party": "",
+          "support": 10.0
+        },
+        {
+          "candidateName": "빈도",
+          "party": "",
+          "support": 24.0
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": null,
       "electionType": "governor",
@@ -38161,7 +38376,26 @@
         "end": "2025-12-28"
       },
       "publishDate": "2026-01-01 08시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 40.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 3.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 2.0,
+          "type": "party_support"
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "governor",
@@ -40419,7 +40653,28 @@
         "end": "2025-12-15"
       },
       "publishDate": "2025-12-16 06시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "잘하는",
+          "party": "",
+          "support": 42.9
+        },
+        {
+          "candidateName": "잘못하는",
+          "party": "",
+          "support": 12.1
+        },
+        {
+          "candidateName": "잘못함",
+          "party": "",
+          "support": 11.9
+        },
+        {
+          "candidateName": "빈도",
+          "party": "",
+          "support": 27.5
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": null,
       "electionType": "governor",
@@ -46938,18 +47193,18 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-04",
-    "lastPipelineRun": "2026-04-04",
+    "lastUpdated": "2026-04-05",
+    "lastPipelineRun": "2026-04-05",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 799,
-    "withRegistrationDate": 796,
+    "pollCount": 801,
+    "withRegistrationDate": 798,
     "withRegistrationId": 670,
-    "withResults": 721,
+    "withResults": 780,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
-      "governor": 220,
-      "mayor": 458,
+      "governor": 221,
+      "mayor": 459,
       "party_support": 101,
       "superintendent": 20
     }
