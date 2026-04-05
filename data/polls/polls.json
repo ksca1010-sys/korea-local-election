@@ -440,7 +440,7 @@
         "samplingFrame": "전체",
         "sampleSize": 1787,
         "marginOfError": 2.3,
-        "responseRate": 0.0,
+        "responseRate": 8.4,
         "contactRate": 0.0,
         "weightingMethod": null
       },
@@ -450,36 +450,14 @@
       },
       "publishDate": "2026-03-24",
       "results": [
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 77.4
-        },
-        {
-          "candidateName": "전라남도",
-          "party": "",
-          "support": 5.0
-        },
-        {
-          "candidateName": "동구",
-          "party": "",
-          "support": 1.8
-        },
-        {
-          "candidateName": "서구",
-          "party": "",
-          "support": 2.8
-        },
-        {
-          "candidateName": "남구",
-          "party": "",
-          "support": 1.1
-        },
-        {
-          "candidateName": "북구",
-          "party": "",
-          "support": 5.5
-        }
+        { "candidateName": "더불어민주당", "party": "democratic", "support": 77.4 },
+        { "candidateName": "국민의힘", "party": "ppp", "support": 5.7 },
+        { "candidateName": "조국혁신당", "party": "innovation", "support": 5.0 },
+        { "candidateName": "개혁신당", "party": "reform", "support": 2.8 },
+        { "candidateName": "진보당", "party": "progressive", "support": 1.8 },
+        { "candidateName": "기타정당", "party": "", "support": 1.1 },
+        { "candidateName": "없음", "party": "", "support": 5.5 },
+        { "candidateName": "잘모름", "party": "", "support": 0.8 }
       ],
       "regionKey": null,
       "municipality": null,
@@ -22419,9 +22397,9 @@
           "raw": "무선 ARS",
           "samplingFrame": "전체",
           "sampleSize": 806,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
+          "marginOfError": 3.45,
+          "responseRate": 6.1,
+          "contactRate": 55.7,
           "weightingMethod": null
         },
         "surveyDate": {
@@ -22430,16 +22408,14 @@
         },
         "publishDate": "2026-03-19 17시 00분",
         "results": [
-          {
-            "candidateName": "지지하는",
-            "party": "",
-            "support": 57.7
-          },
-          {
-            "candidateName": "정당이",
-            "party": "",
-            "support": 24.1
-          }
+          { "candidateName": "더불어민주당", "party": "democratic", "support": 57.7 },
+          { "candidateName": "국민의힘", "party": "ppp", "support": 24.1 },
+          { "candidateName": "개혁신당", "party": "reform", "support": 3.5 },
+          { "candidateName": "조국혁신당", "party": "innovation", "support": 2.3 },
+          { "candidateName": "진보당", "party": "progressive", "support": 1.1 },
+          { "candidateName": "기타", "party": "", "support": 1.3 },
+          { "candidateName": "없음", "party": "", "support": 9.2 },
+          { "candidateName": "잘모름", "party": "", "support": 0.7 }
         ],
         "regionKey": "gyeonggi",
         "municipality": "고양시",
