@@ -310,24 +310,19 @@
       "publishDate": "2026-04-02",
       "results": [
         {
-          "candidateName": "김영록",
-          "party": "",
-          "support": 28.2
+          "candidateName": "정인화",
+          "party": "democratic",
+          "support": 45.4
         },
         {
-          "candidateName": "민형배",
-          "party": "",
-          "support": 20.6
+          "candidateName": "박성현",
+          "party": "democratic",
+          "support": 39.2
         },
         {
-          "candidateName": "신정훈",
-          "party": "",
-          "support": 19.1
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 9.2
+          "candidateName": "김태균",
+          "party": "democratic",
+          "support": 7.3
         }
       ],
       "regionKey": "jeonnam",
@@ -365,24 +360,39 @@
       "publishDate": "2026-04-02",
       "results": [
         {
-          "candidateName": "김영록",
-          "party": "",
-          "support": 21.3
+          "candidateName": "노관규",
+          "party": "independent",
+          "support": 29.0
         },
         {
-          "candidateName": "민형배",
-          "party": "",
-          "support": 24.6
+          "candidateName": "오하근",
+          "party": "democratic",
+          "support": 19.9
         },
         {
-          "candidateName": "신정훈",
-          "party": "",
-          "support": 21.8
+          "candidateName": "허석",
+          "party": "democratic",
+          "support": 15.3
         },
         {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 7.8
+          "candidateName": "손훈모",
+          "party": "democratic",
+          "support": 13.8
+        },
+        {
+          "candidateName": "서동욱",
+          "party": "democratic",
+          "support": 11.4
+        },
+        {
+          "candidateName": "이성수",
+          "party": "progressive",
+          "support": 6.0
+        },
+        {
+          "candidateName": "한숙경",
+          "party": "democratic",
+          "support": 1.1
         }
       ],
       "regionKey": "jeonnam",
@@ -420,24 +430,54 @@
       "publishDate": "2026-04-02",
       "results": [
         {
-          "candidateName": "김영록",
-          "party": "",
-          "support": 16.2
+          "candidateName": "김영규",
+          "party": "democratic",
+          "support": 24.7
         },
         {
-          "candidateName": "민형배",
-          "party": "",
-          "support": 22.7
+          "candidateName": "정기명",
+          "party": "democratic",
+          "support": 18.5
         },
         {
-          "candidateName": "신정훈",
-          "party": "",
-          "support": 8.2
+          "candidateName": "서영학",
+          "party": "democratic",
+          "support": 13.8
         },
         {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 5.1
+          "candidateName": "명창환",
+          "party": "reform",
+          "support": 12.2
+        },
+        {
+          "candidateName": "백인숙",
+          "party": "democratic",
+          "support": 7.4
+        },
+        {
+          "candidateName": "이광일",
+          "party": "democratic",
+          "support": 5.7
+        },
+        {
+          "candidateName": "주종섭",
+          "party": "democratic",
+          "support": 4.1
+        },
+        {
+          "candidateName": "김창주",
+          "party": "independent",
+          "support": 3.8
+        },
+        {
+          "candidateName": "김순빈",
+          "party": "democratic",
+          "support": 1.9
+        },
+        {
+          "candidateName": "원용규",
+          "party": "independent",
+          "support": 1.6
         }
       ],
       "regionKey": "jeonnam",
@@ -636,7 +676,23 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "윤정훈",
+          "party": "democratic",
+          "support": 48.0
+        },
+        {
+          "candidateName": "황인홍",
+          "party": "democratic",
+          "support": 46.0
+        },
+        {
+          "candidateName": "이해연",
+          "party": "democratic",
+          "support": 2.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "무주군",
       "electionType": "mayor",
@@ -671,7 +727,28 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전춘성",
+          "party": "democratic",
+          "support": 45.0
+        },
+        {
+          "candidateName": "이우규",
+          "party": "democratic",
+          "support": 23.0
+        },
+        {
+          "candidateName": "고준식",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "동창옥",
+          "party": "democratic",
+          "support": 7.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "진안군",
       "electionType": "mayor",
@@ -706,7 +783,28 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "최훈식",
+          "party": "democratic",
+          "support": 43.0
+        },
+        {
+          "candidateName": "양성빈",
+          "party": "democratic",
+          "support": 35.0
+        },
+        {
+          "candidateName": "장영수",
+          "party": "reform",
+          "support": 16.0
+        },
+        {
+          "candidateName": "김갑수",
+          "party": "reform",
+          "support": 3.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "장수군",
       "electionType": "mayor",
@@ -741,7 +839,38 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "이정린",
+          "party": "democratic",
+          "support": 25.0
+        },
+        {
+          "candidateName": "양충모",
+          "party": "democratic",
+          "support": 25.0
+        },
+        {
+          "candidateName": "김영태",
+          "party": "democratic",
+          "support": 22.0
+        },
+        {
+          "candidateName": "김원종",
+          "party": "democratic",
+          "support": 13.0
+        },
+        {
+          "candidateName": "강동원",
+          "party": "reform",
+          "support": 8.0
+        },
+        {
+          "candidateName": "오철기",
+          "party": "democratic",
+          "support": 1.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "남원시",
       "electionType": "mayor",
@@ -776,7 +905,23 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "최영일",
+          "party": "democratic",
+          "support": 64.0
+        },
+        {
+          "candidateName": "임종철",
+          "party": "democratic",
+          "support": 18.0
+        },
+        {
+          "candidateName": "오은미",
+          "party": "democratic",
+          "support": 13.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "순창군",
       "electionType": "mayor",
@@ -811,7 +956,23 @@
         "end": "2026-03-31"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박병훈",
+          "party": "ppp",
+          "support": 33.8
+        },
+        {
+          "candidateName": "주낙영",
+          "party": "ppp",
+          "support": 32.7
+        },
+        {
+          "candidateName": "이창화",
+          "party": "ppp",
+          "support": 6.1
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "경주시",
       "electionType": "mayor",
@@ -844,7 +1005,23 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 41.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 37.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 13.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "무주군",
       "electionType": "mayor",
@@ -879,7 +1056,23 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 44.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 20.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 11.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "진안군",
       "electionType": "mayor",
@@ -914,7 +1107,23 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 41.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 32.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 15.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "장수군",
       "electionType": "mayor",
@@ -949,7 +1158,23 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 42.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 19.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 11.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "남원시",
       "electionType": "mayor",
@@ -984,7 +1209,23 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 47.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 14.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 10.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "순창군",
       "electionType": "mayor",
@@ -1019,7 +1260,43 @@
         "end": "2026-03-29"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김진명",
+          "party": "democratic",
+          "support": 33.0
+        },
+        {
+          "candidateName": "한득수",
+          "party": "democratic",
+          "support": 21.0
+        },
+        {
+          "candidateName": "김병이",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "한병락",
+          "party": "democratic",
+          "support": 14.0
+        },
+        {
+          "candidateName": "성준후",
+          "party": "democratic",
+          "support": 12.0
+        },
+        {
+          "candidateName": "김왕중",
+          "party": "reform",
+          "support": 1.0
+        },
+        {
+          "candidateName": "신대용",
+          "party": "democratic",
+          "support": 1.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "임실군",
       "electionType": "mayor",
@@ -1253,7 +1530,18 @@
         "end": "2026-03-31"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박재범",
+          "party": "democratic",
+          "support": 45.2
+        },
+        {
+          "candidateName": "오은택",
+          "party": "ppp",
+          "support": 42.3
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "mayor",
@@ -1345,7 +1633,28 @@
         "end": "2026-03-31"
       },
       "publishDate": "2026-04-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전춘성",
+          "party": "democratic",
+          "support": 44.0
+        },
+        {
+          "candidateName": "이우규",
+          "party": "democratic",
+          "support": 24.0
+        },
+        {
+          "candidateName": "동창옥",
+          "party": "democratic",
+          "support": 9.0
+        },
+        {
+          "candidateName": "한수용",
+          "party": "democratic",
+          "support": 9.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "진안군",
       "electionType": "mayor",
@@ -1378,7 +1687,33 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "권익현",
+          "party": "democratic",
+          "support": 34.0
+        },
+        {
+          "candidateName": "김정기",
+          "party": "democratic",
+          "support": 30.0
+        },
+        {
+          "candidateName": "박병래",
+          "party": "democratic",
+          "support": 14.0
+        },
+        {
+          "candidateName": "김양원",
+          "party": "democratic",
+          "support": 11.0
+        },
+        {
+          "candidateName": "김성수",
+          "party": "reform",
+          "support": 6.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "부안군",
       "electionType": "mayor",
@@ -1413,7 +1748,23 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "심덕섭",
+          "party": "democratic",
+          "support": 61.0
+        },
+        {
+          "candidateName": "유기상",
+          "party": "reform",
+          "support": 23.0
+        },
+        {
+          "candidateName": "조민규",
+          "party": "democratic",
+          "support": 8.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "고창군",
       "electionType": "mayor",
@@ -1448,7 +1799,23 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정성주",
+          "party": "democratic",
+          "support": 60.0
+        },
+        {
+          "candidateName": "나인권",
+          "party": "democratic",
+          "support": 24.0
+        },
+        {
+          "candidateName": "강영석",
+          "party": "democratic",
+          "support": 6.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "김제시",
       "electionType": "mayor",
@@ -1483,7 +1850,43 @@
         "end": "2026-03-28"
       },
       "publishDate": "2026-03-31",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "이학수",
+          "party": "democratic",
+          "support": 44.0
+        },
+        {
+          "candidateName": "김민영",
+          "party": "reform",
+          "support": 21.0
+        },
+        {
+          "candidateName": "이상길",
+          "party": "democratic",
+          "support": 11.0
+        },
+        {
+          "candidateName": "김대중",
+          "party": "democratic",
+          "support": 8.0
+        },
+        {
+          "candidateName": "최도식",
+          "party": "democratic",
+          "support": 5.0
+        },
+        {
+          "candidateName": "안수용",
+          "party": "democratic",
+          "support": 3.0
+        },
+        {
+          "candidateName": "김재선",
+          "party": "independent",
+          "support": 1.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "정읍시",
       "electionType": "mayor",
@@ -1632,11 +2035,6 @@
           "candidateName": "유성수",
           "party": "",
           "support": 22.8
-        },
-        {
-          "candidateName": "기타인",
-          "party": "",
-          "support": 0.8
         }
       ],
       "regionKey": "jeonnam",
@@ -1724,18 +2122,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 57.5,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 2.1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.9,
           "type": "party_support"
         }
       ],
@@ -2347,30 +2733,6 @@
           "party": "democratic",
           "support": 15.1,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 67.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 0.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.8,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 2.2,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeongbuk",
@@ -2438,11 +2800,6 @@
       },
       "publishDate": "2026-03-27",
       "results": [
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 2.4
-        },
         {
           "candidateName": "겠다",
           "party": "",
@@ -2788,6 +3145,11 @@
       "publishDate": "2026-03-27",
       "results": [
         {
+          "candidateName": "이재명",
+          "support": 50.5,
+          "party": null
+        },
+        {
           "candidateName": "박정현",
           "support": 41.9,
           "party": null
@@ -2795,6 +3157,11 @@
         {
           "candidateName": "민주",
           "support": 39.5,
+          "party": null
+        },
+        {
+          "candidateName": "김문수",
+          "support": 30.3,
           "party": null
         },
         {
@@ -2810,6 +3177,11 @@
         {
           "candidateName": "지지율",
           "support": 23.1,
+          "party": null
+        },
+        {
+          "candidateName": "이준석",
+          "support": 9.1,
           "party": null
         }
       ],
@@ -2992,7 +3364,23 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-26",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "송문석",
+          "party": "",
+          "support": 32.0
+        },
+        {
+          "candidateName": "고의숙",
+          "party": "",
+          "support": 20.0
+        },
+        {
+          "candidateName": "김광수",
+          "party": "",
+          "support": 6.0
+        }
+      ],
       "regionKey": "jeju",
       "municipality": null,
       "electionType": "governor",
@@ -3028,64 +3416,24 @@
       "publishDate": "2026-03-26",
       "results": [
         {
-          "candidateName": "이상도",
-          "support": 64.4,
-          "party": null
-        },
-        {
-          "candidateName": "지지층",
-          "support": 63.7,
-          "party": null
-        },
-        {
-          "candidateName": "지지율",
-          "support": 60.1,
-          "party": null
-        },
-        {
-          "candidateName": "긍정평가",
-          "support": 59.2,
-          "party": null
-        },
-        {
-          "candidateName": "민주당",
-          "support": 57.6,
-          "party": null
-        },
-        {
-          "candidateName": "찬성",
-          "support": 52.0,
-          "party": null
-        },
-        {
-          "candidateName": "경북도",
-          "support": 50.8,
-          "party": null
-        },
-        {
-          "candidateName": "반대",
-          "support": 45.3,
-          "party": null
-        },
-        {
           "candidateName": "전재수",
-          "support": 40.2,
-          "party": null
-        },
-        {
-          "candidateName": "국힘",
-          "support": 33.4,
-          "party": null
+          "party": "democratic",
+          "support": 40.2
         },
         {
           "candidateName": "박형준",
-          "support": 19.6,
-          "party": null
+          "party": "ppp",
+          "support": 19.6
         },
         {
           "candidateName": "주진우",
-          "support": 18.5,
-          "party": null
+          "party": "ppp",
+          "support": 18.5
+        },
+        {
+          "candidateName": "이재성",
+          "party": "democratic",
+          "support": 7.1
         }
       ],
       "regionKey": "busan",
@@ -3123,7 +3471,23 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "문대림",
+          "party": "democratic",
+          "support": 30.0
+        },
+        {
+          "candidateName": "오영훈",
+          "party": "democratic",
+          "support": 25.0
+        },
+        {
+          "candidateName": "위성곤",
+          "party": "democratic",
+          "support": 18.0
+        }
+      ],
       "regionKey": "jeju",
       "municipality": null,
       "electionType": "governor",
@@ -3162,12 +3526,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 47.8,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.3,
           "type": "party_support"
         }
       ],
@@ -3350,11 +3708,6 @@
           "candidateName": "홍석준",
           "party": "",
           "support": 3.7
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 16.3
         },
         {
           "candidateName": "겠다",
@@ -3555,7 +3908,28 @@
         "end": "2026-03-22"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김의승",
+          "party": "ppp",
+          "support": 27.1
+        },
+        {
+          "candidateName": "권기창",
+          "party": "ppp",
+          "support": 24.7
+        },
+        {
+          "candidateName": "권광택",
+          "party": "ppp",
+          "support": 21.3
+        },
+        {
+          "candidateName": "권백신",
+          "party": "ppp",
+          "support": 14.6
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "안동시",
       "electionType": "mayor",
@@ -3620,7 +3994,33 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정영철",
+          "party": "ppp",
+          "support": 33.0
+        },
+        {
+          "candidateName": "정일택",
+          "party": "democratic",
+          "support": 24.0
+        },
+        {
+          "candidateName": "윤석진",
+          "party": "ppp",
+          "support": 19.0
+        },
+        {
+          "candidateName": "이수동",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "김국기",
+          "party": "ppp",
+          "support": 3.0
+        }
+      ],
       "regionKey": "chungbuk",
       "municipality": "영동군",
       "electionType": "mayor",
@@ -3708,7 +4108,38 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "노관규",
+          "party": "independent",
+          "support": 31.0
+        },
+        {
+          "candidateName": "손훈모",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "오하근",
+          "party": "democratic",
+          "support": 11.0
+        },
+        {
+          "candidateName": "서동욱",
+          "party": "democratic",
+          "support": 9.0
+        },
+        {
+          "candidateName": "이성수",
+          "party": "progressive",
+          "support": 8.0
+        },
+        {
+          "candidateName": "한숙경",
+          "party": "democratic",
+          "support": 6.0
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "순천시",
       "electionType": "mayor",
@@ -3741,7 +4172,53 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정기명",
+          "party": "democratic",
+          "support": 19.0
+        },
+        {
+          "candidateName": "김영규",
+          "party": "democratic",
+          "support": 16.0
+        },
+        {
+          "candidateName": "백인숙",
+          "party": "democratic",
+          "support": 10.0
+        },
+        {
+          "candidateName": "주종섭",
+          "party": "democratic",
+          "support": 10.0
+        },
+        {
+          "candidateName": "명창환",
+          "party": "reform",
+          "support": 6.0
+        },
+        {
+          "candidateName": "서영학",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "이광일",
+          "party": "democratic",
+          "support": 3.0
+        },
+        {
+          "candidateName": "김창주",
+          "party": "independent",
+          "support": 3.0
+        },
+        {
+          "candidateName": "김순빈",
+          "party": "democratic",
+          "support": 1.0
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "여수시",
       "electionType": "mayor",
@@ -3774,7 +4251,38 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "강성휘",
+          "party": "democratic",
+          "support": 31.0
+        },
+        {
+          "candidateName": "이호균",
+          "party": "democratic",
+          "support": 20.0
+        },
+        {
+          "candidateName": "박용안",
+          "party": "reform",
+          "support": 18.0
+        },
+        {
+          "candidateName": "박홍률",
+          "party": "independent",
+          "support": 3.0
+        },
+        {
+          "candidateName": "윤선웅",
+          "party": "ppp",
+          "support": 2.0
+        },
+        {
+          "candidateName": "여인두",
+          "party": "justice",
+          "support": 2.0
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "목포시",
       "electionType": "mayor",
@@ -3807,7 +4315,48 @@
         "end": "2026-03-24"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "문상필",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "조호권",
+          "party": "democratic",
+          "support": 10.0
+        },
+        {
+          "candidateName": "김주업",
+          "party": "democratic",
+          "support": 7.0
+        },
+        {
+          "candidateName": "신수정",
+          "party": "democratic",
+          "support": 7.0
+        },
+        {
+          "candidateName": "김동찬",
+          "party": "democratic",
+          "support": 5.0
+        },
+        {
+          "candidateName": "정달성",
+          "party": "democratic",
+          "support": 5.0
+        },
+        {
+          "candidateName": "정다은",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "김대원",
+          "party": "democratic",
+          "support": 3.0
+        }
+      ],
       "regionKey": "gwangju",
       "municipality": null,
       "electionType": "mayor",
@@ -3942,7 +4491,18 @@
         "end": "2026-03-22"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김일권",
+          "party": "democratic",
+          "support": 36.9
+        },
+        {
+          "candidateName": "나동연",
+          "party": "ppp",
+          "support": 31.4
+        }
+      ],
       "regionKey": "gyeongnam",
       "municipality": "양산시",
       "electionType": "mayor",
@@ -3975,7 +4535,18 @@
         "end": "2026-03-23"
       },
       "publishDate": "2026-03-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "우성빈",
+          "party": "democratic",
+          "support": 43.5
+        },
+        {
+          "candidateName": "이승우",
+          "party": "ppp",
+          "support": 33.7
+        }
+      ],
       "regionKey": "busan",
       "municipality": "기장군",
       "electionType": "mayor",
@@ -4009,11 +4580,6 @@
       },
       "publishDate": "2026-03-25",
       "results": [
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 25.8
-        },
         {
           "candidateName": "동부권",
           "party": "",
@@ -4175,11 +4741,6 @@
           "support": 77.4
         },
         {
-          "candidateName": "광주광역시",
-          "party": "",
-          "support": 5.7
-        },
-        {
           "candidateName": "전라남도",
           "party": "",
           "support": 5.0
@@ -4238,7 +4799,18 @@
         "end": "2026-03-22"
       },
       "publishDate": "2026-03-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김일권",
+          "party": "democratic",
+          "support": 36.7
+        },
+        {
+          "candidateName": "나동연",
+          "party": "ppp",
+          "support": 33.3
+        }
+      ],
       "regionKey": "gyeongnam",
       "municipality": "양산시",
       "electionType": "mayor",
@@ -4463,49 +5035,54 @@
       "publishDate": "2026-03-26",
       "results": [
         {
-          "candidateName": "김철",
-          "party": "",
-          "support": 15.0
+          "candidateName": "이민근",
+          "party": "ppp",
+          "support": 21.7
         },
         {
-          "candidateName": "박천",
-          "party": "",
-          "support": 7.0
+          "candidateName": "박천광",
+          "party": "democratic",
+          "support": 13.8
         },
         {
-          "candidateName": "박현",
-          "party": "",
-          "support": 10.2
+          "candidateName": "김철민",
+          "party": "democratic",
+          "support": 11.9
         },
         {
-          "candidateName": "송바",
-          "party": "",
-          "support": 3.7
+          "candidateName": "천영미",
+          "party": "democratic",
+          "support": 10.1
         },
         {
-          "candidateName": "우나",
-          "party": "",
-          "support": 6.1
+          "candidateName": "제종길",
+          "party": "democratic",
+          "support": 8.2
         },
         {
-          "candidateName": "제종",
-          "party": "",
-          "support": 13.1
+          "candidateName": "김철진",
+          "party": "democratic",
+          "support": 4.1
         },
         {
-          "candidateName": "천영",
-          "party": "",
-          "support": 8.9
+          "candidateName": "박현탁",
+          "party": "democratic",
+          "support": 4.0
         },
         {
-          "candidateName": "홍희",
-          "party": "",
-          "support": 2.6
+          "candidateName": "송바우나",
+          "party": "democratic",
+          "support": 3.8
         },
         {
-          "candidateName": "잘모",
+          "candidateName": "홍희관",
           "party": "",
-          "support": 5.2
+          "support": 2.1
+        },
+        {
+          "candidateName": "홍연아",
+          "party": "",
+          "support": 1.3
         }
       ],
       "regionKey": "gyeonggi",
@@ -4540,7 +5117,28 @@
         "end": "2026-03-21"
       },
       "publishDate": "2026-03-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "최정호",
+          "party": "democratic",
+          "support": 36.0
+        },
+        {
+          "candidateName": "조용식",
+          "party": "democratic",
+          "support": 27.0
+        },
+        {
+          "candidateName": "심보균",
+          "party": "democratic",
+          "support": 14.0
+        },
+        {
+          "candidateName": "임형택",
+          "party": "reform",
+          "support": 4.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "익산시",
       "electionType": "mayor",
@@ -4575,7 +5173,33 @@
         "end": "2026-03-23"
       },
       "publishDate": "2026-03-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 30.0
+        },
+        {
+          "candidateName": "신정훈",
+          "party": "democratic",
+          "support": 18.0
+        },
+        {
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 12.0
+        },
+        {
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 10.0
+        },
+        {
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 9.0
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": null,
       "electionType": "governor",
@@ -4609,7 +5233,43 @@
         "end": "2026-03-23"
       },
       "publishDate": "2026-03-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 35.0
+        },
+        {
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 19.0
+        },
+        {
+          "candidateName": "신정훈",
+          "party": "democratic",
+          "support": 14.0
+        },
+        {
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "이종욱",
+          "party": "progressive",
+          "support": 2.0
+        },
+        {
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 2.0
+        },
+        {
+          "candidateName": "강은미",
+          "party": "justice",
+          "support": 1.0
+        }
+      ],
       "regionKey": "gwangju",
       "municipality": null,
       "electionType": "governor",
@@ -4753,30 +5413,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 11.1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 78.1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.2,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1.1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 1.1,
           "type": "party_support"
         }
       ],
@@ -4990,30 +5626,6 @@
           "party": "democratic",
           "support": 10.9,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 76.4,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.3,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.8,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 1.2,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeongbuk",
@@ -5162,11 +5774,6 @@
       },
       "publishDate": "2026-03-23",
       "results": [
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 28.3
-        },
         {
           "candidateName": "권기일",
           "party": "",
@@ -5403,18 +6010,6 @@
           "party": "democratic",
           "support": 59.1,
           "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.3,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1.2,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeonggi",
@@ -5586,18 +6181,6 @@
           "party": "democratic",
           "support": 59.8,
           "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.2,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.7,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeonggi",
@@ -5735,7 +6318,33 @@
         "end": "2026-03-21"
       },
       "publishDate": "2026-03-23",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김진명",
+          "party": "democratic",
+          "support": 27.3
+        },
+        {
+          "candidateName": "한득수",
+          "party": "democratic",
+          "support": 21.6
+        },
+        {
+          "candidateName": "김병이",
+          "party": "democratic",
+          "support": 18.1
+        },
+        {
+          "candidateName": "한병락",
+          "party": "democratic",
+          "support": 16.8
+        },
+        {
+          "candidateName": "성준후",
+          "party": "democratic",
+          "support": 11.4
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "임실군",
       "electionType": "mayor",
@@ -5768,7 +6377,53 @@
         "end": "2026-03-21"
       },
       "publishDate": "2026-03-23",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "강임준",
+          "party": "democratic",
+          "support": 24.2
+        },
+        {
+          "candidateName": "김영일",
+          "party": "democratic",
+          "support": 20.1
+        },
+        {
+          "candidateName": "김재준",
+          "party": "democratic",
+          "support": 10.6
+        },
+        {
+          "candidateName": "진희완",
+          "party": "democratic",
+          "support": 10.3
+        },
+        {
+          "candidateName": "나종대",
+          "party": "democratic",
+          "support": 9.3
+        },
+        {
+          "candidateName": "서동석",
+          "party": "democratic",
+          "support": 6.3
+        },
+        {
+          "candidateName": "박정희",
+          "party": "democratic",
+          "support": 5.9
+        },
+        {
+          "candidateName": "이주현",
+          "party": "reform",
+          "support": 4.3
+        },
+        {
+          "candidateName": "최관규",
+          "party": "democratic",
+          "support": 4.2
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "군산시",
       "electionType": "mayor",
@@ -5811,11 +6466,6 @@
           "candidateName": "통일당",
           "party": "",
           "support": 26.1
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 3.0
         },
         {
           "candidateName": "겠다",
@@ -5874,11 +6524,6 @@
           "candidateName": "유성수",
           "party": "",
           "support": 23.3
-        },
-        {
-          "candidateName": "기타인물",
-          "party": "",
-          "support": 1.8
         }
       ],
       "regionKey": "jeonnam",
@@ -5993,12 +6638,6 @@
           "party": "democratic",
           "support": 48.9,
           "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 2.2,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeonggi",
@@ -6108,44 +6747,14 @@
       "publishDate": "2026-03-19 17시 00분",
       "results": [
         {
-          "candidateName": "더불어",
+          "candidateName": "지지하는",
           "party": "",
           "support": 57.7
         },
         {
-          "candidateName": "민주당",
+          "candidateName": "정당이",
           "party": "",
           "support": 24.1
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 2.3
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.1
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.5
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.3
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 9.2
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 0.7
         }
       ],
       "regionKey": "gyeonggi",
@@ -6186,24 +6795,6 @@
           "party": "democratic",
           "support": 23.8,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 4.5,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 16.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 42.7,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeongbuk",
@@ -6240,44 +6831,34 @@
       "publishDate": "2026-03-18 18시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 32.0
+          "candidateName": "박정권",
+          "party": "democratic",
+          "support": 27.5
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 48.8
+          "candidateName": "김대권",
+          "party": "ppp",
+          "support": 18.1
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.2
+          "candidateName": "이진훈",
+          "party": "ppp",
+          "support": 9.5
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.8
+          "candidateName": "전경원",
+          "party": "ppp",
+          "support": 7.0
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.0
+          "candidateName": "김대현",
+          "party": "ppp",
+          "support": 6.1
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.3
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 10.8
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 1.2
+          "candidateName": "황시혁",
+          "party": "ppp",
+          "support": 2.6
         }
       ],
       "regionKey": "daegu",
@@ -6317,18 +6898,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 57.4,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.5,
           "type": "party_support"
         }
       ],
@@ -6400,28 +6969,19 @@
       "publishDate": "2026-03-18 19시 30분",
       "results": [
         {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 2.0,
-          "type": "party_support"
+          "candidateName": "최영일",
+          "party": "democratic",
+          "support": 63.0
         },
         {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 2.0,
-          "type": "party_support"
+          "candidateName": "임종철",
+          "party": "democratic",
+          "support": 15.0
         },
         {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 1.0,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 3.0,
-          "type": "party_support"
+          "candidateName": "오은미",
+          "party": "democratic",
+          "support": 13.0
         }
       ],
       "regionKey": "jeonbuk",
@@ -6458,22 +7018,34 @@
       "publishDate": "2026-03-18 19시 30분",
       "results": [
         {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 1.0,
-          "type": "party_support"
+          "candidateName": "한병락",
+          "party": "democratic",
+          "support": 29.0
         },
         {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 3.0,
-          "type": "party_support"
+          "candidateName": "김진명",
+          "party": "democratic",
+          "support": 17.0
         },
         {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1.0,
-          "type": "party_support"
+          "candidateName": "한득수",
+          "party": "democratic",
+          "support": 17.0
+        },
+        {
+          "candidateName": "김병이",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "성준후",
+          "party": "democratic",
+          "support": 13.0
+        },
+        {
+          "candidateName": "정인준",
+          "party": "independent",
+          "support": 3.0
         }
       ],
       "regionKey": "jeonbuk",
@@ -6510,16 +7082,24 @@
       "publishDate": "2026-03-18 19시 30분",
       "results": [
         {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 2.0,
-          "type": "party_support"
+          "candidateName": "최훈식",
+          "party": "democratic",
+          "support": 47.0
         },
         {
-          "candidateName": "조국혁신당",
+          "candidateName": "장영수",
           "party": "reform",
-          "support": 7.0,
-          "type": "party_support"
+          "support": 31.0
+        },
+        {
+          "candidateName": "양성빈",
+          "party": "democratic",
+          "support": 15.0
+        },
+        {
+          "candidateName": "김갑수",
+          "party": "reform",
+          "support": 1.0
         }
       ],
       "regionKey": "jeonbuk",
@@ -6556,16 +7136,14 @@
       "publishDate": "2026-03-18 19시 30분",
       "results": [
         {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 4.0,
-          "type": "party_support"
+          "candidateName": "황인홍",
+          "party": "democratic",
+          "support": 64.0
         },
         {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 3.0,
-          "type": "party_support"
+          "candidateName": "이해연",
+          "party": "democratic",
+          "support": 4.0
         }
       ],
       "regionKey": "jeonbuk",
@@ -6655,30 +7233,6 @@
           "party": "democratic",
           "support": 33.7,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 43,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 2,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1.3,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 1.4,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeonggi",
@@ -6718,18 +7272,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 79,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 3,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 7,
           "type": "party_support"
         }
       ],
@@ -6771,30 +7313,6 @@
           "party": "democratic",
           "support": 79,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 5,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 6,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1,
-          "type": "party_support"
         }
       ],
       "regionKey": "jeonbuk",
@@ -6835,30 +7353,6 @@
           "party": "democratic",
           "support": 69,
           "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 7,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 6,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 2,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1,
-          "type": "party_support"
         }
       ],
       "regionKey": "jeonbuk",
@@ -6893,7 +7387,23 @@
         "end": "2026-03-14"
       },
       "publishDate": "2026-03-16 20시 15분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김관영",
+          "party": "democratic",
+          "support": 39.0
+        },
+        {
+          "candidateName": "이원택",
+          "party": "democratic",
+          "support": 23.0
+        },
+        {
+          "candidateName": "안호영",
+          "party": "democratic",
+          "support": 9.0
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": null,
       "electionType": "governor",
@@ -6962,11 +7472,6 @@
           "candidateName": "개혁신당",
           "party": "",
           "support": 13.7
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 1.8
         }
       ],
       "regionKey": "daegu",
@@ -7003,44 +7508,14 @@
       "publishDate": "2026-03-16 21시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 58.3
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 26.6
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 2.2
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 1.2
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1.7
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.9
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 8.1
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 1.1
         }
       ],
       "regionKey": "gyeonggi",
@@ -7077,44 +7552,34 @@
       "publishDate": "2026-03-15 18시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 25.2
+          "candidateName": "권기창",
+          "party": "ppp",
+          "support": 21.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 59.8
+          "candidateName": "김의승",
+          "party": "ppp",
+          "support": 20.8
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.3
+          "candidateName": "이삼걸",
+          "party": "democratic",
+          "support": 16.7
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.1
+          "candidateName": "권광택",
+          "party": "ppp",
+          "support": 16.0
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.8
+          "candidateName": "권백신",
+          "party": "ppp",
+          "support": 13.2
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.6
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 6.6
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 1.7
+          "candidateName": "권용수",
+          "party": "democratic",
+          "support": 4.3
         }
       ],
       "regionKey": "gyeongbuk",
@@ -7151,39 +7616,24 @@
       "publishDate": "2026-03-15 16시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 21.1
+          "candidateName": "권기창",
+          "party": "ppp",
+          "support": 30.4
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 66.7
+          "candidateName": "김의승",
+          "party": "ppp",
+          "support": 22.8
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 0.5
+          "candidateName": "권광택",
+          "party": "ppp",
+          "support": 21.2
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.1
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 7.5
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.3
+          "candidateName": "권백신",
+          "party": "ppp",
+          "support": 14.2
         }
       ],
       "regionKey": "gyeongbuk",
@@ -7267,12 +7717,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 58.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 2.1,
           "type": "party_support"
         }
       ],
@@ -7456,39 +7900,64 @@
       "publishDate": "2026-03-11 18시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 20.8
+          "candidateName": "박승호",
+          "party": "ppp",
+          "support": 15.9
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 61.7
+          "candidateName": "박희정",
+          "party": "democratic",
+          "support": 13.3
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.4
+          "candidateName": "김병욱",
+          "party": "ppp",
+          "support": 12.5
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.9
+          "candidateName": "공원식",
+          "party": "ppp",
+          "support": 10.5
         },
         {
-          "candidateName": "진보당",
-          "party": "",
+          "candidateName": "이칠구",
+          "party": "ppp",
+          "support": 8.1
+        },
+        {
+          "candidateName": "박용선",
+          "party": "ppp",
+          "support": 7.7
+        },
+        {
+          "candidateName": "안승대",
+          "party": "ppp",
+          "support": 7.3
+        },
+        {
+          "candidateName": "문충운",
+          "party": "ppp",
+          "support": 5.3
+        },
+        {
+          "candidateName": "모성은",
+          "party": "ppp",
+          "support": 4.3
+        },
+        {
+          "candidateName": "김일만",
+          "party": "ppp",
+          "support": 3.7
+        },
+        {
+          "candidateName": "박대기",
+          "party": "ppp",
           "support": 2.7
         },
         {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 7.2
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 1.9
+          "candidateName": "김순견",
+          "party": "ppp",
+          "support": 2.7
         }
       ],
       "regionKey": "gyeongbuk",
@@ -7784,44 +8253,24 @@
       "publishDate": "2026-03-11 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 61.1
+          "candidateName": "조용익",
+          "party": "democratic",
+          "support": 26.7
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 22
+          "candidateName": "서진웅",
+          "party": "democratic",
+          "support": 10.9
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.2
+          "candidateName": "한병환",
+          "party": "democratic",
+          "support": 10.9
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.7
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.2
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 7.8
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.5
+          "candidateName": "김광민",
+          "party": "democratic",
+          "support": 9.0
         }
       ],
       "regionKey": "gyeonggi",
@@ -8085,39 +8534,39 @@
       "publishDate": "2026-03-11 18시 00분",
       "results": [
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 52.5
+          "candidateName": "주광덕",
+          "party": "ppp",
+          "support": 25.1
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 12.2
+          "candidateName": "김한정",
+          "party": "democratic",
+          "support": 14.6
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 8
+          "candidateName": "이원호",
+          "party": "democratic",
+          "support": 13.6
         },
         {
-          "candidateName": "대체로",
-          "party": "",
-          "support": 22
+          "candidateName": "최현덕",
+          "party": "democratic",
+          "support": 9.7
         },
         {
-          "candidateName": "잘하는",
-          "party": "",
-          "support": 5.3
+          "candidateName": "김지훈",
+          "party": "democratic",
+          "support": 4.7
         },
         {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 64.7
+          "candidateName": "백주선",
+          "party": "democratic",
+          "support": 4.7
         },
         {
-          "candidateName": "잘못하",
-          "party": "",
-          "support": 30
+          "candidateName": "윤용수",
+          "party": "democratic",
+          "support": 2.7
         }
       ],
       "regionKey": "gyeonggi",
@@ -8203,39 +8652,29 @@
       "publishDate": "2026-03-10 21시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 14.8
+          "candidateName": "최기문",
+          "party": "independent",
+          "support": 32.3
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 60
+          "candidateName": "김병삼",
+          "party": "ppp",
+          "support": 26.3
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 1.4
+          "candidateName": "김섭",
+          "party": "ppp",
+          "support": 21.5
         },
         {
-          "candidateName": "조국",
-          "party": "",
+          "candidateName": "이정훈",
+          "party": "democratic",
+          "support": 7.6
+        },
+        {
+          "candidateName": "이동민",
+          "party": "ppp",
           "support": 1.8
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 6.5
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 13.8
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.7
         }
       ],
       "regionKey": "gyeongbuk",
@@ -8324,18 +8763,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 59.4,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 0.7,
           "type": "party_support"
         }
       ],
@@ -8607,36 +9034,6 @@
       "publishDate": "2026-03-10 06시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 43
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 38.9
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.5
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.3
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 9.9
-        },
-        {
           "candidateName": "가중값적용",
           "party": "",
           "support": 1.5
@@ -8709,11 +9106,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 11
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 3.7
         }
       ],
       "regionKey": "gyeongbuk",
@@ -8980,44 +9372,14 @@
       "publishDate": "2026-03-09 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 50.6
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 34.9
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1.7
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.7
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1.9
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.6
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 7.5
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.1
         }
       ],
       "regionKey": "gyeonggi",
@@ -9287,11 +9649,6 @@
           "candidateName": "후보나",
           "party": "",
           "support": 7.7
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 7.8
         }
       ],
       "regionKey": "gyeongbuk",
@@ -9595,11 +9952,6 @@
           "candidateName": "정당이",
           "party": "",
           "support": 30.0
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 2.2
         }
       ],
       "regionKey": "gyeonggi",
@@ -9636,39 +9988,9 @@
       "publishDate": "2026-03-08 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 41.7
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 44.6
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1
-        },
-        {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.4
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 6.4
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 3.1
         }
       ],
       "regionKey": "gyeonggi",
@@ -10095,29 +10417,29 @@
       "publishDate": "2026-03-06 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 10
+          "candidateName": "김광열",
+          "party": "ppp",
+          "support": 42.6
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 83.3
+          "candidateName": "조주홍",
+          "party": "ppp",
+          "support": 27.5
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 0.9
+          "candidateName": "이희진",
+          "party": "ppp",
+          "support": 17.9
         },
         {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 3.8
+          "candidateName": "장성욱",
+          "party": "ppp",
+          "support": 4.9
         },
         {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.1
+          "candidateName": "박병일",
+          "party": "ppp",
+          "support": 1.8
         }
       ],
       "regionKey": "gyeongbuk",
@@ -10551,31 +10873,6 @@
       "publishDate": "2026-03-05 17시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 23.6
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 62.1
-        },
-        {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.7
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 7.4
-        },
-        {
           "candidateName": "지지",
           "party": "",
           "support": 1.7
@@ -10615,44 +10912,14 @@
       "publishDate": "2026-03-04 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 54.5
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 29.4
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 0.9
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 1
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 2
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.9
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 7.9
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.4
         }
       ],
       "regionKey": "gyeonggi",
@@ -10687,7 +10954,33 @@
         "end": "2026-03-04"
       },
       "publishDate": "2026-03-05 17시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 29.0
+        },
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 17.5
+        },
+        {
+          "candidateName": "주진우",
+          "party": "ppp",
+          "support": 13.7
+        },
+        {
+          "candidateName": "정이한",
+          "party": "reform",
+          "support": 5.0
+        },
+        {
+          "candidateName": "이재성",
+          "party": "democratic",
+          "support": 4.5
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -10836,11 +11129,6 @@
           "candidateName": "박준희",
           "party": "",
           "support": 19
-        },
-        {
-          "candidateName": "기타인물",
-          "party": "",
-          "support": 14
         },
         {
           "candidateName": "인물이",
@@ -11152,44 +11440,14 @@
       "publishDate": "2026-03-03 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 61.3
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 26.8
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1.6
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.8
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1.7
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.3
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 5.8
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 0.7
         }
       ],
       "regionKey": "gyeonggi",
@@ -11226,24 +11484,29 @@
       "publishDate": "2026-03-04 07시 00분",
       "results": [
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 4.1
+          "candidateName": "김한종",
+          "party": "democratic",
+          "support": 26.9
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 3.9
+          "candidateName": "유성수",
+          "party": "democratic",
+          "support": 24.1
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 2.6
+          "candidateName": "소영호",
+          "party": "democratic",
+          "support": 22.4
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.7
+          "candidateName": "박노원",
+          "party": "democratic",
+          "support": 19.9
+        },
+        {
+          "candidateName": "김왕근",
+          "party": "reform",
+          "support": 4.7
         }
       ],
       "regionKey": "jeonnam",
@@ -11672,11 +11935,6 @@
           "support": 15.1
         },
         {
-          "candidateName": "모르",
-          "party": "",
-          "support": 4.7
-        },
-        {
           "candidateName": "겠다",
           "party": "",
           "support": 6
@@ -11716,34 +11974,9 @@
       "publishDate": "2026-03-03 12시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 11.5
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 79.6
-        },
-        {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.7
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 4.3
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.4
         }
       ],
       "regionKey": "gyeongbuk",
@@ -11839,24 +12072,24 @@
       "publishDate": "2026-03-03 13시 00분",
       "results": [
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 4.5
+          "candidateName": "김철우",
+          "party": "democratic",
+          "support": 47.6
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.9
+          "candidateName": "윤영주",
+          "party": "democratic",
+          "support": 20.2
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.5
+          "candidateName": "임영수",
+          "party": "democratic",
+          "support": 19.9
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.7
+          "candidateName": "선형수",
+          "party": "democratic",
+          "support": 7.2
         }
       ],
       "regionKey": "jeonnam",
@@ -11893,44 +12126,14 @@
       "publishDate": "2026-03-02 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 48.8
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 38.5
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 0.6
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.7
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 0.9
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 6.8
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.8
         }
       ],
       "regionKey": "gyeonggi",
@@ -12570,64 +12773,44 @@
       "publishDate": "2026-03-02 07시 00분",
       "results": [
         {
-          "candidateName": "김순옥",
-          "party": "",
-          "support": 3.2
+          "candidateName": "문상필",
+          "party": "democratic",
+          "support": 24.0
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
+          "candidateName": "김동찬",
+          "party": "democratic",
           "support": 13.4
         },
         {
-          "candidateName": "광주시당",
-          "party": "",
-          "support": 7.1
-        },
-        {
-          "candidateName": "대변인",
-          "party": "",
-          "support": 5.2
-        },
-        {
           "candidateName": "신수정",
-          "party": "",
-          "support": 24
-        },
-        {
-          "candidateName": "광주시의",
-          "party": "",
+          "party": "democratic",
           "support": 11.7
         },
         {
-          "candidateName": "의장",
-          "party": "",
-          "support": 1.3
-        },
-        {
-          "candidateName": "오주섭",
-          "party": "",
+          "candidateName": "정다은",
+          "party": "democratic",
           "support": 8.7
         },
         {
-          "candidateName": "광주은행",
-          "party": "",
+          "candidateName": "정달성",
+          "party": "democratic",
           "support": 7.9
         },
         {
-          "candidateName": "신협",
-          "party": "",
+          "candidateName": "조호권",
+          "party": "democratic",
           "support": 5.3
         },
         {
-          "candidateName": "이사장",
-          "party": "",
-          "support": 2.7
+          "candidateName": "김주업",
+          "party": "progressive",
+          "support": 5.2
         },
         {
-          "candidateName": "이없",
-          "party": "",
-          "support": 6.4
+          "candidateName": "김대원",
+          "party": "democratic",
+          "support": 3.2
         }
       ],
       "regionKey": "gwangju",
@@ -12922,34 +13105,19 @@
       "publishDate": "2026-02-26 14시 00분",
       "results": [
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 1.8
+          "candidateName": "전동평",
+          "party": "democratic",
+          "support": 50.0
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 3.3
+          "candidateName": "우승희",
+          "party": "democratic",
+          "support": 37.2
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.7
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 0.7
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.8
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 0.8
+          "candidateName": "최영열",
+          "party": "democratic",
+          "support": 9.6
         }
       ],
       "regionKey": "jeonnam",
@@ -13260,44 +13428,14 @@
       "publishDate": "2026-02-25 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 44.7
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 37.2
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 2.4
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.5
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 2.7
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.5
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 9.3
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 1.7
         }
       ],
       "regionKey": "gyeonggi",
@@ -13415,11 +13553,6 @@
           "candidateName": "후보나",
           "party": "",
           "support": 9.9
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 9.8
         }
       ],
       "regionKey": "gangwon",
@@ -13500,39 +13633,29 @@
       "publishDate": "2026-02-25 14시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 56.7
+          "candidateName": "박현탁",
+          "party": "democratic",
+          "support": 13.6
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 27.8
+          "candidateName": "김철민",
+          "party": "democratic",
+          "support": 13.5
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 0.5
+          "candidateName": "김철진",
+          "party": "democratic",
+          "support": 13.0
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.6
+          "candidateName": "제종길",
+          "party": "democratic",
+          "support": 9.2
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 3.6
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 7.4
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.2
+          "candidateName": "천영미",
+          "party": "democratic",
+          "support": 8.0
         }
       ],
       "regionKey": "gyeonggi",
@@ -13641,14 +13764,39 @@
       "publishDate": "2026-02-26 09시 00분",
       "results": [
         {
-          "candidateName": "세종시장",
-          "party": "",
-          "support": 52.2
+          "candidateName": "최민호",
+          "party": "ppp",
+          "support": 21.3
         },
         {
-          "candidateName": "적합도",
-          "party": "",
-          "support": 26.2
+          "candidateName": "조상호",
+          "party": "democratic",
+          "support": 21.0
+        },
+        {
+          "candidateName": "이춘희",
+          "party": "democratic",
+          "support": 14.8
+        },
+        {
+          "candidateName": "김수현",
+          "party": "democratic",
+          "support": 9.8
+        },
+        {
+          "candidateName": "이준배",
+          "party": "ppp",
+          "support": 8.1
+        },
+        {
+          "candidateName": "고준일",
+          "party": "democratic",
+          "support": 7.4
+        },
+        {
+          "candidateName": "황운하",
+          "party": "reform",
+          "support": 6.0
         }
       ],
       "regionKey": "sejong",
@@ -14011,44 +14159,14 @@
       "publishDate": "2026-02-24 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 65.9
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 25.3
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1.1
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.7
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 2.2
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.2
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 2.9
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 0.8
         }
       ],
       "regionKey": "gyeonggi",
@@ -14154,11 +14272,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 21
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 9.3
         }
       ],
       "regionKey": "gyeongbuk",
@@ -14282,11 +14395,6 @@
           "candidateName": "장혜영",
           "party": "",
           "support": 10.1
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 11.4
         }
       ],
       "regionKey": "seoul",
@@ -14494,11 +14602,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 20.3
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 7.9
         }
       ],
       "regionKey": "gyeonggi",
@@ -14733,39 +14836,39 @@
       "publishDate": "2026-02-22 16시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 16.2
+          "candidateName": "최기문",
+          "party": "independent",
+          "support": 29.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 64.8
+          "candidateName": "김병삼",
+          "party": "ppp",
+          "support": 26.1
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 0.6
+          "candidateName": "김섭",
+          "party": "ppp",
+          "support": 18.9
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.2
+          "candidateName": "이춘우",
+          "party": "ppp",
+          "support": 8.8
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 3.9
+          "candidateName": "이정훈",
+          "party": "democratic",
+          "support": 5.5
         },
         {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 10.7
+          "candidateName": "박영환",
+          "party": "ppp",
+          "support": 3.3
         },
         {
-          "candidateName": "신당",
-          "party": "",
-          "support": 2.3
+          "candidateName": "이동민",
+          "party": "ppp",
+          "support": 1.6
         }
       ],
       "regionKey": "gyeongbuk",
@@ -15080,44 +15183,14 @@
       "publishDate": "2026-02-23 23시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 60.5
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 25.1
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1.3
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.9
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 2.2
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.1
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 6.3
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 2.6
         }
       ],
       "regionKey": "gyeonggi",
@@ -15341,24 +15414,9 @@
       "publishDate": "2026-02-24 00시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 15.4
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 28.4
-        },
-        {
           "candidateName": "최호림",
           "party": "",
           "support": 25.6
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 19.5
         },
         {
           "candidateName": "박우식",
@@ -15415,11 +15473,6 @@
       "publishDate": "2026-02-20 21시 00분",
       "results": [
         {
-          "candidateName": "모르겠음",
-          "party": "",
-          "support": 38.8
-        },
-        {
           "candidateName": "잘못하는",
           "party": "",
           "support": 34.4
@@ -15458,11 +15511,6 @@
       },
       "publishDate": "2026-02-20 21시 00분",
       "results": [
-        {
-          "candidateName": "모르겠음",
-          "party": "",
-          "support": 57.7
-        },
         {
           "candidateName": "있음",
           "party": "",
@@ -15610,11 +15658,6 @@
           "candidateName": "이칠",
           "party": "",
           "support": 8.2
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 3.8
         },
         {
           "candidateName": "겠다",
@@ -16152,11 +16195,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 4.4
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 3.6
         }
       ],
       "regionKey": "gyeongbuk",
@@ -16739,33 +16777,28 @@
       "results": [
         {
           "candidateName": "김광수",
-          "party": null,
-          "partyRaw": "현 제주도교육감",
-          "support": 32
+          "party": "",
+          "support": 32.0
         },
         {
           "candidateName": "고의숙",
-          "party": null,
-          "partyRaw": "현 제주도의회 교육의원",
-          "support": 12
+          "party": "",
+          "support": 12.0
         },
         {
           "candidateName": "송문석",
-          "party": null,
-          "partyRaw": "전 서귀중앙여자중학교 교장",
-          "support": 4
+          "party": "",
+          "support": 4.0
         },
         {
           "candidateName": "김창식",
-          "party": null,
-          "partyRaw": "현 제주도의회 교육의원",
-          "support": 3
+          "party": "",
+          "support": 3.0
         },
         {
           "candidateName": "오승식",
-          "party": null,
-          "partyRaw": "현 제주도의회 교육의원",
-          "support": 2
+          "party": "",
+          "support": 2.0
         }
       ],
       "regionKey": "jeju",
@@ -16905,11 +16938,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 3.9
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 3.2
         }
       ],
       "regionKey": "gyeongbuk",
@@ -17065,11 +17093,6 @@
           "candidateName": "반대한다",
           "party": "",
           "support": 23.3
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 42.9
         }
       ],
       "regionKey": "chungbuk",
@@ -17558,39 +17581,49 @@
       "publishDate": "2026-02-13 12시 01분",
       "results": [
         {
-          "candidateName": "김대중",
-          "party": "",
-          "support": 34.1
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 22.3
         },
         {
-          "candidateName": "김용태",
-          "party": "",
-          "support": 6.2
+          "candidateName": "신정훈",
+          "party": "democratic",
+          "support": 14.6
         },
         {
-          "candidateName": "김해룡",
-          "party": "",
-          "support": 13.7
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 14.2
         },
         {
-          "candidateName": "오경미",
-          "party": "",
-          "support": 5.3
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 12.8
         },
         {
-          "candidateName": "이정선",
-          "party": "",
-          "support": 6.4
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 7.0
         },
         {
-          "candidateName": "장관호",
-          "party": "",
-          "support": 7.9
+          "candidateName": "이개호",
+          "party": "democratic",
+          "support": 5.2
         },
         {
-          "candidateName": "정성홍",
-          "party": "",
-          "support": 7.8
+          "candidateName": "이병훈",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "정준호",
+          "party": "democratic",
+          "support": 3.9
+        },
+        {
+          "candidateName": "이용섭",
+          "party": "democratic",
+          "support": 1.6
         }
       ],
       "regionKey": "jeonnam",
@@ -17627,39 +17660,44 @@
       "publishDate": "2026-02-13 12시 01분",
       "results": [
         {
-          "candidateName": "김대중",
-          "party": "",
-          "support": 11
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 31.3
         },
         {
-          "candidateName": "김용태",
-          "party": "",
-          "support": 10.7
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 13.2
         },
         {
-          "candidateName": "김해룡",
-          "party": "",
-          "support": 8.9
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 11.9
         },
         {
-          "candidateName": "오경미",
-          "party": "",
-          "support": 10.8
+          "candidateName": "이병훈",
+          "party": "democratic",
+          "support": 6.4
         },
         {
-          "candidateName": "이정선",
-          "party": "",
-          "support": 19.5
+          "candidateName": "이용섭",
+          "party": "democratic",
+          "support": 4.5
         },
         {
-          "candidateName": "장관호",
-          "party": "",
-          "support": 5.1
+          "candidateName": "이개호",
+          "party": "democratic",
+          "support": 3.4
         },
         {
-          "candidateName": "정성홍",
-          "party": "",
-          "support": 8.1
+          "candidateName": "정준호",
+          "party": "democratic",
+          "support": 3.7
+        },
+        {
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 2.7
         }
       ],
       "regionKey": "gwangju",
@@ -18534,11 +18572,6 @@
           "support": 7.1
         },
         {
-          "candidateName": "모르",
-          "party": "",
-          "support": 12.2
-        },
-        {
           "candidateName": "부동",
           "party": "",
           "support": 2.4
@@ -18755,44 +18788,29 @@
       "publishDate": "2026-02-12 09시 00분",
       "results": [
         {
-          "candidateName": "더불어",
+          "candidateName": "이병학",
           "party": "",
-          "support": 44.9
+          "support": 16.7
         },
         {
-          "candidateName": "민주당",
+          "candidateName": "김영춘",
           "party": "",
-          "support": 39.1
+          "support": 15.8
         },
         {
-          "candidateName": "국민의",
+          "candidateName": "이병도",
           "party": "",
-          "support": 2.2
+          "support": 12.6
         },
         {
-          "candidateName": "조국",
+          "candidateName": "한상경",
           "party": "",
-          "support": 1.1
+          "support": 7.4
         },
         {
-          "candidateName": "혁신당",
+          "candidateName": "명노희",
           "party": "",
-          "support": 1.9
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.5
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 6.6
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.6
+          "support": 7.1
         }
       ],
       "regionKey": "chungnam",
@@ -18950,44 +18968,14 @@
       "publishDate": "2026-02-23 18시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 51.5
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 31.4
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 1.2
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 1.4
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 2.2
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 2.4
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 8.4
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 1.5
         }
       ],
       "regionKey": "gyeonggi",
@@ -19171,28 +19159,18 @@
       "results": [
         {
           "candidateName": "우승희",
-          "party": "",
+          "party": "democratic",
           "support": 47.2
         },
         {
-          "candidateName": "영암군수",
-          "party": "",
+          "candidateName": "전동평",
+          "party": "democratic",
           "support": 42.1
         },
         {
-          "candidateName": "전동평",
-          "party": "",
-          "support": 8.3
-        },
-        {
           "candidateName": "최영열",
-          "party": "",
-          "support": 0.7
-        },
-        {
-          "candidateName": "전남도청",
-          "party": "",
-          "support": 1.3
+          "party": "democratic",
+          "support": 8.3
         }
       ],
       "regionKey": "jeonnam",
@@ -19410,39 +19388,14 @@
       "publishDate": "2026-02-11 13시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 43.3
+          "candidateName": "박상준",
+          "party": "democratic",
+          "support": 41.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
+          "candidateName": "김형찬",
+          "party": "ppp",
           "support": 34.2
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.8
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.9
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 0.9
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 14.2
         }
       ],
       "regionKey": "busan",
@@ -19480,39 +19433,19 @@
       "publishDate": "2026-02-11 13시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 41.4
+          "candidateName": "김대근",
+          "party": "democratic",
+          "support": 29.7
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 34.2
+          "candidateName": "이대훈",
+          "party": "ppp",
+          "support": 22.7
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 2.6
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.7
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.6
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 13.6
+          "candidateName": "조병길",
+          "party": "newReform",
+          "support": 10.9
         }
       ],
       "regionKey": "busan",
@@ -19550,29 +19483,24 @@
       "publishDate": "2026-02-12 05시 00분",
       "results": [
         {
-          "candidateName": "적합도",
-          "party": "",
-          "support": 44.0
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 23.9
         },
         {
           "candidateName": "나경원",
-          "party": "",
-          "support": 32.3
-        },
-        {
-          "candidateName": "오세훈",
-          "party": "",
-          "support": 2.2
+          "party": "ppp",
+          "support": 19.1
         },
         {
           "candidateName": "윤희숙",
-          "party": "",
-          "support": 1.6
+          "party": "ppp",
+          "support": 4.2
         },
         {
           "candidateName": "조은희",
-          "party": "",
-          "support": 2.8
+          "party": "ppp",
+          "support": 4.0
         }
       ],
       "regionKey": "seoul",
@@ -19683,39 +19611,29 @@
       "publishDate": "2026-02-11 17시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 10.1
+          "candidateName": "김광열",
+          "party": "ppp",
+          "support": 39.6
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 80.4
+          "candidateName": "조주홍",
+          "party": "ppp",
+          "support": 28.4
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1
+          "candidateName": "이희진",
+          "party": "ppp",
+          "support": 22.0
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 0.7
+          "candidateName": "장성욱",
+          "party": "ppp",
+          "support": 5.4
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.4
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 4
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.1
+          "candidateName": "박병일",
+          "party": "ppp",
+          "support": 0.5
         }
       ],
       "regionKey": "gyeongbuk",
@@ -19760,11 +19678,6 @@
           "candidateName": "지지",
           "party": "",
           "support": 15.8
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 2.4
         },
         {
           "candidateName": "겠다",
@@ -19877,11 +19790,6 @@
           "candidateName": "잘못하고",
           "party": "",
           "support": 42.3
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 10.7
         }
       ],
       "regionKey": null,
@@ -19971,29 +19879,34 @@
       "publishDate": "2026-02-12 15시 00분",
       "results": [
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 28.4
+          "candidateName": "윤희신",
+          "party": "ppp",
+          "support": 29.8
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 19.7
+          "candidateName": "김세호",
+          "party": "ppp",
+          "support": 13.7
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 26.7
+          "candidateName": "가세로",
+          "party": "democratic",
+          "support": 11.8
         },
         {
-          "candidateName": "대체로",
-          "party": "",
-          "support": 19.3
+          "candidateName": "강철민",
+          "party": "democratic",
+          "support": 10.9
         },
         {
-          "candidateName": "못하고",
-          "party": "",
-          "support": 5.8
+          "candidateName": "김진권",
+          "party": "ppp",
+          "support": 9.2
+        },
+        {
+          "candidateName": "이영수",
+          "party": "ppp",
+          "support": 9.1
         }
       ],
       "regionKey": "chungnam",
@@ -20748,16 +20661,6 @@
           "support": 32.8
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 4
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 11.8
-        },
-        {
           "candidateName": "지지정당없",
           "party": "",
           "support": 0.9
@@ -20923,24 +20826,9 @@
           "support": 10.9
         },
         {
-          "candidateName": "경북교육감",
-          "party": "",
-          "support": 29
-        },
-        {
           "candidateName": "후보",
           "party": "",
           "support": 15.4
-        },
-        {
-          "candidateName": "기타후",
-          "party": "",
-          "support": 21.8
-        },
-        {
-          "candidateName": "잘모르겠다",
-          "party": "",
-          "support": 23
         }
       ],
       "regionKey": "gyeongbuk",
@@ -21306,16 +21194,6 @@
           "candidateName": "김진균",
           "party": "",
           "support": 4.8
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 10.3
-        },
-        {
-          "candidateName": "겠다",
-          "party": "",
-          "support": 47.5
         }
       ],
       "regionKey": "chungbuk",
@@ -21579,11 +21457,6 @@
           "candidateName": "김상동",
           "party": "",
           "support": 29.1
-        },
-        {
-          "candidateName": "기타후보",
-          "party": "",
-          "support": 10
         }
       ],
       "regionKey": "gyeongbuk",
@@ -22309,11 +22182,6 @@
           "support": 6.1
         },
         {
-          "candidateName": "모르",
-          "party": "",
-          "support": 10.7
-        },
-        {
           "candidateName": "겠다",
           "party": "",
           "support": 44.4
@@ -22433,34 +22301,34 @@
       "publishDate": "2026-02-09 04시 00분",
       "results": [
         {
-          "candidateName": "임태희",
-          "party": "",
-          "support": 19.8
+          "candidateName": "신상진",
+          "party": "ppp",
+          "support": 35.0
         },
         {
-          "candidateName": "유은혜",
-          "party": "",
-          "support": 15.5
+          "candidateName": "김병욱",
+          "party": "democratic",
+          "support": 32.0
         },
         {
-          "candidateName": "안민석",
-          "party": "",
-          "support": 13.7
+          "candidateName": "김지호",
+          "party": "democratic",
+          "support": 12.9
         },
         {
-          "candidateName": "성기선",
-          "party": "",
-          "support": 8
+          "candidateName": "장영하",
+          "party": "ppp",
+          "support": 7.0
         },
         {
-          "candidateName": "박효진",
-          "party": "",
-          "support": 3.8
+          "candidateName": "윤창근",
+          "party": "reform",
+          "support": 1.8
         },
         {
-          "candidateName": "이해문",
-          "party": "",
-          "support": 3.1
+          "candidateName": "장지화",
+          "party": "progressive",
+          "support": 1.3
         }
       ],
       "regionKey": "gyeonggi",
@@ -22499,24 +22367,19 @@
       "publishDate": "2026-02-09 12시 00분",
       "results": [
         {
-          "candidateName": "안동시장",
+          "candidateName": "권기창",
           "party": "",
-          "support": 7.7
+          "support": 27.3
         },
         {
-          "candidateName": "권광택",
+          "candidateName": "김의승",
           "party": "",
           "support": 23.9
         },
         {
-          "candidateName": "경북도의",
+          "candidateName": "권광택",
           "party": "",
           "support": 18.6
-        },
-        {
-          "candidateName": "권기창",
-          "party": "",
-          "support": 27.3
         },
         {
           "candidateName": "권백신",
@@ -22524,19 +22387,11 @@
           "support": 10.7
         },
         {
-          "candidateName": "코레일",
-          "party": "",
-          "support": 3.2
-        },
-        {
-          "candidateName": "관광개발",
-          "party": "",
-          "support": 5
-        },
-        {
-          "candidateName": "대표",
-          "party": "",
-          "support": 3.6
+          "candidateName": "이삼걸",
+          "party": "democratic",
+          "support": 7.7,
+          "dataSource": "news_verified",
+          "sourceUrl": "https://www.mt.co.kr/policy/2026/03/24/2026032416482169462"
         }
       ],
       "regionKey": "gyeongbuk",
@@ -22576,30 +22431,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 31.7,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 42.7,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 1.3,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 2.1,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 3.4,
           "type": "party_support"
         }
       ],
@@ -22868,44 +22699,14 @@
       "publishDate": "2026-02-09 14시 00분",
       "results": [
         {
-          "candidateName": "더불",
-          "party": "",
-          "support": 14
-        },
-        {
-          "candidateName": "어민",
-          "party": "",
-          "support": 73.4
-        },
-        {
-          "candidateName": "주당",
-          "party": "",
-          "support": 0.8
-        },
-        {
           "candidateName": "국민",
           "party": "",
           "support": 0.6
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 1.3
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.9
-        },
-        {
           "candidateName": "혁신",
           "party": "",
           "support": 7.8
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 1.3
         }
       ],
       "regionKey": "gyeongbuk",
@@ -23264,44 +23065,24 @@
       "publishDate": "2026-02-08 16시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 18.8
+          "candidateName": "권기창",
+          "party": "ppp",
+          "support": 29.3
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 66.3
+          "candidateName": "김의승",
+          "party": "ppp",
+          "support": 19.4
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 0.8
+          "candidateName": "권광택",
+          "party": "ppp",
+          "support": 18.2
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.9
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.6
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 8.4
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.3
+          "candidateName": "권백신",
+          "party": "ppp",
+          "support": 14.6
         }
       ],
       "regionKey": "gyeongbuk",
@@ -23580,11 +23361,6 @@
       "publishDate": "2026-02-06 18시 00분",
       "results": [
         {
-          "candidateName": "모르",
-          "party": "",
-          "support": 28.3
-        },
-        {
           "candidateName": "겠다",
           "party": "",
           "support": 54.3
@@ -23700,11 +23476,6 @@
           "candidateName": "유성수",
           "party": "",
           "support": 22.2
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 1.2
         }
       ],
       "regionKey": "jeonnam",
@@ -23741,34 +23512,49 @@
       "publishDate": "2026-02-09 11시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 79
+          "candidateName": "장세일",
+          "party": "democratic",
+          "support": 26.4
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 4.7
+          "candidateName": "김혜영",
+          "party": "democratic",
+          "support": 14.6
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 4.6
+          "candidateName": "장기소",
+          "party": "democratic",
+          "support": 12.6
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 7
+          "candidateName": "이석하",
+          "party": "progressive",
+          "support": 11.8
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.3
+          "candidateName": "김한균",
+          "party": "independent",
+          "support": 11.8
         },
         {
-          "candidateName": "진보당",
+          "candidateName": "정원식",
+          "party": "reform",
+          "support": 4.9
+        },
+        {
+          "candidateName": "이동권",
           "party": "",
-          "support": 2.8
+          "support": 5.1
+        },
+        {
+          "candidateName": "이근철",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "양재휘",
+          "party": "",
+          "support": 2.4
         }
       ],
       "regionKey": "jeonnam",
@@ -25034,44 +24820,44 @@
       "publishDate": "2026-02-05 14시 00분",
       "results": [
         {
-          "candidateName": "가세",
-          "party": "",
-          "support": 10
+          "candidateName": "윤희신",
+          "party": "ppp",
+          "support": 31.4
         },
         {
-          "candidateName": "강철",
-          "party": "",
+          "candidateName": "김세호",
+          "party": "ppp",
+          "support": 15.0
+        },
+        {
+          "candidateName": "강철민",
+          "party": "democratic",
           "support": 10.6
         },
         {
-          "candidateName": "김기",
-          "party": "",
-          "support": 5.3
+          "candidateName": "가세로",
+          "party": "democratic",
+          "support": 10.0
         },
         {
-          "candidateName": "홍재",
-          "party": "",
+          "candidateName": "김진권",
+          "party": "ppp",
+          "support": 9.1
+        },
+        {
+          "candidateName": "이영수",
+          "party": "ppp",
+          "support": 9.1
+        },
+        {
+          "candidateName": "홍재표",
+          "party": "democratic",
           "support": 6.6
         },
         {
-          "candidateName": "김세",
-          "party": "",
-          "support": 15
-        },
-        {
-          "candidateName": "김진",
-          "party": "",
-          "support": 9.1
-        },
-        {
-          "candidateName": "이영",
-          "party": "",
-          "support": 9.1
-        },
-        {
-          "candidateName": "윤희",
-          "party": "",
-          "support": 31.4
+          "candidateName": "김기두",
+          "party": "democratic",
+          "support": 5.3
         }
       ],
       "regionKey": "chungnam",
@@ -25337,24 +25123,29 @@
       "publishDate": "2026-02-05 09시 00분",
       "results": [
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 2.7
+          "candidateName": "박노원",
+          "party": "democratic",
+          "support": 24.5
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 4.1
+          "candidateName": "소영호",
+          "party": "democratic",
+          "support": 23.0
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.2
+          "candidateName": "김한종",
+          "party": "democratic",
+          "support": 22.0
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.7
+          "candidateName": "유성수",
+          "party": "democratic",
+          "support": 21.1
+        },
+        {
+          "candidateName": "김왕근",
+          "party": "reform",
+          "support": 4.6
         }
       ],
       "regionKey": "jeonnam",
@@ -25834,39 +25625,14 @@
       "publishDate": "2026-02-04 13시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 42
+          "candidateName": "정영두",
+          "party": "democratic",
+          "support": 35.2
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 31.2
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.1
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.4
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 19
+          "candidateName": "홍태용",
+          "party": "ppp",
+          "support": 32.4
         }
       ],
       "regionKey": "gyeongnam",
@@ -25951,16 +25717,6 @@
       "publishDate": "2026-02-11 05시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 9.5
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 6.6
-        },
-        {
           "candidateName": "배대윤",
           "party": "",
           "support": 16.1
@@ -25969,11 +25725,6 @@
           "candidateName": "임기진",
           "party": "",
           "support": 45.7
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 14.9
         },
         {
           "candidateName": "우병윤",
@@ -26028,11 +25779,6 @@
           "candidateName": "지지인",
           "party": "",
           "support": 15.4
-        },
-        {
-          "candidateName": "물없다",
-          "party": "",
-          "support": 18.8
         }
       ],
       "regionKey": "jeonbuk",
@@ -26076,11 +25822,6 @@
           "candidateName": "박운기",
           "party": "",
           "support": 46
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 5.7
         },
         {
           "candidateName": "이성헌",
@@ -26127,44 +25868,19 @@
       "publishDate": "2026-02-04 09시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 23.1
+          "candidateName": "조현일",
+          "party": "ppp",
+          "support": 40.8
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 58
+          "candidateName": "유윤선",
+          "party": "ppp",
+          "support": 12.7
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.6
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.2
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.1
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 10.3
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.7
+          "candidateName": "이철식",
+          "party": "ppp",
+          "support": 7.5
         }
       ],
       "regionKey": "gyeongbuk",
@@ -26627,39 +26343,39 @@
       "publishDate": "2026-02-09 22시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 17.1
+          "candidateName": "하승철",
+          "party": "ppp",
+          "support": 36.7
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 68.2
+          "candidateName": "김현수",
+          "party": "ppp",
+          "support": 28.9
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.4
+          "candidateName": "제윤경",
+          "party": "democratic",
+          "support": 9.4
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1
+          "candidateName": "손영길",
+          "party": "independent",
+          "support": 4.9
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.9
+          "candidateName": "하만진",
+          "party": "ppp",
+          "support": 3.1
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 7.2
+          "candidateName": "남명우",
+          "party": "independent",
+          "support": 1.9
         },
         {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 1.7
+          "candidateName": "송원우",
+          "party": "ppp",
+          "support": 1.2
         }
       ],
       "regionKey": "gyeongnam",
@@ -26719,11 +26435,6 @@
           "candidateName": "여도",
           "party": "",
           "support": 8.5
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 11.7
         }
       ],
       "regionKey": "incheon",
@@ -26972,11 +26683,6 @@
           "candidateName": "이재욱",
           "party": "",
           "support": 9.2
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 7.2
         }
       ],
       "regionKey": "gyeongnam",
@@ -27011,7 +26717,48 @@
         "end": "2026-01-31"
       },
       "publishDate": "2026-02-01 18시 59분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 22.7
+        },
+        {
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 18.1
+        },
+        {
+          "candidateName": "신정훈",
+          "party": "democratic",
+          "support": 9.2
+        },
+        {
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 6.8
+        },
+        {
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 6.5
+        },
+        {
+          "candidateName": "이개호",
+          "party": "democratic",
+          "support": 4.7
+        },
+        {
+          "candidateName": "이병훈",
+          "party": "democratic",
+          "support": 3.3
+        },
+        {
+          "candidateName": "정준호",
+          "party": "democratic",
+          "support": 3.2
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "governor",
@@ -27184,39 +26931,9 @@
       "publishDate": "2026-02-02 08시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 73.9
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 5.7
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 5.8
-        },
-        {
           "candidateName": "조국혁",
           "party": "",
           "support": 1.5
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 3
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 6.7
         },
         {
           "candidateName": "지지",
@@ -27466,11 +27183,6 @@
           "candidateName": "이준배",
           "party": "",
           "support": 4.1
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 2.8
         }
       ],
       "regionKey": "sejong",
@@ -27674,11 +27386,6 @@
           "candidateName": "후보가",
           "party": "",
           "support": 6.1
-        },
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 31.6
         }
       ],
       "regionKey": "seoul",
@@ -27788,39 +27495,34 @@
       "publishDate": "2026-01-28 06시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 10.9
+          "candidateName": "김광열",
+          "party": "ppp",
+          "support": 43.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 80
+          "candidateName": "이희진",
+          "party": "ppp",
+          "support": 20.7
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.5
+          "candidateName": "조주홍",
+          "party": "ppp",
+          "support": 20.2
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 0.9
+          "candidateName": "장성욱",
+          "party": "ppp",
+          "support": 4.4
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 0.9
+          "candidateName": "강부송",
+          "party": "democratic",
+          "support": 3.4
         },
         {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 3.5
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 3
+          "candidateName": "박병일",
+          "party": "ppp",
+          "support": 3.1
         }
       ],
       "regionKey": "gyeongbuk",
@@ -27869,11 +27571,6 @@
         {
           "candidateName": "긍정",
           "support": 57.8,
-          "party": null
-        },
-        {
-          "candidateName": "민주당",
-          "support": 56.2,
           "party": null
         },
         {
@@ -28046,39 +27743,24 @@
       "publishDate": "2026-01-28 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 17.1
+          "candidateName": "김윤철",
+          "party": "ppp",
+          "support": 39.9
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 70.6
+          "candidateName": "류순철",
+          "party": "ppp",
+          "support": 32.1
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.6
+          "candidateName": "이재욱",
+          "party": "ppp",
+          "support": 9.8
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.6
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 5.7
+          "candidateName": "김성태",
+          "party": "independent",
+          "support": 4.9
         }
       ],
       "regionKey": "gyeongnam",
@@ -28170,46 +27852,44 @@
       "publishDate": "2026-01-27 12시 00분",
       "results": [
         {
-          "candidateName": "안호영",
-          "party": null,
-          "partyRaw": "",
-          "support": 47.7
-        },
-        {
-          "candidateName": "박재완",
-          "party": null,
-          "partyRaw": "",
+          "candidateName": "이돈승",
+          "party": "democratic",
           "support": 30.3
         },
         {
-          "candidateName": "천호성",
-          "party": null,
-          "partyRaw": "",
-          "support": 29.6
-        },
-        {
-          "candidateName": "김정호",
-          "party": null,
-          "partyRaw": "",
+          "candidateName": "유희태",
+          "party": "democratic",
           "support": 23.7
         },
         {
-          "candidateName": "김관영",
-          "party": null,
-          "partyRaw": "",
-          "support": 18.7
+          "candidateName": "국서영",
+          "party": "democratic",
+          "support": 15.5
         },
         {
-          "candidateName": "이남호",
-          "party": null,
-          "partyRaw": "",
-          "support": 17
+          "candidateName": "서남용",
+          "party": "democratic",
+          "support": 11.2
         },
         {
-          "candidateName": "이원택",
-          "party": null,
-          "partyRaw": "",
-          "support": 17
+          "candidateName": "송지용",
+          "party": "democratic",
+          "support": 6.4
+        },
+        {
+          "candidateName": "임상규",
+          "party": "democratic",
+          "support": 3.1
+        },
+        {
+          "candidateName": "김정호",
+          "party": "democratic",
+          "support": 2.5
+        },
+        {
+          "candidateName": "박재완",
+          "party": "democratic",
+          "support": 1.8
         }
       ],
       "regionKey": "jeonbuk",
@@ -28871,11 +28551,6 @@
           "support": 49.3
         },
         {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 46.9
-        },
-        {
           "candidateName": "매우",
           "party": "",
           "support": 3.8
@@ -29115,26 +28790,6 @@
       "publishDate": "2026-01-26 14시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 19.7
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 61.5
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 4.2
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 2.9
-        },
-        {
           "candidateName": "무소속",
           "party": "",
           "support": 5.7
@@ -29174,26 +28829,6 @@
       },
       "publishDate": "2026-01-26 14시 00분",
       "results": [
-        {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 39
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 42
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 3.3
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 2.8
-        },
         {
           "candidateName": "무소속",
           "party": "",
@@ -29302,26 +28937,6 @@
       },
       "publishDate": "2026-01-26 15시 00분",
       "results": [
-        {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 18
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 60.1
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 4.4
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 4.5
-        },
         {
           "candidateName": "무소속",
           "party": "",
@@ -30681,24 +30296,24 @@
       "publishDate": "2026-01-19 16시 00분",
       "results": [
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 76.1
+          "candidateName": "김영록",
+          "party": "democratic",
+          "support": 26.3
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 13.2
+          "candidateName": "주철현",
+          "party": "democratic",
+          "support": 16.3
         },
         {
-          "candidateName": "잘못하고",
-          "party": "",
-          "support": 8.7
+          "candidateName": "신정훈",
+          "party": "democratic",
+          "support": 15.9
         },
         {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 3.1
+          "candidateName": "이개호",
+          "party": "democratic",
+          "support": 9.5
         }
       ],
       "regionKey": "jeonnam",
@@ -31408,11 +31023,6 @@
           "candidateName": "임승필",
           "party": "",
           "support": 7.5
-        },
-        {
-          "candidateName": "기타인물",
-          "party": "",
-          "support": 3.4
         }
       ],
       "regionKey": "gyeongbuk",
@@ -31758,11 +31368,6 @@
           "candidateName": "잘못하고",
           "party": "",
           "support": 42.7
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 10.3
         }
       ],
       "regionKey": null,
@@ -32225,44 +31830,24 @@
       "publishDate": "2026-01-13 15시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 45.9
+          "candidateName": "이응우",
+          "party": "ppp",
+          "support": 28.5
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 40.5
+          "candidateName": "조광국",
+          "party": "democratic",
+          "support": 11.0
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 0.7
+          "candidateName": "허염",
+          "party": "ppp",
+          "support": 8.9
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 0.8
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.6
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 7.6
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 0.7
+          "candidateName": "박춘엽",
+          "party": "democratic",
+          "support": 8.5
         }
       ],
       "regionKey": "chungnam",
@@ -32673,11 +32258,6 @@
           "support": 9.9
         },
         {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 4.6
-        },
-        {
           "candidateName": "기준",
           "party": "",
           "support": 9.6
@@ -32888,39 +32468,44 @@
       "publishDate": "2026-01-06 17시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 50.6
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 29.1
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 44.9
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 22.8
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 4.5
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 16.0
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 36.6
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 6.7
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 14
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 6.4
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 10.5
+          "candidateName": "이준석",
+          "party": "reform",
+          "support": 5.1
         },
         {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 34.5
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 3.6
+        },
+        {
+          "candidateName": "전현희",
+          "party": "democratic",
+          "support": 1.5
         }
       ],
       "regionKey": "seoul",
@@ -33313,11 +32898,6 @@
       "publishDate": "2026-01-08 18시 00분",
       "results": [
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 23.2
-        },
-        {
           "candidateName": "김중남",
           "party": "",
           "support": 18.7
@@ -33326,11 +32906,6 @@
           "candidateName": "김한근",
           "party": "",
           "support": 15.6
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 13.4
         },
         {
           "candidateName": "권혁열",
@@ -33458,11 +33033,6 @@
       "publishDate": "2026-01-07 18시 00분",
       "results": [
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 35.5
-        },
-        {
           "candidateName": "원강수",
           "party": "",
           "support": 33.4
@@ -33481,11 +33051,6 @@
           "candidateName": "곽문근",
           "party": "",
           "support": 7.5
-        },
-        {
-          "candidateName": "기타인물",
-          "party": "",
-          "support": 8.1
         }
       ],
       "regionKey": "gangwon",
@@ -33521,11 +33086,6 @@
       },
       "publishDate": "2026-01-06 18시 00분",
       "results": [
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 32.4
-        },
         {
           "candidateName": "육동한",
           "party": "",
@@ -33788,34 +33348,19 @@
       "publishDate": "2026-01-06 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 44.6
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
+          "candidateName": "이현재",
+          "party": "ppp",
           "support": 37.3
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.8
+          "candidateName": "오수봉",
+          "party": "democratic",
+          "support": 15.6
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.8
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.3
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 10.4
+          "candidateName": "강병덕",
+          "party": "democratic",
+          "support": 14.8
         }
       ],
       "regionKey": "gyeonggi",
@@ -34044,44 +33589,34 @@
       "publishDate": "2026-01-05 19시 00분",
       "results": [
         {
-          "candidateName": "경남지사",
-          "party": "",
-          "support": 33.6
-        },
-        {
-          "candidateName": "지지도",
-          "party": "",
-          "support": 42.3
-        },
-        {
           "candidateName": "김경수",
-          "party": "",
-          "support": 2.8
-        },
-        {
-          "candidateName": "김두관",
-          "party": "",
-          "support": 2.2
-        },
-        {
-          "candidateName": "김태호",
-          "party": "",
-          "support": 3.6
-        },
-        {
-          "candidateName": "민홍철",
-          "party": "",
-          "support": 2.4
+          "party": "democratic",
+          "support": 25.3
         },
         {
           "candidateName": "박완수",
-          "party": "",
-          "support": 11.8
+          "party": "ppp",
+          "support": 16.8
+        },
+        {
+          "candidateName": "김태호",
+          "party": "ppp",
+          "support": 16.6
+        },
+        {
+          "candidateName": "민홍철",
+          "party": "democratic",
+          "support": 10.1
         },
         {
           "candidateName": "조해진",
-          "party": "",
-          "support": 1.3
+          "party": "ppp",
+          "support": 8.1
+        },
+        {
+          "candidateName": "김두관",
+          "party": "democratic",
+          "support": 6.2
         }
       ],
       "regionKey": "gyeongnam",
@@ -34972,7 +34507,53 @@
         "end": "2025-12-29"
       },
       "publishDate": "2026-01-01 04시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 23.0
+        },
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 17.0
+        },
+        {
+          "candidateName": "김도읍",
+          "party": "ppp",
+          "support": 8.0
+        },
+        {
+          "candidateName": "조경태",
+          "party": "ppp",
+          "support": 6.0
+        },
+        {
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 5.0
+        },
+        {
+          "candidateName": "서병수",
+          "party": "ppp",
+          "support": 5.0
+        },
+        {
+          "candidateName": "이재성",
+          "party": "democratic",
+          "support": 4.0
+        },
+        {
+          "candidateName": "박수영",
+          "party": "ppp",
+          "support": 3.0
+        },
+        {
+          "candidateName": "박재호",
+          "party": "democratic",
+          "support": 1.0
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -35368,34 +34949,24 @@
       "publishDate": "2025-12-30 23시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 21.4
+          "candidateName": "윤희신",
+          "party": "ppp",
+          "support": 36.7
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 66
+          "candidateName": "김세호",
+          "party": "ppp",
+          "support": 20.7
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1
+          "candidateName": "이영수",
+          "party": "ppp",
+          "support": 14.3
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 0.6
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 0.7
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 7.4
+          "candidateName": "김진권",
+          "party": "ppp",
+          "support": 8.4
         }
       ],
       "regionKey": "chungnam",
@@ -35536,24 +35107,6 @@
           "candidateName": "더불어민주당",
           "party": "democratic",
           "support": 20.5,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "ppp",
-          "support": 65.9,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "조국혁신당",
-          "party": "reform",
-          "support": 0.7,
-          "type": "party_support"
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "newReform",
-          "support": 3,
           "type": "party_support"
         }
       ],
@@ -36985,11 +36538,6 @@
           "candidateName": "최화삼",
           "party": "",
           "support": 7.9
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 1.2
         }
       ],
       "regionKey": "jeonnam",
@@ -37839,39 +37387,34 @@
       "publishDate": "2025-12-30 17시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 49.1
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 30.1
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 47.9
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 26.2
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 3
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 14.0
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 37.7
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 8.3
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 11.4
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 6.7
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 9
-        },
-        {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 38.8
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 3.8
         }
       ],
       "regionKey": "seoul",
@@ -37925,11 +37468,6 @@
           "candidateName": "잘못하고",
           "party": "",
           "support": 44.7
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 9.2
         },
         {
           "candidateName": "기준",
@@ -38032,16 +37570,6 @@
           "candidateName": "더불어민주",
           "party": "",
           "support": 24.6
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 5.7
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 16.4
         },
         {
           "candidateName": "지지정당없",
@@ -38202,7 +37730,48 @@
         "end": "2025-12-28"
       },
       "publishDate": "2025-12-31 17시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 30.8
+        },
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 19.5
+        },
+        {
+          "candidateName": "김도읍",
+          "party": "ppp",
+          "support": 14.8
+        },
+        {
+          "candidateName": "조경태",
+          "party": "ppp",
+          "support": 7.9
+        },
+        {
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 7.3
+        },
+        {
+          "candidateName": "이재성",
+          "party": "democratic",
+          "support": 6.2
+        },
+        {
+          "candidateName": "박재호",
+          "party": "democratic",
+          "support": 3.7
+        },
+        {
+          "candidateName": "윤택근",
+          "party": "progressive",
+          "support": 2.3
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -38238,39 +37807,34 @@
       "publishDate": "2026-01-05 08시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 31.3
+          "candidateName": "서태원",
+          "party": "ppp",
+          "support": 30.5
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 49.2
+          "candidateName": "추선엽",
+          "party": "ppp",
+          "support": 12.7
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 3.2
+          "candidateName": "김경호",
+          "party": "democratic",
+          "support": 12.2
         },
         {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.6
+          "candidateName": "박범서",
+          "party": "ppp",
+          "support": 6.2
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.1
+          "candidateName": "송기욱",
+          "party": "democratic",
+          "support": 4.9
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 10.8
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 2.2
+          "candidateName": "최정용",
+          "party": "ppp",
+          "support": 2.7
         }
       ],
       "regionKey": "gyeonggi",
@@ -38632,39 +38196,39 @@
       "publishDate": "2026-01-05 05시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 19.4
+          "candidateName": "박승호",
+          "party": "ppp",
+          "support": 19.1
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 65.3
+          "candidateName": "김병욱",
+          "party": "ppp",
+          "support": 13.3
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.2
+          "candidateName": "공원식",
+          "party": "ppp",
+          "support": 10.6
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.6
+          "candidateName": "이칠구",
+          "party": "ppp",
+          "support": 8.5
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.6
+          "candidateName": "박용선",
+          "party": "ppp",
+          "support": 7.8
         },
         {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 8.3
+          "candidateName": "안승대",
+          "party": "ppp",
+          "support": 6.2
         },
         {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.3
+          "candidateName": "김일만",
+          "party": "ppp",
+          "support": 5.6
         }
       ],
       "regionKey": "gyeongbuk",
@@ -38701,11 +38265,6 @@
       },
       "publishDate": "2026-01-04 17시 00분",
       "results": [
-        {
-          "candidateName": "모르",
-          "party": "",
-          "support": 22.3
-        },
         {
           "candidateName": "겠다",
           "party": "",
@@ -39071,39 +38630,14 @@
       "publishDate": "2025-12-30 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 47.1
+          "candidateName": "김동근",
+          "party": "ppp",
+          "support": 41.8
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 31.3
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.8
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.4
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.1
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.4
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 11.4
+          "candidateName": "김원기",
+          "party": "democratic",
+          "support": 37.9
         }
       ],
       "regionKey": "gyeonggi",
@@ -39259,36 +38793,6 @@
       },
       "publishDate": "2025-12-31 04시 00분",
       "results": [
-        {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 75.3
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 3.1
-        },
-        {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 8.2
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 4.7
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.8
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 5.4
-        },
         {
           "candidateName": "지지",
           "party": "",
@@ -39939,7 +39443,38 @@
         "end": "2025-12-22"
       },
       "publishDate": "2025-12-23 17시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 29.4
+        },
+        {
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 25.8
+        },
+        {
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 15.5
+        },
+        {
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 9.2
+        },
+        {
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 7.5
+        },
+        {
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 4.1
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",
@@ -39971,7 +39506,18 @@
         "end": "2025-12-21"
       },
       "publishDate": "2025-12-23 06시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박찬대",
+          "party": "democratic",
+          "support": 52.1
+        },
+        {
+          "candidateName": "유정복",
+          "party": "ppp",
+          "support": 36.8
+        }
+      ],
       "regionKey": "incheon",
       "municipality": null,
       "electionType": "governor",
@@ -40279,29 +39825,44 @@
       "publishDate": "2025-12-22 13시 00분",
       "results": [
         {
-          "candidateName": "김영록",
-          "party": "",
-          "support": 53.6
+          "candidateName": "신의준",
+          "party": "democratic",
+          "support": 26.3
         },
         {
-          "candidateName": "신정훈",
-          "party": "",
-          "support": 9.8
+          "candidateName": "김신",
+          "party": "independent",
+          "support": 18.3
         },
         {
-          "candidateName": "이개호",
-          "party": "",
-          "support": 5.6
+          "candidateName": "이철",
+          "party": "democratic",
+          "support": 15.9
         },
         {
-          "candidateName": "주철현",
-          "party": "",
-          "support": 9.4
+          "candidateName": "지영배",
+          "party": "democratic",
+          "support": 14.7
         },
         {
-          "candidateName": "지지",
-          "party": "",
-          "support": 8.3
+          "candidateName": "우홍섭",
+          "party": "democratic",
+          "support": 10.9
+        },
+        {
+          "candidateName": "허궁희",
+          "party": "democratic",
+          "support": 7.1
+        },
+        {
+          "candidateName": "김세국",
+          "party": "democratic",
+          "support": 3.0
+        },
+        {
+          "candidateName": "김재현",
+          "party": "democratic",
+          "support": 1.4
         }
       ],
       "regionKey": "jeonnam",
@@ -40380,7 +39941,18 @@
         "end": "2025-12-16"
       },
       "publishDate": "2025-12-19 06시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 49.7
+        },
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 43.9
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -40490,34 +40062,9 @@
       "publishDate": "2025-12-18 07시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 17.2
-        },
-        {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 66.5
-        },
-        {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 1.5
-        },
-        {
           "candidateName": "조국혁",
           "party": "",
           "support": 1.4
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 1.6
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 3.6
         },
         {
           "candidateName": "개혁신",
@@ -40700,7 +40247,18 @@
         "end": "2025-12-16"
       },
       "publishDate": "2025-12-19 06시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 46.6
+        },
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 44.8
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -40798,7 +40356,38 @@
         "end": "2025-12-15"
       },
       "publishDate": "2025-12-16 17시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 29.2
+        },
+        {
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 23.0
+        },
+        {
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 15.6
+        },
+        {
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 9.5
+        },
+        {
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 9.0
+        },
+        {
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 4.9
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",
@@ -41469,34 +41058,49 @@
       "publishDate": "2025-12-16 07시 00분",
       "results": [
         {
-          "candidateName": "의힘",
-          "party": "",
+          "candidateName": "최기문",
+          "party": "independent",
           "support": 26.6
         },
         {
-          "candidateName": "의힘",
-          "party": "",
+          "candidateName": "김병삼",
+          "party": "ppp",
           "support": 11.5
         },
         {
-          "candidateName": "의힘",
-          "party": "",
-          "support": 9
+          "candidateName": "김섭",
+          "party": "ppp",
+          "support": 9.0
         },
         {
-          "candidateName": "의힘",
-          "party": "",
+          "candidateName": "이정훈",
+          "party": "democratic",
           "support": 8.8
         },
         {
-          "candidateName": "의힘",
-          "party": "",
+          "candidateName": "박영환",
+          "party": "ppp",
           "support": 6.9
         },
         {
-          "candidateName": "의힘",
-          "party": "",
+          "candidateName": "이춘우",
+          "party": "ppp",
           "support": 6.7
+        },
+        {
+          "candidateName": "하기태",
+          "party": "ppp",
+          "support": 6.0
+        },
+        {
+          "candidateName": "윤승오",
+          "party": "ppp",
+          "support": 5.6
+        },
+        {
+          "candidateName": "정우동",
+          "party": "democratic",
+          "support": 4.5
         }
       ],
       "regionKey": "gyeongbuk",
@@ -41553,19 +41157,9 @@
           "support": 18.4
         },
         {
-          "candidateName": "기타후보",
-          "party": "",
-          "support": 5.5
-        },
-        {
           "candidateName": "지지후보",
           "party": "",
           "support": 17.6
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 16.8
         }
       ],
       "regionKey": "gwangju",
@@ -41731,7 +41325,38 @@
         "end": "2025-12-14"
       },
       "publishDate": "2025-12-16 20시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 26.7
+        },
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 24.5
+        },
+        {
+          "candidateName": "김도읍",
+          "party": "ppp",
+          "support": 8.7
+        },
+        {
+          "candidateName": "이재성",
+          "party": "democratic",
+          "support": 8.3
+        },
+        {
+          "candidateName": "조경태",
+          "party": "ppp",
+          "support": 5.4
+        },
+        {
+          "candidateName": "박재호",
+          "party": "democratic",
+          "support": 3.1
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -41779,11 +41404,6 @@
           "candidateName": "후보가",
           "party": "",
           "support": 20.5
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 18.8
         }
       ],
       "regionKey": "chungnam",
@@ -41892,11 +41512,6 @@
           "candidateName": "박상무",
           "party": "",
           "support": 10.2
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 10.8
         }
       ],
       "regionKey": "chungnam",
@@ -42137,39 +41752,34 @@
       "publishDate": "2025-12-09 17시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 51
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 26.0
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 44.4
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 16.4
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 4.7
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 14.7
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 37.6
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 13.5
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 13.4
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 11.2
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 10
-        },
-        {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 34.3
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 4.5
         }
       ],
       "regionKey": "seoul",
@@ -42538,11 +42148,6 @@
           "candidateName": "후보",
           "party": "",
           "support": 4.8
-        },
-        {
-          "candidateName": "모르겠다",
-          "party": "",
-          "support": 6.6
         }
       ],
       "regionKey": "jeonnam",
@@ -42661,12 +42266,6 @@
           "party": "democratic",
           "support": 20.8,
           "type": "party_support"
-        },
-        {
-          "candidateName": "진보당",
-          "party": "progressive",
-          "support": 1.2,
-          "type": "party_support"
         }
       ],
       "regionKey": "gyeongbuk",
@@ -42766,39 +42365,44 @@
       "publishDate": "2025-12-02 17시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 50.9
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 23.3
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 45.5
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 14.2
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 3.6
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 13.5
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 38.8
+          "candidateName": "김민석",
+          "party": "democratic",
+          "support": 11.7
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 12.1
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 10.6
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 7.3
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 7.8
         },
         {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 38.2
+          "candidateName": "이준석",
+          "party": "reform",
+          "support": 6.2
+        },
+        {
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 3.7
         }
       ],
       "regionKey": "seoul",
@@ -42835,39 +42439,14 @@
       "publishDate": "2025-12-05 10시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 44.5
+          "candidateName": "홍태용",
+          "party": "ppp",
+          "support": 38.1
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 34.8
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 2.8
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 0.8
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 3.2
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 10.5
+          "candidateName": "박재현",
+          "party": "democratic",
+          "support": 30.5
         }
       ],
       "regionKey": "gyeongnam",
@@ -43118,7 +42697,38 @@
         "end": "2025-11-28"
       },
       "publishDate": "2025-12-03 09시 30분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "이철우",
+          "party": "ppp",
+          "support": 22.7
+        },
+        {
+          "candidateName": "김재원",
+          "party": "ppp",
+          "support": 18.2
+        },
+        {
+          "candidateName": "최경환",
+          "party": "ppp",
+          "support": 8.9
+        },
+        {
+          "candidateName": "이강덕",
+          "party": "ppp",
+          "support": 7.4
+        },
+        {
+          "candidateName": "강석호",
+          "party": "ppp",
+          "support": 5.7
+        },
+        {
+          "candidateName": "백승주",
+          "party": "ppp",
+          "support": 1.7
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": null,
       "electionType": "governor",
@@ -43573,7 +43183,28 @@
         "end": "2025-11-23"
       },
       "publishDate": "2025-11-25 22시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박형준",
+          "party": "ppp",
+          "support": 33.0
+        },
+        {
+          "candidateName": "전재수",
+          "party": "democratic",
+          "support": 27.0
+        },
+        {
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 14.0
+        },
+        {
+          "candidateName": "정이한",
+          "party": "newReform",
+          "support": 1.0
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -43670,44 +43301,19 @@
       "publishDate": "2025-11-28 00시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 21.6
+          "candidateName": "박승호",
+          "party": "ppp",
+          "support": 22.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 61.7
+          "candidateName": "김병욱",
+          "party": "ppp",
+          "support": 20.1
         },
         {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.6
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.2
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.4
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 1.4
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 9
-        },
-        {
-          "candidateName": "기타정당",
-          "party": "",
-          "support": 1.2
+          "candidateName": "박용선",
+          "party": "ppp",
+          "support": 11.7
         }
       ],
       "regionKey": "gyeongbuk",
@@ -43744,39 +43350,44 @@
       "publishDate": "2025-11-25 17시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 48.4
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 26.4
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 47
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 14.1
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 4.5
+          "candidateName": "김민석",
+          "party": "democratic",
+          "support": 12.8
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 37.7
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 9.7
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 10.8
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 10.5
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 9.2
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 7.8
         },
         {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 37.8
+          "candidateName": "이준석",
+          "party": "reform",
+          "support": 6.2
+        },
+        {
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 3.0
         }
       ],
       "regionKey": "seoul",
@@ -43942,39 +43553,24 @@
       "publishDate": "2025-11-25 07시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 15.1
+          "candidateName": "권기창",
+          "party": "ppp",
+          "support": 32.9
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 71.6
+          "candidateName": "권광택",
+          "party": "ppp",
+          "support": 22.1
         },
         {
-          "candidateName": "국민의",
+          "candidateName": "김대일",
           "party": "",
-          "support": 0.9
+          "support": 14.6
         },
         {
-          "candidateName": "혁신당",
+          "candidateName": "김명호",
           "party": "",
-          "support": 1.5
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.6
-        },
-        {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 7
-        },
-        {
-          "candidateName": "신당",
-          "party": "",
-          "support": 2
+          "support": 8.9
         }
       ],
       "regionKey": "gyeongbuk",
@@ -44011,39 +43607,39 @@
       "publishDate": "2025-11-24 23시 50분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 18.2
+          "candidateName": "박승호",
+          "party": "ppp",
+          "support": 20.0
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 70.9
+          "candidateName": "김병욱",
+          "party": "ppp",
+          "support": 16.3
         },
         {
-          "candidateName": "국민의",
-          "party": "",
-          "support": 1.1
+          "candidateName": "공원식",
+          "party": "ppp",
+          "support": 13.2
         },
         {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 1.4
+          "candidateName": "박용선",
+          "party": "ppp",
+          "support": 8.9
         },
         {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 1.5
+          "candidateName": "이칠구",
+          "party": "ppp",
+          "support": 8.2
         },
         {
-          "candidateName": "개혁",
-          "party": "",
-          "support": 6.1
+          "candidateName": "안승대",
+          "party": "ppp",
+          "support": 5.7
         },
         {
-          "candidateName": "신당",
-          "party": "",
-          "support": 0.7
+          "candidateName": "김일만",
+          "party": "ppp",
+          "support": 4.1
         }
       ],
       "regionKey": "gyeongbuk",
@@ -44231,39 +43827,14 @@
       "publishDate": "2025-11-24 18시 00분",
       "results": [
         {
-          "candidateName": "더불어",
-          "party": "",
-          "support": 45.5
+          "candidateName": "엄태준",
+          "party": "democratic",
+          "support": 38.5
         },
         {
-          "candidateName": "민주당",
-          "party": "",
-          "support": 33.5
-        },
-        {
-          "candidateName": "국민의힘",
-          "party": "",
-          "support": 1.9
-        },
-        {
-          "candidateName": "조국",
-          "party": "",
-          "support": 1.4
-        },
-        {
-          "candidateName": "혁신당",
-          "party": "",
-          "support": 2.4
-        },
-        {
-          "candidateName": "진보당",
-          "party": "",
-          "support": 2.5
-        },
-        {
-          "candidateName": "개혁신당",
-          "party": "",
-          "support": 10.8
+          "candidateName": "김경희",
+          "party": "ppp",
+          "support": 31.2
         }
       ],
       "regionKey": "gyeonggi",
@@ -44760,7 +44331,38 @@
         "end": "2025-11-17"
       },
       "publishDate": "2025-11-19 20시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김경수",
+          "party": "democratic",
+          "support": 25.4
+        },
+        {
+          "candidateName": "김태호",
+          "party": "ppp",
+          "support": 16.2
+        },
+        {
+          "candidateName": "박완수",
+          "party": "ppp",
+          "support": 15.4
+        },
+        {
+          "candidateName": "윤한홍",
+          "party": "ppp",
+          "support": 5.8
+        },
+        {
+          "candidateName": "김두관",
+          "party": "democratic",
+          "support": 5.6
+        },
+        {
+          "candidateName": "민홍철",
+          "party": "democratic",
+          "support": 2.9
+        }
+      ],
       "regionKey": "gyeongnam",
       "municipality": null,
       "electionType": "governor",
@@ -44976,39 +44578,44 @@
       "publishDate": "2025-11-12 16시 00분",
       "results": [
         {
-          "candidateName": "긍정적",
-          "party": "",
-          "support": 48.9
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 24.3
         },
         {
-          "candidateName": "부정적",
-          "party": "",
-          "support": 46.4
+          "candidateName": "정원오",
+          "party": "democratic",
+          "support": 11.2
         },
         {
-          "candidateName": "매우",
-          "party": "",
-          "support": 4.6
+          "candidateName": "김민석",
+          "party": "democratic",
+          "support": 11.8
         },
         {
-          "candidateName": "잘하고",
-          "party": "",
-          "support": 38.7
+          "candidateName": "나경원",
+          "party": "ppp",
+          "support": 11.6
         },
         {
-          "candidateName": "있다",
-          "party": "",
-          "support": 10.3
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 10.2
         },
         {
-          "candidateName": "잘하",
-          "party": "",
-          "support": 7.8
+          "candidateName": "조국",
+          "party": "reform",
+          "support": 8.5
         },
         {
-          "candidateName": "편이다",
-          "party": "",
-          "support": 38.6
+          "candidateName": "이준석",
+          "party": "reform",
+          "support": 6.0
+        },
+        {
+          "candidateName": "신동욱",
+          "party": "independent",
+          "support": 5.2
         }
       ],
       "regionKey": "seoul",
@@ -45062,11 +44669,6 @@
           "candidateName": "잘못하고",
           "party": "",
           "support": 43.4
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 9.1
         },
         {
           "candidateName": "기준",
@@ -45350,7 +44952,53 @@
         "end": "2025-11-08"
       },
       "publishDate": "2025-11-10 05시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "민형배",
+          "party": "democratic",
+          "support": 33.8
+        },
+        {
+          "candidateName": "강기정",
+          "party": "democratic",
+          "support": 13.6
+        },
+        {
+          "candidateName": "정준호",
+          "party": "democratic",
+          "support": 8.9
+        },
+        {
+          "candidateName": "문인",
+          "party": "democratic",
+          "support": 8.9
+        },
+        {
+          "candidateName": "김정현",
+          "party": "ppp",
+          "support": 7.2
+        },
+        {
+          "candidateName": "서왕진",
+          "party": "reform",
+          "support": 5.1
+        },
+        {
+          "candidateName": "이병훈",
+          "party": "democratic",
+          "support": 4.3
+        },
+        {
+          "candidateName": "이종욱",
+          "party": "progressive",
+          "support": 3.4
+        },
+        {
+          "candidateName": "이형석",
+          "party": "democratic",
+          "support": 3.0
+        }
+      ],
       "regionKey": "gwangju",
       "municipality": null,
       "electionType": "governor",
@@ -45399,11 +45047,6 @@
           "candidateName": "반대함",
           "party": "",
           "support": 7.2
-        },
-        {
-          "candidateName": "잘모름",
-          "party": "",
-          "support": 7
         },
         {
           "candidateName": "빈도",
@@ -47080,7 +46723,18 @@
         "end": "2025-10-29"
       },
       "publishDate": "2025-10-31 06시 00분",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "오세훈",
+          "party": "ppp",
+          "support": 46.8
+        },
+        {
+          "candidateName": "박주민",
+          "party": "democratic",
+          "support": 42.0
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",

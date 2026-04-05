@@ -90,28 +90,28 @@
     "lastAttempt": "2026-04-04"
   },
   "17998": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17997": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17996": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17995": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17994": {
     "attempts": 1,
@@ -162,16 +162,16 @@
     "lastAttempt": "2026-04-04"
   },
   "17953": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17925": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17918": {
     "attempts": 1,
@@ -180,16 +180,16 @@
     "lastAttempt": "2026-04-04"
   },
   "17912": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17909": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17908": {
     "attempts": 1,
@@ -198,16 +198,16 @@
     "lastAttempt": "2026-04-04"
   },
   "17907": {
-    "attempts": 1,
+    "attempts": 2,
     "failures": 0,
     "succeeded": true,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17906": {
-    "attempts": 1,
-    "failures": 0,
+    "attempts": 2,
+    "failures": 1,
     "succeeded": true,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17899": {
     "attempts": 1,
@@ -234,10 +234,10 @@
     "lastAttempt": "2026-04-04"
   },
   "17883": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17882": {
     "attempts": 1,
@@ -270,10 +270,10 @@
     "lastAttempt": "2026-04-04"
   },
   "17876": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17865": {
     "attempts": 1,
@@ -288,10 +288,10 @@
     "lastAttempt": "2026-04-04"
   },
   "17862": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17859": {
     "attempts": 1,
@@ -306,28 +306,28 @@
     "lastAttempt": "2026-04-04"
   },
   "17856": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17855": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17854": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17853": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17851": {
     "attempts": 1,
@@ -360,10 +360,10 @@
     "lastAttempt": "2026-04-04"
   },
   "17757": {
-    "attempts": 1,
-    "failures": 1,
+    "attempts": 2,
+    "failures": 2,
     "succeeded": false,
-    "lastAttempt": "2026-04-04"
+    "lastAttempt": "2026-04-05"
   },
   "17709": {
     "attempts": 1,
@@ -538,5 +538,17 @@
     "failures": 0,
     "succeeded": true,
     "lastAttempt": "2026-04-04"
+  },
+  "17860": {
+    "attempts": 1,
+    "failures": 0,
+    "succeeded": true,
+    "lastAttempt": "2026-04-05"
+  },
+  "17762": {
+    "attempts": 1,
+    "failures": 0,
+    "succeeded": true,
+    "lastAttempt": "2026-04-05"
   }
 }
