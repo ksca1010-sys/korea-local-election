@@ -226,6 +226,13 @@ async function handleAnalytics(request, env) {
     return jsonResponse({ error: 'POST only' }, 405);
   }
 
+  // Origin 검증: 허용된 도메인만 이벤트 수집
+  const origin = request.headers.get('Origin') || '';
+  const allowedOrigins = ['https://korea-local-eletion.pages.dev', 'http://localhost:8000', 'http://localhost'];
+  if (!allowedOrigins.includes(origin)) {
+    return jsonResponse({ error: 'Forbidden' }, 403);
+  }
+
   const body = await request.text();
   if (body.length > MAX_BODY_SIZE) {
     return jsonResponse({ error: 'Payload too large' }, 413);
@@ -254,16 +261,9 @@ async function handleAnalytics(request, env) {
     receivedAt: now.toISOString(),
   };
 
-  // KV에 저장 (90일 TTL)
+  // KV에 저장 (90일 TTL) — 이벤트 1건 = KV 쓰기 1회
   try {
     await env.ANALYTICS.put(`evt:${id}`, JSON.stringify(record), {
-      expirationTtl: 86400 * 90,
-    });
-
-    // 날짜별 카운터 증가
-    const counterKey = `count:${dateKey}:${payload.event}`;
-    const prev = parseInt(await env.ANALYTICS.get(counterKey) || '0', 10);
-    await env.ANALYTICS.put(counterKey, String(prev + 1), {
       expirationTtl: 86400 * 90,
     });
 
@@ -290,11 +290,10 @@ async function handleAnalyticsDump(url, env) {
     if (val) events.push(JSON.parse(val));
   }
 
-  // 카운터도 함께 반환
+  // 카운터: 별도 KV 키 없이 events에서 직접 집계
   const counts = {};
-  for (const evt of VALID_EVENTS) {
-    const c = await env.ANALYTICS.get(`count:${date}:${evt}`);
-    if (c) counts[evt] = parseInt(c, 10);
+  for (const evt of events) {
+    counts[evt.event] = (counts[evt.event] || 0) + 1;
   }
 
   return jsonResponse({ date, counts, events });
