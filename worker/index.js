@@ -277,7 +277,7 @@ async function handleAnalytics(request, env) {
 async function handleAnalyticsDump(url, env) {
   // 인증: ANALYTICS_DUMP_SECRET 환경변수와 일치해야 접근 가능
   const secret = url.searchParams.get('secret');
-  if (!secret || secret !== (env.ANALYTICS_DUMP_SECRET || 'alsungeo-dump-2026')) {
+  if (!secret || !env.ANALYTICS_DUMP_SECRET || secret !== env.ANALYTICS_DUMP_SECRET) {
     return jsonResponse({ error: 'Unauthorized' }, 401);
   }
   const date = url.searchParams.get('date') || new Date().toISOString().slice(0, 10);
