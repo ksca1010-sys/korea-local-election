@@ -2,9 +2,13 @@ name: Poll Sync (NESDC)
 
 on:
   schedule:
-    # 매일 한국시간 09:30 (UTC 00:30) — update-candidates(09:00) 이후 충돌 방지
-    - cron: '30 0 * * *'
+    # 매일 한국시간 10:00 (UTC 01:00) — update-candidates(09:00) 1시간 여유 확보
+    - cron: '0 1 * * *'
   workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
 
 jobs:
   gate:

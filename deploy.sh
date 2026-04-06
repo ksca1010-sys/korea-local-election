@@ -2,6 +2,7 @@
 # Deploy to Cloudflare Pages - excludes large pipeline geojson files that exceed 25MB limit
 
 DIST_DIR=".deploy_dist"
+trap 'rm -rf "$DIST_DIR"' EXIT
 
 echo "Running pre-deploy quality checks..."
 python3 scripts/audit_numeric_fields.py || { echo "audit_numeric_fields 검증 실패 — 배포 중단"; exit 1; }
