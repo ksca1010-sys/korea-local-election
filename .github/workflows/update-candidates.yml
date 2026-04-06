@@ -162,7 +162,16 @@ jobs:
           ]
           for path, key, min_count in checks:
               d = json.load(open(path))
-              cnt = len(d.get(key, []))
+              val = d.get(key, [])
+              if isinstance(val, dict):
+                  # region→district→list 구조: 총 후보 수 합산
+                  cnt = sum(
+                      len(v) if isinstance(v, list)
+                      else sum(len(vv) for vv in v.values() if isinstance(vv, list))
+                      for v in val.values()
+                  )
+              else:
+                  cnt = len(val)
               if cnt < min_count:
                   print(f'FATAL: {path} has {cnt} entries (< {min_count})')
                   sys.exit(1)
