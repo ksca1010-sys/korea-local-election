@@ -233,6 +233,12 @@ const Sidebar = (() => {
                 ? ElectionCalendar.getDday()
                 : (() => { const d = ElectionData.getDday(); return d > 0 ? `D-${d}` : d === 0 ? 'D-DAY' : `D+${Math.abs(d)}`; })();
         }
+        // 선거일 이후에는 라벨을 "선거일로부터"로 전환
+        const labelEl = document.querySelector('#dday-counter .dday-label');
+        if (labelEl && typeof ElectionCalendar !== 'undefined') {
+            const phase = ElectionCalendar.getCurrentPhase();
+            labelEl.textContent = (phase === 'POST_ELECTION' || phase === 'INAUGURATED') ? '선거일로부터' : '선거일까지';
+        }
     }
 
     // ── 선거 캘린더 배너 렌더링 (Layer 3) ──
