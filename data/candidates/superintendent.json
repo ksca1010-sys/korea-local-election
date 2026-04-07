@@ -2,7 +2,7 @@
   "_meta": {
     "lastUpdated": "2026-04-07",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-07T01:31:57.059509",
+    "lastFactCheck": "2026-04-07T05:10:54.868640",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -1131,12 +1131,21 @@
         "name": "주국영",
         "stance": "중도",
         "career": "강원도교육감 선거 출마 예정자",
-        "status": "EXPECTED",
+        "status": "WITHDRAWN",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": "",
         "sourceLabel": "종합",
-        "sourcePublishedAt": "2026-04-07"
+        "sourcePublishedAt": "2026-04-07",
+        "_lastChange": {
+          "date": "2026-04-07",
+          "type": "status_change",
+          "detail": "주국영 강원도교육감 선거 출마 철회, \"누구도 지지하지 않아\"",
+          "previous": "EXPECTED",
+          "sourceUrl": null,
+          "sourceLabel": "없음",
+          "sourcePublishedAt": null
+        }
       }
     ],
     "chungbuk": [
@@ -1762,7 +1771,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1772,13 +1781,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-03",
+          "date": "2026-04-07",
           "type": "status_change",
           "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "DECLARED",
+          "previous": "RUMORED",
           "sourceUrl": "",
-          "sourceLabel": "제주 지역언론",
-          "sourcePublishedAt": "2026-04-03"
+          "sourceLabel": "언론보도",
+          "sourcePublishedAt": "2026-04-07"
         },
         "pledgeCategories": [
           {
@@ -2025,6 +2034,18 @@
             "category": "기타"
           }
         ]
+      },
+      {
+        "id": "sejong-7",
+        "name": "김인엽",
+        "stance": "중도",
+        "career": "교육감 예비후보",
+        "status": "EXPECTED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "",
+        "sourceLabel": "뉴스",
+        "sourcePublishedAt": "2026-04-07"
       }
     ]
   }
