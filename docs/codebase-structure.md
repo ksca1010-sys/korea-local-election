@@ -1,7 +1,7 @@
 # 알선거 (korea-local-election) 코드베이스 구조
 
 > 2026 제9회 전국동시지방선거 인터랙티브 선거 정보 지도
-> 배포: https://korea-local-eletion.pages.dev
+> 배포: https://korea-local-election.pages.dev
 > 스택: 바닐라 HTML + CSS + JavaScript (프레임워크 없음)
 > 최종 갱신: 2026-03-23
 
@@ -350,7 +350,7 @@ src/
 ```
 배포 명령: npm run deploy  ->  bash deploy.sh
 프로젝트명: korea-local-eletion
-URL: https://korea-local-eletion.pages.dev
+URL: https://korea-local-election.pages.dev
 ```
 
 `deploy.sh` 동작:

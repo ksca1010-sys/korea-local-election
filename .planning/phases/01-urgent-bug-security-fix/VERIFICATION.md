@@ -8,7 +8,7 @@ human_verification:
     expected: "하단 sticky 배너에 '사이트 개선을 위해 Microsoft Clarity 세션 기록에 동의하시겠습니까?' 문구와 동의/거부 버튼이 표시된다. 동의 전에는 Clarity 세션 레코딩이 시작되지 않는다."
     why_human: "브라우저 렌더링 동작과 localStorage 없는 신규 방문 상태를 프로그래밍으로 시뮬레이션할 수 없음."
   - test: "배포된 사이트에 curl -I 로 보안 헤더 확인"
-    expected: "curl -I https://korea-local-eletion.pages.dev 응답에 X-Frame-Options, X-Content-Type-Options, Content-Security-Policy 헤더가 포함된다."
+    expected: "curl -I https://korea-local-election.pages.dev 응답에 X-Frame-Options, X-Content-Type-Options, Content-Security-Policy 헤더가 포함된다."
     why_human: "_headers 파일은 Cloudflare Pages 배포 시 적용되므로, 로컬 파일 검증만으로는 실제 배포 적용 여부를 확인할 수 없음."
 ---
 
@@ -82,7 +82,7 @@ human_verification:
 
 ### 2. 배포 후 보안 헤더 응답 확인
 
-**Test:** 배포 후 `curl -I https://korea-local-eletion.pages.dev` 실행.
+**Test:** 배포 후 `curl -I https://korea-local-election.pages.dev` 실행.
 **Expected:** 응답 헤더에 `x-frame-options: DENY`, `x-content-type-options: nosniff`, `content-security-policy:` 가 포함된다.
 **Why human:** `_headers` 파일의 Cloudflare Pages 적용 여부는 실제 배포 없이 로컬에서 확인 불가.
 

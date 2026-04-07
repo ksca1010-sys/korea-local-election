@@ -228,7 +228,7 @@ async function handleAnalytics(request, env) {
 
   // Origin 검증: 허용된 도메인만 이벤트 수집
   const origin = request.headers.get('Origin') || '';
-  const allowedOrigins = ['https://korea-local-eletion.pages.dev', 'http://localhost:8000', 'http://localhost'];
+  const allowedOrigins = ['https://korea-local-election.pages.dev', 'http://localhost:8000', 'http://localhost'];
   if (!allowedOrigins.includes(origin)) {
     return jsonResponse({ error: 'Forbidden' }, 403);
   }

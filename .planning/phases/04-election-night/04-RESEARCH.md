@@ -187,7 +187,7 @@ id = "<KV_NAMESPACE_ID>"
 ```javascript
 const resp = await fetch(NEC_URL, {
   headers: {
-    'User-Agent': 'ElectionInfoMap/1.0 (https://korea-local-eletion.pages.dev; +contact@example.com)',
+    'User-Agent': 'ElectionInfoMap/1.0 (https://korea-local-election.pages.dev; +contact@example.com)',
     'Accept': 'application/json, text/html;q=0.9',
     'Referer': 'https://info.nec.go.kr/',
   }

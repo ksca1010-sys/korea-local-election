@@ -1,7 +1,7 @@
 # 알선거 (VoteMap) — 디자인 의뢰 자료
 
 > 서비스: 알선거 — 아는 만큼 보이는 선거
-> URL: https://korea-local-eletion.pages.dev
+> URL: https://korea-local-election.pages.dev
 > 스택: 바닐라 HTML + CSS + JS (프레임워크 없음)
 > 테마: 다크 모드 고정
 
@@ -271,6 +271,6 @@
 
 ## 7. 참고 URL
 
-- **라이브**: https://korea-local-eletion.pages.dev
+- **라이브**: https://korea-local-election.pages.dev
 - **디자인 가이드**: docs/디자인가이드.md
 - **UX 화면흐름**: docs/UX_화면흐름.md

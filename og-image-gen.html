@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face {
+    font-family: 'NotoKR';
+    src: url('file:///tmp/NotoSansKR.ttf') format('truetype');
+    font-weight: 100 900;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    width: 1200px; height: 630px; overflow: hidden;
+    background: linear-gradient(160deg, #0d1228 0%, #111830 60%, #0f1a3a 100%);
+    font-family: 'NotoKR', sans-serif;
+    position: relative;
+  }
+
+  .circles {
+    position: absolute; right: 80px; top: 50%; transform: translateY(-50%);
+    width: 320px; height: 320px;
+  }
+  .circle {
+    position: absolute; border-radius: 50%; border: 1px solid rgba(169,199,255,0.18);
+    top: 50%; left: 50%; transform: translate(-50%, -50%);
+  }
+  .c1 { width: 580px; height: 580px; }
+  .c2 { width: 460px; height: 460px; border-color: rgba(169,199,255,0.22); }
+  .c3 { width: 340px; height: 340px; border-color: rgba(169,199,255,0.30); }
+  .c4 {
+    width: 220px; height: 220px;
+    background: rgba(111,170,255,0.08);
+    border: 2px solid rgba(111,170,255,0.4);
+  }
+  .check {
+    position: absolute; right: 185px; top: 50%; transform: translateY(-50%);
+    font-size: 80px; color: rgba(111,170,255,0.75); font-weight: 700; line-height:1;
+  }
+  .bar {
+    position: absolute; left: 58px; top: 110px; bottom: 120px;
+    width: 7px; background: linear-gradient(180deg, #4a8fff, #1a3260);
+    border-radius: 4px;
+  }
+  .dots {
+    position: absolute; right: 215px; bottom: 108px;
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px;
+  }
+  .dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(100,150,220,0.4); }
+
+  .content { position: absolute; left: 90px; top: 108px; right: 380px; }
+
+  .tag {
+    display: inline-block;
+    background: #1a3260; color: #a9c7ff;
+    font-size: 19px; font-weight: 400;
+    padding: 5px 14px; border-radius: 6px; margin-bottom: 14px;
+  }
+  .title {
+    font-size: 102px; font-weight: 900; color: #ffffff;
+    line-height: 1.05; letter-spacing: -3px; margin-bottom: 8px;
+  }
+  .subtitle {
+    font-size: 46px; font-weight: 700; color: #7ab4ff;
+    margin-bottom: 22px; letter-spacing: -1px;
+  }
+  .divider { width: 580px; height: 1px; background: #1e3360; margin-bottom: 18px; }
+  .desc { font-size: 28px; color: #7a96b8; font-weight: 400; line-height: 1.8; margin-bottom: 24px; }
+  .badge {
+    display: inline-flex; align-items: center;
+    background: #1a3260; border: 1px solid #3460a0;
+    color: #a9c7ff; font-size: 26px; font-weight: 700;
+    padding: 10px 22px; border-radius: 8px; gap: 10px;
+  }
+  .footer {
+    position: absolute; bottom: 0; left: 0; right: 0; height: 56px;
+    background: #080d1a; display: flex; align-items: center; padding: 0 90px;
+  }
+  .footer span { color: #3a5070; font-size: 18px; }
+</style>
+</head>
+<body>
+  <div class="bar"></div>
+  <div class="circles">
+    <div class="circle c1"></div><div class="circle c2"></div>
+    <div class="circle c3"></div><div class="circle c4"></div>
+  </div>
+  <div class="check">✓</div>
+  <div class="dots">
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+    <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
+  </div>
+  <div class="content">
+    <div class="tag">제9회 전국동시지방선거</div>
+    <div class="title">알선거</div>
+    <div class="subtitle">아는 만큼 보이는 선거</div>
+    <div class="divider"></div>
+    <div class="desc">
+      여론조사 · 후보자 비교 · 역대 선거 결과<br>
+      17개 광역 · 226개 기초 선거구
+    </div>
+    <div class="badge">▶&nbsp; 2026. 06. 03 &nbsp;선거일</div>
+  </div>
+  <div class="footer"><span>korea-local-election.pages.dev</span></div>
+</body>
+</html>

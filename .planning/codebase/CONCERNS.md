@@ -152,7 +152,7 @@
 ## Deployment Concerns
 
 **Typo in production domain name:**
-- Issue: The deployed URL is `https://korea-local-eletion.pages.dev` (missing 'c' in 'election'). This is baked into `index.html` Open Graph tags (`og:url`) and `package.json` (`name`).
+- Issue: The deployed URL is `https://korea-local-election.pages.dev` (missing 'c' in 'election'). This is baked into `index.html` Open Graph tags (`og:url`) and `package.json` (`name`).
 - Files: `index.html` line 15, `package.json` line 2
 - Impact: Cannot be changed without migrating the Cloudflare Pages project. Users sharing the URL with the typo will get broken links if the project is ever renamed.
 

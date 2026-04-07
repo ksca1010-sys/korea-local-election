@@ -58,7 +58,7 @@ def fetch_mulgeum_ris(api_key):
         "typename": "lt_c_adri",
         "output": "application/json",
         "key": api_key,
-        "domain": "korea-local-eletion.pages.dev",
+        "domain": "korea-local-election.pages.dev",
         "srsName": "EPSG:4326",
         "maxFeatures": "200",
         "bbox": bbox,

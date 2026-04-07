@@ -246,7 +246,7 @@ def fetch_vworld_features(api_key: str, bbox: str, sigungu: str) -> list:
         "typename": "lt_c_adri",
         "output": "application/json",
         "key": api_key,
-        "domain": "korea-local-eletion.pages.dev",
+        "domain": "korea-local-election.pages.dev",
         "srsName": "EPSG:4326",
         "maxFeatures": "500",
         "bbox": f"{bbox},EPSG:4326",

@@ -182,7 +182,7 @@ if (location.hostname === 'localhost') {
 ```
 
 These fire in the browser console during local development and cost nothing in production
-(they are never reached on `korea-local-eletion.pages.dev`).
+(they are never reached on `korea-local-election.pages.dev`).
 
 ### 4c. Diff-based review before every commit
 

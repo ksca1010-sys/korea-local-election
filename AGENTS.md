@@ -220,7 +220,7 @@ function switchTab(tabName) {
 
 ## 프로젝트 개요
 6.3 전국동시지방선거 인터랙티브 선거 정보 지도
-배포: https://korea-local-eletion.pages.dev
+배포: https://korea-local-election.pages.dev
 스택: 바닐라 HTML + CSS + JavaScript (프레임워크 없음)
 
 ## 파일 구조와 수정 규칙

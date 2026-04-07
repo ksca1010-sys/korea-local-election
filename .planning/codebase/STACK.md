@@ -91,7 +91,7 @@
 - `serve.sh` provides local HTTP server
 
 **Production:**
-- Cloudflare Pages (static hosting): `https://korea-local-eletion.pages.dev`
+- Cloudflare Pages (static hosting): `https://korea-local-election.pages.dev`
 - Cloudflare Workers (API proxy): `https://election-news-proxy.ksca1010.workers.dev`
 - Cloudflare KV (analytics storage): binding `ANALYTICS`, id `9b31e01259d849009422757c8ebaae27`
 

@@ -78,7 +78,7 @@
 
 **v1.1 출시** — 2026-03-31
 
-- 배포: `https://korea-local-eletion.pages.dev`
+- 배포: `https://korea-local-election.pages.dev`
 - JS: ~21,000줄 (v1.1에서 app.js +_updateElectionBanner 등 추가)
 - Cloudflare Worker: `https://election-night.ksca1010.workers.dev` (parseNECResponse() skeleton, TODO(5/26) 마커 14개)
 - 데이터: 여론조사 743건 (NESDC PDF 18건 수동 채우기 완료)

@@ -94,7 +94,7 @@
 - Platform: Cloudflare Pages
 - Project name: `korea-local-eletion` (note typo in name)
 - Deploy command: `npx wrangler pages deploy` (see `deploy.sh`)
-- Production URL: `https://korea-local-eletion.pages.dev`
+- Production URL: `https://korea-local-election.pages.dev`
 - Deployment excludes: large GeoJSON files, `scripts/`, `node_modules/`, `*_byulpyo/` directories
 
 **API Proxy:**

@@ -45,7 +45,7 @@ def fetch_haeryong(api_key):
     params = {
         "service": "WFS", "version": "1.1.0", "request": "GetFeature",
         "typename": "lt_c_adri", "output": "application/json",
-        "key": api_key, "domain": "korea-local-eletion.pages.dev",
+        "key": api_key, "domain": "korea-local-election.pages.dev",
         "srsName": "EPSG:4326", "maxFeatures": "300",
         "bbox": BBOX,
     }

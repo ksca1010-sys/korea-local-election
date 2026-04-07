@@ -21,7 +21,7 @@
 
 ## Step 1: 폴백 모드 활성화
 
-1. [ ] 사이트(`https://korea-local-eletion.pages.dev`)를 브라우저로 연다
+1. [ ] 사이트(`https://korea-local-election.pages.dev`)를 브라우저로 연다
 2. [ ] `F12` 또는 `Cmd+Option+I` (Mac)로 개발자 도구(DevTools)를 연다
 3. [ ] **Console** 탭을 클릭한다
 4. [ ] 다음 명령어를 정확히 입력하고 Enter를 누른다:

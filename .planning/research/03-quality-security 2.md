@@ -1,6 +1,6 @@
 # Research: Pre-Deployment Quality & Security
 
-**Project:** 알선거 — korea-local-eletion.pages.dev
+**Project:** 알선거 — korea-local-election.pages.dev
 **Researched:** 2026-03-29
 **Confidence:** MEDIUM-HIGH (Cloudflare docs verified; PIPA analytics specifics LOW)
 
@@ -286,7 +286,7 @@ FID was replaced by INP in March 2024. Test with INP.
 **Testing:**
 ```bash
 # Run Lighthouse from CLI against production URL
-npx lighthouse https://korea-local-eletion.pages.dev \
+npx lighthouse https://korea-local-election.pages.dev \
   --preset=mobile \
   --output=html \
   --output-path=./lighthouse-report.html \
