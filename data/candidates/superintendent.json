@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-04",
+    "lastUpdated": "2026-04-07",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-04T01:25:01.918553",
+    "lastFactCheck": "2026-04-07T01:31:57.059509",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -175,6 +175,18 @@
         "sourceUrl": "not_provided",
         "sourceLabel": "언론사",
         "sourcePublishedAt": "2026-03-26"
+      },
+      {
+        "id": "seoul-10",
+        "name": "윤호상",
+        "stance": "보수",
+        "career": "교수",
+        "status": "DECLARED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "",
+        "sourceLabel": "종합",
+        "sourcePublishedAt": "2026-04-07"
       }
     ],
     "busan": [
@@ -996,20 +1008,20 @@
         "name": "강삼영",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "30분 이내 무상통학 버스 운영",
           "무상급식·교복·통학 확대"
         ],
         "_lastChange": {
-          "date": "2026-03-25",
+          "date": "2026-04-07",
           "type": "status_change",
-          "detail": "강삼영 강원도교육감 예비후보 관련 다수 뉴스 보도 - '강원인재성장협의회 신설', '30분 내 무상통학 시대 연다', '강원교육 희망우체통' 운영, 출판기념회 개최",
-          "previous": "DECLARED",
-          "sourceUrl": "N/A",
+          "detail": "강삼영 도교육감 예비후보 양양지역 공약발표회, 강삼영 도교육감 예비후보 출판기념회 개최",
+          "previous": "EXPECTED",
+          "sourceUrl": "",
           "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-03-25"
+          "sourcePublishedAt": "2026-04-07"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1113,6 +1125,18 @@
           "sourceLabel": "종합뉴스",
           "sourcePublishedAt": "2026-03-24"
         }
+      },
+      {
+        "id": "gangwon-6",
+        "name": "주국영",
+        "stance": "중도",
+        "career": "강원도교육감 선거 출마 예정자",
+        "status": "EXPECTED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "",
+        "sourceLabel": "종합",
+        "sourcePublishedAt": "2026-04-07"
       }
     ],
     "chungbuk": [
@@ -1718,6 +1742,18 @@
             "category": "기타"
           }
         ]
+      },
+      {
+        "id": "gyeongnam-8",
+        "name": "김준식",
+        "stance": "중도",
+        "career": "경남교육감 예비후보",
+        "status": "EXPECTED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "언론사 미제공",
+        "sourceLabel": "경남 지역언론",
+        "sourcePublishedAt": "2026-04-07"
       }
     ],
     "jeju": [

@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-04-04T01:21:59.407621",
-    "totalDetections": 49,
-    "pendingCount": 49,
+    "lastRun": "2026-04-07T01:29:35.882980",
+    "totalDetections": 56,
+    "pendingCount": 56,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -18,12 +18,17 @@
         "name": "국회",
         "party": "independent"
       },
-      "confidence": 85,
+      "confidence": 100,
       "sources": [
         {
           "title": "충남 재보선 최대 이슈 與 인물난 속 野 틈새 공략",
           "link": "https://www.cctoday.co.kr/news/articleView.html?idxno=2227130",
           "date": "2026-03-17"
+        },
+        {
+          "title": "이윤석 충남 아산시을 국회의원 보궐선거 예비후보, &quot;아산을 방치한 채...",
+          "link": "https://www.ccdn.co.kr/news/articleView.html?idxno=1071652",
+          "date": "2026-04-05"
         }
       ],
       "necValidated": true,
@@ -856,6 +861,31 @@
           "title": "한동훈 “보수 재건 ‘주호영’과 이미 연대…상식적 정치인 뜻 모아야...",
           "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8517852&ref=A",
           "date": "2026-03-25"
+        },
+        {
+          "title": "지선 앞두고 ‘유튜브 소통’ 시작한 장동혁…국민의힘 지지율 반등 이...",
+          "link": "https://www.kukinews.com/article/view/kuk202604060218",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "&quot;기차는 떠나고&quot;…이진숙, 대구시장 무소속 출마 시사",
+          "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5008278",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "이진숙, ‘재보선 권유’ 장동혁에 “기차 떠났다”…대구시장 강행 뜻",
+          "link": "https://www.seoul.co.kr/news/politics/2026/04/06/20260406500065?wlog_tag3=naver",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "이기인 &quot;이진숙 메타인지 부족…순교자 됐다고 대구시장 잘하나?&quot;",
+          "link": "https://www.nocutnews.co.kr/news/6496979?utm_source=naver&utm_medium=article&utm_campaign=20260406101227",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "이진숙 &quot;기차는 떠나고&quot;… 장동혁 재보선 권유 사실상 거절",
+          "link": "https://www.daejonilbo.com/news/articleView.html?idxno=2267234",
+          "date": "2026-04-06"
         }
       ],
       "necValidated": false,
@@ -924,6 +954,31 @@
           "title": "홍석준 &quot;대구, 지금은 주호영도 김부겸 못이겨...8인 경선? 또 다른 문제...",
           "link": "https://www.ytn.co.kr/_ln/0101_202603312005453458",
           "date": "2026-03-31"
+        },
+        {
+          "title": "[정치쇼] 조광한 &quot;이진숙 기차 떠났다? 자동차 준비할 테니 다음 정거장...",
+          "link": "https://news.sbs.co.kr/news/endPage.do?news_id=N1008507939&plink=ORI&cooper=NAVER",
+          "date": "2026-04-07"
+        },
+        {
+          "title": "[사사건건] “당대표 때 사진 금지”…민주당 결정 속내는?",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8527945&ref=A",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "'대구 공천파동' 정리 나선 장동혁…'마이웨이' 선택한 당사자들",
+          "link": "https://news.jtbc.co.kr/article/NB12292822?influxDiv=NAVER",
+          "date": "2026-04-05"
+        },
+        {
+          "title": "대구선 분열, 경기선 인물난… 끊이지않는 국힘 '공천 혼란'",
+          "link": "http://www.fnnews.com/news/202604051844190809",
+          "date": "2026-04-05"
+        },
+        {
+          "title": "대구는 '4파전'·경기는 '구인난'..野 교통정리 가능할까",
+          "link": "http://www.fnnews.com/news/202604051129314320",
+          "date": "2026-04-05"
         }
       ],
       "necValidated": false,
@@ -1053,12 +1108,17 @@
         "name": "국회",
         "party": "democratic"
       },
-      "confidence": 60,
+      "confidence": 85,
       "sources": [
         {
           "title": "[6.3 재보궐선거] 계양을, 송영길 복귀 변수 부상 …여론 우세 속 '정치...",
           "link": "http://www.incheonnews.com/news/articleView.html?idxno=434817",
           "date": "2026-03-18"
+        },
+        {
+          "title": "국민의힘 5일 수원·화성·안양 후보 경선 확정",
+          "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1320262",
+          "date": "2026-04-05"
         }
       ],
       "necValidated": true,
@@ -1487,6 +1547,173 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-04-03T05:11:44.443835"
+    },
+    {
+      "key": "busan-정도",
+      "region": "busan",
+      "district": "정도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "“주호영 무소속 출마 99% 안할것” “하정우는 99% 출마할것” [정치를...",
+          "link": "https://www.donga.com/news/Politics/article/all/20260406/133684010/1",
+          "date": "2026-04-06"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882887"
+    },
+    {
+      "key": "gyeonggi-경기도",
+      "region": "gyeonggi",
+      "district": "경기도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "여기가 바로 격전지...경기도는 누굴 선택할까",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003221871&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "오늘 민주당 경기지사 본경선 발표…결선 여부 '촉각'",
+          "link": "http://www.newstomato.com/ReadNews.aspx?no=1296847&inflow=N",
+          "date": "2026-04-06"
+        },
+        {
+          "title": "민주당 경기지사 경선 투표 돌입…표심 경쟁 [정치오늘]",
+          "link": "http://www.sisaon.co.kr/news/articleView.html?idxno=182107",
+          "date": "2026-04-05"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882901"
+    },
+    {
+      "key": "daegu-금도",
+      "region": "daegu",
+      "district": "금도",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "유영하 &quot;친이·친박 때 지킨 금도 실종 … 대구 공천은 식구 아닌 증오...",
+          "link": "https://www.newdaily.co.kr/site/data/html/2026/04/06/2026040600273.html",
+          "date": "2026-04-06"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882919"
+    },
+    {
+      "key": "seoul-전남광주시",
+      "region": "seoul",
+      "district": "전남광주시",
+      "electionType": "광역단체장",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "국힘 공관위, 전남광주시장 후보 추가 공모…계양을 등 재·보궐 5곳 9~1...",
+          "link": "https://www.newsis.com/view/NISX20260405_0003578429",
+          "date": "2026-04-05"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882927"
+    },
+    {
+      "key": "gwangju-광주특별시",
+      "region": "gwangju",
+      "district": "광주특별시",
+      "electionType": "광역단체장",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "국민의힘, 전남·광주특별시장 후보 추가 공모 실시",
+          "link": "https://www.dailian.co.kr/news/view/1629802/?sc=Naver",
+          "date": "2026-04-05"
+        },
+        {
+          "title": "국민의힘, 전남광주특별시장 추가 공모...충북지사 후보 27일 최종 결정",
+          "link": "https://www.newspim.com/news/view/20260405000159",
+          "date": "2026-04-05"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882932"
+    },
+    {
+      "key": "ulsan-메시",
+      "region": "ulsan",
+      "district": "메시",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "의원은",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "尹 부활절 메시지에 김상욱 &quot;독재자&quot; 돌직구",
+          "link": "http://www.00news.co.kr/news/articleView.html?idxno=103071",
+          "date": "2026-04-06"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882954"
+    },
+    {
+      "key": "busan-울산시",
+      "region": "busan",
+      "district": "울산시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "진보 연대·보수 분열 고착 조짐",
+          "link": "https://www.busan.com/view/busan/view.php?code=2026040618305614424",
+          "date": "2026-04-06"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-07T01:29:35.882958"
     }
   ]
 }
