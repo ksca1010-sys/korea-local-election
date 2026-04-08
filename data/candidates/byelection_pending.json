@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-04-07T05:08:13.070172",
-    "totalDetections": 56,
-    "pendingCount": 56,
+    "lastRun": "2026-04-08T01:29:49.492047",
+    "totalDetections": 62,
+    "pendingCount": 62,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -425,6 +425,11 @@
           "title": "정청래 &quot;안아보자&quot;…與, 박찬대 인천시장 단수 공천, 김용 두고 속앓이",
           "link": "https://www.joongang.co.kr/article/25409163",
           "date": "2026-03-04"
+        },
+        {
+          "title": "여야 인천시장 주자, 출마 시기 '장고'",
+          "link": "https://www.incheonilbo.com/news/articleView.html?idxno=1320426",
+          "date": "2026-04-07"
         }
       ],
       "necValidated": false,
@@ -1325,6 +1330,31 @@
           "title": "한동훈 부산 보선 몸 푸나…부산발전법 두고 李대통령 비판",
           "link": "https://www.yna.co.kr/view/AKR20260403052600051?input=1195m",
           "date": "2026-04-03"
+        },
+        {
+          "title": "‘하GPT’ 하정우 수석, 전재수 떠나는 부산 북갑 출마 여부는?",
+          "link": "https://www.mk.co.kr/article/12010983",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "전재수 떠나는 부산 북갑 보궐선거 최대 변수는 하정우 수석",
+          "link": "https://www.yna.co.kr/view/AKR20260407097900051?input=1195m",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "경기지사 후보에 추미애…첫 여성 단체장 등극?",
+          "link": "http://www.yonhapnewstv.co.kr/MYH20260407230042Wj9",
+          "date": "2026-04-07"
+        },
+        {
+          "title": "하정우 “북갑, 어릴 때 놀던 곳” 출마 임박? 여야·한동훈 수싸움 치...",
+          "link": "http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0100&key=20260408.22005001979",
+          "date": "2026-04-07"
+        },
+        {
+          "title": "與 사무총장 만난 하정우 AI수석…李대통령 재가만 남았다",
+          "link": "https://www.sedaily.com/article/20029529?ref=naver",
+          "date": "2026-04-07"
         }
       ],
       "necValidated": false,
@@ -1598,6 +1628,11 @@
           "title": "민주당 경기지사 경선 투표 돌입…표심 경쟁 [정치오늘]",
           "link": "http://www.sisaon.co.kr/news/articleView.html?idxno=182107",
           "date": "2026-04-05"
+        },
+        {
+          "title": "민주당 경기도지사 후보에 여성 최다선 추미애 확정",
+          "link": "https://www.goodmorningcc.com/news/articleView.html?idxno=444248",
+          "date": "2026-04-07"
         }
       ],
       "necValidated": false,
@@ -1714,6 +1749,149 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-04-07T01:29:35.882958"
+    },
+    {
+      "key": "busan-안산시갑",
+      "region": "busan",
+      "district": "안산시갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 85,
+      "sources": [
+        {
+          "title": "혁신당 &quot;조국 출마지 15~20일 발표&quot;",
+          "link": "http://www.edaily.co.kr/news/newspath.asp?newsid=04428006645413824&returntp=election",
+          "date": "2026-04-07"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.491949"
+    },
+    {
+      "key": "busan-동시",
+      "region": "busan",
+      "district": "동시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "[손병관의 뉴스프레소] '첫 여성 광역단체장' 성큼 다가선 추미애",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222434&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-04-08"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.491973"
+    },
+    {
+      "key": "busan-압도",
+      "region": "busan",
+      "district": "압도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "경기지사 후보에 추미애…&quot;압도적 승리로 보답&quot;",
+          "link": "http://www.yonhapnewstv.co.kr/MYH20260408053659UBC",
+          "date": "2026-04-08"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.492002"
+    },
+    {
+      "key": "busan-북구갑",
+      "region": "busan",
+      "district": "북구갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "눈치싸움",
+        "party": "democratic"
+      },
+      "confidence": 70,
+      "sources": [
+        {
+          "title": "민주당, 부산 북구갑 후보 하정우로 굳히나···한동훈은 눈치싸움",
+          "link": "https://www.pointe.co.kr/news/articleView.html?idxno=77918",
+          "date": "2026-04-07"
+        },
+        {
+          "title": "하정우 AI수석, 與조승래와 회동…부산 북갑 출마 탄력",
+          "link": "https://www.dailian.co.kr/news/view/1630650/?sc=Naver",
+          "date": "2026-04-07"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.492007"
+    },
+    {
+      "key": "gyeonggi-하남시갑",
+      "region": "gyeonggi",
+      "district": "하남시갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "추미애, 경기지사 후보 확정…하남시 갑 보궐선거 '격전지' 부상",
+          "link": "https://www.newsfreezone.co.kr/news/articleView.html?idxno=683970",
+          "date": "2026-04-07"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.492011"
+    },
+    {
+      "key": "gyeonggi-평택시",
+      "region": "gyeonggi",
+      "district": "평택시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "이윤하",
+        "party": "independent"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "평택시의회, 새 의장 이윤하 의원 선출…소통과 협치 의회 구현 약속",
+          "link": "https://www.newspim.com/news/view/20260407000912",
+          "date": "2026-04-07"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-04-08T01:29:49.492040"
     }
   ]
 }

@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-07",
+    "lastUpdated": "2026-04-08",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-07T05:08:33.325672",
+    "lastFactCheck": "2026-04-08T01:30:07.900580",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -304,12 +304,21 @@
         "age": 52,
         "career": "前 국민의힘 대표 / 前 법무부장관 / 검사장 출신",
         "photo": null,
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-08",
+          "type": "status_change",
+          "detail": "서울특별시 광역단체장 후보로 출마선언 추가 확인 — '[맞수다] 박근혜-김부겸 진짜 만나면?‥조국-한동훈 부산 맞대결 판세는...' 및 부산과 서울 동시 출마 관련 보도",
+          "previous": "RUMORED",
+          "sourceUrl": "기사URL미제공",
+          "sourceLabel": "중앙일보",
+          "sourcePublishedAt": "2026-04-08"
+        }
       }
     ],
     "daegu": [
