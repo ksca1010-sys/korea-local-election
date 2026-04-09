@@ -736,28 +736,14 @@ const ElectionData = (() => {
         return hotspots.sort((a, b) => a.gap - b.gap).slice(0, 10);
     }
 
-    // D-day 계산
+    // D-day 계산 (KST 기준 — CLAUDE.md 준수)
     function getDday() {
-        const now = new Date();
+        const now = (typeof ElectionCalendar !== 'undefined') ? ElectionCalendar.getKST() : new Date();
         const diff = electionDate - now;
         return Math.ceil(diff / (1000 * 60 * 60 * 24));
     }
 
-    // 전국 정당별 우세 지역 수
-    function getPartyDominance() {
-        const dominance = {};
-        Object.values(regions).forEach(region => {
-            const latestPoll = region.polls[region.polls.length - 1];
-            if (!latestPoll?.data) return;
-            const leadingCandidate = Object.entries(latestPoll.data).sort((a, b) => b[1] - a[1])[0];
-            const candidate = region.candidates.find(c => c.id === leadingCandidate[0]);
-            if (candidate) {
-                const party = candidate.party;
-                dominance[party] = (dominance[party] || 0) + 1;
-            }
-        });
-        return dominance;
-    }
+    // getPartyDominance는 _pollsCache 접근이 필요하므로 ElectionData 객체 메서드로 이동됨
 
     // 뉴스 검색 URL 생성 (네이버 뉴스 실시간 링크)
     function getNewsSearchUrl(regionKey) {
@@ -1679,7 +1665,21 @@ const ElectionData = (() => {
         getElectionCalendar,
         getElectionCalendarSections,
         getElectionCalendarSources: () => electionCalendarSources,
-        getPartyDominance,
+        getPartyDominance() {
+            const dominance = {};
+            const regionMap = this._pollsCache?.regions || {};
+            Object.entries(regionMap).forEach(([, polls]) => {
+                if (!polls?.length) return;
+                const govPolls = polls.filter(p => p.electionType === 'governor');
+                if (!govPolls.length) return;
+                const latestPoll = govPolls[govPolls.length - 1];
+                if (!latestPoll?.results?.length) return;
+                const leader = latestPoll.results.reduce((a, b) => (b.support > a.support ? b : a));
+                const party = leader.party;
+                if (party) dominance[party] = (dominance[party] || 0) + 1;
+            });
+            return dominance;
+        },
         getNewsSearchUrl,
         getRegion: (key) => regions[key],
         getSubRegions: (key) => subRegionData[key] || [],
@@ -1970,7 +1970,7 @@ const ElectionData = (() => {
             try {
                 const data = await fetch(`data/candidates/${folder}/${regionKey}.json`).then(r => r.json());
                 this._councilCandidateCache[cacheKey] = data;
-            } catch(e) {
+            } catch (_e) {
                 this._councilCandidateCache[cacheKey] = { candidates: {} };
             }
         },
@@ -2002,7 +2002,7 @@ const ElectionData = (() => {
             if (this._proportionalCache) return;
             try {
                 this._proportionalCache = await fetch('data/candidates/proportional.json').then(r => r.json());
-            } catch(e) {
+            } catch (_e) {
                 this._proportionalCache = {};
             }
         },
@@ -2123,6 +2123,7 @@ const ElectionData = (() => {
                 .catch(err => {
                     this._electionStatsPromise = null; // allow retry
                     console.warn('[ElectionStats] Failed to load, using embedded data:', err);
+                    throw err; // Promise.allSettled가 실패를 올바르게 감지하도록 re-throw
                 });
         },
 
@@ -2350,11 +2351,8 @@ const ElectionData = (() => {
                 .catch(err => {
                     this._candidatesPromise = null;
                     this._candidatesLoaded = false;
-                    // 로드 실패 시 하드코딩 구버전 candidates를 비워서 팩트 오류 방지
-                    Object.keys(regions).forEach(key => {
-                        if (regions[key]?.candidates) regions[key].candidates = [];
-                    });
-                    console.error('[CandidateData] Failed to load governor.json — embedded candidates cleared:', err);
+                    // 네트워크 오류 시 기존 후보 데이터를 보존 (이전: 전량 삭제 → UI 공백 버그)
+                    console.error('[CandidateData] Failed to load governor.json — keeping existing candidates:', err);
                 });
         },
 

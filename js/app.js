@@ -88,6 +88,7 @@ const App = (() => {
             ['loadCouncilMembersData', ElectionData.loadCouncilMembersData?.()],
             ['loadCandidatesData', ElectionData.loadCandidatesData?.()],
             ['loadByElectionData', ElectionData.loadByElectionData?.()],
+            ['loadPollsData', ElectionData.loadPollsData?.()],
         ];
         const results = await Promise.allSettled(dataLoads.map(([, p]) => p));
         const failures = [];
@@ -104,6 +105,9 @@ const App = (() => {
         // 모든 데이터 로드 완료 → 실제 데이터 기반 카운트 동기화
         try { Sidebar.syncCountsFromData(); } catch(e) { console.warn('[syncCounts] error:', e); }
         try { Sidebar.updateFilterCounts(); } catch(e) { console.warn('[filterCounts] error:', e); }
+        // 실데이터 기반으로 사이드바 재렌더링 (초기 렌더는 데이터 로드 전이어서 빈 값이었음)
+        try { Sidebar.renderStats(); } catch(e) { console.warn('[renderStats] error:', e); }
+        try { Sidebar.renderFooterPartyBar(); } catch(e) { console.warn('[renderFooterPartyBar] error:', e); }
         SearchModule.invalidateSearchIndex();
 
         // Load local media pool (새 통합 풀) + 기존 registry + 지역 현안 키워드 → 병합
@@ -286,6 +290,14 @@ const App = (() => {
                 switchTab(tabsArr[newIdx].dataset.tab);
             });
         }
+
+        // council-tab / proportional-tab이 NewsTab을 직접 호출하지 않도록 커스텀 이벤트 수신
+        window.addEventListener('render-news-tab', (e) => {
+            const { regionKey, electionType, districtName } = e.detail;
+            if (typeof NewsTab !== 'undefined') {
+                NewsTab.render(regionKey, electionType, districtName);
+            }
+        });
     }
 
     function switchTab(tabName) {
