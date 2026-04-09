@@ -90,27 +90,46 @@ def load_candidates():
 
 
 def load_polls():
-    """여론조사 데이터 로드 — 지역별 최신 3건씩"""
+    """여론조사 데이터 로드 — 지역별 governor 최신 3건씩
+
+    polls.json 구조:
+      - national: 전국 단위 (party_support 등, regionKey 없음 → 스킵)
+      - regions: {regionKey: [poll, ...]} — 지역별 후보자 여론조사
+    """
     if not POLLS_PATH.exists():
         return {}
     data = json.loads(POLLS_PATH.read_text(encoding="utf-8"))
     region_polls = {}
-    all_polls = data.get("national", []) + data.get("regional", [])
-    for poll in all_polls:
-        rk = poll.get("regionKey")
-        if not rk:
-            continue
-        if rk not in region_polls:
-            region_polls[rk] = []
-        region_polls[rk].append({
+
+    def _add(poll, rk=None):
+        key = rk or poll.get("regionKey")
+        if not key:
+            return
+        et = poll.get("electionType", "")
+        # governor 여론조사만 개요에 활용 (mayor/council/party_support 등 제외)
+        if et and et not in ("governor", ""):
+            return
+        if key not in region_polls:
+            region_polls[key] = []
+        region_polls[key].append({
             "title": poll.get("title", ""),
             "pollOrg": poll.get("pollOrg", ""),
             "clientOrg": poll.get("clientOrg", ""),
             "publishDate": poll.get("publishDate", ""),
-            "method": poll.get("method", {}).get("type", ""),
-            "sampleSize": poll.get("method", {}).get("sampleSize", 0),
+            "method": (poll.get("method") or {}).get("type", ""),
+            "sampleSize": (poll.get("method") or {}).get("sampleSize", 0),
             "results": poll.get("results", []),
         })
+
+    # regions 딕셔너리 (기존 코드에서 "regional"로 잘못 읽던 부분 수정)
+    for rk, polls in data.get("regions", {}).items():
+        for poll in polls:
+            _add(poll, rk=rk)
+
+    # national 목록도 순회 (regionKey 있는 governor 여론조사 포함 가능성)
+    for poll in data.get("national", []):
+        _add(poll)
+
     for rk in region_polls:
         region_polls[rk] = sorted(
             region_polls[rk],

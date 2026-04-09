@@ -299,26 +299,36 @@ def is_stale(state, region_key, district, stale_days=2):
 # ═══════════════════════════════════════════
 
 def load_district_polls():
-    """여론조사 데이터 로드 — 시군구별 최신 3건"""
+    """여론조사 데이터 로드 — 시군구별 mayor 최신 3건
+
+    polls.json 구조:
+      - regions: {regionKey: [poll, ...]}
+      - poll.municipality: 시군구 이름 (예: "천안시")
+      - poll.electionType: "mayor" 인 것만 사용
+    """
     if not POLLS_PATH.exists():
         return {}
     data = json.loads(POLLS_PATH.read_text(encoding="utf-8"))
     district_polls = {}
-    for poll in data.get("regional", []):
-        dk = poll.get("districtKey") or poll.get("district")
-        if not dk:
-            continue
-        rk = poll.get("regionKey", "")
-        key = f"{rk}/{dk}"
-        if key not in district_polls:
-            district_polls[key] = []
-        district_polls[key].append({
-            "title": poll.get("title", ""),
-            "pollOrg": poll.get("pollOrg", ""),
-            "publishDate": poll.get("publishDate", ""),
-            "sampleSize": poll.get("method", {}).get("sampleSize", 0),
-            "results": poll.get("results", []),
-        })
+
+    for rk, polls in data.get("regions", {}).items():
+        for poll in polls:
+            if poll.get("electionType") != "mayor":
+                continue
+            dk = poll.get("municipality") or poll.get("districtKey") or poll.get("district")
+            if not dk:
+                continue
+            key = f"{rk}/{dk}"
+            if key not in district_polls:
+                district_polls[key] = []
+            district_polls[key].append({
+                "title": poll.get("title", ""),
+                "pollOrg": poll.get("pollOrg", ""),
+                "publishDate": poll.get("publishDate", ""),
+                "sampleSize": (poll.get("method") or {}).get("sampleSize", 0),
+                "results": poll.get("results", []),
+            })
+
     for key in district_polls:
         district_polls[key] = sorted(
             district_polls[key],
