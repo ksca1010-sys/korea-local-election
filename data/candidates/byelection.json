@@ -73,7 +73,7 @@
           "partyName": "민주당"
         }
       ],
-      "statusNote": "최신 뉴스 없음. 기존 수집 정보 유지. 정승연 국민의힘 당협위원장이 DECLARED 상태인 반면, 민주당은 박남춘(RUMORED)과 정지열(EXPECTED) 두 후보가 경합 중.",
+      "statusNote": "현재까지 최신 뉴스가 없어 기존 수집 정보를 유지합니다. 2026년 6월 3일 선거일까지 후보자 동향 변화를 계속 모니터링 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -245,7 +245,7 @@
           "sourcePublishedAt": "2026-02-13"
         }
       ],
-      "statusNote": "제공된 최신 뉴스가 없어 기존 수집 정보로만 구성되었습니다. 선거일까지 약 2개월 남은 상황입니다.",
+      "statusNote": "최신 뉴스 정보가 없어 기존 후보 정보 유지. 선거일까지 약 2개월 남음.",
       "history": [
         {
           "election": 17,
@@ -454,9 +454,21 @@
           "pledges": [],
           "sourceLabel": "선관위 예비후보",
           "sourcePublishedAt": "2026-03-30"
+        },
+        {
+          "name": "서재열",
+          "party": "democratic",
+          "partyKey": "democratic",
+          "partyName": "더불어민주당",
+          "career": "전 제16대 국회의원",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-04-08"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거 예정.",
+      "statusNote": "최신 뉴스가 없어 기존 수집 정보로 유지. 경기 평택시을 재보궐선거는 2026년 6월 3일 예정이며, 여야를 비롯한 다양한 진영의 후보자들이 출마를 선언한 상태입니다.",
       "history": [
         {
           "election": 17,
@@ -618,7 +630,7 @@
           "sourcePublishedAt": "2026-02-26"
         }
       ],
-      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 수집 정보만 유지됩니다. 4명의 후보자가 선거일 2026-06-03를 앞두고 출마 선언 상태입니다.",
+      "statusNote": "제공된 최신 뉴스가 없어 기존 수집 정보를 유지합니다. 2026년 6월 3일 선거일까지 추가 뉴스 모니터링 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -785,7 +797,7 @@
           "party": "democratic"
         }
       ],
-      "statusNote": "최신 뉴스가 없어 기존 수집 정보로 유지. 2026년 6월 3일 선거 예정.",
+      "statusNote": "현재 최신 뉴스가 없어 기존 수집 정보만 유지합니다. 2026년 6월 3일 선거까지 후보 동향을 모니터링 필요합니다.",
       "history": [
         {
           "election": 17,
@@ -922,11 +934,23 @@
           "pledges": [],
           "sourceLabel": "선관위 예비후보",
           "sourcePublishedAt": "2026-04-01"
+        },
+        {
+          "name": "한갑수",
+          "party": "ppp",
+          "partyKey": "ppp",
+          "partyName": "국민의힘",
+          "career": "제9대 안산시의회의원",
+          "status": "DECLARED",
+          "dataSource": "nec_precand",
+          "pledges": [],
+          "sourceLabel": "선관위 예비후보",
+          "sourcePublishedAt": "2026-04-09"
         }
       ],
       "keyIssues": [],
       "status": "확정",
-      "statusNote": "현재 공식 뉴스가 제공되지 않아 기존 수집 정보 유지. 이기학은 DECLARED 상태로 확인되며, 나머지 후보들은 RUMORED 상태입니다.",
+      "statusNote": "현재 제공된 최신 뉴스가 없어 기존 수집 데이터 유지. 2026년 6월 3일 선거일까지 추가 뉴스 모니터링 필요.",
       "history": [
         {
           "election": 17,
