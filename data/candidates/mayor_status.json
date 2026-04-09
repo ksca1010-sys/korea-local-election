@@ -177,11 +177,12 @@
     "seoul_구로구": {
       "region": "seoul",
       "district": "구로구",
-      "name": "문헌일",
-      "party": "ppp",
+      "name": "장인홍",
+      "party": "democratic",
       "electedParty": "ppp",
       "electedName": "문헌일",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": false
     },
     "seoul_금천구": {
       "region": "seoul",
@@ -1299,11 +1300,12 @@
     "chungnam_아산시": {
       "region": "chungnam",
       "district": "아산시",
-      "name": "박경귀",
-      "party": "ppp",
+      "name": "오세현",
+      "party": "democratic",
       "electedParty": "ppp",
       "electedName": "박경귀",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": false
     },
     "chungnam_서산시": {
       "region": "chungnam",
@@ -1600,11 +1602,12 @@
     "jeonnam_담양군": {
       "region": "jeonnam",
       "district": "담양군",
-      "name": "이병노",
-      "party": "democratic",
+      "name": "정철원",
+      "party": "reform",
       "electedParty": "democratic",
       "electedName": "이병노",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": false
     },
     "jeonnam_장성군": {
       "region": "jeonnam",
@@ -1791,11 +1794,12 @@
     "gyeongbuk_김천시": {
       "region": "gyeongbuk",
       "district": "김천시",
-      "name": "김충섭",
+      "name": "배낙호",
       "party": "ppp",
       "electedParty": "ppp",
       "electedName": "김충섭",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": false
     },
     "gyeongbuk_안동시": {
       "region": "gyeongbuk",
@@ -2036,11 +2040,12 @@
     "gyeongnam_거제시": {
       "region": "gyeongnam",
       "district": "거제시",
-      "name": "박종우",
-      "party": "ppp",
+      "name": "변광용",
+      "party": "democratic",
       "electedParty": "ppp",
       "electedName": "박종우",
-      "_source": "NEC_API"
+      "_source": "NEC_API",
+      "acting": false
     },
     "gyeongnam_의령군": {
       "region": "gyeongnam",

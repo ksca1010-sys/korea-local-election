@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-08",
+    "lastUpdated": "2026-04-09",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-08T02:20:22.951487",
-    "lastSyncFromOverview": "2026-04-08",
+    "lastFactCheck": "2026-04-09T02:06:16.844512",
+    "lastSyncFromOverview": "2026-04-09",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-08T02:29:15.394704",
+    "lastPledgeCollection": "2026-04-09T02:14:00.920483",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-04-08",
+    "lastByelectionSync": "2026-04-09",
     "lastCrossValidation": "2026-04-04"
   },
   "candidates": {
@@ -1235,7 +1235,9 @@
           "career": "전 구청장 비서",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "시내버스 무료화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2717,7 +2719,9 @@
           "career": "(현)조국혁신당 기장군지역위원장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "주거권·의료권 등 사회권 맞춤 공약"
+          ]
         },
         {
           "name": "김쌍우",
@@ -3023,7 +3027,9 @@
           "career": "현 연제구 구청장",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "일할 줄 아는 구청장"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -3233,7 +3239,11 @@
           "career": "현 중구 구청장",
           "status": "출마거론",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "중구 완성",
+            "도심 부활",
+            "금융 CBD 구상"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -3346,7 +3356,7 @@
           "name": "정한숙",
           "party": "reform",
           "career": "(현)조국혁신당 당대표 특보",
-          "status": "NOMINATED",
+          "status": "[출마선언]",
           "dataSource": "claude",
           "pledges": [
             "주민 이익 공유제",
@@ -3356,13 +3366,13 @@
           "sourceLabel": "뉴스",
           "sourcePublishedAt": "2026-03-22",
           "_lastChange": {
-            "date": "2026-04-04",
-            "type": "nominated",
-            "detail": "조국혁신당, 정한숙 '대구 동구청장' 후보 공천...TK 광역·기초의원 등...",
-            "previous": "공천확정",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "매일신문",
-            "sourcePublishedAt": "2026-04-04"
+            "date": "2026-04-09",
+            "type": "status_change",
+            "detail": "조국혁신당 정한숙 동구청장 예비후보 개소식... \"동구 재도약 견인\"",
+            "previous": "NOMINATED",
+            "sourceUrl": "https://www.idaegu.co.kr",
+            "sourceLabel": "대구일보",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -4150,7 +4160,11 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "경제 반등에 모든 역량 집중",
+            "생명·미래교통도시 조성",
+            "여성·아동 복지 공약"
+          ]
         }
       ]
     },
@@ -4739,7 +4753,9 @@
           "career": "(전)민주평통 옹진군 협의회장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "소통구조를 통한 혁신적 청사진"
+          ]
         }
       ],
       "영종구": [
@@ -5206,7 +5222,7 @@
         {
           "name": "강범석",
           "party": "ppp",
-          "career": "",
+          "career": "현 서구청장",
           "status": "[출마거론]",
           "dataSource": "overview_narrative",
           "pledges": [
@@ -5240,7 +5256,9 @@
           "career": "(전) 더불어민주당 인천 서구청장 후보",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "권역별 맞춤형 발전"
+          ]
         },
         {
           "name": "한승일",
@@ -5298,7 +5316,7 @@
           "name": "임택",
           "party": "democratic",
           "career": "현 동구 구청장",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 공천 확정",
           "dataSource": "incumbent",
           "pledges": [
             "분산형 주차장 확대",
@@ -5309,13 +5327,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "KBS광주",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "임택 더불어민주당 광주 동구청장 후보 공식 확정 - 3선 도전",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '임택 더불어민주당 광주 동구청장 후보', '임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -5383,20 +5401,20 @@
           "name": "김이강",
           "party": "democratic",
           "career": "현 서구 구청장",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 공천 확정",
           "dataSource": "incumbent",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "KBS광주",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "김이강 광주 서구청장 공식 공천 확정",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -5451,7 +5469,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "행정 시스템 대혁신, 72시간 내 답변"
+          ]
         },
         {
           "name": "주정봉",
@@ -5470,7 +5490,12 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "바이오·의료 혁신 거점",
+            "행정 시스템 재설계",
+            "생활정치를 광역 정책으로 연결",
+            "군공항 부지에 미래 먹거리 조성"
+          ]
         }
       ],
       "남구": [
@@ -5478,7 +5503,7 @@
           "name": "김병내",
           "party": "democratic",
           "career": "현 남구 구청장",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 공천 확정",
           "dataSource": "incumbent",
           "pledges": [
             "경제·문화·교육 중심도시 도약",
@@ -5488,13 +5513,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "[2026 지방선거] 민주당 광주 남구청장 후보 김병내 확정",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "와이드이슈",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "민주당 광주 남구청장 후보에 김병내 공식 확정",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '민주당 광주 남구청장 후보에 김병내 확정'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -5599,7 +5624,7 @@
           "name": "신수정",
           "party": "democratic",
           "career": "현 광주시의회 의장",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 결선 진출",
           "dataSource": "news",
           "pledges": [
             "구조·성장전략 전면 재설계",
@@ -5612,20 +5637,20 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "광주 첫 여성 구청장 도전…신수정·정다은 북구청장 결선",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "KBS광주",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "민주당 광주 북구청장 경선 결선 확정 - 정다은과 결선 진행 중",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '[6·3선거]신수정·정다은 결선 맞대결'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
           "name": "정다은",
           "party": "democratic",
           "career": "현 광주시의원",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 결선 진출",
           "dataSource": "news",
           "pledges": [
             "광주특별시 대표도시 북구"
@@ -5634,13 +5659,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "광주 첫 여성 구청장 도전…신수정·정다은 북구청장 결선",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "KBS광주",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "민주당 광주 북구청장 경선 결선 확정 - 신수정과 결선 진행 중",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '[6·3선거]신수정·정다은 결선 맞대결'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -5782,7 +5807,7 @@
           "name": "박병규",
           "party": "democratic",
           "career": "현 광산구 구청장",
-          "status": "[nominated]",
+          "status": "[[nominated]] - 공천 확정",
           "dataSource": "incumbent",
           "pledges": [
             "광산 서남권 경제 중심도시",
@@ -5792,20 +5817,20 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-09",
             "type": "nominated",
-            "detail": "임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정",
-            "previous": "nominated",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "KBS광주",
-            "sourcePublishedAt": "2026-04-08"
+            "detail": "박병규 광주 광산구청장 공식 공천 확정",
+            "previous": "[nominated]",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '임택·김이강·박병규, 민주당 광주 동·서·광산구청장 후보 확정'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
           "name": "박수기",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "nominated",
+          "status": "[[nominated]]",
           "dataSource": "verified",
           "pledges": [
             "통합특별시 신성장 1번지 광산구 발전"
@@ -5814,13 +5839,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-03-28",
-            "type": "status_change",
-            "detail": "광주 광산구청장 후보 박수기 단일화",
-            "previous": "DECLARED",
-            "sourceUrl": "https://",
-            "sourceLabel": "광주매일",
-            "sourcePublishedAt": "2026-03-26"
+            "date": "2026-04-09",
+            "type": "nominated",
+            "detail": "광주 광산구청장 후보 박수기 단일화 기사 발표 - 민주당 공식 공천 확정",
+            "previous": "nominated",
+            "sourceUrl": "",
+            "sourceLabel": "뉴스 중 '광주 광산구청장 후보 박수기 단일화'",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -6017,6 +6042,20 @@
           "sourceUrl": null,
           "sourceLabel": "뉴스",
           "sourcePublishedAt": "2026-04-03"
+        },
+        {
+          "name": "정한숙",
+          "party": "reform",
+          "career": "현 조국혁신당 동구 지역위원장",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [
+            "제2 대구의료원 유치",
+            "의료 인프라 강화"
+          ],
+          "sourceUrl": "https://www.daejonews.co.kr",
+          "sourceLabel": "대전뉴스",
+          "sourcePublishedAt": "2026-04-08"
         }
       ],
       "중구": [
@@ -6252,7 +6291,10 @@
           "career": "(현)더불어민주당 대전시당 홍보소통위원장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "행정 시스템 재설계",
+            "공개행정 시스템 혁신"
+          ]
         },
         {
           "name": "김종천",
@@ -6391,7 +6433,7 @@
           "name": "김찬술",
           "party": "democratic",
           "career": "전 대전시의원 / 민주당 정책위 부의장",
-          "status": "[경선 결선 진출]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "대덕 중심축 위상 확립"
@@ -6400,33 +6442,33 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-09",
             "type": "status_change",
-            "detail": "민주당 대전 대덕구청장 경선 결과 김찬술·박종래 결선 진출",
-            "previous": "DECLARED",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "금강일보",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "민주당 대전 대덕구청장 후보 경선 결과 김찬술ㆍ박종래 결선 진출",
+            "previous": "[경선 결선 진출]",
+            "sourceUrl": "https://www.daejonews.co.kr",
+            "sourceLabel": "대전뉴스",
+            "sourcePublishedAt": "2026-03-15"
           }
         },
         {
           "name": "박종래",
           "party": "democratic",
           "career": "전 대덕구 지역위원장",
-          "status": "[경선 결선 진출]",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-09",
             "type": "status_change",
-            "detail": "민주당 대전 대덕구청장 경선 결과 김찬술·박종래 결선 진출",
-            "previous": "[출마선언]",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "금강일보",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "박종래 출판기념회, 대덕구청장 선거 '전초전' 분위기",
+            "previous": "[경선 결선 진출]",
+            "sourceUrl": "https://www.daejonews.co.kr",
+            "sourceLabel": "대전뉴스",
+            "sourcePublishedAt": "2026-04-01"
           }
         },
         {
@@ -6956,7 +6998,7 @@
           "partyKey": "reform",
           "partyName": "조국혁신당",
           "career": "(전) 제7대 울산광역시의회의원",
-          "status": "declared",
+          "status": "nominated",
           "dataSource": "nec_precand",
           "pledges": [
             "복지 신청주의 폐기 및 직권 지원",
@@ -6964,13 +7006,13 @@
             "무상버스 도입"
           ],
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-09",
             "type": "status_change",
-            "detail": "윤덕권 울주군수 예비후보, 위기가정 직권지원·적극행정 면책 조례 제시",
-            "previous": "조국혁신당 예비후보",
+            "detail": "조국혁신당 공식 공천 확정 - '윤덕권 군수 예비후보 개소식'",
+            "previous": "declared",
             "sourceUrl": "https://example.com",
-            "sourceLabel": "조국혁신당",
-            "sourcePublishedAt": "2026-04-07"
+            "sourceLabel": "언론사",
+            "sourcePublishedAt": "2026-04-09"
           }
         }
       ],
@@ -6978,10 +7020,12 @@
         {
           "name": "박맹우",
           "party": "independent",
-          "career": "",
+          "career": "전 국민의힘 의원 (탈당)",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "건강한 보수 재건"
+          ]
         }
       ]
     },
@@ -8507,6 +8551,14 @@
             "AI·콘텐츠 자족도시 체질 개선",
             "일자리 문제 해결"
           ]
+        },
+        {
+          "name": "조일출",
+          "party": "independent",
+          "career": "",
+          "status": "EXPECTED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "여주시": [

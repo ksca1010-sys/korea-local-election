@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-08",
+    "lastUpdated": "2026-04-09",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-08T01:32:40.927459",
+    "lastFactCheck": "2026-04-09T01:24:48.036057",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -213,7 +213,7 @@
         "name": "최윤홍",
         "stance": "중도",
         "career": "전 부산부교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "체형 맞춤 인체공학 책걸상 단계적 보급"
@@ -222,13 +222,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-04",
+          "date": "2026-04-09",
           "type": "status_change",
-          "detail": "최윤홍 부산교육감 예비후보로 표기되어 출마선언에서 예비후보 상태로 변경",
-          "previous": "DECLARED",
-          "sourceUrl": "최윤홍, 부산시장 여론조사서 박형준 시장과 '오차범위 내 경합'",
-          "sourceLabel": "부산일보",
-          "sourcePublishedAt": "2026-04-04"
+          "detail": "최윤홍 전 부산부교육감, 부산교육감 예비후보 1호 등록",
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "부산교육감 관련 뉴스",
+          "sourcePublishedAt": "2026-04-09"
         },
         "pledgeCategories": [
           {
@@ -1495,12 +1495,21 @@
         "name": "임종식",
         "stance": "보수",
         "career": "현 경상북도 교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-09",
+          "type": "status_change",
+          "detail": "[대구일보 6.3 지방선거 여론조사] 경북교육감 적합도 임종식 31.4% 선두... - 현역 교육감으로서의 지위 확인",
+          "previous": "EXPECTED",
+          "sourceUrl": "https://example.com/news",
+          "sourceLabel": "대구일보",
+          "sourcePublishedAt": "2026-04-09"
+        }
       },
       {
         "id": "gyeongbuk-2",
@@ -1629,7 +1638,7 @@
         "name": "김영곤",
         "stance": "중도",
         "career": null,
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "마산해양신도시 AI 교육캠퍼스 조성",
@@ -1639,13 +1648,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-03",
+          "date": "2026-04-09",
           "type": "status_change",
-          "detail": "김영곤 경남교육감 예비후보 '경남형 초등 기초학력 책임진단·지원제'",
-          "previous": "DECLARED",
-          "sourceUrl": "https://example.com",
-          "sourceLabel": "경남신문",
-          "sourcePublishedAt": "2026-04-03"
+          "detail": "김영곤 경남교육감 예비후보가 '경남형 초등 기초학력 책임진단·지원제' 공약을 발표하며 출마 입장을 명확히 함",
+          "previous": "EXPECTED",
+          "sourceUrl": "언론보도 종합",
+          "sourceLabel": "경남언론사",
+          "sourcePublishedAt": "2026-04-09"
         },
         "pledgeCategories": [
           {
@@ -1771,7 +1780,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "DECLARED",
+        "status": "RUMORED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1781,13 +1790,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-07",
+          "date": "2026-04-09",
           "type": "status_change",
           "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "RUMORED",
-          "sourceUrl": "",
-          "sourceLabel": "언론보도",
-          "sourcePublishedAt": "2026-04-07"
+          "previous": "DECLARED",
+          "sourceUrl": "미제공",
+          "sourceLabel": "언론사명 미제공",
+          "sourcePublishedAt": "2026-04-09"
         },
         "pledgeCategories": [
           {

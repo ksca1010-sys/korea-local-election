@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-04-08T01:29:49.492047",
-    "totalDetections": 62,
-    "pendingCount": 62,
+    "lastRun": "2026-04-09T01:22:17.907937",
+    "totalDetections": 66,
+    "pendingCount": 66,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -1388,6 +1388,16 @@
           "title": "국민의힘 울산 남구갑당협 &quot;김상욱 의원, 국회의원 빨리 사퇴해야&quot;",
           "link": "http://www.ujeil.com/news/articleView.html?idxno=383644",
           "date": "2026-04-02"
+        },
+        {
+          "title": "울산 남구갑 보선 성사시 차출설 전은수 &quot;대변인직에 전념&quot;",
+          "link": "https://www.ulsanpress.net/news/articleView.html?idxno=572829",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "'관심사' 된 울산 남구갑 국회의원 보궐선거 성사 여부",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222625&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-04-08"
         }
       ],
       "necValidated": false,
@@ -1633,6 +1643,31 @@
           "title": "민주당 경기도지사 후보에 여성 최다선 추미애 확정",
           "link": "https://www.goodmorningcc.com/news/articleView.html?idxno=444248",
           "date": "2026-04-07"
+        },
+        {
+          "title": "장성철 &quot;조국, 추미애 떠날 하남갑 출마 민주당과 논의 중&quot;[한판승부]",
+          "link": "https://www.nocutnews.co.kr/news/6499185?utm_source=naver&utm_medium=article&utm_campaign=20260409080101",
+          "date": "2026-04-09"
+        },
+        {
+          "title": "정원오 여론조사 왜곡 의혹…신현영 &quot;사소한 트집, 의혹 빠르게 해소될...",
+          "link": "https://www.natv.go.kr/natv/news/newsView.do?newsId=513060",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "정국 분수령… 하남갑 합류하며 '격전지' 떠오른 경기지역 재보선",
+          "link": "https://www.joongboo.com/news/articleView.html?idxno=363722280",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "김남국, 안산갑 보선 출마 피력...김용과 공천대결 벌어지나",
+          "link": "https://www.kgnews.co.kr/news/article.html?no=890932",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "추미애 &quot;말보다 실력, 통합형 실용인사로 경기도 미래 만들겠다&quot;",
+          "link": "https://www.m-economynews.com/news/article.html?no=66228",
+          "date": "2026-04-08"
         }
       ],
       "necValidated": false,
@@ -1841,6 +1876,21 @@
           "title": "하정우 AI수석, 與조승래와 회동…부산 북갑 출마 탄력",
           "link": "https://www.dailian.co.kr/news/view/1630650/?sc=Naver",
           "date": "2026-04-07"
+        },
+        {
+          "title": "부산 북구갑 출마 가시화?…정청래 &quot;조만간 하정우 AI수석 만날 것&quot;",
+          "link": "https://www.mt.co.kr/politics/2026/04/08/2026040817440027334",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "與, 하정우 AI수석 부산 보선 차출나서…정청래 “조만간 만날 것”",
+          "link": "https://www.sedaily.com/article/20030135?ref=naver",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "하정우·한동훈, 전재수 떠날 부산 북구갑 등판하나",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222517&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-04-08"
         }
       ],
       "necValidated": false,
@@ -1892,6 +1942,100 @@
       "necValidated": true,
       "status": "pending",
       "detectedAt": "2026-04-08T01:29:49.492040"
+    },
+    {
+      "key": "jeonbuk-동시",
+      "region": "jeonbuk",
+      "district": "동시",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'6·3 재보선' 전북 2곳, 최대 '관심지' 부상...'안방정치 폐해' 지적 '조...",
+          "link": "http://www.jbsori.com/news/articleView.html?idxno=17156",
+          "date": "2026-04-09"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-09T01:22:17.907875"
+    },
+    {
+      "key": "busan-실시",
+      "region": "busan",
+      "district": "실시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "대진표 떠오르는 ‘안산·평택·부산’…‘조국 행보’ 변수 [6·3 재보궐...",
+          "link": "https://www.kukinews.com/article/view/kuk202604080121",
+          "date": "2026-04-08"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-09T01:22:17.907906"
+    },
+    {
+      "key": "gyeonggi-다시",
+      "region": "gyeonggi",
+      "district": "다시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "김남국 &quot;내일 안산갑 출마 선언…조국 나오면 난감, 실력으로 승부&quot;",
+          "link": "https://news.jtbc.co.kr/article/NB12293309?influxDiv=NAVER",
+          "date": "2026-04-08"
+        },
+        {
+          "title": "[단독] 전해철 나선다…13일 안산갑 출마 선언 &quot;다시 한 번 평가 받겠다...",
+          "link": "https://www.dailian.co.kr/news/view/1631006/?sc=Naver",
+          "date": "2026-04-08"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-09T01:22:17.907912"
+    },
+    {
+      "key": "busan-북구",
+      "region": "busan",
+      "district": "북구",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "전재수",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "무소속 한동훈 vs 청와대 하정우... 부산 북구 '빅매치' 성사?",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003222742&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-04-09"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-04-09T01:22:17.907921"
     }
   ]
 }
