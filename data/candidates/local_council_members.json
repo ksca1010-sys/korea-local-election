@@ -1,5 +1,5 @@
 {
-  "_meta": {"lastUpdated": "2026-04-03", "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증", "baseline": "제8회 지방선거 (20220601) 구시군의회의원 당선인", "totalMembers": 2607, "totalSigungu": 1032, "lastFactCheck": "2026-04-03T04:09:28.729440", "vacantCount": 0},
+  "_meta": {"lastUpdated": "2026-04-10", "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증", "baseline": "제8회 지방선거 (20220601) 구시군의회의원 당선인", "totalMembers": 2607, "totalSigungu": 1032, "lastFactCheck": "2026-04-10T06:02:29.668724", "vacantCount": 0},
   "sigungus": {
     "seoul_종로구가선거구": {"region": "seoul", "sigungu": "종로구가선거구", "members": [{"name": "이응주", "party": "ppp", "electedParty": "ppp"}, {"name": "여봉무", "party": "democratic", "electedParty": "democratic"}], "parties": {"ppp": 1, "democratic": 1}},
     "seoul_종로구나선거구": {"region": "seoul", "sigungu": "종로구나선거구", "members": [{"name": "김하영", "party": "ppp", "electedParty": "ppp"}, {"name": "정재호", "party": "democratic", "electedParty": "democratic"}], "parties": {"ppp": 1, "democratic": 1}},
