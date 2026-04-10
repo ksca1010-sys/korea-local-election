@@ -361,16 +361,37 @@ def process_district(region_key, region_name, district, candidates, current,
     max_attempts = 2
     for attempt in range(max_attempts):
         try:
-            raw = call_llm(prompt, api_key, max_tokens=1500,
+            raw = call_llm(prompt, api_key, max_tokens=2500,
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if not obj or not obj.get("headline"):
-                print(" [경고] 파싱 실패")
+                # 이전 버그: 첫 시도 파싱 실패 시 즉시 return 해 retry 루프가 무용지물.
+                # → 남은 시도가 있으면 힌트를 붙여 한 번 더 시도.
+                print(" [경고] 파싱 실패", end="", flush=True)
+                if attempt < max_attempts - 1:
+                    print(" → 재시도", flush=True)
+                    prompt += (
+                        "\n\n## ⚠️ 이전 시도 오류: 응답이 JSON 으로 파싱되지 않았음\n"
+                        "설명 텍스트·마크다운 없이 순수 JSON 객체만 출력하세요. "
+                        "코드펜스도 쓰지 마세요."
+                    )
+                    time.sleep(0.5)
+                    continue
+                print()
                 return None, content_hash
 
             # narrative 모드에서는 validate_overview 사용
             if not validate_overview(obj):
-                print(" [경고] 필수 필드 누락")
+                print(" [경고] 필수 필드 누락", end="", flush=True)
+                if attempt < max_attempts - 1:
+                    print(" → 재시도", flush=True)
+                    prompt += (
+                        "\n\n## ⚠️ 이전 시도 오류: headline 또는 trend 필드 누락\n"
+                        "두 필드는 반드시 채우세요."
+                    )
+                    time.sleep(0.5)
+                    continue
+                print()
                 return None, content_hash
 
             passed, reason, severity = validate_quality(obj, news_provided=bool(news))
@@ -394,7 +415,13 @@ def process_district(region_key, region_name, district, candidates, current,
             return obj, content_hash
 
         except Exception as e:
-            print(f" [오류] {e}")
+            # 마지막 시도에서만 포기. 그 전엔 짧게 대기 후 재시도.
+            print(f" [오류] {type(e).__name__}: {e}", end="", flush=True)
+            if attempt < max_attempts - 1:
+                print(" → 재시도", flush=True)
+                time.sleep(1.0)
+                continue
+            print()
             return None, content_hash
 
     return None, content_hash

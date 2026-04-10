@@ -148,7 +148,7 @@ def main():
         )
 
         try:
-            raw = call_llm(prompt, api_key, max_tokens=1500,
+            raw = call_llm(prompt, api_key, max_tokens=2500,
                           suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이.")
             obj = parse_response(raw)
             if obj and validate_overview(obj):

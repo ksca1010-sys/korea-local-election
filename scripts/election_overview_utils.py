@@ -327,17 +327,70 @@ def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
 # ── 파싱/검증 ──
 
 def parse_response(text):
-    """LLM 응답을 JSON으로 파싱"""
+    """LLM 응답에서 JSON 객체를 추출.
+
+    기존 구현은 ```fence 단순 처리 + 한 번의 json.loads 시도만으로
+    실패하면 None 을 반환해, 70%+ 의 mayor_overview 가 stale 에 갇혔다.
+    이 robust 버전은 세 단계로 시도한다:
+
+      1) ```json / ``` 코드펜스를 정규식으로 제거
+      2) 전체 텍스트 json.loads
+      3) 실패 시 첫 '{' 부터 brace balance 로 가장 바깥 객체를 찾아 재시도
+         (Claude 가 "다음은 JSON 입니다:" 같은 prose 를 앞뒤에 붙인 경우 커버)
+
+    트레일링 comma / 단일 따옴표 등 경미한 교정은 의도적으로 하지 않는다.
+    Claude 는 그런 실수를 거의 하지 않고, 오히려 자동 교정이 오염을 부를 수 있다.
+    """
+    if not text:
+        return None
     text = text.strip()
-    if text.startswith("```"):
-        text = text.split("\n", 1)[-1]
-        if text.endswith("```"):
-            text = text[:-3]
-        text = text.strip()
+
+    # 1) 코드펜스 제거 — ```json ... ``` 또는 ``` ... ```
+    import re
+    fence_match = re.search(
+        r"```(?:json|JSON)?\s*\n?(.*?)\n?\s*```",
+        text,
+        re.DOTALL,
+    )
+    if fence_match:
+        text = fence_match.group(1).strip()
+
+    # 2) 전체 텍스트 직접 파싱
     try:
         return json.loads(text)
     except json.JSONDecodeError:
+        pass
+
+    # 3) 첫 '{' 부터 brace balance 로 balanced 객체 추출
+    start = text.find("{")
+    if start < 0:
         return None
+    depth = 0
+    in_str = False
+    escape = False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if escape:
+                escape = False
+            elif ch == "\\":
+                escape = True
+            elif ch == '"':
+                in_str = False
+            continue
+        if ch == '"':
+            in_str = True
+        elif ch == "{":
+            depth += 1
+        elif ch == "}":
+            depth -= 1
+            if depth == 0:
+                candidate = text[start : i + 1]
+                try:
+                    return json.loads(candidate)
+                except json.JSONDecodeError:
+                    return None
+    return None
 
 
 def sanitize_overview(obj):
