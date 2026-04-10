@@ -315,6 +315,53 @@ jobs:
               print(f'OK: {path} — {cnt} entries')
           "
 
+      # overview_narrative 재유입 모니터
+      # P0-2 에서 자동 주입 경로는 차단하고 48ee8b2 에서 잔여 77건을 정리했음.
+      # 미래에 어떤 경로(수동 편집 / 새 버그 / 잘못된 CI 변경)로든 이 dataSource
+      # 가 다시 생기면 CI 런에서 즉시 warning 으로 표면화한다. fail 은 아니지만
+      # Actions summary 에 노출되어 운영자가 인지할 수 있다.
+      - name: Monitor overview_narrative reintroduction
+        continue-on-error: true
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+
+          path = Path("data/candidates/mayor_candidates.json")
+          data = json.loads(path.read_text(encoding="utf-8"))
+          cands = data.get("candidates", {})
+
+          hits = []
+          for region, districts in cands.items():
+              for district, entries in districts.items():
+                  for e in entries:
+                      if e.get("dataSource") == "overview_narrative":
+                          hits.append(f"{region}/{district}/{e.get('name', '?')}")
+
+          count = len(hits)
+          print(f"overview_narrative 레코드: {count}건")
+
+          summary_path = os.environ.get("GITHUB_STEP_SUMMARY")
+          if summary_path:
+              with open(summary_path, "a", encoding="utf-8") as f:
+                  f.write("\n## overview_narrative monitor\n\n")
+                  if count == 0:
+                      f.write("✅ overview_narrative 레코드 없음 (정상)\n")
+                  else:
+                      f.write(f"⚠ overview_narrative 재유입: **{count}건**\n\n")
+                      for h in hits[:30]:
+                          f.write(f"- {h}\n")
+                      if count > 30:
+                          f.write(f"- ... 외 {count - 30}건\n")
+
+          if count > 0:
+              print(f"::warning::overview_narrative 재유입 감지: {count}건. "
+                    "헌법 §2 위반 가능성. scripts/verify_overview_narrative.py 로 "
+                    "NEC 교차검증 후 정리 바랍니다.")
+              for h in hits[:10]:
+                  print(f"  - {h}")
+          PY
+
       - name: Check for changes
         id: diff
         run: |
