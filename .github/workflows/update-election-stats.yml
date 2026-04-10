@@ -17,12 +17,16 @@ jobs:
     outputs:
       active: ${{ steps.check.outputs.active }}
     steps:
+      - uses: actions/checkout@v4
       - id: check
-        name: 선거일 게이팅 확인 (6/10 이후 스킵)
+        name: 선거일 게이팅 확인 (election_meta.json + 7일)
         run: |
           python3 -c "
-          from datetime import date
-          active = date.today() <= date(2026, 6, 10)
+          import json
+          from datetime import date, timedelta
+          meta = json.load(open('data/static/election_meta.json'))
+          cutoff = date.fromisoformat(meta['electionDate']) + timedelta(days=7)
+          active = date.today() <= cutoff
           print('active=' + ('true' if active else 'false'))
           " >> $GITHUB_OUTPUT
 
