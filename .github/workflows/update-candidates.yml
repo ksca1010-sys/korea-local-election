@@ -111,6 +111,8 @@ jobs:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
+          LLM_BUDGET_MAX_CALLS: '50'
+          LLM_STRICT_MODE: '1'
         run: python scripts/candidate_pipeline/factcheck_candidates.py
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
@@ -122,6 +124,8 @@ jobs:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
+          LLM_BUDGET_MAX_CALLS: '100'
+          LLM_STRICT_MODE: '1'
         run: python scripts/candidate_pipeline/factcheck_superintendent.py
 
       # 3단계: 기초단체장 팩트체크 (Claude + 지역뉴스 + 교차검증)
@@ -133,6 +137,8 @@ jobs:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
+          LLM_BUDGET_MAX_CALLS: '100'
+          LLM_STRICT_MODE: '1'
         run: python scripts/candidate_pipeline/factcheck_mayor.py
 
       # 4단계: 재보궐 팩트체크 → update-byelection.yml로 이관 (Claude API 중복 절감)
@@ -221,6 +227,62 @@ jobs:
             echo "::error::Too many stages failed ($failed/${#names[@]}) — refusing to commit"
             exit 1
           fi
+
+      # factcheck 스크립트 내부에서 발생한 LLM 호출 실패를 JSONL 로그로 집계
+      # (Python 스크립트가 try/except 로 삼켜 step 자체는 success 로 끝나기 때문)
+      - name: Factcheck LLM failure gate
+        run: |
+          python3 - <<'PY'
+          import json, sys
+          from datetime import date
+          from pathlib import Path
+
+          LOG_DIR = Path("logs")
+          today = date.today().isoformat()
+          THRESHOLD = 3  # 전체 factcheck 합산 llmFailures 임계치
+
+          total_calls = 0
+          total_failures = 0
+          per_stage = []
+          for p in sorted(LOG_DIR.glob(f"factcheck-*-{today}.jsonl")):
+              stage_calls = 0
+              stage_failures = 0
+              for line in p.read_text(encoding="utf-8").splitlines():
+                  try:
+                      e = json.loads(line)
+                  except json.JSONDecodeError:
+                      continue
+                  if e.get("event") == "run_end":
+                      stage_calls += int(e.get("llmCalls", 0))
+                      stage_failures += int(e.get("llmFailures", 0))
+              total_calls += stage_calls
+              total_failures += stage_failures
+              per_stage.append((p.name, stage_calls, stage_failures))
+
+          summary = Path("/tmp/fc_summary.md")
+          lines = ["## Factcheck LLM summary", "",
+                   "| log | calls | failures |", "| --- | --- | --- |"]
+          for name, c, f in per_stage:
+              lines.append(f"| {name} | {c} | {f} |")
+          lines += ["", f"total calls: {total_calls}",
+                    f"total failures: {total_failures} (threshold: {THRESHOLD})"]
+          summary.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+          import os
+          gsum = os.environ.get("GITHUB_STEP_SUMMARY")
+          if gsum:
+              Path(gsum).write_text(
+                  Path(gsum).read_text(encoding="utf-8") + "\n" + summary.read_text(encoding="utf-8")
+                  if Path(gsum).exists() else summary.read_text(encoding="utf-8"),
+                  encoding="utf-8",
+              )
+
+          print(f"factcheck LLM: {total_calls} calls, {total_failures} failures "
+                f"(threshold {THRESHOLD})")
+          if total_failures > THRESHOLD:
+              print(f"::error::Too many factcheck LLM failures: {total_failures}")
+              sys.exit(1)
+          PY
 
       - name: Assert candidate data not empty
         run: |
