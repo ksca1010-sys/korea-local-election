@@ -84,6 +84,7 @@ def init_from_status():
 
 from local_news_search import fetch_superintendent_news
 from verify_changes import verify_changes_against_news
+from factcheck_logger import FactcheckLogger
 
 
 def build_prompt_for_region(region_key, region_name, candidates, news):
@@ -264,6 +265,7 @@ def main():
 
     regions_to_process = [target_region] if target_region else sorted(REGION_NAMES.keys())
     total_applied = 0
+    logger = FactcheckLogger("superintendent", dry_run=dry_run)
 
     for rk in regions_to_process:
         region_name = REGION_NAMES.get(rk, rk)
@@ -274,21 +276,36 @@ def main():
         print(f"\n[{rk}] {region_name} 교육감 (뉴스 {len(news)}건, 현재 후보 {len(region_cands)}명)")
 
         prompt = build_prompt_for_region(rk, region_name, region_cands, news)
+        detected = verified = applied = 0
+        error_msg: str | None = None
 
         try:
             raw = call_claude_json(prompt, llm_key)
             changes = parse_changes(raw)
+            detected = len(changes)
 
             if not changes:
                 print("  → 변경 없음")
             else:
-                print(f"  → {len(changes)}건 감지 (Gemini)")
+                print(f"  → {detected}건 감지 (Claude)")
                 changes = verify_changes_against_news(changes, news)
-                print(f"  → {len(changes)}건 검증 통과")
+                verified = len(changes)
+                print(f"  → {verified}건 검증 통과")
                 applied = apply_changes(data, changes, dry_run)
                 total_applied += applied
         except Exception as e:
-            print(f"  [오류] {e}")
+            error_msg = f"{type(e).__name__}: {e}"
+            print(f"  [오류] {error_msg}")
+
+        logger.region(
+            rk,
+            candidate_count=len(region_cands),
+            news_count=len(news),
+            changes_detected=detected,
+            changes_verified=verified,
+            applied=applied,
+            error=error_msg,
+        )
 
         time.sleep(1)
 
@@ -302,6 +319,8 @@ def main():
             encoding="utf-8",
         )
         print(f"\n[저장] {CANDIDATES_PATH}")
+
+    logger.run_end(total_applied=total_applied)
 
 
 if __name__ == "__main__":

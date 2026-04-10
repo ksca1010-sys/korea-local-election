@@ -1,14 +1,24 @@
 #!/usr/bin/env python3
 """
-개요 narrative에서 발견된 후보자를 후보자 DB에 동기화
+개요 narrative에서 발견된 후보자 — 갭 리포트 (기본 dry-run)
 
-개요 스크립트는 시군구별 12건+ 뉴스를 검색하므로,
-후보자 팩트체크보다 더 많은 인물을 발견한다.
-이 스크립트는 그 갭을 메워준다.
+용도:
+  개요 AI가 생성한 narrative를 정규식으로 스캔해서,
+  현재 mayor_candidates.json에 없는 인물을 "발견 리포트"로 출력.
+  어떤 후보가 팩트체크 레이더에서 누락됐는지 운영자가 확인하는 도구.
+
+⚠ 헌법 §2 경고
+  narrative는 LLM(Claude)이 생성한 텍스트이므로, 여기서 뽑은 이름은
+  사실관계가 보장되지 않는다. --apply 경로로 DB에 직접 주입하면
+  "개요 → 후보 → 다음 개요" 피드백 루프로 허위가 자기강화될 수 있다.
+  따라서 CI에서는 기본(dry-run)으로만 실행하고, --apply는 운영자가
+  수동으로 NEC 또는 공식 언론 소스와 교차검증한 뒤에만 사용한다.
 
 사용법:
-  python scripts/sync_overview_candidates.py           # 분석만
-  python scripts/sync_overview_candidates.py --apply    # 실제 적용
+  python scripts/sync_overview_candidates.py
+      → 발견 리포트만 출력 (DB 수정 없음)
+  python scripts/sync_overview_candidates.py --apply --i-verified-with-nec
+      → 운영자가 NEC 교차검증을 마쳤다고 선언한 경우에만 실제 적용
 """
 
 import argparse
@@ -93,9 +103,27 @@ def extract_candidates_from_narrative(narrative):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="개요→후보자 동기화")
-    parser.add_argument("--apply", action="store_true", help="실제 적용")
+    parser = argparse.ArgumentParser(
+        description="개요 narrative 갭 리포트 — 기본 dry-run. "
+                    "--apply는 헌법 §2 준수 선언(--i-verified-with-nec) 필요."
+    )
+    parser.add_argument("--apply", action="store_true",
+                        help="실제 적용 (NEC 교차검증 선언 필요)")
+    parser.add_argument("--i-verified-with-nec", action="store_true",
+                        help="NEC 또는 공식 소스로 발견 후보를 교차검증했음을 선언")
     args = parser.parse_args()
+
+    if args.apply and not args.i_verified_with_nec:
+        print("[거부] --apply 는 --i-verified-with-nec 와 함께만 사용 가능합니다.")
+        print("       이유: narrative는 LLM 생성물이라 헌법 §2에 따라 기본 불신.")
+        print("       절차: 1) dry-run으로 발견 리포트 출력 →")
+        print("             2) NEC 예비후보 API / 공식 언론사로 교차검증 →")
+        print("             3) 검증된 경우에만 --apply --i-verified-with-nec 사용.")
+        raise SystemExit(2)
+
+    if args.apply and args.i_verified_with_nec:
+        print("[경고] --apply 모드: narrative에서 추출한 후보를 DB에 주입합니다.")
+        print("       운영자가 NEC 교차검증을 마쳤다고 선언했습니다.")
 
     overview = json.loads(OVERVIEW_PATH.read_text(encoding="utf-8"))
     mayor_data = json.loads(MAYOR_CANDIDATES_PATH.read_text(encoding="utf-8"))
@@ -155,7 +183,8 @@ def main():
         )
         print(f"적용: {total_added}건 → {MAYOR_CANDIDATES_PATH}")
     elif not args.apply:
-        print("(--apply로 실제 적용)")
+        print("(dry-run 모드. 실제 적용: --apply --i-verified-with-nec 필요, "
+              "발견 후보는 반드시 NEC/공식 소스로 교차검증 후 진행.)")
 
 
 if __name__ == "__main__":

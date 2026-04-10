@@ -106,6 +106,7 @@ def get_title(district):
 
 from local_news_search import fetch_mayor_news
 from verify_changes import verify_changes_against_news
+from factcheck_logger import FactcheckLogger
 
 
 def build_prompt_for_region(region_key, region_candidates, news=None):
@@ -349,6 +350,7 @@ def main():
 
     data = load_candidates()
     candidates = data.get("candidates", {})
+    logger = FactcheckLogger("mayor", dry_run=dry_run)
 
     # ── ① 선관위 예비후보 API 동기화 (기초단체장) ──
     try:
@@ -398,19 +400,34 @@ def main():
         print(f"\n[{region_name}] {count}명 팩트체크 중... (뉴스 {len(news)}건, {len(districts)}개 시군구)")
 
         prompt = build_prompt_for_region(rk, region_cands, news)
+        detected = verified = applied = 0
+        error_msg: str | None = None
         try:
             raw = call_claude_json(prompt, llm_key)
             changes = parse_changes(raw)
+            detected = len(changes)
             if not changes:
                 print(f"  → 변경 없음")
             else:
-                print(f"  → {len(changes)}건 감지 (Gemini)")
+                print(f"  → {detected}건 감지 (Claude)")
                 changes = verify_changes_against_news(changes, news)
-                print(f"  → {len(changes)}건 검증 통과")
+                verified = len(changes)
+                print(f"  → {verified}건 검증 통과")
                 applied = apply_changes(region_cands, changes, rk, dry_run)
                 total_applied += applied
         except Exception as e:
-            print(f"  [오류] {e}")
+            error_msg = f"{type(e).__name__}: {e}"
+            print(f"  [오류] {error_msg}")
+
+        logger.region(
+            rk,
+            candidate_count=count,
+            news_count=len(news),
+            changes_detected=detected,
+            changes_verified=verified,
+            applied=applied,
+            error=error_msg,
+        )
 
         time.sleep(1)  # rate limit
 
@@ -423,6 +440,8 @@ def main():
         )
         print(f"\n총 {total_applied}건 적용")
         print(f"[저장] {CANDIDATES_PATH}")
+
+    logger.run_end(total_applied=total_applied)
 
 
 if __name__ == "__main__":

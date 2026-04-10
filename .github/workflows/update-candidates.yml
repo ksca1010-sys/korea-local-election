@@ -44,6 +44,7 @@ jobs:
 
       # 0-a단계: 재보궐 뉴스 자동감지 + NEC 교차검증
       - name: Detect byelection news
+        id: stage_detect_byelection_news
         continue-on-error: true
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -58,6 +59,7 @@ jobs:
 
       # 0-b단계: 재보궐 선거구 자동 감지 (선관위 API)
       - name: Detect new byelection districts
+        id: stage_detect_byelections
         continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
@@ -71,6 +73,7 @@ jobs:
 
       # 0-c단계: 재보궐 당선 결과 동기화 (선관위 API)
       - name: Sync byelection winners
+        id: stage_sync_byelection_winners
         continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
@@ -83,6 +86,7 @@ jobs:
 
       # 0.5단계: NEC 본후보 등록 데이터 수집 (5/14~ 활성화)
       - name: Fetch NEC official candidates
+        id: stage_fetch_nec_candidates
         continue-on-error: true
         env:
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
@@ -100,6 +104,7 @@ jobs:
 
       # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
       - name: Factcheck governor candidates
+        id: stage_factcheck_governor
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -110,6 +115,7 @@ jobs:
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck superintendent candidates
+        id: stage_factcheck_superintendent
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -120,6 +126,7 @@ jobs:
 
       # 3단계: 기초단체장 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck mayor candidates
+        id: stage_factcheck_mayor
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -132,6 +139,7 @@ jobs:
 
       # 4.5단계: 기초단체장 공약 수집 (공약 없는 후보만)
       - name: Collect mayor pledges
+        id: stage_collect_mayor_pledges
         continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -142,18 +150,77 @@ jobs:
 
       # 4.9단계: 전남광주통합특별시 병합 보정
       - name: Merge gwangju-jeonnam (통합특별시)
+        id: stage_merge_gwangju_jeonnam
         continue-on-error: true
         run: python scripts/candidate_pipeline/merge_gwangju_jeonnam.py
 
-      # 5단계: 개요 narrative에서 발견된 후보 동기화
-      - name: Sync candidates from overview narratives
+      # 5단계: 개요 narrative에서 발견된 후보 — 리포트만 (자동 주입 금지)
+      # 헌법 §2 (LLM 생성 데이터 불신) 준수: --apply 제거.
+      # LLM이 쓴 개요 narrative를 정규식으로 긁어 후보 DB에 주입하면
+      # "개요 → 후보 → 다음 개요" 피드백 루프로 허위가 자기강화됨.
+      # 리포트는 출력되므로 Actions 로그에서 누락 후보를 확인해
+      # 수동으로 NEC 교차검증 후 반영하는 흐름으로 전환.
+      - name: Report missing candidates from overview narratives
+        id: stage_sync_overview_report
         continue-on-error: true
-        run: python scripts/sync_overview_candidates.py --apply
+        run: python scripts/sync_overview_candidates.py
 
       # 6단계: 다중 교차 검증 (권한대행/중복/광역 겸직 등)
       - name: Cross-validate candidates
+        id: stage_cross_validate
         continue-on-error: true
         run: python scripts/candidate_pipeline/cross_validate.py --fix
+
+      # 실패율 게이트: continue-on-error 로 조용히 실패한 단계를 집계해
+      # 임계치 초과 시 commit 을 거부. 단계별 outcome 을 summary에 기록.
+      - name: Stage failure rate gate
+        env:
+          THRESHOLD: '4'
+          S01: ${{ steps.stage_detect_byelection_news.outcome }}
+          S02: ${{ steps.stage_detect_byelections.outcome }}
+          S03: ${{ steps.stage_sync_byelection_winners.outcome }}
+          S04: ${{ steps.stage_fetch_nec_candidates.outcome }}
+          S05: ${{ steps.stage_factcheck_governor.outcome }}
+          S06: ${{ steps.stage_factcheck_superintendent.outcome }}
+          S07: ${{ steps.stage_factcheck_mayor.outcome }}
+          S08: ${{ steps.stage_collect_mayor_pledges.outcome }}
+          S09: ${{ steps.stage_merge_gwangju_jeonnam.outcome }}
+          S10: ${{ steps.stage_sync_overview_report.outcome }}
+          S11: ${{ steps.stage_cross_validate.outcome }}
+        run: |
+          names=(detect_byelection_news detect_byelections sync_byelection_winners \
+                 fetch_nec_candidates factcheck_governor factcheck_superintendent \
+                 factcheck_mayor collect_mayor_pledges merge_gwangju_jeonnam \
+                 sync_overview_report cross_validate)
+          outcomes=("$S01" "$S02" "$S03" "$S04" "$S05" "$S06" "$S07" "$S08" "$S09" "$S10" "$S11")
+          failed=0
+          failed_names=()
+          echo "## Pipeline stage summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| stage | outcome |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| --- | --- |" >> "$GITHUB_STEP_SUMMARY"
+          for i in "${!names[@]}"; do
+            name="${names[$i]}"
+            out="${outcomes[$i]}"
+            icon="✅"
+            if [ "$out" = "failure" ]; then
+              icon="❌"
+              failed=$((failed+1))
+              failed_names+=("$name")
+            elif [ "$out" = "skipped" ] || [ -z "$out" ]; then
+              icon="⏭"
+            fi
+            echo "| $name | $icon $out |" >> "$GITHUB_STEP_SUMMARY"
+          done
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "failed: ${failed}/${#names[@]}  (threshold: ${THRESHOLD})" >> "$GITHUB_STEP_SUMMARY"
+          if [ ${#failed_names[@]} -gt 0 ]; then
+            echo "failed stages: ${failed_names[*]}" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$failed" -ge "$THRESHOLD" ]; then
+            echo "::error::Too many stages failed ($failed/${#names[@]}) — refusing to commit"
+            exit 1
+          fi
 
       - name: Assert candidate data not empty
         run: |

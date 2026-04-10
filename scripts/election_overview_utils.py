@@ -169,10 +169,67 @@ def get_local_media_info_merged(region_key, district=None):
 
 # ── LLM 호출 ──
 
+# ── Claude 호출 공통 인프라 ─────────────────────────────────────────────
+# 목적:
+#   - 전역 호출 카운터 (LLM_BUDGET_MAX_CALLS 로 상한)
+#   - 재시도 범위 확장 (429 + 5xx + 연결 오류)
+#   - 쿼터 완전 소진 시 silent-skip 대신 strict 모드에서 예외
+#   - 20개 호출자 후방호환: 기본은 기존과 동일하게 ""/"[]" 반환
+
+_llm_counter = {"count": 0, "failures": 0}
+
+
+def get_llm_call_stats() -> dict:
+    """현재 런의 LLM 호출 통계 (테스트/로깅용)."""
+    return dict(_llm_counter)
+
+
+def reset_llm_call_stats() -> None:
+    _llm_counter["count"] = 0
+    _llm_counter["failures"] = 0
+
+
+def _llm_strict_mode() -> bool:
+    return os.environ.get("LLM_STRICT_MODE", "").lower() in ("1", "true", "yes")
+
+
+def _check_llm_budget() -> None:
+    """LLM_BUDGET_MAX_CALLS 상한을 넘으면 즉시 예외."""
+    raw = os.environ.get("LLM_BUDGET_MAX_CALLS")
+    if not raw:
+        return
+    try:
+        limit = int(raw)
+    except ValueError:
+        return
+    if _llm_counter["count"] >= limit:
+        raise RuntimeError(
+            f"LLM budget exceeded: {_llm_counter['count']}/{limit} calls "
+            f"(LLM_BUDGET_MAX_CALLS={raw})"
+        )
+
+
+def _is_transient_error(exc: Exception) -> bool:
+    """재시도해도 좋은 일시적 오류인지 판정."""
+    err = str(exc).lower()
+    if "429" in err or "rate" in err:
+        return True
+    if "overloaded" in err or "timeout" in err or "timed out" in err:
+        return True
+    if "connection" in err or "reset" in err:
+        return True
+    # 5xx
+    for code in ("500", "502", "503", "504", "529"):
+        if code in err:
+            return True
+    return False
+
+
 def call_llm(prompt, api_key, max_retries=5, max_tokens=1024, suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이."):
-    """Claude API 호출 (429 자동 재시도)"""
+    """Claude API 호출 (429 + 5xx 자동 재시도, 예산 상한 적용)."""
     import anthropic
 
+    _check_llm_budget()
     client = anthropic.Anthropic(api_key=api_key)
 
     for attempt in range(max_retries):
@@ -182,27 +239,35 @@ def call_llm(prompt, api_key, max_retries=5, max_tokens=1024, suffix="\n\nJSON�
                 max_tokens=max_tokens,
                 messages=[{"role": "user", "content": prompt + suffix}],
             )
+            _llm_counter["count"] += 1
             return response.content[0].text if response.content else ""
         except anthropic.RateLimitError:
             wait = 30 * (attempt + 1)
             print(f"  [재시도] 쿼터 초과, {wait}초 대기 ({attempt+1}/{max_retries})")
             time.sleep(wait)
         except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "rate" in err_str.lower():
+            if _is_transient_error(e):
                 wait = 30 * (attempt + 1)
-                print(f"  [재시도] {wait}초 대기 ({attempt+1}/{max_retries})")
+                print(f"  [재시도] {type(e).__name__} {wait}초 대기 ({attempt+1}/{max_retries})")
                 time.sleep(wait)
             else:
+                _llm_counter["failures"] += 1
                 raise
+
+    _llm_counter["failures"] += 1
+    msg = f"LLM call failed after {max_retries} retries (transient errors exhausted)"
+    print(f"  [실패] {msg}")
+    if _llm_strict_mode():
+        raise RuntimeError(msg)
     return ""
 
 
 def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
-    """Claude API 호출 (JSON 응답 전용, 후보 파이프라인용)
+    """Claude API 호출 (JSON 응답 전용, 후보 파이프라인용).
 
-    Gemini call_gemini()를 대체하는 공용 함수.
-    PDF 파싱 제외한 모든 후보 발견/팩트체크에 사용.
+    후방호환: 실패 시 기본적으로 "[]" 반환.
+    LLM_STRICT_MODE=1 설정 시 최종 실패는 RuntimeError 로 승격.
+    LLM_BUDGET_MAX_CALLS 설정 시 호출 상한 초과 즉시 RuntimeError.
     """
     import anthropic
 
@@ -212,6 +277,7 @@ def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
         print(f"[오류] {API_KEY_ENV} 미설정")
         return "[]"
 
+    _check_llm_budget()
     client = anthropic.Anthropic(api_key=api_key)
     json_suffix = "\n\nJSON만 출력하세요. 다른 텍스트 없이."
 
@@ -222,19 +288,26 @@ def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
                 max_tokens=max_tokens,
                 messages=[{"role": "user", "content": prompt + json_suffix}],
             )
+            _llm_counter["count"] += 1
             return response.content[0].text if response.content else "[]"
         except anthropic.RateLimitError:
             wait = 30 * (attempt + 1)
             print(f"    [재시도] 쿼터 초과, {wait}초 대기 ({attempt+1}/{max_retries})")
             time.sleep(wait)
         except Exception as e:
-            err_str = str(e)
-            if "429" in err_str or "rate" in err_str.lower():
+            if _is_transient_error(e):
                 wait = 30 * (attempt + 1)
-                print(f"    [재시도] {wait}초 대기 ({attempt+1}/{max_retries})")
+                print(f"    [재시도] {type(e).__name__} {wait}초 대기 ({attempt+1}/{max_retries})")
                 time.sleep(wait)
             else:
+                _llm_counter["failures"] += 1
                 raise
+
+    _llm_counter["failures"] += 1
+    msg = f"call_claude_json failed after {max_retries} retries"
+    print(f"    [실패] {msg}")
+    if _llm_strict_mode():
+        raise RuntimeError(msg)
     return "[]"
 
 

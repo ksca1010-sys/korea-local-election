@@ -25,7 +25,9 @@ from datetime import datetime, date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 from election_overview_utils import call_claude_json
+from factcheck_logger import FactcheckLogger
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "governor.json"
@@ -380,6 +382,7 @@ def main():
     data = load_candidates()
     total = sum(len(v) for v in data.get("candidates", {}).values())
     print(f"\n현재 후보: {total}명 ({len(data.get('candidates', {}))}개 시도)")
+    logger = FactcheckLogger("governor", dry_run=dry_run)
 
     # ── ① 선관위 예비후보 API 동기화 ──
     try:
@@ -407,23 +410,38 @@ def main():
     print(f"  → {len(news)}건 수집")
 
     prompt = build_prompt(data, news=news)
+    detected = verified = applied = 0
+    error_msg: str | None = None
+    changes = []
 
     try:
         raw = call_claude_json(prompt, llm_key)
         changes = parse_changes(raw)
+        detected = len(changes)
 
         if not changes:
             print("  → 변경 없음")
         else:
-            print(f"  → {len(changes)}건 변경 감지 (Gemini)")
+            print(f"  → {detected}건 변경 감지 (Claude)")
             print("\n뉴스 교차 검증 중...")
             changes = verify_changes_against_news(changes, news)
-            print(f"  → {len(changes)}건 검증 통과")
+            verified = len(changes)
+            print(f"  → {verified}건 검증 통과")
             applied = apply_changes(data, changes, dry_run)
             print(f"  → {applied}건 적용")
     except Exception as e:
-        print(f"  [오류] {e}")
-        return
+        error_msg = f"{type(e).__name__}: {e}"
+        print(f"  [오류] {error_msg}")
+
+    logger.region(
+        "_all",
+        candidate_count=total,
+        news_count=len(news),
+        changes_detected=detected,
+        changes_verified=verified,
+        applied=applied,
+        error=error_msg,
+    )
 
     if not dry_run and changes:
         data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
@@ -433,6 +451,8 @@ def main():
             encoding="utf-8",
         )
         print(f"\n[저장] {CANDIDATES_PATH}")
+
+    logger.run_end(total_applied=applied)
 
     print("\n" + "=" * 60)
     print("완료!")
