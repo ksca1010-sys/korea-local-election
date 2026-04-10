@@ -137,6 +137,21 @@ const DataLoader = (() => {
             updated++;
         }
 
+        // 선거일 drift 감지 — election_meta.json 은 SSOT 로 정해져 있으나
+        // data.js 는 모듈 초기화 순서상 아직 하드코딩 상태. 두 값이 어긋나면
+        // 운영자가 한쪽만 바꾼 것이므로 즉시 경고.
+        if (data.electionMeta && data.electionMeta.electionDate && ED.electionDate instanceof Date) {
+            const hardcodedIso = ED.electionDate.toLocaleDateString('en-CA', { timeZone: 'Asia/Seoul' });
+            const metaIso = data.electionMeta.electionDate;
+            if (hardcodedIso !== metaIso) {
+                console.warn(
+                    `%c[DataLoader] ⚠ 선거일 drift 감지: data.js=${hardcodedIso} vs election_meta.json=${metaIso}\n` +
+                    `  SSOT 는 election_meta.json 입니다. js/data.js 와 js/election-calendar.js 의 하드코딩을 맞춰주세요.`,
+                    'color: #e67e22; font-weight: bold'
+                );
+            }
+        }
+
         // 개발환경: pollSource 없는 support 값 경고
         validateCandidates(ED);
 
