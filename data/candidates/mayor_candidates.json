@@ -12,7 +12,9 @@
     "lastByelectionSync": "2026-04-10",
     "lastCrossValidation": "2026-04-10",
     "lastCleanup": "2026-04-10",
-    "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification"
+    "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
+    "lastOverviewNarrativeVerification": "2026-04-10",
+    "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed"
   },
   "candidates": {
     "seoul": {
@@ -1411,7 +1413,7 @@
           "party": "democratic",
           "career": "(전) 이재명 정부 국정기획위원회 전문위원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "재개발 추진 가속화"
           ],
@@ -3504,17 +3506,6 @@
           "sourcePublishedAt": null
         },
         {
-          "name": "서희철",
-          "party": "independent",
-          "career": "경력미상",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "서구 명칭 개편",
-            "행정혁신"
-          ]
-        },
-        {
           "name": "최규식",
           "party": "democratic",
           "partyKey": "democratic",
@@ -4030,7 +4021,7 @@
           "party": "ppp",
           "career": "현 남구청장",
           "status": "EXPECTED",
-          "dataSource": "overview_narrative",
+          "dataSource": "incumbent",
           "pledges": [
             "대명동 명성 회복"
           ]
@@ -4333,7 +4324,7 @@
           "party": "democratic",
           "career": "(전) 인천시설공단 이사장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "시간 쪼개기 주차 혁신",
             "주차 문제 구조적 해결",
@@ -5106,7 +5097,7 @@
           "party": "ppp",
           "career": "현 동구청장",
           "status": "[출마선언]",
-          "dataSource": "overview_narrative",
+          "dataSource": "incumbent",
           "pledges": [
             "인천 해사법원 유치"
           ],
@@ -5127,7 +5118,7 @@
           "party": "ppp",
           "career": "현 서구청장",
           "status": "[출마거론]",
-          "dataSource": "overview_narrative",
+          "dataSource": "incumbent",
           "pledges": [
             "국공립어린이집 보육환경 개선"
           ],
@@ -5740,20 +5731,6 @@
       ],
       "광주시": [
         {
-          "name": "박관열",
-          "party": "independent",
-          "career": "시민공론화위원회 추진 정책가",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "시민공론화위원회 구성",
-            "경강선 셔틀 운영",
-            "심야버스 운영",
-            "생활문화 공간 조성",
-            "걷고 머무는 라이프스타일 공간"
-          ]
-        },
-        {
           "name": "이종욱",
           "party": "progressive",
           "career": "전 공무원 (30년 공직)",
@@ -5825,7 +5802,7 @@
           "party": "democratic",
           "career": "(전)제6대 대전광역시의회의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "판암·산내 생활체육도시 조성",
             "판암·산내 생활체육·교통 인프라 재편"
@@ -6107,7 +6084,7 @@
           "party": "democratic",
           "career": "(전)법무부장관 비서관",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "서구 명칭 개편 추진"
           ],
@@ -6879,16 +6856,6 @@
         }
       ],
       "울산시장": [
-        {
-          "name": "박맹우",
-          "party": "independent",
-          "career": "전 국민의힘 의원 (탈당)",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "건강한 보수 재건"
-          ]
-        },
         {
           "name": "황명필",
           "party": "reform",
@@ -9927,7 +9894,7 @@
           "party": "democratic",
           "career": "(전)더불어민주당 동해태백삼척정선 지역위원장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "8대 정책 추진",
             "책임지는 정치"
@@ -10098,7 +10065,7 @@
           "party": "democratic",
           "career": "(전)민선8기 속초시장 후보",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "시민배당제",
             "관광통합",
@@ -10322,7 +10289,7 @@
           "party": "democratic",
           "career": "(전)제8대 인제군의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "AI 활용 일자리 창출",
             "액티브 인제 조성"
@@ -11459,7 +11426,7 @@
           "party": "ppp",
           "career": "(전)옥천문화원장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "옥천역 중심 서남부권 신시가지 개발",
             "역세권·구읍 개발",
@@ -11730,7 +11697,7 @@
           "party": "democratic",
           "career": "(전)청와대행정관",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "생활특별시 건설"
           ],
@@ -11885,7 +11852,7 @@
           "party": "independent",
           "career": "(현)서경대학교 K콘텐츠 연구소 관광콘텐츠 연구분과 선임 연구원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "보령 경제 활성화",
             "기업 유치"
@@ -12821,7 +12788,7 @@
           "party": "ppp",
           "career": "(전) 예산고등학교 운영위원장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "3대 랜드마크 조성",
             "수익형 복지 로드맵"
@@ -12834,7 +12801,7 @@
           "party": "ppp",
           "career": "(전) 제8대 인천광역시 부평구의회 의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [],
           "partyKey": "ppp",
           "partyName": "국민의힘"
@@ -13297,7 +13264,7 @@
           "party": "democratic",
           "career": "(전)행정안전부차관",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "시민 햇빛연금 지급",
             "60만평 AI 국가산단 조성"
@@ -13374,7 +13341,7 @@
           "party": "democratic",
           "career": "(전)제8대 정읍시의회 의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "문화예술 행사 보조금 자부담 폐지",
             "문화비 0원",
@@ -13603,7 +13570,7 @@
           "party": "democratic",
           "career": "(전)청와대 선임행정관",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "자립도시 실현",
             "행정주권 회복",
@@ -14052,7 +14019,7 @@
           "party": "ppp",
           "career": "(현)산타요양원 설립자",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "부안 선거문화 개선",
             "지역소멸 극복"
@@ -15352,7 +15319,7 @@
           "party": "democratic",
           "career": "(전) 제6, 7, 8대 진도군의회의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "군민 삶 더 풍요로운 진도"
           ],
@@ -15751,7 +15718,7 @@
           "party": "democratic",
           "career": "(전)목포시청 지역경제과장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "특혜·권력 집중 문제 해결"
           ],
@@ -16213,7 +16180,7 @@
           "party": "ppp",
           "career": "(전)기술보증기금 상임감사",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "구미 경제 재건",
             "기업이 다시 뛰는 구미"
@@ -16317,7 +16284,7 @@
           "party": "ppp",
           "career": "(전) 해양수산부 차관",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "예산 1조5000억 시대 조성",
             "인구 12만 시대 달성"
@@ -17672,7 +17639,7 @@
           "party": "democratic",
           "career": "(전)제9대·제10대 사천시장",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "중1 학생 200만원 지원",
             "청소년 드림 펀드 도입",
@@ -17883,7 +17850,7 @@
           "party": "ppp",
           "career": "(현) 제9대 거제시의회의원",
           "status": "DECLARED",
-          "dataSource": "overview_narrative",
+          "dataSource": "nec_verified",
           "pledges": [
             "거제사랑상품권 정책 실효성 강화"
           ],
