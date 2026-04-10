@@ -270,7 +270,7 @@ def main():
     # 결과 저장 — 기존 mayor/superintendent 섹션 보존
     current["meta"] = {
         "lastUpdated": date.today().isoformat(),
-        "electionDate": "2026-06-03",
+        "electionDate": ELECTION_DATE.isoformat(),
         "note": "중립적 관점의 선거 쟁점 개요. 특정 정당·후보 지지 없음.",
         "generatedBy": f"Claude ({MODEL})"
     }

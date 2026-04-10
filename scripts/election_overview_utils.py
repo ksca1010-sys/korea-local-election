@@ -26,7 +26,20 @@ ENV_FILE = BASE_DIR / ".env"
 # ── 설정 상수 ──
 MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
 API_KEY_ENV = "ANTHROPIC_API_KEY"
-ELECTION_DATE = date(2026, 6, 3)
+
+# 선거일은 data/static/election_meta.json 을 단일 출처(SSOT)로 사용.
+# 파일이 없거나 파싱 실패 시 안전한 기본값(2026-06-03)으로 폴백.
+def _load_election_date() -> date:
+    meta_path = BASE_DIR / "data" / "static" / "election_meta.json"
+    try:
+        with meta_path.open(encoding="utf-8") as f:
+            meta = json.load(f)
+        return date.fromisoformat(meta["electionDate"])
+    except (FileNotFoundError, json.JSONDecodeError, KeyError, ValueError):
+        return date(2026, 6, 3)
+
+
+ELECTION_DATE = _load_election_date()
 
 REGION_NAMES = {
     "seoul": "서울특별시", "busan": "부산광역시", "daegu": "대구광역시",
@@ -427,7 +440,7 @@ def build_narrative_prompt(*, region_name, election_type_label, district=None,
 ## 기본 정보
 - 지역: {target}
 - 선거: {election_type_label}
-- 오늘: {today_str}, 선거일: 2026-06-03 (D-{days_until})
+- 오늘: {today_str}, 선거일: {ELECTION_DATE.isoformat()} (D-{days_until})
 {f'- {media_text}' if media_text else ''}
 
 ## 후보자 현황
