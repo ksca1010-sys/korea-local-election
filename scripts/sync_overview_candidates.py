@@ -31,31 +31,67 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 OVERVIEW_PATH = BASE_DIR / "data" / "election_overview.json"
 MAYOR_CANDIDATES_PATH = BASE_DIR / "data" / "candidates" / "mayor_candidates.json"
 
-# 사람 이름이 아닌 것 필터
+# 사람 이름이 아닌 것 필터 (false positive 방지용 블록리스트)
 NOT_NAMES = {
+    # 기존
     "야당", "여당", "선거는", "구청장", "군수", "시장", "후보", "현직",
     "반면", "동시에", "내부에서", "민의힘의", "복수", "보좌관을", "재선에",
     "야권", "여권", "민주당", "국민의힘", "무소속", "조국혁신당",
     "진보당", "개혁신당", "현직자", "도전자", "주민들",
+    # 조사 후 normalize 결과로 자주 걸리는 일반명사
+    "조사", "선거", "후보자", "시민", "국민", "의원", "대표",
+    "위원", "당원", "주민", "유권자", "전직", "예비", "공천", "경선",
+    "지지율", "지지도", "유력", "확실", "거론", "관측", "전망",
+    "결과", "발표", "이번", "최근", "지난", "다음", "올해", "작년",
+    "지역", "현안", "쟁점", "공약", "정책", "구도", "판세",
 }
 
-# 사람 이름 패턴 (2~3글자 한글, 성+이름)
-NAME_PATTERN = re.compile(r'^[가-힣]{2,4}$')
+# 한국인 이름은 거의 2~3글자. 성(姓)으로 쓰이는 한글 문자 집합
 COMMON_SURNAMES = set("김이박최정강조윤장임한오서신권황안송류전홍고문양손배백허유남심노하주우구신임나탁변")
 
+# 이름 뒤에 자주 붙는 조사 — clean_name 에서 벗겨냄
+NAME_PARTICLES_SINGLE = set("이가은는을를의도만")
+NAME_PARTICLES_MULTI = ("에서", "에게", "부터", "까지", "으로", "처럼", "보다", "마저")
 
-def is_valid_name(name):
-    """사람 이름인지 판별"""
-    if name in NOT_NAMES:
-        return False
-    if not NAME_PATTERN.match(name):
-        return False
-    if len(name) < 2 or len(name) > 4:
-        return False
-    # 첫 글자가 한국 성씨인지 확인
-    if name[0] not in COMMON_SURNAMES:
-        return False
-    return True
+
+def clean_name(raw: str) -> str | None:
+    """캡처된 문자열 뒤의 조사를 벗겨 2~3자 이름을 만들어 반환.
+
+    "정성철이" → "정성철"    ("이" 주격조사)
+    "황양득도" → "황양득"    ("도" 보조사)
+    "조사에서" → "조사"      (→ 이후 NOT_NAMES/성씨 검사에서 탈락)
+    "김영" → "김영"          (2자, 그대로)
+    길이가 2~3자가 아니거나 불가능한 형태면 None.
+    """
+    if not raw:
+        return None
+    name = raw
+    # 다자 조사 (에서, 에게 등) 먼저 — strip 후 최소 2자 남아야 함
+    for p in NAME_PARTICLES_MULTI:
+        if len(name) >= len(p) + 2 and name.endswith(p):
+            name = name[:-len(p)]
+            break
+    # 단자 조사 — 오직 4자일 때만 벗김.
+    # 이유: 한국 이름은 2~3자가 대부분이고 3자 이름의 마지막 글자가
+    # "도/만" 같은 흔한 글자인 경우가 많아 (예: 김영만, 우건도) 3자에서
+    # 단자 조사를 벗기면 멀쩡한 이름이 깎임.
+    if len(name) == 4 and name[-1] in NAME_PARTICLES_SINGLE:
+        name = name[:-1]
+    if len(name) not in (2, 3):
+        return None
+    return name
+
+
+def is_valid_name(raw: str) -> tuple[bool, str | None]:
+    """(valid, cleaned_name) 반환. cleaned_name 은 조사 제거 후 값."""
+    cleaned = clean_name(raw)
+    if not cleaned:
+        return False, None
+    if cleaned in NOT_NAMES:
+        return False, None
+    if cleaned[0] not in COMMON_SURNAMES:
+        return False, None
+    return True, cleaned
 
 
 def extract_candidates_from_narrative(narrative):
@@ -63,6 +99,7 @@ def extract_candidates_from_narrative(narrative):
     candidates = []
 
     # 패턴 1: "OOO 예비후보", "OOO 전 시장" 등
+    # 2~4자로 넓게 캡처한 뒤 clean_name 에서 조사 제거.
     patterns = [
         (r'([가-힣]{2,4})\s+(예비후보|예비 후보)', "DECLARED"),
         (r'([가-힣]{2,4})\s+전\s*(구청장|군수|시장|의원|의장|교육감)', "EXPECTED"),
@@ -72,8 +109,9 @@ def extract_candidates_from_narrative(narrative):
 
     for pat, status in patterns:
         for m in re.finditer(pat, narrative):
-            name = m.group(1)
-            if is_valid_name(name) and status:  # 현직은 스킵
+            raw = m.group(1)
+            valid, name = is_valid_name(raw)
+            if valid and status:  # 현직은 스킵
                 candidates.append({"name": name, "status": status, "context": m.group(0)})
 
     # 패턴 2: "OOO(국민의힘)" "OOO(민주당)"
@@ -83,9 +121,10 @@ def extract_candidates_from_narrative(narrative):
         "무소속": "independent", "조국혁신당": "reform", "개혁신당": "newReform", "진보당": "progressive",
     }
     for m in re.finditer(party_pattern, narrative):
-        name = m.group(1)
+        raw = m.group(1)
         party = m.group(2)
-        if is_valid_name(name):
+        valid, name = is_valid_name(raw)
+        if valid:
             candidates.append({
                 "name": name, "status": "EXPECTED",
                 "party": PARTY_MAP.get(party, "independent"),
