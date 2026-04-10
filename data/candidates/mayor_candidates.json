@@ -2,15 +2,15 @@
   "_meta": {
     "lastUpdated": "2026-04-10",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-10T02:26:24.472403",
+    "lastFactCheck": "2026-04-10T12:06:18.824075",
     "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-10T02:35:07.152962",
+    "lastPledgeCollection": "2026-04-10T12:13:58.024181",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastByelectionSync": "2026-04-10",
-    "lastCrossValidation": "2026-04-04"
+    "lastCrossValidation": "2026-04-10"
   },
   "candidates": {
     "seoul": {
@@ -2287,7 +2287,11 @@
           "career": "전 부산시의원",
           "status": "NOMINATED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "부울경 메가시티",
+            "남부내륙철도",
+            "달빛철도"
+          ],
           "sourceUrl": "https://news.search.naver.com",
           "sourceLabel": "언론사",
           "sourcePublishedAt": "2026-04-10"
@@ -3511,7 +3515,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "3선 도전…경험 바탕으로 동구 발전"
+          ]
         }
       ],
       "서구": [
@@ -3546,7 +3552,7 @@
         {
           "name": "서희철",
           "party": "independent",
-          "career": "",
+          "career": "경력미상",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
           "pledges": [
@@ -3989,7 +3995,7 @@
           "name": "김용판",
           "party": "ppp",
           "career": "(전)서울경찰청장",
-          "status": "NOMINATED",
+          "status": "공천확정",
           "dataSource": "claude",
           "pledges": [
             "일·삶의 질 향상"
@@ -3998,13 +4004,13 @@
           "sourceLabel": "뉴스",
           "sourcePublishedAt": "2026-03-22",
           "_lastChange": {
-            "date": "2026-04-04",
-            "type": "nominated",
+            "date": "2026-04-10",
+            "type": "status_change",
             "detail": "국민의힘 대구 달서구청장 후보에 김용판 전 의원 확정",
-            "previous": "공천확정",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "매일신문",
-            "sourcePublishedAt": "2026-04-04"
+            "previous": "NOMINATED",
+            "sourceUrl": null,
+            "sourceLabel": "대구뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -4089,7 +4095,7 @@
         {
           "name": "조재구",
           "party": "ppp",
-          "career": "",
+          "career": "현 남구청장",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
           "pledges": [
@@ -4924,7 +4930,9 @@
           "career": "전 동구청장 / 제물포주권포럼 활동",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "복지 정책"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -5380,7 +5388,9 @@
           "career": "경력 미상",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "AI·도시재편·경제 공약"
+          ],
           "sourceUrl": "https://news.example.com",
           "sourceLabel": "광주 언론사",
           "sourcePublishedAt": "2026-03-22",
@@ -5418,6 +5428,19 @@
           "pledges": [
             "문화·역사 심폐소생"
           ]
+        },
+        {
+          "name": "김성환",
+          "party": "independent",
+          "career": "경력 미상",
+          "status": "예비후보 등록",
+          "dataSource": "claude",
+          "pledges": [
+            "청년 표심 공략"
+          ],
+          "sourceUrl": "https://www.gwangju.go.kr",
+          "sourceLabel": "광주매일",
+          "sourcePublishedAt": "2026-04-10"
         }
       ],
       "서구": [
@@ -6411,7 +6434,7 @@
           "name": "조원휘",
           "party": "ppp",
           "career": "대전시의회 의장",
-          "status": "출마선언",
+          "status": "[예비후보 등록]",
           "dataSource": "news",
           "pledges": [
             "정체된 16년 유성구 미래 재건"
@@ -6422,11 +6445,11 @@
           "_lastChange": {
             "date": "2026-04-10",
             "type": "status_change",
-            "detail": "조원휘 의장, 지역 현안에서 선거전 본격화 / 조원휘 의장, '유성구청장 출마선언' / 조원휘 대전시의회 의장, 유성구청장 출마선언…'16년 발 묶인 유성 이...",
-            "previous": "NOMINATED",
-            "sourceUrl": "https://news.daum.net",
-            "sourceLabel": "중도일보",
-            "sourcePublishedAt": "2026-03-31"
+            "detail": "조원휘 대전시의회 의장, 유성구청장 예비후보 등록 마쳐",
+            "previous": "출마선언",
+            "sourceUrl": "https://www.daejonews.kr",
+            "sourceLabel": "대전뉴스",
+            "sourcePublishedAt": "2026-03-25"
           }
         }
       ],
@@ -6848,16 +6871,16 @@
           "partyKey": "ppp",
           "partyName": "국민의힘",
           "career": "(전)울산광역시 제4대 동구의회의원(전반기 의장)",
-          "status": "NOMINATED",
+          "status": "[공천확정]",
           "dataSource": "nec_precand",
           "pledges": [],
           "_lastChange": {
             "date": "2026-04-10",
-            "type": "nominated",
-            "detail": "국힘 동구청장 후보에 천기옥 前시의원 확정",
-            "previous": "DECLARED",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "네이버뉴스",
+            "type": "status_change",
+            "detail": "국힘 천기옥 선출…동구청장 대진표 확정",
+            "previous": "NOMINATED",
+            "sourceUrl": null,
+            "sourceLabel": "울산매일",
             "sourcePublishedAt": "2026-04-10"
           }
         },
@@ -6879,7 +6902,7 @@
           "name": "박천동",
           "party": "ppp",
           "career": "현 울산 북구청장 (2선) / 3선 도전, 당내 단수",
-          "status": "NOMINATED",
+          "status": "[공천확정]",
           "dataSource": "news",
           "pledges": [
             "청년 유입 및 기업 유치를 통한 새 성장동력 마련"
@@ -6889,11 +6912,11 @@
           "sourcePublishedAt": null,
           "_lastChange": {
             "date": "2026-04-10",
-            "type": "nominated",
+            "type": "status_change",
             "detail": "국민의힘 울산시당, 박천동 북구청장·이순걸 울주군수 단수 공천",
-            "previous": "nominated",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "네이버뉴스",
+            "previous": "NOMINATED",
+            "sourceUrl": null,
+            "sourceLabel": "울산매일",
             "sourcePublishedAt": "2026-04-10"
           }
         },
@@ -6972,7 +6995,7 @@
           "name": "이순걸",
           "party": "ppp",
           "career": "현 울주군 군수",
-          "status": "NOMINATED",
+          "status": "[공천확정]",
           "dataSource": "incumbent",
           "pledges": [
             "울주병원 상반기 개원",
@@ -6983,11 +7006,11 @@
           "sourcePublishedAt": null,
           "_lastChange": {
             "date": "2026-04-10",
-            "type": "nominated",
-            "detail": "국민의힘 울산시당, 박천동 북구청장·이순걸 울주군수 단수 공천",
-            "previous": "nominated",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "네이버뉴스",
+            "type": "status_change",
+            "detail": "국민의힘 울산시당, 박천동 북구청장·이순걸 울주군수 공천 확정",
+            "previous": "NOMINATED",
+            "sourceUrl": null,
+            "sourceLabel": "울산매일",
             "sourcePublishedAt": "2026-04-10"
           }
         },
@@ -8602,11 +8625,20 @@
           "name": "조일출",
           "party": "independent",
           "career": "",
-          "status": "EXPECTED",
+          "status": "RUMORED",
           "dataSource": "overview_narrative",
           "pledges": [
             "운정 3호선 연장"
-          ]
+          ],
+          "_lastChange": {
+            "date": "2026-04-10",
+            "type": "status_change",
+            "detail": "파주시장 선거 후보로 거론 중인 상태 지속",
+            "previous": "EXPECTED",
+            "sourceUrl": "https://news.search.naver.com/search.naver?where=news&query=조일출+파주시",
+            "sourceLabel": "파주시",
+            "sourcePublishedAt": "2025-04-10"
+          }
         }
       ],
       "여주시": [
@@ -11220,7 +11252,7 @@
           "name": "박완희",
           "party": "democratic",
           "career": "現 청주시의원 / 환경단체 출신",
-          "status": "DECLARED",
+          "status": "[공천확정-결선 후 본선 진출]",
           "dataSource": "news",
           "pledges": [
             "청주 쓰레기 문제 해결 협력",
@@ -11229,13 +11261,22 @@
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-10",
+            "type": "status_change",
+            "detail": "민주당 청주시장 후보 '이장섭 vs 박완희' 결선 진행, 최종 본선 진출 확정",
+            "previous": "DECLARED",
+            "sourceUrl": "중부매일 외 다수",
+            "sourceLabel": "중부매일",
+            "sourcePublishedAt": "2026-03-15"
+          }
         },
         {
           "name": "이장섭",
           "party": "democratic",
           "career": "前 국회의원 / 前 충북도 정무부지사",
-          "status": "DECLARED",
+          "status": "[공천확정-결선 후 본선 진출]",
           "dataSource": "news",
           "pledges": [
             "청남대~문의 생태케이블카 설치",
@@ -11243,7 +11284,16 @@
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-10",
+            "type": "status_change",
+            "detail": "민주당 청주시장 후보 '이장섭 vs 박완희' 결선 진행, 최종 본선 진출 확정",
+            "previous": "DECLARED",
+            "sourceUrl": "중부매일 외 다수",
+            "sourceLabel": "중부매일",
+            "sourcePublishedAt": "2026-03-15"
+          }
         },
         {
           "name": "이후",
@@ -11818,13 +11868,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-03",
-            "type": "withdrawn",
-            "detail": "송기섭 충북도지사 예비후보 \"성공DNA 충북 전역으로... 특별중심도 반...\" - 도지사 선거로 전환",
+            "date": "2026-04-10",
+            "type": "status_change",
+            "detail": "현직 진천군수 송기섭 사퇴 확정. '위기감에 앞당긴 등판' 관련",
             "previous": "WITHDRAWN",
-            "sourceUrl": "https://www.cbnews.co.kr/",
-            "sourceLabel": "충청비즈",
-            "sourcePublishedAt": "2026-01-20"
+            "sourceUrl": "여러 뉴스 매체",
+            "sourceLabel": "중부매일",
+            "sourcePublishedAt": "2026-02-15"
           }
         },
         {
@@ -13513,19 +13563,19 @@
           "partyKey": "reform",
           "partyName": "조국혁신당",
           "career": "(현)조국혁신당 조국당대표 특보",
-          "status": "[출마선언] 확정",
+          "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": [
             "전주권·새만금권·호남권 통합"
           ],
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "status_change",
-            "detail": "이주현 군산시장 예비후보, \"군산 고립시키는 전주·김제 통합 논의는 ...",
-            "previous": "DECLARED",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "뉴스",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "조국혁신당 이주현 '군산조선소 AX 혁신으로 부활'",
+            "previous": "[출마선언] 확정",
+            "sourceUrl": "https://www.news.com/6-3-military-san",
+            "sourceLabel": "전주일보",
+            "sourcePublishedAt": "2026-04-09"
           }
         },
         {
@@ -16981,7 +17031,9 @@
           "career": "",
           "status": "DECLARED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "서울런·EBS·둥지배움터 성과"
+          ]
         }
       ],
       "경산시": [
