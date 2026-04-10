@@ -22,14 +22,36 @@ from election_overview_utils import (
 )
 from local_media_pool import get_media_text, METRO_MEDIA
 
-# ── 뉴스 해시 기반 스킵을 위한 상태 관리 ──
+# ── 뉴스 해시 기반 스킵 + stale 강제 갱신 ──
 GOV_STATE_PATH = BASE_DIR / "data" / "governor_overview_state.json"
+
+# 이 일수가 지나면 contentHash 가 같아도 재생성 강제.
+# update_mayor_overview 의 is_stale() 과 같은 역할을 governor/super 에도 부여.
+MAX_STALE_DAYS = 2
 
 
 def _load_gov_state():
     if GOV_STATE_PATH.exists():
         return json.loads(GOV_STATE_PATH.read_text(encoding="utf-8"))
     return {}
+
+
+def _is_state_stale(state_entry, max_days=MAX_STALE_DAYS):
+    """state entry 의 lastUpdated 가 max_days 일 이상 지났는지 판정.
+
+    missing / 파싱 실패 / 오래된 경우 모두 True 반환 → 재생성 강제.
+    """
+    if not state_entry:
+        return True
+    last = state_entry.get("lastUpdated")
+    if not last:
+        return True
+    try:
+        last_dt = datetime.fromisoformat(last)
+    except (ValueError, TypeError):
+        return True
+    age = datetime.now() - last_dt
+    return age.days >= max_days
 
 
 def _save_gov_state(state):
@@ -214,10 +236,13 @@ def main():
         # 콘텐츠 해시 비교 (뉴스+후보+여론조사) — 변화 없으면 LLM 스킵
         nh = _content_hash(news, region_candidates, region_polls)
         state_key = f"governor/{region_key}"
-        prev_hash = gov_state.get(state_key, {}).get("contentHash")
+        state_entry = gov_state.get(state_key, {})
+        prev_hash = state_entry.get("contentHash")
         prev = current.get("regions", {}).get(region_key, {})
 
-        if prev_hash == nh and prev.get("headline"):
+        # hash 가 같고, 기존 출력이 있고, 마지막 갱신이 MAX_STALE_DAYS 미만일 때만 skip.
+        # stale 하면 hash 일치해도 재생성 강제 (이전엔 이 체크가 빠져 있었음).
+        if prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
             print(f"  변화 없음, 기존 유지")
             updated_regions[region_key] = prev
             skipped += 1
@@ -309,13 +334,14 @@ def update_superintendent_overview(api_key, current):
         news = fetch_news_for_region(rn, "superintendent")
         print(f"\n[{rk}] {rn} 교육감... (뉴스 {len(news)}건)")
 
-        # 콘텐츠 해시 비교 (뉴스+후보)
+        # 콘텐츠 해시 비교 (뉴스+후보) + stale 검사
         nh = _content_hash(news, candidates)
         state_key = f"superintendent/{rk}"
-        prev_hash = gov_state.get(state_key, {}).get("contentHash")
+        state_entry = gov_state.get(state_key, {})
+        prev_hash = state_entry.get("contentHash")
         prev = current.get("superintendent", {}).get(rk, {})
 
-        if prev_hash == nh and prev.get("headline"):
+        if prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
             print(f"  변화 없음, 기존 유지")
             updated[rk] = prev
             skipped += 1

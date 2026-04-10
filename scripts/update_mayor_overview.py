@@ -464,6 +464,26 @@ def main():
     state = load_state()
     district_polls = load_district_polls()
 
+    # state 유령 엔트리 GC —
+    # mayor_candidates.json 에 더 이상 존재하지 않는 지역의 state 레코드는
+    # main 루프가 방문하지 않으므로 lastUpdated 가 영원히 증가하지 않는다.
+    # 운영자가 district 를 삭제했거나 이전 cleanup 에서 제거된 경우
+    # 유령이 쌓여 "오래된 항목" 리포트를 오염시킨다. 매 실행 시작에 제거.
+    ghosts = []
+    for key in list(state.keys()):
+        if "/" not in key:
+            continue
+        rk, district = key.split("/", 1)
+        if rk not in mayor_data or district not in mayor_data.get(rk, {}):
+            ghosts.append(key)
+            del state[key]
+    if ghosts:
+        print(f"[GC] 유령 state 엔트리 {len(ghosts)}건 제거:")
+        for g in ghosts[:10]:
+            print(f"     - {g}")
+        if len(ghosts) > 10:
+            print(f"     ... 외 {len(ghosts) - 10}건")
+
     # 대상 시도 결정
     if args.region:
         target_regions = args.region if isinstance(args.region, list) else [args.region]

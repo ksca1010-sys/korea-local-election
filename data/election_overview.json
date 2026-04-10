@@ -4785,27 +4785,6 @@
           "latestPoll": null,
           "dataSource": "data/candidates + data/polls/state.json"
         }
-      },
-      "조국혁신당 전체": {
-        "regionName": "대전광역시 조국혁신당 전체",
-        "headline": "조국혁신당 대전 시장 후보 미확정",
-        "narrative": "현재 대전광역시 조국혁신당의 시장 후보자 현황이 파악되지 않고 있습니다. 선거일(2026년 6월 3일)까지 72일 남은 시점에서 조국혁신당의 대전 지역 공식 출마 선언이 이루어지지 않았습니다. 여론조사 데이터와 관련 뉴스도 현재 수집되지 않은 상태입니다.",
-        "keyIssues": [],
-        "riskFactor": "조국혁신당의 후보 확정 여부와 시기가 변수.",
-        "trend": "다자 경합 중",
-        "facts": {
-          "candidateCount": 1,
-          "topCandidates": [
-            {
-              "name": "조국혁신당 대전 출마자들",
-              "status": "DECLARED",
-              "party": "조국혁신당"
-            }
-          ],
-          "pollCount": 0,
-          "latestPoll": null,
-          "dataSource": "data/candidates + data/polls/state.json"
-        }
       }
     },
     "gangwon": {
