@@ -10,7 +10,9 @@
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastByelectionSync": "2026-04-10",
-    "lastCrossValidation": "2026-04-10"
+    "lastCrossValidation": "2026-04-10",
+    "lastCleanup": "2026-04-10",
+    "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification"
   },
   "candidates": {
     "seoul": {
@@ -1110,17 +1112,6 @@
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": []
-        },
-        {
-          "name": "박상준",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "교통지옥 해소",
-            "멈춘 강서 변화"
-          ]
         }
       ],
       "구로구": [
@@ -1625,14 +1616,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "황인식이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "강남구": [
@@ -2172,17 +2155,6 @@
             "해사법원 유치",
             "물류 클러스터"
           ]
-        },
-        {
-          "name": "주정봉",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "월 3만원 AI 바우처 지원",
-            "AI 스마트행정"
-          ]
         }
       ],
       "동구": [
@@ -2637,14 +2609,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "정성철이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "기장군": [
@@ -3508,16 +3472,6 @@
           "sourceUrl": null,
           "sourceLabel": "미디어오늘",
           "sourcePublishedAt": "2026-04-07"
-        },
-        {
-          "name": "이상의",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "3선 도전…경험 바탕으로 동구 발전"
-          ]
         }
       ],
       "서구": [
@@ -3618,17 +3572,6 @@
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": []
-        },
-        {
-          "name": "주정봉",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "전 구민에 월 3만원 AI 바우처 지원",
-            "AI 스마트행정 추진"
-          ]
         }
       ],
       "북구": [
@@ -3757,16 +3700,6 @@
           "dataSource": "nec_precand",
           "pledges": [
             "도시재생"
-          ]
-        },
-        {
-          "name": "이상의",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "해양 수도 부산 완성"
           ]
         }
       ],
@@ -4181,18 +4114,6 @@
           "sourceUrl": "https://news.naver.com",
           "sourceLabel": "매일신문",
           "sourcePublishedAt": "2026-04-04"
-        },
-        {
-          "name": "한편",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "경제 반등에 모든 역량 집중",
-            "생명·미래교통도시 조성",
-            "여성·아동 복지 공약"
-          ]
         }
       ]
     },
@@ -5008,18 +4929,6 @@
             "원도심 재도약",
             "자치혁명"
           ]
-        },
-        {
-          "name": "이상이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "영종 제3연륙교 '인천국제공항대교' 제안",
-            "영종 하늘5중 조기 개교",
-            "영종구 교육지원청 설립"
-          ]
         }
       ],
       "검단구": [
@@ -5133,14 +5042,6 @@
             "촘촘한 복지 정책 5개 핵심 공약",
             "매립지 소유권 이전"
           ]
-        },
-        {
-          "name": "이상의",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "서해구": [
@@ -5197,29 +5098,9 @@
           "sourceUrl": null,
           "sourceLabel": "경인일보",
           "sourcePublishedAt": "2026-03-22"
-        },
-        {
-          "name": "이사장도",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "동구": [
-        {
-          "name": "신효철",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "AI 에너지 숲 조성",
-            "공항후적지 AI 밸리 개발",
-            "일자리 1만개 창출"
-          ]
-        },
         {
           "name": "김찬진",
           "party": "ppp",
@@ -5238,16 +5119,6 @@
             "sourceLabel": "",
             "sourcePublishedAt": "2026-03-28"
           }
-        },
-        {
-          "name": "권기일",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "동네별 맞춤 설계도"
-          ]
         }
       ],
       "서구": [
@@ -5269,16 +5140,6 @@
             "sourceLabel": "OBS",
             "sourcePublishedAt": "2026-04-07"
           }
-        },
-        {
-          "name": "서희철",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "서구 명칭 개편"
-          ]
         },
         {
           "name": "김종인",
@@ -5327,17 +5188,6 @@
           "dataSource": "nec_precand",
           "pledges": [
             "정당보다 시민 중심의 정치"
-          ]
-        },
-        {
-          "name": "주정봉",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "월 3만원 AI 바우처 지원",
-            "AI 스마트행정"
           ]
         }
       ]
@@ -5479,16 +5329,6 @@
           "sourcePublishedAt": null
         },
         {
-          "name": "이상이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "전기차 충전소 행정조치"
-          ]
-        },
-        {
           "name": "김영남",
           "party": "democratic",
           "partyKey": "democratic",
@@ -5509,40 +5349,6 @@
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": []
-        },
-        {
-          "name": "최근",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "행정 시스템 대혁신, 72시간 내 답변"
-          ]
-        },
-        {
-          "name": "주정봉",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "전 구민에 월 3만원 AI 바우처 지원",
-            "AI 스마트행정"
-          ]
-        },
-        {
-          "name": "서구의원",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "바이오·의료 혁신 거점",
-            "행정 시스템 재설계",
-            "생활정치를 광역 정책으로 연결",
-            "군공항 부지에 미래 먹거리 조성"
-          ]
         }
       ],
       "남구": [
@@ -8620,25 +8426,6 @@
             "AI·콘텐츠 자족도시 체질 개선",
             "일자리 문제 해결"
           ]
-        },
-        {
-          "name": "조일출",
-          "party": "independent",
-          "career": "",
-          "status": "RUMORED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "운정 3호선 연장"
-          ],
-          "_lastChange": {
-            "date": "2026-04-10",
-            "type": "status_change",
-            "detail": "파주시장 선거 후보로 거론 중인 상태 지속",
-            "previous": "EXPECTED",
-            "sourceUrl": "https://news.search.naver.com/search.naver?where=news&query=조일출+파주시",
-            "sourceLabel": "파주시",
-            "sourcePublishedAt": "2025-04-10"
-          }
         }
       ],
       "여주시": [
@@ -9034,14 +8821,6 @@
           "sourcePublishedAt": null
         },
         {
-          "name": "신임",
-          "party": "independent",
-          "career": "정보 미상",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
           "name": "김주관",
           "party": "democratic",
           "partyKey": "democratic",
@@ -9101,18 +8880,6 @@
           "dataSource": "nec_precand",
           "pledges": [
             "LH 독단 관리 횡포 바로잡기"
-          ]
-        },
-        {
-          "name": "한편",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "울산대교 통행료 50% 인하",
-            "경기북부 투자공사 설립",
-            "권역별 성장 로드맵"
           ]
         }
       ],
@@ -9467,16 +9234,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "정동균",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "서울-양평 고속도로 건설 추진"
-          ]
         },
         {
           "name": "김연호",
@@ -10166,16 +9923,6 @@
           "partyName": "더불어민주당"
         },
         {
-          "name": "한편",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "산업지도 재편"
-          ]
-        },
-        {
           "name": "이정훈",
           "party": "democratic",
           "career": "(전)더불어민주당 동해태백삼척정선 지역위원장",
@@ -10440,27 +10187,6 @@
           "dataSource": "nec_precand",
           "pledges": [
             "새로운 문화 구축"
-          ]
-        },
-        {
-          "name": "최상림",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "3·3·3 대도약"
-          ]
-        },
-        {
-          "name": "허동원",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "사회·복지 9대 공약",
-            "우주항공산업 거점 도시 조성"
           ]
         }
       ],
@@ -11294,48 +11020,6 @@
             "sourceLabel": "중부매일",
             "sourcePublishedAt": "2026-03-15"
           }
-        },
-        {
-          "name": "이후",
-          "party": "independent",
-          "career": "정보 미확인",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "기업애로해소지원단 운영",
-            "기업 규제 완화",
-            "탄소중립 추진",
-            "청주 중추도시 육성"
-          ]
-        },
-        {
-          "name": "서민석",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "소형 원자로 도입",
-            "중동 피해기업 지원",
-            "무상 공공임대",
-            "공공기관 주 4.5일제 도입"
-          ]
-        },
-        {
-          "name": "권에서는",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
-          "name": "주시의원",
-          "party": "independent",
-          "career": "정보 미확인",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         },
         {
           "name": "손인석",
@@ -12208,16 +11892,6 @@
           ]
         },
         {
-          "name": "남도의원",
-          "party": "democratic",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "실행 중심 정치"
-          ]
-        },
-        {
           "name": "최진복",
           "party": "democratic",
           "partyKey": "democratic",
@@ -12390,14 +12064,6 @@
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": []
-        },
-        {
-          "name": "김수겸과",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "서산시": [
@@ -12523,14 +12189,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "권에서는",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         },
         {
           "name": "이영수",
@@ -13101,14 +12759,6 @@
           "status": "DECLARED",
           "dataSource": "nec_precand",
           "pledges": []
-        },
-        {
-          "name": "정부지사",
-          "party": "ppp",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "청양군": [
@@ -13180,14 +12830,6 @@
           "partyName": "국민의힘"
         },
         {
-          "name": "신인",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
           "name": "구동오",
           "party": "ppp",
           "career": "(전) 제8대 인천광역시 부평구의회 의원",
@@ -13230,14 +12872,6 @@
           "pledges": [
             "예산의 미래 10년 설계"
           ]
-        },
-        {
-          "name": "조한영은",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "당진시": [
@@ -13657,18 +13291,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "최근",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "매달 10만~30만원 햇빛연금 지급",
-            "FC익산(가칭) 축구단 창단",
-            "시민 1인당 100만원 지급"
-          ]
         },
         {
           "name": "심보균",
@@ -15260,18 +14882,6 @@
           "pledges": [
             "서울대병원 구례 유치"
           ]
-        },
-        {
-          "name": "이상의",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "태양광·풍력 강제 멈춤 보상",
-            "솔라시도 에너지 신도시",
-            "고흥 제2우주센터"
-          ]
         }
       ],
       "고흥군": [
@@ -15738,14 +15348,6 @@
           "sourcePublishedAt": null
         },
         {
-          "name": "조사에서",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
           "name": "김인정",
           "party": "democratic",
           "career": "(전) 제6, 7, 8대 진도군의회의원",
@@ -15756,14 +15358,6 @@
           ],
           "partyKey": "democratic",
           "partyName": "더불어민주당"
-        },
-        {
-          "name": "김인정도",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "영암군": [
@@ -16829,18 +16423,6 @@
           "pledges": [
             "멈춰 선 영천을 다시 움직이기"
           ]
-        },
-        {
-          "name": "강조하며",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "영천의 새로운 방향 모색",
-            "형식적 군사도시 탈피",
-            "현안사업 협력"
-          ]
         }
       ],
       "상주시": [
@@ -17016,24 +16598,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "안병윤이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
-          "name": "조사에서",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "서울런·EBS·둥지배움터 성과"
-          ]
         }
       ],
       "경산시": [
@@ -17198,22 +16762,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "정영길이",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
-        },
-        {
-          "name": "정영길은",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         },
         {
           "name": "전화식",
@@ -17578,18 +17126,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "최근",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "원전 유치",
-            "첨단산업 유치",
-            "동해안 시대 조성"
-          ]
         },
         {
           "name": "강부송",
@@ -17963,16 +17499,6 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
-        },
-        {
-          "name": "고성군수",
-          "party": "ppp",
-          "career": "현 고성군 군수",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "경제자유구역 포함 먹거리 확보"
-          ]
         },
         {
           "name": "백수명",
@@ -18365,16 +17891,6 @@
           "partyName": "국민의힘"
         },
         {
-          "name": "윤부원",
-          "party": "independent",
-          "career": "",
-          "status": "EXPECTED",
-          "dataSource": "overview_narrative",
-          "pledges": [
-            "민생회복지원금 지원"
-          ]
-        },
-        {
           "name": "황양득",
           "party": "democratic",
           "partyKey": "democratic",
@@ -18395,14 +17911,6 @@
           "pledges": [
             "어민들을 위한 저도 정책"
           ]
-        },
-        {
-          "name": "황양득도",
-          "party": "independent",
-          "career": "",
-          "status": "DECLARED",
-          "dataSource": "overview_narrative",
-          "pledges": []
         }
       ],
       "의령군": [
