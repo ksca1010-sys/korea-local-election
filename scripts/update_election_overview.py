@@ -210,10 +210,15 @@ def main():
         print(f"[오류] {API_KEY_ENV} 환경변수가 설정되지 않았습니다.")
         sys.exit(1)
 
+    # --force: hash / stale 검사 무시하고 모든 지역 강제 재생성 (배포 직전 용)
+    force = "--force" in sys.argv
+
     print("=" * 55)
     print("선거 개요 자동 업데이트 (광역단체장) — narrative 모드")
     print(f"실행 시각: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"모델: {MODEL}")
+    if force:
+        print("모드: FORCE — hash/stale 무시, 전 지역 강제 재생성")
     print("=" * 55)
 
     candidates = load_candidates()
@@ -241,8 +246,8 @@ def main():
         prev = current.get("regions", {}).get(region_key, {})
 
         # hash 가 같고, 기존 출력이 있고, 마지막 갱신이 MAX_STALE_DAYS 미만일 때만 skip.
-        # stale 하면 hash 일치해도 재생성 강제 (이전엔 이 체크가 빠져 있었음).
-        if prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
+        # --force 면 이 검사 자체를 건너뜀 (배포 직전 전량 갱신).
+        if not force and prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
             print(f"  변화 없음, 기존 유지")
             updated_regions[region_key] = prev
             skipped += 1
@@ -315,10 +320,12 @@ def main():
     print("=" * 55)
 
 
-def update_superintendent_overview(api_key, current):
+def update_superintendent_overview(api_key, current, force=False):
     """교육감 개요 업데이트 — narrative 모드"""
     print("\n" + "=" * 55)
     print("교육감 개요 업데이트 — narrative 모드")
+    if force:
+        print("모드: FORCE — hash/stale 무시, 전 지역 강제 재생성")
     print("=" * 55)
 
     supt_data = {}
@@ -341,7 +348,7 @@ def update_superintendent_overview(api_key, current):
         prev_hash = state_entry.get("contentHash")
         prev = current.get("superintendent", {}).get(rk, {})
 
-        if prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
+        if not force and prev_hash == nh and prev.get("headline") and not _is_state_stale(state_entry):
             print(f"  변화 없음, 기존 유지")
             updated[rk] = prev
             skipped += 1
@@ -403,6 +410,7 @@ def main_extended():
         print(f"[오류] {API_KEY_ENV} 미설정")
         sys.exit(1)
 
+    force = "--force" in sys.argv
     current = load_current_overview()
     target_type = None
     for arg in sys.argv[1:]:
@@ -410,7 +418,7 @@ def main_extended():
             target_type = arg.split("=")[1]
 
     if target_type == "superintendent" or target_type == "all":
-        supt = update_superintendent_overview(api_key, current)
+        supt = update_superintendent_overview(api_key, current, force=force)
         current["superintendent"] = supt
 
     if target_type in ("superintendent", "all"):

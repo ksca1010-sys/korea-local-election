@@ -432,6 +432,7 @@ def main():
     parser.add_argument("--region", type=str, nargs="+", help="특정 시도만 처리 (예: gyeonggi gyeongnam)")
     parser.add_argument("--district", type=str, help="단일 시군구만 처리 (예: 강남구)")
     parser.add_argument("--stale-only", action="store_true", help="2일 이상 미갱신 지역만")
+    parser.add_argument("--force", action="store_true", help="hash/stale 무시, 전 지역 강제 재생성 (배포 전 사용)")
     parser.add_argument("--dry-run", action="store_true", help="뉴스 수집만, LLM 미호출")
     args = parser.parse_args()
 
@@ -445,6 +446,12 @@ def main():
     print("기초단체장 개요 업데이트 v2")
     print(f"실행: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     print(f"모델: {MODEL}")
+    if args.force:
+        # --force 는 --stale-only 를 덮어쓴다 (배포 직전 전량 갱신 용)
+        if args.stale_only:
+            print("[force] --stale-only 무시")
+            args.stale_only = False
+        print("모드: FORCE — 전 지역 강제 재생성")
     if args.stale_only:
         print("모드: stale-only (2일+ 미갱신)")
     if args.dry_run:

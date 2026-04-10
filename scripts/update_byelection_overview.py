@@ -74,6 +74,8 @@ def fetch_byelection_news(district_name):
 def main():
     parser = argparse.ArgumentParser(description="재보궐 개요 생성")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--force", action="store_true",
+                        help="hash 무시, 전 선거구 강제 재생성 (배포 전 사용)")
     args = parser.parse_args()
 
     load_env()
@@ -113,7 +115,7 @@ def main():
         prev_hash = bye_state.get(key, {}).get("contentHash")
         prev = overview.get("byelection", {}).get(key, {})
 
-        if prev_hash == nh and prev.get("headline"):
+        if not args.force and prev_hash == nh and prev.get("headline"):
             print(f"  변화 없음, 기존 유지")
             skipped += 1
             continue
