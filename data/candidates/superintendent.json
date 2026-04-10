@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-09",
+    "lastUpdated": "2026-04-10",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-09T01:24:48.036057",
+    "lastFactCheck": "2026-04-10T01:34:27.272332",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -1780,7 +1780,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "RUMORED",
+        "status": "EXPECTED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1790,13 +1790,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-09",
+          "date": "2026-04-10",
           "type": "status_change",
           "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "DECLARED",
-          "sourceUrl": "미제공",
-          "sourceLabel": "언론사명 미제공",
-          "sourcePublishedAt": "2026-04-09"
+          "previous": "RUMORED",
+          "sourceUrl": "",
+          "sourceLabel": "제주언론",
+          "sourcePublishedAt": "2026-04-10"
         },
         "pledgeCategories": [
           {
@@ -1814,7 +1814,7 @@
         "name": "고의숙",
         "stance": "중도",
         "career": "전 교육의원",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "1인 1노트북 대신 입학 준비금 지급",
@@ -1824,13 +1824,13 @@
           "4.3인권교육상 신설"
         ],
         "_lastChange": {
-          "date": "2026-04-08",
+          "date": "2026-04-10",
           "type": "status_change",
-          "detail": "뉴스에서 '예비후보'로 표기되고 있으며, '고의숙 제주교육감 예비후보', '고의숙 예비후보' 등의 표현으로 예비후보 상태 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "미제공",
-          "sourceLabel": "복수 언론사",
-          "sourcePublishedAt": "2026-04-08"
+          "detail": "고의숙 제주도교육감 예비후보, 서귀포 선대위 출범 / 고의숙 예비후보 발언 다수 보도",
+          "previous": "EXPECTED",
+          "sourceUrl": "",
+          "sourceLabel": "제주언론",
+          "sourcePublishedAt": "2026-04-10"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1863,7 +1863,7 @@
         "name": "송문석",
         "stance": "중도",
         "career": "정보 없음",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "제주형 책임교육 모델 구축"
@@ -1872,13 +1872,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-08",
+          "date": "2026-04-10",
           "type": "status_change",
-          "detail": "뉴스에서 '송문석 제주교육감 예비후보', '송문석 교육감 선거 예비후보' 등의 표현으로 예비후보 상태 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "미제공",
-          "sourceLabel": "복수 언론사",
-          "sourcePublishedAt": "2026-04-08"
+          "detail": "송문석 제주교육감 예비후보 \"교사 업무 교실.수업 중심 전환\"",
+          "previous": "EXPECTED",
+          "sourceUrl": "",
+          "sourceLabel": "제주언론",
+          "sourcePublishedAt": "2026-04-10"
         },
         "pledgeCategories": [
           {

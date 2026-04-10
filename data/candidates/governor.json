@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-09",
+    "lastUpdated": "2026-04-10",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-09T01:22:35.857391",
+    "lastFactCheck": "2026-04-10T01:31:52.175009",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -22,7 +22,7 @@
         "age": 57,
         "career": "3선 성동구청장 / 前 임종석 의원 보좌관",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "시민 중심 행정 혁신",
@@ -31,7 +31,16 @@
         ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-10",
+          "type": "status_change",
+          "detail": "민주당 서울시장 후보 확정 — '정원오 서울시장 후보 선출, 박주민·전현희 \"승복\"'",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "정치 뉴스",
+          "sourcePublishedAt": "2026-04-10"
+        }
       },
       {
         "id": "seoul-2",
@@ -190,7 +199,7 @@
         "age": null,
         "career": "現 국회의원 (북구갑) / 前 해양수산부 장관",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "해수부 공공기관 부산 이전",
@@ -198,10 +207,13 @@
           "해사전문법원 신설"
         ],
         "_lastChange": {
-          "date": "2026-03-16",
+          "date": "2026-04-10",
           "type": "status_change",
-          "detail": "2026.03.10 부산시장 출마 선언",
-          "previous": "EXPECTED"
+          "detail": "민주당 부산시장 후보 확정 — '정원오·전재수 본선행… 민주당, 서울·부산 후보 확정'",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "정치 뉴스",
+          "sourcePublishedAt": "2026-04-10"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -304,20 +316,20 @@
         "age": 52,
         "career": "前 국민의힘 대표 / 前 법무부장관 / 검사장 출신",
         "photo": null,
-        "status": "DECLARED",
+        "status": "RUMORED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-08",
+          "date": "2026-04-10",
           "type": "status_change",
-          "detail": "서울특별시 광역단체장 후보로 출마선언 추가 확인 — '[맞수다] 박근혜-김부겸 진짜 만나면?‥조국-한동훈 부산 맞대결 판세는...' 및 부산과 서울 동시 출마 관련 보도",
-          "previous": "RUMORED",
-          "sourceUrl": "기사URL미제공",
-          "sourceLabel": "중앙일보",
-          "sourcePublishedAt": "2026-04-08"
+          "detail": "한동훈이 부산시장 후보가 아닌 북구갑 출마가 유력한 것으로 보도됨 — '한동훈, 北구갑 출마 유력...국힘, 韓에 길 열어주면 부산시장...'",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "정치 뉴스",
+          "sourcePublishedAt": "2026-04-10"
         }
       }
     ],

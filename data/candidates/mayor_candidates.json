@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-09",
+    "lastUpdated": "2026-04-10",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-09T02:06:16.844512",
-    "lastSyncFromOverview": "2026-04-09",
+    "lastFactCheck": "2026-04-10T02:26:24.472403",
+    "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-09T02:14:00.920483",
+    "lastPledgeCollection": "2026-04-10T02:35:07.152962",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-04-09",
+    "lastByelectionSync": "2026-04-10",
     "lastCrossValidation": "2026-04-04"
   },
   "candidates": {
@@ -2280,6 +2280,17 @@
           "pledges": [
             "원도심 공동화 해결"
           ]
+        },
+        {
+          "name": "천기옥",
+          "party": "ppp",
+          "career": "전 부산시의원",
+          "status": "NOMINATED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.search.naver.com",
+          "sourceLabel": "언론사",
+          "sourcePublishedAt": "2026-04-10"
         }
       ],
       "영도구": [
@@ -2622,6 +2633,14 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "정성철이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "기장군": [
@@ -2672,7 +2691,10 @@
           "career": "전 기장군의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "주거권 맞춤 공약",
+            "의료권 맞춤 공약"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -4416,7 +4438,9 @@
           "career": "(현) 더불어민주당 당대표 특별보좌역 정책특보",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "노후주거지 정비"
+          ]
         }
       ],
       "부평구": [
@@ -6387,7 +6411,7 @@
           "name": "조원휘",
           "party": "ppp",
           "career": "대전시의회 의장",
-          "status": "NOMINATED",
+          "status": "출마선언",
           "dataSource": "news",
           "pledges": [
             "정체된 16년 유성구 미래 재건"
@@ -6396,13 +6420,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-03",
+            "date": "2026-04-10",
             "type": "status_change",
-            "detail": "국민의힘 대전 공천, 박희조·최충규·조원휘 '단수 확정'",
-            "previous": "EXPECTED",
-            "sourceUrl": null,
-            "sourceLabel": "뉴스",
-            "sourcePublishedAt": "2026-04-03"
+            "detail": "조원휘 의장, 지역 현안에서 선거전 본격화 / 조원휘 의장, '유성구청장 출마선언' / 조원휘 대전시의회 의장, 유성구청장 출마선언…'16년 발 묶인 유성 이...",
+            "previous": "NOMINATED",
+            "sourceUrl": "https://news.daum.net",
+            "sourceLabel": "중도일보",
+            "sourcePublishedAt": "2026-03-31"
           }
         }
       ],
@@ -6455,20 +6479,20 @@
           "name": "박종래",
           "party": "democratic",
           "career": "전 대덕구 지역위원장",
-          "status": "DECLARED",
+          "status": "출마선언",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-09",
+            "date": "2026-04-10",
             "type": "status_change",
-            "detail": "박종래 출판기념회, 대덕구청장 선거 '전초전' 분위기",
-            "previous": "[경선 결선 진출]",
-            "sourceUrl": "https://www.daejonews.co.kr",
-            "sourceLabel": "대전뉴스",
-            "sourcePublishedAt": "2026-04-01"
+            "detail": "박종래 출판기념회, 대덕구청장 선거 '전초전' 분위기 / 기본사회 손잡은 박종래 대덕구청장 예비후보, 정책연대 시동 / 민주당 대전 대덕구청장 후보 경선 결과 김찬술ㆍ박종래 결선 진출",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.daum.net",
+            "sourceLabel": "중도일보",
+            "sourcePublishedAt": "2026-04-02"
           }
         },
         {
@@ -6584,7 +6608,7 @@
           "name": "임현철",
           "party": "ppp",
           "career": "전 울산시 대변인",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "태화강역·삼산·옥동 3대 핵심축 개발",
@@ -6594,13 +6618,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "국민의힘 울산 남구청장 후보에 임현철 확정",
-            "previous": "국민의힘 공천 확정",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "울산시선거관리위원회",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "국민의힘 울산 남구청장 후보에 임현철 전 市대변인 확정",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -6647,7 +6671,7 @@
           "name": "최덕종",
           "party": "democratic",
           "career": "울산 남구의원",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "남구 대전환 주도"
@@ -6656,13 +6680,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "울산 민주당, 남구 최덕종 기초단체장 후보 확정",
-            "previous": "DECLARED",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "민주당 경선",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "민주당 울산시당, 최덕종 남구청장·김대연 동구청장 후보 확정",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -6776,20 +6800,20 @@
           "name": "김대연",
           "party": "democratic",
           "career": "김태선 국회의원실 수석보좌관",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "울산 민주당, 동구 김대연 기초단체장 후보 확정",
-            "previous": "DECLARED",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "민주당 경선",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "민주당 울산시당, 최덕종 남구청장·김대연 동구청장 후보 확정",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -6824,9 +6848,18 @@
           "partyKey": "ppp",
           "partyName": "국민의힘",
           "career": "(전)울산광역시 제4대 동구의회의원(전반기 의장)",
-          "status": "DECLARED",
+          "status": "NOMINATED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [],
+          "_lastChange": {
+            "date": "2026-04-10",
+            "type": "nominated",
+            "detail": "국힘 동구청장 후보에 천기옥 前시의원 확정",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
+          }
         },
         {
           "name": "이장우",
@@ -6846,7 +6879,7 @@
           "name": "박천동",
           "party": "ppp",
           "career": "현 울산 북구청장 (2선) / 3선 도전, 당내 단수",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "청년 유입 및 기업 유치를 통한 새 성장동력 마련"
@@ -6855,20 +6888,20 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "국민의힘 울산시당, 박천동 북구청장 공천 확정",
-            "previous": "국민의힘 공천 확정",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "국민의힘 중앙당",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "국민의힘 울산시당, 박천동 북구청장·이순걸 울주군수 단수 공천",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
           "name": "백운찬",
           "party": "democratic",
           "career": "전 울산시의원 / 교통공약 발표",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "트램 2호선 시 경계까지 1km 연장",
@@ -6878,20 +6911,20 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "백운찬·이동권, 북구청장 경선후보 확정",
-            "previous": "더불어민주당 경선 확정",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "민주당 경선",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "백운찬·이동권, 북구청장 후보 자리 격돌",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
           "name": "이동권",
           "party": "democratic",
           "career": "전 북구청장",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "아동 간식 바우처 지원",
@@ -6901,13 +6934,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "백운찬·이동권, 북구청장 경선후보 확정",
-            "previous": "더불어민주당 경선 확정",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "민주당 경선",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "백운찬·이동권, 북구청장 후보 자리 격돌",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -6939,7 +6972,7 @@
           "name": "이순걸",
           "party": "ppp",
           "career": "현 울주군 군수",
-          "status": "nominated",
+          "status": "NOMINATED",
           "dataSource": "incumbent",
           "pledges": [
             "울주병원 상반기 개원",
@@ -6949,13 +6982,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-10",
             "type": "nominated",
-            "detail": "국민의힘 울산시당, 이순걸 울주군수 공천 확정",
-            "previous": "국민의힘 공천 확정",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "국민의힘 중앙당",
-            "sourcePublishedAt": "2026-04-07"
+            "detail": "국민의힘 울산시당, 박천동 북구청장·이순걸 울주군수 단수 공천",
+            "previous": "nominated",
+            "sourceUrl": "https://news.naver.com",
+            "sourceLabel": "네이버뉴스",
+            "sourcePublishedAt": "2026-04-10"
           }
         },
         {
@@ -7026,6 +7059,17 @@
           "pledges": [
             "건강한 보수 재건"
           ]
+        },
+        {
+          "name": "황명필",
+          "party": "reform",
+          "career": "조국혁신당 전 최고위원",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://news.naver.com",
+          "sourceLabel": "네이버뉴스",
+          "sourcePublishedAt": "2026-04-10"
         }
       ]
     },
@@ -7239,7 +7283,9 @@
           "career": "(전)의정부시공무원노동조합 사무실장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "기본이 탄탄한 도시 조성"
+          ]
         }
       ],
       "안양시": [
@@ -8558,7 +8604,9 @@
           "career": "",
           "status": "EXPECTED",
           "dataSource": "overview_narrative",
-          "pledges": []
+          "pledges": [
+            "운정 3호선 연장"
+          ]
         }
       ],
       "여주시": [
@@ -9241,7 +9289,10 @@
           "career": "(현)포천시의회 부의장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "AI중심 국가산단 조성",
+            "일자리 창출 컴팩트"
+          ]
         },
         {
           "name": "이명원",
@@ -11239,7 +11290,7 @@
         {
           "name": "손인석",
           "party": "independent",
-          "career": "",
+          "career": "정보 미확인",
           "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
@@ -16915,6 +16966,22 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "안병윤이",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
+        },
+        {
+          "name": "조사에서",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "경산시": [
@@ -18276,6 +18343,14 @@
           "pledges": [
             "어민들을 위한 저도 정책"
           ]
+        },
+        {
+          "name": "황양득도",
+          "party": "independent",
+          "career": "",
+          "status": "DECLARED",
+          "dataSource": "overview_narrative",
+          "pledges": []
         }
       ],
       "의령군": [
@@ -18335,7 +18410,9 @@
           "career": "(전)제7대 의령군의회의원(의장 역임)",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "청년 공약"
+          ]
         },
         {
           "name": "남택욱",
