@@ -16,7 +16,7 @@ from pathlib import Path
 
 from election_overview_utils import (
     BASE_DIR, OVERVIEW_PATH, MAYOR_CANDIDATES_PATH, POLLS_PATH,
-    MODEL, API_KEY_ENV, ELECTION_DATE, REGION_NAMES,
+    MODEL, API_KEY_ENV, ELECTION_DATE, REGION_NAMES, REGION_SHORT,
     load_env, search_latest_news, get_local_media_info_merged,
     call_llm, parse_response, validate_overview, load_current_overview,
     build_narrative_prompt, extract_facts,
@@ -54,7 +54,8 @@ def fetch_news_v2(region_name, district, region_key):
     seen = set()
 
     # 동일 이름 다른 지역 구분용 (예: 대전 동구 vs 대구 동구)
-    short_region = region_name.replace("특별시","").replace("광역시","").replace("특별자치도","").replace("특별자치시","").replace("도","")
+    # 언론 보도에서 실제 사용되는 2글자 축약명을 직접 테이블 조회.
+    short_region = REGION_SHORT.get(region_key, region_name)
 
     # 동명이구 목록 (여러 시도에 같은 이름이 존재하는 구)
     AMBIGUOUS_DISTRICTS = {"동구","서구","중구","남구","북구"}
@@ -88,12 +89,23 @@ def fetch_news_v2(region_name, district, region_key):
                     else:
                         all_news.append(item)
 
-    # 단계 1: 기본 선거 쿼리 (4 호출) — 시도명 포함으로 정밀화
+    # 단계 1: 기본 선거 쿼리 (9 호출) — 시도명 포함으로 정밀화
+    # 한국 선거 뉴스 관용어를 카테고리별로 분리. 네이버 검색은 공백=AND 해석이라
+    # "경선 공천 확정" 같은 복합 키워드는 매치율이 극히 낮아 쪼개서 호출.
     base_queries = [
+        # A. 후보 확정 이벤트 (경선·공천·본선행)
         f'"{short_region}" "{district}" {title} 선거',
-        f'"{short_region}" "{district}" {title} 공천 출마',
-        f'"{district}" 현안 쟁점 사업',
-        f'"{district}" {title} 공약 정책',
+        f'"{short_region}" "{district}" {title} 경선',
+        f'"{short_region}" "{district}" {title} 공천 확정',
+        f'"{short_region}" "{district}" {title} 본선행',
+        # B. 판세 재편 이벤트 (컷오프·단일화·사퇴)
+        f'"{short_region}" "{district}" {title} 컷오프',
+        f'"{short_region}" "{district}" {title} 단일화',
+        f'"{short_region}" "{district}" {title} 사퇴',
+        # C. 출마 등록
+        f'"{short_region}" "{district}" {title} 출마선언',
+        # D. 현안·공약 (기존 2개 쿼리 병합)
+        f'"{district}" {title} 공약 현안 쟁점',
     ]
     for q in base_queries:
         _add(search_latest_news(q, display=5))

@@ -6,6 +6,7 @@
 
 import json
 import os
+import re
 import sys
 import time
 import html as _html
@@ -50,6 +51,18 @@ REGION_NAMES = {
     "gyeongnam": "경상남도", "jeju": "제주특별자치도"
 }
 
+# 실제 언론 보도에서 광역을 지칭할 때 쓰는 2글자 축약명.
+# 기존 .replace("도","") 방식은 전라남/경상남/충청북 처럼 잘못된 축약을 만들어
+# 네이버 검색 쿼리에서 매치율이 극히 낮았다 (실제 기사는 전남/경남/충북 사용).
+REGION_SHORT = {
+    "seoul": "서울", "busan": "부산", "daegu": "대구",
+    "incheon": "인천", "gwangju": "광주", "daejeon": "대전",
+    "ulsan": "울산", "sejong": "세종", "gyeonggi": "경기",
+    "gangwon": "강원", "chungbuk": "충북", "chungnam": "충남",
+    "jeonbuk": "전북", "jeonnam": "전남", "gyeongbuk": "경북",
+    "gyeongnam": "경남", "jeju": "제주",
+}
+
 
 def load_env():
     """Load .env file if present"""
@@ -62,7 +75,16 @@ def load_env():
 
 
 def search_latest_news(query, display=5):
-    """네이버 뉴스 API로 최신 기사 검색"""
+    """네이버 뉴스 API로 최신 기사 검색.
+
+    반환 포맷: "[pub] title :: description"
+    - 네이버 API 의 description 필드(본문 일부 발췌)를 함께 담아,
+      집합 기사(예: "민주당 전남 8곳 본선 확정") 처럼 제목에 특정 시군구명이
+      없어도 본문에 언급돼 있으면 지역 관련성 필터(_is_relevant)가 매치할 수
+      있도록 한다.
+    - description 은 HTML 태그 제거·엔티티 해제 후 200자로 제한하여 토큰
+      비용을 관리한다.
+    """
     import httpx
 
     client_id = os.environ.get("NAVER_CLIENT_ID", "")
@@ -77,16 +99,23 @@ def search_latest_news(query, display=5):
     }
     params = {"query": query, "display": display, "sort": "date"}
 
+    def _clean(s):
+        s = s.replace("<b>", "").replace("</b>", "")
+        s = re.sub(r"<[^>]+>", "", s)
+        return _html.unescape(s).strip()
+
     try:
         resp = httpx.get(url, headers=headers, params=params, timeout=10)
         resp.raise_for_status()
         data = resp.json()
         results = []
         for item in data.get("items", []):
-            title = item.get("title", "").replace("<b>", "").replace("</b>", "")
-            title = _html.unescape(title)
+            title = _clean(item.get("title", ""))
+            desc = _clean(item.get("description", ""))
+            if len(desc) > 200:
+                desc = desc[:200] + "…"
             pub = item.get("pubDate", "")
-            results.append(f"[{pub[:16]}] {title}")
+            results.append(f"[{pub[:16]}] {title} :: {desc}")
         return results
     except Exception as e:
         print(f"  [뉴스검색 오류] {e}")
@@ -525,8 +554,12 @@ def build_narrative_prompt(*, region_name, election_type_label, district=None,
 - "현직 재선 도전 vs 야당 도전" 같은 어디에나 맞는 headline
 - 특정 후보에 유리한 뉘앙스
 - **narrative 안에 여론조사 지지율 수치(%)를 넣지 말 것** — 여론조사는 별도 탭에서 보여주므로 개요에서는 "앞서고 있다" "경합 중이다" 수준으로만 언급. "홍길동(26.1%)" 같은 표현 금지.
+- **경선 결과·공천 확정·컷오프·사퇴 같은 확정 이벤트가 뉴스 섹션에 명시돼 있는데 narrative 에서 빼거나 "경합 중" "단일화 가능성" 으로 얼버무리는 것.** 확정된 사실은 확정형으로 서술해야 함.
 
 ### 반드시 할 것
+- **경선·공천 확정·컷오프·단일화·사퇴·본선행 같은 빅뉴스가 뉴스 섹션에 있으면 narrative 에 반드시 명시적으로 반영할 것.** 한국 지방선거에서 경선은 본선보다도 결정적인 이벤트임. 정당 공식 발표 또는 Tier 1 언론이 확인한 건만 쓸 것.
+  - 예) "4월 8일 민주당 전남도당 경선 결과 우승희 군수가 본선행을 확정 (전동평 탈락). 본선에서는 조국혁신당 최영열과 맞붙는다."
+  - 이벤트 날짜가 뉴스에 있으면 반드시 명시 (예: "4월 8일")
 - **그 지역 사람만 고개를 끄덕일 이야기**로 narrative를 시작할 것
 - 이 선거가 **왜 이 지역에서 중요한지**를 생활 언어로 설명
 - 후보자 나열이 아니라 **쟁점 중심** ("누가 나왔나"보다 "뭘 두고 싸우는가")

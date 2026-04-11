@@ -79,16 +79,34 @@ def _content_hash(news, candidates=None, polls=None):
 
 
 def fetch_news_for_region(region_name, election_type="governor"):
-    """선거 유형별 최신 뉴스 검색"""
+    """선거 유형별 최신 뉴스 검색.
+
+    네이버 검색은 공백=AND 해석이라 "공천 경선" 같은 복합 키워드는 매치율이
+    낮음. 경선·단일화·컷오프 같은 빅뉴스 이벤트를 카테고리별로 분리 검색.
+    """
     queries = {
         "governor": [
+            # A. 후보 확정 이벤트
             f"{region_name} 지방선거 시장 도지사 후보",
-            f"{region_name} 지방선거 공천 경선",
+            f"{region_name} 시장 도지사 경선",
+            f"{region_name} 시장 도지사 공천 확정",
+            f"{region_name} 시장 도지사 본선행",
+            # B. 판세 재편 이벤트
+            f"{region_name} 시장 도지사 컷오프",
+            f"{region_name} 시장 도지사 단일화",
+            f"{region_name} 시장 도지사 사퇴",
+            # C. 출마 등록
+            f"{region_name} 시장 도지사 출마선언",
+            # D. 현안·쟁점
             f"{region_name} 선거 현안 쟁점",
         ],
         "superintendent": [
+            # 교육감은 경선이 드물지만 단일화·사퇴는 동일
             f"{region_name} 교육감 선거 후보",
             f"{region_name} 교육감 출마",
+            f"{region_name} 교육감 경선",
+            f"{region_name} 교육감 단일화",
+            f"{region_name} 교육감 사퇴",
             f"{region_name} 교육 현안",
         ],
     }
@@ -100,7 +118,7 @@ def fetch_news_for_region(region_name, election_type="governor"):
             if item not in seen:
                 seen.add(item)
                 all_news.append(item)
-    return all_news[:10]
+    return all_news[:15]
 
 
 def load_candidates():
