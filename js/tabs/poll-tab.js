@@ -24,58 +24,6 @@ const PollTab = (() => {
         }
     }
 
-    // ── 통합 추세 계산 (가중 이동평균) ──
-
-    function _calcConsensusTrend(polls, windowDays = 21) {
-        // KST 기준 cutoff 계산 (CLAUDE.md: 모든 날짜 비교는 getKST 사용)
-        const kstNow = (typeof ElectionCalendar !== 'undefined' && ElectionCalendar.getKST)
-            ? ElectionCalendar.getKST().getTime() : Date.now();
-        const cutoff = kstNow - windowDays * 86400000;
-        const recent = polls.filter(p => {
-            const d = p.surveyDate?.end || p.publishDate || '';
-            return d && Date.parse(d) >= cutoff && p.results?.some(r => r.support > 0);
-        });
-
-        if (recent.length < 2) return null;
-
-        const candidateMap = {};
-        let totalWeight = 0;
-        let totalMargin = 0;
-
-        recent.forEach(p => {
-            const surveyEnd = Date.parse(p.surveyDate?.end || p.publishDate || '');
-            const recency = Math.max(0.1, 1 - (kstNow - surveyEnd) / (windowDays * 86400000));
-            const sampleWeight = Math.sqrt((p.method?.sampleSize || 500) / 1000);
-            const weight = recency * sampleWeight;
-            totalWeight += weight;
-            totalMargin += (p.method?.marginOfError || 3) * weight;
-
-            (p.results || []).forEach(r => {
-                if (!r.candidateName || r.support <= 0) return;
-                if (!candidateMap[r.candidateName]) candidateMap[r.candidateName] = { sum: 0, weight: 0 };
-                candidateMap[r.candidateName].sum += r.support * weight;
-                candidateMap[r.candidateName].weight += weight;
-            });
-        });
-
-        const estimates = {};
-        for (const [name, data] of Object.entries(candidateMap)) {
-            if (data.weight > 0) estimates[name] = data.sum / data.weight;
-        }
-
-        if (Object.keys(estimates).length < 2) return null;
-
-        return { estimates, pollCount: recent.length, windowDays, avgMargin: totalWeight > 0 ? totalMargin / totalWeight : 3 };
-    }
-
-    function _findCandidateParty(polls, candidateName) {
-        for (const p of polls) {
-            const r = (p.results || []).find(r => r.candidateName === candidateName);
-            if (r?.party) return r.party;
-        }
-        return 'independent';
-    }
-
     // ── 돌출 조사 감지 ──
 
     function _detectOutliers(polls) {
@@ -504,40 +452,7 @@ const PollTab = (() => {
             return;
         }
 
-        // ── 0. 통합 추세 요약 (가중 이동평균) ──
         latestSection.style.display = 'none';
-        const consensusSummary = _calcConsensusTrend(polls);
-        if (consensusSummary) {
-            const summaryCard = document.createElement('div');
-            summaryCard.className = 'poll-result-card';
-            summaryCard.style.cssText = 'margin-bottom:var(--space-16);padding:0;background:transparent;';
-
-            const sorted = Object.entries(consensusSummary.estimates).sort((a, b) => b[1] - a[1]);
-            const maxEst = sorted.length > 0 ? sorted[0][1] : 1;
-            const avgMargin = consensusSummary.avgMargin || 3;
-
-            const allBars = sorted.map(([name, support]) => {
-                const cand = _findCandidateParty(polls, name);
-                const pc = cand ? ElectionData.getPartyColor(cand) : 'var(--text-muted)';
-                const barW = maxEst > 0 ? (support / maxEst * 100) : 0;
-                return `<div class="poll-card-result">
-                    <div class="poll-card-result-info">
-                        <span class="poll-card-candidate" style="font-size:var(--text-body);">${name}</span>
-                        <span class="poll-card-support" style="font-size:var(--text-body);">${support.toFixed(1)}%</span>
-                    </div>
-                    <div class="poll-card-bar-bg">
-                        <div class="poll-card-bar" style="width:${barW}%;background:${pc};"></div>
-                    </div>
-                </div>`;
-            }).join('');
-
-            summaryCard.innerHTML = `
-                <div style="font-size:var(--text-caption);color:var(--text-muted);margin-bottom:var(--space-10);">여론조사 종합 · 최근 ${consensusSummary.windowDays}일 · ${consensusSummary.pollCount}건 집계</div>
-                ${allBars}
-                <div style="font-size:var(--text-micro);color:var(--text-disabled);padding:4px 0 0;">등록 여론조사 기반 가중 집계 (참고용, 예측 아님)</div>
-            `;
-            trendsSection.appendChild(summaryCard);
-        }
 
         // ── 1. 돌출 조사 감지 ──
         const outlierInfo = _detectOutliers(polls);
