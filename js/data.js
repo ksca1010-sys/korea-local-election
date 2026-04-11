@@ -768,7 +768,9 @@ const ElectionData = (() => {
         data: {
             democratic: 48,
             ppp: 20,
+            reform: 1,
             newReform: 3,
+            progressive: 1,
             independent: 25
         }
     };

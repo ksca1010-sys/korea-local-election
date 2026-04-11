@@ -174,11 +174,21 @@ def extract_party_support(seq_no):
     clean_text = re.sub(r'<[^>]+>', ' ', text_block)
     clean_text = re.sub(r'\s+', ' ', clean_text)
 
-    # 정당별 지지율 추출: "더불어민주당 46%" 패턴
+    # 정당별 지지율 추출: "더불어민주당 46%" 패턴 (당명 바로 뒤에 숫자)
     for party_name, key in PARTY_KEY_MAP.items():
         pct_match = re.search(rf'{re.escape(party_name)}\s*(\d+)\s*%', clean_text)
         if pct_match:
             result['data'][key] = int(pct_match.group(1))
+
+    # "조국혁신당, 진보당, 이외 정당/단체 각각 1%" 패턴 처리
+    # 갤럽이 하위 지지율 정당을 묶어 표기하는 관행 — 개별 당명 뒤에 숫자가 없어
+    # 위 루프에서 누락. "각각 N%" 앞쪽 60자 윈도우에서 당명 스캔.
+    for each_match in re.finditer(r'각각\s*(\d+)\s*%', clean_text):
+        group_pct = int(each_match.group(1))
+        window = clean_text[max(0, each_match.start() - 60):each_match.start()]
+        for party_name, key in PARTY_KEY_MAP.items():
+            if party_name in window and key not in result['data']:
+                result['data'][key] = group_pct
 
     # 무당층 추출: "무당(無黨)층 26%" 또는 "무당층 26%"
     indep_match = re.search(r'무당[^층]*층\s*(\d+)\s*%', clean_text)
