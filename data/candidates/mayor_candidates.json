@@ -2021,7 +2021,7 @@
           "name": "강희은",
           "party": "democratic",
           "career": "중구의회 부의장",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "해사법원 유치",
@@ -2187,7 +2187,7 @@
           "name": "강철호",
           "party": "ppp",
           "career": "현 부산시의원 (동구1) / 부산시의회 운영위원장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "북항 야구장 건설"
@@ -2302,7 +2302,7 @@
           "name": "안성민",
           "party": "ppp",
           "career": "현 부산시의회 의장 (4선 시의원)",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "원도심 재생"
@@ -2337,7 +2337,7 @@
           "name": "신기삼",
           "party": "democratic",
           "career": "영도구의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "3·3·3 원칙으로 현장 행정",
@@ -2719,7 +2719,7 @@
           "name": "김쌍우",
           "party": "independent",
           "career": "전 부산시의회 의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.naver.com",
@@ -2756,7 +2756,7 @@
           "name": "노재갑",
           "party": "ppp",
           "career": "전 부산시의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "사하를 중심 도시로 도약",
@@ -2770,7 +2770,7 @@
           "name": "이복조",
           "party": "ppp",
           "career": "부산시의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "사하 잠재력 터뜨리기",
@@ -2784,7 +2784,7 @@
           "name": "이성권",
           "party": "ppp",
           "career": "전 부산시 경제부시장",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "지방교부세 법정율 인상"
@@ -2897,7 +2897,7 @@
           "partyKey": "democratic",
           "partyName": "더불어민주당",
           "career": "(전)더불어민주당 금정구 지역위원장",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "nec_precand",
           "pledges": [
             "해사법원 유치",
@@ -2944,7 +2944,7 @@
           "name": "김진선",
           "party": "ppp",
           "career": "36년 공직, 전 국민의힘 강서병 당협위원장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
             "36년 공직 경험으로 살기 좋은 강서구 조성"
@@ -2979,7 +2979,7 @@
           "name": "추연길",
           "party": "democratic",
           "career": "부산시의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "해수욕장 공약"
@@ -3095,7 +3095,7 @@
           "name": "김진",
           "party": "democratic",
           "career": "(전)수영구의회 의장",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "verified",
           "pledges": [
             "해사법원 유치",
@@ -3147,7 +3147,7 @@
           "name": "조병길",
           "party": "newReform",
           "career": "현 사상구 구청장",
-          "status": "[사퇴 확정]",
+          "status": "WITHDRAWN",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
@@ -3169,7 +3169,7 @@
           "name": "서태경",
           "party": "democratic",
           "career": "민주당 사상구 지역위원장 / 전 청와대 행정비서관",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "걷는 구청장 프로젝트",
@@ -3229,7 +3229,7 @@
           "name": "류규하",
           "party": "ppp",
           "career": "현 중구 구청장",
-          "status": "출마거론",
+          "status": "RUMORED",
           "dataSource": "incumbent",
           "pledges": [
             "중구 완성",
@@ -3309,7 +3309,7 @@
           "name": "정해용",
           "party": "ppp",
           "career": "전 대구시 경제부시장 / 국민의힘 혁신위원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "팔공산 케이블카 재추진",
@@ -3348,7 +3348,7 @@
           "name": "정한숙",
           "party": "reform",
           "career": "(현)조국혁신당 당대표 특보",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "주민 이익 공유제",
@@ -3715,7 +3715,7 @@
           "name": "김대현",
           "party": "ppp",
           "career": "국민의힘 중앙연수위 부위원장 / 전 대구시의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "AI 돌봄 서비스",
@@ -3752,7 +3752,7 @@
           "name": "정일균",
           "party": "ppp",
           "career": "대구시의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": null,
@@ -3772,7 +3772,7 @@
           "name": "전경원",
           "party": "ppp",
           "career": "대구시의원",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "생활이 달라진 수성 건설"
@@ -3848,7 +3848,7 @@
           "name": "김형일",
           "party": "ppp",
           "career": "전 달서구 부구청장",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "생활 교통 개선",
@@ -3886,7 +3886,7 @@
           "name": "손인호",
           "party": "ppp",
           "career": "건축사사무소 대표",
-          "status": "출마거론",
+          "status": "RUMORED",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
@@ -3919,7 +3919,7 @@
           "name": "김용판",
           "party": "ppp",
           "career": "(전)서울경찰청장",
-          "status": "공천확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "claude",
           "pledges": [
             "일·삶의 질 향상"
@@ -4080,7 +4080,7 @@
           "name": "정한숙",
           "party": "reform",
           "career": "조국혁신당 당대표 특보",
-          "status": "공천확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "claude",
           "pledges": [
             "의료 인프라 확충",
@@ -4153,7 +4153,7 @@
           "name": "김종배",
           "party": "ppp",
           "career": "전 인천시의원",
-          "status": "[출마선언 확정]",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
             "승기천 물 보호 및 상습 침수 방지",
@@ -4492,7 +4492,7 @@
           "name": "전영성",
           "party": "reform",
           "career": "지역위원장",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
@@ -4564,7 +4564,7 @@
           "name": "박흥열",
           "party": "democratic",
           "career": "강화군의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
             "국립강화고려박물관 후보지 제안",
@@ -4772,7 +4772,7 @@
           "name": "홍인성",
           "party": "democratic",
           "career": "민주당 당원",
-          "status": "[출마선언 확정]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "영종을 세계도시로"
@@ -4816,7 +4816,7 @@
           "name": "남궁형",
           "party": "democratic",
           "career": "전 인천시의원 / 출판기념회 개최",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "AI 민원 시스템 구축",
@@ -4942,7 +4942,7 @@
           "name": "강남규",
           "party": "democratic",
           "career": "민주당 정책위원회 부의장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "장애인 일자리 확대",
@@ -4966,7 +4966,7 @@
           "name": "김진규",
           "party": "democratic",
           "career": "민주당 당원",
-          "status": "예비후보 등록",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "수도권매립지 생활폐기물 직매립 예외 추진",
@@ -4990,7 +4990,7 @@
           "name": "허숙정",
           "party": "democratic",
           "career": "전 인천시의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "돌봄을 공공의 책임으로"
@@ -5053,7 +5053,7 @@
           "name": "구재용",
           "party": "democratic",
           "career": "전 서구시설공단 이사장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "기본사회",
@@ -5067,7 +5067,7 @@
           "name": "김종인",
           "party": "democratic",
           "career": "전 인천시의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "스마트 명품도시 조성"
@@ -5080,7 +5080,7 @@
           "name": "한승일",
           "party": "ppp",
           "career": "인천 서구의원",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "청라 국제학교 설립",
@@ -5096,7 +5096,7 @@
           "name": "김찬진",
           "party": "ppp",
           "career": "현 동구청장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "인천 해사법원 유치"
@@ -5117,7 +5117,7 @@
           "name": "강범석",
           "party": "ppp",
           "career": "현 서구청장",
-          "status": "[출마거론]",
+          "status": "RUMORED",
           "dataSource": "incumbent",
           "pledges": [
             "국공립어린이집 보육환경 개선"
@@ -5189,7 +5189,7 @@
           "name": "임택",
           "party": "democratic",
           "career": "현 동구 구청장",
-          "status": "[[nominated]] - 공천 확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [
             "분산형 주차장 확대",
@@ -5274,7 +5274,7 @@
           "name": "김성환",
           "party": "independent",
           "career": "경력 미상",
-          "status": "예비후보 등록",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "청년 표심 공략"
@@ -5289,7 +5289,7 @@
           "name": "김이강",
           "party": "democratic",
           "career": "현 서구 구청장",
-          "status": "[[nominated]] - 공천 확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [],
           "sourceUrl": null,
@@ -5347,7 +5347,7 @@
           "name": "김병내",
           "party": "democratic",
           "career": "현 남구 구청장",
-          "status": "[[nominated]] - 공천 확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [
             "경제·문화·교육 중심도시 도약",
@@ -5384,7 +5384,7 @@
           "name": "성현출",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "인구 유출 방어",
@@ -5398,7 +5398,7 @@
           "name": "오은택",
           "party": "democratic",
           "career": "현 남구청장",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "어린이집 회계 문제 개선",
@@ -5434,7 +5434,7 @@
           "partyKey": "democratic",
           "partyName": "더불어민주당",
           "career": "(현) 더불어민주당 정책위 부의장",
-          "status": "nominated",
+          "status": "PRIMARY_WINNER",
           "dataSource": "nec_precand",
           "pledges": [
             "위장전입 강력 대응",
@@ -5468,7 +5468,7 @@
           "name": "신수정",
           "party": "democratic",
           "career": "현 광주시의회 의장",
-          "status": "[[nominated]] - 결선 진출",
+          "status": "PRIMARY",
           "dataSource": "news",
           "pledges": [
             "구조·성장전략 전면 재설계",
@@ -5494,7 +5494,7 @@
           "name": "정다은",
           "party": "democratic",
           "career": "현 광주시의원",
-          "status": "[[nominated]] - 결선 진출",
+          "status": "PRIMARY",
           "dataSource": "news",
           "pledges": [
             "광주특별시 대표도시 북구"
@@ -5530,7 +5530,7 @@
           "name": "노희용",
           "party": "democratic",
           "career": "현 또는 전직 공무원/정치인",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "문화·역사 심폐소생"
@@ -5543,7 +5543,7 @@
           "name": "신정훈",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "nominated",
+          "status": "PRIMARY_WINNER",
           "dataSource": "claude",
           "pledges": [
             "전남 동부청사 대폭 확대",
@@ -5567,7 +5567,7 @@
           "name": "강기정",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "[nominated]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "claude",
           "pledges": [
             "50+ 캠퍼스 (중장년 일자리 거점)",
@@ -5651,7 +5651,7 @@
           "name": "박병규",
           "party": "democratic",
           "career": "현 광산구 구청장",
-          "status": "[[nominated]] - 공천 확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [
             "광산 서남권 경제 중심도시",
@@ -5674,7 +5674,7 @@
           "name": "박수기",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "[[nominated]]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "verified",
           "pledges": [
             "통합특별시 신성장 1번지 광산구 발전"
@@ -5696,7 +5696,7 @@
           "name": "차승세",
           "party": "democratic",
           "career": "민주당 당대표 정무특보",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "21개 동 맞춤형 공약",
@@ -5734,7 +5734,7 @@
           "name": "이종욱",
           "party": "progressive",
           "career": "전 공무원 (30년 공직)",
-          "status": "declared",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.naver.com",
@@ -5749,7 +5749,7 @@
           "name": "박희조",
           "party": "ppp",
           "career": "현 동구 구청장",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [
             "교육 통한 동구 변화",
@@ -5906,7 +5906,7 @@
           "name": "김선광",
           "party": "ppp",
           "career": "현 대전시의원",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "원도심 개선 및 발전",
@@ -6180,7 +6180,7 @@
           "name": "정용래",
           "party": "democratic",
           "career": "현 유성구청장 (민선 7·8기) / 3선 도전",
-          "status": "공천확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "시민의 작은 목소리를 정책으로 담아내기",
@@ -6217,7 +6217,7 @@
           "name": "조원휘",
           "party": "ppp",
           "career": "대전시의회 의장",
-          "status": "[예비후보 등록]",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "정체된 16년 유성구 미래 재건"
@@ -6285,7 +6285,7 @@
           "name": "박종래",
           "party": "democratic",
           "career": "전 대덕구 지역위원장",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [],
           "sourceUrl": null,
@@ -6305,7 +6305,7 @@
           "name": "김안태",
           "party": "democratic",
           "career": "(전) 국회의원 보좌관",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "대전·충남 통합 성공사례 창출"
@@ -6654,7 +6654,7 @@
           "partyKey": "ppp",
           "partyName": "국민의힘",
           "career": "(전)울산광역시 제4대 동구의회의원(전반기 의장)",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "nec_precand",
           "pledges": [],
           "_lastChange": {
@@ -6685,7 +6685,7 @@
           "name": "박천동",
           "party": "ppp",
           "career": "현 울산 북구청장 (2선) / 3선 도전, 당내 단수",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "청년 유입 및 기업 유치를 통한 새 성장동력 마련"
@@ -6778,7 +6778,7 @@
           "name": "이순걸",
           "party": "ppp",
           "career": "현 울주군 군수",
-          "status": "[공천확정]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "incumbent",
           "pledges": [
             "울주병원 상반기 개원",
@@ -6801,7 +6801,7 @@
           "name": "강상규",
           "party": "progressive",
           "career": "前 플랜트건설노조 울산지부장 / 노조활동가",
-          "status": "출마선언 (진보당)",
+          "status": "DECLARED",
           "dataSource": "verified",
           "pledges": [
             "군민·노동자 중심 진보행정 실현"
@@ -6837,7 +6837,7 @@
           "partyKey": "reform",
           "partyName": "조국혁신당",
           "career": "(전) 제7대 울산광역시의회의원",
-          "status": "nominated",
+          "status": "PRIMARY_WINNER",
           "dataSource": "nec_precand",
           "pledges": [
             "복지 신청주의 폐기 및 직권 지원",
@@ -7214,7 +7214,7 @@
           "name": "김정호",
           "party": "ppp",
           "career": "전 경기도의회 국민의힘 대표의원",
-          "status": "공천확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "하안동 철골주차장 재건축 주차빌딩"
@@ -7280,7 +7280,7 @@
           "name": "정장선",
           "party": "democratic",
           "career": "현 평택시장 / 2025.9 정계 은퇴 선언",
-          "status": "사퇴",
+          "status": "WITHDRAWN",
           "dataSource": "news",
           "pledges": [
             "탄소중립 정책 도전적 추진"
@@ -8046,7 +8046,7 @@
           "name": "서철모",
           "party": "democratic",
           "career": "전 화성시장",
-          "status": "하마평",
+          "status": "RUMORED",
           "dataSource": "news",
           "pledges": [],
           "sourceUrl": null,
@@ -8216,7 +8216,7 @@
           "name": "오수봉",
           "party": "democratic",
           "career": "전 하남시장",
-          "status": "하마평",
+          "status": "RUMORED",
           "dataSource": "news",
           "pledges": [
             "스마트 입체 안전도시 조성",
@@ -9268,7 +9268,7 @@
           "name": "서태원",
           "party": "ppp",
           "career": "현 가평군 군수",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "incumbent",
           "pledges": [
             "50대 전략사업 차질없이 추진"
@@ -10945,7 +10945,7 @@
           "name": "박완희",
           "party": "democratic",
           "career": "現 청주시의원 / 환경단체 출신",
-          "status": "[공천확정-결선 후 본선 진출]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "청주 쓰레기 문제 해결 협력",
@@ -10969,7 +10969,7 @@
           "name": "이장섭",
           "party": "democratic",
           "career": "前 국회의원 / 前 충북도 정무부지사",
-          "status": "[공천확정-결선 후 본선 진출]",
+          "status": "PRIMARY_WINNER",
           "dataSource": "news",
           "pledges": [
             "청남대~문의 생태케이블카 설치",
@@ -13222,7 +13222,7 @@
           "name": "조용식",
           "party": "democratic",
           "career": "전 전북경찰청장 / 민주당 당대표 특보",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "news",
           "pledges": [
             "여성친화도시 재도약",
@@ -13739,7 +13739,7 @@
           "name": "이해연",
           "party": "independent",
           "career": "전 무주군의회 의장",
-          "status": "[출마선언]",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "군민 연 200만원 기본소득"
@@ -15872,7 +15872,7 @@
           "name": "안승대",
           "party": "ppp",
           "career": "경력 미상",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "재난안전",
@@ -15912,7 +15912,7 @@
           "name": "정성환",
           "party": "democratic",
           "career": "전 울릉군의회 의장",
-          "status": "공천확정",
+          "status": "PRIMARY_WINNER",
           "dataSource": "claude",
           "pledges": [
             "울릉 항만 예산 확보"
@@ -15982,7 +15982,7 @@
           "name": "여준기",
           "party": "ppp",
           "career": "경력 미상",
-          "status": "출마선언",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [
             "APEC 후속 프로젝트 추진"

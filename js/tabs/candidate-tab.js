@@ -36,6 +36,11 @@ const CandidateTab = (() => {
                     label: '공천확정',
                     style: 'background:rgba(20,184,166,0.14);color:#5eead4;border:1px solid rgba(20,184,166,0.24);'
                 };
+            case 'PRIMARY_WINNER':
+                return {
+                    label: '공천 확정',
+                    style: 'background:rgba(46,125,50,0.16);color:#86efac;border:1px solid rgba(46,125,50,0.30);'
+                };
             case 'PRIMARY':
                 return {
                     label: '경선 참여',
@@ -373,7 +378,7 @@ const CandidateTab = (() => {
         } else {
             // CAND-03: status_priority 모드에서도 WITHDRAWN 제거
             model.candidates = model.candidates.filter(c => c.status !== 'WITHDRAWN');
-            const statusOrder = { NOMINATED: 0, PRIMARY: 1, DECLARED: 2, EXPECTED: 3, RUMORED: 4 };
+            const statusOrder = { NOMINATED: 0, PRIMARY_WINNER: 0.5, PRIMARY: 1, DECLARED: 2, EXPECTED: 3, RUMORED: 4 };
             model.candidates.sort((a, b) => {
                 const sa = statusOrder[a.status] ?? 2.5;
                 const sb = statusOrder[b.status] ?? 2.5;
