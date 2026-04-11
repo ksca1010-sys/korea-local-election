@@ -22,7 +22,68 @@
         "end": "2026-04-09"
       },
       "publishDate": "2026-04-10",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김산",
+          "support": 31.4,
+          "party": null
+        },
+        {
+          "candidateName": "민형배",
+          "support": 21.0,
+          "party": null
+        },
+        {
+          "candidateName": "김중남",
+          "support": 20.9,
+          "party": null
+        },
+        {
+          "candidateName": "김영록",
+          "support": 17.9,
+          "party": null
+        },
+        {
+          "candidateName": "최옥수",
+          "support": 17.0,
+          "party": null
+        },
+        {
+          "candidateName": "김한근",
+          "support": 16.5,
+          "party": null
+        },
+        {
+          "candidateName": "김홍규",
+          "support": 15.4,
+          "party": null
+        },
+        {
+          "candidateName": "나광국",
+          "support": 14.2,
+          "party": null
+        },
+        {
+          "candidateName": "이정운",
+          "support": 13.7,
+          "party": null
+        },
+        {
+          "candidateName": "권혁열",
+          "support": 12.2,
+          "party": null
+        },
+        {
+          "candidateName": "신정훈",
+          "support": 11.2,
+          "party": null
+        },
+        {
+          "candidateName": "강기정",
+          "support": 10.0,
+          "party": null
+        }
+      ],
       "regionKey": "gwangju",
       "municipality": null,
       "electionType": "governor",
@@ -31,7 +92,9 @@
       ],
       "title": "광주광역시 전체    광역단체장선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18181&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-      "registrationDate": "2026-04-10"
+      "registrationDate": "2026-04-10",
+      "_corrected": true,
+      "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
     },
     {
       "nttId": 18180,
@@ -54,7 +117,98 @@
         "end": "2026-04-09"
       },
       "publishDate": "2026-04-10",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "당최훈식",
+          "support": 46.1,
+          "party": null
+        },
+        {
+          "candidateName": "속장영수",
+          "support": 44.1,
+          "party": null
+        },
+        {
+          "candidateName": "김산",
+          "support": 31.4,
+          "party": null
+        },
+        {
+          "candidateName": "박노원",
+          "support": 24.5,
+          "party": null
+        },
+        {
+          "candidateName": "소영호",
+          "support": 23.0,
+          "party": null
+        },
+        {
+          "candidateName": "김한종",
+          "support": 22.0,
+          "party": null
+        },
+        {
+          "candidateName": "유성수",
+          "support": 21.1,
+          "party": null
+        },
+        {
+          "candidateName": "민형배",
+          "support": 21.0,
+          "party": null
+        },
+        {
+          "candidateName": "김중남",
+          "support": 20.9,
+          "party": null
+        },
+        {
+          "candidateName": "김영록",
+          "support": 17.9,
+          "party": null
+        },
+        {
+          "candidateName": "최옥수",
+          "support": 17.0,
+          "party": null
+        },
+        {
+          "candidateName": "김한근",
+          "support": 16.5,
+          "party": null
+        },
+        {
+          "candidateName": "김홍규",
+          "support": 15.4,
+          "party": null
+        },
+        {
+          "candidateName": "나광국",
+          "support": 14.2,
+          "party": null
+        },
+        {
+          "candidateName": "이정운",
+          "support": 13.7,
+          "party": null
+        },
+        {
+          "candidateName": "권혁열",
+          "support": 12.2,
+          "party": null
+        },
+        {
+          "candidateName": "신정훈",
+          "support": 11.2,
+          "party": null
+        },
+        {
+          "candidateName": "강기정",
+          "support": 10.0,
+          "party": null
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": null,
       "electionType": "governor",
@@ -63,7 +217,9 @@
       ],
       "title": "전라남도 전체    광역단체장선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18180&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-      "registrationDate": "2026-04-10"
+      "registrationDate": "2026-04-10",
+      "_corrected": true,
+      "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
     },
     {
       "nttId": 18179,
@@ -118,7 +274,38 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-10",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김병이",
+          "party": "",
+          "support": 20.1
+        },
+        {
+          "candidateName": "김왕중",
+          "party": "",
+          "support": 1.0
+        },
+        {
+          "candidateName": "김진명",
+          "party": "",
+          "support": 31.9
+        },
+        {
+          "candidateName": "성준후",
+          "party": "",
+          "support": 12.4
+        },
+        {
+          "candidateName": "한득수",
+          "party": "",
+          "support": 29.3
+        },
+        {
+          "candidateName": "지지하",
+          "party": "",
+          "support": 3.9
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": "임실군",
       "electionType": "mayor",
@@ -150,7 +337,28 @@
         "end": "2026-04-08"
       },
       "publishDate": "2026-04-09",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "투표하는",
+          "party": "",
+          "support": 6.6
+        },
+        {
+          "candidateName": "가봐야",
+          "party": "",
+          "support": 35.2
+        },
+        {
+          "candidateName": "알겠다",
+          "party": "",
+          "support": 56.3
+        },
+        {
+          "candidateName": "가능하면",
+          "party": "",
+          "support": 1.1
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "의성군",
       "electionType": "mayor",
@@ -183,7 +391,28 @@
         "end": "2026-04-08"
       },
       "publishDate": "2026-04-09",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "투표하는",
+          "party": "",
+          "support": 5.3
+        },
+        {
+          "candidateName": "가봐야",
+          "party": "",
+          "support": 34.2
+        },
+        {
+          "candidateName": "알겠다",
+          "party": "",
+          "support": 57.1
+        },
+        {
+          "candidateName": "가능하면",
+          "party": "",
+          "support": 2.6
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "문경시",
       "electionType": "mayor",
@@ -282,7 +511,33 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-09",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김민석",
+          "party": "",
+          "support": 15.2
+        },
+        {
+          "candidateName": "장동혁",
+          "party": "",
+          "support": 11.3
+        },
+        {
+          "candidateName": "정청래",
+          "party": "",
+          "support": 9.5
+        },
+        {
+          "candidateName": "한동훈",
+          "party": "",
+          "support": 11.8
+        },
+        {
+          "candidateName": "황교안",
+          "party": "",
+          "support": 9.1
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "party_support",
@@ -423,7 +678,23 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-09",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정청래",
+          "party": "",
+          "support": 28.7
+        },
+        {
+          "candidateName": "김민석",
+          "party": "",
+          "support": 20.2
+        },
+        {
+          "candidateName": "송영길",
+          "party": "",
+          "support": 17.7
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "party_support",
@@ -455,7 +726,28 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-08",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김대권",
+          "party": "",
+          "support": 23.6
+        },
+        {
+          "candidateName": "김대현",
+          "party": "",
+          "support": 6.7
+        },
+        {
+          "candidateName": "이진훈",
+          "party": "",
+          "support": 8.4
+        },
+        {
+          "candidateName": "전경원",
+          "party": "",
+          "support": 10.0
+        }
+      ],
       "regionKey": "daegu",
       "municipality": "수성구",
       "electionType": "mayor",
@@ -584,7 +876,28 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-08",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "투표하는",
+          "party": "",
+          "support": 7.2
+        },
+        {
+          "candidateName": "가봐야",
+          "party": "",
+          "support": 33.2
+        },
+        {
+          "candidateName": "알겠다",
+          "party": "",
+          "support": 57.0
+        },
+        {
+          "candidateName": "가능하면",
+          "party": "",
+          "support": 1.4
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "상주시",
       "electionType": "mayor",
@@ -676,7 +989,33 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-09",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "한덕수",
+          "support": 48.0,
+          "party": null
+        },
+        {
+          "candidateName": "김문수",
+          "support": 46.0,
+          "party": null
+        },
+        {
+          "candidateName": "긍정",
+          "support": 46.0,
+          "party": null
+        },
+        {
+          "candidateName": "지지율",
+          "support": 40.0,
+          "party": null
+        },
+        {
+          "candidateName": "주새",
+          "support": 4.0,
+          "party": null
+        }
+      ],
       "regionKey": "daegu",
       "municipality": null,
       "electionType": "governor",
@@ -686,7 +1025,9 @@
       ],
       "title": "대구광역시 전체 광역단체장선거정당지지도",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18146&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-      "registrationDate": "2026-04-08"
+      "registrationDate": "2026-04-08",
+      "_corrected": true,
+      "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
     },
     {
       "nttId": 18145,
@@ -1154,7 +1495,33 @@
         "end": "2026-04-07"
       },
       "publishDate": "2026-04-08",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "좋아질",
+          "party": "",
+          "support": 17.3
+        },
+        {
+          "candidateName": "나빠질",
+          "party": "",
+          "support": 34.7
+        },
+        {
+          "candidateName": "긍정",
+          "party": "",
+          "support": 23.1
+        },
+        {
+          "candidateName": "전망",
+          "party": "",
+          "support": 17.4
+        },
+        {
+          "candidateName": "부정",
+          "party": "",
+          "support": 7.5
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "party_support",
@@ -1551,7 +1918,23 @@
         "end": "2026-04-04"
       },
       "publishDate": "2026-04-07",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "지지후",
+          "party": "",
+          "support": 23.9
+        },
+        {
+          "candidateName": "모르",
+          "party": "",
+          "support": 21.7
+        },
+        {
+          "candidateName": "부동",
+          "party": "",
+          "support": 19.4
+        }
+      ],
       "regionKey": "incheon",
       "municipality": null,
       "electionType": "party_support",
@@ -2268,7 +2651,93 @@
         "end": "2026-04-05"
       },
       "publishDate": "2026-04-06",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "지지율",
+          "support": 61.2,
+          "party": null
+        },
+        {
+          "candidateName": "국정평가",
+          "support": 61.2,
+          "party": null
+        },
+        {
+          "candidateName": "대통령",
+          "support": 60.3,
+          "party": null
+        },
+        {
+          "candidateName": "내린",
+          "support": 57.1,
+          "party": null
+        },
+        {
+          "candidateName": "하락해",
+          "support": 57.1,
+          "party": null
+        },
+        {
+          "candidateName": "정지지율",
+          "support": 56.8,
+          "party": null
+        },
+        {
+          "candidateName": "지지도",
+          "support": 54.5,
+          "party": null
+        },
+        {
+          "candidateName": "민주",
+          "support": 49.9,
+          "party": null
+        },
+        {
+          "candidateName": "민주당",
+          "support": 49.9,
+          "party": null
+        },
+        {
+          "candidateName": "국힘",
+          "support": 31.3,
+          "party": null
+        },
+        {
+          "candidateName": "국민의힘",
+          "support": 31.3,
+          "party": null
+        },
+        {
+          "candidateName": "격차",
+          "support": 18.6,
+          "party": null
+        },
+        {
+          "candidateName": "한국갤럽",
+          "support": 17.0,
+          "party": null
+        },
+        {
+          "candidateName": "서울",
+          "support": 10.9,
+          "party": null
+        },
+        {
+          "candidateName": "서울서",
+          "support": 6.6,
+          "party": null
+        },
+        {
+          "candidateName": "리얼미터",
+          "support": 5.5,
+          "party": null
+        },
+        {
+          "candidateName": "서울만",
+          "support": 4.7,
+          "party": null
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "superintendent",
@@ -2277,7 +2746,9 @@
       ],
       "title": "서울특별시 전체    교육감선거",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18080&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-      "registrationDate": "2026-04-05"
+      "registrationDate": "2026-04-05",
+      "_corrected": true,
+      "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
     },
     {
       "nttId": 18077,
