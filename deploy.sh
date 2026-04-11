@@ -36,7 +36,14 @@ echo "Minifying JS..."
 DEPLOY_DIST="$DIST_DIR" node build.js || { echo "esbuild minify 실패 — 배포 중단"; exit 1; }
 
 echo "Deploying from $DIST_DIR..."
-npx wrangler pages deploy "$DIST_DIR" --project-name korea-local-eletion --branch main --commit-dirty=true
+# Cloudflare API가 한글 커밋 메시지를 가끔 거부 (UTF-8 validation bug) → ASCII 메시지로 강제
+COMMIT_HASH=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
+npx wrangler pages deploy "$DIST_DIR" \
+  --project-name korea-local-eletion \
+  --branch main \
+  --commit-dirty=true \
+  --commit-hash "$COMMIT_HASH" \
+  --commit-message "deploy $COMMIT_HASH"
 
 echo "Cleaning up..."
 rm -rf "$DIST_DIR"
