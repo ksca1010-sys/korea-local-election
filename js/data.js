@@ -8,7 +8,7 @@ const ElectionData = (() => {
     const parties = {
         democratic: { name: '더불어민주당', color: '#2E8BFF', shortName: '민주당' },
         ppp: { name: '국민의힘', color: '#E61E2B', shortName: '국민의힘' },
-        reform: { name: '조국혁신당', color: '#3B6ABF', shortName: '혁신당' }, // 원색 #0A1747 → 다크 테마 가독성 보정
+        reform: { name: '조국혁신당', color: '#3B6ABF', shortName: '조국혁신' }, // 원색 #0A1747 → 다크 테마 가독성 보정
         newReform: { name: '개혁신당', color: '#FF7210', shortName: '개혁신당' },
         progressive: { name: '진보당', color: '#D6001C', shortName: '진보당' },
         justice: { name: '정의당', color: '#FFCC00', shortName: '정의당' },
