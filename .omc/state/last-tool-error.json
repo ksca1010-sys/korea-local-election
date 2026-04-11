@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"wc -l /Users/isawufo/Desktop/AI-cording-project/korea-local-election/js/election-data.js\"}",
-  "error": "Exit code 1\nwc: /Users/isawufo/Desktop/AI-cording-project/korea-local-election/js/election-data.js: open: No such file or directory",
-  "timestamp": "2026-03-28T07:06:38.670Z",
-  "retry_count": 1
-}
