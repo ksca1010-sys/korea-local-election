@@ -48,24 +48,30 @@ const ClarityConsent = (() => {
     }
 
     function _showBanner() {
-        const banner = document.createElement('div');
-        banner.id = 'clarity-consent-banner';
-        banner.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#1a1a2e;border-top:1px solid rgba(255,255,255,0.1);padding:12px 16px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;font-size:14px;color:#ccc;';
-        banner.innerHTML = `
-            <span>사이트 개선을 위해 Microsoft Clarity 세션 기록에 동의하시겠습니까?</span>
-            <button id="clarity-accept" style="background:#4CAF50;color:#fff;border:none;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:14px;">동의</button>
-            <button id="clarity-reject" style="background:transparent;color:#aaa;border:1px solid #555;padding:6px 16px;border-radius:4px;cursor:pointer;font-size:14px;">거부</button>
+        const overlay = document.createElement('div');
+        overlay.id = 'clarity-consent-banner';
+        overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;padding:16px;';
+        overlay.innerHTML = `
+            <div style="background:#1a1a2e;border:1px solid rgba(169,199,255,0.2);border-radius:12px;padding:32px;max-width:420px;width:100%;text-align:center;box-shadow:0 8px 32px rgba(0,0,0,0.5);">
+                <div style="font-size:32px;margin-bottom:12px;">📊</div>
+                <h3 style="color:#fff;font-size:18px;font-weight:700;margin:0 0 10px;">사이트 개선에 도움을 주세요</h3>
+                <p style="color:#8a9fc0;font-size:14px;line-height:1.6;margin:0 0 24px;">Microsoft Clarity를 통해 클릭·스크롤 패턴을 수집합니다.<br>개인정보는 수집하지 않습니다.</p>
+                <div style="display:flex;gap:10px;justify-content:center;">
+                    <button id="clarity-accept" style="background:#4a8fff;color:#fff;border:none;padding:10px 28px;border-radius:8px;cursor:pointer;font-size:15px;font-weight:600;">동의</button>
+                    <button id="clarity-reject" style="background:transparent;color:#8a9fc0;border:1px solid rgba(255,255,255,0.15);padding:10px 28px;border-radius:8px;cursor:pointer;font-size:15px;">거부</button>
+                </div>
+            </div>
         `;
-        document.body.appendChild(banner);
+        document.body.appendChild(overlay);
 
         document.getElementById('clarity-accept').addEventListener('click', () => {
             _setConsent('accepted');
-            banner.remove();
+            overlay.remove();
             _loadClarity();
         });
         document.getElementById('clarity-reject').addEventListener('click', () => {
             _setConsent('rejected');
-            banner.remove();
+            overlay.remove();
         });
     }
 
