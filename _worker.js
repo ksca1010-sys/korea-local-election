@@ -32,7 +32,10 @@ export default {
   async fetch(request, env) {
     const userAgent = request.headers.get('User-Agent') || '';
 
-    if (SOCIAL_BOT_PATTERN.test(userAgent)) {
+    const url = new URL(request.url);
+    const isRootRequest = url.pathname === '/' || url.pathname === '/index.html';
+
+    if (isRootRequest && SOCIAL_BOT_PATTERN.test(userAgent)) {
       return new Response(OG_HTML, {
         headers: { 'Content-Type': 'text/html;charset=UTF-8' }
       });
