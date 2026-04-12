@@ -40,3 +40,7 @@ data/mock-region-data.json
 # 대용량 원본 데이터 (파싱 후 JSON만 커밋)
 data/static/*.xlsx
 data/static/*.xls
+
+# 여론조사 원본 PDF (1,257개, ~1.7GB — JSON만 커밋)
+data/polls/pdfs/
+.vercel
