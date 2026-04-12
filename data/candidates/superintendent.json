@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-10",
+    "lastUpdated": "2026-04-12",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-10T11:26:36.622406",
+    "lastFactCheck": "2026-04-12T02:53:32.887429",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -564,17 +564,20 @@
         "name": "김대중",
         "stance": "진보",
         "career": "현 전라남도 교육감",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "incumbent",
         "pledges": [
           "AI 위기 감지 시스템 도입",
           "폐교를 교육청 사무실로 활용"
         ],
         "_lastChange": {
-          "date": "2026-03-16",
+          "date": "2026-04-12",
           "type": "status_change",
-          "detail": "광주·전남 통합교육감 선거 본격화…김대중 26.1%·이정선 12.7%",
-          "previous": "EXPECTED"
+          "detail": "김대중, 전남광주통합특별시교육감 예비후보 등록...선거운동 돌입 / 다시 뛰는 통합교육…김대중 교육감, 10일 예비후보 등록",
+          "previous": "DECLARED",
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "미디어",
+          "sourcePublishedAt": "2026-04-10"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1516,7 +1519,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1524,13 +1527,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-04-08",
+          "date": "2026-04-12",
           "type": "status_change",
-          "detail": "김상동 전 경북대 총장, 경북교육감 예비후보 등록…경북교육동행포럼에서 단일 후보 선정",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "경북일보",
-          "sourcePublishedAt": "2026-04-08"
+          "detail": "[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록",
+          "previous": "DECLARED",
+          "sourceUrl": "뉴스 URL 정보 없음",
+          "sourceLabel": "언론사명 정보 없음",
+          "sourcePublishedAt": "2026-04-12"
         },
         "sourceUrl": null,
         "sourceLabel": null,

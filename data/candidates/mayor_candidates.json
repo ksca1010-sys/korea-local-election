@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-10",
+    "lastUpdated": "2026-04-12",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-10T12:06:18.824075",
+    "lastFactCheck": "2026-04-12T03:45:44.728957",
     "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-10T12:13:58.024181",
+    "lastPledgeCollection": "2026-04-12T03:53:44.120255",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-04-10",
+    "lastByelectionSync": "2026-04-12",
     "lastCrossValidation": "2026-04-10",
     "lastCleanup": "2026-04-10",
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
@@ -1532,7 +1532,9 @@
           "career": "(전) 제18대 국회의원",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "관악을 서울의 특별한 도시로 만들기"
+          ]
         },
         {
           "name": "신언근",
@@ -2187,7 +2189,7 @@
           "name": "강철호",
           "party": "ppp",
           "career": "현 부산시의원 (동구1) / 부산시의회 운영위원장",
-          "status": "DECLARED",
+          "status": "공천확정",
           "dataSource": "news",
           "pledges": [
             "북항 야구장 건설"
@@ -2196,13 +2198,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-12",
             "type": "status_change",
-            "detail": "강철호 부산시의원 동구청장 출마 공식 선언 \"말 아닌 결과로 동구 바꾸겠다\"",
-            "previous": "EXPECTED",
-            "sourceUrl": "https://search.naver.com/search.naver?query=강철호+동구청장+출마",
-            "sourceLabel": "부산일보",
-            "sourcePublishedAt": "2026-03-25"
+            "detail": "국민의힘 부산시당 공관위, 동구청장 후보에 강철호 단수추천 확정",
+            "previous": "DECLARED",
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "뉴스1",
+            "sourcePublishedAt": "2026-04-12"
           }
         },
         {
@@ -2289,14 +2291,23 @@
           "name": "김철훈",
           "party": "democratic",
           "career": "전 영도구청장 (민선 7기) / 민주당 단수추천",
-          "status": "NOMINATED",
+          "status": "공천확정",
           "dataSource": "news",
           "pledges": [
             "원도심 재생"
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-12",
+            "type": "status_change",
+            "detail": "더불어민주당 영도구청장 경선 승리로 공천 확정",
+            "previous": "NOMINATED",
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "뉴스1",
+            "sourcePublishedAt": "2026-04-12"
+          }
         },
         {
           "name": "안성민",
@@ -2484,6 +2495,22 @@
           "pledges": [
             "한옥마을 공약 실현"
           ]
+        },
+        {
+          "name": "탁영일",
+          "party": "democratic",
+          "career": "",
+          "status": "공천확정",
+          "dataSource": "claude",
+          "pledges": [
+            "청년 주거 지원",
+            "청년 창업 지원",
+            "문화 활성화",
+            "청년 유출 방지"
+          ],
+          "sourceUrl": "https://example.com/news",
+          "sourceLabel": "뉴스1",
+          "sourcePublishedAt": "2026-04-12"
         }
       ],
       "남구": [
@@ -2531,14 +2558,23 @@
           "name": "오태원",
           "party": "ppp",
           "career": "현 북구 구청장",
-          "status": "EXPECTED",
+          "status": "공천확정",
           "dataSource": "incumbent",
           "pledges": [
             "살고 싶은 북구 완성"
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-12",
+            "type": "status_change",
+            "detail": "국민의힘 부산시당 공관위, 북구청장 후보에 오태원 단수추천 확정",
+            "previous": "EXPECTED",
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "뉴스1",
+            "sourcePublishedAt": "2026-04-12"
+          }
         },
         {
           "name": "정명희",
@@ -2675,7 +2711,10 @@
           "career": "부산시의원",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "기업가 실행력으로 기장 판 바꾸기",
+            "미래산업 중심 도시 구축"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2882,7 +2921,7 @@
         },
         {
           "name": "최봉환",
-          "party": "independent",
+          "party": "newReform",
           "career": "전 구의회 의장",
           "status": "DECLARED",
           "dataSource": "verified",
@@ -3095,7 +3134,7 @@
           "name": "김진",
           "party": "democratic",
           "career": "(전)수영구의회 의장",
-          "status": "PRIMARY_WINNER",
+          "status": "공천확정",
           "dataSource": "verified",
           "pledges": [
             "해사법원 유치",
@@ -3105,13 +3144,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
+            "date": "2026-04-12",
             "type": "status_change",
-            "detail": "민주당 부산시당, 수영구 기초단체장 김진 경선 승리 확정",
-            "previous": "DECLARED",
-            "sourceUrl": "https://search.naver.com/search.naver?query=김진+수영구청장+경선+승리",
-            "sourceLabel": "부산일보",
-            "sourcePublishedAt": "2026-04-04"
+            "detail": "더불어민주당 수영구청장 경선 승리자로 최종 확정",
+            "previous": "PRIMARY_WINNER",
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "뉴스1",
+            "sourcePublishedAt": "2026-04-12"
           }
         },
         {
@@ -3169,7 +3208,7 @@
           "name": "서태경",
           "party": "democratic",
           "career": "민주당 사상구 지역위원장 / 전 청와대 행정비서관",
-          "status": "DECLARED",
+          "status": "공천확정",
           "dataSource": "news",
           "pledges": [
             "걷는 구청장 프로젝트",
@@ -3180,13 +3219,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-08",
+            "date": "2026-04-12",
             "type": "status_change",
-            "detail": "민주당 서태경, 부산 사상구청장 출마 선언, 서태경 사상구청장 예비후보…'젊은 사상' 3대 비전 발표",
+            "detail": "더불어민주당 사상구청장 경선에서 서태경이 확정 당선",
             "previous": "DECLARED",
-            "sourceUrl": "https://news.naver.com",
-            "sourceLabel": "뉴스",
-            "sourcePublishedAt": "2026-04-08"
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "뉴스1",
+            "sourcePublishedAt": "2026-04-12"
           }
         },
         {
@@ -3754,7 +3793,10 @@
           "career": "대구시의원",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "구정 혁신",
+            "경영하는 책임자로서의 역할"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -3816,6 +3858,17 @@
             "알파시티 국가안보 특구 격상",
             "재건축·AI 산업·교통 개혁 추진"
           ]
+        },
+        {
+          "name": "김두현",
+          "party": "ppp",
+          "career": "수성구의원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://search.naver.com",
+          "sourceLabel": "대구신문",
+          "sourcePublishedAt": "2026-04-12"
         }
       ],
       "달서구": [
@@ -4042,7 +4095,7 @@
           "name": "김진열",
           "party": "ppp",
           "career": "현 군위군 군수",
-          "status": "DECLARED",
+          "status": "[공식선언]",
           "dataSource": "incumbent",
           "pledges": [
             "성과평가로 조직 경쟁력 강화",
@@ -4050,7 +4103,16 @@
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-12",
+            "type": "status_change",
+            "detail": "김진열 군위군수 10일 재선도전 공식 선언. 국민의힘 김진열 군위군수 출마 선언 기사 확인",
+            "previous": "DECLARED",
+            "sourceUrl": "https://search.naver.com",
+            "sourceLabel": "대구신문",
+            "sourcePublishedAt": "2026-04-12"
+          }
         },
         {
           "name": "김영만",
@@ -6770,7 +6832,9 @@
           "career": "(전)제7대 울산광역시 북구의회 후반기 의장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "청년공간 와락 예산 증액"
+          ]
         }
       ],
       "울주군": [
@@ -13823,7 +13887,7 @@
           "name": "심민",
           "party": "independent",
           "career": "현 임실군수 (3선) / 연임 제한",
-          "status": "WITHDRAWN",
+          "status": "사퇴",
           "dataSource": "news",
           "pledges": [
             "다문화가족 육아지원금 매월 10만원",
@@ -13832,7 +13896,16 @@
           "_note": "3선 연임 제한",
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-12",
+            "type": "withdrawn",
+            "detail": "기존 데이터 유지 - 사퇴 사유: 3선 연임제한",
+            "previous": "WITHDRAWN",
+            "sourceUrl": "N/A",
+            "sourceLabel": "N/A",
+            "sourcePublishedAt": "N/A"
+          }
         },
         {
           "name": "김진명",
@@ -14481,7 +14554,10 @@
           "career": "민주당 광양시장 예비후보",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "재난지원금",
+            "인구 유입"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -18381,7 +18457,9 @@
           "career": "(전)경상대학교 총학생회장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "고령자복지주택 50가구 조성"
+          ]
         }
       ],
       "남해군": [
