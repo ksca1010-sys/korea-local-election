@@ -2,8 +2,8 @@ name: Update Election Overview
 
 on:
   schedule:
-    # 매일 한국시간 11:30 (UTC 02:30) — candidates(09:00)+byelection(11:00) 이후
-    - cron: '30 2 * * *'
+    # 3일마다 한국시간 11:30 (UTC 02:30) — candidates(09:00)+byelection(11:00) 이후
+    - cron: '30 2 */3 * *'
   workflow_dispatch:
   workflow_call:
 

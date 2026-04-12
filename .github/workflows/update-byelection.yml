@@ -2,8 +2,8 @@ name: Update By-Election Data
 
 on:
   schedule:
-    # 매일 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
-    - cron: '0 2 * * *'
+    # 3일마다 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
+    - cron: '0 2 */3 * *'
   workflow_dispatch:
 
 concurrency:

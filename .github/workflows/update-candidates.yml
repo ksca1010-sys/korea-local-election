@@ -2,8 +2,8 @@ name: Update Candidate Data
 
 on:
   schedule:
-    # 매일 한국시간 09:00 (UTC 00:00) 실행
-    - cron: '0 0 * * *'
+    # 5일마다 한국시간 09:00 (UTC 00:00) 실행
+    - cron: '0 0 */5 * *'
   workflow_dispatch:
 
 concurrency:

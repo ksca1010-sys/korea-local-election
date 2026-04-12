@@ -1353,10 +1353,11 @@ const NewsTab = (() => {
             })();
 
             function highlightTitle(title) {
-                if (!_hlTerms.length) return title;
-                let result = title;
+                const safe = escapeHtml(title || '');
+                if (!_hlTerms.length) return safe;
+                let result = safe;
                 for (const term of _hlTerms) {
-                    const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const escaped = escapeHtml(term).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
                     result = result.replace(new RegExp(escaped, 'g'),
                         `<mark style="background:rgba(46,139,255,0.15);color:var(--text-primary);padding:0 1px;border-radius:2px;">$&</mark>`);
                 }
