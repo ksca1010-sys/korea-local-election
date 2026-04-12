@@ -12,7 +12,7 @@ const OG_HTML = `<!DOCTYPE html>
 <meta property="og:type" content="website">
 <meta property="og:title" content="알선거 — 아는 만큼 보이는 선거">
 <meta property="og:description" content="제9회 전국동시지방선거 여론조사, 후보자 비교, 역대 선거 결과를 한눈에 확인하세요.">
-<meta property="og:url" content="https://korea-local-election.pages.dev/">
+<meta property="og:url" content="https://korea-local-eletion.pages.dev/">
 <meta property="og:site_name" content="알선거">
 <meta property="og:image" content="https://korea-local-eletion.pages.dev/og-image.png">
 <meta property="og:image:width" content="1200">
