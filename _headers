@@ -3,6 +3,11 @@
   Cache-Control: public, max-age=86400
   Access-Control-Allow-Origin: *
 
+/og-image-v2.png
+  Content-Type: image/png
+  Cache-Control: public, max-age=86400
+  Access-Control-Allow-Origin: *
+
 /*
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
