@@ -1,6 +1,71 @@
 {
-  "last_id": 18181,
+  "last_id": 18209,
   "polls": [
+    {
+      "nttId": 18209,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)비전코리아",
+      "clientOrg": "전국단위 신문/인터넷언론 : 포털신문/포털신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1051,
+        "marginOfError": 3.0,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-10",
+        "end": "2026-04-11"
+      },
+      "publishDate": "2026-04-12",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도 대통령선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18209&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-12"
+    },
+    {
+      "nttId": 18196,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "여론조사공정(주)",
+      "clientOrg": "인터넷언론 : 미디어디펜스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 501,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-10",
+        "end": "2026-04-11"
+      },
+      "publishDate": "2026-04-11",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "예천군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상북도 예천군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18196&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-11"
+    },
     {
       "nttId": 18181,
       "registrationId": null,
@@ -50052,19 +50117,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-10",
-    "lastPipelineRun": "2026-04-10",
+    "lastUpdated": "2026-04-12",
+    "lastPipelineRun": "2026-04-12",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 852,
-    "withRegistrationDate": 849,
+    "pollCount": 854,
+    "withRegistrationDate": 851,
     "withRegistrationId": 670,
-    "withResults": 814,
+    "withResults": 827,
     "unknownElectionTypeCount": 0,
     "electionTypes": {
+      "party_support": 109,
+      "mayor": 486,
       "governor": 237,
-      "party_support": 108,
-      "mayor": 485,
       "superintendent": 22
     }
   }
