@@ -1,6 +1,102 @@
 {
-  "last_id": 18209,
+  "last_id": 18214,
   "polls": [
+    {
+      "nttId": 18214,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)데일리리서치",
+      "clientOrg": "인터넷언론 : 뉴스티앤티",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 506,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-10",
+        "end": "2026-04-10"
+      },
+      "publishDate": "2026-04-13",
+      "results": [],
+      "regionKey": "chungbuk",
+      "municipality": "옥천군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "충청북도 옥천군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18214&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-13"
+    },
+    {
+      "nttId": 18212,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "KOPRA",
+      "clientOrg": "개인 : 대한민국 자유 유튜브 총연합회",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1005,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-11",
+        "end": "2026-04-12"
+      },
+      "publishDate": "2026-04-13",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": null,
+      "electionTypes": [],
+      "title": "전국   정기(정례)조사 지방선거 투표 후보 정당",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18212&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-12"
+    },
+    {
+      "nttId": 18210,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리얼미터",
+      "clientOrg": "인터넷언론 : 울림뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-10",
+        "end": "2026-04-11"
+      },
+      "publishDate": "2026-04-12",
+      "results": [],
+      "regionKey": "gyeonggi",
+      "municipality": "김포시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경기도 김포시    정당지지도 기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18210&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-12"
+    },
     {
       "nttId": 18209,
       "registrationId": null,
@@ -54,7 +150,23 @@
         "end": "2026-04-11"
       },
       "publishDate": "2026-04-11",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "가선거구",
+          "party": "",
+          "support": 14.9
+        },
+        {
+          "candidateName": "나선거구",
+          "party": "",
+          "support": 70.2
+        },
+        {
+          "candidateName": "다선거구",
+          "party": "",
+          "support": 0.8
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "예천군",
       "electionType": "mayor",
@@ -50117,18 +50229,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-12",
-    "lastPipelineRun": "2026-04-12",
+    "lastUpdated": "2026-04-13",
+    "lastPipelineRun": "2026-04-13",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 854,
-    "withRegistrationDate": 851,
+    "pollCount": 857,
+    "withRegistrationDate": 854,
     "withRegistrationId": 670,
-    "withResults": 827,
-    "unknownElectionTypeCount": 0,
+    "withResults": 828,
+    "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "mayor": 488,
+      "unknown": 1,
       "party_support": 109,
-      "mayor": 486,
       "governor": 237,
       "superintendent": 22
     }
