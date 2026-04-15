@@ -1,6 +1,236 @@
 {
-  "last_id": 18244,
+  "last_id": 18263,
   "polls": [
+    {
+      "nttId": 18263,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)시그널앤펄스",
+      "clientOrg": "인터넷언론 : 프레시안",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 800,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-13",
+        "end": "2026-04-14"
+      },
+      "publishDate": "2026-04-15",
+      "results": [],
+      "regionKey": "gangwon",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "title": "강원특별자치도 전체    광역단체장선거 교육감선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18263&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18259,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)비전코리아",
+      "clientOrg": "시·도단위 신문 : 전남희망신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 515,
+        "marginOfError": 4.3,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-13",
+        "end": "2026-04-13"
+      },
+      "publishDate": "2026-04-15",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "함평군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 함평군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18259&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18255,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "메타보이스(주)",
+      "clientOrg": "인터넷언론 : 케이패스미디어그룹(퍼블릭경제)",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-11",
+        "end": "2026-04-12"
+      },
+      "publishDate": "2026-04-14",
+      "results": [],
+      "regionKey": "gyeonggi",
+      "municipality": "김포시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경기도 김포시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18255&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18253,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "메타보이스(주)",
+      "clientOrg": "방송사 : JTBC",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1001,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-12",
+        "end": "2026-04-13"
+      },
+      "publishDate": "2026-04-14",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18253&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18252,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "메타보이스(주)",
+      "clientOrg": "방송사 : JTBC",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 803,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-11",
+        "end": "2026-04-12"
+      },
+      "publishDate": "2026-04-14",
+      "results": [],
+      "regionKey": "busan",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "party_support"
+      ],
+      "title": "부산광역시 전체    광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18252&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18251,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "메타보이스(주)",
+      "clientOrg": "방송사 : JTBC",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 804,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-11",
+        "end": "2026-04-12"
+      },
+      "publishDate": "2026-04-14",
+      "results": [],
+      "regionKey": "seoul",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "party_support"
+      ],
+      "title": "서울특별시 전체    광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18251&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-14"
+    },
+    {
+      "nttId": 18245,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "여론조사공정(주)",
+      "clientOrg": "인터넷언론 : 펜앤마이크",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-12",
+        "end": "2026-04-13"
+      },
+      "publishDate": "2026-04-14",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18245&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-13"
+    },
     {
       "nttId": 18244,
       "registrationId": null,
@@ -50431,19 +50661,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-14",
-    "lastPipelineRun": "2026-04-14",
+    "lastUpdated": "2026-04-15",
+    "lastPipelineRun": "2026-04-15",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 862,
-    "withRegistrationDate": 859,
+    "pollCount": 869,
+    "withRegistrationDate": 866,
     "withRegistrationId": 670,
     "withResults": 830,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "mayor": 491,
-      "governor": 238,
-      "party_support": 110,
+      "governor": 241,
+      "mayor": 493,
+      "party_support": 112,
       "unknown": 1,
       "superintendent": 22
     }
