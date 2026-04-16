@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-09",
+    "lastUpdated": "2026-04-16",
     "updatedAt": "2026-04-02",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) + 보궐선거 반영",
     "totalCount": 17,
     "note": "교육감은 무소속 (정당 추천 없음), stance=성향",
-    "lastFactCheck": "2026-04-09T04:06:58.701279"
+    "lastFactCheck": "2026-04-16T04:27:46.727556"
   },
   "superintendents": {
     "seoul": {
