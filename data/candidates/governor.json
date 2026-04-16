@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-12",
+    "lastUpdated": "2026-04-16",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-12T02:50:57.001292",
+    "lastFactCheck": "2026-04-16T02:25:53.218287",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -1571,7 +1571,7 @@
         "age": null,
         "career": "現 국회의원 (공주·부여·청양) / 前 청와대 대변인·국민소통수석",
         "photo": null,
-        "status": "DECLARED",
+        "status": "NOMINATED",
         "dataSource": "news",
         "pledges": [
           "충남대전 AI 기본사회",
@@ -1579,7 +1579,16 @@
         ],
         "sourceUrl": null,
         "sourceLabel": null,
-        "sourcePublishedAt": null
+        "sourcePublishedAt": null,
+        "_lastChange": {
+          "date": "2026-04-16",
+          "type": "nominated",
+          "detail": "민주당, 충남지사 후보에 박수현 확정",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "뉴스1",
+          "sourcePublishedAt": "2026-04-16"
+        }
       },
       {
         "id": "chungnam-3",

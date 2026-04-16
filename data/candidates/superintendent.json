@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-15",
+    "lastUpdated": "2026-04-16",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-15T05:24:11.896316",
+    "lastFactCheck": "2026-04-16T02:28:37.282821",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -1167,12 +1167,21 @@
         "name": "우상호",
         "stance": "중도",
         "career": "정치인",
-        "status": "EXPECTED",
+        "status": "RUMORED",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": "https://news.example.com",
         "sourceLabel": "언론사",
-        "sourcePublishedAt": "2026-04-15"
+        "sourcePublishedAt": "2026-04-15",
+        "_lastChange": {
+          "date": "2026-04-16",
+          "type": "status_change",
+          "detail": "김진태·우상호 사실상 출정식…선거전 불붙었다",
+          "previous": "EXPECTED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "강원지역 언론",
+          "sourcePublishedAt": "2026-04-16"
+        }
       }
     ],
     "chungbuk": [
@@ -1543,7 +1552,7 @@
         "name": "김상동",
         "stance": "중도",
         "career": "전 경북대 총장",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "AI 기반 경북형 통합 상담제",
@@ -1551,13 +1560,13 @@
           "경북교육과정 평가원 설립"
         ],
         "_lastChange": {
-          "date": "2026-04-15",
+          "date": "2026-04-16",
           "type": "status_change",
           "detail": "[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.search.naver.com",
+          "previous": "DECLARED",
+          "sourceUrl": "뉴스 기사",
           "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-15"
+          "sourcePublishedAt": "2026-04-16"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1612,20 +1621,20 @@
         "name": "배성도",
         "stance": "중도",
         "career": "칠곡군의원",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": "미제공",
         "sourceLabel": "미제공",
         "sourcePublishedAt": "2026-04-10",
         "_lastChange": {
-          "date": "2026-04-15",
+          "date": "2026-04-16",
           "type": "status_change",
           "detail": "[지선레이더]배성도 칠곡군의원 예비후보…'더 열심히, 더 잘하겠다'",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.search.naver.com",
+          "previous": "DECLARED",
+          "sourceUrl": "뉴스 기사",
           "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-15"
+          "sourcePublishedAt": "2026-04-16"
         }
       }
     ],
@@ -1837,7 +1846,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1847,13 +1856,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-10",
+          "date": "2026-04-16",
           "type": "status_change",
           "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "EXPECTED",
+          "previous": "RUMORED",
           "sourceUrl": "",
-          "sourceLabel": "제주언론",
-          "sourcePublishedAt": "2026-04-10"
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-16"
         },
         "pledgeCategories": [
           {
@@ -1871,7 +1880,7 @@
         "name": "고의숙",
         "stance": "중도",
         "career": "전 교육의원",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "1인 1노트북 대신 입학 준비금 지급",
@@ -1881,13 +1890,13 @@
           "4.3인권교육상 신설"
         ],
         "_lastChange": {
-          "date": "2026-04-15",
+          "date": "2026-04-16",
           "type": "status_change",
-          "detail": "고의숙 예비후보 여러 뉴스 보도 및 선대위 출범",
-          "previous": "DECLARED",
+          "detail": "고의숙 제주도교육감 예비후보, 서귀포 선대위 출범",
+          "previous": "EXPECTED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-04-15"
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-16"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1920,7 +1929,7 @@
         "name": "송문석",
         "stance": "중도",
         "career": "정보 없음",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [
           "제주형 책임교육 모델 구축"
@@ -1929,13 +1938,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-15",
+          "date": "2026-04-16",
           "type": "status_change",
-          "detail": "송문석 제주교육감 예비후보 관련 뉴스 보도",
-          "previous": "DECLARED",
+          "detail": "송문석 제주교육감 예비후보 \"교사 업무 교실.수업 중심 전환\"",
+          "previous": "EXPECTED",
           "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-04-15"
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-16"
         },
         "pledgeCategories": [
           {
