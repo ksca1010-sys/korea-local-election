@@ -1,8 +1,40 @@
 {
-  "generated": "2026-04-16T04:26:27",
-  "totalCount": 874,
+  "generated": "2026-04-17T04:23:34",
+  "totalCount": 875,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
+    {
+      "nttId": 18290,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한국갤럽조사연구소",
+      "clientOrg": "조사기관 자체 : 한국갤럽 자체 조사",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-14",
+        "end": "2026-04-15"
+      },
+      "publishDate": "2026-04-17",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18290&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-16"
+    },
     {
       "nttId": 18278,
       "registrationId": null,
@@ -7688,7 +7720,28 @@
           "end": "2026-04-15"
         },
         "publishDate": "2026-04-16",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "구본영",
+            "party": "",
+            "support": 14.0
+          },
+          {
+            "candidateName": "이규희",
+            "party": "",
+            "support": 21.6
+          },
+          {
+            "candidateName": "장기수",
+            "party": "",
+            "support": 21.0
+          },
+          {
+            "candidateName": "한태선",
+            "party": "",
+            "support": 18.2
+          }
+        ],
         "regionKey": "chungnam",
         "municipality": "천안시",
         "electionType": "mayor",
@@ -9622,7 +9675,32 @@
           "end": "2026-04-14"
         },
         "publishDate": "2026-04-16",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "더불어민주당",
+            "party": "democratic",
+            "support": 57.2,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "국민의힘",
+            "party": "ppp",
+            "support": 25.4,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "조국혁신당",
+            "party": "reform",
+            "support": 1.4,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "개혁신당",
+            "party": "newReform",
+            "support": 1.5,
+            "type": "party_support"
+          }
+        ],
         "regionKey": "gangwon",
         "municipality": "속초시",
         "electionType": "mayor",
@@ -11213,7 +11291,18 @@
           "end": "2026-04-14"
         },
         "publishDate": "2026-04-15",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "지지하는",
+            "party": "",
+            "support": 59.3
+          },
+          {
+            "candidateName": "정당이",
+            "party": "",
+            "support": 23.4
+          }
+        ],
         "regionKey": "gyeonggi",
         "municipality": "부천시",
         "electionType": "mayor",
