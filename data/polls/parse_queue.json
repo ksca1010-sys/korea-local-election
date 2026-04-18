@@ -182,12 +182,19 @@
       "lastAttemptAt": "2026-04-17",
       "lastReason": "PDF 파싱 실패"
     },
-    "18266": {
-      "firstSeenAt": "2026-04-16",
-      "attempts": 2,
+    "18293": {
+      "firstSeenAt": "2026-04-18",
+      "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-04-17",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
+      "lastAttemptAt": "2026-04-18",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18291": {
+      "firstSeenAt": "2026-04-18",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-04-18",
+      "lastReason": "PDF 파싱 실패"
     }
   }
 }

@@ -1,6 +1,72 @@
 {
-  "last_id": 18290,
+  "last_id": 18293,
   "polls": [
+    {
+      "nttId": 18293,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)비전코리아",
+      "clientOrg": "방송사 : TBC",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 506,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-16",
+        "end": "2026-04-16"
+      },
+      "publishDate": "2026-04-17",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "영천시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상북도 영천시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18293&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-17"
+    },
+    {
+      "nttId": 18291,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)이너텍시스템즈",
+      "clientOrg": "인터넷언론 : 이로운넷 대구경북취재본부",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-16",
+        "end": "2026-04-16"
+      },
+      "publishDate": "2026-04-17",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "영천시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상북도 영천시    정당지지도 기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18291&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-17"
+    },
     {
       "nttId": 18290,
       "registrationId": null,
@@ -242,7 +308,18 @@
         "end": "2026-04-14"
       },
       "publishDate": "2026-04-16",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "긍정적",
+          "party": "",
+          "support": 47.5
+        },
+        {
+          "candidateName": "부정적",
+          "party": "",
+          "support": 30.9
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": "광명시",
       "electionType": "mayor",
@@ -50973,18 +51050,18 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-17",
-    "lastPipelineRun": "2026-04-17",
+    "lastUpdated": "2026-04-18",
+    "lastPipelineRun": "2026-04-18",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 875,
-    "withRegistrationDate": 872,
+    "pollCount": 877,
+    "withRegistrationDate": 874,
     "withRegistrationId": 670,
-    "withResults": 835,
+    "withResults": 836,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "mayor": 499,
       "party_support": 114,
-      "mayor": 497,
       "governor": 241,
       "unknown": 1,
       "superintendent": 22
