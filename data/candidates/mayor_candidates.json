@@ -1,15 +1,15 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-16",
+    "lastUpdated": "2026-04-19",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-16T03:23:46.149727",
+    "lastFactCheck": "2026-04-19T06:16:26.226711",
     "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-16T03:32:05.198503",
+    "lastPledgeCollection": "2026-04-19T06:23:40.271170",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-04-16",
+    "lastByelectionSync": "2026-04-19",
     "lastCrossValidation": "2026-04-16",
     "lastCleanup": "2026-04-10",
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
@@ -232,7 +232,9 @@
           "career": "전 통일부 차관 / 2024 총선 순천·광양갑 출마",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "용산 1만호 공급 저지"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -2709,7 +2711,9 @@
           "career": "現 기장군 지역위원장 / 前 민주당 중앙당 대변인",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "기장이 가진 자원 전략적 융합으로 효과 극대화"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -3212,7 +3216,7 @@
           "name": "조병길",
           "party": "newReform",
           "career": "현 사상구 구청장",
-          "status": "WITHDRAWN",
+          "status": "사퇴",
           "dataSource": "incumbent",
           "pledges": [
             "철도지하화 정부계획 반영"
@@ -3221,13 +3225,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-07",
-            "type": "withdrawn",
-            "detail": "국민의힘, 조병길 사상구청장 제명 확정 / 조병길 사상구청장 개혁신당행?",
-            "previous": "[사퇴]",
-            "sourceUrl": "https://news.naver.com",
+            "date": "2026-04-19",
+            "type": "status_change",
+            "detail": "국힘, '부동산 투기 의혹' 조병길 제명…'친한계' 김종혁은 '주의'",
+            "previous": "WITHDRAWN",
+            "sourceUrl": "https://example.com",
             "sourceLabel": "부산일보",
-            "sourcePublishedAt": "2026-04-07"
+            "sourcePublishedAt": "2026-04-19"
           }
         },
         {
@@ -3548,6 +3552,33 @@
           "sourceUrl": null,
           "sourceLabel": "미디어오늘",
           "sourcePublishedAt": "2026-04-07"
+        },
+        {
+          "name": "정의당 양희",
+          "party": "justice",
+          "career": "진보정당 활동가",
+          "status": "DECLARED",
+          "dataSource": "claude",
+          "pledges": [
+            "민간공항 존치"
+          ],
+          "sourceUrl": "https://search.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-19"
+        },
+        {
+          "name": "윤정섭",
+          "party": "ppp",
+          "career": "국민의힘 동구의원 후보",
+          "status": "RUMORED",
+          "dataSource": "claude",
+          "pledges": [
+            "공공형 키즈카페",
+            "구 이름 바꾸기"
+          ],
+          "sourceUrl": "https://search.naver.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-19"
         }
       ],
       "서구": [
@@ -5807,7 +5838,7 @@
           "name": "박수기",
           "party": "democratic",
           "career": "경력 미상",
-          "status": "공천확정",
+          "status": "단일화완료",
           "dataSource": "verified",
           "pledges": [
             "통합특별시 신성장 1번지 광산구 발전"
@@ -5816,13 +5847,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-16",
+            "date": "2026-04-19",
             "type": "status_change",
             "detail": "광주 광산구청장 후보 박수기 단일화",
-            "previous": "PRIMARY_WINNER",
+            "previous": "공천확정",
             "sourceUrl": "https://example.com",
-            "sourceLabel": "뉴스제목",
-            "sourcePublishedAt": "2026-04-16"
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-04-19"
           }
         },
         {
@@ -6056,14 +6087,23 @@
           "name": "김제선",
           "party": "democratic",
           "career": "현 중구 구청장",
-          "status": "DECLARED",
+          "status": "공천확정",
           "dataSource": "news",
           "pledges": [
             "기분 좋은 변화 만들 것"
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-19",
+            "type": "status_change",
+            "detail": "더불어민주당, 김제선 현 청장 대전 중구청장 후보 확정",
+            "previous": "DECLARED",
+            "sourceUrl": null,
+            "sourceLabel": "대전일보",
+            "sourcePublishedAt": "2026-04-19"
+          }
         },
         {
           "name": "김선광",
@@ -6710,12 +6750,21 @@
           "name": "전태진",
           "party": "democratic",
           "career": "변호사",
-          "status": "RUMORED",
+          "status": "DECLARED",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.search.naver.com",
           "sourceLabel": "언론사 종합",
-          "sourcePublishedAt": "2026-04-16"
+          "sourcePublishedAt": "2026-04-16",
+          "_lastChange": {
+            "date": "2026-04-19",
+            "type": "status_change",
+            "detail": "'민주 1호 영입' 전태진‥ 울산 남갑 출마",
+            "previous": "RUMORED",
+            "sourceUrl": "https://news.search.naver.com",
+            "sourceLabel": "뉴스",
+            "sourcePublishedAt": "2026-04-19"
+          }
         }
       ],
       "동구": [
@@ -6806,7 +6855,9 @@
           "career": "김태선 국회의원실 수석보좌관",
           "status": "NOMINATED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "조선 산업 호황의 경제 효과 2배 확산"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -7084,7 +7135,7 @@
         {
           "name": "박맹우",
           "party": "ppp",
-          "career": "",
+          "career": "전 국민의힘 당직자",
           "status": "RUMORED",
           "dataSource": "claude",
           "pledges": [],
@@ -8240,7 +8291,7 @@
         },
         {
           "name": "송진영",
-          "party": "independent",
+          "party": "newReform",
           "partyKey": "newReform",
           "partyName": "개혁신당",
           "career": "(현)오산시의회 의원",
@@ -11439,7 +11490,9 @@
           "career": "(전) 더불어민주당 제천시단양군 지역위원장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "정책으로 승부"
+          ]
         },
         {
           "name": "이찬구",
@@ -11949,7 +12002,9 @@
           "career": "충북도의회 의장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "희망 캠프 개소"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -12605,7 +12660,11 @@
           "career": "(전)제49대 금산군수",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "불공정·비상식 근절로 군정 신뢰 회복",
+            "부채 334억 청산",
+            "예산 1조 시대 개화"
+          ]
         },
         {
           "name": "황국연",
@@ -13846,7 +13905,9 @@
           "career": "(전)제19대 국회의원",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "남원 모노레일 사업 중단 후 해법 모색"
+          ]
         }
       ],
       "김제시": [
@@ -16756,7 +16817,9 @@
           "career": "더불어민주당 당대표 특별보좌역 경북특보",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "영천 미래캠퍼스 조성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null

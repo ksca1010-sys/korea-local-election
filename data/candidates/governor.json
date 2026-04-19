@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-16",
+    "lastUpdated": "2026-04-19",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-16T02:25:53.218287",
+    "lastFactCheck": "2026-04-19T05:27:07.670703",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -316,20 +316,20 @@
         "age": 52,
         "career": "前 국민의힘 대표 / 前 법무부장관 / 검사장 출신",
         "photo": null,
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "news_verified",
         "pledges": [],
         "sourceUrl": null,
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-10",
+          "date": "2026-04-19",
           "type": "status_change",
-          "detail": "한동훈이 부산시장 후보가 아닌 북구갑 출마가 유력한 것으로 보도됨 — '한동훈, 北구갑 출마 유력...국힘, 韓에 길 열어주면 부산시장...'",
-          "previous": "DECLARED",
-          "sourceUrl": "N/A",
-          "sourceLabel": "정치 뉴스",
-          "sourcePublishedAt": "2026-04-10"
+          "detail": "오세훈 국민의힘 서울시장 후보 확정으로 '한동훈 지우기' 관련 보도에서 서울 출마 선언 확인",
+          "previous": "RUMORED",
+          "sourceUrl": "https://example.com",
+          "sourceLabel": "종합뉴스",
+          "sourcePublishedAt": "2026-04-19"
         }
       }
     ],
