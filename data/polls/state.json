@@ -1,6 +1,40 @@
 {
-  "last_id": 18318,
+  "last_id": 18319,
   "polls": [
+    {
+      "nttId": 18319,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "조원씨앤아이",
+      "clientOrg": "방송사 : 대전방송",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 800,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-18",
+        "end": "2026-04-19"
+      },
+      "publishDate": "2026-04-20",
+      "results": [],
+      "regionKey": "daejeon",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18319&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-20"
+    },
     {
       "nttId": 18318,
       "registrationId": null,
@@ -55,7 +89,38 @@
         "end": "2026-04-18"
       },
       "publishDate": "2026-04-20",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 32.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 44.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 1.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.2,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 3.9,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "daegu",
       "municipality": null,
       "electionType": "governor",
@@ -153,7 +218,20 @@
         "end": "2026-04-19"
       },
       "publishDate": "2026-04-19",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 16.7,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 0.5,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "영천시",
       "electionType": "mayor",
@@ -250,7 +328,38 @@
         "end": "2026-04-18"
       },
       "publishDate": "2026-04-20",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 43.4,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 39.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 1.8,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 0.9,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gangwon",
       "municipality": "정선군",
       "electionType": "mayor",
@@ -51445,18 +51554,18 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-20",
-    "lastPipelineRun": "2026-04-20",
+    "lastUpdated": "2026-04-21",
+    "lastPipelineRun": "2026-04-21",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 889,
-    "withRegistrationDate": 886,
+    "pollCount": 890,
+    "withRegistrationDate": 887,
     "withRegistrationId": 670,
-    "withResults": 836,
+    "withResults": 839,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "governor": 245,
       "mayor": 504,
-      "governor": 244,
       "party_support": 118,
       "unknown": 1,
       "superintendent": 22

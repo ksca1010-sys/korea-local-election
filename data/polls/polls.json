@@ -1,6 +1,6 @@
 {
-  "generated": "2026-04-20T04:22:47",
-  "totalCount": 889,
+  "generated": "2026-04-21T04:23:39",
+  "totalCount": 890,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
     {
@@ -7826,6 +7826,618 @@
     }
   ],
   "regions": {
+    "daejeon": [
+      {
+        "nttId": 18319,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "방송사 : 대전방송",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-18",
+          "end": "2026-04-19"
+        },
+        "publishDate": "2026-04-20",
+        "results": [],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ],
+        "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18319&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-04-20"
+      },
+      {
+        "nttId": 17956,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한길리서치",
+        "clientOrg": "기타 : 미래 교육을 위한 대전시민교육감 단일화 시민회의",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 807,
+          "marginOfError": 3.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-28",
+          "end": "2026-03-29"
+        },
+        "publishDate": "2026-03-30",
+        "results": [
+          {
+            "candidateName": "교육",
+            "party": "",
+            "support": 19.7
+          },
+          {
+            "candidateName": "개혁에",
+            "party": "",
+            "support": 34.4
+          },
+          {
+            "candidateName": "대한",
+            "party": "",
+            "support": 15.9
+          },
+          {
+            "candidateName": "철학과",
+            "party": "",
+            "support": 20.4
+          },
+          {
+            "candidateName": "가치",
+            "party": "",
+            "support": 4.6
+          },
+          {
+            "candidateName": "현장",
+            "party": "",
+            "support": 5.0
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "대전광역시 전체    교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17956&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-29",
+        "electionTypes": [
+          "superintendent"
+        ]
+      },
+      {
+        "nttId": 17907,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)여론조사꽃",
+        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1004,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-27",
+        "results": [
+          {
+            "candidateName": "이재명",
+            "support": 50.5,
+            "party": null
+          },
+          {
+            "candidateName": "박정현",
+            "support": 41.9,
+            "party": null
+          },
+          {
+            "candidateName": "민주",
+            "support": 39.5,
+            "party": null
+          },
+          {
+            "candidateName": "김문수",
+            "support": 30.3,
+            "party": null
+          },
+          {
+            "candidateName": "박경호",
+            "support": 28.8,
+            "party": null
+          },
+          {
+            "candidateName": "국힘",
+            "support": 28.5,
+            "party": null
+          },
+          {
+            "candidateName": "지지율",
+            "support": 23.1,
+            "party": null
+          },
+          {
+            "candidateName": "이준석",
+            "support": 9.1,
+            "party": null
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17907&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-25",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ],
+        "_corrected": true,
+        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
+      },
+      {
+        "nttId": 17499,
+        "registrationId": "15435",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 801,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-22",
+          "end": "2026-02-23"
+        },
+        "publishDate": "2026-02-25 05시 00분",
+        "results": [
+          {
+            "candidateName": "이장우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 28.5
+          },
+          {
+            "candidateName": "허태정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9.7
+          },
+          {
+            "candidateName": "박범계",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9.1
+          },
+          {
+            "candidateName": "장종태",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4.3
+          },
+          {
+            "candidateName": "장철민",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 2.5
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17499&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
+        "registrationDate": "2026-02-24",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:52:47",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17374,
+        "registrationId": "15370",
+        "pollName": "선거구분",
+        "pollOrg": "케이스탯리서치",
+        "clientOrg": "방송사 : KBS",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-10",
+          "end": "2026-02-11"
+        },
+        "publishDate": "2026-02-13 19시 00분",
+        "results": [
+          {
+            "candidateName": "이장우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 18
+          },
+          {
+            "candidateName": "허태정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 10
+          },
+          {
+            "candidateName": "박범계",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 9
+          },
+          {
+            "candidateName": "장종태",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 3
+          },
+          {
+            "candidateName": "장철민",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 3
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17374&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=17",
+        "registrationDate": "2026-02-13",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:06:08",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17351,
+        "registrationId": "15306",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "시·도단위 신문 : 대전일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-06",
+          "end": "2026-02-07"
+        },
+        "publishDate": "2026-02-12 13시 00분",
+        "results": [
+          {
+            "candidateName": "이장우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 19.4
+          },
+          {
+            "candidateName": "허태정",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 11.7
+          },
+          {
+            "candidateName": "박범계",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 8.5
+          },
+          {
+            "candidateName": "장철민",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4
+          },
+          {
+            "candidateName": "장종태",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 3.8
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17351&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
+        "registrationDate": "2026-02-10",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:09:22",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17306,
+        "registrationId": "15270",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 803,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-05",
+          "end": "2026-02-06"
+        },
+        "publishDate": "2026-02-11 10시 00분",
+        "results": [
+          {
+            "candidateName": "매우",
+            "party": "",
+            "support": 41.8
+          },
+          {
+            "candidateName": "알고",
+            "party": "",
+            "support": 40.1
+          },
+          {
+            "candidateName": "있다",
+            "party": "",
+            "support": 16.7
+          },
+          {
+            "candidateName": "어느",
+            "party": "",
+            "support": 1.4
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17306&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17202,
+        "registrationId": "15179",
+        "pollName": "선거구분",
+        "pollOrg": "미디어토마토",
+        "clientOrg": "시·도단위 신문 : 뉴스토마토",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 819,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-31",
+          "end": "2026-02-01"
+        },
+        "publishDate": "2026-02-03 06시 00분",
+        "results": [
+          {
+            "candidateName": "강훈식",
+            "party": "",
+            "support": 19.7
+          },
+          {
+            "candidateName": "허태정",
+            "party": "",
+            "support": 15.1
+          },
+          {
+            "candidateName": "박범계",
+            "party": "",
+            "support": 9
+          },
+          {
+            "candidateName": "장철민",
+            "party": "",
+            "support": 5.8
+          },
+          {
+            "candidateName": "박수현",
+            "party": "",
+            "support": 5.5
+          },
+          {
+            "candidateName": "양승조",
+            "party": "",
+            "support": 3.8
+          },
+          {
+            "candidateName": "장종태",
+            "party": "",
+            "support": 3.4
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17202&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
+        "registrationDate": "2026-02-02",
+        "electionTypes": [
+          "governor"
+        ]
+      },
+      {
+        "nttId": 16988,
+        "registrationId": "14991",
+        "pollName": "선거구분",
+        "pollOrg": "(주)한국리서치",
+        "clientOrg": "방송사 : KBS대전",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-26",
+          "end": "2025-12-27"
+        },
+        "publishDate": "2026-01-05 19시 00분",
+        "results": [
+          {
+            "candidateName": "이장우",
+            "party": null,
+            "partyRaw": "",
+            "support": 17
+          },
+          {
+            "candidateName": "허태정",
+            "party": null,
+            "partyRaw": "",
+            "support": 14
+          },
+          {
+            "candidateName": "박범계",
+            "party": null,
+            "partyRaw": "",
+            "support": 13
+          },
+          {
+            "candidateName": "장철민",
+            "party": null,
+            "partyRaw": "",
+            "support": 5
+          },
+          {
+            "candidateName": "장종태",
+            "party": null,
+            "partyRaw": "",
+            "support": 3
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    광역단체장선거 교육감선거 정치 현안 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16988&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
+        "registrationDate": "2025-12-30",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T17:26:11",
+        "electionTypes": [
+          "governor",
+          "superintendent"
+        ]
+      },
+      {
+        "nttId": 16916,
+        "registrationId": "14931",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 809,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-26",
+          "end": "2025-12-27"
+        },
+        "publishDate": "2025-12-30 08시 00분",
+        "results": [
+          {
+            "candidateName": "허태정",
+            "party": "",
+            "support": 25.7
+          },
+          {
+            "candidateName": "장철민",
+            "party": "",
+            "support": 11
+          },
+          {
+            "candidateName": "장종태",
+            "party": "",
+            "support": 10.4
+          }
+        ],
+        "regionKey": "daejeon",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16916&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=61",
+        "registrationDate": "2025-12-29",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ]
+      }
+    ],
     "gyeongbuk": [
       {
         "nttId": 18318,
@@ -7881,7 +8493,20 @@
           "end": "2026-04-19"
         },
         "publishDate": "2026-04-19",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "더불어민주당",
+            "party": "democratic",
+            "support": 16.7,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "조국혁신당",
+            "party": "reform",
+            "support": 0.5,
+            "type": "party_support"
+          }
+        ],
         "regionKey": "gyeongbuk",
         "municipality": "영천시",
         "electionType": "mayor",
@@ -13885,7 +14510,38 @@
           "end": "2026-04-18"
         },
         "publishDate": "2026-04-20",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "더불어민주당",
+            "party": "democratic",
+            "support": 32.6,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "국민의힘",
+            "party": "ppp",
+            "support": 44.3,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "조국혁신당",
+            "party": "reform",
+            "support": 1.3,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "진보당",
+            "party": "progressive",
+            "support": 1.2,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "개혁신당",
+            "party": "newReform",
+            "support": 3.9,
+            "type": "party_support"
+          }
+        ],
         "regionKey": "daegu",
         "municipality": null,
         "electionType": "governor",
@@ -15816,7 +16472,38 @@
           "end": "2026-04-18"
         },
         "publishDate": "2026-04-20",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "더불어민주당",
+            "party": "democratic",
+            "support": 43.4,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "국민의힘",
+            "party": "ppp",
+            "support": 39.6,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "조국혁신당",
+            "party": "reform",
+            "support": 1.8,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "진보당",
+            "party": "progressive",
+            "support": 1.1,
+            "type": "party_support"
+          },
+          {
+            "candidateName": "개혁신당",
+            "party": "newReform",
+            "support": 0.9,
+            "type": "party_support"
+          }
+        ],
         "regionKey": "gangwon",
         "municipality": "정선군",
         "electionType": "mayor",
@@ -50612,584 +51299,6 @@
         "registrationDate": "2026-02-02",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-17T00:33:53",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ]
-      }
-    ],
-    "daejeon": [
-      {
-        "nttId": 17956,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "한길리서치",
-        "clientOrg": "기타 : 미래 교육을 위한 대전시민교육감 단일화 시민회의",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 807,
-          "marginOfError": 3.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-28",
-          "end": "2026-03-29"
-        },
-        "publishDate": "2026-03-30",
-        "results": [
-          {
-            "candidateName": "교육",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "개혁에",
-            "party": "",
-            "support": 34.4
-          },
-          {
-            "candidateName": "대한",
-            "party": "",
-            "support": 15.9
-          },
-          {
-            "candidateName": "철학과",
-            "party": "",
-            "support": 20.4
-          },
-          {
-            "candidateName": "가치",
-            "party": "",
-            "support": 4.6
-          },
-          {
-            "candidateName": "현장",
-            "party": "",
-            "support": 5.0
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "대전광역시 전체    교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17956&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-29",
-        "electionTypes": [
-          "superintendent"
-        ]
-      },
-      {
-        "nttId": 17907,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)여론조사꽃",
-        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1004,
-          "marginOfError": 3.1,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-27",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "support": 50.5,
-            "party": null
-          },
-          {
-            "candidateName": "박정현",
-            "support": 41.9,
-            "party": null
-          },
-          {
-            "candidateName": "민주",
-            "support": 39.5,
-            "party": null
-          },
-          {
-            "candidateName": "김문수",
-            "support": 30.3,
-            "party": null
-          },
-          {
-            "candidateName": "박경호",
-            "support": 28.8,
-            "party": null
-          },
-          {
-            "candidateName": "국힘",
-            "support": 28.5,
-            "party": null
-          },
-          {
-            "candidateName": "지지율",
-            "support": 23.1,
-            "party": null
-          },
-          {
-            "candidateName": "이준석",
-            "support": 9.1,
-            "party": null
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17907&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-25",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ],
-        "_corrected": true,
-        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
-      },
-      {
-        "nttId": 17499,
-        "registrationId": "15435",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 801,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-22",
-          "end": "2026-02-23"
-        },
-        "publishDate": "2026-02-25 05시 00분",
-        "results": [
-          {
-            "candidateName": "이장우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 28.5
-          },
-          {
-            "candidateName": "허태정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9.7
-          },
-          {
-            "candidateName": "박범계",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9.1
-          },
-          {
-            "candidateName": "장종태",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4.3
-          },
-          {
-            "candidateName": "장철민",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 2.5
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17499&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
-        "registrationDate": "2026-02-24",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:52:47",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17374,
-        "registrationId": "15370",
-        "pollName": "선거구분",
-        "pollOrg": "케이스탯리서치",
-        "clientOrg": "방송사 : KBS",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-10",
-          "end": "2026-02-11"
-        },
-        "publishDate": "2026-02-13 19시 00분",
-        "results": [
-          {
-            "candidateName": "이장우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 18
-          },
-          {
-            "candidateName": "허태정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 10
-          },
-          {
-            "candidateName": "박범계",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 9
-          },
-          {
-            "candidateName": "장종태",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 3
-          },
-          {
-            "candidateName": "장철민",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 3
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17374&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=17",
-        "registrationDate": "2026-02-13",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:06:08",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17351,
-        "registrationId": "15306",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "시·도단위 신문 : 대전일보",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-06",
-          "end": "2026-02-07"
-        },
-        "publishDate": "2026-02-12 13시 00분",
-        "results": [
-          {
-            "candidateName": "이장우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 19.4
-          },
-          {
-            "candidateName": "허태정",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 11.7
-          },
-          {
-            "candidateName": "박범계",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 8.5
-          },
-          {
-            "candidateName": "장철민",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4
-          },
-          {
-            "candidateName": "장종태",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 3.8
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17351&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
-        "registrationDate": "2026-02-10",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:09:22",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17306,
-        "registrationId": "15270",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 803,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-05",
-          "end": "2026-02-06"
-        },
-        "publishDate": "2026-02-11 10시 00분",
-        "results": [
-          {
-            "candidateName": "매우",
-            "party": "",
-            "support": 41.8
-          },
-          {
-            "candidateName": "알고",
-            "party": "",
-            "support": 40.1
-          },
-          {
-            "candidateName": "있다",
-            "party": "",
-            "support": 16.7
-          },
-          {
-            "candidateName": "어느",
-            "party": "",
-            "support": 1.4
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17306&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17202,
-        "registrationId": "15179",
-        "pollName": "선거구분",
-        "pollOrg": "미디어토마토",
-        "clientOrg": "시·도단위 신문 : 뉴스토마토",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 819,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-31",
-          "end": "2026-02-01"
-        },
-        "publishDate": "2026-02-03 06시 00분",
-        "results": [
-          {
-            "candidateName": "강훈식",
-            "party": "",
-            "support": 19.7
-          },
-          {
-            "candidateName": "허태정",
-            "party": "",
-            "support": 15.1
-          },
-          {
-            "candidateName": "박범계",
-            "party": "",
-            "support": 9
-          },
-          {
-            "candidateName": "장철민",
-            "party": "",
-            "support": 5.8
-          },
-          {
-            "candidateName": "박수현",
-            "party": "",
-            "support": 5.5
-          },
-          {
-            "candidateName": "양승조",
-            "party": "",
-            "support": 3.8
-          },
-          {
-            "candidateName": "장종태",
-            "party": "",
-            "support": 3.4
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17202&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02",
-        "electionTypes": [
-          "governor"
-        ]
-      },
-      {
-        "nttId": 16988,
-        "registrationId": "14991",
-        "pollName": "선거구분",
-        "pollOrg": "(주)한국리서치",
-        "clientOrg": "방송사 : KBS대전",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-26",
-          "end": "2025-12-27"
-        },
-        "publishDate": "2026-01-05 19시 00분",
-        "results": [
-          {
-            "candidateName": "이장우",
-            "party": null,
-            "partyRaw": "",
-            "support": 17
-          },
-          {
-            "candidateName": "허태정",
-            "party": null,
-            "partyRaw": "",
-            "support": 14
-          },
-          {
-            "candidateName": "박범계",
-            "party": null,
-            "partyRaw": "",
-            "support": 13
-          },
-          {
-            "candidateName": "장철민",
-            "party": null,
-            "partyRaw": "",
-            "support": 5
-          },
-          {
-            "candidateName": "장종태",
-            "party": null,
-            "partyRaw": "",
-            "support": 3
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    광역단체장선거 교육감선거 정치 현안 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16988&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T17:26:11",
-        "electionTypes": [
-          "governor",
-          "superintendent"
-        ]
-      },
-      {
-        "nttId": 16916,
-        "registrationId": "14931",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 809,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-26",
-          "end": "2025-12-27"
-        },
-        "publishDate": "2025-12-30 08시 00분",
-        "results": [
-          {
-            "candidateName": "허태정",
-            "party": "",
-            "support": 25.7
-          },
-          {
-            "candidateName": "장철민",
-            "party": "",
-            "support": 11
-          },
-          {
-            "candidateName": "장종태",
-            "party": "",
-            "support": 10.4
-          }
-        ],
-        "regionKey": "daejeon",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "대전광역시 전체    정당지지도 광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16916&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=61",
-        "registrationDate": "2025-12-29",
         "electionTypes": [
           "governor",
           "superintendent",
