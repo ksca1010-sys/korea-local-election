@@ -25,7 +25,7 @@ OVERRIDES_PATH = BASE_DIR / "data" / "local_media_registry_overrides.json"
 ENV_FILE = BASE_DIR / ".env"
 
 # ── 설정 상수 ──
-MODEL = "gemini-2.0-flash"
+MODEL = "gemini-2.5-flash"
 API_KEY_ENV = "GEMINI_API_KEY"
 GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
 
