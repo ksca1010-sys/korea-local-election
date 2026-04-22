@@ -1,9 +1,6 @@
 name: Update Local Media Pool
 
 on:
-  schedule:
-    # 매주 일요일 KST 01:00 (UTC 16:00 토요일) — 주간 갱신
-    - cron: '0 16 * * 6'
   workflow_dispatch:
     inputs:
       region:
