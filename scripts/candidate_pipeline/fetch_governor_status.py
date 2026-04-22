@@ -15,7 +15,7 @@ from election_overview_utils import call_claude_json
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계)
-  ANTHROPIC_API_KEY: Anthropic API 키 (2단계)
+  GEMINI_API_KEY: Gemini API 키 (2단계)
 """
 
 import json
@@ -298,7 +298,7 @@ def apply_changes(data, changes):
 def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
 
@@ -347,7 +347,7 @@ def main():
 
     # ── 2단계 ──
     if not llm_key:
-        print("  [건너뜀] ANTHROPIC_API_KEY 미설정")
+        print("  [건너뜀] GEMINI_API_KEY 미설정")
     else:
         prompt = build_gemini_prompt(data.get("governors", {}))
         try:

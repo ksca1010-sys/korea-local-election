@@ -143,7 +143,7 @@ def parse_batch_result(text, names):
 
 def main():
     load_env()
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     target_region = None
     for arg in sys.argv[1:]:
@@ -151,7 +151,7 @@ def main():
             target_region = arg.split("=")[-1] if "=" in arg else None
 
     if not api_key:
-        print("[오류] ANTHROPIC_API_KEY 미설정")
+        print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 55)

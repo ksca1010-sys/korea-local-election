@@ -183,12 +183,12 @@ def fetch_history_for_district(sd_name, sgg_hint, api_key):
 
 def fetch_runners_with_gemini(district_name, history):
     """Gemini로 역대 차점자 수집"""
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     if not llm_key or not history:
         return
 
     try:
-        import anthropic
+        import httpx
     except ImportError:
         return
 
@@ -201,17 +201,24 @@ def fetch_runners_with_gemini(district_name, history):
 {entries}
 
 확실한 것만. 모르면 제외.
-[{{"election":17,"runnerName":"이름","runnerParty":"정당명","runnerRate":42.1}}]"""
+[{{"election":17,"runnerName":"이름","runnerParty":"정당명","runnerRate":42.1}}]
 
-    client = anthropic.Anthropic(api_key=llm_key)
+JSON만 출력하세요. 다른 텍스트 없이."""
+
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key={llm_key}"
     for attempt in range(3):
         try:
-            response = client.messages.create(
-                model="claude-haiku-4-5-20251001",
-                max_tokens=512,
-                messages=[{"role": "user", "content": prompt}],
-            )
-            raw = response.content[0].text if response.content else ""
+            resp = httpx.post(url, json={
+                "contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": {"maxOutputTokens": 512, "temperature": 0.1},
+            }, timeout=60)
+            if resp.status_code != 200:
+                if resp.status_code in (429, 500, 502, 503):
+                    time.sleep(60 * (attempt + 1))
+                    continue
+                return
+            parts = resp.json().get("candidates", [{}])[0].get("content", {}).get("parts", [])
+            raw = parts[0]["text"].strip() if parts else ""
             if raw.startswith("```"): raw = raw.split("\n", 1)[-1]
             if raw.endswith("```"): raw = raw[:-3]
             results = json.loads(raw.strip()) if raw.strip() else []
@@ -225,11 +232,8 @@ def fetch_runners_with_gemini(district_name, history):
                     h["runner"] = PARTY_NORM.get(r.get("runnerParty", ""), "other")
                     h["runnerRate"] = r.get("runnerRate", 0)
             return
-        except Exception as e:
-            if "529" in str(e) or "overloaded" in str(e).lower():
-                time.sleep(60 * (attempt + 1))
-            else:
-                return
+        except Exception:
+            return
 
 
 def main():

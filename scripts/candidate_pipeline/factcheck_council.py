@@ -15,7 +15,7 @@ council/*.json의 현직 의원 상태를 뉴스 기반으로 업데이트하고
   python scripts/candidate_pipeline/factcheck_council.py --region gyeonggi
 
 환경변수:
-  ANTHROPIC_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET
+  GEMINI_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET
 """
 
 import json

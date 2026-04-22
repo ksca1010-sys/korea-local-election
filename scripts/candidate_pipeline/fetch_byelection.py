@@ -20,7 +20,7 @@ from election_overview_utils import call_claude_json
 
 BYELECTION_PATH = BASE_DIR / "data" / "candidates" / "byelection.json"
 ENV_FILE = BASE_DIR / ".env"
-API_KEY_ENV = "ANTHROPIC_API_KEY"
+API_KEY_ENV = "GEMINI_API_KEY"
 
 # 선관위 예비후보 API
 NEC_API_BASE = "http://apis.data.go.kr/9760000"

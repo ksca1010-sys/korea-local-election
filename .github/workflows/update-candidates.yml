@@ -2,8 +2,8 @@ name: Update Candidate Data
 
 on:
   schedule:
-    # 5일마다 한국시간 09:00 (UTC 00:00) 실행
-    - cron: '0 0 */5 * *'
+    # 매주 월요일 한국시간 09:00 (UTC 00:00) 실행
+    - cron: '0 0 * * 1'
   workflow_dispatch:
 
 concurrency:
@@ -44,7 +44,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install anthropic httpx
+        run: pip install httpx
 
       # 0-a단계: 재보궐 뉴스 자동감지 + NEC 교차검증
       - name: Detect byelection news
@@ -70,7 +70,7 @@ jobs:
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
           KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/detect_byelections.py --apply
@@ -111,7 +111,7 @@ jobs:
         id: stage_factcheck_governor
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -124,7 +124,7 @@ jobs:
         id: stage_factcheck_superintendent
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -137,7 +137,7 @@ jobs:
         id: stage_factcheck_mayor
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
@@ -152,7 +152,7 @@ jobs:
         id: stage_collect_mayor_pledges
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline

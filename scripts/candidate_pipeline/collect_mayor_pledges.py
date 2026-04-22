@@ -14,7 +14,7 @@
   python scripts/candidate_pipeline/collect_mayor_pledges.py --force  # 기존 공약 있어도 재수집
 
 환경변수:
-  ANTHROPIC_API_KEY: Anthropic API 키
+  GEMINI_API_KEY: Gemini API 키
   NAVER_CLIENT_ID / NAVER_CLIENT_SECRET: 네이버 검색 API
 """
 
@@ -193,9 +193,9 @@ def main():
     args = parser.parse_args()
 
     load_env()
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     if not llm_key:
-        print("[오류] ANTHROPIC_API_KEY 미설정")
+        print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 60)

@@ -84,9 +84,9 @@ def main():
     args = parser.parse_args()
 
     load_env()
-    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
-        print("[오류] ANTHROPIC_API_KEY 미설정")
+        print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
     mayor = json.loads((BASE_DIR / "data/candidates/mayor_candidates.json").read_text(encoding="utf-8"))

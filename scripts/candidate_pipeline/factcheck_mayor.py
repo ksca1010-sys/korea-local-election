@@ -14,7 +14,7 @@ from election_overview_utils import call_claude_json
   python scripts/candidate_pipeline/factcheck_mayor.py --region seoul
 
 환경변수:
-  ANTHROPIC_API_KEY: Anthropic API 키
+  GEMINI_API_KEY: Gemini API 키
 """
 
 import json
@@ -58,7 +58,7 @@ PARTY_NAMES = {
 
 def load_env():
     if ENV_FILE.exists():
-        for line in ENV_FILE.read_text().splitlines():
+        for line in ENV_FILE.read_text(encoding="utf-8").splitlines():
             line = line.strip()
             if line and not line.startswith("#") and "=" in line:
                 key, _, val = line.partition("=")
@@ -328,7 +328,7 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
 
 def main():
     load_env()
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     target_region = None
     for arg in sys.argv[1:]:
@@ -336,7 +336,7 @@ def main():
             target_region = arg.split("=")[-1] if "=" in arg else (sys.argv[sys.argv.index(arg) + 1] if sys.argv.index(arg) + 1 < len(sys.argv) else None)
 
     if not llm_key:
-        print("[오류] ANTHROPIC_API_KEY 미설정")
+        print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 60)

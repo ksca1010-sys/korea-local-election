@@ -25,8 +25,9 @@ OVERRIDES_PATH = BASE_DIR / "data" / "local_media_registry_overrides.json"
 ENV_FILE = BASE_DIR / ".env"
 
 # ── 설정 상수 ──
-MODEL = os.environ.get("CLAUDE_MODEL", "claude-haiku-4-5-20251001")
-API_KEY_ENV = "ANTHROPIC_API_KEY"
+MODEL = "gemini-2.0-flash"
+API_KEY_ENV = "GEMINI_API_KEY"
+GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
 
 # 선거일은 data/static/election_meta.json 을 단일 출처(SSOT)로 사용.
 # 파일이 없거나 파싱 실패 시 안전한 기본값(2026-06-03)으로 폴백.
@@ -267,26 +268,30 @@ def _is_transient_error(exc: Exception) -> bool:
     return False
 
 
-def call_llm(prompt, api_key, max_retries=5, max_tokens=1024, suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이."):
-    """Claude API 호출 (429 + 5xx 자동 재시도, 예산 상한 적용)."""
-    import anthropic
+def call_llm(prompt, api_key, max_retries=3, max_tokens=1024, suffix="\n\nJSON만 출력하세요. 다른 텍스트 없이."):
+    """Gemini API 호출 (429 + 5xx 자동 재시도, 예산 상한 적용)."""
+    import httpx
 
     _check_llm_budget()
-    client = anthropic.Anthropic(api_key=api_key)
+    url = GEMINI_API_URL.format(model=MODEL, key=api_key)
 
     for attempt in range(max_retries):
         try:
-            response = client.messages.create(
-                model=MODEL,
-                max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt + suffix}],
-            )
-            _llm_counter["count"] += 1
-            return response.content[0].text if response.content else ""
-        except anthropic.RateLimitError:
-            wait = 30 * (attempt + 1)
-            print(f"  [재시도] 쿼터 초과, {wait}초 대기 ({attempt+1}/{max_retries})")
-            time.sleep(wait)
+            resp = httpx.post(url, json={
+                "contents": [{"parts": [{"text": prompt + suffix}]}],
+                "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.1},
+            }, timeout=60)
+            if resp.status_code == 200:
+                _llm_counter["count"] += 1
+                parts = resp.json().get("candidates", [{}])[0].get("content", {}).get("parts", [])
+                return parts[0]["text"].strip() if parts else ""
+            elif _is_transient_error(Exception(str(resp.status_code))):
+                wait = 30 * (attempt + 1)
+                print(f"  [재시도] HTTP {resp.status_code}, {wait}초 대기 ({attempt+1}/{max_retries})")
+                time.sleep(wait)
+            else:
+                _llm_counter["failures"] += 1
+                raise RuntimeError(f"Gemini API 오류: {resp.status_code} {resp.text[:100]}")
         except Exception as e:
             if _is_transient_error(e):
                 wait = 30 * (attempt + 1)
@@ -304,14 +309,14 @@ def call_llm(prompt, api_key, max_retries=5, max_tokens=1024, suffix="\n\nJSON�
     return ""
 
 
-def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
-    """Claude API 호출 (JSON 응답 전용, 후보 파이프라인용).
+def call_claude_json(prompt, api_key=None, max_retries=3, max_tokens=2048):
+    """Gemini API 호출 (JSON 응답 전용, 후보 파이프라인용).
 
     후방호환: 실패 시 기본적으로 "[]" 반환.
     LLM_STRICT_MODE=1 설정 시 최종 실패는 RuntimeError 로 승격.
     LLM_BUDGET_MAX_CALLS 설정 시 호출 상한 초과 즉시 RuntimeError.
     """
-    import anthropic
+    import httpx
 
     if api_key is None:
         api_key = os.environ.get(API_KEY_ENV, "")
@@ -320,22 +325,26 @@ def call_claude_json(prompt, api_key=None, max_retries=5, max_tokens=2048):
         return "[]"
 
     _check_llm_budget()
-    client = anthropic.Anthropic(api_key=api_key)
+    url = GEMINI_API_URL.format(model=MODEL, key=api_key)
     json_suffix = "\n\nJSON만 출력하세요. 다른 텍스트 없이."
 
     for attempt in range(max_retries):
         try:
-            response = client.messages.create(
-                model=MODEL,
-                max_tokens=max_tokens,
-                messages=[{"role": "user", "content": prompt + json_suffix}],
-            )
-            _llm_counter["count"] += 1
-            return response.content[0].text if response.content else "[]"
-        except anthropic.RateLimitError:
-            wait = 30 * (attempt + 1)
-            print(f"    [재시도] 쿼터 초과, {wait}초 대기 ({attempt+1}/{max_retries})")
-            time.sleep(wait)
+            resp = httpx.post(url, json={
+                "contents": [{"parts": [{"text": prompt + json_suffix}]}],
+                "generationConfig": {"maxOutputTokens": max_tokens, "temperature": 0.1},
+            }, timeout=60)
+            if resp.status_code == 200:
+                _llm_counter["count"] += 1
+                parts = resp.json().get("candidates", [{}])[0].get("content", {}).get("parts", [])
+                return parts[0]["text"].strip() if parts else "[]"
+            elif _is_transient_error(Exception(str(resp.status_code))):
+                wait = 30 * (attempt + 1)
+                print(f"    [재시도] HTTP {resp.status_code}, {wait}초 대기 ({attempt+1}/{max_retries})")
+                time.sleep(wait)
+            else:
+                _llm_counter["failures"] += 1
+                raise RuntimeError(f"Gemini API 오류: {resp.status_code} {resp.text[:100]}")
         except Exception as e:
             if _is_transient_error(e):
                 wait = 30 * (attempt + 1)

@@ -11,7 +11,7 @@ Naver 뉴스 검색 → Claude Haiku로 경력 추출
   python scripts/candidate_pipeline/fill_proportional_careers.py   # 전체
 
 환경변수:
-  ANTHROPIC_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET
+  GEMINI_API_KEY, NAVER_CLIENT_ID, NAVER_CLIENT_SECRET
 """
 
 import json

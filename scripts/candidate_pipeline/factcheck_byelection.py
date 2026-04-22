@@ -276,11 +276,11 @@ def _verify_party_consistency(districts):
 
 def main():
     load_env()
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
 
     if not llm_key:
-        print("[오류] ANTHROPIC_API_KEY 미설정")
+        print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
     print("=" * 55)

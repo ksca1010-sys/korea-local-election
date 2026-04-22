@@ -2,8 +2,8 @@ name: Update By-Election Data
 
 on:
   schedule:
-    # 3일마다 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
-    - cron: '0 2 */3 * *'
+    # 매주 월요일 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
+    - cron: '0 2 * * 1'
   workflow_dispatch:
 
 concurrency:
@@ -44,7 +44,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install anthropic httpx
+        run: pip install httpx
 
       - name: Step 1 - Detect new districts (NEC API)
         continue-on-error: true
@@ -55,14 +55,14 @@ jobs:
       - name: Step 2 - Fetch & update candidates (news + NEC)
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/fetch_byelection.py
 
       - name: Step 3 - Factcheck candidates
         continue-on-error: true
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
         run: python scripts/candidate_pipeline/factcheck_byelection.py
 

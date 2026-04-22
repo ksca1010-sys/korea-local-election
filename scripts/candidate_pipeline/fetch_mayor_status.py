@@ -19,7 +19,7 @@ AI는 변경사항 탐지 보조 역할만 수행합니다.
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계 필수)
-  ANTHROPIC_API_KEY: Anthropic API 키 (2단계 필수)
+  GEMINI_API_KEY: Gemini API 키 (2단계 필수)
 """
 
 import json
@@ -333,7 +333,7 @@ def apply_changes(data, region_key, changes):
 def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
-    llm_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    llm_key = os.environ.get("GEMINI_API_KEY", "")
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
     target_region = None
@@ -401,7 +401,7 @@ def main():
 
     # ── 2단계: Gemini 변경사항 탐지 ──
     if not llm_key:
-        print("  [건너뜀] ANTHROPIC_API_KEY 미설정")
+        print("  [건너뜀] GEMINI_API_KEY 미설정")
     else:
         mayors = data.get("mayors", {})
         region_groups = {}
