@@ -1,12 +1,12 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-21",
+    "lastUpdated": "2026-04-22",
     "source": "auto-init from mayor_status.json",
-    "lastFactCheck": "2026-04-21T02:50:15.850476",
+    "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-19T06:23:40.271170",
+    "lastPledgeCollection": "2026-04-22T06:12:47.306583",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastByelectionSync": "2026-04-19",
@@ -67,7 +67,9 @@
           "career": "전 종로구의원·서울시의원 / 2022 종로구청장 후보",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "문화경제도시 종로"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -4626,7 +4628,9 @@
           "career": "지역위원장",
           "status": "PRIMARY_WINNER",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "햇빛소득마을 등 환경정책"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null,
@@ -4930,7 +4934,9 @@
           "career": "(전)인천광역시 중구청 공무원",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "캐리어 적재 버스 운영"
+          ]
         },
         {
           "name": "조수진",
@@ -5632,7 +5638,7 @@
           "name": "신수정",
           "party": "democratic",
           "career": "현 광주시의회 의장",
-          "status": "공천확정",
+          "status": "NOMINATED",
           "dataSource": "news",
           "pledges": [
             "구조·성장전략 전면 재설계",
@@ -5645,13 +5651,13 @@
           "sourceLabel": null,
           "sourcePublishedAt": null,
           "_lastChange": {
-            "date": "2026-04-16",
+            "date": "2026-04-22",
             "type": "status_change",
-            "detail": "[2026 지방선거] 신수정, 민주당 광주 북구청장 후보 확정…'첫 여성 구청장' 도전",
-            "previous": "NOMINATED",
-            "sourceUrl": "https://example.com",
-            "sourceLabel": "뉴스제목",
-            "sourcePublishedAt": "2026-04-16"
+            "detail": "신수정 광주 북구청장 예비후보 확정, 첫 여성 구청장 도전",
+            "previous": "공천확정",
+            "sourceUrl": "https://example.com/news",
+            "sourceLabel": "광주일보",
+            "sourcePublishedAt": "2026-04-22"
           }
         },
         {
@@ -7477,7 +7483,11 @@
           "career": "부천시 여성 기초단체장 첫 도전",
           "status": "[출마선언]",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "기업도시 전환",
+            "기업·일자리 창출",
+            "도시 혁신"
+          ],
           "sourceUrl": "https://www.example.com/news",
           "sourceLabel": "중부일보",
           "sourcePublishedAt": "2025-04-16"
@@ -7736,7 +7746,9 @@
           "career": "(전) 경기도의회의원",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "청년 몰려드는 명품 교육 도시 조성"
+          ]
         },
         {
           "name": "유광혁",
@@ -7952,6 +7964,17 @@
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
+        },
+        {
+          "name": "고금란",
+          "party": "newReform",
+          "career": "전 과천시의회 의장",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [],
+          "sourceUrl": "https://www.news.com",
+          "sourceLabel": "중부일보",
+          "sourcePublishedAt": "2026-04-22"
         }
       ],
       "의왕시": [
@@ -11201,7 +11224,7 @@
           "name": "이범석",
           "party": "ppp",
           "career": "현 청주시 시장",
-          "status": "EXPECTED",
+          "status": "[출마선언]",
           "dataSource": "incumbent",
           "pledges": [
             "내수 스마트팜 원예단지 임대 운영",
@@ -11211,7 +11234,16 @@
           ],
           "sourceUrl": null,
           "sourceLabel": null,
-          "sourcePublishedAt": null
+          "sourcePublishedAt": null,
+          "_lastChange": {
+            "date": "2026-04-22",
+            "type": "status_change",
+            "detail": "이범석 청주시장 23일 출마선언",
+            "previous": "EXPECTED",
+            "sourceUrl": "https://news.example.com",
+            "sourceLabel": "충청언론",
+            "sourcePublishedAt": "2026-04-22"
+          }
         },
         {
           "name": "김학관",
@@ -11301,6 +11333,20 @@
           "sourceUrl": "https://example.com",
           "sourceLabel": "지역 뉴스",
           "sourcePublishedAt": "2026-04-08"
+        },
+        {
+          "name": "서승우",
+          "party": "ppp",
+          "career": "現 청주시의원",
+          "status": "[출마선언]",
+          "dataSource": "claude",
+          "pledges": [
+            "스마트 안전도시 구축",
+            "예방 중심의 안전 정책"
+          ],
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "충청언론",
+          "sourcePublishedAt": "2026-04-22"
         }
       ],
       "충주시": [
@@ -11680,7 +11726,9 @@
           "career": "영동군의원",
           "status": "DECLARED",
           "dataSource": "claude",
-          "pledges": [],
+          "pledges": [
+            "충북농업기술원 남부분원 건립 추진"
+          ],
           "sourceUrl": "https://news.source.com",
           "sourceLabel": "중부매일",
           "sourcePublishedAt": "2026-04-15"
@@ -11755,12 +11803,21 @@
           "name": "김도화",
           "party": "independent",
           "career": "보은군의원",
-          "status": "DECLARED",
+          "status": "[사퇴]",
           "dataSource": "claude",
           "pledges": [],
           "sourceUrl": "https://news.source.com",
           "sourceLabel": "중부매일",
-          "sourcePublishedAt": "2026-04-15"
+          "sourcePublishedAt": "2026-04-15",
+          "_lastChange": {
+            "date": "2026-04-22",
+            "type": "status_change",
+            "detail": "김도화 보은군의원 사퇴... 충북도의원 선거 출마 선언",
+            "previous": "DECLARED",
+            "sourceUrl": "https://news.example.com",
+            "sourceLabel": "충청언론",
+            "sourcePublishedAt": "2026-04-22"
+          }
         },
         {
           "name": "조위필",
@@ -13201,7 +13258,9 @@
           "career": "현 예산군 군수",
           "status": "EXPECTED",
           "dataSource": "incumbent",
-          "pledges": [],
+          "pledges": [
+            "섬김택시 확대 (103→120개 마을)"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -14719,7 +14778,9 @@
           "career": "(전)사단법인 여수경영인협회 회장",
           "status": "DECLARED",
           "dataSource": "nec_precand",
-          "pledges": []
+          "pledges": [
+            "중증장애인 자립생활 정책 이행"
+          ]
         }
       ],
       "순천시": [
@@ -16282,7 +16343,12 @@
           "career": "전 국회의원",
           "status": "DECLARED",
           "dataSource": "verified",
-          "pledges": [],
+          "pledges": [
+            "원도심 재부팅",
+            "현장 시장실 설치",
+            "포항도시 관련 정책",
+            "영일만대교/해저터널"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -17045,7 +17111,9 @@
           "career": "전 경산시장 / 무소속 출마",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "잠든 경산 깨우기"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null
@@ -18791,7 +18859,10 @@
           "career": "전 KBS창원총국장",
           "status": "DECLARED",
           "dataSource": "news",
-          "pledges": [],
+          "pledges": [
+            "갈사만산단 해결",
+            "관광산업 육성"
+          ],
           "sourceUrl": null,
           "sourceLabel": null,
           "sourcePublishedAt": null

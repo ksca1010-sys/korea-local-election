@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-21",
+    "lastUpdated": "2026-04-22",
     "source": "auto-init from superintendent_status.json",
-    "lastFactCheck": "2026-04-21T02:16:11.564120",
+    "lastFactCheck": "2026-04-22T05:25:56.350703",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
@@ -452,7 +452,7 @@
         "name": "이정선",
         "stance": "진보",
         "career": "현 광주광역시 교육감 / 전남광주통합특별시 초대 교육감 출마",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "AI 위기 감지 시스템 도입",
@@ -477,13 +477,13 @@
           }
         ],
         "_lastChange": {
-          "date": "2026-04-19",
+          "date": "2026-04-22",
           "type": "status_change",
-          "detail": "[지역교육브리핑] 이정선 광주교육감 예비후보 등록…현직 교육감 中 처...",
-          "previous": "DECLARED",
-          "sourceUrl": "https://example.com",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-19"
+          "detail": "이정선 교육감 후보, 선거사무소 개소식 / 이정선·고두갑·김해룡 '전남광주교육감 후보단일화' 합의",
+          "previous": "EXPECTED",
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-22"
         }
       },
       {
@@ -576,20 +576,20 @@
         "name": "김대중",
         "stance": "진보",
         "career": "현 전라남도 교육감",
-        "status": "EXPECTED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "AI 위기 감지 시스템 도입",
           "폐교를 교육청 사무실로 활용"
         ],
         "_lastChange": {
-          "date": "2026-04-19",
+          "date": "2026-04-22",
           "type": "status_change",
-          "detail": "김대중, 전남광주통합특별시교육감 예비후보 등록...선거운동 돌입",
-          "previous": "DECLARED",
-          "sourceUrl": "https://example.com",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-19"
+          "detail": "김대중, 전남광주통합특별시교육감 예비후보 등록...선거운동 돌입 / '다시 뛰는 통합교육'…김대중 교육감, 10일 예비후보 등록",
+          "previous": "EXPECTED",
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-22"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -659,7 +659,7 @@
         "name": "오석진",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "교원 민원·법률 통합 대응 시스템 고도화",
@@ -677,7 +677,16 @@
             "text": "AI로 행정 업무 자동화",
             "category": "디지털교육"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "오석진 대전시교육감 예비후보 지지 선언 잇따라, 지지 선언만 20곳",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "언론사미상",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "daejeon-3",
@@ -709,7 +718,7 @@
         "name": "정상신",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "교육행정 혁신부 신설로 교사 행정업무 감소",
@@ -727,14 +736,23 @@
             "text": "고교 학생 주식통장 프로젝트 추진",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "정상신 대전교육감 예비후보 \"조직 문화 쇄신이 대전 교육 정상화 핵심",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "언론사미상",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "daejeon-5",
         "name": "성광진",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "학교시설 개방 확대 및 지역사회 공유",
@@ -752,7 +770,28 @@
             "text": "정책·사업 숙려제 도입",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "'보수' 김영진, 출마 접고 '진보' 성광진 대전교육감 후보 지지 선언",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "언론사미상",
+          "sourcePublishedAt": "2026-04-22"
+        }
+      },
+      {
+        "id": "daejeon-6",
+        "name": "진동규",
+        "stance": "중도",
+        "career": "미상",
+        "status": "EXPECTED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "",
+        "sourceLabel": "언론사미상",
+        "sourcePublishedAt": "2026-04-22"
       }
     ],
     "ulsan": [
@@ -891,7 +930,7 @@
         "name": "유은혜",
         "stance": "진보",
         "career": "전 교육부 장관, 전 국회의원",
-        "status": "DECLARED",
+        "status": "WITHDRAWN",
         "dataSource": "news_verified",
         "pledges": [
           "특수학교 확대 및 병설 특수학교 도입",
@@ -914,7 +953,16 @@
             "text": "민주시민교육위원회 설치",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "추미애 경기도지사 후보 선출에 따른 교육감 후보 경선 중단. 뉴스에서 '여성·문재인 정부 장관' 출신 유은혜가 언급되나 교육감 후보로서의 언급 부재",
+          "previous": "DECLARED",
+          "sourceUrl": "https://news.example.com/gyeonggi-yoon",
+          "sourceLabel": "언론사",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "gyeonggi-3",
@@ -1023,20 +1071,20 @@
         "name": "강삼영",
         "stance": "중도",
         "career": null,
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "30분 이내 무상통학 버스 운영",
           "무상급식·교복·통학 확대"
         ],
         "_lastChange": {
-          "date": "2026-04-07",
+          "date": "2026-04-22",
           "type": "status_change",
-          "detail": "강삼영 도교육감 예비후보 양양지역 공약발표회, 강삼영 도교육감 예비후보 출판기념회 개최",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-07"
+          "detail": "강삼영 강원도교육감 예비후보, 선대위 출범 및 선거사무소 활동 확인",
+          "previous": "DECLARED",
+          "sourceUrl": "N/A",
+          "sourceLabel": "언론 보도",
+          "sourcePublishedAt": "2026-04-22"
         },
         "sourceUrl": null,
         "sourceLabel": null,
@@ -1167,20 +1215,20 @@
         "name": "우상호",
         "stance": "중도",
         "career": "정치인",
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "claude",
         "pledges": [],
         "sourceUrl": "https://news.example.com",
         "sourceLabel": "언론사",
         "sourcePublishedAt": "2026-04-15",
         "_lastChange": {
-          "date": "2026-04-16",
+          "date": "2026-04-22",
           "type": "status_change",
           "detail": "김진태·우상호 사실상 출정식…선거전 불붙었다",
-          "previous": "EXPECTED",
+          "previous": "RUMORED",
           "sourceUrl": "N/A",
-          "sourceLabel": "강원지역 언론",
-          "sourcePublishedAt": "2026-04-16"
+          "sourceLabel": "언론 보도",
+          "sourcePublishedAt": "2026-04-22"
         }
       }
     ],
@@ -1283,6 +1331,18 @@
             "category": "기타"
           }
         ]
+      },
+      {
+        "id": "chungbuk-5",
+        "name": "김진균",
+        "stance": "중도",
+        "career": "충주교육지원청 관련 경력",
+        "status": "EXPECTED",
+        "dataSource": "claude",
+        "pledges": [],
+        "sourceUrl": "not_available",
+        "sourceLabel": "언론사 미상",
+        "sourcePublishedAt": "2026-04-22"
       }
     ],
     "chungnam": [
@@ -1846,7 +1906,7 @@
         "name": "김광수",
         "stance": "보수",
         "career": "현 제주특별자치도 교육감",
-        "status": "RUMORED",
+        "status": "DECLARED",
         "dataSource": "incumbent",
         "pledges": [
           "1인 1노트북 정책 폐지",
@@ -1856,13 +1916,13 @@
         "sourceLabel": null,
         "sourcePublishedAt": null,
         "_lastChange": {
-          "date": "2026-04-19",
+          "date": "2026-04-22",
           "type": "status_change",
-          "detail": "김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "DECLARED",
-          "sourceUrl": "미제공",
-          "sourceLabel": "언론사명 미상",
-          "sourcePublishedAt": "2026-04-19"
+          "detail": "\"4년만 하겠다\"던 김광수 교육감, 재선 도전에 \"사과드린다\" / 김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
+          "previous": "RUMORED",
+          "sourceUrl": "뉴스 기반",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-22"
         },
         "pledgeCategories": [
           {
@@ -1985,7 +2045,7 @@
         "name": "원성수",
         "stance": "중도",
         "career": "뉴스에 언급 없음",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "하향 평준화된 세종교육 개혁"
@@ -1998,14 +2058,23 @@
             "text": "하향 평준화된 세종교육 개혁",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "\"세종교육감 예비후보\" 및 선거사무소 개소식 개최로 예비후보 등록 확인",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "sejong-3",
         "name": "안광식",
         "stance": "중도",
         "career": "현장 전문가",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "세종을 대한민국 교육의 표준으로",
@@ -2023,14 +2092,23 @@
             "text": "이재명 정부 교육 개혁과 발맞춘 혁신",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "\"세종시교육감 예비후보\" 및 특별공약 발표 예정으로 예비후보 등록 확인",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "sejong-4",
         "name": "유우석",
         "stance": "중도",
         "career": "평교사 출신 첫 공모교장",
-        "status": "DECLARED",
+        "status": "EXPECTED",
         "dataSource": "news_verified",
         "pledges": [
           "세종 체육중·고등학교 설립",
@@ -2048,7 +2126,16 @@
             "text": "체육 인재 유출 방지",
             "category": "기타"
           }
-        ]
+        ],
+        "_lastChange": {
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "\"세종교육감 도전\" 기사에서 예비후보로 활동 중 확인",
+          "previous": "DECLARED",
+          "sourceUrl": "",
+          "sourceLabel": "종합",
+          "sourcePublishedAt": "2026-04-22"
+        }
       },
       {
         "id": "sejong-5",

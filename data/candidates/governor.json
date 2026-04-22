@@ -1,12 +1,12 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-04-19",
+    "lastUpdated": "2026-04-22",
     "source": "manual (data.js export)",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
     "lastPipelineRun": "2026-03-11T19:54:52.221896",
-    "lastFactCheck": "2026-04-19T05:27:07.670703",
+    "lastFactCheck": "2026-04-22T05:23:38.337520",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
@@ -905,17 +905,20 @@
         "age": 68,
         "career": "現 울산시장 (재선 도전) / 前 남구청장",
         "photo": null,
-        "status": "NOMINATED",
+        "status": "DECLARED",
         "dataSource": "news",
         "pledges": [
           "34조원 투자 유치 지속",
           "분산에너지 특화지역"
         ],
         "_lastChange": {
-          "date": "2026-03-17",
-          "type": "nominated",
-          "detail": "국민의힘, 울산시장·경남지사·강원도지사 모두 현역 단수공천",
-          "previous": "DECLARED"
+          "date": "2026-04-22",
+          "type": "status_change",
+          "detail": "김두겸 울산시장 선거전 시기 앞당겨.. 29일 출마 선언식",
+          "previous": "NOMINATED",
+          "sourceUrl": "https://news.example.com",
+          "sourceLabel": "뉴스",
+          "sourcePublishedAt": "2026-04-22"
         },
         "sourceUrl": null,
         "sourceLabel": null,
