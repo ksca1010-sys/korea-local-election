@@ -1,9 +1,6 @@
 name: Update Local Council Members
 
 on:
-  schedule:
-    # 매주 금요일 한국시간 13:00 (UTC 04:00) 실행 — update-election-stats(01:00)와 3시간 간격
-    - cron: '0 4 * * 5'
   workflow_dispatch:
 
 concurrency:

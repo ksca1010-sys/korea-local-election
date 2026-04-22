@@ -49,22 +49,37 @@ jobs:
       - name: Step 1 - Detect new districts (NEC API)
         continue-on-error: true
         env:
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/candidate_pipeline/detect_byelections.py --apply
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/detect_byelections.py --apply
 
       - name: Step 2 - Fetch & update candidates (news + NEC)
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/candidate_pipeline/fetch_byelection.py
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/fetch_byelection.py
 
       - name: Step 3 - Factcheck candidates
         continue-on-error: true
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
-        run: python scripts/candidate_pipeline/factcheck_byelection.py
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/factcheck_byelection.py
 
       - name: Validate pipeline data
         run: python scripts/candidate_pipeline/validate_pipeline.py
