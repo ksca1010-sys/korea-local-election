@@ -1,6 +1,169 @@
 {
-  "last_id": 18337,
+  "last_id": 18358,
   "polls": [
+    {
+      "nttId": 18358,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "케이스탯리서치",
+      "clientOrg": "조사기관 자체 : 조사기관 자체 : ㈜엠브레인퍼블릭, 케이스탯리서치, ㈜코리아리서치인터내셔널, ㈜한국리서치",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1005,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-23",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18358&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18349,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "전국단위 신문 : 천지일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1008,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-23",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   대통령선거 정당지지도 국정현안 등",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18349&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-22"
+    },
+    {
+      "nttId": 18345,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "미디어토마토",
+      "clientOrg": "시·도단위 신문 : 뉴스토마토",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1036,
+        "marginOfError": 3.0,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-23",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18345&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-22"
+    },
+    {
+      "nttId": 18344,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)에이스리서치",
+      "clientOrg": "시·도단위 신문 : 강원일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 503,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-23",
+      "results": [],
+      "regionKey": "gangwon",
+      "municipality": "인제군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "governor",
+        "mayor",
+        "party_support"
+      ],
+      "title": "강원특별자치도 인제군    정당지지도 기초단체장선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18344&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-22"
+    },
+    {
+      "nttId": 18343,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)이너텍시스템즈",
+      "clientOrg": "인터넷언론/인터넷언론/인터넷언론 : YNT영남뉴스통신/글로벌경제신문 대구경북본부/미디어프레스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-22",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "안동시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상북도 안동시    정당지지도 기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18343&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-22"
+    },
     {
       "nttId": 18337,
       "registrationId": null,
@@ -118,7 +281,28 @@
         "end": "2026-04-19"
       },
       "publishDate": "2026-04-22",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박효진",
+          "party": "",
+          "support": 12.03
+        },
+        {
+          "candidateName": "성기선",
+          "party": "",
+          "support": 12.6
+        },
+        {
+          "candidateName": "안민석",
+          "party": "",
+          "support": 20.17
+        },
+        {
+          "candidateName": "유은혜",
+          "party": "",
+          "support": 22.99
+        }
+      ],
       "regionKey": "gyeonggi",
       "municipality": null,
       "electionType": "superintendent",
@@ -184,7 +368,20 @@
         "end": "2026-04-20"
       },
       "publishDate": "2026-04-21",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 22.2,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.8,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "김천시",
       "electionType": "mayor",
@@ -317,7 +514,26 @@
         "end": "2026-04-19"
       },
       "publishDate": "2026-04-21",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 48.9,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 29.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 1.0,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": null,
       "electionType": "governor",
@@ -51908,19 +52124,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-22",
-    "lastPipelineRun": "2026-04-22",
+    "lastUpdated": "2026-04-23",
+    "lastPipelineRun": "2026-04-23",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 900,
-    "withRegistrationDate": 897,
+    "pollCount": 905,
+    "withRegistrationDate": 902,
     "withRegistrationId": 670,
-    "withResults": 840,
+    "withResults": 843,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "party_support": 121,
+      "party_support": 124,
+      "mayor": 508,
       "superintendent": 24,
-      "mayor": 506,
       "governor": 248,
       "unknown": 1
     }
