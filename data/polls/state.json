@@ -1,6 +1,239 @@
 {
-  "last_id": 18358,
+  "last_id": 18366,
   "polls": [
+    {
+      "nttId": 18366,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한국갤럽조사연구소",
+      "clientOrg": "조사기관 자체 : 한국갤럽 자체 조사",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1001,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-21",
+        "end": "2026-04-22"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18366&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-24"
+    },
+    {
+      "nttId": 18365,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "케이에스오아이 주식회사(한국사회여론연구소)",
+      "clientOrg": "방송사 : CBS",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1001,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-22",
+        "end": "2026-04-23"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": "seoul",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "title": "서울특별시 전체    광역단체장선거 교육감선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18365&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18363,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "조원씨앤아이",
+      "clientOrg": "인터넷언론 : 스트레이트뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 802,
+        "marginOfError": 3.5,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-20",
+        "end": "2026-04-21"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": "seoul",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "title": "서울특별시 전체    정당지지도 광역단체장선거 교육감선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18363&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18362,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)데일리리서치",
+      "clientOrg": "인터넷언론 : 광주in",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 501,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-22",
+        "end": "2026-04-22"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "강진군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 강진군    기초단체장선거 광역의원선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18362&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18361,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)여론조사꽃",
+      "clientOrg": "조사기관 자체 : (주)여론조사꽃",
+      "method": {
+        "type": "전화면접",
+        "raw": "무선전화면접",
+        "samplingFrame": "전체",
+        "sampleSize": 1012,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-21",
+        "end": "2026-04-22"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": "daegu",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "party_support"
+      ],
+      "title": "대구광역시 전체    광역단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18361&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18360,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한국정책연구원",
+      "clientOrg": "인터넷언론 : 오피니언뷰",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 500,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-22",
+        "end": "2026-04-22"
+      },
+      "publishDate": "2026-04-23",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "담양군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 담양군 기초단체장선거정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18360&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
+    {
+      "nttId": 18359,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)에이스리서치",
+      "clientOrg": "시·도단위 신문 : 강원일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 505,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-21",
+        "end": "2026-04-22"
+      },
+      "publishDate": "2026-04-24",
+      "results": [],
+      "regionKey": "gangwon",
+      "municipality": "영월군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "governor",
+        "mayor",
+        "party_support"
+      ],
+      "title": "강원특별자치도 영월군    정당지지도 기초단체장선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18359&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-04-23"
+    },
     {
       "nttId": 18358,
       "registrationId": null,
@@ -118,7 +351,38 @@
         "end": "2026-04-21"
       },
       "publishDate": "2026-04-23",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 53.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 30.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.4,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.1,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gangwon",
       "municipality": "인제군",
       "electionType": "mayor",
@@ -334,7 +598,38 @@
         "end": "2026-04-20"
       },
       "publishDate": "2026-04-22",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 47.5,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 30.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.2,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 3.2,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.1,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gangwon",
       "municipality": "원주시",
       "electionType": "mayor",
@@ -414,7 +709,18 @@
         "end": "2026-04-20"
       },
       "publishDate": "2026-04-21",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "조국혁",
+          "party": "",
+          "support": 41.6
+        },
+        {
+          "candidateName": "개혁신",
+          "party": "",
+          "support": 40.3
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -52124,20 +52430,20 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-23",
-    "lastPipelineRun": "2026-04-23",
+    "lastUpdated": "2026-04-24",
+    "lastPipelineRun": "2026-04-24",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 905,
-    "withRegistrationDate": 902,
+    "pollCount": 912,
+    "withRegistrationDate": 909,
     "withRegistrationId": 670,
-    "withResults": 843,
+    "withResults": 846,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "party_support": 124,
-      "mayor": 508,
+      "party_support": 125,
+      "governor": 251,
+      "mayor": 511,
       "superintendent": 24,
-      "governor": 248,
       "unknown": 1
     }
   }
