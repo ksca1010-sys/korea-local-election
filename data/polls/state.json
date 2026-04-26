@@ -22,7 +22,38 @@
         "end": "2026-04-23"
       },
       "publishDate": "2026-04-25",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "장세일",
+          "party": "",
+          "support": 44.1
+        },
+        {
+          "candidateName": "정원식",
+          "party": "",
+          "support": 7.0
+        },
+        {
+          "candidateName": "이석하",
+          "party": "",
+          "support": 25.0
+        },
+        {
+          "candidateName": "무소속",
+          "party": "",
+          "support": 13.7
+        },
+        {
+          "candidateName": "김한균",
+          "party": "",
+          "support": 2.1
+        },
+        {
+          "candidateName": "오기원",
+          "party": "",
+          "support": 3.7
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "영광군",
       "electionType": "mayor",
@@ -55,7 +86,28 @@
         "end": "2026-04-23"
       },
       "publishDate": "2026-04-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "투표하는",
+          "party": "",
+          "support": 7.8
+        },
+        {
+          "candidateName": "가봐야",
+          "party": "",
+          "support": 28.2
+        },
+        {
+          "candidateName": "알겠다",
+          "party": "",
+          "support": 62.0
+        },
+        {
+          "candidateName": "가능하면",
+          "party": "",
+          "support": 1.0
+        }
+      ],
       "regionKey": "incheon",
       "municipality": "강화군",
       "electionType": "mayor",
@@ -88,7 +140,38 @@
         "end": "2026-04-23"
       },
       "publishDate": "2026-04-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "임전수",
+          "party": "",
+          "support": 23.9
+        },
+        {
+          "candidateName": "강미애",
+          "party": "",
+          "support": 13.6
+        },
+        {
+          "candidateName": "원성수",
+          "party": "",
+          "support": 11.7
+        },
+        {
+          "candidateName": "안광식",
+          "party": "",
+          "support": 8.8
+        },
+        {
+          "candidateName": "김인엽",
+          "party": "",
+          "support": 5.9
+        },
+        {
+          "candidateName": "정일화",
+          "party": "",
+          "support": 3.9
+        }
+      ],
       "regionKey": "sejong",
       "municipality": null,
       "electionType": "superintendent",
@@ -217,7 +300,26 @@
         "end": "2026-04-21"
       },
       "publishDate": "2026-04-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 48.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 0.8,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 0.8,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",
@@ -338,7 +440,33 @@
         "end": "2026-04-22"
       },
       "publishDate": "2026-04-23",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박종원",
+          "party": "",
+          "support": 43.6
+        },
+        {
+          "candidateName": "정철원",
+          "party": "",
+          "support": 41.6
+        },
+        {
+          "candidateName": "최화삼",
+          "party": "",
+          "support": 8.2
+        },
+        {
+          "candidateName": "지지하는",
+          "party": "",
+          "support": 2.6
+        },
+        {
+          "candidateName": "후보없다",
+          "party": "",
+          "support": 1.4
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "담양군",
       "electionType": "mayor",
@@ -371,7 +499,38 @@
         "end": "2026-04-22"
       },
       "publishDate": "2026-04-24",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 38.9,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 42.7,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 1.3,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gangwon",
       "municipality": "영월군",
       "electionType": "mayor",
@@ -52580,14 +52739,14 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-04-25",
-    "lastPipelineRun": "2026-04-25",
+    "lastUpdated": "2026-04-26",
+    "lastPipelineRun": "2026-04-26",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
     "pollCount": 915,
     "withRegistrationDate": 912,
     "withRegistrationId": 670,
-    "withResults": 848,
+    "withResults": 854,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
       "mayor": 513,
