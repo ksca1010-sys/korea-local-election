@@ -1,13 +1,13 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-22",
+    "lastUpdated": "2026-04-29",
     "updatedAt": "2026-04-01",
     "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 226,
     "actingCount": 8,
     "note": "electedParty/electedName = 당선 시점 공식 데이터, name/party = 현재 상태",
-    "lastFactCheck": "2026-04-22T05:39:33.002057"
+    "lastFactCheck": "2026-04-29T06:13:02.213753"
   },
   "mayors": {
     "seoul_종로구": {
