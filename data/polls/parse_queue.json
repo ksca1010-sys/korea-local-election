@@ -301,53 +301,46 @@
       "lastAttemptAt": "2026-04-30",
       "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
     },
-    "18419": {
-      "firstSeenAt": "2026-04-29",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-04-30",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
-    },
-    "18452": {
-      "firstSeenAt": "2026-04-30",
-      "attempts": 1,
-      "status": "retry",
-      "lastAttemptAt": "2026-04-30",
-      "lastReason": "PDF 파싱 실패"
-    },
-    "18436": {
-      "firstSeenAt": "2026-04-30",
-      "attempts": 1,
-      "status": "retry",
-      "lastAttemptAt": "2026-04-30",
-      "lastReason": "PDF 파싱 실패"
-    },
     "18434": {
       "firstSeenAt": "2026-04-30",
+      "attempts": 2,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-01",
+      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
+    },
+    "18463": {
+      "firstSeenAt": "2026-05-01",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-04-30",
+      "lastAttemptAt": "2026-05-01",
       "lastReason": "PDF 파싱 실패"
     },
-    "18433": {
-      "firstSeenAt": "2026-04-30",
+    "18459": {
+      "firstSeenAt": "2026-05-01",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-04-30",
+      "lastAttemptAt": "2026-05-01",
       "lastReason": "PDF 파싱 실패"
     },
-    "18432": {
-      "firstSeenAt": "2026-04-30",
+    "18457": {
+      "firstSeenAt": "2026-05-01",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-04-30",
+      "lastAttemptAt": "2026-05-01",
       "lastReason": "PDF 파싱 실패"
     },
-    "18431": {
-      "firstSeenAt": "2026-04-30",
+    "18456": {
+      "firstSeenAt": "2026-05-01",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-04-30",
+      "lastAttemptAt": "2026-05-01",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18455": {
+      "firstSeenAt": "2026-05-01",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-01",
       "lastReason": "PDF 파싱 실패"
     }
   }
