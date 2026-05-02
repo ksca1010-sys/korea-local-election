@@ -1,6 +1,39 @@
 {
-  "last_id": 18465,
+  "last_id": 18467,
   "polls": [
+    {
+      "nttId": 18467,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "모노커뮤니케이션즈(모노리서치)",
+      "clientOrg": "인터넷언론 : 스마트투데이",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 500,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-04-30",
+        "end": "2026-05-01"
+      },
+      "publishDate": "2026-05-02",
+      "results": [],
+      "regionKey": "seoul",
+      "municipality": "송파구",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "서울특별시 송파구    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18467&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-02"
+    },
     {
       "nttId": 18465,
       "registrationId": null,
@@ -86,7 +119,18 @@
         "end": "2026-04-24"
       },
       "publishDate": "2026-05-01",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "장기수",
+          "party": "",
+          "support": 36.9
+        },
+        {
+          "candidateName": "한태선",
+          "party": "",
+          "support": 27.5
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": "천안시",
       "electionType": "mayor",
@@ -119,7 +163,28 @@
         "end": "2026-04-29"
       },
       "publishDate": "2026-04-30",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "동부권",
+          "party": "",
+          "support": 26.6
+        },
+        {
+          "candidateName": "남부권",
+          "party": "",
+          "support": 56.9
+        },
+        {
+          "candidateName": "북부권",
+          "party": "",
+          "support": 1.4
+        },
+        {
+          "candidateName": "서부권",
+          "party": "",
+          "support": 1.0
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": null,
       "electionType": "governor",
@@ -54430,18 +54495,18 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-01",
-    "lastPipelineRun": "2026-05-01",
+    "lastUpdated": "2026-05-02",
+    "lastPipelineRun": "2026-05-02",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 954,
-    "withRegistrationDate": 951,
+    "pollCount": 955,
+    "withRegistrationDate": 952,
     "withRegistrationId": 670,
-    "withResults": 871,
+    "withResults": 873,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "mayor": 529,
       "party_support": 135,
-      "mayor": 528,
       "governor": 265,
       "superintendent": 25,
       "unknown": 1
