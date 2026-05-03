@@ -1,6 +1,6 @@
 {
-  "generated": "2026-05-02T04:28:00",
-  "totalCount": 955,
+  "generated": "2026-05-03T04:46:39",
+  "totalCount": 956,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
     {
@@ -8338,6 +8338,1035 @@
     }
   ],
   "regions": {
+    "chungbuk": [
+      {
+        "nttId": 18469,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "리서치제이",
+        "clientOrg": "인터넷언론 : (주)충청도민일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 506,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-01",
+          "end": "2026-05-01"
+        },
+        "publishDate": "2026-05-03",
+        "results": [],
+        "regionKey": "chungbuk",
+        "municipality": "괴산군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청북도 괴산군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18469&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-02"
+      },
+      {
+        "nttId": 18214,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "인터넷언론 : 뉴스티앤티",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 506,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-10",
+          "end": "2026-04-10"
+        },
+        "publishDate": "2026-04-13",
+        "results": [
+          {
+            "candidateName": "김승룡",
+            "party": "",
+            "support": 41.4
+          },
+          {
+            "candidateName": "전상인",
+            "party": "",
+            "support": 38.8
+          },
+          {
+            "candidateName": "기타인물",
+            "party": "",
+            "support": 6.4
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "옥천군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청북도 옥천군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18214&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-04-13"
+      },
+      {
+        "nttId": 17909,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)여론조사꽃",
+        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1001,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-27",
+        "results": [],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17909&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-25",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17882,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "KOPRA",
+        "clientOrg": "개인 : 고성국TV",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-27",
+        "results": [
+          {
+            "candidateName": "정영철",
+            "party": "ppp",
+            "support": 33.0
+          },
+          {
+            "candidateName": "정일택",
+            "party": "democratic",
+            "support": 24.0
+          },
+          {
+            "candidateName": "윤석진",
+            "party": "ppp",
+            "support": 19.0
+          },
+          {
+            "candidateName": "이수동",
+            "party": "democratic",
+            "support": 15.0
+          },
+          {
+            "candidateName": "김국기",
+            "party": "ppp",
+            "support": 3.0
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "영동군",
+        "electionType": "mayor",
+        "title": "충청북도 영동군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17882&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-26",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17629,
+        "registrationId": "15550",
+        "pollName": "선거구분",
+        "pollOrg": "미디어토마토",
+        "clientOrg": "시·도단위 신문 : 뉴스토마토",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-06",
+          "end": "2026-03-07"
+        },
+        "publishDate": "2026-03-10 06시 00분",
+        "results": [
+          {
+            "candidateName": "가중값적용",
+            "party": "",
+            "support": 1.5
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "영동군",
+        "electionType": "mayor",
+        "title": "충청북도 영동군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17629&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-09",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17593,
+        "registrationId": "15522",
+        "pollName": "선거구분",
+        "pollOrg": "(주)여론조사꽃",
+        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1014,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-04",
+          "end": "2026-03-05"
+        },
+        "publishDate": "2026-03-09 06시 00분",
+        "results": [
+          {
+            "candidateName": "노영민",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 46.8
+          },
+          {
+            "candidateName": "신용한",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 44.3
+          },
+          {
+            "candidateName": "김영환",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 25.6
+          },
+          {
+            "candidateName": "조길형",
+            "party": null,
+            "partyRaw": "",
+            "support": 11.3
+          },
+          {
+            "candidateName": "송기섭",
+            "party": null,
+            "partyRaw": "",
+            "support": 10.6
+          },
+          {
+            "candidateName": "한범덕",
+            "party": null,
+            "partyRaw": "",
+            "support": 6.7
+          },
+          {
+            "candidateName": "윤갑근",
+            "party": null,
+            "partyRaw": "",
+            "support": 6.1
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17593&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
+        "registrationDate": "2026-03-06",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:36:33",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17576,
+        "registrationId": "15489",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "방송사 : MBC충북",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1002,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-03",
+          "end": "2026-03-04"
+        },
+        "publishDate": "2026-03-04 20시 00분",
+        "results": [
+          {
+            "candidateName": "이범석",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 17
+          },
+          {
+            "candidateName": "이장섭",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 8
+          },
+          {
+            "candidateName": "박완희",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 6
+          },
+          {
+            "candidateName": "서승우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 5
+          },
+          {
+            "candidateName": "유행열",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4
+          },
+          {
+            "candidateName": "서민석",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 3
+          },
+          {
+            "candidateName": "허창원",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 2
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "청주시",
+        "electionType": "mayor",
+        "title": "충청북도 청주시 전체    광역단체장선거 기초단체장선거 교육감선거 국정운영 평가, 정당 지지도, 기타 지역 현안 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17576&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=6",
+        "registrationDate": "2026-03-04",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:39:07",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent"
+        ]
+      },
+      {
+        "nttId": 17532,
+        "registrationId": "15512",
+        "pollName": "선거구분",
+        "pollOrg": "메타보이스(주)",
+        "clientOrg": "기타 : 사단법인 로컬에너지랩",
+        "method": {
+          "type": "unknown",
+          "raw": "인터넷조사",
+          "samplingFrame": "전체",
+          "sampleSize": 900,
+          "marginOfError": 3.3,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-02",
+          "end": "2026-02-03"
+        },
+        "publishDate": "2026-03-06 15시 00분",
+        "results": [
+          {
+            "candidateName": "이재명",
+            "party": null,
+            "partyRaw": "",
+            "support": 47.5
+          },
+          {
+            "candidateName": "김문수",
+            "party": null,
+            "partyRaw": "",
+            "support": 23.2
+          },
+          {
+            "candidateName": "이준석",
+            "party": null,
+            "partyRaw": "",
+            "support": 5.4
+          },
+          {
+            "candidateName": "권영국",
+            "party": null,
+            "partyRaw": "",
+            "support": 0.6
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17532&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
+        "registrationDate": "2026-03-05",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:44:00",
+        "electionTypes": [
+          "governor"
+        ]
+      },
+      {
+        "nttId": 17455,
+        "registrationId": "15392",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 오마이뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 809,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-13",
+          "end": "2026-02-14"
+        },
+        "publishDate": "2026-02-18 18시 00분",
+        "results": [
+          {
+            "candidateName": "신용한",
+            "party": "",
+            "support": 22.7
+          },
+          {
+            "candidateName": "노영민",
+            "party": "",
+            "support": 14.9
+          },
+          {
+            "candidateName": "한범덕",
+            "party": "",
+            "support": 11.7
+          },
+          {
+            "candidateName": "송기섭",
+            "party": "",
+            "support": 10.9
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17455&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=15",
+        "registrationDate": "2026-02-15",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17400,
+        "registrationId": "15330",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치앤리서치",
+        "clientOrg": "시·도단위 신문 : 중부매일",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1012,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-13 07시 00분",
+        "results": [
+          {
+            "candidateName": "찬성한다",
+            "party": "",
+            "support": 33.8
+          },
+          {
+            "candidateName": "반대한다",
+            "party": "",
+            "support": 23.3
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17400&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
+        "registrationDate": "2026-02-12",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17303,
+        "registrationId": "15269",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치앤리서치",
+        "clientOrg": "시·도단위 신문 : 중부매일",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1012,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-10 07시 00분",
+        "results": [
+          {
+            "candidateName": "윤건영",
+            "party": "",
+            "support": 20.7
+          },
+          {
+            "candidateName": "김성근",
+            "party": "",
+            "support": 16.7
+          },
+          {
+            "candidateName": "김진균",
+            "party": "",
+            "support": 4.8
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17303&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17294,
+        "registrationId": "15260",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치앤리서치",
+        "clientOrg": "시·도단위 신문 : 중부매일",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1012,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-11 07시 00분",
+        "results": [
+          {
+            "candidateName": "이장섭",
+            "party": "",
+            "support": 10.3
+          },
+          {
+            "candidateName": "유행열",
+            "party": "",
+            "support": 8.1
+          },
+          {
+            "candidateName": "박완희",
+            "party": "",
+            "support": 5.1
+          },
+          {
+            "candidateName": "허창원",
+            "party": "",
+            "support": 4.2
+          },
+          {
+            "candidateName": "서민석",
+            "party": "",
+            "support": 3.4
+          },
+          {
+            "candidateName": "김학관",
+            "party": "",
+            "support": 1.2
+          },
+          {
+            "candidateName": "모르",
+            "party": "",
+            "support": 16.2
+          },
+          {
+            "candidateName": "겠다",
+            "party": "",
+            "support": 51.5
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17294&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17284,
+        "registrationId": "15250",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치앤리서치",
+        "clientOrg": "시·도단위 신문 : 중부매일",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1012,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-09 07시 00분",
+        "results": [
+          {
+            "candidateName": "신용한",
+            "party": "",
+            "support": 14.3
+          },
+          {
+            "candidateName": "노영민",
+            "party": "",
+            "support": 12.3
+          },
+          {
+            "candidateName": "송기섭",
+            "party": "",
+            "support": 12.2
+          },
+          {
+            "candidateName": "한범덕",
+            "party": "",
+            "support": 6.1
+          },
+          {
+            "candidateName": "겠다",
+            "party": "",
+            "support": 44.4
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17284&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=29",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17094,
+        "registrationId": "15082",
+        "pollName": "선거구분",
+        "pollOrg": "(주)한국리서치",
+        "clientOrg": "방송사 : KBS청주",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 1004,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-13",
+          "end": "2026-01-14"
+        },
+        "publishDate": "2026-01-19 19시 00분",
+        "results": [
+          {
+            "candidateName": "이장섭",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 13
+          },
+          {
+            "candidateName": "박완희",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 5
+          },
+          {
+            "candidateName": "이범석",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 5
+          },
+          {
+            "candidateName": "허창원",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 2
+          },
+          {
+            "candidateName": "서승우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 1
+          },
+          {
+            "candidateName": "유행열",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 1
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "청주시",
+        "electionType": "mayor",
+        "title": "충청북도 청주시 충청북도 전체 광역단체장선거교육감선거기초단체장선거 정당 지지도, 기타 지역 현안 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17094&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
+        "registrationDate": "2026-01-16",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:46:48",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent"
+        ]
+      },
+      {
+        "nttId": 17064,
+        "registrationId": "15057",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 보은사람들",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-06",
+          "end": "2026-01-07"
+        },
+        "publishDate": "2026-01-14 00시 00분",
+        "results": [
+          {
+            "candidateName": "하유정",
+            "party": "",
+            "support": 35.4
+          },
+          {
+            "candidateName": "이태영",
+            "party": "",
+            "support": 24.8
+          },
+          {
+            "candidateName": "박연수",
+            "party": "",
+            "support": 15.5
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "보은군",
+        "electionType": "mayor",
+        "title": "충청북도 보은군 정당지지도기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17064&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=48",
+        "registrationDate": "2026-01-09",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16844,
+        "registrationId": "14871",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-13",
+          "end": "2025-12-14"
+        },
+        "publishDate": "2025-12-16 05시 00분",
+        "results": [
+          {
+            "candidateName": "이범석",
+            "party": null,
+            "partyRaw": "",
+            "support": 16.8
+          },
+          {
+            "candidateName": "박완희",
+            "party": null,
+            "partyRaw": "",
+            "support": 8.4
+          },
+          {
+            "candidateName": "이장섭",
+            "party": null,
+            "partyRaw": "",
+            "support": 8.3
+          },
+          {
+            "candidateName": "서승우",
+            "party": null,
+            "partyRaw": "",
+            "support": 8.2
+          },
+          {
+            "candidateName": "손인웅",
+            "party": null,
+            "partyRaw": "",
+            "support": 4.9
+          },
+          {
+            "candidateName": "황영호",
+            "party": null,
+            "partyRaw": "",
+            "support": 4.6
+          },
+          {
+            "candidateName": "허장",
+            "party": null,
+            "partyRaw": "",
+            "support": 2.2
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "청주시",
+        "electionType": "mayor",
+        "title": "충청북도 청주시    정당지지도 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16844&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
+        "registrationDate": "2025-12-15",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:18:42",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16818,
+        "registrationId": "14849",
+        "pollName": "선거구분",
+        "pollOrg": "모노커뮤니케이션즈(모노리서치)",
+        "clientOrg": "인터넷언론 : 케이 라이프 티브이(K-Life TV)",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 531,
+          "marginOfError": 4.3,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-06",
+          "end": "2025-12-07"
+        },
+        "publishDate": "2025-12-10 11시 00분",
+        "results": [
+          {
+            "candidateName": "박경숙",
+            "party": "",
+            "support": 13.7
+          },
+          {
+            "candidateName": "박연수",
+            "party": "",
+            "support": 13
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": "보은군",
+        "electionType": "mayor",
+        "title": "충청북도 보은군    기초단체장선거 정당지지도 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16818&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
+        "registrationDate": "2025-12-08",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16686,
+        "registrationId": "14727",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1002,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-10-27",
+          "end": "2025-10-28"
+        },
+        "publishDate": "2025-10-30 10시 00분",
+        "results": [
+          {
+            "candidateName": "노영민",
+            "party": "",
+            "support": 16.8
+          },
+          {
+            "candidateName": "신용한",
+            "party": "",
+            "support": 13.5
+          },
+          {
+            "candidateName": "한범덕",
+            "party": "",
+            "support": 10.6
+          },
+          {
+            "candidateName": "송기섭",
+            "party": "",
+            "support": 10.3
+          },
+          {
+            "candidateName": "임호선",
+            "party": "",
+            "support": 5
+          },
+          {
+            "candidateName": "후보가",
+            "party": "",
+            "support": 7
+          }
+        ],
+        "regionKey": "chungbuk",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청북도 전체    광역단체장선거 교육감선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16686&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
+        "registrationDate": "2025-10-29",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ]
+      }
+    ],
     "seoul": [
       {
         "nttId": 18467,
@@ -8360,7 +9389,18 @@
           "end": "2026-05-01"
         },
         "publishDate": "2026-05-02",
-        "results": [],
+        "results": [
+          {
+            "candidateName": "조재희",
+            "party": "",
+            "support": 46.4
+          },
+          {
+            "candidateName": "서강석",
+            "party": "",
+            "support": 44.1
+          }
+        ],
         "regionKey": "seoul",
         "municipality": "송파구",
         "electionType": "mayor",
@@ -45616,1002 +46656,6 @@
         "title": "세종특별자치시 전체    광역단체장선거 교육감선거 정당지지도",
         "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16899&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=62",
         "registrationDate": "2025-12-27",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ]
-      }
-    ],
-    "chungbuk": [
-      {
-        "nttId": 18214,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "인터넷언론 : 뉴스티앤티",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 506,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-10",
-          "end": "2026-04-10"
-        },
-        "publishDate": "2026-04-13",
-        "results": [
-          {
-            "candidateName": "김승룡",
-            "party": "",
-            "support": 41.4
-          },
-          {
-            "candidateName": "전상인",
-            "party": "",
-            "support": 38.8
-          },
-          {
-            "candidateName": "기타인물",
-            "party": "",
-            "support": 6.4
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "옥천군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청북도 옥천군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18214&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-04-13"
-      },
-      {
-        "nttId": 17909,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)여론조사꽃",
-        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1001,
-          "marginOfError": 3.1,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-27",
-        "results": [],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17909&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-25",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17882,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "KOPRA",
-        "clientOrg": "개인 : 고성국TV",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-27",
-        "results": [
-          {
-            "candidateName": "정영철",
-            "party": "ppp",
-            "support": 33.0
-          },
-          {
-            "candidateName": "정일택",
-            "party": "democratic",
-            "support": 24.0
-          },
-          {
-            "candidateName": "윤석진",
-            "party": "ppp",
-            "support": 19.0
-          },
-          {
-            "candidateName": "이수동",
-            "party": "democratic",
-            "support": 15.0
-          },
-          {
-            "candidateName": "김국기",
-            "party": "ppp",
-            "support": 3.0
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "영동군",
-        "electionType": "mayor",
-        "title": "충청북도 영동군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17882&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-26",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17629,
-        "registrationId": "15550",
-        "pollName": "선거구분",
-        "pollOrg": "미디어토마토",
-        "clientOrg": "시·도단위 신문 : 뉴스토마토",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-06",
-          "end": "2026-03-07"
-        },
-        "publishDate": "2026-03-10 06시 00분",
-        "results": [
-          {
-            "candidateName": "가중값적용",
-            "party": "",
-            "support": 1.5
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "영동군",
-        "electionType": "mayor",
-        "title": "충청북도 영동군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17629&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-09",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17593,
-        "registrationId": "15522",
-        "pollName": "선거구분",
-        "pollOrg": "(주)여론조사꽃",
-        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1014,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-04",
-          "end": "2026-03-05"
-        },
-        "publishDate": "2026-03-09 06시 00분",
-        "results": [
-          {
-            "candidateName": "노영민",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 46.8
-          },
-          {
-            "candidateName": "신용한",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 44.3
-          },
-          {
-            "candidateName": "김영환",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 25.6
-          },
-          {
-            "candidateName": "조길형",
-            "party": null,
-            "partyRaw": "",
-            "support": 11.3
-          },
-          {
-            "candidateName": "송기섭",
-            "party": null,
-            "partyRaw": "",
-            "support": 10.6
-          },
-          {
-            "candidateName": "한범덕",
-            "party": null,
-            "partyRaw": "",
-            "support": 6.7
-          },
-          {
-            "candidateName": "윤갑근",
-            "party": null,
-            "partyRaw": "",
-            "support": 6.1
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17593&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-03-06",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:36:33",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17576,
-        "registrationId": "15489",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "방송사 : MBC충북",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1002,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-03",
-          "end": "2026-03-04"
-        },
-        "publishDate": "2026-03-04 20시 00분",
-        "results": [
-          {
-            "candidateName": "이범석",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 17
-          },
-          {
-            "candidateName": "이장섭",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 8
-          },
-          {
-            "candidateName": "박완희",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 6
-          },
-          {
-            "candidateName": "서승우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 5
-          },
-          {
-            "candidateName": "유행열",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4
-          },
-          {
-            "candidateName": "서민석",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 3
-          },
-          {
-            "candidateName": "허창원",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 2
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "청주시",
-        "electionType": "mayor",
-        "title": "충청북도 청주시 전체    광역단체장선거 기초단체장선거 교육감선거 국정운영 평가, 정당 지지도, 기타 지역 현안 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17576&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=6",
-        "registrationDate": "2026-03-04",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:39:07",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent"
-        ]
-      },
-      {
-        "nttId": 17532,
-        "registrationId": "15512",
-        "pollName": "선거구분",
-        "pollOrg": "메타보이스(주)",
-        "clientOrg": "기타 : 사단법인 로컬에너지랩",
-        "method": {
-          "type": "unknown",
-          "raw": "인터넷조사",
-          "samplingFrame": "전체",
-          "sampleSize": 900,
-          "marginOfError": 3.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-02",
-          "end": "2026-02-03"
-        },
-        "publishDate": "2026-03-06 15시 00분",
-        "results": [
-          {
-            "candidateName": "이재명",
-            "party": null,
-            "partyRaw": "",
-            "support": 47.5
-          },
-          {
-            "candidateName": "김문수",
-            "party": null,
-            "partyRaw": "",
-            "support": 23.2
-          },
-          {
-            "candidateName": "이준석",
-            "party": null,
-            "partyRaw": "",
-            "support": 5.4
-          },
-          {
-            "candidateName": "권영국",
-            "party": null,
-            "partyRaw": "",
-            "support": 0.6
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17532&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=4",
-        "registrationDate": "2026-03-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:44:00",
-        "electionTypes": [
-          "governor"
-        ]
-      },
-      {
-        "nttId": 17455,
-        "registrationId": "15392",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 오마이뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 809,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-13",
-          "end": "2026-02-14"
-        },
-        "publishDate": "2026-02-18 18시 00분",
-        "results": [
-          {
-            "candidateName": "신용한",
-            "party": "",
-            "support": 22.7
-          },
-          {
-            "candidateName": "노영민",
-            "party": "",
-            "support": 14.9
-          },
-          {
-            "candidateName": "한범덕",
-            "party": "",
-            "support": 11.7
-          },
-          {
-            "candidateName": "송기섭",
-            "party": "",
-            "support": 10.9
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    정당지지도 광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17455&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=15",
-        "registrationDate": "2026-02-15",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17400,
-        "registrationId": "15330",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치앤리서치",
-        "clientOrg": "시·도단위 신문 : 중부매일",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1012,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-13 07시 00분",
-        "results": [
-          {
-            "candidateName": "찬성한다",
-            "party": "",
-            "support": 33.8
-          },
-          {
-            "candidateName": "반대한다",
-            "party": "",
-            "support": 23.3
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17400&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=21",
-        "registrationDate": "2026-02-12",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17303,
-        "registrationId": "15269",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치앤리서치",
-        "clientOrg": "시·도단위 신문 : 중부매일",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1012,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-10 07시 00분",
-        "results": [
-          {
-            "candidateName": "윤건영",
-            "party": "",
-            "support": 20.7
-          },
-          {
-            "candidateName": "김성근",
-            "party": "",
-            "support": 16.7
-          },
-          {
-            "candidateName": "김진균",
-            "party": "",
-            "support": 4.8
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17303&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17294,
-        "registrationId": "15260",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치앤리서치",
-        "clientOrg": "시·도단위 신문 : 중부매일",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1012,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-11 07시 00분",
-        "results": [
-          {
-            "candidateName": "이장섭",
-            "party": "",
-            "support": 10.3
-          },
-          {
-            "candidateName": "유행열",
-            "party": "",
-            "support": 8.1
-          },
-          {
-            "candidateName": "박완희",
-            "party": "",
-            "support": 5.1
-          },
-          {
-            "candidateName": "허창원",
-            "party": "",
-            "support": 4.2
-          },
-          {
-            "candidateName": "서민석",
-            "party": "",
-            "support": 3.4
-          },
-          {
-            "candidateName": "김학관",
-            "party": "",
-            "support": 1.2
-          },
-          {
-            "candidateName": "모르",
-            "party": "",
-            "support": 16.2
-          },
-          {
-            "candidateName": "겠다",
-            "party": "",
-            "support": 51.5
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17294&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=28",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17284,
-        "registrationId": "15250",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치앤리서치",
-        "clientOrg": "시·도단위 신문 : 중부매일",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1012,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-09 07시 00분",
-        "results": [
-          {
-            "candidateName": "신용한",
-            "party": "",
-            "support": 14.3
-          },
-          {
-            "candidateName": "노영민",
-            "party": "",
-            "support": 12.3
-          },
-          {
-            "candidateName": "송기섭",
-            "party": "",
-            "support": 12.2
-          },
-          {
-            "candidateName": "한범덕",
-            "party": "",
-            "support": 6.1
-          },
-          {
-            "candidateName": "겠다",
-            "party": "",
-            "support": 44.4
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 기초단체장선거 교육감선거 정당지지도, 정책지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17284&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=29",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17094,
-        "registrationId": "15082",
-        "pollName": "선거구분",
-        "pollOrg": "(주)한국리서치",
-        "clientOrg": "방송사 : KBS청주",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 1004,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-13",
-          "end": "2026-01-14"
-        },
-        "publishDate": "2026-01-19 19시 00분",
-        "results": [
-          {
-            "candidateName": "이장섭",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 13
-          },
-          {
-            "candidateName": "박완희",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 5
-          },
-          {
-            "candidateName": "이범석",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 5
-          },
-          {
-            "candidateName": "허창원",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 2
-          },
-          {
-            "candidateName": "서승우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 1
-          },
-          {
-            "candidateName": "유행열",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 1
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "청주시",
-        "electionType": "mayor",
-        "title": "충청북도 청주시 충청북도 전체 광역단체장선거교육감선거기초단체장선거 정당 지지도, 기타 지역 현안 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17094&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=46",
-        "registrationDate": "2026-01-16",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:46:48",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent"
-        ]
-      },
-      {
-        "nttId": 17064,
-        "registrationId": "15057",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 보은사람들",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-06",
-          "end": "2026-01-07"
-        },
-        "publishDate": "2026-01-14 00시 00분",
-        "results": [
-          {
-            "candidateName": "하유정",
-            "party": "",
-            "support": 35.4
-          },
-          {
-            "candidateName": "이태영",
-            "party": "",
-            "support": 24.8
-          },
-          {
-            "candidateName": "박연수",
-            "party": "",
-            "support": 15.5
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "보은군",
-        "electionType": "mayor",
-        "title": "충청북도 보은군 정당지지도기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17064&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=48",
-        "registrationDate": "2026-01-09",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16844,
-        "registrationId": "14871",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 502,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-13",
-          "end": "2025-12-14"
-        },
-        "publishDate": "2025-12-16 05시 00분",
-        "results": [
-          {
-            "candidateName": "이범석",
-            "party": null,
-            "partyRaw": "",
-            "support": 16.8
-          },
-          {
-            "candidateName": "박완희",
-            "party": null,
-            "partyRaw": "",
-            "support": 8.4
-          },
-          {
-            "candidateName": "이장섭",
-            "party": null,
-            "partyRaw": "",
-            "support": 8.3
-          },
-          {
-            "candidateName": "서승우",
-            "party": null,
-            "partyRaw": "",
-            "support": 8.2
-          },
-          {
-            "candidateName": "손인웅",
-            "party": null,
-            "partyRaw": "",
-            "support": 4.9
-          },
-          {
-            "candidateName": "황영호",
-            "party": null,
-            "partyRaw": "",
-            "support": 4.6
-          },
-          {
-            "candidateName": "허장",
-            "party": null,
-            "partyRaw": "",
-            "support": 2.2
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "청주시",
-        "electionType": "mayor",
-        "title": "충청북도 청주시    정당지지도 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16844&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
-        "registrationDate": "2025-12-15",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:18:42",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16818,
-        "registrationId": "14849",
-        "pollName": "선거구분",
-        "pollOrg": "모노커뮤니케이션즈(모노리서치)",
-        "clientOrg": "인터넷언론 : 케이 라이프 티브이(K-Life TV)",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 531,
-          "marginOfError": 4.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-06",
-          "end": "2025-12-07"
-        },
-        "publishDate": "2025-12-10 11시 00분",
-        "results": [
-          {
-            "candidateName": "박경숙",
-            "party": "",
-            "support": 13.7
-          },
-          {
-            "candidateName": "박연수",
-            "party": "",
-            "support": 13
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": "보은군",
-        "electionType": "mayor",
-        "title": "충청북도 보은군    기초단체장선거 정당지지도 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16818&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=69",
-        "registrationDate": "2025-12-08",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16686,
-        "registrationId": "14727",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1002,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-10-27",
-          "end": "2025-10-28"
-        },
-        "publishDate": "2025-10-30 10시 00분",
-        "results": [
-          {
-            "candidateName": "노영민",
-            "party": "",
-            "support": 16.8
-          },
-          {
-            "candidateName": "신용한",
-            "party": "",
-            "support": 13.5
-          },
-          {
-            "candidateName": "한범덕",
-            "party": "",
-            "support": 10.6
-          },
-          {
-            "candidateName": "송기섭",
-            "party": "",
-            "support": 10.3
-          },
-          {
-            "candidateName": "임호선",
-            "party": "",
-            "support": 5
-          },
-          {
-            "candidateName": "후보가",
-            "party": "",
-            "support": 7
-          }
-        ],
-        "regionKey": "chungbuk",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청북도 전체    광역단체장선거 교육감선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16686&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=80",
-        "registrationDate": "2025-10-29",
         "electionTypes": [
           "governor",
           "superintendent",

@@ -1,6 +1,39 @@
 {
-  "last_id": 18467,
+  "last_id": 18469,
   "polls": [
+    {
+      "nttId": 18469,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "리서치제이",
+      "clientOrg": "인터넷언론 : (주)충청도민일보",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 506,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-01",
+        "end": "2026-05-01"
+      },
+      "publishDate": "2026-05-03",
+      "results": [],
+      "regionKey": "chungbuk",
+      "municipality": "괴산군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "충청북도 괴산군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18469&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-02"
+    },
     {
       "nttId": 18467,
       "registrationId": null,
@@ -22,7 +55,18 @@
         "end": "2026-05-01"
       },
       "publishDate": "2026-05-02",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "조재희",
+          "party": "",
+          "support": 46.4
+        },
+        {
+          "candidateName": "서강석",
+          "party": "",
+          "support": 44.1
+        }
+      ],
       "regionKey": "seoul",
       "municipality": "송파구",
       "electionType": "mayor",
@@ -54495,17 +54539,17 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-02",
-    "lastPipelineRun": "2026-05-02",
+    "lastUpdated": "2026-05-03",
+    "lastPipelineRun": "2026-05-03",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 955,
-    "withRegistrationDate": 952,
+    "pollCount": 956,
+    "withRegistrationDate": 953,
     "withRegistrationId": 670,
-    "withResults": 873,
+    "withResults": 874,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "mayor": 529,
+      "mayor": 530,
       "party_support": 135,
       "governor": 265,
       "superintendent": 25,

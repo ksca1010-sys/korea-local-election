@@ -310,30 +310,30 @@
     },
     "18457": {
       "firstSeenAt": "2026-05-01",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-02",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-03",
+      "lastReason": "PDF 파싱 실패"
     },
     "18456": {
       "firstSeenAt": "2026-05-01",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-02",
-      "lastReason": "PDF 파싱 실패"
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-03",
+      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
     },
     "18455": {
       "firstSeenAt": "2026-05-01",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-02",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-03",
+      "lastReason": "PDF 파싱 실패"
     },
-    "18467": {
-      "firstSeenAt": "2026-05-02",
+    "18469": {
+      "firstSeenAt": "2026-05-03",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-02",
+      "lastAttemptAt": "2026-05-03",
       "lastReason": "PDF 파싱 실패"
     }
   }
