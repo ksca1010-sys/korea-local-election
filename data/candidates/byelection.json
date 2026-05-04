@@ -1,9 +1,9 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-27",
+    "lastUpdated": "2026-05-04",
     "source": "뉴스 기반 수집 (Claude)",
     "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
-    "lastDetection": "2026-04-27",
+    "lastDetection": "2026-05-04",
     "lastFactCheck": "2026-04-03T05:53:02.562882"
   },
   "districts": {
@@ -468,7 +468,7 @@
           "sourcePublishedAt": "2026-04-08"
         }
       ],
-      "statusNote": "제공된 최신 뉴스가 없어 기존 후보 정보 유지. 2026년 6월 3일 선거 예정으로 약 40일 남음.",
+      "statusNote": "최신 뉴스에 업데이트된 정보가 없어 기존 후보자 정보가 유지됩니다.",
       "history": [
         {
           "election": 17,
@@ -630,7 +630,7 @@
           "sourcePublishedAt": "2026-02-26"
         }
       ],
-      "statusNote": "최신 뉴스 업데이트가 없어 기존 후보 정보에 변동이 없습니다.",
+      "statusNote": "최신 뉴스에 업데이트된 내용이 없어 기존 후보 정보가 유지됩니다.",
       "history": [
         {
           "election": 17,
