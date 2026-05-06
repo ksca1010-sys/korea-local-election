@@ -331,51 +331,65 @@
     },
     "18497": {
       "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-06",
       "lastReason": "PDF 파싱 실패"
     },
     "18496": {
       "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
-    },
-    "18488": {
-      "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
-      "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
-    },
-    "18481": {
-      "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-06",
       "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
     },
     "18475": {
       "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-06",
       "lastReason": "PDF 파싱 실패"
     },
     "18474": {
       "firstSeenAt": "2026-05-04",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-05",
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-06",
       "lastReason": "상세페이지 fetch 실패: ConnectTimeout"
     },
-    "18504": {
-      "firstSeenAt": "2026-05-05",
+    "18520": {
+      "firstSeenAt": "2026-05-06",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-05",
+      "lastAttemptAt": "2026-05-06",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18517": {
+      "firstSeenAt": "2026-05-06",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-06",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18514": {
+      "firstSeenAt": "2026-05-06",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-06",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18513": {
+      "firstSeenAt": "2026-05-06",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-06",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "18512": {
+      "firstSeenAt": "2026-05-06",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-06",
       "lastReason": "PDF 파싱 실패"
     }
   }
