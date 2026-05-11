@@ -1,8 +1,8 @@
 {
   "_meta": {
     "lastUpdated": "2026-05-11",
-    "source": "뉴스 기반 수집 (Claude)",
-    "note": "재보궐선거 후보 및 현황 데이터. 자동 갱신.",
+    "source": "중앙선거관리위원회 2026년 상반기 재·보궐선거 확정상황(최종 2026.04.30 기준)",
+    "note": "재보궐선거 후보 및 현황 데이터. 선거구 확정 목록은 선관위 공식 확정상황 기준, 후보는 선관위/검증 출처 기준으로만 갱신.",
     "lastDetection": "2026-05-11",
     "lastFactCheck": "2026-04-03T05:53:02.562882"
   },
@@ -12,7 +12,7 @@
       "district": "인천 연수구갑",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "박찬대 의원 인천시장 단수공천 확정(3/4) — 의원직 사퇴 예정(기한 4/30)",
+      "reason": "박찬대 의원 사직",
       "previousMember": {
         "name": "박찬대",
         "party": "democratic",
@@ -161,7 +161,7 @@
       "district": "인천 계양구을",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "이재명 대통령 당선에 따른 궐위",
+      "reason": "이재명 의원 대통령 당선",
       "previousMember": {
         "name": "이재명",
         "party": "democratic",
@@ -333,7 +333,7 @@
       "district": "경기 평택시을",
       "type": "국회의원 보궐",
       "subType": "재선거",
-      "reason": "이병진 의원 공직선거법 위반(재산신고 누락) 유죄 확정 (벌금 700만원)",
+      "reason": "이병진 의원 당선무효",
       "previousMember": {
         "name": "이병진",
         "party": "democratic",
@@ -556,7 +556,7 @@
       "district": "충남 아산시을",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "강훈식 대통령비서실장 취임에 따른 사퇴",
+      "reason": "강훈식 의원 사직",
       "previousMember": {
         "name": "강훈식",
         "party": "democratic",
@@ -715,10 +715,10 @@
     },
     "jeonbuk-gunsan": {
       "region": "jeonbuk",
-      "district": "전북 군산김제부안갑",
+      "district": "전북 군산·김제·부안갑",
       "type": "국회의원 보궐",
       "subType": "재선거",
-      "reason": "신영대 의원 선거사무장 경선 여론조사 조작 유죄 확정 — 당선무효",
+      "reason": "신영대 의원 당선무효",
       "previousMember": {
         "name": "신영대",
         "party": "democratic",
@@ -885,7 +885,7 @@
       "region": "gyeonggi",
       "type": "국회의원 보궐",
       "subType": "보궐선거",
-      "reason": "양문석 의원 특경법(사기) 유죄 확정 — 피선거권 상실로 의원직 상실",
+      "reason": "양문석 의원 피선거권 상실",
       "previousMember": {
         "name": "양문석",
         "party": "democratic"
@@ -1045,6 +1045,150 @@
       ],
       "voters": 170398,
       "sggName": "안산시갑"
+    },
+    "busan-buk": {
+      "region": "busan",
+      "district": "부산 북구갑",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "전재수 의원 사직",
+      "previousMember": {
+        "name": "전재수",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "북구갑"
+    },
+    "daegu-dalseong": {
+      "region": "daegu",
+      "district": "대구 달성군",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "추경호 의원 사직",
+      "previousMember": {
+        "name": "추경호",
+        "party": "ppp"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "달성군"
+    },
+    "gwangju-gwangsan": {
+      "region": "gwangju",
+      "district": "광주 광산구을",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "민형배 의원 사직",
+      "previousMember": {
+        "name": "민형배",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "광산구을"
+    },
+    "ulsan-nam": {
+      "region": "ulsan",
+      "district": "울산 남구갑",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "김상욱 의원 사직",
+      "previousMember": {
+        "name": "김상욱",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "남구갑"
+    },
+    "gyeonggi-hanam": {
+      "region": "gyeonggi",
+      "district": "경기 하남시갑",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "추미애 의원 사직",
+      "previousMember": {
+        "name": "추미애",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "하남시갑"
+    },
+    "chungnam-gongju": {
+      "region": "chungnam",
+      "district": "충남 공주·부여·청양",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "박수현 의원 사직",
+      "previousMember": {
+        "name": "박수현",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "공주시부여군청양군"
+    },
+    "jeonbuk-gunsan-eul": {
+      "region": "jeonbuk",
+      "district": "전북 군산·김제·부안을",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "이원택 의원 사직",
+      "previousMember": {
+        "name": "이원택",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "군산시김제시부안군을"
+    },
+    "jeju-seogwipo": {
+      "region": "jeju",
+      "district": "제주 서귀포시",
+      "type": "국회의원 보궐",
+      "subType": "보궐선거",
+      "reason": "위성곤 의원 사직",
+      "previousMember": {
+        "name": "위성곤",
+        "party": "democratic"
+      },
+      "status": "확정",
+      "candidates": [],
+      "keyIssues": [],
+      "sourceLabel": "중앙선거관리위원회",
+      "sourceUrl": "https://www.nec.go.kr/site/lvt/ex/bbs/View.do?bcIdx=297293&cbIdx=1502&relCbIdx=1084",
+      "sourcePublishedAt": "2026-04-30",
+      "sggName": "서귀포시"
     }
   }
 }
