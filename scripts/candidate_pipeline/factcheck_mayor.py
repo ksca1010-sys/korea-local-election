@@ -351,6 +351,7 @@ def main():
     data = load_candidates()
     candidates = data.get("candidates", {})
     logger = FactcheckLogger("mayor", dry_run=dry_run)
+    nec_applied = 0
 
     # ── ① 선관위 예비후보 API 동기화 (기초단체장) ──
     try:
@@ -360,6 +361,7 @@ def main():
         if nec_items:
             nec_fixes = sync_mayor(data, nec_items)
             if nec_fixes:
+                nec_applied = len(nec_fixes)
                 print(f"  {len(nec_fixes)}건 동기화:")
                 for nf in nec_fixes[:30]:
                     print(f"    • {nf}")
@@ -431,7 +433,7 @@ def main():
 
         time.sleep(1)  # rate limit
 
-    if not dry_run:
+    if not dry_run and (total_applied > 0 or nec_applied > 0):
         data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
         data["_meta"]["lastUpdated"] = date.today().isoformat()
         CANDIDATES_PATH.write_text(
@@ -440,6 +442,8 @@ def main():
         )
         print(f"\n총 {total_applied}건 적용")
         print(f"[저장] {CANDIDATES_PATH}")
+    else:
+        print(f"\n총 {total_applied}건 적용")
 
     logger.run_end(total_applied=total_applied)
 
