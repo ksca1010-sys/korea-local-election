@@ -146,12 +146,18 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash-lite
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
           LLM_BUDGET_MAX_CALLS: '50'
           LLM_STRICT_MODE: '1'
-        run: python scripts/candidate_pipeline/factcheck_candidates.py
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/factcheck_candidates.py
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck superintendent candidates
@@ -183,12 +189,17 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-2.5-flash-lite
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
           LLM_BUDGET_MAX_CALLS: '100'
           LLM_STRICT_MODE: '1'
         run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
           if [ -n "$TARGET_REGION" ]; then
             python scripts/candidate_pipeline/factcheck_mayor.py --region "$TARGET_REGION"
           else

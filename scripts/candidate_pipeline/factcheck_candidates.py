@@ -383,6 +383,7 @@ def main():
     total = sum(len(v) for v in data.get("candidates", {}).values())
     print(f"\n현재 후보: {total}명 ({len(data.get('candidates', {}))}개 시도)")
     logger = FactcheckLogger("governor", dry_run=dry_run)
+    nec_applied = 0
 
     # ── ① 선관위 예비후보 API 동기화 ──
     try:
@@ -392,6 +393,7 @@ def main():
         if nec_items:
             nec_fixes = sync_governor(data, nec_items)
             if nec_fixes:
+                nec_applied = len(nec_fixes)
                 print(f"  {len(nec_fixes)}건 동기화:")
                 for nf in nec_fixes[:20]:
                     print(f"    • {nf}")
@@ -443,7 +445,7 @@ def main():
         error=error_msg,
     )
 
-    if not dry_run and changes:
+    if not dry_run and (changes or nec_applied):
         data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
         data["_meta"]["lastUpdated"] = date.today().isoformat()
         CANDIDATES_PATH.write_text(
