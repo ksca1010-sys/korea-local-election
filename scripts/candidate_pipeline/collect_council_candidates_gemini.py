@@ -57,9 +57,9 @@ def load_env():
 
 
 def call_gemini(prompt, api_key, max_tokens=2000, retries=3):
-    """Gemini 2.5 Flash API 호출"""
+    """Gemini Flash-Lite API 호출"""
     client = httpx.Client(verify=False, timeout=60)
-    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={api_key}"
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key={api_key}"
 
     for attempt in range(retries):
         try:

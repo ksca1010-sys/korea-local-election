@@ -18,7 +18,7 @@ STATE_PATH = BASE_DIR / "data" / "polls" / "state.json"
 CLASSIFY_PATH = BASE_DIR / "data" / "polls" / "pdf_classification.json"
 ENV_FILE = BASE_DIR / ".env"
 
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
 API_KEY_ENV = "GEMINI_API_KEY"
 
 CLASSIFY_PROMPT = """이 PDF 문서를 분류해줘. 반드시 JSON 객체 하나만 반환:
