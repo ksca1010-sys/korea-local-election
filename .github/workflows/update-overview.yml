@@ -7,6 +7,11 @@ on:
     - cron: '30 2 * * 3'
     - cron: '30 2 * * 5'
   workflow_dispatch:
+    inputs:
+      scope:
+        description: '실행 범위: all, governor, superintendent, mayor, byelection'
+        required: false
+        default: 'all'
   workflow_call:
 
 jobs:
@@ -34,6 +39,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      RUN_SCOPE: ${{ github.event.inputs.scope || 'all' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -45,8 +52,13 @@ jobs:
       - name: Install dependencies
         run: pip install httpx
 
+      - name: Show execution scope
+        run: echo "scope=${RUN_SCOPE}"
+
       - name: Update governor overview (광역단체장)
+        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'governor'
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -55,7 +67,9 @@ jobs:
         run: python scripts/update_election_overview.py
 
       - name: Update superintendent overview (교육감)
+        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'superintendent'
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -64,7 +78,9 @@ jobs:
         run: python scripts/update_election_overview.py --type=superintendent
 
       - name: Update mayor overview (기초단체장)
+        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'mayor'
         continue-on-error: true
+        timeout-minutes: 20
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
@@ -73,7 +89,9 @@ jobs:
         run: python scripts/update_mayor_overview.py --stale-only
 
       - name: Update byelection overview (재보궐)
+        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'byelection'
         continue-on-error: true
+        timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
