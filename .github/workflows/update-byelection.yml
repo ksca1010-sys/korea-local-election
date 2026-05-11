@@ -89,11 +89,36 @@ jobs:
         run: |
           python3 -c "
           import json, sys
+          expected = {
+              '부산 북구갑',
+              '대구 달성군',
+              '인천 연수구갑',
+              '인천 계양구을',
+              '광주 광산구을',
+              '울산 남구갑',
+              '경기 평택시을',
+              '경기 안산시갑',
+              '경기 하남시갑',
+              '충남 공주·부여·청양',
+              '충남 아산시을',
+              '전북 군산·김제·부안갑',
+              '전북 군산·김제·부안을',
+              '제주 서귀포시',
+          }
           d = json.load(open('data/candidates/byelection.json'))
           districts = d.get('districts', {})
           total = sum(len(v.get('candidates', [])) for v in districts.values() if isinstance(v, dict))
           if len(districts) < 1:
               print(f'FATAL: byelection.json에 선거구 없음 — 파이프라인 실패 의심')
+              sys.exit(1)
+          actual = {v.get('district') for v in districts.values() if isinstance(v, dict)}
+          missing = sorted(expected - actual)
+          extra = sorted(actual - expected)
+          if missing:
+              print('FATAL: 선관위 공식 재보궐 확정지역 누락 — ' + ', '.join(missing))
+              sys.exit(1)
+          if extra:
+              print('FATAL: 선관위 공식 확정지역 외 데이터 포함 — ' + ', '.join(extra))
               sys.exit(1)
           print(f'OK: byelection — {len(districts)}개 선거구, {total}명 후보')
           "
@@ -101,14 +126,14 @@ jobs:
       - name: Check for changes
         id: diff
         run: |
-          git diff --quiet data/candidates/byelection.json || echo "changed=true" >> $GITHUB_OUTPUT
+          git diff --quiet data/candidates/byelection.json data/static/election_type_info.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/candidates/byelection.json
+          git add data/candidates/byelection.json data/static/election_type_info.json
           git commit -m "chore: auto-update byelection data $(date +%Y-%m-%d)"
           for i in 1 2 3; do
             git pull --rebase origin main && git push && break
