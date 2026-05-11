@@ -156,7 +156,8 @@ jobs:
           LLM_BUDGET_MAX_CALLS: '50'
           LLM_STRICT_MODE: '1'
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          export NEC_API_KEY="${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}"
+          export NEC_API_KEYS="${NDCDC_PERSON},${NDCDC_LOCAL},${NDCDC_PAPER},${NECDC_CODE}"
           python scripts/candidate_pipeline/factcheck_candidates.py
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
@@ -199,7 +200,8 @@ jobs:
           LLM_BUDGET_MAX_CALLS: '100'
           LLM_STRICT_MODE: '1'
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          export NEC_API_KEY="${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}"
+          export NEC_API_KEYS="${NDCDC_PERSON},${NDCDC_LOCAL},${NDCDC_PAPER},${NECDC_CODE}"
           if [ -n "$TARGET_REGION" ]; then
             python scripts/candidate_pipeline/factcheck_mayor.py --region "$TARGET_REGION"
           else

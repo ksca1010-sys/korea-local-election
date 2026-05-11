@@ -54,6 +54,19 @@ def _build_nec_url(sg_typecode, nec_key, page):
     return f"{NEC_SERVICE}?serviceKey={encoded_key}&{params}"
 
 
+def _candidate_keys(primary_key):
+    keys = []
+    raw_values = [primary_key, os.environ.get("NEC_API_KEYS", "")]
+    for raw in raw_values:
+        if not raw:
+            continue
+        for key in str(raw).split(","):
+            key = key.strip()
+            if key and key not in keys:
+                keys.append(key)
+    return keys
+
+
 def _normalize_party(name):
     if not name:
         return "independent"
@@ -75,44 +88,55 @@ def fetch_precandidates(sg_typecode, nec_key=None):
     """
     if not nec_key:
         nec_key = os.environ.get("NEC_API_KEY", "")
-    if not nec_key:
+    keys = _candidate_keys(nec_key)
+    if not keys:
         print("  [NEC] NEC_API_KEY 미설정 — 건너뜀")
         return []
 
-    all_items = []
-    page = 1
-    while True:
-        url = _build_nec_url(sg_typecode, nec_key, page)
-        try:
-            req = urllib.request.Request(url)
-            with urllib.request.urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read().decode("utf-8"))
-        except Exception as e:
-            print(f"  [NEC] API 호출 실패: {e}")
-            break
+    for key_index, key in enumerate(keys):
+        all_items = []
+        page = 1
+        auth_failed = False
+        while True:
+            url = _build_nec_url(sg_typecode, key, page)
+            try:
+                req = urllib.request.Request(url)
+                with urllib.request.urlopen(req, timeout=15) as resp:
+                    data = json.loads(resp.read().decode("utf-8"))
+            except Exception as e:
+                print(f"  [NEC] API 호출 실패: {e}")
+                if "401" in str(e) and page == 1 and key_index < len(keys) - 1:
+                    print("  [NEC] 다음 serviceKey 후보로 재시도")
+                    auth_failed = True
+                break
 
-        header = data.get("response", {}).get("header", {})
-        if header.get("resultCode") != "INFO-00":
-            print(f"  [NEC] API 오류: {header.get('resultMsg')}")
-            break
+            header = data.get("response", {}).get("header", {})
+            if header.get("resultCode") != "INFO-00":
+                print(f"  [NEC] API 오류: {header.get('resultMsg')}")
+                break
 
-        body = data.get("response", {}).get("body")
-        if body is None:
-            print(f"  [WARN] NEC API 응답에 'body' 키 없음 — 스킵 (typecode={sg_typecode})")
-            print(f"  [DEBUG] 실제 응답 키: {list(data.keys())}")
-            break
-        items = body.get("items", {}).get("item", [])
-        if isinstance(items, dict):
-            items = [items]
-        all_items.extend(items)
+            body = data.get("response", {}).get("body")
+            if body is None:
+                print(f"  [WARN] NEC API 응답에 'body' 키 없음 — 스킵 (typecode={sg_typecode})")
+                print(f"  [DEBUG] 실제 응답 키: {list(data.keys())}")
+                break
+            items = body.get("items", {}).get("item", [])
+            if isinstance(items, dict):
+                items = [items]
+            all_items.extend(items)
 
-        total = body.get("totalCount", 0)
-        if len(all_items) >= total:
-            break
-        page += 1
+            total = body.get("totalCount", 0)
+            if len(all_items) >= total:
+                break
+            page += 1
 
-    print(f"  [NEC] 예비후보 {len(all_items)}명 조회 (typecode={sg_typecode})")
-    return all_items
+        if auth_failed:
+            continue
+        print(f"  [NEC] 예비후보 {len(all_items)}명 조회 (typecode={sg_typecode})")
+        return all_items
+
+    print(f"  [NEC] 예비후보 0명 조회 (typecode={sg_typecode})")
+    return []
 
 
 def sync_governor(governor_data, nec_items):
