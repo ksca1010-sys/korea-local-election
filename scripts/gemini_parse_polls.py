@@ -23,7 +23,7 @@ REPORT_PATH = DATA_DIR / "gemini_fallback_report.jsonl"
 GOVERNOR_CANDIDATES_JSON = BASE_DIR / "data" / "candidates" / "governor.json"
 ENV_FILE = BASE_DIR / ".env"
 
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash")
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-2.5-flash-lite")
 API_KEY_ENV = "GEMINI_API_KEY"
 
 PARTY_MAP = {
