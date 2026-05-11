@@ -40,6 +40,20 @@ SIDO_MAP = {
 }
 
 
+def _build_nec_url(sg_typecode, nec_key, page):
+    """Build public-data URL without double-encoding an already encoded key."""
+    params = urllib.parse.urlencode({
+        "pageNo": str(page),
+        "numOfRows": "100",
+        "sgId": SG_ID,
+        "sgTypecode": sg_typecode,
+        "resultType": "json",
+    })
+    key = nec_key.strip()
+    encoded_key = key if "%" in key else urllib.parse.quote(key, safe="")
+    return f"{NEC_SERVICE}?serviceKey={encoded_key}&{params}"
+
+
 def _normalize_party(name):
     if not name:
         return "independent"
@@ -68,15 +82,7 @@ def fetch_precandidates(sg_typecode, nec_key=None):
     all_items = []
     page = 1
     while True:
-        params = urllib.parse.urlencode({
-            "serviceKey": nec_key,
-            "pageNo": str(page),
-            "numOfRows": "100",
-            "sgId": SG_ID,
-            "sgTypecode": sg_typecode,
-            "resultType": "json",
-        })
-        url = f"{NEC_SERVICE}?{params}"
+        url = _build_nec_url(sg_typecode, nec_key, page)
         try:
             req = urllib.request.Request(url)
             with urllib.request.urlopen(req, timeout=15) as resp:
