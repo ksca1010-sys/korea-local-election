@@ -344,6 +344,15 @@ jobs:
 
           print(f"factcheck LLM: {total_calls} calls, {total_failures} failures "
                 f"(threshold {THRESHOLD})")
+          scoped_factcheck = os.environ.get("RUN_SCOPE") in {
+              "governor", "superintendent", "mayor"
+          }
+          if scoped_factcheck and total_failures:
+              print(
+                  "::error::Scoped factcheck selected, but LLM failures were recorded: "
+                  f"{total_failures}"
+              )
+              sys.exit(1)
           if total_failures > THRESHOLD:
               print(f"::error::Too many factcheck LLM failures: {total_failures}")
               sys.exit(1)
