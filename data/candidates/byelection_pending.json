@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-12T06:12:30.568980",
-    "totalDetections": 123,
-    "pendingCount": 123,
+    "lastRun": "2026-05-13T06:25:56.794899",
+    "totalDetections": 125,
+    "pendingCount": 125,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -2336,6 +2336,21 @@
           "title": "'사적 의리'보다 '공적 책임'이 우선이다",
           "link": "https://www.hidomin.com/news/articleView.html?idxno=704240",
           "date": "2026-05-06"
+        },
+        {
+          "title": "부산 북구갑 ‘단일화’ 최대 변수…지지층 흡수 관건",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8558980&ref=A",
+          "date": "2026-05-12"
+        },
+        {
+          "title": "“지원 행보에 징계 카드”… 국민의힘, 비례의 덫 위 ‘균열’ 노출",
+          "link": "https://www.jibs.co.kr/news/articles/articlesDetail/60790?feed=na",
+          "date": "2026-05-05"
+        },
+        {
+          "title": "서병수 &quot;박민식, 2년 전 북갑 당협위원장 제안에 '부산 다신 안 간다'며...",
+          "link": "https://www.ytn.co.kr/_ln/0101_202605121926200269",
+          "date": "2026-05-12"
         }
       ],
       "necValidated": false,
@@ -3279,6 +3294,11 @@
           "title": "민형배 비운 자리…광주광산을 국회의원 보궐 선거 초미 관심",
           "link": "https://www.seoul.co.kr/news/politics/local-election2026/2026/04/14/20260414500313?wlog_tag3=naver",
           "date": "2026-04-14"
+        },
+        {
+          "title": "22대 국회 광주 의원 전원 ‘초선’ 재편…정치력 시험대",
+          "link": "http://www.jndn.com/article.php?aid=1778579192432395001",
+          "date": "2026-05-12"
         }
       ],
       "necValidated": false,
@@ -3989,6 +4009,11 @@
           "title": "중앙선관위 “6·3 재보궐선거 선거구 14곳 확정”",
           "link": "https://biz.heraldcorp.com/article/10729679?ref=naver",
           "date": "2026-04-30"
+        },
+        {
+          "title": "지방선거 후보자 등록 시작…당내 경쟁 넘어 본선 국면 돌입",
+          "link": "https://www.kgnews.co.kr/news/article.html?no=895506",
+          "date": "2026-05-13"
         }
       ],
       "necValidated": false,
@@ -4086,6 +4111,52 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-12T06:12:30.568963"
+    },
+    {
+      "key": "chungbuk-선거통계시",
+      "region": "chungbuk",
+      "district": "선거통계시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "대표지방",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "내일부터 이틀간 후보자 등록",
+          "link": "https://www.ccdn.co.kr/news/articleView.html?idxno=1077844",
+          "date": "2026-05-12"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-13T06:25:56.794827"
+    },
+    {
+      "key": "chungnam-지도",
+      "region": "chungnam",
+      "district": "지도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "국힘, 장동혁 중심 선대위 출범한다",
+          "link": "https://www.hankyung.com/article/2026051219661",
+          "date": "2026-05-12"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-13T06:25:56.794862"
     }
   ]
 }
