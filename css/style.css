@@ -5528,6 +5528,30 @@ body.banner-hidden #main-content {
     align-items: center;
     gap: 3px;
 }
+.candidate-source-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+.official-source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    min-height: 28px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background: rgba(59,130,246,0.10);
+    border: 1px solid rgba(59,130,246,0.22);
+    color: #93c5fd;
+    font-size: 0.74rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+.official-source-link:hover {
+    background: rgba(59,130,246,0.16);
+    color: #bfdbfe;
+}
 
 /* ── Compare Table ── */
 .compare-table { margin-top: 8px; }
@@ -6124,6 +6148,10 @@ body.banner-hidden #main-content {
     border: 1px solid var(--border-color);
     border-radius: 8px;
 }
+.disclosure-section.disclosure-pending {
+    border-style: dashed;
+    opacity: 0.9;
+}
 .disclosure-header {
     font-size: 0.72rem;
     font-weight: 600;
@@ -6215,6 +6243,12 @@ body.banner-hidden #main-content {
 .crime-name {
     color: #f97316;
     font-weight: 500;
+}
+.criminal-raw {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    padding: 5px 0 2px 4px;
+    white-space: pre-wrap;
 }
 .disclosure-source {
     font-size: 0.67rem;

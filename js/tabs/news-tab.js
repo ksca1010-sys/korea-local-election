@@ -10,6 +10,81 @@ const NewsTab = (() => {
 
     // NEWS_PROXY_BASE, MAJOR_NEWS_HOSTS → js/utils.js 전역 상수 사용
 
+    function isCandidateCategoryId(categoryId) {
+        return categoryId === 'candidate' || categoryId === 'candidates';
+    }
+
+    function isOfficialCandidateNewsMode() {
+        try {
+            return typeof ElectionCalendar !== 'undefined'
+                && ElectionCalendar.getCandidateSortMode?.() === 'ballot_number';
+        } catch (_e) {
+            return false;
+        }
+    }
+
+    const POST_REGISTRATION_ACTIVITY_TERMS = [
+        '선거운동', '유세', '출정식', '토론회', '공약', '정책',
+        '지지선언', '선대위', '단일화', '사퇴', '검증', '논란', '해명'
+    ];
+
+    const POST_REGISTRATION_STALE_GUARD_TERMS = [
+        '후보자등록', '후보등록', '등록 후보', '본후보', '공식 후보', '등록 마감', '선관위',
+        ...POST_REGISTRATION_ACTIVITY_TERMS
+    ];
+
+    function textHasAnyTerm(text, terms) {
+        return Array.isArray(terms) && terms.some(term => term && text.includes(term));
+    }
+
+    function isStalePreRegistrationOnlyText(text) {
+        return /예비후보|후보군/.test(text)
+            && !textHasAnyTerm(text, POST_REGISTRATION_STALE_GUARD_TERMS);
+    }
+
+    function replacePreRegistrationTerms(value) {
+        if (typeof value === 'string') {
+            return value
+                .replace(/예비후보/g, '후보')
+                .replace(/후보군/g, '후보');
+        }
+        if (Array.isArray(value)) return value.map(replacePreRegistrationTerms);
+        if (value && typeof value === 'object') {
+            const out = {};
+            Object.entries(value).forEach(([key, entry]) => {
+                out[key] = replacePreRegistrationTerms(entry);
+            });
+            return out;
+        }
+        return value;
+    }
+
+    function applyPostRegistrationNewsMode(categories) {
+        if (!isOfficialCandidateNewsMode() || !Array.isArray(categories)) return categories;
+        return categories.map((category) => {
+            if (!category || typeof category !== 'object') return category;
+            if (!isCandidateCategoryId(category.categoryId) && category.categoryId !== 'all') return category;
+
+            const next = replacePreRegistrationTerms(category);
+            if (isCandidateCategoryId(next.categoryId)) {
+                next.altQueries = mergeUniqueArrays(next.altQueries, [
+                    `${next.query} 선거운동`,
+                    `${next.query} 공약 토론회`
+                ]);
+                next.focusKeywords = mergeUniqueArrays(next.focusKeywords, POST_REGISTRATION_ACTIVITY_TERMS);
+                ['strict', 'relaxed'].forEach((level) => {
+                    const rule = next[level];
+                    if (!rule || typeof rule !== 'object') return;
+                    rule.targetAny = mergeUniqueArrays(rule.targetAny, POST_REGISTRATION_ACTIVITY_TERMS);
+                    rule.boostAny = mergeUniqueArrays(rule.boostAny, [
+                        '유세', '출정식', '토론회', '공약 발표', '지지선언', '선대위 출범', '단일화'
+                    ]);
+                });
+            }
+            return next;
+        });
+    }
+
     // 교육 전문 언론사
     const EDUCATION_MEDIA_HOSTS = [
         'hangyo.com',           // 한국교육신문
@@ -333,8 +408,15 @@ const NewsTab = (() => {
         // 후보자 이름 쿼리 — 해당 시군구 후보자 이름으로 직접 검색
         const districtCandidates = (() => {
             try {
-                const allCands = window.ElectionData?.getMayorCandidates?.(regionKey) || {};
-                const list = allCands[districtName] || [];
+                const mayorData = typeof ElectionData !== 'undefined'
+                    ? ElectionData.getMayorData?.(regionKey, districtName)
+                    : null;
+                const mayorCache = typeof ElectionData !== 'undefined'
+                    ? ElectionData._mayorCandidatesCache
+                    : null;
+                const list = mayorData?.candidates
+                    || mayorCache?.candidates?.[regionKey]?.[districtName]
+                    || [];
                 return list.filter(c => c.status !== 'WITHDRAWN').map(c => c.name).slice(0, 4);
             } catch (e) { return []; }
         })();
@@ -446,6 +528,11 @@ const NewsTab = (() => {
             return `${shortAlias}도지사`;
         }
         return `${shortAlias}시장`;
+    }
+
+    function isMetroGovernorElection(regionName, electionType) {
+        if (electionType !== 'governor') return false;
+        return /특별시|광역시|특별자치시/.test(regionName || '');
     }
 
     function getRegionAliasTerms(regionName) {
@@ -581,7 +668,7 @@ const NewsTab = (() => {
             rule.targetAny = mergeUniqueArrays(rule.targetAny, regionAliases);
             rule.requiredRegionAny = mergeUniqueArrays(rule.requiredRegionAny, regionAliases);
             rule.boostAny = mergeUniqueArrays(rule.boostAny, topIssues);
-            if (tuned.categoryId === 'candidate') {
+            if (isCandidateCategoryId(tuned.categoryId)) {
                 rule.boostAny = mergeUniqueArrays(rule.boostAny, topActors);
                 rule.targetAny = mergeUniqueArrays(rule.targetAny, topActors);
             }
@@ -668,6 +755,7 @@ const NewsTab = (() => {
             GOVERNOR_QUERY_BASE: governorQueryBase
         };
         const regionOverrides = getRegionFilterOverrides(regionKey);
+        const globalExcludes = NEWS_FILTER_CONFIG.globalExcludeKeywords || [];
 
         const phase = typeof ElectionCalendar !== 'undefined' ? ElectionCalendar.getCurrentPhase() : '';
         const showCampaign = phase === 'CAMPAIGN' || phase === 'PRE_ELECTION_DAY' || phase === 'EARLY_VOTING';
@@ -684,6 +772,8 @@ const NewsTab = (() => {
                 if (rule.requiredGovernorRoleAny === true) {
                     rule.requiredGovernorRoleAny = governorRoleTerms;
                 }
+                rule.targetAny = mergeUniqueArrays(rule.targetAny, governorFocusTerms);
+                rule.excludeAny = mergeUniqueArrays(rule.excludeAny, globalExcludes);
             });
             // 광역시/세종: altQuery에서 "도지사" → "시장" 치환 (도지사는 도 지역 전용)
             const isMetro = regionName.includes('광역시') || regionName.includes('특별시') || regionName.includes('특별자치시');
@@ -779,8 +869,8 @@ const NewsTab = (() => {
         if (!url) return '#';
         try {
             const parsed = new URL(url);
-            return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? url : '#';
-        } catch (e) { return '#'; }
+            return (parsed.protocol === 'https:' || parsed.protocol === 'http:') ? escapeHtml(parsed.href) : '#';
+        } catch (_e) { return '#'; }
     }
 
     function isMajorOutlet(host) {
@@ -831,6 +921,10 @@ const NewsTab = (() => {
             return re.test(t);
         };
         const hasAny = (words) => Array.isArray(words) && words.some(w => hasWord(w, text));
+        const hasRegionAny = (words) => Array.isArray(words) && words.some(w => {
+            const s = String(w || '').toLowerCase();
+            return s && text.includes(s);
+        });
         const pollText = `${item.title || ''} ${item.description || ''}`;
         const percentMatches = pollText.match(/[0-9]{1,2}(?:\.[0-9])?\s?%/g) || [];
         const hasPercentPattern = /([0-9]{1,2}(\.[0-9])?\s?%|[0-9]{1,2}\.[0-9]\s?%p|오차범위|표본오차|응답률|표본\s?[0-9])/i.test(pollText);
@@ -863,7 +957,7 @@ const NewsTab = (() => {
         if (!hasAny(strict.targetAny)) return { ok: false, score: 0 };
         if (strict.requiredGovernorAny && !hasAny(strict.requiredGovernorAny)) return { ok: false, score: 0 };
         if (strict.requiredGovernorRoleAny && !hasAny(strict.requiredGovernorRoleAny)) return { ok: false, score: 0 };
-        if (strict.requiredRegionAny && !hasAny(strict.requiredRegionAny)) return { ok: false, score: 0 };
+        if (strict.requiredRegionAny && !hasRegionAny(strict.requiredRegionAny)) return { ok: false, score: 0 };
         // titleMustAny: 제목에도 반드시 포함돼야 하는 키워드 (설명에만 있고 제목과 무관한 기사 차단)
         if (Array.isArray(strict.titleMustAny) && strict.titleMustAny.length) {
             const hasInTitle = strict.titleMustAny.some(w => title.includes(String(w).toLowerCase()));
@@ -904,7 +998,16 @@ const NewsTab = (() => {
             }
             score += pollEvidenceScore;
         }
-        if (category?.categoryId === 'candidate' && !hasAny(['유세', '방문', '현장', '간담회', '회동', '면담', '지지선언', '출정식', '선거운동', '캠프', '선대위', '합류', '후보', '출마', '경선', '공천', '단일화'])) {
+        if (
+            isOfficialCandidateNewsMode()
+            && (isCandidateCategoryId(category?.categoryId) || category?.categoryId === 'all')
+            && hasAny(['예비후보', '후보군'])
+            && !hasAny(POST_REGISTRATION_STALE_GUARD_TERMS)
+        ) {
+            return { ok: false, score: 0 };
+        }
+
+        if (isCandidateCategoryId(category?.categoryId) && !hasAny(['유세', '방문', '현장', '간담회', '회동', '면담', '지지선언', '출정식', '선거운동', '캠프', '선대위', '합류', '후보', '출마', '경선', '공천', '단일화', '토론회', '검증', '논란', '해명'])) {
             return { ok: false, score: 0 };
         }
         if (category?.categoryId === 'policy' && !hasAny(['공약', '정책', '비전', '로드맵', '이행'])) {
@@ -970,8 +1073,8 @@ const NewsTab = (() => {
                 const title = (item.title || '').replace(/<[^>]+>/g, '');
                 return `<a class="news-live-item" href="${safeHref(item.link)}" target="_blank" rel="noopener">
                     <div class="news-live-item-badges">${freshBadge}${localBadge}<span class="news-badge" style="background:${catBadge.color}22;color:${catBadge.color};border-color:${catBadge.color}44">${catBadge.label}</span></div>
-                    <div class="news-live-item-title">${title}</div>
-                    <div class="news-live-item-meta"><span class="news-press">${press}</span>${timeText ? `<span class="news-time">${timeText}</span>` : ''}</div>
+                    <div class="news-live-item-title">${escapeHtml(title)}</div>
+                    <div class="news-live-item-meta"><span class="news-press">${escapeHtml(press)}</span>${timeText ? `<span class="news-time">${timeText}</span>` : ''}</div>
                 </a>`;
             }).join('');
         }
@@ -1150,13 +1253,20 @@ const NewsTab = (() => {
                     let signals = [];
 
                     // 1. 다른 지역 감지 (강한 감점)
-                    if (regionKey && mentionsOtherRegion(t, regionKey)) {
-                        penalty += 0.4;
-                        signals.push('other_region');
+                    const hasCurrentDistrict = selectedCategory._districtName && t.includes(selectedCategory._districtName);
+                    const titleHasOtherRegion = !hasCurrentDistrict && mentionsOtherRegion(item.title || '', regionKey);
+                    const textHasOtherRegion = !hasCurrentDistrict && mentionsOtherRegion(t, regionKey);
+                    if (regionKey && (titleHasOtherRegion || textHasOtherRegion)) {
+                        penalty += titleHasOtherRegion ? 0.55 : 0.4;
+                        signals.push(titleHasOtherRegion ? 'other_region_title' : 'other_region');
                     }
 
                     // 2. 선거유형 불일치 (기초단체장/교육감/국회의원 기사)
-                    if (patterns.mayor.test(t) && !patterns.governor.test(t)) {
+                    const localMayorMismatch = _currentElectionType !== 'mayor'
+                        && !isMetroGovernorElection(regionName, _currentElectionType)
+                        && patterns.mayor.test(t)
+                        && !patterns.governor.test(t);
+                    if (localMayorMismatch) {
                         penalty += 0.3;
                         signals.push('local_mayor');
                     }
@@ -1475,8 +1585,8 @@ const NewsTab = (() => {
                     const press = (() => { try { return new URL(link).hostname.replace(/^www\./, ''); } catch(e) { return ''; } })();
                     const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleString('ko-KR') : '';
                     return `<a class="news-live-item" href="${safeHref(link)}" target="_blank" rel="noopener">
-                        <div class="news-live-item-title">${title}</div>
-                        <div class="news-live-item-meta"><span class="news-press">${press}</span><span class="news-time">${pubDate}</span></div>
+                        <div class="news-live-item-title">${escapeHtml(title)}</div>
+                        <div class="news-live-item-meta"><span class="news-press">${escapeHtml(press)}</span><span class="news-time">${escapeHtml(pubDate)}</span></div>
                     </a>`;
                 }).join('');
                 const retryBtn = document.getElementById('news-retry-btn');
@@ -1556,6 +1666,183 @@ const NewsTab = (() => {
         };
     }
 
+    function normalizeDebugCategoryId(categoryId) {
+        if (categoryId === 'poll' || categoryId === 'polls') return 'polls';
+        if (categoryId === 'candidate' || categoryId === 'candidates') return 'candidates';
+        return categoryId || 'all';
+    }
+
+    function resolveNewsDebugCategory(testCase = {}) {
+        const regionKey = testCase.regionKey || 'seoul';
+        const electionType = testCase.electionType || 'governor';
+        const districtName = testCase.districtName || null;
+        const region = ElectionData.getRegion(regionKey);
+        let regionName = region?.name || '';
+        let categories;
+
+        if (electionType === 'mayor' && districtName) {
+            categories = buildMayorNewsCategories(regionKey, regionName, districtName);
+        } else {
+            if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                regionName = '전남광주통합특별시';
+            }
+            const governorQueryBase = getGovernorQueryBase(regionName);
+            const governorFocusTerms = getGovernorFocusTerms(regionName, governorQueryBase);
+            const governorRoleTerms = getGovernorRoleTerms(regionName, governorQueryBase);
+            categories = buildNewsCategories(regionKey, regionName, governorQueryBase, governorFocusTerms, governorRoleTerms);
+        }
+
+        categories = applyPostRegistrationNewsMode(categories);
+        const wanted = normalizeDebugCategoryId(testCase.categoryId || 'all');
+        const category = categories.find((cat) => normalizeDebugCategoryId(cat.categoryId) === wanted)
+            || categories[0]
+            || { query: `${regionName} 지방선거`, focusKeywords: [] };
+
+        return { regionKey, electionType, districtName, regionName, categories, category };
+    }
+
+    function hostMatches(host, candidates) {
+        if (!host || !Array.isArray(candidates)) return false;
+        return candidates.filter(Boolean).some((candidateHost) =>
+            host === candidateHost || host.endsWith(`.${candidateHost}`)
+        );
+    }
+
+    function getDebugLocalMediaDetails(regionKey, districtName = null) {
+        const registryRegion = window.LocalMediaRegistry?.regions?.[regionKey] || {};
+        const configRegion = NEWS_FILTER_CONFIG.regionalMedia?.[regionKey] || {};
+        const pool = window.LocalMediaPool || {};
+        const canonicalDistrict = districtName
+            ? (ElectionData.getSubRegionByName?.(regionKey, districtName)?.name || districtName)
+            : null;
+        const municipalityEntry = canonicalDistrict ? registryRegion?.municipalities?.[canonicalDistrict] || {} : {};
+        const provinceEntry = registryRegion?.province || {};
+        const poolMunicipal = canonicalDistrict ? pool.municipal?.[canonicalDistrict] || {} : {};
+
+        return {
+            canonicalDistrict,
+            districtTier1: mergeUniqueArrays(municipalityEntry?.hosts?.tier1, poolMunicipal?.hosts),
+            districtTier2: mergeUniqueArrays(municipalityEntry?.hosts?.tier2, municipalityEntry?.tier2Hosts),
+            provinceTier1: mergeUniqueArrays(provinceEntry?.hosts?.tier1, configRegion?.tier1),
+            provinceTier2: mergeUniqueArrays(provinceEntry?.hosts?.tier2, configRegion?.tier2),
+            districtNames: mergeUniqueArrays(municipalityEntry?.priorityNames, poolMunicipal?.names),
+            provinceNames: mergeUniqueArrays(provinceEntry?.priorityNames, configRegion?.priorityNames)
+        };
+    }
+
+    function calculateDebugLocalityScore(item, regionKey, districtName = null) {
+        const host = getHostFromUrl(item.originallink || item.link || '');
+        const text = `${sanitizeHtml(item.title || '')} ${sanitizeHtml(item.description || '')}`;
+        const details = getDebugLocalMediaDetails(regionKey, districtName);
+        const signals = NEWS_FILTER_CONFIG.localitySignals || {};
+        const tier1Score = Number(signals.tier1 || 1);
+        const tier2Score = Number(signals.tier2 || 0.82);
+        const districtMentionScore = Number(signals.outletMentionDistrict || 0.74);
+        const provinceMentionScore = Number(signals.outletMentionProvince || 0.62);
+
+        if (hostMatches(host, details.districtTier1)) return tier1Score;
+        if (hostMatches(host, details.provinceTier1)) return tier1Score;
+        if (hostMatches(host, details.districtTier2)) return tier2Score;
+        if (hostMatches(host, details.provinceTier2)) return tier2Score;
+        if (details.districtNames.some((name) => name && text.includes(name))) return districtMentionScore;
+        if (details.provinceNames.some((name) => name && text.includes(name))) return provinceMentionScore;
+        return 0;
+    }
+
+    function calculateDebugCredibilityScore(host, localityScore) {
+        if (isMajorOutlet(host)) return 1;
+        if (localityScore >= 1) return 0.76;
+        if (localityScore >= 0.8) return 0.68;
+        if (localityScore > 0) return 0.6;
+        return NEWS_FILTER_CONFIG.credibilityTiers?.scores?.unknown || 0.45;
+    }
+
+    function calculateDebugFilterPenalty(item, category, regionKey, electionType) {
+        const text = `${sanitizeHtml(item.title || '')} ${sanitizeHtml(item.description || '')}`;
+        let penalty = 0;
+
+        const hasCurrentDistrict = category?._districtName && text.includes(category._districtName);
+        const titleHasOtherRegion = !hasCurrentDistrict && mentionsOtherRegion(item.title || '', regionKey);
+        const textHasOtherRegion = !hasCurrentDistrict && mentionsOtherRegion(text, regionKey);
+        if (regionKey && (titleHasOtherRegion || textHasOtherRegion)) {
+            penalty += titleHasOtherRegion ? 0.55 : 0.4;
+        }
+
+        const patterns = {
+            governor: /도지사|지사|광역단체장|시도지사/,
+            mayor: /[가-힣]{2,4}(시장|군수|구청장)/,
+            superintendent: /교육감|교육청/,
+            national: /대통령|대선|총선|국회의원|국회|[가-힣]{2,8}(갑|을|병|정)/,
+            noise: /스포츠|프로야구|프로축구|K리그|KBO|드라마|영화|예능|콘서트|공연|사망사고|교통사고|살인|폭행|성범죄|마약/,
+        };
+        const globalExcludes = NEWS_FILTER_CONFIG.globalExcludeKeywords || [];
+        const regionData = ElectionData.getRegion(regionKey);
+        const isMetroGovernor = isMetroGovernorElection(regionData?.name || '', electionType);
+
+        if (electionType !== 'mayor' && !isMetroGovernor && patterns.mayor.test(text) && !patterns.governor.test(text)) penalty += 0.3;
+        if (patterns.superintendent.test(text) && electionType !== 'superintendent') penalty += 0.35;
+        if (patterns.national.test(text)) penalty += 0.25;
+        if (patterns.noise.test(text)) penalty += 0.5;
+        if (electionType !== 'byElection' && globalExcludes.some((word) => word && text.includes(word))) penalty += 0.5;
+
+        const knownActors = [
+            ...((regionData?.candidates || []).map((candidate) => candidate.name).filter(Boolean)),
+            regionData?.currentGovernor?.name
+        ].filter(Boolean);
+        if (knownActors.some((name) => text.includes(name))) penalty -= 0.15;
+
+        const regionAliases = getRegionAliasTerms(regionData?.name || '');
+        if (regionAliases.some((alias) => alias && text.includes(alias))) penalty -= 0.1;
+
+        if (isCandidateCategoryId(category?.categoryId) && isOfficialCandidateNewsMode()) {
+            if (isStalePreRegistrationOnlyText(text)) penalty += 0.5;
+        }
+
+        return Math.max(0, penalty);
+    }
+
+    function buildNewsQueryPlan(testCase = {}) {
+        const { regionKey, districtName, category } = resolveNewsDebugCategory(testCase);
+        const bundle = getDebugRegionMediaBundle(regionKey, districtName);
+        const hosts = mergeUniqueArrays(category.boostHosts, bundle.primaryHosts);
+        const primaryQueries = mergeUniqueArrays(
+            [category.query, ...(category.altQueries || [])].filter(Boolean),
+            hosts.map((host) => `${category.query} site:${host}`)
+        );
+        const secondaryQueries = (bundle.priorityNames || [])
+            .filter(Boolean)
+            .map((name) => `${category.query} ${name}`);
+
+        return { category, primaryQueries, secondaryQueries };
+    }
+
+    function evaluateNewsCase(testCase = {}) {
+        const { regionKey, electionType, districtName, category } = resolveNewsDebugCategory(testCase);
+        const item = {
+            title: testCase.title || '',
+            description: testCase.description || '',
+            link: testCase.link || '#',
+            originallink: testCase.originallink || testCase.link || '#',
+            pubDate: testCase.pubDate || new Date().toUTCString()
+        };
+        const strict = evaluateCategoryMatch(item, category, 'strict');
+        const relaxed = evaluateCategoryMatch(item, category, 'relaxed');
+        const host = getHostFromUrl(item.originallink || item.link || '');
+        const localityScore = calculateDebugLocalityScore(item, regionKey, districtName);
+        const credibilityScore = calculateDebugCredibilityScore(host, localityScore);
+        const filterPenalty = calculateDebugFilterPenalty(item, category, regionKey, electionType);
+
+        return {
+            strict,
+            relaxed,
+            host,
+            localityScore,
+            credibilityScore,
+            filterPenalty,
+            effectiveOk: (strict.ok || relaxed.ok) && filterPenalty < 0.35
+        };
+    }
+
     // ── 메인 render 함수 ──
 
     function render(regionKey, electionType, districtName) {
@@ -1620,7 +1907,9 @@ const NewsTab = (() => {
             }
         }
 
-        let html = `
+        categories = applyPostRegistrationNewsMode(categories);
+
+        const html = `
             <div class="news-live">
                 <div class="news-live-header">
                     <div class="news-live-actions" id="news-live-actions" role="tablist" aria-label="뉴스 카테고리">
@@ -1705,6 +1994,8 @@ const NewsTab = (() => {
         render,
         // 디버그/테스트용 내부 함수 노출
         evaluateCategoryMatch,
+        evaluateNewsCase,
+        buildNewsQueryPlan,
         getDebugRegionMediaBundle,
         buildNewsCategories,
         getGovernorQueryBase,

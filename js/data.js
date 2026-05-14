@@ -1785,7 +1785,10 @@ const ElectionData = (() => {
                         career: c.career || '',
                         pledges: c.pledges || [],
                         status: c.status,
+                        ballotNumber: c.ballotNumber || null,
                         dataSource: c.dataSource,
+                        sourceUrl: c.sourceUrl || null,
+                        officialUrl: c.officialUrl || null,
                     }));
                 if (cands.length) return { candidates: cands };
             }
@@ -1808,7 +1811,11 @@ const ElectionData = (() => {
                             party: c.partyKey || c.party || 'independent',
                             career: c.career || '',
                             pledges: c.pledges || [],
-                            status: c.status || 'DECLARED'
+                            status: c.status || 'DECLARED',
+                            ballotNumber: c.ballotNumber || null,
+                            dataSource: c.dataSource || null,
+                            sourceUrl: c.sourceUrl || null,
+                            officialUrl: c.officialUrl || null,
                         }));
                     return { ...dist, candidates };
                 }
@@ -2221,6 +2228,9 @@ const ElectionData = (() => {
                                     status: c.status,
                                     pledges: c.pledges || [],
                                     dataSource: c.dataSource,
+                                    sourceUrl: c.sourceUrl || null,
+                                    officialUrl: c.officialUrl || null,
+                                    ballotNumber: c.ballotNumber || null,
                                 }));
                         });
                     }
@@ -2992,7 +3002,9 @@ const ElectionData = (() => {
             const typeData = cache.disclosures[typeKey];
             if (!typeData) return null;
             if (typeKey === 'mayor') {
-                const districtData = typeData[regionKey]?.[districtName];
+                const regionData = typeData[regionKey];
+                const districtData = regionData?.[districtName]
+                    || Object.entries(regionData || {}).find(([key]) => key === districtName || key.includes(districtName) || districtName?.includes(key))?.[1];
                 if (!Array.isArray(districtData)) return null;
                 return districtData.find(d => d.name === candidateName) || null;
             }

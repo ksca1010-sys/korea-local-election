@@ -81,6 +81,7 @@ REGION_NAMES = {
 }
 
 OUTPUT_PATH = BASE_DIR / "data" / "candidates" / "disclosures.json"
+OFFICIAL_CANDIDATE_INFO_URL = "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml"
 
 
 def load_api_key():
@@ -144,6 +145,7 @@ def item_to_disclosure(item):
         return el.text.strip() if el is not None and el.text else ""
 
     name = txt("rhgcandiNm") or txt("name") or txt("candidateName")
+    cnddt_id = txt("cnddtId") or txt("huboid") or txt("candidateId")
     giho_str = txt("giho") or txt("jdgmnPreventCn") or ""
     try:
         giho = int(giho_str)
@@ -158,7 +160,10 @@ def item_to_disclosure(item):
 
     return {
         "name": name,
+        "cnddtId": cnddt_id or None,
         "giho": giho,
+        "sourceUrl": OFFICIAL_CANDIDATE_INFO_URL,
+        "officialUrl": OFFICIAL_CANDIDATE_INFO_URL,
         "criminal": parse_criminal(criminal_raw),
         "property": parse_property(property_raw),
         "military": {"status": military_raw or "정보 없음", "rawText": military_raw},

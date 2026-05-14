@@ -4,6 +4,8 @@
 // ============================================
 
 const CandidateTab = (() => {
+    const OFFICIAL_CANDIDATE_INFO_URL = 'https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml';
+    let pendingDisclosureRefreshKey = null;
 
     function buildEmptyMessage(message, icon = 'fa-circle-info') {
         return `
@@ -33,7 +35,7 @@ const CandidateTab = (() => {
                 };
             case 'NOMINATED':
                 return {
-                    label: '공천확정',
+                    label: '등록 후보',
                     style: 'background:rgba(20,184,166,0.14);color:#5eead4;border:1px solid rgba(20,184,166,0.24);'
                 };
             case 'PRIMARY_WINNER':
@@ -74,6 +76,10 @@ const CandidateTab = (() => {
                             pledges: Array.isArray(c.pledges) ? c.pledges.filter(Boolean) : [],
                             status: c.status,
                             statusMeta: getStatusMeta(c.status),
+                            dataSource: c.dataSource,
+                            sourceUrl: c.sourceUrl,
+                            officialUrl: c.officialUrl,
+                            ballotNumber: c.ballotNumber || null,
                             incumbent: false,
                         })),
                     emptyMessage: '등록된 재보궐 후보 데이터가 없습니다. 공천 확정 후 업데이트됩니다.'
@@ -112,6 +118,9 @@ const CandidateTab = (() => {
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
                     primaryNote: candidate._primaryNote || null,
+                    dataSource: candidate.dataSource,
+                    sourceUrl: candidate.sourceUrl,
+                    officialUrl: candidate.officialUrl,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -149,6 +158,9 @@ const CandidateTab = (() => {
                     status: candidate.status,
                     statusMeta: getStatusMeta(candidate.status),
                     primaryNote: candidate._primaryNote || null,
+                    dataSource: candidate.dataSource,
+                    sourceUrl: candidate.sourceUrl,
+                    officialUrl: candidate.officialUrl,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -193,6 +205,10 @@ const CandidateTab = (() => {
                     statusMeta: getStatusMeta(candidate.status),
                     primaryNote: candidate._primaryNote || null,
                     ballotNumber: candidate.ballotNumber || null,
+                    dataSource: candidate.dataSource,
+                    sourceUrl: candidate.sourceUrl,
+                    officialUrl: candidate.officialUrl,
+                    districtName: canonicalDistrict,
                     incumbent: districtSummary?.mayor?.name === candidate.name
                 })),
                 emptyMessage: `${canonicalDistrict} 기초단체장 후보 데이터가 아직 연결되지 않았습니다.`
@@ -260,22 +276,62 @@ const CandidateTab = (() => {
         };
     }
 
+    function getOfficialSourceUrl(candidate = {}, disclosure = {}) {
+        const candidateSource = candidate || {};
+        const disclosureSource = disclosure || {};
+        return disclosureSource.officialUrl || disclosureSource.sourceUrl || candidateSource.officialUrl || candidateSource.sourceUrl || OFFICIAL_CANDIDATE_INFO_URL;
+    }
+
+    function buildOfficialSourceActions(candidate, disclosure) {
+        if (candidate.status !== 'NOMINATED') return '';
+        const url = getOfficialSourceUrl(candidate, disclosure);
+        return `
+            <div class="candidate-source-actions">
+                <a class="official-source-link" href="${url}" target="_blank" rel="noopener noreferrer">
+                    <i class="fas fa-up-right-from-square"></i>
+                    선관위 후보자·공보물 확인
+                </a>
+            </div>
+        `;
+    }
+
+    function buildDisclosurePending(candidate) {
+        if (candidate.status !== 'NOMINATED') return '';
+        return `
+            <div class="disclosure-section disclosure-pending">
+                <div class="disclosure-header">
+                    <i class="fas fa-file-alt"></i>
+                    <span>공보물 주요 내용</span>
+                </div>
+                <div class="disclosure-row">
+                    <i class="fas fa-clock"></i>
+                    <span class="disclosure-value">선관위 공개자료 수집 중입니다. 원문은 선관위에서 직접 확인할 수 있습니다.</span>
+                </div>
+            </div>
+        `;
+    }
+
     function buildDisclosureSection(disclosure) {
         if (!disclosure) return '';
+
+        const criminalRecords = disclosure.criminal?.records || [];
+        const criminalRaw = disclosure.criminal?.rawText || '';
+        const criminalDetails = criminalRecords.length
+            ? `<ul class="criminal-list">
+                ${criminalRecords.map(r =>
+                    `<li><span class="crime-name">${r.crime || '전과'}</span> — ${r.sentence || '-'}${r.confirmedAt ? ` (${r.confirmedAt} 확정)` : ''}</li>`
+                ).join('')}
+               </ul>`
+            : (criminalRaw && disclosure.criminal?.hasRecord)
+                ? `<div class="criminal-raw">${criminalRaw}</div>`
+                : '';
 
         const crimHtml = disclosure.criminal?.hasRecord
             ? `<div class="disclosure-row criminal-warning">
                 <i class="fas fa-exclamation-triangle"></i>
                 <span class="disclosure-label">전과</span>
                 <span class="disclosure-value">${disclosure.criminal.count}건</span>
-                <details class="criminal-details">
-                    <summary>내역 보기</summary>
-                    <ul class="criminal-list">
-                        ${(disclosure.criminal.records || []).map(r =>
-                            `<li><span class="crime-name">${r.crime}</span> — ${r.sentence} (${r.confirmedAt} 확정)</li>`
-                        ).join('')}
-                    </ul>
-                </details>
+                ${criminalDetails ? `<details class="criminal-details"><summary>내역 보기</summary>${criminalDetails}</details>` : ''}
                </div>`
             : `<div class="disclosure-row criminal-clear">
                 <i class="fas fa-check-circle"></i>
@@ -297,11 +353,19 @@ const CandidateTab = (() => {
                 <span class="disclosure-value">${disclosure.military.status || '-'}</span>
                </div>` : '';
 
+        const taxValue = disclosure.tax?.hasArrears
+            ? (Number.isFinite(Number(disclosure.tax.arrearsManWon))
+                ? `체납 ${disclosure.tax.arrearsManWon}만원`
+                : (disclosure.tax.rawText || '체납 기록 있음'))
+            : (disclosure.tax?.rawText && !['없음', '해당없음', '0'].includes(String(disclosure.tax.rawText).trim())
+                ? disclosure.tax.rawText
+                : '체납 없음');
+
         const taxHtml = disclosure.tax
             ? `<div class="disclosure-row${disclosure.tax.hasArrears ? ' tax-warning' : ''}">
                 <i class="fas fa-receipt"></i>
                 <span class="disclosure-label">납세</span>
-                <span class="disclosure-value">${disclosure.tax.hasArrears ? `체납 ${disclosure.tax.arrearsManWon}만원` : '정상'}</span>
+                <span class="disclosure-value">${taxValue}</span>
                </div>` : '';
 
         const eduHtml = disclosure.education
@@ -322,7 +386,7 @@ const CandidateTab = (() => {
                 ${militaryHtml}
                 ${taxHtml}
                 ${eduHtml}
-                <div class="disclosure-source">출처: 선관위 공보물</div>
+                <div class="disclosure-source">출처: 선관위 후보자 공개자료</div>
             </div>
         `;
     }
@@ -359,16 +423,23 @@ const CandidateTab = (() => {
         const compareEl = document.getElementById('candidate-compare');
         if (!listEl || !compareCardEl || !compareEl) return;
 
-        // 공보물 지연 로딩 (fire-and-forget — 캐시 누적 후 다음 렌더에서 표시)
-        if (typeof ElectionData !== 'undefined' && !ElectionData._disclosureCache) {
-            ElectionData.loadDisclosures();
-        }
-
         const model = buildModel(regionKey, electionType, districtName);
         // Layer 2B: 정렬 모드 판정
         const sortMode = typeof ElectionCalendar !== 'undefined'
             ? ElectionCalendar.getCandidateSortMode()
             : 'status_priority';
+
+        // 공보물 지연 로딩: 첫 진입에서 누락되지 않도록 로드 완료 후 1회 재렌더
+        if (sortMode === 'ballot_number' && typeof ElectionData !== 'undefined' && !ElectionData._disclosureCache && ElectionData.loadDisclosures) {
+            const refreshKey = `${regionKey}|${electionType}|${districtName || ''}`;
+            if (pendingDisclosureRefreshKey !== refreshKey) {
+                pendingDisclosureRefreshKey = refreshKey;
+                ElectionData.loadDisclosures().then(data => {
+                    pendingDisclosureRefreshKey = null;
+                    if (data?.disclosures) render(regionKey, electionType, districtName);
+                });
+            }
+        }
 
         if (sortMode === 'ballot_number') {
             // D-07: 본후보 등록 마감 후 NOMINATED만 표시
@@ -405,6 +476,9 @@ const CandidateTab = (() => {
                 const sectionHeader = candidate._sectionLabel
                     ? `<div style="font-size:0.75rem;color:var(--text-muted);padding:8px 0 4px;display:flex;align-items:center;gap:6px;"><i class="fas fa-code-merge"></i>${candidate._sectionLabel}</div>`
                     : '';
+                const disclosure = sortMode === 'ballot_number' && typeof ElectionData !== 'undefined'
+                    ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName)
+                    : null;
                 return `
                 ${sectionHeader}<div class="candidate-card-full ${statusClass}">
                     <div class="candidate-header">
@@ -432,11 +506,8 @@ const CandidateTab = (() => {
                             `).join('')}
                         </div>
                     ` : ''}
-                    ${sortMode === 'ballot_number' ? buildDisclosureSection(
-                        typeof ElectionData !== 'undefined'
-                            ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, districtName)
-                            : null
-                    ) : ''}
+                    ${sortMode === 'ballot_number' ? (disclosure ? buildDisclosureSection(disclosure) : buildDisclosurePending(candidate)) : ''}
+                    ${sortMode === 'ballot_number' ? buildOfficialSourceActions(candidate, disclosure) : ''}
                     ${candidate.primaryNote ? `<div style="font-size:0.74rem;color:#fb923c;padding:4px 0 0;display:flex;align-items:center;gap:5px;"><i class="fas fa-code-branch" style="font-size:0.7rem;"></i>${candidate.primaryNote}</div>` : ''}
                     <div class="cand-card-footer">
                         ${candidate.incumbent ? `<span class="cand-incumbent-badge"><i class="fas fa-star"></i>현직</span>` : ''}

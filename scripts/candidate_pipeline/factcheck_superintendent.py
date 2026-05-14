@@ -169,12 +169,17 @@ def parse_changes(text):
 def apply_changes(data, changes, dry_run=False):
     applied = 0
     candidates = data.get("candidates", {})
+    official_locked = data.get("_meta", {}).get("officialSyncMode") == "replace_registered_candidates"
 
     for change in changes:
         region = change.get("region", "")
         name = change.get("name", "")
         change_type = change.get("changeType", "")
         region_name = REGION_NAMES.get(region, region)
+
+        if official_locked and change_type == "new_candidate":
+            print(f"  [공식동기화 보호] {region_name}: {name} 신규 예비 기록 추가 건너뜀")
+            continue
 
         if region not in candidates:
             candidates[region] = []
@@ -214,6 +219,9 @@ def apply_changes(data, changes, dry_run=False):
                 continue
             old_status = existing.get("status", "?")
             new_status = change.get("newStatus", "WITHDRAWN" if change_type == "withdrawn" else "DECLARED")
+            if official_locked and new_status != "WITHDRAWN":
+                print(f"  [공식동기화 보호] {region_name}: {name} 뉴스 기반 후보 상태 변경 건너뜀 ({old_status} → {new_status})")
+                continue
             if old_status == new_status:
                 continue
             label = f"[상태변경] {region_name}: {name} {old_status} → {new_status} - {change.get('detail', '')}"
@@ -245,7 +253,10 @@ def main():
         if arg.startswith("--region"):
             target_region = arg.split("=")[-1] if "=" in arg else (sys.argv[sys.argv.index(arg) + 1] if sys.argv.index(arg) + 1 < len(sys.argv) else None)
 
-    if not llm_key:
+    data = load_candidates()
+    official_locked = data.get("_meta", {}).get("officialSyncMode") == "replace_registered_candidates"
+
+    if not llm_key and not official_locked:
         print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
@@ -258,7 +269,6 @@ def main():
         print(f"[대상: {REGION_NAMES.get(target_region, target_region)}]")
     print("=" * 60)
 
-    data = load_candidates()
     candidates = data.get("candidates", {})
     total = sum(len(v) for v in candidates.values())
     print(f"\n현재 후보: {total}명 ({len(candidates)}개 시도)")
@@ -266,6 +276,10 @@ def main():
     regions_to_process = [target_region] if target_region else sorted(REGION_NAMES.keys())
     total_applied = 0
     logger = FactcheckLogger("superintendent", dry_run=dry_run)
+    if official_locked:
+        print("\n본후보 공식 동기화 이후이므로 뉴스 기반 교육감 후보 팩트체크 건너뜀")
+        logger.run_end(total_applied=0)
+        return
 
     for rk in regions_to_process:
         region_name = REGION_NAMES.get(rk, rk)

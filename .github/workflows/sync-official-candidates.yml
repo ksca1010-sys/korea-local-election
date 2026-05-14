@@ -1,0 +1,80 @@
+name: Sync NEC Official Candidates
+
+on:
+  schedule:
+    # 5/15 18:30 KST — 후보자등록 마감 직후 1차 동기화 (UTC 09:30)
+    - cron: '30 9 15 5 *'
+    # 5/16~5/27 02:30 KST — 사퇴/등록무효/정정 반영 (UTC 17:30)
+    - cron: '30 17 15-26 5 *'
+  workflow_dispatch:
+    inputs:
+      log_raw:
+        description: 'API 응답 샘플 저장 (--log-raw)'
+        type: boolean
+        default: true
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Fetch official registered candidates
+        env:
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
+        run: |
+          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          ARGS=""
+          if [ "${{ inputs.log_raw }}" != "false" ]; then ARGS="$ARGS --log-raw"; fi
+          python scripts/candidate_pipeline/fetch_nec_candidates.py $ARGS
+
+      - name: Validate candidate JSON
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          paths = [
+              Path("data/candidates/governor.json"),
+              Path("data/candidates/superintendent.json"),
+              Path("data/candidates/mayor_candidates.json"),
+              Path("data/candidates/unmatched_candidates.json"),
+          ]
+          for path in paths:
+              json.loads(path.read_text(encoding="utf-8"))
+              print(f"OK: {path}")
+          PY
+          python scripts/candidate_pipeline/validate_pipeline.py
+
+      - name: Check for changes
+        id: diff
+        run: |
+          git diff --quiet data/candidates/ || echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      - name: Commit and push
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/candidates/
+          git commit -m "data(candidates): sync NEC official registered candidates $(date +%Y-%m-%d)"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && break
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done

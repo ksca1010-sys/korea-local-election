@@ -220,7 +220,7 @@ def parse_changes(text):
         return []
 
 
-def apply_changes(region_candidates, changes, region_key, dry_run=False):
+def apply_changes(region_candidates, changes, region_key, dry_run=False, official_locked=False):
     applied = 0
     region_name = REGION_NAMES.get(region_key, region_key)
 
@@ -228,6 +228,10 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
         district = change.get("district", "")
         name = change.get("name", "")
         change_type = change.get("changeType", "")
+
+        if official_locked and change_type == "new_candidate":
+            print(f"    [공식동기화 보호] {district}: {name} 신규 예비 기록 추가 건너뜀")
+            continue
 
         if district not in region_candidates:
             region_candidates[district] = []
@@ -265,6 +269,9 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 continue
             old_status = existing.get("status", "?")
             new_status = change.get("newStatus", "WITHDRAWN" if change_type == "withdrawn" else "DECLARED")
+            if official_locked and new_status != "WITHDRAWN":
+                print(f"    [공식동기화 보호] {district}: {name} 뉴스 기반 후보 상태 변경 건너뜀 ({old_status}→{new_status})")
+                continue
             if old_status == new_status:
                 continue
             label = f"[상태] {district}: {name} {old_status}→{new_status} - {change.get('detail', '')}"
@@ -286,6 +293,9 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
 
         elif change_type == "party_change":
             if not existing:
+                continue
+            if official_locked:
+                print(f"    [공식동기화 보호] {district}: {name} 뉴스 기반 정당 변경 건너뜀")
                 continue
             new_party = PARTY_MAP.get(change.get("party", ""), "independent")
             if existing.get("party") == new_party:
@@ -309,7 +319,7 @@ def apply_changes(region_candidates, changes, region_key, dry_run=False):
                 if not dry_run:
                     existing["career"] = new_career
                 updated_fields.append(f"경력={new_career}")
-            if new_party_str:
+            if new_party_str and not official_locked:
                 new_party = PARTY_MAP.get(new_party_str, None)
                 if new_party and existing.get("party") == "independent" and new_party != "independent":
                     if not dry_run:
@@ -335,7 +345,10 @@ def main():
         if arg.startswith("--region"):
             target_region = arg.split("=")[-1] if "=" in arg else (sys.argv[sys.argv.index(arg) + 1] if sys.argv.index(arg) + 1 < len(sys.argv) else None)
 
-    if not llm_key:
+    data = load_candidates()
+    official_locked = data.get("_meta", {}).get("officialSyncMode") == "replace_registered_candidates"
+
+    if not llm_key and not official_locked:
         print("[오류] GEMINI_API_KEY 미설정")
         sys.exit(1)
 
@@ -348,33 +361,40 @@ def main():
         print(f"[대상: {REGION_NAMES.get(target_region, target_region)}]")
     print("=" * 60)
 
-    data = load_candidates()
     candidates = data.get("candidates", {})
     logger = FactcheckLogger("mayor", dry_run=dry_run)
     nec_applied = 0
 
     # ── ① 선관위 예비후보 API 동기화 (기초단체장) ──
-    try:
-        from nec_precand_sync import fetch_precandidates, sync_mayor
-        print("\n[1단계] 선관위 예비후보(구시군장) 조회...")
-        nec_items = fetch_precandidates("4")
-        if nec_items:
-            nec_fixes = sync_mayor(data, nec_items)
-            if nec_fixes:
-                nec_applied = len(nec_fixes)
-                print(f"  {len(nec_fixes)}건 동기화:")
-                for nf in nec_fixes[:30]:
-                    print(f"    • {nf}")
-                if len(nec_fixes) > 30:
-                    print(f"    ... 외 {len(nec_fixes) - 30}건")
-            else:
-                print("  변경 없음")
-    except ImportError:
-        print("\n[NEC] nec_precand_sync 모듈 없음 — 건너뜀")
-    except Exception as e:
-        print(f"\n[NEC] 오류: {e}")
+    if official_locked:
+        print("\n[1단계] 본후보 공식 동기화 이후이므로 예비후보 동기화 건너뜀")
+    else:
+        try:
+            from nec_precand_sync import fetch_precandidates, sync_mayor
+            print("\n[1단계] 선관위 예비후보(구시군장) 조회...")
+            nec_items = fetch_precandidates("4")
+            if nec_items:
+                nec_fixes = sync_mayor(data, nec_items)
+                if nec_fixes:
+                    nec_applied = len(nec_fixes)
+                    print(f"  {len(nec_fixes)}건 동기화:")
+                    for nf in nec_fixes[:30]:
+                        print(f"    • {nf}")
+                    if len(nec_fixes) > 30:
+                        print(f"    ... 외 {len(nec_fixes) - 30}건")
+                else:
+                    print("  변경 없음")
+        except ImportError:
+            print("\n[NEC] nec_precand_sync 모듈 없음 — 건너뜀")
+        except Exception as e:
+            print(f"\n[NEC] 오류: {e}")
 
     # ── ② 뉴스 기반 팩트체크 ──
+    if official_locked:
+        print("\n[2단계] 본후보 공식 동기화 이후이므로 뉴스 기반 기초단체장 후보 팩트체크 건너뜀")
+        logger.run_end(total_applied=0)
+        return
+
     print("\n[2단계] 뉴스 기반 팩트체크...")
     regions_to_process = [target_region] if target_region else sorted(candidates.keys())
     total_applied = 0
@@ -415,7 +435,7 @@ def main():
                 changes = verify_changes_against_news(changes, news)
                 verified = len(changes)
                 print(f"  → {verified}건 검증 통과")
-                applied = apply_changes(region_cands, changes, rk, dry_run)
+                applied = apply_changes(region_cands, changes, rk, dry_run, official_locked=official_locked)
                 total_applied += applied
         except Exception as e:
             error_msg = f"{type(e).__name__}: {e}"

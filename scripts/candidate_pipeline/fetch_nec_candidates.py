@@ -41,6 +41,7 @@ SUPERINTENDENT_FILE = CANDIDATES_DIR / 'superintendent.json'
 MAYOR_FILE = CANDIDATES_DIR / 'mayor_candidates.json'
 UNMATCHED_FILE = CANDIDATES_DIR / 'unmatched_candidates.json'
 RAW_SAMPLE_FILE = CANDIDATES_DIR / 'nec_raw_sample.json'
+OFFICIAL_CANDIDATE_INFO_URL = "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml"
 
 # 17개 시도 코드 매핑 (선관위 코드 → 프로젝트 키) — 구버전 호환용 유지
 REGION_MAP = {
@@ -152,6 +153,11 @@ def _convert_nec_item(item, election_type, unmatched_list):
         "status": "NOMINATED",
         "ballotNumber": ballot_number,
         "dataSource": "nec_official",
+        "sourceUrl": OFFICIAL_CANDIDATE_INFO_URL,
+        "officialUrl": OFFICIAL_CANDIDATE_INFO_URL,
+        "sgId": "20260603",
+        "sgTypecode": election_type,
+        "sdName": sd_name,
         "regionKey": region_key,
     }
 
@@ -233,9 +239,9 @@ def merge_governor_candidates(existing, new_candidates):
     governor.json과 NEC 본후보(typecode=3) 병합.
 
     규칙:
-    1. 새 데이터에 있고 기존에 없으면 → 추가 (status: NOMINATED, dataSource: nec_official)
-    2. 기존에 있고 새 데이터에 없으면 → status: WITHDRAWN
-    3. 둘 다 있으면 → 새 데이터로 업데이트 (기존 pledges/photo 유지)
+    1. NEC 본후보 데이터가 있는 지역은 공식 등록 후보 목록으로 교체
+    2. 기존 보조 정보(공약/사진 등)는 이름이 일치하는 후보에게만 보존
+    3. NEC 응답이 없는 지역은 API 부분 장애/미공개 가능성이 있으므로 건드리지 않음
     """
     if not new_candidates:
         return existing
@@ -249,7 +255,9 @@ def merge_governor_candidates(existing, new_candidates):
         if rk:
             by_region.setdefault(rk, []).append(c)
 
-    for region_key in SIDO_MAP.values():
+    removed_count = 0
+
+    for region_key in by_region:
         if region_key not in merged.get("candidates", {}):
             continue
 
@@ -264,43 +272,29 @@ def merge_governor_candidates(existing, new_candidates):
         }
 
         result = []
+        removed_count += len(set(existing_by_name) - set(new_by_name))
 
-        # 기존 후보 업데이트
-        for name, candidate in existing_by_name.items():
-            if name in new_by_name:
-                nc = new_by_name[name]
-                # 새 데이터 우선, 기존 보조 정보(pledges/photo/stance) 유지
-                candidate["status"] = "NOMINATED"
-                candidate["dataSource"] = "nec_official"
-                if nc.get("party"):
-                    candidate["party"] = nc["party"]
-                    candidate["partyKey"] = nc["partyKey"]
-                    candidate["partyName"] = nc.get("partyName", "")
-                if nc.get("ballotNumber") is not None:
-                    candidate["ballotNumber"] = nc["ballotNumber"]
-                if nc.get("career"):
-                    candidate["career"] = nc["career"]
-                result.append(candidate)
-            else:
-                # 기존에만 있음 → WITHDRAWN
-                if candidate.get("status") not in ("WITHDRAWN",):
-                    candidate["status"] = "WITHDRAWN"
-                    candidate["_autoWithdrawn"] = True
-                    candidate["_withdrawnDate"] = datetime.now().strftime("%Y-%m-%d")
-                result.append(candidate)
-
-        # 신규 후보 추가
         for name, nc in new_by_name.items():
-            if name not in existing_by_name:
-                nc.setdefault("pledges", [])
-                nc.setdefault("photo", None)
-                nc["id"] = f"{region_key}-nec-{len(result)+1}"
-                result.append(nc)
+            existing_candidate = existing_by_name.get(name, {})
+            candidate = {
+                **nc,
+                "id": existing_candidate.get("id") or f"{region_key}-nec-{len(result)+1}",
+                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
+                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
+            }
+            if existing_candidate.get("age") is not None and candidate.get("age") is None:
+                candidate["age"] = existing_candidate.get("age")
+            result.append(candidate)
+
+        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
 
         merged["candidates"][region_key] = result
 
     merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
     merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
+    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
+    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
+    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
     return merged
 
 
@@ -308,7 +302,8 @@ def merge_superintendent_candidates(existing, new_candidates):
     """
     superintendent.json과 NEC 본후보(typecode=10) 병합.
 
-    교육감 병합 시 NEC API 응답에 stance 필드가 없으면 기존 값 보존 (Open Question 2 대응).
+    교육감 병합 시 NEC API 응답에 stance 필드가 없으면 기존 값 보존.
+    NEC 본후보 데이터가 있는 지역은 예비/하마평 기록을 남기지 않고 공식 후보로 교체한다.
     """
     if not new_candidates:
         return existing
@@ -324,7 +319,10 @@ def merge_superintendent_candidates(existing, new_candidates):
 
     candidates_map = merged.get("candidates", {})
 
-    for region_key, region_list in candidates_map.items():
+    removed_count = 0
+
+    for region_key in by_region:
+        region_list = candidates_map.get(region_key, [])
         if not isinstance(region_list, list):
             continue
 
@@ -338,40 +336,30 @@ def merge_superintendent_candidates(existing, new_candidates):
         }
 
         result = []
-
-        for name, candidate in existing_by_name.items():
-            if name in new_by_name:
-                nc = new_by_name[name]
-                candidate["status"] = "NOMINATED"
-                candidate["dataSource"] = "nec_official"
-                if nc.get("party"):
-                    candidate["party"] = nc["party"]
-                    candidate["partyKey"] = nc["partyKey"]
-                    candidate["partyName"] = nc.get("partyName", "")
-                if nc.get("ballotNumber") is not None:
-                    candidate["ballotNumber"] = nc["ballotNumber"]
-                # stance 보존: NEC API에 stance 없으므로 기존 값 유지
-                # (덮어쓰지 않음)
-                result.append(candidate)
-            else:
-                if candidate.get("status") not in ("WITHDRAWN",):
-                    candidate["status"] = "WITHDRAWN"
-                    candidate["_autoWithdrawn"] = True
-                    candidate["_withdrawnDate"] = datetime.now().strftime("%Y-%m-%d")
-                result.append(candidate)
+        removed_count += len(set(existing_by_name) - set(new_by_name))
 
         for name, nc in new_by_name.items():
-            if name not in existing_by_name:
-                nc.setdefault("pledges", [])
-                nc.setdefault("photo", None)
-                nc.setdefault("stance", None)  # 교육감 stance 필드 초기화
-                nc["id"] = f"{region_key}-supt-nec-{len(result)+1}"
-                result.append(nc)
+            existing_candidate = existing_by_name.get(name, {})
+            candidate = {
+                **nc,
+                "id": existing_candidate.get("id") or f"{region_key}-supt-nec-{len(result)+1}",
+                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
+                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
+                "stance": existing_candidate.get("stance") or nc.get("stance"),
+            }
+            if existing_candidate.get("age") is not None and candidate.get("age") is None:
+                candidate["age"] = existing_candidate.get("age")
+            result.append(candidate)
+
+        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
 
         candidates_map[region_key] = result
 
     merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
     merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
+    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
+    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
+    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
     return merged
 
 
@@ -380,6 +368,7 @@ def merge_mayor_candidates(existing, new_candidates, unmatched_list):
     mayor_candidates.json과 NEC 본후보(typecode=4) 병합.
 
     기초단체장은 2단계 중첩 구조: candidates["seoul"]["종로구"] = [후보 배열]
+    공식 데이터가 있는 시군구는 기존 예비/하마평 목록을 보존하지 않고 등록 후보로 교체한다.
     wiwName이 기존 데이터 키에 매핑 안 되는 경우 unmatched_list에 추가.
     """
     if not new_candidates:
@@ -395,6 +384,8 @@ def merge_mayor_candidates(existing, new_candidates, unmatched_list):
         wiw = c.get("districtName", "")
         if rk and wiw:
             by_district.setdefault((rk, wiw), []).append(c)
+
+    removed_count = 0
 
     for (rk, wiw), items in by_district.items():
         if rk not in candidates_map:
@@ -452,39 +443,29 @@ def merge_mayor_candidates(existing, new_candidates, unmatched_list):
         }
 
         result = []
-
-        for name, candidate in existing_by_name.items():
-            if name in new_by_name:
-                nc = new_by_name[name]
-                candidate["status"] = "NOMINATED"
-                candidate["dataSource"] = "nec_official"
-                if nc.get("party"):
-                    candidate["party"] = nc["party"]
-                    candidate["partyKey"] = nc["partyKey"]
-                    candidate["partyName"] = nc.get("partyName", "")
-                if nc.get("ballotNumber") is not None:
-                    candidate["ballotNumber"] = nc["ballotNumber"]
-                if nc.get("career"):
-                    candidate["career"] = nc["career"]
-                result.append(candidate)
-            else:
-                if candidate.get("status") not in ("WITHDRAWN",):
-                    candidate["status"] = "WITHDRAWN"
-                    candidate["_autoWithdrawn"] = True
-                    candidate["_withdrawnDate"] = datetime.now().strftime("%Y-%m-%d")
-                result.append(candidate)
+        removed_count += len(set(existing_by_name) - set(new_by_name))
 
         for name, nc in new_by_name.items():
-            if name not in existing_by_name:
-                nc.setdefault("pledges", [])
-                nc.setdefault("photo", None)
-                nc["id"] = f"{rk}-{dist_key}-nec-{len(result)+1}"
-                result.append(nc)
+            existing_candidate = existing_by_name.get(name, {})
+            candidate = {
+                **nc,
+                "id": existing_candidate.get("id") or f"{rk}-{dist_key}-nec-{len(result)+1}",
+                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
+                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
+            }
+            if existing_candidate.get("age") is not None and candidate.get("age") is None:
+                candidate["age"] = existing_candidate.get("age")
+            result.append(candidate)
+
+        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
 
         region_dict[dist_key] = result
 
     merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
     merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
+    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
+    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
+    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
     return merged
 
 

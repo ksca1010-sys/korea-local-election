@@ -319,13 +319,18 @@ const App = (() => {
         document.querySelectorAll('.tab-content').forEach(tc => {
             tc.style.display = 'none';
         });
+        if (!AppState.currentRegionKey) {
+            const welcome = document.getElementById('panel-welcome');
+            if (welcome) welcome.style.display = '';
+            return;
+        }
         const activeTab = document.getElementById(`tab-${tabName}`);
         if (activeTab) activeTab.style.display = 'block';
 
         const panelContent = document.querySelector('.panel-content');
         if (panelContent) panelContent.scrollTop = 0;
 
-        // 탭 전환 시 스켈레톤 스크린 표시 (FEAT-04)
+        // 과거 스켈레톤 훅: 루트 DOM을 보존하기 위해 현재는 no-op.
         showSkeleton(tabName);
 
         // 탭 전환 시 로딩 표시
@@ -1190,22 +1195,8 @@ const App = (() => {
 
     // ── 스켈레톤 스크린 (FEAT-04) ──
     function showSkeleton(tabName) {
-        // 지역이 선택된 상태에서는 탭 렌더러가 직접 콘텐츠를 채우므로 스켈레톤 불필요.
-        // 전체 innerHTML 교체 시 render 함수가 필요한 DOM 요소를 찾지 못해 조기 return됨.
-        if (AppState.currentRegionKey) return;
-        const container = document.getElementById(`tab-${tabName}`);
-        if (!container) return;
-        let html = '<div class="skeleton-container">';
-        html += '<div class="skeleton-line title"></div>';
-        if (tabName === 'polls' || tabName === 'history') {
-            html += '<div class="skeleton-chart"></div>';
-        }
-        for (let i = 0; i < 5; i++) {
-            const w = ['short', 'medium', 'long'][i % 3];
-            html += `<div class="skeleton-line ${w}"></div>`;
-        }
-        html += '</div>';
-        container.innerHTML = html;
+        void tabName;
+        // Deprecated: tab root DOM is structural. Individual tab renderers own loading UI.
     }
 
     // Public API
