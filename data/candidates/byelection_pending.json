@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-13T06:25:56.794899",
-    "totalDetections": 125,
-    "pendingCount": 125,
+    "lastRun": "2026-05-14T06:22:50.541451",
+    "totalDetections": 130,
+    "pendingCount": 130,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -505,6 +505,16 @@
           "title": "정의당 인천시당, 시의원 비례대표 후보 박인숙 확정",
           "link": "https://www.incheontoday.com/news/articleView.html?idxno=318753",
           "date": "2026-05-12"
+        },
+        {
+          "title": "'컷오프' 이기붕 개혁신당 인천시당위원장, 인천시장 재도전··· 3파전...",
+          "link": "https://www.incheontoday.com/news/articleView.html?idxno=318852",
+          "date": "2026-05-13"
+        },
+        {
+          "title": "(재보선 여론조사)③인천 연수갑, 차기 인천시장…박찬대 54.0% 대 유정복...",
+          "link": "http://www.newstomato.com/ReadNews.aspx?no=1300625&inflow=N",
+          "date": "2026-05-13"
         }
       ],
       "necValidated": false,
@@ -1149,6 +1159,16 @@
           "title": "“시민들 분위기 확 달라져… ‘보수심장 대구 지켜야 한다’ 열망”[6...",
           "link": "https://www.munhwa.com/article/11588114?ref=naver",
           "date": "2026-05-11"
+        },
+        {
+          "title": "이진숙, &quot;달성에서 대구 경제 살리고, 대한민국의 정치 바로 세우겠다&quot;",
+          "link": "https://news.bbsi.co.kr/news/articleView.html?idxno=4083608",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "[6·3 지방선거] 대구 선거 대진표 확정된다…여야 주자들 내일부터 후...",
+          "link": "https://www.mhns.co.kr/news/articleView.html?idxno=747356",
+          "date": "2026-05-13"
         }
       ],
       "necValidated": false,
@@ -2351,6 +2371,21 @@
           "title": "서병수 &quot;박민식, 2년 전 북갑 당협위원장 제안에 '부산 다신 안 간다'며...",
           "link": "https://www.ytn.co.kr/_ln/0101_202605121926200269",
           "date": "2026-05-12"
+        },
+        {
+          "title": "또 1등... 부산 북구갑, 하정우는 왜 계속 앞서갈까",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003233885&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-05-13"
+        },
+        {
+          "title": "[6·3 지방선거] 여야 '당대표 리스크' 주의보…'정우오빠''윤어게인' 논...",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=731092",
+          "date": "2026-05-13"
+        },
+        {
+          "title": "[2026 지선] 한동훈, 보선 후원금 모금 19분 만 마감…&quot;보수 재건 최선&quot;",
+          "link": "http://www.inews24.com/view/1968169",
+          "date": "2026-05-13"
         }
       ],
       "necValidated": false,
@@ -3630,6 +3665,26 @@
           "title": "[6·3지방선거] 민주당 제주지사 최종 후보에 위성곤 선출… 3선 의원 경...",
           "link": "https://www.seoul.co.kr/news/politics/2026/04/18/20260418500052?wlog_tag3=naver",
           "date": "2026-04-18"
+        },
+        {
+          "title": "6·3 지방선거·서귀포시 보궐선거 후보 등록에 부쳐",
+          "link": "http://www.jejunews.com/news/articleView.html?idxno=2225525",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "제주 6.3 지방선거 막 올랐다…도지사.교육감 3파전, 서귀포는 2파전",
+          "link": "https://www.jibs.co.kr/news/articles/articlesDetail/61152?feed=na",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "[서귀포 보선 여론조사] 후보 선택 기준·지역 현안",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8560524&ref=A",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "[서귀포 보선 여론조사] 후보 선택 기준·지역 현안",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8560196&ref=A",
+          "date": "2026-05-13"
         }
       ],
       "necValidated": false,
@@ -4157,6 +4212,126 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-13T06:25:56.794862"
+    },
+    {
+      "key": "gwangju-광산구을",
+      "region": "gwangju",
+      "district": "광산구을",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "[무등의 아침] 안태욱 “광산구을 후보들, 민주당과 초록이 동색…정통...",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8560702&ref=A",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "[2026 지방선거] 기본소득당 광주후보단 &quot;AI 기본교육·첫경력보장제 도...",
+          "link": "https://news.dealsitetv.com/articles/170354",
+          "date": "2026-05-14"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-14T06:22:50.541345"
+    },
+    {
+      "key": "gyeonggi-거창군",
+      "region": "gyeonggi",
+      "district": "거창군",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "국힘, 경기 시흥·거창군 ‘무공천’…군산 재보선도 후보 안 내기로",
+          "link": "https://www.kyeonggi.com/article/20260513580396",
+          "date": "2026-05-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-14T06:22:50.541380"
+    },
+    {
+      "key": "jeonbuk-시흥시",
+      "region": "jeonbuk",
+      "district": "시흥시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "구인난 국힘, 시흥시장-군산 재보선 후보 안 낸다",
+          "link": "https://www.donga.com/news/Politics/article/all/20260513/133915199/2",
+          "date": "2026-05-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-14T06:22:50.541384"
+    },
+    {
+      "key": "gyeonggi-시흥시",
+      "region": "gyeonggi",
+      "district": "시흥시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[2026 지선] 국힘, 시흥시장·군산김제부안 을 무공천…접수 후보 없어",
+          "link": "http://www.inews24.com/view/1968182",
+          "date": "2026-05-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-14T06:22:50.541402"
+    },
+    {
+      "key": "incheon-연수구갑",
+      "region": "incheon",
+      "district": "연수구갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "newReform"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "정승연 '공천헌금수수의혹·검찰조사' 발언...선관위 고발로 번졌다",
+          "link": "https://www.thepublic.kr/news/articleView.html?idxno=304284",
+          "date": "2026-05-13"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-14T06:22:50.541446"
     }
   ]
 }
