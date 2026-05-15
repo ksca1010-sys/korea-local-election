@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-14T06:22:50.541451",
-    "totalDetections": 130,
-    "pendingCount": 130,
+    "lastRun": "2026-05-15T06:32:23.627771",
+    "totalDetections": 131,
+    "pendingCount": 131,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -515,6 +515,21 @@
           "title": "(재보선 여론조사)③인천 연수갑, 차기 인천시장…박찬대 54.0% 대 유정복...",
           "link": "http://www.newstomato.com/ReadNews.aspx?no=1300625&inflow=N",
           "date": "2026-05-13"
+        },
+        {
+          "title": "인천시장 후보·재보선 주자들 등록 완료…6·3 지방선거 본격 개막",
+          "link": "https://www.kihoilbo.co.kr/news/articleView.html?idxno=3022888",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "6·3 지방선거 후보 등록 첫날, 인천에서 299명 출사표",
+          "link": "http://www.incheonin.com/news/articleView.html?idxno=117937",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "[후보등록] 인천 국회의원 보선 연수갑·계양을 각각 '3파전'으로",
+          "link": "https://www.yna.co.kr/view/AKR20260514169300065?input=1195m",
+          "date": "2026-05-14"
         }
       ],
       "necValidated": false,
@@ -1169,6 +1184,26 @@
           "title": "[6·3 지방선거] 대구 선거 대진표 확정된다…여야 주자들 내일부터 후...",
           "link": "https://www.mhns.co.kr/news/articleView.html?idxno=747356",
           "date": "2026-05-13"
+        },
+        {
+          "title": "추경호 &quot;보수의 심장 대구에서 민주당의 입법 독주 막아세울 것&quot;",
+          "link": "https://news.bbsi.co.kr/news/articleView.html?idxno=4083508",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "박형룡 후보, 대구 달성군 국회의원 보궐선거 후보등록…본격 선거전 돌...",
+          "link": "https://biz.heraldcorp.com/article/10738319?ref=naver",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "박형룡·이진숙 대구 달성 보선 후보로 등록…&quot;달성 발전&quot; 한 목소리",
+          "link": "https://www.news1.kr/local/daegu-gyeongbuk/6167053",
+          "date": "2026-05-14"
+        },
+        {
+          "title": "[선택 6·3] 박형룡·이진숙, 대구 달성군 보선 후보 등록...본격 선거전",
+          "link": "https://daily.hankooki.com/news/articleView.html?idxno=1367293",
+          "date": "2026-05-14"
         }
       ],
       "necValidated": false,
@@ -4332,6 +4367,29 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-14T06:22:50.541446"
+    },
+    {
+      "key": "incheon-동시",
+      "region": "incheon",
+      "district": "동시",
+      "electionType": "기초단체장",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "박찬대",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "인천 보궐선거 대진표 확정, 연수갑·계양을 ‘3인 3색’ 격돌",
+          "link": "https://www.dt.co.kr/article/12062591?ref=naver",
+          "date": "2026-05-15"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-15T06:32:23.627746"
     }
   ]
 }
