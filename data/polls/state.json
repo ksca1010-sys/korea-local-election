@@ -1,6 +1,234 @@
 {
-  "last_id": 18700,
+  "last_id": 18720,
   "polls": [
+    {
+      "nttId": 18720,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "인터넷언론 : 케이저널",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 701,
+        "marginOfError": 3.7,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-15"
+      },
+      "publishDate": "2026-05-16",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "장흥군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 장흥군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18720&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-16"
+    },
+    {
+      "nttId": 18716,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)데일리리서치",
+      "clientOrg": "구·시·군단위 신문/인터넷언론 : 백제신문/뉴스청양",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 500,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-15"
+      },
+      "publishDate": "2026-05-16",
+      "results": [],
+      "regionKey": "chungnam",
+      "municipality": "청양군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "충청남도 청양군    기초단체장선거 광역의원선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18716&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
+    {
+      "nttId": 18715,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "인터넷언론 : 일간투데이",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-14"
+      },
+      "publishDate": "2026-05-15",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "곡성군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "전라남도 곡성군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18715&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
+    {
+      "nttId": 18705,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)데일리리서치",
+      "clientOrg": "구·시·군단위 신문 : 영광21신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 401,
+        "marginOfError": 4.9,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-14"
+      },
+      "publishDate": "2026-05-16",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "영광군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor"
+      ],
+      "title": "전라남도 영광군  제2선거구(나선거구)  기초단체장선거 광역의원선거 기초의원선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18705&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
+    {
+      "nttId": 18704,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)데일리리서치",
+      "clientOrg": "구·시·군단위 신문 : 영광21신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 400,
+        "marginOfError": 4.9,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-14"
+      },
+      "publishDate": "2026-05-16",
+      "results": [],
+      "regionKey": "jeonnam",
+      "municipality": "영광군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor"
+      ],
+      "title": "전라남도 영광군  제1선거구(가선거구)  기초단체장선거 광역의원선거 기초의원선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18704&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
+    {
+      "nttId": 18702,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "케이에스오아이 주식회사(한국사회여론연구소)",
+      "clientOrg": "인터넷언론 : 프레시안",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 501,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-15"
+      },
+      "publishDate": "2026-05-15",
+      "results": [],
+      "regionKey": "gyeongnam",
+      "municipality": "합천군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상남도 합천군    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18702&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
+    {
+      "nttId": 18701,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)이너텍시스템즈",
+      "clientOrg": "인터넷언론 : 공감신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 504,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-14"
+      },
+      "publishDate": "2026-05-15",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "청도군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor"
+      ],
+      "title": "경상북도 청도군    기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18701&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-15"
+    },
     {
       "nttId": 18700,
       "registrationId": null,
@@ -22,7 +250,33 @@
         "end": "2026-05-14"
       },
       "publishDate": "2026-05-15",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박종원",
+          "party": "",
+          "support": 45.9
+        },
+        {
+          "candidateName": "정철원",
+          "party": "",
+          "support": 44.2
+        },
+        {
+          "candidateName": "최화삼",
+          "party": "",
+          "support": 6.7
+        },
+        {
+          "candidateName": "지지하는",
+          "party": "",
+          "support": 1.0
+        },
+        {
+          "candidateName": "후보없다",
+          "party": "",
+          "support": 0.6
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "담양군",
       "electionType": "mayor",
@@ -55,7 +309,48 @@
         "end": "2026-05-14"
       },
       "publishDate": "2026-05-15",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "외교적",
+          "party": "",
+          "support": 41.1
+        },
+        {
+          "candidateName": "한국에",
+          "party": "",
+          "support": 39.3
+        },
+        {
+          "candidateName": "대한",
+          "party": "",
+          "support": 2.7
+        },
+        {
+          "candidateName": "공격에",
+          "party": "",
+          "support": 3.0
+        },
+        {
+          "candidateName": "맞서지",
+          "party": "",
+          "support": 2.5
+        },
+        {
+          "candidateName": "않은",
+          "party": "",
+          "support": 3.0
+        },
+        {
+          "candidateName": "부적절한",
+          "party": "",
+          "support": 7.4
+        },
+        {
+          "candidateName": "조치였다",
+          "party": "",
+          "support": 1.2
+        }
+      ],
       "regionKey": "busan",
       "municipality": null,
       "electionType": "governor",
@@ -59092,17 +59387,17 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-15",
-    "lastPipelineRun": "2026-05-15",
+    "lastUpdated": "2026-05-16",
+    "lastPipelineRun": "2026-05-16",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 1056,
-    "withRegistrationDate": 1053,
+    "pollCount": 1063,
+    "withRegistrationDate": 1060,
     "withRegistrationId": 670,
-    "withResults": 936,
+    "withResults": 938,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "mayor": 581,
+      "mayor": 588,
       "governor": 293,
       "party_support": 152,
       "superintendent": 29,
