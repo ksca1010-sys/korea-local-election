@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-15T06:32:23.627771",
-    "totalDetections": 131,
-    "pendingCount": 131,
+    "lastRun": "2026-05-16T05:52:25.945636",
+    "totalDetections": 132,
+    "pendingCount": 132,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -618,6 +618,11 @@
           "title": "李정부 후광 있다지만…전태진, '보수불패' 울산 남갑서 이변 만들까?",
           "link": "https://www.dailian.co.kr/news/view/1636217/?sc=Naver",
           "date": "2026-04-22"
+        },
+        {
+          "title": "선거 대진표 확정.. 누가 뛰나?",
+          "link": "http://web.ubc.co.kr/wp/archives/127558",
+          "date": "2026-05-15"
         }
       ],
       "necValidated": false,
@@ -2421,6 +2426,31 @@
           "title": "[2026 지선] 한동훈, 보선 후원금 모금 19분 만 마감…&quot;보수 재건 최선&quot;",
           "link": "http://www.inews24.com/view/1968169",
           "date": "2026-05-13"
+        },
+        {
+          "title": "보수판에 바람은 분다, 한쪽으로 불지 않을 뿐",
+          "link": "https://h21.hani.co.kr/arti/politics/politics_general/59347.html",
+          "date": "2026-05-16"
+        },
+        {
+          "title": "“국민의힘을 정치 플랫폼 삼겠다”…‘절윤’ 못한 국힘, ‘윤어게인’...",
+          "link": "https://www.khan.co.kr/article/202605160900011",
+          "date": "2026-05-16"
+        },
+        {
+          "title": "한동훈-박민식·김용남-조국, 단일화 1차 시한 넘겼다…최종 시한은 언...",
+          "link": "https://www.sidae.com/article/2026051517143348546",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "1차 단일화 시한 코앞인데… 부산 북갑 ‘한동훈·박민식’ 신경전만 [...",
+          "link": "https://www.segye.com/newsView/20260515514845?OutUrl=naver",
+          "date": "2026-05-16"
+        },
+        {
+          "title": "조광한 &quot;한동훈 양보하면 복당검토&quot;→서정욱 &quot;그건 조롱&quot;",
+          "link": "https://www.news1.kr/politics/assembly/6168613",
+          "date": "2026-05-16"
         }
       ],
       "necValidated": false,
@@ -4339,6 +4369,11 @@
           "title": "[2026 지선] 국힘, 시흥시장·군산김제부안 을 무공천…접수 후보 없어",
           "link": "http://www.inews24.com/view/1968182",
           "date": "2026-05-13"
+        },
+        {
+          "title": "[6.3 지방선거 D-18] 7664명 출사표 던졌지만 험지는 '텅텅'…지방선거 ...",
+          "link": "http://www.newsian.co.kr/news/articleView.html?idxno=89740",
+          "date": "2026-05-16"
         }
       ],
       "necValidated": false,
@@ -4390,6 +4425,29 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-15T06:32:23.627746"
+    },
+    {
+      "key": "jeonbuk-군산시",
+      "region": "jeonbuk",
+      "district": "군산시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "김종회 후보 '선거사무소' 개소",
+          "link": "http://www.breaknews.com/1207542",
+          "date": "2026-05-15"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-16T05:52:25.945605"
     }
   ]
 }
