@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-16T05:52:25.945636",
-    "totalDetections": 132,
-    "pendingCount": 132,
+    "lastRun": "2026-05-17T06:20:41.623058",
+    "totalDetections": 133,
+    "pendingCount": 133,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -2451,6 +2451,16 @@
           "title": "조광한 &quot;한동훈 양보하면 복당검토&quot;→서정욱 &quot;그건 조롱&quot;",
           "link": "https://www.news1.kr/politics/assembly/6168613",
           "date": "2026-05-16"
+        },
+        {
+          "title": "[6.3 지방선거③] 흔들리는 PK 보수 텃밭… 민주 공세냐 국힘 수성이냐",
+          "link": "https://www.newscj.com/news/articleView.html?idxno=3400344",
+          "date": "2026-05-15"
+        },
+        {
+          "title": "박민식 &quot;단일화 생각 없다‥한동훈은 보수 분열 야기&quot;",
+          "link": "https://imnews.imbc.com/news/2026/politics/article/6822979_36911.html",
+          "date": "2026-05-16"
         }
       ],
       "necValidated": false,
@@ -3750,6 +3760,11 @@
           "title": "[서귀포 보선 여론조사] 후보 선택 기준·지역 현안",
           "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8560196&ref=A",
           "date": "2026-05-13"
+        },
+        {
+          "title": "서귀포 국회의원 보궐선거 판세 어떤가?...내일부터 이틀간 언론4사 여...",
+          "link": "https://www.jibs.co.kr/news/articles/articlesDetail/61270?feed=na",
+          "date": "2026-05-17"
         }
       ],
       "necValidated": false,
@@ -4437,17 +4452,45 @@
         "name": "국회",
         "party": "democratic"
       },
-      "confidence": 50,
+      "confidence": 60,
       "sources": [
         {
           "title": "김종회 후보 '선거사무소' 개소",
           "link": "http://www.breaknews.com/1207542",
           "date": "2026-05-15"
+        },
+        {
+          "title": "[6·3 국회의원 재보궐선거] 여·야·무소속 후보 등록",
+          "link": "https://www.jjan.kr/article/20260516500054",
+          "date": "2026-05-16"
         }
       ],
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-16T05:52:25.945605"
+    },
+    {
+      "key": "jeonbuk-역시",
+      "region": "jeonbuk",
+      "district": "역시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "[6·3지선 후보등록] 재산·전과 격차 크고, 청년·여성 문턱 높아",
+          "link": "https://www.jjan.kr/article/20260516500079",
+          "date": "2026-05-16"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-17T06:20:41.622980"
     }
   ]
 }
