@@ -15,6 +15,7 @@ const checks = [
     { name: 'poll-regression', command: 'node', args: ['scripts/run_poll_regression.js'] },
     { name: 'local-media', command: 'node', args: ['scripts/check_local_media_registry.js'] },
     { name: 'byelection-search', command: 'node', args: ['scripts/check_byelection_search.js'] },
+    { name: 'search-coverage', command: 'node', args: ['scripts/check_search_coverage.js'] },
     { name: 'proportional-candidates', command: 'node', args: ['scripts/check_proportional_candidates.js'] }
 ];
 

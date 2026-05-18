@@ -53,6 +53,13 @@ const SearchModule = (() => {
             .replace(/[\s·ㆍ,._-]+/g, '');
     }
 
+    function _buildSearchTokens(text) {
+        return String(text || '')
+            .split(/[\s·ㆍ,._-]+/)
+            .map(_normalizeSearchText)
+            .filter(token => token.length >= 2);
+    }
+
     function _addAliasVariants(aliases, value) {
         if (!value) return;
         const compact = _normalizeSearchText(value);
@@ -161,6 +168,8 @@ const SearchModule = (() => {
                 districts.forEach(d => {
                     const aliases = _buildAliases(d.name);
                     aliases.add(parentShort); // "경기" 검색으로 경기도 시군구도 찾기
+                    aliases.add(parent.name);
+                    _addAliasVariants(aliases, parent.name);
                     const parentAbbrev = _provinceAbbrev[parent.name];
                     if (parentAbbrev && parentAbbrev !== parentShort) aliases.add(parentAbbrev);
                     // 읍면동 → 시군구 매핑 (dong_search_index 활용)
@@ -217,6 +226,8 @@ const SearchModule = (() => {
                 if (parent) {
                     const parentShort = parent.name.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '');
                     aliases.add(parentShort);
+                    aliases.add(parent.name);
+                    _addAliasVariants(aliases, parent.name);
                     const parentAbbrev = _provinceAbbrev[parent.name];
                     if (parentAbbrev && parentAbbrev !== parentShort) aliases.add(parentAbbrev);
                 }
@@ -258,18 +269,28 @@ const SearchModule = (() => {
             const index = buildSearchIndex();
             const q = query.toLowerCase();
             const normalizedQuery = _normalizeSearchText(query);
+            const queryTokens = _buildSearchTokens(query);
             const matches = [];
 
             for (const item of index) {
                 // 별칭 + 원본 이름 + 영문 이름에서 매칭
                 const allTexts = [...(item.aliases || []), item.nameEng].filter(Boolean);
+                const normalizedTexts = allTexts.map(_normalizeSearchText);
                 let bestMatch = 0; // 0=no match, 1=partial, 2=startsWith, 3=exact
 
-                for (const t of allTexts) {
-                    const normalizedText = _normalizeSearchText(t);
+                for (let i = 0; i < allTexts.length; i++) {
+                    const t = allTexts[i];
+                    const normalizedText = normalizedTexts[i];
                     if (t === query || normalizedText === normalizedQuery) { bestMatch = 3; break; }
                     if (t.startsWith(query) || normalizedText.startsWith(normalizedQuery)) { bestMatch = Math.max(bestMatch, 2); }
                     else if (t.includes(query) || t.toLowerCase().includes(q) || normalizedText.includes(normalizedQuery)) { bestMatch = Math.max(bestMatch, 1); }
+                }
+
+                if (bestMatch === 0 && queryTokens.length > 1) {
+                    const tokenMatched = queryTokens.every(token =>
+                        normalizedTexts.some(text => text.includes(token) || token.includes(text))
+                    );
+                    if (tokenMatched) bestMatch = 2;
                 }
                 if (bestMatch === 0) continue;
 

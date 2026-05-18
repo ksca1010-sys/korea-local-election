@@ -41,9 +41,17 @@ function normalizeSearchText(text) {
     return String(text || '').toLowerCase().replace(/[\s·ㆍ,._-]+/g, '');
 }
 
+function buildSearchTokens(text) {
+    return String(text || '')
+        .split(/[\s·ㆍ,._-]+/)
+        .map(normalizeSearchText)
+        .filter((token) => token.length >= 2);
+}
+
 function search(index, query) {
     const q = query.toLowerCase();
     const normalizedQuery = normalizeSearchText(query);
+    const queryTokens = buildSearchTokens(query);
     const typePriority = {
         governor: 7,
         superintendent: 6,
@@ -58,9 +66,11 @@ function search(index, query) {
     const matches = [];
     for (const item of index) {
         const allTexts = [...(item.aliases || []), item.nameEng].filter(Boolean);
+        const normalizedTexts = allTexts.map(normalizeSearchText);
         let bestMatch = 0;
-        for (const text of allTexts) {
-            const normalizedText = normalizeSearchText(text);
+        for (let i = 0; i < allTexts.length; i++) {
+            const text = allTexts[i];
+            const normalizedText = normalizedTexts[i];
             if (text === query || normalizedText === normalizedQuery) {
                 bestMatch = 3;
                 break;
@@ -74,6 +84,12 @@ function search(index, query) {
             ) {
                 bestMatch = Math.max(bestMatch, 1);
             }
+        }
+        if (bestMatch === 0 && queryTokens.length > 1) {
+            const tokenMatched = queryTokens.every((token) =>
+                normalizedTexts.some((text) => text.includes(token) || token.includes(text))
+            );
+            if (tokenMatched) bestMatch = 2;
         }
         if (bestMatch === 0) continue;
         let score = bestMatch * 40;
