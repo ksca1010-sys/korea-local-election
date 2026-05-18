@@ -14,6 +14,7 @@ const checks = [
     { name: 'news-loading-policy', command: 'node', args: ['scripts/check_news_loading_policy.js'] },
     { name: 'poll-regression', command: 'node', args: ['scripts/run_poll_regression.js'] },
     { name: 'local-media', command: 'node', args: ['scripts/check_local_media_registry.js'] },
+    { name: 'byelection-search', command: 'node', args: ['scripts/check_byelection_search.js'] },
     { name: 'proportional-candidates', command: 'node', args: ['scripts/check_proportional_candidates.js'] }
 ];
 

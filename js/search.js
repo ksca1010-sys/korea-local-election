@@ -47,16 +47,38 @@ const SearchModule = (() => {
         '제주특별자치도': '제주',
     };
 
+    function _normalizeSearchText(text) {
+        return String(text || '')
+            .toLowerCase()
+            .replace(/[\s·ㆍ,._-]+/g, '');
+    }
+
+    function _addAliasVariants(aliases, value) {
+        if (!value) return;
+        const compact = _normalizeSearchText(value);
+        if (compact.length >= 2) aliases.add(compact);
+
+        // "연수구갑" -> "연수갑", "평택시을" -> "평택을"
+        const constituency = compact.match(/^(.+?)(시|군|구)(갑|을|병|정)$/);
+        if (constituency && constituency[1].length >= 2) {
+            aliases.add(`${constituency[1]}${constituency[3]}`);
+        }
+    }
+
     // 이름에서 검색 별칭 생성 (접미사 제거, 구분자 분리)
     function _buildAliases(name) {
         const aliases = new Set();
         if (!name) return aliases;
         aliases.add(name);
+        _addAliasVariants(aliases, name);
         // "서울특별시" → "서울", "경기도" → "경기", "군산시" → "군산"
         const stripped = name
             .replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '')
             .replace(/(시|군|구)$/, '');
-        if (stripped && stripped !== name) aliases.add(stripped);
+        if (stripped && stripped !== name) {
+            aliases.add(stripped);
+            _addAliasVariants(aliases, stripped);
+        }
         // 시도 약자 추가 (전라남도→전남 등)
         if (_provinceAbbrev[name]) aliases.add(_provinceAbbrev[name]);
         // "전북 군산·김제·부안갑" → ["전북", "군산", "김제", "부안", "군산·김제·부안갑"]
@@ -64,11 +86,15 @@ const SearchModule = (() => {
         name.split(/[\s·ㆍ,]+/).forEach(part => {
             if (part.length >= 2) {
                 aliases.add(part);
+                _addAliasVariants(aliases, part);
                 // "군산시김제시부안군갑" 같은 붙어있는 형태도 분리
                 const subParts = part.replace(/(시|군|구)/g, '$1 ').trim().split(/\s+/);
                 subParts.forEach(sp => {
                     const clean = sp.replace(/(시|군|구|갑|을|병|정)$/, '');
-                    if (clean.length >= 2) aliases.add(clean);
+                    if (clean.length >= 2) {
+                        aliases.add(clean);
+                        _addAliasVariants(aliases, clean);
+                    }
                 });
             }
         });
@@ -185,6 +211,9 @@ const SearchModule = (() => {
                 const aliases = _buildAliases(d.district || key);
                 aliases.add('재보궐');
                 aliases.add('보궐');
+                (d.candidates || []).forEach(candidate => {
+                    if (candidate?.name) aliases.add(candidate.name);
+                });
                 if (parent) {
                     const parentShort = parent.name.replace(/(특별자치도|특별자치시|특별시|광역시|도)$/, '');
                     aliases.add(parentShort);
@@ -228,6 +257,7 @@ const SearchModule = (() => {
 
             const index = buildSearchIndex();
             const q = query.toLowerCase();
+            const normalizedQuery = _normalizeSearchText(query);
             const matches = [];
 
             for (const item of index) {
@@ -236,9 +266,10 @@ const SearchModule = (() => {
                 let bestMatch = 0; // 0=no match, 1=partial, 2=startsWith, 3=exact
 
                 for (const t of allTexts) {
-                    if (t === query) { bestMatch = 3; break; }
-                    if (t.startsWith(query)) { bestMatch = Math.max(bestMatch, 2); }
-                    else if (t.includes(query) || t.toLowerCase().includes(q)) { bestMatch = Math.max(bestMatch, 1); }
+                    const normalizedText = _normalizeSearchText(t);
+                    if (t === query || normalizedText === normalizedQuery) { bestMatch = 3; break; }
+                    if (t.startsWith(query) || normalizedText.startsWith(normalizedQuery)) { bestMatch = Math.max(bestMatch, 2); }
+                    else if (t.includes(query) || t.toLowerCase().includes(q) || normalizedText.includes(normalizedQuery)) { bestMatch = Math.max(bestMatch, 1); }
                 }
                 if (bestMatch === 0) continue;
 
