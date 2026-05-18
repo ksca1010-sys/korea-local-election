@@ -29,6 +29,10 @@ function main() {
         const firstTitleOk = !Array.isArray(testCase.expectedFirstTitleIncludes)
             || !testCase.expectedFirstTitleIncludes.length
             || includesAll(firstPoll?.title || '', testCase.expectedFirstTitleIncludes);
+        const firstPublishDateOk = !testCase.expectedFirstPublishDate
+            || (firstPoll?.publishDate || null) === testCase.expectedFirstPublishDate;
+        const allPublishDateMinOk = !testCase.expectedAllPublishDateMin
+            || result.polls.every((poll) => (poll.publishDate || '') >= testCase.expectedAllPublishDateMin);
         const firstMunicipalityOk = !testCase.expectedFirstMunicipality
             || (firstPoll?.municipality || null) === testCase.expectedFirstMunicipality;
         const datasetOk = !Array.isArray(testCase.expectedDatasetLabels)
@@ -60,7 +64,9 @@ function main() {
             datasetOk,
             datasetCountOk,
             municipalityCountOk,
-            pass: countOk && chartModeOk && chartTypeOk && chartReasonOk && headerOk && firstTitleOk && firstMunicipalityOk && datasetOk && datasetCountOk && municipalityCountOk
+            firstPublishDateOk,
+            allPublishDateMinOk,
+            pass: countOk && chartModeOk && chartTypeOk && chartReasonOk && headerOk && firstTitleOk && firstPublishDateOk && allPublishDateMinOk && firstMunicipalityOk && datasetOk && datasetCountOk && municipalityCountOk
         };
     });
 
@@ -78,6 +84,8 @@ function main() {
             `datasets=${entry.datasetLabels.join(',') || '-'}`,
             `header=${entry.headerOk}`,
             `firstTitle=${entry.firstTitleOk}`,
+            `firstPublishDate=${entry.firstPublishDateOk}`,
+            `allPublishDateMin=${entry.allPublishDateMinOk}`,
             `firstMunicipality=${entry.firstMunicipalityOk}`,
             `dataset=${entry.datasetOk}`,
             `datasetCount=${entry.datasetCountOk}`

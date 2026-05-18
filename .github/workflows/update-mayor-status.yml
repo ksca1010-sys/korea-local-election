@@ -47,17 +47,21 @@ jobs:
         run: pip install httpx
 
       - name: Run mayor status factcheck
-        continue-on-error: true
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash-lite
+          STATUS_STRICT: "1"
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
-          python scripts/candidate_pipeline/fetch_mayor_status.py
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
+          export NEC_API_KEYS="${NEC_API_KEY},${NDCDC_PERSON},${NDCDC_LOCAL},${NDCDC_PAPER},${NECDC_CODE}"
+          python scripts/candidate_pipeline/fetch_mayor_status.py --baseline-only
+
+      - name: Validate mayor status data
+        run: |
+          python3 scripts/validate_status_freshness.py data/candidates/mayor_status.json mayors 200 --max-age-days 9
 
       - name: Check for changes
         id: diff
@@ -71,4 +75,16 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/mayor_status.json
           git commit -m "chore: auto-update mayor status $(date +%Y-%m-%d)"
-          git pull --rebase origin main && git push
+          pushed=false
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi

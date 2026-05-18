@@ -32,6 +32,7 @@ FRESHNESS_RULES = [
     ("candidates/mayor_candidates.json", "_meta.lastUpdated", 2, "update-candidates.yml"),
     ("candidates/byelection.json", "_meta.lastUpdated", 2, "update-candidates.yml"),
     ("election_stats.json", "_meta.lastUpdated", 3, "update-election-stats.yml"),
+    ("static/gallup_national_poll.json", "publishDate", 9, "update-gallup.yml"),
     # 주간 갱신 대상
     ("candidates/governor_status.json", "_meta.lastUpdated", 9, "update-governor-status.yml"),
     ("candidates/mayor_status.json", "_meta.lastUpdated", 9, "update-mayor-status.yml"),
@@ -153,6 +154,11 @@ def check_integrity(heal_state):
     issues = 0
     fixed = 0
 
+    def merged_empty_regions(data):
+        meta = data.get("_meta") or data.get("meta") or {}
+        merged = meta.get("mergedRegions") or {}
+        return set(merged.keys())
+
     # 2-1. 후보자 파일: 빈 후보 목록 체크
     for fname in ("governor.json", "superintendent.json"):
         path = CANDIDATES_DIR / fname
@@ -160,7 +166,11 @@ def check_integrity(heal_state):
             continue
         data = json.loads(path.read_text(encoding="utf-8"))
         candidates = data.get("candidates", {})
-        empty_regions = [r for r, cands in candidates.items() if not cands]
+        expected_empty = merged_empty_regions(data)
+        empty_regions = [
+            r for r, cands in candidates.items()
+            if not cands and r not in expected_empty
+        ]
         if empty_regions:
             print(f"  ⚠️  {fname} — 빈 후보 지역: {', '.join(empty_regions)}")
             issues += 1
@@ -336,7 +346,11 @@ def main():
     print("\n" + "=" * 55)
     print(f"종합: 오래된 데이터 {stale}건 | 무결성 이슈 {issues}건 | 재실행 {retried}건")
     print("=" * 55)
+    if stale or issues:
+        print("상태 점검 실패: stale/무결성 이슈가 남아 있어 자동화 모니터에 노출합니다.")
+        return 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

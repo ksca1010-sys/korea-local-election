@@ -5,19 +5,6 @@ on:
     # 매주 월요일 한국시간 09:00 (UTC 00:00) 실행
     - cron: '0 0 * * 1'
   workflow_dispatch:
-    inputs:
-      scope:
-        description: '실행 범위: all, core, governor, superintendent, mayor, pledges'
-        required: false
-        default: 'all'
-      region:
-        description: '선택 지역 키(seoul, busan, ...). 교육감/기초단체장/공약 수집에 적용'
-        required: false
-        default: ''
-      run_pledges:
-        description: '기초단체장 공약 수집 실행 여부'
-        required: false
-        default: 'false'
 
 concurrency:
   group: ${{ github.workflow }}
@@ -48,10 +35,6 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    env:
-      RUN_SCOPE: ${{ github.event.inputs.scope || 'all' }}
-      TARGET_REGION: ${{ github.event.inputs.region || '' }}
-      RUN_PLEDGES: ${{ github.event.inputs.run_pledges || 'false' }}
 
     steps:
       - uses: actions/checkout@v4
@@ -63,19 +46,12 @@ jobs:
       - name: Install dependencies
         run: pip install httpx
 
-      - name: Show execution scope
-        run: |
-          echo "scope=${RUN_SCOPE}"
-          echo "region=${TARGET_REGION:-all}"
-          echo "run_pledges=${RUN_PLEDGES}"
-
       # 0-a단계: 재보궐 뉴스 자동감지 + NEC 교차검증
       - name: Detect byelection news
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core'
         id: stage_detect_byelection_news
         continue-on-error: true
-        timeout-minutes: 10
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
@@ -83,54 +59,51 @@ jobs:
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/detect_byelection_news.py
 
       # 0-b단계: 재보궐 선거구 자동 감지 (선관위 API)
       - name: Detect new byelection districts
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core'
         id: stage_detect_byelections
         continue-on-error: true
-        timeout-minutes: 10
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/detect_byelections.py --apply
 
       # 0-c단계: 재보궐 당선 결과 동기화 (선관위 API)
       - name: Sync byelection winners
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core'
         id: stage_sync_byelection_winners
         continue-on-error: true
-        timeout-minutes: 10
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/sync_byelection_winners.py
 
       # 0.5단계: NEC 본후보 등록 데이터 수집 (5/14~ 활성화)
       - name: Fetch NEC official candidates
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core'
         id: stage_fetch_nec_candidates
         continue-on-error: true
-        timeout-minutes: 15
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw
 
       # 0.9단계: 데이터 스키마 검증 (name 누락 등 조기 감지) — 실패 시 중단
@@ -139,99 +112,62 @@ jobs:
 
       # 1단계: 광역단체장 팩트체크 (Claude + 뉴스 + 교차검증)
       - name: Factcheck governor candidates
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'governor'
         id: stage_factcheck_governor
         continue-on-error: true
-        timeout-minutes: 20
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash-lite
-          NECDC_CODE: ${{ secrets.NECDC_CODE }}
-          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
-          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
-          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+          GEMINI_MODEL: gemini-2.5-flash
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
           LLM_BUDGET_MAX_CALLS: '50'
           LLM_STRICT_MODE: '1'
-        run: |
-          export NEC_API_KEY="${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}"
-          export NEC_API_KEYS="${NDCDC_PERSON},${NDCDC_LOCAL},${NDCDC_PAPER},${NECDC_CODE}"
-          python scripts/candidate_pipeline/factcheck_candidates.py
+        run: python scripts/candidate_pipeline/factcheck_candidates.py
 
       # 2단계: 교육감 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck superintendent candidates
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'superintendent'
         id: stage_factcheck_superintendent
         continue-on-error: true
-        timeout-minutes: 20
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash-lite
+          GEMINI_MODEL: gemini-2.5-flash
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
           LLM_BUDGET_MAX_CALLS: '100'
           LLM_STRICT_MODE: '1'
-        run: |
-          if [ -n "$TARGET_REGION" ]; then
-            python scripts/candidate_pipeline/factcheck_superintendent.py --region "$TARGET_REGION"
-          else
-            python scripts/candidate_pipeline/factcheck_superintendent.py
-          fi
+        run: python scripts/candidate_pipeline/factcheck_superintendent.py
 
       # 3단계: 기초단체장 팩트체크 (Claude + 지역뉴스 + 교차검증)
       - name: Factcheck mayor candidates
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'mayor'
         id: stage_factcheck_mayor
         continue-on-error: true
-        timeout-minutes: 25
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash-lite
-          NECDC_CODE: ${{ secrets.NECDC_CODE }}
-          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
-          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
-          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+          GEMINI_MODEL: gemini-2.5-flash
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
           LLM_BUDGET_MAX_CALLS: '100'
           LLM_STRICT_MODE: '1'
-        run: |
-          export NEC_API_KEY="${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}"
-          export NEC_API_KEYS="${NDCDC_PERSON},${NDCDC_LOCAL},${NDCDC_PAPER},${NECDC_CODE}"
-          if [ -n "$TARGET_REGION" ]; then
-            python scripts/candidate_pipeline/factcheck_mayor.py --region "$TARGET_REGION"
-          else
-            python scripts/candidate_pipeline/factcheck_mayor.py
-          fi
+        run: python scripts/candidate_pipeline/factcheck_mayor.py
 
       # 4단계: 재보궐 팩트체크 → update-byelection.yml로 이관 (Claude API 중복 절감)
 
       # 4.5단계: 기초단체장 공약 수집 (공약 없는 후보만)
       - name: Collect mayor pledges
-        if: env.RUN_SCOPE == 'pledges' || env.RUN_PLEDGES == 'true'
         id: stage_collect_mayor_pledges
         continue-on-error: true
-        timeout-minutes: 20
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-2.5-flash-lite
+          GEMINI_MODEL: gemini-2.5-flash
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
-        run: |
-          if [ -n "$TARGET_REGION" ]; then
-            python scripts/candidate_pipeline/collect_mayor_pledges.py --region "$TARGET_REGION"
-          else
-            python scripts/candidate_pipeline/collect_mayor_pledges.py
-          fi
+        run: python scripts/candidate_pipeline/collect_mayor_pledges.py
 
       # 4.9단계: 전남광주통합특별시 병합 보정
       - name: Merge gwangju-jeonnam (통합특별시)
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core' || env.RUN_SCOPE == 'mayor'
         id: stage_merge_gwangju_jeonnam
         continue-on-error: true
         run: python scripts/candidate_pipeline/merge_gwangju_jeonnam.py
@@ -243,14 +179,12 @@ jobs:
       # 리포트는 출력되므로 Actions 로그에서 누락 후보를 확인해
       # 수동으로 NEC 교차검증 후 반영하는 흐름으로 전환.
       - name: Report missing candidates from overview narratives
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core' || env.RUN_SCOPE == 'mayor'
         id: stage_sync_overview_report
         continue-on-error: true
         run: python scripts/sync_overview_candidates.py
 
       # 6단계: 다중 교차 검증 (권한대행/중복/광역 겸직 등)
       - name: Cross-validate candidates
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'core' || env.RUN_SCOPE == 'governor' || env.RUN_SCOPE == 'superintendent' || env.RUN_SCOPE == 'mayor'
         id: stage_cross_validate
         continue-on-error: true
         run: python scripts/candidate_pipeline/cross_validate.py --fix
@@ -278,6 +212,7 @@ jobs:
                  sync_overview_report cross_validate)
           outcomes=("$S01" "$S02" "$S03" "$S04" "$S05" "$S06" "$S07" "$S08" "$S09" "$S10" "$S11")
           failed=0
+          critical_failed=0
           failed_names=()
           echo "## Pipeline stage summary" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
@@ -291,6 +226,9 @@ jobs:
               icon="❌"
               failed=$((failed+1))
               failed_names+=("$name")
+              if [ "$name" = "fetch_nec_candidates" ]; then
+                critical_failed=1
+              fi
             elif [ "$out" = "skipped" ] || [ -z "$out" ]; then
               icon="⏭"
             fi
@@ -300,6 +238,10 @@ jobs:
           echo "failed: ${failed}/${#names[@]}  (threshold: ${THRESHOLD})" >> "$GITHUB_STEP_SUMMARY"
           if [ ${#failed_names[@]} -gt 0 ]; then
             echo "failed stages: ${failed_names[*]}" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          if [ "$critical_failed" -eq 1 ]; then
+            echo "::error::Critical official candidate sync failed — refusing to continue with stale candidate data"
+            exit 1
           fi
           if [ "$failed" -ge "$THRESHOLD" ]; then
             echo "::error::Too many stages failed ($failed/${#names[@]}) — refusing to commit"
@@ -357,15 +299,6 @@ jobs:
 
           print(f"factcheck LLM: {total_calls} calls, {total_failures} failures "
                 f"(threshold {THRESHOLD})")
-          scoped_factcheck = os.environ.get("RUN_SCOPE") in {
-              "governor", "superintendent", "mayor"
-          }
-          if scoped_factcheck and total_failures:
-              print(
-                  "::error::Scoped factcheck selected, but LLM failures were recorded: "
-                  f"{total_failures}"
-              )
-              sys.exit(1)
           if total_failures > THRESHOLD:
               print(f"::error::Too many factcheck LLM failures: {total_failures}")
               sys.exit(1)
@@ -404,6 +337,7 @@ jobs:
       # 가 다시 생기면 CI 런에서 즉시 warning 으로 표면화한다. fail 은 아니지만
       # Actions summary 에 노출되어 운영자가 인지할 수 있다.
       - name: Monitor overview_narrative reintroduction
+        # automation-guard: allow-continue-on-error
         continue-on-error: true
         run: |
           python3 - <<'PY'
@@ -457,8 +391,16 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/
           git commit -m "chore: auto-update candidate data $(date +%Y-%m-%d)"
+          pushed=false
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
             echo "push attempt $i failed, retrying..."
             sleep 10
           done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi

@@ -1,11 +1,14 @@
 #!/bin/bash
 # Deploy to Cloudflare Pages - excludes large pipeline geojson files that exceed 25MB limit
 
+set -euo pipefail
+
 DIST_DIR=".deploy_dist"
 trap 'rm -rf "$DIST_DIR"' EXIT
 
 echo "Running pre-deploy quality checks..."
 python3 scripts/audit_numeric_fields.py || { echo "audit_numeric_fields 검증 실패 — 배포 중단"; exit 1; }
+python3 scripts/check_deploy_freshness.py || { echo "deploy freshness 검증 실패 — 배포 중단"; exit 1; }
 
 echo "Preparing deployment directory..."
 rm -rf "$DIST_DIR"
@@ -39,11 +42,10 @@ echo "Deploying from $DIST_DIR..."
 # Cloudflare API가 한글 커밋 메시지를 가끔 거부 (UTF-8 validation bug) → ASCII 메시지로 강제
 COMMIT_HASH=$(git rev-parse --short HEAD 2>/dev/null || echo "unknown")
 npx wrangler pages deploy "$DIST_DIR" \
-  --project-name korea-local-eletion \
+  --project-name korea-local-election \
   --branch main \
   --commit-dirty=true \
   --commit-hash "$COMMIT_HASH" \
   --commit-message "deploy $COMMIT_HASH"
 
 echo "Cleaning up..."
-rm -rf "$DIST_DIR"

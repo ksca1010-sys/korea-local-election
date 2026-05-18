@@ -55,6 +55,7 @@ _load_env()
 
 NAVER_CLIENT_ID = os.environ.get("NAVER_CLIENT_ID", "")
 NAVER_CLIENT_SECRET = os.environ.get("NAVER_CLIENT_SECRET", "")
+ENABLE_NAVER_NEWS = str(os.environ.get("ENABLE_NAVER_NEWS", "")).strip().lower() in {"1", "true", "yes", "on"}
 
 # ── 정당 정규화 ──
 PARTY_NORMALIZE = {
@@ -96,9 +97,13 @@ def fetch_html(client: httpx.Client, url: str) -> str:
 def search_naver_news(client: httpx.Client, query: str, count: int = 5) -> List[Dict[str, str]]:
     """Search Naver News via official Search API.
 
-    Requires NAVER_CLIENT_ID and NAVER_CLIENT_SECRET env vars.
+    Requires ENABLE_NAVER_NEWS=true plus NAVER_CLIENT_ID and NAVER_CLIENT_SECRET env vars.
     API docs: https://developers.naver.com/docs/serviceapi/search/news/news.md
     """
+    if not ENABLE_NAVER_NEWS:
+        print("    ⚠ ENABLE_NAVER_NEWS=true 미설정 — Naver News API 호출 건너뜀")
+        return []
+
     if not NAVER_CLIENT_ID or not NAVER_CLIENT_SECRET:
         print("    ⚠ NAVER_CLIENT_ID / NAVER_CLIENT_SECRET not set")
         return []
@@ -620,6 +625,11 @@ def main():
     parser.add_argument("--limit", type=int, default=0, help="최대 처리 건수 (0=전체)")
     parser.add_argument("--skip-existing", action="store_true", help="이미 results가 있는 건 스킵")
     args = parser.parse_args()
+
+    if not ENABLE_NAVER_NEWS:
+        print("❌ ENABLE_NAVER_NEWS=true 미설정.")
+        print("   Naver API 비용 방지를 위해 기본 차단됩니다.")
+        sys.exit(1)
 
     if not NAVER_CLIENT_ID or not NAVER_CLIENT_SECRET:
         print("❌ NAVER_CLIENT_ID / NAVER_CLIENT_SECRET not set.")

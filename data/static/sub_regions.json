@@ -677,24 +677,28 @@
   ],
   "incheon": [
     {
-      "name": "중구",
-      "population": 120000,
-      "leadParty": "ppp",
+      "name": "영종구",
+      "population": null,
+      "leadParty": "independent",
       "mayor": {
-        "name": "김정헌",
-        "party": "ppp"
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "2026년 인천 행정체제 개편 신설 자치구"
       },
-      "keyIssue": "차이나타운 관광"
+      "keyIssue": "지역 현안"
     },
     {
-      "name": "동구",
-      "population": 63000,
-      "leadParty": "ppp",
+      "name": "제물포구",
+      "population": null,
+      "leadParty": "independent",
       "mayor": {
-        "name": "김찬진",
-        "party": "ppp"
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "2026년 인천 행정체제 개편 신설 자치구"
       },
-      "keyIssue": "원도심 재생"
+      "keyIssue": "지역 현안"
     },
     {
       "name": "미추홀구",
@@ -775,6 +779,18 @@
         "party": "ppp"
       },
       "keyIssue": "청라 국제도시"
+    },
+    {
+      "name": "검단구",
+      "population": null,
+      "leadParty": "independent",
+      "mayor": {
+        "name": null,
+        "party": "independent",
+        "acting": true,
+        "actingReason": "2026년 인천 행정체제 개편 신설 자치구"
+      },
+      "keyIssue": "지역 현안"
     },
     {
       "name": "강화군",

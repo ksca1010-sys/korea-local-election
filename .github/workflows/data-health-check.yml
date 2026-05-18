@@ -45,6 +45,7 @@ jobs:
           python-version: '3.11'
 
       - name: Run health check
+        id: health
         continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
@@ -59,3 +60,9 @@ jobs:
             git commit -m "chore: update heal state $(date +%Y-%m-%d)"
             git pull --rebase origin main && git push
           }
+
+      - name: Fail if health check found unresolved issues
+        if: steps.health.outcome == 'failure'
+        run: |
+          echo "::error::Data health check found unresolved stale data or integrity issues"
+          exit 1

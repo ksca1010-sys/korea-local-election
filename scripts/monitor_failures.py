@@ -36,6 +36,14 @@ NO_AUTO_RETRY = {
     "Data Health Check",
 }
 
+FAILURE_CONCLUSIONS = {
+    "failure",
+    "cancelled",
+    "timed_out",
+    "action_required",
+    "startup_failure",
+}
+
 
 def load_counts() -> dict:
     if FAILURE_COUNTS_PATH.exists():
@@ -182,6 +190,7 @@ def trigger_retry(workflow_name: str):
         "공보물 데이터 수집 (선관위 API)": "fetch-disclosures.yml",
         "Update Local Council Members": "update-local-council.yml",
         "Update Local Media Pool": "update-local-media.yml",
+        "Sync NEC Official Candidates": "sync-official-candidates.yml",
     }
     wf_file = WORKFLOW_FILE_MAP.get(workflow_name)
     if not wf_file:
@@ -272,8 +281,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--workflow", required=True, help="워크플로우 이름")
     parser.add_argument("--run-id", required=True, help="GitHub Run ID")
-    parser.add_argument("--conclusion", required=True,
-                        choices=["success", "failure", "cancelled", "skipped"])
+    parser.add_argument("--conclusion", required=True)
     parser.add_argument("--run-url", default="", help="Run 페이지 URL")
     args = parser.parse_args()
 
@@ -286,7 +294,7 @@ def main():
 
     counts = load_counts()
 
-    if args.conclusion == "failure":
+    if args.conclusion in FAILURE_CONCLUSIONS:
         handle_failure(args.workflow, args.run_id, args.run_url, counts)
     elif args.conclusion == "success":
         handle_success(args.workflow, counts)

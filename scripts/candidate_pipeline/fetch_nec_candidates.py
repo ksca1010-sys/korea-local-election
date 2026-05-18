@@ -1,727 +1,589 @@
 #!/usr/bin/env python3
 """
-선거관리위원회 본후보 데이터 수집 파이프라인
+선관위 정식 후보자 등록현황 동기화.
 
-선관위 PofelcddInfoInqireService API를 호출하여 본후보 데이터를 수집하고
-기존 candidates JSON 파일과 병합한다.
+공식 후보자 정보 API(PofelcddInfoInqireService)를 호출해 등록 후보만
+governor/superintendent/mayor/byelection 후보 JSON에 반영한다.
 
 사용법:
-  python fetch_nec_candidates.py            # 정상 실행 (5/14 이후 활성화)
-  python fetch_nec_candidates.py --dry-run  # 파일 저장 없이 검증만
-  python fetch_nec_candidates.py --log-raw  # raw 응답 샘플 저장
-
-[선거 유형]
-  sgTypecode "3"  → 광역단체장 → governor.json
-  sgTypecode "10" → 교육감     → superintendent.json
-  sgTypecode "4"  → 기초단체장 → mayor_candidates.json
+  python scripts/candidate_pipeline/fetch_nec_candidates.py
+  python scripts/candidate_pipeline/fetch_nec_candidates.py --dry-run
+  python scripts/candidate_pipeline/fetch_nec_candidates.py --log-raw
 """
 
+import argparse
 import json
 import os
 import sys
+import time
+import urllib.parse
+import urllib.request
+from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-# nec_precand_sync import (재사용: fetch_precandidates, SIDO_MAP, _normalize_party)
-# PYTHONPATH=scripts:scripts/candidate_pipeline 필요
 try:
-    from nec_precand_sync import fetch_precandidates, SIDO_MAP, _normalize_party
+    from nec_precand_sync import SIDO_MAP
 except ImportError:
-    # fallback: sys.path에 scripts/candidate_pipeline 추가
     _HERE = Path(__file__).resolve().parent
     sys.path.insert(0, str(_HERE))
-    from nec_precand_sync import fetch_precandidates, SIDO_MAP, _normalize_party
+    from nec_precand_sync import SIDO_MAP
 
-# 프로젝트 루트
+
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
-CANDIDATES_DIR = PROJECT_ROOT / 'data' / 'candidates'
+ENV_FILE = PROJECT_ROOT / ".env"
+CANDIDATES_DIR = PROJECT_ROOT / "data" / "candidates"
 
-GOVERNOR_FILE = CANDIDATES_DIR / 'governor.json'
-SUPERINTENDENT_FILE = CANDIDATES_DIR / 'superintendent.json'
-MAYOR_FILE = CANDIDATES_DIR / 'mayor_candidates.json'
-UNMATCHED_FILE = CANDIDATES_DIR / 'unmatched_candidates.json'
-RAW_SAMPLE_FILE = CANDIDATES_DIR / 'nec_raw_sample.json'
+GOVERNOR_FILE = CANDIDATES_DIR / "governor.json"
+SUPERINTENDENT_FILE = CANDIDATES_DIR / "superintendent.json"
+MAYOR_FILE = CANDIDATES_DIR / "mayor_candidates.json"
+BYELECTION_FILE = CANDIDATES_DIR / "byelection.json"
+UNMATCHED_FILE = CANDIDATES_DIR / "unmatched_candidates.json"
+RAW_SAMPLE_FILE = CANDIDATES_DIR / "nec_raw_sample.json"
+
+SG_ID = "20260603"
+NEC_CANDIDATE_API = (
+    "http://apis.data.go.kr/9760000/"
+    "PofelcddInfoInqireService/getPofelcddRegistSttusInfoInqire"
+)
+DATA_GO_KR_SOURCE_URL = "https://www.data.go.kr/data/15000908/openapi.do"
 OFFICIAL_CANDIDATE_INFO_URL = "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml"
 
-# 17개 시도 코드 매핑 (선관위 코드 → 프로젝트 키) — 구버전 호환용 유지
-REGION_MAP = {
-    '1100': 'seoul',    '2600': 'busan',    '2700': 'daegu',
-    '2800': 'incheon',  '2900': 'gwangju',  '3000': 'daejeon',
-    '3100': 'ulsan',    '3611': 'sejong',   '4100': 'gyeonggi',
-    '4200': 'gangwon',  '4300': 'chungbuk', '4400': 'chungnam',
-    '4500': 'jeonbuk',  '4600': 'jeonnam',  '4700': 'gyeongbuk',
-    '4800': 'gyeongnam','4900': 'jeju'
-}
-
-# 정당명 → 프로젝트 partyKey 매핑 (구버전 호환용 유지)
-PARTY_MAP = {
-    '더불어민주당': 'democratic',
-    '민주당': 'democratic',
-    '국민의힘': 'ppp',
-    '개혁신당': 'newReform',
-    '새로운미래': 'newFuture',
-    '진보당': 'progressive',
-    '정의당': 'justice',
-    '조국혁신당': 'reform',
-    '무소속': 'independent',
-}
-
-# 선거 유형 코드 → 레이블 (헌법 제4조: 혼용 금지)
 ELECTION_TYPE_LABELS = {
-    "3":  "광역단체장",
-    "10": "교육감",
-    "4":  "기초단체장",
+    "2": "국회의원 재보궐",
+    "3": "광역단체장",
+    "4": "기초단체장",
+    "11": "교육감",
+}
+
+SPECIAL_REGION_MAP = {
+    "전남광주통합특별시": "gwangju",
+}
+
+PARTY_KEYWORDS = {
+    "더불어민주당": "democratic",
+    "민주당": "democratic",
+    "국민의힘": "ppp",
+    "조국혁신당": "reform",
+    "개혁신당": "newReform",
+    "진보당": "progressive",
+    "정의당": "justice",
+    "새로운미래": "newFuture",
+    "새미래민주당": "newFuture",
+    "무소속": "independent",
+}
+
+DETAIL_ORDER = {
+    "": 0,
+    "가": 1,
+    "나": 2,
+    "다": 3,
+    "라": 4,
+    "마": 5,
+    "바": 6,
+    "사": 7,
+    "아": 8,
 }
 
 
-def normalize_party(party_name):
-    """정당명을 프로젝트 partyKey로 변환 (구버전 호환 래퍼)"""
-    return _normalize_party(party_name)
+def load_env():
+    if not ENV_FILE.exists():
+        return
+    for line in ENV_FILE.read_text(encoding="utf-8").splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        key, _, value = line.partition("=")
+        os.environ.setdefault(key.strip(), value.strip().strip("'\""))
 
 
-def load_existing():
-    """기존 governor.json 로드"""
-    if GOVERNOR_FILE.exists():
-        with open(GOVERNOR_FILE, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    return {'_meta': {}, 'candidates': {}}
+def load_json(path, default):
+    if not path.exists():
+        return default
+    with path.open("r", encoding="utf-8") as f:
+        return json.load(f)
 
 
-def _extract_ballot_number(item):
-    """
-    NEC 응답에서 ballotNumber(기호) 추출.
-
-    필드명 불확실(LOW confidence): giho → gihoSn → candidateNo → huboNo 순서로 시도.
-    huboCnt는 '후보자 수' 필드이므로 절대 사용 금지.
-
-    Returns:
-        int | None: 기호 번호. 없으면 None (WARN 로깅).
-    """
-    for field in ["giho", "gihoSn", "candidateNo", "huboNo"]:
-        val = item.get(field)
-        if val is not None and val != "":
-            try:
-                return int(val)
-            except (ValueError, TypeError):
-                pass  # 비정수 값이면 다음 필드 시도
-
-    print(f"[WARN] ballotNumber 필드를 찾지 못함: {list(item.keys())}")
-    return None
+def write_json(path, data):
+    path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
-def _convert_nec_item(item, election_type, unmatched_list):
-    """
-    NEC API 응답 아이템 → 프로젝트 후보 객체 변환.
+def clean_text(value):
+    return str(value or "").strip()
 
-    Args:
-        item: NEC API 단건 응답 dict
-        election_type: "3"(광역단체장), "10"(교육감), "4"(기초단체장)
-        unmatched_list: 매핑 실패 후보를 누적할 list (in-place 추가)
 
-    Returns:
-        dict | None: 변환된 후보 객체. 매핑 실패 시 None (unmatched_list에 추가됨).
-    """
-    # 시도명 → regionKey 변환 (SIDO_MAP 재사용: 강원특별자치도/강원도 변형명 처리)
-    sd_name = item.get("sdName", "")
-    region_key = SIDO_MAP.get(sd_name)
+def to_int(value):
+    value = clean_text(value)
+    if not value:
+        return None
+    try:
+        return int(value)
+    except ValueError:
+        return None
+
+
+def normalize_party_key(party_name):
+    party_name = clean_text(party_name)
+    if not party_name:
+        return "independent"
+    for keyword, key in PARTY_KEYWORDS.items():
+        if keyword in party_name:
+            return key
+    return "other"
+
+
+def combined_career(item):
+    parts = []
+    for key in ("career1", "career2"):
+        value = clean_text(item.get(key))
+        if value and value not in parts:
+            parts.append(value)
+    return " / ".join(parts)
+
+
+def candidate_sort_key(candidate):
+    ballot = candidate.get("ballotNumber")
+    official_order = candidate.get("officialOrder") or 999999
+    detail = candidate.get("ballotNumberDetail") or ""
+    detail_order = DETAIL_ORDER.get(detail, 99)
+    return (
+        ballot is None,
+        ballot if ballot is not None else official_order,
+        detail_order,
+        candidate.get("name", ""),
+    )
+
+
+def fetch_official_candidates(api_key, sg_typecode):
+    all_items = []
+    page = 1
+    while True:
+        params = urllib.parse.urlencode({
+            "serviceKey": api_key,
+            "pageNo": str(page),
+            "numOfRows": "1000",
+            "sgId": SG_ID,
+            "sgTypecode": sg_typecode,
+            "resultType": "json",
+        })
+        url = f"{NEC_CANDIDATE_API}?{params}"
+        with urllib.request.urlopen(url, timeout=30) as response:
+            data = json.loads(response.read().decode("utf-8"))
+
+        header = data.get("response", {}).get("header", {})
+        result_code = header.get("resultCode")
+        if result_code == "INFO-03":
+            return []
+        if result_code != "INFO-00":
+            raise RuntimeError(f"NEC API 오류({sg_typecode}): {header.get('resultMsg')}")
+
+        body = data.get("response", {}).get("body", {})
+        items = body.get("items", {}).get("item", [])
+        if isinstance(items, dict):
+            items = [items]
+        all_items.extend(items)
+
+        total_count = int(body.get("totalCount") or 0)
+        if len(all_items) >= total_count or not items:
+            break
+        page += 1
+        time.sleep(0.2)
+
+    return all_items
+
+
+def convert_item(item, sg_typecode, unmatched):
+    sd_name = clean_text(item.get("sdName"))
+    region_key = SIDO_MAP.get(sd_name) or SPECIAL_REGION_MAP.get(sd_name)
     if not region_key:
-        print(f"[WARN] SIDO_MAP 미등록 시도: '{sd_name}' — unmatched로 보관")
-        unmatched_list.append({
-            "sdName": sd_name,
-            "name": item.get("name", ""),
-            "election_type": election_type,
+        unmatched.append({
+            "reason": f"SIDO_MAP 미등록 시도: {sd_name}",
+            "sgTypecode": sg_typecode,
             "raw": item,
         })
         return None
 
-    # 정당명 → partyKey 변환 (_normalize_party 재사용)
-    party_name = item.get("jdName", "")
-    party_key = _normalize_party(party_name)
+    name = clean_text(item.get("name"))
+    if not name:
+        unmatched.append({
+            "reason": "후보자 이름 없음",
+            "sgTypecode": sg_typecode,
+            "raw": item,
+        })
+        return None
 
-    # ballotNumber 추출 (anti-pattern: huboCnt 금지)
-    ballot_number = _extract_ballot_number(item)
-
-    # 기초단체장 전용: wiwName (시군구명)
-    wiw_name = item.get("wiwName", "") if election_type == "4" else None
+    party_name = clean_text(item.get("jdName"))
+    ballot_number = to_int(item.get("giho"))
+    ballot_detail = clean_text(item.get("gihoSangse"))
+    official_order = to_int(item.get("num"))
 
     candidate = {
-        "name": item.get("name", ""),
-        "party": party_key,
-        "partyKey": party_key,
+        "name": name,
+        "party": normalize_party_key(party_name),
+        "partyKey": normalize_party_key(party_name),
         "partyName": party_name,
-        "career": item.get("career1", ""),
+        "career": combined_career(item),
         "status": "NOMINATED",
-        "ballotNumber": ballot_number,
+        "officialStatus": clean_text(item.get("status")) or "등록",
         "dataSource": "nec_official",
-        "sourceUrl": OFFICIAL_CANDIDATE_INFO_URL,
+        "sourceUrl": DATA_GO_KR_SOURCE_URL,
         "officialUrl": OFFICIAL_CANDIDATE_INFO_URL,
-        "sgId": "20260603",
-        "sgTypecode": election_type,
+        "sgId": clean_text(item.get("sgId")) or SG_ID,
+        "sgTypecode": sg_typecode,
+        "huboid": clean_text(item.get("huboid")),
         "sdName": sd_name,
+        "sggName": clean_text(item.get("sggName")),
+        "wiwName": clean_text(item.get("wiwName")),
         "regionKey": region_key,
+        "officialOrder": official_order,
+        "pledges": [],
     }
 
-    if wiw_name:
-        candidate["districtName"] = wiw_name
-        # 기초단체장 기호 미매핑 체크 (wiwName이 기존 데이터 키와 안 맞을 경우)
-        # unmatched 처리는 merge_mayor_candidates()에서 담당
+    age = to_int(item.get("age"))
+    if age is not None:
+        candidate["age"] = age
+    for source_key, target_key in (("gender", "gender"), ("job", "job"), ("edu", "education")):
+        value = clean_text(item.get(source_key))
+        if value:
+            candidate[target_key] = value
+    if ballot_number is not None:
+        candidate["ballotNumber"] = ballot_number
+        candidate["giho"] = str(ballot_number)
+    if ballot_detail:
+        candidate["ballotNumberDetail"] = ballot_detail
+        candidate["gihoSangse"] = ballot_detail
+    if sg_typecode == "4":
+        candidate["districtName"] = candidate["wiwName"] or candidate["sggName"]
 
     return candidate
 
 
-def fetch_nec_official(log_raw=False):
-    """
-    NEC 본후보 API 호출 (sgTypecode 3/10/4).
-
-    날짜 게이팅: 2026-05-14 이전이면 경고 출력 후 빈 dict 반환.
-
-    Args:
-        log_raw: True이면 nec_raw_sample.json에 typecode별 첫 아이템 저장
-
-    Returns:
-        dict: {
-            "3":  [후보 객체, ...],  # 광역단체장
-            "10": [후보 객체, ...],  # 교육감
-            "4":  [후보 객체, ...],  # 기초단체장
-            "unmatched": [...]       # 매핑 실패 후보
-        }
-    """
-    # 날짜 게이팅: 본후보 등록 개시일(2026-05-14) 이전이면 API 미호출
-    now = datetime.now()
-    if now < datetime(2026, 5, 14, 0, 0):
-        print(f"[INFO] 현재 시각: {now.strftime('%Y-%m-%d %H:%M')}")
-        print("[GATE] 본후보 등록 개시일(2026-05-14) 이전입니다.")
-        print("[GATE] NEC 본후보 API를 호출하지 않습니다.")
-        return {}
-
-    result = {"3": [], "10": [], "4": [], "unmatched": []}
+def fetch_nec_official(api_key, log_raw=False):
+    result = {"2": [], "3": [], "4": [], "11": [], "unmatched": []}
     raw_samples = {}
 
-    for typecode in ["3", "10", "4"]:
+    for typecode in ("3", "11", "4", "2"):
         label = ELECTION_TYPE_LABELS[typecode]
-        print(f"\n[NEC] {label} 본후보 조회 (sgTypecode={typecode})...")
+        print(f"\n[NEC] {label} 등록 후보 조회 (sgTypecode={typecode})")
+        raw_items = fetch_official_candidates(api_key, typecode)
+        print(f"  원본 응답: {len(raw_items)}명")
+        if raw_items and log_raw:
+            raw_samples[typecode] = raw_items[0]
 
-        # nec_precand_sync.fetch_precandidates() 재사용 (Don't Hand-Roll)
-        raw_items = fetch_precandidates(typecode)
+        registered_items = [item for item in raw_items if clean_text(item.get("status")) == "등록"]
+        skipped = len(raw_items) - len(registered_items)
+        if skipped:
+            print(f"  등록 외 상태 제외: {skipped}명")
 
-        if not raw_items:
-            print(f"  [NEC] {label} 후보 없음 (API 미공개 또는 미등록)")
-            continue
-
-        # raw response 로깅 (Pitfall 2 대응: 필드명 확인용)
-        if raw_items:
-            print(f"  [RAW] 첫 번째 아이템 필드:")
-            print(json.dumps(raw_items[0], ensure_ascii=False, indent=2))
-            if log_raw:
-                raw_samples[typecode] = raw_items[0]
-
-        # 변환
         converted = []
-        for item in raw_items:
-            obj = _convert_nec_item(item, typecode, result["unmatched"])
-            if obj is not None:
-                converted.append(obj)
-
+        for item in registered_items:
+            candidate = convert_item(item, typecode, result["unmatched"])
+            if candidate:
+                converted.append(candidate)
         result[typecode] = converted
-        print(f"  [NEC] {label} 변환 완료: {len(converted)}명 ({len(result['unmatched'])}명 미매핑)")
+        print(f"  변환 완료: {len(converted)}명")
 
-    # raw 샘플 저장
     if log_raw and raw_samples:
-        with open(RAW_SAMPLE_FILE, 'w', encoding='utf-8') as f:
-            json.dump(raw_samples, f, ensure_ascii=False, indent=2)
+        write_json(RAW_SAMPLE_FILE, raw_samples)
         print(f"\n[RAW] 샘플 저장: {RAW_SAMPLE_FILE}")
 
     return result
 
 
-def merge_governor_candidates(existing, new_candidates):
-    """
-    governor.json과 NEC 본후보(typecode=3) 병합.
-
-    규칙:
-    1. NEC 본후보 데이터가 있는 지역은 공식 등록 후보 목록으로 교체
-    2. 기존 보조 정보(공약/사진 등)는 이름이 일치하는 후보에게만 보존
-    3. NEC 응답이 없는 지역은 API 부분 장애/미공개 가능성이 있으므로 건드리지 않음
-    """
-    if not new_candidates:
-        return existing
-
-    merged = json.loads(json.dumps(existing))  # deep copy
-
-    # regionKey별 그룹핑
-    by_region = {}
-    for c in new_candidates:
-        rk = c.get("regionKey")
-        if rk:
-            by_region.setdefault(rk, []).append(c)
-
-    removed_count = 0
-
-    for region_key in by_region:
-        if region_key not in merged.get("candidates", {}):
-            continue
-
-        existing_list = merged["candidates"][region_key]
-        existing_by_name = {
-            c["name"]: c for c in existing_list
-            if isinstance(c, dict) and c.get("name", "").strip()
-        }
-        new_by_name = {
-            c["name"]: c for c in by_region.get(region_key, [])
-            if isinstance(c, dict) and c.get("name", "").strip()
-        }
-
-        result = []
-        removed_count += len(set(existing_by_name) - set(new_by_name))
-
-        for name, nc in new_by_name.items():
-            existing_candidate = existing_by_name.get(name, {})
-            candidate = {
-                **nc,
-                "id": existing_candidate.get("id") or f"{region_key}-nec-{len(result)+1}",
-                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
-                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
-            }
-            if existing_candidate.get("age") is not None and candidate.get("age") is None:
-                candidate["age"] = existing_candidate.get("age")
-            result.append(candidate)
-
-        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
-
-        merged["candidates"][region_key] = result
-
-    merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
-    merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
-    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
-    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
-    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
+def preserve_existing_fields(candidate, existing_candidate):
+    if not existing_candidate:
+        return candidate
+    merged = dict(candidate)
+    merged["id"] = existing_candidate.get("id") or candidate.get("id")
+    merged["pledges"] = existing_candidate.get("pledges") or candidate.get("pledges") or []
+    if "photo" in existing_candidate:
+        merged["photo"] = existing_candidate.get("photo")
+    if existing_candidate.get("stance"):
+        merged["stance"] = existing_candidate.get("stance")
+    if existing_candidate.get("pledgeCategories"):
+        merged["pledgeCategories"] = existing_candidate.get("pledgeCategories")
     return merged
 
 
-def merge_superintendent_candidates(existing, new_candidates):
-    """
-    superintendent.json과 NEC 본후보(typecode=10) 병합.
+def merge_regional_list(existing, new_candidates, id_prefix):
+    merged = json.loads(json.dumps(existing))
+    candidates_map = merged.setdefault("candidates", {})
+    by_region = defaultdict(list)
+    for candidate in new_candidates:
+        by_region[candidate["regionKey"]].append(candidate)
 
-    교육감 병합 시 NEC API 응답에 stance 필드가 없으면 기존 값 보존.
-    NEC 본후보 데이터가 있는 지역은 예비/하마평 기록을 남기지 않고 공식 후보로 교체한다.
-    """
-    if not new_candidates:
-        return existing
-
-    merged = json.loads(json.dumps(existing))  # deep copy
-
-    # regionKey별 그룹핑
-    by_region = {}
-    for c in new_candidates:
-        rk = c.get("regionKey")
-        if rk:
-            by_region.setdefault(rk, []).append(c)
-
-    candidates_map = merged.get("candidates", {})
-
-    removed_count = 0
-
-    for region_key in by_region:
-        region_list = candidates_map.get(region_key, [])
-        if not isinstance(region_list, list):
+    removed = 0
+    for region_key, existing_list in list(candidates_map.items()):
+        if region_key in by_region or not isinstance(existing_list, list):
             continue
+        removed += len([c for c in existing_list if isinstance(c, dict) and c.get("name")])
+        candidates_map[region_key] = []
 
-        existing_by_name = {
-            c["name"]: c for c in region_list
-            if isinstance(c, dict) and c.get("name", "").strip()
-        }
-        new_by_name = {
-            c["name"]: c for c in by_region.get(region_key, [])
-            if isinstance(c, dict) and c.get("name", "").strip()
-        }
-
-        result = []
-        removed_count += len(set(existing_by_name) - set(new_by_name))
-
-        for name, nc in new_by_name.items():
-            existing_candidate = existing_by_name.get(name, {})
-            candidate = {
-                **nc,
-                "id": existing_candidate.get("id") or f"{region_key}-supt-nec-{len(result)+1}",
-                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
-                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
-                "stance": existing_candidate.get("stance") or nc.get("stance"),
-            }
-            if existing_candidate.get("age") is not None and candidate.get("age") is None:
-                candidate["age"] = existing_candidate.get("age")
-            result.append(candidate)
-
-        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
-
-        candidates_map[region_key] = result
-
-    merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
-    merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
-    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
-    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
-    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
-    return merged
-
-
-def merge_mayor_candidates(existing, new_candidates, unmatched_list):
-    """
-    mayor_candidates.json과 NEC 본후보(typecode=4) 병합.
-
-    기초단체장은 2단계 중첩 구조: candidates["seoul"]["종로구"] = [후보 배열]
-    공식 데이터가 있는 시군구는 기존 예비/하마평 목록을 보존하지 않고 등록 후보로 교체한다.
-    wiwName이 기존 데이터 키에 매핑 안 되는 경우 unmatched_list에 추가.
-    """
-    if not new_candidates:
-        return existing
-
-    merged = json.loads(json.dumps(existing))  # deep copy
-    candidates_map = merged.get("candidates", {})
-
-    # (regionKey, wiwName) 별 그룹핑
-    by_district = {}
-    for c in new_candidates:
-        rk = c.get("regionKey")
-        wiw = c.get("districtName", "")
-        if rk and wiw:
-            by_district.setdefault((rk, wiw), []).append(c)
-
-    removed_count = 0
-
-    for (rk, wiw), items in by_district.items():
-        if rk not in candidates_map:
-            # regionKey 자체가 없으면 unmatched
-            for c in items:
-                unmatched_list.append({
-                    "reason": f"regionKey '{rk}' mayor_candidates.json에 없음",
-                    "candidate": c,
-                })
-            continue
-
-        region_dict = candidates_map[rk]
-        if not isinstance(region_dict, dict):
-            continue
-
-        # wiwName → 실제 키 탐색
-        dist_key = None
-        if wiw in region_dict:
-            dist_key = wiw
-        else:
-            # 접미사 변형 시도
-            for suffix in ["시", "군", "구"]:
-                alt = f"{wiw}{suffix}" if not wiw.endswith(suffix) else wiw[:-1]
-                if alt in region_dict:
-                    dist_key = alt
-                    break
-
-            if dist_key is None:
-                # 부분 일치 탐색
-                for dk in region_dict:
-                    if wiw in dk or dk in wiw:
-                        dist_key = dk
-                        break
-
-        if dist_key is None:
-            print(f"[WARN] 기초단체장 district 미매핑: {rk}/{wiw} — unmatched로 보관")
-            for c in items:
-                unmatched_list.append({
-                    "reason": f"district '{wiw}' ({rk}) mayor_candidates.json에 없음",
-                    "candidate": c,
-                })
-            continue
-
-        existing_list = region_dict.get(dist_key, [])
+    for region_key, official_list in by_region.items():
+        existing_list = candidates_map.get(region_key, [])
         if not isinstance(existing_list, list):
             existing_list = []
-
         existing_by_name = {
-            c["name"]: c for c in existing_list
-            if isinstance(c, dict) and c.get("name", "").strip()
+            c.get("name"): c for c in existing_list
+            if isinstance(c, dict) and c.get("name")
         }
-        new_by_name = {
-            c["name"]: c for c in items
-            if isinstance(c, dict) and c.get("name", "").strip()
-        }
+        official_names = {c["name"] for c in official_list}
+        removed += len(set(existing_by_name) - official_names)
 
-        result = []
-        removed_count += len(set(existing_by_name) - set(new_by_name))
+        next_list = []
+        for index, candidate in enumerate(sorted(official_list, key=candidate_sort_key), start=1):
+            candidate = preserve_existing_fields(candidate, existing_by_name.get(candidate["name"]))
+            candidate["id"] = candidate.get("id") or f"{region_key}-{id_prefix}-nec-{index}"
+            next_list.append(candidate)
+        candidates_map[region_key] = next_list
 
-        for name, nc in new_by_name.items():
-            existing_candidate = existing_by_name.get(name, {})
-            candidate = {
-                **nc,
-                "id": existing_candidate.get("id") or f"{rk}-{dist_key}-nec-{len(result)+1}",
-                "pledges": existing_candidate.get("pledges") or nc.get("pledges") or [],
-                "photo": existing_candidate.get("photo") if "photo" in existing_candidate else nc.get("photo"),
-            }
-            if existing_candidate.get("age") is not None and candidate.get("age") is None:
-                candidate["age"] = existing_candidate.get("age")
-            result.append(candidate)
-
-        result.sort(key=lambda c: (c.get("ballotNumber") is None, c.get("ballotNumber") or 999, c.get("name", "")))
-
-        region_dict[dist_key] = result
-
-    merged.setdefault("_meta", {})["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
-    merged["_meta"]["lastPipelineRun"] = datetime.now().isoformat()
-    merged["_meta"]["lastOfficialSync"] = datetime.now().isoformat()
-    merged["_meta"]["officialSyncMode"] = "replace_registered_candidates"
-    merged["_meta"]["removedPreRegistrationRecords"] = removed_count
+    stamp_official_meta(merged, removed)
     return merged
 
 
-def merge_candidates(existing, new_data):
-    """
-    기존 데이터 + 새 데이터 병합 (광역단체장용 — 하위 호환 유지)
+def find_mayor_district_key(region_dict, official_name):
+    if official_name in region_dict:
+        return official_name
+    compact_official = official_name.replace(" ", "")
+    for key in region_dict:
+        if key.replace(" ", "") == compact_official:
+            return key
+    for key in region_dict:
+        compact_key = key.replace(" ", "")
+        if compact_official in compact_key or compact_key in compact_official:
+            return key
+    return official_name
 
-    규칙:
-    1. 새 데이터에 있고 기존에 없으면 → 추가 (status: PRE, dataSource: nec)
-    2. 기존에 있고 새 데이터에 없으면 → status: WITHDRAWN
-    3. 둘 다 있으면 → 새 데이터로 업데이트 (기존 pledges/career 유지)
-    4. NOMINATED 후보가 있는 정당 → 같은 정당 비확정 후보 자동 탈락
-    """
-    if not new_data:
-        return existing
 
-    merged = json.loads(json.dumps(existing))  # deep copy
+def merge_mayor_candidates(existing, new_candidates):
+    merged = json.loads(json.dumps(existing))
+    candidates_map = merged.setdefault("candidates", {})
+    by_district = defaultdict(list)
+    for candidate in new_candidates:
+        district = candidate.get("districtName") or candidate.get("sggName")
+        by_district[(candidate["regionKey"], district)].append(candidate)
 
-    for region_key in REGION_MAP.values():
-        existing_candidates = {c['name']: c for c in merged['candidates'].get(region_key, [])}
-        new_candidates = {c['name']: c for c in new_data.get(region_key, [])}
+    removed = 0
+    touched = set()
+    for (region_key, official_district), official_list in by_district.items():
+        region_dict = candidates_map.setdefault(region_key, {})
+        if not isinstance(region_dict, dict):
+            continue
+        district_key = find_mayor_district_key(region_dict, official_district)
+        existing_list = region_dict.get(district_key, [])
+        if not isinstance(existing_list, list):
+            existing_list = []
+        existing_by_name = {
+            c.get("name"): c for c in existing_list
+            if isinstance(c, dict) and c.get("name")
+        }
+        official_names = {c["name"] for c in official_list}
+        removed += len(set(existing_by_name) - official_names)
 
-        result = []
+        next_list = []
+        for index, candidate in enumerate(sorted(official_list, key=candidate_sort_key), start=1):
+            candidate = preserve_existing_fields(candidate, existing_by_name.get(candidate["name"]))
+            candidate["id"] = candidate.get("id") or f"{region_key}-{district_key}-nec-{index}"
+            candidate["districtName"] = district_key
+            next_list.append(candidate)
+        region_dict[district_key] = next_list
+        touched.add((region_key, district_key))
 
-        # 기존 후보 업데이트
-        for name, candidate in existing_candidates.items():
-            if name in new_candidates:
-                nc = new_candidates[name]
-                candidate['status'] = nc.get('status', candidate.get('status', 'PRE'))
-                candidate['dataSource'] = nc.get('dataSource', candidate.get('dataSource', 'nec'))
-                if nc.get('party'):
-                    candidate['party'] = nc['party']
-                result.append(candidate)
-            else:
-                if candidate.get('status') not in ('WITHDRAWN',):
-                    candidate['status'] = 'WITHDRAWN'
-                    candidate['_autoWithdrawn'] = True
-                    candidate['_withdrawnDate'] = datetime.now().strftime('%Y-%m-%d')
-                result.append(candidate)
+    for region_key, region_dict in candidates_map.items():
+        if not isinstance(region_dict, dict):
+            continue
+        for district_key, existing_list in list(region_dict.items()):
+            if (region_key, district_key) in touched:
+                continue
+            if isinstance(existing_list, list):
+                removed += len([c for c in existing_list if isinstance(c, dict) and c.get("name")])
+            region_dict[district_key] = []
 
-        # 새 후보 추가
-        for name, nc in new_candidates.items():
-            if name not in existing_candidates:
-                nc.setdefault('status', 'PRE')
-                nc.setdefault('dataSource', 'nec')
-                nc.setdefault('pledges', [])
-                nc.setdefault('photo', None)
-                nc['id'] = f"{region_key}-new-{len(result)+1}"
-                result.append(nc)
-
-        merged['candidates'][region_key] = result
-
-    merged['_meta']['lastUpdated'] = datetime.now().strftime('%Y-%m-%d')
-    merged['_meta']['lastPipelineRun'] = datetime.now().isoformat()
-
+    stamp_official_meta(merged, removed)
     return merged
 
 
-def update_status_from_file(status_file):
-    """
-    수동 상태 업데이트 파일 적용
+def merge_byelection_candidates(existing, new_candidates, unmatched):
+    merged = json.loads(json.dumps(existing))
+    districts = merged.setdefault("districts", {})
+    by_district = defaultdict(list)
+    for candidate in new_candidates:
+        by_district[(candidate.get("sdName"), candidate.get("sggName"))].append(candidate)
 
-    format: data/candidates/status_updates.json
-    {
-        "updates": [
-            {"region": "seoul", "name": "한동훈", "status": "WITHDRAWN", "reason": "서울시장 불출마 선언"},
-            {"region": "daegu", "name": "이진숙", "status": "NOMINATED"},
-            {"region": "busan", "name": "박형준", "party": "ppp", "status": "NOMINATED"}
-        ]
+    index_by_official = {
+        (district.get("sdName"), district.get("sggName")): key
+        for key, district in districts.items()
+        if isinstance(district, dict)
     }
-    """
-    status_path = CANDIDATES_DIR / status_file
-    if not status_path.exists():
-        return None
 
-    with open(status_path, 'r', encoding='utf-8') as f:
-        updates = json.load(f)
+    removed = 0
+    for official_key, official_list in by_district.items():
+        district_key = index_by_official.get(official_key)
+        if not district_key:
+            unmatched.extend({
+                "reason": "재보궐 선거구 미매핑",
+                "candidate": candidate,
+            } for candidate in official_list)
+            continue
 
-    return updates.get('updates', [])
+        district = districts[district_key]
+        existing_list = district.get("candidates", [])
+        if not isinstance(existing_list, list):
+            existing_list = []
+        existing_by_name = {
+            c.get("name"): c for c in existing_list
+            if isinstance(c, dict) and c.get("name")
+        }
+        official_names = {c["name"] for c in official_list}
+        removed += len(set(existing_by_name) - official_names)
+
+        next_list = []
+        for index, candidate in enumerate(sorted(official_list, key=candidate_sort_key), start=1):
+            candidate = preserve_existing_fields(candidate, existing_by_name.get(candidate["name"]))
+            candidate["id"] = candidate.get("id") or f"{district_key}-nec-{index}"
+            next_list.append(candidate)
+        district["candidates"] = next_list
+        district["candidateCount"] = len(next_list)
+        district["verificationStatus"] = "official_registered_candidates"
+        district["dataSource"] = "nec_official"
+        district["sourceLabel"] = "중앙선거관리위원회 후보자 정보"
+        district["sourceUrl"] = DATA_GO_KR_SOURCE_URL
+        district["lastOfficialCandidateSync"] = datetime.now().strftime("%Y-%m-%d")
+
+    stamp_official_meta(merged, removed)
+    merged["_meta"]["source"] = "중앙선거관리위원회 후보자 정보 API"
+    merged["_meta"]["sourceUrl"] = DATA_GO_KR_SOURCE_URL
+    merged["_meta"]["officialCandidateCount"] = sum(
+        len(d.get("candidates", [])) for d in districts.values() if isinstance(d, dict)
+    )
+    return merged
 
 
-def apply_status_updates(data, updates):
-    """상태 업데이트 적용"""
-    if not updates:
-        return data
-
-    applied = 0
-    for upd in updates:
-        region = upd.get('region')
-        name = upd.get('name')
-        candidates = data['candidates'].get(region, [])
-
-        for c in candidates:
-            if c['name'] == name:
-                if 'status' in upd:
-                    c['status'] = upd['status']
-                if 'party' in upd:
-                    c['party'] = upd['party']
-                if 'reason' in upd:
-                    c['_withdrawnReason'] = upd['reason']
-                applied += 1
-                break
-
-    print(f"[STATUS] Applied {applied}/{len(updates)} status updates")
-    return data
+def stamp_official_meta(data, removed_count):
+    meta = data.setdefault("_meta", {})
+    now = datetime.now()
+    meta["lastUpdated"] = now.strftime("%Y-%m-%d")
+    meta["lastPipelineRun"] = now.isoformat()
+    meta["lastOfficialSync"] = now.isoformat()
+    meta["officialSyncMode"] = "replace_registered_candidates"
+    meta["officialSource"] = "중앙선거관리위원회 후보자 정보 API"
+    meta["officialSourceUrl"] = DATA_GO_KR_SOURCE_URL
+    meta["removedPreRegistrationRecords"] = removed_count
 
 
-def validate(data):
-    """데이터 검증"""
+def validate_official_only(label, data):
     issues = []
     total = 0
 
-    for region, candidates in data['candidates'].items():
-        if isinstance(candidates, list):
-            # 메타 항목(_merged, _note 등) 제외하고 실제 후보만 처리
-            real_candidates = [c for c in candidates if isinstance(c, dict) and "name" in c]
-            total += len(real_candidates)
+    def walk(value, path):
+        nonlocal total
+        if isinstance(value, list):
+            for index, candidate in enumerate(value):
+                if not isinstance(candidate, dict) or not candidate.get("name"):
+                    continue
+                total += 1
+                if candidate.get("status") != "NOMINATED":
+                    issues.append(f"{path}[{index}] {candidate.get('name')}: status={candidate.get('status')}")
+                if candidate.get("dataSource") != "nec_official":
+                    issues.append(f"{path}[{index}] {candidate.get('name')}: dataSource={candidate.get('dataSource')}")
+                if candidate.get("officialStatus") != "등록":
+                    issues.append(f"{path}[{index}] {candidate.get('name')}: officialStatus={candidate.get('officialStatus')}")
+        elif isinstance(value, dict):
+            for key, child in value.items():
+                walk(child, f"{path}/{key}")
 
-            # 중복 이름 체크
-            names = [c['name'] for c in real_candidates]
-            dupes = [n for n in names if names.count(n) > 1]
-            if dupes:
-                issues.append(f"  {region}: duplicate names {set(dupes)}")
-
-            # 필수 필드 체크
-            for c in real_candidates:
-                if not c.get('name'):
-                    issues.append(f"  {region}: candidate without name")
-                if not c.get('party'):
-                    issues.append(f"  {region}: {c.get('name', '?')} missing party")
-        elif isinstance(candidates, dict):
-            # 기초단체장 2단계 중첩 구조
-            for district, dist_list in candidates.items():
-                if isinstance(dist_list, list):
-                    total += len(dist_list)
-
-    print(f"\n[VALIDATE] Total: {total} candidates across {len(data['candidates'])} regions")
+    walk(data.get("candidates") or data.get("districts") or {}, label)
     if issues:
-        print(f"[VALIDATE] {len(issues)} issues found:")
-        for i in issues:
-            print(i)
-    else:
-        print("[VALIDATE] No issues found ✓")
+        print(f"[VALIDATE] {label}: {len(issues)}개 문제")
+        for issue in issues[:20]:
+            print(f"  - {issue}")
+        return False
 
-    return len(issues) == 0
+    print(f"[VALIDATE] {label}: 공식 등록 후보 {total}명")
+    return True
 
 
-def save_unmatched(unmatched_list):
-    """미매핑 후보 unmatched_candidates.json에 저장"""
-    if not UNMATCHED_FILE.exists():
-        current = {"_meta": {"version": "1.0", "lastUpdated": None, "description": "선거구 미매핑 후보 보관"}, "candidates": []}
-    else:
-        with open(UNMATCHED_FILE, 'r', encoding='utf-8') as f:
-            current = json.load(f)
-
-    current["candidates"] = unmatched_list
-    current["_meta"]["lastUpdated"] = datetime.now().strftime("%Y-%m-%d")
-
-    with open(UNMATCHED_FILE, 'w', encoding='utf-8') as f:
-        json.dump(current, f, ensure_ascii=False, indent=2)
-
-    print(f"[UNMATCHED] {len(unmatched_list)}명 저장: {UNMATCHED_FILE}")
+def save_unmatched(unmatched):
+    data = {
+        "_meta": {
+            "version": "1.0",
+            "lastUpdated": datetime.now().strftime("%Y-%m-%d"),
+            "description": "선관위 정식 후보자 동기화 미매핑 항목",
+        },
+        "candidates": unmatched,
+    }
+    write_json(UNMATCHED_FILE, data)
+    print(f"[UNMATCHED] {len(unmatched)}건 저장: {UNMATCHED_FILE.name}")
 
 
 def main():
-    dry_run = "--dry-run" in sys.argv
-    log_raw = "--log-raw" in sys.argv
+    parser = argparse.ArgumentParser(description="선관위 정식 후보자 등록현황 동기화")
+    parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 검증만 수행")
+    parser.add_argument("--log-raw", action="store_true", help="타입별 raw 샘플 저장")
+    args = parser.parse_args()
+
+    load_env()
+    api_key = os.environ.get("NEC_API_KEY", "")
+    if not api_key:
+        print("[ERROR] NEC_API_KEY 환경변수가 설정되지 않았습니다.")
+        sys.exit(1)
 
     print("=" * 60)
-    print("후보자 데이터 파이프라인 (NEC 본후보 API)")
+    print("후보자 데이터 파이프라인 (NEC 정식 후보자 API)")
     print(f"실행 시각: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    if dry_run:
+    if args.dry_run:
         print("[DRY-RUN] 파일 저장을 건너뜁니다")
-    if log_raw:
-        print("[LOG-RAW] raw 응답 샘플을 저장합니다")
     print("=" * 60)
 
-    # === NEC 본후보 수집 ===
-    print("\n[PHASE 1] NEC 본후보 데이터 수집")
-    nec_data = fetch_nec_official(log_raw=log_raw)
-
-    # 날짜 게이팅으로 빈 dict 반환된 경우 — 기존 데이터만 유지
-    if not nec_data:
-        print("\n[INFO] NEC 수집 건너뜀 — 기존 데이터 검증만 실행")
-        existing_gov = load_existing()
-        validate(existing_gov)
-        return
-
+    nec_data = fetch_nec_official(api_key, log_raw=args.log_raw)
     unmatched = nec_data.get("unmatched", [])
 
-    # === 광역단체장 병합 ===
-    print("\n[PHASE 2] 광역단체장 병합 (governor.json)")
-    gov_data = load_existing()
-    print(f"  기존: {sum(len(v) for v in gov_data['candidates'].values() if isinstance(v, list))}명")
-    merged_gov = merge_governor_candidates(gov_data, nec_data.get("3", []))
-    is_valid_gov = validate(merged_gov)
+    outputs = {
+        "governor": merge_regional_list(
+            load_json(GOVERNOR_FILE, {"_meta": {}, "candidates": {}}),
+            nec_data.get("3", []),
+            "gov",
+        ),
+        "superintendent": merge_regional_list(
+            load_json(SUPERINTENDENT_FILE, {"_meta": {}, "candidates": {}}),
+            nec_data.get("11", []),
+            "supt",
+        ),
+        "mayor": merge_mayor_candidates(
+            load_json(MAYOR_FILE, {"_meta": {}, "candidates": {}}),
+            nec_data.get("4", []),
+        ),
+        "byelection": merge_byelection_candidates(
+            load_json(BYELECTION_FILE, {"_meta": {}, "districts": {}}),
+            nec_data.get("2", []),
+            unmatched,
+        ),
+    }
 
-    # === 교육감 병합 ===
-    print("\n[PHASE 3] 교육감 병합 (superintendent.json)")
-    if SUPERINTENDENT_FILE.exists():
-        with open(SUPERINTENDENT_FILE, 'r', encoding='utf-8') as f:
-            supt_data = json.load(f)
-        print(f"  기존: {sum(len(v) for v in supt_data.get('candidates', {}).values() if isinstance(v, list))}명")
-        merged_supt = merge_superintendent_candidates(supt_data, nec_data.get("10", []))
-        is_valid_supt = validate(merged_supt)
-    else:
-        print("  [SKIP] superintendent.json 없음")
-        merged_supt = None
-        is_valid_supt = True
+    validations = [
+        validate_official_only("governor", outputs["governor"]),
+        validate_official_only("superintendent", outputs["superintendent"]),
+        validate_official_only("mayor", outputs["mayor"]),
+        validate_official_only("byelection", outputs["byelection"]),
+    ]
 
-    # === 기초단체장 병합 ===
-    print("\n[PHASE 4] 기초단체장 병합 (mayor_candidates.json)")
-    if MAYOR_FILE.exists():
-        with open(MAYOR_FILE, 'r', encoding='utf-8') as f:
-            mayor_data = json.load(f)
-        merged_mayor = merge_mayor_candidates(mayor_data, nec_data.get("4", []), unmatched)
-        is_valid_mayor = True  # 기초단체장은 구조 복잡 — validate 생략
-    else:
-        print("  [SKIP] mayor_candidates.json 없음")
-        merged_mayor = None
-        is_valid_mayor = True
+    if not all(validations):
+        print("[ERROR] 검증 실패. 파일을 저장하지 않습니다.")
+        sys.exit(1)
 
-    # === 수동 상태 업데이트 (광역단체장) ===
-    status_updates = update_status_from_file("status_updates.json")
-    if status_updates:
-        merged_gov = apply_status_updates(merged_gov, status_updates)
+    if args.dry_run:
+        print("\n[DRY-RUN] 저장 건너뜀")
+        print(f"미매핑: {len(unmatched)}건")
+        return
 
-    # === 파일 저장 ===
-    if not dry_run:
-        # 광역단체장
-        with open(GOVERNOR_FILE, 'w', encoding='utf-8') as f:
-            json.dump(merged_gov, f, ensure_ascii=False, indent=2)
-        print(f"\n[SAVE] governor.json 저장 완료")
+    write_json(GOVERNOR_FILE, outputs["governor"])
+    write_json(SUPERINTENDENT_FILE, outputs["superintendent"])
+    write_json(MAYOR_FILE, outputs["mayor"])
+    write_json(BYELECTION_FILE, outputs["byelection"])
+    save_unmatched(unmatched)
 
-        # 교육감
-        if merged_supt is not None:
-            with open(SUPERINTENDENT_FILE, 'w', encoding='utf-8') as f:
-                json.dump(merged_supt, f, ensure_ascii=False, indent=2)
-            print(f"[SAVE] superintendent.json 저장 완료")
-
-        # 기초단체장
-        if merged_mayor is not None:
-            with open(MAYOR_FILE, 'w', encoding='utf-8') as f:
-                json.dump(merged_mayor, f, ensure_ascii=False, indent=2)
-            print(f"[SAVE] mayor_candidates.json 저장 완료")
-
-        # unmatched
-        save_unmatched(unmatched)
-    else:
-        print("\n[DRY-RUN] 저장 건너뜀 (파일 변경 없음)")
-        print(f"  미매핑 후보: {len(unmatched)}명")
-
-    print("\n" + "=" * 60)
-    print("완료")
-    print("=" * 60)
+    print("\n[SAVE] governor/superintendent/mayor/byelection 후보 JSON 저장 완료")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

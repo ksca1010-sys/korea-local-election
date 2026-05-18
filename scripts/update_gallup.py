@@ -38,6 +38,7 @@ PARTY_KEY_MAP = {
     '조국혁신당': 'reform',
     '개혁신당': 'newReform',
     '진보당': 'progressive',
+    '정의당': 'justice',
     '기본소득당': 'basicIncome',
     '새로운미래': 'newFuture',
     '기타정당': 'other',
@@ -69,6 +70,20 @@ def fetch_page(url, method='GET', data=None):
         return raw.decode('euc-kr', errors='replace')
     except Exception:
         return raw.decode('utf-8', errors='replace')
+
+
+def normalize_date(value):
+    value = str(value or '').strip()
+    if not value:
+        return ''
+    value = value.replace('/', '-')
+    parts = value.split('-')
+    if len(parts) == 3:
+        try:
+            return f'{int(parts[0]):04d}-{int(parts[1]):02d}-{int(parts[2]):02d}'
+        except ValueError:
+            return value
+    return value
 
 
 def find_latest_daily_opinion():
@@ -275,7 +290,10 @@ PARTY_NAME_MAP = {
     'reform': '조국혁신당',
     'newReform': '개혁신당',
     'progressive': '진보당',
+    'justice': '정의당',
     'basicIncome': '기본소득당',
+    'newFuture': '새로운미래',
+    'other': '기타정당',
     'independent': '무당층',
 }
 
@@ -295,13 +313,19 @@ def sync_state_json(poll_data):
     polls = state.get('polls', [])
     publish_date = poll_data.get('publish_date', '')
     report_no = poll_data.get('report_no', '')
+    gallup_url = poll_data.get('url', '')
+
+    def has_party_support(p):
+        types = p.get('electionTypes') or []
+        return p.get('electionType') == 'party_support' or 'party_support' in types
+
+    def is_gallup_party_support(p):
+        return has_party_support(p) and '한국갤럽' in p.get('pollOrg', '')
 
     # 같은 주차의 기존 Gallup 항목 찾기 (publishDate 또는 reportNo로 매칭)
     target = None
     for p in polls:
-        if p.get('electionType') != 'party_support':
-            continue
-        if p.get('pollOrg', '') != '한국갤럽':
+        if not is_gallup_party_support(p):
             continue
         if publish_date and p.get('publishDate', '') == publish_date:
             target = p
@@ -312,15 +336,32 @@ def sync_state_json(poll_data):
 
     # 없으면 최신 Gallup 항목을 업데이트 대상으로 사용
     if target is None:
-        gallup_polls = [p for p in polls if p.get('electionType') == 'party_support'
-                        and p.get('pollOrg', '') == '한국갤럽']
+        gallup_polls = [p for p in polls if is_gallup_party_support(p)]
         if gallup_polls:
             gallup_polls.sort(key=lambda p: p.get('publishDate', ''), reverse=True)
             target = gallup_polls[0]
 
+    # NESDC 갤럽 항목이 없을 때도 사이드바/히스토리 정합성을 위해 공식 갤럽 항목 생성
     if target is None:
-        print('  [건너뜀] state.json에서 갤럽 항목을 찾지 못했습니다')
-        return False
+        target = {
+            'nttId': None,
+            'registrationId': None,
+            'pollName': '전국 정당지지도',
+            'pollOrg': '한국갤럽조사연구소',
+            'clientOrg': '조사기관 자체 : 한국갤럽 자체 조사',
+            'method': {},
+            'surveyDate': {},
+            'results': [],
+            'regionKey': None,
+            'municipality': None,
+            'electionType': 'party_support',
+            'electionTypes': ['party_support'],
+            'districtKey': None,
+            'title': '전국 정기(정례)조사 정당지지도',
+            'sourceUrl': gallup_url,
+        }
+        polls.insert(0, target)
+        print('  → state.json에 갤럽 party_support 항목을 새로 생성')
 
     # results 갱신
     new_results = []
@@ -333,37 +374,66 @@ def sync_state_json(poll_data):
             'party': key,
             'support': float(val),
             'type': 'party_support',
+            'pollSource': {
+                'type': 'gallup',
+                'reportNo': report_no,
+                'url': gallup_url,
+            },
         })
     new_results.sort(key=lambda r: r['support'], reverse=True)
 
+    target['pollOrg'] = target.get('pollOrg') or '한국갤럽조사연구소'
+    target['clientOrg'] = target.get('clientOrg') or '조사기관 자체 : 한국갤럽 자체 조사'
+    target['electionType'] = 'party_support'
+    target['electionTypes'] = ['party_support']
+    target['regionKey'] = None
+    target['municipality'] = None
+    target['districtKey'] = None
+    target['method'] = target.get('method') or {}
+    target['method']['sampleSize'] = poll_data.get('sample_size', target['method'].get('sampleSize'))
+    target['method']['marginOfError'] = poll_data.get('margin', target['method'].get('marginOfError'))
+    target['method']['raw'] = target['method'].get('raw') or poll_data.get('method') or '전화면접 (CATI)'
+    target['method']['type'] = target['method'].get('type') or '전화면접'
+    target['method']['samplingFrame'] = target['method'].get('samplingFrame') or '전체'
     target['results'] = new_results
     if publish_date:
         target['publishDate'] = publish_date
     if report_no:
         target['reportNo'] = report_no
+        if report_no not in target.get('title', ''):
+            target['title'] = f"{target.get('title', '전국 정당지지도')} {report_no}".strip()
+    if gallup_url:
+        target['gallupUrl'] = gallup_url
 
     state['meta'] = state.get('meta', {})
     state['meta']['lastUpdated'] = datetime.now().strftime('%Y-%m-%d')
+    state['meta']['pollCount'] = len(polls)
 
     with open(state_path, 'w', encoding='utf-8') as f:
         json.dump(state, f, ensure_ascii=False, indent=2)
         f.write('\n')
 
-    # polls.json 재생성 (간단히 state 기반 재구성)
+    # polls.json 재생성 (state 기반, 프론트엔드가 기대하는 national/regions 구조 유지)
     try:
-        by_region = {}
+        existing = {}
+        if os.path.exists(polls_path):
+            with open(polls_path, 'r', encoding='utf-8') as f:
+                existing = json.load(f)
+        regions = {}
         national = []
         for p in polls:
             region = p.get('regionKey')
             if not region:
                 national.append(p)
             else:
-                by_region.setdefault(region, []).append(p)
+                regions.setdefault(region, []).append(p)
 
         output = {
-            'meta': state.get('meta', {}),
+            'generated': datetime.now().isoformat(timespec='seconds'),
+            'totalCount': len(polls),
+            'source': existing.get('source') or '중앙선거여론조사심의위원회 (nesdc.go.kr)',
             'national': national,
-            'byRegion': by_region,
+            'regions': regions,
         }
         with open(polls_path, 'w', encoding='utf-8') as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
@@ -416,6 +486,8 @@ def main():
     # 2단계: 정당지지율 데이터 추출
     print('\n[2/3] 정당지지율 데이터 추출 중...')
     poll_data = extract_party_support(seq_no)
+    if date_str:
+        poll_data['publish_date'] = normalize_date(date_str)
 
     if not poll_data['data']:
         print('[오류] 정당지지율 데이터를 추출할 수 없습니다.')

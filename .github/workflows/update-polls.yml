@@ -50,6 +50,7 @@ jobs:
         run: python scripts/nesdc_poll_pipeline.py
 
       - name: Reparse empty results
+        # automation-guard: allow-continue-on-error
         continue-on-error: true
         run: python scripts/reparse_pdfs.py
 
@@ -65,11 +66,17 @@ jobs:
           print(f'OK: {total} polls')
           "
 
+      - name: Refresh structured overview after poll sync
+        env:
+          PYTHONPATH: scripts
+        run: python scripts/update_structured_overview.py
+
       # PDF 재시도 큐 모니터
       # reparse_pdfs 가 3회 실패로 abandoned 처리한 조사 수를 주기적으로 표면화.
       # 일정 임계치를 넘으면 warning 으로 운영자 확인 유도.
       # fail 은 아님 (데이터 품질 신호이지 CI 실패 사유는 아님).
       - name: Monitor PDF parse queue
+        # automation-guard: allow-continue-on-error
         continue-on-error: true
         run: |
           python3 - <<'PY'
@@ -119,18 +126,26 @@ jobs:
 
       - name: Check for changes
         id: diff
-        run: git diff --quiet data/polls/ || echo "changed=true" >> $GITHUB_OUTPUT
+        run: git diff --quiet data/polls/ data/election_overview.json || echo "changed=true" >> $GITHUB_OUTPUT
 
       - name: Commit and push
         if: steps.diff.outputs.changed == 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/polls/
+          git add data/polls/ data/election_overview.json
           NEW=$(git diff --cached data/polls/polls.json | grep '^\+' | grep '"nttId"' | wc -l | tr -d ' ')
           git commit -m "data: poll sync $(date +%Y-%m-%d) -- 신규 ${NEW}건"
+          pushed=false
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
             echo "push attempt $i failed, retrying..."
             sleep 10
           done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi

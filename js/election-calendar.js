@@ -7,12 +7,8 @@ const ElectionCalendar = (() => {
 
     // ─── Layer 1: 시간 기준 ───
     // 모든 시간 판정은 이 함수를 통해서만.
-    // 해외 접속(재외국민)도 KST 기준으로 판정.
-    const getKST = () => {
-        const now = new Date();
-        const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-        return new Date(utc + (9 * 3600000));
-    };
+    // DATES가 +09:00 기준 절대 시각이므로 현재 시각도 이동 없이 절대 시각으로 비교한다.
+    const getKST = () => new Date();
 
     // 날짜 상수 — 문자열 비교 금지, Date 객체 + KST만 사용
     const DATES = {
@@ -65,11 +61,11 @@ const ElectionCalendar = (() => {
     // ⚠️ 이 함수는:
     //   - getCurrentPhase()를 참조하지 않음
     //   - 다른 어떤 함수의 반환값에 의존하지 않음
-    //   - DATES 상수와 getKST()만 사용
+    //   - DATES 상수와 절대 Date 시각만 사용
     //   - UI 숨김이 아니라 데이터 자체를 차단
 
-    const isPublicationBanned = () => {
-        const now = getKST();
+    const isPublicationBanned = (referenceDate = getKST()) => {
+        const now = referenceDate instanceof Date ? referenceDate : new Date(referenceDate);
         return now >= DATES.PUBLICATION_BAN_START && now < DATES.VOTE_END;
     };
 

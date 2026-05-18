@@ -6,11 +6,15 @@ const path = require('path');
 const baseDir = path.resolve(__dirname, '..');
 
 const checks = [
+    { name: 'election-calendar', command: 'node', args: ['scripts/check_election_calendar.js'] },
+    { name: 'automation-guard', command: 'python3', args: ['scripts/check_automation_guards.py'] },
     { name: 'news-observations', command: 'node', args: ['scripts/check_news_observations.js'] },
     { name: 'poll-observations', command: 'node', args: ['scripts/check_poll_observations.js'] },
     { name: 'news-regression', command: 'node', args: ['scripts/run_news_regression.js'] },
+    { name: 'news-loading-policy', command: 'node', args: ['scripts/check_news_loading_policy.js'] },
     { name: 'poll-regression', command: 'node', args: ['scripts/run_poll_regression.js'] },
-    { name: 'local-media', command: 'node', args: ['scripts/check_local_media_registry.js'] }
+    { name: 'local-media', command: 'node', args: ['scripts/check_local_media_registry.js'] },
+    { name: 'proportional-candidates', command: 'node', args: ['scripts/check_proportional_candidates.js'] }
 ];
 
 function runCheck(check) {

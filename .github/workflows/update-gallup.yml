@@ -47,8 +47,49 @@ jobs:
         run: pip install certifi
 
       - name: Run gallup update
-        continue-on-error: true
         run: python scripts/update_gallup.py
+
+      - name: Validate gallup data
+        run: |
+          python3 - <<'PY'
+          import json
+          import sys
+
+          data = json.load(open("data/static/gallup_national_poll.json", encoding="utf-8"))
+          state = json.load(open("data/polls/state.json", encoding="utf-8"))
+          polls_json = json.load(open("data/polls/polls.json", encoding="utf-8"))
+          support = data.get("data")
+          if not isinstance(support, dict) or not support:
+              print("gallup_national_poll.json has no party support data", file=sys.stderr)
+              sys.exit(1)
+          if not data.get("publishDate") or not data.get("url"):
+              print("gallup_national_poll.json is missing publishDate or url", file=sys.stderr)
+              sys.exit(1)
+          if int(data.get("sampleSize") or 0) <= 0:
+              print("gallup_national_poll.json has invalid sampleSize", file=sys.stderr)
+              sys.exit(1)
+          report_no = data.get("reportNo")
+          state_matches = [
+              p for p in state.get("polls", [])
+              if "한국갤럽" in p.get("pollOrg", "")
+              and "party_support" in (p.get("electionTypes") or [p.get("electionType")])
+              and p.get("reportNo") == report_no
+              and p.get("results")
+          ]
+          if not state_matches:
+              print("state.json missing synced Gallup party_support results", file=sys.stderr)
+              sys.exit(1)
+          national_matches = [
+              p for p in polls_json.get("national", [])
+              if "한국갤럽" in p.get("pollOrg", "")
+              and p.get("reportNo") == report_no
+              and p.get("results")
+          ]
+          if not national_matches:
+              print("polls.json missing synced Gallup national results", file=sys.stderr)
+              sys.exit(1)
+          print(f"Gallup validated: {data.get('publishDate')} {data.get('reportNo', '')}")
+          PY
 
       - name: Check for changes
         id: diff
@@ -62,7 +103,19 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add js/data.js data/static/gallup_national_poll.json data/polls/state.json data/polls/polls.json
           git commit -m "chore: auto-update gallup national poll $(date +%Y-%m-%d)"
-          git pull --rebase origin main && git push
+          pushed=false
+          for i in 1 2 3; do
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
+            echo "push attempt $i failed, retrying..."
+            sleep 10
+          done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi
 
     outputs:
       changed: ${{ steps.diff.outputs.changed }}

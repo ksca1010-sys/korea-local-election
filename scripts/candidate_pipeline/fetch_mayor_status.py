@@ -16,6 +16,7 @@ AI는 변경사항 탐지 보조 역할만 수행합니다.
   python scripts/candidate_pipeline/fetch_mayor_status.py --dry-run
   python scripts/candidate_pipeline/fetch_mayor_status.py --region seoul
   python scripts/candidate_pipeline/fetch_mayor_status.py --baseline-only  # NEC API만
+  python scripts/candidate_pipeline/fetch_mayor_status.py --skip-llm       # NEC API만
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계 필수)
@@ -121,7 +122,8 @@ def fetch_nec_winners(api_key):
             "resultType": "xml",
         }
         qs = urllib.parse.urlencode(params)
-        url = f"{WINNER_SERVICE}/getWinnerInfoInqire?serviceKey={urllib.parse.quote(api_key, safe='')}&{qs}"
+        key_param = api_key if "%" in api_key else urllib.parse.quote(api_key, safe="")
+        url = f"{WINNER_SERVICE}/getWinnerInfoInqire?serviceKey={key_param}&{qs}"
 
         try:
             resp = urllib.request.urlopen(url, timeout=30)
@@ -334,8 +336,15 @@ def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
     llm_key = os.environ.get("GEMINI_API_KEY", "")
+    strict = os.environ.get("STATUS_STRICT", "").lower() in ("1", "true", "yes")
+    nec_keys = []
+    for key in [nec_key, *os.environ.get("NEC_API_KEYS", "").split(",")]:
+        key = key.strip()
+        if key and key not in nec_keys:
+            nec_keys.append(key)
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
+    skip_llm = "--skip-llm" in sys.argv or baseline_only
     target_region = None
 
     for i, arg in enumerate(sys.argv[1:], 1):
@@ -362,12 +371,20 @@ def main():
 
     # ── 1단계: 선관위 당선인 API ──
     print("\n[1단계] 선관위 당선인정보 API (공식 베이스라인)")
-    if not nec_key:
+    if not nec_keys:
         print("  [건너뜀] NEC_API_KEY 미설정, 기존 데이터 사용")
+        if strict:
+            sys.exit(1)
         data = existing
     else:
         print("  조회 중...")
-        nec_data = fetch_nec_winners(nec_key)
+        nec_data = None
+        for index, candidate_key in enumerate(nec_keys):
+            nec_data = fetch_nec_winners(candidate_key)
+            if nec_data:
+                break
+            if index < len(nec_keys) - 1:
+                print("  [재시도] 다음 NEC serviceKey 후보 사용")
         if nec_data:
             print(f"  → {len(nec_data)}명 당선인 조회 완료")
             data = merge_baseline(nec_data, existing)
@@ -378,6 +395,8 @@ def main():
             print(f"  → 정당별: {parties}")
         else:
             print("  [오류] NEC API 조회 실패, 기존 데이터 사용")
+            if strict:
+                sys.exit(1)
             data = existing
 
     acting = sum(1 for m in data.get("mayors", {}).values() if m.get("acting"))
@@ -386,7 +405,9 @@ def main():
     if baseline_only:
         # 1단계만 실행하고 저장
         data["_meta"]["lastUpdated"] = date.today().isoformat()
+        data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
         data["_meta"]["source"] = "중앙선거관리위원회 당선인정보 API (공식)"
+        data["_meta"]["mode"] = "official_baseline_only"
         data["_meta"]["baseline"] = f"제8회 지방선거 ({SG_ID}) 당선인"
         data["_meta"]["totalCount"] = len(data.get("mayors", {}))
         data["_meta"]["actingCount"] = acting
@@ -400,8 +421,12 @@ def main():
         return
 
     # ── 2단계: Gemini 변경사항 탐지 ──
-    if not llm_key:
+    if skip_llm:
+        print("  [건너뜀] --skip-llm/--baseline-only: 공식 베이스라인만 갱신")
+    elif not llm_key:
         print("  [건너뜀] GEMINI_API_KEY 미설정")
+        if strict:
+            sys.exit(1)
     else:
         mayors = data.get("mayors", {})
         region_groups = {}
@@ -448,11 +473,18 @@ def main():
         print(f"\n  2단계 결과: {total_changes}건 변경 반영")
         if errors:
             print(f"  오류 시도: {', '.join(errors)}")
+            if strict:
+                sys.exit(1)
 
     # ── 저장 ──
     data["_meta"]["lastUpdated"] = date.today().isoformat()
     data["_meta"]["lastFactCheck"] = datetime.now().isoformat()
-    data["_meta"]["source"] = "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증"
+    data["_meta"]["source"] = (
+        "중앙선거관리위원회 당선인정보 API (공식)"
+        if skip_llm else
+        "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증"
+    )
+    data["_meta"]["mode"] = "official_baseline_only" if skip_llm else "official_plus_llm"
     data["_meta"]["baseline"] = f"제8회 지방선거 ({SG_ID}) 당선인"
     data["_meta"]["totalCount"] = len(data.get("mayors", {}))
     data["_meta"]["actingCount"] = sum(

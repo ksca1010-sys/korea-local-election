@@ -1,12 +1,13 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-12",
+    "lastUpdated": "2026-05-18",
     "updatedAt": "2026-03-31",
-    "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
+    "source": "중앙선거관리위원회 당선인정보 API (공식)",
     "baseline": "제8회 지방선거 (20220601) 당선인",
     "totalCount": 17,
     "actingCount": 1,
-    "lastFactCheck": "2026-05-12T05:03:50.083374"
+    "lastFactCheck": "2026-05-18T20:25:31.308512",
+    "mode": "official_baseline_only"
   },
   "governors": {
     "seoul": {

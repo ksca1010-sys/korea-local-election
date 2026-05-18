@@ -45,14 +45,14 @@ jobs:
           python-version: '3.11'
 
       - name: Run election stats pipeline
-        continue-on-error: true
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           python scripts/fetch_election_stats.py
 
       - name: Check for changes

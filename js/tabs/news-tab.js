@@ -9,6 +9,37 @@ const NewsTab = (() => {
     let _renderGeneration = 0;
 
     // NEWS_PROXY_BASE, MAJOR_NEWS_HOSTS → js/utils.js 전역 상수 사용
+    const NEWS_CACHE_TTL_MS = 10 * 60 * 1000;
+    const NEWS_STALE_CACHE_TTL_MS = 60 * 60 * 1000;
+    const NEWS_FETCH_TIMEOUT_MS = 5500;
+    const NEWS_GNEWS_TIMEOUT_MS = 3200;
+    const NEWS_GNEWS_GRACE_MS = 900;
+    const NEWS_PREFETCH_TIMEOUT_MS = 2500;
+    const NEWS_PREFETCH_QUERY_LIMIT = 1;
+
+    function delay(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function fetchWithTimeout(url, options = {}, timeoutMs = NEWS_FETCH_TIMEOUT_MS) {
+        const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+        const timeoutId = controller ? setTimeout(() => controller.abort(), timeoutMs) : null;
+        try {
+            return await fetch(url, {
+                ...options,
+                signal: controller?.signal || options.signal
+            });
+        } catch (err) {
+            if (err?.name === 'AbortError') {
+                const timeoutErr = new Error(`News request timeout after ${timeoutMs}ms`);
+                timeoutErr.name = 'AbortError';
+                throw timeoutErr;
+            }
+            throw err;
+        } finally {
+            if (timeoutId) clearTimeout(timeoutId);
+        }
+    }
 
     function isCandidateCategoryId(categoryId) {
         return categoryId === 'candidate' || categoryId === 'candidates';
@@ -162,8 +193,6 @@ const NewsTab = (() => {
                 if (!localMediaNames.includes(n)) localMediaNames.push(n);
             });
         }
-        const localSearchQueries = localMediaNames.map(name => `${name} 교육감`);
-
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
@@ -214,7 +243,6 @@ const NewsTab = (() => {
     }
 
     function buildProportionalNewsCategories(regionKey, regionName, electionType) {
-        const typeLabel = electionType === 'councilProportional' ? '광역비례' : '기초비례';
         // 국회의원 재보궐 뉴스 혼입 방지
         const excludeNational = ['국회', '총선', '보궐', '재보궐', '재선거', '국회의원'];
         // 지역언론 부스트
@@ -418,7 +446,7 @@ const NewsTab = (() => {
                     || mayorCache?.candidates?.[regionKey]?.[districtName]
                     || [];
                 return list.filter(c => c.status !== 'WITHDRAWN').map(c => c.name).slice(0, 4);
-            } catch (e) { return []; }
+            } catch (_e) { return []; }
         })();
         const candQueries = districtCandidates.map(n => `${n} ${districtName}`);
 
@@ -427,84 +455,78 @@ const NewsTab = (() => {
             try {
                 const key = `${regionKey}_${districtName}`;
                 return window.REGIONAL_ISSUES?.[key] || window.REGIONAL_ISSUES?.[districtName] || [];
-            } catch (e) { return []; }
+            } catch (_e) { return []; }
         })();
         const issueQuery = issueKeywords.length ? `${districtName} ${issueKeywords.slice(0, 3).join(' ')}` : null;
-
-        // 풀 언론사명 쿼리 — 소형 지역 언론사는 Naver 검색에 잘 안 나오므로
-        // 언론사명으로 직접 검색해 수집을 보강
-        const poolMediaQueries = (() => {
-            try {
-                const muni = window.LocalMediaPool?.municipal?.[districtName];
-                if (!muni) return [];
-                // names 중 URL 패턴이 아닌 한글 언론사명만 추출
-                const korNames = (muni.names || [])
-                    .filter(n => n && !/\.(kr|com|net|org|co\.kr|tv)$/i.test(n) && /[가-힣]/.test(n));
-                // 최대 3개: "청송군민신문 청송군 선거" 형태
-                return korNames.slice(0, 3).map(n => `${n} ${districtName}`);
-            } catch(e) { return []; }
-        })();
 
         // 동명 시군구 판별 — 구/동/남/북/서/중구 등 여러 광역에 존재하는 이름
         const ambiguousNames = ['강서구','동구','남구','북구','서구','중구','달서구','수영구','사하구','연수구','부평구','계양구'];
         const needsRegionFilter = ambiguousNames.includes(districtName);
-        const strictMustAny = needsRegionFilter ? [districtName, regionShort] : [districtName];
+        const regionalOfficeLabel = needsRegionFilter ? `${regionShort} ${officeLabel}` : officeLabel;
+        const strictMustAny = needsRegionFilter
+            ? [districtName, officeLabel, regionalOfficeLabel, regionShort]
+            : [districtName, officeLabel];
+        const relaxedMustAny = [districtName, officeLabel];
 
         return [
             {
                 label: '전체', icon: 'fas fa-newspaper', categoryId: 'all',
-                query: `${officeLabel} 선거 후보`,
+                query: `${regionalOfficeLabel} 선거 후보`,
                 maxAgeDays: 60,
                 altQueries: [
+                    `${officeLabel} 선거 후보`,
                     `${districtName} 지방선거 ${title}`,
                     `${officeLabel} 출마 예비후보`,
                     ...candQueries.slice(0, 1)
                 ].filter(Boolean),
-                focusKeywords: [districtName, title, '선거', '후보', '출마', '예비후보', '출판기념회'],
+                focusKeywords: [districtName, officeLabel, regionShort, title, '선거', '후보', '출마', '예비후보', '출판기념회'],
                 boostHosts: localHosts,
                 strict: { mustAny: strictMustAny, targetAny: [title, '선거', '후보', '출마', '예비후보', '공천', '출판기념회'], excludeAny: [...governorExclude, '국회의원'] },
-                relaxed: { mustAny: [districtName], targetAny: [title, '선거'], excludeAny: governorExclude }
+                relaxed: { mustAny: relaxedMustAny, targetAny: [title, '선거'], excludeAny: governorExclude }
             },
             {
                 label: '여론조사', icon: 'fas fa-chart-bar', categoryId: 'polls',
-                query: `${officeLabel} 여론조사`,
+                query: `${regionalOfficeLabel} 여론조사`,
                 maxAgeDays: 60,
                 altQueries: [
+                    `${officeLabel} 여론조사`,
                     `${districtName} ${title} 여론조사 지지율`,
                     `${officeLabel} 지지율 가상대결`
                 ],
-                focusKeywords: ['여론조사', '지지율', '적합도', '가상대결', districtName, officeLabel],
+                focusKeywords: ['여론조사', '지지율', '적합도', '가상대결', districtName, officeLabel, regionShort],
                 boostHosts: localHosts,
                 strict: { mustAny: strictMustAny, targetAny: ['여론조사', '지지율', '적합도', '가상대결', title, officeLabel], excludeAny: ['교육감'] },
-                relaxed: { mustAny: [districtName], targetAny: ['여론조사', '지지율', title], excludeAny: ['교육감'] }
+                relaxed: { mustAny: relaxedMustAny, targetAny: ['여론조사', '지지율', title], excludeAny: ['교육감'] }
             },
             {
                 label: '후보·인물', icon: 'fas fa-user', categoryId: 'candidates',
-                query: `${officeLabel} 후보 출마`,
+                query: `${regionalOfficeLabel} 후보 출마`,
                 maxAgeDays: 60,
                 altQueries: [
+                    `${officeLabel} 후보 출마`,
                     `${districtName} ${title} 후보 공천`,
                     `${officeLabel} 공천 경선 예비후보`,
                     ...candQueries.slice(0, 1)
                 ].filter(Boolean),
-                focusKeywords: [districtName, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선', ...districtCandidates],
+                focusKeywords: [districtName, officeLabel, regionShort, title, '후보', '출마', '공천', '예비후보', '출판기념회', '경선', ...districtCandidates],
                 boostHosts: localHosts,
                 strict: { mustAny: strictMustAny, targetAny: ['후보', '출마', '공천', '예비후보', '출판기념회', title, ...districtCandidates], excludeAny: [...governorExclude, '국회의원'] },
-                relaxed: { mustAny: [districtName], targetAny: [title, '후보', '출마'], excludeAny: governorExclude }
+                relaxed: { mustAny: relaxedMustAny, targetAny: [title, '후보', '출마'], excludeAny: governorExclude }
             },
             {
                 label: '공약·정책', icon: 'fas fa-scroll', categoryId: 'policy',
-                query: `${officeLabel} 공약 정책`,
+                query: `${regionalOfficeLabel} 공약 정책`,
                 maxAgeDays: 60,
                 altQueries: [
+                    `${officeLabel} 공약 정책`,
                     `${districtName} 지방선거 공약`,
                     `${officeLabel} 공약 현안 비전`,
                     ...(issueQuery ? [issueQuery] : [])
                 ],
-                focusKeywords: [districtName, '공약', '정책', '현안', '비전', ...issueKeywords.slice(0, 3)],
+                focusKeywords: [districtName, officeLabel, regionShort, '공약', '정책', '현안', '비전', ...issueKeywords.slice(0, 3)],
                 boostHosts: localHosts,
                 strict: { mustAny: strictMustAny, targetAny: ['공약', '정책', '현안', '비전', title, ...issueKeywords.slice(0, 3)], excludeAny: governorExclude },
-                relaxed: { mustAny: [districtName], targetAny: ['공약', '정책'], excludeAny: governorExclude }
+                relaxed: { mustAny: relaxedMustAny, targetAny: ['공약', '정책'], excludeAny: governorExclude }
             },
         ].map(cat => ({
             ...cat, localMediaPriority: true, _regionKey: regionKey, _districtName: districtName, boostWeight: 5,
@@ -647,7 +669,7 @@ const NewsTab = (() => {
 
     // ── 설정·빌더 ──
 
-    function applyRegionSpecificCategoryTuning(category, regionKey, regionName, governorQueryBase) {
+    function applyRegionSpecificCategoryTuning(category, regionKey, regionName, _governorQueryBase) {
         if (!category || typeof category !== 'object') return category;
         const tuned = { ...category };
         const regionAliases = getRegionAliasTerms(regionName);
@@ -836,13 +858,13 @@ const NewsTab = (() => {
                 safeCategories.forEach(cat => {
                     if (cat === defaultCat) return;
                     const catId = cat.categoryId || 'all';
-                    if (_loadNewsCache(regionKey, catId, 10 * 60 * 1000)) return;
+                    if (_loadNewsCache(regionKey, catId, NEWS_CACHE_TTL_MS)) return;
                     // API만 호출 (DOM 렌더 없이 CF worker 캐시 워밍)
                     const queries = Array.from(new Set([cat.query, ...(cat.altQueries || [])].filter(Boolean)));
-                    queries.forEach(q => {
-                        fetch(`${NEWS_PROXY_BASE}/api/news?query=${encodeURIComponent(q)}&display=50&sort=date`, {
+                    queries.slice(0, NEWS_PREFETCH_QUERY_LIMIT).forEach(q => {
+                        fetchWithTimeout(`${NEWS_PROXY_BASE}/api/news?query=${encodeURIComponent(q)}&display=50&sort=date`, {
                             headers: { 'Accept': 'application/json' }
-                        }).catch(() => {});
+                        }, NEWS_PREFETCH_TIMEOUT_MS).catch(() => {});
                     });
                 });
             }, 500);
@@ -860,7 +882,7 @@ const NewsTab = (() => {
         if (!rawUrl) return '';
         try {
             return new URL(rawUrl).hostname.replace(/^www\./, '').toLowerCase();
-        } catch (err) {
+        } catch (_err) {
             return '';
         }
     }
@@ -1032,22 +1054,30 @@ const NewsTab = (() => {
     function _saveNewsCache(regionKey, catId, items) {
         try {
             const payload = { ts: Date.now(), items: items.slice(0, 80) };
-            sessionStorage.setItem(_newsCacheKey(regionKey, catId), JSON.stringify(payload));
-        } catch (e) { /* storage full — ignore */ }
+            const raw = JSON.stringify(payload);
+            sessionStorage.setItem(_newsCacheKey(regionKey, catId), raw);
+            try { localStorage.setItem(_newsCacheKey(regionKey, catId), raw); } catch (_e) {}
+        } catch (_e) { /* storage full — ignore */ }
+    }
+
+    function _loadNewsCachePayload(regionKey, catId, maxAgeMs) {
+        try {
+            const key = _newsCacheKey(regionKey, catId);
+            const raw = sessionStorage.getItem(key) || localStorage.getItem(key);
+            if (!raw) return null;
+            const payload = JSON.parse(raw);
+            if (!Array.isArray(payload?.items)) return null;
+            if (Date.now() - payload.ts > (maxAgeMs || NEWS_CACHE_TTL_MS)) return null;
+            return payload;
+        } catch (_e) { return null; }
     }
 
     function _loadNewsCache(regionKey, catId, maxAgeMs) {
-        try {
-            const raw = sessionStorage.getItem(_newsCacheKey(regionKey, catId));
-            if (!raw) return null;
-            const payload = JSON.parse(raw);
-            if (Date.now() - payload.ts > (maxAgeMs || 10 * 60 * 1000)) return null; // 기본 10분
-            return payload.items;
-        } catch (e) { return null; }
+        return _loadNewsCachePayload(regionKey, catId, maxAgeMs)?.items || null;
     }
 
     // 캐시 히트 시 인라인 렌더링 — 리치 포맷 (배지 + 상대날짜) 통일
-    function _renderNewsCacheInline(list, cachedItems, selectedCategory, regionKey, maxAgeDays, catId, category) {
+    function _renderNewsCacheInline(list, cachedItems, selectedCategory, _regionKey, _maxAgeDays, _catId, _category) {
         const catBadges = {
             'all': { label: '종합', color: '#3b82f6' }, 'polls': { label: '여론조사', color: '#f59e0b' },
             'candidate': { label: '후보·인물', color: '#22d3ee' }, 'candidates': { label: '후보·인물', color: '#22d3ee' },
@@ -1061,7 +1091,7 @@ const NewsTab = (() => {
             list.innerHTML = '<div class="news-empty"><i class="fas fa-inbox"></i><p>관련 뉴스가 없습니다.</p></div>';
         } else {
             list.innerHTML = items.map(item => {
-                const press = item.host || (() => { try { return new URL(item.link || '').hostname.replace(/^www\./, ''); } catch(e) { return '출처 미상'; } })();
+                const press = item.host || (() => { try { return new URL(item.link || '').hostname.replace(/^www\./, ''); } catch(_e) { return '출처 미상'; } })();
                 const ageDays = item.publishedAt ? Math.floor((Date.now() - item.publishedAt) / (1000 * 60 * 60 * 24)) : null;
                 const timeText = ageDays === null ? '' : ageDays === 0 ? '오늘' : ageDays === 1 ? '어제' : `${ageDays}일 전`;
                 const freshBadge = ageDays !== null && ageDays <= 1 ? '<span class="news-badge news-badge-fresh">NEW</span>' : '';
@@ -1105,15 +1135,25 @@ const NewsTab = (() => {
         const catId = selectedCategory.categoryId || 'all';
 
         // ── 캐시 우선: 유효한 캐시가 있으면 API 호출 생략 (10분 TTL) ──
-        const cachedFirst = _loadNewsCache(regionKey, catId, 10 * 60 * 1000);
+        const cachedFirst = _loadNewsCache(regionKey, catId, NEWS_CACHE_TTL_MS);
         if (cachedFirst && cachedFirst.length > 0) {
             if (fetchGen !== _renderGeneration) return; // race condition 방지
             _renderNewsCacheInline(list, cachedFirst, selectedCategory, regionKey, maxAgeDays, catId, category);
             return;
         }
 
+        const staleCache = _loadNewsCachePayload(regionKey, catId, NEWS_STALE_CACHE_TTL_MS);
+        const hasStaleCache = staleCache?.items?.length > 0;
+        if (hasStaleCache) {
+            _renderNewsCacheInline(list, staleCache.items, selectedCategory, regionKey, maxAgeDays, catId, category);
+            const cacheAge = Math.max(1, Math.round((Date.now() - staleCache.ts) / 60000));
+            list.insertAdjacentHTML('afterbegin', `<div class="news-stale-notice" style="padding:6px 10px;font-size:0.72rem;color:var(--text-muted);background:rgba(245,158,11,0.08);border-radius:6px;margin-bottom:6px;">
+                <i class="fas fa-clock-rotate-left"></i> ${cacheAge}분 전 뉴스를 먼저 표시하고 새 기사를 확인 중입니다.
+            </div>`);
+        }
+
         // 스켈레톤 로딩 UI
-        list.innerHTML = Array.from({length: 4}, () => `
+        if (!hasStaleCache) list.innerHTML = Array.from({length: 4}, () => `
             <div class="news-skeleton-item">
                 <div class="news-skeleton-badges"><div class="news-skeleton-badge"></div><div class="news-skeleton-badge"></div></div>
                 <div class="news-skeleton-bar long"></div>
@@ -1124,18 +1164,18 @@ const NewsTab = (() => {
 
         try {
             // 모든 쿼리를 병렬 실행 (CF Worker 캐시가 burst를 흡수)
-            const fetchOne = async (q, sort) => {
+            const fetchOne = async (q, sort, timeoutMs = NEWS_FETCH_TIMEOUT_MS) => {
                 const url = `${NEWS_PROXY_BASE}/api/news?query=${encodeURIComponent(q)}&display=50&sort=${sort}`;
-                for (let attempt = 0; attempt < 3; attempt++) {
-                    const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                for (let attempt = 0; attempt < 2; attempt++) {
+                    const res = await fetchWithTimeout(url, { headers: { 'Accept': 'application/json' } }, timeoutMs);
                     if (res.status === 429) {
-                        const wait = Math.min(1000 * Math.pow(2, attempt), 4000);
-                        console.warn(`[뉴스] 429 rate limit, ${wait}ms 후 재시도 (${attempt + 1}/3)`);
-                        await new Promise(r => setTimeout(r, wait));
+                        const wait = Math.min(700 * Math.pow(2, attempt), 1400);
+                        console.warn(`[뉴스] 429 rate limit, ${wait}ms 후 재시도 (${attempt + 1}/2)`);
+                        await delay(wait);
                         continue;
                     }
                     if (!res.ok) {
-                        let data; try { data = await res.json(); } catch (_) { data = null; }
+                        let data; try { data = await res.json(); } catch (_e) { data = null; }
                         throw new Error(`News fetch failed${data?.error ? ` (${data.error})` : ''}`);
                     }
                     const data = await res.json();
@@ -1146,26 +1186,28 @@ const NewsTab = (() => {
                 return [];
             };
 
-            // Google News RSS fetch (네이버와 병합하여 커버리지 확대)
+            // Google News RSS fetch (기본 뉴스 소스 보강)
             const fetchGoogleNews = async (q) => {
                 try {
                     const url = `${NEWS_PROXY_BASE}/api/gnews?query=${encodeURIComponent(q)}`;
-                    const res = await fetch(url, { headers: { 'Accept': 'application/json' } });
+                    const res = await fetchWithTimeout(url, { headers: { 'Accept': 'application/json' } }, NEWS_GNEWS_TIMEOUT_MS);
                     if (!res.ok) return [];
                     const data = await res.json();
                     return (Array.isArray(data?.items) ? data.items : []).map((item, idx) => ({
                         ...item, __query: q, __sort: 'date', __rank: idx + 1, __source: 'google'
                     }));
-                } catch (_) { return []; }
+                } catch (_e) { return []; }
             };
 
-            // Google News용 쿼리: 주 쿼리 1개만 (altQueries는 네이버에서 커버)
+            // Google News용 쿼리: 주 쿼리 1개만 사용
             const gnewsQuery = query || queryCandidates[0] || '';
 
-            // 네이버 + Google News 병렬 호출
-            const [naverResults, gnewsResult] = await Promise.all([
-                Promise.allSettled(queryCandidates.map(q => fetchOne(q, 'date'))),
-                gnewsQuery ? fetchGoogleNews(gnewsQuery) : Promise.resolve([])
+            // 뉴스 프록시 결과를 우선 렌더하고, 느린 Google RSS 보강은 짧은 grace 안에 온 것만 병합
+            const gnewsPromise = gnewsQuery ? fetchGoogleNews(gnewsQuery) : Promise.resolve([]);
+            const naverResults = await Promise.allSettled(queryCandidates.map(q => fetchOne(q, 'date')));
+            const gnewsResult = await Promise.race([
+                gnewsPromise,
+                delay(NEWS_GNEWS_GRACE_MS).then(() => [])
             ]);
 
             const fetchedItems = [
@@ -1250,7 +1292,7 @@ const NewsTab = (() => {
                 const filteredDedup = Array.from(dedup.values()).map(item => {
                     const t = (item.title || '') + ' ' + (item.description || '');
                     let penalty = 0;
-                    let signals = [];
+                    const signals = [];
 
                     // 1. 다른 지역 감지 (강한 감점)
                     const hasCurrentDistrict = selectedCategory._districtName && t.includes(selectedCategory._districtName);
@@ -1412,6 +1454,10 @@ const NewsTab = (() => {
             }
 
             if (!allItems.length) {
+                if (hasStaleCache) {
+                    console.warn('[뉴스] 새 결과 없음, 기존 캐시 유지');
+                    return;
+                }
                 const catLabel = selectedCategory.label || '전체';
                 list.innerHTML = `
                     <div class="news-error">
@@ -1569,20 +1615,21 @@ const NewsTab = (() => {
                 };
             }
         } catch (err) {
-            // 캐시 fallback — API 실패 시 최근 캐시 사용 (30분까지 허용)
-            const cached = _loadNewsCache(regionKey, catId, 30 * 60 * 1000);
+            // 캐시 fallback — API 실패 시 최근 캐시 사용
+            const cachedPayload = _loadNewsCachePayload(regionKey, catId, NEWS_STALE_CACHE_TTL_MS);
+            const cached = cachedPayload?.items || null;
             if (cached && cached.length > 0) {
                 console.warn('[뉴스] API 실패, 캐시 fallback 사용', err.message);
                 // 캐시된 fetchedItems를 주입하여 재시도 없이 렌더
                 // 간략 렌더: 캐시된 항목 직접 표시
-                const cacheAge = Math.round((Date.now() - (JSON.parse(sessionStorage.getItem(_newsCacheKey(regionKey, catId)))?.ts || Date.now())) / 60000);
+                const cacheAge = Math.max(1, Math.round((Date.now() - cachedPayload.ts) / 60000));
                 list.innerHTML = `<div style="padding:6px 10px;font-size:0.72rem;color:var(--text-muted);background:rgba(245,158,11,0.08);border-radius:6px;margin-bottom:6px;">
                     <i class="fas fa-clock-rotate-left"></i> 네트워크 오류로 ${cacheAge}분 전 캐시를 표시합니다.
                     <button class="news-retry-btn" style="margin-left:8px;padding:2px 8px;font-size:0.7rem;" id="news-retry-btn"><i class="fas fa-redo"></i> 재시도</button>
                 </div>` + cached.slice(0, 10).map(item => {
                     const title = (item.title || '').replace(/<[^>]+>/g, '');
                     const link = item.originallink || item.link || '#';
-                    const press = (() => { try { return new URL(link).hostname.replace(/^www\./, ''); } catch(e) { return ''; } })();
+                    const press = (() => { try { return new URL(link).hostname.replace(/^www\./, ''); } catch(_e) { return ''; } })();
                     const pubDate = item.pubDate ? new Date(item.pubDate).toLocaleString('ko-KR') : '';
                     return `<a class="news-live-item" href="${safeHref(link)}" target="_blank" rel="noopener">
                         <div class="news-live-item-title">${escapeHtml(title)}</div>
@@ -1602,8 +1649,8 @@ const NewsTab = (() => {
             let icon, title, detail;
             if (missingKey) {
                 icon = 'fas fa-key';
-                title = 'API 키 미설정';
-                detail = 'NAVER_CLIENT_ID/NAVER_CLIENT_SECRET 환경변수를 설정한 뒤 뉴스 프록시를 다시 실행하세요.';
+                title = '뉴스 소스 설정 필요';
+                detail = '현재 기본 뉴스 소스가 응답하지 않습니다. 뉴스 프록시 설정을 확인하세요.';
             } else if (isTimeout) {
                 icon = 'fas fa-clock';
                 title = '응답 시간 초과';
@@ -1854,7 +1901,7 @@ const NewsTab = (() => {
         container.innerHTML = '';
 
         // 세대 카운터 증가 — 이전 비동기 fetch 결과 무시용
-        const gen = ++_renderGeneration;
+        ++_renderGeneration;
         _currentElectionType = electionType || '';
         _currentDistrictName = districtName || '';
 
@@ -1948,7 +1995,7 @@ const NewsTab = (() => {
                     .filter(n => n && !/\.(kr|com|net|org|co\.kr|tv)$/i.test(n) && /[가-힣]/.test(n));
                 const allNames = [
                     ...korNames,
-                    ...(muni.hosts || []).filter(h => !korNames.length).slice(0, 4)
+                    ...(muni.hosts || []).filter(_h => !korNames.length).slice(0, 4)
                 ].slice(0, 8);
                 if (!allNames.length) return null;
                 return allNames.map(n => `<span class="local-media-tag district">${n}</span>`).join('');
@@ -1974,7 +2021,7 @@ const NewsTab = (() => {
                 // 광역선거: 광역 언론사 표시
                 const tier1Hosts = province.hosts?.tier1 || [];
                 const outletItems = provinceOutlets.slice(0, 8).map(o => {
-                    const isTier1 = tier1Hosts.some(h => province.priorityNames?.indexOf(o.name) < 3);
+                    const isTier1 = tier1Hosts.some(_h => province.priorityNames?.indexOf(o.name) < 3);
                     return `<span class="local-media-tag${isTier1 ? ' tier1' : ''}">${o.name}</span>`;
                 }).join('');
                 localMediaEl.innerHTML = `

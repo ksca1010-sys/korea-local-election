@@ -3265,32 +3265,42 @@
             }
           ]
         },
-        "중구": {
+        "영종구": {
           "promoteNames": [
+            "livesnews.com",
             "인천일보",
+            "경인일보",
             "기호일보"
           ],
           "tier1Hosts": [
-            "incheonilbo.com"
+            "livesnews.com"
           ],
           "seedOutlets": [
             {
-              "name": "인천일보",
+              "name": "livesnews.com",
               "types": [
-                "newspaper"
+                "online"
               ]
             },
             {
-              "name": "기호일보",
+              "name": "인천일보",
               "types": [
-                "newspaper"
+                "online"
+              ]
+            },
+            {
+              "name": "경인일보",
+              "types": [
+                "online"
               ]
             }
           ]
         },
-        "동구": {
+        "제물포구": {
           "promoteNames": [
             "인천일보",
+            "인천투데이",
+            "경인일보",
             "기호일보"
           ],
           "tier1Hosts": [
@@ -3300,13 +3310,19 @@
             {
               "name": "인천일보",
               "types": [
-                "newspaper"
+                "online"
               ]
             },
             {
-              "name": "기호일보",
+              "name": "인천투데이",
               "types": [
-                "newspaper"
+                "online"
+              ]
+            },
+            {
+              "name": "경인일보",
+              "types": [
+                "online"
               ]
             }
           ]
@@ -3445,6 +3461,29 @@
               "name": "기호일보",
               "types": [
                 "newspaper"
+              ]
+            }
+          ]
+        },
+        "검단구": {
+          "promoteNames": [
+            "livesnews.com",
+            "ifm.kr"
+          ],
+          "tier1Hosts": [
+            "livesnews.com"
+          ],
+          "seedOutlets": [
+            {
+              "name": "livesnews.com",
+              "types": [
+                "online"
+              ]
+            },
+            {
+              "name": "ifm.kr",
+              "types": [
+                "online"
               ]
             }
           ]

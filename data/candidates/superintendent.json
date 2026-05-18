@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-04-22",
+    "lastUpdated": "2026-05-17",
     "source": "auto-init from superintendent_status.json",
     "lastFactCheck": "2026-04-22T05:25:56.350703",
     "sourceUrlCoverage": "0%",
@@ -8,151 +8,71 @@
     "lastPledgeCollection": "2026-03-25T19:57:21.769546",
     "mergedRegions": {
       "jeonnam": "gwangju"
-    }
+    },
+    "lastPipelineRun": "2026-05-17T17:24:42.958616",
+    "lastOfficialSync": "2026-05-17T17:24:42.958616",
+    "officialSyncMode": "replace_registered_candidates",
+    "officialSource": "중앙선거관리위원회 후보자 정보 API",
+    "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+    "removedPreRegistrationRecords": 0
   },
   "candidates": {
     "seoul": [
       {
-        "id": "seoul-1",
-        "name": "정근식",
-        "stance": "진보",
-        "career": "현 서울특별시 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
-        "pledges": [
-          "대학 무상교육"
-        ],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "[6·3 지선] 서울시교육감 진보 단일화 정근식 참여…",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "대학 무상교육",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "seoul-2",
-        "name": "김영희",
-        "stance": "진보",
-        "career": "전 한국교원단체총연합회 회장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "name": "김영배",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)예원예술대학교 부총장 / (전)상명대학교/성결대학교 교수 역임",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153800",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 1,
         "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 57,
+        "gender": "남",
+        "job": "예원예술대학교 부총장",
+        "education": "동방문화대학원대학교 자연치유학과졸업(교육학박사)",
+        "id": "seoul-supt-nec-1"
       },
       {
-        "id": "seoul-3",
-        "name": "조전혁",
-        "stance": "보수",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "seoul-4",
-        "name": "강신만",
-        "stance": "중도",
-        "career": "현장 31년",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "대학 무상교육 추진"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "대학 무상교육 추진",
-            "category": "무상급식"
-          }
-        ]
-      },
-      {
-        "id": "seoul-5",
-        "name": "김현철",
-        "stance": "중도",
-        "career": "前 서울시교육청 대변인",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "seoul-6",
-        "name": "임해규",
-        "stance": "보수",
-        "career": "전 국회의원",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "교실 수업 회복"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "교실 수업 회복",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "seoul-7",
-        "name": "강민정",
-        "stance": "진보",
-        "career": "전 국회의원",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "행정 업무 없는 학교",
-          "혐오·차별 없는 학교"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "행정 업무 없는 학교",
-            "category": "교권보호"
-          },
-          {
-            "text": "혐오·차별 없는 학교",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "seoul-8",
         "name": "한만중",
-        "stance": "진보",
-        "career": "교육운동가",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)노무현 대통령직인수위 자문위원(교육분야) / (전)조희연 서울시교육감 비서실장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100155563",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 2,
         "pledges": [
           "공립형 문화예술고 설립",
           "부모자산 격차 해소"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 62,
+        "gender": "남",
+        "job": "전국교육자치혁신연대 상임대표",
+        "education": "서울대학교 사범대학 국어교육과 졸업",
+        "id": "seoul-8",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "공립형 문화예술고 설립",
@@ -165,83 +85,228 @@
         ]
       },
       {
-        "id": "seoul-9",
-        "name": "민형배",
-        "stance": "중도",
-        "career": "전직 공직자·교수",
-        "status": "RUMORED",
-        "dataSource": "claude",
+        "name": "조전혁",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)2024년 서울특별시교육감보궐선거 통합대책위원회 중도·보수후보 / (전)국회의원 (교육과학기술위원회 위원)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100163258",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 3,
         "pledges": [],
-        "sourceUrl": "not_provided",
-        "sourceLabel": "언론사",
-        "sourcePublishedAt": "2026-03-26"
+        "age": 65,
+        "gender": "남",
+        "job": "서울시 미래교육연구원 원장",
+        "education": "미국 위스콘신대학교 매디슨 캠퍼스 대학원 경제학 박사 (1989.12.~1991.12.)",
+        "id": "seoul-3",
+        "stance": "보수"
       },
       {
-        "id": "seoul-10",
+        "name": "이학인",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)미국Hofstra대학교 회계학 조교수 / (전)안진회계법인 공인회계사",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162651",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 4,
+        "pledges": [],
+        "age": 53,
+        "gender": "남",
+        "job": "신한대학교 부교수",
+        "education": "뉴욕시립대학교대학원 철학박사(경영학전공)(2006.8~2012.8)",
+        "id": "seoul-supt-nec-4"
+      },
+      {
         "name": "윤호상",
-        "stance": "보수",
-        "career": "교수",
-        "status": "DECLARED",
-        "dataSource": "claude",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)서울좋은교육감후보추대시민회의 보수단일후보(류수노,신평,윤호상,이건주 참여) / (전)서울시 중·고등학교 4개교 교장(강남중,도선고,서울미술고,신도림고)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153774",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 5,
         "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "종합",
-        "sourcePublishedAt": "2026-04-07"
+        "age": 67,
+        "gender": "남",
+        "job": "한양대학교 교육대학원 겸임교수",
+        "education": "숭실대학교 대학원 평생교육학과 졸업(교육학 박사)",
+        "id": "seoul-10",
+        "stance": "보수"
       },
       {
-        "id": "seoul-11",
-        "name": "김대중",
-        "stance": "중도",
-        "career": "통합교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
+        "name": "정근식",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)2026서울민주진보교육감단일화 추진위 추대후보 / (전)노무현정부 친일반민족행위진상규명위원회 위원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100161493",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 6,
+        "pledges": [
+          "대학 무상교육"
+        ],
+        "age": 68,
+        "gender": "남",
+        "job": "서울특별시교육감",
+        "education": "서울대학교 대학원(박사과정) 사회학과 문학박사",
+        "id": "seoul-1",
+        "stance": "진보",
+        "pledgeCategories": [
+          {
+            "text": "대학 무상교육",
+            "category": "기타"
+          }
+        ]
+      },
+      {
+        "name": "홍제남",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)서울특별시남부교육지원청 교육지원국장 / (전)오류중학교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153778",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 7,
         "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "뉴스 기사",
-        "sourcePublishedAt": "2026-04-15"
+        "age": 61,
+        "gender": "여",
+        "job": "다같이배움연구소장",
+        "education": "한국교원대학교 교육정책전문대학원 졸업 (교육학박사)",
+        "id": "seoul-supt-nec-7"
+      },
+      {
+        "name": "류수노",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)한국방송통신대학교 총장 / (현)한성대학교 석좌교수",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153786",
+        "sdName": "서울특별시",
+        "sggName": "서울특별시",
+        "wiwName": "",
+        "regionKey": "seoul",
+        "officialOrder": 8,
+        "pledges": [],
+        "age": 69,
+        "gender": "남",
+        "job": "교수",
+        "education": "충남대학교 대학원 졸업(농학박사)",
+        "id": "seoul-supt-nec-8"
       }
     ],
     "busan": [
       {
-        "id": "busan-1",
-        "name": "하윤수",
-        "stance": "보수",
-        "career": "현 부산광역시 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "name": "정승윤",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)부산대 법학전문대학원 교수 / (전)국민권익위원회 부위원장 겸 사무처장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100163844",
+        "sdName": "부산광역시",
+        "sggName": "부산광역시",
+        "wiwName": "",
+        "regionKey": "busan",
+        "officialOrder": 13,
         "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "하윤수 부산시 교육감, 2026년 재선 출마 공식 선언 (부산일보, 2026-03-10)",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 56,
+        "gender": "남",
+        "job": "부산대학교 법학전문대학원 교수",
+        "education": "부산대학교 대학원 법학과 공법전공 박사과정 수료",
+        "id": "busan-supt-nec-1"
       },
       {
-        "id": "busan-2",
         "name": "최윤홍",
-        "stance": "중도",
-        "career": "전 부산부교육감",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)부산광역시 교육청 부교육감 / (전)부산광역시 교육감 권한대행 부교육감",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153847",
+        "sdName": "부산광역시",
+        "sggName": "부산광역시",
+        "wiwName": "",
+        "regionKey": "busan",
+        "officialOrder": 14,
         "pledges": [
           "체형 맞춤 인체공학 책걸상 단계적 보급"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-10",
-          "type": "status_change",
-          "detail": "부산지법 교육자치법 위반 등으로 집행유예 판결, 예비후보로 등록된 것으로 확인됨",
-          "previous": "DECLARED",
-          "sourceUrl": "부산지법, 교육자치법 위반 등 최윤홍 전 부산교육청 부교육감 '집유'",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-04-10"
-        },
+        "age": 57,
+        "gender": "남",
+        "job": "미기재",
+        "education": "고려대학교 교육대학원 교육학석사",
+        "id": "busan-2",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "체형 맞춤 인체공학 책걸상 단계적 보급",
@@ -250,24 +315,33 @@
         ]
       },
       {
-        "id": "busan-3",
         "name": "김석준",
-        "stance": "진보",
-        "career": "전 부산광역시 교육감",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)부산대학교 사범대 교수 / (전)국가교육위원회 위원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162788",
+        "sdName": "부산광역시",
+        "sggName": "부산광역시",
+        "wiwName": "",
+        "regionKey": "busan",
+        "officialOrder": 15,
         "pledges": [
           "영유아 교육·보육 질 향상 50억 원 투입"
         ],
-        "_lastChange": {
-          "date": "2026-03-19",
-          "type": "status_change",
-          "detail": "부산교육감 선거, 김석준·최윤홍 '양자구도' 전망 - 양자구도 전망은 김석준의 출마가 확정된 상황을 반영",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 69,
+        "gender": "남",
+        "job": "부산광역시교육감",
+        "education": "서울대학교 대학원 사회학과 졸업(문학박사)",
+        "id": "busan-3",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "영유아 교육·보육 질 향상 50억 원 투입",
@@ -278,94 +352,123 @@
     ],
     "daegu": [
       {
-        "id": "daegu-1",
+        "name": "서중현",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)대구광역시 서구청장 / (전)협성상업고등학교 교사",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153820",
+        "sdName": "대구광역시",
+        "sggName": "대구광역시",
+        "wiwName": "",
+        "regionKey": "daegu",
+        "officialOrder": 16,
+        "pledges": [],
+        "age": 74,
+        "gender": "남",
+        "job": "정치인",
+        "education": "경북대학교 대학원 철학과 박사과정 수료",
+        "id": "daegu-supt-nec-1"
+      },
+      {
+        "name": "임성무",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)전국교직원노동조합 대구지부장 / (현)대구민주진보교육포럼 대표",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162085",
+        "sdName": "대구광역시",
+        "sggName": "대구광역시",
+        "wiwName": "",
+        "regionKey": "daegu",
+        "officialOrder": 17,
+        "pledges": [],
+        "age": 62,
+        "gender": "남",
+        "job": "교육활동가",
+        "education": "대구교육대학교 초등교육과 졸업",
+        "id": "daegu-3",
+        "stance": "중도"
+      },
+      {
         "name": "강은희",
-        "stance": "보수",
-        "career": "현 대구광역시 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)대구광역시교육감 / (전)여성가족부장관",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162500",
+        "sdName": "대구광역시",
+        "sggName": "대구광역시",
+        "wiwName": "",
+        "regionKey": "daegu",
+        "officialOrder": 18,
         "pledges": [
           "교원 업무 경감"
         ],
-        "_lastChange": {
-          "date": "2026-03-17",
-          "type": "status_change",
-          "detail": "강은희 교육감, 재선 도선 공식 선언 기자회견",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 61,
+        "gender": "여",
+        "job": "대구광역시교육감",
+        "education": "경북대학교 사범대학 물리교육과 졸업",
+        "id": "daegu-1",
+        "stance": "보수",
         "pledgeCategories": [
           {
             "text": "교원 업무 경감",
             "category": "교권보호"
           }
         ]
-      },
-      {
-        "id": "daegu-2",
-        "name": "엄창옥",
-        "stance": "진보",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-17",
-          "type": "status_change",
-          "detail": "\"장애인교육권 보장하겠다\" 엄창옥 대구교육감 후보 공약",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "daegu-3",
-        "name": "임성무",
-        "stance": "중도",
-        "career": "전 전교조 대구지부장",
-        "status": "DECLARED",
-        "dataSource": "claude",
-        "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "뉴스",
-        "sourcePublishedAt": "2026-03-26",
-        "_lastChange": {
-          "date": "2026-03-27",
-          "type": "status_change",
-          "detail": "임성무 전 전교조 대구지부장 대구시교육감 출마 도전",
-          "previous": "EXPECTED",
-          "sourceUrl": "없음",
-          "sourceLabel": "뉴스 제목",
-          "sourcePublishedAt": "2026-03-27"
-        }
       }
     ],
     "incheon": [
       {
-        "id": "incheon-1",
         "name": "도성훈",
-        "stance": "진보",
-        "career": "현 인천광역시 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)인천광역시 교육감 / (전)동암중학교 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100163408",
+        "sdName": "인천광역시",
+        "sggName": "인천광역시",
+        "wiwName": "",
+        "regionKey": "incheon",
+        "officialOrder": 19,
         "pledges": [
           "인천 AI교육 공동선언 발표"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-03-22",
-          "type": "status_change",
-          "detail": "[경인일보 여론조사] 도성훈 인천시교육감 긍정평가 34% - 현직 교육감으로서의 평가 기사로 출마 의향 확인",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.search.naver.com/",
-          "sourceLabel": "경인일보",
-          "sourcePublishedAt": "2026-03-22"
-        },
+        "age": 65,
+        "gender": "남",
+        "job": "인천광역시 교육감",
+        "education": "중앙대학교 국어국문학과 졸업",
+        "id": "incheon-1",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "인천 AI교육 공동선언 발표",
@@ -374,50 +477,33 @@
         ]
       },
       {
-        "id": "incheon-2",
-        "name": "연규원",
-        "stance": "중도",
-        "career": "34년 현장 경험",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "incheon-3",
-        "name": "임병구",
-        "stance": "중도",
-        "career": "상임대표",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "청소년 3대 기본권 선포"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "청소년 3대 기본권 선포",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "incheon-4",
         "name": "이대형",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)인천교육감중도보수단일후보",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153794",
+        "sdName": "인천광역시",
+        "sggName": "인천광역시",
+        "wiwName": "",
+        "regionKey": "incheon",
+        "officialOrder": 20,
         "pledges": [
           "만18~19세 학생 운전면허 취득비용 지원"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "남",
+        "job": "경인교육대학교 교수",
+        "education": "경희대학교 대학원 졸업(체육학박사)",
+        "id": "incheon-4",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "만18~19세 학생 운전면허 취득비용 지원",
@@ -426,21 +512,36 @@
         ]
       },
       {
-        "id": "incheon-5",
-        "name": "이현준",
-        "stance": "중도",
-        "career": "인천시 교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
+        "name": "임병구",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)전국교육자치혁신연대 상임대표 / (전)인천광역시교육청 정책기획조정관",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153776",
+        "sdName": "인천광역시",
+        "sggName": "인천광역시",
+        "wiwName": "",
+        "regionKey": "incheon",
+        "officialOrder": 21,
         "pledges": [
-          "인천을 대한민국 최초 '헌법교육특구'로 지정"
+          "청소년 3대 기본권 선포"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 61,
+        "gender": "남",
+        "job": "교육대개혁국민운동본부 인천준비위원장",
+        "education": "중앙대학교 국어국문학과 졸업",
+        "id": "incheon-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
-            "text": "인천을 대한민국 최초 '헌법교육특구'로 지정",
+            "text": "청소년 3대 기본권 선포",
             "category": "기타"
           }
         ]
@@ -448,20 +549,61 @@
     ],
     "gwangju": [
       {
-        "id": "gwangju-1",
+        "name": "강숙영",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 김대중(故김대중대통령)재단 전남지부회 탄소중립위원회 위원장 / (현) 교육학 박사 전남대학교 일반대학원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153856",
+        "sdName": "전남광주통합특별시",
+        "sggName": "전남광주통합특별시",
+        "wiwName": "",
+        "regionKey": "gwangju",
+        "officialOrder": 9,
+        "pledges": [],
+        "age": 64,
+        "gender": "여",
+        "job": "무직",
+        "education": "전남대학교 일반대학원 졸업 (교육학박사)",
+        "id": "gwangju-supt-nec-1"
+      },
+      {
         "name": "이정선",
-        "stance": "진보",
-        "career": "현 광주광역시 교육감 / 전남광주통합특별시 초대 교육감 출마",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 제6대 광주교육대학교 총장 / (현) 광주광역시교육감",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100160673",
+        "sdName": "전남광주통합특별시",
+        "sggName": "전남광주통합특별시",
+        "wiwName": "",
+        "regionKey": "gwangju",
+        "officialOrder": 10,
         "pledges": [
           "AI 위기 감지 시스템 도입",
           "스마트기기 보급 및 관리체계 구축",
           "특성화고 글로벌 취·창업 역량 강화"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 67,
+        "gender": "남",
+        "job": "광주광역시교육감",
+        "education": "미국 럿거스 뉴저지주립대학교 교육학 박사 (1990.9.1.~1995.10.1.)",
+        "id": "gwangju-1",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "AI 위기 감지 시스템 도입",
@@ -475,125 +617,72 @@
             "text": "특성화고 글로벌 취·창업 역량 강화",
             "category": "기타"
           }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "이정선 교육감 후보, 선거사무소 개소식 / 이정선·고두갑·김해룡 '전남광주교육감 후보단일화' 합의",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.example.com",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-04-22"
-        }
-      },
-      {
-        "id": "gwangju-2",
-        "name": "정성홍",
-        "stance": "진보",
-        "career": "전 전교조 광주지부장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "인성·실력 교육 전환"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "인성·실력 교육 전환",
-            "category": "기타"
-          }
         ]
       },
       {
-        "id": "gwangju-3",
-        "name": "고두갑",
+        "name": "장관호",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 민주진보교육감 전남광주통합공천위원회 단일후보 (장관호, 정성홍 참여) / (현) 대통령직속 민주평화통일자문회의 자문위원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153771",
+        "sdName": "전남광주통합특별시",
+        "sggName": "전남광주통합특별시",
+        "wiwName": "",
+        "regionKey": "gwangju",
+        "officialOrder": 11,
+        "pledges": [
+          "인성·실력 교육으로 전환"
+        ],
+        "age": 58,
+        "gender": "남",
+        "job": "무직",
+        "education": "전남대학교 사범대학 물리교육과 졸업",
+        "id": "gwangju-7",
         "stance": "중도",
-        "career": "목포대 교수",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "경제학 기반 교육 개혁"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
         "pledgeCategories": [
           {
-            "text": "경제학 기반 교육 개혁",
+            "text": "인성·실력 교육으로 전환",
             "category": "기타"
           }
         ]
       },
       {
-        "id": "gwangju-4",
-        "name": "오경미",
-        "stance": "중도",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "통합교육감 제왕적 권한 분산"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "통합교육감 제왕적 권한 분산",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "gwangju-5",
-        "name": "정상신",
-        "stance": "중도",
-        "career": "교육행정 전문가",
-        "status": "RUMORED",
-        "dataSource": "claude",
-        "pledges": [
-          "교육행정 혁신부 신설로 교사 행정업무 감소",
-          "고교 미래 성장 주식통장 프로젝트"
-        ],
-        "sourceUrl": "",
-        "sourceLabel": "미상",
-        "sourcePublishedAt": "2026-03-24",
-        "pledgeCategories": [
-          {
-            "text": "교육행정 혁신부 신설로 교사 행정업무 감소",
-            "category": "교권보호"
-          },
-          {
-            "text": "고교 미래 성장 주식통장 프로젝트",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "gwangju-6",
         "name": "김대중",
-        "stance": "진보",
-        "career": "현 전라남도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 전라남도교육감 / (전) 노무현재단 운영위원(창립위원)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162107",
+        "sdName": "전남광주통합특별시",
+        "sggName": "전남광주통합특별시",
+        "wiwName": "",
+        "regionKey": "gwangju",
+        "officialOrder": 12,
         "pledges": [
           "AI 위기 감지 시스템 도입",
           "폐교를 교육청 사무실로 활용"
         ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "김대중, 전남광주통합특별시교육감 예비후보 등록...선거운동 돌입 / '다시 뛰는 통합교육'…김대중 교육감, 10일 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.example.com",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-04-22"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "남",
+        "job": "전라남도교육감",
+        "education": "목포대학교 대학원 국어국문학과 박사과정 수료",
+        "id": "gwangju-6",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "AI 위기 감지 시스템 도입",
@@ -603,105 +692,79 @@
             "text": "폐교를 교육청 사무실로 활용",
             "category": "기타"
           }
-        ],
-        "_mergedFrom": "jeonnam"
-      },
-      {
-        "name": "장관호",
-        "stance": "중도",
-        "career": "전남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [
-          "인성·실력 교육으로 전환"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "인성·실력 교육으로 전환",
-            "category": "기타"
-          }
-        ],
-        "id": "gwangju-7",
-        "_mergedFrom": "jeonnam"
-      },
-      {
-        "name": "김해룡",
-        "stance": "중도",
-        "career": "전남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "id": "gwangju-8",
-        "_mergedFrom": "jeonnam"
+        ]
       }
     ],
     "daejeon": [
       {
-        "id": "daejeon-1",
-        "name": "설동호",
-        "stance": "중도",
-        "career": "현 대전광역시 교육감",
-        "status": "EXPECTED",
-        "dataSource": "incumbent",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "daejeon-2",
-        "name": "오석진",
-        "stance": "중도",
-        "career": null,
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
+        "name": "정상신",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 유성중학교 교장 / (현) 대전미래교육연구회 회장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153741",
+        "sdName": "대전광역시",
+        "sggName": "대전광역시",
+        "wiwName": "",
+        "regionKey": "daejeon",
+        "officialOrder": 22,
         "pledges": [
-          "교원 민원·법률 통합 대응 시스템 고도화",
-          "AI로 행정 업무 자동화"
+          "교육행정 혁신부 신설로 교사 행정업무 감소",
+          "고교 학생 주식통장 프로젝트 추진"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "여",
+        "job": "대전미래교육연구회 회장",
+        "education": "충남대학교 대학원 영어영문학과 졸업(문학박사)",
+        "id": "daejeon-4",
+        "stance": "중도",
         "pledgeCategories": [
           {
-            "text": "교원 민원·법률 통합 대응 시스템 고도화",
+            "text": "교육행정 혁신부 신설로 교사 행정업무 감소",
             "category": "교권보호"
           },
           {
-            "text": "AI로 행정 업무 자동화",
-            "category": "디지털교육"
+            "text": "고교 학생 주식통장 프로젝트 추진",
+            "category": "기타"
           }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "오석진 대전시교육감 예비후보 지지 선언 잇따라, 지지 선언만 20곳",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "언론사미상",
-          "sourcePublishedAt": "2026-04-22"
-        }
+        ]
       },
       {
-        "id": "daejeon-3",
         "name": "맹수석",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 충남대학교 법학전문대학원 교수/원장 / (현) 대전광역시교육청소청심사위원회 위원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153739",
+        "sdName": "대전광역시",
+        "sggName": "대전광역시",
+        "wiwName": "",
+        "regionKey": "daejeon",
+        "officialOrder": 23,
         "pledges": [
           "생명·안전 교육 강화 및 현장실습 안전관리 확대",
           "대전형 맞춤 특수교육 체계 구축"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 67,
+        "gender": "남",
+        "job": "충남대학교 법학전문대학원 명예교수",
+        "education": "충남대학교 대학원 졸업(법학박사)",
+        "id": "daejeon-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "생명·안전 교육 강화 및 현장실습 안전관리 확대",
@@ -714,53 +777,34 @@
         ]
       },
       {
-        "id": "daejeon-4",
-        "name": "정상신",
-        "stance": "중도",
-        "career": null,
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "교육행정 혁신부 신설로 교사 행정업무 감소",
-          "고교 학생 주식통장 프로젝트 추진"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "교육행정 혁신부 신설로 교사 행정업무 감소",
-            "category": "교권보호"
-          },
-          {
-            "text": "고교 학생 주식통장 프로젝트 추진",
-            "category": "기타"
-          }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "정상신 대전교육감 예비후보 \"조직 문화 쇄신이 대전 교육 정상화 핵심",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "언론사미상",
-          "sourcePublishedAt": "2026-04-22"
-        }
-      },
-      {
-        "id": "daejeon-5",
         "name": "성광진",
-        "stance": "중도",
-        "career": null,
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 대전교육연구소 소장 / (전) 제8회 전국동시지방선거 대전교육감 후보",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153764",
+        "sdName": "대전광역시",
+        "sggName": "대전광역시",
+        "wiwName": "",
+        "regionKey": "daejeon",
+        "officialOrder": 24,
         "pledges": [
           "학교시설 개방 확대 및 지역사회 공유",
           "정책·사업 숙려제 도입"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 68,
+        "gender": "남",
+        "job": "교육활동가",
+        "education": "한남대학교 국어국문학과 졸업",
+        "id": "daejeon-5",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "학교시설 개방 확대 및 지역사회 공유",
@@ -770,64 +814,134 @@
             "text": "정책·사업 숙려제 도입",
             "category": "기타"
           }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "'보수' 김영진, 출마 접고 '진보' 성광진 대전교육감 후보 지지 선언",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "언론사미상",
-          "sourcePublishedAt": "2026-04-22"
-        }
+        ]
       },
       {
-        "id": "daejeon-6",
-        "name": "진동규",
+        "name": "오석진",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 대전광역시교육청 교육국장 / (전) 대전 괴정고등학교 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153740",
+        "sdName": "대전광역시",
+        "sggName": "대전광역시",
+        "wiwName": "",
+        "regionKey": "daejeon",
+        "officialOrder": 25,
+        "pledges": [
+          "교원 민원·법률 통합 대응 시스템 고도화",
+          "AI로 행정 업무 자동화"
+        ],
+        "age": 66,
+        "gender": "남",
+        "job": "배재대학교 대외협력교수",
+        "education": "한국교원대학교 대학원 졸업(교육학 박사)",
+        "id": "daejeon-2",
         "stance": "중도",
-        "career": "미상",
-        "status": "EXPECTED",
-        "dataSource": "claude",
+        "pledgeCategories": [
+          {
+            "text": "교원 민원·법률 통합 대응 시스템 고도화",
+            "category": "교권보호"
+          },
+          {
+            "text": "AI로 행정 업무 자동화",
+            "category": "디지털교육"
+          }
+        ]
+      },
+      {
+        "name": "진동규",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 제9대, 제10대 유성구청장 / (전) 대덕대학교 교수",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153737",
+        "sdName": "대전광역시",
+        "sggName": "대전광역시",
+        "wiwName": "",
+        "regionKey": "daejeon",
+        "officialOrder": 26,
         "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "언론사미상",
-        "sourcePublishedAt": "2026-04-22"
+        "age": 68,
+        "gender": "남",
+        "job": "청정유성 정책포럼 대표",
+        "education": "인하대학교 대학원 졸업(행정학 박사)",
+        "id": "daejeon-6",
+        "stance": "중도"
       }
     ],
     "ulsan": [
       {
-        "id": "ulsan-1",
-        "name": "노옥희",
-        "stance": "진보",
-        "career": "현 울산광역시 교육감",
-        "status": "WITHDRAWN",
-        "dataSource": "incumbent",
+        "name": "구광렬",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)서울대학교 시간강사 / (전)울산대학교 교수",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100161017",
+        "sdName": "울산광역시",
+        "sggName": "울산광역시",
+        "wiwName": "",
+        "regionKey": "ulsan",
+        "officialOrder": 27,
         "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "withdrawn",
-          "detail": "노옥희 전 울산시 교육감은 2022년 12월 8일 별세하여 2026년 선거에 출마할 수 없음. (연합뉴스, 2022-12-08)",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 70,
+        "gender": "남",
+        "job": "울산대학교 명예교수",
+        "education": "멕시코국립대학교 문학박사(1984.06.~1989.01.)",
+        "id": "ulsan-5",
+        "stance": "중도"
       },
       {
-        "id": "ulsan-2",
         "name": "조용식",
-        "stance": "진보",
-        "career": "노옥희재단 이사장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)노옥희·천창수 울산광역시교육감 비서실장 / (전)노옥희재단 이사장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100160241",
+        "sdName": "울산광역시",
+        "sggName": "울산광역시",
+        "wiwName": "",
+        "regionKey": "ulsan",
+        "officialOrder": 28,
         "pledges": [
           "초등 저학년 기초학력 100% 보장",
           "AI 위기 감지 시스템 도입",
           "폐교를 교육청 사무실로 활용"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 57,
+        "gender": "남",
+        "job": "무직",
+        "education": "강원대학교 사범대학 한문교육과 졸업",
+        "id": "ulsan-2",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "초등 저학년 기초학력 100% 보장",
@@ -844,165 +958,98 @@
         ]
       },
       {
-        "id": "ulsan-3",
-        "name": "천창수",
-        "stance": "진보",
-        "career": "현 울산광역시 교육감",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-08",
-          "type": "status_change",
-          "detail": "뉴스에서 천창수 교육감 관련 정책 발언('교권 보호 통한 교육 공동체 신뢰 회복 최대 성과') 확인되며, '중도-보수-진보 3파전' 표현에서 진보 진영 후보로 언급",
-          "previous": "RUMORED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-08"
-        }
-      },
-      {
-        "id": "ulsan-4",
         "name": "김주홍",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)울산대학교 교수 / (현)울산대학교 명예교수",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100156317",
+        "sdName": "울산광역시",
+        "sggName": "울산광역시",
+        "wiwName": "",
+        "regionKey": "ulsan",
+        "officialOrder": 29,
         "pledges": [
           "AI시대 대응 미래진로교육원 설립"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-03-27",
-          "type": "status_change",
-          "detail": "김주홍 울산교육감 후보 \"AI시대 대응 '미래진로교육원' 설립\"",
-          "previous": "EXPECTED",
-          "sourceUrl": "불명확",
-          "sourceLabel": "울산 지역언론",
-          "sourcePublishedAt": "2026-03-27"
-        },
+        "age": 69,
+        "gender": "남",
+        "job": "울산대학교 명예교수",
+        "education": "서울대학교 대학원 졸업(정치학박사)",
+        "id": "ulsan-4",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "AI시대 대응 미래진로교육원 설립",
             "category": "디지털교육"
           }
         ]
-      },
-      {
-        "id": "ulsan-5",
-        "name": "구광렬",
-        "stance": "중도",
-        "career": "교수",
-        "status": "DECLARED",
-        "dataSource": "claude",
-        "pledges": [],
-        "sourceUrl": "뉴스",
-        "sourceLabel": "언론사명",
-        "sourcePublishedAt": "2026-03-22"
       }
     ],
     "gyeonggi": [
       {
-        "id": "gyeonggi-1",
         "name": "임태희",
-        "stance": "보수",
-        "career": "현 경기도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)경기도교육감 / (전)고용노동부장관",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100163064",
+        "sdName": "경기도",
+        "sggName": "경기도",
+        "wiwName": "",
+        "regionKey": "gyeonggi",
+        "officialOrder": 34,
         "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "임태희 경기도 교육감, 2026년 지방선거 재선 도전 공식화 (연합뉴스, 2026-03-12)",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 69,
+        "gender": "남",
+        "job": "경기도교육감",
+        "education": "서울대학교 대학원 졸업(경영학 석사)",
+        "id": "gyeonggi-1",
+        "stance": "보수"
       },
       {
-        "id": "gyeonggi-2",
-        "name": "유은혜",
-        "stance": "진보",
-        "career": "전 교육부 장관, 전 국회의원",
-        "status": "WITHDRAWN",
-        "dataSource": "news_verified",
-        "pledges": [
-          "특수학교 확대 및 병설 특수학교 도입",
-          "특수교육 학급당 학생 수 감소",
-          "민주시민교육위원회 설치"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "특수학교 확대 및 병설 특수학교 도입",
-            "category": "기타"
-          },
-          {
-            "text": "특수교육 학급당 학생 수 감소",
-            "category": "기타"
-          },
-          {
-            "text": "민주시민교육위원회 설치",
-            "category": "기타"
-          }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "추미애 경기도지사 후보 선출에 따른 교육감 후보 경선 중단. 뉴스에서 '여성·문재인 정부 장관' 출신 유은혜가 언급되나 교육감 후보로서의 언급 부재",
-          "previous": "DECLARED",
-          "sourceUrl": "https://news.example.com/gyeonggi-yoon",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-22"
-        }
-      },
-      {
-        "id": "gyeonggi-3",
-        "name": "박효진",
-        "stance": "중도",
-        "career": "뉴스에 언급된 경력 없음",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "학폭법 개편으로 처벌 중심에서 회복 중심으로 전환",
-          "학교공동체 회복을 통한 학폭·아동학대 체계 개편"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "학폭법 개편으로 처벌 중심에서 회복 중심으로 전환",
-            "category": "기타"
-          },
-          {
-            "text": "학교공동체 회복을 통한 학폭·아동학대 체계 개편",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "gyeonggi-4",
         "name": "안민석",
-        "stance": "진보",
-        "career": "전 국회의원",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)경기도교육감 민주진보 단일후보 / (전)국회 교육위원회 위원 5회 역임(5선 국회의원)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153797",
+        "sdName": "경기도",
+        "sggName": "경기도",
+        "wiwName": "",
+        "regionKey": "gyeonggi",
+        "officialOrder": 35,
         "pledges": [
           "교직수당 25만원에서 40만원으로 인상",
           "교원 대상 7대 정책 발표"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 59,
+        "gender": "남",
+        "job": "명지대학교 석좌교수",
+        "education": "미국 노던콜로라도대학교 대학원 졸업(교육학박사, 1990.09~1993.05)",
+        "id": "gyeonggi-4",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "교직수당 25만원에서 40만원으로 인상",
@@ -1013,82 +1060,38 @@
             "category": "교권보호"
           }
         ]
-      },
-      {
-        "id": "gyeonggi-5",
-        "name": "성기선",
-        "stance": "보수",
-        "career": "경기도교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
-        "pledges": [
-          "교사 행정업무 폭탄 개선으로 관계와 신뢰의 교실 구현"
-        ],
-        "_lastChange": {
-          "date": "2026-03-28",
-          "type": "status_change",
-          "detail": "민주‧진보 경기도교육감 단일화 경선 본격 돌입…박효진‧성기선‧안 기사에서 단일화 경선 참여 후보로 확인",
-          "previous": "RUMORED",
-          "sourceUrl": "뉴스 보도",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-03-28"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "교사 행정업무 폭탄 개선으로 관계와 신뢰의 교실 구현",
-            "category": "교권보호"
-          }
-        ]
       }
     ],
     "gangwon": [
       {
-        "id": "gangwon-1",
-        "name": "신경호",
-        "stance": "보수",
-        "career": "현 강원특별자치도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
-        "pledges": [],
-        "_lastChange": {
-          "date": "2026-04-15",
-          "type": "status_change",
-          "detail": "신경호 강원교육감 예비후보등록, 재선 도전 공식 선언",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://news.example.com",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-15"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "gangwon-2",
         "name": "강삼영",
-        "stance": "중도",
-        "career": null,
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 강원민주진보교육감단일후보(강삼영, 최승기 참여 단일화추진위선출)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153785",
+        "sdName": "강원특별자치도",
+        "sggName": "강원특별자치도",
+        "wiwName": "",
+        "regionKey": "gangwon",
+        "officialOrder": 36,
         "pledges": [
           "30분 이내 무상통학 버스 운영",
           "무상급식·교복·통학 확대"
         ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "강삼영 강원도교육감 예비후보, 선대위 출범 및 선거사무소 활동 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "N/A",
-          "sourceLabel": "언론 보도",
-          "sourcePublishedAt": "2026-04-22"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 57,
+        "gender": "남",
+        "job": "전국교육자치혁신연대 상임대표",
+        "education": "춘천교육대학교 교육대학원 초등교육학과(아동문학교육) 졸업(교육학석사)",
+        "id": "gangwon-2",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "30분 이내 무상통학 버스 운영",
@@ -1101,28 +1104,34 @@
         ]
       },
       {
-        "id": "gangwon-3",
         "name": "최광익",
-        "stance": "중도",
-        "career": null,
-        "status": "RUMORED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 강원도교육감직인수위원장 / (현) 강원미래교육포럼 대표",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153787",
+        "sdName": "강원특별자치도",
+        "sggName": "강원특별자치도",
+        "wiwName": "",
+        "regionKey": "gangwon",
+        "officialOrder": 37,
         "pledges": [
           "강원골프고 설립",
           "춘천 아시아 교육허브 조성"
         ],
-        "_lastChange": {
-          "date": "2026-04-19",
-          "type": "status_change",
-          "detail": "최광익 '현 교육감에 불출마 권고' / 신경호 '허위사실' 강원교육감선거 신경전 치열",
-          "previous": "WITHDRAWN",
-          "sourceUrl": "",
-          "sourceLabel": "강원도교육감 선거 관련 뉴스",
-          "sourcePublishedAt": "2026-04-19"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "남",
+        "job": "강원미래교육포럼 대표",
+        "education": "미국 아이오와대학교 대학원 졸업(철학박사) (1989.9. ∼ 1991.12.)",
+        "id": "gangwon-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "강원골프고 설립",
@@ -1135,192 +1144,117 @@
         ]
       },
       {
-        "id": "gangwon-4",
-        "name": "유대균",
-        "stance": "중도",
-        "career": "",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "AI 디지털 미래교육 인프라 구축",
-          "AI학습 앱 무상지원"
-        ],
-        "_lastChange": {
-          "date": "2026-03-25",
-          "type": "status_change",
-          "detail": "유대균 강원교육감 선거 예비후보 선거사무소 개소, '미래교육 5대 과제 발표'",
-          "previous": "DECLARED",
-          "sourceUrl": "N/A",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-03-25"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "AI 디지털 미래교육 인프라 구축",
-            "category": "디지털교육"
-          },
-          {
-            "text": "AI학습 앱 무상지원",
-            "category": "디지털교육"
-          }
-        ]
+        "name": "신경호",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)반전교조연대 단일후보(신경호,유대균,조백송,김익중 참여) / (현)강원특별자치도교육감",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162320",
+        "sdName": "강원특별자치도",
+        "sggName": "강원특별자치도",
+        "wiwName": "",
+        "regionKey": "gangwon",
+        "officialOrder": 38,
+        "pledges": [],
+        "age": 73,
+        "gender": "남",
+        "job": "공무원",
+        "education": "강원대학교 교육대학원 졸업(교육학석사)",
+        "id": "gangwon-1",
+        "stance": "보수"
       },
       {
-        "id": "gangwon-5",
         "name": "박현숙",
-        "stance": "중도",
-        "career": "도교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현) 한라대학교 조교수 / (현) 전국교수노동조합 강원지부장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153782",
+        "sdName": "강원특별자치도",
+        "sggName": "강원특별자치도",
+        "wiwName": "",
+        "regionKey": "gangwon",
+        "officialOrder": 39,
         "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-03-24",
-          "type": "status_change",
-          "detail": "박현숙 도교육감 예비후보 출판기념회 개최",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "종합뉴스",
-          "sourcePublishedAt": "2026-03-24"
-        }
-      },
-      {
-        "id": "gangwon-6",
-        "name": "주국영",
-        "stance": "중도",
-        "career": "강원도교육감 선거 출마 예정자",
-        "status": "WITHDRAWN",
-        "dataSource": "claude",
-        "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "종합",
-        "sourcePublishedAt": "2026-04-07",
-        "_lastChange": {
-          "date": "2026-04-07",
-          "type": "status_change",
-          "detail": "주국영 강원도교육감 선거 출마 철회, \"누구도 지지하지 않아\"",
-          "previous": "EXPECTED",
-          "sourceUrl": null,
-          "sourceLabel": "없음",
-          "sourcePublishedAt": null
-        }
-      },
-      {
-        "id": "gangwon-7",
-        "name": "우상호",
-        "stance": "중도",
-        "career": "정치인",
-        "status": "DECLARED",
-        "dataSource": "claude",
-        "pledges": [],
-        "sourceUrl": "https://news.example.com",
-        "sourceLabel": "언론사",
-        "sourcePublishedAt": "2026-04-15",
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "김진태·우상호 사실상 출정식…선거전 불붙었다",
-          "previous": "RUMORED",
-          "sourceUrl": "N/A",
-          "sourceLabel": "언론 보도",
-          "sourcePublishedAt": "2026-04-22"
-        }
+        "age": 58,
+        "gender": "여",
+        "job": "한라대학교 조교수",
+        "education": "강원대학교 일반대학원 영어영문학과 졸업(문학박사)",
+        "id": "gangwon-5",
+        "stance": "중도"
       }
     ],
     "chungbuk": [
       {
-        "id": "chungbuk-1",
         "name": "윤건영",
-        "stance": "보수",
-        "career": "현 충청북도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)충청북도교육감 / (전)청주교육대학교 총장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162804",
+        "sdName": "충청북도",
+        "sggName": "충청북도",
+        "wiwName": "",
+        "regionKey": "chungbuk",
+        "officialOrder": 40,
         "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-16",
-          "type": "status_change",
-          "detail": "윤건영 충북교육감 재선 의지",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 66,
+        "gender": "남",
+        "job": "충청북도교육감",
+        "education": "서울대학교 대학원 졸업(교육학박사)",
+        "id": "chungbuk-1",
+        "stance": "보수"
       },
       {
-        "id": "chungbuk-2",
-        "name": "신문규",
-        "stance": "중도",
-        "career": "33년 행정 경력·교육 전문가",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "초등 10만원, 중·고등 100만원 교육펀드 도입",
-          "교육격차 제로화 목표 사교육 척결"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "초등 10만원, 중·고등 100만원 교육펀드 도입",
-            "category": "기타"
-          },
-          {
-            "text": "교육격차 제로화 목표 사교육 척결",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "chungbuk-3",
-        "name": "조동욱",
-        "stance": "중도",
-        "career": "전 교수",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "폐교를 교육감 2차 집무실로 활용",
-          "장애인 공무원 채용 확대"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "폐교를 교육감 2차 집무실로 활용",
-            "category": "기타"
-          },
-          {
-            "text": "장애인 공무원 채용 확대",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "chungbuk-4",
         "name": "김성근",
-        "stance": "진보",
-        "career": "경력 정보 없음",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)노무현 대통령비서실 교육문화행정관",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153743",
+        "sdName": "충청북도",
+        "sggName": "충청북도",
+        "wiwName": "",
+        "regionKey": "chungbuk",
+        "officialOrder": 41,
         "pledges": [
           "충북책임교육원 신설",
           "느린학습자·위기학생 지원"
         ],
-        "_lastChange": {
-          "date": "2026-03-19",
-          "type": "status_change",
-          "detail": "김성근, 충북교육감 예비후보 등록 및 출판기념회 개최",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 66,
+        "gender": "남",
+        "job": "교육전문가",
+        "education": "서울대학교 대학원 졸업(교육학석사)",
+        "id": "chungbuk-4",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "충북책임교육원 신설",
@@ -1333,76 +1267,64 @@
         ]
       },
       {
-        "id": "chungbuk-5",
         "name": "김진균",
-        "stance": "중도",
-        "career": "충주교육지원청 관련 경력",
-        "status": "EXPECTED",
-        "dataSource": "claude",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)충청북도교육감후보 / (전)전국시도교총회장단협의회장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153825",
+        "sdName": "충청북도",
+        "sggName": "충청북도",
+        "wiwName": "",
+        "regionKey": "chungbuk",
+        "officialOrder": 42,
         "pledges": [],
-        "sourceUrl": "not_available",
-        "sourceLabel": "언론사 미상",
-        "sourcePublishedAt": "2026-04-22"
+        "age": 62,
+        "gender": "남",
+        "job": "학교현장교육전문가",
+        "education": "충북대학교 교육대학원 졸업(교육학석사)",
+        "id": "chungbuk-5",
+        "stance": "중도"
       }
     ],
     "chungnam": [
       {
-        "id": "chungnam-1",
-        "name": "김지철",
-        "stance": "진보",
-        "career": "현 충청남도 교육감",
-        "status": "EXPECTED",
-        "dataSource": "incumbent",
-        "pledges": [
-          "음봉고 신설 추진",
-          "어린이 특화 꿀벌도서관 개관",
-          "충남도청과 풀케어 돌봄 정책 협력"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "음봉고 신설 추진",
-            "category": "기타"
-          },
-          {
-            "text": "어린이 특화 꿀벌도서관 개관",
-            "category": "기타"
-          },
-          {
-            "text": "충남도청과 풀케어 돌봄 정책 협력",
-            "category": "돌봄"
-          }
-        ]
-      },
-      {
-        "id": "chungnam-2",
-        "name": "이명수",
-        "stance": "중도",
-        "career": "행정고시 및 충남부지사 출신 전 4선 국회의원",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "chungnam-3",
         "name": "이병도",
-        "stance": "중도",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)충남민주진보교육감추진위원회 선정후보",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153788",
+        "sdName": "충청남도",
+        "sggName": "충청남도",
+        "wiwName": "",
+        "regionKey": "chungnam",
+        "officialOrder": 43,
         "pledges": [
           "기초학력 안심지원망 구축",
           "밀착 학습지원 확대",
           "충남 역사·문화 자산 활용 인성교육"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 62,
+        "gender": "남",
+        "job": "충남교육연구소 소장",
+        "education": "공주대학교 대학원 교육학과 졸업(교육학 박사)",
+        "id": "chungnam-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "기초학력 안심지원망 구축",
@@ -1419,84 +1341,126 @@
         ]
       },
       {
-        "id": "chungnam-4",
         "name": "이병학",
-        "stance": "중도",
-        "career": "충남교육혁신연구소장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)충청남도교육위원회 3대 부의장 / (현)충남교육혁신연구소장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153791",
+        "sdName": "충청남도",
+        "sggName": "충청남도",
+        "wiwName": "",
+        "regionKey": "chungnam",
+        "officialOrder": 44,
         "pledges": [],
-        "_lastChange": {
-          "date": "2026-03-17",
-          "type": "status_change",
-          "detail": "이병학, 충남교육감 선거 예비후보 등록",
-          "previous": "EXPECTED"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
+        "age": 70,
+        "gender": "남",
+        "job": "충남교육혁신연구소장",
+        "education": "단국대학교 사범대학 체육교육과 졸업",
+        "id": "chungnam-4",
+        "stance": "중도"
       },
       {
-        "id": "chungnam-5",
-        "name": "한상경",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "chungnam-6",
         "name": "김영춘",
-        "stance": "중도",
-        "career": "미상",
-        "status": "EXPECTED",
-        "dataSource": "claude",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)대통령직속지방시대위원 / (전)국립 공주대학교 부총장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153814",
+        "sdName": "충청남도",
+        "sggName": "충청남도",
+        "wiwName": "",
+        "regionKey": "chungnam",
+        "officialOrder": 45,
         "pledges": [
           "계룡 교육지원청 신설"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 66,
+        "gender": "남",
+        "job": "국립공주대학교 명예교수",
+        "education": "명지대학교 대학원 전기공학과 졸업(공학박사)",
+        "id": "chungnam-6",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "계룡 교육지원청 신설",
             "category": "기타"
           }
         ]
+      },
+      {
+        "name": "이명수",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)국회의원 4선 / (전)나사렛대 부총장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100158164",
+        "sdName": "충청남도",
+        "sggName": "충청남도",
+        "wiwName": "",
+        "regionKey": "chungnam",
+        "officialOrder": 46,
+        "pledges": [],
+        "age": 71,
+        "gender": "남",
+        "job": "상명대학교 천안산학협력단 특임교수",
+        "education": "성균관대학교 대학원 행정학과 졸업(행정학 박사)",
+        "id": "chungnam-2",
+        "stance": "중도"
       }
     ],
     "jeonbuk": [
       {
-        "id": "jeonbuk-1",
-        "name": "서거석",
-        "stance": "진보",
-        "career": "현 전북특별자치도 교육감",
-        "status": "EXPECTED",
-        "dataSource": "incumbent",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonbuk-2",
         "name": "이남호",
-        "stance": "진보",
-        "career": "전북교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)전북대학교 총장 / (전)전북연구원 원장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153763",
+        "sdName": "전북특별자치도",
+        "sggName": "전북특별자치도",
+        "wiwName": "",
+        "regionKey": "jeonbuk",
+        "officialOrder": 47,
         "pledges": [
           "영유아 단계 학력·지역격차 원천 차단",
           "전북형 생애출발 책임교육",
           "교육비 제로화"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 66,
+        "gender": "남",
+        "job": "전북대학교 명예교수",
+        "education": "서울대학교 대학원 박사 졸업(임산공학)",
+        "id": "jeonbuk-2",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "영유아 단계 학력·지역격차 원천 차단",
@@ -1513,124 +1477,65 @@
         ]
       },
       {
-        "id": "jeonbuk-3",
-        "name": "유성동",
-        "stance": "중도",
-        "career": "전북교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "일반고 전성시대 개설",
-          "진로·진학 중심 교육"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "일반고 전성시대 개설",
-            "category": "자사고/특목고"
-          },
-          {
-            "text": "진로·진학 중심 교육",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "jeonbuk-4",
         "name": "천호성",
-        "stance": "진보",
-        "career": "교수",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)전주교육대학교 교수 / (전)대통령직속 국가균형발전위원회 자문위원(2021.4.1.~2022.4.6.)",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153762",
+        "sdName": "전북특별자치도",
+        "sggName": "전북특별자치도",
+        "wiwName": "",
+        "regionKey": "jeonbuk",
+        "officialOrder": 48,
         "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "jeonbuk-5",
-        "name": "황호진",
-        "stance": "중도",
-        "career": "전북교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
-        "pledges": [
-          "공공형 국제학교 설립",
-          "공공형 대안학교 리더스 국제학교 설립"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "공공형 국제학교 설립",
-            "category": "기타"
-          },
-          {
-            "text": "공공형 대안학교 리더스 국제학교 설립",
-            "category": "기타"
-          }
-        ],
-        "_lastChange": {
-          "date": "2026-03-28",
-          "type": "status_change",
-          "detail": "황호진 전북교육감 예비후보의 출판기념회 개최 및 정책 제시로 활동 강화. '공공형 국제교육' 구상 제시 등 본격적인 선거활동 전개",
-          "previous": "EXPECTED",
-          "sourceUrl": "황호진 \"공공형 국제교육\" 구상 제시 제목의 기사",
-          "sourceLabel": "지역언론",
-          "sourcePublishedAt": "2026-03-28"
-        }
+        "age": 59,
+        "gender": "남",
+        "job": "전주교육대학교 교수",
+        "education": "나고야대학 대학원졸업 교육학 박사(2002.4.1.~2005.3.31.)",
+        "id": "jeonbuk-4",
+        "stance": "진보"
       }
     ],
     "jeonnam": [],
     "gyeongbuk": [
       {
-        "id": "gyeongbuk-1",
-        "name": "임종식",
-        "stance": "보수",
-        "career": "현 경상북도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-09",
-          "type": "status_change",
-          "detail": "[대구일보 6.3 지방선거 여론조사] 경북교육감 적합도 임종식 31.4% 선두... - 현역 교육감으로서의 지위 확인",
-          "previous": "EXPECTED",
-          "sourceUrl": "https://example.com/news",
-          "sourceLabel": "대구일보",
-          "sourcePublishedAt": "2026-04-09"
-        }
-      },
-      {
-        "id": "gyeongbuk-2",
         "name": "김상동",
-        "stance": "중도",
-        "career": "전 경북대 총장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)경북대학교 총장 / (전)경상북도인재평생교육재단 대표이사",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100156976",
+        "sdName": "경상북도",
+        "sggName": "경상북도",
+        "wiwName": "",
+        "regionKey": "gyeongbuk",
+        "officialOrder": 49,
         "pledges": [
           "AI 기반 경북형 통합 상담제",
           "AI 기반 아이-맞춤 성장 멘토링",
           "경북교육과정 평가원 설립"
         ],
-        "_lastChange": {
-          "date": "2026-04-19",
-          "type": "status_change",
-          "detail": "[출마합니다] 김상동 전 경북대 총장, 경북교육감 예비후보 등록",
-          "previous": "EXPECTED",
-          "sourceUrl": "N/A",
-          "sourceLabel": "뉴스 제목",
-          "sourcePublishedAt": "2026-04-19"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 67,
+        "gender": "남",
+        "job": "교육인",
+        "education": "미국 위스콘신대학교 매디슨 수학 박사(1989.1.~1993.5.)",
+        "id": "gyeongbuk-2",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "AI 기반 경북형 통합 상담제",
@@ -1647,20 +1552,35 @@
         ]
       },
       {
-        "id": "gyeongbuk-3",
         "name": "이용기",
-        "stance": "진보",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)전국교직원노동조합 경북지부장 / (현)경북혁신교육연구소공감 소장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153805",
+        "sdName": "경상북도",
+        "sggName": "경상북도",
+        "wiwName": "",
+        "regionKey": "gyeongbuk",
+        "officialOrder": 50,
         "pledges": [
           "교복 폐지",
           "학생 선택권 보장",
           "학교 기후위기 교육"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 59,
+        "gender": "남",
+        "job": "경북혁신교육연구소공감 소장",
+        "education": "경북대학교 교육대학원 석사과정 수료(교육사회 및 평생교육전공)",
+        "id": "gyeongbuk-3",
+        "stance": "진보",
         "pledgeCategories": [
           {
             "text": "교복 폐지",
@@ -1677,192 +1597,64 @@
         ]
       },
       {
-        "id": "gyeongbuk-4",
-        "name": "배성도",
-        "stance": "중도",
-        "career": "칠곡군의원",
-        "status": "EXPECTED",
-        "dataSource": "claude",
+        "name": "임종식",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)경상북도교육청 교육정책국장 / (현)경상북도교육감",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162976",
+        "sdName": "경상북도",
+        "sggName": "경상북도",
+        "wiwName": "",
+        "regionKey": "gyeongbuk",
+        "officialOrder": 51,
         "pledges": [],
-        "sourceUrl": "미제공",
-        "sourceLabel": "미제공",
-        "sourcePublishedAt": "2026-04-10",
-        "_lastChange": {
-          "date": "2026-04-16",
-          "type": "status_change",
-          "detail": "[지선레이더]배성도 칠곡군의원 예비후보…'더 열심히, 더 잘하겠다'",
-          "previous": "DECLARED",
-          "sourceUrl": "뉴스 기사",
-          "sourceLabel": "언론사",
-          "sourcePublishedAt": "2026-04-16"
-        }
+        "age": 70,
+        "gender": "남",
+        "job": "경상북도교육감",
+        "education": "고려대학교 교육대학원 석사과정 교육행정전공 졸업(교육학석사)",
+        "id": "gyeongbuk-1",
+        "stance": "보수"
       }
     ],
     "gyeongnam": [
       {
-        "id": "gyeongnam-1",
-        "name": "박종훈",
-        "stance": "진보",
-        "career": "현 경상남도 교육감",
-        "status": "EXPECTED",
-        "dataSource": "incumbent",
-        "pledges": [],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null
-      },
-      {
-        "id": "gyeongnam-2",
-        "name": "권순기",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "경남형 마을교육공동체 운영",
-          "중·고교 자율형 교복 도입",
-          "학생 안전·돌봄을 국가의 의무로 보장"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-08",
-          "type": "status_change",
-          "detail": "권순기 경남교육감 예비후보 '편한 교복 도입' 정책 제시로 출마 선언 확인",
-          "previous": "EXPECTED",
-          "sourceUrl": "not_provided",
-          "sourceLabel": "뉴스기사",
-          "sourcePublishedAt": "2026-04-08"
-        },
-        "pledgeCategories": [
-          {
-            "text": "경남형 마을교육공동체 운영",
-            "category": "기타"
-          },
-          {
-            "text": "중·고교 자율형 교복 도입",
-            "category": "기타"
-          },
-          {
-            "text": "학생 안전·돌봄을 국가의 의무로 보장",
-            "category": "돌봄"
-          }
-        ]
-      },
-      {
-        "id": "gyeongnam-3",
-        "name": "김영곤",
-        "stance": "중도",
-        "career": null,
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "마산해양신도시 AI 교육캠퍼스 조성",
-          "경남 미래교육 캠퍼스 구축"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-09",
-          "type": "status_change",
-          "detail": "김영곤 경남교육감 예비후보가 '경남형 초등 기초학력 책임진단·지원제' 공약을 발표하며 출마 입장을 명확히 함",
-          "previous": "EXPECTED",
-          "sourceUrl": "언론보도 종합",
-          "sourceLabel": "경남언론사",
-          "sourcePublishedAt": "2026-04-09"
-        },
-        "pledgeCategories": [
-          {
-            "text": "마산해양신도시 AI 교육캠퍼스 조성",
-            "category": "디지털교육"
-          },
-          {
-            "text": "경남 미래교육 캠퍼스 구축",
-            "category": "디지털교육"
-          }
-        ]
-      },
-      {
-        "id": "gyeongnam-4",
-        "name": "송영기",
-        "stance": "진보",
-        "career": "전 전교조 경남지부장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "학교폭력 예방 관계중심교육",
-          "노동 존중·차별 없는 교육현장 구현"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "학교폭력 예방 관계중심교육",
-            "category": "기타"
-          },
-          {
-            "text": "노동 존중·차별 없는 교육현장 구현",
-            "category": "교권보호"
-          }
-        ]
-      },
-      {
-        "name": "전창현",
-        "stance": "중도",
-        "career": "경남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "overview_narrative",
-        "pledges": [
-          "노동이 존중받는 교육 현장 구현"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "노동이 존중받는 교육 현장 구현",
-            "category": "교권보호"
-          }
-        ]
-      },
-      {
-        "id": "gyeongnam-6",
-        "name": "이현석",
-        "stance": "중도",
-        "career": "한국승강기대학교 총장",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "학교의 정치적 중립성 보장"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "학교의 정치적 중립성 보장",
-            "category": "기타"
-          }
-        ]
-      },
-      {
-        "id": "gyeongnam-7",
         "name": "오인태",
-        "stance": "중도",
-        "career": "경남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)오인태 인문학서재 이응 원장 / (전)창원 남정초·하동 묵계초 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153751",
+        "sdName": "경상남도",
+        "sggName": "경상남도",
+        "wiwName": "",
+        "regionKey": "gyeongnam",
+        "officialOrder": 52,
         "pledges": [
           "교육지원청 웅상센터 설립",
           "위기 학생 집중 지원",
           "예술 교육 확대"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "남",
+        "job": "무직",
+        "education": "경상대학교 대학원 졸업(교육학 박사)",
+        "id": "gyeongnam-7",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "교육지원청 웅상센터 설립",
@@ -1879,69 +1671,173 @@
         ]
       },
       {
-        "id": "gyeongnam-8",
+        "name": "송영기",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)좋은교육감만들기 경남시민연대 선출 민주진보후보 / (전)한국과학기술고등학교 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153784",
+        "sdName": "경상남도",
+        "sggName": "경상남도",
+        "wiwName": "",
+        "regionKey": "gyeongnam",
+        "officialOrder": 53,
+        "pledges": [
+          "학교폭력 예방 관계중심교육",
+          "노동 존중·차별 없는 교육현장 구현"
+        ],
+        "age": 60,
+        "gender": "남",
+        "job": "무직",
+        "education": "경남대학교 대학원 체육학박사",
+        "id": "gyeongnam-4",
+        "stance": "진보",
+        "pledgeCategories": [
+          {
+            "text": "학교폭력 예방 관계중심교육",
+            "category": "기타"
+          },
+          {
+            "text": "노동 존중·차별 없는 교육현장 구현",
+            "category": "교권보호"
+          }
+        ]
+      },
+      {
         "name": "김준식",
-        "stance": "중도",
-        "career": "경남교육감 예비후보",
-        "status": "DECLARED",
-        "dataSource": "claude",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)교육대개혁국민운동본부 공동대표 / (전)지수중학교 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153823",
+        "sdName": "경상남도",
+        "sggName": "경상남도",
+        "wiwName": "",
+        "regionKey": "gyeongnam",
+        "officialOrder": 54,
         "pledges": [],
-        "sourceUrl": "언론사 미제공",
-        "sourceLabel": "경남 지역언론",
-        "sourcePublishedAt": "2026-04-07",
-        "_lastChange": {
-          "date": "2026-04-10",
-          "type": "status_change",
-          "detail": "김준식 경남교육감 예비후보 '단일화 참여하지 않고 끝까지 완주' - 본인이 직접 출마 의지를 명확히 선언",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "뉴스 제목",
-          "sourcePublishedAt": "2026-04-10"
-        }
+        "age": 62,
+        "gender": "남",
+        "job": "무직",
+        "education": "경상대학교 법경대학 법학과 졸업",
+        "id": "gyeongnam-8",
+        "stance": "중도"
+      },
+      {
+        "name": "권순기",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)경상대학교 9대·11대 총장 / (전)경상국립대학교 총장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153770",
+        "sdName": "경상남도",
+        "sggName": "경상남도",
+        "wiwName": "",
+        "regionKey": "gyeongnam",
+        "officialOrder": 55,
+        "pledges": [
+          "경남형 마을교육공동체 운영",
+          "중·고교 자율형 교복 도입",
+          "학생 안전·돌봄을 국가의 의무로 보장"
+        ],
+        "age": 67,
+        "gender": "남",
+        "job": "경상국립대학교 명예교수",
+        "education": "한국과학기술원(KAIST) 화학과 졸업(이학박사)",
+        "id": "gyeongnam-2",
+        "stance": "중도",
+        "pledgeCategories": [
+          {
+            "text": "경남형 마을교육공동체 운영",
+            "category": "기타"
+          },
+          {
+            "text": "중·고교 자율형 교복 도입",
+            "category": "기타"
+          },
+          {
+            "text": "학생 안전·돌봄을 국가의 의무로 보장",
+            "category": "돌봄"
+          }
+        ]
       }
     ],
     "jeju": [
       {
-        "id": "jeju-1",
-        "name": "김광수",
-        "stance": "보수",
-        "career": "현 제주특별자치도 교육감",
-        "status": "DECLARED",
-        "dataSource": "incumbent",
+        "name": "송문석",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)서귀중앙여자중학교 교장 / (전)제주특별자치도교육청 교육연구관",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153761",
+        "sdName": "제주특별자치도",
+        "sggName": "제주특별자치도",
+        "wiwName": "",
+        "regionKey": "jeju",
+        "officialOrder": 56,
         "pledges": [
-          "1인 1노트북 정책 폐지",
-          "초중고 입학금 지원"
+          "제주형 책임교육 모델 구축"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "\"4년만 하겠다\"던 김광수 교육감, 재선 도전에 \"사과드린다\" / 김광수 교육감 등판 초읽기...4월 23일 입후보 조율",
-          "previous": "RUMORED",
-          "sourceUrl": "뉴스 기반",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-22"
-        },
+        "age": 62,
+        "gender": "남",
+        "job": "무직",
+        "education": "제주대학교대학원 국어국문학과 졸업 (문학박사)",
+        "id": "jeju-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
-            "text": "1인 1노트북 정책 폐지",
-            "category": "디지털교육"
-          },
-          {
-            "text": "초중고 입학금 지원",
+            "text": "제주형 책임교육 모델 구축",
             "category": "기타"
           }
         ]
       },
       {
-        "id": "jeju-2",
         "name": "고의숙",
-        "stance": "중도",
-        "career": "전 교육의원",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전)남광초등학교 교감 / (전)제12대 제주특별자치도의회교육의원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100156980",
+        "sdName": "제주특별자치도",
+        "sggName": "제주특별자치도",
+        "wiwName": "",
+        "regionKey": "jeju",
+        "officialOrder": 57,
         "pledges": [
           "1인 1노트북 대신 입학 준비금 지급",
           "사람 중심 AI 교육 추진",
@@ -1949,18 +1845,12 @@
           "4.3교육과 신설 및 교과서 개발",
           "4.3인권교육상 신설"
         ],
-        "_lastChange": {
-          "date": "2026-04-16",
-          "type": "status_change",
-          "detail": "고의숙 제주도교육감 예비후보, 서귀포 선대위 출범",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-04-16"
-        },
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 56,
+        "gender": "여",
+        "job": "무직",
+        "education": "제주교육대학교 교육대학원 졸업(교육학 석사)",
+        "id": "jeju-2",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "1인 1노트북 대신 입학 준비금 지급",
@@ -1985,30 +1875,41 @@
         ]
       },
       {
-        "id": "jeju-3",
-        "name": "송문석",
-        "stance": "중도",
-        "career": "정보 없음",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "name": "김광수",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(현)제17대 제주특별자치도교육청 교육감",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100162806",
+        "sdName": "제주특별자치도",
+        "sggName": "제주특별자치도",
+        "wiwName": "",
+        "regionKey": "jeju",
+        "officialOrder": 58,
         "pledges": [
-          "제주형 책임교육 모델 구축"
+          "1인 1노트북 정책 폐지",
+          "초중고 입학금 지원"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "_lastChange": {
-          "date": "2026-04-16",
-          "type": "status_change",
-          "detail": "송문석 제주교육감 예비후보 \"교사 업무 교실.수업 중심 전환\"",
-          "previous": "EXPECTED",
-          "sourceUrl": "",
-          "sourceLabel": "뉴스",
-          "sourcePublishedAt": "2026-04-16"
-        },
+        "age": 73,
+        "gender": "남",
+        "job": "공무원",
+        "education": "고려대학교 교육대학원 졸업(교육학석사)",
+        "id": "jeju-1",
+        "stance": "보수",
         "pledgeCategories": [
           {
-            "text": "제주형 책임교육 모델 구축",
+            "text": "1인 1노트북 정책 폐지",
+            "category": "디지털교육"
+          },
+          {
+            "text": "초중고 입학금 지원",
             "category": "기타"
           }
         ]
@@ -2016,73 +1917,74 @@
     ],
     "sejong": [
       {
-        "id": "sejong-1",
-        "name": "최교진",
-        "stance": "진보",
-        "career": "현 세종특별자치시 교육감",
-        "status": "EXPECTED",
-        "dataSource": "incumbent",
+        "name": "강미애",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 세종특별자치시교원단체총연합회 회장 / (전) 세종도원초등학교 교장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153756",
+        "sdName": "세종특별자치시",
+        "sggName": "세종특별자치시",
+        "wiwName": "",
+        "regionKey": "sejong",
+        "officialOrder": 30,
         "pledges": [
-          "서산초 그린스마트 미래학교 조성",
-          "서산 중앙도서관 건립 재추진"
+          "입시에 강한 세종교육 정책",
+          "학력 신장 4대 정책"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 60,
+        "gender": "여",
+        "job": "세종미래교육연구소 대표",
+        "education": "고려대학교 행정전문대학원 박사과정 수료(정책학과)",
+        "id": "sejong-6",
+        "stance": "중도",
         "pledgeCategories": [
           {
-            "text": "서산초 그린스마트 미래학교 조성",
+            "text": "입시에 강한 세종교육 정책",
             "category": "기타"
           },
           {
-            "text": "서산 중앙도서관 건립 재추진",
+            "text": "학력 신장 4대 정책",
             "category": "기타"
           }
         ]
       },
       {
-        "id": "sejong-2",
-        "name": "원성수",
-        "stance": "중도",
-        "career": "뉴스에 언급 없음",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "하향 평준화된 세종교육 개혁"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "하향 평준화된 세종교육 개혁",
-            "category": "기타"
-          }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "\"세종교육감 예비후보\" 및 선거사무소 개소식 개최로 예비후보 등록 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-22"
-        }
-      },
-      {
-        "id": "sejong-3",
         "name": "안광식",
-        "stance": "중도",
-        "career": "현장 전문가",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 세종시교육청 진로교육원장 / (전) 세종시교육청 교육정책연구소장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153760",
+        "sdName": "세종특별자치시",
+        "sggName": "세종특별자치시",
+        "wiwName": "",
+        "regionKey": "sejong",
+        "officialOrder": 31,
         "pledges": [
           "세종을 대한민국 교육의 표준으로",
           "이재명 정부 교육 개혁과 발맞춘 혁신"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 62,
+        "gender": "남",
+        "job": "미기재",
+        "education": "충남대학교 대학원 졸업(교육학박사)",
+        "id": "sejong-3",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "세종을 대한민국 교육의 표준으로",
@@ -2092,67 +1994,39 @@
             "text": "이재명 정부 교육 개혁과 발맞춘 혁신",
             "category": "기타"
           }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "\"세종시교육감 예비후보\" 및 특별공약 발표 예정으로 예비후보 등록 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-22"
-        }
+        ]
       },
       {
-        "id": "sejong-4",
-        "name": "유우석",
-        "stance": "중도",
-        "career": "평교사 출신 첫 공모교장",
-        "status": "EXPECTED",
-        "dataSource": "news_verified",
-        "pledges": [
-          "세종 체육중·고등학교 설립",
-          "체육 인재 유출 방지"
-        ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
-        "pledgeCategories": [
-          {
-            "text": "세종 체육중·고등학교 설립",
-            "category": "기타"
-          },
-          {
-            "text": "체육 인재 유출 방지",
-            "category": "기타"
-          }
-        ],
-        "_lastChange": {
-          "date": "2026-04-22",
-          "type": "status_change",
-          "detail": "\"세종교육감 도전\" 기사에서 예비후보로 활동 중 확인",
-          "previous": "DECLARED",
-          "sourceUrl": "",
-          "sourceLabel": "종합",
-          "sourcePublishedAt": "2026-04-22"
-        }
-      },
-      {
-        "id": "sejong-5",
         "name": "임전수",
-        "stance": "중도",
-        "career": "뉴스에 언급 없음",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 최교진 교육감 3기 인수위원 및 집행위원장 / (전) 세종특별자치시교육청 교육정책국장",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153758",
+        "sdName": "세종특별자치시",
+        "sggName": "세종특별자치시",
+        "wiwName": "",
+        "regionKey": "sejong",
+        "officialOrder": 32,
         "pledges": [
           "세종724 안심 돌봄 정책",
           "세종형 영유아교육과정 도입",
           "유아교육 공공성 강화",
           "특성화교육 확대"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 64,
+        "gender": "남",
+        "job": "교육운동가",
+        "education": "경북대학교 교육대학원 졸업(교육학 석사)",
+        "id": "sejong-5",
+        "stance": "중도",
         "pledgeCategories": [
           {
             "text": "세종724 안심 돌봄 정책",
@@ -2173,41 +2047,39 @@
         ]
       },
       {
-        "id": "sejong-6",
-        "name": "강미애",
-        "stance": "중도",
-        "career": "",
-        "status": "DECLARED",
-        "dataSource": "news_verified",
+        "name": "원성수",
+        "party": "independent",
+        "partyKey": "independent",
+        "partyName": "",
+        "career": "(전) 국립공주대학교 총장 / (현) 총리실 산하 세종특별자치시 지원위원",
+        "status": "NOMINATED",
+        "officialStatus": "등록",
+        "dataSource": "nec_official",
+        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
+        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
+        "sgId": "20260603",
+        "sgTypecode": "11",
+        "huboid": "100153759",
+        "sdName": "세종특별자치시",
+        "sggName": "세종특별자치시",
+        "wiwName": "",
+        "regionKey": "sejong",
+        "officialOrder": 33,
         "pledges": [
-          "입시에 강한 세종교육 정책",
-          "학력 신장 4대 정책"
+          "하향 평준화된 세종교육 개혁"
         ],
-        "sourceUrl": null,
-        "sourceLabel": null,
-        "sourcePublishedAt": null,
+        "age": 63,
+        "gender": "남",
+        "job": "미기재",
+        "education": "미국 텍사스주립대학교 알링톤 철학박사(1995.08.15.~1997.12.13.)",
+        "id": "sejong-2",
+        "stance": "중도",
         "pledgeCategories": [
           {
-            "text": "입시에 강한 세종교육 정책",
-            "category": "기타"
-          },
-          {
-            "text": "학력 신장 4대 정책",
+            "text": "하향 평준화된 세종교육 개혁",
             "category": "기타"
           }
         ]
-      },
-      {
-        "id": "sejong-7",
-        "name": "김인엽",
-        "stance": "중도",
-        "career": "교육감 예비후보",
-        "status": "EXPECTED",
-        "dataSource": "claude",
-        "pledges": [],
-        "sourceUrl": "",
-        "sourceLabel": "뉴스",
-        "sourcePublishedAt": "2026-04-07"
       }
     ]
   }

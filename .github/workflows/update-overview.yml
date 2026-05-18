@@ -12,7 +12,27 @@ on:
         description: '실행 범위: all, governor, superintendent, mayor, byelection'
         required: false
         default: 'all'
+      run_ai_narrative:
+        description: '비용 발생 가능: Gemini/Naver 기반 AI narrative 개요도 함께 생성'
+        required: false
+        type: boolean
+        default: false
   workflow_call:
+    inputs:
+      scope:
+        description: '실행 범위: all, governor, superintendent, mayor, byelection'
+        required: false
+        type: string
+        default: 'all'
+      run_ai_narrative:
+        description: '비용 발생 가능: Gemini/Naver 기반 AI narrative 개요도 함께 생성'
+        required: false
+        type: boolean
+        default: false
+
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.scope || 'all' }}
+  cancel-in-progress: false
 
 jobs:
   gate:
@@ -40,7 +60,8 @@ jobs:
     permissions:
       contents: write
     env:
-      RUN_SCOPE: ${{ github.event.inputs.scope || 'all' }}
+      RUN_SCOPE: ${{ inputs.scope || 'all' }}
+      RUN_AI_NARRATIVE: ${{ inputs.run_ai_narrative || false }}
 
     steps:
       - uses: actions/checkout@v4
@@ -53,51 +74,92 @@ jobs:
         run: pip install httpx
 
       - name: Show execution scope
-        run: echo "scope=${RUN_SCOPE}"
+        run: |
+          echo "scope=${RUN_SCOPE}"
+          echo "run_ai_narrative=${RUN_AI_NARRATIVE}"
+
+      - name: Refresh structured overview baseline
+        id: structured_overview
+        env:
+          PYTHONPATH: scripts
+        run: python scripts/update_structured_overview.py --scope "${RUN_SCOPE}"
 
       - name: Update governor overview (광역단체장)
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'governor'
+        id: governor_overview
+        if: env.RUN_AI_NARRATIVE == 'true' && (env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'governor')
         continue-on-error: true
         timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_STRICT_MODE: "1"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts
         run: python scripts/update_election_overview.py
 
       - name: Update superintendent overview (교육감)
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'superintendent'
+        id: superintendent_overview
+        if: env.RUN_AI_NARRATIVE == 'true' && (env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'superintendent')
         continue-on-error: true
         timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_STRICT_MODE: "1"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts
         run: python scripts/update_election_overview.py --type=superintendent
 
       - name: Update mayor overview (기초단체장)
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'mayor'
+        id: mayor_overview
+        if: env.RUN_AI_NARRATIVE == 'true' && (env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'mayor')
         continue-on-error: true
         timeout-minutes: 20
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_STRICT_MODE: "1"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts
         run: python scripts/update_mayor_overview.py --stale-only
 
       - name: Update byelection overview (재보궐)
-        if: env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'byelection'
+        id: byelection_overview
+        if: env.RUN_AI_NARRATIVE == 'true' && (env.RUN_SCOPE == 'all' || env.RUN_SCOPE == 'byelection')
         continue-on-error: true
         timeout-minutes: 15
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_STRICT_MODE: "1"
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
           PYTHONPATH: scripts
         run: python scripts/update_byelection_overview.py
+
+      - name: Overview failure gate
+        env:
+          GOV_OUTCOME: ${{ steps.governor_overview.outcome }}
+          SUPER_OUTCOME: ${{ steps.superintendent_overview.outcome }}
+          MAYOR_OUTCOME: ${{ steps.mayor_overview.outcome }}
+          BYE_OUTCOME: ${{ steps.byelection_overview.outcome }}
+        run: |
+          python3 - <<'PY'
+          import os
+
+          scope = os.environ.get("RUN_SCOPE", "all")
+          outcomes = {
+              "governor": os.environ.get("GOV_OUTCOME", "skipped"),
+              "superintendent": os.environ.get("SUPER_OUTCOME", "skipped"),
+              "mayor": os.environ.get("MAYOR_OUTCOME", "skipped"),
+              "byelection": os.environ.get("BYE_OUTCOME", "skipped"),
+          }
+          selected = outcomes if scope == "all" else {scope: outcomes.get(scope, "skipped")}
+          failed = {name: result for name, result in selected.items() if result == "failure"}
+          if failed:
+              print(f"Optional AI narrative overview failed: {failed}")
+              print("Structured overview baseline was already refreshed; keeping workflow successful.")
+          print(f"Overview outcomes: {selected}")
+          PY
 
       - name: Check for changes
         id: diff
@@ -111,8 +173,16 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/election_overview.json data/mayor_overview_state.json data/governor_overview_state.json data/byelection_overview_state.json
           git commit -m "chore: auto-update election overview $(date +%Y-%m-%d)"
+          pushed=false
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
             echo "push attempt $i failed, retrying..."
             sleep 10
           done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi

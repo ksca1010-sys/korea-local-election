@@ -31,17 +31,34 @@ jobs:
           python-version: '3.11'
 
       - name: Fetch official registered candidates
+        id: fetch_core_candidates
+        continue-on-error: true
         env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           NECDC_CODE: ${{ secrets.NECDC_CODE }}
           NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
           NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
           NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
           PYTHONPATH: scripts:scripts/candidate_pipeline
         run: |
-          KEY="${NECDC_CODE:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NDCDC_PERSON}}}"; export NEC_API_KEY="$KEY"
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
           ARGS=""
           if [ "${{ inputs.log_raw }}" != "false" ]; then ARGS="$ARGS --log-raw"; fi
           python scripts/candidate_pipeline/fetch_nec_candidates.py $ARGS
+
+      - name: Fetch official council candidates
+        id: fetch_council_candidates
+        continue-on-error: true
+        env:
+          NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
+          NECDC_CODE: ${{ secrets.NECDC_CODE }}
+          NDCDC_LOCAL: ${{ secrets.NDCDC_LOCAL }}
+          NDCDC_PAPER: ${{ secrets.NDCDC_PAPER }}
+          NDCDC_PERSON: ${{ secrets.NDCDC_PERSON }}
+          PYTHONPATH: scripts:scripts/candidate_pipeline
+        run: |
+          KEY="${NEC_API_KEY:-${NDCDC_PERSON:-${NDCDC_LOCAL:-${NDCDC_PAPER:-$NECDC_CODE}}}}"; export NEC_API_KEY="$KEY"
+          python scripts/candidate_pipeline/fetch_council_candidates_nec.py --type both
 
       - name: Validate candidate JSON
         run: |
@@ -53,13 +70,27 @@ jobs:
               Path("data/candidates/governor.json"),
               Path("data/candidates/superintendent.json"),
               Path("data/candidates/mayor_candidates.json"),
+              Path("data/candidates/byelection.json"),
               Path("data/candidates/unmatched_candidates.json"),
+              *Path("data/candidates/council").glob("*.json"),
+              *Path("data/candidates/local_council").glob("*.json"),
           ]
           for path in paths:
               json.loads(path.read_text(encoding="utf-8"))
               print(f"OK: {path}")
           PY
           python scripts/candidate_pipeline/validate_pipeline.py
+
+      - name: Official sync failure gate
+        env:
+          CORE_OUTCOME: ${{ steps.fetch_core_candidates.outcome }}
+          COUNCIL_OUTCOME: ${{ steps.fetch_council_candidates.outcome }}
+        run: |
+          if [ "$CORE_OUTCOME" = "failure" ] || [ "$COUNCIL_OUTCOME" = "failure" ]; then
+            echo "::error::Official candidate sync stage failed: core=${CORE_OUTCOME}, council=${COUNCIL_OUTCOME}"
+            exit 1
+          fi
+          echo "Official candidate sync stages: core=${CORE_OUTCOME}, council=${COUNCIL_OUTCOME}"
 
       - name: Check for changes
         id: diff
@@ -73,8 +104,16 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add data/candidates/
           git commit -m "data(candidates): sync NEC official registered candidates $(date +%Y-%m-%d)"
+          pushed=false
           for i in 1 2 3; do
-            git pull --rebase origin main && git push && break
+            if git pull --rebase origin main && git push; then
+              pushed=true
+              break
+            fi
             echo "push attempt $i failed, retrying..."
             sleep 10
           done
+          if [ "$pushed" != "true" ]; then
+            echo "push failed after 3 attempts" >&2
+            exit 1
+          fi

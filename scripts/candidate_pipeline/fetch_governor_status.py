@@ -12,6 +12,7 @@ from election_overview_utils import call_claude_json
   python scripts/candidate_pipeline/fetch_governor_status.py
   python scripts/candidate_pipeline/fetch_governor_status.py --dry-run
   python scripts/candidate_pipeline/fetch_governor_status.py --baseline-only
+  python scripts/candidate_pipeline/fetch_governor_status.py --skip-llm
 
 환경변수:
   NEC_API_KEY:   공공데이터포털 인증키 (1단계)
@@ -110,7 +111,8 @@ def fetch_nec_winners(api_key):
         "resultType": "xml",
     }
     qs = urllib.parse.urlencode(params)
-    url = f"{WINNER_SERVICE}/getWinnerInfoInqire?serviceKey={urllib.parse.quote(api_key, safe='')}&{qs}"
+    key_param = api_key if "%" in api_key else urllib.parse.quote(api_key, safe="")
+    url = f"{WINNER_SERVICE}/getWinnerInfoInqire?serviceKey={key_param}&{qs}"
 
     try:
         resp = urllib.request.urlopen(url, timeout=30)
@@ -299,8 +301,15 @@ def main():
     load_env()
     nec_key = os.environ.get("NEC_API_KEY", "")
     llm_key = os.environ.get("GEMINI_API_KEY", "")
+    strict = os.environ.get("STATUS_STRICT", "").lower() in ("1", "true", "yes")
+    nec_keys = []
+    for key in [nec_key, *os.environ.get("NEC_API_KEYS", "").split(",")]:
+        key = key.strip()
+        if key and key not in nec_keys:
+            nec_keys.append(key)
     dry_run = "--dry-run" in sys.argv
     baseline_only = "--baseline-only" in sys.argv
+    skip_llm = "--skip-llm" in sys.argv or baseline_only
 
     print("=" * 60)
     print("광역단체장 현황 2단계 검증 파이프라인")
@@ -315,17 +324,27 @@ def main():
 
     # ── 1단계 ──
     print("\n[1단계] 선관위 당선인정보 API (공식 베이스라인)")
-    if not nec_key:
+    if not nec_keys:
         print("  [건너뜀] NEC_API_KEY 미설정")
+        if strict:
+            sys.exit(1)
         data = existing
     else:
         print("  조회 중...")
-        nec_data = fetch_nec_winners(nec_key)
+        nec_data = None
+        for index, candidate_key in enumerate(nec_keys):
+            nec_data = fetch_nec_winners(candidate_key)
+            if nec_data:
+                break
+            if index < len(nec_keys) - 1:
+                print("  [재시도] 다음 NEC serviceKey 후보 사용")
         if nec_data:
             print(f"  → {len(nec_data)}명 당선인 조회 완료")
             data = merge_baseline(nec_data, existing)
         else:
             print("  [오류] NEC API 실패, 기존 데이터 사용")
+            if strict:
+                sys.exit(1)
             data = existing
 
     acting = sum(1 for g in data.get("governors", {}).values() if g.get("acting"))
@@ -334,7 +353,9 @@ def main():
     if baseline_only:
         data["_meta"].update({
             "lastUpdated": date.today().isoformat(),
+            "lastFactCheck": datetime.now().isoformat(),
             "source": "중앙선거관리위원회 당선인정보 API (공식)",
+            "mode": "official_baseline_only",
             "totalCount": len(data.get("governors", {})),
             "actingCount": acting,
         })
@@ -346,8 +367,12 @@ def main():
         return
 
     # ── 2단계 ──
-    if not llm_key:
+    if skip_llm:
+        print("  [건너뜀] --skip-llm/--baseline-only: 공식 베이스라인만 갱신")
+    elif not llm_key:
         print("  [건너뜀] GEMINI_API_KEY 미설정")
+        if strict:
+            sys.exit(1)
     else:
         prompt = build_gemini_prompt(data.get("governors", {}))
         try:
@@ -365,12 +390,19 @@ def main():
                     apply_changes(data, changes)
         except Exception as e:
             print(f"  [오류] {e}")
+            if strict:
+                sys.exit(1)
 
     # ── 저장 ──
     data["_meta"].update({
         "lastUpdated": date.today().isoformat(),
         "lastFactCheck": datetime.now().isoformat(),
-        "source": "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증",
+        "source": (
+            "중앙선거관리위원회 당선인정보 API (공식)"
+            if skip_llm else
+            "중앙선거관리위원회 당선인정보 API + Gemini 변경사항 검증"
+        ),
+        "mode": "official_baseline_only" if skip_llm else "official_plus_llm",
         "totalCount": len(data.get("governors", {})),
         "actingCount": sum(1 for g in data.get("governors", {}).values() if g.get("acting")),
     })

@@ -4336,58 +4336,148 @@
             "tier2": []
           }
         },
-        "중구": {
+        "영종구": {
           "outlets": [
             {
-              "name": "인천일보",
-              "count": 0,
+              "name": "livesnews.com",
+              "count": 6,
               "types": [
-                "newspaper"
+                "naver"
               ]
             },
             {
-              "name": "기호일보",
-              "count": 0,
+              "name": "sidae.com",
+              "count": 2,
               "types": [
-                "newspaper"
+                "naver"
+              ]
+            },
+            {
+              "name": "incheonilbo.com",
+              "count": 18,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "kyeongin.com",
+              "count": 12,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "kihoilbo.co.kr",
+              "count": 11,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "incheontoday.com",
+              "count": 10,
+              "types": [
+                "naver"
               ]
             }
           ],
           "priorityNames": [
-            "인천일보",
-            "기호일보"
+            "livesnews.com",
+            "incheonilbo.com",
+            "kyeongin.com",
+            "kihoilbo.co.kr",
+            "incheontoday.com",
+            "news.ifm.kr",
+            "kmaeil.com",
+            "incheonin.com",
+            "slist.kr",
+            "incheonnews.com"
           ],
           "hosts": {
             "tier1": [
-              "incheonilbo.com"
+              "livesnews.com",
+              "incheonilbo.com",
+              "kyeongin.com",
+              "kihoilbo.co.kr",
+              "incheontoday.com",
+              "news.ifm.kr",
+              "kmaeil.com",
+              "incheonin.com",
+              "slist.kr",
+              "incheonnews.com"
             ],
             "tier2": []
           }
         },
-        "동구": {
+        "제물포구": {
           "outlets": [
             {
-              "name": "인천일보",
-              "count": 0,
+              "name": "sidae.com",
+              "count": 2,
               "types": [
-                "newspaper"
+                "naver"
               ]
             },
             {
-              "name": "기호일보",
-              "count": 0,
+              "name": "maria.catholic.or.kr",
+              "count": 2,
               "types": [
-                "newspaper"
+                "kakao"
+              ]
+            },
+            {
+              "name": "incheonilbo.com",
+              "count": 20,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "incheontoday.com",
+              "count": 18,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "kyeongin.com",
+              "count": 12,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "news.ifm.kr",
+              "count": 10,
+              "types": [
+                "naver"
               ]
             }
           ],
           "priorityNames": [
-            "인천일보",
-            "기호일보"
+            "incheonilbo.com",
+            "incheontoday.com",
+            "kyeongin.com",
+            "news.ifm.kr",
+            "kihoilbo.co.kr",
+            "incheonnews.com",
+            "fnnews.com",
+            "incheonin.com",
+            "hankookilbo.com",
+            "chogabje.com"
           ],
           "hosts": {
             "tier1": [
-              "incheonilbo.com"
+              "incheonilbo.com",
+              "incheontoday.com",
+              "kyeongin.com",
+              "news.ifm.kr",
+              "kihoilbo.co.kr",
+              "incheonnews.com",
+              "fnnews.com",
+              "incheonin.com",
+              "hankookilbo.com",
+              "chogabje.com"
             ],
             "tier2": []
           }
@@ -4556,6 +4646,56 @@
           "hosts": {
             "tier1": [
               "incheonilbo.com"
+            ],
+            "tier2": []
+          }
+        },
+        "검단구": {
+          "outlets": [
+            {
+              "name": "livesnews.com",
+              "count": 4,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "tournews21.com",
+              "count": 4,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "ifm.kr",
+              "count": 2,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "sidae.com",
+              "count": 2,
+              "types": [
+                "naver"
+              ]
+            },
+            {
+              "name": "hbnpress.com",
+              "count": 2,
+              "types": [
+                "naver"
+              ]
+            }
+          ],
+          "priorityNames": [
+            "livesnews.com",
+            "ifm.kr"
+          ],
+          "hosts": {
+            "tier1": [
+              "livesnews.com",
+              "ifm.kr"
             ],
             "tier2": []
           }
