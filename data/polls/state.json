@@ -1,6 +1,71 @@
 {
-  "last_id": 18744,
+  "last_id": 18759,
   "polls": [
+    {
+      "nttId": 18759,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "KOPRA",
+      "clientOrg": "개인 : 대한민국 자유 유튜브 총연합회",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1001,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-16",
+        "end": "2026-05-17"
+      },
+      "publishDate": "2026-05-18",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "title": "전국   정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18759&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-17"
+    },
+    {
+      "nttId": 18757,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)코리아정보리서치",
+      "clientOrg": "인터넷언론 : 뉴스메타",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1002,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-14",
+        "end": "2026-05-15"
+      },
+      "publishDate": "2026-05-18",
+      "results": [],
+      "regionKey": "gyeongbuk",
+      "municipality": "안동시",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "title": "경상북도 안동시    기초단체장선거 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18757&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-17"
+    },
     {
       "nttId": 18744,
       "registrationId": null,
@@ -22,7 +87,23 @@
         "end": "2026-05-16"
       },
       "publishDate": "2026-05-17",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "우홍섭",
+          "party": "",
+          "support": 44.9
+        },
+        {
+          "candidateName": "김신",
+          "party": "",
+          "support": 51.5
+        },
+        {
+          "candidateName": "이외인물",
+          "party": "",
+          "support": 0.8
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "완도군",
       "electionType": "mayor",
@@ -55,7 +136,38 @@
         "end": "2026-05-14"
       },
       "publishDate": "2026-05-17",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 29.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 55.0,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.7,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.2,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gyeongbuk",
       "municipality": "안동시",
       "electionType": "mayor",
@@ -59533,19 +59645,19 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-17",
-    "lastPipelineRun": "2026-05-17",
+    "lastUpdated": "2026-05-18",
+    "lastPipelineRun": "2026-05-18",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 1065,
-    "withRegistrationDate": 1062,
+    "pollCount": 1067,
+    "withRegistrationDate": 1064,
     "withRegistrationId": 670,
-    "withResults": 943,
+    "withResults": 945,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "mayor": 590,
+      "party_support": 153,
+      "mayor": 591,
       "governor": 293,
-      "party_support": 152,
       "superintendent": 29,
       "unknown": 1
     }
