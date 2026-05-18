@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-17T06:20:41.623058",
-    "totalDetections": 133,
-    "pendingCount": 133,
+    "lastRun": "2026-05-18T04:16:31.681605",
+    "totalDetections": 135,
+    "pendingCount": 135,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -4491,6 +4491,62 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-17T06:20:41.622980"
+    },
+    {
+      "key": "gwangju-구도",
+      "region": "gwangju",
+      "district": "구도",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": {
+        "name": "국회",
+        "party": "democratic"
+      },
+      "confidence": 60,
+      "sources": [
+        {
+          "title": "‘6자 구도’ 광주 광산을 국회의원 보선 돌입",
+          "link": "http://www.kjdaily.com/article.php?aid=1779017309678838002",
+          "date": "2026-05-17"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-18T04:16:31.681558"
+    },
+    {
+      "key": "chungnam-실시",
+      "region": "chungnam",
+      "district": "실시",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'보수 분열 뇌관' 김혁종 후보 변수…공주·부여·청양 '4파전 혈투' 시...",
+          "link": "https://www.m-i.kr/news/articleView.html?idxno=1373745",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "&quot;보수 심장에 균열?&quot;…김혁종 무소속 출마에 공주·부여·청양 보선 '출...",
+          "link": "http://www.newsprime.co.kr/news/article.html?no=733726",
+          "date": "2026-05-18"
+        },
+        {
+          "title": "김혁종 변수 덮친 공주부여청양 보궐선거… 박수현 사퇴 후폭풍에 국민...",
+          "link": "https://www.goodkyung.com/news/articleView.html?idxno=287083",
+          "date": "2026-05-17"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-05-18T04:16:31.681584"
     }
   ]
 }
