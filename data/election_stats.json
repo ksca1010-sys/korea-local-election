@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-17",
-    "source": "중앙선거관리위원회 공공데이터 API 및 CommonCodeService (자동 갱신)",
+    "lastUpdated": "2026-05-19",
+    "source": "중앙선거관리위원회 공공데이터 API (자동 갱신)",
     "electionId": "20260603",
     "electionName": "제9회 전국동시지방선거",
     "note": "선거구 획정 미확정 시 제8회 기준 사용, API 갱신 시 자동 반영"
@@ -25,7 +25,7 @@
     },
     "council": {
       "name": "광역의원",
-      "count": 779,
+      "count": 795,
       "description": "시도의회의원 선거",
       "detail": "시·도의회 지역구 의원을 선출합니다. 광역자치단체의 조례 제정, 예산 심의 등 입법 기능을 수행합니다.",
       "term": "4년",
@@ -98,6 +98,6 @@
   "redistrictingStatus": {
     "finalized": false,
     "note": "2025.10.24 헌재 결정(인구편차 상하50%)으로 획정 기한(2026.02.19) 초과. 확정 시 자동 갱신.",
-    "lastChecked": "2026-03-26"
+    "lastChecked": "2026-05-19"
   }
 }
