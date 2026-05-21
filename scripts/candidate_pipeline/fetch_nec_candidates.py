@@ -17,6 +17,7 @@ import os
 import sys
 import time
 import urllib.parse
+import urllib.error
 import urllib.request
 from collections import defaultdict
 from datetime import datetime
@@ -84,6 +85,10 @@ DETAIL_ORDER = {
     "사": 7,
     "아": 8,
 }
+
+API_MAX_ATTEMPTS = 4
+API_RETRYABLE_STATUS_CODES = {429, 500, 502, 503, 504}
+API_RETRY_BASE_DELAY_SECONDS = 3
 
 
 def load_env():
@@ -154,6 +159,28 @@ def candidate_sort_key(candidate):
     )
 
 
+def fetch_json_with_retries(url, context):
+    for attempt in range(1, API_MAX_ATTEMPTS + 1):
+        try:
+            with urllib.request.urlopen(url, timeout=30) as response:
+                return json.loads(response.read().decode("utf-8"))
+        except urllib.error.HTTPError as exc:
+            retryable = exc.code in API_RETRYABLE_STATUS_CODES
+            if not retryable or attempt == API_MAX_ATTEMPTS:
+                raise RuntimeError(f"{context}: HTTP {exc.code}") from exc
+            delay = API_RETRY_BASE_DELAY_SECONDS * attempt
+            print(f"  [RETRY] {context}: HTTP {exc.code}, {delay}초 후 재시도 ({attempt}/{API_MAX_ATTEMPTS})")
+            time.sleep(delay)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError) as exc:
+            if attempt == API_MAX_ATTEMPTS:
+                raise RuntimeError(f"{context}: {exc}") from exc
+            delay = API_RETRY_BASE_DELAY_SECONDS * attempt
+            print(f"  [RETRY] {context}: {exc}, {delay}초 후 재시도 ({attempt}/{API_MAX_ATTEMPTS})")
+            time.sleep(delay)
+
+    raise RuntimeError(f"{context}: 재시도 실패")
+
+
 def fetch_official_candidates(api_key, sg_typecode):
     all_items = []
     page = 1
@@ -167,8 +194,7 @@ def fetch_official_candidates(api_key, sg_typecode):
             "resultType": "json",
         })
         url = f"{NEC_CANDIDATE_API}?{params}"
-        with urllib.request.urlopen(url, timeout=30) as response:
-            data = json.loads(response.read().decode("utf-8"))
+        data = fetch_json_with_retries(url, f"sgTypecode={sg_typecode} page={page}")
 
         header = data.get("response", {}).get("header", {})
         result_code = header.get("resultCode")
@@ -259,7 +285,7 @@ def convert_item(item, sg_typecode, unmatched):
 
 
 def fetch_nec_official(api_key, log_raw=False):
-    result = {"2": [], "3": [], "4": [], "11": [], "unmatched": []}
+    result = {"2": [], "3": [], "4": [], "11": [], "unmatched": [], "empty_typecodes": []}
     raw_samples = {}
 
     for typecode in ("3", "11", "4", "2"):
@@ -267,6 +293,8 @@ def fetch_nec_official(api_key, log_raw=False):
         print(f"\n[NEC] {label} 등록 후보 조회 (sgTypecode={typecode})")
         raw_items = fetch_official_candidates(api_key, typecode)
         print(f"  원본 응답: {len(raw_items)}명")
+        if not raw_items:
+            result["empty_typecodes"].append({"sgTypecode": typecode, "label": label})
         if raw_items and log_raw:
             raw_samples[typecode] = raw_items[0]
 
@@ -403,29 +431,108 @@ def merge_mayor_candidates(existing, new_candidates):
     return merged
 
 
+def normalize_byelection_key(value):
+    return clean_text(value).replace(" ", "").replace("·", "")
+
+
+def byelection_region_key(district):
+    if not isinstance(district, dict):
+        return ""
+    region_key = clean_text(district.get("regionKey") or district.get("region"))
+    if region_key:
+        return region_key
+    sd_name = clean_text(district.get("sdName"))
+    return SIDO_MAP.get(sd_name) or SPECIAL_REGION_MAP.get(sd_name) or ""
+
+
+def add_byelection_index(index, lookup_key, district_key):
+    if not all(lookup_key):
+        return
+    if lookup_key in index:
+        existing_key = index[lookup_key]
+        if existing_key != district_key:
+            index[lookup_key] = None
+        return
+    index[lookup_key] = district_key
+
+
+def build_byelection_district_index(districts):
+    index = {}
+    for district_key, district in districts.items():
+        if not isinstance(district, dict):
+            continue
+
+        sd_name = clean_text(district.get("sdName"))
+        region_key = byelection_region_key(district)
+        sgg_name = normalize_byelection_key(district.get("sggName"))
+        district_label = normalize_byelection_key(district.get("district"))
+
+        add_byelection_index(index, ("sd_sgg", sd_name, sgg_name), district_key)
+        add_byelection_index(index, ("region_sgg", region_key, sgg_name), district_key)
+        add_byelection_index(index, ("region_label", region_key, district_label), district_key)
+
+    return index
+
+
+def find_byelection_district_key(index, districts, candidate):
+    sd_name = clean_text(candidate.get("sdName"))
+    region_key = clean_text(candidate.get("regionKey"))
+    sgg_name = normalize_byelection_key(candidate.get("sggName"))
+
+    for lookup_key in (
+        ("sd_sgg", sd_name, sgg_name),
+        ("region_sgg", region_key, sgg_name),
+    ):
+        district_key = index.get(lookup_key)
+        if district_key:
+            return district_key
+
+    for district_key, district in districts.items():
+        if not isinstance(district, dict):
+            continue
+        if byelection_region_key(district) != region_key:
+            continue
+        district_label = normalize_byelection_key(district.get("district"))
+        existing_sgg = normalize_byelection_key(district.get("sggName"))
+        if sgg_name and (sgg_name == existing_sgg or sgg_name in district_label):
+            return district_key
+
+    return None
+
+
+def stamp_byelection_district(district, official_list):
+    first = official_list[0] if official_list else {}
+    district["candidateCount"] = len(district.get("candidates", []) or [])
+    district["verificationStatus"] = "official_registered_candidates"
+    district["dataSource"] = "nec_official"
+    district["sourceLabel"] = "중앙선거관리위원회 후보자 정보"
+    district["sourceUrl"] = DATA_GO_KR_SOURCE_URL
+    district["lastOfficialCandidateSync"] = datetime.now().strftime("%Y-%m-%d")
+    if first:
+        district["sgId"] = first.get("sgId") or SG_ID
+        district["sgTypecode"] = first.get("sgTypecode") or "2"
+        district["sdName"] = first.get("sdName") or district.get("sdName")
+        district["sggName"] = first.get("sggName") or district.get("sggName")
+
+
 def merge_byelection_candidates(existing, new_candidates, unmatched):
     merged = json.loads(json.dumps(existing))
     districts = merged.setdefault("districts", {})
     by_district = defaultdict(list)
+    index_by_official = build_byelection_district_index(districts)
     for candidate in new_candidates:
-        by_district[(candidate.get("sdName"), candidate.get("sggName"))].append(candidate)
-
-    index_by_official = {
-        (district.get("sdName"), district.get("sggName")): key
-        for key, district in districts.items()
-        if isinstance(district, dict)
-    }
-
-    removed = 0
-    for official_key, official_list in by_district.items():
-        district_key = index_by_official.get(official_key)
+        district_key = find_byelection_district_key(index_by_official, districts, candidate)
         if not district_key:
-            unmatched.extend({
+            unmatched.append({
                 "reason": "재보궐 선거구 미매핑",
                 "candidate": candidate,
-            } for candidate in official_list)
+            })
             continue
+        by_district[district_key].append(candidate)
 
+    removed = 0
+    touched = set()
+    for district_key, official_list in by_district.items():
         district = districts[district_key]
         existing_list = district.get("candidates", [])
         if not isinstance(existing_list, list):
@@ -443,12 +550,17 @@ def merge_byelection_candidates(existing, new_candidates, unmatched):
             candidate["id"] = candidate.get("id") or f"{district_key}-nec-{index}"
             next_list.append(candidate)
         district["candidates"] = next_list
-        district["candidateCount"] = len(next_list)
-        district["verificationStatus"] = "official_registered_candidates"
-        district["dataSource"] = "nec_official"
-        district["sourceLabel"] = "중앙선거관리위원회 후보자 정보"
-        district["sourceUrl"] = DATA_GO_KR_SOURCE_URL
-        district["lastOfficialCandidateSync"] = datetime.now().strftime("%Y-%m-%d")
+        stamp_byelection_district(district, official_list)
+        touched.add(district_key)
+
+    for district_key, district in districts.items():
+        if district_key in touched or not isinstance(district, dict):
+            continue
+        existing_list = district.get("candidates", [])
+        if isinstance(existing_list, list):
+            removed += len([c for c in existing_list if isinstance(c, dict) and c.get("name")])
+        district["candidates"] = []
+        stamp_byelection_district(district, [])
 
     stamp_official_meta(merged, removed)
     merged["_meta"]["source"] = "중앙선거관리위원회 후보자 정보 API"
@@ -516,6 +628,13 @@ def save_unmatched(unmatched):
     print(f"[UNMATCHED] {len(unmatched)}건 저장: {UNMATCHED_FILE.name}")
 
 
+def required_typecodes(existing_byelection):
+    required = {"3", "4", "11"}
+    if existing_byelection.get("districts"):
+        required.add("2")
+    return required
+
+
 def main():
     parser = argparse.ArgumentParser(description="선관위 정식 후보자 등록현황 동기화")
     parser.add_argument("--dry-run", action="store_true", help="파일 저장 없이 검증만 수행")
@@ -535,26 +654,40 @@ def main():
         print("[DRY-RUN] 파일 저장을 건너뜁니다")
     print("=" * 60)
 
+    existing_governor = load_json(GOVERNOR_FILE, {"_meta": {}, "candidates": {}})
+    existing_superintendent = load_json(SUPERINTENDENT_FILE, {"_meta": {}, "candidates": {}})
+    existing_mayor = load_json(MAYOR_FILE, {"_meta": {}, "candidates": {}})
+    existing_byelection = load_json(BYELECTION_FILE, {"_meta": {}, "districts": {}})
+
     nec_data = fetch_nec_official(api_key, log_raw=args.log_raw)
     unmatched = nec_data.get("unmatched", [])
+    empty_required = [
+        item for item in nec_data.get("empty_typecodes", [])
+        if item.get("sgTypecode") in required_typecodes(existing_byelection)
+    ]
+    if empty_required:
+        print("[ERROR] 필수 공식 후보 API 응답이 0건입니다. 기존 데이터를 비우지 않습니다.")
+        for item in empty_required:
+            print(f"  - {item.get('label')} (sgTypecode={item.get('sgTypecode')})")
+        sys.exit(1)
 
     outputs = {
         "governor": merge_regional_list(
-            load_json(GOVERNOR_FILE, {"_meta": {}, "candidates": {}}),
+            existing_governor,
             nec_data.get("3", []),
             "gov",
         ),
         "superintendent": merge_regional_list(
-            load_json(SUPERINTENDENT_FILE, {"_meta": {}, "candidates": {}}),
+            existing_superintendent,
             nec_data.get("11", []),
             "supt",
         ),
         "mayor": merge_mayor_candidates(
-            load_json(MAYOR_FILE, {"_meta": {}, "candidates": {}}),
+            existing_mayor,
             nec_data.get("4", []),
         ),
         "byelection": merge_byelection_candidates(
-            load_json(BYELECTION_FILE, {"_meta": {}, "districts": {}}),
+            existing_byelection,
             nec_data.get("2", []),
             unmatched,
         ),
@@ -566,6 +699,18 @@ def main():
         validate_official_only("mayor", outputs["mayor"]),
         validate_official_only("byelection", outputs["byelection"]),
     ]
+    if unmatched:
+        print(f"[VALIDATE] 미매핑 공식 후보 {len(unmatched)}건")
+        for item in unmatched[:20]:
+            candidate = item.get("candidate") or item.get("raw") or {}
+            print(
+                "  - "
+                f"{item.get('reason')}: "
+                f"{candidate.get('sdName', '?')} "
+                f"{candidate.get('sggName', '?')} "
+                f"{candidate.get('name', '?')}"
+            )
+        validations.append(False)
 
     if not all(validations):
         print("[ERROR] 검증 실패. 파일을 저장하지 않습니다.")
