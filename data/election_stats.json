@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-19",
+    "lastUpdated": "2026-05-22",
     "source": "중앙선거관리위원회 공공데이터 API (자동 갱신)",
     "electionId": "20260603",
     "electionName": "제9회 전국동시지방선거",
@@ -98,6 +98,6 @@
   "redistrictingStatus": {
     "finalized": false,
     "note": "2025.10.24 헌재 결정(인구편차 상하50%)으로 획정 기한(2026.02.19) 초과. 확정 시 자동 갱신.",
-    "lastChecked": "2026-05-19"
+    "lastChecked": "2026-05-22"
   }
 }

@@ -10,7 +10,7 @@ const OverviewTab = (() => {
 
     function _renderRegionIssuesHtml(regionKey) {
         const issues = ElectionData.getRegionIssues(regionKey);
-        const signals = ElectionData.getDerivedIssueSignals ? ElectionData.getDerivedIssueSignals(regionKey) : {};
+        ElectionData.getDerivedIssueSignals ? ElectionData.getDerivedIssueSignals(regionKey) : {};
         const meta = ElectionData.getDerivedIssuesMeta ? ElectionData.getDerivedIssuesMeta(regionKey) : null;
         if (!Array.isArray(issues) || issues.length === 0) {
             return `<div class="issues-list"><span class="issue-tag">출처 집계 중인 핵심이슈가 아직 없습니다</span></div>`;
@@ -23,7 +23,7 @@ const OverviewTab = (() => {
         let updatedText = meta.updatedAt;
         try {
             updatedText = new Date(meta.updatedAt).toLocaleString('ko-KR', { hour12: false });
-        } catch (err) {
+        } catch (_err) {
             updatedText = meta.updatedAt;
         }
 
@@ -39,9 +39,170 @@ const OverviewTab = (() => {
     const ADMIN_CHANGE_NOTICES = {
         incheon: {
             label: '인천광역시 행정구역 개편',
-            detail: '2026년 7월 서구가 서해구로 변경되며, 검단구·영종구·제물포구가 신설됩니다. 6월 3일 선거는 현행 행정구역 기준으로 실시됩니다.',
+            detail: '2026년 7월 행정체제 개편에 따라 영종구·제물포구·검단구가 신설됩니다. 후보자·여론조사 표시는 선관위 후보 등록 기준의 선거구명을 우선 적용합니다.',
         },
     };
+
+    function _normalizeTrend(value) {
+        return String(value || '').trim();
+    }
+
+    function _getPhaseLabel() {
+        if (typeof ElectionCalendar === 'undefined') {
+            return { label: '선거 일정 확인 중', tone: 'info', icon: 'fa-calendar-days' };
+        }
+        const phase = ElectionCalendar.getCurrentPhase();
+        if (phase === 'CAMPAIGN' || phase === 'PRE_ELECTION_DAY') {
+            return { label: '공식 선거운동 중', tone: 'campaign', icon: 'fa-bullhorn' };
+        }
+        if (phase === 'EARLY_VOTING') {
+            return { label: '사전투표 진행 중', tone: 'vote', icon: 'fa-check-to-slot' };
+        }
+        if (phase === 'ELECTION_DAY') {
+            return { label: '투표일', tone: 'vote', icon: 'fa-person-booth' };
+        }
+        if (phase === 'election_night') {
+            return { label: '개표 진행 중', tone: 'result', icon: 'fa-chart-pie' };
+        }
+        if (phase === 'POST_ELECTION') {
+            return { label: '선거 종료', tone: 'info', icon: 'fa-flag-checkered' };
+        }
+        return { label: '후보 등록 이후', tone: 'info', icon: 'fa-calendar-days' };
+    }
+
+    function _renderCampaignStatusCard(candidateCount) {
+        const statusEl = document.getElementById('campaign-status-card');
+        if (!statusEl) return;
+        const phase = _getPhaseLabel();
+        const dday = typeof ElectionCalendar !== 'undefined' ? ElectionCalendar.getDday() : '';
+        const banner = typeof ElectionCalendar !== 'undefined' && ElectionCalendar.getBannerConfig
+            ? ElectionCalendar.getBannerConfig()
+            : null;
+        const pollBanned = typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned();
+        const bannerText = pollBanned
+            ? '여론조사 공표금지 기간에는 후보·공보·뉴스 중심으로 확인하세요.'
+            : (banner?.text || '후보자와 선거운동 정보를 공식 출처 기준으로 확인하세요.');
+
+        statusEl.className = `campaign-status-card campaign-status-card--${phase.tone}`;
+        statusEl.innerHTML = `
+            <div class="campaign-status-main">
+                <div class="campaign-status-icon"><i class="fas ${phase.icon}"></i></div>
+                <div>
+                    <div class="campaign-status-kicker">${phase.label}</div>
+                    <div class="campaign-status-title">${dday ? `${dday} · ` : ''}후보 ${candidateCount || 0}명 확인</div>
+                </div>
+            </div>
+            <p>${escapeHtml(bannerText)}</p>
+        `;
+        statusEl.style.display = '';
+    }
+
+    function _buildCandidateLine(candidate, index) {
+        const pledge = candidate.pledges?.[0] || '';
+        const number = candidate.ballotNumber || index + 1;
+        const sourceUrl = candidate.officialUrl || candidate.sourceUrl || '';
+        return `
+            <div class="race-lineup-item" style="--candidate-color:${candidate.badgeColor || 'var(--accent-blue)'}">
+                <div class="race-lineup-number">${number}</div>
+                <div class="race-lineup-body">
+                    <div class="race-lineup-top">
+                        <strong>${escapeHtml(candidate.name || '이름 확인 중')}</strong>
+                        <span class="race-lineup-party">${escapeHtml(candidate.badgeLabel || '소속 확인 중')}</span>
+                        ${candidate.incumbent ? '<span class="race-lineup-incumbent">현직</span>' : ''}
+                    </div>
+                    <div class="race-lineup-career">${escapeHtml(candidate.career || '경력 정보 수집 중')}</div>
+                    ${pledge ? `<div class="race-lineup-pledge"><i class="fas fa-list-check"></i>${escapeHtml(pledge)}</div>` : ''}
+                </div>
+                ${sourceUrl ? `
+                    <a class="race-lineup-source" href="${escapeHtml(sourceUrl)}" target="_blank" rel="noopener noreferrer" title="선관위 원문">
+                        <i class="fas fa-up-right-from-square"></i>
+                    </a>
+                ` : ''}
+            </div>
+        `;
+    }
+
+    function _bindCampaignActions(actionEl) {
+        actionEl.querySelectorAll('[data-campaign-tab]').forEach(button => {
+            button.addEventListener('click', () => {
+                const tabName = button.dataset.campaignTab;
+                if (!tabName || button.disabled) return;
+                if (typeof App !== 'undefined' && App.switchTab) {
+                    App.switchTab(tabName);
+                }
+            });
+        });
+    }
+
+    function _renderCampaignHome(regionKey, electionType, districtName) {
+        const model = ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName);
+        const sortMode = ElectionData.getCandidateSortMode ? ElectionData.getCandidateSortMode() : 'status_priority';
+        const candidates = model?.candidates
+            ? (ElectionData.getSortedCandidatesForDisplay
+                ? ElectionData.getSortedCandidatesForDisplay(model.candidates, sortMode)
+                : model.candidates.filter(candidate => candidate.status !== 'WITHDRAWN'))
+            : [];
+
+        _renderCampaignStatusCard(candidates.length);
+
+        const lineupEl = document.getElementById('overview-race-lineup');
+        if (lineupEl) {
+            if (model && candidates.length) {
+                const visibleCandidates = candidates.slice(0, 3);
+                const hiddenCount = candidates.length - visibleCandidates.length;
+                lineupEl.innerHTML = `
+                    <div class="overview-block-head">
+                        <div>
+                            <span class="overview-block-kicker">${escapeHtml(model.electionLabel || '후보자')}</span>
+                            <h3>공식 후보 라인업</h3>
+                        </div>
+                        <span class="overview-count-pill">${sortMode === 'ballot_number' ? '기호순' : '상태순'}</span>
+                    </div>
+                    <div class="race-lineup-list">
+                        ${visibleCandidates.map((candidate, index) => _buildCandidateLine(candidate, index)).join('')}
+                    </div>
+                    ${hiddenCount > 0 ? `<div class="race-lineup-more">후보 ${hiddenCount}명은 후보자 탭에서 이어서 확인</div>` : ''}
+                `;
+                lineupEl.style.display = '';
+            } else if (model && ['governor', 'superintendent', 'mayor', 'byElection'].includes(electionType)) {
+                lineupEl.innerHTML = `
+                    <div class="overview-empty-lineup">
+                        <i class="fas fa-circle-info"></i>
+                        <span>${escapeHtml(model.emptyMessage || '후보자 정보를 확인 중입니다.')}</span>
+                    </div>
+                `;
+                lineupEl.style.display = '';
+            } else {
+                lineupEl.style.display = 'none';
+                lineupEl.innerHTML = '';
+            }
+        }
+
+        const actionEl = document.getElementById('campaign-action-grid');
+        if (actionEl) {
+            const pollBanned = typeof ElectionCalendar !== 'undefined' && ElectionCalendar.isPublicationBanned();
+            actionEl.innerHTML = `
+                <button type="button" class="campaign-action" data-campaign-tab="candidates">
+                    <i class="fas fa-id-card"></i>
+                    <span>후보·공보</span>
+                </button>
+                <button type="button" class="campaign-action" data-campaign-tab="news">
+                    <i class="fas fa-bullhorn"></i>
+                    <span>선거운동 뉴스</span>
+                </button>
+                <button type="button" class="campaign-action" data-campaign-tab="candidates">
+                    <i class="fas fa-scale-balanced"></i>
+                    <span>공약 비교</span>
+                </button>
+                <button type="button" class="campaign-action ${pollBanned ? 'is-muted' : ''}" data-campaign-tab="polls">
+                    <i class="fas ${pollBanned ? 'fa-gavel' : 'fa-chart-line'}"></i>
+                    <span>${pollBanned ? '공표금지' : '여론조사'}</span>
+                </button>
+            `;
+            _bindCampaignActions(actionEl);
+            actionEl.style.display = '';
+        }
+    }
 
     function render(regionKey, electionType, districtName) {
         if (typeof ElectionData === 'undefined') return;
@@ -63,10 +224,12 @@ const OverviewTab = (() => {
             }
         }
 
+        _renderCampaignHome(regionKey, electionType, districtName);
+
         // Election overview card (선거 쟁점 개요)
         const overviewCard = document.getElementById('election-overview-card');
         if (overviewCard && ElectionData.loadElectionOverview) {
-            ElectionData.loadElectionOverview().then(() => {
+            ElectionData.loadElectionOverview({ maxAgeMs: 60 * 1000 }).then(() => {
                 // 비동기 완료 시점에 세대가 바뀌었으면 무시 (race condition 방지)
                 if (gen !== _renderGeneration) return;
                 const ov = ElectionData.getElectionOverview(regionKey, electionType, districtName);
@@ -82,7 +245,8 @@ const OverviewTab = (() => {
                     if (trendBadge) trendBadge.textContent = _normalizeTrend(ov.trend);
                     if (updatedDate) {
                         const updated = ElectionData._overviewCache?.meta?.lastUpdated || '';
-                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--text-muted);margin-left:var(--space-4);">AI 분석</span>`;
+                        const sourceLabel = ov.generatedBy === 'structured_data' ? '구조화 데이터' : 'AI 분석';
+                        updatedDate.innerHTML = `${updated} <span style="font-size:var(--text-micro);color:var(--text-muted);margin-left:var(--space-4);">${sourceLabel}</span>`;
                     }
                     if (headline) headline.textContent = _normalizeTrend(ov.headline);
 
@@ -105,9 +269,12 @@ const OverviewTab = (() => {
                         ).join('');
                     }
                     if (risk && ov.riskFactor) {
+                        const riskSourceNote = ov.generatedBy === 'structured_data'
+                            ? '이 개요는 공식 후보 데이터와 등록 여론조사 메타데이터로 구성했습니다.'
+                            : '이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.';
                         risk.innerHTML = `<i class="fas fa-exclamation-triangle"></i> <strong>핵심 변수:</strong> ${escapeHtml(_normalizeTrend(ov.riskFactor))}
                             <div style="font-size:var(--text-micro);color:var(--text-disabled);margin-top:var(--space-4);">
-                                <i class="fas fa-info-circle"></i> 이 개요는 AI가 뉴스를 분석하여 생성한 것으로, 사실과 다를 수 있습니다.
+                                <i class="fas fa-info-circle"></i> ${riskSourceNote}
                             </div>`;
                     }
 
@@ -218,10 +385,8 @@ const OverviewTab = (() => {
                 if (mayorHist.length > 0) {
                     const last = mayorHist[mayorHist.length - 1];
                     const winColor = ElectionData.getPartyColor(last.winner);
-                    const winParty = last.winnerParty || ElectionData.getHistoricalPartyName(last.winner, last.election);
                     const hasRunner = last.runnerName && last.runner;
                     const runColor = hasRunner ? ElectionData.getPartyColor(last.runner) : '#666';
-                    const runParty = hasRunner ? (last.runnerParty || ElectionData.getHistoricalPartyName(last.runner, last.election)) : '';
                     const turnoutHtml = last.turnout ? `<div class="prev-turnout"><i class="fas fa-person-booth"></i> ${last.year}년 투표율: ${last.turnout}%</div>` : '';
 
                     prevContainer.innerHTML = `
@@ -392,7 +557,7 @@ const OverviewTab = (() => {
                 gov = (ElectionData.getCurrentOfficeholder && ElectionData.getCurrentOfficeholder(regionKey, 'governor')) || region.currentGovernor;
                 if (!gov) {
                     govContainer.innerHTML = '';
-                } else {
+                } else if (gov.name) {
                     govColor = ElectionData.getPartyColor(gov.party);
                     const sinceText = Number.isFinite(Number(gov.since)) ? ` ${gov.since}년~` : '';
                     const statusText = gov.acting ? ' 권한대행' : ' 재임중';
@@ -440,6 +605,14 @@ const OverviewTab = (() => {
                     }
 
                     govContainer.innerHTML = govHtml;
+                } else if (gov.acting) {
+                    govContainer.innerHTML = `
+                        <div style="padding:8px;color:var(--text-muted);font-size:0.85rem">
+                            <i class="fas fa-user-clock"></i> 권한대행 중
+                        </div>
+                    `;
+                } else {
+                    govContainer.innerHTML = '';
                 }
             }
         }

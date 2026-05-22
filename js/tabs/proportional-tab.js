@@ -73,11 +73,12 @@ const ProportionalTab = (() => {
     function _buildOverview(regionKey, electionType, label, regionName) {
         const propData = ElectionData.getProportionalData?.(regionKey, electionType, _currentDistrictName);
         const totalSeats = propData?.totalSeats || (electionType === 'councilProportional' ? 10 : 2);
-        const displayName = _currentDistrictName ? `${_currentDistrictName} ${label}` : `${regionName} ${label}`;
         const histData = getHistoryData(regionKey, electionType);
 
         const prevContainer = document.getElementById('prev-election-result');
         if (!prevContainer) return;
+        const contextCard = document.getElementById('overview-context-card');
+        if (contextCard) contextCard.open = true;
 
         const isMetro = electionType === 'councilProportional';
         const typeDesc = isMetro
@@ -116,7 +117,7 @@ const ProportionalTab = (() => {
             const partyGroups = Object.keys(incumbents).length > 0
                 ? Object.entries(incumbents).sort((a, b) => b[1].length - a[1].length)
                 : (propCandidates?.parties || []).filter(p => p.candidates?.length).map(p => [
-                    ElectionData.getPartyName(p.party), p.candidates
+                    p.partyName || ElectionData.getPartyName(p.party), p.candidates
                 ]);
 
             if (partyGroups.length > 0) {
@@ -208,7 +209,7 @@ const ProportionalTab = (() => {
     // 여론조사탭 — 정당지지도만
     // ══════════════════════════════════════
 
-    function renderPolls(regionKey, electionType) {
+    function renderPolls(regionKey, _electionType) {
         const cardsSection = document.getElementById('poll-cards-section');
         const latestSection = document.getElementById('poll-latest-section');
         const trendsSection = document.getElementById('poll-trends-section');
@@ -334,7 +335,7 @@ const ProportionalTab = (() => {
     }
 
     // ══════════════════════════════════════
-    // 후보자탭 — 현행 유지
+    // 후보자탭 — 선관위 정식 등록 후보
     // ══════════════════════════════════════
 
     function renderCandidates(regionKey, electionType) {
@@ -354,20 +355,51 @@ const ProportionalTab = (() => {
         }
 
         const data = ElectionData.getProportionalCandidates?.(regionKey, electionType);
-        if (!data?.parties?.length) {
+        if (!data) {
             container.innerHTML = `<div class="district-no-data"><p>비례대표 후보 명부 데이터를 준비 중입니다.</p></div>`;
             return;
         }
 
-        container.innerHTML = data.parties.map(party => {
+        if (electionType === 'localCouncilProportional') {
+            const sigungus = data.sigungus || {};
+            const selected = _currentDistrictName && sigungus[_currentDistrictName]
+                ? [[_currentDistrictName, sigungus[_currentDistrictName]]]
+                : Object.entries(sigungus);
+            const visible = selected.filter(([, sigungu]) => (sigungu.parties || []).some(party => (party.candidates || []).length));
+
+            if (!visible.length) {
+                container.innerHTML = `<div class="district-no-data"><p>해당 지역의 기초의원 비례대표 등록 후보가 없습니다.</p></div>`;
+                return;
+            }
+
+            container.innerHTML = visible.map(([sigunguName, sigungu]) => `
+                <div style="margin-bottom:18px;">
+                    <h4 style="margin:0 0 10px;color:var(--text-secondary);font-size:0.9rem;">${sigunguName}</h4>
+                    ${_renderCandidatePartySections(sigungu.parties || [])}
+                </div>
+            `).join('');
+            return;
+        }
+
+        if (!data.parties?.length) {
+            container.innerHTML = `<div class="district-no-data"><p>해당 지역의 광역의원 비례대표 등록 후보가 없습니다.</p></div>`;
+            return;
+        }
+
+        container.innerHTML = _renderCandidatePartySections(data.parties);
+    }
+
+    function _renderCandidatePartySections(parties) {
+        return parties.filter(party => (party.candidates || []).length).map(party => {
+            const candidates = party.candidates || [];
             const pc = ElectionData.getPartyColor(party.party);
-            const pn = ElectionData.getPartyName(party.party);
+            const pn = party.partyName || ElectionData.getPartyName(party.party);
             return `
                 <div style="margin-bottom:16px;border-radius:8px;overflow:hidden;border:1px solid var(--border-color);">
                     <div style="padding:8px 12px;background:${pc}15;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:8px;">
                         <span style="width:10px;height:10px;border-radius:50%;background:${pc}"></span>
                         <strong style="color:var(--text-primary)">${pn}</strong>
-                        <span style="color:var(--text-muted);font-size:0.8rem;margin-left:auto">${party.candidates.length}명</span>
+                        <span style="color:var(--text-muted);font-size:0.8rem;margin-left:auto">${candidates.length}명</span>
                     </div>
                     <table style="width:100%;font-size:0.8rem;border-collapse:collapse;">
                         <thead><tr style="background:var(--bg-secondary);">
@@ -375,7 +407,7 @@ const ProportionalTab = (() => {
                             <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">이름</th>
                             <th style="padding:4px 8px;text-align:left;color:var(--text-muted)">약력</th>
                         </tr></thead>
-                        <tbody>${party.candidates.map((c, i) => `
+                        <tbody>${candidates.map((c, i) => `
                             <tr style="border-top:1px solid var(--border-color);">
                                 <td style="padding:4px 8px;text-align:center;color:var(--text-muted)">${i + 1}</td>
                                 <td style="padding:4px 8px;color:var(--text-primary)">${c.name}</td>
@@ -407,7 +439,7 @@ const ProportionalTab = (() => {
 
         container.innerHTML = '<div class="panel-section"><div class="panel-loading"><div class="panel-loading-spinner"></div></div></div>';
 
-        loadHistory().then(data => {
+        loadHistory().then(_data => {
             const histData = getHistoryData(regionKey, electionType);
 
             if (!histData?.elections?.length) {

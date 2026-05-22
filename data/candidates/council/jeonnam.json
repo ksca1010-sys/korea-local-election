@@ -1,9 +1,16 @@
 {
   "_meta": {
-    "lastUpdated": "2026-03-22",
-    "source": "gemini_news (Gemini 2.5 Flash + 토속언론)",
+    "lastUpdated": "2026-05-22",
+    "lastOfficialSync": "2026-05-22T23:48:20.521516",
+    "source": "중앙선거관리위원회 후보자 정보 API",
+    "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "jeonnam",
-    "note": "후보자 등록 기간(5/14~15) 이후 선관위 데이터로 업데이트 예정"
+    "electionType": "council",
+    "sgId": "20260603",
+    "sgTypecode": "5",
+    "officialSyncMode": "merged_into_gwangju",
+    "mergedRegionKey": "gwangju",
+    "note": "광역의원 공식 후보자는 선관위 전남광주통합특별시 기준으로 gwangju.json에 저장됩니다."
   },
   "candidates": {}
 }

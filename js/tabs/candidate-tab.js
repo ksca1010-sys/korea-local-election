@@ -6,6 +6,7 @@
 const CandidateTab = (() => {
     const OFFICIAL_CANDIDATE_INFO_URL = 'https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml';
     let pendingDisclosureRefreshKey = null;
+    let pendingCouncilCandidateRefreshKey = null;
 
     function buildEmptyMessage(message, icon = 'fa-circle-info') {
         return `
@@ -59,6 +60,17 @@ const CandidateTab = (() => {
     }
 
     function buildModel(regionKey, electionType, districtName) {
+        const sharedModel = ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName);
+        if (sharedModel) {
+            return {
+                ...sharedModel,
+                candidates: (sharedModel.candidates || []).map(candidate => ({
+                    ...candidate,
+                    statusMeta: candidate.statusMeta || getStatusMeta(candidate.status)
+                }))
+            };
+        }
+
         // 재보궐: byelection.json에서 후보 로드
         if (electionType === 'byElection' && districtName) {
             const byeData = ElectionData.getByElectionData(districtName);
@@ -69,7 +81,7 @@ const CandidateTab = (() => {
                         .filter(c => c.status !== 'WITHDRAWN')
                         .map(c => ({
                             name: c.name,
-                            badgeLabel: ElectionData.getPartyName(c.party || c.partyKey || 'independent'),
+                            badgeLabel: c.partyName || ElectionData.getPartyName(c.party || c.partyKey || 'independent'),
                             badgeColor: ElectionData.getPartyColor(c.party || c.partyKey || 'independent'),
                             age: c.age,
                             career: c.career || '',
@@ -79,6 +91,8 @@ const CandidateTab = (() => {
                             dataSource: c.dataSource,
                             sourceUrl: c.sourceUrl,
                             officialUrl: c.officialUrl,
+                            detailUrl: c.detailUrl,
+                            huboid: c.huboid || c.cnddtId || null,
                             ballotNumber: c.ballotNumber || null,
                             incumbent: false,
                         })),
@@ -110,7 +124,7 @@ const CandidateTab = (() => {
                 candidates: govCandidates.map((candidate) => ({
                     _sectionLabel: candidate._sectionLabel || null,
                     name: candidate.name,
-                    badgeLabel: ElectionData.getPartyName(candidate.party),
+                    badgeLabel: candidate.partyName || ElectionData.getPartyName(candidate.party),
                     badgeColor: ElectionData.getPartyColor(candidate.party),
                     age: candidate.age,
                     career: candidate.career,
@@ -121,6 +135,8 @@ const CandidateTab = (() => {
                     dataSource: candidate.dataSource,
                     sourceUrl: candidate.sourceUrl,
                     officialUrl: candidate.officialUrl,
+                    detailUrl: candidate.detailUrl,
+                    huboid: candidate.huboid || candidate.cnddtId || null,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -161,6 +177,8 @@ const CandidateTab = (() => {
                     dataSource: candidate.dataSource,
                     sourceUrl: candidate.sourceUrl,
                     officialUrl: candidate.officialUrl,
+                    detailUrl: candidate.detailUrl,
+                    huboid: candidate.huboid || candidate.cnddtId || null,
                     incumbent: incumbentName === candidate.name,
                     ballotNumber: candidate.ballotNumber || null
                 })),
@@ -180,23 +198,15 @@ const CandidateTab = (() => {
             const canonicalDistrict = ElectionData.getSubRegionByName(regionKey, districtName)?.name || districtName;
             const mayorData = ElectionData.getMayorData?.(regionKey, canonicalDistrict);
             const districtSummary = ElectionData.getDistrictSummary?.(regionKey, canonicalDistrict);
-            const pollCandidates = ElectionData.getPollCandidates?.(regionKey, 'mayor', canonicalDistrict) || [];
             const candidates = mayorData?.candidates?.length
                 ? mayorData.candidates
-                : pollCandidates.map((candidate, index) => ({
-                    id: `${regionKey}-${canonicalDistrict}-${index}`,
-                    name: candidate.name,
-                    party: candidate.party || 'independent', // leadParty 폴백 제거 — 야당 후보에 여당 정당 표시 방지
-                    age: null,
-                    career: '',
-                    pledges: []
-                }));
+                : [];
 
             return {
                 title: `${canonicalDistrict} 기초단체장 후보`,
                 candidates: candidates.map((candidate) => ({
                     name: candidate.name,
-                    badgeLabel: ElectionData.getPartyName(candidate.party),
+                    badgeLabel: candidate.partyName || ElectionData.getPartyName(candidate.party),
                     badgeColor: ElectionData.getPartyColor(candidate.party),
                     age: candidate.age,
                     career: candidate.career,
@@ -208,6 +218,8 @@ const CandidateTab = (() => {
                     dataSource: candidate.dataSource,
                     sourceUrl: candidate.sourceUrl,
                     officialUrl: candidate.officialUrl,
+                    detailUrl: candidate.detailUrl,
+                    huboid: candidate.huboid || candidate.cnddtId || null,
                     districtName: canonicalDistrict,
                     incumbent: districtSummary?.mayor?.name === candidate.name
                 })),
@@ -279,18 +291,29 @@ const CandidateTab = (() => {
     function getOfficialSourceUrl(candidate = {}, disclosure = {}) {
         const candidateSource = candidate || {};
         const disclosureSource = disclosure || {};
-        return disclosureSource.officialUrl || disclosureSource.sourceUrl || candidateSource.officialUrl || candidateSource.sourceUrl || OFFICIAL_CANDIDATE_INFO_URL;
+        return disclosureSource.detailUrl
+            || candidateSource.detailUrl
+            || disclosureSource.officialUrl
+            || disclosureSource.sourceUrl
+            || candidateSource.officialUrl
+            || candidateSource.sourceUrl
+            || OFFICIAL_CANDIDATE_INFO_URL;
     }
 
     function buildOfficialSourceActions(candidate, disclosure) {
         if (candidate.status !== 'NOMINATED') return '';
-        const url = getOfficialSourceUrl(candidate, disclosure);
+        const url = escapeHtml(getOfficialSourceUrl(candidate, disclosure));
+        const documents = Array.isArray(disclosure?.documents) ? disclosure.documents : [];
+        const docSummary = documents.length
+            ? `<span class="official-source-doc-count">${documents.length}종 ${documents.reduce((sum, doc) => sum + (Number(doc.pageCount) || 0), 0)}쪽 원문</span>`
+            : '';
         return `
             <div class="candidate-source-actions">
                 <a class="official-source-link" href="${url}" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-up-right-from-square"></i>
-                    선관위 후보자·공보물 확인
+                    선관위 상세 원문
                 </a>
+                ${docSummary}
             </div>
         `;
     }
@@ -314,79 +337,154 @@ const CandidateTab = (() => {
     function buildDisclosureSection(disclosure) {
         if (!disclosure) return '';
 
-        const criminalRecords = disclosure.criminal?.records || [];
+        const formatThousandWon = (value) => {
+            const numberValue = Number(value);
+            if (!Number.isFinite(numberValue)) return '';
+            const sign = numberValue < 0 ? '-' : '';
+            const manWon = Math.round(Math.abs(numberValue) / 10);
+            const eok = Math.floor(manWon / 10000);
+            const rest = manWon % 10000;
+            if (eok > 0 && rest > 0) return `${sign}${eok.toLocaleString()}억 ${rest.toLocaleString()}만원`;
+            if (eok > 0) return `${sign}${eok.toLocaleString()}억원`;
+            return `${sign}${manWon.toLocaleString()}만원`;
+        };
+        const safeText = (value) => escapeHtml(String(value || ''));
+        const compactRaw = (value) => escapeHtml(String(value || '').replace(/\n+/g, ' / '));
+        const extractCriminalOcrSection = (value) => {
+            const lines = String(value || '').split(/\n+/).map(line => line.trim()).filter(Boolean);
+            if (!lines.length) return '';
+            const start = lines.findIndex(line => line.replace(/\s/g, '') === '전과기록');
+            if (start < 0) return lines.slice(0, 18).join('\n');
+            const end = lines.findIndex((line, index) => index > start && (/^첨부서류/.test(line) || /^\d{4}년/.test(line)));
+            return lines.slice(start, end > start ? end : start + 18).join('\n');
+        };
+        const sourceStamp = disclosure.detailUrl ? '선관위 상세공개' : '선관위 공개자료';
+        const propertyValue = disclosure.property?.totalAmountThousandWon != null
+            ? formatThousandWon(disclosure.property.totalAmountThousandWon)
+            : compactRaw(disclosure.property?.rawText || '-');
+        const paidTaxValue = disclosure.tax?.paidThousandWon != null
+            ? formatThousandWon(disclosure.tax.paidThousandWon)
+            : compactRaw(disclosure.tax?.rawText || '-');
+        const currentArrears = Number(disclosure.tax?.currentArrearsThousandWon || 0);
+        const recentArrears = Number(disclosure.tax?.recentArrearsThousandWon || 0);
+        const arrearsLabel = disclosure.tax?.hasArrears
+            ? `체납 ${formatThousandWon(Math.max(currentArrears, recentArrears))}`
+            : '체납 없음';
+
+        const criminalOcrRecords = Array.isArray(disclosure.criminal?.ocrRecords)
+            ? disclosure.criminal.ocrRecords
+            : [];
+        const criminalManualRecords = Array.isArray(disclosure.criminal?.records)
+            ? disclosure.criminal.records
+            : [];
+        const criminalRecords = criminalOcrRecords.length ? criminalOcrRecords : criminalManualRecords;
         const criminalRaw = disclosure.criminal?.rawText || '';
+        const criminalOcrText = disclosure.criminal?.ocrText || '';
+        const criminalOcrTableText = disclosure.criminal?.ocrTableText || '';
+        const criminalCount = Number(disclosure.criminal?.count || 0);
+        const criminalCountLabel = Number.isFinite(criminalCount) && criminalCount > 0
+            ? `${criminalCount}건`
+            : compactRaw(criminalRaw || '있음');
+        const criminalRawIsCountOnly = !criminalRaw
+            || criminalRaw.replace(/\s/g, '') === criminalCountLabel.replace(/\s/g, '');
+        const criminalSourceLink = disclosure.detailUrl
+            ? `<a class="criminal-source-link" href="${escapeHtml(disclosure.detailUrl)}" target="_blank" rel="noopener noreferrer">
+                <i class="fas fa-up-right-from-square"></i> 원문 확인
+               </a>`
+            : '<small class="criminal-source-note">세부 내역은 선관위 원문 기준</small>';
+        const criminalDisplayText = criminalOcrTableText || (criminalOcrText ? extractCriminalOcrSection(criminalOcrText) : '');
         const criminalDetails = criminalRecords.length
-            ? `<ul class="criminal-list">
-                ${criminalRecords.map(r =>
-                    `<li><span class="crime-name">${r.crime || '전과'}</span> — ${r.sentence || '-'}${r.confirmedAt ? ` (${r.confirmedAt} 확정)` : ''}</li>`
+            ? `<div class="criminal-ocr-label">전과 세부 내용</div>
+               <ol class="criminal-record-list">
+                ${criminalRecords.map((r, index) =>
+                    `<li class="criminal-record-item">
+                        <span class="criminal-record-index">${index + 1}</span>
+                        <div class="criminal-record-body">
+                            <div class="criminal-record-crime">${safeText(r.crime || '죄명 확인 필요')}</div>
+                            <div class="criminal-record-meta">
+                                <span><b>처분</b><em>${safeText(r.sentence || '-')}</em></span>
+                                ${r.confirmedAt ? `<span><b>일자</b><em>${safeText(r.confirmedAt)}</em></span>` : ''}
+                            </div>
+                        </div>
+                    </li>`
                 ).join('')}
-               </ul>`
-            : (criminalRaw && disclosure.criminal?.hasRecord)
-                ? `<div class="criminal-raw">${criminalRaw}</div>`
+               </ol>`
+            : criminalDisplayText
+                ? `<div class="criminal-ocr-label">전과 원문 추출</div><pre class="criminal-ocr-text">${safeText(criminalDisplayText)}</pre>`
+            : (criminalRaw && disclosure.criminal?.hasRecord && !criminalRawIsCountOnly)
+                ? `<div class="criminal-raw">${compactRaw(criminalRaw)}</div>`
                 : '';
+        const criminalHasRichDetails = Boolean(criminalRecords.length || criminalDisplayText);
 
         const crimHtml = disclosure.criminal?.hasRecord
-            ? `<div class="disclosure-row criminal-warning">
+            ? `<div class="disclosure-pill disclosure-pill--warning${criminalHasRichDetails ? ' disclosure-pill--wide' : ''}">
                 <i class="fas fa-exclamation-triangle"></i>
-                <span class="disclosure-label">전과</span>
-                <span class="disclosure-value">${disclosure.criminal.count}건</span>
-                ${criminalDetails ? `<details class="criminal-details"><summary>내역 보기</summary>${criminalDetails}</details>` : ''}
+                <span class="disclosure-pill__label">전과</span>
+                <strong>${criminalCountLabel}</strong>
+                ${criminalDetails ? `<div class="criminal-details${criminalDisplayText ? ' criminal-details--ocr' : ''}">${criminalDetails}</div>` : ''}
+                ${criminalSourceLink}
                </div>`
-            : `<div class="disclosure-row criminal-clear">
+            : `<div class="disclosure-pill disclosure-pill--clear">
                 <i class="fas fa-check-circle"></i>
-                <span class="disclosure-label">전과</span>
-                <span class="disclosure-value">없음</span>
+                <span class="disclosure-pill__label">전과</span>
+                <strong>없음</strong>
                </div>`;
 
         const propertyHtml = disclosure.property
-            ? `<div class="disclosure-row">
+            ? `<div class="disclosure-pill">
                 <i class="fas fa-coins"></i>
-                <span class="disclosure-label">재산</span>
-                <span class="disclosure-value">${disclosure.property.rawText || '-'}</span>
+                <span class="disclosure-pill__label">재산</span>
+                <strong>${propertyValue}</strong>
                </div>` : '';
 
         const militaryHtml = disclosure.military
-            ? `<div class="disclosure-row">
+            ? `<div class="disclosure-pill">
                 <i class="fas fa-shield-alt"></i>
-                <span class="disclosure-label">병역</span>
-                <span class="disclosure-value">${disclosure.military.status || '-'}</span>
+                <span class="disclosure-pill__label">병역</span>
+                <strong>${compactRaw(disclosure.military.status || '-')}</strong>
                </div>` : '';
-
-        const taxValue = disclosure.tax?.hasArrears
-            ? (Number.isFinite(Number(disclosure.tax.arrearsManWon))
-                ? `체납 ${disclosure.tax.arrearsManWon}만원`
-                : (disclosure.tax.rawText || '체납 기록 있음'))
-            : (disclosure.tax?.rawText && !['없음', '해당없음', '0'].includes(String(disclosure.tax.rawText).trim())
-                ? disclosure.tax.rawText
-                : '체납 없음');
 
         const taxHtml = disclosure.tax
-            ? `<div class="disclosure-row${disclosure.tax.hasArrears ? ' tax-warning' : ''}">
+            ? `<div class="disclosure-pill${disclosure.tax.hasArrears ? ' disclosure-pill--warning' : ''}">
                 <i class="fas fa-receipt"></i>
-                <span class="disclosure-label">납세</span>
-                <span class="disclosure-value">${taxValue}</span>
+                <span class="disclosure-pill__label">납세</span>
+                <strong>${arrearsLabel}</strong>
+                <small>납부 ${paidTaxValue}</small>
                </div>` : '';
 
-        const eduHtml = disclosure.education
-            ? `<div class="disclosure-row">
-                <i class="fas fa-graduation-cap"></i>
-                <span class="disclosure-label">학력</span>
-                <span class="disclosure-value">${disclosure.education.finalDegree || '-'}</span>
-               </div>` : '';
+        const details = [
+            disclosure.education?.finalDegree ? ['학력', disclosure.education.finalDegree] : null,
+            disclosure.career?.rawText ? ['경력', disclosure.career.rawText] : null,
+            disclosure.job ? ['직업', disclosure.job] : null,
+            disclosure.electionHistory?.rawText ? ['입후보', disclosure.electionHistory.rawText] : null,
+        ].filter(Boolean);
 
         return `
             <div class="disclosure-section">
                 <div class="disclosure-header">
-                    <i class="fas fa-file-alt"></i>
-                    <span>공보물 주요 내용</span>
+                    <span><i class="fas fa-id-card"></i> 후보자 공개자료</span>
+                    <em>${sourceStamp}</em>
                 </div>
-                ${crimHtml}
-                ${propertyHtml}
-                ${militaryHtml}
-                ${taxHtml}
-                ${eduHtml}
-                <div class="disclosure-source">출처: 선관위 후보자 공개자료</div>
+                <div class="disclosure-pill-grid">
+                    ${propertyHtml}
+                    ${taxHtml}
+                    ${crimHtml}
+                    ${militaryHtml}
+                </div>
+                ${details.length ? `
+                    <details class="disclosure-more">
+                        <summary>기본정보·경력 보기</summary>
+                        <dl>
+                            ${details.map(([label, value]) => `
+                                <div>
+                                    <dt>${label}</dt>
+                                    <dd>${compactRaw(value)}</dd>
+                                </div>
+                            `).join('')}
+                        </dl>
+                    </details>
+                ` : ''}
+                <div class="disclosure-source">출처: 중앙선거관리위원회 후보자 정보공개</div>
             </div>
         `;
     }
@@ -416,12 +514,54 @@ const CandidateTab = (() => {
         `;
     }
 
+    function buildCandidateRaceSummary(model, candidates, sortMode) {
+        const officialCount = candidates.filter(candidate => candidate.status === 'NOMINATED').length;
+        const pledgeCount = candidates.filter(candidate => candidate.pledges?.length).length;
+        const sourceCount = candidates.filter(candidate => candidate.officialUrl || candidate.sourceUrl || candidate.dataSource === 'nec_official').length;
+        const sortLabel = sortMode === 'ballot_number' ? '기호순 정렬' : '상태순 정렬';
+        const disclosureLabel = sortMode === 'ballot_number'
+            ? (ElectionData._disclosureCache ? '공보물 확인 가능 항목 반영' : '공보물 수집 상태 표시')
+            : '예비·등록 상태 함께 표시';
+
+        return `
+            <div class="candidate-race-summary">
+                <div class="candidate-race-summary__title">
+                    <i class="fas fa-users-viewfinder"></i>
+                    <span>${escapeHtml(model.title)}</span>
+                </div>
+                <div class="candidate-race-summary__stats">
+                    <span><strong>${candidates.length}</strong>명 표시</span>
+                    <span>공식 등록 ${officialCount}명</span>
+                    <span>${sortLabel}</span>
+                </div>
+                <div class="candidate-race-summary__meta">
+                    <span><i class="fas fa-link"></i> 선관위 원문 ${sourceCount ? '연결' : '확인 중'}</span>
+                    <span><i class="fas fa-file-lines"></i> ${disclosureLabel}</span>
+                    <span><i class="fas fa-list-check"></i> 공약 ${pledgeCount ? `${pledgeCount}명 등록` : '수집 중'}</span>
+                </div>
+            </div>
+        `;
+    }
+
     function render(regionKey, electionType, districtName) {
         if (typeof ElectionData === 'undefined') return;
         const listEl = document.getElementById('candidates-list');
         const compareCardEl = document.getElementById('candidate-compare-card');
         const compareEl = document.getElementById('candidate-compare');
         if (!listEl || !compareCardEl || !compareEl) return;
+
+        if ((electionType === 'council' || electionType === 'localCouncil') && ElectionData.loadCouncilCandidates) {
+            const folder = electionType === 'council' ? 'council' : 'local_council';
+            const cacheKey = `${folder}_${regionKey}`;
+            const refreshKey = `${cacheKey}|${districtName || ''}`;
+            if (!ElectionData._councilCandidateCache?.[cacheKey] && pendingCouncilCandidateRefreshKey !== refreshKey) {
+                pendingCouncilCandidateRefreshKey = refreshKey;
+                ElectionData.loadCouncilCandidates(regionKey, electionType).then(() => {
+                    pendingCouncilCandidateRefreshKey = null;
+                    render(regionKey, electionType, districtName);
+                });
+            }
+        }
 
         const model = buildModel(regionKey, electionType, districtName);
         // Layer 2B: 정렬 모드 판정
@@ -441,20 +581,16 @@ const CandidateTab = (() => {
             }
         }
 
-        if (sortMode === 'ballot_number') {
-            // D-07: 본후보 등록 마감 후 NOMINATED만 표시
-            model.candidates = model.candidates.filter(c => c.status === 'NOMINATED');
-            // D-10: ballotNumber 없는 NOMINATED 후보는 999 폴백
-            model.candidates.sort((a, b) => (a.ballotNumber || 999) - (b.ballotNumber || 999));
+        if (ElectionData.getSortedCandidatesForDisplay) {
+            model.candidates = ElectionData.getSortedCandidatesForDisplay(model.candidates, sortMode);
+        } else if (sortMode === 'ballot_number') {
+            model.candidates = model.candidates
+                .filter(c => c.status === 'NOMINATED')
+                .sort((a, b) => (a.ballotNumber || 999) - (b.ballotNumber || 999));
         } else {
-            // CAND-03: status_priority 모드에서도 WITHDRAWN 제거
             model.candidates = model.candidates.filter(c => c.status !== 'WITHDRAWN');
             const statusOrder = { NOMINATED: 0, PRIMARY_WINNER: 0.5, PRIMARY: 1, DECLARED: 2, EXPECTED: 3, RUMORED: 4 };
-            model.candidates.sort((a, b) => {
-                const sa = statusOrder[a.status] ?? 2.5;
-                const sb = statusOrder[b.status] ?? 2.5;
-                return sa - sb;
-            });
+            model.candidates.sort((a, b) => (statusOrder[a.status] ?? 2.5) - (statusOrder[b.status] ?? 2.5));
         }
         if (!model.candidates.length && sortMode === 'ballot_number' && electionType === 'mayor') {
             model.emptyMessage = '공식 후보 등록 마감 후 선거구 확정 중입니다';
@@ -467,9 +603,7 @@ const CandidateTab = (() => {
         }
 
         listEl.innerHTML = `
-            <div class="cand-count-summary">
-                <i class="fas fa-list-ul"></i>${model.title} · ${model.candidates.length}명
-            </div>
+            ${buildCandidateRaceSummary(model, model.candidates, sortMode)}
             ${model.candidates.map((candidate) => {
                 const statusClass = candidate.status === 'NOMINATED' ? 'status-nominated'
                     : candidate.status === 'DECLARED' ? 'status-declared' : '';
@@ -477,14 +611,17 @@ const CandidateTab = (() => {
                     ? `<div style="font-size:0.75rem;color:var(--text-muted);padding:8px 0 4px;display:flex;align-items:center;gap:6px;"><i class="fas fa-code-merge"></i>${candidate._sectionLabel}</div>`
                     : '';
                 const disclosure = sortMode === 'ballot_number' && typeof ElectionData !== 'undefined'
-                    ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName)
+                    ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName, candidate.huboid)
                     : null;
+                const markerHtml = sortMode === 'ballot_number'
+                    ? `<div class="candidate-ballot-number" title="기호"><strong>${candidate.ballotNumber || '-'}</strong><span>기호</span></div>`
+                    : `<div class="candidate-avatar" style="background:${candidate.badgeColor}">
+                            ${candidate.name?.charAt(0) || '?'}
+                       </div>`;
                 return `
                 ${sectionHeader}<div class="candidate-card-full ${statusClass}">
                     <div class="candidate-header">
-                        <div class="candidate-avatar" style="background:${candidate.badgeColor}">
-                            ${candidate.name?.charAt(0) || '?'}
-                        </div>
+                        ${markerHtml}
                         <div style="flex:1;min-width:0;">
                             <div class="candidate-info">
                                 <span class="candidate-name">${candidate.name}</span>
@@ -505,7 +642,7 @@ const CandidateTab = (() => {
                                 </div>
                             `).join('')}
                         </div>
-                    ` : ''}
+                    ` : '<div class="candidate-pledges candidate-pledges--empty"><i class="fas fa-circle-info"></i> 주요 공약 수집 중</div>'}
                     ${sortMode === 'ballot_number' ? (disclosure ? buildDisclosureSection(disclosure) : buildDisclosurePending(candidate)) : ''}
                     ${sortMode === 'ballot_number' ? buildOfficialSourceActions(candidate, disclosure) : ''}
                     ${candidate.primaryNote ? `<div style="font-size:0.74rem;color:#fb923c;padding:4px 0 0;display:flex;align-items:center;gap:5px;"><i class="fas fa-code-branch" style="font-size:0.7rem;"></i>${candidate.primaryNote}</div>` : ''}

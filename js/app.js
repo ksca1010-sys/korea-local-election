@@ -6,6 +6,21 @@
 
 const App = (() => {
     const NEWS_FILTER_CONFIG = window.NewsFilterConfig || {};
+    const LOADING_FAILSAFE_MS = 8000;
+    const MAP_LIBRARY_TIMEOUT_MS = 6500;
+    const MAP_INIT_TIMEOUT_MS = 8000;
+    const MAP_LIBRARY_FALLBACKS = {
+        d3: {
+            id: 'alsungo-d3-fallback',
+            src: 'https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js',
+            integrity: 'sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i'
+        },
+        topojson: {
+            id: 'alsungo-topojson-fallback',
+            src: 'https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js',
+            integrity: 'sha384-Ukv1p/xTma6P4/2bY5KzWBw+ydSpXmhCMtyciIQVDJ1RmOxtCYNMF1uXT9T63H67'
+        }
+    };
 
     // ── Analytics ──
     const ANALYTICS_ENDPOINT = 'https://election-news-proxy.ksca1010.workers.dev/analytics';
@@ -17,13 +32,101 @@ const App = (() => {
                 body: JSON.stringify({ event, data, timestamp: new Date().toISOString() }),
                 keepalive: true
             }).catch(() => {});
-        } catch (_) {}
+        } catch (_e) {
+            /* analytics is best-effort */
+        }
+    }
+
+    let _loadingHideScheduled = false;
+
+    function hideLoadingScreen(delay = 0) {
+        if (_loadingHideScheduled) return;
+        _loadingHideScheduled = true;
+        if (window.__alsungoLoadingFallback) {
+            clearTimeout(window.__alsungoLoadingFallback);
+            window.__alsungoLoadingFallback = null;
+        }
+        setTimeout(() => {
+            const loading = document.getElementById('loading-screen');
+            if (loading) {
+                loading.classList.add('hidden');
+                setTimeout(() => loading.remove(), 500);
+            }
+        }, delay);
+    }
+
+    function withTimeout(promise, ms, label) {
+        let timer;
+        const timeout = new Promise((_, reject) => {
+            timer = setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms);
+        });
+        return Promise.race([promise, timeout]).finally(() => clearTimeout(timer));
+    }
+
+    function waitForGlobals(names, ms) {
+        const startedAt = performance.now();
+        return new Promise(resolve => {
+            const check = () => {
+                const ready = names.every(name => typeof window[name] !== 'undefined');
+                if (ready) {
+                    resolve(true);
+                    return;
+                }
+                if (performance.now() - startedAt >= ms) {
+                    resolve(false);
+                    return;
+                }
+                setTimeout(check, 50);
+            };
+            check();
+        });
+    }
+
+    function loadScriptOnce({ id, src, integrity }, ms) {
+        if (document.getElementById(id)) {
+            return waitForGlobals([id.includes('topojson') ? 'topojson' : 'd3'], ms);
+        }
+        const script = document.createElement('script');
+        script.id = id;
+        script.async = true;
+        script.src = src;
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+        const loaded = new Promise((resolve, reject) => {
+            script.onload = () => resolve(true);
+            script.onerror = () => reject(new Error(`Failed to load ${src}`));
+        });
+        document.head.appendChild(script);
+        return withTimeout(loaded, ms, `${id} load`);
+    }
+
+    async function ensureMapLibraries() {
+        if (await waitForGlobals(['d3', 'topojson'], 1500)) return true;
+        const fallbackLoads = [];
+        if (typeof window.d3 === 'undefined') {
+            fallbackLoads.push(loadScriptOnce(MAP_LIBRARY_FALLBACKS.d3, MAP_LIBRARY_TIMEOUT_MS));
+        }
+        if (typeof window.topojson === 'undefined') {
+            fallbackLoads.push(loadScriptOnce(MAP_LIBRARY_FALLBACKS.topojson, MAP_LIBRARY_TIMEOUT_MS));
+        }
+        const results = await Promise.allSettled(fallbackLoads);
+        results.forEach(result => {
+            if (result.status === 'rejected') {
+                console.warn('[init] map library fallback failed:', result.reason);
+            }
+        });
+        return waitForGlobals(['d3', 'topojson'], 1000);
     }
 
     // ============================================
     // Initialization
     // ============================================
     async function init() {
+        const loadingFailsafe = setTimeout(() => {
+            console.warn(`[init] loading fail-safe triggered after ${LOADING_FAILSAFE_MS}ms`);
+            hideLoadingScreen();
+        }, LOADING_FAILSAFE_MS);
+
         // ── Theme toggle ──
         const themeToggle = document.getElementById('theme-toggle');
         const themeIcon = document.getElementById('theme-icon');
@@ -177,9 +280,26 @@ const App = (() => {
             }
         } catch(e) { console.warn('LocalMedia load error:', e); }
 
-        // Initialize map
-        await MapModule.init();
-        if (MapModule.setElectionType) MapModule.setElectionType(null);
+        // Initialize map. The app shell must not stay blocked if map assets/CDNs are slow.
+        let mapInitialized = false;
+        if (typeof MapModule !== 'undefined' && MapModule.init) {
+            try {
+                const mapLibrariesReady = await ensureMapLibraries();
+                if (!mapLibrariesReady) {
+                    throw new Error('Map libraries are not ready');
+                }
+                await withTimeout(MapModule.init(), MAP_INIT_TIMEOUT_MS, 'MapModule.init');
+                mapInitialized = true;
+            } catch (e) {
+                console.error('[init] MapModule init failed:', e);
+                showToast('지도 초기화가 지연되어 정보 패널을 먼저 표시합니다', 'warn', 5000);
+            }
+        } else {
+            console.warn('[init] MapModule is unavailable');
+        }
+        if (mapInitialized && typeof MapModule !== 'undefined' && MapModule.setElectionType) {
+            MapModule.setElectionType(null);
+        }
 
         // Setup event listeners
         SearchModule.setupSearch();
@@ -206,13 +326,8 @@ const App = (() => {
         } catch(e) { console.warn('[TermTooltips] load error:', e); }
 
         // Hide loading screen
-        setTimeout(() => {
-            const loading = document.getElementById('loading-screen');
-            if (loading) {
-                loading.classList.add('hidden');
-                setTimeout(() => loading.remove(), 500);
-            }
-        }, 800);
+        clearTimeout(loadingFailsafe);
+        hideLoadingScreen(800);
 
         // 선거 캘린더 배너 초기 렌더링
         Sidebar.renderElectionBanner();
@@ -368,7 +483,7 @@ const App = (() => {
         }
 
         if (tabName === 'candidates' && AppState.currentRegionKey) {
-            const councilTypes = ['council', 'localCouncil', 'councilProportional', 'localCouncilProportional'];
+            const councilTypes = ['councilProportional', 'localCouncilProportional'];
             if (!councilTypes.includes(AppState.currentElectionType)) {
                 if (typeof CandidateTab !== 'undefined') {
                     CandidateTab.render(AppState.currentRegionKey, AppState.currentElectionType, AppState.currentDistrictName);
@@ -442,8 +557,6 @@ const App = (() => {
     const PANEL_STAGES = ['collapsed', 'panel-peek', 'panel-half', 'panel-full'];
     const STAGE_HEIGHTS = { 'collapsed': 0, 'panel-peek': 30, 'panel-half': 50, 'panel-full': 85 };
     let _currentPanelStage = 'collapsed';
-
-    function getPanelStage() { return _currentPanelStage; }
 
     function setPanelStage(stage, animate) {
         const panel = document.getElementById('detail-panel');
@@ -832,17 +945,16 @@ const App = (() => {
         AppState.currentRegionKey = regionKey;
         AppState.currentDistrictName = null;
 
-        // 기초의원/기초비례: 광역 선택 시 welcome 유지
-        if (AppState.currentElectionType === 'localCouncilProportional' || AppState.currentElectionType === 'localCouncil') {
-            if (options?.subDistrict) {
-                if (AppState.currentElectionType === 'localCouncilProportional') {
-                    ElectionViews.showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
-                } else {
-                    ElectionViews.showLocalCouncilDistrictDetail(regionKey, options.subDistrict);
-                }
-                switchTabForRegion();
-                openPanel();
+        // 기초의원/기초비례: 시군구가 지정된 deep link는 곧바로 상세 패널로 복원
+        if ((AppState.currentElectionType === 'localCouncilProportional' || AppState.currentElectionType === 'localCouncil')
+            && options?.subDistrict) {
+            if (AppState.currentElectionType === 'localCouncilProportional') {
+                ElectionViews.showLocalCouncilProportionalDetail(regionKey, options.subDistrict);
+            } else {
+                ElectionViews.showLocalCouncilDistrictDetail(regionKey, options.subDistrict);
             }
+            switchTabForRegion();
+            openPanel();
             return;
         }
 
@@ -885,6 +997,7 @@ const App = (() => {
                 ElectionViews.renderCouncilProportionalView(regionKey, region);
                 break;
             case 'localCouncilProportional':
+                ElectionViews.renderLocalCouncilProportionalView(regionKey, region);
                 break;
             case 'byElection':
                 ElectionViews.renderByElectionProvinceView(regionKey, region);
@@ -998,10 +1111,22 @@ const App = (() => {
     // ============================================
     // Initialize on DOM Ready
     // ============================================
+    function startInit() {
+        init().catch(error => {
+            console.error('[init] fatal error:', error);
+            hideLoadingScreen();
+            try {
+                showToast('초기화 중 오류가 발생해 화면을 먼저 표시합니다', 'warn', 5000);
+            } catch (_e) {
+                /* toast is best-effort */
+            }
+        });
+    }
+
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', startInit);
     } else {
-        init();
+        startInit();
     }
 
     // ── Analytics: 이벤트 위임 ──
@@ -1141,6 +1266,9 @@ const App = (() => {
             if (!resp.ok) throw new Error(`Worker ${resp.status}`);
             const data = await resp.json();
             if (data.error) throw new Error(data.error);
+            if (!_hasUsableElectionResults(data)) {
+                throw new Error('개표 결과 데이터 없음');
+            }
             if (typeof MapModule !== 'undefined' && MapModule.applyElectionNightLayer) {
                 MapModule.applyElectionNightLayer(data);
             }
@@ -1150,6 +1278,14 @@ const App = (() => {
             console.warn('[election_night] Worker 응답 실패, 수동 모드 전환', err);
             _setManualFallbackMode(true);
         }
+    }
+
+    function _hasUsableElectionResults(data) {
+        return !!data
+            && data._source !== 'stub'
+            && data.regions
+            && typeof data.regions === 'object'
+            && Object.keys(data.regions).length > 0;
     }
 
     function _setManualFallbackMode(active) {
@@ -1177,8 +1313,8 @@ const App = (() => {
     function _handleManualJsonInput(jsonString) {
         try {
             const data = JSON.parse(jsonString);
-            if (!data.regions || typeof data.regions !== 'object') {
-                throw new Error('regions 필드 없음');
+            if (!_hasUsableElectionResults(data)) {
+                throw new Error('사용 가능한 regions 데이터 없음');
             }
             if (typeof MapModule !== 'undefined' && MapModule.applyElectionNightLayer) {
                 MapModule.applyElectionNightLayer(data);

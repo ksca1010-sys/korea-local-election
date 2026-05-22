@@ -4,13 +4,15 @@
 
 검증 레이어:
   1. mayor_status.json (선관위 공식) vs mayor_candidates.json
-     - 당선무효/직위상실/사퇴 → 후보자 DB에서 WITHDRAWN 확인
+     - 당선무효/직위상실/사퇴 → 과거 현직 carry-over 데이터만 WITHDRAWN 확인
+     - 현재 선관위 등록 후보(nec_official/등록)는 새 출마로 인정
      - 권한대행 중인데 현직으로 나오면 수정
-  2. 중복 후보 검출 (같은 이름이 여러 시군구에 등록)
-  3. 광역 출마자가 기초에 남아있는지 교차 확인
+  2. 중복 후보 검출 (NEC huboid 우선, 없을 때만 이름 fallback)
+  3. 광역/교육감 출마자가 기초에 남아있는지 교차 확인 (huboid 기반)
 
 사용법:
   python scripts/candidate_pipeline/cross_validate.py           # 검증만
+  python scripts/candidate_pipeline/cross_validate.py --strict  # 이슈 1건 이상이면 실패
   python scripts/candidate_pipeline/cross_validate.py --fix     # 자동 수정
 """
 
@@ -28,7 +30,24 @@ SUPT_CANDIDATES = BASE_DIR / "data" / "candidates" / "superintendent.json"
 BYELECTION_CANDIDATES = BASE_DIR / "data" / "candidates" / "byelection.json"
 
 # 출처 없어도 허용하는 dataSource (자동 수집 파이프라인 출처)
-TRUSTED_SOURCES = {"incumbent", "news_verified", "claude", "news_factcheck"}
+TRUSTED_SOURCES = {"nec_official", "incumbent", "news_verified", "claude", "news_factcheck"}
+
+
+def _is_current_official_registration(candidate):
+    """현재 선관위 등록 후보는 과거 현직 상태와 별개의 새 후보 데이터로 취급."""
+    return (
+        candidate.get("dataSource") == "nec_official"
+        and candidate.get("officialStatus") == "등록"
+        and candidate.get("status") == "NOMINATED"
+    )
+
+
+def _identity_key(candidate):
+    """NEC huboid가 있으면 동명이인 오탐을 피하기 위해 huboid를 우선 사용."""
+    huboid = str(candidate.get("huboid") or "").strip()
+    if huboid:
+        return ("huboid", huboid)
+    return ("name", candidate.get("name", ""))
 
 
 def check_acting_consistency(fix=False):
@@ -48,6 +67,8 @@ def check_acting_consistency(fix=False):
 
         for c in cands.get(rk, {}).get(dist, []):
             if c["name"] == elected_name and c.get("status") not in ("WITHDRAWN",):
+                if _is_current_official_registration(c):
+                    continue
                 issues.append({
                     "type": "acting_not_withdrawn",
                     "region": rk, "district": dist,
@@ -74,20 +95,20 @@ def check_governor_overlap(fix=False):
     cands = mayor.get("candidates", {})
     issues = []
 
-    # 광역 출마자 이름 수집 (활동 중인 사람만)
-    gov_names = set()
+    # 광역 출마자 신원 수집 (활동 중인 사람만)
+    gov_identities = set()
     for rk, candidates in gov.get("candidates", {}).items():
         for c in candidates:
             if "_merged" in c:
                 continue
             if c.get("status") not in ("WITHDRAWN",):
-                gov_names.add(c["name"])
+                gov_identities.add(_identity_key(c))
 
-    # 기초에서 같은 이름이 활동 중인지
+    # 기초에서 같은 NEC 신원이 활동 중인지
     for rk, districts in cands.items():
         for dist, candidates in districts.items():
             for c in candidates:
-                if c["name"] in gov_names and c.get("status") not in ("WITHDRAWN",):
+                if _identity_key(c) in gov_identities and c.get("status") not in ("WITHDRAWN",):
                     issues.append({
                         "type": "governor_overlap",
                         "region": rk, "district": dist,
@@ -105,18 +126,18 @@ def check_superintendent_overlap():
     cands = mayor.get("candidates", {})
     issues = []
 
-    supt_names = set()
+    supt_identities = set()
     for rk, candidates in supt.get("candidates", {}).items():
         for c in candidates:
             if "_merged" in c:
                 continue
             if c.get("status") not in ("WITHDRAWN",):
-                supt_names.add(c["name"])
+                supt_identities.add(_identity_key(c))
 
     for rk, districts in cands.items():
         for dist, candidates in districts.items():
             for c in candidates:
-                if c["name"] in supt_names and c.get("status") not in ("WITHDRAWN",):
+                if _identity_key(c) in supt_identities and c.get("status") not in ("WITHDRAWN",):
                     issues.append({
                         "type": "superintendent_overlap",
                         "region": rk, "district": dist,
@@ -131,21 +152,27 @@ def check_duplicate_names():
     mayor = json.loads(MAYOR_CANDIDATES.read_text(encoding="utf-8"))
     cands = mayor.get("candidates", {})
 
-    name_locations = {}
+    identity_locations = {}
     for rk, districts in cands.items():
         for dist, candidates in districts.items():
             for c in candidates:
                 if c.get("status") == "WITHDRAWN":
                     continue
-                name = c["name"]
-                if name not in name_locations:
-                    name_locations[name] = []
-                name_locations[name].append(f"{rk}/{dist}")
+                identity = _identity_key(c)
+                if identity not in identity_locations:
+                    identity_locations[identity] = {"name": c["name"], "locations": []}
+                identity_locations[identity]["locations"].append(f"{rk}/{dist}")
 
     issues = []
-    for name, locs in name_locations.items():
+    for identity, entry in identity_locations.items():
+        locs = entry["locations"]
         if len(locs) > 1:
-            issues.append({"type": "duplicate", "name": name, "locations": locs})
+            issues.append({
+                "type": "duplicate",
+                "identity": f"{identity[0]}:{identity[1]}",
+                "name": entry["name"],
+                "locations": locs,
+            })
 
     return issues
 
@@ -153,18 +180,19 @@ def check_duplicate_names():
 def check_byelection_duplicates(fix=False):
     """5. 재보궐: 같은 인물이 여러 선거구에 등록 (불가능한 케이스 — 하드 오류)"""
     bye = json.loads(BYELECTION_CANDIDATES.read_text(encoding="utf-8"))
-    name_districts = {}  # name -> [(district_key, candidate_dict)]
+    identity_districts = {}  # identity -> [(district_key, candidate_dict)]
     for key, district in bye.get("districts", {}).items():
         for c in district.get("candidates", []):
             if c.get("status") == "WITHDRAWN":
                 continue
-            name = c["name"]
-            if name not in name_districts:
-                name_districts[name] = []
-            name_districts[name].append((key, c))
+            identity = _identity_key(c)
+            if identity not in identity_districts:
+                identity_districts[identity] = []
+            identity_districts[identity].append((key, c))
     issues = []
-    for name, entries in name_districts.items():
+    for identity, entries in identity_districts.items():
         if len(entries) > 1:
+            name = entries[0][1].get("name", identity[1])
             issues.append({"type": "byelection_duplicate", "name": name,
                            "districts": [e[0] for e in entries]})
             if fix:
@@ -216,7 +244,7 @@ def check_missing_sources():
                     continue
                 if c.get("dataSource") in TRUSTED_SOURCES:
                     continue
-                if c.get("sourceUrl") or c.get("sourceLabel"):
+                if c.get("sourceUrl") or c.get("officialUrl") or c.get("sourceLabel"):
                     continue
                 issues.append({
                     "type": "missing_source",
@@ -240,7 +268,7 @@ def check_missing_sources():
                     continue
                 if c.get("dataSource") in TRUSTED_SOURCES:
                     continue
-                if c.get("sourceUrl") or c.get("sourceLabel"):
+                if c.get("sourceUrl") or c.get("officialUrl") or c.get("sourceLabel"):
                     continue
                 issues.append({
                     "type": "missing_source",
@@ -259,7 +287,7 @@ def check_missing_sources():
                 continue
             if c.get("dataSource") in TRUSTED_SOURCES:
                 continue
-            if c.get("sourceUrl") or c.get("sourceLabel"):
+            if c.get("sourceUrl") or c.get("officialUrl") or c.get("sourceLabel"):
                 continue
             issues.append({
                 "type": "missing_source",
@@ -276,6 +304,7 @@ def check_missing_sources():
 def main():
     parser = argparse.ArgumentParser(description="후보자 다중 교차 검증")
     parser.add_argument("--fix", action="store_true", help="자동 수정")
+    parser.add_argument("--strict", action="store_true", help="이슈가 있으면 exit code 1")
     args = parser.parse_args()
 
     print("=" * 55)
@@ -326,6 +355,9 @@ def main():
     # 하드 오류: --fix 없이 재보궐 중복이 있으면 CI 실패
     if issues5 and not args.fix:
         print("\n[오류] 재보궐 중복 인물이 있습니다. --fix 플래그로 자동 수정하거나 수동으로 수정하세요.")
+        sys.exit(1)
+    if args.strict and total:
+        print("\n[오류] strict 모드에서 후보자 교차 검증 이슈가 발견되었습니다.")
         sys.exit(1)
 
 
