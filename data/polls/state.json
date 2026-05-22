@@ -91,7 +91,63 @@
         "end": "2026-05-20"
       },
       "publishDate": "2026-05-22",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 45.0,
+          "type": "party_support",
+          "pollSource": {
+            "type": "gallup",
+            "reportNo": "데일리 오피니언 제664호",
+            "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
+          }
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 22.0,
+          "type": "party_support",
+          "pollSource": {
+            "type": "gallup",
+            "reportNo": "데일리 오피니언 제664호",
+            "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
+          }
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 3.0,
+          "type": "party_support",
+          "pollSource": {
+            "type": "gallup",
+            "reportNo": "데일리 오피니언 제664호",
+            "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
+          }
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 2.0,
+          "type": "party_support",
+          "pollSource": {
+            "type": "gallup",
+            "reportNo": "데일리 오피니언 제664호",
+            "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
+          }
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.0,
+          "type": "party_support",
+          "pollSource": {
+            "type": "gallup",
+            "reportNo": "데일리 오피니언 제664호",
+            "url": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
+          }
+        }
+      ],
       "regionKey": null,
       "municipality": null,
       "electionType": "party_support",
@@ -99,9 +155,11 @@
         "party_support"
       ],
       "districtKey": null,
-      "title": "전국   정기(정례)조사 광역단체장선거 정당지지도",
+      "title": "전국   정기(정례)조사 광역단체장선거 정당지지도 데일리 오피니언 제664호",
       "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18925&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-      "registrationDate": "2026-05-21"
+      "registrationDate": "2026-05-21",
+      "reportNo": "데일리 오피니언 제664호",
+      "gallupUrl": "https://www.gallup.co.kr/gallupdb/reportContent.asp?seqNo=1643"
     },
     {
       "nttId": 18924,
