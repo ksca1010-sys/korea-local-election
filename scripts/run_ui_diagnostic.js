@@ -27,6 +27,8 @@ const polls = loadJSON('data/polls/polls.json');
 const overview = loadJSON('data/election_overview.json');
 const proportionalCouncil = loadJSON('data/proportional_council.json');
 const councilMembers = loadJSON('data/council/council_members.json');
+const regionsStatic = loadJSON('data/static/regions.json');
+const subRegions = loadJSON('data/static/sub_regions.json');
 
 const REGIONS = [
     'seoul','busan','daegu','incheon','gwangju','daejeon','ulsan','sejong',
@@ -38,6 +40,30 @@ const REGION_NAMES = {
     ulsan:'울산',sejong:'세종',gyeonggi:'경기',gangwon:'강원',chungbuk:'충북',chungnam:'충남',
     jeonbuk:'전북',jeonnam:'전남',gyeongbuk:'경북',gyeongnam:'경남',jeju:'제주'
 };
+
+const NO_LOCAL_MAYOR_ELECTION_REGIONS = new Set(['sejong', 'jeju']);
+
+function getMergedTarget(regionKey, electionType) {
+    for (const [targetKey, region] of Object.entries(regionsStatic || {})) {
+        const types = region?.mergedElectionTypes || [];
+        if (region?.mergedWith === regionKey && types.includes(electionType)) {
+            return targetKey;
+        }
+    }
+    return regionKey;
+}
+
+function currentDistrictNames(regionKey) {
+    const canonical = (subRegions?.[regionKey] || [])
+        .map(item => typeof item === 'string' ? item : item?.name)
+        .filter(Boolean);
+    if (canonical.length) return canonical;
+
+    return Object.values(mayorStatus?.mayors || {})
+        .filter(info => info?.region === regionKey)
+        .map(info => info.district)
+        .filter(Boolean);
+}
 
 let totalIssues = 0;
 let totalChecks = 0;
@@ -62,11 +88,9 @@ function section(title) {
 section('1. 광역단체장');
 for (const rk of REGIONS) {
     const rn = REGION_NAMES[rk];
-    const cands = governor?.candidates?.[rk] || [];
-    const regionPolls = (polls?.regions?.[rk] || []).filter(p =>
-        p.electionType === 'governor' || (!p.municipality && !p.electionType?.includes('superintendent'))
-    );
-    const ov = overview?.regions?.[rk];
+    const dataRegion = getMergedTarget(rk, 'governor');
+    const cands = governor?.candidates?.[dataRegion] || [];
+    const ov = overview?.regions?.[dataRegion];
 
     const issues = [];
     if (!cands.length) issues.push('후보 없음');
@@ -85,9 +109,10 @@ for (const rk of REGIONS) {
 section('2. 교육감');
 for (const rk of REGIONS) {
     const rn = REGION_NAMES[rk];
+    const dataRegion = getMergedTarget(rk, 'superintendent');
     const status = superintendentStatus?.superintendents?.[rk];
-    const cands = superintendent?.candidates?.[rk] || [];
-    const ov = overview?.superintendent?.[rk];
+    const cands = superintendent?.candidates?.[dataRegion] || [];
+    const ov = overview?.superintendent?.[dataRegion];
 
     const issues = [];
     if (!status) issues.push('현직 정보 없음');
@@ -104,19 +129,21 @@ for (const rk of REGIONS) {
 
 // ── 3. 기초단체장 ──
 section('3. 기초단체장');
-const mayorRegionStats = {};
+const skippedMayorRegions = [];
 for (const rk of REGIONS) {
     const rn = REGION_NAMES[rk];
-    const districts = mayorStatus?.mayors || {};
-    const regionDistricts = Object.entries(districts).filter(([k]) => k.startsWith(rk + '_'));
+    if (NO_LOCAL_MAYOR_ELECTION_REGIONS.has(rk)) {
+        skippedMayorRegions.push(rn);
+        continue;
+    }
+    const regionDistricts = currentDistrictNames(rk);
     const cands = mayorCandidates?.candidates?.[rk] || {};
     const ovRegion = overview?.mayor?.[rk] || {};
 
     let noOverview = 0;
     let noCands = 0;
 
-    for (const [key, info] of regionDistricts) {
-        const district = info.district;
+    for (const district of regionDistricts) {
         if (!cands[district]?.length) noCands++;
         if (!ovRegion[district]) noOverview++;
         totalChecks += 2;
@@ -130,6 +157,18 @@ for (const rk of REGIONS) {
         console.log(`  ${rn}: ${issues.join(', ')}`);
         totalIssues += noCands + noOverview;
     }
+}
+
+if (skippedMayorRegions.length) {
+    console.log(`  참고: 기초단체장 직접선거 대상이 아닌 지역 제외 (${skippedMayorRegions.join(', ')})`);
+}
+
+const staleMayorStatus = Object.values(mayorStatus?.mayors || {})
+    .filter(info => info?.region && info?.district)
+    .filter(info => !currentDistrictNames(info.region).includes(info.district))
+    .map(info => `${REGION_NAMES[info.region] || info.region} ${info.district}`);
+if (staleMayorStatus.length) {
+    console.log(`  참고: 현재 행정구역에서 제외된 현직 데이터 ${staleMayorStatus.length}건 (${staleMayorStatus.join(', ')})`);
 }
 
 // ── 4. 광역의원 ──
@@ -218,3 +257,7 @@ section('진단 결과');
 console.log(`  총 검사: ${totalChecks}건`);
 console.log(`  이슈: ${totalIssues}건`);
 console.log(`  통과율: ${((1 - totalIssues / totalChecks) * 100).toFixed(1)}%`);
+
+if (totalIssues > 0) {
+    process.exitCode = 1;
+}
