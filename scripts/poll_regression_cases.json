@@ -14,13 +14,13 @@
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "gyeonggi-governor-may18-visible",
-    "regionKey": "gyeonggi",
+    "name": "chungnam-governor-may18-visible",
+    "regionKey": "chungnam",
     "electionType": "governor",
     "expectedMinCount": 1,
     "expectedMaxCount": 1,
     "expectedHeaderIncludes": [
-      "경기",
+      "충청남도",
       "광역단체장"
     ],
     "expectedFirstTitleIncludes": [
