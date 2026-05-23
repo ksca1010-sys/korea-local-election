@@ -661,18 +661,24 @@ const CandidateTab = (() => {
                     ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName, candidate.huboid)
                     : null;
                 const markerHtml = buildCandidateMarker(candidate, sortMode);
+                const candidateName = escapeHtml(candidate.name || '');
+                const candidateCareer = candidate.career
+                    ? escapeHtml(candidate.career)
+                    : '<span style="color:var(--text-muted);font-style:italic">경력 정보 수집 중</span>';
+                const badgeLabel = escapeHtml(candidate.badgeLabel || '');
+                const badgeColor = escapeHtml(candidate.badgeColor || 'var(--accent-blue)');
                 return `
-                ${sectionHeader}<div class="candidate-card-full ${statusClass}">
+                ${sectionHeader}<div class="candidate-card-full ${statusClass}" style="--candidate-party:${badgeColor};">
                     <div class="candidate-header">
                         ${markerHtml}
-                        <div style="flex:1;min-width:0;">
-                            <div class="candidate-info">
-                                <span class="candidate-name">${candidate.name}</span>
+                        <div class="candidate-main">
+                            <div class="candidate-title-row">
+                                <span class="candidate-name">${candidateName}</span>
                                 ${candidate.age ? `<span class="candidate-age">${candidate.age}세</span>` : ''}
-                                <span class="party-badge" style="background:${candidate.badgeColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.8rem;color:white;">${candidate.badgeLabel}</span>
+                                <span class="candidate-party-pill">${badgeLabel}</span>
                             </div>
-                            <div class="candidate-career">${candidate.career || '<span style="color:var(--text-muted);font-style:italic">경력 정보 수집 중</span>'}</div>
-                            ${candidate.supportLabel ? `<div class="cand-core-message">${candidate.supportLabel}</div>` : ''}
+                            <div class="candidate-career">${candidateCareer}</div>
+                            ${candidate.supportLabel ? `<div class="cand-core-message">${escapeHtml(candidate.supportLabel)}</div>` : ''}
                         </div>
                     </div>
                     ${candidate.pledges?.length ? `
@@ -681,7 +687,7 @@ const CandidateTab = (() => {
                             ${candidate.pledges.slice(0, 3).map((pledge, index) => `
                                 <div class="pledge-item">
                                     <span class="pledge-num">${index + 1}</span>
-                                    <span>${pledge}</span>
+                                    <span>${escapeHtml(pledge)}</span>
                                 </div>
                             `).join('')}
                         </div>
