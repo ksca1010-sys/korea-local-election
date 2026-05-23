@@ -32,6 +32,7 @@ AUTO_RETRY_THRESHOLD = 1  # 연속 N회 실패 시 워크플로우 자동 재시
 
 # 자동 재시도 제외 워크플로우 (재시도해도 의미 없는 것)
 NO_AUTO_RETRY = {
+    "CI",
     "Monitor Automation Failures",
     "Data Health Check",
 }
