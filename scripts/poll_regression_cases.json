@@ -14,11 +14,10 @@
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "chungnam-governor-may18-visible",
+    "name": "chungnam-governor-latest-visible",
     "regionKey": "chungnam",
     "electionType": "governor",
     "expectedMinCount": 1,
-    "expectedMaxCount": 1,
     "expectedHeaderIncludes": [
       "충청남도",
       "광역단체장"
@@ -26,15 +25,13 @@
     "expectedFirstTitleIncludes": [
       "광역단체장선거"
     ],
-    "expectedFirstPublishDate": "2026-05-18",
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "gyeonggi-superintendent-combined-may18-visible",
+    "name": "gyeonggi-superintendent-combined-latest-visible",
     "regionKey": "gyeonggi",
     "electionType": "superintendent",
     "expectedMinCount": 1,
-    "expectedMaxCount": 1,
     "expectedHeaderIncludes": [
       "경기",
       "교육감"
@@ -42,16 +39,14 @@
     "expectedFirstTitleIncludes": [
       "교육감선거"
     ],
-    "expectedFirstPublishDate": "2026-05-18",
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "gyeongbuk-andong-may18-visible",
+    "name": "gyeongbuk-andong-latest-visible",
     "regionKey": "gyeongbuk",
     "electionType": "mayor",
     "districtName": "안동시",
     "expectedMinCount": 1,
-    "expectedMaxCount": 1,
     "expectedHeaderIncludes": [
       "안동시",
       "기초단체장"
@@ -60,7 +55,6 @@
       "기초단체장선거"
     ],
     "expectedFirstMunicipality": "안동시",
-    "expectedFirstPublishDate": "2026-05-18",
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {

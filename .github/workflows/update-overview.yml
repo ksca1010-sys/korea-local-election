@@ -40,7 +40,7 @@ jobs:
     outputs:
       active: ${{ steps.check.outputs.active }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
       - id: check
         name: 선거일 게이팅 확인 (election_meta.json + 7일)
         run: |
@@ -64,9 +64,9 @@ jobs:
       RUN_AI_NARRATIVE: ${{ inputs.run_ai_narrative || false }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6.0.2
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6.2.0
         with:
           python-version: '3.11'
 

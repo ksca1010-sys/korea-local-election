@@ -320,7 +320,7 @@ window.IssueEngine = (function () {
                         });
                     }
                 }
-            } catch (e) { /* skip */ }
+            } catch (_e) { /* skip */ }
         }
 
         // 30일 이내
@@ -621,7 +621,7 @@ window.IssueEngine = (function () {
                             allItems.push({ title: stripHtml(item.title || '') });
                         }
                     }
-                } catch (e) { /* skip */ }
+                } catch (_e) { /* skip */ }
             }
 
             // 전국 뉴스에서 유니그램 빈도 추출 (지역 필터 없이)
@@ -645,7 +645,7 @@ window.IssueEngine = (function () {
             nationalTermsCache = termFreq;
             nationalTermsTimestamp = Date.now();
             return termFreq;
-        } catch (e) {
+        } catch (_e) {
             return {};
         }
     }
@@ -680,7 +680,7 @@ window.IssueEngine = (function () {
             cache[regionKey] = { data: issues, timestamp: Date.now() };
             return issues;
 
-        } catch (err) {
+        } catch (_err) {
             return getStaticIssues(regionKey);
         }
     }

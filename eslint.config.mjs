@@ -56,7 +56,7 @@ export default [
             },
         },
         rules: {
-            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", varsIgnorePattern: "^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|NEWS_PROXY_BASE|NEWS_FILTER_CONFIG|MAJOR_NEWS_HOSTS|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend|AppState|ElectionViews|DistrictMapView|Sidebar|SearchModule|Router|isMergedGwangjuJeonnam|getMergedDisplayName)$" }],
+            "no-unused-vars": ["warn", { argsIgnorePattern: "^_", caughtErrorsIgnorePattern: "^_", varsIgnorePattern: "^_|^(App|ElectionData|MapModule|DataLoader|ElectionCalendar|ChartsModule|NECData|OverviewTab|PollTab|CandidateTab|NewsTab|HistoryTab|CouncilTab|ProportionalTab|escapeHtml|showToast|NEWS_PROXY_BASE|NEWS_FILTER_CONFIG|MAJOR_NEWS_HOSTS|IssueEngine|DerivedIssuesData|NewsFilterConfig|_normalizeTrend|AppState|ElectionViews|DistrictMapView|Sidebar|SearchModule|Router|isMergedGwangjuJeonnam|getMergedDisplayName|ClarityConsent|getMergedRegionKey)$" }],
             "no-redeclare": "off",
             "no-console": "off",
             "no-undef": "error",
