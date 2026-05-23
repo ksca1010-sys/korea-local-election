@@ -23,6 +23,25 @@
     <meta name="twitter:description" content="제9회 전국동시지방선거 여론조사, 후보자, 선거구 정보를 한눈에.">
     <meta name="twitter:image" content="https://korea-local-election.pages.dev/og-image-v2.png">
 
+    <script>
+        window.__alsungoLoadingFallback = setTimeout(function () {
+            var loading = document.getElementById('loading-screen');
+            if (loading) {
+                loading.classList.add('hidden');
+                setTimeout(function () { loading.remove(); }, 500);
+            }
+        }, 9000);
+        window.__loadChartDateAdapter = function () {
+            if (window.__chartDateAdapterLoading) return;
+            window.__chartDateAdapterLoading = true;
+            var script = document.createElement('script');
+            script.async = true;
+            script.src = 'https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js';
+            script.integrity = 'sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws';
+            script.crossOrigin = 'anonymous';
+            document.head.appendChild(script);
+        };
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,11 +51,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" media="print" onload="this.media='all'">
-    <script defer src="https://d3js.org/d3.v7.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
-    <script defer src="https://d3js.org/topojson.v3.min.js" integrity="sha384-9dCJK6nh7skY14HrcvlLYlFga9/MehJjL9ONWRflmiXNRuf8p2jiF4Y5PR881PTq" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=1775210000">
+    <script async src="https://d3js.org/d3.v7.min.js" integrity="sha384-CjloA8y00+1SDAUkjs099PVfnY2KmDC2BZnws9kh8D/lX1s46w6EPhpXdqMfjK6i" crossorigin="anonymous"></script>
+    <script async src="https://d3js.org/topojson.v3.min.js" integrity="sha384-9dCJK6nh7skY14HrcvlLYlFga9/MehJjL9ONWRflmiXNRuf8p2jiF4Y5PR881PTq" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous" onload="window.__loadChartDateAdapter && window.__loadChartDateAdapter()"></script>
+    <link rel="stylesheet" href="css/style.css?v=1779537300">
     <link rel="stylesheet" href="css/mobile.css?v=1775910473">
 </head>
 <body>
@@ -190,7 +208,7 @@
                         <button class="filter-btn" data-type="byElection">
                             <span class="filter-icon"><i class="fas fa-calendar-check"></i></span>
                             <span>재보궐</span>
-                            <span class="filter-count">6</span>
+                            <span class="filter-count">14</span>
                         </button>
                         <div class="filter-tooltip" id="tooltip-byElection"></div>
                     </div>
@@ -324,6 +342,10 @@
                 <div id="tab-overview" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-overview" style="display:none;">
                     <!-- 행정구역 변경 안내 -->
                     <div id="admin-change-notice" style="display:none;"></div>
+                    <!-- 선거운동 국면 요약 -->
+                    <div id="campaign-status-card" class="campaign-status-card" style="display:none;"></div>
+                    <div id="overview-race-lineup" class="overview-race-lineup" style="display:none;"></div>
+                    <div id="campaign-action-grid" class="campaign-action-grid" style="display:none;"></div>
                     <!-- 선거 쟁점 개요 카드 -->
                     <div id="election-overview-card" class="election-overview-card" style="display:none;">
                         <div id="integration-alert-banner" class="integration-alert-banner" style="display:none;"></div>
@@ -341,15 +363,20 @@
                     <div id="district-detail" class="district-detail panel-card">
                         <!-- 기초단체장 정보가 여기에 렌더링됨 -->
                     </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-clipboard-list"></i> 개요</h4>
-                        <div id="prev-election-result"></div>
-                    </div>
-                    <div class="panel-card">
-                        <h4><i class="fas fa-user-tie"></i> 현직자 정보</h4>
-                        <div id="current-governor"></div>
+                    <details id="overview-context-card" class="overview-context-card panel-card">
+                        <summary><i class="fas fa-clock-rotate-left"></i> 지난 선거·현직 맥락</summary>
+                        <div class="overview-context-grid">
+                            <section class="overview-context-section">
+                                <h4><i class="fas fa-clipboard-list"></i> 지난 선거</h4>
+                                <div id="prev-election-result"></div>
+                            </section>
+                            <section class="overview-context-section">
+                                <h4><i class="fas fa-user-tie"></i> 현직 정보</h4>
+                                <div id="current-governor"></div>
+                            </section>
+                        </div>
                         <div id="panel-region-badge" class="panel-region-badge" style="display:none"></div>
-                    </div>
+                    </details>
                     <div id="key-issues" style="display:none"></div>
                 </div>
 
@@ -898,31 +925,31 @@
     <script defer src="js/app-state.js?v=1775191900"></script>
     <!-- 1. 데이터 로더 -->
     <script defer src="js/data-loader.js?v=1775191900"></script>
-    <script defer src="js/data.js?v=1775911193"></script>
+    <script defer src="js/data.js?v=1779533509"></script>
 
     <!-- 2. 독립 모듈 -->
     <script defer src="js/derived_issues.js?v=1775191900"></script>
     <script defer src="js/issue_engine.js?v=1775191900"></script>
     <script defer src="js/nec.js?v=1775191900"></script>
     <script defer src="js/map.js?v=1775191900"></script>
-    <script defer src="js/charts.js?v=1775191900"></script>
+    <script defer src="js/charts.js?v=1775920000"></script>
 
     <!-- 3. 선거 캘린더 (법적 필수 + 편의 로직) -->
     <script defer src="js/election-calendar.js?v=1775191900"></script>
 
     <!-- 4. 탭 모듈 -->
     <script defer src="js/tabs/history-tab.js?v=1775191900"></script>
-    <script defer src="js/tabs/council-tab.js?v=1775191900"></script>
-    <script defer src="js/tabs/proportional-tab.js?v=1775191900"></script>
-    <script defer src="js/tabs/candidate-tab.js?v=1775919024"></script>
+    <script defer src="js/tabs/council-tab.js?v=1779533509"></script>
+    <script defer src="js/tabs/proportional-tab.js?v=1779533509"></script>
+    <script defer src="js/tabs/candidate-tab.js?v=1779537300"></script>
     <script defer src="js/tabs/poll-tab.js?v=1775910473"></script>
-    <script defer src="js/tabs/overview-tab.js?v=1775191900"></script>
+    <script defer src="js/tabs/overview-tab.js?v=1779527000"></script>
     <script defer src="js/tabs/news-tab.js?v=1775191900"></script>
 
     <!-- 5. app.js에서 분리된 모듈 -->
-    <script defer src="js/sidebar.js?v=1775191900"></script>
+    <script defer src="js/sidebar.js?v=1779527000"></script>
     <script defer src="js/search.js?v=1775191900"></script>
-    <script defer src="js/views/election-views.js?v=1775191900"></script>
+    <script defer src="js/views/election-views.js?v=1779527000"></script>
     <script defer src="js/views/district-map.js?v=1775191900"></script>
     <script defer src="js/router.js?v=1775191900"></script>
 

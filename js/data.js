@@ -1785,6 +1785,10 @@ const ElectionData = (() => {
                     huboid: candidate.huboid || candidate.cnddtId || null,
                     sgId: candidate.sgId || null,
                     sgTypecode: candidate.sgTypecode || null,
+                    photoUrl: candidate.photoUrl || null,
+                    photoSourceUrl: candidate.photoSourceUrl || null,
+                    photoSourceLabel: candidate.photoSourceLabel || null,
+                    photoFetchedAt: candidate.photoFetchedAt || null,
                     ballotNumber: candidate.ballotNumber || null,
                     districtName: candidate.districtName || options.districtName || districtName || null,
                     incumbent: options.incumbentName ? options.incumbentName === candidate.name : Boolean(candidate.incumbent || candidate.isIncumbent),
@@ -1814,6 +1818,10 @@ const ElectionData = (() => {
                     huboid: candidate.huboid || candidate.cnddtId || null,
                     sgId: candidate.sgId || null,
                     sgTypecode: candidate.sgTypecode || null,
+                    photoUrl: candidate.photoUrl || null,
+                    photoSourceUrl: candidate.photoSourceUrl || null,
+                    photoSourceLabel: candidate.photoSourceLabel || null,
+                    photoFetchedAt: candidate.photoFetchedAt || null,
                     ballotNumber: candidate.ballotNumber || null,
                     incumbent: options.incumbentName ? options.incumbentName === candidate.name : Boolean(candidate.incumbent || candidate.isIncumbent),
                 };
@@ -2018,6 +2026,14 @@ const ElectionData = (() => {
                         dataSource: c.dataSource,
                         sourceUrl: c.sourceUrl || null,
                         officialUrl: c.officialUrl || null,
+                        detailUrl: c.detailUrl || null,
+                        huboid: c.huboid || c.cnddtId || null,
+                        sgId: c.sgId || null,
+                        sgTypecode: c.sgTypecode || null,
+                        photoUrl: c.photoUrl || null,
+                        photoSourceUrl: c.photoSourceUrl || null,
+                        photoSourceLabel: c.photoSourceLabel || null,
+                        photoFetchedAt: c.photoFetchedAt || null,
                     }));
                 if (cands.length) return { candidates: cands };
             }
@@ -2046,6 +2062,14 @@ const ElectionData = (() => {
                             dataSource: c.dataSource || null,
                             sourceUrl: c.sourceUrl || null,
                             officialUrl: c.officialUrl || null,
+                            detailUrl: c.detailUrl || null,
+                            huboid: c.huboid || c.cnddtId || null,
+                            sgId: c.sgId || null,
+                            sgTypecode: c.sgTypecode || null,
+                            photoUrl: c.photoUrl || null,
+                            photoSourceUrl: c.photoSourceUrl || null,
+                            photoSourceLabel: c.photoSourceLabel || null,
+                            photoFetchedAt: c.photoFetchedAt || null,
                         }));
                     return { ...dist, candidates };
                 }
@@ -2061,7 +2085,18 @@ const ElectionData = (() => {
                             partyName: c.partyName || null,
                             career: c.career || '',
                             pledges: c.pledges || [],
-                            status: c.status || 'DECLARED'
+                            status: c.status || 'DECLARED',
+                            dataSource: c.dataSource || null,
+                            sourceUrl: c.sourceUrl || null,
+                            officialUrl: c.officialUrl || null,
+                            detailUrl: c.detailUrl || null,
+                            huboid: c.huboid || c.cnddtId || null,
+                            sgId: c.sgId || null,
+                            sgTypecode: c.sgTypecode || null,
+                            photoUrl: c.photoUrl || null,
+                            photoSourceUrl: c.photoSourceUrl || null,
+                            photoSourceLabel: c.photoSourceLabel || null,
+                            photoFetchedAt: c.photoFetchedAt || null,
                         }));
                     all[k] = { ...d, candidates };
                 });
@@ -2465,6 +2500,14 @@ const ElectionData = (() => {
                                     dataSource: c.dataSource,
                                     sourceUrl: c.sourceUrl || null,
                                     officialUrl: c.officialUrl || null,
+                                    detailUrl: c.detailUrl || null,
+                                    huboid: c.huboid || c.cnddtId || null,
+                                    sgId: c.sgId || null,
+                                    sgTypecode: c.sgTypecode || null,
+                                    photoUrl: c.photoUrl || null,
+                                    photoSourceUrl: c.photoSourceUrl || null,
+                                    photoSourceLabel: c.photoSourceLabel || null,
+                                    photoFetchedAt: c.photoFetchedAt || null,
                                     ballotNumber: c.ballotNumber || null,
                                 }));
                         });

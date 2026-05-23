@@ -7,6 +7,7 @@ const CandidateTab = (() => {
     const OFFICIAL_CANDIDATE_INFO_URL = 'https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml';
     let pendingDisclosureRefreshKey = null;
     let pendingCouncilCandidateRefreshKey = null;
+    let pendingCouncilMembersRefreshKey = null;
 
     function buildEmptyMessage(message, icon = 'fa-circle-info') {
         return `
@@ -60,7 +61,10 @@ const CandidateTab = (() => {
     }
 
     function buildModel(regionKey, electionType, districtName) {
-        const sharedModel = ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName);
+        const shouldUseSharedModel = !['council', 'localCouncil'].includes(electionType);
+        const sharedModel = shouldUseSharedModel
+            ? ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName)
+            : null;
         if (sharedModel) {
             return {
                 ...sharedModel,
@@ -255,12 +259,20 @@ const CandidateTab = (() => {
         // 광역의원/기초의원: 현직 의원 데이터 표시
         if (electionType === 'council' || electionType === 'localCouncil') {
             const typeLabel = electionType === 'council' ? '광역의원' : '기초의원';
+            if (electionType === 'localCouncil' && !districtName) {
+                return {
+                    title: `${region.name} ${typeLabel} 후보`,
+                    candidates: [],
+                    emptyMessage: '지도에서 시군구를 선택하면 기초의원 선거구별 후보를 확인할 수 있습니다.'
+                };
+            }
+
             const councilData = ElectionData.getCouncilData(regionKey);
             const members = [];
             if (councilData?.municipalities) {
                 Object.values(councilData.municipalities).forEach(constituencies => {
                     constituencies.forEach(c => {
-                        (c.candidates || []).forEach(m => {
+                        (c.candidates || c.members || []).forEach(m => {
                             members.push({
                                 name: m.name,
                                 badgeLabel: ElectionData.getPartyName(m.party || 'independent'),
@@ -298,6 +310,28 @@ const CandidateTab = (() => {
             || candidateSource.officialUrl
             || candidateSource.sourceUrl
             || OFFICIAL_CANDIDATE_INFO_URL;
+    }
+
+    function buildCandidateMarker(candidate, sortMode) {
+        if (candidate.photoUrl) {
+            const photoUrl = escapeHtml(candidate.photoUrl);
+            const sourceLabel = escapeHtml(candidate.photoSourceLabel || '중앙선거관리위원회 후보자 사진');
+            const ballotBadge = sortMode === 'ballot_number'
+                ? `<span class="candidate-photo-ballot" title="기호">${escapeHtml(candidate.ballotNumber || '-')}</span>`
+                : '';
+            return `
+                <div class="candidate-photo-wrap" title="${sourceLabel}">
+                    <img class="candidate-photo" src="${photoUrl}" alt="${escapeHtml(candidate.name || '후보자')} 후보자 사진" loading="lazy" referrerpolicy="no-referrer">
+                    ${ballotBadge}
+                </div>
+            `;
+        }
+        if (sortMode === 'ballot_number') {
+            return `<div class="candidate-ballot-number" title="기호"><strong>${candidate.ballotNumber || '-'}</strong><span>기호</span></div>`;
+        }
+        return `<div class="candidate-avatar" style="background:${candidate.badgeColor}">
+                ${candidate.name?.charAt(0) || '?'}
+           </div>`;
     }
 
     function buildOfficialSourceActions(candidate, disclosure) {
@@ -562,12 +596,25 @@ const CandidateTab = (() => {
                 });
             }
         }
+        if (electionType === 'council' && !districtName && ElectionData.loadCouncilMembersData && !ElectionData._councilMembersCache) {
+            const refreshKey = `members_${regionKey}`;
+            if (pendingCouncilMembersRefreshKey !== refreshKey) {
+                pendingCouncilMembersRefreshKey = refreshKey;
+                ElectionData.loadCouncilMembersData().then(() => {
+                    pendingCouncilMembersRefreshKey = null;
+                    render(regionKey, electionType, districtName);
+                });
+            }
+        }
 
         const model = buildModel(regionKey, electionType, districtName);
         // Layer 2B: 정렬 모드 판정
-        const sortMode = typeof ElectionCalendar !== 'undefined'
+        let sortMode = typeof ElectionCalendar !== 'undefined'
             ? ElectionCalendar.getCandidateSortMode()
             : 'status_priority';
+        if ((electionType === 'council' || electionType === 'localCouncil') && !districtName) {
+            sortMode = 'status_priority';
+        }
 
         // 공보물 지연 로딩: 첫 진입에서 누락되지 않도록 로드 완료 후 1회 재렌더
         if (sortMode === 'ballot_number' && typeof ElectionData !== 'undefined' && !ElectionData._disclosureCache && ElectionData.loadDisclosures) {
@@ -613,23 +660,25 @@ const CandidateTab = (() => {
                 const disclosure = sortMode === 'ballot_number' && typeof ElectionData !== 'undefined'
                     ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName, candidate.huboid)
                     : null;
-                const markerHtml = sortMode === 'ballot_number'
-                    ? `<div class="candidate-ballot-number" title="기호"><strong>${candidate.ballotNumber || '-'}</strong><span>기호</span></div>`
-                    : `<div class="candidate-avatar" style="background:${candidate.badgeColor}">
-                            ${candidate.name?.charAt(0) || '?'}
-                       </div>`;
+                const markerHtml = buildCandidateMarker(candidate, sortMode);
+                const candidateName = escapeHtml(candidate.name || '');
+                const candidateCareer = candidate.career
+                    ? escapeHtml(candidate.career)
+                    : '<span style="color:var(--text-muted);font-style:italic">경력 정보 수집 중</span>';
+                const badgeLabel = escapeHtml(candidate.badgeLabel || '');
+                const badgeColor = escapeHtml(candidate.badgeColor || 'var(--accent-blue)');
                 return `
-                ${sectionHeader}<div class="candidate-card-full ${statusClass}">
+                ${sectionHeader}<div class="candidate-card-full ${statusClass}" style="--candidate-party:${badgeColor};">
                     <div class="candidate-header">
                         ${markerHtml}
-                        <div style="flex:1;min-width:0;">
-                            <div class="candidate-info">
-                                <span class="candidate-name">${candidate.name}</span>
+                        <div class="candidate-main">
+                            <div class="candidate-title-row">
+                                <span class="candidate-name">${candidateName}</span>
                                 ${candidate.age ? `<span class="candidate-age">${candidate.age}세</span>` : ''}
-                                <span class="party-badge" style="background:${candidate.badgeColor};display:inline-block;padding:1px 6px;border-radius:3px;font-size:0.8rem;color:white;">${candidate.badgeLabel}</span>
+                                <span class="candidate-party-pill">${badgeLabel}</span>
                             </div>
-                            <div class="candidate-career">${candidate.career || '<span style="color:var(--text-muted);font-style:italic">경력 정보 수집 중</span>'}</div>
-                            ${candidate.supportLabel ? `<div class="cand-core-message">${candidate.supportLabel}</div>` : ''}
+                            <div class="candidate-career">${candidateCareer}</div>
+                            ${candidate.supportLabel ? `<div class="cand-core-message">${escapeHtml(candidate.supportLabel)}</div>` : ''}
                         </div>
                     </div>
                     ${candidate.pledges?.length ? `
@@ -638,7 +687,7 @@ const CandidateTab = (() => {
                             ${candidate.pledges.slice(0, 3).map((pledge, index) => `
                                 <div class="pledge-item">
                                     <span class="pledge-num">${index + 1}</span>
-                                    <span>${pledge}</span>
+                                    <span>${escapeHtml(pledge)}</span>
                                 </div>
                             `).join('')}
                         </div>

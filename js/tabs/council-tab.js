@@ -43,6 +43,26 @@ const CouncilTab = (() => {
         return 2; // 최종 기본값
     }
 
+    function safeText(value) {
+        return typeof escapeHtml === 'function'
+            ? escapeHtml(String(value || ''))
+            : String(value || '').replace(/[&<>"']/g, ch => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[ch]));
+    }
+
+    function renderCandidatePhoto(candidate, partyColor, compact = false) {
+        if (candidate.photoUrl) {
+            return `
+                <span class="${compact ? 'candidate-photo-wrap candidate-photo-wrap--sm' : 'candidate-photo-wrap'}" title="${safeText(candidate.photoSourceLabel || '중앙선거관리위원회 후보자 사진')}">
+                    <img class="candidate-photo" src="${safeText(candidate.photoUrl)}" alt="${safeText(candidate.name)} 후보자 사진" loading="lazy" referrerpolicy="no-referrer">
+                    ${candidate.ballotNumber ? `<span class="candidate-photo-ballot">${safeText(candidate.ballotNumberDetail || candidate.ballotNumber)}</span>` : ''}
+                </span>
+            `;
+        }
+        return `<span class="${compact ? 'candidate-mini-dot' : 'candidate-avatar'}" style="background:${partyColor}">${compact ? '' : safeText((candidate.name || '?').charAt(0))}</span>`;
+    }
+
     // ── 메인 렌더 ──
 
     async function render(tabName, regionKey, districtName, electionType) {
@@ -433,6 +453,7 @@ const CouncilTab = (() => {
             return `
                 <div class="candidate-card" style="border-left:3px solid ${pc}">
                     <div class="candidate-header">
+                        ${renderCandidatePhoto(c, pc)}
                         <strong class="candidate-name">${c.name}</strong>
                         ${incumbentBadge}${statusBadge}
                         <span class="party-badge" style="background:${pc}22;color:${pc};border:1px solid ${pc}44;padding:1px 6px;border-radius:3px;font-size:0.7rem;margin-left:auto">${pn}</span>
@@ -488,7 +509,7 @@ const CouncilTab = (() => {
                             : '';
                         return `
                             <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:0.85rem;">
-                                <span style="width:6px;height:6px;border-radius:50%;background:${pc};flex-shrink:0"></span>
+                                ${renderCandidatePhoto(c, pc, true)}
                                 <span style="color:var(--text-primary)">${c.name}</span>
                                 ${incumbentBadge}
                                 ${c.career ? `<span style="color:var(--text-muted);font-size:0.75rem;margin-left:auto">${c.career}</span>` : ''}
