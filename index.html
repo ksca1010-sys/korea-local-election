@@ -36,7 +36,7 @@
     <script defer src="https://d3js.org/topojson.v3.min.js" integrity="sha384-9dCJK6nh7skY14HrcvlLYlFga9/MehJjL9ONWRflmiXNRuf8p2jiF4Y5PR881PTq" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" integrity="sha384-9nhczxUqK87bcKHh20fSQcTGD4qq5GhayNYSYWqwBkINBhOfQLg/P5HG5lF1urn4" crossorigin="anonymous"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3.0.0/dist/chartjs-adapter-date-fns.bundle.min.js" integrity="sha384-cVMg8E3QFwTvGCDuK+ET4PD341jF3W8nO1auiXfuZNQkzbUUiBGLsIQUE+b1mxws" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css?v=1775210000">
+    <link rel="stylesheet" href="css/style.css?v=1779630900">
     <link rel="stylesheet" href="css/mobile.css?v=1775910473">
 </head>
 <body>
@@ -355,18 +355,21 @@
 
                 <!-- Polls Tab (#10 투명성 강조) -->
                 <div id="tab-polls" class="tab-content" role="tabpanel" aria-labelledby="tab-btn-polls" style="display:none;">
-                    <!-- 투명성 안내 -->
-                    <div class="poll-transparency-box">
-                        <div class="ptb-header"><i class="fas fa-shield-halved"></i> 여론조사 투명성 안내</div>
-                        <p>이 페이지의 모든 여론조사는 <strong>중앙선거여론조사심의위원회</strong>에 등록된 자료를 기반으로 합니다. 조사기관, 조사방법, 표본수, 오차범위를 반드시 함께 확인하세요.</p>
-                        <a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" class="ptb-link"><i class="fas fa-external-link-alt"></i> 선거여론조사심의위원회 바로가기</a>
-                    </div>
+                    <div id="poll-summary-strip" class="poll-summary-strip" style="display:none;"></div>
 
                     <!-- 최신 여론조사 바차트 -->
                     <div id="poll-latest-section" class="panel-card" style="display:none;">
                         <h4><i class="fas fa-poll"></i> 최신 여론조사</h4>
                         <div class="poll-source-info" id="poll-source-info"></div>
+                        <div id="poll-bar-fallback" class="poll-bar-fallback" role="img" aria-label="최신 여론조사 지지율 막대그래프"></div>
                         <canvas id="poll-bar-chart"></canvas>
+                    </div>
+
+                    <!-- 투명성 안내 -->
+                    <div class="poll-transparency-box">
+                        <div class="ptb-header"><i class="fas fa-shield-halved"></i> 여론조사 투명성 안내</div>
+                        <p>이 페이지의 모든 여론조사는 <strong>중앙선거여론조사심의위원회</strong>에 등록된 자료를 기반으로 합니다. 조사기관, 조사방법, 표본수, 오차범위를 반드시 함께 확인하세요.</p>
+                        <a href="https://www.nesdc.go.kr/" target="_blank" rel="noopener" class="ptb-link"><i class="fas fa-external-link-alt"></i> 선거여론조사심의위원회 바로가기</a>
                     </div>
 
                     <!-- 추이 차트 섹션 (동적 생성) -->
@@ -915,7 +918,7 @@
     <script defer src="js/tabs/council-tab.js?v=1775191900"></script>
     <script defer src="js/tabs/proportional-tab.js?v=1775191900"></script>
     <script defer src="js/tabs/candidate-tab.js?v=1775919024"></script>
-    <script defer src="js/tabs/poll-tab.js?v=1775910473"></script>
+    <script defer src="js/tabs/poll-tab.js?v=1779630900"></script>
     <script defer src="js/tabs/overview-tab.js?v=1775191900"></script>
     <script defer src="js/tabs/news-tab.js?v=1775191900"></script>
 
