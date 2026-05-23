@@ -8,6 +8,7 @@
     "check:all": "node scripts/run_quality_gate.js",
     "check:polls:source": "python3 scripts/audit_numeric_fields.py",
     "check:polls": "node scripts/run_poll_regression.js",
+    "check:ui": "node scripts/run_ui_diagnostic.js",
     "check:automation": "python3 scripts/check_automation_guards.py",
     "check:poll-observations": "node scripts/check_poll_observations.js",
     "check:observations": "node scripts/check_news_observations.js",

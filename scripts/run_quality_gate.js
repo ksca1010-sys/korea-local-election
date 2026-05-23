@@ -13,6 +13,7 @@ const checks = [
     { name: 'news-regression', command: 'node', args: ['scripts/run_news_regression.js'] },
     { name: 'news-loading-policy', command: 'node', args: ['scripts/check_news_loading_policy.js'] },
     { name: 'poll-regression', command: 'node', args: ['scripts/run_poll_regression.js'] },
+    { name: 'ui-diagnostic', command: 'node', args: ['scripts/run_ui_diagnostic.js'] },
     { name: 'local-media', command: 'node', args: ['scripts/check_local_media_registry.js'] },
     { name: 'byelection-search', command: 'node', args: ['scripts/check_byelection_search.js'] },
     { name: 'search-coverage', command: 'node', args: ['scripts/check_search_coverage.js'] },
