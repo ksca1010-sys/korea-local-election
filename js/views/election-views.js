@@ -261,6 +261,37 @@ const ElectionViews = (() => {
         if (card) card.open = true;
     }
 
+    function renderProvinceLanding({ icon, title, description, stats = [], actionText = '' }) {
+        const districtDetail = document.getElementById('district-detail');
+        if (!districtDetail) return;
+        districtDetail.style.display = '';
+        districtDetail.classList.add('active');
+        const statsHtml = stats.length
+            ? `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:8px;margin-top:14px;">
+                ${stats.map(stat => `
+                    <div style="padding:10px;border-radius:8px;background:var(--bg-secondary);border:1px solid var(--border-subtle);">
+                        <div style="font-size:1rem;font-weight:700;color:var(--text-primary);">${stat.value}</div>
+                        <div style="font-size:0.72rem;color:var(--text-muted);margin-top:2px;">${stat.label}</div>
+                    </div>
+                `).join('')}
+            </div>`
+            : '';
+
+        districtDetail.innerHTML = `
+            <div style="padding:16px;">
+                <div style="display:flex;align-items:flex-start;gap:12px;">
+                    <i class="fas ${icon}" style="font-size:1.35rem;color:var(--accent-primary);margin-top:2px;"></i>
+                    <div>
+                        <h4 style="margin:0 0 6px;color:var(--text-primary);font-size:1rem;">${title}</h4>
+                        <p style="margin:0;color:var(--text-secondary);font-size:0.86rem;line-height:1.6;">${description}</p>
+                    </div>
+                </div>
+                ${statsHtml}
+                ${actionText ? `<p style="margin:12px 0 0;color:var(--text-muted);font-size:0.78rem;line-height:1.5;">${actionText}</p>` : ''}
+            </div>
+        `;
+    }
+
     const proportionalConfig = {
         councilProportional: {
             label: '광역의원 비례대표',
@@ -275,6 +306,9 @@ const ElectionViews = (() => {
     function renderProportionalView(regionKey, region, typeKey) {
         const config = proportionalConfig[typeKey];
         const label = config?.label || '비례대표';
+        const isMetro = typeKey === 'councilProportional';
+        const propData = ElectionData.getProportionalData?.(regionKey, typeKey, AppState.currentDistrictName);
+        const totalSeats = propData?.totalSeats || (isMetro ? 10 : 2);
 
         document.getElementById('panel-region-name').textContent = `${region.name} ${label}`;
         document.getElementById('panel-region-info').textContent = `${label} · 정당 투표로 의석 배분`;
@@ -282,9 +316,19 @@ const ElectionViews = (() => {
         Sidebar.configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         Sidebar.toggleSuperintendentSummary(false);
 
-        // district-detail 숨기기 (비례대표에서는 불필요)
-        const districtDetail = document.getElementById('district-detail');
-        if (districtDetail) districtDetail.style.display = 'none';
+        renderProvinceLanding({
+            icon: 'fa-chart-pie',
+            title: `${region.name} ${label}`,
+            description: '비례대표는 지역구 후보가 아니라 정당에 투표하고, 정당 득표율에 따라 의석을 배분합니다.',
+            stats: [
+                { label: '배분 의석', value: `${totalSeats}석` },
+                { label: '투표 방식', value: '정당표' },
+                { label: '봉쇄조항', value: '5%' },
+            ],
+            actionText: isMetro
+                ? '후보자 탭에서 정당별 비례대표 명부와 의석 정보를 확인할 수 있습니다.'
+                : '지도에서 시군구를 선택하면 해당 기초의회 비례대표 의석 정보를 확인할 수 있습니다.',
+        });
         const ovSummary = document.getElementById('overview-summary');
         if (ovSummary) ovSummary.innerHTML = '';
         const ovIssues = document.getElementById('overview-key-issues');
@@ -319,6 +363,18 @@ const ElectionViews = (() => {
 
         Sidebar.configurePanelTabs(['overview', 'candidates', 'news', 'history']);
         Sidebar.toggleSuperintendentSummary(false);
+
+        renderProvinceLanding({
+            icon: 'fa-chart-pie',
+            title: `${region.name} 기초의원 비례대표`,
+            description: '기초의원 비례대표는 시군구별 기초의회 정당 득표율에 따라 의석을 배분합니다.',
+            stats: [
+                { label: '시군구', value: `${subRegions.length}개` },
+                { label: '투표 방식', value: '정당표' },
+                { label: '범위', value: '기초의회' },
+            ],
+            actionText: '지도에서 시군구를 선택하면 해당 지역의 기초의원 비례대표 정보를 볼 수 있습니다.',
+        });
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
@@ -388,17 +444,29 @@ const ElectionViews = (() => {
     function renderCouncilProvinceView(regionKey, region) {
         const councilData = ElectionData.getCouncilData(regionKey);
         const municipalities = councilData ? Object.entries(councilData.municipalities || {}) : [];
+        const districtCount = councilData ? councilData.districts.length : 0;
 
         document.getElementById('panel-region-name').textContent = `${region.name} 광역의원`;
         document.getElementById('panel-region-info').textContent =
-            `광역의원 지역구 ${councilData ? councilData.districts.length : 0}개`;
+            `광역의원 지역구 ${districtCount}개`;
 
         Sidebar.configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         Sidebar.toggleSuperintendentSummary(false);
 
+        renderProvinceLanding({
+            icon: 'fa-map-marked-alt',
+            title: `${region.name} 광역의원 지역구`,
+            description: '시군구를 선택하면 광역의원 선거구 목록과 선거구별 후보·현직 정보를 확인할 수 있습니다.',
+            stats: [
+                { label: '시군구', value: `${municipalities.length}개` },
+                { label: '선거구', value: `${districtCount}개` },
+                { label: '선거 방식', value: '지역구' },
+            ],
+            actionText: '후보자 탭에서는 현재 시도 단위 현직 의원 목록을 먼저 보여줍니다.',
+        });
+
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
-            const districtCount = councilData ? councilData.districts.length : 0;
             prevContainer.innerHTML = `
                 <div style="text-align:center;padding:16px;">
                     <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--accent-primary);margin-bottom:8px;display:block;"></i>
@@ -413,6 +481,14 @@ const ElectionViews = (() => {
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) issuesContainer.innerHTML = '';
         openOverviewContextCard();
+
+        if (!councilData && ElectionData.loadCouncilMembersData) {
+            ElectionData.loadCouncilMembersData().then(() => {
+                if (AppState.currentElectionType === 'council' && AppState.currentRegionKey === regionKey) {
+                    renderCouncilProvinceView(regionKey, region);
+                }
+            });
+        }
 
         // 뉴스탭은 lazy 로딩 — 탭 전환 시 renderNewsTab 호출 (API 쿼터 절약)
         AppState._newsTabPendingRegion = regionKey;
@@ -513,12 +589,27 @@ const ElectionViews = (() => {
     // Local Council Province View (기초의원 - 시도 선택 후)
     // ============================================
     function renderLocalCouncilProvinceView(regionKey, region) {
+        const subRegions = ElectionData.getSubRegions(regionKey) || [];
+        const summary = ElectionData.getLocalCouncilRegionSummary?.(regionKey);
+
         document.getElementById('panel-region-name').textContent = `${region.name} 기초의원`;
         document.getElementById('panel-region-info').textContent =
             `시군구를 선택하면 기초의원 선거구를 확인할 수 있습니다.`;
 
         Sidebar.configurePanelTabs(['overview', 'polls', 'candidates', 'news', 'history']);
         Sidebar.toggleSuperintendentSummary(false);
+
+        renderProvinceLanding({
+            icon: 'fa-mouse-pointer',
+            title: `${region.name} 기초의원 지역구`,
+            description: '시군구를 선택하면 기초의원 선거구별 후보, 현직 의원, 지난 선거 맥락을 확인할 수 있습니다.',
+            stats: [
+                { label: '시군구', value: `${subRegions.length}개` },
+                { label: '현직 의원', value: summary?.totalMembers ? `${summary.totalMembers}명` : '집계 중' },
+                { label: '선거 방식', value: '중선거구' },
+            ],
+            actionText: '후보자 탭은 시군구 또는 선거구 선택 후 정식 후보 명부를 표시합니다.',
+        });
 
         const prevContainer = document.getElementById('prev-election-result');
         if (prevContainer) {
@@ -535,6 +626,14 @@ const ElectionViews = (() => {
         const issuesContainer = document.getElementById('key-issues');
         if (issuesContainer) issuesContainer.innerHTML = '';
         openOverviewContextCard();
+
+        if (!summary && ElectionData.loadLocalCouncilMembersData) {
+            ElectionData.loadLocalCouncilMembersData().then(() => {
+                if (AppState.currentElectionType === 'localCouncil' && AppState.currentRegionKey === regionKey) {
+                    renderLocalCouncilProvinceView(regionKey, region);
+                }
+            });
+        }
 
         // 뉴스탭은 lazy 로딩 — 탭 전환 시 renderNewsTab 호출 (API 쿼터 절약)
         AppState._newsTabPendingRegion = regionKey;

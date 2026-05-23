@@ -200,7 +200,10 @@ const Sidebar = (() => {
         const overviewCard = document.getElementById('election-overview-card');
         if (overviewCard) overviewCard.style.display = 'none';
         const districtDetail = document.getElementById('district-detail');
-        if (districtDetail) districtDetail.style.display = '';
+        if (districtDetail) {
+            districtDetail.style.display = '';
+            districtDetail.classList.remove('active');
+        }
 
         // 공유 컨테이너 초기화
         const ids = ['overview-summary', 'overview-key-issues', 'overview-risk-factor',

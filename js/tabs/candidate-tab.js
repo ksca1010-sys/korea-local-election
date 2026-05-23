@@ -7,6 +7,7 @@ const CandidateTab = (() => {
     const OFFICIAL_CANDIDATE_INFO_URL = 'https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml';
     let pendingDisclosureRefreshKey = null;
     let pendingCouncilCandidateRefreshKey = null;
+    let pendingCouncilMembersRefreshKey = null;
 
     function buildEmptyMessage(message, icon = 'fa-circle-info') {
         return `
@@ -60,7 +61,10 @@ const CandidateTab = (() => {
     }
 
     function buildModel(regionKey, electionType, districtName) {
-        const sharedModel = ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName);
+        const shouldUseSharedModel = !['council', 'localCouncil'].includes(electionType);
+        const sharedModel = shouldUseSharedModel
+            ? ElectionData.getCandidatesForSelection?.(regionKey, electionType, districtName)
+            : null;
         if (sharedModel) {
             return {
                 ...sharedModel,
@@ -255,12 +259,20 @@ const CandidateTab = (() => {
         // 광역의원/기초의원: 현직 의원 데이터 표시
         if (electionType === 'council' || electionType === 'localCouncil') {
             const typeLabel = electionType === 'council' ? '광역의원' : '기초의원';
+            if (electionType === 'localCouncil' && !districtName) {
+                return {
+                    title: `${region.name} ${typeLabel} 후보`,
+                    candidates: [],
+                    emptyMessage: '지도에서 시군구를 선택하면 기초의원 선거구별 후보를 확인할 수 있습니다.'
+                };
+            }
+
             const councilData = ElectionData.getCouncilData(regionKey);
             const members = [];
             if (councilData?.municipalities) {
                 Object.values(councilData.municipalities).forEach(constituencies => {
                     constituencies.forEach(c => {
-                        (c.candidates || []).forEach(m => {
+                        (c.candidates || c.members || []).forEach(m => {
                             members.push({
                                 name: m.name,
                                 badgeLabel: ElectionData.getPartyName(m.party || 'independent'),
@@ -562,12 +574,25 @@ const CandidateTab = (() => {
                 });
             }
         }
+        if (electionType === 'council' && !districtName && ElectionData.loadCouncilMembersData && !ElectionData._councilMembersCache) {
+            const refreshKey = `members_${regionKey}`;
+            if (pendingCouncilMembersRefreshKey !== refreshKey) {
+                pendingCouncilMembersRefreshKey = refreshKey;
+                ElectionData.loadCouncilMembersData().then(() => {
+                    pendingCouncilMembersRefreshKey = null;
+                    render(regionKey, electionType, districtName);
+                });
+            }
+        }
 
         const model = buildModel(regionKey, electionType, districtName);
         // Layer 2B: 정렬 모드 판정
-        const sortMode = typeof ElectionCalendar !== 'undefined'
+        let sortMode = typeof ElectionCalendar !== 'undefined'
             ? ElectionCalendar.getCandidateSortMode()
             : 'status_priority';
+        if ((electionType === 'council' || electionType === 'localCouncil') && !districtName) {
+            sortMode = 'status_priority';
+        }
 
         // 공보물 지연 로딩: 첫 진입에서 누락되지 않도록 로드 완료 후 1회 재렌더
         if (sortMode === 'ballot_number' && typeof ElectionData !== 'undefined' && !ElectionData._disclosureCache && ElectionData.loadDisclosures) {

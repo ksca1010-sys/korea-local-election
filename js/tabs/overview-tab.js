@@ -5,6 +5,11 @@
 
 const OverviewTab = (() => {
 
+    function safeInitial(name) {
+        const text = String(name || '').trim();
+        return text ? text.charAt(0) : '?';
+    }
+
     // 세대 카운터: 지역/선거유형 전환 시 이전 비동기 결과를 무시
     let _renderGeneration = 0;
 
@@ -485,7 +490,7 @@ const OverviewTab = (() => {
                     let suptHtml = `
                         ${isMergedSupt ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` : ''}
                         <div class="governor-info">
-                            <div class="governor-avatar" style="background:${govColor}">${s.name.charAt(0)}</div>
+                            <div class="governor-avatar" style="background:${govColor}">${safeInitial(s.name)}</div>
                             <div class="governor-details">
                                 <div class="name">${s.name}</div>
                                 <div class="meta">
@@ -508,7 +513,7 @@ const OverviewTab = (() => {
                                         <i class="fas fa-code-merge"></i> 통합 이전 전라남도
                                     </div>
                                     <div class="governor-info">
-                                        <div class="governor-avatar" style="background:${jnColor}">${prevJn.name.charAt(0)}</div>
+                                        <div class="governor-avatar" style="background:${jnColor}">${safeInitial(prevJn.name)}</div>
                                         <div class="governor-details">
                                             <div class="name">${prevJn.name}</div>
                                             <div class="meta">
@@ -534,7 +539,7 @@ const OverviewTab = (() => {
                     const statusText = mayorInfo.acting ? ' 권한대행' : ' 현직';
                     govContainer.innerHTML = `
                         <div class="governor-info">
-                            <div class="governor-avatar" style="background:${mColor}">${mayorInfo.name.charAt(0)}</div>
+                            <div class="governor-avatar" style="background:${mColor}">${safeInitial(mayorInfo.name)}</div>
                             <div class="governor-details">
                                 <div class="name">${mayorInfo.name}</div>
                                 <div class="meta">
@@ -565,7 +570,7 @@ const OverviewTab = (() => {
                     let govHtml = `
                         ${isMerged ? `<div style="font-size:0.7rem;color:var(--text-muted);margin-bottom:4px;"><i class="fas fa-code-merge"></i> 통합 이전 광주광역시</div>` : ''}
                         <div class="governor-info">
-                            <div class="governor-avatar" style="background:${govColor}">${gov.name.charAt(0)}</div>
+                            <div class="governor-avatar" style="background:${govColor}">${safeInitial(gov.name)}</div>
                             <div class="governor-details">
                                 <div class="name">${gov.name}</div>
                                 <div class="meta">
@@ -590,7 +595,7 @@ const OverviewTab = (() => {
                                         <i class="fas fa-code-merge"></i> 통합 이전 전라남도
                                     </div>
                                     <div class="governor-info">
-                                        <div class="governor-avatar" style="background:${jnColor}">${jeonnamGov.name.charAt(0)}</div>
+                                        <div class="governor-avatar" style="background:${jnColor}">${safeInitial(jeonnamGov.name)}</div>
                                         <div class="governor-details">
                                             <div class="name">${jeonnamGov.name}</div>
                                             <div class="meta">
