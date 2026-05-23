@@ -217,7 +217,23 @@
         "end": "2026-05-21"
       },
       "publishDate": "2026-05-22",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "못하고",
+          "party": "",
+          "support": 42.2
+        },
+        {
+          "candidateName": "긍정평가",
+          "party": "",
+          "support": 16.0
+        },
+        {
+          "candidateName": "부정평가",
+          "party": "",
+          "support": 10.0
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",
@@ -508,7 +524,33 @@
         "end": "2026-05-17"
       },
       "publishDate": "2026-05-21",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "반드시",
+          "party": "",
+          "support": 67.3
+        },
+        {
+          "candidateName": "투표",
+          "party": "",
+          "support": 18.0
+        },
+        {
+          "candidateName": "가급적",
+          "party": "",
+          "support": 4.6
+        },
+        {
+          "candidateName": "의향",
+          "party": "",
+          "support": 8.6
+        },
+        {
+          "candidateName": "있음",
+          "party": "",
+          "support": 1.5
+        }
+      ],
       "regionKey": "daejeon",
       "municipality": "대덕구",
       "electionType": "mayor",
@@ -1096,7 +1138,28 @@
         "end": "2026-05-19"
       },
       "publishDate": "2026-05-20",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "박문옥",
+          "party": "",
+          "support": 43.7
+        },
+        {
+          "candidateName": "천기옥",
+          "party": "",
+          "support": 30.9
+        },
+        {
+          "candidateName": "노동당",
+          "party": "",
+          "support": 10.1
+        },
+        {
+          "candidateName": "이장우",
+          "party": "",
+          "support": 6.9
+        }
+      ],
       "regionKey": "ulsan",
       "municipality": null,
       "electionType": "governor",
@@ -53681,14 +53744,14 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-22",
-    "lastPipelineRun": "2026-05-22",
+    "lastUpdated": "2026-05-23",
+    "lastPipelineRun": "2026-05-23",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
     "pollCount": 1120,
     "withRegistrationDate": 1117,
     "withRegistrationId": 908,
-    "withResults": 1004,
+    "withResults": 1008,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
       "governor": 318,

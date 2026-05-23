@@ -102,28 +102,7 @@
           "date": "2026-05-20",
           "org": "(주)리서치앤리서치",
           "sampleSize": 802,
-          "results": [
-            {
-              "name": "잘하는",
-              "support": 33.5
-            },
-            {
-              "name": "못하는",
-              "support": 30.7
-            },
-            {
-              "name": "잘못하고",
-              "support": 11.2
-            },
-            {
-              "name": "긍정",
-              "support": 15.1
-            },
-            {
-              "name": "부정",
-              "support": 9.5
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -165,28 +144,7 @@
           "date": "2026-05-20",
           "org": "(주)리서치앤리서치",
           "sampleSize": 803,
-          "results": [
-            {
-              "name": "잘하는",
-              "support": 24.7
-            },
-            {
-              "name": "못하는",
-              "support": 29.5
-            },
-            {
-              "name": "잘못하고",
-              "support": 13.0
-            },
-            {
-              "name": "긍정",
-              "support": 20.3
-            },
-            {
-              "name": "부정",
-              "support": 12.4
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -312,28 +270,7 @@
           "date": "2026-05-20",
           "org": "(주)리얼미터",
           "sampleSize": 507,
-          "results": [
-            {
-              "name": "전문학",
-              "support": 40.6
-            },
-            {
-              "name": "서철모",
-              "support": 39.8
-            },
-            {
-              "name": "유지곤",
-              "support": 6.6
-            },
-            {
-              "name": "서구",
-              "support": 4.1
-            },
-            {
-              "name": "갑선거구",
-              "support": 8.9
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -380,28 +317,7 @@
           "date": "2026-05-20",
           "org": "(주)리얼미터",
           "sampleSize": 507,
-          "results": [
-            {
-              "name": "더불어민주당",
-              "support": 30.8
-            },
-            {
-              "name": "국민의힘",
-              "support": 42.2
-            },
-            {
-              "name": "조국혁신당",
-              "support": 2.0
-            },
-            {
-              "name": "진보당",
-              "support": 9.8
-            },
-            {
-              "name": "개혁신당",
-              "support": 2.6
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -443,16 +359,7 @@
           "date": "2026-05-19",
           "org": "KOPRA",
           "sampleSize": 802,
-          "results": [
-            {
-              "name": "조국혁신당",
-              "support": 3.0
-            },
-            {
-              "name": "진보당",
-              "support": 1.0
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -504,20 +411,7 @@
           "date": "2026-05-18",
           "org": "조원씨앤아이",
           "sampleSize": 802,
-          "results": [
-            {
-              "name": "더불어민주당",
-              "support": 44.1
-            },
-            {
-              "name": "조국혁신당",
-              "support": 2.7
-            },
-            {
-              "name": "진보당",
-              "support": 3.3
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -618,24 +512,7 @@
           "date": "2026-05-21",
           "org": "(주)리얼미터",
           "sampleSize": 806,
-          "results": [
-            {
-              "name": "더불어민주당",
-              "support": 38.4
-            },
-            {
-              "name": "국민의힘",
-              "support": 35.7
-            },
-            {
-              "name": "조국혁신당",
-              "support": 4.0
-            },
-            {
-              "name": "진보당",
-              "support": 3.2
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -687,24 +564,7 @@
           "date": "2026-05-18",
           "org": "한길리서치",
           "sampleSize": 1001,
-          "results": [
-            {
-              "name": "반드시",
-              "support": 5.2
-            },
-            {
-              "name": "투표하지",
-              "support": 30.9
-            },
-            {
-              "name": "못하거나",
-              "support": 62.4
-            },
-            {
-              "name": "안할",
-              "support": 1.0
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -799,20 +659,7 @@
           "date": "2026-05-20",
           "org": "케이에스오아이 주식회사(한국사회여론연구소)",
           "sampleSize": 1001,
-          "results": [
-            {
-              "name": "못하고",
-              "support": 39.1
-            },
-            {
-              "name": "긍정평가",
-              "support": 18.1
-            },
-            {
-              "name": "부정평가",
-              "support": 12.6
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -1584,24 +1431,7 @@
           "date": "2026-05-18",
           "org": "한길리서치",
           "sampleSize": 1002,
-          "results": [
-            {
-              "name": "반드시",
-              "support": 9.7
-            },
-            {
-              "name": "투표하지",
-              "support": 28.8
-            },
-            {
-              "name": "못하거나",
-              "support": 57.8
-            },
-            {
-              "name": "안할",
-              "support": 2.2
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
         "previousElection": {
@@ -3198,16 +3028,7 @@
             "date": "2026-05-19",
             "org": "윈지코리아컨설팅",
             "sampleSize": 506,
-            "results": [
-              {
-                "name": "지지하는",
-                "support": 37.7
-              },
-              {
-                "name": "정당이",
-                "support": 49.2
-              }
-            ]
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "서산시",
@@ -3463,16 +3284,7 @@
             "date": "2026-05-21",
             "org": "(주)리서치뷰",
             "sampleSize": 700,
-            "results": [
-              {
-                "name": "박수현",
-                "support": 35.6
-              },
-              {
-                "name": "김태흠",
-                "support": 54.6
-              }
-            ]
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "태안군",
@@ -3869,28 +3681,7 @@
             "date": "2026-05-20",
             "org": "(주)에이스리서치",
             "sampleSize": 502,
-            "results": [
-              {
-                "name": "더불어민주당",
-                "support": 32.3
-              },
-              {
-                "name": "국민의힘",
-                "support": 43.0
-              },
-              {
-                "name": "조국혁신당",
-                "support": 2.3
-              },
-              {
-                "name": "진보당",
-                "support": 1.6
-              },
-              {
-                "name": "개혁신당",
-                "support": 5.1
-              }
-            ]
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "수성구",
@@ -5576,10 +5367,6 @@
               {
                 "name": "권기창",
                 "support": 50.8
-              },
-              {
-                "name": "이외후보",
-                "support": 5.3
               }
             ]
           },
@@ -8341,24 +8128,7 @@
             "date": "2026-05-18",
             "org": "한길리서치",
             "sampleSize": 500,
-            "results": [
-              {
-                "name": "반드시",
-                "support": 7.9
-              },
-              {
-                "name": "투표하지",
-                "support": 30.9
-              },
-              {
-                "name": "못하거나",
-                "support": 58.8
-              },
-              {
-                "name": "안할",
-                "support": 1.8
-              }
-            ]
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "남동구",
@@ -9315,10 +9085,6 @@
               {
                 "name": "차영수",
                 "support": 34.7
-              },
-              {
-                "name": "지지하는",
-                "support": 2.5
               }
             ]
           },
@@ -9594,28 +9360,7 @@
             "date": "2026-05-19",
             "org": "(주)리얼미터",
             "sampleSize": 501,
-            "results": [
-              {
-                "name": "반드시",
-                "support": 70.3
-              },
-              {
-                "name": "투표",
-                "support": 21.1
-              },
-              {
-                "name": "가급적",
-                "support": 2.2
-              },
-              {
-                "name": "의향",
-                "support": 5.8
-              },
-              {
-                "name": "있음",
-                "support": 0.6
-              }
-            ]
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "담양군",
@@ -11500,10 +11245,6 @@
               {
                 "name": "이순걸",
                 "support": 41.0
-              },
-              {
-                "name": "강상규",
-                "support": 8.3
               }
             ]
           },
@@ -11606,28 +11347,7 @@
           "date": "2026-05-20",
           "org": "(주)리서치앤리서치",
           "sampleSize": 500,
-          "results": [
-            {
-              "name": "잘하는",
-              "support": 26.8
-            },
-            {
-              "name": "못하는",
-              "support": 35.7
-            },
-            {
-              "name": "잘못하고",
-              "support": 13.4
-            },
-            {
-              "name": "긍정",
-              "support": 15.8
-            },
-            {
-              "name": "부정",
-              "support": 8.3
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
         "vacancyReason": "공석 사유는 공식 데이터 확인 후 표시합니다.",
@@ -12329,28 +12049,7 @@
           "date": "2026-05-20",
           "org": "(주)리얼미터",
           "sampleSize": 1004,
-          "results": [
-            {
-              "name": "더불어민주당",
-              "support": 34.3
-            },
-            {
-              "name": "국민의힘",
-              "support": 38.7
-            },
-            {
-              "name": "조국혁신당",
-              "support": 4.3
-            },
-            {
-              "name": "진보당",
-              "support": 9.8
-            },
-            {
-              "name": "개혁신당",
-              "support": 4.8
-            }
-          ]
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
         "vacancyReason": "공석 사유는 공식 데이터 확인 후 표시합니다.",
