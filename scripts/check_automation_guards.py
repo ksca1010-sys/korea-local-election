@@ -27,6 +27,7 @@ IGNORED_WORKFLOWS = {
 }
 
 NO_AUTO_RETRY_NAMES = {
+    "CI",
     "Data Health Check",
 }
 

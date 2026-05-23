@@ -28,10 +28,6 @@ const CouncilTab = (() => {
         return electionType === 'council' ? '광역의원' : '기초의원';
     }
 
-    function getRoleLabel(electionType) {
-        return electionType === 'council' ? '시·도의원' : '구·시·군의원';
-    }
-
     function getSeats(regionKey, districtName, electionType) {
         if (electionType === 'council') return 1; // 소선거구
 
@@ -57,7 +53,7 @@ const CouncilTab = (() => {
         // 후보자 JSON을 먼저 로드한 뒤 탭 렌더 (현직+신규 모두 포함)
         try {
             await ElectionData.loadCouncilCandidates?.(regionKey, electionType);
-        } catch(e) { /* 로드 실패 시 폴백 사용 */ }
+        } catch(_e) { /* 로드 실패 시 폴백 사용 */ }
 
         switch (tabName) {
             case 'overview':   renderOverview(regionKey, districtName, electionType); break;
@@ -148,6 +144,8 @@ const CouncilTab = (() => {
         const dongs = getDistrictDongs(regionKey, districtName, electionType);
         const region = ElectionData.getRegion(regionKey);
         const regionName = region?.name || '';
+        const contextCard = document.getElementById('overview-context-card');
+        if (contextCard) contextCard.open = true;
 
         // ── 개요 박스: 선거구 정보 + 관할 읍면동 ──
         const prevContainer = document.getElementById('prev-election-result');
@@ -237,7 +235,7 @@ const CouncilTab = (() => {
                 }
             } else {
                 const normalized = districtName.replace(/\s+/g, '');
-                for (const [sgg, districts] of Object.entries(data.local_council?.[regionKey] || {})) {
+                for (const [_sgg, districts] of Object.entries(data.local_council?.[regionKey] || {})) {
                     for (const [dk, dv] of Object.entries(districts)) {
                         if (dk === districtName || dk.replace(/\s+/g, '') === normalized) { winners = dv; break; }
                     }
@@ -408,20 +406,28 @@ const CouncilTab = (() => {
 
     function renderCandidateCards(container, candidates) {
         const sorted = [...candidates].sort((a, b) => {
-            // 현직 우선, 그 다음 이름순
             if (a.isIncumbent && !b.isIncumbent) return -1;
             if (!a.isIncumbent && b.isIncumbent) return 1;
+            const aBallot = Number.isFinite(Number(a.ballotNumber)) ? Number(a.ballotNumber) : 999;
+            const bBallot = Number.isFinite(Number(b.ballotNumber)) ? Number(b.ballotNumber) : 999;
+            if (aBallot !== bBallot) return aBallot - bBallot;
+            const detailOrder = { '': 0, '가': 1, '나': 2, '다': 3, '라': 4, '마': 5, '바': 6 };
+            const aDetail = detailOrder[a.ballotNumberDetail || ''] ?? 99;
+            const bDetail = detailOrder[b.ballotNumberDetail || ''] ?? 99;
+            if (aDetail !== bDetail) return aDetail - bDetail;
             return (a.name || '').localeCompare(b.name || '');
         });
 
         container.innerHTML = sorted.map(c => {
             const pc = ElectionData.getPartyColor(c.party || 'independent');
-            const pn = ElectionData.getPartyName(c.party || 'independent');
+            const pn = c.partyName || ElectionData.getPartyName(c.party || 'independent');
             const incumbentBadge = c.isIncumbent
                 ? '<span style="background:#f59e0b;color:white;padding:1px 6px;border-radius:3px;font-size:0.65rem;margin-left:4px">현직</span>'
                 : '';
-            const statusBadge = c.status === 'DECLARED'
-                ? '<span style="background:#22c55e22;color:#22c55e;padding:1px 6px;border-radius:3px;font-size:0.65rem;margin-left:4px">출마확정</span>'
+            const statusBadge = c.status === 'NOMINATED'
+                ? '<span style="background:#2563eb22;color:#60a5fa;padding:1px 6px;border-radius:3px;font-size:0.65rem;margin-left:4px">등록 후보</span>'
+                : c.status === 'DECLARED'
+                    ? '<span style="background:#22c55e22;color:#22c55e;padding:1px 6px;border-radius:3px;font-size:0.65rem;margin-left:4px">출마확정</span>'
                 : '';
 
             return `
@@ -458,7 +464,17 @@ const CouncilTab = (() => {
 
         sortedParties.forEach(([party, members]) => {
             const pc = ElectionData.getPartyColor(party);
-            const pn = ElectionData.getPartyName(party);
+            const pn = members[0]?.partyName || ElectionData.getPartyName(party);
+            const sortedMembers = [...members].sort((a, b) => {
+                const aBallot = Number.isFinite(Number(a.ballotNumber)) ? Number(a.ballotNumber) : 999;
+                const bBallot = Number.isFinite(Number(b.ballotNumber)) ? Number(b.ballotNumber) : 999;
+                if (aBallot !== bBallot) return aBallot - bBallot;
+                const detailOrder = { '': 0, '가': 1, '나': 2, '다': 3, '라': 4, '마': 5, '바': 6 };
+                const aDetail = detailOrder[a.ballotNumberDetail || ''] ?? 99;
+                const bDetail = detailOrder[b.ballotNumberDetail || ''] ?? 99;
+                if (aDetail !== bDetail) return aDetail - bDetail;
+                return (a.name || '').localeCompare(b.name || '');
+            });
 
             html += `
                 <div class="council-party-group" style="margin-bottom:12px;padding:10px;border-radius:8px;background:var(--bg-secondary);border-left:3px solid ${pc}">
@@ -466,10 +482,10 @@ const CouncilTab = (() => {
                         <strong style="color:${pc}">${pn}</strong>
                         <span style="color:var(--text-muted);font-size:0.8rem">${members.length}명 출마</span>
                     </div>
-                    ${members.map(c => {
+                    ${sortedMembers.map(c => {
                         const incumbentBadge = c.isIncumbent
                             ? '<span style="background:#f59e0b;color:white;padding:1px 4px;border-radius:3px;font-size:0.6rem;margin-left:4px">현직</span>'
-                            : '<span style="background:var(--bg-tertiary);color:var(--text-muted);padding:1px 4px;border-radius:3px;font-size:0.6rem;margin-left:4px">신인</span>';
+                            : '';
                         return `
                             <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:0.85rem;">
                                 <span style="width:6px;height:6px;border-radius:50%;background:${pc};flex-shrink:0"></span>
@@ -622,7 +638,7 @@ const CouncilTab = (() => {
 
                 // 선거구명 매칭 (시군구 > 선거구)
                 let winners = [];
-                for (const [sgg, districts] of Object.entries(regionData)) {
+                for (const [_sgg, districts] of Object.entries(regionData)) {
                     if (!districts || typeof districts !== 'object') continue;
                     for (const [dk, dv] of Object.entries(districts)) {
                         if (dk === districtName || dk.replace(/\s+/g, '') === lcNormalized) {

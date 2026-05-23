@@ -92,6 +92,11 @@ jobs:
           fi
           echo "Official candidate sync stages: core=${CORE_OUTCOME}, council=${COUNCIL_OUTCOME}"
 
+      - name: Validate candidate fact-check guards
+        run: |
+          python3 scripts/audit_candidate_sources.py
+          python3 scripts/candidate_pipeline/cross_validate.py --strict
+
       - name: Check for changes
         id: diff
         run: |

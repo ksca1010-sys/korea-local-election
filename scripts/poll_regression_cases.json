@@ -1,23 +1,26 @@
 [
   {
-    "name": "seoul-governor-before-cutoff-hidden",
+    "name": "seoul-governor-latest-visible",
     "regionKey": "seoul",
     "electionType": "governor",
-    "expectedMinCount": 0,
-    "expectedMaxCount": 0,
+    "expectedMinCount": 1,
     "expectedHeaderIncludes": [
       "서울",
       "광역단체장"
-    ]
+    ],
+    "expectedFirstTitleIncludes": [
+      "광역단체장선거"
+    ],
+    "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "gyeonggi-governor-may18-visible",
-    "regionKey": "gyeonggi",
+    "name": "chungnam-governor-may18-visible",
+    "regionKey": "chungnam",
     "electionType": "governor",
     "expectedMinCount": 1,
     "expectedMaxCount": 1,
     "expectedHeaderIncludes": [
-      "경기",
+      "충청남도",
       "광역단체장"
     ],
     "expectedFirstTitleIncludes": [
@@ -72,14 +75,21 @@
     ]
   },
   {
-    "name": "jeonnam-mayor-before-cutoff-hidden",
+    "name": "jeonnam-mayor-latest-visible",
     "regionKey": "jeonnam",
     "electionType": "mayor",
-    "expectedMinCount": 0,
-    "expectedMaxCount": 0,
+    "expectedMinCount": 1,
     "expectedHeaderIncludes": [
       "전라남도",
       "기초단체장"
-    ]
+    ],
+    "expectedChartMode": "activity",
+    "expectedChartType": "bar",
+    "expectedChartReason": "activity",
+    "expectedMunicipalityCountMin": 1,
+    "expectedDatasetLabels": [
+      "조사 수"
+    ],
+    "expectedAllPublishDateMin": "2026-05-18"
   }
 ]

@@ -17,6 +17,7 @@ on:
       - "Update Local Council Members"
       - "Update Local Media Pool"
       - "Sync NEC Official Candidates"
+      - "CI"
     types: [completed]
 
 concurrency:

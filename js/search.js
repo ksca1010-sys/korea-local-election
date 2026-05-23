@@ -64,6 +64,12 @@ const SearchModule = (() => {
         if (!value) return;
         const compact = _normalizeSearchText(value);
         if (compact.length >= 2) aliases.add(compact);
+        const withoutAdminSuffixes = compact
+            .replace(/(특별자치도|특별자치시|특별시|광역시)/g, '')
+            .replace(/([가-힣])(도|시|군|구)(?=[가-힣]|$)/g, '$1');
+        if (withoutAdminSuffixes.length >= 2 && withoutAdminSuffixes !== compact) {
+            aliases.add(withoutAdminSuffixes);
+        }
 
         // "연수구갑" -> "연수갑", "평택시을" -> "평택을"
         const constituency = compact.match(/^(.+?)(시|군|구)(갑|을|병|정)$/);

@@ -1671,8 +1671,9 @@ const ElectionData = (() => {
             const dominance = {};
             const regionMap = this._pollsCache?.regions || {};
             Object.entries(regionMap).forEach(([, polls]) => {
-                if (!polls?.length) return;
-                const govPolls = polls.filter(p => p.electionType === 'governor');
+                const visiblePolls = this._filterDisplayPolls(polls);
+                if (!visiblePolls.length) return;
+                const govPolls = visiblePolls.filter(p => p.electionType === 'governor');
                 if (!govPolls.length) return;
                 const latestPoll = govPolls[govPolls.length - 1];
                 if (!latestPoll?.results?.length) return;
@@ -1736,6 +1737,233 @@ const ElectionData = (() => {
         },
         getPartyColor: (partyKey) => parties[partyKey]?.color || '#808080',
         getPartyName: (partyKey) => parties[partyKey]?.name || '무소속',
+        getCandidateSortMode() {
+            return typeof ElectionCalendar !== 'undefined'
+                ? ElectionCalendar.getCandidateSortMode()
+                : 'status_priority';
+        },
+        getSortedCandidatesForDisplay(candidates, sortMode = null) {
+            const mode = sortMode || this.getCandidateSortMode();
+            const list = Array.isArray(candidates) ? [...candidates] : [];
+            if (mode === 'ballot_number') {
+                return list
+                    .filter(candidate => candidate.status === 'NOMINATED')
+                    .sort((a, b) => (a.ballotNumber || 999) - (b.ballotNumber || 999));
+            }
+            const statusOrder = { NOMINATED: 0, PRIMARY_WINNER: 0.5, PRIMARY: 1, DECLARED: 2, EXPECTED: 3, RUMORED: 4 };
+            return list
+                .filter(candidate => candidate.status !== 'WITHDRAWN')
+                .sort((a, b) => {
+                    const sa = statusOrder[a.status] ?? 2.5;
+                    const sb = statusOrder[b.status] ?? 2.5;
+                    return sa - sb;
+                });
+        },
+        getCandidatesForSelection(regionKey, electionType = 'governor', districtName = null) {
+            const region = this.getRegion(regionKey);
+            const displayName = (typeof getMergedDisplayName === 'function' && getMergedDisplayName(regionKey, electionType))
+                || region?.name
+                || '';
+            const normalizePartyCandidate = (candidate, options = {}) => {
+                const partyKey = candidate.party || candidate.partyKey || options.party || 'independent';
+                return {
+                    _sectionLabel: candidate._sectionLabel || options.sectionLabel || null,
+                    name: candidate.name,
+                    badgeLabel: candidate.partyName || this.getPartyName(partyKey),
+                    badgeColor: this.getPartyColor(partyKey),
+                    party: partyKey,
+                    partyName: candidate.partyName || this.getPartyName(partyKey),
+                    age: candidate.age,
+                    career: candidate.career || '',
+                    pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
+                    status: candidate.status,
+                    primaryNote: candidate._primaryNote || null,
+                    dataSource: candidate.dataSource,
+                    sourceUrl: candidate.sourceUrl || null,
+                    officialUrl: candidate.officialUrl || null,
+                    detailUrl: candidate.detailUrl || null,
+                    huboid: candidate.huboid || candidate.cnddtId || null,
+                    sgId: candidate.sgId || null,
+                    sgTypecode: candidate.sgTypecode || null,
+                    ballotNumber: candidate.ballotNumber || null,
+                    districtName: candidate.districtName || options.districtName || districtName || null,
+                    incumbent: options.incumbentName ? options.incumbentName === candidate.name : Boolean(candidate.incumbent || candidate.isIncumbent),
+                };
+            };
+            const normalizeSuperintendentCandidate = (candidate, options = {}) => {
+                const stance = candidate.stance || '교육계';
+                return {
+                    _sectionLabel: candidate._sectionLabel || options.sectionLabel || null,
+                    name: candidate.name,
+                    badgeLabel: stance,
+                    badgeColor: this.getSuperintendentColor(stance),
+                    stance,
+                    age: candidate.age,
+                    career: candidate.career || '',
+                    pledges: Array.isArray(candidate.pledges) ? candidate.pledges.filter(Boolean) : [],
+                    pledgeCategories: Array.isArray(candidate.pledgeCategories) ? candidate.pledgeCategories : [],
+                    supportLabel: (Number.isFinite(Number(candidate.support)) && Number(candidate.support) > 0)
+                        ? `최근 조사 ${Number(candidate.support).toFixed(1)}%`
+                        : '',
+                    status: candidate.status,
+                    primaryNote: candidate._primaryNote || null,
+                    dataSource: candidate.dataSource,
+                    sourceUrl: candidate.sourceUrl || null,
+                    officialUrl: candidate.officialUrl || null,
+                    detailUrl: candidate.detailUrl || null,
+                    huboid: candidate.huboid || candidate.cnddtId || null,
+                    sgId: candidate.sgId || null,
+                    sgTypecode: candidate.sgTypecode || null,
+                    ballotNumber: candidate.ballotNumber || null,
+                    incumbent: options.incumbentName ? options.incumbentName === candidate.name : Boolean(candidate.incumbent || candidate.isIncumbent),
+                };
+            };
+
+            if (electionType === 'byElection' && districtName) {
+                const byeData = this.getByElectionData(districtName);
+                if (!byeData) {
+                    return { title: '재보궐 후보', candidates: [], emptyMessage: '등록된 재보궐 후보 데이터가 없습니다. 공천 확정 후 업데이트됩니다.' };
+                }
+                return {
+                    title: `${byeData.district} 국회의원 재보궐 후보`,
+                    electionLabel: byeData.type || '재보궐선거',
+                    candidates: (byeData.candidates || []).map(candidate => normalizePartyCandidate(candidate)),
+                    emptyMessage: '등록된 재보궐 후보 데이터가 없습니다. 공천 확정 후 업데이트됩니다.'
+                };
+            }
+
+            if (!region) {
+                return { title: '후보자 정보', candidates: [], emptyMessage: '후보자 데이터를 찾을 수 없습니다.' };
+            }
+
+            if (electionType === 'governor') {
+                let govCandidates = region.candidates || [];
+                if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    const jnRegion = this.getRegion('jeonnam');
+                    if (jnRegion?.candidates?.length) {
+                        if (govCandidates.length) govCandidates[0] = { ...govCandidates[0], _sectionLabel: '통합 이전 광주광역시' };
+                        const jnCands = jnRegion.candidates.map((candidate, index) =>
+                            index === 0 ? { ...candidate, _sectionLabel: '통합 이전 전라남도' } : candidate
+                        );
+                        govCandidates = [...govCandidates, ...jnCands];
+                    }
+                }
+                return {
+                    title: `${displayName} 광역단체장 후보`,
+                    electionLabel: '광역단체장',
+                    candidates: govCandidates.map(candidate => normalizePartyCandidate(candidate, {
+                        incumbentName: region.currentGovernor?.name || ''
+                    })),
+                    emptyMessage: '등록된 광역단체장 후보 데이터가 없습니다.'
+                };
+            }
+
+            if (electionType === 'superintendent') {
+                const data = this.getSuperintendentData(regionKey);
+                let suCandidates = data?.candidates || [];
+                if (regionKey === 'gwangju' && typeof isMergedGwangjuJeonnam === 'function' && isMergedGwangjuJeonnam(electionType)) {
+                    const jnData = this.getSuperintendentData('jeonnam');
+                    if (jnData?.candidates?.length) {
+                        if (suCandidates.length) suCandidates[0] = { ...suCandidates[0], _sectionLabel: '통합 이전 광주광역시' };
+                        const jnCands = jnData.candidates
+                            .filter(candidate => !candidate._merged)
+                            .map((candidate, index) => index === 0 ? { ...candidate, _sectionLabel: '통합 이전 전라남도' } : candidate);
+                        suCandidates = [...suCandidates, ...jnCands];
+                    }
+                }
+                return {
+                    title: `${displayName} 교육감 후보`,
+                    electionLabel: '교육감',
+                    isSuperintendent: true,
+                    candidates: suCandidates.map(candidate => normalizeSuperintendentCandidate(candidate, {
+                        incumbentName: data?.currentSuperintendent?.name || ''
+                    })),
+                    emptyMessage: '등록된 교육감 후보 데이터가 없습니다.'
+                };
+            }
+
+            if (electionType === 'mayor') {
+                if (!districtName) {
+                    return {
+                        title: `${region.name} 기초단체장 후보`,
+                        electionLabel: '기초단체장',
+                        candidates: [],
+                        emptyMessage: '지도에서 시군구를 선택하면 해당 지역 기초단체장 후보를 확인할 수 있습니다.'
+                    };
+                }
+                const canonicalDistrict = this.getSubRegionByName(regionKey, districtName)?.name || districtName;
+                const mayorData = this.getMayorData?.(regionKey, canonicalDistrict);
+                const districtSummary = this.getDistrictSummary?.(regionKey, canonicalDistrict);
+                return {
+                    title: `${canonicalDistrict} 기초단체장 후보`,
+                    electionLabel: '기초단체장',
+                    candidates: (mayorData?.candidates || []).map(candidate => normalizePartyCandidate(candidate, {
+                        districtName: canonicalDistrict,
+                        incumbentName: districtSummary?.mayor?.name || ''
+                    })),
+                    emptyMessage: `${canonicalDistrict} 기초단체장 후보 데이터가 아직 연결되지 않았습니다.`
+                };
+            }
+
+            if (electionType === 'councilProportional' || electionType === 'localCouncilProportional') {
+                const isCouncilProp = electionType === 'councilProportional';
+                const typeLabel = isCouncilProp ? '광역 비례대표' : '기초 비례대표';
+                const propData = isCouncilProp
+                    ? this.getProportionalCouncilRegion(regionKey)
+                    : this.getProportionalLocalCouncilRegion(regionKey);
+                if (propData) {
+                    const candidates = (propData.parties || [])
+                        .filter(party => party.seats > 0)
+                        .map(party => ({
+                            name: `${this.getPartyName(party.party)} (${party.seats}석)`,
+                            badgeLabel: `${party.seats}석`,
+                            badgeColor: this.getPartyColor(party.party),
+                            party: party.party,
+                            career: party.voteShare ? `득표율 ${party.voteShare}%` : '',
+                            pledges: [],
+                        }));
+                    return {
+                        title: `${region.name} ${typeLabel} 정당별 의석`,
+                        electionLabel: typeLabel,
+                        candidates,
+                        emptyMessage: `${typeLabel} 데이터가 없습니다.`
+                    };
+                }
+            }
+
+            if (electionType === 'council' || electionType === 'localCouncil') {
+                const typeLabel = electionType === 'council' ? '광역의원' : '기초의원';
+                const folder = electionType === 'council' ? 'council' : 'local_council';
+                const cacheKey = `${folder}_${regionKey}`;
+                const officialCandidates = this._councilCandidateCache?.[cacheKey]?.candidates || {};
+                const normalizeKey = (value) => String(value || '').replace(/\s+/g, '');
+                const targetDistrict = normalizeKey(districtName);
+                const selectedEntries = Object.entries(officialCandidates).filter(([name]) => {
+                    if (!targetDistrict) return true;
+                    const normalizedName = normalizeKey(name);
+                    return normalizedName === targetDistrict || normalizedName.startsWith(targetDistrict);
+                });
+                const candidates = selectedEntries.flatMap(([candidateDistrict, list]) =>
+                    (Array.isArray(list) ? list : []).map(candidate => normalizePartyCandidate(candidate, {
+                        districtName: candidateDistrict
+                    }))
+                );
+                return {
+                    title: `${districtName || region.name} ${typeLabel} 후보`,
+                    electionLabel: typeLabel,
+                    candidates,
+                    emptyMessage: districtName
+                        ? `${districtName} ${typeLabel} 후보 데이터를 불러오는 중입니다.`
+                        : `지도에서 선거구를 선택하거나 후보 데이터 로딩이 끝나면 ${typeLabel} 후보를 확인할 수 있습니다.`
+                };
+            }
+
+            return {
+                title: `${region.name} 후보자 정보`,
+                candidates: [],
+                emptyMessage: '현재 선택한 선거 유형은 후보자 탭을 아직 지원하지 않습니다.'
+            };
+        },
         getLeadingParty: (regionKey) => {
             const region = regions[regionKey];
             if (!region) return null;
@@ -2059,7 +2287,8 @@ const ElectionData = (() => {
 
         // ── 정당지지도 (비례대표용) — 순수 정당지지도만 ──
         getPartySupport(regionKey) {
-            if (!this._pollsCache?.regions?.[regionKey]) return [];
+            const polls = this._filterDisplayPolls(this._pollsCache?.regions?.[regionKey]);
+            if (!polls.length) return [];
             const ALLOWED = new Set([
                 '더불어민주당','국민의힘','조국혁신당','개혁신당','진보당','정의당',
                 '무소속','새로운미래','기타','기타정당','모름/무응답','없음','모르겠다',
@@ -2067,7 +2296,7 @@ const ElectionData = (() => {
             ]);
             // 제외 키워드: 후보 지지율 조사에 딸린 정당지지도
             const EXCLUDE_TITLE = ['기초단체장', '국회의원', '시장선거', '구청장', '군수'];
-            return this._pollsCache.regions[regionKey].filter(p => {
+            return polls.filter(p => {
                 const title = p.title || '';
                 const types = p.classification?.electionTypes || [];
                 if (!title.includes('정당지지도') && !types.includes('정당지지도')) return false;
@@ -2389,8 +2618,21 @@ const ElectionData = (() => {
         _isPollDisplayEligible(poll) {
             return this._parsePollDate(poll?.publishDate) >= this._pollDisplayStartAt;
         },
+        _isPollPublicationBanned() {
+            return typeof ElectionCalendar !== 'undefined'
+                && typeof ElectionCalendar.isPublicationBanned === 'function'
+                && ElectionCalendar.isPublicationBanned();
+        },
         _filterDisplayPolls(polls) {
-            return (polls || []).filter(poll => this._isPollDisplayEligible(poll));
+            const eligiblePolls = (polls || []).filter(poll => this._isPollDisplayEligible(poll));
+            if (
+                typeof ElectionCalendar !== 'undefined'
+                && typeof ElectionCalendar.getFilteredPolls === 'function'
+            ) {
+                return ElectionCalendar.getFilteredPolls(eligiblePolls).polls || [];
+            }
+            if (this._isPollPublicationBanned()) return [];
+            return eligiblePolls;
         },
         loadPollsData(options = {}) {
             const loadOptions = options || {};
@@ -2737,7 +2979,9 @@ const ElectionData = (() => {
                         }
                     });
                 }
-            } catch (_e) {}
+            } catch (_e) {
+                /* optional mayor candidate cache */
+            }
             filtered = filtered.map(p => ({
                 ...p,
                 results: (p.results || []).map(r => {
@@ -2949,7 +3193,9 @@ const ElectionData = (() => {
                             if (Array.isArray(cands)) cands.forEach(c => { if (c.name && c.party) _partyMap[c.name] = c.party; });
                         });
                     }
-                } catch (_e) {}
+                } catch (_e) {
+                    /* optional mayor candidate cache */
+                }
                 const _knownParty = {
                     '오세훈': 'ppp', '나경원': 'ppp', '김동연': 'democratic', '김은혜': 'ppp',
                     '박형준': 'ppp', '강기정': 'democratic', '이장우': 'ppp', '김두겸': 'ppp',
@@ -3195,7 +3441,7 @@ const ElectionData = (() => {
                 .catch(err => { this._disclosurePromise = null; console.warn('[Disclosures] 로드 실패:', err); return null; });
             return this._disclosurePromise;
         },
-        getDisclosure(electionType, regionKey, candidateName, districtName) {
+        getDisclosure(electionType, regionKey, candidateName, districtName, huboid) {
             const cache = this._disclosureCache;
             if (!cache?.disclosures) return null;
             const typeMap = { governor: 'governor', superintendent: 'superintendent', mayor: 'mayor' };
@@ -3203,16 +3449,21 @@ const ElectionData = (() => {
             if (!typeKey) return null;
             const typeData = cache.disclosures[typeKey];
             if (!typeData) return null;
+            const matchesCandidate = (record) => {
+                if (!record) return false;
+                if (huboid && String(record.huboid || record.cnddtId || '') === String(huboid)) return true;
+                return record.name === candidateName;
+            };
             if (typeKey === 'mayor') {
                 const regionData = typeData[regionKey];
                 const districtData = regionData?.[districtName]
                     || Object.entries(regionData || {}).find(([key]) => key === districtName || key.includes(districtName) || districtName?.includes(key))?.[1];
                 if (!Array.isArray(districtData)) return null;
-                return districtData.find(d => d.name === candidateName) || null;
+                return districtData.find(matchesCandidate) || null;
             }
             const regionArr = typeData[regionKey];
             if (!Array.isArray(regionArr)) return null;
-            return regionArr.find(d => d.name === candidateName) || null;
+            return regionArr.find(matchesCandidate) || null;
         }
     };
 })();

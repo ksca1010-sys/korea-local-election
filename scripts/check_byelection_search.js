@@ -121,11 +121,12 @@ function main() {
         ['평택을', 'gyeonggi-pyeongtaek'],
         ['안산갑', 'gyeonggi-ansan'],
         ['군산김제부안갑', 'jeonbuk-gunsan'],
-        ['공주부여청양', 'chungnam-gongju'],
+        ['공주부여청양', 'chungnam-gongju-buyeo-cheongyang'],
         ['서귀포', 'jeju-seogwipo'],
-        ['광산구을', 'gwangju-gwangsan'],
+        ['광산구을', 'gwangju-gwangsan-eul'],
         ['김용', 'gyeonggi-pyeongtaek'],
-        ['조국', 'jeonbuk-gunsan']
+        ['조국', 'gyeonggi-pyeongtaek'],
+        ['김의겸', 'jeonbuk-gunsan']
     ];
 
     for (const [query, expectedKey] of cases) {
