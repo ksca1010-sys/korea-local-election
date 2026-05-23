@@ -205,6 +205,23 @@ const ProportionalTab = (() => {
         return map[name] || 'independent';
     }
 
+    function _safeText(value) {
+        return typeof escapeHtml === 'function'
+            ? escapeHtml(String(value || ''))
+            : String(value || '').replace(/[&<>"']/g, ch => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[ch]));
+    }
+
+    function _renderCandidatePhoto(candidate) {
+        if (!candidate.photoUrl) return '';
+        return `
+            <span class="candidate-photo-wrap candidate-photo-wrap--sm" title="${_safeText(candidate.photoSourceLabel || '중앙선거관리위원회 후보자 사진')}">
+                <img class="candidate-photo" src="${_safeText(candidate.photoUrl)}" alt="${_safeText(candidate.name)} 후보자 사진" loading="lazy" referrerpolicy="no-referrer">
+            </span>
+        `;
+    }
+
     // ══════════════════════════════════════
     // 여론조사탭 — 정당지지도만
     // ══════════════════════════════════════
@@ -410,7 +427,9 @@ const ProportionalTab = (() => {
                         <tbody>${candidates.map((c, i) => `
                             <tr style="border-top:1px solid var(--border-color);">
                                 <td style="padding:4px 8px;text-align:center;color:var(--text-muted)">${i + 1}</td>
-                                <td style="padding:4px 8px;color:var(--text-primary)">${c.name}</td>
+                                <td style="padding:4px 8px;color:var(--text-primary)">
+                                    <span style="display:flex;align-items:center;gap:6px;">${_renderCandidatePhoto(c)}<span>${_safeText(c.name)}</span></span>
+                                </td>
                                 <td style="padding:4px 8px;color:var(--text-muted)">${c.career || ''}</td>
                             </tr>`).join('')}
                         </tbody>

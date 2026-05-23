@@ -312,6 +312,28 @@ const CandidateTab = (() => {
             || OFFICIAL_CANDIDATE_INFO_URL;
     }
 
+    function buildCandidateMarker(candidate, sortMode) {
+        if (candidate.photoUrl) {
+            const photoUrl = escapeHtml(candidate.photoUrl);
+            const sourceLabel = escapeHtml(candidate.photoSourceLabel || '중앙선거관리위원회 후보자 사진');
+            const ballotBadge = sortMode === 'ballot_number'
+                ? `<span class="candidate-photo-ballot" title="기호">${escapeHtml(candidate.ballotNumber || '-')}</span>`
+                : '';
+            return `
+                <div class="candidate-photo-wrap" title="${sourceLabel}">
+                    <img class="candidate-photo" src="${photoUrl}" alt="${escapeHtml(candidate.name || '후보자')} 후보자 사진" loading="lazy" referrerpolicy="no-referrer">
+                    ${ballotBadge}
+                </div>
+            `;
+        }
+        if (sortMode === 'ballot_number') {
+            return `<div class="candidate-ballot-number" title="기호"><strong>${candidate.ballotNumber || '-'}</strong><span>기호</span></div>`;
+        }
+        return `<div class="candidate-avatar" style="background:${candidate.badgeColor}">
+                ${candidate.name?.charAt(0) || '?'}
+           </div>`;
+    }
+
     function buildOfficialSourceActions(candidate, disclosure) {
         if (candidate.status !== 'NOMINATED') return '';
         const url = escapeHtml(getOfficialSourceUrl(candidate, disclosure));
@@ -638,11 +660,7 @@ const CandidateTab = (() => {
                 const disclosure = sortMode === 'ballot_number' && typeof ElectionData !== 'undefined'
                     ? ElectionData.getDisclosure(electionType, regionKey, candidate.name, candidate.districtName || districtName, candidate.huboid)
                     : null;
-                const markerHtml = sortMode === 'ballot_number'
-                    ? `<div class="candidate-ballot-number" title="기호"><strong>${candidate.ballotNumber || '-'}</strong><span>기호</span></div>`
-                    : `<div class="candidate-avatar" style="background:${candidate.badgeColor}">
-                            ${candidate.name?.charAt(0) || '?'}
-                       </div>`;
+                const markerHtml = buildCandidateMarker(candidate, sortMode);
                 return `
                 ${sectionHeader}<div class="candidate-card-full ${statusClass}">
                     <div class="candidate-header">
