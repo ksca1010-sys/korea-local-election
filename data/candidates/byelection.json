@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-22",
+    "lastUpdated": "2026-05-23",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "note": "재보궐선거 선거구는 선관위 코드정보 기준. 후보·공석 사유는 공식/언론 검증된 항목만 표시.",
     "lastDetection": "2026-05-17",
@@ -8,8 +8,8 @@
     "lastOfficialDistrictSync": "2026-05-17",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "officialDistrictCount": 14,
-    "lastPipelineRun": "2026-05-22T23:25:33.483126",
-    "lastOfficialSync": "2026-05-22T23:25:33.483126",
+    "lastPipelineRun": "2026-05-23T06:11:46.188619",
+    "lastOfficialSync": "2026-05-23T06:11:46.188619",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
@@ -236,7 +236,7 @@
         }
       ],
       "candidateCount": 4,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "전재수",
@@ -415,7 +415,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "ppp",
         "winnerName": "추경호",
@@ -640,7 +640,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "incheon-gyeyang": {
       "region": "incheon",
@@ -851,7 +851,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "gwangju-gwangsan-eul": {
       "region": "gwangju",
@@ -1128,7 +1128,7 @@
         }
       ],
       "candidateCount": 6,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "민형배",
@@ -1363,7 +1363,7 @@
         }
       ],
       "candidateCount": 4,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "ppp",
         "winnerName": "김상욱",
@@ -1645,7 +1645,7 @@
       "candidateCount": 5,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "gyeonggi-ansan": {
       "district": "경기 안산시갑",
@@ -1851,7 +1851,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "gyeonggi-hanam-gap": {
       "region": "gyeonggi",
@@ -2044,7 +2044,7 @@
         }
       ],
       "candidateCount": 3,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "추미애",
@@ -2265,7 +2265,7 @@
         }
       ],
       "candidateCount": 5,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "박수현",
@@ -2490,7 +2490,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "jeonbuk-gunsan": {
       "region": "jeonbuk",
@@ -2668,7 +2668,7 @@
       "candidateCount": 2,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-05-22"
+      "lastOfficialCandidateSync": "2026-05-23"
     },
     "jeonbuk-gunsan-gimje-buan-eul": {
       "region": "jeonbuk",
@@ -2763,7 +2763,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "이원택",
@@ -2928,7 +2928,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-05-22",
+      "lastOfficialCandidateSync": "2026-05-23",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "위성곤",
