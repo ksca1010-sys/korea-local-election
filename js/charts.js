@@ -232,7 +232,7 @@ const ChartsModule = (() => {
 
             datasets.push({
                 label: name,
-                data: polls.map((p, i) => {
+                data: polls.map((p) => {
                     const r = (p.results || []).find(r => r.candidateName === name);
                     const dateStr = p.surveyDate?.end || p.publishDate || null;
                     return r && dateStr ? { x: dateStr, y: r.support } : null;
@@ -375,7 +375,7 @@ const ChartsModule = (() => {
      * 호환성: 기존 renderAllCharts 호출 대응
      * 새 구현에서는 renderPollTab에서 직접 호출
      */
-    function renderAllCharts(regionKey) {
+    function renderAllCharts(_regionKey) {
         destroyCharts();
     }
 

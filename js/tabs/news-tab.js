@@ -1056,7 +1056,7 @@ const NewsTab = (() => {
             const payload = { ts: Date.now(), items: items.slice(0, 80) };
             const raw = JSON.stringify(payload);
             sessionStorage.setItem(_newsCacheKey(regionKey, catId), raw);
-            try { localStorage.setItem(_newsCacheKey(regionKey, catId), raw); } catch (_e) {}
+            try { localStorage.setItem(_newsCacheKey(regionKey, catId), raw); } catch (_e) { /* localStorage may be unavailable */ }
         } catch (_e) { /* storage full — ignore */ }
     }
 

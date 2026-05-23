@@ -16,8 +16,6 @@ const MapModule = (() => {
     let currentProvinceKey = null;
     let currentElectionType = null;
     let colorModeActive = false;
-    let currentMunicipality = null;
-    let currentSubdistrictName = null;
     let subdistrictContext = { regionKey: null, districtName: null };
     let _mapTooltip = null; // cached tooltip element
 
@@ -287,7 +285,6 @@ const MapModule = (() => {
             if (_muniTopoCache) {
                 try {
                     const objKey = Object.keys(_muniTopoCache.objects)[0];
-                    const codeBase = cfg.mergedCode.substring(0, 4); // e.g. '3304' for 청주시
                     const geoms = _muniTopoCache.objects[objKey].geometries.filter(g => {
                         const name = g.properties?.name || '';
                         return cfg.guMatchFn(name) || cfg.aliasPattern.test(name);
@@ -295,7 +292,7 @@ const MapModule = (() => {
                     if (geoms.length > 0) {
                         mergedGeometry = topojson.merge(_muniTopoCache, geoms);
                     }
-                } catch (e) {
+                } catch (_e) {
                     // fallback to coordinate concat
                 }
             }
@@ -680,7 +677,6 @@ const MapModule = (() => {
         currentMapMode = 'subdistrict';
         currentProvinceKey = regionKey;
         subdistrictContext = { regionKey, districtName };
-        currentSubdistrictName = null;
         setMapModeLabel(`${districtName} 읍면동`);
         toggleBackButton(true);
         updateBreadcrumb('district', regionKey, districtName);
@@ -726,7 +722,7 @@ const MapModule = (() => {
     }
 
     function handleMouseOver(event, d) {
-        let key = getRegionKey(d);
+        const key = getRegionKey(d);
         // 전남광주통합: 전남 hover → 광주 tooltip + 양쪽 하이라이트
         if (_isMergedJeonnam() && (key === 'jeonnam' || key === 'gwangju')) {
             _highlightMergedGwangjuJeonnam(true);
@@ -1499,7 +1495,6 @@ const MapModule = (() => {
     function switchToProvinceMap() {
         currentMapMode = 'province';
         currentProvinceKey = null;
-        currentSubdistrictName = null;
         subdistrictContext = { regionKey: null, districtName: null };
         _tooltipPinned = false;
         if (_mapTooltip) _mapTooltip.classList.remove('active');
@@ -1601,7 +1596,6 @@ const MapModule = (() => {
         const region = ElectionData.getRegion(regionKey);
         if (!region) return Promise.resolve();
 
-        currentSubdistrictName = null;
         subdistrictContext = { regionKey: null, districtName: null };
 
         currentMapMode = 'district';
@@ -1695,9 +1689,6 @@ const MapModule = (() => {
                 const b = path.bounds(d);
                 areaMap.set(d, (b[1][0] - b[0][0]) * (b[1][1] - b[0][1]));
             });
-            const areaValues = [...areaMap.values()].sort((a, b) => a - b);
-            const medianArea = areaValues[Math.floor(areaValues.length / 2)] || 0;
-
             // 라벨 충돌 검사용 배열
             const placedRects = [];
             function rectsOverlap(a, b) {
@@ -1832,7 +1823,6 @@ const MapModule = (() => {
     }
 
     function selectSubdistrict(regionKey, districtName, subdistrictName) {
-        currentSubdistrictName = subdistrictName;
         highlightSubdistrict(subdistrictName);
         if (typeof App !== 'undefined' && App.onSubdistrictSelected) {
             App.onSubdistrictSelected(regionKey, districtName, subdistrictName);
@@ -2012,7 +2002,7 @@ const MapModule = (() => {
                 sigungus.forEach(sgg => {
                     // 이 시군구에 속하는 geometry들
                     const indices = [];
-                    topoObj.geometries.forEach((geom, idx) => {
+                    topoObj.geometries.forEach((geom) => {
                         if (geom.properties && geom.properties.sigungu === sgg) {
                             indices.push(geom);
                         }
@@ -2155,10 +2145,6 @@ const MapModule = (() => {
                 .sort((a, b) => b.area - a.area);
 
             sortedSggEntries.forEach(({ sgg, features, fc, area: groupArea }) => {
-                const groupBounds = path.bounds(fc);
-                const gbw = groupBounds[1][0] - groupBounds[0][0];
-                const gbh = groupBounds[1][1] - groupBounds[0][1];
-
                 // 시군구명 라벨 (그룹 중심에 큰 글자)
                 const groupCentroid = d3.geoCentroid(fc);
                 const gc = projection(groupCentroid);
@@ -2277,7 +2263,6 @@ const MapModule = (() => {
 
         currentMapMode = 'subdistrict';
         currentProvinceKey = regionKey;
-        currentMunicipality = sggName;
         subdistrictContext = { regionKey, districtName: sggName };
         setMapModeLabel(`${sggName} 광역의원 선거구`);
         toggleBackButton(true);
@@ -2316,9 +2301,6 @@ const MapModule = (() => {
             path = d3.geoPath().projection(projection);
 
             // 선거구 색상: 정당색 기반 (폴백: 선거구별 팔레트)
-            const distNames = [...new Set(filtered.map(f => f.properties.district_name))];
-            const palette = d3.scaleOrdinal(d3.schemeTableau10).domain(distNames);
-
             function getSubCouncilColor(d) {
                 const councilData = ElectionData.getCouncilData?.(regionKey);
                 if (councilData) {
@@ -2349,7 +2331,7 @@ const MapModule = (() => {
                             .attr('fill', _neutralFill())
                             .attr('stroke', 'none')
                             .attr('pointer-events', 'none');
-                    } catch(e) { /* merge 실패 시 무시 */ }
+                    } catch(_e) { /* merge 실패 시 무시 */ }
                 }
             }
 
@@ -2520,7 +2502,6 @@ const MapModule = (() => {
 
         currentMapMode = 'subdistrict';
         currentProvinceKey = regionKey;
-        currentMunicipality = sggName;
         subdistrictContext = { regionKey, districtName: sggName };
         setMapModeLabel(`${sggName} 기초의원 선거구`);
         toggleBackButton(true);
@@ -2760,7 +2741,6 @@ const MapModule = (() => {
     function switchToConstituencyGrid(regionKey, districtName) {
         if (!regionKey || !districtName) return;
         currentMapMode = 'constituency';
-        currentMunicipality = districtName;
         updateBreadcrumb('district', regionKey, districtName);
         setMapModeLabel(`${districtName} 지역구`);
         toggleBackButton(true);
@@ -3143,7 +3123,6 @@ const MapModule = (() => {
     function setElectionTypeOnly(type) {
         currentElectionType = type;
         colorModeActive = (type === 'governor' || type === 'superintendent');
-        currentSubdistrictName = null;
         subdistrictContext = { regionKey: null, districtName: null };
         g.selectAll('.byelection-marker').remove();
         g.selectAll('.byelection-pulse').remove();
@@ -3160,7 +3139,6 @@ const MapModule = (() => {
             switchToProvinceMap();
         }
 
-        currentSubdistrictName = null;
         subdistrictContext = { regionKey: null, districtName: null };
 
         // Reset zoom to default (immediate, not transition)
@@ -3274,7 +3252,7 @@ const MapModule = (() => {
             // 재보궐 선거구 마커 — 1단계: 좌표 계산
             const markerData = regionByElections.map(([key, election]) => {
                 const districtName = election.district.replace(/.*\s/, '').replace(/[갑을병정]$/, '');
-                let targetFeature = filtered.find(f => {
+                const targetFeature = filtered.find(f => {
                     const name = getDistrictName(f);
                     return name && (districtName.includes(name.replace(/[시군구]$/, '')) || name.includes(districtName));
                 });
@@ -3913,8 +3891,7 @@ const MapModule = (() => {
     }
 
     function renderProportionalDistrictLabels(regionKey, features) {
-        ElectionData.loadProportionalLocalCouncilData().then(data => {
-            const regionData = data?.regions?.[regionKey];
+        ElectionData.loadProportionalLocalCouncilData().then(_data => {
             const fCount = features.length;
             const fontSize = fCount <= 3 ? '14px' : fCount <= 8 ? '11px' : fCount <= 15 ? '9px' : '8px';
             const fs = parseFloat(fontSize);
@@ -3936,8 +3913,6 @@ const MapModule = (() => {
                 const c = path.centroid(feature);
                 if (isNaN(c[0])) return;
 
-                const sggData = regionData?.sigungus?.[districtName];
-                const totalSeats = sggData?.totalSeats || 0;
                 const label = fCount > 8 && districtName.length > 3
                     ? districtName.replace(/시$|군$|구$/, '')
                     : districtName;

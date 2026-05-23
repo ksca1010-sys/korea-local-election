@@ -243,7 +243,7 @@ const SearchModule = (() => {
             // 읍면동 매칭 감지
             let limited;
             let _dongModal = false;
-            let _dongHintItems = []; // 직접 매칭이 있어도 읍면동 매칭이 있으면 하단에 표시
+            const _dongHintItems = []; // 직접 매칭이 있어도 읍면동 매칭이 있으면 하단에 표시
             if (_dongRevIndex && matches.length > 0) {
                 const hasDirectMatch = matches.some(m => {
                     const nameTexts = [m.name, m.name.replace(/(시|군|구)$/, '')];
@@ -767,7 +767,6 @@ const SearchModule = (() => {
                 updateActive();
             } else if (e.key === 'ArrowUp') {
                 e.preventDefault();
-                const items = results.querySelectorAll('.search-result-item[data-region]');
                 activeIdx = Math.max(activeIdx - 1, 0);
                 updateActive();
             } else if (e.key === 'Enter') {

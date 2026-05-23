@@ -54,11 +54,6 @@ const PollTab = (() => {
     // ── 조사 0건 — 선거유형별 빈 화면 ──
 
     function _buildEmptyPollView(regionKey, electionType, districtName) {
-        const region = ElectionData.getRegion(regionKey);
-        const regionName = region?.name || '';
-        const dday = typeof ElectionCalendar !== 'undefined' ? ElectionCalendar.getDday() : null;
-        const ddayText = dday != null && dday > 0 ? `D-${dday}` : '';
-
         // 기초단체장: 여론조사 없음 안내
         if (electionType === 'mayor' && districtName) {
             return `<div class="district-no-data">
@@ -93,7 +88,7 @@ const PollTab = (() => {
 
     // ── 조사 1건 — 스냅샷 카드 (방법론 상세 기본 펼침) ──
 
-    function _renderSnapshotCard(poll, container, regionKey, districtName) {
+    function _renderSnapshotCard(poll, container, _regionKey, _districtName) {
         const method = poll.method || {};
         const surveyStart = poll.surveyDate?.start || '';
         const surveyEnd = poll.surveyDate?.end || '';
@@ -429,7 +424,7 @@ const PollTab = (() => {
             try {
                 const mayorCands = ElectionData.getMayorCandidates?.(regionKey) || {};
                 (mayorCands[districtName] || []).forEach(c => { if (c.name && c.party) candidatePartyMap[c.name] = c.party; });
-            } catch (_) {}
+            } catch (_) { /* optional mayor candidate lookup */ }
         }
         if (Object.keys(candidatePartyMap).length > 0) {
             polls.forEach(p => {
