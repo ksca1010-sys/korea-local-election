@@ -24,7 +24,13 @@ const App = (() => {
 
     // ── Analytics ──
     const ANALYTICS_ENDPOINT = 'https://election-news-proxy.ksca1010.workers.dev/analytics';
+    const ANALYTICS_HOSTS = new Set(['korea-local-election.pages.dev']);
+    function shouldTrackAnalytics() {
+        return ANALYTICS_HOSTS.has(location.hostname);
+    }
+
     function trackEvent(event, data) {
+        if (!shouldTrackAnalytics()) return;
         try {
             fetch(ANALYTICS_ENDPOINT, {
                 method: 'POST',
