@@ -11,23 +11,24 @@
     <meta property="og:title" content="알선거 — 아는 만큼 보이는 선거">
     <meta property="og:description" content="제9회 전국동시지방선거 여론조사, 후보자 비교, 역대 선거 결과를 한눈에 확인하세요.">
     <meta property="og:site_name" content="알선거">
-    <meta property="og:image" content="https://korea-local-eletion.pages.dev/og-image-v2.png">
+    <meta property="og:image" content="https://korea-local-election.pages.dev/og-image-v2.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:type" content="image/png">
-    <meta property="og:url" content="https://korea-local-eletion.pages.dev">
+    <meta property="og:url" content="https://korea-local-election.pages.dev">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="알선거 — 아는 만큼 보이는 선거">
     <meta name="twitter:description" content="제9회 전국동시지방선거 여론조사, 후보자, 선거구 정보를 한눈에.">
-    <meta name="twitter:image" content="https://korea-local-eletion.pages.dev/og-image-v2.png">
+    <meta name="twitter:image" content="https://korea-local-election.pages.dev/og-image-v2.png">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://d3js.org" crossorigin>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="icon" type="image/png" href="logo-small.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Public+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha384-t1nt8BQoYMLFN5p42tRAtuAAFQaCQODekUVeKKZrEnEyp4H2R0RHFz0KWpmj7i8g" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,100..700,0..1" rel="stylesheet" media="print" onload="this.media='all'">
@@ -895,9 +896,6 @@
     <script defer src="js/news_filters.js?v=1775191900"></script>
     <script defer src="js/utils.js?v=1775191900"></script>
     <script defer src="js/app-state.js?v=1775191900"></script>
-    <!-- 에러 로거 — 모든 모듈보다 먼저 로드해야 전체 에러 수집 가능 -->
-    <script defer src="js/error-logger.js?v=1775695142"></script>
-
     <!-- 1. 데이터 로더 -->
     <script defer src="js/data-loader.js?v=1775191900"></script>
     <script defer src="js/data.js?v=1775911193"></script>
@@ -931,11 +929,16 @@
     <!-- 6. 메인 앱 (최후 로드 — 오케스트레이터) -->
     <script defer src="js/clarity-consent.js?v=1775191900"></script>
     <script defer src="js/app.js?v=1775191900"></script>
-    <!-- 7. 개발 도구 (프로덕션에서도 로드, 단 ?debug=health 또는 Ctrl+Shift+H로만 활성화) -->
-    <script defer src="js/health-dashboard.js?v=1775695142"></script>
-
     <!-- Cloudflare 웹 분석 -->
-    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6cb7b0e87bf1475799a9d177f9d54315"}'></script>
+    <script>
+      if (!['localhost', '127.0.0.1', '::1'].includes(location.hostname)) {
+        const beacon = document.createElement('script');
+        beacon.defer = true;
+        beacon.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+        beacon.dataset.cfBeacon = '{"token": "6cb7b0e87bf1475799a9d177f9d54315"}';
+        document.body.appendChild(beacon);
+      }
+    </script>
     <!-- Cloudflare 웹 분석 종료 -->
 </body>
 </html>
