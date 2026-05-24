@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-23",
+    "lastUpdated": "2026-05-24",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
@@ -15,12 +15,12 @@
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
     "lastOverviewNarrativeVerification": "2026-04-10",
     "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed",
-    "lastPipelineRun": "2026-05-23T18:34:20.641207",
-    "lastOfficialSync": "2026-05-23T18:34:20.641207",
+    "lastPipelineRun": "2026-05-24T18:38:10.687771",
+    "lastOfficialSync": "2026-05-24T18:38:10.687771",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 0,
+    "removedPreRegistrationRecords": 1,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {
@@ -9895,7 +9895,7 @@
           "party": "democratic",
           "partyKey": "democratic",
           "partyName": "더불어민주당",
-          "career": "(전) 민선7기 제천시장 / (현) 더불어민주당 정책위원회 부의장",
+          "career": "(전) 민선7기 제천시장 / (전) 더불어민주당 정책위원회 부의장",
           "status": "NOMINATED",
           "officialStatus": "등록",
           "dataSource": "nec_official",
@@ -14936,38 +14936,6 @@
           "giho": "3",
           "districtName": "신안군",
           "id": "jeonnam-신안군-nec-2"
-        },
-        {
-          "name": "고봉기",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(전)경찰청 중앙경찰학교 외래교수 / (현)기술행정사무소 대표",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100159939",
-          "sdName": "전라남도",
-          "sggName": "신안군",
-          "wiwName": "신안군",
-          "regionKey": "jeonnam",
-          "officialOrder": 472,
-          "pledges": [
-            "재생에너지 수익 배분",
-            "섬 발전"
-          ],
-          "age": 58,
-          "gender": "남",
-          "job": "(주)한국해양항만 대표",
-          "education": "동국대학교 대학원 경찰행정학과 졸업(범죄학 석사)",
-          "ballotNumber": 5,
-          "giho": "5",
-          "districtName": "신안군",
-          "id": "jeonnam-신안군-nec-3"
         }
       ]
     },
