@@ -199,6 +199,26 @@ def fetch_byelection_news(district_name):
     return all_news[:15]
 
 
+def format_previous_member(dist):
+    previous_member = dist.get("previousMember") or {}
+    if not isinstance(previous_member, dict):
+        return str(previous_member).strip() or "정보 없음"
+
+    name = (
+        previous_member.get("name")
+        or previous_member.get("memberName")
+        or previous_member.get("candidateName")
+        or "정보 없음"
+    )
+    party = (
+        previous_member.get("party")
+        or previous_member.get("partyName")
+        or previous_member.get("partyKey")
+        or ""
+    )
+    return f"{name} ({party})" if party else name
+
+
 def build_prompt(key, dist, news=None):
     today_str = date.today().isoformat()
 
@@ -216,6 +236,7 @@ def build_prompt(key, dist, news=None):
         existing_text = "(아직 수집된 후보 없음)"
 
     news_text = "\n".join(f"- {n}" for n in news) if news else "(뉴스 없음)"
+    previous_member = format_previous_member(dist)
 
     return f"""당신은 한국 재보궐선거 전문 리서처입니다.
 
@@ -229,7 +250,7 @@ def build_prompt(key, dist, news=None):
 - 선거구: {dist['district']}
 - 선거 유형: {dist['type']} ({dist['subType']})
 - 사유: {dist['reason']}
-- 전임: {dist['previousMember']['name']} ({dist['previousMember']['party']})
+- 전임: {previous_member}
 - 오늘 날짜: {today_str}
 - 선거일: 2026-06-03
 
@@ -557,7 +578,8 @@ def main():
 
     # 저장
     current["_meta"]["lastUpdated"] = date.today().isoformat()
-    current["_meta"]["source"] = "뉴스 기반 수집 (Claude)"
+    current["_meta"]["source"] = "선관위 예비후보 API 및 뉴스 기사"
+    current["_meta"]["verificationNote"] = "Claude/Gemini 기반 뉴스 분석은 사용자 비용 승인 후 실행된 경우에만 반영"
     current["districts"] = districts
 
     BYELECTION_PATH.write_text(

@@ -59,7 +59,7 @@ FRESHNESS_RULES = [
     ("candidates/byelection.json", "_meta.lastUpdated", 2, "update-candidates.yml"),
     ("candidates/council/*.json", "_meta.lastOfficialSync", 2, "sync-official-candidates.yml"),
     ("candidates/local_council/*.json", "_meta.lastOfficialSync", 2, "sync-official-candidates.yml"),
-    ("election_stats.json", "_meta.lastUpdated", 3, "update-election-stats.yml"),
+    ("election_stats.json", "redistrictingStatus.lastChecked", 3, "update-election-stats.yml"),
     ("polls/polls.json", "generated", 2, "update-polls.yml"),
     ("static/gallup_national_poll.json", "publishDate", 9, "update-gallup.yml"),
     # 주간 갱신 대상

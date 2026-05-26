@@ -5,6 +5,12 @@ on:
     # 매주 월요일 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
     - cron: '0 2 * * 1'
   workflow_dispatch:
+    inputs:
+      approve_llm_cost:
+        description: '명시 승인: Gemini 재보궐 뉴스 분석/후보 팩트체크 실행 (비용 발생 가능)'
+        required: false
+        type: boolean
+        default: false
 
 concurrency:
   group: ${{ github.workflow }}
@@ -35,6 +41,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      RUN_LLM_FACTCHECK: ${{ inputs.approve_llm_cost || false }}
 
     steps:
       - uses: actions/checkout@v6.0.2
@@ -45,6 +53,9 @@ jobs:
 
       - name: Install dependencies
         run: pip install httpx
+
+      - name: Show LLM approval state
+        run: echo "run_llm_factcheck=${RUN_LLM_FACTCHECK}"
 
       - name: Step 1 - Detect new districts (NEC API)
         env:
@@ -58,6 +69,7 @@ jobs:
           python scripts/candidate_pipeline/detect_byelections.py --apply
 
       - name: Step 2 - Fetch & update candidates (news + NEC)
+        if: env.RUN_LLM_FACTCHECK == 'true'
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -70,6 +82,7 @@ jobs:
           python scripts/candidate_pipeline/fetch_byelection.py
 
       - name: Step 3 - Factcheck candidates
+        if: env.RUN_LLM_FACTCHECK == 'true'
         env:
           NEC_API_KEY: ${{ secrets.NEC_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
