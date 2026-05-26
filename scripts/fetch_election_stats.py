@@ -197,13 +197,16 @@ def update_stats_file(api_results, existing, dry_run=False):
     규칙:
     - API에서 유효한 값이 있으면 → 업데이트
     - API에서 None이면 → 기존 값 유지
-    - 변경이 있으면 lastUpdated 갱신
+    - 선관위 API 확인이 성공하면 redistrictingStatus.lastChecked 갱신
+    - 표시 데이터나 확인 메타데이터가 바뀌면 파일 저장
     """
     if not existing:
         print("[오류] 기존 election_stats.json이 없습니다.")
         return False
 
     changed = False
+    metadata_changed = False
+    today_str = date.today().isoformat()
     election_types = existing.get("electionTypes", {})
 
     for type_key, new_count in api_results.items():
@@ -236,17 +239,25 @@ def update_stats_file(api_results, existing, dry_run=False):
     any_found = any(v is not None for v in api_results.values())
     if any_found:
         existing.setdefault("redistrictingStatus", {})
-        existing["redistrictingStatus"]["lastChecked"] = date.today().isoformat()
+        if existing["redistrictingStatus"].get("lastChecked") != today_str:
+            existing["redistrictingStatus"]["lastChecked"] = today_str
+            metadata_changed = True
         # 모든 선거종류에서 데이터가 있으면 확정으로 판단
         all_found = all(v is not None for v in api_results.values())
         if all_found:
-            existing["redistrictingStatus"]["finalized"] = True
-            existing["redistrictingStatus"]["note"] = f"선관위 API 기준 선거구 획정 확정 ({date.today().isoformat()})"
+            finalized_note = f"선관위 API 기준 선거구 획정 확정 ({today_str})"
+            if existing["redistrictingStatus"].get("finalized") is not True:
+                existing["redistrictingStatus"]["finalized"] = True
+                metadata_changed = True
+            if existing["redistrictingStatus"].get("note") != finalized_note:
+                existing["redistrictingStatus"]["note"] = finalized_note
+                metadata_changed = True
 
     if changed:
-        existing["_meta"]["lastUpdated"] = date.today().isoformat()
+        existing["_meta"]["lastUpdated"] = today_str
         existing["_meta"]["source"] = "중앙선거관리위원회 공공데이터 API (자동 갱신)"
 
+    if changed or metadata_changed:
         if dry_run:
             print("\n[DRY RUN] 파일 미수정 (변경 사항 있음)")
             print(json.dumps(existing, ensure_ascii=False, indent=2)[:2000])
@@ -257,9 +268,9 @@ def update_stats_file(api_results, existing, dry_run=False):
             )
             print(f"\n[저장] {STATS_FILE}")
     else:
-        print("\n[변경 없음] 기존 데이터와 동일합니다.")
+        print("\n[변경 없음] 기존 데이터와 검사일이 동일합니다.")
 
-    return changed
+    return changed or metadata_changed
 
 
 def main():
