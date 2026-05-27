@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-25",
-    "lastOfficialSync": "2026-05-25T19:04:03.465028",
+    "lastUpdated": "2026-05-27",
+    "lastOfficialSync": "2026-05-27T07:04:46.897598",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "seoul",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "6",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 581,
+    "totalCandidates": 580,
     "totalDistricts": 155
   },
   "candidates": {
@@ -14129,34 +14129,6 @@
         "giho": "2",
         "ballotNumberDetail": "나",
         "gihoSangse": "나"
-      },
-      {
-        "name": "서용택",
-        "party": "other",
-        "partyKey": "other",
-        "partyName": "자유와혁신",
-        "career": "(전) 삼진제약 연구센터 책임연구원 / (전) 단국대학교의과대학부속병원 융합의료센터 사원",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "seoul",
-        "sdName": "서울특별시",
-        "sggName": "서초구라선거구",
-        "wiwName": "서초구",
-        "sgId": "20260603",
-        "sgTypecode": "6",
-        "huboid": "100165691",
-        "officialOrder": 479,
-        "age": 42,
-        "gender": "남",
-        "job": "(주)노을코스메틱 대표이사",
-        "education": "경희대학교대학원 약학박사",
-        "ballotNumber": 5,
-        "giho": "5"
       },
       {
         "name": "김성주",

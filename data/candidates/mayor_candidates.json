@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-25",
+    "lastUpdated": "2026-05-27",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
@@ -15,12 +15,12 @@
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
     "lastOverviewNarrativeVerification": "2026-04-10",
     "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed",
-    "lastPipelineRun": "2026-05-25T19:01:57.391904",
-    "lastOfficialSync": "2026-05-25T19:01:57.391904",
+    "lastPipelineRun": "2026-05-27T07:02:41.025991",
+    "lastOfficialSync": "2026-05-27T07:02:41.025991",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 0,
+    "removedPreRegistrationRecords": 2,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {
@@ -11404,39 +11404,6 @@
           "giho": "2",
           "districtName": "홍성군",
           "id": "chungnam-홍성군-nec-2"
-        },
-        {
-          "name": "이두원",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(전)홍성군의회의원 (5,6대) / (전)대전충남 한우협동조합조합장",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100159999",
-          "sdName": "충청남도",
-          "sggName": "홍성군",
-          "wiwName": "홍성군",
-          "regionKey": "chungnam",
-          "officialOrder": 364,
-          "pledges": [
-            "내포신도시와 동반성장",
-            "서해안시대 신중심 홍성",
-            "환황해경제시대 주도"
-          ],
-          "age": 61,
-          "gender": "남",
-          "job": "농업",
-          "education": "충남대학교 낙농학과 졸업",
-          "ballotNumber": 5,
-          "giho": "5",
-          "districtName": "홍성군",
-          "id": "chungnam-홍성군-nec-3"
         }
       ],
       "청양군": [
@@ -17270,37 +17237,6 @@
           "giho": "2",
           "districtName": "김해시",
           "id": "gyeongnam-김해시-nec-2"
-        },
-        {
-          "name": "박봉열",
-          "party": "progressive",
-          "partyKey": "progressive",
-          "partyName": "진보당",
-          "career": "(현)진보당 경남도당 위원장 / (전)2014년 김해시장선거 출마",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100155891",
-          "sdName": "경상남도",
-          "sggName": "김해시",
-          "wiwName": "김해시",
-          "regionKey": "gyeongnam",
-          "officialOrder": 549,
-          "pledges": [
-            "부산김해경전철 적자 해소 국비 확보"
-          ],
-          "age": 55,
-          "gender": "남",
-          "job": "정당인",
-          "education": "부산대학교 무기재료공학과 4학년 제적(1989년 3월~1999년10월)",
-          "ballotNumber": 5,
-          "giho": "5",
-          "districtName": "김해시",
-          "id": "gyeongnam-김해시-nec-3"
         }
       ],
       "밀양시": [

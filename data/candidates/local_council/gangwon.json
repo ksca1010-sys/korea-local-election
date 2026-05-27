@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-25",
-    "lastOfficialSync": "2026-05-25T19:04:03.401397",
+    "lastUpdated": "2026-05-27",
+    "lastOfficialSync": "2026-05-27T07:04:46.836435",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "gangwon",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "6",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 271,
+    "totalCandidates": 270,
     "totalDistricts": 56
   },
   "candidates": {
@@ -2174,34 +2174,6 @@
       }
     ],
     "강릉시가선거구": [
-      {
-        "name": "신선애",
-        "party": "democratic",
-        "partyKey": "democratic",
-        "partyName": "더불어민주당",
-        "career": "(현)더불어민주당 강릉시 지역위원회 소상공인위원장 / (전)더불어민주당 강릉시 지역위원회 여성위원장",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "gangwon",
-        "sdName": "강원특별자치도",
-        "sggName": "강릉시가선거구",
-        "wiwName": "강릉시",
-        "sgId": "20260603",
-        "sgTypecode": "6",
-        "huboid": "100163693",
-        "officialOrder": 2196,
-        "age": 50,
-        "gender": "여",
-        "job": "공인중개사",
-        "education": "가톨릭관동대학교 일반대학원 법학과 법학석사 졸업",
-        "ballotNumber": 1,
-        "giho": "1"
-      },
       {
         "name": "최종혁",
         "party": "ppp",
