@@ -1,6 +1,6 @@
 {
   "meta": {
-    "lastUpdated": "2026-05-26",
+    "lastUpdated": "2026-05-27",
     "electionDate": "2026-06-03",
     "note": "중립적 관점의 선거 쟁점 개요. 특정 정당·후보 지지 없음.",
     "generatedBy": "structured_data",
@@ -13,7 +13,7 @@
       "generatedBy": "structured_data",
       "trend": "공식 후보 등록",
       "headline": "서울특별시 광역단체장 선거: 공식 후보 6명 등록",
-      "summary": "선관위 후보자 정보 기준으로 서울특별시 광역단체장 선거에는 후보 6명이 등록되어 있습니다. 주요 후보는 정원오(더불어민주당), 오세훈(국민의힘), 김정철(개혁신당), 유지혜(여성의당), 외 2명입니다. 최신 등록 여론조사는 2026-05-22 리서치웰 조사입니다. 직전 선거는 오세훈 59% 대 송영길 39.2%였습니다.",
+      "summary": "선관위 후보자 정보 기준으로 서울특별시 광역단체장 선거에는 후보 6명이 등록되어 있습니다. 주요 후보는 정원오(더불어민주당), 오세훈(국민의힘), 김정철(개혁신당), 유지혜(여성의당), 외 2명입니다. 최신 등록 여론조사는 2026-05-27 여론조사공정(주) 조사입니다. 직전 선거는 오세훈 59% 대 송영길 39.2%였습니다.",
       "keyIssues": [
         "주거 안정",
         "교통 인프라",
@@ -55,25 +55,12 @@
             "party": "정의당"
           }
         ],
-        "pollCount": 6,
+        "pollCount": 7,
         "latestPoll": {
-          "date": "2026-05-22",
-          "org": "리서치웰",
-          "sampleSize": 977,
-          "results": [
-            {
-              "name": "정원오",
-              "support": 42.0
-            },
-            {
-              "name": "오세훈",
-              "support": 44.8
-            },
-            {
-              "name": "김정철",
-              "support": 2.1
-            }
-          ]
+          "date": "2026-05-27",
+          "org": "여론조사공정(주)",
+          "sampleSize": 809,
+          "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
       }
@@ -125,7 +112,7 @@
       "generatedBy": "structured_data",
       "trend": "공식 후보 등록",
       "headline": "대구광역시 광역단체장 선거: 공식 후보 3명 등록",
-      "summary": "선관위 후보자 정보 기준으로 대구광역시 광역단체장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 김부겸(더불어민주당), 추경호(국민의힘), 이수찬(개혁신당)입니다. 최신 등록 여론조사는 2026-05-26 리서치웰 조사입니다. 직전 선거는 홍준표 78.8% 대 서재헌 18%였습니다.",
+      "summary": "선관위 후보자 정보 기준으로 대구광역시 광역단체장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 김부겸(더불어민주당), 추경호(국민의힘), 이수찬(개혁신당)입니다. 최신 등록 여론조사는 2026-05-27 (주)에이스리서치 조사입니다. 직전 선거는 홍준표 78.8% 대 서재헌 18%였습니다.",
       "keyIssues": [
         "대구경북통합신공항",
         "산업 구조 전환",
@@ -152,11 +139,11 @@
             "party": "개혁신당"
           }
         ],
-        "pollCount": 6,
+        "pollCount": 7,
         "latestPoll": {
-          "date": "2026-05-26",
-          "org": "리서치웰",
-          "sampleSize": 1002,
+          "date": "2026-05-27",
+          "org": "(주)에이스리서치",
+          "sampleSize": 1004,
           "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
@@ -251,7 +238,7 @@
       "generatedBy": "structured_data",
       "trend": "공식 후보 등록",
       "headline": "대전광역시 광역단체장 선거: 공식 후보 3명 등록",
-      "summary": "선관위 후보자 정보 기준으로 대전광역시 광역단체장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 허태정(더불어민주당), 이장우(국민의힘), 강희린(개혁신당)입니다. 최신 등록 여론조사는 2026-05-26 (주)데일리리서치 조사입니다. 직전 선거는 이장우 51.2% 대 허태정 48.8%였습니다.",
+      "summary": "선관위 후보자 정보 기준으로 대전광역시 광역단체장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 허태정(더불어민주당), 이장우(국민의힘), 강희린(개혁신당)입니다. 최신 등록 여론조사는 2026-05-27 (주)데일리리서치 조사입니다. 직전 선거는 이장우 51.2% 대 허태정 48.8%였습니다.",
       "keyIssues": [
         "대전-충남 행정통합",
         "과학기술 클러스터",
@@ -278,11 +265,11 @@
             "party": "개혁신당"
           }
         ],
-        "pollCount": 7,
+        "pollCount": 9,
         "latestPoll": {
-          "date": "2026-05-26",
+          "date": "2026-05-27",
           "org": "(주)데일리리서치",
-          "sampleSize": 500,
+          "sampleSize": 702,
           "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
@@ -535,7 +522,7 @@
       "generatedBy": "structured_data",
       "trend": "공식 후보 등록",
       "headline": "전북특별자치도 광역단체장 선거: 공식 후보 5명 등록",
-      "summary": "선관위 후보자 정보 기준으로 전북특별자치도 광역단체장 선거에는 후보 5명이 등록되어 있습니다. 주요 후보는 이원택(더불어민주당), 양정무(국민의힘), 백승재(진보당), 김성수(무소속), 외 1명입니다. 최신 등록 여론조사는 2026-05-25 케이에스오아이 주식회사(한국사회여론연구소) 조사입니다. 직전 선거는 김관영 82.1% 대 조배숙 17.9%였습니다.",
+      "summary": "선관위 후보자 정보 기준으로 전북특별자치도 광역단체장 선거에는 후보 5명이 등록되어 있습니다. 주요 후보는 이원택(더불어민주당), 양정무(국민의힘), 백승재(진보당), 김성수(무소속), 외 1명입니다. 최신 등록 여론조사는 2026-05-27 조원씨앤아이 조사입니다. 직전 선거는 김관영 82.1% 대 조배숙 17.9%였습니다.",
       "keyIssues": [
         "특별자치도 자치권",
         "새만금 개발",
@@ -572,11 +559,11 @@
             "party": "무소속"
           }
         ],
-        "pollCount": 2,
+        "pollCount": 3,
         "latestPoll": {
-          "date": "2026-05-25",
-          "org": "케이에스오아이 주식회사(한국사회여론연구소)",
-          "sampleSize": 1015,
+          "date": "2026-05-27",
+          "org": "조원씨앤아이",
+          "sampleSize": 1001,
           "results": []
         },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json"
@@ -721,7 +708,7 @@
       "generatedBy": "structured_data",
       "trend": "공식 후보 등록",
       "headline": "서울특별시 교육감 선거: 공식 후보 8명 등록",
-      "summary": "선관위 후보자 정보 기준으로 서울특별시 교육감 선거에는 후보 8명이 등록되어 있습니다. 등록 후보는 김영배, 한만중(진보), 조전혁(보수), 이학인, 외 4명입니다. 등록 여론조사는 없습니다. 직전 선거는 조희연 45.6% 대 조전혁 44.6%였습니다. 교육감 선거는 정당 추천 없이 치러집니다.",
+      "summary": "선관위 후보자 정보 기준으로 서울특별시 교육감 선거에는 후보 8명이 등록되어 있습니다. 등록 후보는 김영배, 한만중(진보), 조전혁(보수), 이학인, 외 4명입니다. 최신 등록 여론조사는 2026-05-27 (주)리얼미터 조사입니다. 직전 선거는 조희연 45.6% 대 조전혁 44.6%였습니다. 교육감 선거는 정당 추천 없이 치러집니다.",
       "keyIssues": [
         "공식 후보 등록 현황",
         "교육 정책·학교 현안",
@@ -763,8 +750,13 @@
             "stance": "진보"
           }
         ],
-        "pollCount": 0,
-        "latestPoll": null,
+        "pollCount": 1,
+        "latestPoll": {
+          "date": "2026-05-27",
+          "org": "(주)리얼미터",
+          "sampleSize": 802,
+          "results": []
+        },
         "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
         "previousElection": {
           "election": 5,
@@ -3019,7 +3011,7 @@
         "generatedBy": "structured_data",
         "trend": "공식 후보 등록",
         "headline": "충청남도 서산시 시장 선거: 공식 후보 3명 등록",
-        "summary": "선관위 후보자 정보 기준으로 충청남도 서산시 시장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 맹정호(더불어민주당), 이완섭(국민의힘), 유관곤(개혁신당)입니다. 최신 등록 여론조사는 2026-05-19 윈지코리아컨설팅 조사입니다. 현 단체장은 이완섭입니다. 지역 현안 키워드는 석유화학 산업 환경입니다. 직전 선거 투표율은 48.6%였습니다.",
+        "summary": "선관위 후보자 정보 기준으로 충청남도 서산시 시장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 맹정호(더불어민주당), 이완섭(국민의힘), 유관곤(개혁신당)입니다. 최신 등록 여론조사는 2026-05-27 (주)리얼미터 조사입니다. 현 단체장은 이완섭입니다. 지역 현안 키워드는 석유화학 산업 환경입니다. 직전 선거 투표율은 48.6%였습니다.",
         "keyIssues": [
           "석유화학 산업 환경",
           "공식 후보 등록 현황",
@@ -3046,11 +3038,11 @@
               "party": "개혁신당"
             }
           ],
-          "pollCount": 1,
+          "pollCount": 2,
           "latestPoll": {
-            "date": "2026-05-19",
-            "org": "윈지코리아컨설팅",
-            "sampleSize": 506,
+            "date": "2026-05-27",
+            "org": "(주)리얼미터",
+            "sampleSize": 505,
             "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
@@ -3280,7 +3272,7 @@
         "generatedBy": "structured_data",
         "trend": "공식 후보 등록",
         "headline": "충청남도 태안군 군수 선거: 공식 후보 2명 등록",
-        "summary": "선관위 후보자 정보 기준으로 충청남도 태안군 군수 선거에는 후보 2명이 등록되어 있습니다. 주요 후보는 강철민(더불어민주당), 윤희신(국민의힘)입니다. 최신 등록 여론조사는 2026-05-21 (주)리서치뷰 조사입니다. 현 단체장은 가세로입니다. 지역 현안 키워드는 해양 환경 복원입니다. 직전 선거 투표율은 62.6%였습니다.",
+        "summary": "선관위 후보자 정보 기준으로 충청남도 태안군 군수 선거에는 후보 2명이 등록되어 있습니다. 주요 후보는 강철민(더불어민주당), 윤희신(국민의힘)입니다. 최신 등록 여론조사는 2026-05-27 (주)리얼미터 조사입니다. 현 단체장은 가세로입니다. 지역 현안 키워드는 해양 환경 복원입니다. 직전 선거 투표율은 62.6%였습니다.",
         "keyIssues": [
           "해양 환경 복원",
           "공식 후보 등록 현황",
@@ -3302,11 +3294,11 @@
               "party": "국민의힘"
             }
           ],
-          "pollCount": 1,
+          "pollCount": 2,
           "latestPoll": {
-            "date": "2026-05-21",
-            "org": "(주)리서치뷰",
-            "sampleSize": 700,
+            "date": "2026-05-27",
+            "org": "(주)리얼미터",
+            "sampleSize": 720,
             "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
@@ -3789,7 +3781,16 @@
             "date": "2026-05-26",
             "org": "(주)데일리리서치",
             "sampleSize": 500,
-            "results": []
+            "results": [
+              {
+                "name": "김찬술",
+                "support": 48.0
+              },
+              {
+                "name": "최충규",
+                "support": 41.2
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "대덕구",
@@ -3921,7 +3922,16 @@
             "date": "2026-05-26",
             "org": "(주)데일리리서치",
             "sampleSize": 600,
-            "results": []
+            "results": [
+              {
+                "name": "정용래",
+                "support": 52.7
+              },
+              {
+                "name": "조원휘",
+                "support": 37.0
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "유성구",
@@ -4062,7 +4072,7 @@
         "generatedBy": "structured_data",
         "trend": "공식 후보 등록",
         "headline": "강원특별자치도 동해시 시장 선거: 공식 후보 3명 등록",
-        "summary": "선관위 후보자 정보 기준으로 강원특별자치도 동해시 시장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 이정학(더불어민주당), 김기하(국민의힘), 김홍수(개혁신당)입니다. 최신 등록 여론조사는 2026-05-25 (주)엠브레인퍼블릭 조사입니다. 현 단체장은 심규언입니다. 지역 현안 키워드는 항만 물류 발전입니다. 직전 선거 투표율은 54.7%였습니다.",
+        "summary": "선관위 후보자 정보 기준으로 강원특별자치도 동해시 시장 선거에는 후보 3명이 등록되어 있습니다. 주요 후보는 이정학(더불어민주당), 김기하(국민의힘), 김홍수(개혁신당)입니다. 최신 등록 여론조사는 2026-05-27 (주)에이스리서치 조사입니다. 현 단체장은 심규언입니다. 지역 현안 키워드는 항만 물류 발전입니다. 직전 선거 투표율은 54.7%였습니다.",
         "keyIssues": [
           "항만 물류 발전",
           "공식 후보 등록 현황",
@@ -4089,11 +4099,11 @@
               "party": "개혁신당"
             }
           ],
-          "pollCount": 2,
+          "pollCount": 3,
           "latestPoll": {
-            "date": "2026-05-25",
-            "org": "(주)엠브레인퍼블릭",
-            "sampleSize": 504,
+            "date": "2026-05-27",
+            "org": "(주)에이스리서치",
+            "sampleSize": 704,
             "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
@@ -7354,7 +7364,24 @@
             "date": "2026-05-26",
             "org": "케이에스오아이 주식회사(한국사회여론연구소)",
             "sampleSize": 500,
-            "results": []
+            "results": [
+              {
+                "name": "최창열",
+                "support": 13.2
+              },
+              {
+                "name": "이홍기",
+                "support": 4.6
+              },
+              {
+                "name": "김일수",
+                "support": 39.7
+              },
+              {
+                "name": "구인모",
+                "support": 2.3
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "거창군",
@@ -8432,14 +8459,14 @@
         "generatedBy": "structured_data",
         "trend": "공식 후보 등록",
         "headline": "인천광역시 옹진군 군수 선거: 공식 후보 2명 등록",
-        "summary": "선관위 후보자 정보 기준으로 인천광역시 옹진군 군수 선거에는 후보 2명이 등록되어 있습니다. 주요 후보는 장정민(더불어민주당), 문경복(국민의힘)입니다. 등록 여론조사는 없습니다. 현 단체장은 문경복입니다. 지역 현안 키워드는 섬 지역 발전입니다. 직전 선거 투표율은 67.2%였습니다.",
+        "summary": "선관위 후보자 정보 기준으로 인천광역시 옹진군 군수 선거에는 후보 2명이 등록되어 있습니다. 주요 후보는 장정민(더불어민주당), 문경복(국민의힘)입니다. 최신 등록 여론조사는 2026-05-27 (주)이너텍시스템즈 조사입니다. 현 단체장은 문경복입니다. 지역 현안 키워드는 섬 지역 발전입니다. 직전 선거 투표율은 67.2%였습니다.",
         "keyIssues": [
           "섬 지역 발전",
           "공식 후보 등록 현황",
           "등록 여론조사 여부",
           "기초행정 연속성"
         ],
-        "riskFactor": "등록 여론조사가 없는 시군구는 후보 등록 현황과 지역 기본 정보 중심으로 표시합니다.",
+        "riskFactor": "기초단체장 여론조사는 지역별 등록 여부와 표본 규모 차이가 커서 후보 등록 현황과 함께 해석해야 합니다.",
         "facts": {
           "candidateCount": 2,
           "topCandidates": [
@@ -8454,8 +8481,13 @@
               "party": "국민의힘"
             }
           ],
-          "pollCount": 0,
-          "latestPoll": null,
+          "pollCount": 1,
+          "latestPoll": {
+            "date": "2026-05-27",
+            "org": "(주)이너텍시스템즈",
+            "sampleSize": 501,
+            "results": []
+          },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "옹진군",
           "currentMayor": {
@@ -9311,7 +9343,7 @@
         "generatedBy": "structured_data",
         "trend": "공식 후보 등록",
         "headline": "전라남도 구례군 군수 선거: 공식 후보 6명 등록",
-        "summary": "선관위 후보자 정보 기준으로 전라남도 구례군 군수 선거에는 후보 6명이 등록되어 있습니다. 주요 후보는 장길선(더불어민주당), 이창호(조국혁신당), 이현창(무소속), 전경태(무소속), 외 2명입니다. 최신 등록 여론조사는 2026-05-24 (주)코리아정보리서치 조사입니다. 현 단체장은 김순호입니다. 지역 현안 키워드는 지리산 생태 관광입니다. 직전 선거 투표율은 76.2%였습니다.",
+        "summary": "선관위 후보자 정보 기준으로 전라남도 구례군 군수 선거에는 후보 6명이 등록되어 있습니다. 주요 후보는 장길선(더불어민주당), 이창호(조국혁신당), 이현창(무소속), 전경태(무소속), 외 2명입니다. 최신 등록 여론조사는 2026-05-27 (주)코리아정보리서치 조사입니다. 현 단체장은 김순호입니다. 지역 현안 키워드는 지리산 생태 관광입니다. 직전 선거 투표율은 76.2%였습니다.",
         "keyIssues": [
           "지리산 생태 관광",
           "공식 후보 등록 현황",
@@ -9353,33 +9385,12 @@
               "party": "무소속"
             }
           ],
-          "pollCount": 1,
+          "pollCount": 2,
           "latestPoll": {
-            "date": "2026-05-24",
+            "date": "2026-05-27",
             "org": "(주)코리아정보리서치",
-            "sampleSize": 504,
-            "results": [
-              {
-                "name": "장길선",
-                "support": 34.2
-              },
-              {
-                "name": "이창호",
-                "support": 16.8
-              },
-              {
-                "name": "이현창",
-                "support": 12.4
-              },
-              {
-                "name": "전경태",
-                "support": 4.8
-              },
-              {
-                "name": "정현택",
-                "support": 23.5
-              }
-            ]
+            "sampleSize": 502,
+            "results": []
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "구례군",
@@ -9467,7 +9478,20 @@
             "date": "2026-05-25",
             "org": "한국정책연구원",
             "sampleSize": 507,
-            "results": []
+            "results": [
+              {
+                "name": "박종원",
+                "support": 49.1
+              },
+              {
+                "name": "정철원",
+                "support": 36.7
+              },
+              {
+                "name": "최화삼",
+                "support": 10.5
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "담양군",
@@ -9645,7 +9669,20 @@
             "date": "2026-05-26",
             "org": "(주)데일리리서치",
             "sampleSize": 703,
-            "results": []
+            "results": [
+              {
+                "name": "손훈모",
+                "support": 33.4
+              },
+              {
+                "name": "이성수",
+                "support": 13.0
+              },
+              {
+                "name": "노관규",
+                "support": 3.1
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "순천시",
@@ -9984,7 +10021,16 @@
             "date": "2026-05-26",
             "org": "(주)코리아정보리서치",
             "sampleSize": 531,
-            "results": []
+            "results": [
+              {
+                "name": "이재각",
+                "support": 51.0
+              },
+              {
+                "name": "김희수",
+                "support": 45.8
+              }
+            ]
           },
           "dataSource": "data/candidates/*.json + data/polls/polls.json + data/static/*.json",
           "district": "진도군",
