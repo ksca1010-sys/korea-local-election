@@ -22,6 +22,7 @@ body.mobile-layout #main-content {
     display: block !important;
     padding: 0 !important;
     margin: 0 !important;
+    top: 0 !important;
     width: 100% !important;
     max-width: 100% !important;
     height: 100dvh !important;
@@ -385,13 +386,9 @@ body.mobile-layout .panel-resize-handle {
     display: none !important;
 }
 
-/* 선거 배너: 지도 위 상단 고정 */
+/* 공식 선거운동 기간 배너는 모바일에서 선거종류 칩을 가리므로 숨김 */
 body.mobile-layout #election-banner {
-    position: fixed !important;
-    top: 50px !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 95 !important;
+    display: none !important;
 }
 
 /* 툴팁: 지도 위 표시 */
