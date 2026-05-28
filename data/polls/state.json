@@ -1,6 +1,146 @@
 {
-  "last_id": 19202,
+  "last_id": 19306,
   "polls": [
+    {
+      "nttId": 19306,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "인터넷언론 : 쿠키뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1004,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-26",
+        "end": "2026-05-27"
+      },
+      "publishDate": "2026-05-28",
+      "results": [],
+      "regionKey": "busan",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "부산광역시 전체    정당지지도 교육감선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19306&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-28"
+    },
+    {
+      "nttId": 19305,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "인터넷언론 : 쿠키뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1001,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-25",
+        "end": "2026-05-26"
+      },
+      "publishDate": "2026-05-28",
+      "results": [],
+      "regionKey": "gyeongnam",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "경상남도 전체    정당지지도 교육감선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19305&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-28"
+    },
+    {
+      "nttId": 19304,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "인터넷언론 : 쿠키뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1003,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-25",
+        "end": "2026-05-26"
+      },
+      "publishDate": "2026-05-28",
+      "results": [],
+      "regionKey": "daegu",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "대구광역시 전체    정당지지도 교육감선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19304&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-28"
+    },
+    {
+      "nttId": 19303,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "인터넷언론 : 쿠키뉴스",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1002,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-25",
+        "end": "2026-05-26"
+      },
+      "publishDate": "2026-05-28",
+      "results": [],
+      "regionKey": "seoul",
+      "municipality": null,
+      "electionType": "governor",
+      "electionTypes": [
+        "governor",
+        "superintendent",
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "서울특별시 전체    정당지지도 교육감선거 광역단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19303&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-28"
+    },
     {
       "nttId": 19202,
       "registrationId": null,
@@ -22,7 +162,23 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "전문학",
+          "party": "",
+          "support": 45.9
+        },
+        {
+          "candidateName": "서철모",
+          "party": "",
+          "support": 39.7
+        },
+        {
+          "candidateName": "유지곤",
+          "party": "",
+          "support": 3.5
+        }
+      ],
       "regionKey": "daejeon",
       "municipality": null,
       "electionType": "governor",
@@ -57,7 +213,28 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "황인호",
+          "party": "",
+          "support": 47.3
+        },
+        {
+          "candidateName": "박희조",
+          "party": "",
+          "support": 42.2
+        },
+        {
+          "candidateName": "무소속",
+          "party": "",
+          "support": 3.8
+        },
+        {
+          "candidateName": "한현택",
+          "party": "",
+          "support": 3.6
+        }
+      ],
       "regionKey": "daejeon",
       "municipality": null,
       "electionType": "governor",
@@ -92,7 +269,48 @@
         "end": "2026-05-22"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정근식",
+          "party": "",
+          "support": 29.9
+        },
+        {
+          "candidateName": "윤호상",
+          "party": "",
+          "support": 18.4
+        },
+        {
+          "candidateName": "홍제남",
+          "party": "",
+          "support": 7.9
+        },
+        {
+          "candidateName": "이학인",
+          "party": "",
+          "support": 7.2
+        },
+        {
+          "candidateName": "김영배",
+          "party": "",
+          "support": 6.5
+        },
+        {
+          "candidateName": "동북권",
+          "party": "",
+          "support": 2.7
+        },
+        {
+          "candidateName": "서북권",
+          "party": "",
+          "support": 8.3
+        },
+        {
+          "candidateName": "서남권",
+          "party": "",
+          "support": 19.1
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "superintendent",
@@ -159,7 +377,38 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "장길선",
+          "party": "",
+          "support": 28.1
+        },
+        {
+          "candidateName": "이창호",
+          "party": "",
+          "support": 19.6
+        },
+        {
+          "candidateName": "이현창",
+          "party": "",
+          "support": 9.9
+        },
+        {
+          "candidateName": "전경태",
+          "party": "",
+          "support": 3.9
+        },
+        {
+          "candidateName": "정현택",
+          "party": "",
+          "support": 31.0
+        },
+        {
+          "candidateName": "정택균",
+          "party": "",
+          "support": 3.0
+        }
+      ],
       "regionKey": "jeonnam",
       "municipality": "구례군",
       "electionType": "mayor",
@@ -193,7 +442,38 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 38.01,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 44.76,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 1.82,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.62,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.45,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "gangwon",
       "municipality": "동해시",
       "electionType": "mayor",
@@ -228,7 +508,38 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 31.3,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "국민의힘",
+          "party": "ppp",
+          "support": 46.7,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 1.7,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 1.6,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "개혁신당",
+          "party": "newReform",
+          "support": 2.9,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "daegu",
       "municipality": null,
       "electionType": "governor",
@@ -263,7 +574,53 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "정원오",
+          "party": "",
+          "support": 43.6
+        },
+        {
+          "candidateName": "오세훈",
+          "party": "",
+          "support": 44.0
+        },
+        {
+          "candidateName": "개혁신",
+          "party": "",
+          "support": 2.6
+        },
+        {
+          "candidateName": "김정철",
+          "party": "",
+          "support": 2.1
+        },
+        {
+          "candidateName": "권영국",
+          "party": "",
+          "support": 2.1
+        },
+        {
+          "candidateName": "자유",
+          "party": "",
+          "support": 2.0
+        },
+        {
+          "candidateName": "통일당",
+          "party": "",
+          "support": 0.7
+        },
+        {
+          "candidateName": "이강산",
+          "party": "",
+          "support": 1.4
+        },
+        {
+          "candidateName": "여성의",
+          "party": "",
+          "support": 1.3
+        }
+      ],
       "regionKey": "seoul",
       "municipality": null,
       "electionType": "governor",
@@ -331,7 +688,26 @@
         "end": "2026-05-26"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "더불어민주당",
+          "party": "democratic",
+          "support": 69.1,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "조국혁신당",
+          "party": "reform",
+          "support": 8.5,
+          "type": "party_support"
+        },
+        {
+          "candidateName": "진보당",
+          "party": "progressive",
+          "support": 2.5,
+          "type": "party_support"
+        }
+      ],
       "regionKey": "jeonbuk",
       "municipality": null,
       "electionType": "governor",
@@ -366,7 +742,18 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "최경환",
+          "party": "",
+          "support": 49.7
+        },
+        {
+          "candidateName": "홍성준",
+          "party": "",
+          "support": 35.1
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": "태안군",
       "electionType": "mayor",
@@ -401,7 +788,23 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-27",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "잘하는",
+          "party": "",
+          "support": 31.5
+        },
+        {
+          "candidateName": "잘못하는",
+          "party": "",
+          "support": 20.0
+        },
+        {
+          "candidateName": "잘못함",
+          "party": "",
+          "support": 14.4
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": "서산시",
       "electionType": "mayor",
@@ -809,7 +1212,18 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-26",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "김기재",
+          "party": "",
+          "support": 48.6
+        },
+        {
+          "candidateName": "오성환",
+          "party": "",
+          "support": 42.1
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": "당진시",
       "electionType": "mayor",
@@ -900,7 +1314,33 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-26",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "대구경북",
+          "party": "",
+          "support": 7.5
+        },
+        {
+          "candidateName": "행정",
+          "party": "",
+          "support": 15.2
+        },
+        {
+          "candidateName": "통합",
+          "party": "",
+          "support": 21.3
+        },
+        {
+          "candidateName": "신공항",
+          "party": "",
+          "support": 35.0
+        },
+        {
+          "candidateName": "조속",
+          "party": "",
+          "support": 8.5
+        }
+      ],
       "regionKey": "daegu",
       "municipality": null,
       "electionType": "governor",
@@ -935,7 +1375,28 @@
         "end": "2026-05-19"
       },
       "publishDate": "2026-05-26",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "이기재",
+          "party": "",
+          "support": 46.3
+        },
+        {
+          "candidateName": "우형찬",
+          "party": "",
+          "support": 27.5
+        },
+        {
+          "candidateName": "양천구",
+          "party": "",
+          "support": 9.9
+        },
+        {
+          "candidateName": "갑선거구",
+          "party": "",
+          "support": 16.3
+        }
+      ],
       "regionKey": "seoul",
       "municipality": "양천구",
       "electionType": "mayor",
@@ -969,7 +1430,23 @@
         "end": "2026-05-25"
       },
       "publishDate": "2026-05-26",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "못하고",
+          "party": "",
+          "support": 27.4
+        },
+        {
+          "candidateName": "긍정평가",
+          "party": "",
+          "support": 18.6
+        },
+        {
+          "candidateName": "부정평가",
+          "party": "",
+          "support": 15.7
+        }
+      ],
       "regionKey": "daegu",
       "municipality": null,
       "electionType": "governor",
@@ -55714,17 +56191,17 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-27",
-    "lastPipelineRun": "2026-05-27",
+    "lastUpdated": "2026-05-28",
+    "lastPipelineRun": "2026-05-28",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 1165,
-    "withRegistrationDate": 1162,
+    "pollCount": 1169,
+    "withRegistrationDate": 1166,
     "withRegistrationId": 908,
-    "withResults": 1030,
+    "withResults": 1044,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
-      "governor": 331,
+      "governor": 335,
       "superintendent": 31,
       "mayor": 629,
       "party_support": 164,
