@@ -716,37 +716,58 @@
     },
     "19167": {
       "firstSeenAt": "2026-05-27",
-      "attempts": 2,
-      "status": "retry",
-      "lastAttemptAt": "2026-05-28",
+      "attempts": 3,
+      "status": "abandoned",
+      "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     },
-    "19306": {
-      "firstSeenAt": "2026-05-28",
+    "19319": {
+      "firstSeenAt": "2026-05-29",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-28",
+      "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     },
-    "19305": {
-      "firstSeenAt": "2026-05-28",
+    "19318": {
+      "firstSeenAt": "2026-05-29",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-28",
+      "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     },
-    "19304": {
-      "firstSeenAt": "2026-05-28",
+    "19317": {
+      "firstSeenAt": "2026-05-29",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-28",
+      "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     },
-    "19303": {
-      "firstSeenAt": "2026-05-28",
+    "19316": {
+      "firstSeenAt": "2026-05-29",
       "attempts": 1,
       "status": "retry",
-      "lastAttemptAt": "2026-05-28",
+      "lastAttemptAt": "2026-05-29",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "19315": {
+      "firstSeenAt": "2026-05-29",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-29",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "19314": {
+      "firstSeenAt": "2026-05-29",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-29",
+      "lastReason": "PDF 파싱 실패"
+    },
+    "19313": {
+      "firstSeenAt": "2026-05-29",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     }
   }
