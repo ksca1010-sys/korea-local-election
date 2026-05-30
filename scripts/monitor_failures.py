@@ -21,7 +21,7 @@ import json
 import os
 import subprocess
 import sys
-from datetime import date, datetime
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,6 +36,27 @@ NO_AUTO_RETRY = {
     "Monitor Automation Failures",
     "Data Health Check",
 }
+
+SCHEDULE_FRESHNESS_CHECKS = [
+    {
+        "name": "Data Health Check",
+        "workflow": "data-health-check.yml",
+        "max_age_hours": 30,
+        "auto_trigger": True,
+    },
+    {
+        "name": "Poll Sync (NESDC)",
+        "workflow": "update-polls.yml",
+        "max_age_hours": 30,
+        "auto_trigger": True,
+    },
+    {
+        "name": "Update Election Stats",
+        "workflow": "update-election-stats.yml",
+        "max_age_hours": 30,
+        "auto_trigger": True,
+    },
+]
 
 FAILURE_CONCLUSIONS = {
     "failure",
@@ -56,6 +77,8 @@ def load_counts() -> dict:
 
 
 def save_counts(counts: dict):
+    if not counts and not FAILURE_COUNTS_PATH.exists():
+        return
     FAILURE_COUNTS_PATH.write_text(
         json.dumps(counts, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
@@ -204,6 +227,128 @@ def trigger_retry(workflow_name: str):
         print(f"  자동 재시도 실패: {err}")
 
 
+def trigger_workflow_file(workflow_file: str):
+    rc, _, err = gh("workflow", "run", workflow_file)
+    if rc == 0:
+        print(f"  워크플로우 수동 실행 트리거됨: {workflow_file}")
+        return True
+    print(f"  워크플로우 수동 실행 실패: {err}")
+    return False
+
+
+def parse_github_datetime(value: str) -> datetime | None:
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+def get_latest_workflow_run(workflow_file: str) -> dict | None:
+    rc, out, err = gh(
+        "run", "list",
+        "--workflow", workflow_file,
+        "--limit", "1",
+        "--json", "conclusion,createdAt,databaseId,status,url",
+    )
+    if rc != 0:
+        print(f"  {workflow_file} 최근 실행 조회 실패: {err}")
+        return None
+    try:
+        runs = json.loads(out)
+    except json.JSONDecodeError:
+        return None
+    return runs[0] if runs else None
+
+
+def handle_schedule_success(workflow_name: str, counts: dict):
+    monitor_name = f"{workflow_name} schedule"
+    if monitor_name in counts:
+        handle_success(monitor_name, counts)
+
+
+def handle_schedule_miss(check: dict, counts: dict, reason: str, run_url: str = ""):
+    workflow_name = f"{check['name']} schedule"
+    rec = counts.setdefault(workflow_name, {
+        "consecutive": 0,
+        "first_failed_at": None,
+        "last_failed_at": None,
+        "issue_created": False,
+    })
+    rec["consecutive"] += 1
+    rec["last_failed_at"] = date.today().isoformat()
+    if not rec.get("first_failed_at"):
+        rec["first_failed_at"] = date.today().isoformat()
+
+    consecutive = rec["consecutive"]
+    print(f"  스케줄 누락 감지: {check['name']} ({reason}) — {consecutive}회")
+
+    if consecutive == 1 and check.get("auto_trigger"):
+        trigger_workflow_file(check["workflow"])
+
+    if consecutive < ALERT_THRESHOLD:
+        print(f"  임계치({ALERT_THRESHOLD}회) 미달 — Issue 생성 보류")
+        return
+
+    error_log = (
+        f"Scheduled workflow heartbeat failed.\n"
+        f"Workflow file: {check['workflow']}\n"
+        f"Reason: {reason}\n"
+        f"Max age: {check['max_age_hours']}h"
+    )
+    existing = find_open_issue(workflow_name)
+    if existing:
+        add_comment(existing, workflow_name, run_url, consecutive, error_log)
+    else:
+        create_issue(workflow_name, run_url or "(no recent run)", consecutive, error_log, rec["first_failed_at"])
+
+
+def check_schedule_freshness(counts: dict) -> int:
+    failures = 0
+    now = datetime.now(timezone.utc)
+    print("\n[스케줄 heartbeat 점검]")
+    for check in SCHEDULE_FRESHNESS_CHECKS:
+        latest = get_latest_workflow_run(check["workflow"])
+        if not latest:
+            failures += 1
+            handle_schedule_miss(check, counts, "최근 실행 없음")
+            continue
+
+        created_at = parse_github_datetime(latest.get("createdAt", ""))
+        if not created_at:
+            failures += 1
+            handle_schedule_miss(check, counts, f"createdAt 파싱 실패: {latest.get('createdAt')}", latest.get("url", ""))
+            continue
+
+        age_hours = (now - created_at).total_seconds() / 3600
+        status = latest.get("status") or "-"
+        conclusion = latest.get("conclusion") or "-"
+        if status == "completed" and conclusion != "success":
+            failures += 1
+            handle_schedule_miss(
+                check,
+                counts,
+                f"마지막 실행 실패 (status={status}, conclusion={conclusion})",
+                latest.get("url", ""),
+            )
+            continue
+
+        if age_hours > check["max_age_hours"]:
+            failures += 1
+            handle_schedule_miss(
+                check,
+                counts,
+                f"마지막 실행 {age_hours:.1f}시간 전 (status={status}, conclusion={conclusion})",
+                latest.get("url", ""),
+            )
+            continue
+
+        print(f"  ✓ {check['name']} — 마지막 실행 {age_hours:.1f}시간 전 ({status}/{conclusion})")
+        handle_schedule_success(check["name"], counts)
+    return failures
+
+
 def handle_failure(workflow_name: str, run_id: str, run_url: str, counts: dict):
     rec = counts.setdefault(workflow_name, {
         "consecutive": 0,
@@ -280,11 +425,15 @@ def handle_success(workflow_name: str, counts: dict):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("--workflow", required=True, help="워크플로우 이름")
-    parser.add_argument("--run-id", required=True, help="GitHub Run ID")
-    parser.add_argument("--conclusion", required=True)
+    parser.add_argument("--check-schedules", action="store_true", help="스케줄 workflow heartbeat 점검")
+    parser.add_argument("--workflow", help="워크플로우 이름")
+    parser.add_argument("--run-id", help="GitHub Run ID")
+    parser.add_argument("--conclusion")
     parser.add_argument("--run-url", default="", help="Run 페이지 URL")
     args = parser.parse_args()
+
+    if not args.check_schedules and (not args.workflow or not args.run_id or not args.conclusion):
+        parser.error("--workflow, --run-id, --conclusion are required unless --check-schedules is used")
 
     print("=" * 55)
     print(f"  자동화 실패 모니터")
@@ -295,6 +444,15 @@ def main():
 
     counts = load_counts()
 
+    if args.check_schedules:
+        failures = check_schedule_freshness(counts)
+        save_counts(counts)
+        if failures:
+            print(f"완료 — 스케줄 이상 {failures}건")
+            return 1
+        print("완료")
+        return 0
+
     if args.conclusion in FAILURE_CONCLUSIONS:
         handle_failure(args.workflow, args.run_id, args.run_url, counts)
     elif args.conclusion == "success":
@@ -304,7 +462,8 @@ def main():
 
     save_counts(counts)
     print("완료")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

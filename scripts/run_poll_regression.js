@@ -5,6 +5,7 @@ const path = require('path');
 const { loadAppDebug } = require('./news_debug_runtime');
 
 const casesPath = path.join(__dirname, 'poll_regression_cases.json');
+const DEFAULT_POLL_REFERENCE_DATE = process.env.POLL_REGRESSION_REFERENCE_DATE || '2026-06-03T18:00:00+09:00';
 
 function includesAll(haystack, needles = []) {
     return needles.every((needle) => haystack.includes(needle));
@@ -12,9 +13,17 @@ function includesAll(haystack, needles = []) {
 
 function main() {
     const cases = JSON.parse(fs.readFileSync(casesPath, 'utf8'));
-    const { app } = loadAppDebug();
+    const debugCache = new Map();
+    const getDebugApp = (referenceDate) => {
+        if (!debugCache.has(referenceDate)) {
+            debugCache.set(referenceDate, loadAppDebug({ pollReferenceDate: referenceDate }).app);
+        }
+        return debugCache.get(referenceDate);
+    };
 
     const results = cases.map((testCase) => {
+        const referenceDate = testCase.referenceDate || DEFAULT_POLL_REFERENCE_DATE;
+        const app = getDebugApp(referenceDate);
         const result = app.__debug.buildPollSelection(testCase);
         const firstPoll = result.polls[0] || null;
         const chart = result.chart || null;
@@ -54,6 +63,7 @@ function main() {
             municipalityCount: (result.municipalities || []).length,
             datasetLabels: chart?.datasetLabels || [],
             chartReason: result.chartReason || null,
+            referenceDate,
             countOk,
             chartModeOk,
             chartTypeOk,
@@ -76,6 +86,7 @@ function main() {
         console.log([
             status,
             entry.name,
+            `referenceDate=${entry.referenceDate}`,
             `count=${entry.count}`,
             `chartMode=${entry.chartMode}`,
             `chartType=${entry.chartType || '-'}`,
