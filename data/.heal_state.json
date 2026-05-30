@@ -8,5 +8,6 @@
   "workflow_retry:update-gallup.yml": "2026-04-06",
   "workflow_retry:update-byelection.yml": "2026-04-12",
   "workflow_retry:update-polls.yml": "2026-04-27",
-  "workflow_retry:sync-official-candidates.yml": "2026-05-27"
+  "workflow_retry:sync-official-candidates.yml": "2026-05-27",
+  "freshness:sync-official-candidates.yml": "2026-05-30"
 }
