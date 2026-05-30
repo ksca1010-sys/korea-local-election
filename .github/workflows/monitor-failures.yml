@@ -1,6 +1,10 @@
 name: Monitor Automation Failures
 
 on:
+  schedule:
+    # 매일 한국시간 13:30 (UTC 04:30) — 정오 Data Health Check 실행 누락 감지
+    - cron: '30 4 * * *'
+  workflow_dispatch:
   workflow_run:
     workflows:
       - "Update Candidate Data"
@@ -30,7 +34,7 @@ jobs:
     permissions:
       contents: write
       issues: write    # GitHub Issue 자동 생성 권한
-      actions: read    # 실패 로그 조회 권한
+      actions: write   # 실패 로그 조회 + heartbeat 누락 시 수동 재실행
 
     steps:
       - uses: actions/checkout@v6.0.2
@@ -40,6 +44,9 @@ jobs:
           python-version: '3.11'
 
       - name: Run failure monitor
+        id: event_monitor
+        if: github.event_name == 'workflow_run'
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -49,7 +56,16 @@ jobs:
             --conclusion "${{ github.event.workflow_run.conclusion }}" \
             --run-url "${{ github.event.workflow_run.html_url }}"
 
+      - name: Check scheduled workflow heartbeat
+        id: schedule_monitor
+        if: github.event_name != 'workflow_run'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/monitor_failures.py --check-schedules
+
       - name: Commit updated failure counts
+        if: always()
         run: |
           git diff --quiet data/.failure_counts.json 2>/dev/null || {
             git config user.name "github-actions[bot]"
@@ -58,3 +74,7 @@ jobs:
             git commit -m "chore: update failure counts [skip ci]"
             git pull --rebase origin main && git push
           }
+
+      - name: Fail if monitor found issues
+        if: steps.event_monitor.outcome == 'failure' || steps.schedule_monitor.outcome == 'failure'
+        run: exit 1

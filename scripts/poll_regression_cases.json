@@ -58,15 +58,33 @@
     "expectedAllPublishDateMin": "2026-05-18"
   },
   {
-    "name": "busan-superintendent-before-cutoff-hidden",
-    "regionKey": "busan",
-    "electionType": "superintendent",
+    "name": "seoul-governor-publication-ban-hidden",
+    "regionKey": "seoul",
+    "electionType": "governor",
+    "referenceDate": "2026-05-29T12:00:00+09:00",
     "expectedMinCount": 0,
     "expectedMaxCount": 0,
     "expectedHeaderIncludes": [
+      "서울",
+      "광역단체장"
+    ],
+    "expectedChartMode": "trend",
+    "expectedChartType": "bar",
+    "expectedChartReason": "reference-support"
+  },
+  {
+    "name": "busan-superintendent-latest-visible",
+    "regionKey": "busan",
+    "electionType": "superintendent",
+    "expectedMinCount": 1,
+    "expectedHeaderIncludes": [
       "부산광역시",
       "교육감"
-    ]
+    ],
+    "expectedFirstTitleIncludes": [
+      "교육감선거"
+    ],
+    "expectedAllPublishDateMin": "2026-05-18"
   },
   {
     "name": "jeonnam-mayor-latest-visible",

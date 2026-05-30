@@ -69,7 +69,21 @@ function loadScript(ctx, relativePath) {
     vm.runInContext(source, ctx, { filename: filePath });
 }
 
-function loadAppDebug() {
+function applyPollReferenceDate(ctx, referenceDate) {
+    if (!referenceDate) return;
+    const referenceDateLiteral = JSON.stringify(referenceDate);
+    vm.runInContext(`
+        (() => {
+            const pollReferenceDate = new Date(${referenceDateLiteral});
+            const originalIsPublicationBanned = ElectionCalendar.isPublicationBanned;
+            const originalGetFilteredPolls = ElectionCalendar.getFilteredPolls;
+            ElectionCalendar.isPublicationBanned = (referenceDate = pollReferenceDate) => originalIsPublicationBanned(referenceDate);
+            ElectionCalendar.getFilteredPolls = (polls, referenceDate = pollReferenceDate) => originalGetFilteredPolls(polls, referenceDate);
+        })();
+    `, ctx, { filename: 'poll-reference-date.js' });
+}
+
+function loadAppDebug(options = {}) {
     const ctx = buildContext();
     ctx.window.LocalMediaRegistry = JSON.parse(
         fs.readFileSync(path.join(baseDir, 'data', 'local_media_registry.json'), 'utf8')
@@ -81,6 +95,7 @@ function loadAppDebug() {
     loadScript(ctx, 'js/news_filters.js');
     loadScript(ctx, 'js/utils.js');
     loadScript(ctx, 'js/election-calendar.js');
+    applyPollReferenceDate(ctx, options.pollReferenceDate);
     loadScript(ctx, 'js/data.js');
     loadScript(ctx, 'js/tabs/poll-tab.js');
     loadScript(ctx, 'js/tabs/news-tab.js');

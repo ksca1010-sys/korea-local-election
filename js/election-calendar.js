@@ -70,8 +70,8 @@ const ElectionCalendar = (() => {
     };
 
     // 여론조사 데이터 접근 시 반드시 이 함수를 거침
-    const getFilteredPolls = (polls) => {
-        if (isPublicationBanned()) {
+    const getFilteredPolls = (polls, referenceDate = getKST()) => {
+        if (isPublicationBanned(referenceDate)) {
             return {
                 polls: [],
                 banned: true,
