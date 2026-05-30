@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
-    "lastOfficialSync": "2026-05-27T07:04:46.855034",
+    "lastUpdated": "2026-05-30",
+    "lastOfficialSync": "2026-05-30T06:23:42.703880",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "gyeonggi",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "6",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 646,
+    "totalCandidates": 645,
     "totalDistricts": 161
   },
   "candidates": {
@@ -1975,34 +1975,6 @@
         "giho": "2",
         "ballotNumberDetail": "나",
         "gihoSangse": "나"
-      },
-      {
-        "name": "정성규",
-        "party": "newReform",
-        "partyKey": "newReform",
-        "partyName": "개혁신당",
-        "career": "(현) 명지대학교SMU새마을대학원장 / (전) 용인시사회복지협의회 회장",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "gyeonggi",
-        "sdName": "경기도",
-        "sggName": "용인시라선거구",
-        "wiwName": "용인시기흥구",
-        "sgId": "20260603",
-        "sgTypecode": "6",
-        "huboid": "100165687",
-        "officialOrder": 1539,
-        "age": 72,
-        "gender": "남",
-        "job": "사단법인 경기도사회적경제협회 남부시니어사업단 대표",
-        "education": "미기재",
-        "ballotNumber": 4,
-        "giho": "4"
       },
       {
         "name": "조병훈",

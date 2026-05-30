@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
-    "lastOfficialSync": "2026-05-27T07:04:46.844784",
+    "lastUpdated": "2026-05-30",
+    "lastOfficialSync": "2026-05-30T06:23:42.692845",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "gyeongbuk",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "6",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 445,
+    "totalCandidates": 444,
     "totalDistricts": 105
   },
   "candidates": {
@@ -5071,34 +5071,6 @@
         "giho": "2",
         "ballotNumberDetail": "나",
         "gihoSangse": "나"
-      },
-      {
-        "name": "최광재",
-        "party": "independent",
-        "partyKey": "independent",
-        "partyName": "무소속",
-        "career": "(전)산동고등학교 유치위원장 / (현)산동읍 단체장협의회장",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "gyeongbuk",
-        "sdName": "경상북도",
-        "sggName": "구미시아선거구",
-        "wiwName": "구미시",
-        "sgId": "20260603",
-        "sgTypecode": "6",
-        "huboid": "100163849",
-        "officialOrder": 3703,
-        "age": 57,
-        "gender": "남",
-        "job": "농업인",
-        "education": "부산공업대학교(현 국립부경대학교)산업공학과 졸업",
-        "ballotNumber": 5,
-        "giho": "5"
       }
     ],
     "구미시자선거구": [

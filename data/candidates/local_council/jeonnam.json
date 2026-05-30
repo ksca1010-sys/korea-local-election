@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
-    "lastOfficialSync": "2026-05-27T07:04:46.889677",
+    "lastUpdated": "2026-05-30",
+    "lastOfficialSync": "2026-05-30T06:23:42.740625",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "jeonnam",
@@ -8521,7 +8521,7 @@
         "party": "independent",
         "partyKey": "independent",
         "partyName": "무소속",
-        "career": "(전)일로개발청년회 회장 / (전)일로제일교회 시무장로",
+        "career": "(전)일로개발청년회 회장 / (현)일로제일교회 시무장로",
         "status": "NOMINATED",
         "officialStatus": "등록",
         "dataSource": "nec_official",

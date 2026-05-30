@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
-    "lastOfficialSync": "2026-05-27T07:03:10.625628",
+    "lastUpdated": "2026-05-30",
+    "lastOfficialSync": "2026-05-30T06:22:19.316750",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "gyeonggi",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "5",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 293,
+    "totalCandidates": 292,
     "totalDistricts": 146
   },
   "candidates": {
@@ -4333,34 +4333,6 @@
         "education": "세종대학교 대학원 졸업 (무용학박사)",
         "ballotNumber": 2,
         "giho": "2"
-      },
-      {
-        "name": "방우성",
-        "party": "progressive",
-        "partyKey": "progressive",
-        "partyName": "진보당",
-        "career": "(전)안산시산업단지근로자복지관장 / (현)진보당 안산시단원구지역위원회 공동위원장",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "gyeonggi",
-        "sdName": "경기도",
-        "sggName": "안산시제7선거구",
-        "wiwName": "안산시단원구",
-        "sgId": "20260603",
-        "sgTypecode": "5",
-        "huboid": "100158115",
-        "officialOrder": 897,
-        "age": 58,
-        "gender": "남",
-        "job": "택배노동자",
-        "education": "마포고등학교 졸업",
-        "ballotNumber": 5,
-        "giho": "5"
       }
     ],
     "안산시제8선거구": [

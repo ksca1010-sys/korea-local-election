@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
+    "lastUpdated": "2026-05-30",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
@@ -15,12 +15,12 @@
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
     "lastOverviewNarrativeVerification": "2026-04-10",
     "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed",
-    "lastPipelineRun": "2026-05-27T07:02:41.025991",
-    "lastOfficialSync": "2026-05-27T07:02:41.025991",
+    "lastPipelineRun": "2026-05-30T06:21:48.438508",
+    "lastOfficialSync": "2026-05-30T06:21:48.438508",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 2,
+    "removedPreRegistrationRecords": 4,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {
@@ -4248,35 +4248,6 @@
           "giho": "2",
           "districtName": "강화군",
           "id": "incheon-강화군-nec-2"
-        },
-        {
-          "name": "문경신",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(전) 강화군청 비서실장 / (전) 강화군청 안전경제산업국장",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100163321",
-          "sdName": "인천광역시",
-          "sggName": "강화군",
-          "wiwName": "강화군",
-          "regionKey": "incheon",
-          "officialOrder": 125,
-          "pledges": [],
-          "age": 65,
-          "gender": "남",
-          "job": "회사원",
-          "education": "인하대학교대학원 졸업(도시계획학석사)",
-          "ballotNumber": 5,
-          "giho": "5",
-          "districtName": "강화군",
-          "id": "incheon-강화군-nec-3"
         }
       ],
       "옹진군": [
@@ -5221,38 +5192,6 @@
           "giho": "2",
           "districtName": "서구",
           "id": "daejeon-서구-nec-2"
-        },
-        {
-          "name": "유지곤",
-          "party": "reform",
-          "partyKey": "reform",
-          "partyName": "조국혁신당",
-          "career": "(현)조국혁신당 당대표 특보 / (전)서구갑 국회의원 후보",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100154367",
-          "sdName": "대전광역시",
-          "sggName": "서구",
-          "wiwName": "서구",
-          "regionKey": "daejeon",
-          "officialOrder": 165,
-          "pledges": [
-            "양당 독점 구조 타파",
-            "지방정치 혁신"
-          ],
-          "age": 45,
-          "gender": "남",
-          "job": "대전미래전략연구소 대표",
-          "education": "카이스트 미래전략대학원프로그램 석사 재학",
-          "ballotNumber": 3,
-          "giho": "3",
-          "districtName": "서구",
-          "id": "daejeon-서구-nec-3"
         }
       ],
       "유성구": [
@@ -7961,35 +7900,6 @@
           "giho": "2",
           "districtName": "연천군",
           "id": "gyeonggi-연천군-nec-2"
-        },
-        {
-          "name": "송병서",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(현) 전곡초등학교 총동문회 회장 / (전) 국민의힘 중앙위원회 노동분과위 부위원장",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100161966",
-          "sdName": "경기도",
-          "sggName": "연천군",
-          "wiwName": "연천군",
-          "regionKey": "gyeonggi",
-          "officialOrder": 259,
-          "pledges": [],
-          "age": 52,
-          "gender": "남",
-          "job": "경기측량이엔씨 대표",
-          "education": "경희대학교 경영대학원 경영학과 졸업(경영학석사)",
-          "ballotNumber": 5,
-          "giho": "5",
-          "districtName": "연천군",
-          "id": "gyeonggi-연천군-nec-3"
         }
       ],
       "양평군": [
@@ -13183,37 +13093,6 @@
           "giho": "5",
           "districtName": "여수시",
           "id": "jeonnam-여수시-nec-3"
-        },
-        {
-          "name": "김창주",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(전)사단법인 여수경영인협회 회장 / (현)주식회사 휴엔텍 대표이사",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "4",
-          "huboid": "100156517",
-          "sdName": "전라남도",
-          "sggName": "여수시",
-          "wiwName": "여수시",
-          "regionKey": "jeonnam",
-          "officialOrder": 417,
-          "pledges": [
-            "중증장애인 자립생활 정책 이행"
-          ],
-          "age": 68,
-          "gender": "남",
-          "job": "주식회사 휴엔텍 대표",
-          "education": "연세대학교 법과대학 법학과 졸업",
-          "ballotNumber": 6,
-          "giho": "6",
-          "districtName": "여수시",
-          "id": "jeonnam-여수시-nec-4"
         }
       ],
       "순천시": [

@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-27",
-    "lastOfficialSync": "2026-05-27T07:04:46.897598",
+    "lastUpdated": "2026-05-30",
+    "lastOfficialSync": "2026-05-30T06:23:42.749136",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "seoul",
@@ -9,7 +9,7 @@
     "sgId": "20260603",
     "sgTypecode": "6",
     "officialSyncMode": "replace_registered_candidates",
-    "totalCandidates": 580,
+    "totalCandidates": 579,
     "totalDistricts": 155
   },
   "candidates": {
@@ -11055,34 +11055,6 @@
         "education": "부천대학교 경영학과 경영학사",
         "ballotNumber": 2,
         "giho": "2"
-      },
-      {
-        "name": "김선주",
-        "party": "independent",
-        "partyKey": "independent",
-        "partyName": "무소속",
-        "career": "미기재",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "isIncumbent": false,
-        "pledges": [],
-        "regionKey": "seoul",
-        "sdName": "서울특별시",
-        "sggName": "금천구나선거구",
-        "wiwName": "금천구",
-        "sgId": "20260603",
-        "sgTypecode": "6",
-        "huboid": "100165714",
-        "officialOrder": 375,
-        "age": 60,
-        "gender": "남",
-        "job": "봉재 플랜트",
-        "education": "고흥녹동고등학교 졸업",
-        "ballotNumber": 5,
-        "giho": "5"
       }
     ],
     "금천구다선거구": [
