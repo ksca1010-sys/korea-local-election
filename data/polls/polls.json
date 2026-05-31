@@ -1,8 +1,41 @@
 {
-  "generated": "2026-05-30T04:57:29",
-  "totalCount": 1176,
+  "generated": "2026-05-31T05:19:49",
+  "totalCount": 1177,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
+    {
+      "nttId": 19326,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리서치뷰",
+      "clientOrg": "조사기관 자체 : 리서치뷰",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-26",
+        "end": "2026-05-27"
+      },
+      "publishDate": "2026-05-31",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19326&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-31"
+    },
     {
       "nttId": 19151,
       "registrationId": null,
@@ -7123,11 +7156,6 @@
             "candidateName": "김덕현",
             "party": "ppp",
             "support": 6.9
-          },
-          {
-            "candidateName": "송병서",
-            "party": "independent",
-            "support": 5.0
           }
         ],
         "regionKey": "gyeonggi",
@@ -16486,12 +16514,6 @@
             "party": "ppp",
             "partyRaw": "국민의힘",
             "support": 26.6
-          },
-          {
-            "candidateName": "전희영",
-            "party": "progressive",
-            "partyRaw": "진보당",
-            "support": 1.2
           }
         ],
         "regionKey": "gyeongnam",
@@ -16626,12 +16648,6 @@
             "party": "ppp",
             "partyRaw": "국민의힘",
             "support": 29
-          },
-          {
-            "candidateName": "전희영",
-            "party": "progressive",
-            "partyRaw": "진보당",
-            "support": 1
           }
         ],
         "regionKey": "gyeongnam",
@@ -16999,12 +17015,6 @@
             "party": "ppp",
             "partyRaw": "국민의힘",
             "support": 18.7
-          },
-          {
-            "candidateName": "전희영",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 3.6
           }
         ],
         "regionKey": "gyeongnam",
@@ -27135,11 +27145,6 @@
             "support": 12.2
           },
           {
-            "candidateName": "김창주",
-            "party": "independent",
-            "support": 3.8
-          },
-          {
             "candidateName": "원용규",
             "party": "independent",
             "support": 1.6
@@ -27499,11 +27504,6 @@
             "candidateName": "서영학",
             "party": "democratic",
             "support": 4.0
-          },
-          {
-            "candidateName": "김창주",
-            "party": "independent",
-            "support": 3.0
           }
         ],
         "regionKey": "jeonnam",
@@ -45545,11 +45545,6 @@
             "support": 28.9
           },
           {
-            "candidateName": "김종훈",
-            "party": "progressive",
-            "support": 15.4
-          },
-          {
             "candidateName": "박맹우",
             "party": "independent",
             "support": 8.9
@@ -45597,11 +45592,6 @@
             "candidateName": "김두겸",
             "party": "ppp",
             "support": 31.0
-          },
-          {
-            "candidateName": "김종훈",
-            "party": "progressive",
-            "support": 17.8
           },
           {
             "candidateName": "박맹우",
@@ -45687,12 +45677,6 @@
             "party": "democratic",
             "partyRaw": "더불어민주당",
             "support": 22.3
-          },
-          {
-            "candidateName": "김종훈",
-            "party": "progressive",
-            "partyRaw": "진보당",
-            "support": 8.2
           }
         ],
         "regionKey": "ulsan",
@@ -45786,12 +45770,6 @@
             "party": "ppp",
             "partyRaw": "국민의힘",
             "support": 38.1
-          },
-          {
-            "candidateName": "김종훈",
-            "party": "progressive",
-            "partyRaw": "진보당",
-            "support": 27.8
           }
         ],
         "regionKey": "ulsan",
@@ -45877,11 +45855,6 @@
             "candidateName": "김상욱",
             "party": "democratic",
             "support": 20.5
-          },
-          {
-            "candidateName": "김종훈",
-            "party": "progressive",
-            "support": 11.7
           }
         ],
         "regionKey": "ulsan",

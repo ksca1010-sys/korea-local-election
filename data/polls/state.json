@@ -1,6 +1,39 @@
 {
-  "last_id": 19320,
+  "last_id": 19326,
   "polls": [
+    {
+      "nttId": 19326,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "(주)리서치뷰",
+      "clientOrg": "조사기관 자체 : 리서치뷰",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 1000,
+        "marginOfError": 3.1,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-26",
+        "end": "2026-05-27"
+      },
+      "publishDate": "2026-05-31",
+      "results": [],
+      "regionKey": null,
+      "municipality": null,
+      "electionType": "party_support",
+      "electionTypes": [
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "전국   정기(정례)조사 정당지지도",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19326&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-05-31"
+    },
     {
       "nttId": 19319,
       "registrationId": null,
@@ -56659,20 +56692,20 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-05-30",
-    "lastPipelineRun": "2026-05-30",
+    "lastUpdated": "2026-05-31",
+    "lastPipelineRun": "2026-05-31",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 1176,
-    "withRegistrationDate": 1173,
+    "pollCount": 1177,
+    "withRegistrationDate": 1174,
     "withRegistrationId": 908,
     "withResults": 1055,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "party_support": 165,
       "mayor": 635,
       "governor": 336,
       "superintendent": 31,
-      "party_support": 164,
       "byelection": 9,
       "unknown": 1
     }
