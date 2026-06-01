@@ -1,26 +1,26 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-30",
+    "lastUpdated": "2026-06-01",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
     "lastStatusSync": "2026-03-17",
     "lastDiscovery": "2026-03-17",
-    "lastPledgeCollection": "2026-04-22T06:12:47.306583",
+    "lastPledgeCollection": "2026-06-01T07:07:08.321301",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
-    "lastByelectionSync": "2026-05-25",
+    "lastByelectionSync": "2026-06-01",
     "lastCrossValidation": "2026-04-16",
     "lastCleanup": "2026-04-10",
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
     "lastOverviewNarrativeVerification": "2026-04-10",
     "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed",
-    "lastPipelineRun": "2026-05-30T06:21:48.438508",
-    "lastOfficialSync": "2026-05-30T06:21:48.438508",
+    "lastPipelineRun": "2026-06-01T04:57:58.454969",
+    "lastOfficialSync": "2026-06-01T04:57:58.454969",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 4,
+    "removedPreRegistrationRecords": 0,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {
@@ -557,7 +557,9 @@
           "wiwName": "중랑구",
           "regionKey": "seoul",
           "officialOrder": 17,
-          "pledges": [],
+          "pledges": [
+            "중랑에 AI 기업 유치"
+          ],
           "age": 66,
           "gender": "남",
           "job": "(사)한국공공정책개발연구원 원장",
@@ -620,7 +622,10 @@
           "wiwName": "성북구",
           "regionKey": "seoul",
           "officialOrder": 19,
-          "pledges": [],
+          "pledges": [
+            "멈춘 성북, 빠른 속도로 재도약",
+            "사회연대경제 활성화"
+          ],
           "age": 59,
           "gender": "남",
           "job": "정당인",
@@ -680,7 +685,10 @@
           "wiwName": "강북구",
           "regionKey": "seoul",
           "officialOrder": 21,
-          "pledges": [],
+          "pledges": [
+            "성과 높이는 예산 행정",
+            "착착개발로 주거 사업 신속 추진"
+          ],
           "age": 56,
           "gender": "남",
           "job": "나라살림연구소 소장",
@@ -740,7 +748,10 @@
           "wiwName": "강북구",
           "regionKey": "seoul",
           "officialOrder": 23,
-          "pledges": [],
+          "pledges": [
+            "강북구 재건축 추진",
+            "사회복지 공공성 강화"
+          ],
           "age": 52,
           "gender": "여",
           "job": "IT노동자 (프로젝트 품질관리 컨설턴트)",
@@ -1287,7 +1298,9 @@
           "wiwName": "강서구",
           "regionKey": "seoul",
           "officialOrder": 40,
-          "pledges": [],
+          "pledges": [
+            "김포공항 고도제한 완화"
+          ],
           "age": 69,
           "gender": "남",
           "job": "무직",
@@ -1349,7 +1362,9 @@
           "wiwName": "구로구",
           "regionKey": "seoul",
           "officialOrder": 42,
-          "pledges": [],
+          "pledges": [
+            "튼튼한 자립사회 만들겠다"
+          ],
           "age": 49,
           "gender": "남",
           "job": "변호사",
@@ -1412,7 +1427,9 @@
           "wiwName": "금천구",
           "regionKey": "seoul",
           "officialOrder": 44,
-          "pledges": [],
+          "pledges": [
+            "금천 서남권 경제거점 조성"
+          ],
           "age": 69,
           "gender": "남",
           "job": "(유)광성주류 대표이사",
@@ -1637,7 +1654,9 @@
           "wiwName": "관악구",
           "regionKey": "seoul",
           "officialOrder": 52,
-          "pledges": [],
+          "pledges": [
+            "자립형 도시 관악 조성"
+          ],
           "age": 74,
           "gender": "남",
           "job": "건설업",
@@ -4107,7 +4126,9 @@
           "wiwName": "부평구",
           "regionKey": "incheon",
           "officialOrder": 140,
-          "pledges": [],
+          "pledges": [
+            "캠프마켓·군부대 활용"
+          ],
           "age": 38,
           "gender": "여",
           "job": "인천광역시의회 의원",
@@ -4366,7 +4387,10 @@
           "wiwName": "영종구",
           "regionKey": "incheon",
           "officialOrder": 131,
-          "pledges": [],
+          "pledges": [
+            "직통버스 확충",
+            "광역망 확충"
+          ],
           "age": 60,
           "gender": "남",
           "job": "정치인",
@@ -6063,7 +6087,9 @@
           "wiwName": "안양시동안구",
           "regionKey": "gyeonggi",
           "officialOrder": 210,
-          "pledges": [],
+          "pledges": [
+            "시민 문제 직접 해결"
+          ],
           "age": 63,
           "gender": "남",
           "job": "기업인",
@@ -6415,7 +6441,11 @@
           "wiwName": "안산시단원구",
           "regionKey": "gyeonggi",
           "officialOrder": 205,
-          "pledges": [],
+          "pledges": [
+            "시민참여 허브 공익활동 지원센터",
+            "첫째아 출생지원금 300만원 지급",
+            "안산형 야장 가이드라인 구축"
+          ],
           "age": 60,
           "gender": "여",
           "job": "정당인",
@@ -7858,7 +7888,10 @@
           "wiwName": "연천군",
           "regionKey": "gyeonggi",
           "officialOrder": 257,
-          "pledges": [],
+          "pledges": [
+            "주민주권 보장 및 확대",
+            "접경지역 평화 정착"
+          ],
           "age": 57,
           "gender": "남",
           "job": "정당인",
@@ -11688,7 +11721,10 @@
           "wiwName": "전주시완산구",
           "regionKey": "jeonbuk",
           "officialOrder": 372,
-          "pledges": [],
+          "pledges": [
+            "트럼프·김정은 초청 평화회담 개최",
+            "금융·교육중심 도시로 경제 성장"
+          ],
           "age": 63,
           "gender": "남",
           "job": "정치인",
@@ -12329,7 +12365,9 @@
           "wiwName": "진안군",
           "regionKey": "jeonbuk",
           "officialOrder": 392,
-          "pledges": [],
+          "pledges": [
+            "돌봄 종사자 처우 개선"
+          ],
           "age": 63,
           "gender": "남",
           "job": "롱맨학원원장",
@@ -12521,7 +12559,9 @@
           "wiwName": "임실군",
           "regionKey": "jeonbuk",
           "officialOrder": 398,
-          "pledges": [],
+          "pledges": [
+            "지원금 지급"
+          ],
           "age": 68,
           "gender": "남",
           "job": "무직",
@@ -12550,7 +12590,9 @@
           "wiwName": "임실군",
           "regionKey": "jeonbuk",
           "officialOrder": 399,
-          "pledges": [],
+          "pledges": [
+            "지원금 지급"
+          ],
           "age": 72,
           "gender": "남",
           "job": "무직",
@@ -12957,7 +12999,9 @@
           "wiwName": "목포시",
           "regionKey": "jeonnam",
           "officialOrder": 412,
-          "pledges": [],
+          "pledges": [
+            "AI허브 유치"
+          ],
           "age": 72,
           "gender": "남",
           "job": "정치인",
@@ -13241,7 +13285,9 @@
           "wiwName": "나주시",
           "regionKey": "jeonnam",
           "officialOrder": 422,
-          "pledges": [],
+          "pledges": [
+            "생활안정지원금 50만원 지급"
+          ],
           "age": 55,
           "gender": "남",
           "job": "정당인",
@@ -13976,7 +14022,9 @@
           "wiwName": "화순군",
           "regionKey": "jeonnam",
           "officialOrder": 444,
-          "pledges": [],
+          "pledges": [
+            "화순군민연금 제도 도입"
+          ],
           "age": 52,
           "gender": "여",
           "job": "화순군의회의원",
@@ -14172,7 +14220,12 @@
           "wiwName": "완도군",
           "regionKey": "jeonnam",
           "officialOrder": 466,
-          "pledges": [],
+          "pledges": [
+            "전 군민 월 20만원 지원",
+            "완도군 기본소득 도입",
+            "전복산업 회생 지원",
+            "수산인 맞춤형 지원 확대"
+          ],
           "age": 60,
           "gender": "남",
           "job": "정당인",
@@ -14201,7 +14254,11 @@
           "wiwName": "완도군",
           "regionKey": "jeonnam",
           "officialOrder": 467,
-          "pledges": [],
+          "pledges": [
+            "완도 야간관광 활성화",
+            "육지 동등 택배서비스 혜택",
+            "돌봄 서비스 지원 확대"
+          ],
           "age": 63,
           "gender": "남",
           "job": "자영업",
@@ -14457,7 +14514,9 @@
           "wiwName": "무안군",
           "regionKey": "jeonnam",
           "officialOrder": 455,
-          "pledges": [],
+          "pledges": [
+            "전남광주통합시 청사 유치"
+          ],
           "age": 62,
           "gender": "남",
           "job": "남악 씽크탱크 대표",
@@ -17457,7 +17516,9 @@
           "wiwName": "창녕군",
           "regionKey": "gyeongnam",
           "officialOrder": 562,
-          "pledges": [],
+          "pledges": [
+            "창녕인구 10만 새대 구상"
+          ],
           "age": 78,
           "gender": "남",
           "job": "농업경영체 사업자",
@@ -18088,7 +18149,10 @@
           "wiwName": "합천군",
           "regionKey": "gyeongnam",
           "officialOrder": 584,
-          "pledges": [],
+          "pledges": [
+            "군수 월급 전액 기부",
+            "농어촌기본소득 도입"
+          ],
           "age": 65,
           "gender": "남",
           "job": "부동산임대업",
@@ -18151,7 +18215,11 @@
           "wiwName": "창원시성산구",
           "regionKey": "gyeongnam",
           "officialOrder": 535,
-          "pledges": [],
+          "pledges": [
+            "마산YMCA 정책 제안 공감",
+            "LG 안방 환경 개선",
+            "롯데백화점 활용 방안 마련"
+          ],
           "age": 56,
           "gender": "남",
           "job": "정당인",
@@ -18213,7 +18281,10 @@
           "wiwName": "창원시성산구",
           "regionKey": "gyeongnam",
           "officialOrder": 537,
-          "pledges": [],
+          "pledges": [
+            "마산YMCA 정책 제안 공감",
+            "LG 안방 환경 개선"
+          ],
           "age": 53,
           "gender": "남",
           "job": "365병원 병원장",
@@ -18242,7 +18313,11 @@
           "wiwName": "창원시성산구",
           "regionKey": "gyeongnam",
           "officialOrder": 538,
-          "pledges": [],
+          "pledges": [
+            "마산YMCA 정책 제안 공감",
+            "LG 안방 환경 개선",
+            "기득권 양당 정치 종식"
+          ],
           "age": 58,
           "gender": "여",
           "job": "에스더공인중개사 사무소 대표",

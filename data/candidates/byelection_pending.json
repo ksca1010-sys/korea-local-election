@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "lastRun": "2026-05-25T04:25:25.889197",
-    "totalDetections": 139,
-    "pendingCount": 139,
+    "lastRun": "2026-06-01T04:57:39.986265",
+    "totalDetections": 144,
+    "pendingCount": 144,
     "approvedCount": 0,
     "rejectedCount": 0
   },
@@ -1783,6 +1783,16 @@
           "title": "교육감 조용식 선두..남구갑 김태규-전태진 '접전'",
           "link": "http://web.ubc.co.kr/wp/archives/127690",
           "date": "2026-05-21"
+        },
+        {
+          "title": "한덕수 징역 23년 선고 날 &quot;판사가 등신&quot;이라던 판사 출신 후보",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003237849&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "48시간 최후결전 돌입…여야 모두 우위 자신",
+          "link": "https://www.ksilbo.co.kr/news/articleView.html?idxno=1058210",
+          "date": "2026-06-01"
         }
       ],
       "necValidated": false,
@@ -2511,6 +2521,31 @@
           "title": "단일화에 목매지 않는 조국·한동훈 속내는?",
           "link": "https://weekly.hankooki.com/news/articleView.html?idxno=7165579",
           "date": "2026-05-25"
+        },
+        {
+          "title": "평택을·부산 북갑, 결국 단일화는 없었다",
+          "link": "https://weekly.khan.co.kr/article/202605281045001",
+          "date": "2026-05-28"
+        },
+        {
+          "title": "하정우, 북구갑 거리 유세…사전투표 종료 앞두고 막판 민심 공략 [쿠키...",
+          "link": "https://www.kukinews.com/article/view/kuk202605300024",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "한동훈 &quot;박민식 표는 하정우 돕는 표&quot;…북구갑서 단일화 압박",
+          "link": "https://www.news1.kr/local/busan-gyeongnam/6182642",
+          "date": "2026-05-30"
+        },
+        {
+          "title": "[뉴스퀘어 2PM] 사전투표 시작...'블랙아웃' 기간 민심은?",
+          "link": "https://www.ytn.co.kr/_ln/0101_202605291427076002",
+          "date": "2026-05-29"
+        },
+        {
+          "title": "[재보궐] 부산 북구갑 한동훈·하정우 지지율 접전…다자대결 1.6%p 경합...",
+          "link": "https://www.topstarnews.net/news/articleView.html?idxno=16074733",
+          "date": "2026-05-29"
         }
       ],
       "necValidated": false,
@@ -2670,7 +2705,7 @@
         "name": "전재수",
         "party": "democratic"
       },
-      "confidence": 50,
+      "confidence": 55,
       "sources": [
         {
           "title": "무소속 한동훈 vs 청와대 하정우... 부산 북구 '빅매치' 성사?",
@@ -2701,6 +2736,11 @@
           "title": "[공감 2026] 한동훈 사실상 &quot;부산 북구&quot;…김용은 &quot;경기&quot;",
           "link": "https://www.obsnews.co.kr/news/articleView.html?idxno=1520906",
           "date": "2026-04-13"
+        },
+        {
+          "title": "민주당 “역대 최고 사전투표율, 내란 심판·정부 국정 뒷받침 의지”",
+          "link": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8574281&ref=A",
+          "date": "2026-05-31"
         }
       ],
       "necValidated": false,
@@ -4699,6 +4739,125 @@
       "necValidated": false,
       "status": "pending",
       "detectedAt": "2026-05-25T04:25:25.889179"
+    },
+    {
+      "key": "ulsan-남구",
+      "region": "ulsan",
+      "district": "남구",
+      "electionType": "광역단체장",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "[6·3 지방선거] D-2, 與野 지지층 결집 총력전…한화에어로 폭발 사고에...",
+          "link": "https://www.polinews.co.kr/news/articleView.html?idxno=732736",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "지방선거 D-2 막판 총력전…정청래 '중원' 공략, 장동혁 '험지' 지원",
+          "link": "https://www.mt.co.kr/politics/2026/06/01/2026060108285137627",
+          "date": "2026-06-01"
+        },
+        {
+          "title": "중원 공들이는 정청래, 험지 찾는 장동혁…D-2 막판 총력전",
+          "link": "https://www.news1.kr/politics/assembly/6183144",
+          "date": "2026-06-01"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-06-01T04:57:39.986156"
+    },
+    {
+      "key": "gyeonggi-북구갑",
+      "region": "gyeonggi",
+      "district": "북구갑",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "공석 (사유 확인 필요)",
+      "previousMember": null,
+      "confidence": 75,
+      "sources": [
+        {
+          "title": "평택을 &quot;사회주의자&quot; 북구갑 &quot;조작&quot;…정쟁에 묻힌 지역 현안들",
+          "link": "https://www.youthdaily.co.kr/news/article.html?no=219990",
+          "date": "2026-05-31"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-06-01T04:57:39.986178"
+    },
+    {
+      "key": "gwangju-지역구",
+      "region": "gwangju",
+      "district": "지역구",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "의원직 상실로 공석",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "[6·3재보궐선거②] 민주, 텃밭 호남제주 싹쓸이 총력전",
+          "link": "https://www.shinailbo.co.kr/news/articleView.html?idxno=5024813",
+          "date": "2026-05-28"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-06-01T04:57:39.986222"
+    },
+    {
+      "key": "chungnam-청양군",
+      "region": "chungnam",
+      "district": "청양군",
+      "electionType": "국회의원",
+      "subType": "보궐선거",
+      "reason": "사퇴",
+      "previousMember": {
+        "name": "국회",
+        "party": "independent"
+      },
+      "confidence": 55,
+      "sources": [
+        {
+          "title": "윤석열 체포에 &quot;헌정사 최악&quot;, 그의 마지막 비서실장 계승하겠다는 후보",
+          "link": "https://www.ohmynews.com/NWS_Web/View/at_pg.aspx?CNTN_CD=A0003236654&CMPT_CD=P0010&utm_source=naver&utm_medium=newsearch&utm_campaign=naver_news",
+          "date": "2026-05-31"
+        }
+      ],
+      "necValidated": true,
+      "status": "pending",
+      "detectedAt": "2026-06-01T04:57:39.986232"
+    },
+    {
+      "key": "gyeonggi-판세도",
+      "region": "gyeonggi",
+      "district": "판세도",
+      "electionType": "국회의원",
+      "subType": "재선거",
+      "reason": "당선무효로 공석",
+      "previousMember": {
+        "name": "현역",
+        "party": "democratic"
+      },
+      "confidence": 50,
+      "sources": [
+        {
+          "title": "'미니 총선' 재보선 판세도 안갯속…5곳 접전",
+          "link": "http://www.yonhapnewstv.co.kr/news/MYH202605270536259On",
+          "date": "2026-05-27"
+        }
+      ],
+      "necValidated": false,
+      "status": "pending",
+      "detectedAt": "2026-06-01T04:57:39.986255"
     }
   ]
 }

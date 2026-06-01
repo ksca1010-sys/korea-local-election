@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-05-30",
+    "lastUpdated": "2026-06-01",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T05:25:56.350703",
     "sourceUrlCoverage": "0%",
@@ -9,8 +9,8 @@
     "mergedRegions": {
       "jeonnam": "gwangju"
     },
-    "lastPipelineRun": "2026-05-30T06:21:48.428365",
-    "lastOfficialSync": "2026-05-30T06:21:48.428365",
+    "lastPipelineRun": "2026-06-01T04:57:58.444444",
+    "lastOfficialSync": "2026-06-01T04:57:58.444444",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
