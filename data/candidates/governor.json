@@ -1,22 +1,22 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-06-01",
+    "lastUpdated": "2026-06-02",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
-    "lastPipelineRun": "2026-06-01T04:57:58.443378",
+    "lastPipelineRun": "2026-06-02T07:22:53.107626",
     "lastFactCheck": "2026-04-22T05:23:38.337520",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
       "jeonnam": "gwangju"
     },
-    "lastOfficialSync": "2026-06-01T04:57:58.443378",
+    "lastOfficialSync": "2026-06-02T07:22:53.107626",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 0,
+    "removedPreRegistrationRecords": 1,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {
@@ -141,34 +141,6 @@
         "ballotNumber": 5,
         "giho": "5",
         "id": "seoul-gov-nec-4"
-      },
-      {
-        "name": "이강산",
-        "party": "other",
-        "partyKey": "other",
-        "partyName": "자유통일당",
-        "career": "(전)자유통일당 2025년 구로구청장 보궐선거 후보 / (현)자유통일당 AI전략위원회 위원장",
-        "status": "NOMINATED",
-        "officialStatus": "등록",
-        "dataSource": "nec_official",
-        "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-        "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-        "sgId": "20260603",
-        "sgTypecode": "3",
-        "huboid": "100162642",
-        "sdName": "서울특별시",
-        "sggName": "서울특별시",
-        "wiwName": "",
-        "regionKey": "seoul",
-        "officialOrder": 5,
-        "pledges": [],
-        "age": 36,
-        "gender": "남",
-        "job": "정당인",
-        "education": "서울대학교 경영전문대학원 경영학과(SNU MBA) 졸업(석사)",
-        "ballotNumber": 6,
-        "giho": "6",
-        "id": "seoul-gov-nec-5"
       },
       {
         "name": "권영국",

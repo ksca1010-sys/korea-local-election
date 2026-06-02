@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-06-01",
+    "lastUpdated": "2026-06-02",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "note": "재보궐선거 선거구는 선관위 코드정보 기준. 후보·공석 사유는 공식/언론 검증된 항목만 표시.",
     "lastDetection": "2026-06-01",
@@ -8,13 +8,13 @@
     "lastOfficialDistrictSync": "2026-05-17",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "officialDistrictCount": 14,
-    "lastPipelineRun": "2026-06-01T04:57:58.456523",
-    "lastOfficialSync": "2026-06-01T04:57:58.456523",
+    "lastPipelineRun": "2026-06-02T07:22:53.121187",
+    "lastOfficialSync": "2026-06-02T07:22:53.121187",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 0,
-    "officialCandidateCount": 47
+    "removedPreRegistrationRecords": 1,
+    "officialCandidateCount": 46
   },
   "districts": {
     "busan-buk-gap": {
@@ -82,34 +82,6 @@
           "ballotNumber": 2,
           "giho": "2",
           "id": "busan-buk-gap-nec-2"
-        },
-        {
-          "name": "김성근",
-          "party": "independent",
-          "partyKey": "independent",
-          "partyName": "무소속",
-          "career": "(현)K-Garden,Flower,Food 공동주관사 대표 / (전)미국 Biovim, Inc. 회장",
-          "status": "NOMINATED",
-          "officialStatus": "등록",
-          "dataSource": "nec_official",
-          "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-          "officialUrl": "https://info.nec.go.kr/electioninfo/electionInfo_report.xhtml",
-          "sgId": "20260603",
-          "sgTypecode": "2",
-          "huboid": "100164159",
-          "sdName": "부산광역시",
-          "sggName": "북구갑",
-          "wiwName": "북구",
-          "regionKey": "busan",
-          "officialOrder": 3,
-          "pledges": [],
-          "age": 58,
-          "gender": "남",
-          "job": "주식회사 바인 대표이사",
-          "education": "서울대학교 보건대학원 보건학과 졸업",
-          "ballotNumber": 5,
-          "giho": "5",
-          "id": "busan-buk-gap-nec-3"
         },
         {
           "name": "한동훈",
@@ -235,8 +207,8 @@
           "turnout": 68.93
         }
       ],
-      "candidateCount": 4,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "candidateCount": 3,
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "전재수",
@@ -415,7 +387,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "ppp",
         "winnerName": "추경호",
@@ -640,7 +612,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "incheon-gyeyang": {
       "region": "incheon",
@@ -851,7 +823,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "gwangju-gwangsan-eul": {
       "region": "gwangju",
@@ -1128,7 +1100,7 @@
         }
       ],
       "candidateCount": 6,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "민형배",
@@ -1363,7 +1335,7 @@
         }
       ],
       "candidateCount": 4,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "ppp",
         "winnerName": "김상욱",
@@ -1645,7 +1617,7 @@
       "candidateCount": 5,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "gyeonggi-ansan": {
       "district": "경기 안산시갑",
@@ -1851,7 +1823,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "gyeonggi-hanam-gap": {
       "region": "gyeonggi",
@@ -2044,7 +2016,7 @@
         }
       ],
       "candidateCount": 3,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "추미애",
@@ -2265,7 +2237,7 @@
         }
       ],
       "candidateCount": 5,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "박수현",
@@ -2490,7 +2462,7 @@
       "candidateCount": 3,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "jeonbuk-gunsan": {
       "region": "jeonbuk",
@@ -2668,7 +2640,7 @@
       "candidateCount": 2,
       "verificationStatus": "official_registered_candidates",
       "dataSource": "nec_official",
-      "lastOfficialCandidateSync": "2026-06-01"
+      "lastOfficialCandidateSync": "2026-06-02"
     },
     "jeonbuk-gunsan-gimje-buan-eul": {
       "region": "jeonbuk",
@@ -2763,7 +2735,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "이원택",
@@ -2928,7 +2900,7 @@
         }
       ],
       "candidateCount": 2,
-      "lastOfficialCandidateSync": "2026-06-01",
+      "lastOfficialCandidateSync": "2026-06-02",
       "prevElection": {
         "winner": "democratic",
         "winnerName": "위성곤",
