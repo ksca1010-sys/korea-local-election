@@ -1281,7 +1281,7 @@ const App = (() => {
             _updateElectionBanner(data);
             _setManualFallbackMode(false);
         } catch (err) {
-            console.warn('[election_night] Worker 응답 실패, 수동 모드 전환', err);
+            console.warn('[election_night] Worker 응답 대기 중', err);
             _setManualFallbackMode(true);
         }
     }
@@ -1295,10 +1295,22 @@ const App = (() => {
     }
 
     function _setManualFallbackMode(active) {
-        _manualFallbackMode = active;
+        const enabled = !!active && _isManualFallbackAllowed();
+        _manualFallbackMode = enabled;
         const container = document.getElementById('manual-fallback-container');
         if (!container) return;
-        container.style.display = active ? 'block' : 'none';
+        container.style.display = enabled ? 'block' : 'none';
+    }
+
+    function _isManualFallbackAllowed() {
+        try {
+            const params = new URLSearchParams(window.location.search || '');
+            return params.get('manualFallback') === '1'
+                || params.get('adminFallback') === '1'
+                || window.localStorage?.getItem('electionNightManualFallback') === '1';
+        } catch (_err) {
+            return false;
+        }
     }
 
     function _updateElectionBanner(data) {
