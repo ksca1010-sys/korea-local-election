@@ -1,6 +1,40 @@
 {
-  "last_id": 19326,
+  "last_id": 19329,
   "polls": [
+    {
+      "nttId": 19329,
+      "registrationId": null,
+      "pollName": "선거구분",
+      "pollOrg": "한길리서치",
+      "clientOrg": "구·시·군단위 신문 : 금산중앙신문",
+      "method": {
+        "type": "ARS",
+        "raw": "무선 ARS",
+        "samplingFrame": "전체",
+        "sampleSize": 502,
+        "marginOfError": 4.4,
+        "responseRate": 0.0,
+        "contactRate": 0.0,
+        "weightingMethod": null
+      },
+      "surveyDate": {
+        "start": "2026-05-22",
+        "end": "2026-05-23"
+      },
+      "publishDate": "2026-06-03",
+      "results": [],
+      "regionKey": "chungnam",
+      "municipality": "금산군",
+      "electionType": "mayor",
+      "electionTypes": [
+        "mayor",
+        "party_support"
+      ],
+      "districtKey": null,
+      "title": "충청남도 금산군    정당지지도 기초단체장선거",
+      "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19329&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+      "registrationDate": "2026-06-02"
+    },
     {
       "nttId": 19326,
       "registrationId": null,
@@ -56692,18 +56726,18 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-06-02",
-    "lastPipelineRun": "2026-06-02",
+    "lastUpdated": "2026-06-03",
+    "lastPipelineRun": "2026-06-03",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
-    "pollCount": 1177,
-    "withRegistrationDate": 1174,
+    "pollCount": 1178,
+    "withRegistrationDate": 1175,
     "withRegistrationId": 908,
     "withResults": 1055,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
+      "mayor": 636,
       "party_support": 165,
-      "mayor": 635,
       "governor": 336,
       "superintendent": 31,
       "byelection": 9,

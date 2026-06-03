@@ -1,6 +1,6 @@
 {
-  "generated": "2026-06-02T05:31:52",
-  "totalCount": 1177,
+  "generated": "2026-06-03T06:05:14",
+  "totalCount": 1178,
   "source": "중앙선거여론조사심의위원회 (nesdc.go.kr)",
   "national": [
     {
@@ -7056,6 +7056,2260 @@
     }
   ],
   "regions": {
+    "chungnam": [
+      {
+        "nttId": 19329,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "한길리서치",
+        "clientOrg": "구·시·군단위 신문 : 금산중앙신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-22",
+          "end": "2026-05-23"
+        },
+        "publishDate": "2026-06-03",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "금산군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 금산군    정당지지도 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19329&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-06-02"
+      },
+      {
+        "nttId": 19316,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 뉴스아이즈서해신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 701,
+          "marginOfError": 3.7,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-26",
+          "end": "2026-05-27"
+        },
+        "publishDate": "2026-05-28",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "서천군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 서천군    기초의원선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19316&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-28"
+      },
+      {
+        "nttId": 19134,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 720,
+          "marginOfError": 3.7,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-24",
+          "end": "2026-05-25"
+        },
+        "publishDate": "2026-05-27",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19134&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-26"
+      },
+      {
+        "nttId": 19133,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 505,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-24",
+          "end": "2026-05-25"
+        },
+        "publishDate": "2026-05-27",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "서산시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 서산시    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19133&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-26"
+      },
+      {
+        "nttId": 19069,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 당진시대",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-24",
+          "end": "2026-05-25"
+        },
+        "publishDate": "2026-05-26",
+        "results": [
+          {
+            "candidateName": "김기재",
+            "party": "democratic",
+            "support": 48.6
+          },
+          {
+            "candidateName": "오성환",
+            "party": "ppp",
+            "support": 42.1
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "당진시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "superintendent",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 당진시    기초단체장선거 광역단체장선거 교육감선거 정당지지도 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19069&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-25"
+      },
+      {
+        "nttId": 19021,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 803,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-22",
+          "end": "2026-05-23"
+        },
+        "publishDate": "2026-05-25",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 전체    교육감선거 광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19021&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-24"
+      },
+      {
+        "nttId": 18924,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "인터넷언론/인터넷언론/인터넷언론 : 브레이크뉴스/뉴스티앤티/충남뉴스TV",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-19",
+          "end": "2026-05-20"
+        },
+        "publishDate": "2026-05-22",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "부여군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 부여군    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18924&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-21"
+      },
+      {
+        "nttId": 18890,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 시사매거진",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 709,
+          "marginOfError": 3.7,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-18",
+          "end": "2026-05-19"
+        },
+        "publishDate": "2026-05-21",
+        "results": [
+          {
+            "candidateName": "문정우",
+            "party": "democratic",
+            "support": 47.0
+          },
+          {
+            "candidateName": "박범인",
+            "party": "ppp",
+            "support": 41.4
+          },
+          {
+            "candidateName": "안찬",
+            "party": "reform",
+            "support": 5.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "금산군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 금산군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18890&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-20"
+      },
+      {
+        "nttId": 18889,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 태안신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 700,
+          "marginOfError": 3.7,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-18",
+          "end": "2026-05-19"
+        },
+        "publishDate": "2026-05-21",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor"
+        ],
+        "districtKey": null,
+        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 광역의원선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18889&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-20"
+      },
+      {
+        "nttId": 18885,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "뉴스통신사 : 뉴스핌",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 806,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-18",
+          "end": "2026-05-19"
+        },
+        "publishDate": "2026-05-21",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 전체    광역단체장선거 정당지지도 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18885&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-20"
+      },
+      {
+        "nttId": 18851,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 케이저널",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 503,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-18",
+          "end": "2026-05-19"
+        },
+        "publishDate": "2026-05-20",
+        "results": [
+          {
+            "candidateName": "김민수",
+            "party": "democratic",
+            "support": 36.4
+          },
+          {
+            "candidateName": "이용우",
+            "party": "ppp",
+            "support": 39.5
+          },
+          {
+            "candidateName": "김기서",
+            "party": "independent",
+            "support": 18.0
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "부여군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 부여군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18851&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-19"
+      },
+      {
+        "nttId": 18811,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 서산포스트",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 506,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-17",
+          "end": "2026-05-18"
+        },
+        "publishDate": "2026-05-19",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "서산시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 서산시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18811&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-19"
+      },
+      {
+        "nttId": 18779,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "방송사/시·도단위 신문 : 대전MBC/충청투데이",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-16",
+          "end": "2026-05-17"
+        },
+        "publishDate": "2026-05-18",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ],
+        "districtKey": null,
+        "title": "충청남도 전체    광역단체장선거 교육감선거 정당지지도 지역 현안",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18779&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-18"
+      },
+      {
+        "nttId": 18716,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "구·시·군단위 신문/인터넷언론 : 백제신문/뉴스청양",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-14",
+          "end": "2026-05-15"
+        },
+        "publishDate": "2026-05-16",
+        "results": [
+          {
+            "candidateName": "김돈곤",
+            "party": "democratic",
+            "support": 41.8
+          },
+          {
+            "candidateName": "김홍열",
+            "party": "ppp",
+            "support": 53.4
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "청양군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 청양군    기초단체장선거 광역의원선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18716&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-15"
+      },
+      {
+        "nttId": 18674,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)비전코리아",
+        "clientOrg": "구·시·군단위 신문 : 홍성신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 534,
+          "marginOfError": 4.2,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-13",
+          "end": "2026-05-13"
+        },
+        "publishDate": "2026-05-13",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "홍성군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 홍성군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18674&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-13"
+      },
+      {
+        "nttId": 18628,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)유앤미리서치",
+        "clientOrg": "구·시·군단위 신문 : 계룡신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-10",
+          "end": "2026-05-11"
+        },
+        "publishDate": "2026-05-13",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "계룡시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 계룡시    기초단체장선거 광역의원선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18628&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
+        "registrationDate": "2026-05-11"
+      },
+      {
+        "nttId": 18587,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)비전코리아",
+        "clientOrg": "전국단위 신문/인터넷언론 : 포털신문/올리서치",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 648,
+          "marginOfError": 3.8,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-07",
+          "end": "2026-05-08"
+        },
+        "publishDate": "2026-05-10",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "논산시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 논산시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18587&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-05-09"
+      },
+      {
+        "nttId": 18522,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 태안신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 700,
+          "marginOfError": 3.7,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-03",
+          "end": "2026-05-04"
+        },
+        "publishDate": "2026-05-07",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor"
+        ],
+        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 광역의원선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18522&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
+        "registrationDate": "2026-05-05"
+      },
+      {
+        "nttId": 18483,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-01",
+          "end": "2026-05-02"
+        },
+        "publishDate": "2026-05-04",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "아산시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 아산시    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18483&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-03"
+      },
+      {
+        "nttId": 18482,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 521,
+          "marginOfError": 4.3,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-05-01",
+          "end": "2026-05-02"
+        },
+        "publishDate": "2026-05-04",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "논산시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 논산시    광역단체장선거 기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18482&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-05-03"
+      },
+      {
+        "nttId": 18463,
+        "registrationId": null,
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 광역행정신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-23",
+          "end": "2026-04-24"
+        },
+        "publishDate": "2026-05-01",
+        "results": [
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "support": 36.9
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 천안시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18463&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-04-30"
+      },
+      {
+        "nttId": 18321,
+        "registrationId": "16161",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "방송사 : 대전방송",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 803,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-18",
+          "end": "2026-04-19"
+        },
+        "publishDate": "2026-04-21",
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "support": 30.0,
+            "party": "ppp"
+          },
+          {
+            "candidateName": "박수현",
+            "support": 6.8,
+            "party": "democratic"
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ],
+        "title": "충청남도 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18321&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-04-20",
+        "_corrected": true,
+        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
+      },
+      {
+        "nttId": 18277,
+        "registrationId": "16117",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 뉴스파고",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 503,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-14",
+          "end": "2026-04-15"
+        },
+        "publishDate": "2026-04-16",
+        "results": [
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "support": 21.0
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 천안시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18277&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-04-15"
+      },
+      {
+        "nttId": 18144,
+        "registrationId": "16004",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-06",
+          "end": "2026-04-07"
+        },
+        "publishDate": "2026-04-09",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ],
+        "title": "충청남도 전체    정당지지도 광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18144&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
+        "registrationDate": "2026-04-08"
+      },
+      {
+        "nttId": 18135,
+        "registrationId": "15995",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 모닝포스트",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-04-06",
+          "end": "2026-04-07"
+        },
+        "publishDate": "2026-04-08",
+        "results": [
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "support": 13.2
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ],
+        "title": "충청남도 천안시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18135&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-04-07"
+      },
+      {
+        "nttId": 17959,
+        "registrationId": "15831",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 시사뉴스24",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-27",
+          "end": "2026-03-28"
+        },
+        "publishDate": "2026-03-30",
+        "results": [
+          {
+            "candidateName": "박찬우",
+            "party": "ppp",
+            "support": 33.1
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "title": "충청남도 천안시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17959&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-30",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17908,
+        "registrationId": "15788",
+        "pollName": "선거구분",
+        "pollOrg": "(주)여론조사꽃",
+        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1003,
+          "marginOfError": 3.1,
+          "responseRate": 0.0,
+          "contactRate": 0.0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-03-23",
+          "end": "2026-03-24"
+        },
+        "publishDate": "2026-03-27",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17908&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
+        "registrationDate": "2026-03-25",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ],
+        "_corrected": true,
+        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
+      },
+      {
+        "nttId": 17549,
+        "registrationId": "15473",
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "구·시·군단위 신문/구·시·군단위 신문 : 백제신문/뉴스청양",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-27",
+          "end": "2026-02-28"
+        },
+        "publishDate": "2026-03-06 10시 00분",
+        "results": [
+          {
+            "candidateName": "김돈곤",
+            "party": "democratic",
+            "support": 29.1
+          },
+          {
+            "candidateName": "김홍열",
+            "party": "ppp",
+            "support": 41.5
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "청양군",
+        "electionType": "mayor",
+        "title": "충청남도 청양군 기초단체장선거광역의원선거정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17549&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
+        "registrationDate": "2026-03-03",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17546,
+        "registrationId": "15467",
+        "pollName": "선거구분",
+        "pollOrg": "(주)데일리리서치",
+        "clientOrg": "인터넷언론 : 뉴스티앤티",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-27",
+          "end": "2026-02-28"
+        },
+        "publishDate": "2026-03-03 11시 00분",
+        "results": [
+          {
+            "candidateName": "정준영",
+            "party": "democratic",
+            "support": 32.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "계룡시",
+        "electionType": "mayor",
+        "title": "충청남도 계룡시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17546&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
+        "registrationDate": "2026-03-02",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17501,
+        "registrationId": "15437",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 802,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-22",
+          "end": "2026-02-23"
+        },
+        "publishDate": "2026-02-25 05시 00분",
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 34.7
+          },
+          {
+            "candidateName": "박수현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 4.7
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체 광역단체장선거정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17501&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
+        "registrationDate": "2026-02-24",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:52:08",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17500,
+        "registrationId": "15436",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 503,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-22",
+          "end": "2026-02-23"
+        },
+        "publishDate": "2026-02-25 05시 00분",
+        "results": [
+          {
+            "candidateName": "박찬우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 25.3
+          },
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 7.3
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "title": "충청남도 천안시 정당지지도기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17500&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
+        "registrationDate": "2026-02-24",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-16T23:52:21",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17375,
+        "registrationId": "15371",
+        "pollName": "선거구분",
+        "pollOrg": "케이스탯리서치",
+        "clientOrg": "방송사 : KBS",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 807,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-10",
+          "end": "2026-02-11"
+        },
+        "publishDate": "2026-02-13 19시 00분",
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 18
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17375&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=17",
+        "registrationDate": "2026-02-13",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:05:45",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17366,
+        "registrationId": "15321",
+        "pollName": "선거구분",
+        "pollOrg": "(주)비전코리아",
+        "clientOrg": "구·시·군단위 신문 : 서산타임즈",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 509,
+          "marginOfError": 4.3,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-10",
+          "end": "2026-02-11"
+        },
+        "publishDate": "2026-02-12 11시 59분",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "서산시",
+        "electionType": "mayor",
+        "title": "충청남도 서산시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17366&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=22",
+        "registrationDate": "2026-02-12",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17362,
+        "registrationId": "15317",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "인터넷언론 : 시사뉴스24",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-09",
+          "end": "2026-02-10"
+        },
+        "publishDate": "2026-02-12 09시 00분",
+        "results": [
+          {
+            "candidateName": "이병학",
+            "party": "independent",
+            "support": 16.7
+          },
+          {
+            "candidateName": "김영춘",
+            "party": "independent",
+            "support": 15.8
+          },
+          {
+            "candidateName": "이병도",
+            "party": "independent",
+            "support": 12.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "충청남도 전체 교육감선거정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17362&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=22",
+        "registrationDate": "2026-02-11",
+        "electionTypes": [
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17352,
+        "registrationId": "15307",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "시·도단위 신문 : 대전일보",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1004,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-06",
+          "end": "2026-02-07"
+        },
+        "publishDate": "2026-02-12 13시 00분",
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 21.3
+          },
+          {
+            "candidateName": "박수현",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 5.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    정당지지도 광역단체장선거 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17352&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
+        "registrationDate": "2026-02-10",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:09:06",
+        "electionTypes": [
+          "governor",
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17336,
+        "registrationId": "15293",
+        "pollName": "선거구분",
+        "pollOrg": "주식회사 한민리서치",
+        "clientOrg": "인터넷언론 : 씨엘미디어",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 732,
+          "marginOfError": 3.6,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-08",
+          "end": "2026-02-09"
+        },
+        "publishDate": "2026-02-11 14시 00분",
+        "results": [
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 14.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "title": "충청남도 천안시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17336&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
+        "registrationDate": "2026-02-10",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:10:32",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17335,
+        "registrationId": "15289",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 태안타임즈",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 707,
+          "marginOfError": 3.7,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-08",
+          "end": "2026-02-09"
+        },
+        "publishDate": "2026-02-12 15시 00분",
+        "results": [
+          {
+            "candidateName": "윤희신",
+            "party": "ppp",
+            "support": 29.8
+          },
+          {
+            "candidateName": "강철민",
+            "party": "democratic",
+            "support": 10.9
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "title": "충청남도 태안군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17335&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
+        "registrationDate": "2026-02-10",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17307,
+        "registrationId": "15271",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 810,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-05",
+          "end": "2026-02-06"
+        },
+        "publishDate": "2026-02-11 10시 00분",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17307&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "governor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17302,
+        "registrationId": "15268",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 당진시대",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 1000,
+          "marginOfError": 3.1,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-13 19시 00분",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "당진시",
+        "electionType": "mayor",
+        "title": "충청남도 당진시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17302&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17301,
+        "registrationId": "15267",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리서치뷰",
+        "clientOrg": "구·시·군단위 신문 : 금산진악신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-07",
+          "end": "2026-02-08"
+        },
+        "publishDate": "2026-02-11 23시 00분",
+        "results": [
+          {
+            "candidateName": "문정우",
+            "party": "democratic",
+            "support": 42.5
+          },
+          {
+            "candidateName": "박범인",
+            "party": "ppp",
+            "support": 34.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "금산군",
+        "electionType": "mayor",
+        "title": "충청남도 금산군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17301&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
+        "registrationDate": "2026-02-09",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17232,
+        "registrationId": "15204",
+        "pollName": "선거구분",
+        "pollOrg": "주)메타서치",
+        "clientOrg": "구·시·군단위 신문 : 태안반도",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-02-03",
+          "end": "2026-02-04"
+        },
+        "publishDate": "2026-02-05 14시 00분",
+        "results": [
+          {
+            "candidateName": "윤희신",
+            "party": "ppp",
+            "support": 31.4
+          },
+          {
+            "candidateName": "강철민",
+            "party": "democratic",
+            "support": 10.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "title": "충청남도 태안군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17232&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=34",
+        "registrationDate": "2026-02-04",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17201,
+        "registrationId": "15178",
+        "pollName": "선거구분",
+        "pollOrg": "미디어토마토",
+        "clientOrg": "시·도단위 신문 : 뉴스토마토",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 808,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-31",
+          "end": "2026-02-01"
+        },
+        "publishDate": "2026-02-03 06시 00분",
+        "results": [
+          {
+            "candidateName": "박수현",
+            "party": "democratic",
+            "support": 7.5
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    광역단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17201&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
+        "registrationDate": "2026-02-02",
+        "electionTypes": [
+          "governor"
+        ]
+      },
+      {
+        "nttId": 17145,
+        "registrationId": "15129",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 808,
+          "marginOfError": 3.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-23",
+          "end": "2026-01-24"
+        },
+        "publishDate": "2026-01-27 08시 00분",
+        "results": [
+          {
+            "candidateName": "이병학",
+            "party": "independent",
+            "support": 14.4
+          },
+          {
+            "candidateName": "이병도",
+            "party": "independent",
+            "support": 12.7
+          },
+          {
+            "candidateName": "김영춘",
+            "party": "independent",
+            "support": 8.5
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "superintendent",
+        "title": "충청남도 전체    정당지지도 교육감선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17145&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
+        "registrationDate": "2026-01-26",
+        "electionTypes": [
+          "superintendent",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17143,
+        "registrationId": "15127",
+        "pollName": "선거구분",
+        "pollOrg": "리서치웰",
+        "clientOrg": "인터넷언론 : 뉴데일리",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 502,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-24",
+          "end": "2026-01-25"
+        },
+        "publishDate": "2026-01-26 14시 00분",
+        "results": [],
+        "regionKey": "chungnam",
+        "municipality": "당진시",
+        "electionType": "mayor",
+        "title": "충청남도 당진시    기초단체장선거 광역단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17143&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
+        "registrationDate": "2026-01-26",
+        "electionTypes": [
+          "governor",
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17132,
+        "registrationId": "15116",
+        "pollName": "선거구분",
+        "pollOrg": "(주)리얼미터",
+        "clientOrg": "구·시·군단위 신문 : 21세기부여신문(e부여신문)",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 805,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-21",
+          "end": "2026-01-22"
+        },
+        "publishDate": "2026-01-29 00시 00분",
+        "results": [
+          {
+            "candidateName": "김민수",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 38.4
+          },
+          {
+            "candidateName": "이용우",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 31.2
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "부여군",
+        "electionType": "mayor",
+        "title": "충청남도 부여군    정당지지도 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17132&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
+        "registrationDate": "2026-01-23",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:42:06",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17112,
+        "registrationId": "15101",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아리서치인터내셔널",
+        "clientOrg": "시·도단위 신문 : 투데이충남",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-16",
+          "end": "2026-01-17"
+        },
+        "publishDate": "2026-02-03 10시 00분",
+        "results": [
+          {
+            "candidateName": "이완섭",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 41
+          },
+          {
+            "candidateName": "맹정호",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 31
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "서산시",
+        "electionType": "mayor",
+        "title": "충청남도 서산시    기초단체장선거 정당지지도 정치 및 지역 현안 조사",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17112&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
+        "registrationDate": "2026-01-19",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:44:54",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17072,
+        "registrationId": "15065",
+        "pollName": "선거구분",
+        "pollOrg": "(주)코리아정보리서치",
+        "clientOrg": "시·도단위 신문 : 충청신문사",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 504,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-09",
+          "end": "2026-01-10"
+        },
+        "publishDate": "2026-01-13 15시 00분",
+        "results": [
+          {
+            "candidateName": "이응우",
+            "party": "ppp",
+            "support": 28.5
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "계룡시",
+        "electionType": "mayor",
+        "title": "충청남도 계룡시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17072&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
+        "registrationDate": "2026-01-12",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17038,
+        "registrationId": "15032",
+        "pollName": "선거구분",
+        "pollOrg": "(주)이너텍시스템즈",
+        "clientOrg": "구·시·군단위 신문 : 태안미래신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 501,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-02",
+          "end": "2026-01-03"
+        },
+        "publishDate": "2026-01-06 23시 00분",
+        "results": [
+          {
+            "candidateName": "윤희신",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 32
+          },
+          {
+            "candidateName": "강철민",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 8.2
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "title": "충청남도 태안군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17038&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
+        "registrationDate": "2026-01-05",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:52:43",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 17034,
+        "registrationId": "15029",
+        "pollName": "선거구분",
+        "pollOrg": "(주)비전코리아",
+        "clientOrg": "구·시·군단위 신문 : 공주시 언론인협회",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 524,
+          "marginOfError": 4.3,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2026-01-02",
+          "end": "2026-01-03"
+        },
+        "publishDate": "2026-01-05 14시 00분",
+        "results": [
+          {
+            "candidateName": "최원철",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 42.4
+          },
+          {
+            "candidateName": "김정섭",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 39.1
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "공주시",
+        "electionType": "mayor",
+        "title": "충청남도 공주시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17034&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
+        "registrationDate": "2026-01-05",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:53:50",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16994,
+        "registrationId": "14997",
+        "pollName": "선거구분",
+        "pollOrg": "(주)한국리서치",
+        "clientOrg": "방송사 : KBS대전",
+        "method": {
+          "type": "전화면접",
+          "raw": "무선전화면접",
+          "samplingFrame": "전체",
+          "sampleSize": 800,
+          "marginOfError": 3.5,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-24",
+          "end": "2025-12-26"
+        },
+        "publishDate": "2026-01-05 19시 00분",
+        "results": [
+          {
+            "candidateName": "김태흠",
+            "party": "ppp",
+            "partyRaw": "",
+            "support": 21
+          },
+          {
+            "candidateName": "박수현",
+            "party": "democratic",
+            "partyRaw": "",
+            "support": 4
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": null,
+        "electionType": "governor",
+        "title": "충청남도 전체    광역단체장선거 교육감선거 정치 현안 등",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16994&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
+        "registrationDate": "2025-12-30",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T00:58:50",
+        "electionTypes": [
+          "governor",
+          "superintendent"
+        ]
+      },
+      {
+        "nttId": 16984,
+        "registrationId": "14987",
+        "pollName": "선거구분",
+        "pollOrg": "(주)에스티아이",
+        "clientOrg": "구·시·군단위 신문 : 태안미래신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-28",
+          "end": "2025-12-29"
+        },
+        "publishDate": "2025-12-30 23시 00분",
+        "results": [
+          {
+            "candidateName": "윤희신",
+            "party": "ppp",
+            "support": 36.7
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "태안군",
+        "electionType": "mayor",
+        "title": "충청남도 태안군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16984&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
+        "registrationDate": "2025-12-30",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16843,
+        "registrationId": "14870",
+        "pollName": "선거구분",
+        "pollOrg": "조원씨앤아이",
+        "clientOrg": "인터넷언론 : 스트레이트뉴스",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 500,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-13",
+          "end": "2025-12-14"
+        },
+        "publishDate": "2025-12-16 05시 00분",
+        "results": [
+          {
+            "candidateName": "박찬우",
+            "party": "ppp",
+            "partyRaw": "",
+            "support": 12.3
+          },
+          {
+            "candidateName": "장기수",
+            "party": "democratic",
+            "partyRaw": "",
+            "support": 6.5
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "천안시",
+        "electionType": "mayor",
+        "title": "충청남도 천안시    정당지지도 기초단체장선거",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16843&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
+        "registrationDate": "2025-12-15",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:19:00",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16832,
+        "registrationId": "14861",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 505,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-11",
+          "end": "2025-12-12"
+        },
+        "publishDate": "2025-12-17 10시 00분",
+        "results": [
+          {
+            "candidateName": "김정섭",
+            "party": "democratic",
+            "support": 33.6
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "공주시",
+        "electionType": "mayor",
+        "title": "충청남도 공주시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16832&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
+        "registrationDate": "2025-12-13",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16831,
+        "registrationId": "14860",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 505,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-11",
+          "end": "2025-12-12"
+        },
+        "publishDate": "2025-12-18 10시 00분",
+        "results": [
+          {
+            "candidateName": "오인환",
+            "party": "democratic",
+            "support": 14.2
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "논산시",
+        "electionType": "mayor",
+        "title": "충청남도 논산시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16831&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
+        "registrationDate": "2025-12-13",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16830,
+        "registrationId": "14859",
+        "pollName": "선거구분",
+        "pollOrg": "윈지코리아컨설팅",
+        "clientOrg": "인터넷언론 : 굿모닝충청",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 504,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-12-11",
+          "end": "2025-12-12"
+        },
+        "publishDate": "2025-12-19 10시 00분",
+        "results": [
+          {
+            "candidateName": "맹정호",
+            "party": "democratic",
+            "support": 30.2
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "서산시",
+        "electionType": "mayor",
+        "title": "충청남도 서산시    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16830&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
+        "registrationDate": "2025-12-13",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      },
+      {
+        "nttId": 16743,
+        "registrationId": "14779",
+        "pollName": "선거구분",
+        "pollOrg": "(주)메타서치",
+        "clientOrg": "구·시·군단위 신문 : 금산진악신문",
+        "method": {
+          "type": "ARS",
+          "raw": "무선 ARS",
+          "samplingFrame": "전체",
+          "sampleSize": 506,
+          "marginOfError": 4.4,
+          "responseRate": 0,
+          "contactRate": 0,
+          "weightingMethod": null
+        },
+        "surveyDate": {
+          "start": "2025-11-09",
+          "end": "2025-11-10"
+        },
+        "publishDate": "2025-11-13 06시 00분",
+        "results": [
+          {
+            "candidateName": "문정우",
+            "party": "democratic",
+            "partyRaw": "더불어민주당",
+            "support": 45.3
+          },
+          {
+            "candidateName": "박범인",
+            "party": "ppp",
+            "partyRaw": "국민의힘",
+            "support": 39.1
+          }
+        ],
+        "regionKey": "chungnam",
+        "municipality": "금산군",
+        "electionType": "mayor",
+        "title": "충청남도 금산군    기초단체장선거 정당지지도",
+        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16743&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
+        "registrationDate": "2025-11-11",
+        "resultsSource": "gemini-fallback",
+        "resultsUpdatedAt": "2026-03-17T01:25:24",
+        "electionTypes": [
+          "mayor",
+          "party_support"
+        ]
+      }
+    ],
     "gyeonggi": [
       {
         "nttId": 19319,
@@ -13082,2226 +15336,6 @@
         "registrationDate": "2025-11-20",
         "resultsSource": "gemini-fallback",
         "resultsUpdatedAt": "2026-03-17T01:24:37",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      }
-    ],
-    "chungnam": [
-      {
-        "nttId": 19316,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 뉴스아이즈서해신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 701,
-          "marginOfError": 3.7,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-26",
-          "end": "2026-05-27"
-        },
-        "publishDate": "2026-05-28",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "서천군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 서천군    기초의원선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19316&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-28"
-      },
-      {
-        "nttId": 19134,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 720,
-          "marginOfError": 3.7,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-24",
-          "end": "2026-05-25"
-        },
-        "publishDate": "2026-05-27",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19134&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-26"
-      },
-      {
-        "nttId": 19133,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 505,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-24",
-          "end": "2026-05-25"
-        },
-        "publishDate": "2026-05-27",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "서산시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 서산시    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19133&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-26"
-      },
-      {
-        "nttId": 19069,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "구·시·군단위 신문 : 당진시대",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-24",
-          "end": "2026-05-25"
-        },
-        "publishDate": "2026-05-26",
-        "results": [
-          {
-            "candidateName": "김기재",
-            "party": "democratic",
-            "support": 48.6
-          },
-          {
-            "candidateName": "오성환",
-            "party": "ppp",
-            "support": 42.1
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "당진시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "superintendent",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 당진시    기초단체장선거 광역단체장선거 교육감선거 정당지지도 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19069&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-25"
-      },
-      {
-        "nttId": 19021,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 803,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-22",
-          "end": "2026-05-23"
-        },
-        "publishDate": "2026-05-25",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 전체    교육감선거 광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=19021&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-24"
-      },
-      {
-        "nttId": 18924,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "인터넷언론/인터넷언론/인터넷언론 : 브레이크뉴스/뉴스티앤티/충남뉴스TV",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-19",
-          "end": "2026-05-20"
-        },
-        "publishDate": "2026-05-22",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "부여군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 부여군    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18924&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-21"
-      },
-      {
-        "nttId": 18890,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 시사매거진",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 709,
-          "marginOfError": 3.7,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-18",
-          "end": "2026-05-19"
-        },
-        "publishDate": "2026-05-21",
-        "results": [
-          {
-            "candidateName": "문정우",
-            "party": "democratic",
-            "support": 47.0
-          },
-          {
-            "candidateName": "박범인",
-            "party": "ppp",
-            "support": 41.4
-          },
-          {
-            "candidateName": "안찬",
-            "party": "reform",
-            "support": 5.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "금산군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 금산군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18890&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-20"
-      },
-      {
-        "nttId": 18889,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "구·시·군단위 신문 : 태안신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 700,
-          "marginOfError": 3.7,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-18",
-          "end": "2026-05-19"
-        },
-        "publishDate": "2026-05-21",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor"
-        ],
-        "districtKey": null,
-        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 광역의원선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18889&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-20"
-      },
-      {
-        "nttId": 18885,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "뉴스통신사 : 뉴스핌",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 806,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-18",
-          "end": "2026-05-19"
-        },
-        "publishDate": "2026-05-21",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 전체    광역단체장선거 정당지지도 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18885&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-20"
-      },
-      {
-        "nttId": 18851,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 케이저널",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 503,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-18",
-          "end": "2026-05-19"
-        },
-        "publishDate": "2026-05-20",
-        "results": [
-          {
-            "candidateName": "김민수",
-            "party": "democratic",
-            "support": 36.4
-          },
-          {
-            "candidateName": "이용우",
-            "party": "ppp",
-            "support": 39.5
-          },
-          {
-            "candidateName": "김기서",
-            "party": "independent",
-            "support": 18.0
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "부여군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 부여군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18851&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-19"
-      },
-      {
-        "nttId": 18811,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 서산포스트",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 506,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-17",
-          "end": "2026-05-18"
-        },
-        "publishDate": "2026-05-19",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "서산시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 서산시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18811&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-19"
-      },
-      {
-        "nttId": 18779,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "방송사/시·도단위 신문 : 대전MBC/충청투데이",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-16",
-          "end": "2026-05-17"
-        },
-        "publishDate": "2026-05-18",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ],
-        "districtKey": null,
-        "title": "충청남도 전체    광역단체장선거 교육감선거 정당지지도 지역 현안",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18779&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-18"
-      },
-      {
-        "nttId": 18716,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "구·시·군단위 신문/인터넷언론 : 백제신문/뉴스청양",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-14",
-          "end": "2026-05-15"
-        },
-        "publishDate": "2026-05-16",
-        "results": [
-          {
-            "candidateName": "김돈곤",
-            "party": "democratic",
-            "support": 41.8
-          },
-          {
-            "candidateName": "김홍열",
-            "party": "ppp",
-            "support": 53.4
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "청양군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 청양군    기초단체장선거 광역의원선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18716&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-15"
-      },
-      {
-        "nttId": 18674,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)비전코리아",
-        "clientOrg": "구·시·군단위 신문 : 홍성신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 534,
-          "marginOfError": 4.2,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-13",
-          "end": "2026-05-13"
-        },
-        "publishDate": "2026-05-13",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "홍성군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 홍성군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18674&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-13"
-      },
-      {
-        "nttId": 18628,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)유앤미리서치",
-        "clientOrg": "구·시·군단위 신문 : 계룡신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-10",
-          "end": "2026-05-11"
-        },
-        "publishDate": "2026-05-13",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "계룡시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 계룡시    기초단체장선거 광역의원선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18628&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-05-11"
-      },
-      {
-        "nttId": 18587,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)비전코리아",
-        "clientOrg": "전국단위 신문/인터넷언론 : 포털신문/올리서치",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 648,
-          "marginOfError": 3.8,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-07",
-          "end": "2026-05-08"
-        },
-        "publishDate": "2026-05-10",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "논산시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 논산시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18587&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-05-09"
-      },
-      {
-        "nttId": 18522,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "구·시·군단위 신문 : 태안신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 700,
-          "marginOfError": 3.7,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-03",
-          "end": "2026-05-04"
-        },
-        "publishDate": "2026-05-07",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor"
-        ],
-        "title": "충청남도 태안군    광역단체장선거 기초단체장선거 광역의원선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18522&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=3",
-        "registrationDate": "2026-05-05"
-      },
-      {
-        "nttId": 18483,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 502,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-01",
-          "end": "2026-05-02"
-        },
-        "publishDate": "2026-05-04",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "아산시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 아산시    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18483&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-03"
-      },
-      {
-        "nttId": 18482,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 521,
-          "marginOfError": 4.3,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-05-01",
-          "end": "2026-05-02"
-        },
-        "publishDate": "2026-05-04",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "논산시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 논산시    광역단체장선거 기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18482&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-05-03"
-      },
-      {
-        "nttId": 18463,
-        "registrationId": null,
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 광역행정신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-23",
-          "end": "2026-04-24"
-        },
-        "publishDate": "2026-05-01",
-        "results": [
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "support": 36.9
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 천안시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18463&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-04-30"
-      },
-      {
-        "nttId": 18321,
-        "registrationId": "16161",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "방송사 : 대전방송",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 803,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-18",
-          "end": "2026-04-19"
-        },
-        "publishDate": "2026-04-21",
-        "results": [
-          {
-            "candidateName": "김태흠",
-            "support": 30.0,
-            "party": "ppp"
-          },
-          {
-            "candidateName": "박수현",
-            "support": 6.8,
-            "party": "democratic"
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ],
-        "title": "충청남도 전체    정당지지도 광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18321&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-04-20",
-        "_corrected": true,
-        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
-      },
-      {
-        "nttId": 18277,
-        "registrationId": "16117",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 뉴스파고",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 503,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-14",
-          "end": "2026-04-15"
-        },
-        "publishDate": "2026-04-16",
-        "results": [
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "support": 21.0
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 천안시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18277&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-04-15"
-      },
-      {
-        "nttId": 18144,
-        "registrationId": "16004",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-06",
-          "end": "2026-04-07"
-        },
-        "publishDate": "2026-04-09",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ],
-        "title": "충청남도 전체    정당지지도 광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18144&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=2",
-        "registrationDate": "2026-04-08"
-      },
-      {
-        "nttId": 18135,
-        "registrationId": "15995",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 모닝포스트",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-04-06",
-          "end": "2026-04-07"
-        },
-        "publishDate": "2026-04-08",
-        "results": [
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "support": 13.2
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ],
-        "title": "충청남도 천안시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=18135&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-04-07"
-      },
-      {
-        "nttId": 17959,
-        "registrationId": "15831",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 시사뉴스24",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 502,
-          "marginOfError": 4.4,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-27",
-          "end": "2026-03-28"
-        },
-        "publishDate": "2026-03-30",
-        "results": [
-          {
-            "candidateName": "박찬우",
-            "party": "ppp",
-            "support": 33.1
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "title": "충청남도 천안시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17959&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-30",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17908,
-        "registrationId": "15788",
-        "pollName": "선거구분",
-        "pollOrg": "(주)여론조사꽃",
-        "clientOrg": "조사기관 자체 : (주)여론조사꽃",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1003,
-          "marginOfError": 3.1,
-          "responseRate": 0.0,
-          "contactRate": 0.0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-03-23",
-          "end": "2026-03-24"
-        },
-        "publishDate": "2026-03-27",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17908&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=1",
-        "registrationDate": "2026-03-25",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ],
-        "_corrected": true,
-        "_correctionSource": "Google News 교차검증 (PDF 파싱 실패 폴백)"
-      },
-      {
-        "nttId": 17549,
-        "registrationId": "15473",
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "구·시·군단위 신문/구·시·군단위 신문 : 백제신문/뉴스청양",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-27",
-          "end": "2026-02-28"
-        },
-        "publishDate": "2026-03-06 10시 00분",
-        "results": [
-          {
-            "candidateName": "김돈곤",
-            "party": "democratic",
-            "support": 29.1
-          },
-          {
-            "candidateName": "김홍열",
-            "party": "ppp",
-            "support": 41.5
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "청양군",
-        "electionType": "mayor",
-        "title": "충청남도 청양군 기초단체장선거광역의원선거정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17549&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-03",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17546,
-        "registrationId": "15467",
-        "pollName": "선거구분",
-        "pollOrg": "(주)데일리리서치",
-        "clientOrg": "인터넷언론 : 뉴스티앤티",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-27",
-          "end": "2026-02-28"
-        },
-        "publishDate": "2026-03-03 11시 00분",
-        "results": [
-          {
-            "candidateName": "정준영",
-            "party": "democratic",
-            "support": 32.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "계룡시",
-        "electionType": "mayor",
-        "title": "충청남도 계룡시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17546&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=8",
-        "registrationDate": "2026-03-02",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17501,
-        "registrationId": "15437",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 802,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-22",
-          "end": "2026-02-23"
-        },
-        "publishDate": "2026-02-25 05시 00분",
-        "results": [
-          {
-            "candidateName": "김태흠",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 34.7
-          },
-          {
-            "candidateName": "박수현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 4.7
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체 광역단체장선거정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17501&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
-        "registrationDate": "2026-02-24",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:52:08",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17500,
-        "registrationId": "15436",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 503,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-22",
-          "end": "2026-02-23"
-        },
-        "publishDate": "2026-02-25 05시 00분",
-        "results": [
-          {
-            "candidateName": "박찬우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 25.3
-          },
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 7.3
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "title": "충청남도 천안시 정당지지도기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17500&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=11",
-        "registrationDate": "2026-02-24",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-16T23:52:21",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17375,
-        "registrationId": "15371",
-        "pollName": "선거구분",
-        "pollOrg": "케이스탯리서치",
-        "clientOrg": "방송사 : KBS",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 807,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-10",
-          "end": "2026-02-11"
-        },
-        "publishDate": "2026-02-13 19시 00분",
-        "results": [
-          {
-            "candidateName": "김태흠",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 18
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17375&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=17",
-        "registrationDate": "2026-02-13",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:05:45",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17366,
-        "registrationId": "15321",
-        "pollName": "선거구분",
-        "pollOrg": "(주)비전코리아",
-        "clientOrg": "구·시·군단위 신문 : 서산타임즈",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 509,
-          "marginOfError": 4.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-10",
-          "end": "2026-02-11"
-        },
-        "publishDate": "2026-02-12 11시 59분",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "서산시",
-        "electionType": "mayor",
-        "title": "충청남도 서산시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17366&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=22",
-        "registrationDate": "2026-02-12",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17362,
-        "registrationId": "15317",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "인터넷언론 : 시사뉴스24",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-09",
-          "end": "2026-02-10"
-        },
-        "publishDate": "2026-02-12 09시 00분",
-        "results": [
-          {
-            "candidateName": "이병학",
-            "party": "independent",
-            "support": 16.7
-          },
-          {
-            "candidateName": "김영춘",
-            "party": "independent",
-            "support": 15.8
-          },
-          {
-            "candidateName": "이병도",
-            "party": "independent",
-            "support": 12.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "충청남도 전체 교육감선거정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17362&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=22",
-        "registrationDate": "2026-02-11",
-        "electionTypes": [
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17352,
-        "registrationId": "15307",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "시·도단위 신문 : 대전일보",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1004,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-06",
-          "end": "2026-02-07"
-        },
-        "publishDate": "2026-02-12 13시 00분",
-        "results": [
-          {
-            "candidateName": "김태흠",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 21.3
-          },
-          {
-            "candidateName": "박수현",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 5.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    정당지지도 광역단체장선거 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17352&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=23",
-        "registrationDate": "2026-02-10",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:09:06",
-        "electionTypes": [
-          "governor",
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17336,
-        "registrationId": "15293",
-        "pollName": "선거구분",
-        "pollOrg": "주식회사 한민리서치",
-        "clientOrg": "인터넷언론 : 씨엘미디어",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 732,
-          "marginOfError": 3.6,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-08",
-          "end": "2026-02-09"
-        },
-        "publishDate": "2026-02-11 14시 00분",
-        "results": [
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 14.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "title": "충청남도 천안시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17336&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
-        "registrationDate": "2026-02-10",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:10:32",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17335,
-        "registrationId": "15289",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 태안타임즈",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 707,
-          "marginOfError": 3.7,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-08",
-          "end": "2026-02-09"
-        },
-        "publishDate": "2026-02-12 15시 00분",
-        "results": [
-          {
-            "candidateName": "윤희신",
-            "party": "ppp",
-            "support": 29.8
-          },
-          {
-            "candidateName": "강철민",
-            "party": "democratic",
-            "support": 10.9
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "title": "충청남도 태안군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17335&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=25",
-        "registrationDate": "2026-02-10",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17307,
-        "registrationId": "15271",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 810,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-05",
-          "end": "2026-02-06"
-        },
-        "publishDate": "2026-02-11 10시 00분",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17307&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "governor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17302,
-        "registrationId": "15268",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "구·시·군단위 신문 : 당진시대",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 1000,
-          "marginOfError": 3.1,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-13 19시 00분",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "당진시",
-        "electionType": "mayor",
-        "title": "충청남도 당진시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17302&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17301,
-        "registrationId": "15267",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리서치뷰",
-        "clientOrg": "구·시·군단위 신문 : 금산진악신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-07",
-          "end": "2026-02-08"
-        },
-        "publishDate": "2026-02-11 23시 00분",
-        "results": [
-          {
-            "candidateName": "문정우",
-            "party": "democratic",
-            "support": 42.5
-          },
-          {
-            "candidateName": "박범인",
-            "party": "ppp",
-            "support": 34.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "금산군",
-        "electionType": "mayor",
-        "title": "충청남도 금산군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17301&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=27",
-        "registrationDate": "2026-02-09",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17232,
-        "registrationId": "15204",
-        "pollName": "선거구분",
-        "pollOrg": "주)메타서치",
-        "clientOrg": "구·시·군단위 신문 : 태안반도",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-02-03",
-          "end": "2026-02-04"
-        },
-        "publishDate": "2026-02-05 14시 00분",
-        "results": [
-          {
-            "candidateName": "윤희신",
-            "party": "ppp",
-            "support": 31.4
-          },
-          {
-            "candidateName": "강철민",
-            "party": "democratic",
-            "support": 10.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "title": "충청남도 태안군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17232&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=34",
-        "registrationDate": "2026-02-04",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17201,
-        "registrationId": "15178",
-        "pollName": "선거구분",
-        "pollOrg": "미디어토마토",
-        "clientOrg": "시·도단위 신문 : 뉴스토마토",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 808,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-31",
-          "end": "2026-02-01"
-        },
-        "publishDate": "2026-02-03 06시 00분",
-        "results": [
-          {
-            "candidateName": "박수현",
-            "party": "democratic",
-            "support": 7.5
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    광역단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17201&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=36",
-        "registrationDate": "2026-02-02",
-        "electionTypes": [
-          "governor"
-        ]
-      },
-      {
-        "nttId": 17145,
-        "registrationId": "15129",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 808,
-          "marginOfError": 3.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-23",
-          "end": "2026-01-24"
-        },
-        "publishDate": "2026-01-27 08시 00분",
-        "results": [
-          {
-            "candidateName": "이병학",
-            "party": "independent",
-            "support": 14.4
-          },
-          {
-            "candidateName": "이병도",
-            "party": "independent",
-            "support": 12.7
-          },
-          {
-            "candidateName": "김영춘",
-            "party": "independent",
-            "support": 8.5
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "superintendent",
-        "title": "충청남도 전체    정당지지도 교육감선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17145&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
-        "registrationDate": "2026-01-26",
-        "electionTypes": [
-          "superintendent",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17143,
-        "registrationId": "15127",
-        "pollName": "선거구분",
-        "pollOrg": "리서치웰",
-        "clientOrg": "인터넷언론 : 뉴데일리",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 502,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-24",
-          "end": "2026-01-25"
-        },
-        "publishDate": "2026-01-26 14시 00분",
-        "results": [],
-        "regionKey": "chungnam",
-        "municipality": "당진시",
-        "electionType": "mayor",
-        "title": "충청남도 당진시    기초단체장선거 광역단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17143&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=41",
-        "registrationDate": "2026-01-26",
-        "electionTypes": [
-          "governor",
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17132,
-        "registrationId": "15116",
-        "pollName": "선거구분",
-        "pollOrg": "(주)리얼미터",
-        "clientOrg": "구·시·군단위 신문 : 21세기부여신문(e부여신문)",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 805,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-21",
-          "end": "2026-01-22"
-        },
-        "publishDate": "2026-01-29 00시 00분",
-        "results": [
-          {
-            "candidateName": "김민수",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 38.4
-          },
-          {
-            "candidateName": "이용우",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 31.2
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "부여군",
-        "electionType": "mayor",
-        "title": "충청남도 부여군    정당지지도 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17132&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=42",
-        "registrationDate": "2026-01-23",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:42:06",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17112,
-        "registrationId": "15101",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아리서치인터내셔널",
-        "clientOrg": "시·도단위 신문 : 투데이충남",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-16",
-          "end": "2026-01-17"
-        },
-        "publishDate": "2026-02-03 10시 00분",
-        "results": [
-          {
-            "candidateName": "이완섭",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 41
-          },
-          {
-            "candidateName": "맹정호",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 31
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "서산시",
-        "electionType": "mayor",
-        "title": "충청남도 서산시    기초단체장선거 정당지지도 정치 및 지역 현안 조사",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17112&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=44",
-        "registrationDate": "2026-01-19",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:44:54",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17072,
-        "registrationId": "15065",
-        "pollName": "선거구분",
-        "pollOrg": "(주)코리아정보리서치",
-        "clientOrg": "시·도단위 신문 : 충청신문사",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 504,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-09",
-          "end": "2026-01-10"
-        },
-        "publishDate": "2026-01-13 15시 00분",
-        "results": [
-          {
-            "candidateName": "이응우",
-            "party": "ppp",
-            "support": 28.5
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "계룡시",
-        "electionType": "mayor",
-        "title": "충청남도 계룡시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17072&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=47",
-        "registrationDate": "2026-01-12",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17038,
-        "registrationId": "15032",
-        "pollName": "선거구분",
-        "pollOrg": "(주)이너텍시스템즈",
-        "clientOrg": "구·시·군단위 신문 : 태안미래신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 501,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-02",
-          "end": "2026-01-03"
-        },
-        "publishDate": "2026-01-06 23시 00분",
-        "results": [
-          {
-            "candidateName": "윤희신",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 32
-          },
-          {
-            "candidateName": "강철민",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 8.2
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "title": "충청남도 태안군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17038&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=50",
-        "registrationDate": "2026-01-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:52:43",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 17034,
-        "registrationId": "15029",
-        "pollName": "선거구분",
-        "pollOrg": "(주)비전코리아",
-        "clientOrg": "구·시·군단위 신문 : 공주시 언론인협회",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 524,
-          "marginOfError": 4.3,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2026-01-02",
-          "end": "2026-01-03"
-        },
-        "publishDate": "2026-01-05 14시 00분",
-        "results": [
-          {
-            "candidateName": "최원철",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 42.4
-          },
-          {
-            "candidateName": "김정섭",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 39.1
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "공주시",
-        "electionType": "mayor",
-        "title": "충청남도 공주시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=17034&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=51",
-        "registrationDate": "2026-01-05",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:53:50",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16994,
-        "registrationId": "14997",
-        "pollName": "선거구분",
-        "pollOrg": "(주)한국리서치",
-        "clientOrg": "방송사 : KBS대전",
-        "method": {
-          "type": "전화면접",
-          "raw": "무선전화면접",
-          "samplingFrame": "전체",
-          "sampleSize": 800,
-          "marginOfError": 3.5,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-24",
-          "end": "2025-12-26"
-        },
-        "publishDate": "2026-01-05 19시 00분",
-        "results": [
-          {
-            "candidateName": "김태흠",
-            "party": "ppp",
-            "partyRaw": "",
-            "support": 21
-          },
-          {
-            "candidateName": "박수현",
-            "party": "democratic",
-            "partyRaw": "",
-            "support": 4
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": null,
-        "electionType": "governor",
-        "title": "충청남도 전체    광역단체장선거 교육감선거 정치 현안 등",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16994&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=54",
-        "registrationDate": "2025-12-30",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T00:58:50",
-        "electionTypes": [
-          "governor",
-          "superintendent"
-        ]
-      },
-      {
-        "nttId": 16984,
-        "registrationId": "14987",
-        "pollName": "선거구분",
-        "pollOrg": "(주)에스티아이",
-        "clientOrg": "구·시·군단위 신문 : 태안미래신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-28",
-          "end": "2025-12-29"
-        },
-        "publishDate": "2025-12-30 23시 00분",
-        "results": [
-          {
-            "candidateName": "윤희신",
-            "party": "ppp",
-            "support": 36.7
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "태안군",
-        "electionType": "mayor",
-        "title": "충청남도 태안군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16984&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=55",
-        "registrationDate": "2025-12-30",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16843,
-        "registrationId": "14870",
-        "pollName": "선거구분",
-        "pollOrg": "조원씨앤아이",
-        "clientOrg": "인터넷언론 : 스트레이트뉴스",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 500,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-13",
-          "end": "2025-12-14"
-        },
-        "publishDate": "2025-12-16 05시 00분",
-        "results": [
-          {
-            "candidateName": "박찬우",
-            "party": "ppp",
-            "partyRaw": "",
-            "support": 12.3
-          },
-          {
-            "candidateName": "장기수",
-            "party": "democratic",
-            "partyRaw": "",
-            "support": 6.5
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "천안시",
-        "electionType": "mayor",
-        "title": "충청남도 천안시    정당지지도 기초단체장선거",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16843&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=67",
-        "registrationDate": "2025-12-15",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:19:00",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16832,
-        "registrationId": "14861",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 505,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-11",
-          "end": "2025-12-12"
-        },
-        "publishDate": "2025-12-17 10시 00분",
-        "results": [
-          {
-            "candidateName": "김정섭",
-            "party": "democratic",
-            "support": 33.6
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "공주시",
-        "electionType": "mayor",
-        "title": "충청남도 공주시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16832&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16831,
-        "registrationId": "14860",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 505,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-11",
-          "end": "2025-12-12"
-        },
-        "publishDate": "2025-12-18 10시 00분",
-        "results": [
-          {
-            "candidateName": "오인환",
-            "party": "democratic",
-            "support": 14.2
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "논산시",
-        "electionType": "mayor",
-        "title": "충청남도 논산시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16831&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16830,
-        "registrationId": "14859",
-        "pollName": "선거구분",
-        "pollOrg": "윈지코리아컨설팅",
-        "clientOrg": "인터넷언론 : 굿모닝충청",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 504,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-12-11",
-          "end": "2025-12-12"
-        },
-        "publishDate": "2025-12-19 10시 00분",
-        "results": [
-          {
-            "candidateName": "맹정호",
-            "party": "democratic",
-            "support": 30.2
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "서산시",
-        "electionType": "mayor",
-        "title": "충청남도 서산시    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16830&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=68",
-        "registrationDate": "2025-12-13",
-        "electionTypes": [
-          "mayor",
-          "party_support"
-        ]
-      },
-      {
-        "nttId": 16743,
-        "registrationId": "14779",
-        "pollName": "선거구분",
-        "pollOrg": "(주)메타서치",
-        "clientOrg": "구·시·군단위 신문 : 금산진악신문",
-        "method": {
-          "type": "ARS",
-          "raw": "무선 ARS",
-          "samplingFrame": "전체",
-          "sampleSize": 506,
-          "marginOfError": 4.4,
-          "responseRate": 0,
-          "contactRate": 0,
-          "weightingMethod": null
-        },
-        "surveyDate": {
-          "start": "2025-11-09",
-          "end": "2025-11-10"
-        },
-        "publishDate": "2025-11-13 06시 00분",
-        "results": [
-          {
-            "candidateName": "문정우",
-            "party": "democratic",
-            "partyRaw": "더불어민주당",
-            "support": 45.3
-          },
-          {
-            "candidateName": "박범인",
-            "party": "ppp",
-            "partyRaw": "국민의힘",
-            "support": 39.1
-          }
-        ],
-        "regionKey": "chungnam",
-        "municipality": "금산군",
-        "electionType": "mayor",
-        "title": "충청남도 금산군    기초단체장선거 정당지지도",
-        "sourceUrl": "https://www.nesdc.go.kr/portal/bbs/B0000005/view.do?nttId=16743&menuNo=200467&searchTime=&sdate=&edate=&pdate=&pollGubuncd=&searchCnd=&searchWrd=&pageIndex=75",
-        "registrationDate": "2025-11-11",
-        "resultsSource": "gemini-fallback",
-        "resultsUpdatedAt": "2026-03-17T01:25:24",
         "electionTypes": [
           "mayor",
           "party_support"
@@ -21871,11 +21905,6 @@
             "candidateName": "권영국",
             "party": "justice",
             "support": 2.1
-          },
-          {
-            "candidateName": "이강산",
-            "party": "other",
-            "support": 1.4
           }
         ],
         "regionKey": "seoul",
@@ -22519,11 +22548,6 @@
             "candidateName": "김정철",
             "party": "newReform",
             "support": 2.1
-          },
-          {
-            "candidateName": "이강산",
-            "party": "other",
-            "support": 1.7
           },
           {
             "candidateName": "권영국",

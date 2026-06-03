@@ -720,6 +720,13 @@
       "status": "abandoned",
       "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
+    },
+    "19329": {
+      "firstSeenAt": "2026-06-03",
+      "attempts": 1,
+      "status": "retry",
+      "lastAttemptAt": "2026-06-03",
+      "lastReason": "PDF 파싱 실패"
     }
   }
 }
