@@ -22,7 +22,28 @@
         "end": "2026-05-29"
       },
       "publishDate": "2026-06-03",
-      "results": [],
+      "results": [
+        {
+          "candidateName": "안함",
+          "party": "",
+          "support": 4.4
+        },
+        {
+          "candidateName": "사전",
+          "party": "",
+          "support": 40.6
+        },
+        {
+          "candidateName": "투표",
+          "party": "",
+          "support": 52.1
+        },
+        {
+          "candidateName": "선거일",
+          "party": "",
+          "support": 2.9
+        }
+      ],
       "regionKey": "chungnam",
       "municipality": "보령시",
       "electionType": "mayor",
@@ -56911,14 +56932,14 @@
     }
   ],
   "meta": {
-    "lastUpdated": "2026-06-04",
-    "lastPipelineRun": "2026-06-04",
+    "lastUpdated": "2026-06-05",
+    "lastPipelineRun": "2026-06-05",
     "source": "NESDC 중앙선거여론조사심의위원회 등록조사",
     "sourceUrl": "https://nesdc.go.kr",
     "pollCount": 1183,
     "withRegistrationDate": 1180,
     "withRegistrationId": 908,
-    "withResults": 1056,
+    "withResults": 1057,
     "unknownElectionTypeCount": 1,
     "electionTypes": {
       "mayor": 637,

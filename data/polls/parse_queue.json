@@ -721,32 +721,25 @@
       "lastAttemptAt": "2026-05-29",
       "lastReason": "PDF 파싱 실패"
     },
-    "19338": {
-      "firstSeenAt": "2026-06-04",
-      "attempts": 1,
-      "status": "retry",
-      "lastAttemptAt": "2026-06-04",
-      "lastReason": "PDF 파싱 실패"
-    },
     "19336": {
       "firstSeenAt": "2026-06-04",
-      "attempts": 1,
+      "attempts": 2,
       "status": "retry",
-      "lastAttemptAt": "2026-06-04",
+      "lastAttemptAt": "2026-06-05",
       "lastReason": "PDF 파싱 실패"
     },
     "19335": {
       "firstSeenAt": "2026-06-04",
-      "attempts": 1,
+      "attempts": 2,
       "status": "retry",
-      "lastAttemptAt": "2026-06-04",
+      "lastAttemptAt": "2026-06-05",
       "lastReason": "PDF 파싱 실패"
     },
     "19334": {
       "firstSeenAt": "2026-06-04",
-      "attempts": 1,
+      "attempts": 2,
       "status": "retry",
-      "lastAttemptAt": "2026-06-04",
+      "lastAttemptAt": "2026-06-05",
       "lastReason": "PDF 파싱 실패"
     }
   }
