@@ -1,22 +1,22 @@
 {
   "_meta": {
     "version": "1.0.0",
-    "lastUpdated": "2026-06-02",
+    "lastUpdated": "2026-06-05",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "electionType": "governor",
     "description": "2026 6.3 지방선거 광역단체장 후보 데이터",
-    "lastPipelineRun": "2026-06-02T07:22:53.107626",
+    "lastPipelineRun": "2026-06-05T07:07:15.561664",
     "lastFactCheck": "2026-04-22T05:23:38.337520",
     "sourceUrlCoverage": "0%",
     "sourceUrlNote": "sourceUrl 필드 구조 추가 완료. 다음 파이프라인 실행부터 자동 수집.",
     "mergedRegions": {
       "jeonnam": "gwangju"
     },
-    "lastOfficialSync": "2026-06-02T07:22:53.107626",
+    "lastOfficialSync": "2026-06-05T07:07:15.561664",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
-    "removedPreRegistrationRecords": 1,
+    "removedPreRegistrationRecords": 0,
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do"
   },
   "candidates": {

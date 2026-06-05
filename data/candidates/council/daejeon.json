@@ -1,7 +1,7 @@
 {
   "_meta": {
-    "lastUpdated": "2026-06-02",
-    "lastOfficialSync": "2026-06-02T07:23:23.571236",
+    "lastUpdated": "2026-06-05",
+    "lastOfficialSync": "2026-06-05T07:07:47.003322",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "sourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
     "region": "daejeon",
@@ -760,7 +760,7 @@
         "age": 63,
         "gender": "남",
         "job": "정당인",
-        "education": "배제대학교 대학원 행정학과 박사과정 수료",
+        "education": "배재대학교 대학원 행정학과 박사과정 수료",
         "ballotNumber": 2,
         "giho": "2"
       }

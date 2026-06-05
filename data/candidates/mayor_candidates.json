@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "lastUpdated": "2026-06-02",
+    "lastUpdated": "2026-06-05",
     "source": "중앙선거관리위원회 후보자 정보 API",
     "lastFactCheck": "2026-04-22T06:05:49.870973",
     "lastSyncFromOverview": "2026-04-10",
@@ -15,8 +15,8 @@
     "lastCleanupNote": "overview_narrative cleanup: removed 49 records (34 garbage, 15 empty-career); 28 kept for NEC cross-verification",
     "lastOverviewNarrativeVerification": "2026-04-10",
     "lastOverviewNarrativeVerificationNote": "verified 22 → nec_verified, 3 → incumbent, 3 removed",
-    "lastPipelineRun": "2026-06-02T07:22:53.119673",
-    "lastOfficialSync": "2026-06-02T07:22:53.119673",
+    "lastPipelineRun": "2026-06-05T07:07:15.572958",
+    "lastOfficialSync": "2026-06-05T07:07:15.572958",
     "officialSyncMode": "replace_registered_candidates",
     "officialSource": "중앙선거관리위원회 후보자 정보 API",
     "officialSourceUrl": "https://www.data.go.kr/data/15000908/openapi.do",
