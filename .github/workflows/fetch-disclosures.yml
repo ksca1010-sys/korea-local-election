@@ -1,11 +1,6 @@
 name: 공보물 데이터 수집 (선관위 API)
 
 on:
-  schedule:
-    # 5/16 06:00 KST — 본후보 등록 마감 직후 첫 수집 (UTC 5/15 21:00)
-    - cron: '0 21 15 5 *'
-    # 5/17~5/27 02:00 KST — 매일 갱신, 등록 수정 반영 (UTC 5/16~26 17:00)
-    - cron: '0 17 16-26 5 *'
   workflow_dispatch:
     inputs:
       log_raw:

@@ -1,28 +1,7 @@
 name: Monitor Automation Failures
 
 on:
-  schedule:
-    # 매일 한국시간 13:30 (UTC 04:30) — 정오 Data Health Check 실행 누락 감지
-    - cron: '30 4 * * *'
   workflow_dispatch:
-  workflow_run:
-    workflows:
-      - "Update Candidate Data"
-      - "Update Gallup National Poll"
-      - "Poll Sync (NESDC)"
-      - "Update Election Overview"
-      - "Update Election Stats"
-      - "Update Governor Status"
-      - "Update Mayor Status"
-      - "Update Superintendent Status"
-      - "Update By-Election Data"
-      - "Data Health Check"
-      - "공보물 데이터 수집 (선관위 API)"
-      - "Update Local Council Members"
-      - "Update Local Media Pool"
-      - "Sync NEC Official Candidates"
-      - "CI"
-    types: [completed]
 
 concurrency:
   group: ${{ github.workflow }}

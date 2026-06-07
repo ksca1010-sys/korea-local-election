@@ -1,9 +1,6 @@
 name: Update By-Election Data
 
 on:
-  schedule:
-    # 매주 월요일 한국시간 11:00 (UTC 02:00) — candidates(09:00) 완료 후 실행
-    - cron: '0 2 * * 1'
   workflow_dispatch:
     inputs:
       approve_llm_cost:

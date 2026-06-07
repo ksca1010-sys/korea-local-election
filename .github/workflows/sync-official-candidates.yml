@@ -1,11 +1,6 @@
 name: Sync NEC Official Candidates
 
 on:
-  schedule:
-    # 5/15 18:30 KST — 후보자등록 마감 직후 1차 동기화 (UTC 09:30)
-    - cron: '30 9 15 5 *'
-    # 5/16~5/27 02:30 KST — 사퇴/등록무효/정정 반영 (UTC 17:30)
-    - cron: '30 17 15-26 5 *'
   workflow_dispatch:
     inputs:
       log_raw:

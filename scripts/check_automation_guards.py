@@ -10,6 +10,9 @@ from __future__ import annotations
 
 import re
 import sys
+import json
+import os
+from datetime import date, datetime
 from pathlib import Path
 
 
@@ -19,12 +22,16 @@ MONITOR_WORKFLOW = WORKFLOW_DIR / "monitor-failures.yml"
 MONITOR_SCRIPT = ROOT / "scripts" / "monitor_failures.py"
 QUALITY_GATE = ROOT / "scripts" / "run_quality_gate.js"
 DEPLOY_SCRIPT = ROOT / "deploy.sh"
+ELECTION_META = ROOT / "data" / "static" / "election_meta.json"
 
 ALLOW_COMMENT = "automation-guard: allow-continue-on-error"
 
 IGNORED_WORKFLOWS = {
     "monitor-failures.yml",
 }
+
+TRUE_VALUES = {"1", "true", "yes", "on"}
+FALSE_VALUES = {"0", "false", "no", "off"}
 
 NO_AUTO_RETRY_NAMES = {
     "CI",
@@ -60,6 +67,25 @@ def monitored_names() -> set[str]:
 def retry_map_names() -> set[str]:
     text = MONITOR_SCRIPT.read_text(encoding="utf-8")
     return set(re.findall(r'"([^"]+)":\s*"[^"]+\.yml"', text))
+
+
+def election_date() -> date | None:
+    try:
+        meta = json.loads(ELECTION_META.read_text(encoding="utf-8"))
+        return datetime.fromisoformat(meta["electionDate"]).date()
+    except (FileNotFoundError, KeyError, TypeError, ValueError, json.JSONDecodeError):
+        return None
+
+
+def is_portfolio_mode() -> bool:
+    override = os.environ.get("PORTFOLIO_MODE", "").strip().lower()
+    if override in TRUE_VALUES:
+        return True
+    if override in FALSE_VALUES:
+        return False
+
+    target_date = election_date()
+    return bool(target_date and date.today() > target_date)
 
 
 def step_blocks(lines: list[str]) -> list[tuple[int, int, list[str]]]:
@@ -121,6 +147,9 @@ def check_continue_on_error_gates(errors: list[str]) -> None:
 
 
 def check_monitor_coverage(errors: list[str]) -> None:
+    if is_portfolio_mode():
+        return
+
     watched = monitored_names()
     retryable = retry_map_names()
 

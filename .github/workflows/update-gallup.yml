@@ -1,9 +1,6 @@
 name: Update Gallup National Poll
 
 on:
-  schedule:
-    # 매주 금요일 한국시간 18:00 (UTC 09:00) - 갤럽 발표 후
-    - cron: '0 9 * * 5'
   workflow_dispatch:
 
 concurrency:
