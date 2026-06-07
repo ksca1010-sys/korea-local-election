@@ -26,9 +26,12 @@ from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 FAILURE_COUNTS_PATH = BASE_DIR / "data" / ".failure_counts.json"
+ELECTION_META_PATH = BASE_DIR / "data" / "static" / "election_meta.json"
 
 ALERT_THRESHOLD = 2   # 연속 N회 실패 시 Issue 생성
 AUTO_RETRY_THRESHOLD = 1  # 연속 N회 실패 시 워크플로우 자동 재시도
+TRUE_VALUES = {"1", "true", "yes", "on"}
+FALSE_VALUES = {"0", "false", "no", "off"}
 
 # 자동 재시도 제외 워크플로우 (재시도해도 의미 없는 것)
 NO_AUTO_RETRY = {
@@ -65,6 +68,25 @@ FAILURE_CONCLUSIONS = {
     "action_required",
     "startup_failure",
 }
+
+
+def get_election_date() -> date | None:
+    try:
+        meta = json.loads(ELECTION_META_PATH.read_text(encoding="utf-8"))
+        return datetime.fromisoformat(meta["electionDate"]).date()
+    except (FileNotFoundError, KeyError, TypeError, ValueError, json.JSONDecodeError):
+        return None
+
+
+def is_portfolio_mode() -> bool:
+    override = os.environ.get("PORTFOLIO_MODE", "").strip().lower()
+    if override in TRUE_VALUES:
+        return True
+    if override in FALSE_VALUES:
+        return False
+
+    election_date = get_election_date()
+    return bool(election_date and date.today() > election_date)
 
 
 def load_counts() -> dict:
@@ -443,6 +465,11 @@ def main():
     print("=" * 55)
 
     counts = load_counts()
+
+    if is_portfolio_mode():
+        print("포트폴리오 모드: 선거 종료 후 자동화 실패 모니터링을 비활성화합니다.")
+        print("완료")
+        return 0
 
     if args.check_schedules:
         failures = check_schedule_freshness(counts)
