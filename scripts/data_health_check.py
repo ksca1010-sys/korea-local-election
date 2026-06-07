@@ -21,6 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 CANDIDATES_DIR = DATA_DIR / "candidates"
 HEAL_STATE_PATH = DATA_DIR / ".heal_state.json"
+ELECTION_META_PATH = DATA_DIR / "static" / "election_meta.json"
 
 KST = timezone(timedelta(hours=9))
 TODAY = datetime.now(KST).date()
@@ -48,6 +49,9 @@ FAILURE_CONCLUSIONS = {
     "action_required",
     "startup_failure",
 }
+
+TRUE_VALUES = {"1", "true", "yes", "on"}
+FALSE_VALUES = {"0", "false", "no", "off"}
 
 
 # ── 신선도 기준: (파일, 메타키, 허용일수, 복구 워크플로우) ──
@@ -108,6 +112,27 @@ def save_heal_state(state):
     HEAL_STATE_PATH.write_text(
         json.dumps(state, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
+
+
+def get_election_date():
+    """election_meta.json 기준 선거일을 반환한다."""
+    try:
+        meta = json.loads(ELECTION_META_PATH.read_text(encoding="utf-8"))
+        return datetime.fromisoformat(meta["electionDate"]).date()
+    except (FileNotFoundError, KeyError, TypeError, ValueError, json.JSONDecodeError):
+        return None
+
+
+def is_portfolio_mode():
+    """선거 종료 후에는 자동 수집/신선도 실패를 포트폴리오 보관 모드로 완화한다."""
+    override = os.environ.get("PORTFOLIO_MODE", "").strip().lower()
+    if override in TRUE_VALUES:
+        return True
+    if override in FALSE_VALUES:
+        return False
+
+    election_date = get_election_date()
+    return bool(election_date and TODAY > election_date)
 
 
 def get_meta_date(data, meta_path):
@@ -171,7 +196,7 @@ def trigger_workflow(workflow_file):
 
 # ── 1. 신선도 점검 ──
 
-def check_freshness(heal_state):
+def check_freshness(heal_state, allow_recovery=True):
     """데이터 파일 신선도 확인, 오래되면 워크플로우 재실행"""
     print("\n[1] 데이터 신선도 점검")
     print("=" * 50)
@@ -201,6 +226,10 @@ def check_freshness(heal_state):
 
             stale_count += 1
             print(f"  ✗ {display_path} — {age}일 전 ({last_date}, 기준: {max_days}일)")
+
+            if not allow_recovery:
+                print(f"    (포트폴리오 모드 — {workflow} 자동 복구 건너뜀)")
+                continue
 
             # 오늘 이미 복구 시도했는지 확인
             heal_key = f"freshness:{workflow}"
@@ -430,13 +459,24 @@ def main():
     print(f"실행: {datetime.now(KST).strftime('%Y-%m-%d %H:%M:%S')} KST")
     if DRY_RUN:
         print("[DRY RUN — 실제 수정/재실행 안 함]")
+    portfolio_mode = is_portfolio_mode()
+    if portfolio_mode:
+        election_date = get_election_date()
+        date_label = election_date.isoformat() if election_date else "unknown"
+        print(f"[PORTFOLIO MODE — 선거일({date_label}) 이후 자동 수집/신선도 실패 완화]")
     print("=" * 55)
 
     heal_state = load_heal_state()
 
-    stale = check_freshness(heal_state)
+    stale = check_freshness(heal_state, allow_recovery=not portfolio_mode)
     issues = check_integrity(heal_state)
-    retried = check_workflow_failures(heal_state)
+    if portfolio_mode:
+        print("\n[3] 워크플로우 실패 감지")
+        print("=" * 50)
+        print("  포트폴리오 모드: 실패 워크플로우 자동 재실행을 건너뜁니다.")
+        retried = 0
+    else:
+        retried = check_workflow_failures(heal_state)
 
     if DRY_RUN:
         print("\n[DRY RUN] heal_state 저장 생략")
@@ -446,8 +486,14 @@ def main():
     print("\n" + "=" * 55)
     print(f"종합: 오래된 데이터 {stale}건 | 무결성 이슈 {issues}건 | 재실행 {retried}건")
     print("=" * 55)
-    if stale or issues:
-        print("상태 점검 실패: stale/무결성 이슈가 남아 있어 자동화 모니터에 노출합니다.")
+    if issues:
+        print("상태 점검 실패: 데이터 무결성 이슈가 남아 있습니다.")
+        return 1
+    if stale and portfolio_mode:
+        print("포트폴리오 모드: 오래된 데이터는 선거 종료 후 보관 상태로 간주하여 통과합니다.")
+        return 0
+    if stale:
+        print("상태 점검 실패: stale 이슈가 남아 있어 자동화 모니터에 노출합니다.")
         return 1
     return 0
 

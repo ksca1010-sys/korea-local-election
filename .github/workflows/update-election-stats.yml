@@ -1,10 +1,6 @@
 name: Update Election Stats
 
 on:
-  schedule:
-    # 매일 한국시간 10:00 (UTC 01:00) 실행
-    # 획정 확정 시기(2026.04~05) 대응: 매일 갱신
-    - cron: '0 1 * * *'
   workflow_dispatch:
 
 concurrency:

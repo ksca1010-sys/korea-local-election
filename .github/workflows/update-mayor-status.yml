@@ -1,9 +1,6 @@
 name: Update Mayor Status
 
 on:
-  schedule:
-    # 매주 수요일 한국시간 12:30 (UTC 03:30) — data-health-check(03:00)과 30분 간격
-    - cron: '30 3 * * 3'
   workflow_dispatch:
 
 concurrency:
